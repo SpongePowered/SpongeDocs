@@ -1,0 +1,18 @@
+
+@mixin border-radius($radius) {
+  @if type-of($radius) == 'number' {
+    -webkit-border-radius: $radius;
+       -moz-border-radius: $radius;
+            border-radius: $radius;
+  } @else {
+    @warn "$radius is not number. see screen/_mixin.scss";
+  }
+}
+
+@mixin transform-rotate($rotate) {
+  -webkit-transform: rotate($rotate);
+     -moz-transform: rotate($rotate);
+      -ms-transform: rotate($rotate);
+       -o-transform: rotate($rotate);
+          transform: rotate($rotate);
+}

@@ -1,0 +1,35 @@
+@mixin text-size-adjust {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+// Return the percent font size
+@mixin percent-font-size($pixel) {
+  @if $pixel == 10 {
+    font-size: 77%;
+  } @else if $pixel == 11 {
+    font-size: 85%;
+  } @else if $pixel == 12 {
+    font-size: 93%;
+  } @else if $pixel == 13 {
+    font-size: 100%;
+  } @else if $pixel == 14 {
+    font-size: 108%;
+  } @else if $pixel == 16 {
+    font-size: 123%;
+  } @else if $pixel == 18 {
+    font-size: 138%;
+  } @else if $pixel == 20 {
+    font-size: 154%;
+  } @else if $pixel == 24 {
+    font-size: 182%;
+  } @else if $pixel == 27 {
+    font-size: 205%;
+  } @else if $pixel == 30 {
+    font-size: 230%;
+  } @else if $pixel == 32 {
+    font-size: 246%;
+  } @else if $pixel == 36 {
+    font-size: 278%;
+  }
+}

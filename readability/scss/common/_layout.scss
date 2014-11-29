@@ -1,0 +1,28 @@
+body {
+  position: relative;
+}
+#container {
+  margin: 0 0 0 270px;
+  padding: 20px;
+  max-width: 960px;
+  min-width: 300px;
+}
+#sidebar {
+  position: absolute;
+  top: 20px;
+  left: 15px;
+  width: 240px;
+  z-index: 99;
+}
+.highlight-python {
+  pre {
+    padding: 10px;
+    border: solid 1px #DDD;
+    border-radius: 5px;
+    background-color: #FFF;
+    span {
+      line-height: 1.5;
+      @include percent-font-size(13);
+    }
+  }
+}

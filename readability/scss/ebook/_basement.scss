@@ -1,0 +1,70 @@
+.ebook {
+  background: #EDEBE8 url("side_ebook.png") repeat-y top left;
+  color: $ebook-default-font-color;
+  a {
+    color: $ebook-default-link-color;
+    &:link {
+      text-decoration: none;
+      -webkit-tap-highlight-color: #D7DCDF;
+    }
+    &:visited {
+      text-decoration: none;
+      color: $ebook-default-visited-color;
+    }
+    &:hover {
+      text-decoration: underline;
+      color: $ebook-default-hover-color;
+    }
+    &:active {
+      text-decoration: underline;
+      color: $ebook-default-active-color;
+    }
+  }
+  .admonition {
+    &.attention {
+      background-color: $ebook-attention-background-color;
+      border-color: $ebook-attention-background-color;
+      color: $ebook-attention-font-color;
+    }
+    &.caution {
+      background-color: $ebook-caution-background-color;
+      border-color: $ebook-caution-background-color;
+      color: $ebook-caution-font-color;
+    }
+    &.danger {
+      background-color: $ebook-danger-background-color;
+      border-color: $ebook-danger-background-color;
+      color: $ebook-danger-font-color;
+    }
+    &.error {
+      background-color: $ebook-error-background-color;
+      border-color: $ebook-error-background-color;
+      color: $ebook-error-font-color;
+    }
+    &.hint {
+      background-color: $ebook-hint-background-color;
+      border-color: $ebook-hint-background-color;
+      color: $ebook-hint-font-color;
+    }
+    &.important {
+      background-color: $ebook-important-background-color;
+      border-color: $ebook-important-background-color;
+      color: $ebook-important-font-color;
+    }
+    &.note {
+      background-color: $ebook-note-background-color;
+      border-color: $ebook-note-background-color;
+      color: $ebook-note-font-color;
+    }
+    &.tip {
+      background-color: $ebook-tip-background-color;
+        border-color: $ebook-tip-background-color;
+      color: $ebook-tip-font-color;
+    }
+    &.warning {
+      background-color: $ebook-warning-background-color;
+      border-color: $ebook-warning-background-color;
+      color: $ebook-warning-font-color;
+    }
+  }
+}

@@ -1,0 +1,70 @@
+.novel {
+  background: #F4EED9 url("side_novel.png") repeat-y top left;
+  color: $novel-default-font-color;
+  a {
+    color: $novel-default-link-color;
+    &:link {
+      text-decoration: none;
+      -webkit-tap-highlight-color: #D7DCDF;
+    }
+    &:visited {
+      text-decoration: none;
+      color: $novel-default-visited-color;
+    }
+    &:hover {
+      text-decoration: underline;
+      color: $novel-default-hover-color;
+    }
+    &:active {
+      text-decoration: underline;
+      color: $novel-default-active-color;
+    }
+  }
+  .admonition {
+    &.attention {
+      background-color: $novel-attention-background-color;
+      border-color: $novel-attention-background-color;
+      color: $novel-attention-font-color;
+    }
+    &.caution {
+      background-color: $novel-caution-background-color;
+      border-color: $novel-caution-background-color;
+      color: $novel-caution-font-color;
+    }
+    &.danger {
+      background-color: $novel-danger-background-color;
+      border-color: $novel-danger-background-color;
+      color: $novel-danger-font-color;
+    }
+    &.error {
+      background-color: $novel-error-background-color;
+      border-color: $novel-error-background-color;
+      color: $novel-error-font-color;
+    }
+    &.hint {
+      background-color: $novel-hint-background-color;
+      border-color: $novel-hint-background-color;
+      color: $novel-hint-font-color;
+    }
+    &.important {
+      background-color: $novel-important-background-color;
+      border-color: $novel-important-background-color;
+      color: $novel-important-font-color;
+    }
+    &.note {
+      background-color: $novel-note-background-color;
+      border-color: $novel-note-background-color;
+      color: $novel-note-font-color;
+    }
+    &.tip {
+      background-color: $novel-tip-background-color;
+        border-color: $novel-tip-background-color;
+      color: $novel-tip-font-color;
+    }
+    &.warning {
+      background-color: $novel-warning-background-color;
+      border-color: $novel-warning-background-color;
+      color: $novel-warning-font-color;
+    }
+  }
+}

@@ -1,0 +1,70 @@
+.newspaper {
+  background: #FDFDFA url("side_newspaper.png") repeat-y top left;
+  color: $newspaper-default-font-color;
+  a {
+    color: $newspaper-default-link-color;
+    &:link {
+      text-decoration: none;
+      -webkit-tap-highlight-color: #D7DCDF;
+    }
+    &:visited {
+      text-decoration: none;
+      color: $newspaper-default-visited-color;
+    }
+    &:hover {
+      text-decoration: underline;
+      color: $newspaper-default-hover-color;
+    }
+    &:active {
+      text-decoration: underline;
+      color: $newspaper-default-active-color;
+    }
+  }
+  .admonition {
+    &.attention {
+      background-color: $newspaper-attention-background-color;
+      border-color: $newspaper-attention-background-color;
+      color: $newspaper-attention-font-color;
+    }
+    &.caution {
+      background-color: $newspaper-caution-background-color;
+      border-color: $newspaper-caution-background-color;
+      color: $newspaper-caution-font-color;
+    }
+    &.danger {
+      background-color: $newspaper-danger-background-color;
+      border-color: $newspaper-danger-background-color;
+      color: $newspaper-danger-font-color;
+    }
+    &.error {
+      background-color: $newspaper-error-background-color;
+      border-color: $newspaper-error-background-color;
+      color: $newspaper-error-font-color;
+    }
+    &.hint {
+      background-color: $newspaper-hint-background-color;
+      border-color: $newspaper-hint-background-color;
+      color: $newspaper-hint-font-color;
+    }
+    &.important {
+      background-color: $newspaper-important-background-color;
+      border-color: $newspaper-important-background-color;
+      color: $newspaper-important-font-color;
+    }
+    &.note {
+      background-color: $newspaper-note-background-color;
+      border-color: $newspaper-note-background-color;
+      color: $newspaper-note-font-color;
+    }
+    &.tip {
+      background-color: $newspaper-tip-background-color;
+        border-color: $newspaper-tip-background-color;
+      color: $newspaper-tip-font-color;
+    }
+    &.warning {
+      background-color: $newspaper-warning-background-color;
+      border-color: $newspaper-warning-background-color;
+      color: $newspaper-warning-font-color;
+    }
+  }
+}

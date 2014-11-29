@@ -1,0 +1,88 @@
+.widget {
+  margin: 0 0 10px;
+  border-top: dotted 1px #CCC;
+  .widgetHead {
+    padding-top: 10px;
+    font-size: 11px;
+    font-weight: bold;
+  }
+  .widgetBody {
+    ul {
+      li {
+        @include percent-font-size(12);
+      }
+    }
+  }
+  &.search,
+  &.copyright,
+  &.updated,
+  &.version {
+    .widgetBody {
+      p {
+        margin: 10px 0 0;
+        font-size: 11px;
+        color: #777;
+      }
+    }
+  }
+}
+.logo {
+  .widgetBody {
+    padding-top: 10px;
+  }
+}
+.toctree {
+  .widgetBody {
+    ul {
+      margin: 0;
+    }
+  }
+}
+.search {
+  padding-top: 10px;
+  form {
+    @include clearfix();
+  }
+  input[type='text'] {
+    display: inline-block;
+    float: left;
+    margin: 0;
+    padding: 4px;
+    width: 195px;
+    height: 18px;
+    line-height: 18px;
+    background-color: #FFF;
+    border: solid 1px #DDD;
+    -webkit-border-top-left-radius: 3px;
+       -moz-border-top-left-radius: 3px;
+            border-top-left-radius: 3px;
+    -webkit-border-bottom-left-radius: 3px;
+       -moz-border-bottom-left-radius: 3px;
+            border-bottom-left-radius: 3px;
+    font-size: 13px;
+    color: #444;
+    &:focus {
+      border: solid 1px #DDD;
+    }
+  }
+  button {
+    display: inline-block;
+    overflow: hidden;
+    margin: 0;
+    width: 35px;
+    height: 28px;
+    line-height: 24px;
+    background-color: #DDD;
+    border: none;
+    -webkit-border-top-right-radius: 3px;
+       -moz-border-top-right-radius: 3px;
+            border-top-right-radius: 3px;
+    -webkit-border-bottom-right-radius: 3px;
+       -moz-border-bottom-right-radius: 3px;
+            border-bottom-right-radius: 3px;
+    text-align: center;
+    text-shadow: 0 1px 1px rgba(255,255,255,.75);
+    font-size: 13px;
+    color: #333;
+  }
+}

@@ -1,0 +1,166 @@
+{#
+    readability/layout.html
+    ~~~~~~~~~~~~~~~~~~~~~~~
+
+    Base layout template for readability theme.
+
+    :copyright: Copyright 2012 by Tsuyoshi Tokuda.
+    :license: BSD, see LICENSE for details.
+#}
+{%- set render_sidebar = (not embedded) and (not theme_nosidebar|tobool) and (sidebars != []) %}
+{%- set url_root = pathto('', 1) %}
+
+{%- macro script() %}
+<script type="text/javascript">
+var DOCUMENTATION_OPTIONS = {
+  URL_ROOT:       "{{ url_root }}",
+  VERSION:        "{{ release|e }}",
+  COLLAPSE_INDEX: false,
+  FILE_SUFFIX:    "{{ '' if no_search_suffix else file_suffix }}",
+  HAS_SOURCE:     {{ has_source|lower }}
+};
+</script>
+{%- for scriptfile in script_files %}
+<script type="text/javascript" src="{{ pathto(scriptfile, 1) }}"></script>
+{%- endfor %}
+<!--[if lt IE 9]>
+<script type="text/javascript" src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+{%- endmacro %}
+
+{%- macro css() %}
+<link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />
+<link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}" type="text/css" />
+{%- for cssfile in css_files %}
+<link rel="stylesheet" href="{{ pathto(cssfile, 1) }}" type="text/css" />
+{%- endfor %}
+{%- endmacro %}
+
+{%- macro sidebar() %}
+{%- if render_sidebar %}
+<aside id="sidebar">
+{%- if sidebars != None %}
+{%- for sidebartemplate in sidebars %}
+{%- include sidebartemplate %}
+{%- endfor %}
+{%- else %}
+{%- block sidebartoc %}{%- include "localtoc.html" %}{%- endblock %}
+{%- block sidebarsourcelink %}{%- include "sourcelink.html" %}{%- endblock %}
+{%- if customsidebar %}{%- include customsidebar %}{%- endif %}
+{%- block sidebarsearch %}{%- include "searchbox.html" %}{%- endblock %}
+{%- endif %}
+{%- if last_updated %}
+{%- trans last_updated=last_updated|e %}
+  <section class="widget updated">
+    <div class="widgetBody">
+      <p>Last updated on {{ last_updated }}.</p>
+    </div>
+  </section><!-- .widget -->
+{%- endtrans %}
+{%- endif %}
+{%- if show_sphinx %}
+{%- trans sphinx_version=sphinx_version|e %}
+  <section class="widget version">
+    <div class="widgetBody">
+      <p>Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> {{ sphinx_version }}.</p>
+    </div>
+  </section><!-- .widget -->
+{%- endtrans %}
+{%- endif %}
+{%- if show_copyright %}
+{%- if hasdoc('copyright') %}
+{%- trans path=pathto('copyright'), copyright=copyright|e %}
+  <section class="widget copyright">
+    <div class="widgetBody">
+      <p>&copy; Copyright {{ copyright }}.</p>
+    </div>
+  </section><!-- .widget -->
+{%- endtrans %}
+{%- else %}
+{%- trans copyright=copyright|e %}
+  <section class="widget copyright">
+    <div class="widgetBody">
+      <p>&copy; Copyright {{ copyright }}.</p>
+    </div>
+  </section><!-- .widget -->
+{%- endtrans %}
+{%- endif %}
+{%- endif %}
+</aside><!-- #sidebar -->
+{%- endif %}
+{%- endmacro %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+{%- block htmltitle %}
+<title>{{ title|striptags|e }}{{ titlesuffix }}</title>
+{%- endblock %}
+<!-- META -->
+{{ metatags }}
+<!-- LINK -->
+{%- if favicon %}
+<link rel="shortcut icon" href="{{ pathto('_static/' + favicon, 1) }}" />
+{%- endif %}
+{%- block linktags %}
+{%- if hasdoc('about') %}
+<link rel="author" title="{{ _('About these documents') }}" href="{{ pathto('about') }}" />
+{%- endif %}
+{%- if hasdoc('genindex') %}
+<link rel="index" title="{{ _('Index') }}" href="{{ pathto('genindex') }}" />
+{%- endif %}
+{%- if hasdoc('search') %}
+<link rel="search" title="{{ _('Search') }}" href="{{ pathto('search') }}" />
+{%- endif %}
+{%- if hasdoc('copyright') %}
+<link rel="copyright" title="{{ _('Copyright') }}" href="{{ pathto('copyright') }}" />
+{%- endif %}
+<link rel="top" title="{{ docstitle|e }}" href="{{ pathto('index') }}" />
+{%- if parents %}
+<link rel="up" title="{{ parents[-1].title|striptags|e }}" href="{{ parents[-1].link|e }}" />
+{%- endif %}
+{%- if next %}
+<link rel="next" title="{{ next.title|striptags|e }}" href="{{ next.link|e }}" />
+{%- endif %}
+{%- if prev %}
+<link rel="prev" title="{{ prev.title|striptags|e }}" href="{{ prev.link|e }}" />
+{%- endif %}
+{%- endblock %}
+<!-- STYLE -->
+{{ css() }}
+<!-- SCRIPT -->
+{{ script() }}
+{%- block extrahead %}{% endblock %}
+</head>
+
+<body class="{{ theme_readabilitystyle }}">
+{%- block content %}
+<div id="container">
+  <header id="header">
+{%- block headertitle %}
+    <p><a href="{{ pathto(master_doc) }}" title="{{ shorttitle|e }}">{{ shorttitle|e }}</a></p>
+{%- endblock %}
+
+    <div class="rel">
+{%- for rellink in rellinks|reverse %}
+      <a href="{{ pathto(rellink[0]) }}" title="{{ rellink[1]|striptags|e }}" {{ accesskey(rellink[2]) }}><span>{{ rellink[3] }}</span></a>
+      {%- if not loop.last %}{{ reldelim2 }}{% endif %}
+{%- endfor %}
+    </div>
+  </header><!-- #header -->
+
+  <div id="document">
+{%- block document %}
+{% block body %}{% endblock %}
+{%- endblock %}
+  </div><!-- #document -->
+
+{%- include "relations.html" %}
+
+{%- block footer %}{% endblock %}
+</div><!-- #container -->
+{%- endblock %}
+{{ sidebar() }}
+</body>
+</html>

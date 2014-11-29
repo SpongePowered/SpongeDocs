@@ -1,0 +1,67 @@
+table.docutils {
+  display: table;
+  margin: 1em 0;
+  width: 100%;
+  thead,
+  tfoot,
+  tbody {
+    tr {
+      th,td {
+        padding: 7px 5px;
+      }
+      th {
+        vertical-align: middle;
+        font-weight: bold;
+      }
+      td {
+        vertical-align: top;
+        p, ul {
+          margin: 0 0 .5em;
+          &.last {
+            margin-bottom: 0;
+          }
+        }
+        p {
+          line-height: 1.2em;
+          @include percent-font-size(12);
+        }
+        li {
+          margin: 0 0 .5em;
+          line-height: 1.4em;
+          @include percent-font-size(12);
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+  thead,
+  tfoot {
+    background: #F1F1F1;
+  }
+  tbody {
+    tr {
+      &:hover {
+        background-color: #F6F6F6;
+      }
+      th,td {
+        border-top: solid 1px #DDD;
+      }
+      th {
+        font-weight: bold;
+      }
+      &:last-child {
+        th,td {
+          border-bottom: solid 1px #DDD;
+        }
+      }
+    }
+  }
+}
+table.field-list {
+  
+}
+table.footnote {
+  
+}
