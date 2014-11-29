@@ -26,6 +26,6 @@ Installing Sponge on your Forge server
    not work* unless there as also some kind of functioning thurd-party
    compatibility-layer plugin, such as *Pore* (still a work in
    progress). For information about Bukkit plugins, see
-   [[Bukkit-Compatibility\|Bukkit Compatibility]]
+    :doc:'bukkit-compatibility'
 
 
