@@ -91,7 +91,13 @@ pygments_style = 'sphinx'
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-html_theme = 'default'
+import sphinxtheme
+
+readability_path = os.path.dirname(os.path.abspath(sphinxtheme.__file__))
+relative_path = os.path.relpath(readability_path, os.path.abspath('.'))
+
+html_theme = 'readability'
+html_theme_path = [relative_path]
 
 #html_style = '/default.css'
 
