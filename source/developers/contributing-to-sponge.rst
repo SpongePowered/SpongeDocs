@@ -72,71 +72,56 @@ Spaces in filenames are not ideal.
 Please do not use whitespace in filenames. 
 As such, putting your repository into say, the Desktop, or in folders that contain whitespace filenames is a bad idea.
 
-Keep the paths to your source tree as short as possible:
+Keep the paths to your source tree as short as possible::
 
-```bash
-C:\> mkdir c:\sp\main
-```
+    C:\> mkdir c:\sp\main
+    C:\> cd c:\sp\main
 
-```bash
-C:\> cd c:\sp\main
-```
 
-Now you're ready to begin the process of getting Sponge sources and beginning to build it for the first time.  Refer to the README.md page for the Sponge project for the most current version of instructions, but these steps are generally going to be the same throughout the development of Sponge:
+Now you're ready to begin the process of getting Sponge sources and beginning to build it for the first time.
+Refer to the README.md page for the Sponge project for the most current version of instructions,
+but these steps are generally going to be the same throughout the development of Sponge::
 
-```bash
-C:\sp\main> git clone git@github.com:SpongePowered/Sponge.git
-```
+    C:\sp\main> git clone git@github.com:SpongePowered/Sponge.git
 
-That will create a clone of the Sponge project on your PC. The process will create the directory Sponge.
+That will create a clone of the Sponge project on your PC. The process will create the directory Sponge::
 
-```bash
-C:\sp\main> cd Sponge
-```
+    C:\sp\main> cd Sponge
 
-We need to update the project by fetching the submodules linked to Sponge, namely the SpongeAPI module:
+We need to update the project by fetching the submodules linked to Sponge, namely the SpongeAPI module::
 
-```bash
-C:\sp\main\Sponge> git submodule update --init --recursive
-```
+    C:\sp\main\Sponge> git submodule update --init --recursive
 
-There is a commit-hook that is used to process checkins to the repository, we need to put a copy of that hook in the `git` hooks folder:
+There is a commit-hook that is used to process checkins to the repository,
+we need to put a copy of that hook in the `git` hooks folder::
 
-```bash
-C:\sp\main\Sponge> copy scripts\pre-commit .git\hooks
-```
+    C:\sp\main\Sponge> copy scripts\pre-commit .git\hooks
 
-(With Unix-based systems the command is just the same, but using cp and the path separators are /)
+(With Unix-based systems the command is just the same, but using cp and the path separators are /)::
 
-```bash
-$ cp scripts/pre-commit .git/hooks
-```
-
+    $ cp scripts/pre-commit .git/hooks
 
 At this point you can begin to setup the workspace with gradle (which you do NOT need to download or install)
 
 The catch is that the gradle build process needs to be aware of the location of your Java compiler.
-So before running gradle for the first time to setup the workspace, we need to specify the environment variable JAVA_HOME.
+So before running gradle for the first time to setup the workspace,
+we need to specify the environment variable ``JAVA_HOME``.
 
-JAVA_HOME is an environment variable that is set in the shell.  
+``JAVA_HOME`` is an environment variable that is set in the shell.
 You can set this up once in your login process for your PC or manually set it
 each time you run gradle.  I prefer to put it into my per-login process so I don't need to manually set it.
 
-JAVA_HOME is a directory to where the JDK is installed:
+``JAVA_HOME`` is a directory to where the JDK is installed:
 
-If you installed Java as shown above then the JAVA_HOME would be set like this:
+If you installed Java as shown above then the JAVA_HOME would be set like this::
 
-```bash
-C:\> set JAVA_HOME=c:\program files\java\jdk1.7.0_67
-```
+    C:\> set JAVA_HOME=c:\program files\java\jdk1.7.0_67
 
 (jdk1.7.0.67 is the version I have at the moment, your version will differ if the download is recent)
 
-To see exactly what the version (path) is then just type:
+To see exactly what the version (path) is then just type::
 
-```bash
-C:\> dir C:\program files\java
-```
+    C:\> dir C:\program files\java
 
 and inspect the output for the name of the directory that contains the JDK.
 
@@ -159,49 +144,48 @@ Sponge plugins DO NOT need Forge to build (nor should they ever need Forge to bu
 
 This process will take a few minutes depending on your network connection.  It is a process that requires a network connection so be sure you are online for that step.
 
-At this point the output will end with a message like this:
+At this point the output will end with a message like this::
 
-```bash
-C:\sp\main\Sponge>gradle setupDecompWorkspace --refresh-dependencies
-****************************
- Powered By MCP:
- http://mcp.ocean-labs.de/
- Searge, ProfMobius, Fesh0r,
- R4wk, ZeuX, IngisKahn, bspkrs
- MCP Data version : unknown
-****************************
-:extractMcpData UP-TO-DATE
-:getVersionJson
-:extractUserDev UP-TO-DATE
-:genSrgs SKIPPED
-:extractNatives UP-TO-DATE
-:copyNativesLegacy UP-TO-DATE
-:getAssetsIndex
-:getAssets
-:makeStart
-:downloadMcpTools
-:downloadClient SKIPPED
-:downloadServer SKIPPED
-:mergeJars SKIPPED
-:deobfuscateJar SKIPPED
-:decompile SKIPPED
-:processSources SKIPPED
-:remapJar SKIPPED
-:extractMinecraftSrc SKIPPED
-:recompMinecraft SKIPPED
-:repackMinecraft SKIPPED
-:setupDecompWorkspace
+    C:\sp\main\Sponge>gradle setupDecompWorkspace --refresh-dependencies
+    ****************************
+     Powered By MCP:
+     http://mcp.ocean-labs.de/
+     Searge, ProfMobius, Fesh0r,
+     R4wk, ZeuX, IngisKahn, bspkrs
+     MCP Data version : unknown
+    ****************************
+    :extractMcpData UP-TO-DATE
+    :getVersionJson
+    :extractUserDev UP-TO-DATE
+    :genSrgs SKIPPED
+    :extractNatives UP-TO-DATE
+    :copyNativesLegacy UP-TO-DATE
+    :getAssetsIndex
+    :getAssets
+    :makeStart
+    :downloadMcpTools
+    :downloadClient SKIPPED
+    :downloadServer SKIPPED
+    :mergeJars SKIPPED
+    :deobfuscateJar SKIPPED
+    :decompile SKIPPED
+    :processSources SKIPPED
+    :remapJar SKIPPED
+    :extractMinecraftSrc SKIPPED
+    :recompMinecraft SKIPPED
+    :repackMinecraft SKIPPED
+    :setupDecompWorkspace
 
-BUILD SUCCESSFUL
+    BUILD SUCCESSFUL
 
-Total time: 2 mins 45.216 secs
-C:\sp\main\Sponge>
-```
+    Total time: 2 mins 45.216 secs
+    C:\sp\main\Sponge>
 
+Next Steps
+----------
 
-## Next Steps ##
+From here you should follow the steps on the SpongePowered/Sponge README.md file to configure your IDE
+(Eclipse or InteliJ) to import the Sponge Project and build/run the Sponge Artifact within the IDE.
 
-From here you should follow the steps on the SpongePowered/Sponge README.md file to configure your IDE (Eclipse or InteliJ) to import the Sponge Project and build/run
-the Sponge Artifact within the IDE.
-
-The next wiki article on [[Debugging Sponge Within the IDE]] will explain how to setup your IDE to start, run and debug Sponge within the IDE.
+The next wiki article on [[Debugging Sponge Within the IDE]]
+will explain how to setup your IDE to start, run and debug Sponge within the IDE.
