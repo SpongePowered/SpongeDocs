@@ -49,6 +49,7 @@ coverage.xml
 
 # Sphinx documentation
 docs/_build/
+build/
 
 # PyBuilder
 target/
@@ -115,3 +116,6 @@ local.properties
 
 # Sphinx
 _build
+
+.idea/
+*.iml
