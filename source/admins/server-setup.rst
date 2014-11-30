@@ -4,8 +4,7 @@ How to make a Sponge Server
 The procedure below demonstrates how to set up a Sponge server using
 Minecraft Forge.
 
-For information on the various implementations of the Sponge API, see
- :doc:`admins/implementations`
+For information on the various implementations of the Sponge API, see :doc:`admins/implementations`
 
 Installing Sponge on your Forge server
 --------------------------------------
