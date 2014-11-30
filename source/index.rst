@@ -53,15 +53,12 @@ ready. For more information, please visit :doc:`bukkit-compatibility`.
 Sponge for server admins
 ------------------------
 
-**[[Server Admins Portal\|Server-Admins]]** - A central resource for all
-things related to server administration.
-- [[Frequently Asked Questions(FAQ)\|Frequently-Asked-Questions]] - Frequently asked questions about
-Sponge.
-- :doc:`bukkit-compatibility` - What's changed? Will my old stuff work?
-- [[Using Forge mods with Sponge\|Forge-Mods]] - What's the deal with Forge mods? Do they work
-with Sponge?
-- [[Setting up a Sponge Server\|Sponge-Server-Setup]] - Guide on how to start you every own server using Sponge.
-- [[Troubleshooting Common Problems\|Troubleshooting]] - Find answers to the most common problems that occur here.
+    - **[[Server Admins Portal\|Server-Admins]]** - A central resource for all things related to server administration.   
+    - :doc:`frequently-asked-questions` - Frequently asked questions about Sponge.  
+    - :doc:`bukkit-compatibility` - What's changed? Will my old stuff work?   
+    - [[Using Forge mods with Sponge\|Forge-Mods]] - What's the deal with Forge mods? Do they work with Sponge?   
+    - [[Setting up a Sponge Server\|Sponge-Server-Setup]] - Guide on how to start your very own server using Sponge.   
+    - [[Troubleshooting Common Problems\|Troubleshooting]] - Find answers to the most common problems that occur here.
 
 Sponge for plugin developers
 ----------------------------
