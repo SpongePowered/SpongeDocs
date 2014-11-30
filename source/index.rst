@@ -20,7 +20,7 @@ The Sponge API will have an official Minecraft Forge-based
 implementation designed to be an easy-to-use addition to your server.
 
 Sponge will be available for free to both server owners and plugin
-developers at the :doc:`downloads`.
+developers at the Downloads page at :doc:`downloads`.
 
 *The Sponge API and its Forge implementation are still under development
 and not available at this time.*
@@ -48,38 +48,31 @@ What about my favourite Bukkit plugins?
 Server Plugins must be written to use the Sponge API, or employ some
 kind of compatibility layer to run (eg. Pore). A large number of Bukkit
 plugin developers have offered to port their work to Sponge when it is
-ready. For more information, please visit [[Bukkit
-Compatibility\|Bukkit-Compatibility]].
+ready. For more information, please visit :doc:`bukkit-compatibility`.
 
 Sponge for server admins
 ------------------------
 
 **[[Server Admins Portal\|Server-Admins]]** - A central resource for all
-things related to server administration. - [[Frequently Asked Questions
-(FAQ)\|Frequently-Asked-Questions]] - Frequently asked questions about
-Sponge. - [[Transitioning from Bukkit to Sponge\|Bukkit-Compatibility]]
-- What's changed? Will my old stuff work? - [[Using Forge mods with
-Sponge\|Forge-Mods]] - What's the deal with Forge mods? Do they work
-with Sponge? - [[Setting up a Sponge Server\|Sponge-Server-Setup]] -
-Guide on how to start you every own server using Sponge. -
-[[Troubleshooting Common Problems\|Troubleshooting]] - Find answers to
-the most common problems that occur here.
+things related to server administration.
+- [[Frequently Asked Questions(FAQ)\|Frequently-Asked-Questions]] - Frequently asked questions about
+Sponge.
+- :doc:`bukkit-compatibility` - What's changed? Will my old stuff work?
+- [[Using Forge mods with Sponge\|Forge-Mods]] - What's the deal with Forge mods? Do they work
+with Sponge?
+- [[Setting up a Sponge Server\|Sponge-Server-Setup]] - Guide on how to start you every own server using Sponge.
+- [[Troubleshooting Common Problems\|Troubleshooting]] - Find answers to the most common problems that occur here.
 
 Sponge for plugin developers
 ----------------------------
 
-**[[Developers Portal\|Developers]]** - A central resource for all
-things related to plugin development - [[Setting up your
-workspace\|Setting-up-your-workspace]] - Guide on how to set up your IDE
-to start coding with the Sponge API - [[Beginner's
-Guide\|Beginners-Guide]] - New to developing plugins? - [[All
-Tutorials\|All-Tutorials]] - Guides for working with the Sponge API -
-[[Event API Reference\|Event-API-Reference]] - Detailed Documentation
-and examples on the event system. - [[Configuration API
-Reference\|Configuration-API-Reference]] - Detailed documentation and
-examples on the configuration system. - `Sponge
-API <https://github.com/SpongePowered/SpongeAPI>`__ - Official Github
-for the Sponge API.
+**[[Developers Portal\|Developers]]** - A central resource for all things related to plugin development
+- [[Setting up your workspace\|Setting-up-your-workspace]] - Guide on how to set up your IDE to start coding with the Sponge API
+- [[Beginner's Guide\|Beginners-Guide]] - New to developing plugins?
+- [[All Tutorials\|All-Tutorials]] - Guides for working with the Sponge API
+- [[Event API Reference\|Event-API-Reference]] - Detailed Documentation and examples on the event system.
+- [[Configuration API Reference\|Configuration-API-Reference]] - Detailed documentation and examples on the configuration system.
+- `Sponge API <https://github.com/SpongePowered/SpongeAPI>`__ - Official Github for the Sponge API.
 
 Guides and help resources
 -------------------------
