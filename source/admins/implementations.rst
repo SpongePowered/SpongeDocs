@@ -20,7 +20,7 @@ version 1.8* and above. There is no guarantee of backward compatibility
 with earlier versions of Minecraft Forge.
 
 How to install Sponge on your Forge server is described in detail at
-[[Sponge-Server-Setup\|Sponge Server Setup]]
+:doc:`server-setup`
 
 Sponge as a stand-alone server
 ------------------------------
