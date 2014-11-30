@@ -54,10 +54,10 @@ Sponge for server admins
 ------------------------
 
 - :doc:`admins/admins` - A central resource for all things related to server administration.   
-- :doc:`frequently-asked-questions` - Frequently asked questions about Sponge.   
+- :doc:`faq` - Frequently asked questions about Sponge.   
 - :doc:`bukkit-compatibility` - What's changed? Will my old stuff work?   
 - :doc:`forge-mods` - What's the deal with Forge mods? Do they work with Sponge?   
-- :doc:`server-setup` - Guide on how to start your very own server using Sponge.   
+- :doc:`admins/server-setup` - Guide on how to start your very own server using Sponge.   
 - :doc:`troubleshooting` - Find answers to the most common problems that occur here.
 
 Sponge for plugin developers
