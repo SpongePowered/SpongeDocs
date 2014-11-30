@@ -21,7 +21,7 @@ offered to port their work to Sponge when it is ready. There is an
 extensive list available on the Sponge Forums.
 
 For more information on the Sponge server,
-please read :doc:`sponge-implementations`.
+please read :doc:`admins/implementations`.
 
 What about other tools?
 ~~~~~~~~~~~~~~~~~~~~~~~
