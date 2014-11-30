@@ -53,7 +53,7 @@ ready. For more information, please visit :doc:`bukkit-compatibility`.
 Sponge for server admins
 ------------------------
 
-- **[[Server Admins Portal\|Server-Admins]]** - A central resource for all things related to server administration.   
+- :doc:`admins/admins` - Admins Portal, a central resource for all things related to server administration.   
 - :doc:`frequently-asked-questions` - Frequently asked questions about Sponge.  
 - :doc:`bukkit-compatibility` - What's changed? Will my old stuff work?   
 - :doc:`forge-mods` - What's the deal with Forge mods? Do they work with Sponge?   
