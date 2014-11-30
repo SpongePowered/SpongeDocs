@@ -24,7 +24,6 @@ Installing Sponge on your Forge server
    specifically for Sponge, using the Sponge API. Bukkit plugins *will
    not work* unless there as also some kind of functioning thurd-party
    compatibility-layer plugin, such as *Pore* (still a work in
-   progress). For information about Bukkit plugins, see
- :doc:`bukkit-compatibility`
+   progress). For information about Bukkit plugins, see :doc:`../bukkit-compatibility`
 
 
