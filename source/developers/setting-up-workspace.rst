@@ -15,6 +15,8 @@ The Sponge team recommends the use of Gradle as use of the Forge team's ForgeGra
 
 Development builds use the SNAPSHOT system
 
+`Online Javadocs(Temporary link) <http://spongepowered.github.io/SpongeAPI/>`__
+
 Gradle
 ------
 
@@ -31,7 +33,7 @@ Gradle users place the following in your build.gradle:
     }
 
     dependencies {
-        compile "org.spongepowered:spongeapi:1.0.0"
+        compile "org.spongepowered:spongeapi:1.0"
     }
 
 Maven
@@ -59,6 +61,6 @@ Maven users place the following in your pom.xml:
         <dependency>
             <groupId>org.spongepowered</groupId>
             <artifactId>spongeapi</artifactId>
-            <version>1.0.0</version>
+            <version>1.0</version>
         </dependency>
     </dependencies>
