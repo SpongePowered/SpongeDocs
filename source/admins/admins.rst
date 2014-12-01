@@ -11,4 +11,4 @@ Deja-Vu.
 
     implementations
     server-setup
-    server-properties
+    sponge-config
