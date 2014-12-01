@@ -45,7 +45,7 @@ Malformed config file (eg. bad editing)
 ---------------------------------------
 
 **Symptom**: One (or more) plugins refuse to load, or behave in
-unexpected ways. The server.log file will contain messages about
+unexpected ways. The server log files will contain messages about
 unreadable files on startup. The server may crash, and data may be
 corrupted.
 
@@ -58,7 +58,7 @@ A plugin (or mod) has malfunctioned
 
 **Symptom**: This could be almost anything - whatever your plugins do,
 plus the X-factor. Commonly the server crashes with a train of error
-messages in the server.log file.
+messages in the server log files.
 
 **Solution**: Stop the server, and check to see nothing has been
 corrupted. Be sure to check that it isn't from an incorrectly edited
@@ -112,7 +112,7 @@ should.
 
 **Solution**: Time to get out the big guns. File a report on the Sponge
 issue tracker, remembering to include details of the version of Forge
-and Sponge you are using, and a link to your server.log file.
+and Sponge you are using, and a link to the relevant server log file.
 
 There is something wrong with the Universe
 ------------------------------------------
