@@ -12,6 +12,7 @@ Contents:
     admins/admins
     developers/developers
     troubleshooting
+    license
 
 **Sponge** is an all-new Minecraft modding API created by a team of top
 minds in both the server and client modding communities. The Sponge
