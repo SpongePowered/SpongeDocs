@@ -1,4 +1,4 @@
-Sponge server properties file
+Sponge config file
 =============================
 
 This will be a file similar in nature to the *bukkit.yml* file used with
