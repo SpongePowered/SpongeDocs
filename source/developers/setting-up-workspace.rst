@@ -12,6 +12,7 @@ Artifact IDs are as follows:
 Sponge plugins can be compiled with `Gradle <http://gradle.org>`__ or `Maven <http://maven.apache.org>`__.
 
 The Sponge team recommends the use of Gradle as use of the Forge team's ForgeGradle plugin can allow testing of Sponge inside Eclipse or Intellij IDEA development environments.
+
 Development builds use the SNAPSHOT system
 
 Gradle
