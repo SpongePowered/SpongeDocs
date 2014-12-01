@@ -121,7 +121,7 @@ However, we are interested in talking with anyone who is able to help.
 How are decisions made?
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-The project owners, [[blood]] and [[sk89q]], after consulting with the
+The project owners, **blood** and **sk89q**, after consulting with the
 community and other members when appropriate, will make the decisions.
 
 Have you consulted the community?
