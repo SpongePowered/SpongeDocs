@@ -8,10 +8,10 @@ it. If you haven't done so already, we recommend reading :doc:`bukkit-compatibil
 Java is not installed on your Computer
 --------------------------------------
 
-**Solution**: Download and Install Java Runtime Engine (JRE) version 6
-for your operating system. Sponge (and Minecraft) are built on Java 6,
-however you are reccommended and encouraged to use Java 7. Java 8 does
-not currently have widespread usage so installing it is not reccomended.
+**Solution**: Download and install the latest version of the  Java Runtime
+Environment (JRE) available for your operating system. Sponge (and Minecraft)
+are built on Java 6, however you are recommended and encouraged to use Java 7.
+Java 8 does not currently have widespread usage so installing it is not recommended.
 Oracle Java is a good option for most Operating Systems.
 
 Network connection failure (or DDoS attack)
@@ -34,9 +34,9 @@ Not enough free memory
 messages.
 
 **Solutions**: Expand the maximum Perm memory size with the startup
-argument -XX:MaxPermSize=128. Expand your server heap memory (if
-possible) with startup arguments eg. -Xms1024M (1GB starting memory) and
--Xmx2048M (2GB maximum). Monitor your free memory on the computer and
+argument ``-XX:MaxPermSize=128``. Expand your server heap memory (if
+possible) with startup arguments eg. ``-Xms1024M`` (1GB starting memory) and
+``-Xmx2048M`` (2GB maximum). Monitor your free memory on the computer and
 see if there is some locked up in other processes. You may need to kill
 frozen java processes, or restart your machine. Memory leaks sometimes
 occur with bugs in plugins, which can take time to isolate.
@@ -70,11 +70,11 @@ be the cause, having two incompatible plugins.
 Operating System is unstable (eg. Virus infection)
 --------------------------------------------------
 
-**Symptom**: The Server keeps crashing or timing out, and other parts of
-your OS are also having problems.
+**Symptom**: The server keeps crashing or timing out, and other parts of
+your operating system are also having problems.
 
-**Solution**: Stop Everything. Thoroughly check your system and storage
-devices for Malware and Viruses. Good tools for this include AdwCleaner,
+**Solution**: Stop everything. Thoroughly check your system and storage
+devices for malware and viruses. Good tools for this include AdwCleaner,
 Junkware Removal Tool, MalwareBytes, and most antivirus ware. Check your
 server files for corruption after a clean restart of your system.
 Examine the hardware for damage too if the problems persist - eg. a
