@@ -64,30 +64,20 @@ Sponge for server admins
 Sponge for plugin developers
 ----------------------------
 
-**[[Developers Portal\|Developers]]** - A central resource for all things related to plugin development
-- [[Setting up your workspace\|Setting-up-your-workspace]] - Guide on how to set up your IDE to start coding with the Sponge API
-- [[Beginner's Guide\|Beginners-Guide]] - New to developing plugins?
-- [[All Tutorials\|All-Tutorials]] - Guides for working with the Sponge API
-- [[Event API Reference\|Event-API-Reference]] - Detailed Documentation and examples on the event system.
-- [[Configuration API Reference\|Configuration-API-Reference]] - Detailed documentation and examples on the configuration system.
+- :doc:`developers` - A central resource for all things related to plugin development
+- :doc:`setting-up-workspace` - Guide on how to set up your IDE to start coding with the Sponge API
+- :doc:`sponge-tutorials` - Guides and tutorials for working with the Sponge API
+- :doc:`event-api` - Detailed documentation and examples on the event system.
 - `Sponge API <https://github.com/SpongePowered/SpongeAPI>`__ - Official Github for the Sponge API.
 
 Guides and help resources
 -------------------------
 
--  [[Contributing to the Sponge wiki\|Contributing-to-the-Sponge-Wiki]]
-   - How to get involved in making this Wiki
--  [[Guides\|Bukkit-Compatibility]] - Documentation on starting and
-   maintaining a server.
--  `Issue
-   Tracker <https://github.com/SpongePowered/SpongeAPI/issues?q=>`__ -
-   The list of issues related to the Sponge API.
--  [[Sponge Change Log\|Sponge-Changelog]] - The list of changes between
-   Sponge releases
--  [[Development resources\|Developers]] - Documentation and information
-   to develop applications to work with *Sponge*.
--  [[Programs and editors\|Programs-and-editors]] - A list of some
-   third-party programs that are designed to work with *Minecraft*.
+-  :doc:`sponge-archivist` - How to get involved in making this Wiki
+-  :doc:`../bukkit-compatibility` - Documentation on starting and maintaining a server.
+-  `Issue Tracker <https://github.com/SpongePowered/SpongeAPI/issues?q=>`__ - The list of issues related to the Sponge API.
+-  :doc:`../changelog` - The list of changes between Sponge releases
+-  :doc:`developers` - Documentation and information to develop applications to work with *Sponge*.
 
 Links to external resources
 ---------------------------
