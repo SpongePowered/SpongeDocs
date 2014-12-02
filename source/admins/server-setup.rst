@@ -22,7 +22,7 @@ Installing Sponge on your Forge server
 -  On server start-up using the Sponge CoreMod, it will attempt to load
    all files in the "mods" folder. These files must be plugins written
    specifically for Sponge, using the Sponge API. Bukkit plugins *will
-   not work* unless there as also some kind of functioning thurd-party
+   not work* unless there as also some kind of functioning third-party
    compatibility-layer plugin, such as *Pore* (still a work in
    progress). For information about Bukkit plugins, see :doc:`../bukkit-compatibility`
 
