@@ -1,12 +1,12 @@
-Forge Mods
+Forge mods
 ==========
 
-Forge Mods in a Sponge server
+Forge mods in a Sponge server
 -----------------------------
 
 At present, the only implementation of Sponge *in development* is as a
-Forge CoreMod. Therefore, you must be running a Forge server to use the
-Sponge API (via Sponge CoreMod). Forge-compatible mods should be fully
+Forge coremod. Therefore, you must be running a Forge server to use the
+Sponge API (via Sponge coremod). Forge-compatible mods should be fully
 functional in this environment, provided they are updated to work with
 the recommended build of Forge.
 
