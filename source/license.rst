@@ -7,7 +7,7 @@ A Contributor License Agreement is considered unnecessary and may discourage con
 Details on the MIT license can be found at http://choosealicense.com/licenses/mit/.
 
 The MIT has been chosen for Sponge in preference to the GPL licence used for Bukkit. The main reason why GPL
-(Gnu Public License) is not favored for Sponge is that it encumbers developers of Sponge Plugins by requiring
+(GNU Public License) is not favored for Sponge is that it encumbers developers of Sponge Plugins by requiring
 that they maintain their code in GPL. MIT license phrasing has no reference to the redistribution parameters
 that exist in the GPL. The philosophy of how GNU based software is designed and distributed is excellent, but
 in light of the DCMA issues that have befallen on the CraftBukkit community, there is true value in keeping
