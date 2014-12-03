@@ -70,6 +70,11 @@ Sponge for plugin developers
 - :doc:`developers/event-api` - Detailed documentation and examples on the event system.
 - `Sponge API <https://github.com/SpongePowered/SpongeAPI>`__ - Official Github for the Sponge API.
 
+Sponge development portal
+-------------------------
+
+- :doc:`sponge-developers/sponge-developers`
+
 Guides and help resources
 -------------------------
 
