@@ -260,8 +260,9 @@ invite others to collaborate with us if they wish to.
 I wish to help out.
 ~~~~~~~~~~~~~~~~~~~
 
-Currently we are looking for developers with programming experience. We
-also would like assistance with documentation, moderation, and other
-aspects, but that will come once we get started. NOTE: We are not yet
-doing anything with the submissions yet so don’t fret if you don’t get a
-response.
+We appreciate all offers of assistance. Please visit our volunteers portal:
+
+-  :doc:`helping-out`
+
+We apologise to anyone who did not receive a reply to earlier rounds of
+applications. The number of sumbissions was overwhelming, thank you all!
