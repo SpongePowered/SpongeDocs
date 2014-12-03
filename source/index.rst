@@ -64,10 +64,10 @@ Sponge for server admins
 Sponge for plugin developers
 ----------------------------
 
-- :doc:`developers` - A central resource for all things related to plugin development
-- :doc:`setting-up-workspace` - Guide on how to set up your IDE to start coding with the Sponge API
-- :doc:`sponge-tutorials` - Guides and tutorials for working with the Sponge API
-- :doc:`event-api` - Detailed documentation and examples on the event system.
+- :doc:`developers/developers` - A central resource for all things related to plugin development
+- :doc:`developers/setting-up-workspace` - Guide on how to set up your IDE to start coding with the Sponge API
+- :doc:`developers/sponge-tutorials` - Guides and tutorials for working with the Sponge API
+- :doc:`developers/event-api` - Detailed documentation and examples on the event system.
 - `Sponge API <https://github.com/SpongePowered/SpongeAPI>`__ - Official Github for the Sponge API.
 
 Guides and help resources
@@ -77,7 +77,7 @@ Guides and help resources
 -  :doc:`../bukkit-compatibility` - Documentation on starting and maintaining a server.
 -  `Issue Tracker <https://github.com/SpongePowered/SpongeAPI/issues?q=>`__ - The list of issues related to the Sponge API.
 -  :doc:`../changelog` - The list of changes between Sponge releases
--  :doc:`developers` - Documentation and information to develop applications to work with *Sponge*.
+-  :doc:`developers/developers` - Documentation and information to develop applications to work with *Sponge*.
 
 Links to external resources
 ---------------------------
