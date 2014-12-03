@@ -10,7 +10,7 @@ The MIT has been chosen for Sponge in preference to the GPL licence used for Buk
 (GNU Public License) is not favored for Sponge is that it encumbers developers of Sponge Plugins by requiring
 that they maintain their code in GPL. MIT license phrasing has no reference to the redistribution parameters
 that exist in the GPL. The philosophy of how GNU based software is designed and distributed is excellent, but
-in light of the DCMA issues that have befallen on the CraftBukkit community, there is true value in keeping
+in light of the DMCA issues that have befallen on the CraftBukkit community, there is true value in keeping
 Sponge under the MIT license.
 
 The bottom line is that a Sponge plugin developer can still own their own software and choose not to release
