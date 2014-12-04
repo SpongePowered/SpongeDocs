@@ -26,4 +26,4 @@ Installing Sponge on your Forge server
    compatibility-layer plugin, such as *Pore* (still a work in
    progress). For information about Bukkit plugins, see :doc:`../bukkit-compatibility`
 
-
+-  If you run into problems, visit :doc:`troubleshooting`
