@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sponge 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-03 17:32-0700\n"
+"POT-Creation-Date: 2014-12-03 18:37-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -13,11 +13,11 @@ msgstr ""
 
 #: ..\..\source\index.rst:2
 msgid "Welcome to the Sponge documentation!"
-msgstr ""
+msgstr "Bienvenido a la documentación Esponja"
 
 #: ..\..\source\index.rst:4
 msgid "Contents:"
-msgstr ""
+msgstr "Contenido:"
 
 #: ..\..\source\index.rst:17
 msgid ""
