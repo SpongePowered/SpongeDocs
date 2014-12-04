@@ -128,7 +128,7 @@ and inspect the output for the name of the directory that contains the JDK.
 
 Once JAVA_HOME is set then we can run gradle to setup the workspace:
 
-```bash
+```
 C:\> gradle setupDecompWorkspace --refresh-dependencies
 ```
 
