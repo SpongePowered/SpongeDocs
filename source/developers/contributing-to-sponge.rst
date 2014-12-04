@@ -78,32 +78,32 @@ Caveat - some users may prefer to hold their source trees in their user folders,
 keep the paths short, but it may help.  If you do not prefer to put things close to the root folder, then put the file
 tree anywhere you like.  It is up to you.  Be aware of path name length limits of your Operating System
 
-    C:\> mkdir c:\sp\main
-    C:\> cd c:\sp\main
+``C:\> mkdir c:\sp\main``
+``C:\> cd c:\sp\main``
 
 
 Now you're ready to begin the process of getting Sponge sources and beginning to build it for the first time.
 Refer to the README.md page for the Sponge project for the most current version of instructions,
 but these steps are generally going to be the same throughout the development of Sponge::
 
-    C:\sp\main> git clone git@github.com:SpongePowered/Sponge.git
+``C:\sp\main> git clone git@github.com:SpongePowered/Sponge.git``
 
 That will create a clone of the Sponge project on your PC. The process will create the directory Sponge::
 
-    C:\sp\main> cd Sponge
+``C:\sp\main> cd Sponge``
 
 We need to update the project by fetching the submodules linked to Sponge, namely the SpongeAPI module::
 
-    C:\sp\main\Sponge> git submodule update --init --recursive
+``C:\sp\main\Sponge> git submodule update --init --recursive``
 
 There is a commit-hook that is used to process checkins to the repository,
 we need to put a copy of that hook in the `git` hooks folder::
 
-    C:\sp\main\Sponge> copy scripts\pre-commit .git\hooks
+``C:\sp\main\Sponge> copy scripts\pre-commit .git\hooks``
 
 (With Unix-based systems the command is just the same, but using cp and the path separators are /)::
 
-    $ cp scripts/pre-commit .git/hooks
+``$ cp scripts/pre-commit .git/hooks``
 
 At this point you can begin to setup the workspace with gradle (which you do NOT need to download or install)
 
@@ -119,13 +119,13 @@ each time you run gradle.  I prefer to put it into my per-login process so I don
 
 If you installed Java as shown above then the JAVA_HOME would be set like this::
 
-    C:\> set JAVA_HOME=c:\program files\java\jdk1.7.0_67
+``C:\> set JAVA_HOME=c:\program files\java\jdk1.7.0_67``
 
 (jdk1.7.0.67 is the version I have at the moment, your version will differ if the download is recent)
 
 To see exactly what the version (path) is then just type::
 
-    C:\> dir C:\program files\java
+``C:\> dir C:\program files\java``
 
 and inspect the output for the name of the directory that contains the JDK.
 
@@ -148,6 +148,7 @@ This process will take a few minutes depending on your network connection.  It i
 
 At this point the output will end with a message like this::
 
+``
     C:\sp\main\Sponge>gradle setupDecompWorkspace --refresh-dependencies
     ****************************
      Powered By MCP:
@@ -182,6 +183,7 @@ At this point the output will end with a message like this::
 
     Total time: 2 mins 45.216 secs
     C:\sp\main\Sponge>
+``
 
 Next Steps
 ----------
