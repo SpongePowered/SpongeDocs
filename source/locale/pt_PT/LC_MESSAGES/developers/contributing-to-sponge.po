@@ -1,0 +1,309 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Sponge 0.0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-12-03 17:32-0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ..\..\source\developers\contributing-to-sponge.rst:2
+msgid "Contributing to Sponge"
+msgstr ""
+
+#: ..\..\source\developers\contributing-to-sponge.rst:5
+msgid "Prerequisites"
+msgstr ""
+
+#: ..\..\source\developers\contributing-to-sponge.rst:7
+msgid ""
+"The setup required to develop plugins for Sponge is quite simple and "
+"requires three things."
+msgstr ""
+
+#: ..\..\source\developers\contributing-to-sponge.rst:9
+msgid "Java JDK installed"
+msgstr ""
+
+#: ..\..\source\developers\contributing-to-sponge.rst:10
+msgid "Editor of your choice installed"
+msgstr ""
+
+#: ..\..\source\developers\contributing-to-sponge.rst:11
+msgid "git client installed"
+msgstr ""
+
+#: ..\..\source\developers\contributing-to-sponge.rst:14
+msgid "Java JDK download"
+msgstr ""
+
+#: ..\..\source\developers\contributing-to-sponge.rst:16
+msgid "Download the JDK from Oracle first."
+msgstr ""
+
+#: ..\..\source\developers\contributing-to-sponge.rst:18
+msgid ""
+"We recommended that you first check that you only have one version of Java "
+"installed at any point in time. Please begin by uninstalling any old "
+"versions of Java you may have acquired in the past."
+msgstr ""
+
+#: ..\..\source\developers\contributing-to-sponge.rst:21
+msgid ""
+"Then visit this site: "
+"http://www.oracle.com/technetwork/java/javase/downloads/index.html"
+msgstr ""
+
+#: ..\..\source\developers\contributing-to-sponge.rst:23
+msgid ""
+"Download and install the Java JDK. It's the upper blue button on the right-"
+"hand side of the main column. real If you cannot find it, try this link for "
+"a direct Java 7 JDK download: "
+"http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html"
+msgstr ""
+
+#: ..\..\source\developers\contributing-to-sponge.rst:28
+msgid ""
+"Make sure you install the JDK, not the JRE. The JDK, or Java Development "
+"Kit, contains crucial tools for creating Java applications."
+msgstr ""
+
+#: ..\..\source\developers\contributing-to-sponge.rst:31
+msgid "Let that install, then reboot your PC."
+msgstr ""
+
+#: ..\..\source\developers\contributing-to-sponge.rst:34
+msgid "IDE download"
+msgstr ""
+
+#: ..\..\source\developers\contributing-to-sponge.rst:36
+msgid ""
+"The second main download you need to perform is getting your IDE "
+"(Interactive Development Environment)."
+msgstr ""
+
+#: ..\..\source\developers\contributing-to-sponge.rst:38
+msgid ""
+"There are two commercially available IDEs that we provide instructions for; "
+"Eclipse, and IntelliJ IDEA. Which one you choose is a matter of personal "
+"preference, and you might even prefer an IDE that isn't listed here. That's "
+"up to you."
+msgstr ""
+
+#: ..\..\source\developers\contributing-to-sponge.rst:42
+msgid ""
+"You can download Eclipse here: https://eclipse.org/downloads/ (Choose "
+"\"Eclipse IDE for Java Developers\")"
+msgstr ""
+
+#: ..\..\source\developers\contributing-to-sponge.rst:45
+msgid ""
+"You can download IntelliJ IDEA here: "
+"https://www.jetbrains.com/idea/download/ (Choose the \"Community Version\" "
+"unless you want to pay for the Ultimate Edition. You do not need the "
+"Ultimate Edition to develop plugins, as the Community Version still contains"
+" all the tools you need.)"
+msgstr ""
+
+#: ..\..\source\developers\contributing-to-sponge.rst:50
+msgid "git download"
+msgstr ""
+
+#: ..\..\source\developers\contributing-to-sponge.rst:52
+msgid "The download page for git is here:  http://git-scm.com/downloads"
+msgstr ""
+
+#: ..\..\source\developers\contributing-to-sponge.rst:54
+msgid ""
+"Make sure to install the appropriate version for your operating system."
+msgstr ""
+
+#: ..\..\source\developers\contributing-to-sponge.rst:56
+msgid ""
+"Linux users, git will be available on your distro's package manager, usually"
+" under the name \"git\"."
+msgstr ""
+
+#: ..\..\source\developers\contributing-to-sponge.rst:58
+msgid "Install it like any other application, and reboot."
+msgstr ""
+
+#: ..\..\source\developers\contributing-to-sponge.rst:61
+msgid "Running Gradle"
+msgstr ""
+
+#: ..\..\source\developers\contributing-to-sponge.rst:63
+msgid ""
+"Once these are downloaded, installed, and you've rebooted (again), then you "
+"can begin to setup the workspace specific for Sponge."
+msgstr ""
+
+#: ..\..\source\developers\contributing-to-sponge.rst:65
+msgid ""
+"(We're going to assume that your `PATH` is correct as well, each operating "
+"system has its own way of specifying new directories to search for commands."
+" In Unix-based systems the environment variable is `$PATH`.  In Windows "
+"systems it is `%PATH%`%. It's advised to construct your profile in your "
+"system such that when you login to the computer, the `PATH` is setup "
+"correctly vs. manually updating the `PATH` before working with Sponge)"
+msgstr ""
+
+#: ..\..\source\developers\contributing-to-sponge.rst:67
+msgid ""
+"To get Sponge and built, now we need to use `git` and the tools we just "
+"downloaded:"
+msgstr ""
+
+#: ..\..\source\developers\contributing-to-sponge.rst:69
+msgid "Before we begin with that, a few words of advice:"
+msgstr ""
+
+#: ..\..\source\developers\contributing-to-sponge.rst:71
+msgid ""
+"Spaces in filenames are not ideal. Please do not use whitespace in "
+"filenames. As such, putting your repository into say, the Desktop, or in "
+"folders that contain whitespace filenames is a bad idea."
+msgstr ""
+
+#: ..\..\source\developers\contributing-to-sponge.rst:75
+msgid "Keep the paths to your source tree as short as possible::"
+msgstr ""
+
+#: ..\..\source\developers\contributing-to-sponge.rst:81
+msgid ""
+"Now you're ready to begin the process of getting Sponge sources and "
+"beginning to build it for the first time. Refer to the README.md page for "
+"the Sponge project for the most current version of instructions, but these "
+"steps are generally going to be the same throughout the development of "
+"Sponge::"
+msgstr ""
+
+#: ..\..\source\developers\contributing-to-sponge.rst:87
+msgid ""
+"That will create a clone of the Sponge project on your PC. The process will "
+"create the directory Sponge::"
+msgstr ""
+
+#: ..\..\source\developers\contributing-to-sponge.rst:91
+msgid ""
+"We need to update the project by fetching the submodules linked to Sponge, "
+"namely the SpongeAPI module::"
+msgstr ""
+
+#: ..\..\source\developers\contributing-to-sponge.rst:95
+msgid ""
+"There is a commit-hook that is used to process checkins to the repository, "
+"we need to put a copy of that hook in the `git` hooks folder::"
+msgstr ""
+
+#: ..\..\source\developers\contributing-to-sponge.rst:100
+msgid ""
+"(With Unix-based systems the command is just the same, but using cp and the "
+"path separators are /)::"
+msgstr ""
+
+#: ..\..\source\developers\contributing-to-sponge.rst:104
+msgid ""
+"At this point you can begin to setup the workspace with gradle (which you do"
+" NOT need to download or install)"
+msgstr ""
+
+#: ..\..\source\developers\contributing-to-sponge.rst:106
+msgid ""
+"The catch is that the gradle build process needs to be aware of the location"
+" of your Java compiler. So before running gradle for the first time to setup"
+" the workspace, we need to specify the environment variable ``JAVA_HOME``."
+msgstr ""
+
+#: ..\..\source\developers\contributing-to-sponge.rst:110
+msgid ""
+"``JAVA_HOME`` is an environment variable that is set in the shell. You can "
+"set this up once in your login process for your PC or manually set it each "
+"time you run gradle.  I prefer to put it into my per-login process so I "
+"don't need to manually set it."
+msgstr ""
+
+#: ..\..\source\developers\contributing-to-sponge.rst:114
+msgid "``JAVA_HOME`` is a directory to where the JDK is installed:"
+msgstr ""
+
+#: ..\..\source\developers\contributing-to-sponge.rst:116
+msgid ""
+"If you installed Java as shown above then the JAVA_HOME would be set like "
+"this::"
+msgstr ""
+
+#: ..\..\source\developers\contributing-to-sponge.rst:120
+msgid ""
+"(jdk1.7.0.67 is the version I have at the moment, your version will differ "
+"if the download is recent)"
+msgstr ""
+
+#: ..\..\source\developers\contributing-to-sponge.rst:122
+msgid "To see exactly what the version (path) is then just type::"
+msgstr ""
+
+#: ..\..\source\developers\contributing-to-sponge.rst:126
+msgid ""
+"and inspect the output for the name of the directory that contains the JDK."
+msgstr ""
+
+#: ..\..\source\developers\contributing-to-sponge.rst:129
+msgid "Once JAVA_HOME is set then we can run gradle to setup the workspace:"
+msgstr ""
+
+#: ..\..\source\developers\contributing-to-sponge.rst:131
+msgid "```bash C:\\> gradle setupDecompWorkspace --refresh-dependencies ```"
+msgstr ""
+
+#: ..\..\source\developers\contributing-to-sponge.rst:135
+msgid "This process will do several things:"
+msgstr ""
+
+#: ..\..\source\developers\contributing-to-sponge.rst:137
+msgid ""
+"It will download jar files that are required for Sponge to build. It will "
+"download Forge which is required for Sponge to build."
+msgstr ""
+
+#: ..\..\source\developers\contributing-to-sponge.rst:140
+msgid "(remember we're building Sponge, not plugins for Sponge)"
+msgstr ""
+
+#: ..\..\source\developers\contributing-to-sponge.rst:142
+msgid ""
+"Sponge plugins DO NOT need Forge to build (nor should they ever need Forge "
+"to build)."
+msgstr ""
+
+#: ..\..\source\developers\contributing-to-sponge.rst:145
+msgid ""
+"This process will take a few minutes depending on your network connection.  "
+"It is a process that requires a network connection so be sure you are online"
+" for that step."
+msgstr ""
+
+#: ..\..\source\developers\contributing-to-sponge.rst:147
+msgid "At this point the output will end with a message like this::"
+msgstr ""
+
+#: ..\..\source\developers\contributing-to-sponge.rst:185
+msgid "Next Steps"
+msgstr ""
+
+#: ..\..\source\developers\contributing-to-sponge.rst:187
+msgid ""
+"From here you should follow the steps on the SpongePowered/Sponge README.md "
+"file to configure your IDE (Eclipse or InteliJ) to import the Sponge Project"
+" and build/run the Sponge Artifact within the IDE."
+msgstr ""
+
+#: ..\..\source\developers\contributing-to-sponge.rst:190
+msgid ""
+"The next wiki article on [[Debugging Sponge Within the IDE]] will explain "
+"how to setup your IDE to start, run and debug Sponge within the IDE."
+msgstr ""

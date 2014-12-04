@@ -1,0 +1,32 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Sponge 0.0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-12-03 17:32-0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ..\..\source\admins\sponge-config.rst:2
+msgid "Sponge config file"
+msgstr ""
+
+#: ..\..\source\admins\sponge-config.rst:4
+msgid ""
+"This will be a file similar in nature to the *bukkit.yml* file used with "
+"CraftBukkit. It will reside in the config folder of the Forge server root "
+"directory. Modification of the properties in this file will change the way "
+"Sponge affects your Minecraft Forge server. Changes in this file will only "
+"affect the Sponge CoreMod, and only after server restart."
+msgstr ""
+
+#: ..\..\source\admins\sponge-config.rst:10
+msgid ""
+"The Sponge server properties file - sponge.conf - will use HOCON (Human-"
+"Optimized Config Object Notation). More information about the HOCON format "
+"can be found at https://github.com/typesafehub/config/blob/master/HOCON.md"
+msgstr ""

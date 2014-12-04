@@ -1,0 +1,52 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Sponge 0.0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-12-03 17:32-0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ..\..\source\general\forge-mods.rst:2
+msgid "Forge mods"
+msgstr ""
+
+#: ..\..\source\general\forge-mods.rst:5
+msgid "Forge mods in a Sponge server"
+msgstr ""
+
+#: ..\..\source\general\forge-mods.rst:7
+msgid ""
+"At present, the only implementation of Sponge *in development* is as a Forge"
+" coremod. Therefore, you must be running a Forge server to use the Sponge "
+"API (via Sponge coremod). Forge-compatible mods should be fully functional "
+"in this environment, provided they are updated to work with the recommended "
+"build of Forge."
+msgstr ""
+
+#: ..\..\source\general\forge-mods.rst:13
+msgid ""
+"Sponge will initially do very little to your server other than implement a "
+"few Bukkit-style commands, unless there are also Sponge Plugins present. "
+"Note that Plugins for Sponge should be placed the *mods* folder, much the "
+"same as Forge mods. There will be no separate *plugins* folder in a Sponge "
+"server setup."
+msgstr ""
+
+#: ..\..\source\general\forge-mods.rst:20
+msgid "What if Sponge breaks?"
+msgstr ""
+
+#: ..\..\source\general\forge-mods.rst:22
+msgid ""
+"Unexpected bugs may occur as always, please report them on the Sponge issue "
+"tracker so we can fix them. Please make sure that the error isn't caused by "
+"an incompatibility between the Forge version and another mod. This can "
+"usually be accomplished by removing Sponge and testing again, or by trying "
+"out the suspect plugin on its' own in a test-server environment. For more "
+"help in finding the source of a server problem, visit :doc:`troubleshooting`"
+msgstr ""

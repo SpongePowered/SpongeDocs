@@ -1,0 +1,41 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Sponge 0.0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-12-03 17:32-0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ..\..\source\admins\server-log-files.rst:2
+msgid "Server log files"
+msgstr ""
+
+#: ..\..\source\admins\server-log-files.rst:4
+msgid ""
+"Minecraft Forge generates a log of server events in the /logs directory of "
+"the Forge server root folder. Logging is handled by log4j2, and the log file"
+" will include data from the Sponge coremod."
+msgstr ""
+
+#: ..\..\source\admins\server-log-files.rst:7
+msgid ""
+"A Glowstone implementation of Sponge (if or when it exists) may do this "
+"differently."
+msgstr ""
+
+#: ..\..\source\admins\server-log-files.rst:11
+msgid "Including a log file in a bug report"
+msgstr ""
+
+#: ..\..\source\admins\server-log-files.rst:13
+msgid ""
+"When you report a bug, it may be necessary to include the relevant log file "
+"that contains the error. Please make sure you find the right one, and upload"
+" it to a file sharing service like pastebin or dropbox so it can be added to"
+" a post as a link."
+msgstr ""

@@ -1,0 +1,39 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Sponge 0.0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-12-03 17:32-0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ..\..\source\sponge-developers\sponge-developers.rst:2
+msgid "Sponge developers"
+msgstr ""
+
+#: ..\..\source\sponge-developers\sponge-developers.rst:4
+msgid ""
+"This portal is for those who want to help create, modify, or extend Sponge. "
+"We welcome contributions, as long as they comply with our contribution "
+"guidelines."
+msgstr ""
+
+#: ..\..\source\sponge-developers\sponge-developers.rst:7
+msgid ":doc:`contribution-guidelines`"
+msgstr ""
+
+#: ..\..\source\sponge-developers\sponge-developers.rst:8
+msgid ":doc:`project-layout`"
+msgstr ""
+
+#: ..\..\source\sponge-developers\sponge-developers.rst:9
+msgid ":doc:`workspace-setup`"
+msgstr ""
+
+#: ..\..\source\sponge-developers\sponge-developers.rst:10
+msgid ":doc:`implementation-guide`"
+msgstr ""
