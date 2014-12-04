@@ -74,6 +74,10 @@ As such, putting your repository into say, the Desktop, or in folders that conta
 
 Keep the paths to your source tree as short as possible::
 
+(Caveat - some users may prefer to hold their source trees in their user folders, or elsewhere on the system.  It's not required to 
+keep the paths short, but it may help.  If you do not prefer to put things close to the root folder, then put the file
+tree anywhere you like.  It is up to you.  Be aware of path name length limits of your Operating System)
+
     C:\> mkdir c:\sp\main
     C:\> cd c:\sp\main
 
