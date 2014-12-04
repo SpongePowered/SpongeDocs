@@ -21,7 +21,7 @@ Please begin by uninstalling any old versions of Java you may have acquired in t
 Then visit this site: http://www.oracle.com/technetwork/java/javase/downloads/index.html
 
 Download and install the Java JDK. It's the upper blue button on the right-hand side of the main column.
-real
+
 If you cannot find it, try this link for a direct Java 7 JDK download:
 http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html
 
