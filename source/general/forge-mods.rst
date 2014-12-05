@@ -25,4 +25,4 @@ caused by an incompatibility between the Forge version and another mod.
 This can usually be accomplished by removing Sponge and testing again,
 or by trying out the suspect plugin on its' own in a test-server
 environment. For more help in finding the source of a server problem,
-visit :doc:`troubleshooting`
+visit :doc:`../admins/troubleshooting`
