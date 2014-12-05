@@ -2,41 +2,13 @@
 Other Platforms
 ===============
 
-So, you perhaps want to take the giant leap and move from a Bukkit
-server to Sponge. Here are the options you have for setting up a Sponge
-server. The following Guides will walk you through all you need to do to
-accomplish this lofty goal.
+Sponge, as mentioned previously, provides both an API (a standard, like DVD) as well as one implementation or platform (like a DVD player). However, it's possible to use a different platform for running Sponge plugins.
 
-Sponge as a Forge CoreMod
--------------------------
+We do provide a Forge-based platform, but this page details other options.
 
-The First release of a Sponge API Implementation is planned to be a
-Forge Server CoreMod.
+Glowstone
+=========
 
-*The Forge Sponge Implementation is not ready yet, it is still a work in
-progress.*
+Glowstone is an independently-made server for Minecraft. It does not contain any Minecraft code.
 
-Please note that Sponge is intended to be implemented for *Minecraft
-version 1.8* and above. There is no guarantee of backward compatibility
-with earlier versions of Minecraft Forge.
-
-How to install Sponge on your Forge server is described in detail at
-:doc:`server-setup`
-
-Sponge as a stand-alone server
-------------------------------
-
-There are currently no plans for a stand-alone Sponge API Implementation
-(like *Craftbukkit*). Anyone interested in creating such a project is
-most welcome to do so.
-
-Sponge as a mod for other servers
----------------------------------
-
-There are currently no plans for a Sponge API implementation for
-CanaryMod, Granite, Rainbow, or in fact any other Minecraft server
-environment. Anyone interested in starting any of these projects is most
-welcome to do so.
-
-The Sponge developers would like to create a Glowstone implementation,
-but there are no concrete plans to do so at this point in time.
+However, at the moment, Glowstone does not yet support the Sponge API but it is planned.
