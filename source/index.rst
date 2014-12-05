@@ -6,67 +6,30 @@ Welcome to the documentation for `Sponge <http://spongepowered.org>`__! Sponge l
 
 Sponge produces an "API" -- a standard way to write mods. However, the API is like the DVD standard, a DVD player is required to actually play the DVD. In our case, we both define the standard (the Sponge API) as well as provide one way to run Sponge plugins: on top of Minecraft Forge, which some people may already be familiar with.
 
-This documentation is separated into several sections:
+.. warning::
+    Sponge is currently in development as of writing, so no download is yet available for running Sponge plugins.
 
-* :ref:`user-docs`
-* :ref:`plugin-dev-docs`
-
-For people who wish to work on Sponge itself, or build an implementation, there is some documentation for that:
-
-* :ref:`sponge-dev-docs`
-
-User Documentation
-==================
-
-.. _user-docs:
+Documentation
+=============
 
 Using Sponge
 ~~~~~~~~~~~~
-
-.. warning::
-    Sponge is currently in development as of writing, so no download is yet available for running Sponge plugins.
  
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 3
     :titlesonly:
 
-    users/quick-start
-    users/config
-    users/logs
-    users/compat
-    users/troubleshooting
-    users/platforms
+    users/index
 
-.. _plugin-dev-docs:
-
-Writing Plugins
-~~~~~~~~~~~~~~~
+Developers
+~~~~~~~~~~
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 3
     :titlesonly:
 
-    plugins/workspace
-    plugins/quick-start
-    plugins/advanced-topics
-
-Developer Documentation
-=======================
-
-.. _sponge-dev-docs:
-
-Working on Sponge
-~~~~~~~~~~~~~~~~~
-
-.. toctree::
-    :maxdepth: 2
-    :titlesonly:
-
-    devs/guidelines
-    devs/workspace
-    devs/api/contributing
-    devs/forge/contributing
-    devs/impl/guide
+    plugins/index
+    devs/index
 
 About Sponge
 ============
