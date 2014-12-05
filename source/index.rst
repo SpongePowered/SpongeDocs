@@ -23,7 +23,7 @@ The Sponge API will have an official Minecraft Forge-based
 implementation designed to be an easy-to-use addition to your server.
 
 Sponge will be available for free to both server owners and plugin
-developers at the Downloads page at :doc:`downloads`.
+developers at the Downloads page at :doc:`/general/downloads`.
 
 *The Sponge API and its Forge implementation are still under development
 and not available at this time.*
@@ -51,17 +51,17 @@ What about my favourite Bukkit plugins?
 Server Plugins must be written to use the Sponge API, or employ some
 kind of compatibility layer to run (eg. Pore). A large number of Bukkit
 plugin developers have offered to port their work to Sponge when it is
-ready. For more information, please visit :doc:`bukkit-compatibility`.
+ready. For more information, please visit :doc:`/general/bukkit-compatibility`.
 
 Sponge for server admins
 ------------------------
 
 - :doc:`admins/admins` - A central resource for all things related to server administration.   
 - :doc:`faq` - Frequently asked questions about Sponge.   
-- :doc:`bukkit-compatibility` - What's changed? Will my old stuff work?   
-- :doc:`forge-mods` - What's the deal with Forge mods? Do they work with Sponge?   
+- :doc:`/general/bukkit-compatibility` - What's changed? Will my old stuff work?   
+- :doc:`/general/forge-mods` - What's the deal with Forge mods? Do they work with Sponge?   
 - :doc:`admins/server-setup` - Guide on how to start your very own server using Sponge.   
-- :doc:`troubleshooting` - Find answers to the most common problems that occur here.
+- :doc:`admins/troubleshooting` - Find answers to the most common problems that occur here.
 
 Sponge for plugin developers
 ----------------------------
@@ -80,10 +80,10 @@ Sponge development portal
 Guides and help resources
 -------------------------
 
--  :doc:`sponge-archivist` - How to get involved in making this Wiki
--  :doc:`../bukkit-compatibility` - Documentation on starting and maintaining a server.
+-  :doc:`/general/helping-out` - How to get involved with the Sponge project
+-  :doc:`/general/bukkit-compatibility` - Documentation on starting and maintaining a server.
 -  `Issue Tracker <https://github.com/SpongePowered/SpongeAPI/issues?q=>`__ - The list of issues related to the Sponge API.
--  :doc:`../changelog` - The list of changes between Sponge releases
+-  :doc:`/general//changelog` - The list of changes between Sponge releases
 -  :doc:`developers/developers` - Documentation and information to develop applications to work with *Sponge*.
 
 Links to external resources
