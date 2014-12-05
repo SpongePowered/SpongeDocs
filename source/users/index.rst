@@ -9,6 +9,9 @@ User's Guide
     quick-start
     plugins
     config
+    permissions
+    whitelist
+    bans
     logs
     compat
     troubleshooting
