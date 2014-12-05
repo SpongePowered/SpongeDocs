@@ -40,9 +40,10 @@ normal!
 What are Sponge mods
 ~~~~~~~~~~~~~~~~~~~~
 
-Sponge mod is not currently available but is still be planned for the
-future. These mods will preform a variety of functions related to the
-client.
+Sponge coremod is still under development, and will implement the Sponge
+API on a 1.8 Minecraft-Forge server.
+Future plans may include more client Sponge mods that could perform a
+variety of functions related to the client.
 
 What does this mean for the server owners?
 ------------------------------------------
