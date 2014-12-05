@@ -247,3 +247,6 @@ texinfo_documents = [
 
 # How to display URL addresses: 'footnote', 'no', or 'inline'.
 #texinfo_show_urls = 'footnote'
+
+locale_dirs = ['locale/']   #path is example but recommended.
+gettext_compact = False     #optional.

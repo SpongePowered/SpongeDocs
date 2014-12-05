@@ -1,0 +1,26 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Sponge 0.0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-12-03 18:37-0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ..\..\source\admins\admins.rst:2
+msgid "Server Administrators Portal"
+msgstr ""
+
+#: ..\..\source\admins\admins.rst:4
+msgid ""
+"Greetings and welcome to the Server Administrators portal! Your one-stop "
+"shop for making, shaking, baking and breaking your Sponge Server."
+msgstr ""
+
+#: ..\..\source\admins\admins.rst:7
+msgid "Deja-Vu."
+msgstr ""

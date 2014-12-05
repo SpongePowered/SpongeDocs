@@ -3,6 +3,8 @@ Welcome to the Sponge documentation!
 
 Contents:
 
+Testing
+
 .. toctree::
     :maxdepth: 2
     :titlesonly:

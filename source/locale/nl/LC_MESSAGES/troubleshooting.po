@@ -1,0 +1,199 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Sponge 0.0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-12-03 18:37-0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ..\..\source\troubleshooting.rst:2
+msgid "Troubleshooting"
+msgstr ""
+
+#: ..\..\source\troubleshooting.rst:4
+msgid ""
+"You're probably here because something went wrong with your Sponge server. "
+"Let's see if we can figure out what it was, and what to do about it. If you "
+"haven't done so already, we recommend reading :doc:`bukkit-compatibility`."
+msgstr ""
+
+#: ..\..\source\troubleshooting.rst:9
+msgid "Java is not installed on your Computer"
+msgstr ""
+
+#: ..\..\source\troubleshooting.rst:11
+msgid ""
+"**Solution**: Download and install the latest version of the  Java Runtime "
+"Environment (JRE) available for your operating system. Sponge (and "
+"Minecraft) are built on Java 6, however you are recommended and encouraged "
+"to use Java 7. Java 8 does not currently have widespread usage so installing"
+" it is not recommended. Oracle Java is a good option for most Operating "
+"Systems."
+msgstr ""
+
+#: ..\..\source\troubleshooting.rst:18
+msgid "Network connection failure (or DDoS attack)"
+msgstr ""
+
+#: ..\..\source\troubleshooting.rst:20
+msgid ""
+"**Symptoms**: Network connection is very laggy, drops in and out, or absent."
+msgstr ""
+
+#: ..\..\source\troubleshooting.rst:23
+msgid ""
+"**Solutions**: Check your connection to the modem or router. See if your "
+"browser has similar troubles. You can use a free service like speedtest.net "
+"to check your connection speed. Other services running on your computer or "
+"local network may the cause. A DDoS attack will probably completely kill "
+"your connectivity, and you should contact your ISP if you believe this to be"
+" the case."
+msgstr ""
+
+#: ..\..\source\troubleshooting.rst:31
+msgid "Not enough free memory"
+msgstr ""
+
+#: ..\..\source\troubleshooting.rst:33
+msgid ""
+"**Symptoms**: Server crashes, often accompanied with \"Out of Memory\" "
+"messages."
+msgstr ""
+
+#: ..\..\source\troubleshooting.rst:36
+msgid ""
+"**Solutions**: Expand the maximum Perm memory size with the startup argument"
+" ``-XX:MaxPermSize=128``. Expand your server heap memory (if possible) with "
+"startup arguments eg. ``-Xms1024M`` (1GB starting memory) and ``-Xmx2048M`` "
+"(2GB maximum). Monitor your free memory on the computer and see if there is "
+"some locked up in other processes. You may need to kill frozen java "
+"processes, or restart your machine. Memory leaks sometimes occur with bugs "
+"in plugins, which can take time to isolate."
+msgstr ""
+
+#: ..\..\source\troubleshooting.rst:45
+msgid "Malformed config file (eg. bad editing)"
+msgstr ""
+
+#: ..\..\source\troubleshooting.rst:47
+msgid ""
+"**Symptom**: One (or more) plugins refuse to load, or behave in unexpected "
+"ways. The server log files will contain messages about unreadable files on "
+"startup. The server may crash, and data may be corrupted."
+msgstr ""
+
+#: ..\..\source\troubleshooting.rst:52
+msgid ""
+"**Solution**: Stop the server, and check your edited files. Load backup "
+"files of any corrupted data. You may need to delete a config file entirely "
+"and allow it to regenerate server startup."
+msgstr ""
+
+#: ..\..\source\troubleshooting.rst:57
+msgid "A plugin (or mod) has malfunctioned"
+msgstr ""
+
+#: ..\..\source\troubleshooting.rst:59
+msgid ""
+"**Symptom**: This could be almost anything - whatever your plugins do, plus "
+"the X-factor. Commonly the server crashes with a train of error messages in "
+"the server log files."
+msgstr ""
+
+#: ..\..\source\troubleshooting.rst:63
+msgid ""
+"**Solution**: Stop the server, and check to see nothing has been corrupted. "
+"Be sure to check that it isn't from an incorrectly edited config file "
+"(above). Remove suspect plugins and add them again one by one, restarting "
+"the server each time. The problem may originate from one Plugin that is out "
+"of date - check for updates. Plugin conflict may also be the cause, having "
+"two incompatible plugins."
+msgstr ""
+
+#: ..\..\source\troubleshooting.rst:71
+msgid "Operating System is unstable (eg. Virus infection)"
+msgstr ""
+
+#: ..\..\source\troubleshooting.rst:73
+msgid ""
+"**Symptom**: The server keeps crashing or timing out, and other parts of "
+"your operating system are also having problems."
+msgstr ""
+
+#: ..\..\source\troubleshooting.rst:76
+msgid ""
+"**Solution**: Stop everything. Thoroughly check your system and storage "
+"devices for malware and viruses. Good tools for this include AdwCleaner, "
+"Junkware Removal Tool, MalwareBytes, and most antivirus ware. Check your "
+"server files for corruption after a clean restart of your system. Examine "
+"the hardware for damage too if the problems persist - eg. a faulty power "
+"supply."
+msgstr ""
+
+#: ..\..\source\troubleshooting.rst:84
+msgid "Corrupted Data"
+msgstr ""
+
+#: ..\..\source\troubleshooting.rst:86
+msgid ""
+"**Symptom**: World files fail to load or cause server to crash when players "
+"enter certain chunks. Database corruption."
+msgstr ""
+
+#: ..\..\source\troubleshooting.rst:89
+msgid ""
+"**Solution**: Load backup files of corrupted data. Software for repairing "
+"damaged worlds is available, and missing regions may be regenerated. "
+"Investigate the cause of corruption - was it a malformed plugin, database "
+"driver, power failure or something else? Always make sure you make regular "
+"backups of important data onto a secure device."
+msgstr ""
+
+#: ..\..\source\troubleshooting.rst:96
+msgid "Problem between keyboard and chair"
+msgstr ""
+
+#: ..\..\source\troubleshooting.rst:98
+msgid ""
+"**Symptom**: Everything was working fine yesterday. It went strange today "
+"after I did XYX ..."
+msgstr ""
+
+#: ..\..\source\troubleshooting.rst:101
+msgid ""
+"**Solution**: This wiki is not large enough to encompass the things people "
+"may do that will cause software to fail in unpredictable ways. It is always "
+"worth thinking long and hard about what you may have done recently that "
+"could have affected the smooth running of your server. A memory card may be "
+"loose after dusting, a shortcut may be broken..."
+msgstr ""
+
+#: ..\..\source\troubleshooting.rst:108
+msgid "There is a bug in Sponge"
+msgstr ""
+
+#: ..\..\source\troubleshooting.rst:110
+msgid ""
+"**Symptom**: None of the above apply, and it still doesn't work as it "
+"should."
+msgstr ""
+
+#: ..\..\source\troubleshooting.rst:113
+msgid ""
+"**Solution**: Time to get out the big guns. File a report on the Sponge "
+"issue tracker, remembering to include details of the version of Forge and "
+"Sponge you are using, and a link to the relevant server log file."
+msgstr ""
+
+#: ..\..\source\troubleshooting.rst:118
+msgid "There is something wrong with the Universe"
+msgstr ""
+
+#: ..\..\source\troubleshooting.rst:120
+msgid "We can't help you with this one. You're on your own."
+msgstr ""
