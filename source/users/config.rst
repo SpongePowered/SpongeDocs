@@ -2,21 +2,26 @@
 Configuration
 =============
 
-There are several configuration files that you can use:
+You can find all configuration files inside the "config" folder.
 
-server.properties
-~~~~~~~~~~~~~~~~
+Config Syntax
+=============
 
-Sponge Config
-~~~~~~~~~~~~~
+Most configuration files will make use of the HOCON format.
 
-This will be a file similar in nature to the *bukkit.yml* file used with
-CraftBukkit. It will reside in the config folder of the Forge server
-root directory. Modification of the properties in this file will change
-the way Sponge affects your Minecraft Forge server. Changes in this file
-will only affect the Sponge CoreMod, and only after server restart.
+For more information, see the :doc:`Introduction to HOCON <hocon>` page.
 
-The Sponge server properties file - sponge.conf - will use HOCON
-(Human-Optimized Config Object Notation). More information about the
-HOCON format can be found at
-https://github.com/typesafehub/config/blob/master/HOCON.md
+What You Can Configure
+======================
+
+.. toctree::
+    :maxdepth: 3
+    :titlesonly:
+
+    sponge-conf
+    server-properties
+
+Plugins will also have their own configuration files in the "config" folder.
+
+.. tip::
+    Changing a configuration file will not necessarily take effect right away if your game or server is currently running. Use the ``/sponge reloadconfig`` command to send a message to all plugins and Sponge to reload their configuration. However, you may need to restart your game or server for some changes to take effect.

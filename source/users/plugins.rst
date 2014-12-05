@@ -15,13 +15,6 @@ In order to install plugins, place them into the "mods" folder of your game or s
 
 If your download came in a .zip file, then you may need to extract it to find a .jar file inside.
 
-Configuration
-=============
-
-To configure plugins, find the "config" folder that should be alongside your "mods" folder. Inside, you should find configuration files for some of the plugins that you have installed.
-
-Changing a configuration file will not necessarily take effect right away if your game or server is currently running. Use the ``/sponge reloadconfig`` command to send a message to all plugins to reload their plugins. However, not all plugins may abide this message, so you may need to restart your game or server if your changes do not seem to be taking effect.
-
 Common Problems
 ===============
 
