@@ -1,5 +1,5 @@
 =================
-Working on Sponge
+Developing Sponge
 =================
 
 .. toctree::
@@ -10,4 +10,3 @@ Working on Sponge
     workspace
     api/contributing
     forge/contributing
-    impl/guide
