@@ -8,4 +8,6 @@ Writing Plugins
 
     workspace
     quick-start
+    event-bus
+    services
     advanced-topics
