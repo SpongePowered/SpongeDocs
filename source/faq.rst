@@ -4,19 +4,18 @@ Frequently Asked Questions
 What is Sponge?
 ---------------
 
-Sponge is a combination of a new API (likely based off of Spout/Flow’s
-APIs) implemented on top of Forge, with assistance from other parts of
-Minecraft’s modding community (Glowstone, etc.). It will be both a
-server and client API, and its target user base is pretty much anyone
-that wants to mod their game, including server owners. However, we may
-focus on the server-side portion first. We invite any developer to help
-out.
+Sponge is a combination of a new API (based in part on Spout/Flow’s APIs)
+implemented on top of Forge, with assistance from other parts of Minecraft’s
+modding community (Glowstone, Cauldron, FTB...). It will be both a server
+and client API, and its target user base is pretty much anyone that wants
+to mod their game, including server owners. However, we will focus on the
+server-side portion first. We invite any developer to help out.
 
 When will the first downloads be available?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The release date is still to be announced. However, the API portion is
-set to be release in November.
+The release date of the Sponge implementation is still to be announced.
+However, the Sponge API (v1.0) was released on November 30th, 2014.
 
 Will there be an official place to download plugins?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -41,7 +40,7 @@ normal!
 What are Sponge mods
 ~~~~~~~~~~~~~~~~~~~~
 
-Sponge mod is not currently avalible but is still be planned for the
+Sponge mod is not currently available but is still be planned for the
 future. These mods will preform a variety of functions related to the
 client.
 
@@ -49,7 +48,7 @@ What does this mean for the server owners?
 ------------------------------------------
 
 Server owners will have to download Sponge and start them like any other
-Minecraft server.
+Minecraft Forge server.
 
 What Java version is Sponge using?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -81,8 +80,8 @@ Bukkit plugins on top of Sponge.
 But Forge doesn’t support unmodified vanilla clients?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-At this time, yes, but LexManos has expressed plans in adding support
-for vanilla clients.
+Forge's lead developer LexManos has expressed plans to add support
+for vanilla clients in the 1.8 update.
 
 But Forge takes too long to update?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -180,6 +179,7 @@ What license will Sponge be placed under?
 
 MIT, without a Contributor License Agreement. A Contributor License
 Agreement is not necessary and it may be a turn off to contributors.
+For more information, please read :doc:`license`
 
 Why not use Bukkit’s API?
 ~~~~~~~~~~~~~~~~~~~~~~~~~
