@@ -9,7 +9,11 @@ Config Syntax
 
 Most configuration files will make use of the HOCON format.
 
-For more information, see the :doc:`Introduction to HOCON <hocon>` page.
+.. toctree::
+    :maxdepth: 3
+    :titlesonly:
+
+    hocon
 
 What You Can Configure
 ======================
