@@ -1,66 +1,49 @@
+=========================
 Setting Up Your Workspace
 =========================
 
-The Sponge maven repository is at http://repo.spongepowered.org/Sponge/maven/.
-All sponge artifacts are under the group ID of ``org.spongepowered``.
+Installing the JDK
+==================
 
-Artifact IDs are as follows:
+First and foremost, you do need the Java Development Kit (JDK) installed.
 
-- the API: ``spongeapi``
-- the forge based implementation: ``sponge``
+Getting Started
+===============
 
-Sponge plugins can be compiled with `Gradle <http://gradle.org>`__ or `Maven <http://maven.apache.org>`__.
+You can choose to either start developing plugins by following instructions to set up an IDE or by creating a build script and going from there.
 
-The Sponge team recommends the use of Gradle as use of the Forge team's ForgeGradle plugin can allow testing of Sponge inside Eclipse or Intellij IDEA development environments.
+.. note::
 
-Development builds use the SNAPSHOT system
+    The IDE route is preferred for those who are not familiar with developing in Java.
 
-`Online Javadocs(Temporary link) <http://spongepowered.github.io/SpongeAPI/>`__
+Starting with an IDE
+~~~~~~~~~~~~~~~~~~~~
 
-Gradle
-------
+An IDE (integrated development environment) auto-completes names and is recommended for getting started with Sponge, though it is not required.
 
-Gradle users place the following in your build.gradle:
+.. tip::
+   
+    We provide instructions for both IntelliJ IDEA and Eclipse, but IDEA is recommended over Eclipse.
 
-.. code-block:: groovy
+.. toctree::
+    :maxdepth: 2
+    :titlesonly:
 
-    repositories {
-        mavenCentral()
-        maven {
-            name 'Sponge maven repo'
-            url 'http://repo.spongepowered.org/Sponge/maven'
-        }
-    }
+    idea
+    eclipse
 
-    dependencies {
-        compile "org.spongepowered:spongeapi:1.0"
-    }
+Starting with a Build Script
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Maven
------
+These instructions illustrate how one can build a build script to compile a Sponge plugin.
 
-Maven users place the following in your pom.xml:
+.. tip::
+   
+    We provide instructions for both the Gradle and Maven build systems, but Gradle is easier to get started with, especially on Windows.
 
-.. code-block:: xml
+.. toctree::
+    :maxdepth: 2
+    :titlesonly:
 
-    <repositories>
-        <repository>
-            <id>sponge-maven-repo</id>
-            <name>Sponge maven repo</name>
-            <url>http://repo.spongepowered.org/Sponge/maven</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.spongepowered</groupId>
-            <artifactId>spongeapi</artifactId>
-            <version>1.0</version>
-        </dependency>
-    </dependencies>
+    gradle
+    maven
