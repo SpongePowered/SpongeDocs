@@ -1,5 +1,6 @@
-Helping out
-===========
+============
+Contributing
+============
 
 We're really glad you're interested. Sponge is a huge undertaking, and will benefit from the wisdom of others.
 Here are some ways you can help the Sponge project:

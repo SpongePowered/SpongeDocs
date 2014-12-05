@@ -1,5 +1,12 @@
-Contributing to Sponge
-======================
+========================
+Working on the Forge Mod
+========================
+
+.. toctree::
+    :maxdepth: 2
+    :titlesonly:
+
+    project-layout
 
 Prerequisites
 -------------

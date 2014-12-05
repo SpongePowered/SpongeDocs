@@ -1,3 +1,0 @@
-Understanding the Project Layout
-================================
-

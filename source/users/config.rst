@@ -1,5 +1,14 @@
-Sponge config file
-=============================
+=============
+Configuration
+=============
+
+There are several configuration files that you can use:
+
+server.properties
+~~~~~~~~~~~~~~~~
+
+Sponge Config
+~~~~~~~~~~~~~
 
 This will be a file similar in nature to the *bukkit.yml* file used with
 CraftBukkit. It will reside in the config folder of the Forge server

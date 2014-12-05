@@ -1,5 +1,6 @@
-Sponge Implementations
-======================
+===============
+Other Platforms
+===============
 
 So, you perhaps want to take the giant leap and move from a Bukkit
 server to Sponge. Here are the options you have for setting up a Sponge

@@ -1,5 +1,6 @@
-Server log files
-================
+=========
+Log Files
+=========
 
 Minecraft Forge generates a log of server events in the /logs directory of the Forge server root folder.
 Logging is handled by log4j2, and the log file will include data from the Sponge coremod. 

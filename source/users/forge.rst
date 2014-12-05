@@ -1,5 +1,6 @@
-Forge mods
-==========
+================
+Using Forge Mods
+================
 
 Forge mods in a Sponge server
 -----------------------------

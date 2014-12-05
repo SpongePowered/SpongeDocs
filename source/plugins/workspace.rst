@@ -1,4 +1,4 @@
-Setting up your Workspace
+Setting Up Your Workspace
 =========================
 
 The Sponge maven repository is at http://repo.spongepowered.org/Sponge/maven/.

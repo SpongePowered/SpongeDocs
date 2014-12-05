@@ -1,101 +1,96 @@
-Welcome to the Sponge documentation!
-====================================
+====================
+Sponge Documentation
+====================
 
-Contents:
+Welcome to the documentation for `Sponge <http://spongepowered.org>`__! Sponge lets people write self-contained mods for Minecraft that work even across major updates to Minecraft. The project is free to use and open source.
 
-Testing
+Sponge produces an "API" -- a standard way to write mods. However, the API is like the DVD standard, a DVD player is required to actually play the DVD. In our case, we both define the standard (the Sponge API) as well as provide one way to run Sponge plugins: on top of Minecraft Forge, which some people may already be familiar with.
+
+This documentation is separated into several sections:
+
+* :ref:`user-docs`
+* :ref:`plugin-dev-docs`
+
+For people who wish to work on Sponge itself, or build an implementation, there is some documentation for that:
+
+* :ref:`sponge-dev-docs`
+
+User Documentation
+==================
+
+.. _user-docs:
+
+Using Sponge
+~~~~~~~~~~~~
+
+.. warning::
+    Sponge is currently in development as of writing, so no download is yet available for running Sponge plugins.
+ 
+.. toctree::
+    :maxdepth: 2
+    :titlesonly:
+
+    users/quick-start
+    users/config
+    users/logs
+    users/compat
+    users/troubleshooting
+    users/platforms
+
+.. _plugin-dev-docs:
+
+Writing Plugins
+~~~~~~~~~~~~~~~
 
 .. toctree::
     :maxdepth: 2
     :titlesonly:
 
-    faq
+    plugins/workspace
+    plugins/quick-start
+    plugins/advanced-topics
+
+Developer Documentation
+=======================
+
+.. _sponge-dev-docs:
+
+Working on Sponge
+~~~~~~~~~~~~~~~~~
+
+.. toctree::
+    :maxdepth: 2
+    :titlesonly:
+
+    devs/guidelines
+    devs/workspace
+    devs/api/contributing
+    devs/forge/contributing
+    devs/impl/guide
+
+About Sponge
+============
+ 
+.. toctree::
+    :maxdepth: 2
+    :titlesonly:
+
     changelog
-    admins/admins
-    developers/developers
-    troubleshooting
-    license
+    downloads
+    contributing
 
-**Sponge** is an all-new Minecraft modding API created by a team of top
-minds in both the server and client modding communities. The Sponge
-project welcomes new contributions from players and developers alike.
-The Sponge API will have an official Minecraft Forge-based
-implementation designed to be an easy-to-use addition to your server.
+Links
+~~~~~
 
-Sponge will be available for free to both server owners and plugin
-developers at the Downloads page at :doc:`/general/downloads`.
-
-*The Sponge API and its Forge implementation are still under development
-and not available at this time.*
-
-    If this is your first time here, you probably have a lot of
-    questions to ask. We have tried to answer as many as possible in our
-    :doc:`faq`. Take a moment to browse it
-    before heading onward to the specifics.
-
-Sponge for players
-------------------
-
-Will I need to use a Forge client and sponge too?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-You can log in to a Minecraft Server running Sponge with any Minecraft
-Client of the right MC version. It will not require players to have
-either Forge or Sponge installed. Minecraft Forge for 1.8 will allow
-vanilla clients to connect. Sponge should work much the same as
-CraftBukkit did in this respect.
-
-What about my favourite Bukkit plugins?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Server Plugins must be written to use the Sponge API, or employ some
-kind of compatibility layer to run (eg. Pore). A large number of Bukkit
-plugin developers have offered to port their work to Sponge when it is
-ready. For more information, please visit :doc:`/general/bukkit-compatibility`.
-
-Sponge for server admins
-------------------------
-
-- :doc:`admins/admins` - A central resource for all things related to server administration.   
-- :doc:`faq` - Frequently asked questions about Sponge.   
-- :doc:`/general/bukkit-compatibility` - What's changed? Will my old stuff work?   
-- :doc:`/general/forge-mods` - What's the deal with Forge mods? Do they work with Sponge?   
-- :doc:`admins/server-setup` - Guide on how to start your very own server using Sponge.   
-- :doc:`admins/troubleshooting` - Find answers to the most common problems that occur here.
-
-Sponge for plugin developers
-----------------------------
-
-- :doc:`developers/developers` - A central resource for all things related to plugin development
-- :doc:`developers/setting-up-workspace` - Guide on how to set up your IDE to start coding with the Sponge API
-- :doc:`developers/sponge-tutorials` - Guides and tutorials for working with the Sponge API
-- :doc:`developers/event-api` - Detailed documentation and examples on the event system.
-- `Sponge API <https://github.com/SpongePowered/SpongeAPI>`__ - Official Github for the Sponge API.
-
-Sponge development portal
--------------------------
-
-- :doc:`sponge-developers/sponge-developers`
-
-Guides and help resources
--------------------------
-
--  :doc:`/general/helping-out` - How to get involved with the Sponge project
--  :doc:`/general/bukkit-compatibility` - Documentation on starting and maintaining a server.
--  `Issue Tracker <https://github.com/SpongePowered/SpongeAPI/issues?q=>`__ - The list of issues related to the Sponge API.
--  :doc:`/general//changelog` - The list of changes between Sponge releases
--  :doc:`developers/developers` - Documentation and information to develop applications to work with *Sponge*.
-
-Links to external resources
----------------------------
+.. toctree::
+    :maxdepth: 2
+    :titlesonly:
 
 -  `Sponge Homepage <http://spongepowered.org>`__
 -  `Sponge Forums <http://forums.spongepowered.org>`__
 -  `Sponge Issue Tracker <https://github.com/SpongePowered/SpongeAPI/issues?q=>`__
 -  `Sponge Twitter <https://twitter.com/SpongePowered>`__
 -  `Sponge Subreddit <https://reddit.com/r/SpongeProject>`__
-
-
 
 Indices and tables
 ==================

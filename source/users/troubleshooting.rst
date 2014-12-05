@@ -1,5 +1,6 @@
+===============
 Troubleshooting
-=================
+===============
 
 You're probably here because something went wrong with your Sponge
 server. Let's see if we can figure out what it was, and what to do about
