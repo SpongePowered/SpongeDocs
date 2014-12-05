@@ -2,26 +2,31 @@
 Quick Start
 ===========
 
-This quick start guide assumes that you want to run the Forge version of Sponge to run Sponge plugins. See :doc:`the platforms page <platforms>` to see alternatives.
+.. hint::
+    This quick start guide assumes that you want to use the Forge platform to run Sponge. See :doc:`the platforms page <platforms>` to see alternatives.
 
-Installing Sponge on your Forge server
---------------------------------------
+.. note::
+    These instructions are subject to change until we are able to release Sponge for Forge.
+    
+Single Player / LAN Server
+==========================
 
--  In order to run a Sponge server, you must first install the
-   recommended build of Forge Server. This can easily be accomplished by
-   downloading and using the Universal Forge installer from their
-   `download site <http://files.minecraftforge.net/>`__. When Forge
-   installation is complete, you must place the recommended build of the
-   Sponge CoreMod into the server "mods" folder. Starting the Forge
-   server will then cause all the relevant server configuration files
-   for Sponge to be generated. At this point, stop the server and edit
-   these files if required.
+1. Download the correct `Forge version for your MC version <http://files.minecraftforge.net/>`_.
+2. Run the downloaded Forge installer and use it to create a new Forge profile in the Minecraft launcher.
+3. Open the Minecraft launcher and select the new Forge profile that was created.
+4. Click "Options" and then click "Open Game Dir."
+5. Download the `Sponge coremod <http://www.spongepowered.org>`_ and put it into the "mods" folder, creating the folder if it does not yet exist.
+    
+Dedicated Server
+================
 
--  On server start-up using the Sponge CoreMod, it will attempt to load
-   all files in the "mods" folder. These files must be plugins written
-   specifically for Sponge, using the Sponge API. Bukkit plugins *will
-   not work* unless there as also some kind of functioning third-party
-   compatibility-layer plugin, such as *Pore* (still a work in
-   progress). For information about Bukkit plugins, see :doc:`../bukkit-compatibility`
+New Installation
+----------------
 
--  If you run into problems, visit :doc:`troubleshooting`
+1. Download the `Sponge server installer <http://www.spongepowered.org>`_.
+2. Either double click the installer to automatically down the required server files, or if you are on the command line or terminal, use ``java -jar installer.jar`` to download the files.
+
+Existing Forge Server
+---------------------
+
+If you already have a Forge server set up, get the `Sponge coremod <http://www.spongepowered.org>`_ and place it into your "mods" folder.
