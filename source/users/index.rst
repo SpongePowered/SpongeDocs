@@ -7,6 +7,7 @@ User's Guide
     :titlesonly:
 
     quick-start
+    plugins
     config
     logs
     compat
