@@ -10,4 +10,5 @@ Writing Plugins
     quick-start
     event-bus
     services
-    advanced-topics
+    logging
+    plugin-lifecycle
