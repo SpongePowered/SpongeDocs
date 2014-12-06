@@ -263,7 +263,7 @@ I wish to help out.
 
 We appreciate all offers of assistance. Please visit our volunteers portal:
 
--  :doc:`/general/helping-out`
+-  :doc:`/contributing`
 
 We apologise to anyone who did not receive a reply to earlier rounds of
 applications. The number of sumbissions was overwhelming, thank you all!
