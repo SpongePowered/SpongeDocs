@@ -8,6 +8,7 @@ Writing Plugins
 
     workspace
     quick-start
+    blocks
     event-bus
     services
     logging
