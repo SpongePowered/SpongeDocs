@@ -93,29 +93,30 @@ From a Technical Perspective
  - Our developers are well versed with Java. Many of us frequently work with “bytecode injection” and have for years, or even write mod loaders on the side.
  - Performance is on our mind. The Glowstone implementation may run the best, but we plan to make the necessary changes to Minecraft to improve its performance for anything built on top of Minecraft itself (which includes the Forge implementation), just as Bukkit and Spigot has done.
 
+  
 
-How does it all fit together?
+How Does It All Fit Together?
 -----------------------------
 
 .. image:: /images/faq1.png
 
 **Note**: As this is a simplification, the number of layers has no bearing on the performance of the actual implementation. When the game is actually run with the API, it collapses into two layers: plugins versus "modded Minecraft" / Glowstone.
 
-
+  
 
 What is Sponge Building?
 ------------------------
 
 .. image:: /images/faq2.png
 
-
+  
 
 How Do We Keep Plugins/Mods From Breaking Between MC Versions?
 --------------------------------------------------------------
 
 .. image:: /images/faq3.png
 
-
+  
 
 How Much is Open Source?
 ------------------------
@@ -124,7 +125,7 @@ How Much is Open Source?
 
 **Note**: Glowstone is only a server and not the full game itself.
 
-
+  
 
 How Did Bukkit Work?
 --------------------
@@ -133,110 +134,100 @@ How Did Bukkit Work?
 
 **Note**: Bukkit came as one download, even though there are multiple underlying parts. That will be the same case with Sponge, and we will make it easy to run Sponge.
 
-
+  
 
 What About Forge Mods and hMod Plugins?
 ---------------------------------------
 
 .. image:: /images/faq6.png
 
-
-
-# BITS BELOW THIS STILL NEED FIXIN'
-
+  
 
 When Will the First Downloads Be Available?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------
 
 The release date of the Sponge implementation is still to be announced.
 However, the Sponge API (v1.0) was released on November 30th, 2014.
 
-Will there be an Official Place to Download Plugins?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Will There Be an Official Place to Download Plugins?
+----------------------------------------------------
 
 Yes there will be. The complete details are still being discussed. You
 can take part of the discussion here
 https://forums.spongepowered.org/t/plugin-hosting/1150.
 
-What does this mean for the players?
+What Does This Mean for the Players?
 ------------------------------------
 
 Players should not notice anything different about the servers you know
 and love. Sponge is just an API that allows developers to create plugins
 just like before when using bukkit.
 
-Will I need Forge to connect to a Sponge server?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Will I Need Forge to Connect to a Sponge server?
+------------------------------------------------
 
 No modification to your client is needed, just launch and play like
 normal!
 
-What are Sponge mods
-~~~~~~~~~~~~~~~~~~~~
+What are Sponge Mods?
+--------------------
 
 Sponge coremod is still under development, and will implement the Sponge
 API on a 1.8 Minecraft-Forge server.
 Future plans may include more client Sponge mods that could perform a
 variety of functions related to the client.
 
-What does this mean for the server owners?
+What Does This Mean for the Server Owners?
 ------------------------------------------
 
 Server owners will have to download Sponge and start them like any other
 Minecraft Forge server.
 
-What Java version is Sponge using?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+What Java Version is Sponge Using?
+----------------------------------
 
 Sponge will be using Java 1.6, which is the minimum version supported by
 vanilla Minecraft and Forge.
 
-Will players need the Forge client to connect?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Will Players Need the Forge Client to Connect?
+----------------------------------------------
 
 If Sponge is used on the server, players who join will not need Sponge
 or Forge installed on their game. You can use Sponge to make management
 of your server easier, by allowing you to protect areas, log what
 players (or even friends) do, add minigames, and so on.
 
-What Minecraft version is Sponge be first available for?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+What Minecraft Version is Sponge be First Available for?
+--------------------------------------------------------
 
 Sponge will be first available for Minecraft 1.8, or whatever 1.8.x
 version exists at the time.
 
-Will Bukkit Plugins work with Sponge
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+But Forge Doesn’t Support Unmodified Vanilla Clients?
+-----------------------------------------------------
 
-While Sponge will not be directly supporting Bukkit, community projects
-have been started that aim to provide complete support for existing
-Bukkit plugins on top of Sponge.
+It does now. Forge's lead developer LexManos has delivered on plans to
+add support for vanilla clients in the 1.8 update.
 
-But Forge doesn’t support unmodified vanilla clients?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Forge's lead developer LexManos has expressed plans to add support
-for vanilla clients in the 1.8 update.
-
-But Forge takes too long to update?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+But Forge Takes Too Long to Update?
+-----------------------------------
 
 With a large portion of the Minecraft community working together, we are
-sure we can help speed up things.
+sure we can help speed up things. Development builds for Minecraft Forge
+are already available for the 1.8 update.
 
-I haven't kept up, what happened to Bukkit?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+I Haven't Kept Up, What Happened To Bukkit?
+-------------------------------------------
 
 One of the contributors to Bukkit sent a DMCA take down notice to have
 Bukkit removed. He was within his legal right. Downloads, as well as
 source code, for Bukkit and its derivatives (Spigot, Cauldron) are no
-longer available.
+longer available. 
 
-Who?
-----
 
-Who is involved with this effort?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Who is Involved With the Sponge Project?
+---------------------------------
 
 -  sk89q (of WorldEdit/WorldGuard) - project lead
 -  blood (of MCPC+/Cauldron) - project lead
@@ -252,14 +243,14 @@ Who is involved with this effort?
 
 However, we are interested in talking with anyone who is able to help.
 
-How are decisions made?
-~~~~~~~~~~~~~~~~~~~~~~~
+How Are Decisions Made?
+-----------------------
 
 The project owners, **blood** and **sk89q**, after consulting with the
 community and other members when appropriate, will make the decisions.
 
-Have you consulted the community?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Have You Consulted the Community?
+---------------------------------
 
 Yes! While things have been moving pretty quickly, we’re very open to
 input. Many of our decisions are based on discussion in the #nextstep
@@ -267,17 +258,17 @@ IRC channel (on EsperNet) as well as the results of a survey. We have
 been collecting meeting notes and consensus on a Google document.
 
 Technical Questions
--------------------
+===================
 
-Why not use a "Wrapper"-styled API?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Why Not Use a "Wrapper"-styled API?
+-----------------------------------
 
 A wrapper that merely works on network packets and reuses command blocks
 is extremely limited in function, so plugins would only be able to do a
 fraction of what they are able to do now.
 
-Why not build a standalone server?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Why Not Build a Standalone Server?
+----------------------------------
 
 Reusing existing efforts in the community will allow us to have a
 working version much quicker. Glowstone, unfortunately, is not free from
@@ -288,8 +279,8 @@ contention for a lot of users and developers. None of us have the time
 to write a new server from scratch, and most of us have already seen
 Minecraft’s code in some form.
 
-Doesn’t that mean that we will end up in this same situation again if we use proprietary code?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Doesn’t That Mean That We Will End Up In This Same Situation Again If We Use Proprietary Code?
+----------------------------------------------------------------------------------------------
 
 It is to our knowledge and our understanding that Mojang does not wish
 to stop Minecraft modding, and the recent events have not been directly
@@ -299,35 +290,38 @@ If we avoid GPL, we will not have this problem. While this does not free
 us from Mojang’s control, it is to our belief that they support modding
 and will continue to do so.
 
-Why not wait for the Official Minecraft API?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Why Not Wait for the Official Minecraft API?
+--------------------------------------------
 
-We are not sure when it will come out. Many people are not in a position
-to wait. We can get started sooner. Those last three bullet points may
-have said the same thing. As this new project is community-run, we may
-be able to push updates quicker than Mojang is able to and react to the
-needs of the community better. The API may be implemented on other
-server implementations and we encourage it.
+1. We are not sure when it will come out. 
+2. Many people are not in a position to wait.
+3. We can get started sooner. 
+4. Those last three bullet points may have said the same thing.
+5. As this new project is community-run, we may be able to push updates quicker than Mojang is able to and react to the needs of the community better.
+6. The API may be implemented on other server implementations, and we encourage it.
 
-What license will Sponge be placed under?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+What License Will Sponge Be Placed Under?
+-----------------------------------------
 
 MIT, without a Contributor License Agreement. A Contributor License
 Agreement is not necessary and it may be a turn off to contributors.
 For more information, please read :doc:`license`
 
-Why not use Bukkit’s API?
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Why Not use Bukkit’s API?
+-------------------------
 
 It contains GPL licensed code, which is the reason why we are in this
 situation. Recently, at least in the United States, the federal courts
 found that APIs could be copyrighted, although the case has not been
-fully resolved. Will the new API be similar to the Bukkit API in how it
-is used? Events, etc.? Yes. It should be fairly similar, and still
-afford you more power because you will have access to Forge.
+fully resolved.
 
-Why SpoutAPI (+ Flow libs) versus Canary or other APIs?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Will the New API Be Like the Bukkit API in How It is Used? Events, etc.?
+------------------------------------------------------------------------
+
+Yes. It should be fairly similar, and still afford you more power because you will have access to Forge.
+
+Why SpoutAPI (+ Flow libs) Versus Canary or Other APIs?
+-------------------------------------------------------
 
 We chose SpoutAPI purely based on the result of the survey (which is
 mentioned previously). Note, however, we are not implementing SpoutAPI
@@ -335,36 +329,36 @@ as-is. It will serve as inspiration, which will reduce the amount of
 time spent on API design. We will also use portions of flow’s libraries
 from http://github.com/flow.
 
-What about plugins that access ‘NMS’?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+What About Plugins That Access ‘NMS’?
+-------------------------------------
 
 You will instead be accessing interfaces through Forge, which has a much
 greater number of names de-obfuscated. However, accessing “NMS” raises
 the risk of your plugin breaking as is the case here, but that is your
 prerogative.
 
-Will the new server be multi-threaded?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Will the New Server Be Multi-threaded?
+--------------------------------------
 
 It will be multi-threaded in the same fashion that is Minecraft is (and
 also Bukkit and Spigot was), but we are not writing a server from
 scratch, so we are not able to make substantial changes.
 
-How will the new server perform in comparison with Spigot and Bukkit?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+How Will the New Server Perform in Comparison With Spigot and Bukkit?
+---------------------------------------------------------------------
 
 We are currently investigating this, but we plan to reach or exceed
 performance of the other implementations given time.
 
-Will you be able to send mods from the server to the client?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Will You Be Able to Send Mods From the Server to the Client?
+------------------------------------------------------------
 
 The general consensus is against this due to security concerns.
 Minecraft’s API does not plan to send mods (with executable code) to the
 client either.
 
-Will Bukkit plugins be supported, without modification?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Will Bukkit Plugins Be Supported, Without Modification?
+-------------------------------------------------------
 
 No, not natively, however members of the community have begun work on a
 Sponge plugin named Pore that acts as a bridge between the two APIs.
@@ -372,28 +366,32 @@ Sponge plugin named Pore that acts as a bridge between the two APIs.
 For those unable to use it, we will be providing documentation and
 support for people looking to transition from Bukkit to Sponge entirely.
 
-Will I be able to keep my Bukkit worlds and data?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Will I Be Able To Keep My Bukkit Worlds and Data?
+-------------------------------------------------
 
+Yes, at least for worlds. Plugin data may or may not carry over.
 The plan is to create a conversion process which will convert or import
 as much data as possible. Plugins will likely create their own
 conversion process allowing you to keep homes, warps and other data.
 
-What about support for Scala, Groovy, and other JVM-based languages?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+What About Support for Scala, Groovy, and Other JVM-based Languages?
+--------------------------------------------------------------------
 
-We encourage other languages but Java will be our main priority. Will
-other programming languages (such as Lua) be supported? We will
-encourage other implementations but it will not be a high priority.
+We encourage other languages but Java will be our main priority. 
 
-Will Glowstone be a part of this?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Will Other Programming Languages (Such as Lua) Be Supported?
+------------------------------------------------------------
+
+We will encourage other implementations but it will not be a high priority.
+
+Will Glowstone be a Part of This?
+---------------------------------
 
 We hope we can help SpaceManiac and the team implement the API. We also
 invite others to collaborate with us if they wish to.
 
-I wish to help out.
-~~~~~~~~~~~~~~~~~~~
+I Wish to Help Out.
+===================
 
 We appreciate all offers of assistance. Please visit our volunteers portal:
 
