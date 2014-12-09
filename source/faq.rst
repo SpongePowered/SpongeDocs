@@ -101,6 +101,7 @@ How does it all fit together?
 **Note**: As this is a simplification, the number of layers has no bearing on the performance of the actual implementation. When the game is actually run with the API, it collapses into two layers: plugins versus "modded Minecraft" / Glowstone.
 
 
+
 What is Sponge Building?
 ------------------------
 
@@ -114,12 +115,14 @@ How Do We Keep Plugins/Mods From Breaking Between MC Versions?
 .. image:: /images/faq3.png
 
 
+
 How Much is Open Source?
 ------------------------
 
 .. image:: /images/faq4.png
 
-Note: Glowstone is only a server and not the full game itself.
+**Note**: Glowstone is only a server and not the full game itself.
+
 
 
 How Did Bukkit Work?
@@ -130,12 +133,15 @@ How Did Bukkit Work?
 **Note**: Bukkit came as one download, even though there are multiple underlying parts. That will be the same case with Sponge, and we will make it easy to run Sponge.
 
 
+
 What About Forge Mods and hMod Plugins?
 ---------------------------------------
 
 .. image:: /images/faq6.png
 
-// BITS BELOW THIS STILL NEED FIXIN'
+
+
+# BITS BELOW THIS STILL NEED FIXIN'
 
 
 When Will the First Downloads Be Available?
