@@ -8,6 +8,7 @@ What is Sponge?
 
 The purpose of the Sponge project is to provide a community-supported modding framework for Minecraft.
 
+.. image:: /images/faq1.png
 
 Summary
 -------
@@ -28,7 +29,7 @@ Summary
         - Planned & and officially working with Forge team
 
     - Can be injected into Minecraft directly
-    
+
         - Not planned yet (this is a larger undertaking and we prefer something usable sooner)
 
  - An extremely open project.
@@ -43,9 +44,9 @@ For the User
 Our ultimate goal is to create a modding API that is easy to use for owners of small servers for friends and family, owners of large servers, and everyone in between. In addition, we also plan to permit client modding.
 
  - Sponge mods should work across several different Minecraft versions without needing an update from the developer, which means that you don’t have to worry about all your mods breaking between each new major release of Minecraft (1.6, 1.7, 1.8, etc.).
- 
+
  - If Sponge is used on the server, players who join will not need Sponge or Forge installed on their game. You can use Sponge to make management of your server easier, by allowing you to protect areas, log what players (or even friends) do, add minigames, and so on.
- 
+
      - However, you will be able to use Sponge mods on the client too, including Sponge mods that are meant only to be used on the client.
 
  - Sponge will be separated into an “API” that modders will use to make mods and an “implementation” that is able to load these mods. The API won’t change much between MC versions, so modders will build against that, and the implementation loads the mods and makes them work.
