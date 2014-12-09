@@ -4,9 +4,9 @@ Troubleshooting
 
 You're probably here because something went wrong with your Sponge
 server. Let's see if we can figure out what it was, and what to do about
-it. If you haven't done so already, we recommend reading :doc:`/bukkit`.
+it. If you haven't done so already, we recommend reading :doc:`/compat`.
 
-Java is not installed on your Computer
+Java Is Not Installed On Your Computer
 --------------------------------------
 
 **Solution**: Download and install the latest version of the  Java Runtime
@@ -15,7 +15,7 @@ are built on Java 6, however you are recommended and encouraged to use Java 7.
 Java 8 does not currently have widespread usage so installing it is not recommended.
 Oracle Java is a good option for most Operating Systems.
 
-Network connection failure (or DDoS attack)
+Network Connection Failure (or DDoS Attack)
 -------------------------------------------
 
 **Symptoms**: Network connection is very laggy, drops in and out, or
@@ -28,7 +28,7 @@ your computer or local network may the cause. A DDoS attack will
 probably completely kill your connectivity, and you should contact your
 ISP if you believe this to be the case.
 
-Not enough free memory
+Not Enough Free Memory
 ----------------------
 
 **Symptoms**: Server crashes, often accompanied with "Out of Memory"
@@ -42,7 +42,7 @@ see if there is some locked up in other processes. You may need to kill
 frozen java processes, or restart your machine. Memory leaks sometimes
 occur with bugs in plugins, which can take time to isolate.
 
-Malformed config file (eg. bad editing)
+Malformed Config File (eg. Bad Editing)
 ---------------------------------------
 
 **Symptom**: One (or more) plugins refuse to load, or behave in
@@ -54,7 +54,7 @@ corrupted.
 files of any corrupted data. You may need to delete a config file
 entirely and allow it to regenerate server startup.
 
-A plugin (or mod) has malfunctioned
+A Plugin (or Mod) Has Malfunctioned
 -----------------------------------
 
 **Symptom**: This could be almost anything - whatever your plugins do,
@@ -68,7 +68,7 @@ one, restarting the server each time. The problem may originate from one
 Plugin that is out of date - check for updates. Plugin conflict may also
 be the cause, having two incompatible plugins.
 
-Operating System is unstable (eg. Virus infection)
+Operating System Unstable (eg. Virus Infection)
 --------------------------------------------------
 
 **Symptom**: The server keeps crashing or timing out, and other parts of
@@ -93,7 +93,7 @@ regenerated. Investigate the cause of corruption - was it a malformed
 plugin, database driver, power failure or something else? Always make
 sure you make regular backups of important data onto a secure device.
 
-Problem between keyboard and chair
+Problem Between Keyboard and Chair
 ----------------------------------
 
 **Symptom**: Everything was working fine yesterday. It went strange
@@ -105,7 +105,7 @@ is always worth thinking long and hard about what you may have done
 recently that could have affected the smooth running of your server. A
 memory card may be loose after dusting, a shortcut may be broken...
 
-There is a bug in Sponge
+There is a Bug in Sponge
 ------------------------
 
 **Symptom**: None of the above apply, and it still doesn't work as it
@@ -115,7 +115,7 @@ should.
 issue tracker, remembering to include details of the version of Forge
 and Sponge you are using, and a link to the relevant server log file.
 
-There is something wrong with the Universe
+There is Something Wrong With the Universe
 ------------------------------------------
 
 We can't help you with this one. You're on your own.
