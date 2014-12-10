@@ -11,7 +11,7 @@ Here is the default server.properties file of an unmodified Minecraft 1.8.1 serv
 The function of each property is explained in some detail on the Minecraft Wiki at
 http://minecraft.gamepedia.com/Server.properties
 
-.. code-block:: java
+.. code-block:: properties
 
     #Minecraft server properties
     #(File modification datestamp)
