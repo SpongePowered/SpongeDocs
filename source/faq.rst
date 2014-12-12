@@ -2,6 +2,9 @@
 Frequently Asked Questions
 ==========================
 
+.. contents:: **Table of Contents**
+   :depth: 2
+   :local:
 
 What is Sponge?
 ===============
@@ -390,8 +393,8 @@ Will Glowstone be a Part of This?
 We hope we can help SpaceManiac and the team implement the API. We also
 invite others to collaborate with us if they wish to.
 
-I Wish to Help Out.
-===================
+How Can I Help?
+===============
 
 We appreciate all offers of assistance. Please visit our volunteers portal:
 
