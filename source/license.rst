@@ -15,7 +15,7 @@ Details on the MIT license can be found at http://choosealicense.com/licenses/mi
     Sponge under the MIT license.
     
     The bottom line is that a Sponge plugin developer can still own their own software and choose not to release
-    the source code to their plugin and still be in compliance with MIT License. Sponge plugins share memory-in-place
+    the source code to their plugin and still be in compliance with MIT license. Sponge plugins share memory-in-place
     with Sponge coremod, and thus if Sponge were under GPL, this would tether Sponge to the Plugin. This subtle point
     may otherwise be lost on a good portion of the future Sponge plugin developers.
     
