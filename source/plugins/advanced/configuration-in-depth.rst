@@ -1,5 +1,5 @@
 ======================
-Configuration in depth
+Configuration In-depth
 ======================
 
 Placeholder.
