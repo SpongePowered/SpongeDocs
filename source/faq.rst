@@ -144,7 +144,8 @@ What About Forge Mods and hMod Plugins?
 
 .. image:: /images/faq6.png
 
-  
+General Questions
+=================
 
 When Will the First Downloads Be Available?
 -------------------------------------------
