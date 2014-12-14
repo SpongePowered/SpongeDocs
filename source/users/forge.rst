@@ -2,7 +2,7 @@
 Using Forge Mods
 ================
 
-Forge mods in a Sponge server
+Forge Mods in a Sponge Server
 -----------------------------
 
 At present, the only implementation of Sponge *in development* is as a
@@ -22,7 +22,7 @@ present. Note that Plugins for Sponge should be placed the *mods*
 folder, much the same as Forge mods. There will be no separate *plugins*
 folder in a Sponge server setup.
 
-What if Sponge breaks?
+What If Sponge Breaks?
 ----------------------
 
 Unexpected bugs may occur as always, please report them on the Sponge
