@@ -11,6 +11,11 @@ Sponge API (via Sponge coremod). Forge-compatible mods should be fully
 functional in this environment, provided they are updated to work with
 the recommended build of Forge.
 
+
+More information on Minecraft Forge can be found at their Wiki:
+http://www.minecraftforge.net/wiki/
+
+
 Sponge will initially do very little to your server other than implement
 a few Bukkit-style commands, unless there are also Sponge Plugins
 present. Note that Plugins for Sponge should be placed the *mods*
