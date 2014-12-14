@@ -4,7 +4,7 @@ Troubleshooting
 
 You're probably here because something went wrong with your Sponge
 server. Let's see if we can figure out what it was, and what to do about
-it. If you haven't done so already, we recommend reading :doc:`/compat`.
+it. If you haven't done so already, we recommend reading :doc:`bukkit`.
 
 Java Is Not Installed On Your Computer
 --------------------------------------
