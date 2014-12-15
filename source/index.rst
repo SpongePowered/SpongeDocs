@@ -45,6 +45,7 @@ About Sponge
     changelog
     downloads
     contributing
+    license
 
 Links
 ~~~~~
