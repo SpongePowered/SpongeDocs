@@ -27,6 +27,7 @@ We recommend using IntelliJ IDEA.
 
     idea
     eclipse
+    netbeans
 
 Starting with a Build Script
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
