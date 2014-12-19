@@ -6,6 +6,11 @@ You're probably here because something went wrong with your Sponge
 server. Let's see if we can figure out what it was, and what to do about
 it. If you haven't done so already, we recommend reading :doc:`bukkit`.
 
+.. contents:: **Potential Sources of Trouble**
+   :depth: 2
+   :local:
+
+
 Java Is Not Installed On Your Computer
 --------------------------------------
 
@@ -97,9 +102,9 @@ Problem Between Keyboard and Chair
 ----------------------------------
 
 **Symptom**: Everything was working fine yesterday. It went strange
-today after I did XYX ...
+today after I did XYZ ...
 
-**Solution**: This wiki is not large enough to encompass the things
+**Solution**: SpongeDocs is not large enough to encompass the things
 people may do that will cause software to fail in unpredictable ways. It
 is always worth thinking long and hard about what you may have done
 recently that could have affected the smooth running of your server. A
