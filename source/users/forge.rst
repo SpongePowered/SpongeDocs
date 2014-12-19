@@ -12,8 +12,7 @@ functional in this environment, provided they are updated to work with
 the recommended build of Forge.
 
 
-More information on Minecraft Forge can be found at their Wiki:
-http://www.minecraftforge.net/wiki/
+More information on Forge can be found at the `Minecraft Forge Wiki <http://www.minecraftforge.net/wiki/>`__.
 
 
 Sponge will initially do very little to your server other than implement
@@ -31,4 +30,4 @@ caused by an incompatibility between the Forge version and another mod.
 This can usually be accomplished by removing Sponge and testing again,
 or by trying out the suspect plugin on its' own in a test-server
 environment. For more help in finding the source of a server problem,
-visit :doc:`../admins/troubleshooting`
+visit :doc:`troubleshooting`
