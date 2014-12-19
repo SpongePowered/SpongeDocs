@@ -37,7 +37,8 @@ For this purpose, we will use slf4j logger. It is supported by default in Sponge
 
         private static Logger logger;
 
-        public static Logger getLogger() {
+        public static Logger getLoggerInstance() {
+            if (logger == null) throw new IllegalStateException("Cannot get a null logger");
             return logger;
         }
 
@@ -45,11 +46,6 @@ For this purpose, we will use slf4j logger. It is supported by default in Sponge
         @Subscribe
         public void onPreInitialization(PreInitializationEvent event) {
             logger = LoggerFactory.getLogger("example"); //Change the "example" with your plugin ID or name
-        }
-
-        public static Logger getLoggerInstance() {
-            if (logger == null) throw new IllegalStateException("Cannot get a null logger");
-            return logger;
         }
     
     }
