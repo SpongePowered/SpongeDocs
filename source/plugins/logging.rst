@@ -37,11 +37,6 @@ For this purpose, we will use slf4j logger. It is supported by default in Sponge
 
         private static Logger logger;
 
-        public static Logger getLoggerInstance() {
-            if (logger == null) throw new IllegalStateException("Cannot get a null logger");
-            return logger;
-        }
-
         @SuppressWarnings("unused")
         @Subscribe
         public void onPreInitialization(PreInitializationEvent event) {
