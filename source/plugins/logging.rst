@@ -59,3 +59,49 @@ In the "private static Logger **logger**;" we used the **"logger"** as a name. W
 
 Emitting Messages
 =================
+
+In the previous section we have implemented a logger in our plugin, now time to its use.
+Correct usage shows an example "ServerStartingEvent" and the log of the plugin is loaded correctly.
+
+.. code-block:: java
+
+    @SuppressWarnings("unused")
+    @Subscribe
+    public void onEnable(ServerStartingEvent event) {
+        logger.info("[ExamplePlugin]Plugin successfully loaded!");
+    }
+
+
+We can use the 5 categories of logs. In the case of writing plugins are really used 3:
+
+- **INFO**:
+    
+.. code-block:: java
+
+    logger.info("[ExamplePlugin]Information message");
+
+It will be displayed in logs like this:
+
+.. code-block:: python
+
+    [00:00:00] [Server thread/INFO]: [ExamplePlugin]Information message!
+
+- **WARN**:
+    
+.. code-block:: java
+
+    logger.warn("[ExamplePlugin]Warning message");
+
+.. code-block:: python
+
+    [00:00:00] [Server thread/WARN]: [ExamplePlugin]Warning message!
+
+- **ERROR**: (Note: the use of error does not cause the server crash)
+    
+.. code-block:: java
+
+    logger.error("[ExamplePlugin]Error message");
+
+.. code-block:: python
+
+    [00:00:00] [Server thread/ERROR]: [ExamplePlugin]Error message!
