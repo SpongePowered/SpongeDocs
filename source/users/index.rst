@@ -10,6 +10,7 @@ User's Guide
     plugins
     config
     permissions
+    commands
     whitelist
     bans
     logs
