@@ -17,7 +17,7 @@ Events cannot be sent to a specific set of plugins. All plugins that subscribe t
 
 The event bus or event manager is the class that keeps track of which plugins have subscribed to which event, and is also responsible for distributing events to event handlers. Sponge comes with an event bus.
 
-An important note about events in Sponge is that the event bus **supports supertypes**. For example, there's a ``BlockBreakEvent`` that extends a ``BlockChangeEvent``. A plugin could subscribe to the BlockChangeEvent and still receive BlockBreakEvent events. However, a plugin subscribed to just BlockChangeEvent would not receive other types of BlockBreakEvent.
+An important note about events in Sponge is that the event bus **supports supertypes**. For example, there's a ``BlockBreakEvent`` that extends a ``BlockChangeEvent``. A plugin could subscribe to the ``BlockChangeEvent`` and still receive ``BlockBreakEvent`` events. However, a plugin subscribed to just ``BlockBreakEvent`` would not receive other types of ``BlockChangeEvent``.
 
 The event bus in Sponge is a high-performance event bus.
 
