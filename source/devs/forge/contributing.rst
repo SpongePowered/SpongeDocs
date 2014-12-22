@@ -37,7 +37,7 @@ contains crucial tools for creating Java applications.
 
 Let that install, then reboot your PC.
 
-IDE download
+IDE Download
 ~~~~~~~~~~~~
 
 The second main download you need to perform is getting your IDE (Interactive Development Environment).
@@ -53,7 +53,7 @@ You can download IntelliJ IDEA here: https://www.jetbrains.com/idea/download/
 (Choose the "Community Version" unless you want to pay for the Ultimate Edition.
 You do not need the Ultimate Edition to develop plugins, as the Community Version still contains all the tools you need.)
 
-git download
+git Download
 ~~~~~~~~~~~~
 
 The download page for git is here:  http://git-scm.com/downloads
@@ -155,7 +155,6 @@ This process will take a few minutes depending on your network connection.  It i
 
 At this point the output will end with a message like this::
 
-``
     C:\sp\main\Sponge>gradle setupDecompWorkspace --refresh-dependencies
     ****************************
      Powered By MCP:
@@ -185,18 +184,17 @@ At this point the output will end with a message like this::
     :recompMinecraft SKIPPED
     :repackMinecraft SKIPPED
     :setupDecompWorkspace
-
+    
     BUILD SUCCESSFUL
-
+    
     Total time: 2 mins 45.216 secs
     C:\sp\main\Sponge>
-``
 
 Next Steps
 ----------
 
 From here you should follow the steps on the SpongePowered/Sponge README.md file to configure your IDE
-(Eclipse or InteliJ) to import the Sponge Project and build/run the Sponge Artifact within the IDE.
+(Eclipse or IntelliJ) to import the Sponge Project and build/run the Sponge Artifact within the IDE.
 
 The next wiki article on [[Debugging Sponge Within the IDE]]
 will explain how to setup your IDE to start, run and debug Sponge within the IDE.
