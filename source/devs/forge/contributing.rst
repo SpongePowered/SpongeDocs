@@ -196,5 +196,5 @@ Next Steps
 From here you should follow the steps on the SpongePowered/Sponge README.md file to configure your IDE
 (Eclipse or IntelliJ) to import the Sponge Project and build/run the Sponge Artifact within the IDE.
 
-The next wiki article on [[Debugging Sponge Within the IDE]]
+The next wiki article on :doc:`debugging`
 will explain how to setup your IDE to start, run and debug Sponge within the IDE.
