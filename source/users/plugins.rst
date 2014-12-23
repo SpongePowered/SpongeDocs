@@ -5,7 +5,7 @@ Installing Plugins
 What Are Plugins
 ===============
 
-Plugins are files written in Java by any developer that change the way the server runs, generally adding features.
+Plugins are files written in Java that change the way the server works, generally adding features.
 They allow server-owners to do a lot of modifications, such as adding an economy system, managing teleports and permissions, etc.
 
 Finding Plugins
