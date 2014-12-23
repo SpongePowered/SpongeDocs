@@ -4,16 +4,16 @@ msgstr ""
 "Project-Id-Version: Sponge 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-12-03 18:37-0700\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2014-12-23 19:20+0100\n"
+"Last-Translator: Paul Vogel <evilcodes.dev@gmail.com>\n"
+"Language-Team: German <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ..\..\source\general\helping-out.rst:2
 msgid "Helping out"
-msgstr ""
+msgstr "Aushelfen"
 
 #: ..\..\source\general\helping-out.rst:4
 msgid ""
@@ -21,34 +21,44 @@ msgid ""
 "benefit from the wisdom of others. Here are some ways you can help the "
 "Sponge project:"
 msgstr ""
+"Wir sind sehr froh darüber, dass du interessiert bist. Sponge ist ein sehr großes Projekt "
+"und es wird sehr von dem Wissen anderer profitieren. Hier sind einige Möglichkeiten "
+"aufgelistet, wie du dem Sponge Projekt helfen kannst:"
 
 #: ..\..\source\general\helping-out.rst:7
 msgid ""
 "Join the Sponge Forums. Read about the project and get to know the folk. "
 "Hang with the funky people."
 msgstr ""
+"Tritt dem Sponge Forum bei. Lies über das Projekt und lern die Community kennen. "
+"Beschäftige dich mit den irren Leuten."
 
 #: ..\..\source\general\helping-out.rst:8
 msgid "Create your own Sponge plugin. Attract attention with your mad skills."
-msgstr ""
+msgstr "Erstell dein eigenes Plugin für Sponge. Errege Aufmerksamkeit mit deinen krassen Fähigkeiten."
 
 #: ..\..\source\general\helping-out.rst:9
 msgid ""
 "Volunteer to help with Sponge Documentation. Applications via the Forums."
 msgstr ""
+"Freiwilliges Aushelfen bei der Sponge Dokumentation. Bewerbungen bitte über das Forum."
 
 #: ..\..\source\general\helping-out.rst:10
 msgid ""
 "Volunteer to help with Sponge API development. Plan and submit a quality PR."
 msgstr ""
+"Freiwilliges Aushelfen bei der Sponge API Entwicklung. Plane und sende gute Pullrequests ab."
 
 #: ..\..\source\general\helping-out.rst:11
 msgid ""
 "Volunteer to help with Sponge coremod development. Plan and submit a quality"
 " PR."
 msgstr ""
+"Freiwilliges Aushelfen bei der Sponge coremod Entwicklung. Plane und sende gute "
+"Pullrequests ab."
 
 #: ..\..\source\general\helping-out.rst:12
 msgid ""
 "Donate to a starving developer. Sometimes they eat nothing but ramen..."
 msgstr ""
+"Spende an verhundernde Entwickler. Manchmal essen diese nichts als ramen..."
