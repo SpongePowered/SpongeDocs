@@ -4,20 +4,20 @@ msgstr ""
 "Project-Id-Version: Sponge 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-12-03 18:37-0700\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2014-12-23 16:53+0100\n"
+"Last-Translator: Paul Vogel <evilcodes.dev@gmail.com>\n"
+"Language-Team: German <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ..\..\source\faq.rst:2
 msgid "Frequently Asked Questions"
-msgstr ""
+msgstr "Häufig gestellte Fragen"
 
 #: ..\..\source\faq.rst:5
 msgid "What is Sponge?"
-msgstr ""
+msgstr "Was ist Sponge?"
 
 #: ..\..\source\faq.rst:7
 msgid ""
@@ -28,20 +28,28 @@ msgid ""
 " mod their game, including server owners. However, we may focus on the "
 "server-side portion first. We invite any developer to help out."
 msgstr ""
+"Sponge ist eine Kombination einer neuen API (so ähnlich wie Spout / Flow's APIs)"
+" eingebettet über Forge, mit unterstützung von anderen Teilen der "
+"Minecraft Modding Community (Glowstone, etc.). Es wird eine Server- und "
+"Client API, dessen Zielgruppe sogut wie jeder ist, der sein Spiel modifizieren "
+"will, sowie Server Besitzer. Jedoch fokussieren wir uns ersteinmal auf die "
+"Serverseitigen Teile. Wir laden jeden Entwickler ein uns zu helfen."
 
 #: ..\..\source\faq.rst:16
 msgid "When will the first downloads be available?"
-msgstr ""
+msgstr "Wann wird der erste Download bereitstehen?"
 
 #: ..\..\source\faq.rst:18
 msgid ""
 "The release date is still to be announced. However, the API portion is set "
 "to be release in November."
 msgstr ""
+"Das Erscheinungsdatum ist noch nicht bekanntgegeben, jedoch wurde geplant die API "
+"Teile des Projektes im November fertig zustellen."
 
 #: ..\..\source\faq.rst:22
 msgid "Will there be an official place to download plugins?"
-msgstr ""
+msgstr "Wird es eine offizielle Seite geben, auf der man Plugins downloaden kann?"
 
 #: ..\..\source\faq.rst:24
 msgid ""
@@ -49,10 +57,13 @@ msgid ""
 "take part of the discussion here https://forums.spongepowered.org/t/plugin-"
 "hosting/1150."
 msgstr ""
+"Ja, wird es. Die meisten Details darüber sind aber noch in Diskussion. Du kannst "
+"an dieser Diskussion hier https://forums.spongepowered.org/t/plugin-"
+"hosting/1150 teilhaben."
 
 #: ..\..\source\faq.rst:29
 msgid "What does this mean for the players?"
-msgstr ""
+msgstr "Was für Auswirkungen hat das auf die Spieler?"
 
 #: ..\..\source\faq.rst:31
 msgid ""
@@ -60,49 +71,59 @@ msgid ""
 "love. Sponge is just an API that allows developers to create plugins just "
 "like before when using bukkit."
 msgstr ""
+"Spieler sollten davon, auf den Servern die sie kennen und mögen, nichts mitbekommen."
+"Sponge ist einfach eine API die es Entwicklern erlaubt Plugins dafür zu "
+"erstellen. So wie es Bukkit war."
 
 #: ..\..\source\faq.rst:36
 msgid "Will I need Forge to connect to a Sponge server?"
-msgstr ""
+msgstr "Werde ich Forge brauchen um auf Sponge Server zu kommen?"
 
 #: ..\..\source\faq.rst:38
 msgid ""
 "No modification to your client is needed, just launch and play like normal!"
 msgstr ""
+"Keine Modifikationen werden benötigt. Einfach starten und normal, wie immer, spielen!"
 
 #: ..\..\source\faq.rst:42
 msgid "What are Sponge mods"
-msgstr ""
+msgstr "Was sind Sponge Mods?"
 
 #: ..\..\source\faq.rst:44
 msgid ""
 "Sponge mod is not currently avalible but is still be planned for the future."
 " These mods will preform a variety of functions related to the client."
 msgstr ""
+"Sponge Mods sind derzeit nicht verfügbar, aber sind für die Zukunft geplant."
+"Diese Mods werden viele verschiedene Funktionen für den Client haben."
 
 #: ..\..\source\faq.rst:49
 msgid "What does this mean for the server owners?"
-msgstr ""
+msgstr "Was bedeutet dies für die Server Besitzer?"
 
 #: ..\..\source\faq.rst:51
 msgid ""
 "Server owners will have to download Sponge and start them like any other "
 "Minecraft server."
 msgstr ""
+"Server Besitzer brauchen Sponge nur zu downloaden und zu starten, "
+"wie jeder andere Minecraft Server."
 
 #: ..\..\source\faq.rst:55
 msgid "What Java version is Sponge using?"
-msgstr ""
+msgstr "Welche Java Version benutzt Sponge?"
 
 #: ..\..\source\faq.rst:57
 msgid ""
 "Sponge will be using Java 1.6, which is the minimum version supported by "
 "vanilla Minecraft and Forge."
 msgstr ""
+"Sponge wird die Java Version 1.6 nutzen, welche die Minimumversion ist, die von "
+"Minecraft und Forge unterstützt wird."
 
 #: ..\..\source\faq.rst:61
 msgid "Will players need the Forge client to connect?"
-msgstr ""
+msgstr "Brauchen Spieler den Forge Client um auf den Server zu kommen?"
 
 #: ..\..\source\faq.rst:63
 msgid ""
@@ -111,20 +132,26 @@ msgid ""
 " server easier, by allowing you to protect areas, log what players (or even "
 "friends) do, add minigames, and so on."
 msgstr ""
+"Wenn Sponge auf dem Server genutzt wird brauchen Spieler weder Forge noch Sponge."
+"Du kannst Sponge nutzen um das Verwalten deines Servers zu vereinfachen, z.B. durch das "
+"Erlauben Regionen zu protecten (schützen), protokollieren was Spieler / Freunde tun, "
+"Minispiele hinzufügen und vieles mehr."
 
 #: ..\..\source\faq.rst:69
 msgid "What Minecraft version is Sponge be first available for?"
-msgstr ""
+msgstr "Für welche Minecraft Version wird Sponge als erstes verfügbar sein?"
 
 #: ..\..\source\faq.rst:71
 msgid ""
 "Sponge will be first available for Minecraft 1.8, or whatever 1.8.x version "
 "exists at the time."
 msgstr ""
+"Sponge wird als erstes für Minecraft 1.8 verfügbar sein, oder welche 1.8.x Version "
+"zu dieser Zeit existiert."
 
 #: ..\..\source\faq.rst:75
 msgid "Will Bukkit Plugins work with Sponge"
-msgstr ""
+msgstr "Werden Bukkit Plugins mit Sponge funktionieren?"
 
 #: ..\..\source\faq.rst:77
 msgid ""
@@ -132,30 +159,36 @@ msgid ""
 " been started that aim to provide complete support for existing Bukkit "
 "plugins on top of Sponge."
 msgstr ""
+"Da Sponge Bukkit Plugins nicht direkt unterstützt haben sich Communityprojekte gebildet, "
+"deren Ziel es ist die Bukkit Plugins für Sponge verfügbar zu machen."
 
 #: ..\..\source\faq.rst:82
 msgid "But Forge doesn’t support unmodified vanilla clients?"
-msgstr ""
+msgstr "Aber Forge unterstützt doch garkeine nicht modifizierten Minecraft Clients?"
 
 #: ..\..\source\faq.rst:84
 msgid ""
 "At this time, yes, but LexManos has expressed plans in adding support for "
 "vanilla clients."
 msgstr ""
+"Zurzeit ja, aber LexMancs hat gesagt, dass die Entwickler eine Untersützung von nicht-"
+"modifizierten Clients planen und einbauen wollen."
 
 #: ..\..\source\faq.rst:88
 msgid "But Forge takes too long to update?"
-msgstr ""
+msgstr "Aber bei Forge dauert es so lange, bis Updates erscheinen?"
 
 #: ..\..\source\faq.rst:90
 msgid ""
 "With a large portion of the Minecraft community working together, we are "
 "sure we can help speed up things."
 msgstr ""
+"Mit der großen Minecraft Community die zusammenarbeitet, sind wir sicher, dass wir "
+"die Updateprozesse stark beschleunigen können."
 
 #: ..\..\source\faq.rst:94
 msgid "I haven't kept up, what happened to Bukkit?"
-msgstr ""
+msgstr "Ich habe nicht aufgepasst, was ist mit Bukkit passiert?"
 
 #: ..\..\source\faq.rst:96
 msgid ""
@@ -164,78 +197,85 @@ msgid ""
 "code, for Bukkit and its derivatives (Spigot, Cauldron) are no longer "
 "available."
 msgstr ""
+"Einer der Bukkitmitarbeiter hat einen DMCA Takedown (Rechtliche Klage) eingesendet um Bukkit "
+"zu entfernen. Er war dabei im Recht. Downloads, sowie der Sourcecode, für Bukkit "
+"und ähnliche (Spigot, Cauldron) sind nicht mehr verfügbar."
 
 #: ..\..\source\faq.rst:102
 msgid "Who?"
-msgstr ""
+msgstr "Wer?"
 
 #: ..\..\source\faq.rst:105
 msgid "Who is involved with this effort?"
-msgstr ""
+msgstr "Wer ist in diese Anstrenungen mit einbezogen?"
 
 #: ..\..\source\faq.rst:107
 msgid "sk89q (of WorldEdit/WorldGuard) - project lead"
-msgstr ""
+msgstr "sk89q (Macher von WorldEdit/WorldGuard) - Projektleiter"
 
 #: ..\..\source\faq.rst:108
 msgid "blood (of MCPC+/Cauldron) - project lead"
-msgstr ""
+msgstr "blood (Macher von MCPC+/Cauldron) - Projektleiter"
 
 #: ..\..\source\faq.rst:109
 msgid "LexManos (of Forge/FML/MCP)"
-msgstr ""
+msgstr "LexManos (Macher von Forge/FML/MCP)"
 
 #: ..\..\source\faq.rst:110
 msgid ""
 "Portions of the Spout team: Zidane, Raphfrk, DDoS, Sleaker, Owexz, "
 "Wulfspider"
 msgstr ""
+"Teile des Spoutteams: Zidane, Raphfrk, DDoS, Sleaker, Owexz, "
+"Wulfspider"
 
 #: ..\..\source\faq.rst:111
 msgid "Portions of the Flow team: kitskub"
-msgstr ""
+msgstr "Teile des Flowteams: kitskub"
 
 #: ..\..\source\faq.rst:112
 msgid "Portions from ForgeEssentials: AbrarSyed"
-msgstr ""
+msgstr "Teile des ForgeEssentialsteams: AbrarSyed"
 
 #: ..\..\source\faq.rst:113
 msgid "Other Bukkit Plugin developers: KHobbits, Elgarl, zml"
-msgstr ""
+msgstr "Andere Bukkit Plugin Entwickler: KHobbits, EdgarL, zml"
 
 #: ..\..\source\faq.rst:114
 msgid "Portions of the FTB team: progwml6"
-msgstr ""
+msgstr "Teile des FTBteams: progwml6"
 
 #: ..\..\source\faq.rst:115
 msgid "Glowstone: SpaceManiac"
-msgstr ""
+msgstr "Glowstone: SpaceManiac"
 
 #: ..\..\source\faq.rst:116
 msgid "Some previous contributors to Bukkit"
-msgstr ""
+msgstr "Einige frühere Mitarbeiter von Bukkit"
 
 #: ..\..\source\faq.rst:117
 msgid "Other people we have likely failed to mention"
-msgstr ""
+msgstr "Andere Leute, die wir vermutlich vergessen haben zu erwähnen."
 
 #: ..\..\source\faq.rst:119
 msgid "However, we are interested in talking with anyone who is able to help."
-msgstr ""
+msgstr "Jedoch sind wir sehr interessiert daran mit jedem zu reden, der möglicherweise helfen kann."
 
 #: ..\..\source\faq.rst:122
 msgid "How are decisions made?"
-msgstr ""
+msgstr "Wie werden Entscheidungen gefällt?"
 
 #: ..\..\source\faq.rst:124
 msgid ""
 "The project owners, **blood** and **sk89q**, after consulting with the "
 "community and other members when appropriate, will make the decisions."
 msgstr ""
+"Die Projektleiter, **blood*** und **sk89q**, nach Beratungen mit der Community "
+"und anderen Mitgliedern, wenn Angemessen, fällen Entscheidungen."
 
 #: ..\..\source\faq.rst:128
 msgid "Have you consulted the community?"
-msgstr ""
+msgstr "Habt ihr die Community befragt?"
 
 #: ..\..\source\faq.rst:130
 msgid ""
@@ -244,14 +284,18 @@ msgid ""
 "(on EsperNet) as well as the results of a survey. We have been collecting "
 "meeting notes and consensus on a Google document."
 msgstr ""
+"Ja! Da die Dinge sehr schnell gehen, sind wir sehr offen für Vorschläge. "
+"Viele unserer Entscheidungen basieren auf Entscheidungen von dem #nextstep IRC channel "
+"(auf EsperNet) sowie den Ergebnissen von Umfragen. Wir hatten Meetings und Einigkeiten von "
+"Umfragen in Google Dokumenten."
 
 #: ..\..\source\faq.rst:136
 msgid "Technical Questions"
-msgstr ""
+msgstr "Technische Fragen"
 
 #: ..\..\source\faq.rst:139
 msgid "Why not use a \"Wrapper\"-styled API?"
-msgstr ""
+msgstr "Warum nutzt ihr nicht eine \"Wrapper\"-styled API?"
 
 #: ..\..\source\faq.rst:141
 msgid ""
@@ -259,10 +303,13 @@ msgid ""
 "extremely limited in function, so plugins would only be able to do a "
 "fraction of what they are able to do now."
 msgstr ""
+"Ein Wrapper der lediglich mit Netzwerkpaketen und Commandblöcken arbeitet "
+"ist sehr limitiert in seinem Funktionsumfang. Viele Plugins würden dann nur "
+"einen winzigen Teil der Funktionen beinhalten."
 
 #: ..\..\source\faq.rst:146
 msgid "Why not build a standalone server?"
-msgstr ""
+msgstr "Warum entwickelt ihr nicht einen eigenständigen (und von Grund auf neu entwickelten) Server?"
 
 #: ..\..\source\faq.rst:148
 msgid ""
@@ -274,12 +321,19 @@ msgid ""
 " developers. None of us have the time to write a new server from scratch, "
 "and most of us have already seen Minecraft’s code in some form."
 msgstr ""
+"Das Nutzen von Produkten aus der Community macht es für uns schneller "
+"möglich eine Version fertig zu haben. Glowstone ist leider nicht frei von der EULA, da "
+"es nicht von Grund auf neu programmiert wurde. Jedoch sind andere Minecraft Server Softwares "
+"entweder nicht in Java, oder sie sind nicht so langlebig. Java ist für Spieler, Serverbesitzer und "
+"Entwickler die einfachste Lösung, da sie sich damit auskennen. "
+"Leider hat keiner von uns Zeit einen neuen Server von Grund auf zu programmieren."
 
 #: ..\..\source\faq.rst:158
 msgid ""
 "Doesn’t that mean that we will end up in this same situation again if we use"
 " proprietary code?"
 msgstr ""
+"Heißt das nicht, dass wir in der gleichen Situation wie Bukkit landen, wenn wir Code von anderen nutzen?"
 
 #: ..\..\source\faq.rst:160
 msgid ""
@@ -291,10 +345,16 @@ msgid ""
 "Mojang’s control, it is to our belief that they support modding and will "
 "continue to do so."
 msgstr ""
+"Es ist unserer Meinung nach von Mojang nicht gewünscht, dass das Minecraft "
+"Modding aufhört. Außerdem gingen die letzten Ereignisse nicht von ihnen aus, sondern "
+"Mitarbeiter von Bukkit, der nicht möchte, dass sein Code genutzt wird, da er unter der GPL "
+"Lizenz steht. Wenn wir keine GPL Lizenz nutzen, haben wir das Problem also nicht. "
+"Dies befreit uns allerdings nicht von der Kontrolle durch Mojang. Deshalb hoffen wir alle, "
+"dass Sie weitere an Minecraft Modding glauben und es gutheißen, sodass wir weiter machen können."
 
 #: ..\..\source\faq.rst:169
 msgid "Why not wait for the Official Minecraft API?"
-msgstr ""
+msgstr "Warum warten wir nicht auf die offizielle Minecraft Modding API?"
 
 #: ..\..\source\faq.rst:171
 msgid ""
@@ -305,20 +365,28 @@ msgid ""
 "community better. The API may be implemented on other server implementations"
 " and we encourage it."
 msgstr ""
+"Wir sind nicht sicher, wann diese erscheinen wird. Viele Leute können nicht warten. "
+"Wir können damit schneller fertig sein. Außer diesen drei Punkten sind wir als Community "
+"schneller fähig Updates zu machen, da wir zusammen arbeiten."
+"Vielleicht ermutigen wir Mojang auch mit unserer API und der guten Community dazu ihre API "
+"schneller fertig zu stellen. Wir werden sehen. "
 
 #: ..\..\source\faq.rst:179
 msgid "What license will Sponge be placed under?"
-msgstr ""
+msgstr "Unter welcher Lizenz wird Sponge stehen?"
 
 #: ..\..\source\faq.rst:181
 msgid ""
 "MIT, without a Contributor License Agreement. A Contributor License "
 "Agreement is not necessary and it may be a turn off to contributors."
 msgstr ""
+"MIT, ohne eine Mitarbeiter Lizenz Vereinbarung. Eine Mitarbeiter Lizenz "
+"Vereinbarung ist nicht notwendig und es ist vielleicht abschreckend für "
+"Mitarbeiter."
 
 #: ..\..\source\faq.rst:185
 msgid "Why not use Bukkit’s API?"
-msgstr ""
+msgstr "Warum benutzen wir nicht die Bukkit API?"
 
 #: ..\..\source\faq.rst:187
 msgid ""
@@ -329,10 +397,17 @@ msgid ""
 "Events, etc.? Yes. It should be fairly similar, and still afford you more "
 "power because you will have access to Forge."
 msgstr ""
+"Sie enthält GPL lizensierten Code, welcher der Grund dafür ist, warum wir "
+"in dieser Situation sind. Letztens, zumindest in den USA, haben die Bundesgerichte "
+"klargemacht, dass APIs unter Copyright stehen können."
+"(Neue Frage - Fehler in der Originalsprache)"
+"Wird die neue API so ähnlich wie Bukkit zu benutzen sein? Events, etc.?"
+"Ja. Es sollte sehr ähnlich sein, aber dennoch mehr bieten, da wir Zugriff auf "
+"Forge haben."
 
 #: ..\..\source\faq.rst:195
 msgid "Why SpoutAPI (+ Flow libs) versus Canary or other APIs?"
-msgstr ""
+msgstr "Warum SpoutAPI (+ Flow libs) gegen Canary oder andere APIs?"
 
 #: ..\..\source\faq.rst:197
 msgid ""
@@ -342,10 +417,13 @@ msgid ""
 " on API design. We will also use portions of flow’s libraries from "
 "http://github.com/flow."
 msgstr ""
+"Wir haben die SpoutAPI nur ausgewählt, da sie das Ergebnis der Umfrage war. "
+"Wir betten allerdings nicht die SpoutAPI in unser API Design ein. Wir werden Teile "
+"der Flow Bibilothek von http://github.com/flow nutzen."
 
 #: ..\..\source\faq.rst:204
 msgid "What about plugins that access ‘NMS’?"
-msgstr ""
+msgstr "Was ist mit Plugins die auf 'NMS' zugreifen?"
 
 #: ..\..\source\faq.rst:206
 msgid ""
@@ -354,10 +432,14 @@ msgid ""
 "risk of your plugin breaking as is the case here, but that is your "
 "prerogative."
 msgstr ""
+"Du wirst auf Interfaces von Forge zugreifen müssen, welche viel besser sind "
+"und deren Namen auch nicht 'verschleiert' sind. Dennoch wird das Zugreifen auf "
+"'NMS' die Wahrscheinlichkeit erhöhen, dass dein Plugin nicht mehr funktionieren könnte. "
+"Das ist deine Entscheidung und dein Problem."
 
 #: ..\..\source\faq.rst:212
 msgid "Will the new server be multi-threaded?"
-msgstr ""
+msgstr "Wird die Serversoftware multi-threaded sein?"
 
 #: ..\..\source\faq.rst:214
 msgid ""
@@ -365,46 +447,58 @@ msgid ""
 " Bukkit and Spigot was), but we are not writing a server from scratch, so we"
 " are not able to make substantial changes."
 msgstr ""
+"Es wir genauso multi-threaded sein wie Minecraft ist und Bukkit und Spigot es waren, "
+"aber wir schreiben den Server nicht von Grund auf neu, sodass wir dabei keine riesiegen "
+"Änderungen machen können."
 
 #: ..\..\source\faq.rst:219
 msgid "How will the new server perform in comparison with Spigot and Bukkit?"
-msgstr ""
+msgstr "Wie wird die Serverperformance im Vergleich zu Bukkit und Spigot sein?"
 
 #: ..\..\source\faq.rst:221
 msgid ""
 "We are currently investigating this, but we plan to reach or exceed "
 "performance of the other implementations given time."
 msgstr ""
+"Wir untersuchen das zurzeit, aber wir planen die Perfomance dieser "
+"zu erreichen oder sogar zu übertreffen."
 
 #: ..\..\source\faq.rst:225
 msgid "Will you be able to send mods from the server to the client?"
-msgstr ""
+msgstr "Wird es möglich sein Mods vom Server an den Client zu senden?"
 
 #: ..\..\source\faq.rst:227
 msgid ""
 "The general consensus is against this due to security concerns. Minecraft’s "
 "API does not plan to send mods (with executable code) to the client either."
 msgstr ""
+"Die Mehrheit ist dagegen, da dies viele Sicherheitsrisiken mit sich bringt. "
+"Minecrafts API plant auch nicht Mods sendbar zu machen."
 
 #: ..\..\source\faq.rst:232
 msgid "Will Bukkit plugins be supported, without modification?"
-msgstr ""
+msgstr "Werden Bukkit Plugins unterstützt, die nicht verändert wurden?"
 
 #: ..\..\source\faq.rst:234
 msgid ""
 "No, not natively, however members of the community have begun work on a "
 "Sponge plugin named Pore that acts as a bridge between the two APIs."
 msgstr ""
+"Nein, sie werden nicht unterstützt. Jedoch programmieren Mitglieder der Community "
+"viele Plugins zu einem Spongeplugin um. Außerdem haben einige ein Plugin namens Pore "
+"erstellt, welches eine Brücke zwischen der Sponge und Bukkit API bildet."
 
 #: ..\..\source\faq.rst:237
 msgid ""
 "For those unable to use it, we will be providing documentation and support "
 "for people looking to transition from Bukkit to Sponge entirely."
 msgstr ""
+"Für Leute, die dieses nicht verwenden können bieten wir eine Dokumentation und "
+"Unterstützung an, damit sie Bukkit Plugins auf Sponge verwenden können."
 
 #: ..\..\source\faq.rst:241
 msgid "Will I be able to keep my Bukkit worlds and data?"
-msgstr ""
+msgstr "Wird es möglich sein, dass ich meine Bukkitwelten und andere Daten behalten kann?"
 
 #: ..\..\source\faq.rst:243
 msgid ""
@@ -412,10 +506,13 @@ msgid ""
 "much data as possible. Plugins will likely create their own conversion "
 "process allowing you to keep homes, warps and other data."
 msgstr ""
+"Der Plan ist es, einen konvertierungs Prozess einzubauen, der deine Daten und Welten "
+"importiert. Plugins haben eventuell auch solch einen Prozess, um Homes, Warps und andere "
+"Daten behalten zu können. Dies hängt allerdings vom Entwickler ab."
 
 #: ..\..\source\faq.rst:248
 msgid "What about support for Scala, Groovy, and other JVM-based languages?"
-msgstr ""
+msgstr "Was ist mit Unterstützung für Scala, Groovy und andere JVM-basierte Sprachen?"
 
 #: ..\..\source\faq.rst:250
 msgid ""
@@ -423,32 +520,41 @@ msgid ""
 "programming languages (such as Lua) be supported? We will encourage other "
 "implementations but it will not be a high priority."
 msgstr ""
+"Wir setzen uns für andere Sprachen ein, aber Java wird unsere Hauptsprache bleiben. "
+"(Neue Frage - Fehler in der Originalsprache)"
+"Werden andere Programmiersprachen (wie Lua) unterstützt?"
+"Wir setzen uns dafür ein, aber es ist nicht von höchster Priorität."
 
 #: ..\..\source\faq.rst:255
 msgid "Will Glowstone be a part of this?"
-msgstr ""
+msgstr "Wird Glowstone ein Teil von Sponge sein?"
 
 #: ..\..\source\faq.rst:257
 msgid ""
 "We hope we can help SpaceManiac and the team implement the API. We also "
 "invite others to collaborate with us if they wish to."
 msgstr ""
+"Wir hoffen, dass wir SpaceManiac und dessen restlichen Team helfen können die API einzubauen. "
+"Wir werden außerdem andere Entwickler einladen mit uns zusammen zu arbeiten."
 
 #: ..\..\source\faq.rst:261
 msgid "I wish to help out."
-msgstr ""
+msgstr "Ich möchte gerne mithelfen!"
 
 #: ..\..\source\faq.rst:263
 msgid ""
 "We appreciate all offers of assistance. Please visit our volunteers portal:"
 msgstr ""
+"Wir schätzen dein Hilfsangebot sehr. Bitte besuche unsere Seite dafür:"
 
 #: ..\..\source\faq.rst:265
 msgid ":doc:`helping-out`"
-msgstr ""
+msgstr ":doc:`helping-out`"
 
 #: ..\..\source\faq.rst:267
 msgid ""
 "We apologise to anyone who did not receive a reply to earlier rounds of "
 "applications. The number of sumbissions was overwhelming, thank you all!"
 msgstr ""
+"Wir entschuldigen uns dafür, falls jemand keine Antwort auf frühere Bewerbungen "
+"bekommen hat. Die Anzahl der Einsendugen war sehr groß. Vielen Dank an euch alle!"
