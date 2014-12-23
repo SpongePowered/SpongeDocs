@@ -6,7 +6,7 @@ Minecraft, and consequently Sponge, has simple ban management to prevent unwante
 
 
 The ``/ban <name> [reason]`` command is a native Minecraft server function that bans player *name*.
-The complete list of banned players is available using the command ``banlist players``
+The complete list of banned players is available using the command ``/banlist players``
 
 
 It is also possible to ban any connections from a given IP address using ``/banip <address|name> [reason]``
