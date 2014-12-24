@@ -4,20 +4,20 @@ msgstr ""
 "Project-Id-Version: Sponge 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-12-03 18:37-0700\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2014-12-24 22:44+0100\n"
+"Last-Translator: Paul Vogel <evilcodes.dev@gmail.com>\n"
+"Language-Team: German <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ..\..\source\developers\plugin-lifecycle.rst:2
 msgid "Plugin Lifecycle"
-msgstr ""
+msgstr "Plugin Lebenszyklus"
 
 #: ..\..\source\developers\plugin-lifecycle.rst:5
 msgid "Loading and other pre-plugin events"
-msgstr ""
+msgstr "Laden und andere Vor-Plugin Events"
 
 #: ..\..\source\developers\plugin-lifecycle.rst:7
 msgid ""
@@ -29,18 +29,25 @@ msgid ""
 "Additionally, all lifecycle states are global: all plugins visible to each "
 "other in any manner must be transitioned through all stages at once."
 msgstr ""
+"Bevor ein eine Aktion eines Plugins eintritt überprüft der Plugin Loader "
+"alle Plugins, untersucht, ob alle Abhängigkeiten vorhanden sind und sortiert "
+"Plugins nach deren Abhängigkeitsreihenfolge. Alle Lebenszyklusevents sind für Plugins "
+"in der Reihenfolge gesetzt, dass das Plugin A, welches ein Plugin B benötigt, "
+"das Event erst dann bekommt, wenn das Plugin B mit seiner Arbeit mit diesem Event "
+"fertig ist. Außerdem sind alle Lebenszykluszustände öffentlich:  Alle Plugins die sichtbar "
+"für die anderen in irgendeiner Weise sind müssen alle Stationen auf einmal durchlaufen."
 
 #: ..\..\source\developers\plugin-lifecycle.rst:17
 msgid "Initalization states"
-msgstr ""
+msgstr "Initialisierungsstationen"
 
 #: ..\..\source\developers\plugin-lifecycle.rst:19
 msgid "All the initialization events will occur at most once."
-msgstr ""
+msgstr "Alle Initialisierungsevents werden auf einmal passieren."
 
 #: ..\..\source\developers\plugin-lifecycle.rst:22
 msgid "CONSTRUCTION"
-msgstr ""
+msgstr "AUFBAU"
 
 #: ..\..\source\developers\plugin-lifecycle.rst:23
 msgid ""
@@ -48,10 +55,13 @@ msgid ""
 "plugin are created. The primary 'state event' for this stage is the "
 "``@Plugin`` class constructor."
 msgstr ""
+"Während des Aufbaus wird eine ``@Plugin`` Klassen Instanz von jedem Plugin "
+"erstellt. Das erste 'Stationsevent' für diese Station ist der ``@Plugin`` "
+"Klassen Konstruktor."
 
 #: ..\..\source\developers\plugin-lifecycle.rst:28
 msgid "PRE_INITIALIZATION"
-msgstr ""
+msgstr "VORINITIALISIERUNG"
 
 #: ..\..\source\developers\plugin-lifecycle.rst:30
 msgid ""
@@ -60,10 +70,14 @@ msgid ""
 "plugin access to a default logger instance, as well as information on "
 "preferred configuration file locations."
 msgstr ""
+"Vorinitialisierung ist die Zeit in der ein Plugin alles macht um fertig für "
+"die Initialisierung zu sein. Das Vorinitialisierungsevent gibt dem Plugin "
+"Zugriff auf die standard Logger-Instanz, sowie Informationen über die "
+"Plätze der Konfigurationsdateien."
 
 #: ..\..\source\developers\plugin-lifecycle.rst:36
 msgid "INITIALIZATION"
-msgstr ""
+msgstr "INITIALISIERUNG"
 
 #: ..\..\source\developers\plugin-lifecycle.rst:37
 msgid ""
@@ -72,10 +86,14 @@ msgid ""
 "other registration or information that does not depend on other plugins or a"
 " running server instance should be handled at this stage."
 msgstr ""
+"Initialisierung ist die Station in der das Plugin mit der Arbeit, des es zum "
+"funktionieren braucht, fertig sein sollte. Globale Eventhandler und andere "
+"Registrationen oder Informationen, welche nicht auf anderen Plugins basieren, sowie "
+"das Laufen und nutzen einer Serverinstanz sollten hier behandelt werden."
 
 #: ..\..\source\developers\plugin-lifecycle.rst:44
 msgid "POST_INITIALIZATION"
-msgstr ""
+msgstr "NACHINITIALISIERUNG"
 
 #: ..\..\source\developers\plugin-lifecycle.rst:45
 msgid ""
@@ -83,20 +101,25 @@ msgid ""
 "plugin communication should occur. All plugins that provide an API should be"
 " ready to accept basic requests to their API by this stage."
 msgstr ""
+"Nach-Initialisierung ist die Station in der die Initialisierungsphase in die "
+"Plugin-Zu-Plugin Kommunikation übergehen sollte. Alle Plugins die eine API anbieten "
+"sollten nun soweit sein Anfragen an ihre API zu akzeptieren."
 
 #: ..\..\source\developers\plugin-lifecycle.rst:51
 msgid "LOAD_COMPLETE"
-msgstr ""
+msgstr "FERTIG MIT LADEN"
 
 #: ..\..\source\developers\plugin-lifecycle.rst:52
 msgid ""
 "All plugin initialization should be completed before this stage. At this "
 "point everything should be ready for a server instance to start."
 msgstr ""
+"Alles was mit Plugin Initialisierung zutun hat sollte nun beendet sein. "
+"Hier sollte nun alles soweit sein, dass die Serverinstanz komplett starten kann."
 
 #: ..\..\source\developers\plugin-lifecycle.rst:57
 msgid "Running states"
-msgstr ""
+msgstr "Laufende Stationen"
 
 #: ..\..\source\developers\plugin-lifecycle.rst:59
 msgid ""
@@ -104,45 +127,50 @@ msgid ""
 "SERVER_ABOUT_TO_START may follow from SERVER_STOPPED, and in the event of "
 "errors during any part of the process SERVER_STOPPED may occur immediately."
 msgstr ""
+"Diese Stationen können mehrmals in einem Laufvorgang vorkommen. "
+"SERVER_ABOUT_TO_START könnte von SERVER_STOPPED kommen und in einem Event "
+"Fehler während dem Teil des Prozesses, dass der Server gestoppt wird, auftreten."
 
 #: ..\..\source\developers\plugin-lifecycle.rst:65
 msgid "SERVER_ABOUT_TO_START"
-msgstr ""
+msgstr "SERVER_ABOUT_TO_START"
 
 #: ..\..\source\developers\plugin-lifecycle.rst:66
 msgid "The server instance exists, worlds are not yet loaded."
-msgstr ""
+msgstr "Die Serverinstanz existiert, die Welten wurden aber noch nicht geladen."
 
 #: ..\..\source\developers\plugin-lifecycle.rst:70
 msgid "SERVER_STARTING"
-msgstr ""
+msgstr "SERVER_STARTING"
 
 #: ..\..\source\developers\plugin-lifecycle.rst:71
 msgid "The server instance exists, worlds have been loaded."
-msgstr ""
+msgstr "Die Server Instanz existiert, die Welten wurden auch geladen."
 
 #: ..\..\source\developers\plugin-lifecycle.rst:75
 msgid "SERVER_STARTED"
-msgstr ""
+msgstr "SERVER_STARTED"
 
 #: ..\..\source\developers\plugin-lifecycle.rst:76
 msgid "(Appears to currently happen immediately following SERVER_STARTING?)"
-msgstr ""
+msgstr "(Erscheint derzeit direkt nach dem SERVER_STARTING Event und wird eventuell in Zukunft geändert.)"
 
 #: ..\..\source\developers\plugin-lifecycle.rst:79
 msgid "SERVER_STOPPING"
-msgstr ""
+msgstr "SERVER_STOPPING"
 
 #: ..\..\source\developers\plugin-lifecycle.rst:80
 msgid "Immediately following the final tick, prior to saving."
-msgstr ""
+msgstr "Tritt unmittelbar nach dem letzten Servertick auf, bevor gespeichert wird."
 
 #: ..\..\source\developers\plugin-lifecycle.rst:83
 msgid "SERVER_STOPPED"
-msgstr ""
+msgstr "SERVER_STOPPED"
 
 #: ..\..\source\developers\plugin-lifecycle.rst:84
 msgid ""
 "Server has been shutdown, possibly by a major error. No players are "
 "connected, no changes to the world will be saved."
 msgstr ""
+"Der Server wurde ausgeschaltet, möglicherweise durch einen großen Fehler. "
+"Keine Spieler sind verbunden, keine Änderungen in der Welt werden gespeichert."
