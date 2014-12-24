@@ -52,6 +52,13 @@ see if there is some locked up in other processes. You may need to kill
 frozen java processes, or restart your machine. Memory leaks sometimes
 occur with bugs in plugins, which can take time to isolate.
 
+**Still an issue?**: If you are still having issues despite the above and
+cannot increase the Heap Size. Check in your Task Manager to see if you are
+using all available Memory, if you are, the only solution is to add more RAM
+to your system. If there is still plenty of memory available, you are running
+32-bit Java. If you are using 32-bit Java, we reccommend an upgrade to 64-bit Java,
+provided that your Operating System is also 64-bit.
+
 Malformed Config File (eg. Bad Editing)
 ---------------------------------------
 
