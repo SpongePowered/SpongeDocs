@@ -4,16 +4,16 @@ msgstr ""
 "Project-Id-Version: Sponge 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-12-03 18:37-0700\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2014-12-24 23:04+0100\n"
+"Last-Translator: Paul Vogel <evilcodes.dev@gmail.com>\n"
+"Language-Team: German <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ..\..\source\developers\setting-up-workspace.rst:2
 msgid "Setting up your Workspace"
-msgstr ""
+msgstr "Aufsetzen deines Workspaces"
 
 #: ..\..\source\developers\setting-up-workspace.rst:4
 msgid ""
@@ -21,24 +21,29 @@ msgid ""
 "http://repo.spongepowered.org/Sponge/maven/. All sponge artifacts are under "
 "the group ID of ``org.spongepowered``."
 msgstr ""
+"Das Sponge Maven Repositorium ist auf "
+"http://repo.spongepowered.org/Sponge/maven/ zu finden. Alle Sponge Artefakte werden "
+"unter der Gruppen ID von ``org.spongepowered`` zu finden sein."
 
 #: ..\..\source\developers\setting-up-workspace.rst:7
 msgid "Artifact IDs are as follows:"
-msgstr ""
+msgstr "Artefakt IDs sind die folgenden:"
 
 #: ..\..\source\developers\setting-up-workspace.rst:9
 msgid "the API: ``spongeapi``"
-msgstr ""
+msgstr "die API: ``spongeapi``"
 
 #: ..\..\source\developers\setting-up-workspace.rst:10
 msgid "the forge based implementation: ``sponge``"
-msgstr ""
+msgstr "die Forge-basierte Einbettung: ``sponge``"
 
 #: ..\..\source\developers\setting-up-workspace.rst:12
 msgid ""
 "Sponge plugins can be compiled with `Gradle <http://gradle.org>`__ or `Maven"
 " <http://maven.apache.org>`__."
 msgstr ""
+"Sponge Plugins können mit `Gradle <http://gradle.org>`__ oder `Maven"
+" <http://maven.apache.org>`__ compiled werden."
 
 #: ..\..\source\developers\setting-up-workspace.rst:14
 msgid ""
@@ -46,29 +51,34 @@ msgid ""
 "ForgeGradle plugin can allow testing of Sponge inside Eclipse or Intellij "
 "IDEA development environments."
 msgstr ""
+"Das Sponge Team empfiehlt die Benutung von Gradle, da das ForgeGradle "
+"Plugin vom Forge Team ein Testen von Sponge innerhalb von Eclipse oder "
+"IntelliJ IDEA ermöglicht."
 
 #: ..\..\source\developers\setting-up-workspace.rst:16
 msgid "Development builds use the SNAPSHOT system"
-msgstr ""
+msgstr "Entwickler builds nutzen das SNAPSHOT System"
 
 #: ..\..\source\developers\setting-up-workspace.rst:18
 msgid ""
 "`Online Javadocs(Temporary link) "
 "<http://spongepowered.github.io/SpongeAPI/>`__"
 msgstr ""
+"`Online Javadocs(Temporärer link) "
+"<http://spongepowered.github.io/SpongeAPI/>`__"
 
 #: ..\..\source\developers\setting-up-workspace.rst:21
 msgid "Gradle"
-msgstr ""
+msgstr "Gradle"
 
 #: ..\..\source\developers\setting-up-workspace.rst:23
 msgid "Gradle users place the following in your build.gradle:"
-msgstr ""
+msgstr "Gradle Nutzer plazieren bitte das folgende in ihrer build.gradle Datei:"
 
 #: ..\..\source\developers\setting-up-workspace.rst:40
 msgid "Maven"
-msgstr ""
+msgstr "Maven"
 
 #: ..\..\source\developers\setting-up-workspace.rst:42
 msgid "Maven users place the following in your pom.xml:"
-msgstr ""
+msgstr "Maven Nutzer plazieren bitte das folgende in ihrer pom.xml Datei:"
