@@ -14,28 +14,14 @@ Prerequisites
 The setup required to develop plugins for Sponge is quite simple and requires three things.
 
 - Java JDK installed
-- Editor of your choice installed
+- IDE of your choice installed
 - git client installed
 
-Java JDK download
-~~~~~~~~~~~~~~~~~
+Java Development Kit
+~~~~~~~~~~~~~~~~~~~~
 
-Download the JDK from Oracle first.
+Full instructions and links are available at :doc:`../plugins/javadevkit`.
 
-We recommended that you first check that you only have one version of Java installed at any point in time.
-Please begin by uninstalling any old versions of Java you may have acquired in the past.
-
-Then visit this site: http://www.oracle.com/technetwork/java/javase/downloads/index.html
-
-Download and install the Java JDK. It's the upper blue button on the right-hand side of the main column.
-
-If you cannot find it, try this link for a direct Java 7 JDK download:
-http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html
-
-Make sure you install the JDK, not the JRE. The JDK, or Java Development Kit,
-contains crucial tools for creating Java applications.
-
-Let that install, then reboot your PC.
 
 IDE Download
 ~~~~~~~~~~~~
@@ -144,7 +130,7 @@ Once JAVA_HOME is set then we can run gradle to setup the workspace:
 This process will do several things:
 
 It will download jar files that are required for Sponge to build.
-It will download Forge which is required for Sponge to build.
+It will download Forge which is also required for Sponge to build.
 
 (remember we're building Sponge, not plugins for Sponge)
 
