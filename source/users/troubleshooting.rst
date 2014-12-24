@@ -14,15 +14,7 @@ it. If you haven't done so already, we recommend reading :doc:`bukkit`.
 Java Is Not Installed On Your Computer
 --------------------------------------
 
-**Solution**: Download and install the latest version of the  Java Runtime
-Environment (JRE) available for your operating system. Sponge (and Minecraft)
-are built on Java 6, however you are recommended and encouraged to use Java 7.
-Java 8 does not currently have widespread usage so installing it is not recommended.
-Oracle Java is a good option for most Operating Systems.
-If you are running a 64-bit Operating System, use 64-bit Java.
-
--  `Java 7 <https://java.com/en/download/manual_java7.jsp>`__
--  `Java 8 <https://java.com/en/download/manual.jsp>`__
+**Solution**: Get Java. Visit the :doc:`java` for more information.
 
 Network Connection Failure (or DDoS Attack)
 -------------------------------------------
