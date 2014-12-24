@@ -19,6 +19,10 @@ Environment (JRE) available for your operating system. Sponge (and Minecraft)
 are built on Java 6, however you are recommended and encouraged to use Java 7.
 Java 8 does not currently have widespread usage so installing it is not recommended.
 Oracle Java is a good option for most Operating Systems.
+If you are running a 64-bit Operating System, use 64-bit Java.
+
+-  `Java 7 <https://java.com/en/download/manual_java7.jsp>`__
+-  `Java 8 <https://java.com/en/download/manual.jsp>`__
 
 Network Connection Failure (or DDoS Attack)
 -------------------------------------------
@@ -29,9 +33,10 @@ absent.
 **Solutions**: Check your connection to the modem or router. See if your
 browser has similar troubles. You can use a free service like
 speedtest.net to check your connection speed. Other services running on
-your computer or local network may the cause. A DDoS attack will
-probably completely kill your connectivity, and you should contact your
-ISP if you believe this to be the case.
+your computer or local network may the cause. 
+Make sure that you have enabled Port Forwarding on your router.
+A DDoS attack, while unlikely, will probably completely kill your connectivity,
+and you should contact your ISP if you believe this to be the case.
 
 Not Enough Free Memory
 ----------------------
