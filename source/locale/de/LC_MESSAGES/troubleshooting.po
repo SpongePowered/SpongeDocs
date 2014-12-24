@@ -4,16 +4,16 @@ msgstr ""
 "Project-Id-Version: Sponge 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-12-03 18:37-0700\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2014-12-25 00:19+0100\n"
+"Last-Translator: Paul Vogel <evilcodes.dev@gmail.com>\n"
+"Language-Team: German <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ..\..\source\troubleshooting.rst:2
 msgid "Troubleshooting"
-msgstr ""
+msgstr "Fehlerbehebung"
 
 #: ..\..\source\troubleshooting.rst:4
 msgid ""
@@ -21,10 +21,13 @@ msgid ""
 "Let's see if we can figure out what it was, and what to do about it. If you "
 "haven't done so already, we recommend reading :doc:`bukkit-compatibility`."
 msgstr ""
+"Du bist vermutlich hier, da irgendetwas mit deinem Sponge Server schief gegangen ist. "
+"Lass uns überprüfen ob wir herausfinden können, was und warum es schief gegangen ist. "
+"Falls du es nicht schon getan hast, empfehlen wir dir :doc:`bukkit-compatibility` zu lesen."
 
 #: ..\..\source\troubleshooting.rst:9
 msgid "Java is not installed on your Computer"
-msgstr ""
+msgstr "Java ist nicht auf deinem Computer installiert"
 
 #: ..\..\source\troubleshooting.rst:11
 msgid ""
@@ -35,15 +38,23 @@ msgid ""
 " it is not recommended. Oracle Java is a good option for most Operating "
 "Systems."
 msgstr ""
+"**Lösung**: Downloade und installiere die neueste Version der Java Runtime "
+"Environment (JRE), welche für dein Betriebssystem verfügbar ist. Sponge (und "
+"Minecraft) sind auf Java 6 aufgebaut, trotzdem empfehlen wir dir Java 7 zu nutzen. "
+"Java 8 ist derzeit nicht weit verbreitet und enthält eventuell ein paar kleinere Fehler, "
+"weshalb wir dir die Benutzung davon nicht empfehlen. "
+"Java von Oracle zu beziehen ist, in den meisten Fällen, die beste Entscheidung."
 
 #: ..\..\source\troubleshooting.rst:18
 msgid "Network connection failure (or DDoS attack)"
-msgstr ""
+msgstr "Netzwerk Verbindung fehlgeschlagen (oder DDoS Attacke)"
 
 #: ..\..\source\troubleshooting.rst:20
 msgid ""
 "**Symptoms**: Network connection is very laggy, drops in and out, or absent."
 msgstr ""
+"**Symptome**: Deine Internetverbindung ist sehr langsam, geht an und aus oder "
+"fehlt sogar ganz."
 
 #: ..\..\source\troubleshooting.rst:23
 msgid ""
@@ -54,16 +65,25 @@ msgid ""
 "your connectivity, and you should contact your ISP if you believe this to be"
 " the case."
 msgstr ""
+"**Lösung**: Überprüfe deine Verbindung zum Modem bzw. Router. Checke ob dein "
+"Browser gleiche Probleme hat. Du kannst kostenlose Services wie speedtest.net "
+"nutzen um deine Verbindungsgeschwindigkeit zu testen. Andere Programme, die auf "
+"deinem PC oder in deinem Netzwerk laufen könnten das Problem sein. Eine DDoS Attacke "
+"würde vermutlich deine komplette Internetverbindung unterbrechen und du solltest auf "
+"jeden Fall deinen Provider kontaktieren, wenn du dir 100% sicher bist, dass es "
+"sich um eine DDoS Attacke handelt."
 
 #: ..\..\source\troubleshooting.rst:31
 msgid "Not enough free memory"
-msgstr ""
+msgstr "Nicht genug freien Arbeits-Speicher"
 
 #: ..\..\source\troubleshooting.rst:33
 msgid ""
 "**Symptoms**: Server crashes, often accompanied with \"Out of Memory\" "
 "messages."
 msgstr ""
+"**Symptome**: Server crasht, oft begleitet von \"Out of Memory\" "
+"Nachrichten."
 
 #: ..\..\source\troubleshooting.rst:36
 msgid ""
@@ -75,10 +95,18 @@ msgid ""
 "processes, or restart your machine. Memory leaks sometimes occur with bugs "
 "in plugins, which can take time to isolate."
 msgstr ""
+"**Lösung**: Erweitere deinen maximalen Arbeits-Speicher für Sponge indem du das "
+"Startup Argument `-XX:MaxPermSize=128`` ersetzt mit einem Argument wie ``-Xms1024M`` "
+"(für 1GB Arbeits-Speicher) oder ``-Xmx2048M`` (für 2GB Arbeits-Speicher). Kontrollier "
+"den freien Arbeitsspeichers deines PCs und schau nach ob nicht irgendwelche Prozesse "
+"laufen, die viel Arbeits-Speicher ziehen. Vielleicht musst du auch eingefrorene Java "
+"Prozesse beenden oder sogar deinen PC neustarten, damit du wieder freien Arbeits-Speicher "
+"hast. Einige Speicherprobleme können in Plugins auftreten. Allerdings wird es eventuell "
+"lange dauern bis diese behoben werden können."
 
 #: ..\..\source\troubleshooting.rst:45
 msgid "Malformed config file (eg. bad editing)"
-msgstr ""
+msgstr "Falsch geformte Konfigurationsdatei (z.B. durch falsches Beabeiten)"
 
 #: ..\..\source\troubleshooting.rst:47
 msgid ""
@@ -86,6 +114,10 @@ msgid ""
 "ways. The server log files will contain messages about unreadable files on "
 "startup. The server may crash, and data may be corrupted."
 msgstr ""
+"**Symptome**: Ein (oder mehrere) Plugin(s) laden nicht oder verhalten sich "
+"komplett anders als erwartet. Die Server Protokoll Datei wird mit Sicherheit "
+"Nachrichten über nicht lesbare Dateien enthalten. Der Server könnte eventuell "
+"crashen oder Dateien könnten beschädigt sein / werden."
 
 #: ..\..\source\troubleshooting.rst:52
 msgid ""
@@ -93,10 +125,14 @@ msgid ""
 "files of any corrupted data. You may need to delete a config file entirely "
 "and allow it to regenerate server startup."
 msgstr ""
+"**Lösung**: Stopp den Server und überprüfe deine bearbeiteten Dateien. "
+"Lade Backupdateien der kaputt gegangenen Dateien. Du musst eventuell sogar "
+"eine Konfigurationsdatei löschen um dem Server / Plugin es zu gestatten eine "
+"neue zu generieren."
 
 #: ..\..\source\troubleshooting.rst:57
 msgid "A plugin (or mod) has malfunctioned"
-msgstr ""
+msgstr "Ein Plugin (Oder Mod) hat eine Fehlfunktion"
 
 #: ..\..\source\troubleshooting.rst:59
 msgid ""
@@ -104,6 +140,9 @@ msgid ""
 "the X-factor. Commonly the server crashes with a train of error messages in "
 "the server log files."
 msgstr ""
+"**Symptome:** Das könnte fast alles sein - egal was deine Plugins tun. "
+"Normalerweise crasht der Server mit sehr vielen Fehlermeldungen in den "
+"Protokolldateien des Servers."
 
 #: ..\..\source\troubleshooting.rst:63
 msgid ""
@@ -114,16 +153,26 @@ msgid ""
 "of date - check for updates. Plugin conflict may also be the cause, having "
 "two incompatible plugins."
 msgstr ""
+"**Lösung**: Stop den Server und überprüfe ob nichts defekt ist. "
+"Stell sicher, dass es sich nicht um eine falsch bearbeitete Konfigurationsdatei "
+"handelt (Siehe oben). Entfern Plugins und füg sie nach und nach wieder hinzu - "
+"starte dazu den Server nach jedem Mal neu. Das Problem könnte bei einem "
+"Plugin liegen, dass nicht mehr aktuell ist - prüf ob Updates verfügbar sind. "
+"Plugin Konflikte könnten auch das Problem sein - prüf ob alle Plugins miteinander "
+"kompatibel sind."
 
 #: ..\..\source\troubleshooting.rst:71
 msgid "Operating System is unstable (eg. Virus infection)"
-msgstr ""
+msgstr "Betriebssystem ist instabil (z.B. durch eine Virus Infektion)"
 
 #: ..\..\source\troubleshooting.rst:73
 msgid ""
 "**Symptom**: The server keeps crashing or timing out, and other parts of "
 "your operating system are also having problems."
 msgstr ""
+"**Symptome**: Der Server crasht andauernd oder bekommt time outs. Andere "
+"Teile deines Betriebssystems haben ebenfalls Probleme und funktionieren "
+"nicht einwandfrei."
 
 #: ..\..\source\troubleshooting.rst:76
 msgid ""
@@ -134,16 +183,24 @@ msgid ""
 "the hardware for damage too if the problems persist - eg. a faulty power "
 "supply."
 msgstr ""
+"**Lösung**: Stopp alles. Prüf gründlich dein System und deine Festplatte "
+"auf Viren. Gute Werkzeuge dafür sind z.B. AdwCleaner, Junkware Removal Tool, "
+"MalwareBytes und viele Antivirusprogramme. Prüf deine Serverdateien und "
+"check ob nicht eine davon kaputt ist. Start dein System neu. "
+"Untersuch deine Hardware auf Schäden falls das Problem weiterhin besteht "
+"(z.B. zu wenig Strom / Kaputtes Netzkabel)."
 
 #: ..\..\source\troubleshooting.rst:84
 msgid "Corrupted Data"
-msgstr ""
+msgstr "Beschädigte Dateien"
 
 #: ..\..\source\troubleshooting.rst:86
 msgid ""
 "**Symptom**: World files fail to load or cause server to crash when players "
 "enter certain chunks. Database corruption."
 msgstr ""
+"**Symptome**: Weltdateien können nicht geladen werden und der Server crasht "
+"wenn Spieler bestimmte Chunks betregen. Deine Datenbank ist beschädigt."
 
 #: ..\..\source\troubleshooting.rst:89
 msgid ""
@@ -153,16 +210,23 @@ msgid ""
 "driver, power failure or something else? Always make sure you make regular "
 "backups of important data onto a secure device."
 msgstr ""
+"**Lösung**: Lad ein Backup deiner kaputten Dateien. Außerdem gibt es Software "
+"die kaputte Welten reparieren kann und zerstörte Regionen neu generieren kann. "
+"Untersuch den Grund der Zerstörung - War es ein kaputtes Plugin, der Datenbank "
+"Treiber, zu wenig Strom oder irgendetwas anderes? "
+"Stell immer sicher, dass du genug Backups auf einer zweiten Festplatte hast!"
 
 #: ..\..\source\troubleshooting.rst:96
 msgid "Problem between keyboard and chair"
-msgstr ""
+msgstr "Probleme zwischen Tastatur und Stuhl."
 
 #: ..\..\source\troubleshooting.rst:98
 msgid ""
 "**Symptom**: Everything was working fine yesterday. It went strange today "
 "after I did XYX ..."
 msgstr ""
+"**Symptome**: Gestern hat alles noch gut funktioniert. Es wurde heute alles "
+"total komisch nachdem ich XYZ gemacht habe..."
 
 #: ..\..\source\troubleshooting.rst:101
 msgid ""
@@ -172,16 +236,23 @@ msgid ""
 "could have affected the smooth running of your server. A memory card may be "
 "loose after dusting, a shortcut may be broken..."
 msgstr ""
+"**Lösung**: Diese Wikiseite ist nicht groß genug um alle Sachen zu umfassen, "
+"die Menschen tun könnten um Software so zu verändern, dass sie nicht mehr "
+"richtig funktioniert. Es ist immer sehr viel wert lange über etwas nachzudenken "
+"bevor man es tut. Vorallem wenn dein Server normalerweise problemlos läuft. "
+"Never touch a running System!"
 
 #: ..\..\source\troubleshooting.rst:108
 msgid "There is a bug in Sponge"
-msgstr ""
+msgstr "Es gibt da einen Fehler in Sponge"
 
 #: ..\..\source\troubleshooting.rst:110
 msgid ""
 "**Symptom**: None of the above apply, and it still doesn't work as it "
 "should."
 msgstr ""
+"**Symptome**: Keines der oben genannten Probleme trifft zu und es "
+"funktioniert immernoch nicht so wie es soll."
 
 #: ..\..\source\troubleshooting.rst:113
 msgid ""
@@ -189,11 +260,16 @@ msgid ""
 "issue tracker, remembering to include details of the version of Forge and "
 "Sponge you are using, and a link to the relevant server log file."
 msgstr ""
+"**Lösung**: Es ist Zeit für die harten Geschütze. Start eine Fehlermeldung "
+"beim Sponge Fehlerverfolgungssystem, aber denk dran alle Details (Version von "
+"Forge und Sponge) sowie Protokolldateien mit einzubinden."
 
 #: ..\..\source\troubleshooting.rst:118
 msgid "There is something wrong with the Universe"
-msgstr ""
+msgstr "Da ist etwas mit dem Universum falsch"
 
 #: ..\..\source\troubleshooting.rst:120
 msgid "We can't help you with this one. You're on your own."
 msgstr ""
+"Wir können dir damit leider nicht helfen. Hier bist du auf "
+"dich allein gestellt :-("
