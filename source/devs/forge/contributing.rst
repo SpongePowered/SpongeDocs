@@ -20,7 +20,7 @@ The setup required to develop plugins for Sponge is quite simple and requires th
 Java Development Kit
 ~~~~~~~~~~~~~~~~~~~~
 
-Full instructions and links are available at :doc:`../plugins/javadevkit`.
+Full instructions and links are available at :doc:`../../plugins/javadevkit`.
 
 
 IDE Download
