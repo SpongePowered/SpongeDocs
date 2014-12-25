@@ -4,16 +4,16 @@ msgstr ""
 "Project-Id-Version: Sponge 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-12-03 18:37-0700\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2014-12-24 23:12+0100\n"
+"Last-Translator: Paul Vogel <evilcodes.dev@gmail.com>\n"
+"Language-Team: German <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ..\..\source\sponge-developers\sponge-developers.rst:2
 msgid "Sponge developers"
-msgstr ""
+msgstr "Sponge Entwickler"
 
 #: ..\..\source\sponge-developers\sponge-developers.rst:4
 msgid ""
@@ -21,19 +21,22 @@ msgid ""
 "We welcome contributions, as long as they comply with our contribution "
 "guidelines."
 msgstr ""
+"Dieses Portal ist für diejenigen, die helfen wollen das Projekt zu erstellen, zu "
+"bearbeiten oder zu erweitern. Wir heißen alle Mithelfer willkommen, solange sie unseren "
+"Beitragsleitfäden entsprechen."
 
 #: ..\..\source\sponge-developers\sponge-developers.rst:7
 msgid ":doc:`contribution-guidelines`"
-msgstr ""
+msgstr ":doc:`contribution-guidelines`"
 
 #: ..\..\source\sponge-developers\sponge-developers.rst:8
 msgid ":doc:`project-layout`"
-msgstr ""
+msgstr ":doc:`project-layout`"
 
 #: ..\..\source\sponge-developers\sponge-developers.rst:9
 msgid ":doc:`workspace-setup`"
-msgstr ""
+msgstr ":doc:`workspace-setup`"
 
 #: ..\..\source\sponge-developers\sponge-developers.rst:10
 msgid ":doc:`implementation-guide`"
-msgstr ""
+msgstr ":doc:`implementation-guide`"

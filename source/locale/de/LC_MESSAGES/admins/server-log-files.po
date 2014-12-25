@@ -4,16 +4,16 @@ msgstr ""
 "Project-Id-Version: Sponge 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-12-03 18:37-0700\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2014-12-23 20:00+0100\n"
+"Last-Translator: Paul Vogel <evilcodes.dev@gmail.com>\n"
+"Language-Team: German <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ..\..\source\admins\server-log-files.rst:2
 msgid "Server log files"
-msgstr ""
+msgstr "Server Protokoll Dateien"
 
 #: ..\..\source\admins\server-log-files.rst:4
 msgid ""
@@ -21,16 +21,21 @@ msgid ""
 "the Forge server root folder. Logging is handled by log4j2, and the log file"
 " will include data from the Sponge coremod."
 msgstr ""
+"Minecraft Forge generiert ein Protokoll der Events in dem /logs Ordner des "
+"Forge-Hauptordners. Das Protokoll wird mit log4j2 erstellt und die Protokolldatei "
+"enthält alle Daten vom Sponge CoreMod."
 
 #: ..\..\source\admins\server-log-files.rst:7
 msgid ""
 "A Glowstone implementation of Sponge (if or when it exists) may do this "
 "differently."
 msgstr ""
+"Eine Glowstone Einbettung von Sponge (falls und wenn sie existiert) macht "
+"das eventuell anders."
 
 #: ..\..\source\admins\server-log-files.rst:11
 msgid "Including a log file in a bug report"
-msgstr ""
+msgstr "Einbettung einer Protokolldatei in eine Fehlermeldung"
 
 #: ..\..\source\admins\server-log-files.rst:13
 msgid ""
@@ -39,3 +44,7 @@ msgid ""
 " it to a file sharing service like pastebin or dropbox so it can be added to"
 " a post as a link."
 msgstr ""
+"Wenn du einen Fehler meldest ist es vielleicht notwendig, dass du relevante Protokolldateien "
+"die den Fehler enthalten mitsendest. Bitte stell sicher, dass du die richtige Datei nimmst, lad "
+"diese auf einen Upload-Dienst (wie Pastebin oder Dropbox) hoch und füge den Link zu deiner "
+"Fehlermeldung hinzu."

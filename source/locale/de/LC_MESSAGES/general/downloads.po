@@ -4,24 +4,27 @@ msgstr ""
 "Project-Id-Version: Sponge 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-12-03 18:37-0700\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2014-12-23 19:07+0100\n"
+"Last-Translator: Paul Vogel <evilcodes.dev@gmail.com>\n"
+"Language-Team: German <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ..\..\source\general\downloads.rst:2
 msgid "We apologise for the inconvenience"
-msgstr ""
+msgstr "Wir entschuldigen uns für die Unannehmlichkeiten"
 
 #: ..\..\source\general\downloads.rst:4
 msgid ""
 "There are no Downloads available here. Sponge, the Forge implementation of "
 "the Sponge API, has yet to be released."
 msgstr ""
+"Es gibt bisher keine verfügbaren Downloads. Sponge, die Forge Einbettung der "
+"Sponge API, wurde bisher nicht veröffentlicht."
 
 #: ..\..\source\general\downloads.rst:7
 msgid ""
 "Differences between builds of Sponge are listed in the :doc:`changelog`."
 msgstr ""
+"Unterschiede zwischen den builds von Sponge sind im :doc:`changelog` aufgelistet."
