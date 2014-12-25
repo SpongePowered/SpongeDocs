@@ -1,0 +1,265 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014, Sponge Contributors
+# This file is distributed under the same license as the Sponge package.
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: Sponge Docs\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-12-26 22:20\n"
+"PO-Revision-Date: 2014-12-26 01:05+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: French (http://www.transifex.com/projects/p/sponge-docs/language/fr/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+# 0bc9b20bd8e44053b6e1f1667fc67f90
+#: ../../source/devs/guidelines.rst:3
+msgid "Contribution Guidelines"
+msgstr ""
+
+# 9c15adb230a14206b6f26887b2f26ac8
+#: ../../source/devs/guidelines.rst:5
+msgid ""
+"We will always have a need for developers to help us improve SpongeAPI. "
+"There is no such thing as a perfect project and things can always be "
+"improved. If you are a developer and are interested in helping then please "
+"do not hesitate. Just make sure you follow our guidelines."
+msgstr ""
+
+# 7510083396a14b3fbb8c9d2cc97f8ea6
+#: ../../source/devs/guidelines.rst:8
+msgid "General steps"
+msgstr ""
+
+# 76f4967d863343959b308556f8b9d43c
+#: ../../source/devs/guidelines.rst:10
+msgid "Setup your workspace as described in :doc:`workspace`."
+msgstr ""
+
+# 139f9d5d475f4fd7bc59085fc9e0f860
+#: ../../source/devs/guidelines.rst:12
+msgid ""
+"Check for existing issues in the `SpongeAPI "
+"<https://github.com/SpongePowered/SpongeAPI/issues>`_ and `Sponge "
+"<https://github.com/SpongePowered/Sponge>`_ repositories. There is possibly "
+"someone else already working on the same thing. You can also check `issues "
+"marked with \"help wanted\" "
+"<https://github.com/SpongePowered/SpongeAPI/labels/help%20wanted>`_ for "
+"existing issues we need your help with."
+msgstr ""
+
+# 018f9374b3e74d9b8670902830fd2508
+#: ../../source/devs/guidelines.rst:15
+msgid ""
+"Please don't submit pull request for small changes under 20 lines. Instead, "
+"`join #spongedev on IRC (irc.esper.net) <TODO>`_ and we'll change it "
+"together with the other smaller changes."
+msgstr ""
+
+# b276b12a303746ea81d3f6aecea40567
+#: ../../source/devs/guidelines.rst:17
+msgid ""
+"If the issue requires a bigger change you may want to submit the issues "
+"without the necessary changes first, so we can confirm the issue and know "
+"that you're working on fixing it. You should also create a WIP (work in "
+"process) pull request prefixed with ``[WIP]`` early so we can already start "
+"reviewing them."
+msgstr ""
+
+# 92c56bec73bc4e40b8da5cb4c2c05b34
+#: ../../source/devs/guidelines.rst:19
+msgid "Fork the project, clone it and make your changes in an extra branch."
+msgstr ""
+
+# 084c4d6aef8d471799ff205228a857d5
+#: ../../source/devs/guidelines.rst:21
+msgid ""
+"Test your changes (make sure it compiles!), commit and push them to your "
+"fork."
+msgstr ""
+
+# 40bdf80ba597409d9a8a957f67a7ea47
+#: ../../source/devs/guidelines.rst:23
+msgid ""
+"Submit the pull request with a short summary what you've changed and why it "
+"should be changed in that way."
+msgstr ""
+
+# e746bbb237844e8194449937c5b2ba5a
+#: ../../source/devs/guidelines.rst:25
+msgid ""
+"If you make additional changes, push new commits to your branch. **Do not "
+"squash your changes**, that makes it extremely hard to see what you've "
+"changed compared to the previous version of your pull request."
+msgstr ""
+
+# f3e4abe69ab045e284562a784101d505
+#: ../../source/devs/guidelines.rst:28
+msgid "Code Style"
+msgstr ""
+
+# 2ee3864d6452457091ee752207d67dbc
+#: ../../source/devs/guidelines.rst:30
+msgid ""
+"We follow `Google's Java Style Guidelines <https://google-"
+"styleguide.googlecode.com/svn/trunk/javaguide.html>`_ with a few additions "
+"and modifications, which are described herein."
+msgstr ""
+
+# 97b3ef0136354573a43c6d0318728b3a
+#: ../../source/devs/guidelines.rst:33
+msgid ""
+"You can use our code styles for Eclipse or IntelliJ IDEA to let your IDE "
+"format the code correctly for you. See :doc:`workspace` for more "
+"information."
+msgstr ""
+
+# f6444adaef2b4d3b82b870e64f831e59
+#: ../../source/devs/guidelines.rst:35
+msgid "Line endings"
+msgstr ""
+
+# f86e8f7ca8ee4e4e970665c051fdb965
+#: ../../source/devs/guidelines.rst:37
+msgid "Use Unix line endings when committing (\\\\n)"
+msgstr ""
+
+# f65159afc7eb4a829ee0c3bb3ba866b9
+#: ../../source/devs/guidelines.rst:39
+msgid ""
+"Windows users of Git can do ``git config --global core.autocrlf true`` to "
+"let Git convert them automatically"
+msgstr ""
+
+# 2a373136cbe7481b988a58b241b75ffb
+#: ../../source/devs/guidelines.rst:41
+msgid "Column width"
+msgstr ""
+
+# 58ec6943dc9b451c91fa8c21fc376198
+#: ../../source/devs/guidelines.rst:43
+msgid "80 for Javadocs"
+msgstr ""
+
+# f3967080ad734092ae1a1d5aee51b921
+#: ../../source/devs/guidelines.rst:44
+msgid "150 for code"
+msgstr ""
+
+# a3eb84cfcd3943748e40244fc65aede5
+#: ../../source/devs/guidelines.rst:45
+msgid "Feel free to wrap when it will help with readability"
+msgstr ""
+
+# 8fa99a633d2c4994b82312a8a6c8ea61
+#: ../../source/devs/guidelines.rst:47
+msgid "Indentation"
+msgstr ""
+
+# 15079abe606b476082eba6fac636df18
+#: ../../source/devs/guidelines.rst:49
+msgid "Use 4 spaces for indentations, do not use 2 spaces"
+msgstr ""
+
+# 3361b35ff1a1449ba15a7fe7316a9837
+#: ../../source/devs/guidelines.rst:51
+msgid "Vertical whitespace"
+msgstr ""
+
+# 3d299878d1e14da88191594497695334
+#: ../../source/devs/guidelines.rst:53
+msgid ""
+"Place a blank line before the first member of a class, interface, enum, etc."
+" (i.e. after ``class Example {``) as well as after the last member"
+msgstr ""
+
+# 03544c80da9b4c3399cf861d47ec2057
+#: ../../source/devs/guidelines.rst:55
+msgid "File headers"
+msgstr ""
+
+# 4151cd573d6f4c0c969fcc6292455a37
+#: ../../source/devs/guidelines.rst:57
+msgid ""
+"File headers must contain the license headers for the project. Use the "
+"``licenseFormat`` Gradle task to add them automatically."
+msgstr ""
+
+# 5f2e49c1150d451dbb1fec98bb3b94ba
+#: ../../source/devs/guidelines.rst:59
+msgid "Exceptions"
+msgstr ""
+
+# 9c77e6843f9f4ff6b8791a6025eea5ec
+#: ../../source/devs/guidelines.rst:61
+msgid ""
+"For exceptions that are to be ignored, name the exception variable "
+"``ignored``"
+msgstr ""
+
+# 566276cad9c34857b5f99b0e6ecf45f1
+#: ../../source/devs/guidelines.rst:63
+msgid "Javadocs"
+msgstr ""
+
+# 1e970d5691f04763a1671c0492df3ba7
+#: ../../source/devs/guidelines.rst:65
+msgid "Do not use ``@author``"
+msgstr ""
+
+# 1663a34e10d745c68f86c4d499da7e63
+#: ../../source/devs/guidelines.rst:66
+msgid "Wrap additional paragraphs in ``<p>`` and ``</p>``"
+msgstr ""
+
+# ea68bea16d9143af90e4484a0623da98
+#: ../../source/devs/guidelines.rst:67
+msgid ""
+"Capitalize the first letter in the descriptions within each \"at clause\", "
+"i.e. ``@param name Player to affect``, no periods"
+msgstr ""
+
+# b5c20bcdfb99459ba3dc50318d0b6e81
+#: ../../source/devs/guidelines.rst:70
+msgid "Code Conventions"
+msgstr ""
+
+# 9f3f4a821a784948a2dfef8361da5076
+#: ../../source/devs/guidelines.rst:72
+msgid ""
+"Use `Optionals <https://code.google.com/p/guava-"
+"libraries/wiki/UsingAndAvoidingNullExplained>`_ instead of returning "
+"``null`` in the API"
+msgstr ""
+
+# 7cc4377b77b0436e8e37f1c13379a66f
+#: ../../source/devs/guidelines.rst:73
+msgid ""
+"Method parameters accepting ``null`` must be annotated with ``@Nullable`` "
+"(from javax.*), all methods and parameters are ``@Nonnull`` by default."
+msgstr ""
+
+# 53a72e0576ec4b45ab90611dcffa2b1d
+#: ../../source/devs/guidelines.rst:74
+msgid ""
+"Use `Google Preconditions <https://code.google.com/p/guava-"
+"libraries/wiki/PreconditionsExplained>`_ for null- and argument checking."
+msgstr ""
+
+# 5b5a6408c9174629a05276d46355b22b
+#: ../../source/devs/guidelines.rst:77
+msgid "The Gist"
+msgstr ""
+
+# 4de43d438c724165ac32691438ca5fc1
+#: ../../source/devs/guidelines.rst:79
+msgid ""
+"While we urge that you read Google's Java conventions particularly, the two "
+"are fairly long documents. To get you started quickly, here is an example of"
+" properly formatted code:"
+msgstr ""

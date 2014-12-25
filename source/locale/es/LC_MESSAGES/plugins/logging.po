@@ -1,0 +1,62 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014, Sponge Contributors
+# This file is distributed under the same license as the Sponge package.
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: Sponge Docs\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-12-26 22:20\n"
+"PO-Revision-Date: 2014-12-26 01:06+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Spanish (http://www.transifex.com/projects/p/sponge-docs/language/es/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: es\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+# f5950977e49640c1992349d82acba26f
+#: ../../source/plugins/logging.rst:3
+msgid "Logging and Debug Messages"
+msgstr ""
+
+# 32f816943534418598f5c1706a746f16
+#: ../../source/plugins/logging.rst:5
+msgid ""
+"Java comes with a few logging frameworks. Logging is preferrable to printing"
+" to stdout (or stderr) with ``System.out.println()`` for a number of "
+"reasons:"
+msgstr ""
+
+# 11585eac486c40bc81f194988b638bf8
+#: ../../source/plugins/logging.rst:7
+msgid ""
+"Logged messages have a source name attached to them so it is possible to "
+"figure out where the logged messages are coming from."
+msgstr ""
+
+# cb9113b453f6485ba211858bffe1780e
+#: ../../source/plugins/logging.rst:8
+msgid ""
+"Logged messages have a severity level which allows for simple filtering "
+"(i.e. disable all non-critical notices)."
+msgstr ""
+
+# 15cab258028540b094f5aae6eddf2fb2
+#: ../../source/plugins/logging.rst:9
+msgid ""
+"The available logger frameworks allow you to enable or disable messages from"
+" certain sources."
+msgstr ""
+
+# 9f507c115b0b4f41b6be8fe061e8e63d
+#: ../../source/plugins/logging.rst:12
+msgid "Getting a Logger"
+msgstr ""
+
+# f2544e41545342ac95a7ed151f5fc4cc
+#: ../../source/plugins/logging.rst:15
+msgid "Emitting Messages"
+msgstr ""

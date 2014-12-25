@@ -1,0 +1,31 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014, Sponge Contributors
+# This file is distributed under the same license as the Sponge package.
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: Sponge Docs\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-12-26 22:20\n"
+"PO-Revision-Date: 2014-12-26 01:07+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Japanese (http://www.transifex.com/projects/p/sponge-docs/language/ja/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+# b4b343dcf4994623b8547c9a656b6141
+#: ../../source/porting/index.rst:3
+msgid "Porting to Other Platforms"
+msgstr ""
+
+# cf4a99ce34954b3db51d0ccb412b045a
+#: ../../source/porting/index.rst:5
+msgid ""
+"This section for those who wish to make the API available on other "
+"platforms. Right now, Sponge is officially for Minecraft Forge and "
+"eventually Glowstone."
+msgstr ""

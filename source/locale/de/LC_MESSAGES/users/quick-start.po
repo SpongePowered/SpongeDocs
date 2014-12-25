@@ -1,0 +1,118 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014, Sponge Contributors
+# This file is distributed under the same license as the Sponge package.
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: Sponge Docs\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-12-26 22:20\n"
+"PO-Revision-Date: 2014-12-26 01:07+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: German (http://www.transifex.com/projects/p/sponge-docs/language/de/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: de\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+# a4c9d88399dc4388b394467808447998
+#: ../../source/users/quick-start.rst:3
+msgid "Quick Start"
+msgstr ""
+
+# 6035796a18cf4b589c250e989a59de0e
+#: ../../source/users/quick-start.rst:6
+msgid ""
+"This quick start guide assumes that you want to use the Forge platform to "
+"run Sponge. See :doc:`the platforms page <platforms>` to see alternatives."
+msgstr ""
+
+# 6c09735c1dfd4cdca4e2424bbc927f69
+#: ../../source/users/quick-start.rst:9
+msgid ""
+"These instructions are subject to change until we are able to release Sponge"
+" for Forge."
+msgstr ""
+
+# ed59f8d0ad7645609ebaa515bcd3c9a2
+#: ../../source/users/quick-start.rst:12
+msgid "Single Player / LAN Server"
+msgstr ""
+
+# f46c23917bff4711b8d22152f9ed06ab
+#: ../../source/users/quick-start.rst:14
+msgid ""
+"Download the correct `Forge version for your MC version "
+"<http://files.minecraftforge.net/>`_."
+msgstr ""
+
+# 9e0ae81e445b446e99b4bb7279a96626
+#: ../../source/users/quick-start.rst:15
+msgid ""
+"Run the downloaded Forge installer and use it to create a new Forge profile "
+"in the Minecraft launcher."
+msgstr ""
+
+# 98a15632a8da4cd39023cae3c5d7d38f
+#: ../../source/users/quick-start.rst:16
+msgid ""
+"Open the Minecraft launcher and select the new Forge profile that was "
+"created."
+msgstr ""
+
+# 4658b0a01359463c9ad114e396ed44bb
+#: ../../source/users/quick-start.rst:17
+msgid "Click \"Options\" and then click \"Open Game Dir.\""
+msgstr ""
+
+# 6120ea8ce53249e3b4778d9670986108
+#: ../../source/users/quick-start.rst:18
+msgid ""
+"Download the `Sponge coremod <http://www.spongepowered.org>`_ and put it "
+"into the \"mods\" folder, creating the folder if it does not yet exist."
+msgstr ""
+
+# 04164fb5bf6347a49e1b7562f43f0580
+#: ../../source/users/quick-start.rst:22
+msgid "Dedicated Server"
+msgstr ""
+
+# 0543c5a32f4441728d973f3c3c22376a
+#: ../../source/users/quick-start.rst:25
+msgid "New Installation"
+msgstr ""
+
+# 615950ba324a4527b38752d89936e385
+#: ../../source/users/quick-start.rst:27
+msgid ""
+"Download the `Sponge server installer <http://www.spongepowered.org>`_."
+msgstr ""
+
+# c514539152dc4699803d458e89fd550a
+#: ../../source/users/quick-start.rst:28
+msgid ""
+"Either double click the installer to automatically download the required "
+"server files, or if you are on the command line or terminal, use ``java -jar"
+" installer.jar`` to download the files."
+msgstr ""
+
+# 2c28f3d1b0824b60bace218a84b22e2d
+#: ../../source/users/quick-start.rst:31
+msgid "Existing Forge Server"
+msgstr ""
+
+# b8fba7798f314b6eaf6939cfa6fdcc37
+#: ../../source/users/quick-start.rst:33
+msgid ""
+"If you already have a Forge server set up, get the `Sponge coremod "
+"<http://www.spongepowered.org>`_ and place it into your \"mods\" folder."
+msgstr ""
+
+# e568b4ef92e64f97a982bdefb8f3847e
+#: ../../source/users/quick-start.rst:37
+msgid ""
+"For new installations, you may need to manually configure :doc:`port-"
+"forwarding` on your router/modem to allow public access to your server."
+msgstr ""

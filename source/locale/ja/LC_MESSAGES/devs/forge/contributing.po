@@ -1,0 +1,389 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014, Sponge Contributors
+# This file is distributed under the same license as the Sponge package.
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: Sponge Docs\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-12-26 22:20\n"
+"PO-Revision-Date: 2014-12-27 06:27+0000\n"
+"Last-Translator: Max Ovsiankin <max@ovsankin.com>\n"
+"Language-Team: Japanese (http://www.transifex.com/projects/p/sponge-docs/language/ja/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+# 8553ff3fa9624389b17b792a2b49068d
+#: ../../source/devs/forge/contributing.rst:3
+msgid "Working on the Forge Mod"
+msgstr ""
+
+# f8596e598d234b67826d998212f5fd57
+#: ../../source/devs/forge/contributing.rst:12
+msgid "Prerequisites"
+msgstr ""
+
+# d0f6c510666e4f7e92f046a56462af98
+#: ../../source/devs/forge/contributing.rst:14
+msgid ""
+"The setup required to develop plugins for Sponge is quite simple and "
+"requires three things."
+msgstr ""
+
+# ba049ad0cd6f4605b6006d8b982ffc4b
+#: ../../source/devs/forge/contributing.rst:16
+msgid "Java JDK installed"
+msgstr ""
+
+# 05552ab3dba54d70911c777979fb5ac6
+#: ../../source/devs/forge/contributing.rst:17
+msgid "Editor of your choice installed"
+msgstr ""
+
+# 86c0ae3022794635b9fdae89b0a6e523
+#: ../../source/devs/forge/contributing.rst:18
+msgid "git client installed"
+msgstr ""
+
+# 44960882b2824eb1aa91dd2f0baf5595
+#: ../../source/devs/forge/contributing.rst:21
+msgid "Java JDK download"
+msgstr ""
+
+# 6f46a66d08fe43868d357e724c8318b6
+#: ../../source/devs/forge/contributing.rst:23
+msgid "Download the JDK from Oracle first."
+msgstr ""
+
+# 2edac1f49cc24694961accc213861196
+#: ../../source/devs/forge/contributing.rst:25
+msgid ""
+"We recommended that you first check that you only have one version of Java "
+"installed at any point in time. Please begin by uninstalling any old "
+"versions of Java you may have acquired in the past."
+msgstr ""
+
+# 026408fb34934ff898861877eb6812b9
+#: ../../source/devs/forge/contributing.rst:28
+msgid ""
+"Then visit this site: "
+"http://www.oracle.com/technetwork/java/javase/downloads/index.html"
+msgstr ""
+
+# 7c27f6d2b13747129c78c6ee4f444d0a
+#: ../../source/devs/forge/contributing.rst:30
+msgid ""
+"Download and install the Java JDK. It's the upper blue button on the right-"
+"hand side of the main column."
+msgstr ""
+
+# 78bef06357fd4599849b62a48b67ef92
+#: ../../source/devs/forge/contributing.rst:32
+msgid ""
+"If you cannot find it, try this link for a direct Java 7 JDK download: "
+"http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html"
+msgstr ""
+
+# c0482fa1d2da439c83c252477aadddfa
+#: ../../source/devs/forge/contributing.rst:35
+msgid ""
+"Make sure you install the JDK, not the JRE. The JDK, or Java Development "
+"Kit, contains crucial tools for creating Java applications."
+msgstr ""
+
+# 33a759b5e9214d6dba95cd9d338d942d
+#: ../../source/devs/forge/contributing.rst:38
+msgid "Let that install, then reboot your PC."
+msgstr ""
+
+# 644c254297a649ab8868f5e9192c3701
+#: ../../source/devs/forge/contributing.rst:41
+msgid "IDE Download"
+msgstr ""
+
+# 73651e10fd774755b74b6084d5cb6d32
+#: ../../source/devs/forge/contributing.rst:43
+msgid ""
+"The second main download you need to perform is getting your IDE "
+"(Interactive Development Environment)."
+msgstr ""
+
+# 5d2abd34d57a4772946d1d9374e5161f
+#: ../../source/devs/forge/contributing.rst:45
+msgid ""
+"There are two commercially available IDEs that we provide instructions for; "
+"Eclipse, and IntelliJ IDEA. Which one you choose is a matter of personal "
+"preference, and you might even prefer an IDE that isn't listed here. That's "
+"up to you."
+msgstr ""
+
+# 8fbad2ea424c4c679fc059b3fce958a0
+#: ../../source/devs/forge/contributing.rst:49
+msgid ""
+"You can download Eclipse here: https://eclipse.org/downloads/ (Choose "
+"\"Eclipse IDE for Java Developers\")"
+msgstr ""
+
+# 0ecc30c6487648fe9efd233b780392f7
+#: ../../source/devs/forge/contributing.rst:52
+msgid ""
+"You can download IntelliJ IDEA here: "
+"https://www.jetbrains.com/idea/download/ (Choose the \"Community Version\" "
+"unless you want to pay for the Ultimate Edition. You do not need the "
+"Ultimate Edition to develop plugins, as the Community Version still contains"
+" all the tools you need.)"
+msgstr ""
+
+# d6b551e92c64462aa992fdda20a56858
+#: ../../source/devs/forge/contributing.rst:57
+msgid "git Download"
+msgstr ""
+
+# cfe1d169413644e59653016c93dc855e
+#: ../../source/devs/forge/contributing.rst:59
+msgid "The download page for git is here:  http://git-scm.com/downloads"
+msgstr ""
+
+# 0779cfa8fc2e4ff99049556f320745b7
+#: ../../source/devs/forge/contributing.rst:61
+msgid ""
+"Make sure to install the appropriate version for your operating system."
+msgstr ""
+
+# cc99168d1358437c961d0dbf2c7e1eb0
+#: ../../source/devs/forge/contributing.rst:63
+msgid ""
+"Linux users, git will be available on your distro's package manager, usually"
+" under the name \"git\"."
+msgstr ""
+
+# 7b923fab0ebd4a7e90054c003af1e7c5
+#: ../../source/devs/forge/contributing.rst:65
+msgid "Install it like any other application, and reboot."
+msgstr ""
+
+# b7d139b3484f40b18548d890214be708
+#: ../../source/devs/forge/contributing.rst:68
+msgid "Running Gradle"
+msgstr ""
+
+# e510c1606fe646a6835dae25684c2c8a
+#: ../../source/devs/forge/contributing.rst:70
+msgid ""
+"Once these are downloaded, installed, and you've rebooted (again), then you "
+"can begin to setup the workspace specific for Sponge."
+msgstr ""
+
+# 65361d1b8a3245d9b4dae6af998ddda5
+#: ../../source/devs/forge/contributing.rst:72
+msgid ""
+"(We're going to assume that your `PATH` is correct as well, each operating "
+"system has its own way of specifying new directories to search for commands."
+" In Unix-based systems the environment variable is `$PATH`.  In Windows "
+"systems it is `%PATH%`%. It's advised to construct your profile in your "
+"system such that when you login to the computer, the `PATH` is setup "
+"correctly vs. manually updating the `PATH` before working with Sponge)"
+msgstr ""
+
+# 9269790e55544b8d9225438d0011fbd4
+#: ../../source/devs/forge/contributing.rst:74
+msgid ""
+"To get Sponge and built, now we need to use `git` and the tools we just "
+"downloaded:"
+msgstr ""
+
+# 066e8d7b639c4b8cb4765ffb93880e60
+#: ../../source/devs/forge/contributing.rst:76
+msgid "Before we begin with that, a few words of advice:"
+msgstr ""
+
+# 68c35ec168ef431abd9fef730115d0f4
+#: ../../source/devs/forge/contributing.rst:78
+msgid ""
+"Spaces in filenames are not ideal. Please do not use whitespace in "
+"filenames. As such, putting your repository into say, the Desktop, or in "
+"folders that contain whitespace filenames is a bad idea."
+msgstr ""
+
+# afc3db5805a24a8fb278d23bdf255f99
+#: ../../source/devs/forge/contributing.rst:82
+msgid "Keep the paths to your source tree as short as possible::"
+msgstr ""
+
+# bc69109ebc424c68b85e9889a0bb6792
+#: ../../source/devs/forge/contributing.rst:84
+msgid ""
+"Caveat - some users may prefer to hold their source trees in their user "
+"folders, or elsewhere on the system.  It's not required to keep the paths "
+"short, but it may help.  If you do not prefer to put things close to the "
+"root folder, then put the file tree anywhere you like.  It is up to you.  Be"
+" aware of path name length limits of your Operating System"
+msgstr ""
+
+# 3e8bb49053ec4706ac53bfdf748f2bd6
+#: ../../source/devs/forge/contributing.rst:88
+msgid "``C:\\> mkdir c:\\sp\\main`` ``C:\\> cd c:\\sp\\main``"
+msgstr ""
+
+# d0e38df994524913bc5acf46fce67518
+#: ../../source/devs/forge/contributing.rst:92
+msgid ""
+"Now you're ready to begin the process of getting Sponge sources and "
+"beginning to build it for the first time. Refer to the README.md page for "
+"the Sponge project for the most current version of instructions, but these "
+"steps are generally going to be the same throughout the development of "
+"Sponge::"
+msgstr ""
+
+# 952f97a3de4245689af8f29c32f2c227
+#: ../../source/devs/forge/contributing.rst:98
+msgid ""
+"That will create a clone of the Sponge project on your PC. The process will "
+"create the directory Sponge::"
+msgstr ""
+
+# 4416e610e0f849dfb6d65fdba574b672
+#: ../../source/devs/forge/contributing.rst:102
+msgid ""
+"We need to update the project by fetching the submodules linked to Sponge, "
+"namely the SpongeAPI module::"
+msgstr ""
+
+# a1666d59c645445ea8a8d3a312d840f3
+#: ../../source/devs/forge/contributing.rst:106
+msgid ""
+"There is a commit-hook that is used to process checkins to the repository, "
+"we need to put a copy of that hook in the `git` hooks folder::"
+msgstr ""
+
+# b8155285888842e5b8b97dd6b147b99a
+#: ../../source/devs/forge/contributing.rst:111
+msgid ""
+"(With Unix-based systems the command is just the same, but using cp and the "
+"path separators are /)::"
+msgstr ""
+
+# 963876f66d224966bef860a5281f30bd
+#: ../../source/devs/forge/contributing.rst:115
+msgid ""
+"At this point you can begin to setup the workspace with gradle (which you do"
+" NOT need to download or install)"
+msgstr ""
+
+# 7182271a124d4e18987fa1a18e71b7d0
+#: ../../source/devs/forge/contributing.rst:117
+msgid ""
+"The catch is that the gradle build process needs to be aware of the location"
+" of your Java compiler. So before running gradle for the first time to setup"
+" the workspace, we need to specify the environment variable ``JAVA_HOME``."
+msgstr ""
+
+# 78d22abbe7d549778949531360ee5d3b
+#: ../../source/devs/forge/contributing.rst:121
+msgid ""
+"``JAVA_HOME`` is an environment variable that is set in the shell. You can "
+"set this up once in your login process for your PC or manually set it each "
+"time you run gradle.  I prefer to put it into my per-login process so I "
+"don't need to manually set it."
+msgstr ""
+
+# d918bfabe2bd4a54b1f55d23f126c05b
+#: ../../source/devs/forge/contributing.rst:125
+msgid "``JAVA_HOME`` is a directory to where the JDK is installed:"
+msgstr ""
+
+# 4e99460b604a433db217d55db0031a5d
+#: ../../source/devs/forge/contributing.rst:127
+msgid ""
+"If you installed Java as shown above then the JAVA_HOME would be set like "
+"this::"
+msgstr ""
+
+# 976a24cde02b4ad583360b39923a3f1b
+#: ../../source/devs/forge/contributing.rst:131
+msgid ""
+"(jdk1.7.0.67 is the version I have at the moment, your version will differ "
+"if the download is recent)"
+msgstr ""
+
+# ef1ea441424a49658a04f80e0e05d23b
+#: ../../source/devs/forge/contributing.rst:133
+msgid "To see exactly what the version (path) is then just type::"
+msgstr ""
+
+# f9e4326af161458289f346dddcd2436d
+#: ../../source/devs/forge/contributing.rst:137
+msgid ""
+"and inspect the output for the name of the directory that contains the JDK."
+msgstr ""
+
+# d704bac31d474cd8a8cb1c01a13e351f
+#: ../../source/devs/forge/contributing.rst:140
+msgid "Once JAVA_HOME is set then we can run gradle to setup the workspace:"
+msgstr ""
+
+# 924355beab4a4699bf07b04f3ce11a5c
+#: ../../source/devs/forge/contributing.rst:142
+msgid "``C:\\> gradle setupDecompWorkspace --refresh-dependencies``"
+msgstr ""
+
+# 8131758c5b9b45fd8bb2902c609f7632
+#: ../../source/devs/forge/contributing.rst:144
+msgid "This process will do several things:"
+msgstr ""
+
+# 5e1d2f8a582b47c1bfea81fbf5b8ef5f
+#: ../../source/devs/forge/contributing.rst:146
+msgid ""
+"It will download jar files that are required for Sponge to build. It will "
+"download Forge which is required for Sponge to build."
+msgstr ""
+
+# 3d3e4119bbc14f08af2500182cf57519
+#: ../../source/devs/forge/contributing.rst:149
+msgid "(remember we're building Sponge, not plugins for Sponge)"
+msgstr ""
+
+# bfa91c7538314c3dac048d6f1e2bdc94
+#: ../../source/devs/forge/contributing.rst:151
+msgid ""
+"Sponge plugins DO NOT need Forge to build (nor should they ever need Forge "
+"to build)."
+msgstr ""
+
+# ccca2ddc8e5d4a548257c89eae7dcac3
+#: ../../source/devs/forge/contributing.rst:154
+msgid ""
+"This process will take a few minutes depending on your network connection.  "
+"It is a process that requires a network connection so be sure you are online"
+" for that step."
+msgstr ""
+
+# 40ed565bd166413e9746392a8896d2f4
+#: ../../source/devs/forge/contributing.rst:156
+msgid "At this point the output will end with a message like this::"
+msgstr ""
+
+# 3a83688ca6374874bb01829789429456
+#: ../../source/devs/forge/contributing.rst:194
+msgid "Next Steps"
+msgstr ""
+
+# 22c09d19a3d044939621dfacdf8ef923
+#: ../../source/devs/forge/contributing.rst:196
+msgid ""
+"From here you should follow the steps on the SpongePowered/Sponge README.md "
+"file to configure your IDE (Eclipse or IntelliJ) to import the Sponge "
+"Project and build/run the Sponge Artifact within the IDE."
+msgstr ""
+
+# 6bf56268bff14e9c8ea6b1a8ef2ef652
+#: ../../source/devs/forge/contributing.rst:199
+msgid ""
+"The next wiki article on :doc:`debugging` will explain how to setup your IDE"
+" to start, run and debug Sponge within the IDE."
+msgstr ""

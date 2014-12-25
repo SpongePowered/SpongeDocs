@@ -1,0 +1,60 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014, Sponge Contributors
+# This file is distributed under the same license as the Sponge package.
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: Sponge Docs\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-12-26 22:20\n"
+"PO-Revision-Date: 2014-12-26 01:07+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Portuguese (Portugal) (http://www.transifex.com/projects/p/sponge-docs/language/pt_PT/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: pt_PT\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+# 91eb69c8b38249728f52615186648939
+#: ../../source/users/config.rst:3
+msgid "Configuration"
+msgstr ""
+
+# dddd11a2da6240b49762a2942e4b47bb
+#: ../../source/users/config.rst:5
+msgid "You can find all configuration files inside the \"config\" folder."
+msgstr ""
+
+# 6d48b6dd30c64765aafcfdb010b9c389
+#: ../../source/users/config.rst:8
+msgid "Config Syntax"
+msgstr ""
+
+# 61a409b9d1ee4f679996aecdaaaff74b
+#: ../../source/users/config.rst:10
+msgid "Most configuration files will make use of the HOCON format."
+msgstr ""
+
+# eaa62fc1b92c4a679f71b3b28ad6ac82
+#: ../../source/users/config.rst:19
+msgid "What You Can Configure"
+msgstr ""
+
+# 4ddf5f1fc2504f94b70b25bea2eda90e
+#: ../../source/users/config.rst:28
+msgid ""
+"Plugins will also have their own configuration files in the \"config\" "
+"folder."
+msgstr ""
+
+# 1c9ddfcbd07142f6ad8d6fbeda0c7d0d
+#: ../../source/users/config.rst:31
+msgid ""
+"Changing a configuration file will not necessarily take effect right away if"
+" your game or server is currently running. Use the ``/sponge reloadconfig`` "
+"command to send a message to all plugins and Sponge to reload their "
+"configuration. However, you may need to restart your game or server for some"
+" changes to take effect."
+msgstr ""

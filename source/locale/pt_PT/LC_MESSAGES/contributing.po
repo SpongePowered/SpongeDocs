@@ -1,0 +1,71 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014, Sponge Contributors
+# This file is distributed under the same license as the Sponge package.
+# 
+# Translators:
+# Daniel Silva <daniel_p_silva_97@hotmail.com>, 2014
+msgid ""
+msgstr ""
+"Project-Id-Version: Sponge Docs\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-12-26 22:20\n"
+"PO-Revision-Date: 2014-12-27 06:51+0000\n"
+"Last-Translator: Daniel Silva <daniel_p_silva_97@hotmail.com>\n"
+"Language-Team: Portuguese (Portugal) (http://www.transifex.com/projects/p/sponge-docs/language/pt_PT/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: pt_PT\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+# 0eaa268977fc40c4b2fd5ee2721d92df
+#: ../../source/contributing.rst:3
+msgid "Contributing"
+msgstr "Contribuir"
+
+# f1c21897d4b54c5cb68eaff2be223760
+#: ../../source/contributing.rst:5
+msgid ""
+"We're really glad you're interested. Sponge is a huge undertaking, and will "
+"benefit from the wisdom of others. Here are some ways you can help the "
+"Sponge project:"
+msgstr "Ficamos felizes pelo seu interesse. O Sponge é um investimento enorme, que pode beneficiar do conhecimento de todos. Abaixo seguem algumas das formas de ajudar o projeto Sponge. "
+
+# d22c2119d7784125bd04cdee42b27537
+#: ../../source/contributing.rst:8
+msgid ""
+"Join the Sponge Forums. Read about the project and get to know the folk. "
+"Hang with the funky people."
+msgstr "Junte-se aos Fóruns Sponge. Leia acerca do projeto e conheça o pessoal envolvido. Conviva."
+
+# 0e10e5f9b4f04db7b46c788fdaa1bb9d
+#: ../../source/contributing.rst:9
+msgid "Create your own Sponge plugin. Attract attention with your mad skills."
+msgstr "Crie o seu próprio plugin para o Sponge. Atraia atenção com as suas capacidades."
+
+# 44bf417540214dfcb181166792b2be62
+#: ../../source/contributing.rst:10
+msgid ""
+"Volunteer to help with Sponge Documentation. Plan and submit a quality PR on"
+" GitHub."
+msgstr "Voluntarie-se para ajudar com a Documentação do Sponge. Planeie e submeta um *Pull Request* de qualidade no GitHub."
+
+# cb845b7becdf43928b6a2faafc83c84c
+#: ../../source/contributing.rst:11
+msgid ""
+"Volunteer to help with Sponge API development. Plan and submit a quality PR "
+"on GitHub."
+msgstr "Voluntarie-se para ajudar com o desenvolvimento do Sponge API. Planeie e submeta um *Pull Request* de qualidade no GitHub."
+
+# 450a759be32440e28b50a4155ee3c692
+#: ../../source/contributing.rst:12
+msgid ""
+"Volunteer to help with Sponge coremod development. Plan and submit a quality"
+" PR on GitHub."
+msgstr "Voluntarie-se para ajudar com o desenvolvimento do Sponge coremod. Planeie e submeta um *Pull Request* de qualidade no GitHub."
+
+# d2c9ea951bde48a2bcb1be9856e25b80
+#: ../../source/contributing.rst:13
+msgid ""
+"Donate to a starving developer. Sometimes they eat nothing but ramen..."
+msgstr "Doe a um desenvolvedor faminto. Às vezes eles só comem *ramen*..."

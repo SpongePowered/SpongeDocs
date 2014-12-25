@@ -1,0 +1,216 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014, Sponge Contributors
+# This file is distributed under the same license as the Sponge package.
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: Sponge Docs\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-12-26 22:20\n"
+"PO-Revision-Date: 2014-12-26 01:06+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: French (http://www.transifex.com/projects/p/sponge-docs/language/fr/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+# 552ddbb7bd98415ca44ca860ef8db24d
+#: ../../source/plugins/quick-start.rst:3
+msgid "Writing a Plugin"
+msgstr ""
+
+# 334c3d51586646de8f22bc7777ca7bbe
+#: ../../source/plugins/quick-start.rst:9
+msgid "Your Plugin Class"
+msgstr ""
+
+# 3fe463900380435aac1a74f9c91e1a78
+#: ../../source/plugins/quick-start.rst:11
+msgid ""
+"In order to make a plugin, you need to create a new class with a name of "
+"your choosing and in any package (that does **not** begin with "
+"org.spongepowered)."
+msgstr ""
+
+# 53cf40dbb1e84da0b1654c74d765c0be
+#: ../../source/plugins/quick-start.rst:13
+msgid ""
+"However, in order to make Sponge recognize your plugin, you need to affix a "
+"``@Plugin`` annotation to the class as illustrated below."
+msgstr ""
+
+# 336b70c4165c424d88414b12f0398316
+#: ../../source/plugins/quick-start.rst:26
+msgid ""
+"When loading your plugin .jar file, Sponge will find your plugin class "
+"automatically and load it."
+msgstr ""
+
+# a25af946c1c345338259ad648898afe1
+#: ../../source/plugins/quick-start.rst:28
+msgid ""
+"Be sure to also change the ID and name of your plugin, as well its version. "
+"The ID should be a simple identifier without special characters or spaces, "
+"as it is used for generating configuration files and letting users refer to "
+"your plugin by its ID."
+msgstr ""
+
+# 5ab545f93b6b4faeb0b5041c43f75de4
+#: ../../source/plugins/quick-start.rst:31
+msgid "Initializing Your Plugin"
+msgstr ""
+
+# fcc030a17bf34a8b940e5b5b1e0ff3d6
+#: ../../source/plugins/quick-start.rst:33
+msgid ""
+"Plugins are loaded before the game and worlds are loaded, so there is a "
+"specific time when you should start interacting with the game, registering "
+"commands, and performing other startup functions."
+msgstr ""
+
+# fb1ab2e49d9744b2ad4021b8213e85ac
+#: ../../source/plugins/quick-start.rst:35
+msgid ""
+"To be notified when the time is right, your plugin needs to listen to a "
+"particular *event*. Sponge comes with many events, but a few of these are "
+"called *state events* because they indicate changes in the state of the "
+"game. When you listen to an event, you create an *event handler*. This is "
+"illustrated below."
+msgstr ""
+
+# c323dd5cc7c54234bb33de1f265a3474
+#: ../../source/plugins/quick-start.rst:54
+msgid ""
+"The ``@Subscribe`` annotation tells Sponge that whenever the "
+"``ServerStartedEvent`` event occurs, the method *doThisOnServerStart* should"
+" be called (you are free to name the method however you like)."
+msgstr ""
+
+# b143c900decb4607a8300b390fd1b5f5
+#: ../../source/plugins/quick-start.rst:57
+msgid ""
+"Normally, in addition to marking your event handlers with ``@Subscribe``, "
+"you must also register your object with Sponge's event bus; however, your "
+"main plugin class is automatically registered."
+msgstr ""
+
+# aa176638bfd54e34b6b4e8cab458c06b
+#: ../../source/plugins/quick-start.rst:59
+msgid ""
+"If you need to register event handlers on another object, see :doc:`the "
+"event bus documentation <event-bus>`."
+msgstr ""
+
+# e7982fb505ed4fa7974322e4775926eb
+#: ../../source/plugins/quick-start.rst:62
+msgid "State Events"
+msgstr ""
+
+# 35237a1c8d4c48f698b630bd32e8034e
+#: ../../source/plugins/quick-start.rst:64
+msgid "There are two categories of state events:"
+msgstr ""
+
+# 5a112576b4b047dd88fee29da598750f
+#: ../../source/plugins/quick-start.rst:66
+msgid ""
+"**Initialization:** When Sponge and plugins are loading, before the actual "
+"game has started."
+msgstr ""
+
+# 3442a41625f94166a668ae8b992b2a52
+#: ../../source/plugins/quick-start.rst:67
+msgid "**Running:** When the game and world are loading."
+msgstr ""
+
+# b7dadffd4c7245a99b320439618c9b97
+#: ../../source/plugins/quick-start.rst:69
+msgid ""
+"The initialization events occur once each and occur in the following order:"
+msgstr ""
+
+# 2ba99610777e4e8799fa407238c7efb3
+#: ../../source/plugins/quick-start.rst:71
+msgid "**ConstructionEvent**: Fired when your plugin is constructed."
+msgstr ""
+
+# bf08dbdd0c064386912d58e63913f0da
+#: ../../source/plugins/quick-start.rst:72
+msgid ""
+"**PreInitializationEvent:** Fired when your plugin should be doing anything "
+"that should occur before the next step (initialization)."
+msgstr ""
+
+# 6c7cf66a95a949cc80706c1c61cbc3a3
+#: ../../source/plugins/quick-start.rst:73
+msgid ""
+"**InitializationEvent:** Fired when event handlers, services, commands, and "
+"other things should be registered with Sponge."
+msgstr ""
+
+# 53f846b684354918b238bedf1d88288d
+#: ../../source/plugins/quick-start.rst:74
+msgid ""
+"**PostInitializationEvent:** Fired when plugins should start asking each "
+"other for resources, including querying for services."
+msgstr ""
+
+# 67b85c3f45fd43bea463eee52db2d53a
+#: ../../source/plugins/quick-start.rst:75
+msgid ""
+"**LoadCompleteEvent:** Fired when everything should be loaded already and "
+"the game / server is ready to start."
+msgstr ""
+
+# 7f5be6336bcb40c3a7aa4493718f9138
+#: ../../source/plugins/quick-start.rst:77
+msgid "The running events may occur more than once:"
+msgstr ""
+
+# 9c0c4ef104a24e62a178d787256e78e9
+#: ../../source/plugins/quick-start.rst:79
+msgid ""
+"**ServerAboutToStartEvent:** Fired when the game / server is about to start "
+"and worlds have not yet been loaded."
+msgstr ""
+
+# 5166604ab3a649ae93855a3e2a1cd884
+#: ../../source/plugins/quick-start.rst:80
+msgid "**ServerStartingEvent:** Fired when worlds have been loaded."
+msgstr ""
+
+# ae395eb5ee50450e82171398491c699b
+#: ../../source/plugins/quick-start.rst:81
+msgid "**ServerStartedEvent:** Fired after the previous event."
+msgstr ""
+
+# f959fd527ab347b19d1b140d1dcac3ce
+#: ../../source/plugins/quick-start.rst:82
+msgid ""
+"**ServerStoppingEvent:** Fired right before the final tick and before a "
+"world save has occurred."
+msgstr ""
+
+# b1638582dec248c5869154fe21801b2e
+#: ../../source/plugins/quick-start.rst:83
+msgid ""
+"**ServerStoppedEvent:** Fired when the game / server has shutdown and no "
+"changes to the world will be committed to disk."
+msgstr ""
+
+# 9bc63f609cba488b9de2390665f9dea7
+#: ../../source/plugins/quick-start.rst:85
+msgid ""
+"It is possible for Sponge to skip directly to ServerStoppedEvent if a "
+"critical error occurs during loading."
+msgstr ""
+
+# 86eb4233a8734f019534bcd7030eb809
+#: ../../source/plugins/quick-start.rst:87
+msgid ""
+"For more information, see the :doc:`plugin lifecycle documentation <plugin-"
+"lifecycle>`."
+msgstr ""

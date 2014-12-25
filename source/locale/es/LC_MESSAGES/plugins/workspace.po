@@ -1,0 +1,89 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014, Sponge Contributors
+# This file is distributed under the same license as the Sponge package.
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: Sponge Docs\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-12-26 22:20\n"
+"PO-Revision-Date: 2014-12-27 06:27+0000\n"
+"Last-Translator: Max Ovsiankin <max@ovsankin.com>\n"
+"Language-Team: Spanish (http://www.transifex.com/projects/p/sponge-docs/language/es/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: es\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+# 0f6a624f3a084fceae3a9b30fdcb22e6
+#: ../../source/plugins/workspace.rst:3
+msgid "Setting Up Your Workspace"
+msgstr ""
+
+# 790fb434efa545588a7a2ea4b16c1c83
+#: ../../source/plugins/workspace.rst:6
+msgid "Installing the JDK"
+msgstr ""
+
+# f0d78a66af2d4cc5b1b1c2e31361d7ea
+#: ../../source/plugins/workspace.rst:8
+msgid "First and foremost, you need the Java Development Kit (JDK) installed."
+msgstr ""
+
+# a536d92324da4e90a2eecfe8bf98adf6
+#: ../../source/plugins/workspace.rst:11
+msgid ""
+"Oracle.com kindly provides free JDK dowmloads for `Java 7 "
+"<http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html>`__"
+" and `Java 8 "
+"<http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html>`__."
+" Java 6 is outdated and not recommended for use in development."
+msgstr ""
+
+# 06eed20f0c0c40eea3b8a8194b4457a5
+#: ../../source/plugins/workspace.rst:14
+msgid "Getting Started"
+msgstr ""
+
+# 70cd247265914945a8e762bab563c21a
+#: ../../source/plugins/workspace.rst:16
+msgid ""
+"You can choose to either start developing plugins by following instructions "
+"to set up an IDE or by creating a build script and going from there."
+msgstr ""
+
+# a1a6e266656845809fd7eea58a1452e4
+#: ../../source/plugins/workspace.rst:18
+msgid "We recommend starting with an IDE if you are not familiar with Java."
+msgstr ""
+
+# 32387f9674794cb3acd124353de6a0c7
+#: ../../source/plugins/workspace.rst:21
+msgid "Starting with an IDE"
+msgstr ""
+
+# 45d23d81da3a4738804559fb2f2ed08f
+#: ../../source/plugins/workspace.rst:23
+msgid ""
+"An IDE (integrated development environment) auto-completes names and is "
+"recommended for getting started with Sponge, though it is not required."
+msgstr ""
+
+# 4758cc9b9f094210abe92ef789117c46
+#: ../../source/plugins/workspace.rst:25
+msgid "We recommend using IntelliJ IDEA."
+msgstr ""
+
+# eaa6a4679c28499da35811de5fd06c60
+#: ../../source/plugins/workspace.rst:36
+msgid "Starting with a Build Script"
+msgstr ""
+
+# 2513242c56294e278b92edaa1721fd91
+#: ../../source/plugins/workspace.rst:38
+msgid ""
+"These instructions illustrate how one can build a build script to compile a "
+"Sponge plugin."
+msgstr ""

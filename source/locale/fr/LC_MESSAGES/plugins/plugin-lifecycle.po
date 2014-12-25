@@ -1,0 +1,176 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014, Sponge Contributors
+# This file is distributed under the same license as the Sponge package.
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: Sponge Docs\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-12-26 22:20\n"
+"PO-Revision-Date: 2014-12-26 01:06+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: French (http://www.transifex.com/projects/p/sponge-docs/language/fr/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+# fc58ec95c0664cfd9d95c817fe104af2
+#: ../../source/plugins/plugin-lifecycle.rst:3
+msgid "Plugin Lifecycle"
+msgstr ""
+
+# 63fa0b7afa204e18a89de4e06ca728b1
+#: ../../source/plugins/plugin-lifecycle.rst:5
+msgid ""
+"Prior to any plugin-visible states, the plugin loader finds the available "
+"plugins, determines if all dependencies are satisfied, and sorts plugins by "
+"dependency order. All lifecycle events are given to plugins in this order, "
+"such that plugin A containing \"[required-]after:B\" will get each event "
+"after plugin B has completed any work it is doing for that state. "
+"Additionally, all lifecycle states are global: all plugins visible to each "
+"other in any manner must be transitioned through all stages at once."
+msgstr ""
+
+# 2d99f25881bb430aa88cc63aed518fd2
+#: ../../source/plugins/plugin-lifecycle.rst:8
+msgid "Initalization States"
+msgstr ""
+
+# b7a388312a494f639df54879ac73dfca
+#: ../../source/plugins/plugin-lifecycle.rst:10
+msgid "All the initialization events will occur at most once."
+msgstr ""
+
+# 47271d8f56654b7e9f834509ee960197
+#: ../../source/plugins/plugin-lifecycle.rst:13
+msgid "CONSTRUCTION"
+msgstr ""
+
+# c956482c85d5415094034f7a3e371050
+#: ../../source/plugins/plugin-lifecycle.rst:14
+msgid ""
+"During the construction stage the ``@Plugin`` class instances for each "
+"plugin are created. The primary 'state event' for this stage is the "
+"``@Plugin`` class constructor."
+msgstr ""
+
+# 81ea9474197b4c99885d4b899ac6c923
+#: ../../source/plugins/plugin-lifecycle.rst:19
+msgid "PRE_INITIALIZATION"
+msgstr ""
+
+# ab52470f57094704913e4b430d058fe4
+#: ../../source/plugins/plugin-lifecycle.rst:21
+msgid ""
+"Pre-initialization is the time for a plugin to perform any actions it needs "
+"to get ready for initialization. The pre-initialization event gives the "
+"plugin access to a default logger instance, as well as information on "
+"preferred configuration file locations."
+msgstr ""
+
+# ea6baf36b3bc48459707080ce59424f9
+#: ../../source/plugins/plugin-lifecycle.rst:27
+msgid "INITIALIZATION"
+msgstr ""
+
+# 819219032b65496f9dd6ac2ba09facd5
+#: ../../source/plugins/plugin-lifecycle.rst:28
+msgid ""
+"Initialization is the stage where the plugin should finish any work it needs"
+" to do in order to be essentially functional. Global event handlers and any "
+"other registration or information that does not depend on other plugins or a"
+" running server instance should be handled at this stage."
+msgstr ""
+
+# 5cacbe68d31a47a7b1d44fb5ece55ad0
+#: ../../source/plugins/plugin-lifecycle.rst:35
+msgid "POST_INITIALIZATION"
+msgstr ""
+
+# 24caa70ed3a64859bc3174a6ff1a7791
+#: ../../source/plugins/plugin-lifecycle.rst:36
+msgid ""
+"Post-initialization is the stage where most initialization phase inter-"
+"plugin communication should occur. All plugins that provide an API should be"
+" ready to accept basic requests to their API by this stage."
+msgstr ""
+
+# 7078b697dd8241279b867fe492054cec
+#: ../../source/plugins/plugin-lifecycle.rst:42
+msgid "LOAD_COMPLETE"
+msgstr ""
+
+# 6e1bab45086c481187188d879f39183b
+#: ../../source/plugins/plugin-lifecycle.rst:43
+msgid ""
+"All plugin initialization should be completed before this stage. At this "
+"point everything should be ready for a server instance to start."
+msgstr ""
+
+# 3f0ebc9f25634ed3bb2bb92c6c5b4176
+#: ../../source/plugins/plugin-lifecycle.rst:48
+msgid "Running States"
+msgstr ""
+
+# 3026a504d2f4413e9c3f4fb82595f3af
+#: ../../source/plugins/plugin-lifecycle.rst:50
+msgid ""
+"These states can occur multiple times during a single run. "
+"SERVER_ABOUT_TO_START may follow from SERVER_STOPPED, and in the event of "
+"errors during any part of the process SERVER_STOPPED may occur immediately."
+msgstr ""
+
+# f195788bdd454f77a880006c48840f60
+#: ../../source/plugins/plugin-lifecycle.rst:56
+msgid "SERVER_ABOUT_TO_START"
+msgstr ""
+
+# 50d46afa677e4cf99ee8223e85785296
+#: ../../source/plugins/plugin-lifecycle.rst:57
+msgid "The server instance exists, worlds are not yet loaded."
+msgstr ""
+
+# 4de70cbb4fc8460d9cb7b6929817fcb3
+#: ../../source/plugins/plugin-lifecycle.rst:61
+msgid "SERVER_STARTING"
+msgstr ""
+
+# 5dbfe65df14849dc824897ce181ea672
+#: ../../source/plugins/plugin-lifecycle.rst:62
+msgid "The server instance exists, worlds have been loaded."
+msgstr ""
+
+# d3ab19c3963a427683f24768f5f2c6c5
+#: ../../source/plugins/plugin-lifecycle.rst:66
+msgid "SERVER_STARTED"
+msgstr ""
+
+# bca879f21b6a4dbdb29b43ff80bcf19c
+#: ../../source/plugins/plugin-lifecycle.rst:67
+msgid "(Appears to currently happen immediately following SERVER_STARTING?)"
+msgstr ""
+
+# e7933c1370be46bda76c73c98aa3bffc
+#: ../../source/plugins/plugin-lifecycle.rst:70
+msgid "SERVER_STOPPING"
+msgstr ""
+
+# fd76376be8764c8387c20bb0bc2b8f70
+#: ../../source/plugins/plugin-lifecycle.rst:71
+msgid "Immediately following the final tick, prior to saving."
+msgstr ""
+
+# b93e5424c2ce4829bf58513968d4618d
+#: ../../source/plugins/plugin-lifecycle.rst:74
+msgid "SERVER_STOPPED"
+msgstr ""
+
+# f88a086ab1c64f62a61823366c27a63e
+#: ../../source/plugins/plugin-lifecycle.rst:75
+msgid ""
+"Server has been shutdown, possibly by a major error. No players are "
+"connected, no changes to the world will be saved."
+msgstr ""

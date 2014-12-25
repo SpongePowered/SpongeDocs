@@ -1,223 +1,121 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014, Sponge Contributors
+# This file is distributed under the same license as the Sponge package.
 # 
+# Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: Sponge 0.0.1\n"
+"Project-Id-Version: Sponge Docs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-03 18:37-0700\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"POT-Creation-Date: 2014-12-26 22:20\n"
+"PO-Revision-Date: 2014-12-26 01:05+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language-Team: Japanese (http://www.transifex.com/projects/p/sponge-docs/language/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ..\..\source\index.rst:2
-msgid "Welcome to the Sponge documentation!"
+# 3d8d45e39d5249aa8bb6f1c77f4ef315
+#: ../../source/index.rst:3
+msgid "Sponge Documentation"
 msgstr ""
 
-#: ..\..\source\index.rst:4
-msgid "Contents:"
-msgstr ""
-
-#: ..\..\source\index.rst:17
+# 689109205001493a87ab4deb6ce8272e
+#: ../../source/index.rst:5
 msgid ""
-"**Sponge** is an all-new Minecraft modding API created by a team of top "
-"minds in both the server and client modding communities. The Sponge project "
-"welcomes new contributions from players and developers alike. The Sponge API"
-" will have an official Minecraft Forge-based implementation designed to be "
-"an easy-to-use addition to your server."
+"Welcome to the documentation for `Sponge <http://spongepowered.org>`__! "
+"Sponge lets people write self-contained mods for Minecraft that work even "
+"across major updates to Minecraft. The project is free to use and open "
+"source."
 msgstr ""
 
-#: ..\..\source\index.rst:23
+# e4548e92c12a4e778ebb60960ee94e11
+#: ../../source/index.rst:7
 msgid ""
-"Sponge will be available for free to both server owners and plugin "
-"developers at the Downloads page at :doc:`downloads`."
+"Sponge produces an \"API\" -- a standard way to write mods. However, the API"
+" is like the DVD standard, a DVD player is required to actually play the "
+"DVD. In our case, we both define the standard (the Sponge API) as well as "
+"provide one way to run Sponge plugins: on top of Minecraft Forge, which some"
+" people may already be familiar with."
 msgstr ""
 
-#: ..\..\source\index.rst:26
+# bc8debe1a81e41b6883ac87998421b2e
+#: ../../source/index.rst:9
+msgid "Some general issues are addressed in the :doc:`faq`"
+msgstr ""
+
+# 30e2d1a28d2b4b32ad7415e75eab20b2
+#: ../../source/index.rst:12
 msgid ""
-"*The Sponge API and its Forge implementation are still under development and"
-" not available at this time.*"
+"Sponge is currently in development as of writing, so no download is yet "
+"available for running Sponge plugins."
 msgstr ""
 
-#: ..\..\source\index.rst:29
-msgid ""
-"If this is your first time here, you probably have a lot of questions to "
-"ask. We have tried to answer as many as possible in our :doc:`faq`. Take a "
-"moment to browse it before heading onward to the specifics."
+# e9a27b585c284d5ba08e3451a6d53342
+#: ../../source/index.rst:16
+msgid "Documentation"
 msgstr ""
 
-#: ..\..\source\index.rst:35
-msgid "Sponge for players"
+# 6f114b7dfd1a45119752927098fef100
+#: ../../source/index.rst:19
+msgid "Using Sponge"
 msgstr ""
 
-#: ..\..\source\index.rst:38
-msgid "Will I need to use a Forge client and sponge too?"
+# 43e031228d0e45d58b99fb9ea407d21b
+#: ../../source/index.rst:28
+msgid "Developers"
 msgstr ""
 
-#: ..\..\source\index.rst:40
-msgid ""
-"You can log in to a Minecraft Server running Sponge with any Minecraft "
-"Client of the right MC version. It will not require players to have either "
-"Forge or Sponge installed. Minecraft Forge for 1.8 will allow vanilla "
-"clients to connect. Sponge should work much the same as CraftBukkit did in "
-"this respect."
+# f2c40cfd8fcf4814b3a077a7330418a4
+#: ../../source/index.rst:39
+msgid "About Sponge"
 msgstr ""
 
-#: ..\..\source\index.rst:47
-msgid "What about my favourite Bukkit plugins?"
+# 63872b03edd54100ab98cfd8f6cae553
+#: ../../source/index.rst:51
+msgid "Links"
 msgstr ""
 
-#: ..\..\source\index.rst:49
-msgid ""
-"Server Plugins must be written to use the Sponge API, or employ some kind of"
-" compatibility layer to run (eg. Pore). A large number of Bukkit plugin "
-"developers have offered to port their work to Sponge when it is ready. For "
-"more information, please visit :doc:`bukkit-compatibility`."
-msgstr ""
-
-#: ..\..\source\index.rst:55
-msgid "Sponge for server admins"
-msgstr ""
-
-#: ..\..\source\index.rst:57
-msgid ""
-":doc:`admins/admins` - A central resource for all things related to server "
-"administration."
-msgstr ""
-
-#: ..\..\source\index.rst:58
-msgid ":doc:`faq` - Frequently asked questions about Sponge."
-msgstr ""
-
-#: ..\..\source\index.rst:59
-msgid ":doc:`bukkit-compatibility` - What's changed? Will my old stuff work?"
-msgstr ""
-
-#: ..\..\source\index.rst:60
-msgid ""
-":doc:`forge-mods` - What's the deal with Forge mods? Do they work with "
-"Sponge?"
-msgstr ""
-
-#: ..\..\source\index.rst:61
-msgid ""
-":doc:`admins/server-setup` - Guide on how to start your very own server "
-"using Sponge."
-msgstr ""
-
-#: ..\..\source\index.rst:62
-msgid ""
-":doc:`troubleshooting` - Find answers to the most common problems that occur"
-" here."
-msgstr ""
-
-#: ..\..\source\index.rst:65
-msgid "Sponge for plugin developers"
-msgstr ""
-
-#: ..\..\source\index.rst:67
-msgid ""
-":doc:`developers/developers` - A central resource for all things related to "
-"plugin development"
-msgstr ""
-
-#: ..\..\source\index.rst:68
-msgid ""
-":doc:`developers/setting-up-workspace` - Guide on how to set up your IDE to "
-"start coding with the Sponge API"
-msgstr ""
-
-#: ..\..\source\index.rst:69
-msgid ""
-":doc:`developers/sponge-tutorials` - Guides and tutorials for working with "
-"the Sponge API"
-msgstr ""
-
-#: ..\..\source\index.rst:70
-msgid ""
-":doc:`developers/event-api` - Detailed documentation and examples on the "
-"event system."
-msgstr ""
-
-#: ..\..\source\index.rst:71
-msgid ""
-"`Sponge API <https://github.com/SpongePowered/SpongeAPI>`__ - Official "
-"Github for the Sponge API."
-msgstr ""
-
-#: ..\..\source\index.rst:74
-msgid "Sponge development portal"
-msgstr ""
-
-#: ..\..\source\index.rst:76
-msgid ":doc:`sponge-developers/sponge-developers`"
-msgstr ""
-
-#: ..\..\source\index.rst:79
-msgid "Guides and help resources"
-msgstr ""
-
-#: ..\..\source\index.rst:81
-msgid ":doc:`sponge-archivist` - How to get involved in making this Wiki"
-msgstr ""
-
-#: ..\..\source\index.rst:82
-msgid ""
-":doc:`../bukkit-compatibility` - Documentation on starting and maintaining a"
-" server."
-msgstr ""
-
-#: ..\..\source\index.rst:83
-msgid ""
-"`Issue Tracker <https://github.com/SpongePowered/SpongeAPI/issues?q=>`__ - "
-"The list of issues related to the Sponge API."
-msgstr ""
-
-#: ..\..\source\index.rst:84
-msgid ":doc:`../changelog` - The list of changes between Sponge releases"
-msgstr ""
-
-#: ..\..\source\index.rst:85
-msgid ""
-":doc:`developers/developers` - Documentation and information to develop "
-"applications to work with *Sponge*."
-msgstr ""
-
-#: ..\..\source\index.rst:88
-msgid "Links to external resources"
-msgstr ""
-
-#: ..\..\source\index.rst:90
+# 3657e87bed1345bf91d3cd07e951f7ce
+#: ../../source/index.rst:57
 msgid "`Sponge Homepage <http://spongepowered.org>`__"
 msgstr ""
 
-#: ..\..\source\index.rst:91
+# 6cc59270c0834087a83c203693e30c8d
+#: ../../source/index.rst:58
 msgid "`Sponge Forums <http://forums.spongepowered.org>`__"
 msgstr ""
 
-#: ..\..\source\index.rst:92
+# 516678e5bd244572ae54f091962be58f
+#: ../../source/index.rst:59
 msgid ""
 "`Sponge Issue Tracker "
 "<https://github.com/SpongePowered/SpongeAPI/issues?q=>`__"
 msgstr ""
 
-#: ..\..\source\index.rst:93
+# 9ddb2130aff44eaeacae12b650d0cff4
+#: ../../source/index.rst:60
 msgid "`Sponge Twitter <https://twitter.com/SpongePowered>`__"
 msgstr ""
 
-#: ..\..\source\index.rst:94
+# aa962b0f910b4c7bacd0667e2f93cf79
+#: ../../source/index.rst:61
 msgid "`Sponge Subreddit <https://reddit.com/r/SpongeProject>`__"
 msgstr ""
 
-#: ..\..\source\index.rst:99
+# 5af5d7cf796340a7bee182e41c71a1d6
+#: ../../source/index.rst:64
 msgid "Indices and tables"
 msgstr ""
 
-#: ..\..\source\index.rst:101
+# 47edc80f7e044712a7fd5805caa35854
+#: ../../source/index.rst:66
 msgid ":ref:`genindex`"
 msgstr ""
 
-#: ..\..\source\index.rst:102
+# da949e4ab09645cc925f164e01ce82f1
+#: ../../source/index.rst:67
 msgid ":ref:`search`"
 msgstr ""

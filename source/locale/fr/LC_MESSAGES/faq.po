@@ -1,110 +1,148 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014, Sponge Contributors
+# This file is distributed under the same license as the Sponge package.
 # 
+# Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: Sponge 0.0.1\n"
+"Project-Id-Version: Sponge Docs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-03 18:37-0700\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"POT-Creation-Date: 2014-12-26 22:20\n"
+"PO-Revision-Date: 2014-12-26 01:05+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language-Team: French (http://www.transifex.com/projects/p/sponge-docs/language/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: ..\..\source\faq.rst:2
+# cc4453a4f92b483695d2c16660807c09
+#: ../../source/faq.rst:3
 msgid "Frequently Asked Questions"
 msgstr ""
 
-#: ..\..\source\faq.rst:5
+# 0e79255a0e914012922cab434d0699c9
+#: ../../source/faq.rst:10
 msgid "What is Sponge?"
 msgstr ""
 
-#: ..\..\source\faq.rst:7
+# f6caf7d50e1549aea5767c238c6c6720
+#: ../../source/faq.rst:12
 msgid ""
-"Sponge is a combination of a new API (likely based off of Spout/Flow’s APIs)"
-" implemented on top of Forge, with assistance from other parts of "
-"Minecraft’s modding community (Glowstone, etc.). It will be both a server "
-"and client API, and its target user base is pretty much anyone that wants to"
-" mod their game, including server owners. However, we may focus on the "
-"server-side portion first. We invite any developer to help out."
+"The purpose of the Sponge project is to provide a community-supported "
+"modding framework for Minecraft."
 msgstr ""
 
-#: ..\..\source\faq.rst:16
-msgid "When will the first downloads be available?"
+# c4280b17bc1c4c70b93982bdf4f5bb35
+#: ../../source/faq.rst:16
+msgid "Summary"
 msgstr ""
 
-#: ..\..\source\faq.rst:18
+# 6414df7fbfbc43dc887695e902cd1445
+#: ../../source/faq.rst:18
+msgid "We want something easy to use."
+msgstr ""
+
+# b4c8755b593849ec9aab403565158a5b
+#: ../../source/faq.rst:19
+msgid "Community-developed modding API. We invite any developer to help out."
+msgstr ""
+
+# a267ee2ad4694280b0b32678462983d3
+#: ../../source/faq.rst:20
+msgid "Works with Forge mods."
+msgstr ""
+
+# 4661aa60cc7a49d995e813e598ff314b
+#: ../../source/faq.rst:21
+msgid "No need for client mods if only used on the server."
+msgstr ""
+
+# a117fc63ee894fbebe5f0b5e566cc171
+#: ../../source/faq.rst:22
+msgid "Can be used to write client mods."
+msgstr ""
+
+# d0a0990105ff4b7c9ed1a4b06762c67f
+#: ../../source/faq.rst:23
+msgid "Not tied to any platform:"
+msgstr ""
+
+# 96428a1596914b15b0fefa76108b336e
+#: ../../source/faq.rst:25
 msgid ""
-"The release date is still to be announced. However, the API portion is set "
-"to be release in November."
+"Can be used on a from-scratch server (i.e. Glowstone) - Planned & officially"
+" working with Glowstone team"
 msgstr ""
 
-#: ..\..\source\faq.rst:22
-msgid "Will there be an official place to download plugins?"
-msgstr ""
-
-#: ..\..\source\faq.rst:24
+# ed3959195bc640b093578a5c636f8c23
+#: ../../source/faq.rst:27
 msgid ""
-"Yes there will be. The complete details are still being discussed. You can "
-"take part of the discussion here https://forums.spongepowered.org/t/plugin-"
-"hosting/1150."
+"Can be used on top of Forge - Planned & and officially working with Forge "
+"team"
 msgstr ""
 
-#: ..\..\source\faq.rst:29
-msgid "What does this mean for the players?"
-msgstr ""
-
-#: ..\..\source\faq.rst:31
+# 2a9307b915fb48899a897751888c4756
+#: ../../source/faq.rst:29
 msgid ""
-"Players should not notice anything different about the servers you know and "
-"love. Sponge is just an API that allows developers to create plugins just "
-"like before when using bukkit."
+"Can be injected into Minecraft directly - Not planned yet (this is a larger "
+"undertaking and we prefer something usable sooner)"
 msgstr ""
 
-#: ..\..\source\faq.rst:36
-msgid "Will I need Forge to connect to a Sponge server?"
+# 1f431bb1ecac4833b2c06b2faacb69fa
+#: ../../source/faq.rst:31
+msgid "An extremely open project."
 msgstr ""
 
-#: ..\..\source\faq.rst:38
+# b9d77c4cc2ea4ccebfc005a4e099f65d
+#: ../../source/faq.rst:32
+msgid "No legal issues, unlike the Bukkit project."
+msgstr ""
+
+# 080d0a6df5d740769f76325daf4a8b0e
+#: ../../source/faq.rst:33
 msgid ""
-"No modification to your client is needed, just launch and play like normal!"
+"Bukkit plugins may run on Sponge without change due to efforts by the "
+"community."
 msgstr ""
 
-#: ..\..\source\faq.rst:42
-msgid "What are Sponge mods"
+# 26c17ca9b91042968648ab8e1f3d5a6b
+#: ../../source/faq.rst:34
+msgid "Keeping performance as a high priority during development."
 msgstr ""
 
-#: ..\..\source\faq.rst:44
+# 46e5bc5a0f104bf4a40c76d11c3a322e
+#: ../../source/faq.rst:35
 msgid ""
-"Sponge mod is not currently avalible but is still be planned for the future."
-" These mods will preform a variety of functions related to the client."
+"Lots of people involved with strong Java backgrounds and/or experience."
 msgstr ""
 
-#: ..\..\source\faq.rst:49
-msgid "What does this mean for the server owners?"
+# da6ea75bd72f48cfbc04f1987d20c635
+#: ../../source/faq.rst:38
+msgid "For the User"
 msgstr ""
 
-#: ..\..\source\faq.rst:51
+# e27c5733da1e44f892bda90a0473aede
+#: ../../source/faq.rst:40
 msgid ""
-"Server owners will have to download Sponge and start them like any other "
-"Minecraft server."
+"Our ultimate goal is to create a modding API that is easy to use for owners "
+"of small servers for friends and family, owners of large servers, and "
+"everyone in between. In addition, we also plan to permit client modding."
 msgstr ""
 
-#: ..\..\source\faq.rst:55
-msgid "What Java version is Sponge using?"
-msgstr ""
-
-#: ..\..\source\faq.rst:57
+# 89cb2170290049bfb82395cf9d57fa1f
+#: ../../source/faq.rst:42
 msgid ""
-"Sponge will be using Java 1.6, which is the minimum version supported by "
-"vanilla Minecraft and Forge."
+"Sponge mods should work across several different Minecraft versions without "
+"needing an update from the developer, which means that you don’t have to "
+"worry about all your mods breaking between each new major release of "
+"Minecraft (1.6, 1.7, 1.8, etc.)"
 msgstr ""
 
-#: ..\..\source\faq.rst:61
-msgid "Will players need the Forge client to connect?"
-msgstr ""
-
-#: ..\..\source\faq.rst:63
+# 628e1b31d0084b9ab395cc8c2a8e759a
+# a7db7ed641d84f38a75855e3ce0c1552
+#: ../../source/faq.rst:43 ../../source/faq.rst:198
 msgid ""
 "If Sponge is used on the server, players who join will not need Sponge or "
 "Forge installed on their game. You can use Sponge to make management of your"
@@ -112,52 +150,410 @@ msgid ""
 "friends) do, add minigames, and so on."
 msgstr ""
 
-#: ..\..\source\faq.rst:69
-msgid "What Minecraft version is Sponge be first available for?"
-msgstr ""
-
-#: ..\..\source\faq.rst:71
+# ab01827b19c148e594b8649ae33fd85e
+#: ../../source/faq.rst:44
 msgid ""
-"Sponge will be first available for Minecraft 1.8, or whatever 1.8.x version "
-"exists at the time."
+"However, you will be able to use Sponge mods on the client too, including "
+"Sponge mods that are meant only to be used on the client."
 msgstr ""
 
-#: ..\..\source\faq.rst:75
-msgid "Will Bukkit Plugins work with Sponge"
+# c7013976a950446793db2c1ecb3b1fb3
+#: ../../source/faq.rst:45
+msgid ""
+"Sponge will be separated into an “API” that modders will use to make mods "
+"and an “implementation” that is able to load these mods. The API won’t "
+"change much between MC versions, so modders will build against that, and the"
+" implementation loads the mods and makes them work."
 msgstr ""
 
-#: ..\..\source\faq.rst:77
+# e482de3db6604ddea9b2ae4b6297d025
+#: ../../source/faq.rst:47
+msgid ""
+"We want to start by writing an implementation for two platforms: - Sponge "
+"will run on Minecraft Forge, which is an existing Minecraft modding "
+"framework (that lacks a cross-version API). - Sponge will also run on "
+"Glowstone, which is an independent Minecraft server that was written from "
+"scratch. Later on, we may also explore other options."
+msgstr ""
+
+# 7a120e22cadd47dd914551652862afd2
+#: ../../source/faq.rst:50
+msgid ""
+"The reason why we have chosen Forge and Glowstone as our initial base is "
+"because they are well established projects, reducing our time to release, "
+"while making use of work that has already been done by the community."
+msgstr ""
+
+# bebb5d816ca34b2fb2f6d4ad7597254f
+#: ../../source/faq.rst:51
+msgid ""
+"Sponge is not tied to any particular platform, be it Forge or Glowstone."
+msgstr ""
+
+# 0f987d94e0854e27a217b87f87950d24
+#: ../../source/faq.rst:52
+msgid ""
+"When/if Mojang releases their own modding API, it will be possible to build "
+"the Sponge API on top of Mojang’s modding API so that your Sponge mods "
+"continue to work."
+msgstr ""
+
+# 2ddb34dc904b4ad8b384b3ec9c000fb5
+#: ../../source/faq.rst:53
+msgid ""
+"Sponge will support official interoperability with Forge so you can use both"
+" Sponge mods and Forge mods together. We are working directly with the Forge"
+" team."
+msgstr ""
+
+# 5a5d5c11011a4853b420e76005192e59
+#: ../../source/faq.rst:54
 msgid ""
 "While Sponge will not be directly supporting Bukkit, community projects have"
 " been started that aim to provide complete support for existing Bukkit "
 "plugins on top of Sponge."
 msgstr ""
 
-#: ..\..\source\faq.rst:82
-msgid "But Forge doesn’t support unmodified vanilla clients?"
+# 1922dd5e9e7842d8962883b3635ad578
+#: ../../source/faq.rst:58
+msgid "For Bukkit Plugin Developers"
 msgstr ""
 
-#: ..\..\source\faq.rst:84
+# 85801a51e3c4477895c065cc0ec2ac4c
+#: ../../source/faq.rst:60
+msgid "Sponge should be as easy to develop in as with Bukkit."
+msgstr ""
+
+# df1919e5a03c45869a044bfc57a99f94
+#: ../../source/faq.rst:61
 msgid ""
-"At this time, yes, but LexManos has expressed plans in adding support for "
-"vanilla clients."
+"You will also be able to access something like “NMS” as well, however, this "
+"will be discouraged unless you are also writing a Forge mod. If you need "
+"something that the Sponge API does not provide, we plan to be a lot more "
+"open about accepting (well-written) implementations of well-requested "
+"features so that you don’t have to rely on hacky code."
 msgstr ""
 
-#: ..\..\source\faq.rst:88
-msgid "But Forge takes too long to update?"
+# 4ef33128e03346b6a80cc13328d73684
+#: ../../source/faq.rst:62
+msgid ""
+"If/when the Mojang modding API comes out, we will build the Sponge API on "
+"top of Mojang’s API so your plugins/mods continue to work with minimal "
+"changes."
 msgstr ""
 
-#: ..\..\source\faq.rst:90
+# e716afbf3b364d5aacb1947d26b3be85
+#: ../../source/faq.rst:66
+msgid "For Forge Mod Developers"
+msgstr ""
+
+# 42ae12e002564e6aa60d932e446fa470
+#: ../../source/faq.rst:68
+msgid ""
+"The purpose of Sponge is to make an API that doesn’t change much between MC "
+"versions. It will be possible to write mods that use both Forge and Sponge."
+msgstr ""
+
+# 3dadc13896fa4892bddb8c02c2145c10
+#: ../../source/faq.rst:72
+msgid "Management of the Project"
+msgstr ""
+
+# 6ff146f362c84fd6a5965f7e60259f9f
+#: ../../source/faq.rst:74
+msgid ""
+"As some of the older members of the community are aware, the demise of "
+"Bukkit would not be the first instance that the demise of a large modding "
+"platform has occurred in Minecraft. We’re aware of this and we’re planning "
+"for future scenarios."
+msgstr ""
+
+# bd4fc6b135c14e8abe0caf73a2783a1d
+#: ../../source/faq.rst:76
+msgid ""
+"hMod died because its developer disappeared for an extended amount of time "
+"but provided no ability for hMod’s other developers to publish official "
+"releases. In addition, hMod did not have an API and suffered from technical "
+"problems."
+msgstr ""
+
+# 27edb34299174a91a5a717e3c7458db8
+#: ../../source/faq.rst:78
+msgid ""
+"To solve the problem with one single leader possibly disappearing from "
+"Earth, the project is currently led by two people: blood and sk89q. In "
+"addition, we are making sure to be open with the team so that we do not end "
+"up “holding all the keys.”"
+msgstr ""
+
+# a320baf23b8148f480390fcb3668e562
+#: ../../source/faq.rst:80
+msgid ""
+"As for the technical problems, we have chosen to write an API rather than "
+"simply modify Minecraft and add a mod loader."
+msgstr ""
+
+# 8b14c7a1bf5f4884a5d967d1a899e6d0
+#: ../../source/faq.rst:82
+msgid ""
+"Bukkit met its end because it was not open about decisions that it made, "
+"causing anger within the community, which then prompted one of Bukkit’s own "
+"developers to send a DMCA takedown notice to Bukkit, which was possible "
+"because Bukkit used an overly restrictive open source license with strict "
+"terms on how Bukkit could be used in conjunction with other software."
+msgstr ""
+
+# 19ec5b4c940e4c38939e867af76b0d3f
+#: ../../source/faq.rst:84
+msgid ""
+"We are trying to be open as possible. Our GitHub repository has been "
+"available since the first day development began and we make weekly, lengthy "
+"announcements detailing the progress and future of the project. Our "
+"developers and leads interact with the community around the Internet and on "
+"the Sponge forums. You will find that we are very approachable: if you have "
+"an idea or issue we are all open ears."
+msgstr ""
+
+# 7938036d9b7e46e996047861bf7d730e
+#: ../../source/faq.rst:86
+msgid ""
+"We are using MIT, an extremely permissive open source license. This means "
+"that, should the worst case scenario occur, it will be possible to reuse the"
+" Sponge API and start a new project without being encumbered by legal "
+"problems like with Bukkit. In addition, MIT is compatible with GPL should "
+"that ever become a problem."
+msgstr ""
+
+# 8721b7d1296b4ce6bf3e62d379f9d5e7
+#: ../../source/faq.rst:88
+msgid ""
+"Sponge has a lot of help from the existing Minecraft community, but please "
+"take note that ultimately the project is led by two people who make the "
+"final decisions. This way, we can have a large number of people contribute "
+"and yet still avoid having “too many cooks spoiling the broth.”"
+msgstr ""
+
+# d0b4055e46144306b55dee543775181c
+#: ../../source/faq.rst:92
+msgid "From a Technical Perspective"
+msgstr ""
+
+# 9f6a4b4483f4458bada6fcd07dc1dfdc
+#: ../../source/faq.rst:94
+msgid ""
+"Many of our developers have worked with Minecraft for years and know the ins"
+" and outs of its mechanics."
+msgstr ""
+
+# c2561b0d15294dd481c1e87f56008571
+#: ../../source/faq.rst:95
+msgid ""
+"Our developers are well versed with Java. Many of us frequently work with "
+"“bytecode injection” and have for years, or even write mod loaders on the "
+"side."
+msgstr ""
+
+# 4163bb6c1dfc44b19515bb5ab65a37f8
+#: ../../source/faq.rst:96
+msgid ""
+"Performance is on our mind. The Glowstone implementation may run the best, "
+"but we plan to make the necessary changes to Minecraft to improve its "
+"performance for anything built on top of Minecraft itself (which includes "
+"the Forge implementation), just as Bukkit and Spigot has done."
+msgstr ""
+
+# 4428b4bedb804137acd1ea32ffcb30ea
+#: ../../source/faq.rst:101
+msgid "How Does It All Fit Together?"
+msgstr ""
+
+# e5e341759101400caf8d50391c98e821
+#: ../../source/faq.rst:105
+msgid ""
+"**Note**: As this is a simplification, the number of layers has no bearing "
+"on the performance of the actual implementation. When the game is actually "
+"run with the API, it collapses into two layers: plugins versus \"modded "
+"Minecraft\" / Glowstone."
+msgstr ""
+
+# b8f2e5dcfb004d82af4cede9a92b1ed8
+#: ../../source/faq.rst:110
+msgid "What is Sponge Building?"
+msgstr ""
+
+# 1512453346f74ba88e4bf538bba13925
+#: ../../source/faq.rst:117
+msgid "How Do We Keep Plugins/Mods From Breaking Between MC Versions?"
+msgstr ""
+
+# 74ed38a30d2b4448a65ed2b839675dd4
+#: ../../source/faq.rst:124
+msgid "How Much is Open Source?"
+msgstr ""
+
+# 144c7e5d8bc24c0c9887afd2cdea6c13
+#: ../../source/faq.rst:128
+msgid "**Note**: Glowstone is only a server and not the full game itself."
+msgstr ""
+
+# 9d66d9ca173543b3869678ad3123651f
+#: ../../source/faq.rst:133
+msgid "How Did Bukkit Work?"
+msgstr ""
+
+# 904959d8bfea4509a85f169a3bbc4714
+#: ../../source/faq.rst:137
+msgid ""
+"**Note**: Bukkit came as one download, even though there are multiple "
+"underlying parts. That will be the same case with Sponge, and we will make "
+"it easy to run Sponge."
+msgstr ""
+
+# fee32c34d1e2493582034d3254f04683
+#: ../../source/faq.rst:142
+msgid "What About Forge Mods and hMod Plugins?"
+msgstr ""
+
+# 4b210ff1916f454eac9d99b1f1065331
+#: ../../source/faq.rst:147
+msgid "General Questions"
+msgstr ""
+
+# 2abcd11656dc4cbf9ac697becb6a31b6
+#: ../../source/faq.rst:150
+msgid "When Will the First Downloads Be Available?"
+msgstr ""
+
+# c07d760d3cab4a369c74571a8665b062
+#: ../../source/faq.rst:152
+msgid ""
+"The release date of the Sponge implementation is still to be announced. "
+"However, the Sponge API (v1.0) was released on November 30th, 2014."
+msgstr ""
+
+# ef9671069625446ba72d5389cc5f92ca
+#: ../../source/faq.rst:156
+msgid "Will There Be an Official Place to Download Plugins?"
+msgstr ""
+
+# 038da00c85504e68a853f6dfc7a0e1f5
+#: ../../source/faq.rst:158
+msgid ""
+"Yes there will be. The complete details are still being discussed. You can "
+"take part of the discussion here https://forums.spongepowered.org/t/plugin-"
+"hosting/1150."
+msgstr ""
+
+# 07d67c33b597499e99ac68cc0697c83a
+#: ../../source/faq.rst:163
+msgid "What Does This Mean for the Players?"
+msgstr ""
+
+# ccfc7aac5b184ae5b4d6ac1cc01ec68c
+#: ../../source/faq.rst:165
+msgid ""
+"Players should not notice anything different about the servers you know and "
+"love. Sponge is just an API that allows developers to create plugins just "
+"like before when using bukkit."
+msgstr ""
+
+# 03f779f36b884ce39f4617443e31ef70
+#: ../../source/faq.rst:170
+msgid "Will I Need Forge to Connect to a Sponge server?"
+msgstr ""
+
+# 2a8ecd064c43428d88ed20dd7a3ae0a9
+#: ../../source/faq.rst:172
+msgid ""
+"No modification to your client is needed, just launch and play like normal!"
+msgstr ""
+
+# f28b1d46e3524e00b1a5465bbf074161
+#: ../../source/faq.rst:176
+msgid "What are Sponge Mods?"
+msgstr ""
+
+# f8ea0c8f7ca2460ba0405f852044cd56
+#: ../../source/faq.rst:178
+msgid ""
+"Sponge coremod is still under development, and will implement the Sponge API"
+" on a 1.8 Minecraft-Forge server. Future plans may include more client "
+"Sponge mods that could perform a variety of functions related to the client."
+msgstr ""
+
+# b71f2e9bf7b9417c9952d72f9c1f6e80
+#: ../../source/faq.rst:184
+msgid "What Does This Mean for the Server Owners?"
+msgstr ""
+
+# 0ff59f166a604b84ab2086cbf6f78f54
+#: ../../source/faq.rst:186
+msgid ""
+"Server owners will have to download Sponge and start them like any other "
+"Minecraft Forge server."
+msgstr ""
+
+# 59eb25c677de4a3db28ff6a31d64b321
+#: ../../source/faq.rst:190
+msgid "What Java Version is Sponge Using?"
+msgstr ""
+
+# f85240bed0094d12b3ce5515d310eeb8
+#: ../../source/faq.rst:192
+msgid ""
+"Sponge will be using Java 1.6, which is the minimum version supported by "
+"vanilla Minecraft and Forge."
+msgstr ""
+
+# cefb6ada53674726bdc83245d39d19e9
+#: ../../source/faq.rst:196
+msgid "Will Players Need the Forge Client to Connect?"
+msgstr ""
+
+# 8fbf78eae42243c894c3f9a0e3f705cd
+#: ../../source/faq.rst:204
+msgid "What Minecraft Version is Sponge be First Available for?"
+msgstr ""
+
+# 0ada7a7511dc4d85983b07a232dcbaf8
+#: ../../source/faq.rst:206
+msgid ""
+"Sponge will be first available for Minecraft 1.8, or whatever 1.8.x version "
+"exists at the time."
+msgstr ""
+
+# 873b4813e4f147128523fcb9436428fb
+#: ../../source/faq.rst:210
+msgid "But Forge Doesn’t Support Unmodified Vanilla Clients?"
+msgstr ""
+
+# 3255feed1e0c489094867543515c0857
+#: ../../source/faq.rst:212
+msgid ""
+"It does now. Forge's lead developer LexManos has delivered on plans to add "
+"support for vanilla clients in the 1.8 update."
+msgstr ""
+
+# c54e272ebd20466bb3b3bab404df63a9
+#: ../../source/faq.rst:216
+msgid "But Forge Takes Too Long to Update?"
+msgstr ""
+
+# 52cdea99235240da82e935e96b5252c5
+#: ../../source/faq.rst:218
 msgid ""
 "With a large portion of the Minecraft community working together, we are "
-"sure we can help speed up things."
+"sure we can help speed up things. Development builds for Minecraft Forge are"
+" already available for the 1.8 update."
 msgstr ""
 
-#: ..\..\source\faq.rst:94
-msgid "I haven't kept up, what happened to Bukkit?"
+# 0413c3881eca4582a980e9898e5ce8b2
+#: ../../source/faq.rst:224
+msgid "I Haven't Kept Up, What Happened To Bukkit?"
 msgstr ""
 
-#: ..\..\source\faq.rst:96
+# 1ddd8fb241a7477faf5de962aa7182d6
+#: ../../source/faq.rst:226
 msgid ""
 "One of the contributors to Bukkit sent a DMCA take down notice to have "
 "Bukkit removed. He was within his legal right. Downloads, as well as source "
@@ -165,79 +561,92 @@ msgid ""
 "available."
 msgstr ""
 
-#: ..\..\source\faq.rst:102
-msgid "Who?"
+# ff8c852567264aed826f7c2e7da0d934
+#: ../../source/faq.rst:233
+msgid "Who is Involved With the Sponge Project?"
 msgstr ""
 
-#: ..\..\source\faq.rst:105
-msgid "Who is involved with this effort?"
-msgstr ""
-
-#: ..\..\source\faq.rst:107
+# 86ce3080dafe47acb9529343684b2c03
+#: ../../source/faq.rst:235
 msgid "sk89q (of WorldEdit/WorldGuard) - project lead"
 msgstr ""
 
-#: ..\..\source\faq.rst:108
+# eadd704757974de4b138b59e7e50bd74
+#: ../../source/faq.rst:236
 msgid "blood (of MCPC+/Cauldron) - project lead"
 msgstr ""
 
-#: ..\..\source\faq.rst:109
+# 886c5073dfd74e049a55903018106440
+#: ../../source/faq.rst:237
 msgid "LexManos (of Forge/FML/MCP)"
 msgstr ""
 
-#: ..\..\source\faq.rst:110
+# 1fd2853022f94d75af234d6e187a9db8
+#: ../../source/faq.rst:238
 msgid ""
 "Portions of the Spout team: Zidane, Raphfrk, DDoS, Sleaker, Owexz, "
 "Wulfspider"
 msgstr ""
 
-#: ..\..\source\faq.rst:111
+# ed2c0869cb384cbaa97d1adbcbd64038
+#: ../../source/faq.rst:239
 msgid "Portions of the Flow team: kitskub"
 msgstr ""
 
-#: ..\..\source\faq.rst:112
+# 71be754f4dc9441b86bec10396bb5786
+#: ../../source/faq.rst:240
 msgid "Portions from ForgeEssentials: AbrarSyed"
 msgstr ""
 
-#: ..\..\source\faq.rst:113
+# b183731289e84f22b392c1b2a2bf5a14
+#: ../../source/faq.rst:241
 msgid "Other Bukkit Plugin developers: KHobbits, Elgarl, zml"
 msgstr ""
 
-#: ..\..\source\faq.rst:114
+# fbba986c3ca7427188bb6c079bc9b1c2
+#: ../../source/faq.rst:242
 msgid "Portions of the FTB team: progwml6"
 msgstr ""
 
-#: ..\..\source\faq.rst:115
+# 5edbbaed2d234cb5a0b30ce9f89c69a7
+#: ../../source/faq.rst:243
 msgid "Glowstone: SpaceManiac"
 msgstr ""
 
-#: ..\..\source\faq.rst:116
+# 6a2bbee394944b05a9e516957b69dca4
+#: ../../source/faq.rst:244
 msgid "Some previous contributors to Bukkit"
 msgstr ""
 
-#: ..\..\source\faq.rst:117
+# c1ec476f6910485e9463ad21956d98ae
+#: ../../source/faq.rst:245
 msgid "Other people we have likely failed to mention"
 msgstr ""
 
-#: ..\..\source\faq.rst:119
+# d30ae161510447c39299334db6ac2b16
+#: ../../source/faq.rst:247
 msgid "However, we are interested in talking with anyone who is able to help."
 msgstr ""
 
-#: ..\..\source\faq.rst:122
-msgid "How are decisions made?"
+# 265afaed8a1a4f86942075a3c3f3571e
+#: ../../source/faq.rst:250
+msgid "How Are Decisions Made?"
 msgstr ""
 
-#: ..\..\source\faq.rst:124
+# 2bb75f04073b445783311edbd66753fd
+#: ../../source/faq.rst:252
 msgid ""
 "The project owners, **blood** and **sk89q**, after consulting with the "
 "community and other members when appropriate, will make the decisions."
 msgstr ""
 
-#: ..\..\source\faq.rst:128
-msgid "Have you consulted the community?"
+# 91c11b19571d4a999515f45d9af79650
+#: ../../source/faq.rst:256
+msgid "Have You Consulted the Community?"
 msgstr ""
 
-#: ..\..\source\faq.rst:130
+# 1c7812990051488ca672ca3f1670be9b
+#: ../../source/faq.rst:258
 msgid ""
 "Yes! While things have been moving pretty quickly, we’re very open to input."
 " Many of our decisions are based on discussion in the #nextstep IRC channel "
@@ -245,26 +654,31 @@ msgid ""
 "meeting notes and consensus on a Google document."
 msgstr ""
 
-#: ..\..\source\faq.rst:136
+# a375179332154017ba92e94f9baf2cbb
+#: ../../source/faq.rst:264
 msgid "Technical Questions"
 msgstr ""
 
-#: ..\..\source\faq.rst:139
-msgid "Why not use a \"Wrapper\"-styled API?"
+# 789ce1d475174404a12e52686443d9b0
+#: ../../source/faq.rst:267
+msgid "Why Not Use a \"Wrapper\"-styled API?"
 msgstr ""
 
-#: ..\..\source\faq.rst:141
+# 094543b4952f4e938787df9393b8447e
+#: ../../source/faq.rst:269
 msgid ""
 "A wrapper that merely works on network packets and reuses command blocks is "
 "extremely limited in function, so plugins would only be able to do a "
 "fraction of what they are able to do now."
 msgstr ""
 
-#: ..\..\source\faq.rst:146
-msgid "Why not build a standalone server?"
+# 5d6eec26621a4964acd60d4784ff9841
+#: ../../source/faq.rst:274
+msgid "Why Not Build a Standalone Server?"
 msgstr ""
 
-#: ..\..\source\faq.rst:148
+# 092e470c5a6b4e8abfd5a9f0d71de928
+#: ../../source/faq.rst:276
 msgid ""
 "Reusing existing efforts in the community will allow us to have a working "
 "version much quicker. Glowstone, unfortunately, is not free from the EULA as"
@@ -275,13 +689,15 @@ msgid ""
 "and most of us have already seen Minecraft’s code in some form."
 msgstr ""
 
-#: ..\..\source\faq.rst:158
+# 238d855da6a94d9da51d2fa17513b533
+#: ../../source/faq.rst:286
 msgid ""
-"Doesn’t that mean that we will end up in this same situation again if we use"
-" proprietary code?"
+"Doesn’t That Mean That We Will End Up In This Same Situation Again If We Use"
+" Proprietary Code?"
 msgstr ""
 
-#: ..\..\source\faq.rst:160
+# 38d45f8d6aa3498995875455bb80ed7a
+#: ../../source/faq.rst:288
 msgid ""
 "It is to our knowledge and our understanding that Mojang does not wish to "
 "stop Minecraft modding, and the recent events have not been directly caused "
@@ -292,49 +708,92 @@ msgid ""
 "continue to do so."
 msgstr ""
 
-#: ..\..\source\faq.rst:169
-msgid "Why not wait for the Official Minecraft API?"
+# 7115fbb26e654d938722fa17fef7790f
+#: ../../source/faq.rst:297
+msgid "Why Not Wait for the Official Minecraft API?"
 msgstr ""
 
-#: ..\..\source\faq.rst:171
+# a16726dcf4eb4d379368d4cb37436157
+#: ../../source/faq.rst:299
+msgid "We are not sure when it will come out."
+msgstr ""
+
+# 5adc37c0453c4bc7b27510b07632f187
+#: ../../source/faq.rst:300
+msgid "Many people are not in a position to wait."
+msgstr ""
+
+# 6ec5e2fdee4e44518103f45c72134382
+#: ../../source/faq.rst:301
+msgid "We can get started sooner."
+msgstr ""
+
+# c6dc2ffc27b1447ca46e89432e1fc87c
+#: ../../source/faq.rst:302
+msgid "Those last three reasons may have said the same thing."
+msgstr ""
+
+# 21461eeb2c0a46508c436cdb0be40aa1
+#: ../../source/faq.rst:303
 msgid ""
-"We are not sure when it will come out. Many people are not in a position to "
-"wait. We can get started sooner. Those last three bullet points may have "
-"said the same thing. As this new project is community-run, we may be able to"
-" push updates quicker than Mojang is able to and react to the needs of the "
-"community better. The API may be implemented on other server implementations"
-" and we encourage it."
+"As this new project is community-run, we may be able to push updates quicker"
+" than Mojang is able to and react to the needs of the community better."
 msgstr ""
 
-#: ..\..\source\faq.rst:179
-msgid "What license will Sponge be placed under?"
+# 2e23cd4062c846f1a16cae5cb157ea83
+#: ../../source/faq.rst:304
+msgid ""
+"The API may be implemented on other server implementations, and we encourage"
+" it."
 msgstr ""
 
-#: ..\..\source\faq.rst:181
+# 176e51dcb8814b66aaecc1ec15b0a67f
+#: ../../source/faq.rst:307
+msgid "What License Will Sponge Be Placed Under?"
+msgstr ""
+
+# efc553426b644a3fabdcfd15b387e816
+#: ../../source/faq.rst:309
 msgid ""
 "MIT, without a Contributor License Agreement. A Contributor License "
-"Agreement is not necessary and it may be a turn off to contributors."
+"Agreement is not necessary and it may be a turn off to contributors. For "
+"more information, please read :doc:`license`"
 msgstr ""
 
-#: ..\..\source\faq.rst:185
-msgid "Why not use Bukkit’s API?"
+# 9b0be3050f7b4eafafc909fce29db5ab
+#: ../../source/faq.rst:314
+msgid "Why Not use Bukkit’s API?"
 msgstr ""
 
-#: ..\..\source\faq.rst:187
+# ffc5ad790ab24fe0a7bffeb0b06346aa
+#: ../../source/faq.rst:316
 msgid ""
 "It contains GPL licensed code, which is the reason why we are in this "
 "situation. Recently, at least in the United States, the federal courts found"
 " that APIs could be copyrighted, although the case has not been fully "
-"resolved. Will the new API be similar to the Bukkit API in how it is used? "
-"Events, etc.? Yes. It should be fairly similar, and still afford you more "
-"power because you will have access to Forge."
+"resolved."
 msgstr ""
 
-#: ..\..\source\faq.rst:195
-msgid "Why SpoutAPI (+ Flow libs) versus Canary or other APIs?"
+# 9fb4aa1b0bac4bcfa76b025724fc0dcd
+#: ../../source/faq.rst:322
+msgid ""
+"Will the New API Be Like the Bukkit API in How It is Used? Events, etc.?"
 msgstr ""
 
-#: ..\..\source\faq.rst:197
+# 73a408f97d234126973a76b9c79522ff
+#: ../../source/faq.rst:324
+msgid ""
+"Yes. It should be fairly similar, and still afford you more power because "
+"you will have access to Forge."
+msgstr ""
+
+# a63f18ebed494c52a13ed7ac5004bb19
+#: ../../source/faq.rst:327
+msgid "Why SpoutAPI (+ Flow libs) Versus Canary or Other APIs?"
+msgstr ""
+
+# 7561d178aafb4a7281f93e252b8325d7
+#: ../../source/faq.rst:329
 msgid ""
 "We chose SpoutAPI purely based on the result of the survey (which is "
 "mentioned previously). Note, however, we are not implementing SpoutAPI as-"
@@ -343,11 +802,13 @@ msgid ""
 "http://github.com/flow."
 msgstr ""
 
-#: ..\..\source\faq.rst:204
-msgid "What about plugins that access ‘NMS’?"
+# 1a72fa906d1b41a1ac5fba7d2f757d33
+#: ../../source/faq.rst:336
+msgid "What About Plugins That Access ‘NMS’?"
 msgstr ""
 
-#: ..\..\source\faq.rst:206
+# 8ba18391ef8e4c67928340c12d23eb80
+#: ../../source/faq.rst:338
 msgid ""
 "You will instead be accessing interfaces through Forge, which has a much "
 "greater number of names de-obfuscated. However, accessing “NMS” raises the "
@@ -355,99 +816,127 @@ msgid ""
 "prerogative."
 msgstr ""
 
-#: ..\..\source\faq.rst:212
-msgid "Will the new server be multi-threaded?"
+# 13edd3e27725463caa9da1002a06003f
+#: ../../source/faq.rst:344
+msgid "Will the New Server Be Multi-threaded?"
 msgstr ""
 
-#: ..\..\source\faq.rst:214
+# f0fc80aee1db45d0a6dd462675cdb659
+#: ../../source/faq.rst:346
 msgid ""
 "It will be multi-threaded in the same fashion that is Minecraft is (and also"
 " Bukkit and Spigot was), but we are not writing a server from scratch, so we"
 " are not able to make substantial changes."
 msgstr ""
 
-#: ..\..\source\faq.rst:219
-msgid "How will the new server perform in comparison with Spigot and Bukkit?"
+# 508152d26ed44059bc5e5c15ba0462f8
+#: ../../source/faq.rst:351
+msgid "How Will the New Server Perform in Comparison With Spigot and Bukkit?"
 msgstr ""
 
-#: ..\..\source\faq.rst:221
+# 9f997782fa12418cbf4120db1f6123eb
+#: ../../source/faq.rst:353
 msgid ""
 "We are currently investigating this, but we plan to reach or exceed "
 "performance of the other implementations given time."
 msgstr ""
 
-#: ..\..\source\faq.rst:225
-msgid "Will you be able to send mods from the server to the client?"
+# 8f5c82939a7845cd94008fcd0eb4e175
+#: ../../source/faq.rst:357
+msgid "Will You Be Able to Send Mods From the Server to the Client?"
 msgstr ""
 
-#: ..\..\source\faq.rst:227
+# b6a77276d1aa4739b6b004bef2c451a3
+#: ../../source/faq.rst:359
 msgid ""
 "The general consensus is against this due to security concerns. Minecraft’s "
 "API does not plan to send mods (with executable code) to the client either."
 msgstr ""
 
-#: ..\..\source\faq.rst:232
-msgid "Will Bukkit plugins be supported, without modification?"
+# 4c7b079b0c1d435ba5e82b26d0a2b66b
+#: ../../source/faq.rst:364
+msgid "Will Bukkit Plugins Be Supported, Without Modification?"
 msgstr ""
 
-#: ..\..\source\faq.rst:234
+# 393abd28a45c4d549f77e88f490d612c
+#: ../../source/faq.rst:366
 msgid ""
 "No, not natively, however members of the community have begun work on a "
 "Sponge plugin named Pore that acts as a bridge between the two APIs."
 msgstr ""
 
-#: ..\..\source\faq.rst:237
+# 527453dbb03e4f6790846a6fca275481
+#: ../../source/faq.rst:369
 msgid ""
 "For those unable to use it, we will be providing documentation and support "
 "for people looking to transition from Bukkit to Sponge entirely."
 msgstr ""
 
-#: ..\..\source\faq.rst:241
-msgid "Will I be able to keep my Bukkit worlds and data?"
+# 5d7e271afa9043648d6ed6c71c4f603a
+#: ../../source/faq.rst:373
+msgid "Will I Be Able To Keep My Bukkit Worlds and Data?"
 msgstr ""
 
-#: ..\..\source\faq.rst:243
+# a5fdbdda9eec489abaaecc3beb83481a
+#: ../../source/faq.rst:375
 msgid ""
-"The plan is to create a conversion process which will convert or import as "
-"much data as possible. Plugins will likely create their own conversion "
-"process allowing you to keep homes, warps and other data."
+"Yes, at least for worlds. Plugin data may or may not carry over. The plan is"
+" to create a conversion process which will convert or import as much data as"
+" possible. Plugins will likely create their own conversion process allowing "
+"you to keep homes, warps and other data."
 msgstr ""
 
-#: ..\..\source\faq.rst:248
-msgid "What about support for Scala, Groovy, and other JVM-based languages?"
+# 522dfa41f0de42b5a79aafc4e0c91ba5
+#: ../../source/faq.rst:381
+msgid "What About Support for Scala, Groovy, and Other JVM-based Languages?"
 msgstr ""
 
-#: ..\..\source\faq.rst:250
+# 44a6d65a9e4b4b3a91f1b06175d0a676
+#: ../../source/faq.rst:383
+msgid "We encourage other languages but Java will be our main priority."
+msgstr ""
+
+# fe1f12b7a9b9415e818b9ded79a3fb13
+#: ../../source/faq.rst:386
+msgid "Will Other Programming Languages (Such as Lua) Be Supported?"
+msgstr ""
+
+# 2be6546e87d247898c8d836b380b8609
+#: ../../source/faq.rst:388
 msgid ""
-"We encourage other languages but Java will be our main priority. Will other "
-"programming languages (such as Lua) be supported? We will encourage other "
-"implementations but it will not be a high priority."
+"We will encourage other implementations but it will not be a high priority."
 msgstr ""
 
-#: ..\..\source\faq.rst:255
-msgid "Will Glowstone be a part of this?"
+# 4d0089f65f9d4a0b8b082219e578b44b
+#: ../../source/faq.rst:391
+msgid "Will Glowstone be a Part of This?"
 msgstr ""
 
-#: ..\..\source\faq.rst:257
+# 5949fa622bbf4d95b5e8ca4547abd0d6
+#: ../../source/faq.rst:393
 msgid ""
 "We hope we can help SpaceManiac and the team implement the API. We also "
 "invite others to collaborate with us if they wish to."
 msgstr ""
 
-#: ..\..\source\faq.rst:261
-msgid "I wish to help out."
+# e07383b555ef49ee9dbe95815c028250
+#: ../../source/faq.rst:397
+msgid "How Can I Help?"
 msgstr ""
 
-#: ..\..\source\faq.rst:263
+# 23e76ecc239d459e9f4487527c7b3be6
+#: ../../source/faq.rst:399
 msgid ""
 "We appreciate all offers of assistance. Please visit our volunteers portal:"
 msgstr ""
 
-#: ..\..\source\faq.rst:265
-msgid ":doc:`helping-out`"
+# 080f8057955e4a38bf10a4c03ad7c94e
+#: ../../source/faq.rst:401
+msgid ":doc:`/contributing`"
 msgstr ""
 
-#: ..\..\source\faq.rst:267
+# 2ab22c6015284f689c65650d6a86efa8
+#: ../../source/faq.rst:403
 msgid ""
 "We apologise to anyone who did not receive a reply to earlier rounds of "
 "applications. The number of sumbissions was overwhelming, thank you all!"

@@ -1,0 +1,64 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014, Sponge Contributors
+# This file is distributed under the same license as the Sponge package.
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: Sponge Docs\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-12-26 22:20\n"
+"PO-Revision-Date: 2014-12-26 01:07+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Chinese (China) (http://www.transifex.com/projects/p/sponge-docs/language/zh_CN/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+# 1587105c64834191bf5643f4de98100a
+#: ../../source/users/permissions.rst:3
+msgid "Managing Who Can Do What"
+msgstr ""
+
+# e561d0f1299649e19474d5705c6d6bc2
+#: ../../source/users/permissions.rst:5
+msgid ""
+"You can configure who has access to what if you are running a server by "
+"making use of permissions."
+msgstr ""
+
+# 0135d05fab5d4b9cafe392e8f3a3c5cd
+#: ../../source/users/permissions.rst:8
+msgid "Operator Level"
+msgstr ""
+
+# 82f4a01be265449cba75f7606240e499
+#: ../../source/users/permissions.rst:10
+msgid ""
+"Minecraft comes with a simple way to give permissions: by setting users as "
+"\"op.\" General information on op status can be found at "
+"http://minecraft.gamepedia.com/Op"
+msgstr ""
+
+# b06129ed01134fd387f932ed2372aa9f
+#: ../../source/users/permissions.rst:13
+msgid ""
+"A list of native Minecraft server commands available to players with OP is "
+"available at http://minecraft.gamepedia.com/Commands#Summary_of_commands"
+msgstr ""
+
+# 27b0e6904c0b4427b7afe891c77b540b
+#: ../../source/users/permissions.rst:18
+msgid ""
+"Minecraft does not have any fine-grained permissions capacity, only op. This"
+" is a very high level of permission and should be reserved for trusted "
+"players. More complicated permission setups require the use of a permissions"
+" plugin or mod. Sponge is not a permissions-management plugin."
+msgstr ""
+
+# e7d1c2d83ff74974a4226890377603be
+#: ../../source/users/permissions.rst:25
+msgid "Some plugins and mods may also grant specific permissions to ops."
+msgstr ""

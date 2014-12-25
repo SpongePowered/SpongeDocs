@@ -1,0 +1,284 @@
+[main]
+host = https://www.transifex.com
+type = PO
+
+[sponge-docs.changelog]
+file_filter = source/locale/<lang>/LC_MESSAGES/changelog.po
+source_file = build/locale/changelog.pot
+source_lang = en
+
+[sponge-docs.contributing]
+file_filter = source/locale/<lang>/LC_MESSAGES/contributing.po
+source_file = build/locale/contributing.pot
+source_lang = en
+
+[sponge-docs.downloads]
+file_filter = source/locale/<lang>/LC_MESSAGES/downloads.po
+source_file = build/locale/downloads.pot
+source_lang = en
+
+[sponge-docs.faq]
+file_filter = source/locale/<lang>/LC_MESSAGES/faq.po
+source_file = build/locale/faq.pot
+source_lang = en
+
+[sponge-docs.index]
+file_filter = source/locale/<lang>/LC_MESSAGES/index.po
+source_file = build/locale/index.pot
+source_lang = en
+
+[sponge-docs.license]
+file_filter = source/locale/<lang>/LC_MESSAGES/license.po
+source_file = build/locale/license.pot
+source_lang = en
+
+[sponge-docs.devs--guidelines]
+file_filter = source/locale/<lang>/LC_MESSAGES/devs/guidelines.po
+source_file = build/locale/devs/guidelines.pot
+source_lang = en
+
+[sponge-docs.devs--index]
+file_filter = source/locale/<lang>/LC_MESSAGES/devs/index.po
+source_file = build/locale/devs/index.pot
+source_lang = en
+
+[sponge-docs.devs--workspace]
+file_filter = source/locale/<lang>/LC_MESSAGES/devs/workspace.po
+source_file = build/locale/devs/workspace.pot
+source_lang = en
+
+[sponge-docs.devs--api--contributing]
+file_filter = source/locale/<lang>/LC_MESSAGES/devs/api/contributing.po
+source_file = build/locale/devs/api/contributing.pot
+source_lang = en
+
+[sponge-docs.devs--forge--contributing]
+file_filter = source/locale/<lang>/LC_MESSAGES/devs/forge/contributing.po
+source_file = build/locale/devs/forge/contributing.pot
+source_lang = en
+
+[sponge-docs.devs--forge--debugging]
+file_filter = source/locale/<lang>/LC_MESSAGES/devs/forge/debugging.po
+source_file = build/locale/devs/forge/debugging.pot
+source_lang = en
+
+[sponge-docs.devs--forge--project-layout]
+file_filter = source/locale/<lang>/LC_MESSAGES/devs/forge/project-layout.po
+source_file = build/locale/devs/forge/project-layout.pot
+source_lang = en
+
+[sponge-docs.plugins--blocks]
+file_filter = source/locale/<lang>/LC_MESSAGES/plugins/blocks.po
+source_file = build/locale/plugins/blocks.pot
+source_lang = en
+
+[sponge-docs.plugins--commands]
+file_filter = source/locale/<lang>/LC_MESSAGES/plugins/commands.po
+source_file = build/locale/plugins/commands.pot
+source_lang = en
+
+[sponge-docs.plugins--configuration]
+file_filter = source/locale/<lang>/LC_MESSAGES/plugins/configuration.po
+source_file = build/locale/plugins/configuration.pot
+source_lang = en
+
+[sponge-docs.plugins--eclipse]
+file_filter = source/locale/<lang>/LC_MESSAGES/plugins/eclipse.po
+source_file = build/locale/plugins/eclipse.pot
+source_lang = en
+
+[sponge-docs.plugins--entities]
+file_filter = source/locale/<lang>/LC_MESSAGES/plugins/entities.po
+source_file = build/locale/plugins/entities.pot
+source_lang = en
+
+[sponge-docs.plugins--event-bus]
+file_filter = source/locale/<lang>/LC_MESSAGES/plugins/event-bus.po
+source_file = build/locale/plugins/event-bus.pot
+source_lang = en
+
+[sponge-docs.plugins--gradle]
+file_filter = source/locale/<lang>/LC_MESSAGES/plugins/gradle.po
+source_file = build/locale/plugins/gradle.pot
+source_lang = en
+
+[sponge-docs.plugins--idea]
+file_filter = source/locale/<lang>/LC_MESSAGES/plugins/idea.po
+source_file = build/locale/plugins/idea.pot
+source_lang = en
+
+[sponge-docs.plugins--index]
+file_filter = source/locale/<lang>/LC_MESSAGES/plugins/index.po
+source_file = build/locale/plugins/index.pot
+source_lang = en
+
+[sponge-docs.plugins--javadevkit]
+file_filter = source/locale/<lang>/LC_MESSAGES/plugins/javadevkit.po
+source_file = build/locale/plugins/javadevkit.pot
+source_lang = en
+
+[sponge-docs.plugins--logging]
+file_filter = source/locale/<lang>/LC_MESSAGES/plugins/logging.po
+source_file = build/locale/plugins/logging.pot
+source_lang = en
+
+[sponge-docs.plugins--manager]
+file_filter = source/locale/<lang>/LC_MESSAGES/plugins/manager.po
+source_file = build/locale/plugins/manager.pot
+source_lang = en
+
+[sponge-docs.plugins--maven]
+file_filter = source/locale/<lang>/LC_MESSAGES/plugins/maven.po
+source_file = build/locale/plugins/maven.pot
+source_lang = en
+
+[sponge-docs.plugins--message]
+file_filter = source/locale/<lang>/LC_MESSAGES/plugins/message.po
+source_file = build/locale/plugins/message.pot
+source_lang = en
+
+[sponge-docs.plugins--netbeans]
+file_filter = source/locale/<lang>/LC_MESSAGES/plugins/netbeans.po
+source_file = build/locale/plugins/netbeans.pot
+source_lang = en
+
+[sponge-docs.plugins--permissions]
+file_filter = source/locale/<lang>/LC_MESSAGES/plugins/permissions.po
+source_file = build/locale/plugins/permissions.pot
+source_lang = en
+
+[sponge-docs.plugins--plugin-lifecycle]
+file_filter = source/locale/<lang>/LC_MESSAGES/plugins/plugin-lifecycle.po
+source_file = build/locale/plugins/plugin-lifecycle.pot
+source_lang = en
+
+[sponge-docs.plugins--quick-start]
+file_filter = source/locale/<lang>/LC_MESSAGES/plugins/quick-start.po
+source_file = build/locale/plugins/quick-start.pot
+source_lang = en
+
+[sponge-docs.plugins--services]
+file_filter = source/locale/<lang>/LC_MESSAGES/plugins/services.po
+source_file = build/locale/plugins/services.pot
+source_lang = en
+
+[sponge-docs.plugins--workspace]
+file_filter = source/locale/<lang>/LC_MESSAGES/plugins/workspace.po
+source_file = build/locale/plugins/workspace.pot
+source_lang = en
+
+[sponge-docs.plugins--advanced--configuration-in-depth]
+file_filter = source/locale/<lang>/LC_MESSAGES/plugins/advanced/configuration-in-depth.po
+source_file = build/locale/plugins/advanced/configuration-in-depth.pot
+source_lang = en
+
+[sponge-docs.plugins--advanced--index]
+file_filter = source/locale/<lang>/LC_MESSAGES/plugins/advanced/index.po
+source_file = build/locale/plugins/advanced/index.pot
+source_lang = en
+
+[sponge-docs.porting--dependencies]
+file_filter = source/locale/<lang>/LC_MESSAGES/porting/dependencies.po
+source_file = build/locale/porting/dependencies.pot
+source_lang = en
+
+[sponge-docs.porting--index]
+file_filter = source/locale/<lang>/LC_MESSAGES/porting/index.po
+source_file = build/locale/porting/index.pot
+source_lang = en
+
+[sponge-docs.users--bans]
+file_filter = source/locale/<lang>/LC_MESSAGES/users/bans.po
+source_file = build/locale/users/bans.pot
+source_lang = en
+
+[sponge-docs.users--bukkit]
+file_filter = source/locale/<lang>/LC_MESSAGES/users/bukkit.po
+source_file = build/locale/users/bukkit.pot
+source_lang = en
+
+[sponge-docs.users--commands]
+file_filter = source/locale/<lang>/LC_MESSAGES/users/commands.po
+source_file = build/locale/users/commands.pot
+source_lang = en
+
+[sponge-docs.users--compat]
+file_filter = source/locale/<lang>/LC_MESSAGES/users/compat.po
+source_file = build/locale/users/compat.pot
+source_lang = en
+
+[sponge-docs.users--config]
+file_filter = source/locale/<lang>/LC_MESSAGES/users/config.po
+source_file = build/locale/users/config.pot
+source_lang = en
+
+[sponge-docs.users--forge]
+file_filter = source/locale/<lang>/LC_MESSAGES/users/forge.po
+source_file = build/locale/users/forge.pot
+source_lang = en
+
+[sponge-docs.users--hocon]
+file_filter = source/locale/<lang>/LC_MESSAGES/users/hocon.po
+source_file = build/locale/users/hocon.pot
+source_lang = en
+
+[sponge-docs.users--index]
+file_filter = source/locale/<lang>/LC_MESSAGES/users/index.po
+source_file = build/locale/users/index.pot
+source_lang = en
+
+[sponge-docs.users--java]
+file_filter = source/locale/<lang>/LC_MESSAGES/users/java.po
+source_file = build/locale/users/java.pot
+source_lang = en
+
+[sponge-docs.users--logs]
+file_filter = source/locale/<lang>/LC_MESSAGES/users/logs.po
+source_file = build/locale/users/logs.pot
+source_lang = en
+
+[sponge-docs.users--permissions]
+file_filter = source/locale/<lang>/LC_MESSAGES/users/permissions.po
+source_file = build/locale/users/permissions.pot
+source_lang = en
+
+[sponge-docs.users--platforms]
+file_filter = source/locale/<lang>/LC_MESSAGES/users/platforms.po
+source_file = build/locale/users/platforms.pot
+source_lang = en
+
+[sponge-docs.users--plugins]
+file_filter = source/locale/<lang>/LC_MESSAGES/users/plugins.po
+source_file = build/locale/users/plugins.pot
+source_lang = en
+
+[sponge-docs.users--port-forwarding]
+file_filter = source/locale/<lang>/LC_MESSAGES/users/port-forwarding.po
+source_file = build/locale/users/port-forwarding.pot
+source_lang = en
+
+[sponge-docs.users--quick-start]
+file_filter = source/locale/<lang>/LC_MESSAGES/users/quick-start.po
+source_file = build/locale/users/quick-start.pot
+source_lang = en
+
+[sponge-docs.users--server-properties]
+file_filter = source/locale/<lang>/LC_MESSAGES/users/server-properties.po
+source_file = build/locale/users/server-properties.pot
+source_lang = en
+
+[sponge-docs.users--sponge-conf]
+file_filter = source/locale/<lang>/LC_MESSAGES/users/sponge-conf.po
+source_file = build/locale/users/sponge-conf.pot
+source_lang = en
+
+[sponge-docs.users--troubleshooting]
+file_filter = source/locale/<lang>/LC_MESSAGES/users/troubleshooting.po
+source_file = build/locale/users/troubleshooting.pot
+source_lang = en
+
+[sponge-docs.users--whitelist]
+file_filter = source/locale/<lang>/LC_MESSAGES/users/whitelist.po
+source_file = build/locale/users/whitelist.pot
+source_lang = en
+
