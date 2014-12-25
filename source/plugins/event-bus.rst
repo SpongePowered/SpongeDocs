@@ -7,7 +7,7 @@ Sponge provides a system to (1) fire events and then (2) listen for events.
 Overview
 ========
 
-Events are used to inform plugins of certain happenings. Many events can also be *cancelled* -- that is, the action that the event refers to can prevented from occurring. Cancellable events implement the ``Cancellable`` interface.
+Events are used to inform plugins of certain happenings. Many events can also be *cancelled* -- that is, the action that the event refers to can be prevented from occurring. Cancellable events implement the ``Cancellable`` interface.
 
 Sponge itself contains many events; however, plugins can create their own events which other plugins can subscribe to.
 
