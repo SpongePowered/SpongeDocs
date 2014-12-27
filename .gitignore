@@ -119,3 +119,6 @@ _build
 
 .idea/
 *.iml
+
+# Transifex config
+.tx/
