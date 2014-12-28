@@ -26,7 +26,7 @@ Full instructions and links are available at :doc:`../../plugins/javadevkit`.
 IDE Download
 ~~~~~~~~~~~~
 
-The second main download you need to perform is getting your IDE (Interactive Development Environment).
+The second main download you need to perform is getting your IDE (Integrated Development Environment).
 
 There are two commercially available IDEs that we provide instructions for; Eclipse, and IntelliJ IDEA.
 Which one you choose is a matter of personal preference, and you might even prefer an IDE that isn't listed here.
