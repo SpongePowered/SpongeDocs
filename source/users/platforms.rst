@@ -12,3 +12,10 @@ Glowstone
 `Glowstone <http://www.glowstone.net/>`__ is an independently-made server for Minecraft. It does not contain any Minecraft code.
 
 However, at the moment, Glowstone does not yet support the Sponge API but it is planned.
+
+Granite
+=======
+
+`Granite <http://www.granitepowered.org/>`__ is another Sponge implementation built ontop the Minecraft Server.
+
+However, at the moment, Granite isn't feature-complete and has no recommended build.
