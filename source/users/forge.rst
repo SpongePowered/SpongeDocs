@@ -5,7 +5,7 @@ Using Forge Mods
 Forge Mods in a Sponge Server
 -----------------------------
 
-At present, the only implementation of Sponge *in development* is as a
+At present, the only official implementation of Sponge *in development* is as a
 Forge coremod. Therefore, you must be running a Forge server to use the
 Sponge API (via Sponge coremod). Forge-compatible mods should be fully
 functional in this environment, provided they are updated to work with
