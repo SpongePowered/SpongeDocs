@@ -16,6 +16,6 @@ However, at the moment, Glowstone does not yet support the Sponge API but it is 
 Granite
 =======
 
-`Granite <http://www.granitepowered.org/>`__ is another Sponge implementation built ontop the Minecraft Server.
+`Granite <http://www.granitepowered.org/>`__ is another Sponge implementation built on top the Minecraft Server.
 
 However, at the moment, Granite isn't feature-complete and has no recommended build.
