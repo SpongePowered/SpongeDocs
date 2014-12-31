@@ -1,6 +1,6 @@
-===========================
-Example Valid JSON Syntax
-===========================
+=============================
+Example of Valid JSON Syntax
+=============================
 
 This is an example of a ``whitelist.json`` file with correct formatting (although the UUID-s are fictional). Your file should follow the same syntax.
 
