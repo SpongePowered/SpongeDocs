@@ -4,12 +4,12 @@ Eclipse
 
 Eclipse for Java
 ~~~~~~~~~~~~~~~~~~~~~~
-Eclipse Luna is a development environment that you can learn and code Java with. 
-*It is recomended that you have somewhat minimal knowledge of Java before you proceed writing plugins in Sponge.*
+Eclipse is a development environment that you can learn and code Java with. 
+*It is recommended that you have some experience with Java before you proceed to writing plugins in Sponge.*
 
 Downloads
 ~~~~~~~~~~~~~~~~~~~~~~
 **Download Eclipse at:**
 https://eclipse.org/downloads/
 
-*Make sure you pick "Eclipse IDE for Java Developers".*
+*Make sure you choose "Eclipse IDE for Java Developers".*
