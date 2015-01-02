@@ -54,6 +54,8 @@ Here is the default server.properties file of an unmodified Minecraft 1.8.1 serv
 Property Explanation
 ----------------------
 
+Credit goes to the editors at the `Minecraft Wiki <http://minecraft.gamepedia.com>`__ for the explanations.
+
 **Boolean** properties have only two valid values: *true* and *false*.
 **Integer** properties must be whole numbers. Where a range is specified, the number must be in that range.
 **String** properties can consist of any symbol.
