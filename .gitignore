@@ -122,3 +122,6 @@ _build
 
 # Transifex config
 .tx/
+
+# Node
+node_modules/
