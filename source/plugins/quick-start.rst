@@ -10,6 +10,9 @@ Your Plugin Class
 
 In order to make a plugin, you need to create a new class with a name of your choosing and in any package (that does **not** begin with org.spongepowered).
 
+`Oracle Recommends`__ __ http://docs.oracle.com/javase/tutorial/java/package/namingpkgs.html that if you own a domain to use the domain as your package name. However if you do not own a domain, a common practice is using an email address com.gmail.exampleuser.project or if open source and hosted on a repository such as github io.github.username.project
+
+
 However, in order to make Sponge recognize your plugin, you need to affix a ``@Plugin`` annotation to the class as illustrated below.
 
 .. code-block:: java
