@@ -10,6 +10,12 @@ Writing Plugins
     quick-start
     blocks
     event-bus
+    entities
     services
     logging
     plugin-lifecycle
+    mixins
+    permissions
+    commands
+    message
+    manager
