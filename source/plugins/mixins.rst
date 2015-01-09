@@ -2,6 +2,9 @@
 Mixins
 ======
 
+
+Mixins are a way of modifying java code at runtime by adding additional behavior to classes. They enable transplanting of intended behavior into existing Minecraft objects. Mixins are necessary for the Sponge coremod to function.
+
 A basic introduction to some of the core concepts underpinning the mixin functionality we're using to implement Sponge
 is available at the `Mixin Wiki <https://github.com/SpongePowered/Mixin/wiki/>`__
 
