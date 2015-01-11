@@ -9,5 +9,5 @@ been officially released.
 Sponge Builds
 -------------
 
-1. **Inspired Wallaroo** - Release Date Target is Q1, 2015
+1. **Inspired Wallaroo** - planned release date: sometime in 2015
 
