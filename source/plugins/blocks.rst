@@ -42,24 +42,24 @@ In the future, there will only be one 16 bit number (65536 possible combinations
     5 => minecraft:planks[variant=spruce]
     etc.
 
-Tile Entity Data
-~~~~~~~~~~~~~~~~
+Block Entity Data
+~~~~~~~~~~~~~~~~~~
 
-With 65536 possible combinations, it is not possible to store a lot of information like inventory, so there's an additional way that *some* blocks have data: tile entities.
+With 65536 possible combinations, it is not possible to store a lot of information like inventory, so there's an additional way that *some* blocks have data: block entities.
 
-Tile entities themselves are Java objects (like a `Chest` class). Normally, Minecraft code would access data in a tile entity by getting its instance and then calling it methods or fields, like a regular object (``world.getTileEntity(position).getInventory()``). When tile entities need to be written to the save file, they are stored in the `NBT format <http://minecraft.gamepedia.com/NBT_format>`_.
+Block entities themselves are Java objects (like a `Chest` class). Normally, Minecraft code would access data in a block entity by getting its instance and then calling it methods or fields, like a regular object (``world.getBlockEntity(position).getInventory()``). When block entities need to be written to the save file, they are stored in the `NBT format <http://minecraft.gamepedia.com/NBT_format>`_.
 
 .. tip::
     
     Some things, like paintings, are actually entities.
     
-    However, tile entities can also override rendering so they don't look like a regular block, although this is generally inefficient and causes a client framerate drop.
+    However, block entities can also override rendering so they don't look like a regular block, although this is generally inefficient and causes a client framerate drop.
 
 The Block API
 =============
 
-Accessing Tile Entity Data
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+Accessing Block Entity Data
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Snapshots
 ~~~~~~~~~
