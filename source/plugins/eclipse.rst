@@ -38,8 +38,8 @@ Eclipse Git Integration
 
 This plugin provides an interface for the distributed version control system Git, which is also used by the Sponge Project.
 
-**You can download it at:**
-http://marketplace.eclipse.org/content/egit-git-team-provider
+**This plugin is already included in the "Eclipse IDE for Java Developers" package.**
+
 
 .. tip::
     
