@@ -25,7 +25,9 @@ Alternatively, you can drag the 'Install Button' from the Eclipse marketplace in
 Eclipse Gradle Integration
 --------------------------
 
-This plugin adds a visual interface for Gradle, the dependeny management and build system used by the Sponge Project and many plugin developers.
+This plugin adds a visual interface for Gradle, the dependency management and build system used by the Sponge Project and many plugin developers.
+
+Look at the :doc:`gradle` page for more information about setting up a Gradle project.
 
 Usually you do not need the optional Spring modules distributed with this plugin, so you uncheck them during the installation.
 
@@ -43,4 +45,4 @@ This plugin provides an interface for the distributed version control system Git
 
 .. tip::
     
-    This `Tutorial <http://www.vogella.com/tutorials/EclipseGit/article.html>`_ covers the basics of Git and the usage of the EGit plugin
+    This `Tutorial <http://www.vogella.com/tutorials/EclipseGit/article.html>`_ covers the basics of Git and the usage of the EGit plugin.
