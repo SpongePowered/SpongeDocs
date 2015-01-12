@@ -64,11 +64,101 @@ The ``@Subscribe`` annotation has a few configurable fields:
 Firing Events
 =============
 
+To dispatch an event, you need an object that implements the ``org.spongepowered.api.util.event.Event`` interface.
+
+You can fire events using the event bus (``org.spongepowered.api.service.event.EventManager``):
+
+.. code-block:: java
+
+    boolean cancelled = eventBus.post(theObject);
+    
+The method returns ``true`` if the event was cancelled, ``false`` if not.
+
 Firing Sponge Events
 ~~~~~~~~~~~~~~~~~~~~
 
+It is possible to generate instances of built-in events with the static ``SpongeEventFactory``.
+
+
 Creating Custom Events
 ======================
+
+You can write your own event classes and dispatch those events using the method described above.
+
+An event class must implement the ``Event`` interface. Alternatively you can extend the ``AbstractEvent`` class.
+
+If you want your event to be cancellable, the class must also implement ``Cancellable``.
+
+**Example: Custom Event Class**
+
+.. code-block:: java
+
+    package example.event;
+
+    import org.spongepowered.api.entity.player.Player;
+    import org.spongepowered.api.event.AbstractEvent;
+    import org.spongepowered.api.util.event.Cancellable;
+   
+    public class PrivateMessageEvent extends AbstractEvent implements Cancellable {
+   
+       private boolean cancelled = false;
+      
+       private Player sender;
+       private Player receipient;
+      
+       private String message;
+   
+       public Player getSender() {
+          return sender;
+       }
+   
+       public Player getReceipient() {
+          return receipient;
+       }
+   
+       public String getMessage() {
+          return message;
+       }
+   
+       @Override
+       public boolean isCancelled() {
+          return cancelled;
+       }
+   
+       @Override
+       public void setCancelled(boolean cancel) {
+          cancelled = cancel;
+       }
+   
+       public PrivateMessageEvent(Player sender, Player receipient, String message) {
+          this.sender = sender;
+          this.receipient = receipient;
+          this.message = message;
+       }
+    }
+
+
+**Example: Fire custom Event**
+
+.. code-block:: java
+
+    eventBus.post(new PrivateMessageEvent(playerA, playerB, "Hello World!");
+
+
+**Example: Listen for custom event**
+
+.. code-block:: java
+
+    @Subscribe
+    public void pmEventHandler(PrivateMessageEvent event) {
+        if(event.getMessage().equals("hi i am from planetminecraft")) {
+           event.setCancelled();
+           return;
+        }
+    
+        String senderName = event.getSender().getName();
+        event.getReceipient().sendMessage(ChatTypes.CHAT, "PM from " + senderName + ": " + event.getMessage());
+    }
 
 Callbacks
 =========
