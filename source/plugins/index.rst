@@ -9,13 +9,14 @@ Writing Plugins
     workspace
     quick-start
     blocks
+    commands
     event-bus
     entities
-    services
     logging
-    plugin-lifecycle
-    mixins
-    permissions
-    commands
-    message
     manager
+    message
+    permissions
+    plugin-lifecycle
+    services
+
+
