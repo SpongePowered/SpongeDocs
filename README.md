@@ -3,7 +3,7 @@
 This is the repository where the Sponge documentation is held.
 
 
-The latest version may be viewed in full by visiting [Sponge at Read-the-Docs](https:/docs.spongepowered.org)
+The latest version may be viewed in full by visiting [Sponge at Read-the-Docs](https://docs.spongepowered.org/)
 
 ## Translations
 
