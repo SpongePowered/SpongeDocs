@@ -11,7 +11,7 @@ Dependencies
         mavenCentral()
         maven {
             name 'Sponge maven repo'
-            url 'http://repo.spongepowered.org/Sponge/maven'
+            url 'http://repo.spongepowered.org/maven'
         }
     }
 
