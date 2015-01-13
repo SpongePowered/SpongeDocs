@@ -11,7 +11,7 @@ Dependencies
         <repository>
             <id>sponge-maven-repo</id>
             <name>Sponge maven repo</name>
-            <url>http://repo.spongepowered.org/Sponge/maven</url>
+            <url>http://repo.spongepowered.org/maven</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
