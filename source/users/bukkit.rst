@@ -5,7 +5,7 @@ Migrating from Bukkit
 Do Bukkit Plugins Work?
 =======================
 
-No, unfortunately natively they do not, however plugins could re-implement the Bukkit API for Sponge, for this to be possible.
+No, unfortunately there is no native support for Bukkit plugins in Sponge. (It may be possible to re-implement the Bukkit API with a special Sponge plugin, and thus support Bukkit plugins)
 
 
 .. note::
