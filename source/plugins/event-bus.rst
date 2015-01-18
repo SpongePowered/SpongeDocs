@@ -70,7 +70,7 @@ You can fire events using the event bus (``org.spongepowered.api.service.event.E
 
 .. code-block:: java
 
-    boolean cancelled = eventBus.post(theObject);
+    boolean cancelled = eventBus.post(theEventObject);
     
 The method returns ``true`` if the event was cancelled, ``false`` if not.
 
