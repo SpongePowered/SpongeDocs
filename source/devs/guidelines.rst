@@ -60,6 +60,10 @@ We follow `Google's Java Style Guidelines <https://google-styleguide.googlecode.
 
   * For exceptions that are to be ignored, name the exception variable ``ignored``
 
+* Field accesses
+
+  * Qualify **all** field accesses with ``this``
+
 * Javadocs
 
   * Do not use ``@author``
