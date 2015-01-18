@@ -56,6 +56,17 @@ We follow `Google's Java Style Guidelines <https://google-styleguide.googlecode.
 
   * File headers must contain the license headers for the project. Use the ``licenseFormat`` Gradle task to add them automatically.
 
+* Imports
+
+  * Imports must be grouped in the following order, where each group is separated by an empty line
+
+    * Static imports
+    * All other imports
+    * ``java`` imports
+    * ``javax`` imports
+
+  * This differs from Google's style in that imports are not grouped by top-level package, they are all grouped as one.
+
 * Exceptions
 
   * For exceptions that are to be ignored, name the exception variable ``ignored``
