@@ -2,12 +2,10 @@
 IntelliJ IDEA
 =======
 
-.. tip::
-    IntelliJ is recomended to use by the Sponge team, as it is a very smart IDE for beginners and advanced users.
-
 Intellij for Java
 ~~~~~~~~~~~~~~~~
-Intellij is a development environment that you can learn and code Java with. 
+Intellij is a development environment that you can learn and code Java (including Sponge plugins). 
+
 *It is recommended that you have some experience with Java before you proceed to writing plugins in Sponge.*
 
 Downloads
@@ -15,7 +13,8 @@ Downloads
 **Download Intellij IDEA at:**
 https://www.jetbrains.com/idea/download/
 
-*Make sure you choose "Eclipse IDE for Java Developers".*
+- Intellij have a Community and a Ultimate Edition, download the Community Edition unless you have the license/money for the paid version. You can also apply as a student to get it free.
+- You do not need the Ultimate Edition to develop plugins, as the Community Version still contains all the tools you need.
 
 Plugins
 ~~~~~~~
