@@ -11,7 +11,7 @@ Working on the Forge Mod
 Prerequisites
 -------------
 
-The setup required to develop plugins for Sponge is quite simple and requires three things.
+The setup required to develop the Sponge Forge Mod is quite simple and requires three things.
 
 - Java JDK installed
 - IDE of your choice installed
@@ -37,7 +37,7 @@ You can download Eclipse here: https://eclipse.org/downloads/
 
 You can download IntelliJ IDEA here: https://www.jetbrains.com/idea/download/
 (Choose the "Community Version" unless you want to pay for the Ultimate Edition.
-You do not need the Ultimate Edition to develop plugins, as the Community Version still contains all the tools you need.)
+You do not need the Ultimate Edition, as the Community Version still contains all the tools you need.)
 
 git Download
 ~~~~~~~~~~~~
