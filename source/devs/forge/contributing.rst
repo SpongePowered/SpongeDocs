@@ -15,7 +15,7 @@ The setup required to develop the Sponge Forge Mod is quite simple and requires 
 
 - Java JDK installed
 - IDE of your choice installed
-- git client installed
+- Git client installed
 
 Java Development Kit
 ~~~~~~~~~~~~~~~~~~~~
@@ -39,25 +39,30 @@ You can download IntelliJ IDEA here: https://www.jetbrains.com/idea/download/
 (Choose the "Community Version" unless you want to pay for the Ultimate Edition.
 You do not need the Ultimate Edition, as the Community Version still contains all the tools you need.)
 
-git Download
+Git Download
 ~~~~~~~~~~~~
 
-The download page for git is here:  http://git-scm.com/downloads
+The download page for Git is here:  http://git-scm.com/downloads
 
 Make sure to install the appropriate version for your operating system.
 
-Linux users, git will be available on your distro's package manager, usually under the name "git".
+For Linux users, Git will be available on the distro's package manager, usually under the name "git".
 
 Install it like any other application, and reboot.
 
-Running Gradle
---------------
+Workspace Setup
+---------------
 
-Once these are downloaded, installed, and you've rebooted (again), then you can begin to setup the workspace specific for Sponge.
+Once these are downloaded, installed, and you've rebooted (again), 
+then you can begin to setup the workspace specific for Sponge.
 
-(We're going to assume that your `PATH` is correct as well, each operating system has its own way of specifying new directories to search for commands. In Unix-based systems the environment variable is `$PATH`.  In Windows systems it is `%PATH%`%. It's advised to construct your profile in your system such that when you login to the computer, the `PATH` is setup correctly vs. manually updating the `PATH` before working with Sponge)
+(We're going to assume that your `PATH` is correct. 
+Each operating system has its own way of specifying new directories to search for commands. 
+In Unix-based systems the environment variable is `$PATH`.  In Windows systems it is `%PATH%`%. 
+It's advised to construct your profile in your system such that when you login to the computer, 
+the `PATH` is setup correctly vs. manually updating the `PATH` before working with Sponge)
 
-To get Sponge and built, now we need to use `git` and the tools we just downloaded:
+To get Sponge and built, now we need to use Git and the tools we just downloaded:
 
 Before we begin with that, a few words of advice:
 
@@ -67,75 +72,87 @@ As such, putting your repository into say, the Desktop, or in folders that conta
 
 Keep the paths to your source tree as short as possible::
 
-Caveat - some users may prefer to hold their source trees in their user folders, or elsewhere on the system.  It's not required to 
-keep the paths short, but it may help.  If you do not prefer to put things close to the root folder, then put the file
-tree anywhere you like.  It is up to you.  Be aware of path name length limits of your Operating System
+    C:\> mkdir c:\sp\main
+    C:\> cd c:\sp\main
 
-``C:\> mkdir c:\sp\main``
-``C:\> cd c:\sp\main``
+.. note::
+    
+    Some users may prefer to hold their source trees in their user folders, or elsewhere on the system.  
+    It's not required to keep the paths short, but it may help.  
+    If you do not prefer to put things close to the root folder, then put the file tree anywhere you like.  
+    It is up to you. Be aware of path name length limits of your Operating System.
 
+Cloning the Sponge Repository with Git
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Now you're ready to begin the process of getting Sponge sources and beginning to build it for the first time.
 Refer to the README.md page for the Sponge project for the most current version of instructions,
 but these steps are generally going to be the same throughout the development of Sponge::
 
-``C:\sp\main> git clone git@github.com:SpongePowered/Sponge.git``
+    C:\sp\main> git clone git@github.com:SpongePowered/Sponge.git
 
 That will create a clone of the Sponge project on your PC. The process will create the directory Sponge::
 
-``C:\sp\main> cd Sponge``
+    C:\sp\main> cd Sponge
 
-We need to update the project by fetching the submodules linked to Sponge, namely the SpongeAPI module::
+We need to update the project by fetching the submodules linked to Sponge, namely the "SpongeAPI" module::
 
-``C:\sp\main\Sponge> git submodule update --init --recursive``
+    C:\sp\main\Sponge> git submodule update --init --recursive
 
 There is a commit-hook that is used to process checkins to the repository,
-we need to put a copy of that hook in the `git` hooks folder::
+we need to put a copy of that hook in the `Git` hooks folder::
 
-``C:\sp\main\Sponge> copy scripts\pre-commit .git\hooks``
+    C:\sp\main\Sponge> copy scripts\pre-commit .git\hooks
 
 (With Unix-based systems the command is just the same, but using cp and the path separators are /)::
 
-``$ cp scripts/pre-commit .git/hooks``
+    $ cp scripts/pre-commit .git/hooks
 
-At this point you can begin to setup the workspace with gradle (which you do NOT need to download or install)
+At this point, you can begin to setup the workspace with Gradle (which you do NOT need to download or install).
 
-The catch is that the gradle build process needs to be aware of the location of your Java compiler.
+The catch is that the Gradle build process needs to be aware of the location of your Java compiler.
 So before running gradle for the first time to setup the workspace,
 we need to specify the environment variable ``JAVA_HOME``.
 
-``JAVA_HOME`` is an environment variable that is set in the shell.
-You can set this up once in your login process for your PC or manually set it
-each time you run gradle.  I prefer to put it into my per-login process so I don't need to manually set it.
+Setting the ``JAVA_HOME`` Variable
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. note::
+    
+    ``JAVA_HOME`` is an environment variable that is set in the shell.
+    You can set this up once in your login process for your PC or manually set it
+    each time you run gradle. It is recommended to put it into your per-login process so you don't need to manually set it.
 
 ``JAVA_HOME`` is a directory to where the JDK is installed:
 
 If you installed Java as shown above then the JAVA_HOME would be set like this::
 
-``C:\> set JAVA_HOME=c:\program files\java\jdk1.7.0_67``
+    C:\> set JAVA_HOME=c:\program files\java\jdk1.7.0_67
 
-(jdk1.7.0.67 is the version I have at the moment, your version will differ if the download is recent)
+(The path will differ depending on the Java version you have installed at the moment)
 
 To see exactly what the version (path) is then just type::
 
-``C:\> dir C:\program files\java``
+    C:\> dir C:\program files\java
 
 and inspect the output for the name of the directory that contains the JDK.
 
+Running Gradle
+~~~~~~~~~~~~~~
 
-Once JAVA_HOME is set then we can run gradle to setup the workspace:
+Once ``JAVA_HOME`` is set then we can run Gradle to setup the workspace::
 
-``C:\> gradle setupDecompWorkspace --refresh-dependencies``
+    C:\> gradle setupDecompWorkspace --refresh-dependencies
 
 This process will do several things:
 
-It will download jar files that are required for Sponge to build.
-It will download Forge which is also required for Sponge to build.
+* It will download jar files that are required for Sponge to build.
+* It will download Forge which is also required for Sponge to build.
 
-(remember we're building Sponge, not plugins for Sponge)
-
-Sponge plugins DO NOT need Forge to build (nor should they ever need Forge to build).
-
+.. note::
+    
+    Remember that we're building Sponge, not plugins for Sponge.
+    Sponge plugins **DO NOT** need Forge to build (nor should they ever need Forge to build).
 
 This process will take a few minutes depending on your network connection.  It is a process that requires a network connection so be sure you are online for that step.
 
