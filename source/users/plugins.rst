@@ -26,6 +26,7 @@ Common Problems
 
 If you are having problems with a plugin, consider the following things:
 
-* If the plugin compatible with your Minecraft version? While Sponge tries to keep old plugins working, this is sometimes not possible.
+* Is the plugin compatible with your Minecraft version? While Sponge tries to keep old plugins working, this is sometimes not possible, (however in most cases plugins based on a stable release should continue functioning without needing to keep up to date).
 * Do you have a new enough Java version? While Sponge is built for Java 6 minimum, some plugins may require newer versions of Java such as 7 or 8.
 * The plugin may be outdated. Is there a newer version of the plugin?
+* Some plugins may be "implementation specific" they may hook into minecraft/forge/glowstone bypassing the SpongeAPI, or otherwise rely on details that change between versions or platforms.
