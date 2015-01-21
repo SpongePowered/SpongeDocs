@@ -23,8 +23,7 @@ git configuration has your identity setup.
 
 
 .. tip::
-   Do not proceed with any contribution in any Sponge repository until 
-   you establish your ```user.name``` and ```user.email```.
+   Do not proceed with any contribution in any Sponge repository until you establish your ```user.name``` and ```user.email```.
 
 Getting an enlistment to Sponge
 =============
@@ -47,8 +46,7 @@ Working on the SpongeAPI
 #. ```git pull```
 
 .. tip::
-    ```git pull``` brings your branch (master at this point) up to date before 
-   branching it.
+    ```git pull``` brings your branch (master at this point) up to date before branching it.
 
 #. ```git checkout -b YourBranchName```
 
@@ -86,8 +84,7 @@ Working on the SpongeAPI
 #.  ```git push```
 
 .. tip::
-    If this is the first time you're pushing a commit for this new branch
-    then the branch is not on the upstream remote.  You may see this warning:
+    If this is the first time you're pushing a commit for this new branch then the branch is not on the upstream remote.  You may see this warning:
 ```
 fatal: The current branch YourBranchName has no upstream branch.
 To push the current branch and set the remote as upstream, use
