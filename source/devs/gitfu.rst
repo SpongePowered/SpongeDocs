@@ -14,16 +14,16 @@ Who are You?
 Before you even start to work with git and the repostory, make sure your
 git configuration has your identity setup.
 
-1.  ```git config --list```
-#.  Look for ```user.name``` and ```user.email```
+1.  ``git config --list``
+#.  Look for ``user.name`` and ``user.email``
 #.  If they are not the same username and email as your Github account
     then set them:
-#.  ```git config --global user.name "John Doe"```
-#.  ```git config --global user.email johndoe@example.com```
+#.  ``git config --global user.name "John Doe"``
+#.  ``git config --global user.email johndoe@example.com``
 
 
 .. tip::
-   Do not proceed with any contribution in any Sponge repository until you establish your ```user.name``` and ```user.email```.
+    Do not proceed with any contribution in any Sponge repository until you establish your ``user.name`` and ``user.email``.
 
 Getting an enlistment to Sponge
 =============
@@ -41,17 +41,17 @@ Getting an enlistment to Sponge
 
 Working on the SpongeAPI
 =============
-1. ```cd SpongeAPI```
+1. ``cd SpongeAPI``
 
-#. ```git pull```
-
-.. tip::
-    ```git pull``` brings your branch (master at this point) up to date before branching it.
-
-#. ```git checkout -b YourBranchName```
+#. ``git pull``
 
 .. tip::
-    The name of your branch should follow a convention.  Please try to use a name like ```feature/your-feature```
+    Bring your master branch current before branching.  ``git pull`` brings your branch (master at this point) up to date before branching it.
+
+#. ``git checkout -b YourBranchName``
+
+.. tip::
+    The name of your branch should follow a convention.  Please try to use a name like ``feature/your-feature``
 
 #.  Work with the files, create files, etc..  Do your work in the branch.
 
@@ -60,37 +60,37 @@ Working on the SpongeAPI
     the commit.
 
 .. tip::
-    Run ```gradle compileJava``` to run a simple build of the source files.
+    Run ``gradle compileJava`` to run a simple build of the source files.
 
 #.  When you're convinced that the build of your branch of the SpongeAPI is
     ok then you can commit. 
 
-#.  ```git status```
+#.  ``git status``
 
 #.  Look for files that are noted as not staged for commit.   Add the
     files that need to be staged for commit.
 
-#.  ```git add FILE(s)```
+#.  ``git add FILE(s)``
 
 #.  When all the files are staged for commit, then commit.
 
-#.  ```git commit```
+#.  ``git commit``
 
 #.  Edit the commit message.  This message should be short and concise.
 
 #.  Now that you've made the commit, you can push this commit to the 
     repository.
 
-#.  ```git push```
+#.  ``git push``
 
 .. tip::
     If this is the first time you're pushing a commit for this new branch then the branch is not on the upstream remote.  You may see this warning:
-```
+``
 fatal: The current branch YourBranchName has no upstream branch.
 To push the current branch and set the remote as upstream, use
 
     git push --set-upstream origin YourBranchName
-```
+``
 
 #.  Once your commit is pushed to the repository, then you can open
     a pull request
