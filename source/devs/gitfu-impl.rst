@@ -43,8 +43,7 @@ Git-Fu for Sponge Implementation
 
 #.  ``git add SpongeAPI``    (May be required)
 #.  ``git add Mixin``        (May be required)
-#.  ``git status``           (Look for unstaged commits.  You should have already commited your SpongeAPI changes and pushed them before moving forward with
-the implementation commit and push).
+#.  ``git status``           (Look for unstaged commits.  You should have already commited your SpongeAPI changes and pushed them before moving forward with the implementation commit and push).
 
 #.  ``git commit``
 
