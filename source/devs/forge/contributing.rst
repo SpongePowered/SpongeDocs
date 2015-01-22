@@ -56,11 +56,13 @@ Workspace Setup
 Once these are downloaded, installed, and you've rebooted (again), 
 then you can begin to setup the workspace specific for Sponge.
 
-(We're going to assume that your `PATH` is correct. 
-Each operating system has its own way of specifying new directories to search for commands. 
-In Unix-based systems the environment variable is `$PATH`.  In Windows systems it is `%PATH%`%. 
-It's advised to construct your profile in your system such that when you login to the computer, 
-the `PATH` is setup correctly vs. manually updating the `PATH` before working with Sponge)
+.. note::
+    
+    We're going to assume that your ``PATH`` is correct. 
+    Each operating system has its own way of specifying new directories to search for commands. 
+    In Unix-based systems the environment variable is ``$PATH``.  In Windows systems it is ``%PATH%``. 
+    It's advised to construct your profile in your system such that when you login to the computer, 
+    the ``PATH`` is setup correctly vs. manually updating the ``PATH`` before working with Sponge.
 
 To get Sponge and built, now we need to use Git and the tools we just downloaded:
 
