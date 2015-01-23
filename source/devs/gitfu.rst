@@ -1,18 +1,20 @@
-=======================
-Git-Fu
-=======================
+===============================
+How to Work with Git and Sponge
+===============================
 
-Using git is part of developing for Sponge and SpongeAPI.
+*(aka Git-Fu: A Guide to Using Git in Development)*
 
-Using git well improves your contributions.  This document will help
+Using git is a vital part of developing for Sponge and SpongeAPI.
+
+Using git well can improve your contributions. This document will help
 show you how to make the most of git when contributing to Sponge.
 
 
-Who are You?
-=============
+Who Are You?
+============
 
-Before you even start to work with git and the repostory, make sure your
-git configuration has your identity setup.
+Before you even start to work with git and the repository, make sure your
+git configuration has your identity set up.
 
 1.  ``git config --list``
 #.  Look for ``user.name`` and ``user.email``
@@ -25,8 +27,9 @@ git configuration has your identity setup.
 .. tip::
     Do not proceed with any contribution in any Sponge repository until you establish your ``user.name`` and ``user.email``.
 
-Getting an enlistment to Sponge
-=============
+
+Getting an Enlistment to Sponge
+===============================
 
 Setup your workspace as described in the main page of the Sponge project.
 
