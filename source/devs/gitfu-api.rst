@@ -46,12 +46,13 @@ Git-Fu for SpongeAPI
 
 .. tip::
     If this is the first time you're pushing a commit for this new branch then the branch is not on the upstream remote.  You may see this warning:
-``
-fatal: The current branch YourBranchName has no upstream branch.
+
+    ``fatal: The current branch YourBranchName has no upstream branch.``
+
 To push the current branch and set the remote as upstream, use
 
-    git push --set-upstream origin YourBranchName
-``
+    ``git push --set-upstream origin YourBranchName``
+
 
 #.  Once your commit is pushed to the repository, then you can open
     a pull request
