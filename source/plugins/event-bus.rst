@@ -132,7 +132,7 @@ If you want your event to be cancellable, the class must also implement ``Cancel
    
        public PrivateMessageEvent(Player sender, Player recipient, String message) {
           this.sender = sender;
-          this.recipient = receipient;
+          this.recipient = recipient;
           this.message = message;
        }
     }
