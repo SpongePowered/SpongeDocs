@@ -17,22 +17,24 @@ Summary
 
 - We want something easy to use.
 - Community-developed modding API. We invite any developer to help out.
-- Works with Forge mods.
-- No need for client mods if only used on the server.
-- Can be used to write client mods.
+- Lots of people involved with strong Java backgrounds and/or experience.
+- An extremely open project.
+- No legal issues, unlike the Bukkit project.
+- Keeping performance as a high priority during development.
+- Bukkit plugins *may* run on Sponge without change due to efforts by the community.
+- Plan to eventually be used to make client mods.
 - Not tied to any platform:
 
     - Can be used on a from-scratch server (i.e. Glowstone)
       - Planned & officially working with Glowstone team
     - Can be used on top of Forge
       - Planned & and officially working with Forge team
+      - No need for client mods if only Sponge is used on the server
+      - Can work with Forge mods
     - Can be injected into Minecraft directly
       - Not planned yet (this is a larger undertaking and we prefer something usable sooner)
-- An extremely open project.
-- No legal issues, unlike the Bukkit project.
-- Bukkit plugins may run on Sponge without change due to efforts by the community.
-- Keeping performance as a high priority during development.
-- Lots of people involved with strong Java backgrounds and/or experience.
+      - Several Third Party Implementations are attempting this
+
 
 For the User
 ------------
@@ -40,8 +42,10 @@ For the User
 Our ultimate goal is to create a modding API that is easy to use for owners of small servers for friends and family, owners of large servers, and everyone in between. In addition, we also plan to permit client modding.
 
 - Sponge mods should work across several different Minecraft versions without needing an update from the developer, which means that you don’t have to worry about all your mods breaking between each new major release of Minecraft (1.6, 1.7, 1.8, etc.)
-- If Sponge is used on the server, players who join will not need Sponge or Forge installed on their game. You can use Sponge to make management of your server easier, by allowing you to protect areas, log what players (or even friends) do, add minigames, and so on.
+
+- If Sponge is used on the server, players who join will not need Sponge or Forge installed on their game. You can use Sponge to make management of your server easier, by allowing you to deploy Sponge Plugins that protect areas, log what players (or even friends) do, add minigames, and so on.
     - However, you will be able to use Sponge mods on the client too, including Sponge mods that are meant only to be used on the client.
+
 - Sponge will be separated into an “API” that modders will use to make mods and an “implementation” that is able to load these mods. The API won’t change much between MC versions, so modders will build against that, and the implementation loads the mods and makes them work.
 
     - We want to start by writing an implementation for two platforms:
@@ -93,7 +97,7 @@ From a Technical Perspective
 
 - Many of our developers have worked with Minecraft for years and know the ins and outs of its mechanics.
 - Our developers are well versed with Java. Many of us frequently work with “bytecode injection” and have for years, or even write mod loaders on the side.
-- Performance is on our mind. The Glowstone implementation may run the best, but we plan to make the necessary changes to Minecraft to improve its performance for anything built on top of Minecraft itself (which includes the Forge implementation), just as Bukkit and Spigot has done.
+- Performance is on our mind. The Glowstone implementation may run the best, but we plan to make the necessary changes to Minecraft to improve its performance for anything built on top of Minecraft itself (which includes the Forge implementation), just as Bukkit and Spigot have done.
 
   
 
@@ -143,21 +147,23 @@ What About Forge Mods and hMod Plugins?
 
 .. image:: /images/faq6.png
 
+
 General Questions
 =================
 
 When Will the First Downloads Be Available?
 -------------------------------------------
 
-The release date of the Sponge implementation is still to be announced.
+The release date of the Sponge implementation for Forge is still to be announced.
 However, the Sponge API (v1.0) was released on November 30th, 2014.
 
 Will There Be an Official Place to Download Plugins?
 ----------------------------------------------------
 
-Yes there will be. The complete details are still being discussed. You
-can take part of the discussion here
-https://forums.spongepowered.org/t/plugin-hosting/1150.
+Yes there will be. The plugin repository, to be called **Ore** is in the works.
+The details are still being debated. You can take part in the discussion here
+https://forums.spongepowered.org/t/plugin-hosting/1150,
+or even assist its' development on GitHub.
 
 What Does This Mean for the Players?
 ------------------------------------
@@ -166,25 +172,19 @@ Players should not notice anything different about the servers you know
 and love. Sponge is just an API that allows developers to create plugins
 just like before when using bukkit.
 
-Will I Need Forge to Connect to a Sponge server?
-------------------------------------------------
-
-No modification to your client is needed, just launch and play like
-normal!
-
 What are Sponge Mods?
 --------------------
 
 Sponge coremod is still under development, and will implement the Sponge
 API on a 1.8 Minecraft-Forge server.
-Future plans may include more client Sponge mods that could perform a
-variety of functions related to the client.
+Future plans may include client-side Sponge mods that could perform a
+variety of functions related to the client, and running server plugins in single player mode.
 
 What Does This Mean for the Server Owners?
 ------------------------------------------
 
 Server owners will have to download Sponge and start them like any other
-Minecraft Forge server.
+MinecraftForge server.
 
 What Java Version is Sponge Using?
 ----------------------------------
@@ -195,22 +195,20 @@ vanilla Minecraft and Forge.
 Will Players Need the Forge Client to Connect?
 ----------------------------------------------
 
-If Sponge is used on the server, players who join will not need Sponge
-or Forge installed on their game. You can use Sponge to make management
-of your server easier, by allowing you to protect areas, log what
-players (or even friends) do, add minigames, and so on.
-
-What Minecraft Version is Sponge be First Available for?
---------------------------------------------------------
-
-Sponge will be first available for Minecraft 1.8, or whatever 1.8.x
-version exists at the time.
+No. If Sponge is used on the server, players who join will not need Sponge
+or Forge to connect.
 
 But Forge Doesn’t Support Unmodified Vanilla Clients?
 -----------------------------------------------------
 
 It does now. Forge's lead developer LexManos has delivered on plans to
 add support for vanilla clients in the 1.8 update.
+
+What Minecraft Version is Sponge be First Available for?
+--------------------------------------------------------
+
+Sponge will be first available for Minecraft 1.8, or whatever 1.8.x
+version exists at the time.
 
 But Forge Takes Too Long to Update?
 -----------------------------------
@@ -219,7 +217,6 @@ With a large portion of the Minecraft community working together, we are
 sure we can help speed up things. Development builds for Minecraft Forge
 are already available for the 1.8 update.
 
-
 I Haven't Kept Up, What Happened To Bukkit?
 -------------------------------------------
 
@@ -227,7 +224,6 @@ One of the contributors to Bukkit sent a DMCA take down notice to have
 Bukkit removed. He was within his legal right. Downloads, as well as
 source code, for Bukkit and its derivatives (Spigot, Cauldron) are no
 longer available. 
-
 
 Who is Involved With the Sponge Project?
 ---------------------------------
@@ -255,10 +251,11 @@ community and other members when appropriate, will make the decisions.
 Have You Consulted the Community?
 ---------------------------------
 
-Yes! While things have been moving pretty quickly, we’re very open to
-input. Many of our decisions are based on discussion in the #nextstep
-IRC channel (on EsperNet) as well as the results of a survey. We have
-been collecting meeting notes and consensus on a Google document.
+Yes! While things have been moving along quickly, we’re still very open to
+input. Many of our decisions have been based on the initial discussion in the #nextstep
+IRC channel (on EsperNet) as well as the results of a survey. Sponge now has
+extensive IRC channels of its' own, and helpful discussion is always welcome.
+
 
 Technical Questions
 ===================
@@ -351,7 +348,8 @@ How Will the New Server Perform in Comparison With Spigot and Bukkit?
 ---------------------------------------------------------------------
 
 We are currently investigating this, but we plan to reach or exceed
-performance of the other implementations given time.
+performance of the other implementations given time. The optimisations that were
+featured in Cauldron are also being evaluated.
 
 Will You Be Able to Send Mods From the Server to the Client?
 ------------------------------------------------------------
