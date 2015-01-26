@@ -104,7 +104,7 @@ If you want your event to be cancellable, the class must also implement ``Cancel
        private boolean cancelled = false;
 
        private Player sender;
-       private Player receipient;
+       private Player recipient;
 
        private String message;
 
@@ -112,8 +112,8 @@ If you want your event to be cancellable, the class must also implement ``Cancel
           return sender;
        }
 
-       public Player getReceipient() {
-          return receipient;
+       public Player getRecipient() {
+          return recipient;
        }
 
        public String getMessage() {
@@ -130,9 +130,9 @@ If you want your event to be cancellable, the class must also implement ``Cancel
           cancelled = cancel;
        }
 
-       public PrivateMessageEvent(Player sender, Player receipient, String message) {
+       public PrivateMessageEvent(Player sender, Player recipient, String message) {
           this.sender = sender;
-          this.receipient = receipient;
+          this.recipient = recipient;
           this.message = message;
        }
     }
