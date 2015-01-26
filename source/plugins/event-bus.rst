@@ -164,3 +164,57 @@ Callbacks
 =========
 
 Callbacks are a more advanced feature of Sponge's event system.
+
+Callbacks allow plugins to cooperate better when they override vanilla behavior. When an event is invoked, Sponge runs through the event
+handlers in order from first to last. Then Sponge runs through the callback list in order from last to first. Vanilla is always the first
+callback added, meaning that vanilla's handler will be executed last.
+
+Plugins that don't use event handlers can also use the simpler ```setCancelled(boolean)``` method, which will disable all calbacks. However,
+some plugins may just need to disable vanilla behavior, or prevent another plugin's behavior from running. Additionally, callbacks allow a
+plugin to tweak properties of added behavior. 
+
+A plugin can add as many callbacks as it needs during an event, and plugins can cancel specific callbacks. However, a plugin cannot reorder
+or remove callbacks, as some behaviors (especially vanilla) cannot be reordered.
+
+**Example: Disable chair sitting added by CraftBook**
+
+.. code-block:: java
+
+    @Subscribe
+    public void onPlayerInteractBlock(PlayerInteractBlock event) {
+        List<Callback> baseGameCallbacks = new ArrayList<Callback>();
+        boolean foundChair = false;
+
+        Iterator<Callback> it = event.getCallbacks().iterator();
+        while (it.hasNext()) {
+            Callback callback = it.next();
+            if (callback instanceof com.sk89q.craftbook.mechanic.Chair) {
+                callback.setCancelled(true);
+                foundChair = true;
+            } else if (!callback.isBaseGame() && !callback.isCancelled()) {
+                foundChair = false;
+                break;
+            }
+        }
+
+        if (foundChair) {
+            for (Callback callback : baseGameCallbacks) {
+                callback.setCancelled(false);
+            }
+        }
+    }
+
+**Example: Modifying behaviors**
+
+.. code-block:: java
+
+    @Subscribe
+    public void onExplosion(ExplosionEvent event) {
+        for (Callback callback : event.getCallbacks()) {
+            if (callback instanceof example.FireworksExplosion) {
+                ((example.FireworksExplosion) callback).setYield(200);
+            }
+        }
+    }
+
+Thanks to @sk89q for the callback examples. They were copied from his original `PR #232 <https://github.com/SpongePowered/SpongeAPI/pull/232>`_.
