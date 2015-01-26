@@ -34,7 +34,7 @@ In order to listen for event, an event handler must be registered. This is done 
     public void someEventHandler(SomeEvent event) {
         // Do something with the event
     }
-    
+
 In addition, the object that has these methods must be registered with the event bus.
 
 .. code-block:: java
@@ -46,11 +46,11 @@ The event bus is the ``org.spongepowered.api.service.event.EventManager`` class.
 .. tip::
 
     For event handlers on your main plugin class, you do not need to register the object for events because Sponge will do it automatically.
-    
+
 Note that, by default, ``@Subscribe`` is configured so that your event handler will *not* be called if the event in question is cancellable and has been cancelled (such as by another plugin).
 
 .. note::
-    
+
     It is currently not possible to register a dynamic event handler by providing an event type and a handler.
 
 About @Subscribe
@@ -71,7 +71,7 @@ You can fire events using the event bus (``org.spongepowered.api.service.event.E
 .. code-block:: java
 
     boolean cancelled = eventBus.post(theEventObject);
-    
+
 The method returns ``true`` if the event was cancelled, ``false`` if not.
 
 Firing Sponge Events
@@ -98,38 +98,38 @@ If you want your event to be cancellable, the class must also implement ``Cancel
     import org.spongepowered.api.entity.player.Player;
     import org.spongepowered.api.event.AbstractEvent;
     import org.spongepowered.api.util.event.Cancellable;
-   
+
     public class PrivateMessageEvent extends AbstractEvent implements Cancellable {
-   
+
        private boolean cancelled = false;
-      
+
        private Player sender;
        private Player receipient;
-      
+
        private String message;
-   
+
        public Player getSender() {
           return sender;
        }
-   
+
        public Player getReceipient() {
           return receipient;
        }
-   
+
        public String getMessage() {
           return message;
        }
-   
+
        @Override
        public boolean isCancelled() {
           return cancelled;
        }
-   
+
        @Override
        public void setCancelled(boolean cancel) {
           cancelled = cancel;
        }
-   
+
        public PrivateMessageEvent(Player sender, Player receipient, String message) {
           this.sender = sender;
           this.receipient = receipient;
@@ -155,7 +155,7 @@ If you want your event to be cancellable, the class must also implement ``Cancel
            event.setCancelled();
            return;
         }
-    
+
         String senderName = event.getSender().getName();
         event.getReceipient().sendMessage(ChatTypes.CHAT, "PM from " + senderName + ": " + event.getMessage());
     }
@@ -169,37 +169,36 @@ Callbacks allow plugins to cooperate better when they override vanilla behavior.
 handlers in order from first to last. Then Sponge runs through the callback list in order from last to first. Vanilla is always the first
 callback added, meaning that vanilla's handler will be executed last.
 
-Plugins that don't use event handlers can also use the simpler ```setCancelled(boolean)``` method, which will disable all calbacks. However,
+Plugins that don't use event handlers can also use the simpler ``setCancelled(boolean)` method, which will disable all calbacks. However,
 some plugins may just need to disable vanilla behavior, or prevent another plugin's behavior from running. Additionally, callbacks allow a
-plugin to tweak properties of added behavior. 
+plugin to tweak properties of added behavior.
 
 A plugin can add as many callbacks as it needs during an event, and plugins can cancel specific callbacks. However, a plugin cannot reorder
 or remove callbacks, as some behaviors (especially vanilla) cannot be reordered.
 
 **Example: Disable chair sitting added by CraftBook**
 
+Note: This example will break if other plugins enable or disable callbacks.
+
 .. code-block:: java
 
     @Subscribe
     public void onPlayerInteractBlock(PlayerInteractBlock event) {
-        List<Callback> baseGameCallbacks = new ArrayList<Callback>();
         boolean foundChair = false;
 
-        Iterator<Callback> it = event.getCallbacks().iterator();
-        while (it.hasNext()) {
-            Callback callback = it.next();
+        for (Callback callback : event.getCallbacks())
             if (callback instanceof com.sk89q.craftbook.mechanic.Chair) {
                 callback.setCancelled(true);
                 foundChair = true;
-            } else if (!callback.isBaseGame() && !callback.isCancelled()) {
-                foundChair = false;
                 break;
             }
         }
 
         if (foundChair) {
-            for (Callback callback : baseGameCallbacks) {
-                callback.setCancelled(false);
+            for (Callback callback : event.getCallbacks()) {
+                if (!(callback instanceof com.sk89q.craftbook.mechanic.Chair)) {
+                  callback.setCancelled(false);
+                }
             }
         }
     }
