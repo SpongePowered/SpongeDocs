@@ -15,25 +15,25 @@ The first step is to create a class for the command. The class has to implement 
     import java.util.List;
 
     import org.spongepowered.api.Server;
-    import org.spongepowered.api.entity.player.Player;
+    import org.spongepowered.api.text.message.Messages;
     import org.spongepowered.api.util.command.CommandCallable;
     import org.spongepowered.api.util.command.CommandException;
     import org.spongepowered.api.util.command.CommandSource;
 
     import com.google.common.base.Optional;
 
-    public class ExampleCommand implements CommandCallable {
+    public class MyBroadcastCommand implements CommandCallable {
 
         private final Server server;
+        private final Optional<String> desc = Optional.of("Displays a message to all players");
+        private final Optional<String> help = Optional.of("Displays a message to all players. It has no color support!");
 
-        public ExampleCommand(Server server) {
+        public MyBroadcastCommand(Server server) {
             this.server = server;
         }
 
         public boolean call(CommandSource source, String arguments, List<String> parents) throws CommandException {
-            for (Player p : server.getOnlinePlayers()) {
-                p.sendMessage(arguments);
-            }
+            server.broadcastMessage(Messages.of(arguments));
             return true;
         }
 
@@ -42,12 +42,10 @@ The first step is to create a class for the command. The class has to implement 
         }
 
         public Optional<String> getShortDescription() {
-            Optional<String> desc = Optional.of("Displays a message to all players");
             return desc;
         }
 
         public Optional<String> getHelp() {
-            Optional<String> help = Optional.of("Displays a message to all players. It has no color support!");
             return help;
         }
 
@@ -70,8 +68,8 @@ Now we can register the class in the CommandService
 .. code-block:: java
 
     CommandService cmdService = game.getCommandDispatcher();
-    cmdService.register(plugin, new ExampleCommand(server), "message", "broadcast");
+    cmdService.register(plugin, new MyBroadcastCommand(server), "message", "broadcast");
 
 The command is now registered.
 The last argument are the aliases for the command. You can add as many Strings as you want.
-If a alias is used by another command it is ignored. The first alias, which isn't used by another command, becomes the primary alias.
+If an alias is used by another command it is ignored. The first alias, which isn't used by another command, becomes the primary alias.
