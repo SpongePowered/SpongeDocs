@@ -28,7 +28,7 @@ All blocks are of a *base type*. Examples of base types include dirt, stairs, an
         minecraft:redstone_wire[east=none,north=up,power=0,south=up,west=up]
         minecraft:redstone_wire[east=up,north=side,power=0,south=up,west=up]
 
-Some properties, however, are *ephemeral* -- they exist only when the game is running. Their values are not written to the save file because their values can be detected automatically. For example, with Redstone wire, whether they are powered are not can be detected based on the environment (is there a lever that is on?). In this case, the ``power`` property of ``minecraft:redstone_wire`` as illustrated above is an ephemeral property.
+Some properties, however, are *ephemeral* -- they exist only when the game is running. Their values are not written to the save file because their values can be detected automatically. For example, with Redstone wire, whether they are powered or not can be detected based on the environment (is there a lever that is on?). In this case, the ``power`` property of ``minecraft:redstone_wire`` as illustrated above is an ephemeral property.
 
 As of writing, Minecraft still stores block data to an old format with 12 bits for a base type (4096 possible base types) and 4 bits for "metadata" (16 possible values per base type). However, properties do not map directly to metadata due to legacy reasons: for example, the furnace block consists of two base types (currently smelting versus not smelting), each not utilizing their metadata at all. On the other hand, logs do use their metadata fully, but because the combination of properties exceeds 16 possible values (think tree type and direction), logs must be split over two base types.
 
