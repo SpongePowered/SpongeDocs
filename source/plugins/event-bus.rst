@@ -176,6 +176,39 @@ plugin to tweak properties of added behavior.
 A plugin can add as many callbacks as it needs during an event, and plugins can cancel specific callbacks. However, a plugin cannot reorder
 or remove callbacks, as some behaviors (especially vanilla) cannot be reordered.
 
+Note: ExplosionEvent doesn't exist in the API currently, it is just used for example purposes.
+
+**Example: Adding a callback to disable explosions and spawn an arrow**
+
+Note: This is a bad example, but use-cases for callbacks are going to be very specific so this just demonstrates the code needed to add one.
+
+.. code-block:: java
+
+    @Subscribe
+    // final not required unless using an inner class that needs access to it.
+    public void onExplosion(final ExplosionEvent event) {
+        for (EventCallback callback : event.getCallbacks()) {
+            // Disable vanilla behavior
+            if (callback.isBaseGame()) {
+                callback.setCancelled(true);
+            }
+        }
+
+        event.getCallbacks().add(new EventCallback() {
+            public boolean isBaseGame() {
+                // Not a base game (i.e. Vanilla) behavior
+                return false;
+            }
+
+            public void run() {
+                Extent extent = event.getEntity().getLocation().getExtent();
+                
+                // Create an arrow
+                extent.createEntity(EntityTypes.ARROW, event.getEntity().getLocation().getPosition());
+            }
+        });
+    }
+
 **Example: Disable chair sitting added by CraftBook**
 
 Note: This example will break if other plugins enable or disable callbacks.
