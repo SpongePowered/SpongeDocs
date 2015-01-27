@@ -7,13 +7,16 @@ User's Guide
     :titlesonly:
 
     quick-start
+    java
     plugins
     config
     permissions
     commands
     whitelist
+    json-formatting
     bans
     logs
     compat
     troubleshooting
+    port-forwarding
     platforms

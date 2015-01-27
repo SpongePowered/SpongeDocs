@@ -1,6 +1,6 @@
-============
+===========
 JSON Syntax
-============
+===========
 
 This is an example of a ``whitelist.json`` file with correct formatting (although the UUID-s are fictional). Your file should follow the same syntax.
 
@@ -18,7 +18,7 @@ This is an example of a ``whitelist.json`` file with correct formatting (althoug
   ]
 
 Format Rules
-^^^^^^^^^^^^^
+------------
 
 - Square braces (``[]``) open and close the file
 - Each entry in the file is wrapped with curly braces (``{}``)

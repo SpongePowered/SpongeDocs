@@ -21,7 +21,7 @@ When the installation process is complete, reboot your computer. The JDK should 
 
 
 .. note::
-  Java 6 is outdated and not recommended for use in development. Java 8 is also not recommended because it is not yet  widely used.
+  Java 6 is outdated and not recommended for use in development. Java 8 is also not recommended because it is not yet widely used.
  
  
 .. warning::

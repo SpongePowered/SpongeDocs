@@ -42,6 +42,7 @@ About Sponge
     :maxdepth: 2
     :titlesonly:
 
+    faq
     changelog
     downloads
     contributing

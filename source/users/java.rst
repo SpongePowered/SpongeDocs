@@ -1,13 +1,13 @@
-===============
+=============================
 Java (JRE) Installation Guide
-===============
+=============================
 
 .. contents:: **Java**
    :depth: 2
    :local:
 
 Introducing Java
---------------------------------------
+----------------
 
 Java is a computer language used by programmers to develop their software, 
 differing from many other languages in its "Write Once, Run Anywhere" capability.
@@ -17,7 +17,7 @@ to run on this wide variety of systems by creating a virtual computer known as t
 "Java Virtual Machine", on which Java programs will run.
 
 What's the Difference Between JRE and JDK?
---------------------------------------
+------------------------------------------
 
 **JRE**: The JRE (Java Runtime Environment) is required to run any Java program on a system,
 without it, the system cannot create the Java Virtual Machine. If you want to run a Sponge
@@ -29,7 +29,7 @@ not need the JDK.
 
 
 What's the Difference Between 32-bit and 64-bit?
---------------------------------------
+------------------------------------------------
 
 **32-bit**: 32-bit Java is the most common Java installation, due to it being the default download
 for most systems. Due to the small maximum RAM allocation of ~1.6 GB, 32-bit is not recommended
@@ -41,7 +41,7 @@ as much memory as your computer has towards your Server. 64-bit Java can also ru
 32-bit, meaning that you can make the most of your processing power. We recommend 64-bit Java.
 
 How to Install Java On Your Computer
---------------------------------------
+------------------------------------
 
 Download and install the latest version of the Java Runtime
 Environment (JRE) available for your operating system. Sponge (and Minecraft)

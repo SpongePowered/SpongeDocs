@@ -55,7 +55,7 @@ Our ultimate goal is to create a modding API that is easy to use for owners of s
     - Sponge is not tied to any particular platform, be it Forge or Glowstone.
     - When/if Mojang releases their own modding API, it will be possible to build the Sponge API on top of Mojang’s modding API so that your Sponge mods continue to work.
 - Sponge will support official interoperability with Forge so you can use both Sponge mods and Forge mods together. We are working directly with the Forge team.
- - While Sponge will not be directly supporting Bukkit, community projects have been started that aim to provide complete support for existing Bukkit plugins on top of Sponge.
+- While Sponge will not be directly supporting Bukkit, community projects have been started that aim to provide complete support for existing Bukkit plugins on top of Sponge.
 
 
 For Bukkit Plugin Developers
@@ -173,7 +173,7 @@ and love. Sponge is just an API that allows developers to create plugins
 just like before when using bukkit.
 
 What are Sponge Mods?
---------------------
+---------------------
 
 Sponge coremod is still under development, and will implement the Sponge
 API on a 1.8 Minecraft-Forge server.
@@ -226,7 +226,7 @@ source code, for Bukkit and its derivatives (Spigot, Cauldron) are no
 longer available. 
 
 Who is Involved With the Sponge Project?
----------------------------------
+----------------------------------------
 
 -  sk89q (of WorldEdit/WorldGuard) - project lead
 -  blood (of MCPC+/Cauldron) - project lead

@@ -8,6 +8,7 @@ Writing Plugins
 
     workspace
     quick-start
+    javadevkit
     blocks
     commands
     event-bus
@@ -18,5 +19,6 @@ Writing Plugins
     permissions
     plugin-lifecycle
     services
-
+    configuration
+    advanced/index
 

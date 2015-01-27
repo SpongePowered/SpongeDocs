@@ -14,9 +14,9 @@ Components
 
 **Example:**
 
-.. code-block::
+.. code-block:: json
 
-      yellow-thing : "Sponge"
+      yellow-thing: "Sponge"
 
 In this example, the ``key`` is ``yellow-thing``, the ``value`` is ``Sponge``, and the ``key-value separator`` is ``:``.
 
@@ -27,19 +27,19 @@ HOCON is more flexible than the JSON (JavaScript Object Notation) format in that
 
 **Example #1:**
 
-.. code-block::
+.. code-block:: none
 
-    player : {
-        name  : "Steve",
-        level : 30
+    player: {
+        name: "Steve",
+        level: 30
     }
     
 **Example #2:**
 
-.. code-block::
+.. code-block:: none
 
     player {
-        name  = "Steve"
+        name = "Steve"
         level = 30
     }
     

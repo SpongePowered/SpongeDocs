@@ -44,5 +44,10 @@ Your local copy of Sponge is now setup and your branch is master.
 
 * Working on the Sponge implementation is described here  :doc:`gitfu-impl`.
 
+.. toctree::
+    :maxdepth: 2
+    :titlesonly:
 
+    gitfu-api
+    gitfu-impl
 
