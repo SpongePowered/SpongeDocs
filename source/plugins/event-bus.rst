@@ -190,7 +190,9 @@ Note: This is a bad example, but use-cases for callbacks are going to be very sp
         for (EventCallback callback : event.getCallbacks()) {
             // Disable vanilla behavior
             if (callback.isBaseGame()) {
-                callback.setCancelled(true);
+                if (callback instanceof Cancellable) {
+                    ((Cancellable) callback).setCancelled(true);
+                }
             }
         }
 
@@ -202,7 +204,7 @@ Note: This is a bad example, but use-cases for callbacks are going to be very sp
 
             public void run() {
                 Extent extent = event.getEntity().getLocation().getExtent();
-                
+
                 // Create an arrow
                 extent.createEntity(EntityTypes.ARROW, event.getEntity().getLocation().getPosition());
             }
@@ -221,7 +223,9 @@ Note: This example will break if other plugins enable or disable callbacks.
 
         for (Callback callback : event.getCallbacks())
             if (callback instanceof com.sk89q.craftbook.mechanic.Chair) {
-                callback.setCancelled(true);
+                if (callback instanceof Cancellable) {
+                    ((Cancellable) callback).setCancelled(true);
+                }
                 foundChair = true;
                 break;
             }
@@ -230,7 +234,9 @@ Note: This example will break if other plugins enable or disable callbacks.
         if (foundChair) {
             for (Callback callback : event.getCallbacks()) {
                 if (!(callback instanceof com.sk89q.craftbook.mechanic.Chair)) {
-                  callback.setCancelled(false);
+                  if (callback instanceof Cancellable) {
+                      ((Cancellable) callback).setCancelled(false);
+                  }
                 }
             }
         }
