@@ -169,12 +169,14 @@ Callbacks allow plugins to cooperate better when they override vanilla behavior.
 handlers in order from first to last. Then Sponge runs through the callback list in order from last to first. Vanilla is always the first
 callback added, meaning that vanilla's handler will be executed last.
 
-Plugins that don't use event handlers can also use the simpler ``setCancelled(boolean)` method, which will disable all calbacks. However,
-some plugins may just need to disable vanilla behavior, or prevent another plugin's behavior from running. Additionally, callbacks allow a
-plugin to tweak properties of added behavior.
+Plugins that don't use callbacks can also use the simpler ``setCancelled(boolean)`` method, which will disable all callbacks. However,
+some plugins may just need to disable vanilla behavior, modify another plugin's behavior, or disable that behavior completely. These are
+cases where the flexibility offered through callbacks is required.
 
 A plugin can add as many callbacks as it needs during an event, and plugins can cancel specific callbacks. However, a plugin cannot reorder
-or remove callbacks, as some behaviors (especially vanilla) cannot be reordered.
+or remove callbacks, as some behaviors (especially vanilla) cannot be reordered. Additionally, all modifications to the callback list, should
+be done in the event handler itself. Attempting to change the list during callback execution will cause a ``ConcurrentModificationException``.
+Callbacks should only be added or cancelled in event handlers who's ``Order`` property allows event cancellation.
 
 Note: ExplosionEvent doesn't exist in the API currently, it is just used for example purposes.
 
