@@ -28,7 +28,7 @@ However, in order to make Sponge recognize your plugin, you need to affix a ``@P
 
 When loading your plugin .jar file, Sponge will find your plugin class automatically and load it.
 
-Be sure to also change the ID and name of your plugin, as well its version. The ID should be a simple identifier without special characters or spaces, as it is used for generating configuration files and letting users refer to your plugin by its ID.
+Be sure to also change the ID and name of your plugin, as well as its version. The ID should be a simple identifier without special characters or spaces, as it is used for generating configuration files and letting users refer to your plugin by its ID.
 
 Initializing Your Plugin
 ========================
