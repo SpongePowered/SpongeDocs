@@ -1,6 +1,6 @@
 ====================
 Sponge Documentation
-==============================
+====================
 
 Welcome to the documentation for `Sponge <http://spongepowered.org>`__! Sponge lets people write self-contained plugins for Minecraft that work even across major updates to Minecraft. The project is free to use and open source.
 
