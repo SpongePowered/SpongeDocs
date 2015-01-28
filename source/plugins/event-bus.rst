@@ -89,7 +89,8 @@ An event class must implement the ``Event`` interface. Alternatively you can ext
 
 If you want your event to be cancellable, the class must also implement ``Cancellable``.
 
-**Example: Custom Event Class**
+Example: Custom Event Class
+~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: java
 
@@ -138,14 +139,16 @@ If you want your event to be cancellable, the class must also implement ``Cancel
     }
 
 
-**Example: Fire custom Event**
+Example: Fire custom Event
+~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: java
 
     eventBus.post(new PrivateMessageEvent(playerA, playerB, "Hello World!");
 
 
-**Example: Listen for custom event**
+Example: Listen for custom event
+~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: java
 
@@ -178,11 +181,17 @@ or remove callbacks, as some behaviors (especially vanilla) cannot be reordered.
 be done in the event handler itself. Attempting to change the list during callback execution will cause a ``ConcurrentModificationException``.
 Callbacks should only be added or cancelled in event handlers who's ``Order`` property allows event cancellation.
 
-Note: ExplosionEvent doesn't exist in the API currently, it is just used for example purposes.
+.. note::
 
-**Example: Adding a callback to disable explosions and spawn an arrow**
+    ``ExplosionEvent`` doesn't exist in the API currently, it is just used for example purposes.
 
-Note: This is a bad example, but use-cases for callbacks are going to be very specific so this just demonstrates the code needed to add one.
+
+Example: Adding a callback to disable explosions and spawn an arrow
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. note::
+
+    This is a bad example, but use-cases for callbacks are going to be very specific so this just demonstrates the code needed to add one.
 
 .. code-block:: java
 
@@ -213,14 +222,17 @@ Note: This is a bad example, but use-cases for callbacks are going to be very sp
         });
     }
 
-**Example: Disable chair sitting added by CraftBook**
+Example: Disable chair sitting added by CraftBook
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Note: This example will break if other plugins enable or disable callbacks.
+.. note::
+
+    This example will break if other plugins enable or disable callbacks.
 
 .. code-block:: java
 
     @Subscribe
-    public void onPlayerInteractBlock(PlayerInteractBlock event) {
+    public void onPlayerInteractBlock(PlayerInteractBlockEvent event) {
         boolean foundChair = false;
 
         for (Callback callback : event.getCallbacks())
@@ -244,9 +256,11 @@ Note: This example will break if other plugins enable or disable callbacks.
         }
     }
 
-**Example: Modifying behaviors**
+Example: Modifying behaviors
+~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: java
+
 
     @Subscribe
     public void onExplosion(ExplosionEvent event) {
@@ -256,5 +270,7 @@ Note: This example will break if other plugins enable or disable callbacks.
             }
         }
     }
+    
+
 
 Thanks to @sk89q for the callback examples. They were copied from his original `PR #232 <https://github.com/SpongePowered/SpongeAPI/pull/232>`_.
