@@ -1,0 +1,2 @@
+sphinx-intl==0.9.5
+-e git+https://github.com/gratimax/transifex-client.git@bf0cb28206ff6b03809dcc610e7df6fd2f441103#egg=transifex_client

@@ -1,0 +1,13 @@
+language: python
+sudo: false
+python:
+- '3.4'
+install: pip install -r requirements.txt
+script:
+  - '[[ $TRAVIS_PULL_REQUEST = false ]] && ./etc/update.sh'
+env:
+  global:
+    secure: TbDkR+5ODoa5X76hqNJNerNPByspHl7J0VDFj0/jvJn3bQRc7ItlZL4DfGdODBAkJYIhbqF3po32KyFADrA4RayD+heN/RnytKPjGwoG80GV3wS44aFY1TDEhhjvu+1Sik+FDntbNzMeigmXBilAvf5ahJy0s+DZIiX0e8IPG+Q=
+branches:
+  only:
+    - master
