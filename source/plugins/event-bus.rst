@@ -90,7 +90,7 @@ An event class must implement the ``Event`` interface. Alternatively you can ext
 If you want your event to be cancellable, the class must also implement ``Cancellable``.
 
 Example: Custom Event Class
-~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: java
 
@@ -139,16 +139,16 @@ Example: Custom Event Class
     }
 
 
-Example: Fire custom Event
-~~~~~~~~~~~~~~~~~~~~
+Example: Fire Custom Event
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: java
 
     eventBus.post(new PrivateMessageEvent(playerA, playerB, "Hello World!");
 
 
-Example: Listen for custom event
-~~~~~~~~~~~~~~~~~~~~
+Example: Listen for Custom Event
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: java
 
@@ -186,8 +186,8 @@ Callbacks should only be added or cancelled in event handlers who's ``Order`` pr
     ``ExplosionEvent`` doesn't exist in the API currently, it is just used for example purposes.
 
 
-Example: Adding a callback to disable explosions and spawn an arrow
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Example: Adding a Callback to Disable Explosions and Spawn an Arrow
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
@@ -222,8 +222,8 @@ Example: Adding a callback to disable explosions and spawn an arrow
         });
     }
 
-Example: Disable chair sitting added by CraftBook
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Example: Disable Chair Sitting Added by CraftBook
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
@@ -256,8 +256,8 @@ Example: Disable chair sitting added by CraftBook
         }
     }
 
-Example: Modifying behaviors
-~~~~~~~~~~~~~~~~~~~~
+Example: Modifying Behaviors
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: java
 
