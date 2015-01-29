@@ -6,7 +6,7 @@ echo languages: $LANGUAGES
 echo | tx init --user=$TX_USER --pass=$TX_PASS
 
 sphinx-build -b gettext source build/locale
-sphinx-intl update -p build/locale $LANGUAGES -d locale/ > /dev/null/
+sphinx-intl update -p build/locale $LANGUAGES -d locale/ > /dev/null
 
 sphinx-intl update-txconfig-resources -p build/locale --transifex-project-name sponge-docs -d locale/
 
