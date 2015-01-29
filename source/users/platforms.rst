@@ -5,6 +5,7 @@ Other Platforms
 Sponge, as mentioned previously, provides both an API (a standard, like DVD) as well as one implementation or platform (like a DVD player). However, it's possible to use a different platform for running Sponge plugins.
 
 We do provide a Forge-based platform, but this page details other options.
+Please note that we do not provide support for users of these third-party platforms. 
 
 Glowstone
 =========
@@ -18,4 +19,4 @@ Granite
 
 `Granite <http://www.granitepowered.org/>`__ is another Sponge implementation built on top the Minecraft Server.
 
-However, at the moment, Granite isn't feature-complete and has no recommended build.
+Granite is not yet feature-complete, and only early development builds are available. Use at your own risk.
