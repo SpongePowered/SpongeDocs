@@ -8,5 +8,8 @@ if [[ -n $(cat warnings) ]]; then
   echo "WARNINGS (These are causing your build to fail):"
   echo "================================================"
   cat warnings
+  echo "END WARNINGS"
+  echo "============"
+  echo ${reset}
   exit 1
 fi
