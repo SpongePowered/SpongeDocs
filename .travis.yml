@@ -8,3 +8,5 @@ script:
 env:
   global:
   - secure: nW0Q7eTwB6T7LyLeBPlwoSKTVGHQ9Y4/KEco6UYdJsIZ58L+bxvMFlhhwHe5rsdqP49invR+uT2Pz0jGgQpSQrd2DasIMFQprAF42o8wt5jHeZLxVDSbMUY5pY9YxxY+KkPbpY81bLHznbxRn3npHQzLysSdJZw7kjfbODG3ZxY=
+notifications:
+  email: false
