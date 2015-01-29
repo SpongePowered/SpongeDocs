@@ -3,7 +3,7 @@ Changelog
 =========
 
 This page is a placeholder for the changelog of **Sponge**, the Forge
-implementation of *Sponge API* as a coremod). **Sponge** has not yet
+implementation of *Sponge API* as a coremod. **Sponge** has not yet
 been officially released.
 
 Sponge Builds
