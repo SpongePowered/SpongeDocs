@@ -4,10 +4,10 @@ python:
 - '3.4'
 install: pip install -r requirements.txt
 script:
-  - '[[ $TRAVIS_PULL_REQUEST = false ]] && ./etc/update.sh'
-env:
-  global:
-    secure: TbDkR+5ODoa5X76hqNJNerNPByspHl7J0VDFj0/jvJn3bQRc7ItlZL4DfGdODBAkJYIhbqF3po32KyFADrA4RayD+heN/RnytKPjGwoG80GV3wS44aFY1TDEhhjvu+1Sik+FDntbNzMeigmXBilAvf5ahJy0s+DZIiX0e8IPG+Q=
+- "[[ $TRAVIS_PULL_REQUEST = false ]] && ./etc/update.sh"
 branches:
   only:
-    - master
+  - master
+env:
+  global:
+  - secure: nW0Q7eTwB6T7LyLeBPlwoSKTVGHQ9Y4/KEco6UYdJsIZ58L+bxvMFlhhwHe5rsdqP49invR+uT2Pz0jGgQpSQrd2DasIMFQprAF42o8wt5jHeZLxVDSbMUY5pY9YxxY+KkPbpY81bLHznbxRn3npHQzLysSdJZw7kjfbODG3ZxY=
