@@ -40,9 +40,7 @@ Setup your workspace as described in the main page of the Sponge project.
 
 Your local copy of Sponge is now setup and your branch is master.
 
-* Working on the SpongeAPI is described here  :doc:`gitfu-api`.
-
-* Working on the Sponge implementation is described here  :doc:`gitfu-impl`.
+Specific information for using git with the API, or the Implementation, is available here:
 
 .. toctree::
     :maxdepth: 2
