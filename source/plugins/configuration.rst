@@ -80,7 +80,7 @@ Checking whether your plugin's configuration file exists where it is expected to
         try {
             getDefaultConfig().createNewFile();
         } catch (IOException exception) {
-            getLogger().log(Level.SEVERE, "The default configuration could not be created!");
+            getLogger().error("The default configuration could not be created!");
         }
         ConfigFile config = ConfigFile.parseFile(getDefaultConfig())
             .withValue("plugin.version", ConfigValueFactory.fromAnyRef(1))
