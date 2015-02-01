@@ -79,7 +79,7 @@ As some of the older members of the community are aware, the demise of Bukkit wo
 
 - hMod died because its developer disappeared for an extended amount of time but provided no ability for hMod’s other developers to publish official releases. In addition, hMod did not have an API and suffered from technical problems.
 
-    - To solve the problem with one single leader possibly disappearing from Earth, the project is currently led by two people: blood and sk89q. In addition, we are making sure to be open with the team so that we do not end up “holding all the keys.”
+    - To solve the problem with one single leader possibly disappearing from Earth, the project is currently led by three people: blood, sk89q and Zidane. In addition, we are making sure to be open with the team so that we do not end up “holding all the keys.”
 
     - As for the technical problems, we have chosen to write an API rather than simply modify Minecraft and add a mod loader.
 
@@ -230,8 +230,9 @@ Who is Involved With the Sponge Project?
 
 -  sk89q (of WorldEdit/WorldGuard) - project lead
 -  blood (of MCPC+/Cauldron) - project lead
+-  Zidane (of Spout/Obsidian) - project lead
 -  LexManos (of Forge/FML/MCP)
-- Portions of the Spout team: Zidane, Raphfrk, DDoS, Sleaker, Owexz, Wulfspider
+- Portions of the Spout team: Raphfrk, DDoS, Sleaker, Owexz, Wulfspider
 - Portions of the Flow team: kitskub
 - Portions from ForgeEssentials: AbrarSyed
 - Other Bukkit Plugin developers: KHobbits, Elgarl, zml
@@ -245,7 +246,7 @@ However, we are interested in talking with anyone who is able to help.
 How Are Decisions Made?
 -----------------------
 
-The project owners, **blood** and **sk89q**, after consulting with the
+The project owners, **blood**, **sk89q** and **Zidane**, after consulting with the
 community and other members when appropriate, will make the decisions.
 
 Have You Consulted the Community?
