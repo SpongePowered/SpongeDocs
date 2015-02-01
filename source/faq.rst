@@ -19,16 +19,15 @@ Summary
 - Community-developed modding API. We invite any developer to help out.
 - Lots of people involved with strong Java backgrounds and/or experience.
 - An extremely open project.
-- No legal issues, unlike the Bukkit project.
 - Keeping performance as a high priority during development.
 - Bukkit plugins *may* run on Sponge without change due to efforts by the community.
 - Plan to eventually be used to make client mods.
 - Not tied to any platform:
 
     - Can be used on a from-scratch server (i.e. Glowstone)
-      - Planned & officially working with Glowstone team
+      - Planned and officially working with Glowstone team
     - Can be used on top of Forge
-      - Planned & and officially working with Forge team
+      - Planned and officially working with Forge team
       - No need for client mods if only Sponge is used on the server
       - Can work with Forge mods
     - Can be injected into Minecraft directly
@@ -62,7 +61,7 @@ For Bukkit Plugin Developers
 ----------------------------
 
 - Sponge should be as easy to develop in as with Bukkit.
-- You will also be able to access something like “NMS” as well, however, this will be discouraged unless you are also writing a Forge mod. If you need something that the Sponge API does not provide, we plan to be a lot more open about accepting (well-written) implementations of well-requested features so that you don’t have to rely on hacky code.
+- You will also be able to access the server internals ("net.minecraft.server" or "NMS" under CraftBukkit), however, this will be discouraged unless you are also writing a Forge mod. If you need something that the Sponge API does not provide, we plan to be open about accepting (well-written) implementations of well-requested features so that you don’t have to rely on hacky code.
 - If/when the Mojang modding API comes out, we will build the Sponge API on top of Mojang’s API so your plugins/mods continue to work with minimal changes.
 
 
@@ -75,21 +74,11 @@ For Forge Mod Developers
 Management of the Project
 -------------------------
 
-As some of the older members of the community are aware, the demise of Bukkit would not be the first instance that the demise of a large modding platform has occurred in Minecraft. We’re aware of this and we’re planning for future scenarios.
+- The project is currently led by three people: blood, sk89q and Zidane. We are making sure to be open with the team so that we do not end up “holding all the keys.” Sponge has a lot of help from the existing Minecraft community, but the project is led by these three people who make the final decisions. This way, we can have a large number of people contribute and yet still avoid having “too many cooks spoiling the broth.”
 
-- hMod died because its developer disappeared for an extended amount of time but provided no ability for hMod’s other developers to publish official releases. In addition, hMod did not have an API and suffered from technical problems.
+- We are trying to be open as possible. Our GitHub repository has been available since the first day development began and we make weekly, lengthy announcements detailing the progress and future of the project. Our developers and leads interact with the community around the Internet and on the Sponge forums. You will find that we are very approachable: if you have an idea or issue we are all open ears.
 
-    - To solve the problem with one single leader possibly disappearing from Earth, the project is currently led by three people: blood, sk89q and Zidane. In addition, we are making sure to be open with the team so that we do not end up “holding all the keys.”
-
-    - As for the technical problems, we have chosen to write an API rather than simply modify Minecraft and add a mod loader.
-
-- Bukkit met its end because it was not open about decisions that it made, causing anger within the community, which then prompted one of Bukkit’s own developers to send a DMCA takedown notice to Bukkit, which was possible because Bukkit used an overly restrictive open source license with strict terms on how Bukkit could be used in conjunction with other software.
-
-    - We are trying to be open as possible. Our GitHub repository has been available since the first day development began and we make weekly, lengthy announcements detailing the progress and future of the project. Our developers and leads interact with the community around the Internet and on the Sponge forums. You will find that we are very approachable: if you have an idea or issue we are all open ears.
-
-    - We are using MIT, an extremely permissive open source license. This means that, should the worst case scenario occur, it will be possible to reuse the Sponge API and start a new project without being encumbered by legal problems like with Bukkit. In addition, MIT is compatible with GPL should that ever become a problem.
-
-Sponge has a lot of help from the existing Minecraft community, but please take note that ultimately the project is led by two people who make the final decisions. This way, we can have a large number of people contribute and yet still avoid having “too many cooks spoiling the broth.”
+- We are using the MIT License, an extremely permissive open source license. This means that, should our server implementation encounter legal problems, it will be possible to reuse the Sponge API and start a new project without being further encumbered by legal issues.
 
 
 From a Technical Perspective
@@ -97,7 +86,7 @@ From a Technical Perspective
 
 - Many of our developers have worked with Minecraft for years and know the ins and outs of its mechanics.
 - Our developers are well versed with Java. Many of us frequently work with “bytecode injection” and have for years, or even write mod loaders on the side.
-- Performance is on our mind. The Glowstone implementation may run the best, but we plan to make the necessary changes to Minecraft to improve its performance for anything built on top of Minecraft itself (which includes the Forge implementation), just as Bukkit and Spigot have done.
+- Performance is on our mind. The Glowstone implementation may run the best, but we plan to make the necessary changes to Minecraft to improve its performance for anything built on top of Minecraft itself (which includes the Forge implementation).
 
   
 
@@ -138,7 +127,7 @@ How Did Bukkit Work?
 
 .. image:: /images/faq5.png
 
-**Note**: Bukkit came as one download, even though there are multiple underlying parts. That will be the same case with Sponge, and we will make it easy to run Sponge.
+**Note**: CraftBukkit came as one download, even though there are multiple underlying parts. That will be the same case with Sponge, and we will make it easy to run Sponge.
 
   
 
@@ -163,14 +152,13 @@ Will There Be an Official Place to Download Plugins?
 Yes there will be. The plugin repository, to be called **Ore** is in the works.
 The details are still being debated. You can take part in the discussion here
 https://forums.spongepowered.org/t/plugin-hosting/1150,
-or even assist its' development on GitHub.
+or even assist its development on GitHub.
 
 What Does This Mean for the Players?
 ------------------------------------
 
 Players should not notice anything different about the servers you know
-and love. Sponge is just an API that allows developers to create plugins
-just like before when using bukkit.
+and love. Sponge is just an API that allows developers to create plugins.
 
 What are Sponge Mods?
 ---------------------
@@ -220,9 +208,11 @@ are already available for the 1.8 update.
 I Haven't Kept Up, What Happened To Bukkit?
 -------------------------------------------
 
-One of the contributors to Bukkit sent a DMCA take down notice to have
-Bukkit removed. He was within his legal right. Downloads, as well as
-source code, for Bukkit and its derivatives (Spigot, Cauldron) are no
+The Bukkit project halted further development of their API and server
+modification. Later, one of the contributors to Bukkit sent a DMCA
+takedown notice to stop further distribution of CraftBukkit.
+He was within his legal right. Downloads, as well as
+source code, for CraftBukkit and its derivatives (Spigot, Cauldron) are no
 longer available. 
 
 Who is Involved With the Sponge Project?
@@ -235,10 +225,10 @@ Who is Involved With the Sponge Project?
 - Portions of the Spout team: Raphfrk, DDoS, Sleaker, Owexz, Wulfspider
 - Portions of the Flow team: kitskub
 - Portions from ForgeEssentials: AbrarSyed
+- Some previous contributors to Bukkit
 - Other Bukkit Plugin developers: KHobbits, Elgarl, zml
 - Portions of the FTB team: progwml6
 - Glowstone: SpaceManiac
-- Some previous contributors to Bukkit
 - Other people we have likely failed to mention
 
 However, we are interested in talking with anyone who is able to help.
@@ -311,7 +301,7 @@ For more information, please read :doc:`license`
 Why Not use Bukkit’s API?
 -------------------------
 
-It contains GPL licensed code, which is the reason why we are in this
+It contains GPL licensed code, which contributed to why we are in this
 situation. Recently, at least in the United States, the federal courts
 found that APIs could be copyrighted, although the case has not been
 fully resolved.
@@ -341,15 +331,15 @@ prerogative.
 Will the New Server Be Multi-threaded?
 --------------------------------------
 
-It will be multi-threaded in the same fashion that is Minecraft is (and
-also Bukkit and Spigot was), but we are not writing a server from
-scratch, so we are not able to make substantial changes.
+It will be multi-threaded in the same fashion that is Minecraft is but
+we are not writing a server from scratch, so we are not able to make
+substantial changes.
 
-How Will the New Server Perform in Comparison With Spigot and Bukkit?
----------------------------------------------------------------------
+How Will the New Server Perform in Comparison With Other Servers?
+-----------------------------------------------------------------
 
 We are currently investigating this, but we plan to reach or exceed
-performance of the other implementations given time. The optimisations that were
+performance of other implementations given time. The optimisations that were
 featured in Cauldron are also being evaluated.
 
 Will You Be Able to Send Mods From the Server to the Client?
@@ -368,8 +358,8 @@ Sponge plugin named Pore that acts as a bridge between the two APIs.
 For those unable to use it, we will be providing documentation and
 support for people looking to transition from Bukkit to Sponge entirely.
 
-Will I Be Able To Keep My Bukkit Worlds and Data?
--------------------------------------------------
+Will I Be Able To Keep My Server's Worlds and Data?
+---------------------------------------------------
 
 Yes, at least for worlds. Plugin data may or may not carry over.
 The plan is to create a conversion process which will convert or import
