@@ -17,7 +17,7 @@ Documentation
 
 Using Sponge
 ~~~~~~~~~~~~
- 
+
 .. toctree::
     :maxdepth: 3
     :titlesonly:
@@ -31,13 +31,14 @@ Developers
     :maxdepth: 3
     :titlesonly:
 
+    workspace/index
     plugins/index
     devs/index
     porting/index
 
 About Sponge
 ============
- 
+
 .. toctree::
     :maxdepth: 2
     :titlesonly:
@@ -66,4 +67,3 @@ Indices and tables
 
 * :ref:`genindex`
 * :ref:`search`
-

@@ -1,13 +1,12 @@
-====================================
-Developing the Sponge Implementation
-====================================
-
+=============================
+Developing the Sponge Coremod
+=============================
 
 .. toctree::
     :maxdepth: 2
     :titlesonly:
 
-    project-layout
     contributing
+    project-layout
     debugging
     mixins
