@@ -22,9 +22,6 @@ Starting Your Project
 
 We recommend using Gradle or Maven when developing plugins with the Sponge API. Gradle and Maven help significantly when managing dependencies, such as the Sponge API, for your project. This is preferable to including the ``.jar`` file in your project.
 
-
-**See** :doc:`Artifacts <../../workspace/artifact>` **for up-to-date information regarding the Maven artifact for the Sponge API.**
-
 Gradle
 ~~~~~~
 
@@ -54,7 +51,7 @@ You may then proceed to create your project.
 **To import the Sponge API as a dependency:**
 
 * Open ``common.gradle`` under the ``Projects`` tab.
-* Manually add the official Sponge API Maven artifact as a dependency. An example can be found on the aforementioned Artifacts article.
+* Manually add the :doc:`official Sponge API Maven artifact <../../workspace/artifact>` as a dependency. An example can be found on the aforementioned Artifacts article.
 * Right-click your primary project node under the **Projects** tab, and click ``Reload Project``.
 
 Maven
@@ -80,7 +77,7 @@ Maven
 
 * Right-click on the ``Dependencies`` node under the **Projects** tab, which is on the left by default.
 * Click ``Add Dependency``.
-* Enter the **Group ID**, **Artifact ID**, and **Version** of the official Sponge API Maven artifact.
+* Enter the **Group ID**, **Artifact ID**, and **Version** of the :doc:`official Sponge API Maven artifact <../../workspace/artifact>`.
 * Click ``Add``.
 
 Git Integration
