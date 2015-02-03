@@ -2,89 +2,81 @@
 Writing a Plugin
 ================
 
-.. toctree::
-   :maxdepth: 2
+.. tip::
+
+    Read :doc:`../../workspace/index` to prepare your workspace for plugin development!
+
+.. note::
+
+    The instructions within the Sponge Documentation assume that you have prior knowledge of Java. The Sponge API provides the foundation for you to begin creating plugins for Minecraft servers powered by Sponge; however, it is up to you to be creative and make your code work! There are several free Java courses online if you have had little experience with Java.
 
 Your Plugin Class
 =================
 
-In order to make a plugin, you need to create a new class with a name of your choosing and in any package (that does **not** begin with org.spongepowered).
+The next step after adding the Sponge API as a dependency is creating a new class. The class can be named however you'd like, and can be in any package that does **not** begin with ``org.spongepowered``. By convention, class names should be in title case.
 
-`Oracle Recommends <http://docs.oracle.com/javase/tutorial/java/package/namingpkgs.html>`_  that if you own a domain to use the domain as your package name. However if you do not own a domain, a common practice is using an email address com.gmail.exampleuser.project or if open source and hosted on a repository such as github io.github.username.project
+Oracle `recommends <http://docs.oracle.com/javase/tutorial/java/package/namingpkgs.html>`_ to use your domain as your package name, if you own a domain. However, in the event that you do not own a domain, a common practice is to use an email address (such as ``com.gmail.username.project``) or an open-source repository (such as ``io.github.username.project``).
 
-
-However, in order to make Sponge recognize your plugin, you need to affix a ``@Plugin`` annotation to the class as illustrated below.
+After creating your main class, the ``@Plugin`` annotation must be affixed to it. This annotation allows Sponge to easily find your main plugin class when your plugin is loaded. An example usage is illustrated below.
 
 .. code-block:: java
 
-    package example;
-    
+    package io.github.username.project;
+
     import org.spongepowered.api.plugin.Plugin;
-    
-    @Plugin(id = "example", name = "Example Plugin", version = "1.0")
-    public class ExamplePlugin {
-    
+
+    @Plugin(id = "example", name = "Example Project", version = "1.0")
+    public class ExampleProject {
+        // Woot! This is a comment!
     }
 
-When loading your plugin .jar file, Sponge will find your plugin class automatically and load it.
-
-Be sure to also change the ID and name of your plugin, as well as its version. The ID should be a simple identifier without special characters or spaces, as it is used for generating configuration files and letting users refer to your plugin by its ID.
+Remember to changing the ID, name, and version of your plugin in the annotation. The ID should be a simple identifier with no special characters or spaces, as it is used for generating configuration files and for identification purposes.
 
 Initializing Your Plugin
 ========================
 
-Plugins are loaded before the game and worlds are loaded, so there is a specific time when you should start interacting with the game, registering commands, and performing other startup functions.
+Plugins are loaded before the game and the world. This leaves a specific timeframe when your plugin should begin interacting with the game, such as registering commands or events.
 
-To be notified when the time is right, your plugin needs to listen to a particular *event*. Sponge comes with many events, but a few of these are called *state events* because they indicate changes in the state of the game. When you listen to an event, you create an *event handler*. This is illustrated below.
+Your plugin can listen for particular events, called **state events**, to be notified about changes in the state of the game. In the example below, ``onServerStart()`` is called when the ``ServerStartedEvent`` occurs; take note of the ``@Subscribe`` annotation before the method.
 
 .. code-block:: java
 
-    package example;
-    
     import org.spongepowered.api.event.state.ServerStartedEvent;
     import org.spongepowered.api.plugin.Plugin;
     import org.spongepowered.api.util.event.Subscribe;
-    
-    @Plugin(id = "example", name = "Example Plugin", version = "1.0")
-    public class ExamplePlugin {
-    
+
+    @Plugin(id = "example", name = "Example Project", version = "1.0")
+    public class ExampleProject {
         @Subscribe
-        public void doThisOnServerStart(ServerStartedEvent event) {
+        public void onServerStart(ServerStartedEvent event) {
+            // Hey! The server has started!
+            // Try instantiating your logger in here.
+            // (There's a guide for that)
         }
-    
     }
 
-The ``@Subscribe`` annotation tells Sponge that whenever the ``ServerStartedEvent`` event occurs, the method *doThisOnServerStart* should be called (you are free to name the method however you like).
-
 .. tip::
-    Normally, in addition to marking your event handlers with ``@Subscribe``, you must also register your object with Sponge's event bus; however, your main plugin class is automatically registered.
-    
-    If you need to register event handlers on another object, see :doc:`the event bus documentation <event-bus>`.
+
+    The Sponge documentation provides a guide with more information on events. Normally, in addition to prefixing event-handler methods with ``@Subscribe``, you must also register your object with Sponge's event bus. However, your main plugin class is registered automatically.
 
 State Events
-------------
+~~~~~~~~~~~~
 
-There are two categories of state events:
+It may also be desirable to listen for other state events, particularly the ``ServerStoppingEvent``. There are two categories of state events:
 
-1. **Initialization:** When Sponge and plugins are loading, before the actual game has started.
-2. **Running:** When the game and world are loading.
+* **Initialization**: These events occur when Sponge and plugins are loading.
 
-The initialization events occur once each and occur in the following order:
+  * ConstructionEvent
+  * PreInitializationEvent
+  * InitializationEvent
+  * PostInitializationEvent
+  * LoadCompleteEvent
+* **Running**: These events occur when the game and world are loading.
 
-1. **ConstructionEvent**: Fired when your plugin is constructed.
-2. **PreInitializationEvent:** Fired when your plugin should be doing anything that should occur before the next step (initialization).
-3. **InitializationEvent:** Fired when event handlers, services, commands, and other things should be registered with Sponge.
-4. **PostInitializationEvent:** Fired when plugins should start asking each other for resources, including querying for services.
-5. **LoadCompleteEvent:** Fired when everything should be loaded already and the game / server is ready to start.
+  * ServerAboutToStartEvent
+  * ServerStartingEvent
+  * ServerStartedEvent
+  * ServerStoppingEvent
+  * ServerStoppedEvent
 
-The running events may occur more than once:
-
-6. **ServerAboutToStartEvent:** Fired when the game / server is about to start and worlds have not yet been loaded.
-7. **ServerStartingEvent:** Fired when worlds have been loaded.
-8. **ServerStartedEvent:** Fired after the previous event.
-9. **ServerStoppingEvent:** Fired right before the final tick and before a world save has occurred.
-10. **ServerStoppedEvent:** Fired when the game / server has shutdown and no changes to the world will be committed to disk.
-
-It is possible for Sponge to skip directly to ServerStoppedEvent if a critical error occurs during loading.
-
-For more information, see the :doc:`plugin lifecycle documentation <plugin-lifecycle>`.
+For information regarding when each state event occurs, see the :doc:`plugin lifecycle documentation <plugin-lifecycle>`.

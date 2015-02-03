@@ -7,7 +7,6 @@ Developing Sponge
     :titlesonly:
 
     guidelines
-    workspace
-    api/index
     forge/index
+    api/index
     git/index
