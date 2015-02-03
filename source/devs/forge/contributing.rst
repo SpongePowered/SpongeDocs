@@ -61,7 +61,7 @@ Mac OS X
 Tips Before You Start
 =====================
 
-* Spaces/whitespace in file names are not ideal.
+* Avoid using spaces and whitespace in file names.
 * Store the Git repository somewhere other than your desktop.
 
   * Some people prefer to keep it in their user folder.
@@ -94,7 +94,44 @@ This process does a couple things:
 * It downloads the ``.jar`` files that Sponge requires in order to build.
 * It downloads Forge, which Sponge also requires in order to build.
 
-The process may take a while, depending on the quality of your network connection.
+The process may take a while, depending on the quality of your network connection. You will end up with something like this:
+
+.. code-block:: none
+
+    C:\sp\main\Sponge>gradle setupDecompWorkspace --refresh-dependencies
+    ****************************
+     Powered By MCP:
+     http://mcp.ocean-labs.de/
+     Searge, ProfMobius, Fesh0r,
+     R4wk, ZeuX, IngisKahn, bspkrs
+     MCP Data version : unknown
+    ****************************
+    :extractMcpData UP-TO-DATE
+    :getVersionJson
+    :extractUserDev UP-TO-DATE
+    :genSrgs SKIPPED
+    :extractNatives UP-TO-DATE
+    :copyNativesLegacy UP-TO-DATE
+    :getAssetsIndex
+    :getAssets
+    :makeStart
+    :downloadMcpTools
+    :downloadClient SKIPPED
+    :downloadServer SKIPPED
+    :mergeJars SKIPPED
+    :deobfuscateJar SKIPPED
+    :decompile SKIPPED
+    :processSources SKIPPED
+    :remapJar SKIPPED
+    :extractMinecraftSrc SKIPPED
+    :recompMinecraft SKIPPED
+    :repackMinecraft SKIPPED
+    :setupDecompWorkspace
+
+    BUILD SUCCESSFUL
+
+    Total time: 2 mins 45.216 secs
+    C:\sp\main\Sponge>
 
 .. note::
 
