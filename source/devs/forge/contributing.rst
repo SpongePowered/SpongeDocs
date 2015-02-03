@@ -54,7 +54,7 @@ Mac OS X
 #. To find the current path, run ``echo $JAVA_HOME``.
 #. Run ``vim .bash_profile``.
 #. Enter ``export JAVA_HOME=$(/usr/libexec/java_home)``.
-#. Close the editor by pressing Command + X, then type ``:x``.
+#. Close the editor by pressing Esc, then type ``:x``.
 #. Run ``source .bash_profile``.
 #. Verify you have set the variable correctly by typing ``echo $JAVA_HOME``.
 
