@@ -7,7 +7,7 @@ We will always have a need for developers to help us improve SpongeAPI. There is
 General steps
 =============
 
-1. Setup your workspace as described in :doc:`workspace`.
+1. Setup your workspace as described in :doc:`../../workspace/getting-started`.
 
 #. Check for existing issues in the `SpongeAPI <https://github.com/SpongePowered/SpongeAPI/issues>`_ and `Sponge <https://github.com/SpongePowered/Sponge>`_ repositories. There is possibly someone else already working on the same thing. You can also check `issues marked with "help wanted" <https://github.com/SpongePowered/SpongeAPI/labels/help%20wanted>`_ for existing issues we need your help with.
 
@@ -30,7 +30,7 @@ Code Style
 We follow `Google's Java Style Guidelines <https://google-styleguide.googlecode.com/svn/trunk/javaguide.html>`_ with a few additions and modifications, which are described herein.
 
 .. tip::
-    You can use our code styles for Eclipse or IntelliJ IDEA to let your IDE format the code correctly for you. See :doc:`workspace` for more information.
+    You can use our code styles for Eclipse or IntelliJ IDEA to let your IDE format the code correctly for you. See :doc:`../../workspace/getting-started` for more information.
 
 * Line endings
 
