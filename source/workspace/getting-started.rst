@@ -34,6 +34,7 @@ Sponge API Track
 * :doc:`jdk`
 * :doc:`git`
 * :doc:`ide/index`
+* :doc:`../../devs/api/contributing`
 
 SpongeDocs Track
 ~~~~~~~~~~~~~~~~

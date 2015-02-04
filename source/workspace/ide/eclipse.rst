@@ -94,6 +94,6 @@ Track Continuation
 If you are following a track in **Preparing for Development**, your next step is:
 
 * **Sponge (coremod):** :doc:`../../devs/forge/contributing`
-* **Sponge API:** This is the end of the Sponge API track.
+* **Sponge API:** :doc:`../../devs/api/contributing`
 * **SpongeDocs:** This document is not included in the SpongeDocs track.
 * **Plugin Development:** :doc:`../../plugins/quick-start`
