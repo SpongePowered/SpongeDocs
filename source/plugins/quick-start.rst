@@ -30,7 +30,7 @@ After creating your main class, the ``@Plugin`` annotation must be affixed to it
         // Woot! This is a comment!
     }
 
-Remember to changing the ID, name, and version of your plugin in the annotation. The ID should be a simple identifier with no special characters or spaces, as it is used for generating configuration files and for identification purposes.
+Remember to change the ID, name, and version of your plugin in the annotation. The ID should be a simple identifier with no special characters or spaces, as it is used for generating configuration files and for identification purposes.
 
 Initializing Your Plugin
 ========================

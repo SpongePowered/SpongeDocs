@@ -27,7 +27,31 @@ We recommend using Gradle or Maven when developing plugins with the Sponge API. 
 Gradle
 ~~~~~~
 
-At the time of writing, the **Gradle Integration for Eclipse** plugin is unavailable. Use Maven instead.
+**To create your project:**
+
+You must first install the **Gradle Integration Plugin** before using Gradle in Eclipse. This only needs to be done upon the creation of your first project.
+
+.. note::
+
+    Typically, you do not need the optional Spring modules distributed with this plugin, so you can uncheck them during installation.
+
+* Open **Eclipse**.
+* Click ``Help > Eclipse Marketplace``.
+* Search for ``Gradle Integration Plugin``.
+* Install the **Gradle Integration Plugin**.
+
+You may then proceed to create your project.
+
+* Click ``File > New > Other``.
+* Select ``Gradle > Gradle Project``.
+* Click ``Next``.
+* Enter a project name, then click ``Finish``.
+
+**To import the Sponge API as a dependency:**
+
+* Open ``build.gradle`` in the navigator.
+* Manually add the :doc:`official Sponge API Maven artifact <../../workspace/artifact>` as a dependency. An example can be found on the aforementioned Artifacts article.
+* Right-click your project, and select ``Gradle > Refresh Dependencies``.
 
 Maven
 ~~~~~

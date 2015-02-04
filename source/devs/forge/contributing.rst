@@ -20,30 +20,30 @@ Prior to working on the Sponge coremod, please review the :doc:`contributor guid
 PATH Environment Variable
 =========================
 
-The PATH environment variable essentially tells your operating system where to look for executable programs. Ensure your PATH environment variable is set correctly prior to working on Sponge. Oracle provides `instructions <https://www.java.com/en/download/help/path.xml>`_ on setting and changing the PATH environment variable.
+The ``PATH`` environment variable essentially tells your operating system where to look for executable programs. Ensure your ``PATH`` environment variable is set correctly prior to working on Sponge. Oracle provides `instructions <https://www.java.com/en/download/help/path.xml>`_ on setting and changing the ``PATH`` environment variable.
 
 On Unix-based systems, the environment variable is ``$PATH``. On Windows, the environment variable is ``%PATH%``.
 
-It is recommended to construct your system profile in such a way that the PATH environment variable to set up correctly when you log in, rather than having to manually update it each time you want to work on Sponge.
+It is recommended to construct your system profile in such a way that the ``PATH`` environment variable to set up correctly when you log in, rather than having to manually update it each time you want to work on Sponge.
 
 JAVA_HOME Environment Variable
 ==============================
 
-The JAVA_HOME environment variable is an environment that is set in the shell, and is the directory in which the Java Developer Kit is installed. It is recommended to construct your system profile in such a way that JAVA_HOME is set up correctly each time you log in.
+The ``JAVA_HOME`` environment variable is an environment that is set in the shell, and is the directory in which the Java Developer Kit is installed. It is recommended to construct your system profile in such a way that ``JAVA_HOME`` is set up correctly each time you log in.
 
 Windows
 ~~~~~~~
 
 #. Launch the Command Prompt.
 #. To find the path, run ``dir C:\Program Files\Java``
-#. To set JAVA_HOME, run ``set JAVA_HOME=C:\Program Files\Java\<your jdk version>``
+#. To set ``JAVA_HOME``, run ``set JAVA_HOME=C:\Program Files\Java\<your jdk version>``
 
 Alternatively, if you are uncomfortable using the Command Prompt, you can use a GUI:
 
 #. Right-click ``My Computer`` and click ``Properties``.
 #. Click ``Advanced``, then ``Environment Variables``.
 #. Under ``System Variables``, click ``New``.
-#. The name is JAVA_HOME, and the value is the installation path for the Java Development Kit.
+#. The name is ``JAVA_HOME``, and the value is the installation path for the Java Development Kit.
 #. Click ``OK``.
 #. Click ``Apply Changes``.
 

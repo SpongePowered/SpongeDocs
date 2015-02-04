@@ -12,6 +12,14 @@ Documentation for **Preparing for Development** is presented in **tracks**, as e
 Tracks
 ======
 
+Plugin Development Track
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+* :doc:`jdk`
+* :doc:`ide/index`
+* :doc:`artifact`
+* :doc:`../../plugins/quick-start`
+
 Sponge (coremod) Track
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -32,11 +40,3 @@ SpongeDocs Track
 
 * :doc:`git`
 * :doc:`text`
-
-Plugin Development Track
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-* :doc:`jdk`
-* :doc:`ide/index`
-* :doc:`artifact`
-* :doc:`../../plugins/quick-start`
