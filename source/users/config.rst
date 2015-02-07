@@ -27,5 +27,18 @@ What You Can Configure
 
 Plugins will also have their own configuration files in the "config" folder.
 
+World Configs
+======================
+
+There are three types of world configs:
+
+* Global
+* Dimension
+* World
+
+Global configuration files can affect all of a server's worlds and dimensions. This is the default level for configs.
+Dimension configuration files are used by mods to affect a certain mod world or group of worlds. These types of configs will override the global config files.
+World configuration files are used to modify individual worlds only. World configs override dimension and global configs.
+
 .. tip::
     Changing a configuration file will not necessarily take effect right away if your game or server is currently running. Use the ``/sponge reloadconfig`` command to send a message to all plugins and Sponge to reload their configuration. However, you may need to restart your game or server for some changes to take effect.
