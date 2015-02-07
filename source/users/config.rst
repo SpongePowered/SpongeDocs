@@ -37,7 +37,7 @@ There are three types of world configs:
 * World
 
 Global configuration files can affect all of a server's worlds and dimensions. This is the default level for configs.
-Dimension configuration files are used by mods to affect a certain mod world or group of worlds. These types of configs will override the global config files.
+Dimension configuration files are used to affect a certain dimension or group of worlds. These types of configs will override the global config files.
 World configuration files are used to modify individual worlds only. World configs override dimension and global configs.
 
 .. tip::
