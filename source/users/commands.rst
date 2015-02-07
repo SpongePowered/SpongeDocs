@@ -25,6 +25,17 @@ Command               Description                               Permission
 ====================  ========================================  ====================
 /sponge reloadconfig  Send a message to all plugins and Sponge  Not yet available.
                       to reload their configuration.
+/sponge chunks        Prints out the chunk data for a world, a
+                      dimension, or globally.
+/sponge conf          Alters a global, world, or a dimension
+                      config.
+/sponge heap          Dumps the JVM heap.
+/sponge version       Prints the Sponge/SpongeAPI versions to
+                      the console.
+/sponge save          Saves the global, world, or dimension
+                      config.
+/sponge reload        Reloads the global, world, or dimension
+                      config.
 ====================  ========================================  ====================
 
 Forge
