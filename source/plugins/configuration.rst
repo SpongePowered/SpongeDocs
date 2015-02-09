@@ -60,7 +60,7 @@ Creating a getter method for your plugin's default configuration file may come i
         return defaultConfig;
     }
     
-    public File getConfigManager() {
+    public ConfigurationLoader getConfigManager() {
         return configManager;
     }
 
