@@ -108,7 +108,7 @@ Checking whether your plugin's configuration file exists where it is expected to
 After setting the default configuration values, the ``save()`` method must be called. The configuration will only be saved if changes are detected. This applies more to later edits of your configuration.
 
 
-If all goes well, your default configuration file will end up looking similar to this:
+If all goes well, your configuration file will end up looking similar to this:
 
 .. code-block:: none
 
@@ -123,7 +123,7 @@ If all goes well, your default configuration file will end up looking similar to
 Edits
 ~~~~~
 
-Editing default configuration files is similar to creating them. After defining the ``config = configManager.load()``, values can be edited as necessary with the ``config.getNode(String path).setValue(value)`` method, as exemplified below.
+Editing configuration files is similar to creating them. After defining the ``config = configManager.load()``, values can be edited as necessary with the ``config.getNode(String path).setValue(value)`` method, as exemplified below.
 
 .. code-block:: java
 
@@ -137,11 +137,18 @@ Editing default configuration files is similar to creating them. After defining 
     
 The ``path`` is the path to the value in your configuration. The ``path`` is dependent on what you set it to be. Paths are illustrated in :doc:`../users/hocon`.
 
-Retrieving Default Configuration Values
+Retrieving Configuration Values
 =======================================
 
 
-After defining the ``ConfigFile`` object, a method such as ``getInt(String path)`` or ``getBoolean(String path)`` may be invoked to retrieve default configuration values. The path to the configuration value must be passed as an argument to the method.
+After defining the ``config = configManager.load()`` ,  a method such as the following may be invoked to retrieve configuration values.
+
+* ``getNode(String path).getInt()``
+* ``getNode(String path).getBoolean()`` 
+* ``getNode(String path).getDouble()``
+* ``getNode(String path).getString()``
+* ``getNode(String path).getLong()``
+* ``getNode(String path).getFloat()``
 
 .. code-block:: java
 
@@ -151,4 +158,10 @@ After defining the ``ConfigFile`` object, a method such as ``getInt(String path)
     config = configManager.load();
     int version = config.getNode("version").getInt();
 
-In this example, "version" is the path. Assuming that the configuration exists and is valid, an integer will be returned as the value.
+In this example, "version" is the path. Assuming that the configuration exists and is valid, an integer will be returned as the value. 
+
+Config getter methods can be passed a default value as an argument. This default value will be returned if the config object contains no appropriate value on the given path.
+
+.. code-block:: java
+
+    config.getNode("doesntexist").getString("foo"); // will return "foo" since there is no path "doesntexist" in our config file
