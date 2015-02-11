@@ -60,7 +60,7 @@ The server instance exists, and worlds are loaded.
 
 **SERVER_STARTED**
 
-The ``ServerStopped`` event is triggered.
+The ``ServerStarted`` event is triggered.
 The server instance exists, and worlds are loaded.
 
 **SERVER_STOPPING**
