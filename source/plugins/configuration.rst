@@ -25,6 +25,11 @@ If you are unsure of what to set the value of ``sharedRoot`` to, consider the fo
 * If you plan on having multiple configuration files (complex plugins) in the future, set the value to ``false``.
 * If you plan on having a single configuration file (less-complex plugins), set the value to ``true``.
 
+.. warning::
+
+    Setting sharedRoot to false currently crashes the plugin as it has not been implemented yet. Please set sharedRoot to true until that is fixed.
+
+
 **Example - Field using** ``@DefaultConfig``
 
 .. code-block:: java
@@ -33,8 +38,12 @@ If you are unsure of what to set the value of ``sharedRoot`` to, consider the fo
     import org.spongepowered.api.service.config.DefaultConfig;
 
     @Inject
-    @DefaultConfig(sharedRoot = false)
+    @DefaultConfig(sharedRoot = true)
     private File defaultConfig;
+    
+    @Inject
+    @DefaultConfig(sharedRoot = true)
+    private ConfigurationLoader configManager;
 
 .. warning::
 
@@ -49,6 +58,10 @@ Creating a getter method for your plugin's default configuration file may come i
 
     public File getDefaultConfig() {
         return defaultConfig;
+    }
+    
+    public ConfigurationLoader getConfigManager() {
+        return configManager;
     }
 
 Setting Configuration Values
@@ -66,45 +79,42 @@ Default configuration values are a necessity for a couple of reasons:
 - They are the first thing server administrators will see when first opening the configuration for your plugin.
 - The lack of default configuration values may throw exceptions, depending on how you handle things.
 
-Checking whether your plugin's configuration file exists where it is expected to is an effective method of determining if default configuration values need to be set. If your plugin's configuration file does not exist where it is expected to, then the file likely needs to be created. This is shown in the example below; the example checks whether the pathname defined by the previously-defined ``getDefaultConfig()`` exists. If it does not exist, a default configuration file is created, and values are written to it using ``withValue(String path, ConfigValue value)``.
+Checking whether your plugin's configuration file exists where it is expected to is an effective method of determining if default configuration values need to be set. If your plugin's configuration file does not exist where it is expected to, then the file likely needs to be created. This is shown in the example below; the example checks whether the pathname defined by the previously-defined ``getDefaultConfig()`` exists. If it does not exist, a default configuration file is created, and values are written to it using ``config.getNode(String path).setValue(value)``. The value can be a String, Int, Boolean, Double, Long, or Float.
 
 .. code-block:: java
 
-     import com.typesafe.config.ConfigValueFactory;
-     import org.spongepowered.api.util.config.ConfigFile;
      import java.io.File;
+     import ninja.leaping.configurate.ConfigurationNode;
+     import ninja.leaping.configurate.loader.ConfigurationLoader;
+      
+      ConfigurationNode config = null;
 
-     if (!getDefaultConfig().exists()) {
-        File newConfig;
-        
-        try {
-            getDefaultConfig().createNewFile();
-        } catch (IOException exception) {
-            getLogger().error("The default configuration could not be created!");
-        }
-        ConfigFile config = ConfigFile.parseFile(getDefaultConfig())
-            .withValue("plugin.version", ConfigValueFactory.fromAnyRef(1))
-            .withValue("plugin.doStuff", ConfigValueFactory.fromAnyRef(true))
-            .withValue("plugin.doMoreStuff", ConfigValueFactory.fromAnyRef(false));
-        
-        config.save(true);
+      try {
+          if (!defaultConfig.exists()) {
+              defaultConfig.createNewFile();
+              config = configManager.load();
+              
+              config.getNode("version").setValue(1);
+              config.getNode("doStuff").setValue(true);
+              config.getNode("doMoreStuff").setValue(false);
+              configManager.save(config);
+          }
+          config = configManager.load();
+
+      } catch (IOException exception) {
+          getLogger().error("The default configuration could not be loaded or created!");
       }
 
-After setting the default configuration values, the ``save(boolean onlyIfChanged)`` method must be called. If you set the ``onlyIfChanged`` boolean to ``true``, the configuration will only be saved if changes are detected. This applies more to later edits of your configuration.
+After setting the default configuration values, the ``save()`` method must be called. The configuration will only be saved if changes are detected. This applies more to later edits of your configuration.
 
-.. note::
 
-    Keep in mind that the ``ConfigFile`` object is immutable. In other words, each invocation of ``withValue()`` produces a new ``ConfigFile`` object rather than modifying the original.
-
-If all goes well, your default configuration file will end up looking similar to this:
+If all goes well, your configuration file will end up looking similar to this:
 
 .. code-block:: none
 
-    plugin = {
-        version = 1,
-        doStuff = true,
-        doMoreStuff = false
-    }
+    version=1
+    doStuff=true
+    doMoreStuff=false
 
 .. note::
 
@@ -113,33 +123,45 @@ If all goes well, your default configuration file will end up looking similar to
 Edits
 ~~~~~
 
-Editing default configuration files is similar to creating them. After defining the ``ConfigFile`` object, values can be edited as necessary with the ``withValue(String path, ConfigValue value)`` method, as exemplified below.
+Editing configuration files is similar to creating them. After defining the ``config = configManager.load()``, values can be edited as necessary with the ``config.getNode(String path).setValue(value)`` method, as exemplified below.
 
 .. code-block:: java
 
-    import org.spongepowered.api.util.config.ConfigFile;
-
-    ConfigFile config = ConfigFile.parseFile(getDefaultConfig())
-        .withValue("plugin.version", ConfigValueFactory.fromAnyRef(2));
+    import ninja.leaping.configurate.ConfigurationNode;
+    import ninja.leaping.configurate.loader.ConfigurationLoader;
     
-    config.save(true);
+    config = configManager.load();   
+    config.getNode("version").setValue(2);
+    configManager.save(config);
+
     
 The ``path`` is the path to the value in your configuration. The ``path`` is dependent on what you set it to be. Paths are illustrated in :doc:`../users/hocon`.
 
-Retrieving Default Configuration Values
+Retrieving Configuration Values
 =======================================
 
-.. note::
 
-    The following example assumes that the getter method for your default configuration is named ``getDefaultConfig()``, as shown in :ref:`getting-default-config`. This may differ for you depending on what you named your getter method.
+After defining the ``config = configManager.load()`` ,  a method such as the following may be invoked to retrieve configuration values.
 
-After defining the ``ConfigFile`` object, a method such as ``getInt(String path)`` or ``getBoolean(String path)`` may be invoked to retrieve default configuration values. The path to the configuration value must be passed as an argument to the method.
+* ``getNode(String path).getInt()``
+* ``getNode(String path).getBoolean()`` 
+* ``getNode(String path).getDouble()``
+* ``getNode(String path).getString()``
+* ``getNode(String path).getLong()``
+* ``getNode(String path).getFloat()``
 
 .. code-block:: java
 
-    import org.spongepowered.api.util.config.ConfigFile;
+    import ninja.leaping.configurate.ConfigurationNode;
+    import ninja.leaping.configurate.loader.ConfigurationLoader;
 
-    ConfigFile config = ConfigFile.parseFile(getDefaultConfig());
-    int version = config.getInt("plugin.version");
+    config = configManager.load();
+    int version = config.getNode("version").getInt();
 
-In this example, "plugin.version" is the path. Assuming that the configuration exists and is valid, an integer will be returned as the value.
+In this example, "version" is the path. Assuming that the configuration exists and is valid, an integer will be returned as the value. 
+
+Config getter methods can be passed a default value as an argument. This default value will be returned if the config object contains no appropriate value on the given path.
+
+.. code-block:: java
+
+    config.getNode("doesntexist").getString("foo"); // will return "foo" since there is no path "doesntexist" in our config file
