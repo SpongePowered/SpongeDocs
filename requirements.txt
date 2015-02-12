@@ -1,3 +1,0 @@
-sphinx-intl==0.9.5
-colorama==0.3.3
--e git+https://github.com/gratimax/transifex-client.git#egg=transifex_client

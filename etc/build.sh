@@ -10,18 +10,12 @@ fi
 
 if [[ $TRAVIS_PULL_REQUEST = false && $TRAVIS_BRANCH = master ]]; then
 
-  LANGUAGES=$(curl --user $TX_USER:$TX_PASS http://transifex.com/api/2/project/sponge-docs/languages/ | jq -r '.[] | .language_code | "-l " + .' | xargs echo)
-
-  echo languages: $LANGUAGES
-
-  echo | tx init --user=$TX_USER --pass=$TX_PASS
+  echo -e \\napi_key: ${CROWDIN_API_KEY} >> ./crowdin.yaml
 
   sphinx-build -b gettext source build/locale
-  sphinx-intl update -p build/locale $LANGUAGES -d locale/ > /dev/null
+  sphinx-intl update -p build/locale -l en -d locale-src
 
-  sphinx-intl update-txconfig-resources -p build/locale --transifex-project-name sponge-docs -d locale/
-
-  tx push -s
+  crowdin-cli upload sources
 
 fi
 
