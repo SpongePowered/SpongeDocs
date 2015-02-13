@@ -9,7 +9,7 @@ The latest version may be viewed in full by visiting [Sponge at Read-the-Docs](h
 
 ## Translations
 
-We're eagerly looking for translators! Please visit the [Transifex translation page](https://www.transifex.com/projects/p/sponge-docs/), sign up, join the team, and start translating.
+We're eagerly looking for translators! Please visit the [CrowdIn translation page](https://translate.spongepowered.org), sign up, join the team, and start translating.
 
 ## Local Environment
 
