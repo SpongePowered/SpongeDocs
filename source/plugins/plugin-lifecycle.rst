@@ -46,7 +46,7 @@ By this state, all plugin initialization should be completed.
 Running States
 ~~~~~~~~~~~~~~
 
-Running States can occur multiple times during a single run. SERVER_ABOUT_TO_START may follow SERVER_STOPPED, and SERVER_STOPPED may occur at any point during the process if there is an error.
+Running States can occur multiple times during a single run. ``SERVER_ABOUT_TO_START`` may follow ``SERVER_STOPPED``, and ``SERVER_STOPPED`` may occur at any point during the process if there is an error.
 
 **SERVER_ABOUT_TO_START**
 
@@ -60,7 +60,7 @@ The server instance exists, and worlds are loaded.
 
 **SERVER_STARTED**
 
-The ``ServerStarted`` event is triggered.
+The ``ServerStartedEvent`` event is triggered.
 The server instance exists, and worlds are loaded.
 
 **SERVER_STOPPING**
