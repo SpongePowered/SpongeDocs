@@ -25,10 +25,6 @@ If you are unsure of what to set the value of ``sharedRoot`` to, consider the fo
 * If you plan on having multiple configuration files (complex plugins) in the future, set the value to ``false``.
 * If you plan on having a single configuration file (less-complex plugins), set the value to ``true``.
 
-.. warning::
-
-    Setting sharedRoot to false currently crashes the plugin as it has not been implemented yet. Please set sharedRoot to true until that is fixed.
-
 
 **Example - Field using** ``@DefaultConfig``
 
@@ -43,7 +39,7 @@ If you are unsure of what to set the value of ``sharedRoot`` to, consider the fo
     
     @Inject
     @DefaultConfig(sharedRoot = true)
-    private ConfigurationLoader configManager;
+    private ConfigurationLoader<CommentedConfigurationNode> configManager;
 
 .. warning::
 
@@ -60,7 +56,7 @@ Creating a getter method for your plugin's default configuration file may come i
         return defaultConfig;
     }
     
-    public ConfigurationLoader getConfigManager() {
+    public ConfigurationLoader<CommentedConfigurationNode> getConfigManager() {
         return configManager;
     }
 
@@ -79,15 +75,15 @@ Default configuration values are a necessity for a couple of reasons:
 - They are the first thing server administrators will see when first opening the configuration for your plugin.
 - The lack of default configuration values may throw exceptions, depending on how you handle things.
 
-Checking whether your plugin's configuration file exists where it is expected to is an effective method of determining if default configuration values need to be set. If your plugin's configuration file does not exist where it is expected to, then the file likely needs to be created. This is shown in the example below; the example checks whether the pathname defined by the previously-defined ``getDefaultConfig()`` exists. If it does not exist, a default configuration file is created, and values are written to it using ``config.getNode(String path).setValue(value)``. The value can be a String, Int, Boolean, Double, Long, or Float.
+Checking whether your plugin's configuration file exists where it is expected to is an effective method of determining if default configuration values need to be set. If your plugin's configuration file does not exist where it is expected to, then the file likely needs to be created. This is shown in the example below; the example checks whether the pathname defined by the previously-defined ``getDefaultConfig()`` exists. If it does not exist, a default configuration file is created, and values are written to it using ``config.getNode(Object... path).setValue(value)``. The value can be a String, Int, Boolean, Double, Long, or Float.
 
 .. code-block:: java
 
      import java.io.File;
-     import ninja.leaping.configurate.ConfigurationNode;
+     import ninja.leaping.configurate.CommentedConfigurationNode;
      import ninja.leaping.configurate.loader.ConfigurationLoader;
       
-      ConfigurationNode config = null;
+      CommentedConfigurationNode config = null;
 
       try {
           if (!defaultConfig.exists()) {
@@ -123,7 +119,7 @@ If all goes well, your configuration file will end up looking similar to this:
 Edits
 ~~~~~
 
-Editing configuration files is similar to creating them. After defining the ``config = configManager.load()``, values can be edited as necessary with the ``config.getNode(String path).setValue(value)`` method, as exemplified below.
+Editing configuration files is similar to creating them. After defining the ``config = configManager.load()``, values can be edited as necessary with the ``config.getNode(Object... path).setValue(value)`` method, as exemplified below.
 
 .. code-block:: java
 
@@ -143,12 +139,12 @@ Retrieving Configuration Values
 
 After defining the ``config = configManager.load()`` ,  a method such as the following may be invoked to retrieve configuration values.
 
-* ``getNode(String path).getInt()``
-* ``getNode(String path).getBoolean()`` 
-* ``getNode(String path).getDouble()``
-* ``getNode(String path).getString()``
-* ``getNode(String path).getLong()``
-* ``getNode(String path).getFloat()``
+* ``getNode(Object... path).getInt()``
+* ``getNode(Object... path).getBoolean()`` 
+* ``getNode(Object... path).getDouble()``
+* ``getNode(Object... path).getString()``
+* ``getNode(Object... path).getLong()``
+* ``getNode(Object... path).getFloat()``
 
 .. code-block:: java
 
