@@ -22,7 +22,7 @@
     <h3>{{ _('Navigation') }}</h3>
     <ul>
       <span style="float: right" class="lights" title="Toggles syntax highlighting between light and dark">
-        <i class="icon-lamp"></i> Highlight Code Light/Dark
+        <i class="icon-lamp lights-icon"></i> Highlight Code Light/Dark
       </span>
       {%- for rellink in rellinks %}
         <li class="right" {% if loop.first %}style="margin-right: 10px"{% endif %}>
@@ -59,21 +59,21 @@
           {%- endfor %}
         {%- else %}
           {#- old style sidebars: using blocks -- should be deprecated #}
+          {%- block sidebarsearch %}
+            {%- include "searchbox.html" %}
+          {%- endblock %}
           {%- block sidebartoc %}
             {%- include "globaltoc.html" %}
           {%- endblock %}
           {%- block sidebarrel %}
-            {%- include "relations.html" %}
+            {#- {%- include "relations.html" %} #}
           {%- endblock %}
           {%- block sidebarsourcelink %}
-           {%- include "sourcelink.html" %}
+           {#- {%- include "sourcelink.html" %} #}
           {%- endblock %}
           {%- if customsidebar %}
             {%- include customsidebar %}
           {%- endif %}
-          {%- block sidebarsearch %}
-            {%- include "searchbox.html" %}
-          {%- endblock %}
         {%- endif %}
       </div>
     </div>
@@ -98,7 +98,7 @@
 {%- macro css() %}
   <link rel="stylesheet" href="{{ pathto('_static/basic.css', 1) }}" type="text/css" />
   <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />
-  <link href='http://fonts.googleapis.com/css?family=Roboto:400italic,700italic,700,400' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Roboto:400italic,700italic,700,400' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="{{ pathto('_static/tomorrow.css', 1) }}" type="text/css" />
   <link id="syntax-highlighting-ref" rel="stylesheet" href="{{ pathto('_static/tomorrow_night.css', 1) }}" type="text/css" />
   {%- for cssfile in css_files %}
@@ -180,7 +180,7 @@
         </div>
       {%- endblock %}
 
-      {%- block relbar2 %}{{ relbar() }}{% endblock %}
+      {#- {%- block relbar2 %}{{ relbar() }}{% endblock %} #}
 
       {%- block footer %}
         <div class="footer" role="contentinfo">
