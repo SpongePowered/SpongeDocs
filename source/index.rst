@@ -34,7 +34,6 @@ Developers
     workspace/index
     plugins/index
     devs/index
-    porting/index
 
 About Sponge
 ============
