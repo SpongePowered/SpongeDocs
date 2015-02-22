@@ -17,7 +17,7 @@ module.exports = function(grunt) {
 
     watch: {
       sphinx: {
-        files: ['source/**/*.rst'],
+        files: ['source/**/*.rst', 'sponge-theme/**/*'],
         tasks: ['exec:sphinx']
       },
 

@@ -93,10 +93,10 @@ pygments_style = 'sphinx'
 # a list of builtin themes.
 
 # readability
-#html_theme = 'readability'
-#html_theme_path = ['../']
+html_theme = 'sponge-theme'
+html_theme_path = ['../']
 
-html_theme = 'default'
+#html_theme = 'default'
 
 #html_style = '/default.css'
 
