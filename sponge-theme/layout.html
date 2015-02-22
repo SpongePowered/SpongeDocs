@@ -52,6 +52,9 @@
             </a></p>
           {%- endif %}
         {%- endblock %}
+        {#-<div class="logo-wrapper">
+          <img class="logo" src="{{ pathto('_static/logo-small.png', 1) }}" alt="Logo"/>
+        </div>#}
         {%- if sidebars != None %}
           {#- new style sidebar: explicitly include/exclude templates #}
           {%- for sidebartemplate in sidebars %}
@@ -98,7 +101,7 @@
 {%- macro css() %}
   <link rel="stylesheet" href="{{ pathto('_static/basic.css', 1) }}" type="text/css" />
   <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />
-  <link href='//fonts.googleapis.com/css?family=Roboto:400italic,700italic,700,400' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Source+Code+Pro|Roboto:400italic,700italic,700,400' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="{{ pathto('_static/tomorrow.css', 1) }}" type="text/css" />
   <link id="syntax-highlighting-ref" rel="stylesheet" href="{{ pathto('_static/tomorrow_night.css', 1) }}" type="text/css" />
   {%- for cssfile in css_files %}
