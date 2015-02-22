@@ -49,6 +49,9 @@ fi
 # No jekyll !!!
 touch dist/.nojekyll
 
+# Add a cname
+echo "docs.spongepowered.org" > dist/CNAME
+
 # Deploy
 cd dist
 git config --global user.name "Spongy"
