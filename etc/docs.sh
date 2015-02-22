@@ -16,28 +16,35 @@ sphinx-intl build -d locale/ 1>/dev/null
 # Build the english source
 sphinx-build -b html source dist/en
 
-# We need the platform for xargs args
+#We need the platform for xargs args
 platform='unknown'
 unamestr=$(uname)
 
-# Build each language
 if [[ "$unamestr" == 'FreeBSD' || "$unamestr" == 'Darwin'  ]]; then
+    # Build each language
     find locale -d 1 |
     sed 's/locale\///' |
     xargs -L 1 ./etc/sphinx_opts.sh |
     xargs -P 4 -I % sh -c "sphinx-build -b html %"
+
+    # Build the homepage
+    python ./etc/home.py $(find locale -d 1 |
+    sed 's/locale\///' |
+    tr '\n' ',' |
+    sed 's/,$//g')
 else
-    find locale -d 1 |
+    # Build each language
+    find locale -maxdepth 1 -mindepth 1 |
     sed 's/locale\///' |
     xargs -L 1 ./etc/sphinx_opts.sh |
     xargs --max-procs=4 -I % sh -c "sphinx-build -b html %"
-fi
 
-# Build the homepage
-python ./etc/home.py $(find locale -d 1 |
-sed 's/locale\///' |
-tr '\n' ',' |
-sed 's/,$//g')
+    # Build the homepage
+    python ./etc/home.py $(find locale -maxdepth 1 -mindepth 1 |
+    sed 's/locale\///' |
+    tr '\n' ',' |
+    sed 's/,$//g')
+fi
 
 # No jekyll !!!
 touch dist/.nojekyll
