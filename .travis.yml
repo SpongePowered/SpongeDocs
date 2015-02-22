@@ -9,4 +9,4 @@ notifications:
   email: false
 env:
   global:
-    - secure: IjVuOTVN5F4qEtfuiMTHv7V+BsC7/Cl44xt13RG4+2Hr/BhvVCodJKLirLNCq3vk5Uku9CgNGbSFVGNZXodv940L1X1tFWsDt85Kvncz/YVNtAsI988V5518zlmaRJseGW9wOWEBgjM/sgQ1BoZKf7nlvakEfH/dfNHv/U2WUxg=
+    secure: RIbu9atbeMJiEJM8xIGIWpaZl5rda5E3PJm+LvXa05CQWk7bv0k5a2ZzWGOI83xW2rj/eML8i/BDT/RN00++2HlwOFhp6VJN8ck/8R+0OuOpCzow45GIT/2x++IgRfJXqOQL4pQ1N8lqSxFLjpPexT5nOYSHgr+9DY6WFtokocw=

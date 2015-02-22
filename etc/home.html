@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <link rel="stylesheet" href="en/_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="en/_static/sponge.css" type="text/css" />
+    <link href='//fonts.googleapis.com/css?family=Roboto:400italic,700italic,700,400' rel='stylesheet' type='text/css'>
+
+    <script src="en/_static/jquery.js"></script>
+    <script>
+      $(function () {
+        $('.langs').css('visibility', 'visible').hide().fadeIn(200);
+      })
+    </script>
+
+    <title>Sponge Documentation</title>
+  </head>
+  <body class="homepage">
+    <div class="landing">
+      <div class="row center">
+        <h1>Welcome to the Sponge Documentation</h1>
+        <p class="info-text">The official, curated documentation for the Sponge project.</p>
+        <div class="search-wrapper">
+          <form class="search" action="en/search" method="get">
+            <input class="field" type="text" name="q" autocomplete="off" />
+            <button class="submit" type="submit"><i class="icon-search"></i></button>
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="row langs">
+      <h1>Available Languages</h1>
+      {{#langs}}
+        <a href="{{crowdin_code}}" class="lang">
+          <img src="https://d1ztvzf22lmr1j.cloudfront.net/images/flags/{{crowdin_code}}.png" alt="Flag for {{name}}"/><br/>
+          {{name}}
+        </a>
+      {{/langs}}
+    </div>
+  </body>
+</html>
