@@ -16,7 +16,7 @@ sphinx-intl build -d locale/ 1>/dev/null
 # Build the english source
 sphinx-build -b html source dist/en
 
-#We need the platform for xargs args
+# We need the platform for xargs args
 platform='unknown'
 unamestr=$(uname)
 
@@ -46,7 +46,7 @@ else
     sed 's/,$//g')
 fi
 
-# No jekyll !!!
+# No jekyll!!!
 touch dist/.nojekyll
 
 # Add a cname
@@ -60,5 +60,5 @@ git init
 git remote add origin https://spongy:${GH_TOKEN}@github.com/Spongy/SpongeDocs >/dev/null
 git checkout -b gh-pages
 git add .
-git commit -m "Deploy $(date)"
+git commit -m "Deploy $(date)" >/dev/null
 git push -f origin gh-pages >/dev/null
