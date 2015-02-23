@@ -1,0 +1,3 @@
+[submodule "spongedocs-theme"]
+	path = spongedocs-theme
+	url = git://github.com/gratimax/spongedocs-theme

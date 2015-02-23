@@ -125,3 +125,6 @@ _build
 
 # Node
 node_modules/
+
+# Built theme
+sponge-theme/

@@ -2,9 +2,8 @@ language: python
 sudo: false
 python:
 - '3.4'
-install: gem install crowdin-cli && pip install -r etc/requirements.txt
-script:
-- "./etc/build.sh"
+install: ./etc/install.sh
+script: ./etc/build.sh
 notifications:
   email: false
 env:
