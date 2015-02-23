@@ -46,11 +46,8 @@ else
     sed 's/,$//g')
 fi
 
-# No jekyll!!!
-touch dist/.nojekyll
-
-# Add a cname
-echo "docs.spongepowered.org" > dist/CNAME
+# Copy static files
+cp -R ./etc/static/ dist/
 
 # Deploy
 cd dist
