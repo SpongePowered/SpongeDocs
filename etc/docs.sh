@@ -25,7 +25,7 @@ if [[ "$unamestr" == 'FreeBSD' || "$unamestr" == 'Darwin'  ]]; then
     find locale -d 1 |
     sed 's/locale\///' |
     xargs -L 1 ./etc/sphinx_opts.sh |
-    xargs -P 4 -I % sh -c "sphinx-build -b html %"
+    xargs -P 32 -I % sh -c "sphinx-build -b html %"
 
     # Build the homepage
     python ./etc/home.py $(find locale -d 1 |
@@ -37,7 +37,7 @@ else
     find locale -maxdepth 1 -mindepth 1 |
     sed 's/locale\///' |
     xargs -L 1 ./etc/sphinx_opts.sh |
-    xargs --max-procs=4 -I % sh -c "sphinx-build -b html %"
+    xargs --max-procs=32 -I % sh -c "sphinx-build -b html %"
 
     # Build the homepage
     python ./etc/home.py $(find locale -maxdepth 1 -mindepth 1 |
