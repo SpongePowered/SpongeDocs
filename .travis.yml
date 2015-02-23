@@ -2,10 +2,10 @@ language: python
 sudo: false
 python:
 - '3.4'
-install: ./etc/install.sh
-script: ./etc/build.sh
+install: "./etc/install.sh"
+script: "./etc/build.sh"
 notifications:
   email: false
 env:
   global:
-    secure: RIbu9atbeMJiEJM8xIGIWpaZl5rda5E3PJm+LvXa05CQWk7bv0k5a2ZzWGOI83xW2rj/eML8i/BDT/RN00++2HlwOFhp6VJN8ck/8R+0OuOpCzow45GIT/2x++IgRfJXqOQL4pQ1N8lqSxFLjpPexT5nOYSHgr+9DY6WFtokocw=
+  - secure: BYyMR5HSgbTytbnKFPaTpOknbuy9F7860BtsxSQMNpWQrNpYWhOQf8YGNWP6AJmzunRy3WgGzPcHdlOMzrDf00xRZ/DiSAgLbUGaMuKGUTUQ4D3gAJ6iPFR6M5arnbmcDHZV7sxBmL4KAQ9ozwmydMaWkTrAorziPepFj6X1JEY=
