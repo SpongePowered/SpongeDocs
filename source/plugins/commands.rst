@@ -1,8 +1,8 @@
 ====================
-Command Registration
+Creating Commands
 ====================
 
-Creating a command
+Writing a command
 ================
 
 The first step is to create a class for the command. The class has to implement the interface ``CommandCallable``:
