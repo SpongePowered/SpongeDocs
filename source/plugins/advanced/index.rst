@@ -14,3 +14,4 @@ Upcoming tutorials on:
     :titlesonly:
 
     configuration-in-depth
+    dependency-injection
