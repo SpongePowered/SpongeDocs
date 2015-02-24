@@ -2,10 +2,10 @@
 Command Registration
 ====================
 
-Create a command
+Creating a command
 ================
 
-The first step is to create a class for the command. The class has to implement ``CommandCallable``:
+The first step is to create a class for the command. The class has to implement the interface ``CommandCallable``:
 
 .. code-block:: java
 
@@ -56,20 +56,24 @@ The first step is to create a class for the command. The class has to implement 
         public List<String> getSuggestions(CommandSource source, String arguments) throws CommandException {
             return Collections.emptyList();
         }
-
     }
 
+.. tip::
 
-Register the Command
+    See the `documentation for CommandCallable <http://spongepowered.github.io/SpongeAPI/org/spongepowered/api/service/command/CommandService.html>` for the purposes of each method in this example.
+
+Registering the command
 ====================
 
-Now we can register the class in the CommandService
+Now we can register the class in the ``CommandService``. The ``CommandService`` stands as the manager for watching what commands get typed into chat, and redirecting them to the right command handler.
+To register your command, use the method ``CommandService.register()``, passing your plugin, an instance of the command, and any needed aliases as parameters.
 
 .. code-block:: java
 
     CommandService cmdService = game.getCommandDispatcher();
     cmdService.register(plugin, new MyBroadcastCommand(server), "message", "broadcast");
 
-The command is now registered.
-The last argument are the aliases for the command. You can add as many Strings as you want.
-If an alias is used by another command it is ignored. The first alias, which isn't used by another command, becomes the primary alias.
+.. note::
+
+    The arguments after the new instance of your command are the aliases to register for the command. You can add as many Strings as you want.
+    The first alias that isn't used by another command becomes the primary alias. This means aliases used by another command are ignored.
