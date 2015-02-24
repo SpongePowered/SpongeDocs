@@ -5,7 +5,7 @@ Migrating from Canary
 Do Canary Plugins Work?
 =======================
 
-No, unfortunately there is no native support for Canary plugins in Sponge. (It may be possible to re-implement the Canary API with a special Sponge plugin, and thus support Canary plugins)
+No, unfortunately there is no native support for Canary plugins in Sponge. (It may be possible to re-implement Canarylib with a special Sponge plugin, and thus support Canary plugins)
 
 
 .. note::
