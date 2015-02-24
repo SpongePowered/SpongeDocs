@@ -1,4 +1,4 @@
 ===============================
-Working With the Plugin Manager
+Working with the Plugin Manager
 ===============================
 
