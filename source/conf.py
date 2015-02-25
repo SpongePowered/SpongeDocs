@@ -173,9 +173,6 @@ html_theme_path = ['../']
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'SpongeDocs'
 
-def setup(app):
-    app.add_stylesheet("rtd_overrides.css")
-
 # -- Options for LaTeX output --------------------------------------------------
 
 latex_elements = {
