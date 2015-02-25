@@ -12,6 +12,10 @@ In this guide are pages that provide useful information as to how to utilize pri
     
     If you are a developer contributing to Sponge's development, see :doc:`../../devs/index` for information about working with Sponge code.
 
+.. tip::
+
+    If you are new to developing, try checking out :doc:`../../workspace/index` before reading through this guide.
+
 .. toctree::
     :maxdepth: 2
     :titlesonly:
