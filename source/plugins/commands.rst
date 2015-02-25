@@ -1,9 +1,9 @@
-====================
+=================
 Creating Commands
-====================
+=================
 
 Writing a command
-================
+=================
 
 The first step is to create a class for the command. The class has to implement the interface ``CommandCallable``:
 
@@ -63,7 +63,7 @@ The first step is to create a class for the command. The class has to implement 
     See the `documentation for CommandCallable <http://spongepowered.github.io/SpongeAPI/org/spongepowered/api/service/command/CommandService.html>` for the purposes of each method in this example.
 
 Registering the command
-====================
+=======================
 
 Now we can register the class in the ``CommandService``. The ``CommandService`` stands as the manager for watching what commands get typed into chat, and redirecting them to the right command handler.
 To register your command, use the method ``CommandService.register()``, passing your plugin, an instance of the command, and any needed aliases as parameters.
