@@ -8,6 +8,7 @@ In this guide is a number of pages discussing topics useful that a server owner 
 .. note::
 
     This guide shows topics targetted specifically at server owners.
+    
     If you are here to develop, see :doc:`../../plugins/index` for plugin development, and :doc:`../../devs/index` for Sponge development.
 
 .. toctree::
