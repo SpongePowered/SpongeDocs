@@ -38,7 +38,7 @@ for anything other than extremely small servers.
 **64-bit**: 64-bit Java, while less commonly installed, has numerous advantages over 32-bit.
 The amount of memory that can be allocated increases to approximately 3 TB, so you can throw
 as much memory as your computer has towards your Server. 64-bit Java can also run faster than
-32-bit, meaning that you can make the most of your processing power. We recommend 64-bit Java.
+32-bit, meaning that you can make the most of your processing power.
 
 How to Install Java On Your Computer
 ------------------------------------
