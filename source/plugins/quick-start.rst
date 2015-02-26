@@ -30,7 +30,7 @@ After creating your main class, the ``@Plugin`` annotation must be affixed to it
         // Woot! This is a comment!
     }
 
-Remember to change the ID, name, and version of your plugin in the annotation. The ID should be a simple identifier with no special characters or spaces, as it is used for generating configuration files and for identification purposes.
+Remember to change the ID, name, and version of your plugin in the annotation. The ID should be a simple identifier with no special characters or spaces, as it is used for generating configuration files and for identification purposes. That in mind, it is not recommended to change the ID after releasing the plugin.
 
 Initializing Your Plugin
 ========================
@@ -57,7 +57,7 @@ Your plugin can listen for particular events, called **state events**, to be not
 
 .. tip::
 
-    The Sponge documentation provides a guide with more information on events. Normally, in addition to prefixing event-handler methods with ``@Subscribe``, you must also register your object with Sponge's event bus. However, your main plugin class is registered automatically.
+    The Sponge documentation provides a guide with more information on events (see :doc:`Working with Events <event-bus>`). Normally, in addition to prefixing event-handler methods with ``@Subscribe``, you must also register your object with Sponge's event bus. However, your main plugin class is registered automatically.
 
 State Events
 ~~~~~~~~~~~~
