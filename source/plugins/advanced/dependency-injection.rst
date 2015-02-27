@@ -21,6 +21,6 @@ Temporary List of Injected Types
 - ConfigFile
 - File (Has to have an additional annotation specifying specific file)
 
-.. note:
+.. note::
 
     This is an incomplete doc, but offers a temporary quick reference. More information can be found in the source of SpongeGuiceModule which is part of Sponge.
