@@ -25,12 +25,17 @@ Summary
 - Not tied to any platform:
 
     - Can be used on a from-scratch server. (i.e. Glowstone)
+    
       - Planned and officially working with Glowstone team.
+      
     - Can be used on top of Forge.
+    
       - Planned and officially working with Forge team.
       - No need for client mods if only Sponge is used on the server.
       - Can work with Forge mods.
+      
     - Can be injected into Minecraft directly.
+    
       - Not planned yet. (This is a larger undertaking and we prefer something usable sooner.)
       - Several third party implementations are attempting this.
 
@@ -43,16 +48,20 @@ Our ultimate goal is to create a modding API that is easy to use for owners of l
 - Sponge plugins should work across several different Minecraft versions without needing an update from the developer, which means that you don’t have to worry about all your plugins breaking between each new major release of Minecraft. (1.6, 1.7, 1.8, etc.)
 
 - If Sponge is used on the server, players who join will not need Sponge or Forge installed on their game. You can use Sponge to make management of your server easier, by allowing you to deploy Sponge Plugins that protect areas, log what players do, add minigames, and so on.
+
     - However, you will be able to use Sponge plugins on the client too, including ones that are meant only to be used on the client.
 
 - Sponge will be separated into an **API** that developers will use to make plugins and an **implementation** that is able to load these plugins. The API won’t change much between MC versions, so developers will build against that, and the implementation loads the plugins and makes them work.
 
     - We want to start by writing an implementation for two platforms:
+    
       - Sponge will run on Minecraft Forge, which is an existing Minecraft modding framework (that lacks a cross-version API).
       - Sponge will also run on Glowstone, which is an independent Minecraft server that was written from scratch. Later on, we may also explore other options.
+      
     - The reason why we have chosen Forge and Glowstone as our initial base is because they are well established projects, reducing our time to release, while making use of work that has already been done by the community.
     - Sponge is not tied to any particular platform, be it Forge or Glowstone.
     - When/if Mojang releases their own modding API, it will be possible to build the Sponge API on top of Mojang’s modding API so that your Sponge plugins continue to work.
+
 - Sponge will support official interoperability with Forge so you can use both Sponge plugins and Forge mods together. We are working directly with the Forge team.
 - While Sponge will not be directly supporting Bukkit, community projects have been started that aim to provide complete support for existing Bukkit plugins on top of Sponge.
 
@@ -75,9 +84,7 @@ Management of the Project
 -------------------------
 
 - The project is currently led by three people: blood, sk89q and Zidane. We are making sure to be open with the team so that we do not end up “holding all the keys.” Sponge has a lot of help from the existing Minecraft community, but the project is led by these three people who make the final decisions. This way, we can have a large number of people contribute and yet still avoid having “too many cooks spoiling the broth.”
-
 - We are trying to be open as possible. Our GitHub repository has been available since the first day development began and we make weekly, lengthy announcements detailing the progress and future of the project. Our developers and leads interact with the community around the Internet and on the Sponge forums. You will find that we are very approachable; if you have an idea or issue, we are all ears.
-
 - We are using the MIT License, an extremely permissive open source license. This means that, should our server implementation encounter legal problems, it will be possible to reuse the Sponge API and start a new project without being further encumbered by legal issues.
 
 
