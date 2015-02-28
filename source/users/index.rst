@@ -3,7 +3,7 @@ User's Guide
 ============
 
 Welcome, user, to the Sponge User's Guide!
-In this guide is a number of pages discussing topics useful that a server owner can find useful. Use these to learn how to take full control of your server, along with its extra capabilities provided by Sponge!
+In this guide are a number of pages discussing topics that a server owner may find useful. Use these to learn how to take full control of your server, along with the extra capabilities provided by Sponge!
 
 .. note::
 
