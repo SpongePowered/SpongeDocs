@@ -2,7 +2,7 @@
 Working with the Plugin Manager
 ===============================
 
-The Plugin Manager is what your plugin gets sent to after being loaded by the server at startup. It will keep track of plugin instances including your own, and will allow you to easily interact with another plugin if you so desire.
+The Plugin Manager is what your plugin gets sent to after being loaded by the server at startup. The server loads your plugin by finding its main class, annotated by the ``@Plugin`` annotation that holds its general information, and sends a new instance of it to the manager. The manager then keeps that instance in its own collection that you can look into and pull from using methods provided by itself, thus allowing you to easily interact with another loaded plugin if you so desire.
 
 The ``PluginManager`` Class
 ===========================
@@ -13,7 +13,7 @@ The ``PluginManager`` Class
 
   See the `documentation for ``PluginManager```_ for full information about the class, as well as its methods and their usage.
 
-Public methods inside the ``PluginManager`` are used to grab information about the current collection of loaded plugins, alongside their instances. Example usages would be to communicate with another plugin, grabbing its instance and using the methods it offers to provide compability or extended features by means of the calling plugin.
+Public methods inside the ``PluginManager`` are used to grab information about the current collection of loaded plugins, alongside their instances. The plugins are stored inside a ``PluginContainer`` (discussed in next section) to allow for an easy center of information about the specific plugin. As an example, you can use the ``PluginManager`` to communicate with another plugin, grabbing its instance and using the methods it offers to provide compability or extended features by means of your calling plugin.
 
 TODO: Example - Grabbing Another Plugin
 
