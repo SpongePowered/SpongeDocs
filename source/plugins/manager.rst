@@ -15,6 +15,80 @@ The ``PluginManager`` Class
 
 Public methods inside the ``PluginManager`` are used to grab information about the current collection of loaded plugins, alongside their instances. The plugins are stored inside a ``PluginContainer`` (discussed in next section) to allow for an easy center of information about the specific plugin. As an example, you can use the ``PluginManager`` to communicate with another plugin, grabbing its instance and using the methods it offers to provide compability or extended features by means of your calling plugin.
 
+Obtaining the ``PluginManager``
+===============================
+
+You can get an instance of the server's ``PluginManager`` using a few different ways.
+
+1. Dependency Injection
+~~~~~~~~~~~~~~~~~~~~~~~
+
+.. tip::
+
+  See the :doc:`advanced/dependency-injection` guide for help on using dependency injection.
+
+The ``PluginManager`` is one of the few API instances that are injected into the main class upon being loaded. To ask for a reference, create a new variable to hold the ``PluginManager`` instance and simply annotate it with ``@Inject``.
+
+Example - Grabbing the Plugin Manager (Dependency Injection)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: java
+
+  package examples.plugin;
+
+  import com.google.inject.Inject;
+  import org.spongepowered.api.plugin.PluginManager;
+
+  @Inject
+  private PluginManager pluginManager;
+
+2. The Service Manager
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. tip::
+
+  See :doc:`services` for a full guide about the Service Manager.
+
+The service manager also holds an instance of the server's ``PluginManager``. Simply use the method ``ServiceManager.provide()``, passing the ``PluginManager``'s class (``PluginManager.class``) as a parameter.
+
+Example - Grabbing the Plugin Manager (Service Manager)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: java
+
+  package examples.plugin;
+
+  import org.spongepowered.api.plugin.PluginManager;
+  import org.spongepowered.api.service.ServiceManager;
+
+  private PluginManager pluginManager = serviceManager.provide(PluginManager.class);
+
+3. The Game Instance
+~~~~~~~~~~~~~~~~~~~~
+
+.. _documentation for Game: http://spongepowered.github.io/SpongeAPI/org/spongepowered/api/Game.html
+
+.. tip::
+
+  See the `documentation for Game`_ for full information about the class, as well as its methods and their usage.
+
+A game instance can provide a reference to the server's ``PluginManager`` as well for convenience.
+
+Example - Grabbing the Plugin Manager (Game Instance)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: java
+
+  package examples.plugin;
+
+  import org.spongepowered.api.Game;
+  import org.spongepowered.api.plugin.PluginManager;
+
+  private PluginManager pluginManager = game.getPluginManager();
+
+
+And now that you have the ``PluginManager``...
+
 Example - Grabbing Another ``PluginContainer``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -27,13 +101,7 @@ Example - Grabbing Another ``PluginContainer``
 
   import com.google.inject.Inject;
 
-  /* Things like PluginManager are injected into the plugin's main class upon being
-   * loaded.
-   *
-   * See https://docs.spongepowered.org/en/plugins/advanced/dependency-injection.html
-   * for a full list of these injected API instances.
-   */
-  @Inject private PluginManager manager;
+  private PluginManager manager = ;
 
   //Grab our plugin's container using the plugin manager.
   private PluginContainer myOtherPlugin = manager.getPlugin("myOtherPluginId").get();
