@@ -9,12 +9,15 @@ The first step is to create a class for the command. The class has to implement 
 
 .. code-block:: java
 
-    package com.github.maenni025.spongeExample;
+    package example.command;
 
+    import java.util.ArrayList;
+    import java.util.Arrays;
     import java.util.Collections;
     import java.util.List;
 
     import org.spongepowered.api.Server;
+    import org.spongepowered.api.text.message.Message;
     import org.spongepowered.api.text.message.Messages;
     import org.spongepowered.api.util.command.CommandCallable;
     import org.spongepowered.api.util.command.CommandException;
@@ -22,9 +25,11 @@ The first step is to create a class for the command. The class has to implement 
 
     import com.google.common.base.Optional;
 
+    // Simple command that sends a message to all players: /broadcast <message>
     public class MyBroadcastCommand implements CommandCallable {
 
         private final Server server;
+
         private final Optional<String> desc = Optional.of("Displays a message to all players");
         private final Optional<String> help = Optional.of("Displays a message to all players. It has no color support!");
 
@@ -32,29 +37,57 @@ The first step is to create a class for the command. The class has to implement 
             this.server = server;
         }
 
+        // Called when a CommandSource (player, console, ...) executes the command
         public boolean call(CommandSource source, String arguments, List<String> parents) throws CommandException {
-            server.broadcastMessage(Messages.of(arguments));
+
+            // Creates a message from the command arguments
+            Message message = Messages.of(arguments);
+
+            // Sends the message to all players
+            this.server.broadcastMessage(message);
+
+            // Indicates that the command was successful
             return true;
         }
 
+        // Tests if the CommandSource is permitted to run this command
         public boolean testPermission(CommandSource source) {
-            return source.hasPermission("example.exampleCommand");
+            return source.hasPermission("example.broadcast");
         }
 
+        // Displayed when a player uses /help, if the help system supports it
         public Optional<String> getShortDescription() {
             return desc;
         }
 
+        // A longer help text
         public Optional<String> getHelp() {
             return help;
         }
 
+        // A string explaining the arguments of the command
         public String getUsage() {
-            return "/<command> <message>";
+            return "<message>";
         }
 
+        // A list of suggestions when a player presses TAB to complete the command
         public List<String> getSuggestions(CommandSource source, String arguments) throws CommandException {
-            return Collections.emptyList();
+
+            // Checks if a player entered "h" or "H"
+            if (arguments.equalsIgnoreCase("H")) {
+
+                // Create a list of suggestions starting with "H"
+                ArrayList<String> suggestions = new ArrayList<String>();
+                suggestions.add("Hi!");
+                suggestions.add("Hello World!");
+
+                // Return the list
+                return suggestions;
+
+            } else {
+                // Otherwise return no suggestions
+                return Collections.emptyList();
+            }
         }
     }
 
