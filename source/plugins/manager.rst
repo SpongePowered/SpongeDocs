@@ -7,11 +7,11 @@ The Plugin Manager is what your plugin gets sent to after being loaded by the se
 The ``PluginManager`` Class
 ===========================
 
-.. _documentation for ``PluginManager``: http://spongepowered.github.io/SpongeAPI/org/spongepowered/api/plugin/PluginManager.html
+.. _documentation for PluginManager: http://spongepowered.github.io/SpongeAPI/org/spongepowered/api/plugin/PluginManager.html
 
 .. tip::
 
-  See the `documentation for ``PluginManager```_ for full information about the class, as well as its methods and their usage.
+  See the `documentation for PluginManager`_ for full information about the class, as well as its methods and their usage.
 
 Public methods inside the ``PluginManager`` are used to grab information about the current collection of loaded plugins, alongside their instances. The plugins are stored inside a ``PluginContainer`` (discussed in next section) to allow for an easy center of information about the specific plugin. As an example, you can use the ``PluginManager`` to communicate with another plugin, grabbing its instance and using the methods it offers to provide compability or extended features by means of your calling plugin.
 
@@ -42,11 +42,11 @@ Example - Grabbing Another ``PluginContainer``
 The ``PluginContainer`` Class
 =============================
 
-.. _documentation for ``PluginContainer``: http://spongepowered.github.io/SpongeAPI/org/spongepowered/api/plugin/PluginContainer.html
+.. _documentation for PluginContainer: http://spongepowered.github.io/SpongeAPI/org/spongepowered/api/plugin/PluginContainer.html
 
 .. tip::
 
-  See the `documentation for ``PluginContainer```_ for full information about the class, as well as its methods and their usage.
+  See the `documentation for PluginContainer`_ for full information about the class, as well as its methods and their usage.
 
 When grabbing a plugin from the ``PluginManager``, you'll notice very quickly that you are not given an immediate instance of the requested plugin. Instead, you'll be greeted by a ``PluginContainer`` containing information about the plugin attained from its ``@Plugin`` annotation in its main class, as well as the loaded instance.
 
