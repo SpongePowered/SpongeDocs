@@ -15,7 +15,29 @@ The ``PluginManager`` Class
 
 Public methods inside the ``PluginManager`` are used to grab information about the current collection of loaded plugins, alongside their instances. The plugins are stored inside a ``PluginContainer`` (discussed in next section) to allow for an easy center of information about the specific plugin. As an example, you can use the ``PluginManager`` to communicate with another plugin, grabbing its instance and using the methods it offers to provide compability or extended features by means of your calling plugin.
 
-TODO: Example - Grabbing Another Plugin
+Example - Grabbing Another ``PluginContainer``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: java
+
+  package examples.plugin;
+
+  import org.spongepowered.api.plugin.PluginContainer;
+  import org.spongepowered.api.plugin.PluginManager;
+
+  import com.google.inject.Inject;
+
+  /* Things like PluginManager are injected into the plugin's main class upon being
+   * loaded.
+   *
+   * See https://docs.spongepowered.org/en/plugins/advanced/dependency-injection.html
+   * for a full list of these injected API instances.
+   */
+  @Inject private PluginManager manager;
+
+  //Grab our plugin's container using the plugin manager.
+  private PluginContainer myOtherPlugin = manager.getPlugin("myOtherPluginId").get();
+
 
 The ``PluginContainer`` Class
 =============================
@@ -30,4 +52,26 @@ When grabbing a plugin from the ``PluginManager``, you'll notice very quickly th
 
 The ``PluginContainer`` will hold any generic information about the plugin set by its owning developer. You can use information from here instead of hard-coding what you know about it in your supporting plugin. An example scenario would be if the owning developer changes the name of the plugin, references to the latter in the supporting plugin would not become wrong as a result of this change, provided you've used the method ``PluginContainer.getName()`` to get its name.
 
-TODO: Example - Using a Plugin Container
+Example - Using a ``PluginContainer`` to get a Plugin's Instance
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. code-block:: java
+
+  package examples.plugin;
+
+  import org.spongepowered.api.plugin.PluginContainer;
+  import org.spongepowered.api.plugin.PluginManager;
+
+  import com.google.inject.Inject;
+
+  /* Things like PluginManager are injected into the plugin's main class upon being
+   * loaded.
+   *
+   * See https://docs.spongepowered.org/en/plugins/advanced/dependency-injection.html
+   * for a full list of these injected API instances.
+   */
+  @Inject private PluginManager manager;
+  private PluginContainer myOtherPlugin = manager.getPlugin("myOtherPluginId").get();
+
+  //The plugin is returned as an object. We need to cast it as our other plugin,
+  //since we know it really is our other plugin.
+  private MyOtherPlugin pluginInstance = (MyOtherPlugin) myOtherPlugin.getInstance();
