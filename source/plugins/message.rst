@@ -5,7 +5,7 @@
 .. _documentation for TextActions: http://spongepowered.github.io/SpongeAPI/org/spongepowered/api/text/action/TextActions.html
 
 .. _Wikipedia article about the builder pattern: http://en.wikipedia.org/wiki/Builder_pattern
-.. _Minecraft Gamepedia article about selectors: http://minecraft.gamepedia.com/Commands#Target_selectors
+.. _Minecraft Wiki article about selectors: http://minecraft.gamepedia.com/Commands#Target_selectors
 
 =====================
 Using the Message API
