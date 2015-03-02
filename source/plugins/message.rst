@@ -1,8 +1,22 @@
+.. External references.
+
+.. _documentation for the MessageBuilder: http://spongepowered.github.io/SpongeAPI/org/spongepowered/api/text/message/MessageBuilder.html
+.. _documentation for Messages: http://spongepowered.github.io/SpongeAPI/org/spongepowered/api/text/message/Messages.html
+.. _documentation for TextActions: http://spongepowered.github.io/SpongeAPI/org/spongepowered/api/text/action/TextActions.html
+
+.. _Wikipedia article about the builder pattern: http://en.wikipedia.org/wiki/Builder_pattern
+.. _Minecraft Gamepedia article about selectors: http://minecraft.gamepedia.com/Commands#Target_selectors
+
 =====================
 Using the Message API
 =====================
 
 Messages are used to create formatted text. These messages can be sent to players in chat messages, and can also be used in places such as books and signs. Sponge provides a message builder through the ``org.spongepowered.api.text.message.MessageBuilder`` interface to assist in creating and formatting messages.
+
+.. tip::
+
+    See the `documentation for the MessageBuilder`_ for full information about the class, as well as its methods and their usage.
+
 
 Creating a Message
 ==================
@@ -11,6 +25,10 @@ Oftentimes, all you need is an unformatted message. Unformatted messages do not 
 
 Example: Unformatted Message
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. tip::
+
+    See the `documentation for Messages`_ for full information about the class, as well as its methods and their usage.
 
 .. code-block:: java
 
@@ -30,7 +48,7 @@ The message builder interface allows for the creation of formatted messages in a
 
 .. tip ::
 
-    Read this `Wikipedia article <http://en.wikipedia.org/wiki/Builder_pattern>`__ for help understanding the purpose of the builder pattern in software design.
+    Read this `Wikipedia article about the builder pattern`_ for help understanding its purpose in software design.
 
 Colors
 ~~~~~~
@@ -72,6 +90,10 @@ Text Actions
 
 The message builder also offers the ability to create actions for messages. Any action specified within the ``org.spongepowered.api.text.action.TextActions`` class can be used when creating text actions for messages. The method below is a small example of what text actions can do.
 
+.. tip::
+
+    See the `documentation for TextActions`_ for a full list of supported TextActions in Sponge.
+
 Example: Message with a Text Action
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -102,7 +124,7 @@ Target selectors are used to target players or entities that meet a specific cri
 
 .. tip ::
 
-    Read this `Minecraft wiki article <http://minecraft.gamepedia.com/Commands#Target_selectors>`__ for help understanding what target selectors are in Minecraft, and how to use them.
+    Read this `Minecraft Wiki article about selectors`_ for help understanding what target selectors are in Minecraft, and how to use them.
 
 To use selectors in messages, you must use the ``org.spongepowered.api.text.selector.SelectorBuilder`` interface. This is illustrated in the example below.
 
