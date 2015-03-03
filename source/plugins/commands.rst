@@ -1,3 +1,8 @@
+.. External references.
+
+.. _documentation for CommandCallable: http://spongepowered.github.io/SpongeAPI/org/spongepowered/api/util/command/CommandCallable.html
+.. _documentation for CommandService: http://spongepowered.github.io/SpongeAPI/org/spongepowered/api/service/command/CommandService.html
+
 =================
 Creating Commands
 =================
@@ -6,6 +11,10 @@ Writing a command
 =================
 
 The first step is to create a class for the command. The class has to implement the interface ``CommandCallable``:
+
+.. tip::
+
+    See the `documentation for CommandCallable`_ for the purposes of each method in this example.
 
 .. code-block:: java
 
@@ -58,16 +67,15 @@ The first step is to create a class for the command. The class has to implement 
         }
     }
 
-.. _documentation for CommandCallable: http://spongepowered.github.io/SpongeAPI/org/spongepowered/api/service/command/CommandService.html
-.. tip::
-
-    See the `documentation for CommandCallable`_ for the purposes of each method in this example.
-
 Registering the command
 =======================
 
 Now we can register the class in the ``CommandService``. The ``CommandService`` stands as the manager for watching what commands get typed into chat, and redirecting them to the right command handler.
 To register your command, use the method ``CommandService.register()``, passing your plugin, an instance of the command, and any needed aliases as parameters.
+
+.. tip::
+
+    See the `documentation for CommandService`_ for full information about the class, as well as its methods and their usage.
 
 .. code-block:: java
 
