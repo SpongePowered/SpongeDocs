@@ -20,7 +20,7 @@ Atom is an open-source text editor published under the MIT license. Atom has bui
 Notepad++
 ~~~~~~~~~
 
-Notepad is, arguably, one of the most popular text editors.
+Notepad++ is, arguably, one of the most popular text editors.
 
 **Notepad++** can be downloaded for free from http://www.notepad-plus-plus.org/.
 
