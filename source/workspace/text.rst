@@ -20,9 +20,16 @@ Atom is an open-source text editor published under the MIT license. Atom has bui
 Notepad++
 ~~~~~~~~~
 
-Notepad is, arguably, one of the most popular text editors.
+Notepad++ is, arguably, one of the most popular text editors.
 
 **Notepad++** can be downloaded for free from http://www.notepad-plus-plus.org/.
+
+Sublime Text
+~~~~~~~~~~~~
+
+Sublime Text is a multi-platform text editor, with quite a few useful features. It includes the ability to, customize the look of the editor, create useful macros, and even includes a plugin API to make your editing even easier. Sublime Text provides both a free version, and a paid license.
+
+**Sublime Text** can be downloaded for free from http://www.sublimetext.com/
 
 Track Continuation
 ==================
