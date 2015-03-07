@@ -7,9 +7,9 @@ In this guide are pages that provide useful information as to how to utilize pri
 .. note::
 
     This guide shows topics targetted specifically at plugin developers.
-    
+
     If you are a server owner, see the :doc:`../../users/index` for information on how to use Sponge.
-    
+
     If you are a developer contributing to Sponge's development, see :doc:`../../devs/index` for information about working with Sponge code.
 
 .. tip::
@@ -24,7 +24,7 @@ In this guide are pages that provide useful information as to how to utilize pri
     blocks
     commands
     event-bus
-    entities
+    entities/index
     logging
     manager
     message
