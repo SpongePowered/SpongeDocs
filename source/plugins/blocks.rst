@@ -1,7 +1,3 @@
-.. External references.
-
-.. _NBT format: http://minecraft.gamepedia.com/NBT_format
-
 ===================
 Working with Blocks
 ===================
@@ -17,9 +13,9 @@ Properties
 All blocks are of a *base type*. Examples of base types include dirt, stairs, and leaves. However, to further differentiate these base types, each block has set of different properties, of which each can take a limited set of values (i.e. *podzol* dirt, *brick* stairs, *oak* leaves). A block can have multiple properties (such as *east-facing*, *brick* stairs).
 
 .. topic:: Examples of block properties
-
+    
     .. code::
-
+    
         minecraft:dirt[snowy=false,variant=default]
         minecraft:dirt[snowy=true,variant=default]
         minecraft:dirt[snowy=false,variant=grassless]
@@ -51,12 +47,12 @@ Tile Entity Data
 
 With 65536 possible combinations, it is not possible to store a lot of information like inventory, so there's an additional way that *some* blocks have data: tile entities.
 
-Tile entities themselves are Java objects (like a `Chest` class). Normally, Minecraft code would access data in a tile entity by getting its instance and then calling it methods or fields, like a regular object (``world.getTileEntity(position).getInventory()``). When tile entities need to be written to the save file, they are stored in the `NBT format`_.
+Tile entities themselves are Java objects (like a `Chest` class). Normally, Minecraft code would access data in a tile entity by getting its instance and then calling it methods or fields, like a regular object (``world.getTileEntity(position).getInventory()``). When tile entities need to be written to the save file, they are stored in the `NBT format <http://minecraft.gamepedia.com/NBT_format>`_.
 
 .. tip::
-
+    
     Some things, like paintings, are actually entities.
-
+    
     However, tile entities can also override rendering so they don't look like a regular block, although this is generally inefficient and causes a client framerate drop.
 
 The Block API
