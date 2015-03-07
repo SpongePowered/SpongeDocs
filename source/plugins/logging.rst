@@ -1,7 +1,3 @@
-.. External references.
-
-.. _documentation for Logger: http://www.slf4j.org/apidocs/org/slf4j/Logger.html
-
 ==========================
 Logging and Debug Messages
 ==========================
@@ -13,10 +9,6 @@ There are a few logging frameworks available for use in Java. Logging is prefera
 * The available logger frameworks allow you to enable or disable messages from certain sources.
 
 Sponge uses ``org.slf4j.Logger``, not ``java.util.logging.Logger``.
-
-.. tip::
-
-    See the `documentation for Logger`_ for full information about the class, as well as its methods and their usage.
 
 Getting a Logger
 ================
@@ -44,23 +36,23 @@ The Guice module used during the initialization of plugins has a plugin-scoped l
     import org.slf4j.Logger;
 
     private Logger logger;
-
+    
     @Inject
     private void setLogger(Logger logger)
         this.logger = logger;
     }
-
+    
 **Example - Constructor**
 
 .. code-block:: java
 
     import com.google.inject.Inject;
     import org.slf4j.Logger;
-
+    
     // For the purpose of this example, "Banana" is the class name
-
+    
     private Logger logger;
-
+    
     @Inject
     public Banana(Logger logger) {
         this.logger = logger;
@@ -91,7 +83,7 @@ Emitting a message with your logger is very simple.
 .. code-block:: java
 
     import org.slf4j.Logger;
-
+    
     getLogger().info(String);
     getLogger().debug(String);
     getLogger().warn(String);
@@ -100,5 +92,5 @@ Emitting a message with your logger is very simple.
 The String is the message you wish to emit. For example:
 
 .. code-block:: java
-
+    
     getLogger().warn("This is a warning!");

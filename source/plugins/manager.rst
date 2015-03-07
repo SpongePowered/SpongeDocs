@@ -1,9 +1,3 @@
-.. External references.
-
-.. _documentation for PluginContainer: http://spongepowered.github.io/SpongeAPI/org/spongepowered/api/plugin/PluginContainer.html
-.. _documentation for PluginManager: http://spongepowered.github.io/SpongeAPI/org/spongepowered/api/plugin/PluginManager.html
-.. _documentation for Game: http://spongepowered.github.io/SpongeAPI/org/spongepowered/api/Game.html
-
 ===============================
 Working with the Plugin Manager
 ===============================
@@ -12,6 +6,8 @@ The Plugin Manager is what your plugin gets sent to after being loaded by the se
 
 The ``PluginManager`` Class
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. _documentation for PluginManager: http://spongepowered.github.io/SpongeAPI/org/spongepowered/api/plugin/PluginManager.html
 
 .. tip::
 
@@ -64,6 +60,8 @@ The service manager also holds an instance of the server's ``PluginManager``. Si
 3. The Game Instance
 --------------------
 
+.. _documentation for Game: http://spongepowered.github.io/SpongeAPI/org/spongepowered/api/Game.html
+
 .. tip::
 
     See the `documentation for Game`_ for full information about the class, as well as its methods and their usage.
@@ -112,6 +110,8 @@ Or, it is possible to obtain an instance to a plugin container directly, by the 
 
 The PluginContainer Class
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. _documentation for PluginContainer: http://spongepowered.github.io/SpongeAPI/org/spongepowered/api/plugin/PluginContainer.html
 
 .. tip::
 

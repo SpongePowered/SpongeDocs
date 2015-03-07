@@ -1,14 +1,3 @@
-.. External references.
-
-.. _documentation for Subscribe: http://spongepowered.github.io/SpongeAPI/org/spongepowered/api/util/event/Subscribe.html
-.. _documentation for AbstractEvent: http://spongepowered.github.io/SpongeAPI/org/spongepowered/api/event/AbstractEvent.html
-.. _documentation for the SpongeEventFactory: http://spongepowered.github.io/SpongeAPI/org/spongepowered/api/event/SpongeEventFactory.html
-.. _documentation for EventCallback: http://spongepowered.github.io/SpongeAPI/org/spongepowered/api/util/event/callback/EventCallback.html
-.. _Event: http://spongepowered.github.io/SpongeAPI/org/spongepowered/api/util/event/Event.html
-.. _Cancellable: http://spongepowered.github.io/SpongeAPI/org/spongepowered/api/util/event/Cancellable.html
-
-.. _PR #232: https://github.com/SpongePowered/SpongeAPI/pull/232
-
 ===================
 Working with Events
 ===================
@@ -36,10 +25,6 @@ Event Handlers
 ==============
 
 In order to listen for event, an event handler must be registered. This is done by making a method with any name, having the first (and only) parameter be of the desired event type that you want to catch, and then affixing ``@Subscribe`` to the method. This is illustrated below.
-
-.. tip::
-
-    See the `documentation for Subscribe`_ for full information about the class, as well as its methods and their usage.
 
 .. code-block:: java
 
@@ -94,9 +79,6 @@ Firing Sponge Events
 
 It is possible to generate instances of built-in events with the static ``SpongeEventFactory``.
 
-.. tip::
-
-    See the `documentation for the SpongeEventFactory`_ for a complete method list of Sponge events that the factory can generate.
 
 Creating Custom Events
 ======================
@@ -106,10 +88,6 @@ You can write your own event classes and dispatch those events using the method 
 An event class must implement the ``Event`` interface. Alternatively you can extend the ``AbstractEvent`` class.
 
 If you want your event to be cancellable, the class must also implement ``Cancellable``.
-
-.. tip::
-
-    See the `documentation for AbstractEvent`_, `Event`_, and `Cancellable`_ for full information about each class, as well as their methods and their usage.
 
 Example: Custom Event Class
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -203,10 +181,6 @@ or remove callbacks, as some behaviors (especially vanilla) cannot be reordered.
 be done in the event handler itself. Attempting to change the list during callback execution will cause a ``ConcurrentModificationException``.
 Callbacks should only be added or cancelled in event handlers who's ``Order`` property allows event cancellation.
 
-.. tip::
-
-    See the `documentation for EventCallback`_ for full information about the class, as well as its methods and their usage.
-
 .. note::
 
     ``ExplosionEvent`` doesn't exist in the API currently, it is just used for example purposes.
@@ -296,7 +270,7 @@ Example: Modifying Behaviors
             }
         }
     }
+    
 
 
-
-Thanks to @sk89q for the callback examples. They were copied from his original `PR #232`_.
+Thanks to @sk89q for the callback examples. They were copied from his original `PR #232 <https://github.com/SpongePowered/SpongeAPI/pull/232>`_.
