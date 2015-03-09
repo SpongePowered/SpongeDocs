@@ -39,4 +39,11 @@ if [[ $TRAVIS_PULL_REQUEST = false && $TRAVIS_BRANCH = master ]]; then
 
 fi
 
+# If we're on a pull request, build the PR
+if ! [[ $TRAVIS_PULL_REQUEST = false ]]; then
+
+    ./etc/pr.sh
+
+fi
+
 exit 0
