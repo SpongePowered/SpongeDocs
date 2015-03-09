@@ -1,4 +1,5 @@
 sphinx-intl==0.9.5
 colorama==0.3.3
 pystache==0.5.4
+requests==2.5.3
 #-e git+https://github.com/gratimax/transifex-client.git#egg=transifex_client
