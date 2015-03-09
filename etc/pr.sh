@@ -20,4 +20,5 @@ git add .
 git commit -q -m "Deploy $(date)" &> /dev/null
 git push -q -f origin $branch &> /dev/null
 
+cd ../../
 python ./etc/comment.py
