@@ -1,8 +1,9 @@
-=========
-Downloads
-=========
+========
+Download
+========
 
-There are no downloads available yet. Sponge, the Forge implementation
-of the Sponge API, has yet to be released.
+.. warning::
 
-Differences between builds of Sponge are listed in the :doc:`changelog`.
+    Sponge is still in development. A download will not be available until later in 2015.
+
+If you'd like, you may compile the Sponge coremod from its GitHub repository; however, keep in mind that it may not be usable at this point.
