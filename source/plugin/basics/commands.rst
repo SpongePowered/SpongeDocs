@@ -84,7 +84,7 @@ If your command does not provide a description, use :code:`Optional.absent()`:
 
 .. code-block:: java
 
-  public Optional<String> getShortDescription() {
+  public Optional<String> getUsage() {
       return Optional.absent();
   }
 
@@ -156,7 +156,7 @@ the console, a command block, or a remote source (Rcon or some developer-defined
 The second parameter is a string of the arguments passed into the command.
 
 The final parameter is a list of parents to the command, starting with the root command.
-Most commands don't worry about this, so for this tutorial we do not care.
+Most commands don't worry about this, so it is out of scope for this tutorial.
 
 .. tip::
 
@@ -166,8 +166,8 @@ Most commands don't worry about this, so for this tutorial we do not care.
 
 The command throws CommandException by default. You can use this error to throw messages related to how the
 command is handled, for instance, if the console attempts to run a command that only a player can run.
-Be careful about throwing CommandException.
-If something goes on with the actual execution of your command, you most likely need to throw another exception,
+Be careful about throwing CommandException; if something goes wrong with the actual execution of your command,
+you most likely need to throw another exception,
 like an InvalidArgumentsException.
 
 Finally, the command returns a boolean indicating whether it passed or failed.
