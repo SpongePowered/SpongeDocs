@@ -1,5 +1,7 @@
 # Sponge Documentation
 
+[![Join the chat at https://gitter.im/SpongePowered/SpongeDocs](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/SpongePowered/SpongeDocs?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![Build Status](https://travis-ci.org/SpongePowered/SpongeDocs.svg?branch=master)](https://travis-ci.org/SpongePowered/SpongeDocs)
 
 This is the repository where the Sponge documentation is held.
