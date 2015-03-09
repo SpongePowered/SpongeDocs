@@ -9,7 +9,7 @@ Single Player / LAN Server
 ==========================
 
 .. warning::
-These instructions are subject to change until we are able to release Sponge for Forge.
+    These instructions are subject to change until we are able to release Sponge for Forge.
 
 1. Download the correct `Forge version for your MC version <http://files.minecraftforge.net/>`_.
 2. Run the downloaded Forge installer and use it to create a new Forge profile in the Minecraft launcher.
