@@ -14,6 +14,14 @@ sphinx-build -b html -d build/doctrees source build/html 2> errors
 # Fail if there are errors
 if [[ -n $(cat errors) ]]; then
     python ./etc/reporter.py fail
+
+    # If we're on a pull request, build the PR
+    if ! [[ $TRAVIS_PULL_REQUEST = false ]]; then
+
+        ./etc/pr.sh
+
+    fi
+
     exit 1
 else
     python ./etc/reporter.py pass
