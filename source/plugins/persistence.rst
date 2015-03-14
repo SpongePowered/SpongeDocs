@@ -77,7 +77,7 @@ Example usage:
 
 Displaying the importance of the viability for BannerData as a DataContainer, the following would exist:
 
-.. code-block:: hocon
+.. code-block:: none
 
     "Banner" // Name of the DataContainer
         |- "id" -> String
