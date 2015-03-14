@@ -21,7 +21,7 @@ In this guide are pages that provide useful information as to how to utilize pri
     :titlesonly:
 
     quick-start
-    blocks
+    blocks/index
     commands
     event-bus
     entities/index

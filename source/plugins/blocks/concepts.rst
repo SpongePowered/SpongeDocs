@@ -1,7 +1,4 @@
-===================
-Working with Blocks
-===================
-
+========
 Concepts
 ========
 
@@ -54,12 +51,3 @@ Tile entities themselves are Java objects (like a `Chest` class). Normally, Mine
     Some things, like paintings, are actually entities.
     
     However, tile entities can also override rendering so they don't look like a regular block, although this is generally inefficient and causes a client framerate drop.
-
-The Block API
-=============
-
-Accessing Tile Entity Data
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Snapshots
-~~~~~~~~~
