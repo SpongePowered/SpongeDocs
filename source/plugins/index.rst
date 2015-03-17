@@ -29,6 +29,7 @@ In this guide are pages that provide useful information as to how to utilize pri
     manager
     message
     permissions
+    persistence
     plugin-lifecycle
     services
     configuration
