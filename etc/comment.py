@@ -24,7 +24,7 @@ pr_repo = 'https://api.github.com/repos/Spongy/SpongeDocs-PRs'
 
 branch = requests.get('%s/branches/%s' % (pr_repo, pr), auth=('x-oauth-basic', token)).json()
 print(json.dumps(branch, indent=2))
-commit = ['commit']['sha'][:8]
+commit = branch['commit']['sha'][:8]
 
 def map_change(change):
     filename = change['filename']
