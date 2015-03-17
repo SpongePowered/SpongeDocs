@@ -22,8 +22,9 @@ rawgit = 'https://cdn.rawgit.com/Spongy/SpongeDocs-PRs'
 repo = 'https://api.github.com/repos/SpongePowered/SpongeDocs'
 pr_repo = 'https://api.github.com/repos/Spongy/SpongeDocs-PRs'
 
-commit = requests.get('%s/branches/%s' % (pr_repo, pr), auth=('x-oauth-basic', token)).json()['commit']['sha'][:8]
-
+branch = requests.get('%s/branches/%s' % (pr_repo, pr), auth=('x-oauth-basic', token)).json()
+print(json.dumps(branch, indent=2))
+commit = ['commit']['sha'][:8]
 
 def map_change(change):
     filename = change['filename']
