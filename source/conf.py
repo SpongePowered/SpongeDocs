@@ -12,6 +12,8 @@
 # serve to show the default.
 
 import sys, os
+import sponge_docs_theme
+
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -93,8 +95,8 @@ pygments_style = 'sphinx'
 # a list of builtin themes.
 
 # readability
-html_theme = 'sponge-theme'
-html_theme_path = ['../']
+html_theme = 'sponge_docs_theme'
+html_theme_path = [sponge_docs_theme.get_html_theme_path()]
 
 #html_theme = 'default'
 

@@ -1,13 +1,5 @@
 #!/usr/bin/env bash
 
-# Build the theme
-cd spongedocs-theme
-./node_modules/.bin/gulp build
-cd ../
-
-# Copy it to where sphinx sees it
-cp -R spongedocs-theme/build/ sponge-theme/
-
 # Attempt to build the docs
 sphinx-build -b html -d build/doctrees source build/html 2> errors
 

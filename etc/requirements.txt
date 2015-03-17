@@ -3,4 +3,4 @@ sphinx==1.2
 colorama==0.3.3
 pystache==0.5.4
 requests==2.5.3
-#-e git+https://github.com/gratimax/transifex-client.git#egg=transifex_client
+-e git+https://github.com/gratimax/sponge_docs_theme.git#egg=sponge_docs_theme
