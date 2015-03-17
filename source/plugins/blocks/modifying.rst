@@ -14,7 +14,7 @@ Changing the Type of a Block is as simple as calling the ``replaceWith()`` metho
 It's as simple as that.
     
 Altering Block States
-~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
 Similar to the above example, the ``BlockLoc`` class provides a ``replaceWith()`` method accepting a new ``BlockState``. To make use of it, you first must acquire a ``BlockState`` you can modify. You can do so either by getting the block's current state via the ``getState()`` method provided by the ``BlockLoc`` class or by using a Block Type's default State. The latter is demonstrated below: The default state for a Sponge block is retrieved and then modified to directly create a wet sponge block.
 
  .. code-block :: java
