@@ -17,4 +17,4 @@ Contents
     layout
     debugging
     mixins
-    git-fu
+    git

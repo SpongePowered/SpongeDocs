@@ -19,4 +19,4 @@ Contents
     :titlesonly:
 
     layout
-    git-fu
+    git

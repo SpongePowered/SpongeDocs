@@ -8,7 +8,7 @@ Overview
 What is this about?
 ~~~~~~~~~~~~~~~~~~~
 
-The articles within the contents of this section explain how to best set up your development environment.
+The articles in this section explain how to best set up your development environment.
 
 Who should read this?
 ~~~~~~~~~~~~~~~~~~~~~

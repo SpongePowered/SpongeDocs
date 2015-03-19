@@ -8,7 +8,7 @@ Overview
 What is this about?
 ~~~~~~~~~~~~~~~~~~~
 
-The articles within the contents of this section explain how to get involved with the Sponge Forge coremod, the Sponge API, or SpongeDocs. These articles are essentially required reading for anyone who wishes to begin developing or writing for Sponge.
+The articles in this section explain how to get involved with the Sponge Forge coremod, the Sponge API, or SpongeDocs. These articles are essentially required reading for anyone who wishes to begin developing or writing for Sponge.
 
 Who should read this?
 ~~~~~~~~~~~~~~~~~~~~~
@@ -21,7 +21,7 @@ This articles listed in the contents below are intended for people who wish to:
 
 There are, of course, other ways to help if you'd like:
 
-* Join the Sponge forums and the #sponge IRC channel to help others hang out.
+* Join the Sponge forums and the #sponge IRC channel to help others and hang out.
 * Spread the word about Sponge!
 
 Contents

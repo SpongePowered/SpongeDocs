@@ -5,7 +5,7 @@ Installing Sponge
 Overview
 ========
 
-The intent of this article is to help new server owners install Sponge. Please note that the process described here may not vary depending on the platform used.
+The intent of this article is to help new server owners install Sponge. Please note that the process described here may vary depending on the platform used.
 
 Installing Sponge
 =================

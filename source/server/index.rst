@@ -8,7 +8,7 @@ Overview
 What is this about?
 ~~~~~~~~~~~~~~~~~~~
 
-The articles within the contents of this section explain how to create and run a server powered by an implementation of the Sponge API.
+The articles in this section explain how to create and run a server powered by an implementation of the Sponge API.
 
 .. note::
 

@@ -8,7 +8,7 @@ Overview
 What is this about?
 ~~~~~~~~~~~~~~~~~~~
 
-The articles within the contents of this section explain the purpose and goals of the Sponge project. Think of this section as an extended FAQ.
+The articles in this section explain the purpose and goals of the Sponge project. Think of this section as an extended FAQ.
 
 Who should read this?
 ~~~~~~~~~~~~~~~~~~~~~
