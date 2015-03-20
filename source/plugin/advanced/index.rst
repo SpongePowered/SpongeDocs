@@ -10,6 +10,7 @@ Contents
     :titlesonly:
 
     adv-configuration
+    database
     permissions
     services
     manager
