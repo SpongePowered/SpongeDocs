@@ -33,7 +33,7 @@ Sponge will be using Java 1.6, which is the minimum version supported by vanilla
 I haven't kept up. What happened to Bukkit?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Bukkit project halted further development of their API and server modification. Shortly thereafter, one of the contributors to Bukkit sent a DMCA takedown notice to stop further distribution of CraftBukkit. He was within his legal right. Downloads, as well as source code for CraftBukkit and its derivatives (such as Spigot and Cauldron) are no longer publicly available.
+The Bukkit project halted further development of their API and server modification. Shortly thereafter, one of the contributors to Bukkit sent a DMCA takedown notice to stop further distribution of CraftBukkit. He was within his legal right. Downloads, as well as source code, for CraftBukkit and its derivatives (such as Spigot and Cauldron) are no longer publicly available.
 
 For Server Owners
 =================
@@ -60,7 +60,7 @@ For Developers
 I’m a Bukkit plugin developer! Why can’t Sponge use Bukkit’s API?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Bukkit’s API contains code licensed under the GPL. This is a large reason why Bukkit met its demise in October; by moving forward with a new API licensed under the MIT license, we can avoid the problems that fell upon Bukkit. While this does not free us from Mojang’s control, as their code is proprietary, it is our belief that Mojang supports modding and will continue to do so.
+Bukkit’s API contains code licensed under the GPL. This is a large reason why Bukkit met its demise in September; by moving forward with a new API licensed under the MIT license, we can avoid some of the problems that fell upon Bukkit. While this does not free us from Mojang’s control, as their code is proprietary, it is our belief that Mojang supports modding and will continue to do so.
 
 Will I be able to access the server internals in my plugins?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
