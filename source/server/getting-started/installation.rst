@@ -20,7 +20,7 @@ Single Player LAN Servers
 1. Download the correct Forge release for your Minecraft version from the `Minecraft Forge website <http://files.minecraftforge.net/>`_.
 #. Run the provided Forge installer. A new Forge profile will be created in the Minecraft launcher.
 #. Open the Minecraft launcher, and select the new Forge profile.
-#. Click "Options" and click "Open Game Dir."
+#. Click "Options" and click "Open Game Dir".
 #. Download the Sponge coremod from the Sponge website and put it into the ``mods`` folder. Create the folder if it does not yet exist.
 #. You may now open a single-player world to LAN.
 

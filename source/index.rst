@@ -34,7 +34,12 @@ This section is for users who have a Sponge server or are interested in creating
 Preparing for Development
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This section is for developers who wish to create Sponge plugins **and** for developers who wish to contribute code or writing to the Sponge project. Please read this section before "Creating Plugins" and "Contributing to Sponge."
+This section is for:
+
+* Developers who wish to create Sponge plugins or contribute code to the Sponge project
+* Users who wish to help with writing and editing articles in SpongeDocs
+
+Please read this section before `Creating Plugins`_ and `Contributing to Sponge`_.
 
 .. toctree::
     :maxdepth: 3
@@ -72,7 +77,7 @@ This section is intended to help everyone understand the goals of the Sponge pro
 .. toctree::
     :maxdepth: 3
     :titlesonly:
-    
+
     about/index
     downloads
     changelog

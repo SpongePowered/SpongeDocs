@@ -2,7 +2,7 @@
 Introduction
 ============
 
-What is Sponge?
+What Is Sponge?
 ~~~~~~~~~~~~~~~
 
 The purpose of the Sponge project is to create a plugin development framework for Minecraft. Sponge is being created by a global community, and its open-source nature means anyone can participate.
@@ -19,24 +19,18 @@ We have another project in addition to the Sponge API. It is the Sponge coremod 
 
 Players on servers running Sponge do not need to install any client-side mods. They are able to join servers running Sponge using the vanilla Minecraft client provided by Mojang.
 
-Although the official Sponge implementation runs on Minecraft Forge, the Sponge API is not tied to any platform. This means that server owners run Sponge plugins on any implementation of the Sponge API, such as Granite (a third-party vanilla implementation).
+Although the official Sponge implementation runs on Minecraft Forge, the Sponge API is not tied to any platform. This means that server owners can run Sponge plugins on any implementation of the Sponge API, such as Granite (a third-party vanilla implementation).
 
-Where can I download Sponge?
+Where Can I Download Sponge?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The Sponge coremod is not ready yet, and no download is available. The Sponge API, however, was released on November 30, 2014.
 
-Who is behind Sponge?
+Who Is behind Sponge?
 ~~~~~~~~~~~~~~~~~~~~~
 
-The project leaders are blood, sk89q, and Zidane. We are trying to be very open with the team to ensure the project leaders do not end up “holding all of the keys.” Nonetheless, these three people make the final decisions to ensure the efficient operation of the project.
+The project leaders are blood, sk89q and Zidane. We are trying to be very open with the team to ensure the project leaders do not end up “holding all of the keys.” Nonetheless, these three people make the final decisions to ensure the efficient operation of the project.
 
-Each aspect of the Sponge project is led by a different individual:
-
-* Sponge API development is led by **Zidane**.
-* Sponge coremod development is led by **blood**.
-* Ore development is led by **gratimax**.
-* SpongeDocs is coordinated by **Inscrutable**.
-* Support is coordinated by **Owexz**.
+A full list of staff members is located at :doc:`staff`.
 
 Our developers are well-versed with Java, and many of them have worked with Minecraft for years and know the ins-and-outs of its mechanics. There are tons of very good developers working on the Sponge project, and it would be nearly impossible to list all of them!

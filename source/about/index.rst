@@ -5,12 +5,12 @@ About the Sponge Project
 Overview
 ========
 
-What is this about?
+What Is This About?
 ~~~~~~~~~~~~~~~~~~~
 
 The articles in this section explain the purpose and goals of the Sponge project. Think of this section as an extended FAQ.
 
-Who should read this?
+Who Should Read This?
 ~~~~~~~~~~~~~~~~~~~~~
 
 Everybody should read this!
@@ -28,3 +28,4 @@ Contents
     faq
     future
     license
+    staff
