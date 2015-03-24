@@ -1,33 +1,31 @@
-================
-Using Forge Mods
-================
+====================
+Migrating from Forge
+====================
 
-Forge Mods in a Sponge Server
------------------------------
+Overview
+========
 
-At present, one of two official implementations of Sponge *in development* is a
-Forge coremod. You must be running a Forge server to use the
-Sponge API (via Sponge coremod). Forge-compatible mods should be fully
-functional in this environment, provided they are updated to work with
-the recommended build of Forge.
+The intent of this article is to help people who currently run Forge servers to migrate to Sponge.
 
+Instructions
+============
 
-More information on Forge can be found at the `Minecraft Forge Wiki <http://www.minecraftforge.net/wiki/>`__.
+Migrating from a plain Forge server to a Sponge server is a fairly simple process that needs little-to-no preparatory work.
 
+You must first ensure you are running a version of Forge that is compatible with the version of Sponge your plan to use. You may find recommended builds of Forge at http://files.minecraftforge.net. If you are using any other mods, they must also be updated.
 
-Sponge will initially do very little to your server other than implement
-a few Bukkit-style commands, unless there are also Sponge Plugins
-present. Note that Plugins for Sponge should be placed in the *mods*
-folder, much the same as Forge mods. There will be no separate *plugins*
-folder in a Sponge server setup.
+When you are ready to install Sponge, you may proceed with the following steps:
 
-What If Sponge Breaks?
-----------------------
+1. Stop your Forge server if it is running.
+#. Download the Sponge coremod from the Sponge website.
+#. Place the Sponge coremod into your ``mods`` folder.
+#. Start the server and party!
 
-Unexpected bugs may occur, so as always, please report them on the Sponge
-issue tracker so we can fix them. Please make sure that the error isn't
-caused by an incompatibility between the Forge version and another mod.
-This can usually be accomplished by removing Sponge and testing again,
-or by trying out the suspect plugin on its own in a test-server
-environment. For more help in finding the source of a server problem,
-visit :doc:`../../../server/spongineer/troubleshooting`
+.. note::
+
+    If Sponge is the only mod on your server, players will be able to log in with a vanilla client. Other mods may require players to install Forge on their own computers.
+
+The Next Step
+=============
+
+The guide at :doc:`../../../server/getting-started/installation` provides further information for your adventures with Sponge.
