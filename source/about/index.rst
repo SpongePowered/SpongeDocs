@@ -28,3 +28,4 @@ Contents
     faq
     future
     license
+    staff

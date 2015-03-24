@@ -35,8 +35,10 @@ Each aspect of the Sponge project is led by a different individual:
 
 * Sponge API development is led by **Zidane**.
 * Sponge coremod development is led by **blood**.
-* Ore development is led by **gratimax**.
+* Web development is led by **gratimax**.
 * SpongeDocs is coordinated by **Inscrutable**.
 * Support is coordinated by **Owexz**.
+
+A full list of staff members may be located at :doc:`staff`.
 
 Our developers are well-versed with Java, and many of them have worked with Minecraft for years and know the ins-and-outs of its mechanics. There are tons of very good developers working on the Sponge project, and it would be nearly impossible to list all of them!
