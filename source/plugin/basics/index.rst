@@ -11,6 +11,7 @@ Contents
 
     workspace/index
     practices
+    templates
     main-class
     lifecycle
     logging

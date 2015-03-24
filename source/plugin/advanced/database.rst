@@ -1,0 +1,48 @@
+======================
+Working with Databases
+======================
+
+SQL
+---
+Sponge provides a convenient abstraction for establishing JDBC database connections that handles the complexities of establishing an efficient pooled connection from a JDBC URL. 
+
+While the SQL service supports any JDBC connector, the Forge implementation of Sponge only ships with the most common:
+
+- MySQL
+- Sqlite
+- H2
+
+.. warning::
+    Because Sqlite has many limitations, its usage is strongly discouraged except in cases where legacy compatibility is required. H2 is our recommended file-backed database implementation. 
+
+Usage
+~~~~~
+
+A data source can be accessed through the plugin's service manager:
+
+.. code-block:: java
+
+    private final SqlService sql;
+    public javax.sql.DataSource getDataSource(String jdbcUrl) throws SQLException {
+        if (sql == null) {
+            sql = game.getServiceManager().provide(SqlService.class).get();
+        }
+        return sql.getDataSource(jdbcUrl);
+    }
+
+    // Later on
+    public void myMethodThatQueries() throws SQLException {
+        Connection conn = getDataSource("jdbc:h2:imalittledatabaseshortandstout.db").getConnection();
+        try {
+            conn.prepareStatement("SELECT * FROM test_tbl").execute();
+        } finally {
+            conn.close();
+        }
+        
+    }
+
+Because the SQL service provides a pooled connection, getting a Connection from the returned DataSource is not expensive. Because of this, it is recommended to not keep connections around, instead closing them soon after use, as shown in the above example. (yes, you do have to close connections. Proper resource management guys!)
+
+NoSQL
+-----
+Sponge does not currently provide any special abstraction over NoSQL databases (MongoDB etc). Plugins that wish to use NoSQL databases must provide their own connectors

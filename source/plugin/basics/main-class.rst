@@ -2,6 +2,9 @@
 Creating Your Main Plugin Class
 ===============================
 
+.. tip::
+    Using a common build system like Maven or Gradle? We might just have an existing template for you. Check :doc:`templates` to see!
+
 .. note::
 
     The instructions within the Sponge Documentation assume that you have prior knowledge of Java. The Sponge API provides the foundation for you to begin creating plugins for Minecraft servers powered by Sponge; however, it is up to you to be creative and make your code work! There are several free Java courses online if you have had little experience with Java.
