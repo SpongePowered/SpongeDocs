@@ -34,7 +34,7 @@ The **Team Leaders** of Sponge each coordinate a separate aspect of the Sponge p
 |                                   | API and Implementation Developer  |
 +-----------------------------------+-----------------------------------+
 | Inscrutable                       | SpongeDocs Editor-in-Chief        |
-|                                   | Chief Mad Scientist at Yggdrasil  |
+|                                   | Chief Mad Scientist at Yggdrasyl  |
 |                                   | Laboratories, makers of FLARD     |
 +-----------------------------------+-----------------------------------+
 | lukegb                            | System Operations Lead            |
