@@ -2,7 +2,7 @@
 Granite
 =======
 
-    Granite is a vanilla implementation of the Sponge API as a stand-alone server.
+Granite is a vanilla implementation of the Sponge API as a stand-alone server.
 
 
 Overview
