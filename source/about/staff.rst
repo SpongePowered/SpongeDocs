@@ -17,6 +17,7 @@ The **Project Leaders** are the stewards of the Sponge project, and make the fin
 | sk89q                             | Chief Swag Officer                |
 +-----------------------------------+-----------------------------------+
 | Zidane                            | API Development Lead              |
+|                                   |                                   |
 |                                   | LLC Director                      |
 +-----------------------------------+-----------------------------------+
 
@@ -31,20 +32,26 @@ The **Team Leaders** of Sponge each coordinate a separate aspect of the Sponge p
 | AbrarSyed                         | Master of ForgeGradle             |
 +-----------------------------------+-----------------------------------+
 | gratimax                          | Web Development Lead              |
+|                                   |                                   |
 |                                   | API and Implementation Developer  |
 +-----------------------------------+-----------------------------------+
 | Inscrutable                       | SpongeDocs Editor-in-Chief        |
+|                                   |                                   |
 |                                   | Chief Mad Scientist at Yggdrasyl  |
 |                                   | Laboratories, makers of FLARD     |
 +-----------------------------------+-----------------------------------+
 | lukegb                            | System Operations Lead            |
 +-----------------------------------+-----------------------------------+
 | Me4502                            | Subreddit Moderation Lead         |
+|                                   |                                   |
 |                                   | API and Implementation Developer  |
+|                                   |                                   |
 |                                   | Owexz's Minion (basically)        |
 +-----------------------------------+-----------------------------------+
 | Owexz                             | Support and Public Relations Lead |
+|                                   |                                   |
 |                                   | LLC Director                      |
+|                                   |                                   |
 |                                   | Chief of Pestering                |
 +-----------------------------------+-----------------------------------+
 
@@ -61,6 +68,7 @@ The **API and Implementation Developers** work on producing the Sponge API and S
 | Deamon                            | Developer                         |
 +-----------------------------------+-----------------------------------+
 | gabizou                           | API Design Specialist             |
+|                                   |                                   |
 |                                   | Master of "closing in favor of"   |
 +-----------------------------------+-----------------------------------+
 | kitskub                           | Developer                         |
@@ -74,9 +82,11 @@ The **API and Implementation Developers** work on producing the Sponge API and S
 | Mumfrey                           | Lord of Mixins                    |
 +-----------------------------------+-----------------------------------+
 | progwml6                          | Developer                         |
+|                                   |                                   |
 |                                   | DevOps and IRC Flag Lead          |
 +-----------------------------------+-----------------------------------+
 | sibomots                          | Developer                         |
+|                                   |                                   |
 |                                   | LLC Leader                        |
 +-----------------------------------+-----------------------------------+
 | theresajayne                      | Developer                         |
@@ -91,6 +101,7 @@ The **Website Ninjas** make the Sponge website look completely awesome.
 | Name                              | Role                              |
 +===================================+===================================+
 | Kornagan                          | Graphic Designer                  |
+|                                   |                                   |
 |                                   | Website Extraordinaire            |
 +-----------------------------------+-----------------------------------+
 
@@ -124,6 +135,7 @@ The **SpongeDocs Editors** lovingly write articles for Sponge's official documen
 | Pandette                          | Editor and Contributor            |
 +-----------------------------------+-----------------------------------+
 | Tyrannokapi                       | Editor and Contributor            |
+|                                   |                                   |
 |                                   | Space-age Whiz Kid                |
 +-----------------------------------+-----------------------------------+
 
@@ -136,6 +148,7 @@ Moderators and Support
 | Name                              | Role                              |
 +===================================+===================================+
 | Dockter                           | Moderator                         |
+|                                   |                                   |
 |                                   | Cat Aficionado                    |
 +-----------------------------------+-----------------------------------+
 | drtshock                          | Forum and IRC Moderator           |
@@ -143,6 +156,7 @@ Moderators and Support
 | Grinch                            | Moderator                         |
 +-----------------------------------+-----------------------------------+
 | mbaxter                           | Moderator                         |
+|                                   |                                   |
 |                                   | Chief of Kittens                  |
 +-----------------------------------+-----------------------------------+
 | phroa                             | IRC Moderator                     |
