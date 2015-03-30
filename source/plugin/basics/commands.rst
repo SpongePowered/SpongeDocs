@@ -164,8 +164,17 @@ Most commands don't worry about this, so it is out of scope for this tutorial.
 
     .. TODO: add the relevant guide.
 
-The command throws CommandException by default. You can use this error to throw messages related to how the
+Command Exceptions
+~~~~~~~~~~~~~~~~~~
+
+A command throws CommandException by default. You can use this error to throw messages related to how the
 command is handled, for instance, if the console attempts to run a command that only a player can run.
+
+Here's the command exceptions already present in the Sponge API:
+
+- **CommandException**: The base class for all exceptions, represents an exception related to command handling.
+- **InvocationCommandException**: 
+
 Be careful about throwing CommandException; if something goes wrong with the actual execution of your command,
 you most likely need to throw another exception,
 like an InvalidArgumentsException.
@@ -198,7 +207,7 @@ We can customize this by implementing the `getSuggestions` method, like so:
     }
 
 Like the `call` method, `getSuggestions` also takes a CommandSource and a string for the arguments.
-The CommandSource is the exact same as `call` -- the source of the command.
+The CommandSource is exactly the same as `call` -- the source of the command.
 The arguments are almost the same, except they aren't the completed arguments like `call`, they are whatever
 the CommandSource has currently typed in. Keep this in mind when writing your autocomplete code.
 
@@ -206,106 +215,6 @@ Also like `call`, `getSuggestions` throws a CommandException something related t
 Again, be sure to throw this exception only when necessary and use different or more specific classes for other, unrelated exceptions.
 
 Return a list of strings as suggestions, or `Collections.emptyList()`.
-
-Command Example
-===============
-
-Here is what we have so far:
-
-.. code-block:: java
-
-    package example.command;
-
-    import java.util.ArrayList;
-    import java.util.Arrays;
-    import java.util.Collections;
-    import java.util.List;
-
-    import org.spongepowered.api.Server;
-    import org.spongepowered.api.text.message.Message;
-    import org.spongepowered.api.text.message.Messages;
-    import org.spongepowered.api.util.command.CommandCallable;
-    import org.spongepowered.api.util.command.CommandException;
-    import org.spongepowered.api.util.command.CommandSource;
-
-    import com.google.common.base.Optional;
-
-    // Simple command that sends a message to all players: /broadcast <message>
-    public class MyBroadcastCommand implements CommandCallable {
-
-        private final Server server;
-
-        private final Optional<String> desc = Optional.of(
-            "Displays a message to all players");
-
-        private final Optional<String> help = Optional.of(
-            "Displays a message to all players. It has no color support!");
-
-        public MyBroadcastCommand(Server server) {
-            this.server = server;
-        }
-
-        // Called when a CommandSource (player, console, ...) executes the command
-        public boolean call(CommandSource source, String arguments,
-            List<String> parents) throws CommandException {
-
-            // Creates a message from the command arguments
-            Message message = Messages.of(arguments);
-
-            // Sends the message to all players
-            this.server.broadcastMessage(message);
-
-            // Indicates that the command was successful
-            return true;
-        }
-
-        // Tests if the CommandSource is permitted to run this command
-        public boolean testPermission(CommandSource source) {
-            return source.hasPermission("example.broadcast");
-        }
-
-        // Displayed when a player uses /help, if the help system supports it
-        public Optional<String> getShortDescription() {
-            return desc;
-        }
-
-        // A longer help text
-        public Optional<String> getHelp() {
-            return help;
-        }
-
-        // A string explaining the arguments of the command
-        public String getUsage() {
-            return "<message>";
-        }
-
-        // A list of suggestions when a player presses TAB to complete the command
-        public List<String> getSuggestions(CommandSource source, String arguments)
-            throws CommandException {
-
-            // Checks if a player entered "h" or "H"
-            if (arguments.equalsIgnoreCase("H")) {
-
-                // Create a list of suggestions starting with "H"
-                ArrayList<String> suggestions = new ArrayList<String>();
-                suggestions.add("Hi!");
-                suggestions.add("Hello World!");
-
-                // Return the list
-                return suggestions;
-
-            } else {
-                // Otherwise return no suggestions
-                return Collections.emptyList();
-            }
-        }
-    }
-
-.. _documentation for CommandCallable: http://spongepowered.github.io/SpongeAPI/org/spongepowered/api/service/command/CommandService.html
-
-.. tip::
-
-    See the `documentation for CommandCallable`_ for the purposes of each method in this example.
 
 Registering the Command
 =======================
