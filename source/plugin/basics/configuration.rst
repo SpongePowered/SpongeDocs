@@ -52,4 +52,4 @@ If you are unsure of what to set the value of ``sharedRoot`` to, consider the fo
 Working with the Configuration
 ==============================
 
-Configurate is documented on `its wiki <https://github.com/zml2008/configurate/wiki>`_. Sponge provides a pre-created ConfigurationLoader for plugins already, but the rest of the information on the wiki applies to any plugin working with configurations.
+See :doc:`../advanced/config-in-depth/index` to learn how to utilize the config file and loader.
