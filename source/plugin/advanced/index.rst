@@ -9,7 +9,7 @@ Contents
     :maxdepth: 2
     :titlesonly:
 
-    adv-configuration
+    config-in-depth/index
     database
     permissions
     services
