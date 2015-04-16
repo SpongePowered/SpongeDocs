@@ -18,3 +18,8 @@ Contents
     debugging
     mixins
     git
+
+
+.. tip::
+
+    A video tutorial on `setting up a Sponge workspace using Eclipse <https://www.youtube.com/watch?v=6d42wDHbAfE>`__ is also available, courtesy of Mumfrey.
