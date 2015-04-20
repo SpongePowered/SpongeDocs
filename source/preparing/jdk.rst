@@ -14,7 +14,7 @@ Before installing the JDK, uninstall any older versions of Java that are present
 
 .. note::
 
-    We recommend using Java 7 for development. If you are adventurous, Java 8 is an option; however, many Minecraft servers have not yet migrated to Java 8. Avoid using Java 6, as Java 6 is outdated.
+    We recommend using Java 7 for development. If you are adventurous, Java 8 is an option; however, many Minecraft servers have not yet migrated to Java 8. Using java 6 is outdated and should generally be avoided. However, use Java 6 if you wish your code to work in all environments, as there are some end users who have not yet updated.
 
 Oracle provides free downloads of the Java Development Kit on their website. Ensure that you are installing the JDK (Java Development Kit), not the JRE (Java Runtime Environment). There is a difference between the two.
 
