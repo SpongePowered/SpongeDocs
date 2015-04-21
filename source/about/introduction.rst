@@ -15,16 +15,20 @@ Sponge was created after seeing the failures of other projects in the Minecraft 
 
 Most plugins developed with the Sponge API should work across several different versions of Minecraft without needing to be updated. This means that, for the most part, server owners do not need to worry about plugin incompatibilities.
 
-We have another project in addition to the Sponge API. It is the Sponge coremod for Forge, often referred to as simply “Sponge.” Sponge runs on Minecraft Forge, which is an existing Minecraft modding framework famous for spurring the Minecraft modding scene. Forge lacks a cross-version API, and this is where Sponge steps in. Sponge allows server owners to deploy Sponge plugins with ease, making server management easier.
+We have two other projects in addition to the Sponge API:
 
-Players on servers running Sponge do not need to install any client-side mods. They are able to join servers running Sponge using the vanilla Minecraft client provided by Mojang.
+(1) **Sponge**, a coremod for Minecraft Forge, which is an existing Minecraft modding framework famous for spurring the Minecraft modding scene. Forge lacks a cross-version API, and this is where Sponge steps in. Sponge allows server owners to deploy Sponge plugins with ease, making server management easier.
 
-Although the official Sponge implementation runs on Minecraft Forge, the Sponge API is not tied to any platform. This means that server owners can run Sponge plugins on any implementation of the Sponge API, such as Granite (a third-party vanilla implementation).
+(2) **SpongeVanilla**, a stand-alone implementation of the Sponge API, running on top of the vanilla Minecraft server.  (SpongeVanilla was formerly known as Granite, until the development teams merged).
+
+Players on servers running Sponge or SpongeVanilla do not need to install any client-side mods. They are able to join servers running Sponge using the vanilla Minecraft client provided by Mojang.
+
+The Sponge API is not tied to any platform. This means that server owners can run Sponge plugins on any official implementation of the Sponge API. Sponge plugins should function identically on either implementation, due to the common functionality of mixins.
 
 Where Can I Download Sponge?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Sponge coremod is not ready yet, and no download is available. The Sponge API, however, was released on November 30, 2014.
+The Sponge coremod is not ready yet, and no download is available. The Sponge API, however, was first released in November 2014, and version 2.0 was released on April 21st, 2015.
 
 Who Is behind Sponge?
 ~~~~~~~~~~~~~~~~~~~~~
