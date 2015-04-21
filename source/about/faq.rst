@@ -10,10 +10,10 @@ Are There Downloads Available Yet?
 
 No. When we are ready for a release, an announcement will be posted on the Sponge forums. Keep in mind that Sponge will first be available for Minecraft 1.8.
 
-Why Is the Official Sponge Implementation Built on Minecraft Forge?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Is the Official Sponge Implementation Built on Minecraft Forge?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Reusing existing efforts in the community allows us to have a working version much quicker. It would be very time-consuming to write a new server from scratch, and many people are not in a position to wait.
+There are now TWO official implementations, Sponge (coremod) and SpongeVanilla. Sponge is a coremod for Minecraft Forge, and SpongeVanilla is a stand-alone server that does not use Forge. Take your pick!
 
 What Makes Sponge Different from Other Projects, Such as Bukkit?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -35,14 +35,21 @@ I Haven't Kept Up. What Happened to Bukkit?
 
 The Bukkit project halted further development of their API and server modification. Shortly thereafter, one of the contributors to Bukkit sent a DMCA takedown notice to stop further distribution of CraftBukkit. He was within his legal right. Downloads, as well as source code, for CraftBukkit and its derivatives (such as Spigot and Cauldron) are no longer publicly available.
 
+What Happened to the Granite implementation?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The developers of Granite have joined the Sponge project, and Granite was renamed SpongeVanilla. It is now an officially supported Sponge API implementation, developed in parallel with Sponge coremod.
+
+
 For Server Owners
 =================
 
 I Am a Server Owner! How Will Switching to Sponge Affect My Server?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You will need to download Sponge and place it into the mods folder. The server can then be started like any other Forge server.
+For an existing Forge server, you will need to download Sponge and place it into the mods folder. The server can then be started like any other Forge server.
 
+Non-Forge servers may elect to use SpongeVanilla instead, an implementation that does not rely on Forge.
 There are guides for migrating from Bukkit and/or Canary elsewhere on SpongeDocs. It is worth noting that many plugin developers from the Bukkit community have thrown their weight behind Sponge, and are planning to make their plugins available for Sponge-powered servers.
 
 Worlds will be able to be ported over. It is up to plugin developers to create conversion processes that will allow you to keep plugin data, if any exists. Some plugin developers may not do this.
