@@ -7,9 +7,10 @@ Introduction
 
 Welcome to SpongeDocs, the official documentation for the open-source `Sponge <http://spongepowered.org>`__ project.
 
-The Sponge project currently has three main components:
+The Sponge project currently has four main components:
 
 * Sponge (coremod)
+* SpongeVanilla
 * Sponge API
 * SpongeDocs
 
@@ -94,3 +95,4 @@ Links
 -  `Sponge Issue Tracker <https://github.com/SpongePowered/SpongeAPI/issues?q=>`__
 -  `Sponge Twitter <https://twitter.com/SpongePowered>`__
 -  `Sponge Subreddit <https://reddit.com/r/SpongeProject>`__
+-  `Sponge GitHub <https://github.com/SpongePowered>`__

@@ -17,3 +17,4 @@ Contents
     bukkit
     canary
     forge
+    spongevanilla

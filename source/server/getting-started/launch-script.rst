@@ -4,12 +4,14 @@ Creating a Launch Script
 
 .. note::
 
-    These instructions apply only if you plan to run your Minecraft server on your own machine. Most shared Minecraft hosts will create a launch script for you.
+    These instructions apply only if you plan to run your Minecraft server on your own machine.
+    Most shared Minecraft hosts will create a launch script for you.
 
 Writing a Launch Script
 =======================
 
-First, open a text editor such as Atom, Sublime Text, or Notepad. Write (or paste) a launch script for your server. Examples of simple launch scripts for Windows, Mac OS X, and Linux have been provided below. Keep the RAM limitations of your machine in mind.
+First, open a text editor such as Atom, Sublime Text, or Notepad. Write (or paste) a launch script for your server.
+Examples of simple launch scripts for Windows, Mac OS X, and Linux have been provided below. Keep the RAM limitations of your machine in mind.
 
 Windows
 ~~~~~~~
