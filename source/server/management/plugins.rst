@@ -17,9 +17,15 @@ Finding Plugins
 Installation
 ============
 
+Sponge Coremod
+~~~~~~~~~~~~~~
+
 In order to install plugins, place them into the "mods" folder of your game or server directory.
 
 If your download came in a .zip file, then you may need to extract it to find a .jar file inside.
+
+SpongeVanilla
+~~~~~~~~~~~~~
 
 Common Problems
 ===============

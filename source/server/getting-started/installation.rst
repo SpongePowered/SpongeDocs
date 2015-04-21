@@ -7,8 +7,8 @@ Overview
 
 The intent of this article is to help new server owners install Sponge. Please note that the process described here may vary depending on the platform used.
 
-Installing Sponge
-=================
+Installing Sponge (coremod)
+===========================
 
 .. note::
 
@@ -35,3 +35,14 @@ Existing Forge Server Installation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Obtain the Sponge coremod from the Sponge website and place it into your server's ``mods`` folder.
+
+Installing SpongeVanilla
+========================
+
+1. Download the SpongeVanilla .jar from the Sponge website.
+#. Run it via CMD: ``java -jar spongevanilla-whatever.jar``
+#. Set up :doc:`port-forward` to ensure others can connect.
+
+.. warning::
+
+    DON'T DOUBLECLICK THE .JAR FILE!
