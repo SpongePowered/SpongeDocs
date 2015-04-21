@@ -1,19 +1,13 @@
-================
-Using Forge Mods
-================
+===================
+Using SpongeVanilla
+===================
 
 Forge Mods in a Sponge Server
 -----------------------------
 
-At present, one of two official implementations of Sponge *in development* is as a
-Forge coremod. You must be running a Forge server to use the
-Sponge API (via Sponge coremod). Forge-compatible mods should be fully
-functional in this environment, provided they are updated to work with
-the recommended build of Forge.
-
-
-More information on Forge can be found at the `Minecraft Forge Wiki <http://www.minecraftforge.net/wiki/>`__.
-
+At present, one of two official implementations of Sponge *in development* is based on a
+plain vanilla server. Forge-compatible mods are not compatible with this implementation.
+If you wish to use forge mods, usage of the Sponge Coremod is recommended.
 
 Sponge will initially do very little to your server other than implement
 a few Bukkit-style commands, unless there are also Sponge Plugins

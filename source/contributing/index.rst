@@ -33,6 +33,7 @@ Contents
 
     guidelines
     coremod/index
+    vanilla/index
     api/index
     docs/index
     porting

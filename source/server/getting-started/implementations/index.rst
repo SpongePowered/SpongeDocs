@@ -34,5 +34,5 @@ Contents
     :titlesonly:
 
     sponge
-    granite
+    spongevanilla
     glowstone
