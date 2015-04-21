@@ -14,7 +14,7 @@ Before installing the JDK, uninstall any older versions of Java that are present
 
 .. note::
 
-    Sponge contributors must use JDK 6 at present to preserve compatibility with underlying implementation. For Plugin development, we now recommend Java 8, but be aware that many Minecraft servers have not yet migrated to Java 8. Support for Java 7 is nearing end-of-line, and Java 6 is unsupported. However, if you wish your Plugin to work in all environments, use Java 6 as there are some end users who have not yet updated.
+    Sponge contributors must use JDK 6 at present to preserve compatibility with underlying implementation. For Plugin development, we recommend Java 8, as older versions of Java are no longer supported. Be aware that many Minecraft servers have not yet migrated to Java 8. If you wish your Plugin to work in all environments, use Java 6, as there are some end users who have not yet updated.
 
 Oracle provides free downloads of the Java Development Kit on their website. Ensure that you are installing the JDK (Java Development Kit), not the JRE (Java Runtime Environment). There is a difference between the two.
 
