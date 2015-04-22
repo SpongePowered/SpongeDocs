@@ -95,3 +95,4 @@ Links
 -  `Sponge Issue Tracker <https://github.com/SpongePowered/SpongeAPI/issues?q=>`__
 -  `Sponge Twitter <https://twitter.com/SpongePowered>`__
 -  `Sponge Subreddit <https://reddit.com/r/SpongeProject>`__
+-  `Sponge GitHub <https://github.com/SpongePowered>`__

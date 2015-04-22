@@ -16,10 +16,14 @@ When using the analogy of chocolate chip cookies:
 * The developers of each implementation are different bakeries.
 * Each implementation of the Sponge API is a different brand of chocolate chip cookies.
 
-There are currently two implementations of the Sponge API:
+There are currently two official implementations of the Sponge API:
 
-* **Sponge**: This is the official implementation of the Sponge API, created as a coremod for the Forge platform.
-* **Granite**: This is an implementation of the Sponge API directly on top of the vanilla Minecraft server.
+* **Sponge Coremod**: The implementation of the Sponge API, created as a coremod for the Forge platform.
+* **SpongeVanilla**: The implementation of the Sponge API directly on top of the vanilla Minecraft server.
+
+And an unofficial implementation:
+
+* **Glowstone**: The implementation of the Sponge API, based on a completely rewritten Minecraft server.
 
 How do I know which one to choose?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -34,5 +38,5 @@ Contents
     :titlesonly:
 
     sponge
-    granite
+    spongevanilla
     glowstone
