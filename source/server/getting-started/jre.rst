@@ -44,7 +44,7 @@ How to Install Java On Your Computer
 Download and install the latest version of the Java Runtime
 Environment (JRE) available for your operating system. Sponge (and Minecraft)
 are built on Java 6, however you are recommended and encouraged to use Java 8.
-Earler versions of Java are no longer supported and may have security issues. 
+Earlier versions of Java are no longer supported and may have security issues. 
 Oracle Java is a good option for most Operating Systems.
 If you are running a 64-bit Operating System, use 64-bit Java.
 
