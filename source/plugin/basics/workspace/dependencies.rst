@@ -7,7 +7,7 @@ You must add the Sponge API as a dependency to your plugin in order to create a 
 The following information may come in handy when you are setting up a project with Maven or Gradle.
 
 * Maven Repository: http://repo.spongepowered.org/maven
-* Maven Artifact: ``org.spongepowered:spongeapi:2.0-SNAPSHOT``
+* Maven Artifact: ``org.spongepowered:spongeapi:2.0``
 
 .. note::
 
@@ -30,7 +30,7 @@ Gradle
     }
 
     dependencies {
-        compile "org.spongepowered:spongeapi:2.0-SNAPSHOT"
+        compile "org.spongepowered:spongeapi:2.0"
     }
 
 Maven
@@ -56,7 +56,7 @@ Maven
         <dependency>
             <groupId>org.spongepowered</groupId>
             <artifactId>spongeapi</artifactId>
-            <version>2.0-SNAPSHOT</version>
+            <version>2.0</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
