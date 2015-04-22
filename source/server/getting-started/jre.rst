@@ -12,6 +12,7 @@ so long as that computer has hardware powerful enough to run the program. Java i
 to run on this wide variety of systems by creating a virtual computer known as the
 "Java Virtual Machine", on which Java programs will run.
 
+
 What's the Difference Between JRE and JDK?
 ------------------------------------------
 
@@ -36,15 +37,15 @@ The amount of memory that can be allocated increases to approximately 3 TB, so y
 as much memory as your computer has towards your server. 64-bit Java can also run faster than
 32-bit, meaning that you can make the most of your processing power.
 
+
 How to Install Java On Your Computer
 ------------------------------------
 
 Download and install the latest version of the Java Runtime
 Environment (JRE) available for your operating system. Sponge (and Minecraft)
-are built on Java 6, however you are recommended and encouraged to use Java 7.
-Java 8 does not currently have widespread usage so installing it is not recommended.
+are built on Java 6, however you are recommended and encouraged to use Java 8.
+Earler versions of Java are no longer supported and may have security issues. 
 Oracle Java is a good option for most Operating Systems.
 If you are running a 64-bit Operating System, use 64-bit Java.
 
--  `Java 7 <https://java.com/en/download/manual_java7.jsp>`__
 -  `Java 8 <https://java.com/en/download/manual.jsp>`__
