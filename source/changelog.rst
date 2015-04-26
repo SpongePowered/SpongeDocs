@@ -13,8 +13,8 @@ Sponge (coremod)
 Inspired Wallaroo
 -----------------
 
-* **Status:** Unreleased.
-* **Description:** This will be the first release of the Sponge Coremod.
+* **Status:** Build #428 (Inspired Wallaroo) was released on April 25th, 2015. 
+* **Description:** This is the first alpha release of the Sponge coremod.
 
 SpongeVanilla
 ~~~~~~~~~~~~~
