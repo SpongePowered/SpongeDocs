@@ -9,14 +9,18 @@ Creating a Launch Script
 Writing a Launch Script
 =======================
 
-First, open a text editor such as Atom, Sublime Text, or Notepad. Write (or paste) a launch script for your server. Examples of simple launch scripts for Windows, Mac OS X, and Linux have been provided below. Keep the RAM limitations of your machine in mind.
+First, open a text editor such as Atom, Sublime Text, or Notepad. Write (or paste) a launch script for your server. Examples of simple launch scripts for Windows, Mac OS X, and Linux have been provided below. Keep the RAM limitations of your machine in mind. 
+
+.. note::
+
+    The following examples are generic. For a Forge server using Sponge (coremod), change ``forge-1.8-XYZ-universal.jar`` to whatever your Forge version in the server directory is named. To launch a SpongeVanilla server, change ``forge-1.8-XYZ-universal.jar`` to the name of the SpongeVanilla.jar file.
 
 Windows
 ~~~~~~~
 
 .. code-block:: none
 
-    java -Xms1G -Xmx2G -jar sponge.jar
+    java -Xms1G -Xmx2G -jar forge-1.8-XYZ-universal.jar
     pause
 
 Save your Windows launch script as ``launch.bat``.
@@ -28,7 +32,7 @@ Mac OS X
 
     #!/bin/bash
     cd "$(dirname "$0")"
-    java -Xms1G -Xmx2G -jar sponge.jar
+    java -Xms1G -Xmx2G -jar forge-1.8-XYZ-universal.jar
 
 Save your Mac launch script as ``launch.command``.
 
@@ -39,7 +43,7 @@ Linux
 
     #!/bin/sh
     cd "$(dirname "$(readlink -fn "$0")")"
-    java -Xms1G -Xmx2G -jar sponge.jar
+    java -Xms1G -Xmx2G -jar forge-1.8-XYZ-universal.jar
 
 Save your Linux launch script as ``launch.sh``.
 
