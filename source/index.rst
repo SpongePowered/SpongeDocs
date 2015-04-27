@@ -15,7 +15,7 @@ The Sponge project currently has three main components:
 
 .. warning::
 
-    Sponge is still in development. A download will not be available until later in 2015.
+    Sponge is still in development. Development builds are currently available for `download <https://repo.spongepowered.org/maven/org/spongepowered/sponge/>`__, but an official release will not be available until later in 2015.
 
 Contents
 ========
