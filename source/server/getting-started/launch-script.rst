@@ -54,6 +54,10 @@ Ensure you are running your launch script out of a folder created especially for
 
 You may run your launch script by double-clicking it. If you are using a console or terminal, navigate to the directory of the script and run it. Keep in mind that you must agree to the Mojang EULA in order to run a server.
 
+.. note::
+
+    The default minecraft server GUI console is disabled by Sponge, because it is very processor-intensive. 
+
 .. warning::
 
     If you get a permissions error when attempting to launch your server on a Mac, try this:
