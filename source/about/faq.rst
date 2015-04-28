@@ -8,7 +8,7 @@ For Everyone
 Are There Downloads Available Yet?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-No. When we are ready for a release, an announcement will be posted on the Sponge forums. Keep in mind that Sponge will first be available for Minecraft 1.8.
+Yes, see :doc:`/downloads`.
 
 Is the Official Sponge Implementation Built on Minecraft Forge?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

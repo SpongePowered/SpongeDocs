@@ -28,7 +28,7 @@ The Sponge API is not tied to any platform. This means that server owners can ru
 Where Can I Download Sponge?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Sponge coremod is not ready yet, and no download is available. The Sponge API, however, was first released in November 2014, and version 2.0 was released on April 21st, 2015.
+The Sponge coremod is not ready yet but development builds can be found at :doc:`/downloads`. SpongeVanilla builds will be available shortly after it catches up to Sponge in implemented API.
 
 Who Is behind Sponge?
 ~~~~~~~~~~~~~~~~~~~~~
