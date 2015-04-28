@@ -38,7 +38,7 @@ The Guice module used during the initialization of plugins has a plugin-scoped l
     private Logger logger;
 
     @Inject
-    private void setLogger(Logger logger)
+    private void setLogger(Logger logger) {
         this.logger = logger;
     }
 
