@@ -9,6 +9,8 @@ Git is an open-source version control system, and helps tremendously with collab
 
 The Sponge project, alongside thousands of other open-source projects, hosts its Git repositories on GitHub. Thus, Git is a crucial tool in the development of Sponge and the Sponge API.
 
+The `Git website <https://www.git-scm.com/>`__ has substantial documentation, and their downloads page offers a range of options for GUI clients suitable for various operating systems.
+
 Download
 ========
 
