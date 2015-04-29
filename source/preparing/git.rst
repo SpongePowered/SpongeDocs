@@ -17,7 +17,7 @@ Download
 Windows
 ~~~~~~~
 
-`GitHub for Windows <https://windows.github.com/>`_ is an easy method of installing Git on Windows, because Git is included as a part of the software.
+`SourceTree <http://www.sourcetreeapp.com/>`_ is an easy method of installing Git on Windows, because Git is included as a part of the software.
 
 Rebooting your computer after installing Git is recommended.
 
