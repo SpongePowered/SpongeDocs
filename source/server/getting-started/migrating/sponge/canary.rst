@@ -54,4 +54,4 @@ Ore is Sponge's official repository for finding plugins, and it is recommended t
 Installing Sponge
 =================
 
-The guide at :doc:`../../../server/getting-started/installation` provides instructions for installing Sponge, once the above steps have been completed.
+The guide at :doc:`../../../../server/getting-started/installation` provides instructions for installing Sponge, once the above steps have been completed.

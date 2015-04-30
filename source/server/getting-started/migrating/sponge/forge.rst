@@ -28,4 +28,4 @@ When you are ready to install Sponge, you may proceed with the following steps:
 The Next Step
 =============
 
-The guide at :doc:`../../../server/getting-started/installation` provides further information for your adventures with Sponge.
+The guide at :doc:`../../../../server/getting-started/installation` provides further information for your adventures with Sponge.
