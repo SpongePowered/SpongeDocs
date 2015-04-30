@@ -146,7 +146,7 @@ While we urge that you read Google's Java conventions particularly, the two are 
             log.info("ID requested");
 
             if (random.nextBoolean()) {
-                return Optional.of(id);
+                return Optional.of(this.id);
             } else {
                 return Optional.absent();
             }
