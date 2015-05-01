@@ -38,6 +38,11 @@ Existing Forge Server Installation
 
 Obtain the Sponge coremod from the Sponge website and place it into your server's ``mods`` folder.
 
+.. tip::
+
+    Developer Me4502 has provided a `tutorial video for installing Sponge (coremod). <https://www.youtube.com/watch?v=UTIyjjO6lxY>`__
+
+
 Installing SpongeVanilla
 ========================
 
