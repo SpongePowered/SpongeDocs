@@ -22,4 +22,4 @@ Contents
 
 .. tip::
 
-    Video tutorials showing how to set up a Sponge workspace using `Eclipse <https://www.youtube.com/watch?v=6d42wDHbAfE>`__ and `IntelliJ IDEA <https://www.youtube.com/watch?v=E5jvsWdhWrQ>`__ are also available, courtesy of developers Mumfrey and gabizou.
+    Video tutorials by trusted developers will be featured here when available.
