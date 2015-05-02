@@ -5,6 +5,13 @@ Frequently Asked Questions
 For Everyone
 ============
 
+Can I create (client side mods with sponge) / (new GUI to a players screen) / (new blocks or entities)?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Not yet. Sponge implementations are still in developer builds and the API is far from finalized. Plans are being formulated for exactly what and how client side modding will look like in sponge.
+Client side plugins will probably not be implemented until the current serverside API is somewhat stable, unless someone skilled and keen makes a Pull Request after discussion with the team.
+See :roadmap:`/roadmap`.
+
 Are There Downloads Available Yet?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
