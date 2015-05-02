@@ -2,66 +2,65 @@
 Creating Commands
 =================
 
-Writing a command
-=================
+There are two different APIs to create commands in Sponge: The ``CommandCallable`` interface and the ``CommandSpec`` builder.
 
-The first step is to create a class for the command. The class has to implement the interface ``CommandCallable``:
+The most comfortable way to create a new command is the ``CommandSpec`` builder. It supports child commands and argument parsing.
+
+Alternatively, you can use ``CommandCallable``, a lower-level interface which provides access to the raw command data. 
+It is described on :doc:`this page <../advanced/commands>`.
+
+Building a command
+==================
+
+The first step is to get a new ``CommandSpec`` builder. 
+The builder provides methods to modify the command help messages, command arguments and the command logic. 
+These methods can be chained. To finally build the command, call the ``build()`` method of the builder.
+
+Example: Building a simple command
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: java
 
-    package com.github.maenni025.spongeExample;
+    import org.spongepowered.api.util.command.spec.CommandSpec;
+    import org.spongepowered.api.text.Texts;
 
-    import java.util.Collections;
-    import java.util.List;
+    CommandSpec myCommandSpec = CommandSpec.builder()
+        .setDescription(Texts.of("Hello World Command"))
+        .setExecutor(new HelloWorldCommand())
+        .build();
 
-    import org.spongepowered.api.Server;
-    import org.spongepowered.api.text.message.Messages;
-    import org.spongepowered.api.util.command.CommandCallable;
+Writing a command executor
+==========================
+
+The only required component to build a simple command is the command executor class, which contains the logic of the command.
+
+The class has to implement the ``CommandExecutor`` interface, which defines the ``execute`` method. 
+The method is called on command execution and has two arguments:
+
+* The source of the command call (e.g. the console, a command block or a player)
+* The command context object, which contains the parsed arguments (See argument parsing)
+
+Example: Simple command executor
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: java
+
+    import org.spongepowered.api.text.Texts;
     import org.spongepowered.api.util.command.CommandException;
+    import org.spongepowered.api.util.command.CommandResult;
     import org.spongepowered.api.util.command.CommandSource;
-
-    import com.google.common.base.Optional;
-
-    public class MyBroadcastCommand implements CommandCallable {
-
-        private final Server server;
-        private final Optional<String> desc = Optional.of("Displays a message to all players");
-        private final Optional<String> help = Optional.of("Displays a message to all players. It has no color support!");
-
-        public MyBroadcastCommand(Server server) {
-            this.server = server;
-        }
-
-        public boolean call(CommandSource source, String arguments, List<String> parents) throws CommandException {
-            server.broadcastMessage(Messages.of(arguments));
-            return true;
-        }
-
-        public boolean testPermission(CommandSource source) {
-            return source.hasPermission("example.exampleCommand");
-        }
-
-        public Optional<String> getShortDescription() {
-            return desc;
-        }
-
-        public Optional<String> getHelp() {
-            return help;
-        }
-
-        public String getUsage() {
-            return "/<command> <message>";
-        }
-
-        public List<String> getSuggestions(CommandSource source, String arguments) throws CommandException {
-            return Collections.emptyList();
+    import org.spongepowered.api.util.command.args.CommandContext;
+    import org.spongepowered.api.util.command.spec.CommandExecutor;
+    
+    public class HelloWorldCommand implements CommandExecutor {
+   
+        @Override
+        public CommandResult execute(CommandSource src, CommandContext args) throws CommandException {
+            src.sendMessage(Texts.of("Hello World!"));
+            return CommandResult.success();
         }
     }
-
-.. _documentation for CommandCallable: http://spongepowered.github.io/SpongeAPI/org/spongepowered/api/service/command/CommandService.html
-.. tip::
-
-    See the `documentation for CommandCallable`_ for the purposes of each method in this example.
+    
 
 Registering the command
 =======================
@@ -72,7 +71,9 @@ To register your command, use the method ``CommandService.register()``, passing 
 .. code-block:: java
 
     CommandService cmdService = game.getCommandDispatcher();
-    cmdService.register(plugin, new MyBroadcastCommand(server), "message", "broadcast");
+    cmdService.register(plugin, myCommandSpec, "message", "broadcast");
+    
+Usually you want to register your commands when the ``PreInitializationEvent`` is called.
 
 .. note::
 
