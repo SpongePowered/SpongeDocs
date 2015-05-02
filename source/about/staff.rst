@@ -2,7 +2,7 @@
 Staff
 =====
 
-Below is a list of Sponge's staff members. Each section is presented alphabetically.
+Below is a list of staff members of the Sponge project. Each section is presented alphabetically.
 
 Project Leaders
 ~~~~~~~~~~~~~~~
@@ -126,11 +126,11 @@ The **SpongeDocs Editors** lovingly write articles for Sponge's official documen
 +-----------------------------------+-----------------------------------+
 | Name                              | Role                              |
 +===================================+===================================+
-| Kodfod                            | Senior Editor                     |
-+-----------------------------------+-----------------------------------+
 | Cedeel                            | Editor and Contributor            |
 +-----------------------------------+-----------------------------------+
 | hawtre                            | Editor and Contributor            |
++-----------------------------------+-----------------------------------+
+| Kodfod                            | Senior Editor                     |
 +-----------------------------------+-----------------------------------+
 | Pandette                          | Editor and Contributor            |
 +-----------------------------------+-----------------------------------+
