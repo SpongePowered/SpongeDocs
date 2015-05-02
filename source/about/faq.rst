@@ -5,12 +5,20 @@ Frequently Asked Questions
 For Everyone
 ============
 
-Can I create (client side mods with sponge) / (new GUI to a players screen) / (new blocks or entities)?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Can I use SpongeAPI to create client side plugins?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Not yet. Sponge implementations are still in developer builds and the API is far from finalized. Plans are being formulated for exactly what and how client side modding will look like in sponge.
-Client side plugins will probably not be implemented until the current serverside API is somewhat stable, unless someone skilled and keen makes a Pull Request after discussion with the team.
-See :roadmap:`/roadmap`.
+Can I create (client side mods with sponge) / (new GUI to a players screen) / (new blocks or entities)?
+
+**Not yet.** 
+
+Sponge implementations are still in developer builds and the API is far from finalized. Plans are being formulated for exactly what and how client side modding will look like in sponge.
+Client side plugins will probably not be implemented until the current serverside API is somewhat stable.
+::
+  <Inscrutable> The closest they'll get for the moment is running plugins in single player worlds along with mods (if on forge)
+  <Inscrutable> Zidane doesn't want to get overcommitted with clientside stuff, so we try not to make any promises. No-one is working on it atm, too many higher priorities
+  <Inscrutable> But long term plan is to make it *possible*, so try to make API at least allow it
+  <Inscrutable> feel free to quote me ;)
 
 Are There Downloads Available Yet?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
