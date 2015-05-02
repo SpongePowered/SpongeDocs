@@ -9,14 +9,42 @@ The most comfortable way to create a new command is the ``CommandSpec`` builder.
 Alternatively, you can use ``CommandCallable``, a lower-level interface which provides access to the raw command data. 
 It is described on :doc:`this page <../advanced/commands>`.
 
-Building a command
+Building a Command
 ==================
 
 The first step is to get a new ``CommandSpec`` builder. 
 The builder provides methods to modify the command help messages, command arguments and the command logic. 
-These methods can be chained. To finally build the command, call the ``build()`` method of the builder.
+These methods can be chained. 
 
-Example: Building a simple command
+To finally build the command, call the ``build()`` method of the builder.
+
+Overview of the ``CommandSpec`` builder methods
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++----------------------------+---------------------------------------------------------------------------------------------------------+
+| Method                     | Description                                                                                             |
++============================+=========================================================================================================+
+| ``setExecutor``            | Defines the command logic (See `Writing a Command Executor`_).                                          |
++----------------------------+---------------------------------------------------------------------------------------------------------+
+| ``setArguments``           | Sets the argument specification for this command (See `Argument Parsing`_).                             |                              
++----------------------------+---------------------------------------------------------------------------------------------------------+
+| ``setPermission``          | Set the permission that will be checked before using this command.                                      |
++----------------------------+---------------------------------------------------------------------------------------------------------+
+| ``setDescription``         | A short, one-line description of this command's purpose that will be displayed by the help system.      |
++----------------------------+---------------------------------------------------------------------------------------------------------+
+| ``setExtendedDescription`` | Sets an extended description to use in longer help listings. Will be appended to the short description. |
++----------------------------+---------------------------------------------------------------------------------------------------------+
+| ``setChildren``            | Sets the child commands of this command with their aliases (See `Child Commands`_).                     |
++----------------------------+---------------------------------------------------------------------------------------------------------+
+| ``setInputTokenizer``      | Defines how the arguments will be parsed. By default, the parser splits the command input by spaces.    |
+|                            | Quotations count as a single argument.                                                                  |
+|                            |                                                                                                         |
+|                            | Example: ``/tpworld Notch "My World"`` would result in two arguments: ``Notch`` and ``My World``.       |
++----------------------------+---------------------------------------------------------------------------------------------------------+
+| ``build``                  | Builds the command. After that, you have to register the command (See `Registering the Command`_).      |
++----------------------------+---------------------------------------------------------------------------------------------------------+
+
+Example: Building a Simple Command
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: java
@@ -26,10 +54,11 @@ Example: Building a simple command
 
     CommandSpec myCommandSpec = CommandSpec.builder()
         .setDescription(Texts.of("Hello World Command"))
+        .setPermission("myplugin.command.helloworld")
         .setExecutor(new HelloWorldCommand())
         .build();
 
-Writing a command executor
+Writing a Command Executor
 ==========================
 
 The only required component to build a simple command is the command executor class, which contains the logic of the command.
@@ -38,9 +67,9 @@ The class has to implement the ``CommandExecutor`` interface, which defines the 
 The method is called on command execution and has two arguments:
 
 * The source of the command call (e.g. the console, a command block or a player)
-* The command context object, which contains the parsed arguments (See argument parsing)
+* The command context object, which contains the parsed arguments (See `Argument Parsing`_)
 
-Example: Simple command executor
+Example: Simple Command Executor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: java
@@ -61,8 +90,35 @@ Example: Simple command executor
         }
     }
     
+Player-Only Commands
+~~~~~~~~~~~~~~~~~~~~
 
-Registering the command
+Sometimes it is necessary that only players can execute a command (e.g. a ``/suicide`` command).
+
+Perform an ``instanceof`` check to determine the type of the ``CommandSource``:
+
+.. code-block:: java
+
+    if(src instance Player) {
+        Player player = (Player) src; 
+        player.sendMessage(Texts.of("Hello " + player.getName() + "!"));
+    }
+    else if(src instanceof ConsoleSource) {
+        src.sendMessage(Texts.of("Hello GLaDOS!"));
+        // The Cake Is a Lie
+    }
+    else if(src instanceof CommandBlockSource) {
+        src.sendMessage(Texts.of("Hello Companion Cube!"));
+        // <3
+    }
+
+Argument Parsing
+================
+
+Child Commands
+==============
+    
+Registering the Command
 =======================
 
 Now we can register the class in the ``CommandService``. The ``CommandService`` stands as the manager for watching what commands get typed into chat, and redirecting them to the right command handler.
