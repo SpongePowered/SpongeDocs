@@ -16,21 +16,25 @@ The first step is to get a new ``CommandSpec`` builder.
 The builder provides methods to modify the command help messages, command arguments and the command logic. 
 These methods can be chained. 
 
-To finally build the command, call the ``build()`` method of the builder and register the command (See `Registering the Command`_).
+To finally build the command, call the ``build()`` method of the builder.
+
+After that, you have to register the command.
 
 Example: Building a Simple Command
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: java
 
-    import org.spongepowered.api.util.command.spec.CommandSpec;
     import org.spongepowered.api.text.Texts;
+    import org.spongepowered.api.util.command.spec.CommandSpec;
 
     CommandSpec myCommandSpec = CommandSpec.builder()
         .setDescription(Texts.of("Hello World Command"))
         .setPermission("myplugin.command.helloworld")
         .setExecutor(new HelloWorldCommand())
         .build();
+        
+    game.getCommandDispatcher().register(plugin, myCommandSpec, "helloworld", "hello", "test");
 
 Overview of the ``CommandSpec`` builder methods
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -57,7 +61,7 @@ Overview of the ``CommandSpec`` builder methods
 |                            |                                                                                                         |
 |                            | Example: ``/tpworld Notch "My World"`` would result in two arguments: ``Notch`` and ``My World``.       |
 +----------------------------+---------------------------------------------------------------------------------------------------------+
-| ``build``                  | Builds the command. After that, you have to register the command (See `Registering the Command`_).      |
+| ``build``                  | Builds the command. After that, you have to register the command.                                       |
 +----------------------------+---------------------------------------------------------------------------------------------------------+
 
 Writing a Command Executor
@@ -100,8 +104,12 @@ Sometimes it is neccessary that only players can execute a command (e.g. a ``/su
 Perform an ``instanceof`` check to determine the type of the ``CommandSource``:
 
 .. code-block:: java
+    import org.spongepowered.api.text.Texts;
+    import org.spongepowered.api.entity.player.Player;
+    import org.spongepowered.api.util.command.source.ConsoleSource;
+    import org.spongepowered.api.util.command.source.CommandBlockSource;
 
-    if(src instance Player) {
+    if(src instanceof Player) {
         Player player = (Player) src; 
         player.sendMessage(Texts.of("Hello " + player.getName() + "!"));
     }
@@ -135,6 +143,15 @@ Example: Building a Command with Multiple Arguments
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: java
+    import org.spongepowered.api.text.Texts;
+    import org.spongepowered.api.entity.player.Player;
+    import org.spongepowered.api.util.command.CommandException;
+    import org.spongepowered.api.util.command.CommandResult;
+    import org.spongepowered.api.util.command.CommandSource;
+    import org.spongepowered.api.util.command.args.CommandContext;
+    import org.spongepowered.api.util.command.args.GenericArguments;
+    import org.spongepowered.api.util.command.spec.CommandExecutor;
+    import org.spongepowered.api.util.command.spec.CommandSpec;
 
     CommandSpec myCommandSpec = CommandSpec.builder()
             .setDescription(Texts.of("Send a message to a player"))
@@ -157,6 +174,9 @@ Example: Building a Command with Multiple Arguments
                 }
             })
             .build();
+            
+    game.getCommandDispatcher().register(plugin, myCommandSpec, "message", "msg", "m");
+    
 
 Overview of the ``GenericArguments`` command elements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -254,53 +274,69 @@ The specification of the child commands must be stored in a ``Map``:
 
 .. code-block:: java
 
+    import java.util.Arrays;
+    import java.util.HashMap;
+    import java.util.List;
+    import org.spongepowered.api.text.Texts;
+    import org.spongepowered.api.util.command.spec.CommandSpec;
+
     HashMap<List<String>, CommandSpec> subcommands = new HashMap<>();
 
     // /mail read
     subcommands.put(Arrays.asList("read", "r", "inbox"), CommandSpec.builder()
             .setPermission("myplugin.mail.read")
             .setDescription(Texts.of("Read your inbox"))
-            .setExecutor(...)
+            .setExecutor(…)
             .build());
 
     // /mail send
     subcommands.put(Arrays.asList("send", "s", "write"), CommandSpec.builder()
             .setPermission("myplugin.mail.send")
             .setDescription(Texts.of("Send a mail"))
-            .setArguments(...)
-            .setExecutor(...)
+            .setArguments(…)
+            .setExecutor(…)
             .build());
 
 Use the ``setChildren()`` method of the parent command builder to apply the child command map: 
 
-.. code-block:: java       
+.. code-block:: java 
     
-    CommandSpec mailCommand = CommandSpec.builder()
+    CommandSpec mailCommandSpec = CommandSpec.builder()
             .setPermission("myplugin.mail")
             .setDescription(Texts.of("Send and receive mails"))
             .setChildren(subcommands)
             .build();
+            
+    game.getCommandDispatcher().register(plugin, mailCommandSpec, "mail", "email");
             
 .. note::
 
     If a ``CommandExecutor`` was set for the parent command, it is used as a fallback if the arguments do not match one of the child command aliases.
     Setting an executor is not required.
     
-Registering the Command
-=======================
+The Command Service
+===================
 
-The last step is to register the command in the ``CommandService``. 
 The ``CommandService`` stands as the manager for watching what commands get typed into chat, and redirecting them to the right command handler.
 To register your command, use the method ``CommandService.register()``, passing your plugin, an instance of the command, and any needed aliases as parameters.
 
-.. code-block:: java
-
-    CommandService cmdService = game.getCommandDispatcher();
-    cmdService.register(plugin, mailCommand, "mail", "mailer", "m");
-    
 Usually you want to register your commands when the ``PreInitializationEvent`` is called.
 
+.. code-block:: java
+    import org.spongepowered.api.service.command.CommandService;
+
+    CommandService cmdService = game.getCommandDispatcher();
+    cmdService.register(plugin, myCommandSpec, "alias1", "alias2", "alias3");
+    
 .. note::
 
     The arguments after the new instance of your command are the aliases to register for the command. You can add as many Strings as you want.
     The first alias that isn't used by another command becomes the primary alias. This means aliases used by another command are ignored.
+    
+The ``CommandService`` can also be used to call a command programatically:
+
+.. code-block:: java
+
+    cmdService.process(player, "msg Notch hi notch!");
+    
+    
