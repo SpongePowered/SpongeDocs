@@ -18,6 +18,20 @@ These methods can be chained.
 
 To finally build the command, call the ``build()`` method of the builder.
 
+Example: Building a Simple Command
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: java
+
+    import org.spongepowered.api.util.command.spec.CommandSpec;
+    import org.spongepowered.api.text.Texts;
+
+    CommandSpec myCommandSpec = CommandSpec.builder()
+        .setDescription(Texts.of("Hello World Command"))
+        .setPermission("myplugin.command.helloworld")
+        .setExecutor(new HelloWorldCommand())
+        .build();
+
 Overview of the ``CommandSpec`` builder methods
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -43,20 +57,6 @@ Overview of the ``CommandSpec`` builder methods
 +----------------------------+---------------------------------------------------------------------------------------------------------+
 | ``build``                  | Builds the command. After that, you have to register the command (See `Registering the Command`_).      |
 +----------------------------+---------------------------------------------------------------------------------------------------------+
-
-Example: Building a Simple Command
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. code-block:: java
-
-    import org.spongepowered.api.util.command.spec.CommandSpec;
-    import org.spongepowered.api.text.Texts;
-
-    CommandSpec myCommandSpec = CommandSpec.builder()
-        .setDescription(Texts.of("Hello World Command"))
-        .setPermission("myplugin.command.helloworld")
-        .setExecutor(new HelloWorldCommand())
-        .build();
 
 Writing a Command Executor
 ==========================
@@ -117,60 +117,17 @@ Argument Parsing
 
 The Command Builder API comes with a powerful argument parser. 
 It converts the string input to java base types (integers, booleans, strings) or game objects (players, worlds, block types , ...). 
-The parser also supports optional arguments and flags.
+The parser supports optional arguments and flags. It also handles TAB completion of arguments.
 
 The parsed arguments are stored in the ``CommandContext`` object. 
 If the parser returns a single object, obtain it with ``args.<T>getOne(String key)`` (``T`` is the value type). 
-For multiple objects, use ``args.<T>getAll(String key)``.
+For multiple objects, use ``args.<T>getAll(String key)``. Optional and weak command elements may return ``Optional.absent()``.
 
 To create a new ``CommandElement`` (argument), use the ``GenericArguments`` factory class. 
 Many command elements require a short text key, which is displayed in error and help messages.
 
 Apply the ``CommandElement`` to the command builder with the ``setArguments()`` method.
 Use the ``GenericArguments.seq()`` element to chain multiple arguments (e.g ``/msg <player> <msg>``).
-
-Overview of the ``GenericArguments`` command elements
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. _catalog type: spongepowered.github.io/SpongeAPI/org/spongepowered/api/CatalogTypes.html
-
-+----------------------------+-----------------------------------------------------------------------------------------+------------------------+
-| Command Element            | Description                                                                             | Value Type             |
-+============================+=========================================================================================+========================+
-| ``none``                   | Expects no arguments. This is the default behavior of a ``CommandSpec``.                | -                      |
-+----------------------------+-----------------------------------------------------------------------------------------+------------------------+
-| Java Base Types                                                                                                                               |
-+----------------------------+-----------------------------------------------------------------------------------------+------------------------+
-| ``string``                 | Require an argument to be a string.                                                     | ``String``             |
-+----------------------------+-----------------------------------------------------------------------------------------+------------------------+
-| ``remainingJoinedStrings`` | Concatenates all remaining arguments separated by spaces (useful for message commands). | ``String``             |
-+----------------------------+-----------------------------------------------------------------------------------------+------------------------+
-| ``bool``                   | Require an argument to be a boolean.                                                    | ``Boolean``            |
-+----------------------------+-----------------------------------------------------------------------------------------+------------------------+
-| ``integer``                | Require an argument to be an integer.                                                   | ``Integer``            |
-+----------------------------+-----------------------------------------------------------------------------------------+------------------------+
-| ``enumValue``              | Require the argument to be a key under the provided enum.                               | specified enum         |
-+----------------------------+-----------------------------------------------------------------------------------------+------------------------+
-| Game Objects                                                                                                                                  |
-+----------------------------+-----------------------------------------------------------------------------------------+------------------------+
-| ``player``                 | Expect an argument to represent an online player.                                       | ``Player``             |
-+----------------------------+-----------------------------------------------------------------------------------------+------------------------+
-| ``playerOrSource``         | Like ``player``, but returns the sender of the command if no matching player was found. | ``Player``             |
-+----------------------------+-----------------------------------------------------------------------------------------+------------------------+
-| ``world``                  | Expect an argument to represent a world.                                                | ``WorldProperties``    |
-+----------------------------+-----------------------------------------------------------------------------------------+------------------------+
-| ``dimension``              | Expect an argument to represent a dimension (``END``, ``NETHER``, ``OVERWORLD``).       | ``DimensionType``      |
-+----------------------------+-----------------------------------------------------------------------------------------+------------------------+
-| ``location``               | Expect an argument to represent a Location.                                             | ``Location``           |
-+----------------------------+-----------------------------------------------------------------------------------------+------------------------+
-| ``vector3d``               | Expect an argument to represent a Vector3d.                                             | ``Vector3d``           |
-+----------------------------+-----------------------------------------------------------------------------------------+------------------------+
-| ``catalogedElement``       | Expect an argument that is a member of the specified `catalog type`_.                   | specified catalog type |
-+----------------------------+-----------------------------------------------------------------------------------------+------------------------+
-| Utilities                                                                                                                                     |
-+----------------------------+-----------------------------------------------------------------------------------------+------------------------+
-
-allOff, choices, flags, firstParsing, onlyOne, optional
 
 Example: Building a Command with Multiple Arguments
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -199,8 +156,92 @@ Example: Building a Command with Multiple Arguments
             })
             .build();
 
+Overview of the ``GenericArguments`` command elements
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. _catalog type: spongepowered.github.io/SpongeAPI/org/spongepowered/api/CatalogTypes.html
+
++----------------------------+-----------------------------------------------------------------------------------------+------------------------+
+| Command Element            | Description                                                                             | Value Type             |
++============================+=========================================================================================+========================+
+| ``none``                   | Expects no arguments. This is the default behavior of a ``CommandSpec``.                |                        |
++----------------------------+-----------------------------------------------------------------------------------------+------------------------+
+| **Java Base Types**                                                                                                                           |
++----------------------------+-----------------------------------------------------------------------------------------+------------------------+
+| ``string``                 | Require an argument to be a string.                                                     | ``String``             |
++----------------------------+-----------------------------------------------------------------------------------------+------------------------+
+| ``remainingJoinedStrings`` | Concatenates all remaining arguments separated by spaces (useful for message commands). | ``String``             |
++----------------------------+-----------------------------------------------------------------------------------------+------------------------+
+| ``bool``                   | Require an argument to be a boolean.                                                    | ``Boolean``            |
++----------------------------+-----------------------------------------------------------------------------------------+------------------------+
+| ``integer``                | Require an argument to be an integer.                                                   | ``Integer``            |
++----------------------------+-----------------------------------------------------------------------------------------+------------------------+
+| **Game Objects**                                                                                                                              |
++----------------------------+-----------------------------------------------------------------------------------------+------------------------+
+| ``player``                 | Expect an argument to represent an online player.                                       | ``Player``             |
++----------------------------+-----------------------------------------------------------------------------------------+------------------------+
+| ``playerOrSource``         | Like ``player``, but returns the sender of the command if no matching player was found. | ``Player``             |
++----------------------------+-----------------------------------------------------------------------------------------+------------------------+
+| ``world``                  | Expect an argument to represent a world (also includes unloaded worlds).                | ``WorldProperties``    |
++----------------------------+-----------------------------------------------------------------------------------------+------------------------+
+| ``dimension``              | Expect an argument to represent a dimension (``END``, ``NETHER``, ``OVERWORLD``).       | ``DimensionType``      |
++----------------------------+-----------------------------------------------------------------------------------------+------------------------+
+| ``location``               | Expect an argument to represent a ``Location``.                                         | ``Location``           |
++----------------------------+-----------------------------------------------------------------------------------------+------------------------+
+| ``vector3d``               | Expect an argument to represent a ``Vector3d``.                                         | ``Vector3d``           |
++----------------------------+-----------------------------------------------------------------------------------------+------------------------+
+| ``catalogedElement``       | Expect an argument that is a member of the specified `catalog type`_.                   | specified catalog type |
++----------------------------+-----------------------------------------------------------------------------------------+------------------------+
+| **Matchers**                                                                                                                                  |
++----------------------------+-----------------------------------------------------------------------------------------+------------------------+
+| ``choices``                | Return an argument that allows selecting from a limited set of values.                  | specified class        |
++----------------------------+-----------------------------------------------------------------------------------------+------------------------+
+| ``literal``                | Expect a literal sequence of arguments (e.g. ``"i", "luv", "u"``: ``/cmd i luv u``).    | specified class        |
+|                            | Throws an error if the arguments do not match.                                          |                        |
++----------------------------+-----------------------------------------------------------------------------------------+------------------------+
+| ``enumValue``              | Require the argument to be a key under the provided enum.                               | specified enum         |
++----------------------------+-----------------------------------------------------------------------------------------+------------------------+
+| **Utilities**                                                                                                                                 |
+|                                                                                                                                               |
+| Can be wrapped arround command elements. The value type is inherited from the wrapped element.                                                |
++----------------------------+-----------------------------------------------------------------------------------------+------------------------+
+| ``seq``                    | Builds a sequence of command elements (e.g. ``/cmd <arg1> <arg2> <arg3>``).             | inherited              |
++----------------------------+-----------------------------------------------------------------------------------------+------------------------+
+| ``repeated``               | Require a given command element to be provided a certain number of times.               | inherited              |
++----------------------------+-----------------------------------------------------------------------------------------+------------------------+
+| ``allOf``                  | Require all remaining args to match the provided command element.                       | inherited              |
++----------------------------+-----------------------------------------------------------------------------------------+------------------------+
+| ``optional``               | Make the provided command element optional. Throws an error if the argument             | inherited              |
+|                            | is of invalid format and there are no more args.                                        |                        |
++----------------------------+-----------------------------------------------------------------------------------------+------------------------+
+| ``optionalWeak``           | Make the provided command element optional. Does not throw an error if the argument     | inherited              |
+|                            | is of invalid format and there are no more args.                                        |                        |
++----------------------------+-----------------------------------------------------------------------------------------+------------------------+
+| ``flags``                  | Returns a builder for command flags (e.g. ``/cmd [-a] [-b <value>]``).                  | inherited              |
+|                            |                                                                                         |                        |
+|                            | See :doc:`Advanced Command Arguments <../advanced/commands/arguments>`                  |                        |
++----------------------------+-----------------------------------------------------------------------------------------+------------------------+
+| ``firstParsing``           | Returns a command element that matches the first of the provided elements that parses   | inherited              |
+|                            | (useful for command overloading, e.g. ``/settime <day|night|<number>>``).               |                        |
++----------------------------+-----------------------------------------------------------------------------------------+------------------------+
+| ``onlyOne``                | Restricts the given command element to only insert one value into the context at the    | inherited              |
+|                            | provided key.                                                                           |                        |
++----------------------------+-----------------------------------------------------------------------------------------+------------------------+
+
+.. tip::
+
+    See the `documentation for GenericArguments <http://spongepowered.github.io/SpongeAPI/org/spongepowered/api/util/command/args/GenericArguments.html>`_ 
+    for more information.
+
+.. tip::
+
+    It is possible to create custom command elements (e.g. an URL parser or a ``Vector2i`` element). The procedure is described on
+    :doc:`this page <../advanced/commands/arguments>` 
+
 Child Commands
 ==============
+
+TODO
     
 Registering the Command
 =======================
