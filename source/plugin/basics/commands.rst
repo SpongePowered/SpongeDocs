@@ -7,7 +7,7 @@ There are two different APIs to create commands in Sponge: The ``CommandCallable
 The most comfortable way to create a new command is the ``CommandSpec`` builder. It supports child commands and argument parsing.
 
 Alternatively, you can use ``CommandCallable``, a lower-level interface which provides access to the raw command data. 
-It is described on :doc:`this page <../advanced/commands>`.
+It is described on :doc:`this page <../advanced/commands/callable>`.
 
 Building a Command
 ==================
@@ -93,7 +93,7 @@ Example: Simple Command Executor
 Player-Only Commands
 ~~~~~~~~~~~~~~~~~~~~
 
-Sometimes it is necessary that only players can execute a command (e.g. a ``/suicide`` command).
+Sometimes it is neccessary that only players can execute a command (e.g. a ``/suicide`` command).
 
 Perform an ``instanceof`` check to determine the type of the ``CommandSource``:
 
