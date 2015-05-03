@@ -12,13 +12,10 @@ Can I create (client side mods with sponge) / (new GUI to a players screen) / (n
 
 **Not yet.** 
 
-Sponge implementations are still in developer builds and the API is far from finalized. Plans are being formulated for exactly what and how client side modding will look like in sponge.
-Client side plugins will probably not be implemented until the current serverside API is somewhat stable.
-::
-  <Inscrutable> The closest they'll get for the moment is running plugins in single player worlds along with mods (if on forge)
-  <Inscrutable> Zidane doesn't want to get overcommitted with clientside stuff, so we try not to make any promises. No-one is working on it atm, too many higher priorities
-  <Inscrutable> But long term plan is to make it *possible*, so try to make API at least allow it
-  <Inscrutable> feel free to quote me ;)
+The Sponge team do not want to get overcommitted with client side API until Sponge is competitive with other Minecraft modding API's.
+No one is currently working to make this possible, however the long term plan is to make it *possible*.
+This is a seperate issue from single player! 
+Single player support using Sponge (coremod / forge) should work fine, any issues should be reported to the bug tracker.
 
 Are There Downloads Available Yet?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
