@@ -28,12 +28,16 @@ Sponge, SpongeVanilla and SpongeCommon
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 There are two official implementations of the Sponge API: Sponge (coremod) and SpongeVanilla. Despite their differences, much of their code is shared, and this is now contained in the SpongeCommon repository.
+This diagram shows an overview of the Sponge codebase and its dependencies:
+
+.. image:: /images/sponge-codebase-layout.png
 
 **SpongeCommon**  is the core of both official implementations of the Sponge API. Within it resides all core services and the common layer of implementation that is used in both Sponge and SpongeVanilla. Almost all implementation should reside in SpongeCommon, with separation of interfaces as necessary for special handling per implementation.
 
 **Sponge** is the forge implementation extending SpongeCommon, with special handling for maximizing compatibility with Forge, and therefore numerous Forge mods.
 
-**SpongeVanilla** is the vanilla implementation of the Sponge API. Acting as a standalone implementation having complete control over the Minecraft Server, this implementation does not support mods wishing to add new things like blocks and items. 
+**SpongeVanilla** is the vanilla implementation of the Sponge API. Acting as a standalone implementation having complete control over the Minecraft Server, this implementation does not support mods wishing to add new things like blocks and items.
+
 
 
 Contents
