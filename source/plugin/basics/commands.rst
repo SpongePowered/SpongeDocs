@@ -286,15 +286,15 @@ The specification of the child commands must be stored in a ``Map``:
     subcommands.put(Arrays.asList("read", "r", "inbox"), CommandSpec.builder()
             .setPermission("myplugin.mail.read")
             .setDescription(Texts.of("Read your inbox"))
-            .setExecutor(…)
+            .setExecutor(...)
             .build());
 
     // /mail send
     subcommands.put(Arrays.asList("send", "s", "write"), CommandSpec.builder()
             .setPermission("myplugin.mail.send")
             .setDescription(Texts.of("Send a mail"))
-            .setArguments(…)
-            .setExecutor(…)
+            .setArguments(...)
+            .setExecutor(...)
             .build());
 
 Use the ``setChildren()`` method of the parent command builder to apply the child command map: 
@@ -320,13 +320,15 @@ The Command Service
 The ``CommandService`` stands as the manager for watching what commands get typed into chat, and redirecting them to the right command handler.
 To register your command, use the method ``CommandService.register()``, passing your plugin, an instance of the command, and any needed aliases as parameters.
 
-Usually you want to register your commands when the ``PreInitializationEvent`` is called.
+Usually you want to register your commands when the ``PreInitializationEvent`` is called. 
+If you are registering the commands from the main plugin class, use ``this`` as the ``plugin`` parameter.
 
 .. code-block:: java
-    import org.spongepowered.api.service.command.CommandService;
 
+    import org.spongepowered.api.service.command.CommandService;
+    
     CommandService cmdService = game.getCommandDispatcher();
-    cmdService.register(plugin, myCommandSpec, "alias1", "alias2", "alias3");
+    cmdService.register(this, myCommandSpec, "alias1", "alias2", "alias3");
     
 .. note::
 
