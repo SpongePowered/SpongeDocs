@@ -65,10 +65,9 @@ The first step is to create a class for the command. The class has to implement 
         }
     }
 
-.. _documentation for CommandCallable: http://spongepowered.github.io/SpongeAPI/org/spongepowered/api/service/command/CommandService.html
 .. tip::
 
-    See the `documentation for CommandCallable`_ for the purposes of each method in this example.
+    See the `documentation for CommandCallable <http://spongepowered.github.io/SpongeAPI/org/spongepowered/api/service/command/CommandService.html>`_ for the purposes of each method in this example.
 
 Registering the command
 =======================

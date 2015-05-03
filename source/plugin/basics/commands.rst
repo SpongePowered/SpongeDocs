@@ -115,6 +115,101 @@ Perform an ``instanceof`` check to determine the type of the ``CommandSource``:
 Argument Parsing
 ================
 
+The Command Builder API comes with a powerful argument parser. 
+It converts the string input to java base types (integers, booleans, strings) or game objects (players, worlds, block types , ...). 
+The parser also supports optional arguments and flags.
+
+The parsed arguments are stored in the ``CommandContext`` object. 
+If the parser returns a single object, obtain it with ``args.<T>getOne(String key)`` (``T`` is the value type). 
+For multiple objects, use ``args.<T>getAll(String key)``.
+
+To create a new ``CommandElement`` (argument), use the ``GenericArguments`` factory class. 
+Many command elements require a short text key, which is displayed in error and help messages.
+
+Apply the ``CommandElement`` to the command builder with the ``setArguments()`` method.
+Use the ``GenericArguments.seq()`` element to chain multiple arguments (e.g ``/msg <player> <msg>``).
+
+Overview of the ``GenericArguments`` command elements
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. _catalog type: spongepowered.github.io/SpongeAPI/org/spongepowered/api/CatalogTypes.html
+
++----------------------------+-----------------------------------------------------------------------------------------+------------------------+
+| Command Element            | Description                                                                             | Value Type             |
++============================+=========================================================================================+========================+
+| ``none``                   | Expects no arguments. This is the default behavior of a ``CommandSpec``.                | -                      |
++----------------------------+-----------------------------------------------------------------------------------------+------------------------+
+| Java Base Types                                                                                                                               |
++----------------------------+-----------------------------------------------------------------------------------------+------------------------+
+| ``string``                 | Require an argument to be a string.                                                     | ``String``             |
++----------------------------+-----------------------------------------------------------------------------------------+------------------------+
+| ``remainingJoinedStrings`` | Concatenates all remaining arguments separated by spaces (useful for message commands). | ``String``             |
++----------------------------+-----------------------------------------------------------------------------------------+------------------------+
+| ``bool``                   | Require an argument to be a boolean.                                                    | ``Boolean``            |
++----------------------------+-----------------------------------------------------------------------------------------+------------------------+
+| ``integer``                | Require an argument to be an integer.                                                   | ``Integer``            |
++----------------------------+-----------------------------------------------------------------------------------------+------------------------+
+| ``enumValue``              | Require the argument to be a key under the provided enum.                               | specified enum         |
++----------------------------+-----------------------------------------------------------------------------------------+------------------------+
+| Game Objects                                                                                                                                  |
++----------------------------+-----------------------------------------------------------------------------------------+------------------------+
+| ``player``                 | Expect an argument to represent an online player.                                       | ``Player``             |
++----------------------------+-----------------------------------------------------------------------------------------+------------------------+
+| ``playerOrSource``         | Like ``player``, but returns the sender of the command if no matching player was found. | ``Player``             |
++----------------------------+-----------------------------------------------------------------------------------------+------------------------+
+| ``world``                  | Expect an argument to represent a world.                                                | ``WorldProperties``    |
++----------------------------+-----------------------------------------------------------------------------------------+------------------------+
+| ``dimension``              | Expect an argument to represent a dimension (``END``, ``NETHER``, ``OVERWORLD``).       | ``DimensionType``      |
++----------------------------+-----------------------------------------------------------------------------------------+------------------------+
+| ``location``               | Expect an argument to represent a Location.                                             | ``Location``           |
++----------------------------+-----------------------------------------------------------------------------------------+------------------------+
+| ``vector3d``               | Expect an argument to represent a Vector3d.                                             | ``Vector3d``           |
++----------------------------+-----------------------------------------------------------------------------------------+------------------------+
+| ``catalogedElement``       | Expect an argument that is a member of the specified `catalog type`_.                   | specified catalog type |
++----------------------------+-----------------------------------------------------------------------------------------+------------------------+
+| Utilities                                                                                                                                     |
++----------------------------+-----------------------------------------------------------------------------------------+------------------------+
+| ``allOff``                 | Expect an argument to represent an online player.                                       | ``Player``             |
++----------------------------+-----------------------------------------------------------------------------------------+------------------------+
+| ``choices``         | Like ``player``, but returns the sender of the command if no matching player was found. | ``Player``             |
++----------------------------+-----------------------------------------------------------------------------------------+------------------------+
+| ``flags``                  | Expect an argument to represent a world.                                                | ``WorldProperties``    |
++----------------------------+-----------------------------------------------------------------------------------------+------------------------+
+| ``firstParsing``              | Expect an argument to represent a dimension (``END``, ``NETHER``, ``OVERWORLD``).       | ``DimensionType``      |
++----------------------------+-----------------------------------------------------------------------------------------+------------------------+
+| ``onlyOne``               | Expect an argument to represent a Location.                                             | ``Location``           |
++----------------------------+-----------------------------------------------------------------------------------------+------------------------+
+| ``optional``               | Expect an argument to represent a Vector3d.                                             | ``Vector3d``           |
++----------------------------+-----------------------------------------------------------------------------------------+------------------------+
+| ``catalogedElement``       | Expect an argument that is a member of the specified `catalog type`_.                   | specified catalog type |
++----------------------------+-----------------------------------------------------------------------------------------+------------------------+
+Example: Building a Command with Multiple Arguments
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: java
+
+    CommandSpec myCommandSpec = CommandSpec.builder()
+            .setDescription(Texts.of("Send a message to a player"))
+            .setPermission("myplugin.command.message")
+
+            .setArguments(GenericArguments.seq(
+                    GenericArguments.player(Texts.of("player"), this.game),
+                    GenericArguments.remainingJoinedStrings(Texts.of("message"))))
+
+            .setExecutor(new CommandExecutor() {
+                @Override
+                public CommandResult execute(CommandSource src, CommandContext args) throws CommandException {
+
+                    Player player = args.<Player>getOne("player").get();
+                    String message = args.<String>getOne("message").get();
+
+                    player.sendMessage(Texts.of(message));
+
+                    return CommandResult.success();
+                }
+            })
+            .build();
+
 Child Commands
 ==============
     
