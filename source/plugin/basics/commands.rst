@@ -104,6 +104,7 @@ Sometimes it is neccessary that only players can execute a command (e.g. a ``/su
 Perform an ``instanceof`` check to determine the type of the ``CommandSource``:
 
 .. code-block:: java
+
     import org.spongepowered.api.text.Texts;
     import org.spongepowered.api.entity.player.Player;
     import org.spongepowered.api.util.command.source.ConsoleSource;
@@ -143,6 +144,7 @@ Example: Building a Command with Multiple Arguments
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: java
+
     import org.spongepowered.api.text.Texts;
     import org.spongepowered.api.entity.player.Player;
     import org.spongepowered.api.util.command.CommandException;
