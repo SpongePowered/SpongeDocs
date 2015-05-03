@@ -16,7 +16,7 @@ The first step is to get a new ``CommandSpec`` builder.
 The builder provides methods to modify the command help messages, command arguments and the command logic. 
 These methods can be chained. 
 
-To finally build the command, call the ``build()`` method of the builder and `register the command <Registering the Command>`_.
+To finally build the command, call the ``build()`` method of the builder and register the command (See `Registering the Command>`_).
 
 Example: Building a Simple Command
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
