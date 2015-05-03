@@ -16,7 +16,7 @@ The first step is to get a new ``CommandSpec`` builder.
 The builder provides methods to modify the command help messages, command arguments and the command logic. 
 These methods can be chained. 
 
-To finally build the command, call the ``build()`` method of the builder.
+To finally build the command, call the ``build()`` method of the builder and `register the command <Registering the Command>`_.
 
 Example: Building a Simple Command
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -39,6 +39,8 @@ Overview of the ``CommandSpec`` builder methods
 | Method                     | Description                                                                                             |
 +============================+=========================================================================================================+
 | ``setExecutor``            | Defines the command logic (See `Writing a Command Executor`_).                                          |
+|                            |                                                                                                         |
+|                            | **Setting the executor is required** if no child commands are set.                                      |
 +----------------------------+---------------------------------------------------------------------------------------------------------+
 | ``setArguments``           | Sets the argument specification for this command (See `Argument Parsing`_).                             |                              
 +----------------------------+---------------------------------------------------------------------------------------------------------+
@@ -241,18 +243,60 @@ Overview of the ``GenericArguments`` command elements
 Child Commands
 ==============
 
-TODO
+The ``CommandSpec`` builder supports hierarchical command structures like this:
+
+* ``/mail`` (parent command)
+  * ``/mail send`` (child command)
+  * ``/mail read`` (child command)
+
+Every child command is a separate ``CommandSpec`` with a list of aliases. 
+The specification of the child commands must be stored in a ``Map``:
+
+.. code-block:: java
+
+    HashMap<List<String>, CommandSpec> subcommands = new HashMap<>();
+
+    // /mail read
+    subcommands.put(Arrays.asList("read", "r", "inbox"), CommandSpec.builder()
+            .setPermission("myplugin.mail.read")
+            .setDescription(Texts.of("Read your inbox"))
+            .setExecutor(...)
+            .build());
+
+    // /mail send
+    subcommands.put(Arrays.asList("send", "s", "write"), CommandSpec.builder()
+            .setPermission("myplugin.mail.send")
+            .setDescription(Texts.of("Send a mail"))
+            .setArguments(...)
+            .setExecutor(...)
+            .build());
+
+Use the ``setChildren()`` method of the parent command builder to apply the child command map: 
+
+.. code-block:: java       
+    
+    CommandSpec mailCommand = CommandSpec.builder()
+            .setPermission("myplugin.mail")
+            .setDescription(Texts.of("Send and receive mails"))
+            .setChildren(subcommands)
+            .build();
+            
+.. note::
+
+    If a ``CommandExecutor`` was set for the parent command, it is used as a fallback if the arguments do not match one of the child command aliases.
+    Setting an executor is not required.
     
 Registering the Command
 =======================
 
-Now we can register the class in the ``CommandService``. The ``CommandService`` stands as the manager for watching what commands get typed into chat, and redirecting them to the right command handler.
+The last step is to register the command in the ``CommandService``. 
+The ``CommandService`` stands as the manager for watching what commands get typed into chat, and redirecting them to the right command handler.
 To register your command, use the method ``CommandService.register()``, passing your plugin, an instance of the command, and any needed aliases as parameters.
 
 .. code-block:: java
 
     CommandService cmdService = game.getCommandDispatcher();
-    cmdService.register(plugin, myCommandSpec, "message", "broadcast");
+    cmdService.register(plugin, mailCommand, "mail", "mailer", "m");
     
 Usually you want to register your commands when the ``PreInitializationEvent`` is called.
 
