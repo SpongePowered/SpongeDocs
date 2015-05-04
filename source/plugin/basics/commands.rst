@@ -122,7 +122,14 @@ Perform an ``instanceof`` check to determine the type of the ``CommandSource``:
         src.sendMessage(Texts.of("Hello Companion Cube!"));
         // <3
     }
+    
+.. note::
 
+    We recommend you to add an optional ``[player]`` argument so that the commands are console-friendly (e.g. ``/suicide [player]``).
+    
+    The easiest solution for this is to append a ``playerOrSource`` command element as the last argument (See `Argument Parsing`_).
+    
+    
 Argument Parsing
 ================
 
