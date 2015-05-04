@@ -127,7 +127,7 @@ Perform an ``instanceof`` check to determine the type of the ``CommandSource``:
 
     We recommend you to add an optional ``[player]`` argument to make the command **console-friendly** (e.g. ``/suicide [player]``).
     
-    The easiest solution for this is to append a ``playerOrSource`` command element as the last argument (See `Argument Parsing`_).
+    The easiest solution for this is to append a ``playerOrSource`` command element (See `Argument Parsing`_).
     
     
 Argument Parsing
