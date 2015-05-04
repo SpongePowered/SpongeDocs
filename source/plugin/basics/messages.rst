@@ -2,13 +2,13 @@
 Creating Messages
 =================
 
-Messages are used to create formatted text. These messages can be sent to players in chat messages, and can also be used in places such as books and signs. 
-Sponge provides a message builder through the ``org.spongepowered.api.text.message.MessageBuilder`` interface to assist in creating and formatting messages.
+The Text API is used to create formatted messages. These messages can be sent to players in chat messages, and can also be used in places such as books and signs. 
+Sponge provides the ``org.spongepowered.api.text.Texts`` utility class to assist in creating and formatting messages.
 
 Unformatted Messages
 ====================
 
-Oftentimes, all you need is an unformatted message. Unformatted messages do not require the use of the message builder interface, 
+Oftentimes, all you need is an unformatted message. Unformatted messages do not require the use of a text builder, 
 and are the simplest form of messages to create.
 
 Example:
@@ -16,11 +16,11 @@ Example:
 
 .. code-block:: java
 
-    import org.spongepowered.api.text.message.Message;
-    import org.spongepowered.api.text.message.Messages;
+    import org.spongepowered.api.text.Text;
+    import org.spongepowered.api.text.Texts;
 
-    public Message createSomeMessage() {
-        return Messages.of("Hey! This is an unformatted message!");
+    public Text createSomeMessage() {
+        return Texts.of("Hey! This is an unformatted message!");
     }
 
 The code excerpt illustrated above will return an uncolored message, with no events configured.
@@ -45,11 +45,11 @@ Example: Colored Message
 .. code-block:: java
 
     import org.spongepowered.api.text.format.TextColors;
-    import org.spongepowered.api.text.message.Message;
-    import org.spongepowered.api.text.message.Messages;
+    import org.spongepowered.api.text.Text;
+    import org.spongepowered.api.text.Texts;
 
-    public Message createColoredMessage() {
-        return Messages.builder("Woot! Golden text is golden.").color(TextColors.GOLD).build();
+    public Text createColoredMessage() {
+        return Texts.builder("Woot! Golden text is golden.").color(TextColors.GOLD).build();
     }
 
 Any color specified within the ``org.spongepowered.api.text.format.TextColors`` class can be used when coloring messages. 
@@ -61,12 +61,12 @@ Example: Multi-colored Message
 .. code-block:: java
 
     import org.spongepowered.api.text.format.TextColors;
-    import org.spongepowered.api.text.message.Message;
-    import org.spongepowered.api.text.message.Messages;
+    import org.spongepowered.api.text.Text;
+    import org.spongepowered.api.text.Texts;
 
-    public Message createMultiColoredMessage() {
-        return Messages.builder("Sponges are ").color(TextColors.YELLOW).append(
-                Messages.builder("invincible!").color(TextColors.RED).build()
+    public Text createMultiColoredMessage() {
+        return Texts.builder("Sponges are ").color(TextColors.YELLOW).append(
+                Texts.builder("invincible!").color(TextColors.RED).build()
         ).build();
     }
 
@@ -83,11 +83,11 @@ Example: Message with a Text Action
 .. code-block:: java
 
     import org.spongepowered.api.text.action.TextActions;
-    import org.spongepowered.api.text.message.Message;
-    import org.spongepowered.api.text.message.Messages;
+    import org.spongepowered.api.text.Text;
+    import org.spongepowered.api.text.Texts;
 
-    public Message createClickableMessage() {
-        return Messages.builder("Click here!").onClick(TextActions.runCommand("tell Spongesquad I'm ready!")).build();
+    public Text createClickableMessage() {
+        return Texts.builder("Click here!").onClick(TextActions.runCommand("tell Spongesquad I'm ready!")).build();
     }
 
 In the method above, players can click the "Click here!" text to run the specified command.
@@ -119,12 +119,13 @@ Example: Selector-generated Message
 
 .. code-block:: java
 
-    import org.spongepowered.api.text.message.Message;
-    import org.spongepowered.api.text.message.Messages;
+    import org.spongepowered.api.text.Text;
+    import org.spongepowered.api.text.Texts;
+    import org.spongepowered.api.text.selector.Selectors;
 
-    public Message displayAdventurers() {
-        return Messages.builder("These players are in adventure mode: ").append(
-                Messages.selector("@a[m=2]").build()
+    public Text displayAdventurers() {
+        return Texts.builder("These players are in adventure mode: ").append(
+                Texts.of(Selectors.parse("@a[m=2]"))
         ).build();
     }
 
