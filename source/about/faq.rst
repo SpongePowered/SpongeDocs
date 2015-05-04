@@ -13,8 +13,8 @@ Can I create (client side mods with sponge) / (new GUI to a players screen) / (n
 **Not yet.** 
 
 The Sponge team do not want to get overcommitted with client side API until Sponge is competitive with other Minecraft modding API's.
-No one is currently working to make this possible, however the long term plan is to make it *possible*.
-This is a seperate issue from single player! 
+No one is currently working to create client side API, but it's not been forgotten; it should be possible in the long term.
+This is a separate issue from single player! 
 Single player support using Sponge (coremod / forge) should work fine, any issues should be reported to the bug tracker.
 
 Are There Downloads Available Yet?
