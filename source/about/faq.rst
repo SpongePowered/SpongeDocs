@@ -5,6 +5,18 @@ Frequently Asked Questions
 For Everyone
 ============
 
+Can I use SpongeAPI to create client side plugins?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Can I create (client side mods with sponge) / (new GUI to a players screen) / (new blocks or entities)?
+
+**Not yet.** 
+
+The Sponge team do not want to get overcommitted with client side API until Sponge is competitive with other Minecraft modding API's.
+No one is currently working to create client side API, but it's not been forgotten; it should be possible in the long term.
+This is a separate issue from single player! 
+Single player support using Sponge (coremod / forge) should work fine, any issues should be reported to the bug tracker.
+
 Are There Downloads Available Yet?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
