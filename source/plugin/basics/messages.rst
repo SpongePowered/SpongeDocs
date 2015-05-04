@@ -2,12 +2,14 @@
 Creating Messages
 =================
 
-Messages are used to create formatted text. These messages can be sent to players in chat messages, and can also be used in places such as books and signs. Sponge provides a message builder through the ``org.spongepowered.api.text.message.MessageBuilder`` interface to assist in creating and formatting messages.
+Messages are used to create formatted text. These messages can be sent to players in chat messages, and can also be used in places such as books and signs. 
+Sponge provides a message builder through the ``org.spongepowered.api.text.message.MessageBuilder`` interface to assist in creating and formatting messages.
 
 Unformatted Messages
 ====================
 
-Oftentimes, all you need is an unformatted message. Unformatted messages do not require the use of the message builder interface, and are the simplest form of messages to create.
+Oftentimes, all you need is an unformatted message. Unformatted messages do not require the use of the message builder interface, 
+and are the simplest form of messages to create.
 
 Example:
 ~~~~~~~~
@@ -50,7 +52,8 @@ Example: Colored Message
         return Messages.builder("Woot! Golden text is golden.").color(TextColors.GOLD).build();
     }
 
-Any color specified within the ``org.spongepowered.api.text.format.TextColors`` class can be used when coloring messages. Multiple colors can be used in a message by appending additional messages with different colors:
+Any color specified within the ``org.spongepowered.api.text.format.TextColors`` class can be used when coloring messages. 
+Multiple colors can be used in a message by appending additional messages with different colors:
 
 Example: Multi-colored Message
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -70,7 +73,9 @@ Example: Multi-colored Message
 Text Actions
 ~~~~~~~~~~~~
 
-The message builder also offers the ability to create actions for messages. Any action specified within the ``org.spongepowered.api.text.action.TextActions`` class can be used when creating text actions for messages. The method below is a small example of what text actions can do.
+The message builder also offers the ability to create actions for messages. 
+Any action specified within the ``org.spongepowered.api.text.action.TextActions`` class can be used when creating text actions for messages. 
+The method below is a small example of what text actions can do.
 
 Example: Message with a Text Action
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -93,16 +98,19 @@ In the method above, players can click the "Click here!" text to run the specifi
 
 .. tip ::
 
-    Just like with colors, multiple text actions can be appended to a message. Text actions can even be used in tandem with text colors because of the builder pattern interface.
+    Just like with colors, multiple text actions can be appended to a message. Text actions can even be used in tandem with text colors 
+    because of the builder pattern interface.
 
 Selectors
 ~~~~~~~~~
 
-Target selectors are used to target players or entities that meet a specific criteria. Target selectors are particularly useful when creating minigame plugins, but have a broad range of applications.
+Target selectors are used to target players or entities that meet a specific criteria. Target selectors are particularly useful 
+when creating minigame plugins, but have a broad range of applications.
 
 .. tip ::
 
-    Read this `Minecraft wiki article <http://minecraft.gamepedia.com/Commands#Target_selectors>`__ for help understanding what target selectors are in Minecraft, and how to use them.
+    Read this `Minecraft wiki article <http://minecraft.gamepedia.com/Commands#Target_selectors>`__ for help understanding 
+    what target selectors are in Minecraft, and how to use them.
 
 To use selectors in messages, you must use the ``org.spongepowered.api.text.selector.SelectorBuilder`` interface. This is illustrated in the example below.
 
@@ -120,4 +128,5 @@ Example: Selector-generated Message
         ).build();
     }
 
-In this example, the target selector ``@a[m=2]`` is targeting every online player who is in adventure mode. When the method is called, a Message will be returned containing the usernames of every online player who is in adventure mode.
+In this example, the target selector ``@a[m=2]`` is targeting every online player who is in adventure mode. When the method is called, 
+a Message will be returned containing the usernames of every online player who is in adventure mode.
