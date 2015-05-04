@@ -362,4 +362,9 @@ The ``CommandService`` can also be used to call a command programatically:
 
     cmdService.process(player, "msg Notch hi notch!");
     
+You can also send a command from the server console:
+    
+.. code-block:: java
+
+    cmdService.process(game.getServer().getConsole(), "kill Notch");
     
