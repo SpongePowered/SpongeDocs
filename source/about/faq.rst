@@ -21,13 +21,9 @@ What Makes Sponge Different from Other Projects, Such as Bukkit?
 Sponge is using the MIT license, which is an extremely permissive open-source license. This means that, should our server implementation (the Sponge coremod) encounter any legal issues similar to those that fell upon Bukkit, it will be possible to reuse the Sponge API and start a new project without being further encumbered by legal issues.
 
 Which parts does the Sponge Project consist of?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Take a look at this figure:
-
-.. image:: /images/sponge-layout.png
-
-As you can see Sponge consists of several (mostly) independent parts:
+As you can see Sponge has several (mostly) independent parts:
 
  * sourcecode maintained on github.com
     * Mixins
@@ -37,6 +33,7 @@ As you can see Sponge consists of several (mostly) independent parts:
     * SpongeVanilla
     * SpongeDocs
     * Ore
+    
  * websites
     * Sponge forums
     * SpongeDocs
