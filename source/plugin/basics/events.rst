@@ -67,7 +67,7 @@ The ``@Subscribe`` annotation has a few configurable fields:
 
 * ``order`` is the order in which the event handler is to be run. See the ``Order`` enum in Sponge to see the available options.
 * ``ignoreCancelled``, if true (which is default true), causes the event handler to be skipped if the event in question is cancellable 
-and has been cancelled (by a previously-executed plugin, for example).
+  and has been cancelled (by a previously-executed plugin, for example).
 
 Firing Events
 =============
