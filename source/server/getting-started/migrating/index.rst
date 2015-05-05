@@ -14,6 +14,5 @@ Contents
     :maxdepth: 2
     :titlesonly:
 
-    bukkit
-    canary
-    forge
+    sponge/index
+    spongevanilla/index
