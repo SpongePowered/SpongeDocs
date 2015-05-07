@@ -76,6 +76,3 @@ Additional Data (like orientation, subtypes like granite vs regular stone, farm 
 
 First, we need to know which ``DataManipulator`` subinterface we need. Those that are applicable to blocks are found in the ``org.spongepowered.api.data.manipulators`` and ``org.spongepowered.api.data.manipulators.block`` packages. Then we can just pass that class to the ``getManipulator()`` method and get an ``Optional`` in return which will be ``absent()`` if the ``BlockState`` does not contain data of that type.
 Since ``WetData`` represents a boolean value, its presence equates to ``true``. Its absence (if ``Optional.absent()`` was returned) either signifies ``false``.
-
-.. tip::
-	For a more detailed take on DataManipulators and how to use them, take a look at ToDo:HERE BE LINK
