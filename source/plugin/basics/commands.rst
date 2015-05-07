@@ -292,6 +292,7 @@ Child Commands
 The ``CommandSpec`` builder supports hierarchical command structures like this:
 
 * ``/mail`` (parent command)
+
   * ``/mail send`` (child command)
   * ``/mail read`` (child command)
 
