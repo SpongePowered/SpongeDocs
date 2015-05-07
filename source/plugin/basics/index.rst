@@ -18,6 +18,6 @@ Contents
     commands
     messages
     events
-    blocks
+    blocks/index
     entities/index
     configuration
