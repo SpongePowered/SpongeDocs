@@ -16,7 +16,7 @@ Contents
     lifecycle
     logging
     commands
-    messages
+    text
     events
     blocks
     entities/index
