@@ -36,7 +36,7 @@ This is illustrated below.
 
 .. code-block:: java
 
-    import org.spongepowered.api.util.event.Subscribe;
+    import org.spongepowered.api.event.Subscribe;
 
     @Subscribe
     public void someEventHandler(SomeEvent event) {
@@ -72,7 +72,7 @@ The ``@Subscribe`` annotation has a few configurable fields:
 Firing Events
 =============
 
-To dispatch an event, you need an object that implements the ``org.spongepowered.api.util.event.Event`` interface.
+To dispatch an event, you need an object that implements the ``org.spongepowered.api.event.Event`` interface.
 
 You can fire events using the event bus (``org.spongepowered.api.service.event.EventManager``):
 
@@ -106,7 +106,7 @@ Example: Custom Event Class
 
     import org.spongepowered.api.entity.player.Player;
     import org.spongepowered.api.event.AbstractEvent;
-    import org.spongepowered.api.util.event.Cancellable;
+    import org.spongepowered.api.event.Cancellable;
 
     public class PrivateMessageEvent extends AbstractEvent implements Cancellable {
 

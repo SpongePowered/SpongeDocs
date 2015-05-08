@@ -40,9 +40,9 @@ Your plugin can listen for particular events, called **state events**, to be not
 
 .. code-block:: java
 
+    import org.spongepowered.api.event.Subscribe;
     import org.spongepowered.api.event.state.ServerStartedEvent;
     import org.spongepowered.api.plugin.Plugin;
-    import org.spongepowered.api.util.event.Subscribe;
 
     @Plugin(id = "example", name = "Example Project", version = "1.0")
     public class ExampleProject {
