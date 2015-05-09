@@ -4,10 +4,10 @@ Forum & IRC Rules
 
 Welcome to the Sponge Project! We're glad you're here and interested in Sponge. We have a few rules that apply to all of our various methods of communications, including (but not limited to):
 
-* Official IRC channels: #sponge, #spongedocs, #sponge-dev, etc
+* Official IRC channels: #sponge, #spongedocs, #spongedev
 * Sponge Forums
-* Github andBug/Issue tracker
-* Sponge Subreddit
+* Github and Bug/Issue tracker
+* Sponge subReddit
 * Any other official means of communication by the Sponge project.
 
 The Sponge project adheres primarily to Wheaton's Law: "Don't be a dick." We expect everyone using our communication systems to act like a reasonable and responsible person, showing respect for other users and staff.
@@ -45,4 +45,4 @@ Read on for some more specific guidance, but please remember these rules are mea
 
 .. note::
 
-    Any of the above rules are subject to change at any time without warning. Any content found to be in violation of these rules, even if the content was created before a rule was in place, can be removed by moderator approval. These rules apply generally to all Sponge methods of communication, but each individual sub method (eg: Sub-Reddit or Forum Category) may have its own set of additional rules and guidelines to add on top of these general rules. If this is the case, both sets of rules must be followed. Rules and guidelines evolve as the Sponge community evolves. Use only as directed; excessive use of FLARD may rot your socks.
+    Any of the above rules are subject to change at any time without warning. Any content found to be in violation of these rules, even if the content was created before a rule was in place, can be removed by moderator approval. These rules apply generally to all Sponge methods of communication, but each individual sub method (eg: subReddit or Forum category) may have its own set of additional rules and guidelines to add on top of these general rules. If this is the case, both sets of rules must be followed. Rules and guidelines evolve as the Sponge community evolves. Use only as directed; excessive use of FLARD may rot your socks.
