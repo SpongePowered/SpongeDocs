@@ -4,6 +4,7 @@ Modifying Blocks
 
 Changing a Blocks Type
 ~~~~~~~~~~~~~~~~~~~~~~
+
 Changing the Type of a Block is as simple as calling the ``replaceWith()`` method of a ``Location`` with the new ``BlockType``. For example the following code turns the block at the given ``Location`` into a sponge.
 
  .. code-block:: java
@@ -19,6 +20,7 @@ It's as simple as that. If you just want to 'delete' a block (which is done by r
     
 Altering Block States
 ~~~~~~~~~~~~~~~~~~~~~
+
 Similar to the above example, the ``Location`` class provides a ``replaceWith()`` method accepting a new ``BlockState``. To make use of it, you first must acquire a ``BlockState`` you can modify. You can do so either by getting the block's current state via the ``getState()`` method provided by the ``Location`` class or by using a blocktype's default state. The latter is demonstrated below: The default state for a Sponge block is retrieved and then modified to directly create a wet sponge block.
 
  .. code-block:: java
@@ -83,6 +85,7 @@ Since the ``WetData`` data manipulator represents boolean data, by removing it w
 
 Copying Blocks
 ~~~~~~~~~~~~~~
+
 If you want to copy all of a blocks data, the ``BlockSnapshot`` class is your best friend. While it doesn't expose all the data, it stores a Blocks type, its BlockState and, if necessary, all additional Tile Entity Data (for example chest inventories). Conventiently, the ``Location`` class provides a ``getSnapshot()`` method as well as a ``replaceWith()`` method accepting a ``BlockSnapshot``. That makes copying blocks from one location to another very simple:
 
  .. code-block:: java

@@ -1,8 +1,10 @@
 ================
 Accessing Blocks
 ================
+
 Basic Information
 ~~~~~~~~~~~~~~~~~
+
 Blocks are most commonly identified and accessed by their ``Location``. This location points to a certain coordinate within an ``Extent``. In most cases a ``World`` will be used as the Extent.
 
 .. code-block:: java
@@ -57,6 +59,7 @@ The ``Location`` class also provides means to check for environmental influences
         
 BlockStates
 ~~~~~~~~~~~
+
 Additional Data (like orientation, subtypes like granite vs regular stone, farm land moisture ... ) can be obtained from a ``BlockState``. A ``BlockState`` contains a ``BlockType`` and further data that can be accessed via a set of data manipulators that all extend the ``DataManipulator`` interface. The following example will return ``true`` if a the block at a given ``Location`` is a) a Sponge and b) wet, false otherwise.
 
 .. code-block:: java
