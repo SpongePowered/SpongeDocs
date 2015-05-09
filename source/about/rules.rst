@@ -4,7 +4,7 @@ Forum & IRC Rules
 
 Welcome to the Sponge Project! We're glad you're here and interested in Sponge. We have a few rules that apply to all of our various methods of communications, including (but not limited to):
 
-* Official IRC channels: #sponge, #spongedocs, #spongedev
+* Official IRC channels: #sponge, #spongedev, #spongedocs, #spongeweb
 * Sponge Forums
 * Github and Bug/Issue tracker
 * Sponge subReddit
