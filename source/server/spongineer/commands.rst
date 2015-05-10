@@ -49,7 +49,8 @@ Command               Description                               Permission
 
 .. tip::
 
-    Here are a few simple examples of the sponge conf command in action:
+    Here are a few simple examples of the sponge conf command in action. Please see
+    :doc:`../getting-started/configuration/index` for a more detailed explanation.
 
     a. ``/sponge conf -d logging.chunk-load true``
      
