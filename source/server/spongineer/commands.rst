@@ -38,7 +38,7 @@ Command               Description                               Permission
                       config.
 ====================  ========================================  ====================
 
-
+|
 
 **Sponge Command Parameters**
 
