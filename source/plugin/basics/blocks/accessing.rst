@@ -13,7 +13,7 @@ Blocks are most commonly identified and accessed by their ``Location``. This loc
     import org.spongepowered.api.world.Location;
     import org.spongepowered.api.world.World;
 
-    public BlockLoc getBlockAt(String worldName, int posX, int posY, int posZ) {
+    public Location getBlockAt(String worldName, int posX, int posY, int posZ) {
         World world = game.getServer().getWorld(worldName).get();
         Location block = new Location(world, posX, posY, posZ);
         return block;
