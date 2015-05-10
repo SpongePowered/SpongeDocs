@@ -38,6 +38,7 @@ Command               Description                               Permission
                       config.
 ====================  ========================================  ====================
 
+
 **Sponge Command Parameters**
 
 * /sponge chunks [-g] [-d dim] [-w world]
