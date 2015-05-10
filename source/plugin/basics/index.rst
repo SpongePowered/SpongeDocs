@@ -18,6 +18,6 @@ Contents
     commands
     text
     events
-    blocks
+    blocks/index
     entities/index
     configuration
