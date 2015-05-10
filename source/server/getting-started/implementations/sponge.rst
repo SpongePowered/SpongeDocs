@@ -29,7 +29,7 @@ Note that there is no separator between the Sponge API Version and the Sponge Bu
 +----------------------+-------------------------------------------------------------------------------------------------------------+
 | ``SpongeAPIVersion`` | The version of the SpongeAPI implemented by this file. This is what Sponge plugins depend on.               |
 +----------------------+-------------------------------------------------------------------------------------------------------------+
-| ``SpongeBuildId``    | The build number of Sponge. This is what you should supply when reporting bugs or seek support.             |
+| ``SpongeBuildId``    | The build number of Sponge. This is what you should supply when reporting bugs or seeking support.             |
 +----------------------+-------------------------------------------------------------------------------------------------------------+
 
 Example
