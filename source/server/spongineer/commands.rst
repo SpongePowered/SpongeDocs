@@ -39,6 +39,7 @@ Command               Description                               Permission
 ====================  ========================================  ====================
 
 
+
 **Sponge Command Parameters**
 
 * /sponge chunks [-g] [-d dim] [-w world]
@@ -49,19 +50,20 @@ Command               Description                               Permission
 
 .. tip::
     
-    Here are a few simple examples of the sponge conf command in action. Please see :doc:`../getting-started/configuration/index` for a more detailed explanation.
+    Here are a few simple examples of the sponge conf command in action.
+    Please see :doc:`../getting-started/configuration/index` for a more detailed explanation.
 
-    a. ``/sponge conf -d logging.chunk-load true``
+    a. ``/sponge conf logging.chunk-load true``
      
-     Since no dimension was specified, the dimension would default to the sender(player) dimension. So if you were in a mystcraft dimension, this would alter the mystcraft dimension config.
+      Since no dimension was specified, the dimension would default to the sender(player) dimension. So if you were in a mystcraft dimension, this would alter the mystcraft dimension config.
     
     b. ``/sponge conf -d nether logging.chunk-load true``
      
-     Since a dimension type was specified, this would alter the nether dimension config.
+      Since a dimension type was specified, this would alter the nether dimension config.
     
     c. ``/sponge conf -w DIM1 logging.chunk-load true``
      
-     This would alter the config of world named DIM1.
+      This would alter the config of world named DIM1.
 
 
 Forge
