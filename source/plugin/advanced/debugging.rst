@@ -37,8 +37,7 @@ IntelliJ
 
 **Modifying the classpath:**
 
-.. tip:: From the Sponge `README.md <https://github.com/SpongePowered/Sponge/blob/master/README.md>`_, ensure that you have your
-Run/Debug Configuration set appropriately.
+.. tip:: From the Sponge `README.md <https://github.com/SpongePowered/Sponge/blob/master/README.md>`_, ensure that you have your Run/Debug Configuration set appropriately.
 
 * Open your Project Structure.
 
