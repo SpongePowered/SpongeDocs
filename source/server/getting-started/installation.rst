@@ -17,7 +17,7 @@ Installing Sponge (coremod)
 Single Player LAN Servers
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Download the correct Forge release for your Minecraft version from the `Minecraft Forge website <http://files.minecraftforge.net/>`_. Sponge should be compatible with the latest 1.8 Forge build.
+1. Download the correct Forge release for your Minecraft version from the `Minecraft Forge website <http://files.minecraftforge.net/>`_. Sponge should be compatible with the latest 1.8 Forge build. If you're unsure which version to choose, take a look here: :doc:`implementations/sponge`
 #. Run the provided Forge installer. A new Forge profile will be created in the Minecraft launcher.
 #. Open the Minecraft launcher, and select the new Forge profile.
 #. Click "Options" and click "Open Game Dir".
