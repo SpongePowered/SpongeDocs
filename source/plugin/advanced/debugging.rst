@@ -68,7 +68,7 @@ capabilities of Hotswapping:
 Go ahead and make a change to an existing method. Make sure that this is something you can trigger from within the server,
 to see the change. Once you've done that:
 
-* Click ``Run``.
+* Open the ``Run`` menu, from the top of the IDE.
 * Below the first category break, click ``Reload Changed Classes``.
 
 Yes, it's that simple. Assuming you've made this change in an obvious manner, you should now see the benefits of Hotswapping.
