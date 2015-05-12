@@ -2,6 +2,10 @@
 Creating Commands
 =================
 
+.. tip::
+
+	Since the Command API makes use of the Text API, make sure you read :doc:`text` first.
+
 There are two different APIs to create commands in Sponge: The ``CommandCallable`` interface and the ``CommandSpec`` builder.
 
 The most comfortable way to create a new command is the ``CommandSpec`` builder. It supports child commands and argument parsing.
