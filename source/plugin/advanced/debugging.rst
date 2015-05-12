@@ -62,8 +62,7 @@ Eclipse
 * Find your Run/Debug Configuration
 
   * Click ``Run``, followed by ``Run Configurations...``
-  *OR, click the drop-down arrow beside the Run/Debug icons and then ``Run Configurations...`` or
-  ``Debug Configurations...```, respectively.
+  * OR, click the drop-down arrow beside the Run/Debug icons and then ``Run Configurations...`` or ``Debug Configurations...``, respectively.
 
 * Select your Run/Debug Configuration for Sponge (Server) on the left side.
 * Switch to the ``Classpath`` tab.
