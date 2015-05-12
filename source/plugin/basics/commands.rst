@@ -344,14 +344,35 @@ Use the ``setChildren()`` method of the parent command builder to apply the chil
 
     If a ``CommandExecutor`` was set for the parent command, it is used as a fallback if the arguments do not match one of the child command aliases.
     Setting an executor is not required.
-    
+
+Command Results
+===============
+
+The ``CommandExecutor::execute()`` method must always return a ``CommandResult``. In most cases it is sufficient to return ``CommandResult.success()`` if the command was successful or ``CommandResult.empty()`` if it wasn't. 
+In cases where more information needs to be conveyed, a ``CommandResult.Builder`` should be used. It provides the methods ``affectedBlocks()``, ``affectedEntities()``, ``affectedItems()``, ``queryResult()`` and ``successCount()`` methods, each accepting an integer and setting the attribute of the same name. All attributes that are not set by the builder will be absent. 
+
+Example: Building a CommandResult
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: java
+	
+	CommandResult result = CommandResult.builder().affectedEntities(42).successCount(1).build();
+	
+This example uses a builder to create a ``CommandResult`` for a command which affected 42 entities and was successful.
+
+Error Handling
+==============
+
+The ``execute()`` method may also throw a ``CommandException``, signaling that an error occured while trying to execute the command. If such an Exception is thrown, its message will be displayed to the command source, formatted as an error. Also, the commands usage message will be displayed.
+An ``ArgumentParseException``, a subtype of ``CommandException`` is automatically thrown if the commands arguments could not be parsed.
+
 The Command Service
 ===================
 
 The ``CommandService`` stands as the manager for watching what commands get typed into chat, and redirecting them to the right command handler.
 To register your command, use the method ``CommandService.register()``, passing your plugin, an instance of the command, and any needed aliases as parameters.
 
-Usually you want to register your commands when the ``PreInitializationEvent`` is called. 
+Usually you want to register your commands when the ``InitializationEvent`` is called. 
 If you are registering the commands from the main plugin class, use ``this`` as the ``plugin`` parameter.
 
 .. code-block:: java
