@@ -31,7 +31,7 @@ IntelliJ
 Eclipse
 ~~~~~~~
 
-.. tip:: You can use `Setting Up Eclipse <../basics/workspace/eclipse.rst>`_ to create a new Eclipse project.
+.. tip:: You can use `Setting Up Eclipse <../basics/workspace/eclipse.rst>`_ to create a new Eclipse project. Eclipse, unlike IntelliJ, does not require any specific setup in regards to how you manage the plugin. Creating a new project is all you need to do.
 
 Adding Plugin to Sponge classpath
 =================================
