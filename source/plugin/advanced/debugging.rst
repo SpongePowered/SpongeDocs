@@ -127,5 +127,3 @@ In Eclipse, when a file is rebuilt, it is automatically hotswapped with the curr
 for building files insist that it is rebuilt upon every save. Meaning as soon as the file is saved, it's automatically
 built and swapped. If you have turned this feature off, you would have to build manually.
 
-Yes, it's that simple. Assuming you've made this change in an obvious manner, you should now see the benefits of
-Hotswapping.
