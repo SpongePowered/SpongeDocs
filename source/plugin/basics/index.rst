@@ -15,8 +15,8 @@ Contents
     main-class
     lifecycle
     logging
-    commands
     text
+    commands/index
     events
     blocks/index
     entities/index
