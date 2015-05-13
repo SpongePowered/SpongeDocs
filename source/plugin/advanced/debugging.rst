@@ -108,7 +108,7 @@ capabilities of Hotswapping:
 
 * You cannot remove classes.
 
-    * You cannot modify a class' type, extentions or implementations. Nor can you add an additional import.
+    * You cannot modify a class' type, extensions or implementations. Nor can you add an additional import.
     * You can add classes. However, once it's been built and hotswapped, the class follows the above rules.
 
 Go ahead and make a change to an existing method. Make sure that this is something you can trigger from within the
