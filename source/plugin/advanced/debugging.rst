@@ -102,8 +102,13 @@ Hotswapping
 Now that you've got the server, running, let's try to make some changes. Note, that there are limits to the built-in
 capabilities of Hotswapping:
 
-* You cannot create or remove methods, nor can you create or remove classes.
-* Hotswapping is limited to changes from within existing methods.
+* You cannot create or remove methods.
+
+    * Changes to methods are limited to information *within* the method. You cannot modify its return type, nor its variable requirements
+
+* You cannot remove classes.
+
+    * You can add classes. However, once it's been built and hotswapped, the class follows the above rules.
 
 Go ahead and make a change to an existing method. Make sure that this is something you can trigger from within the
 server, to see the change. Once you've done that:
