@@ -348,8 +348,10 @@ Use the ``setChildren()`` method of the parent command builder to apply the chil
 Command Results
 ===============
 
-The ``CommandExecutor::execute()`` method must always return a ``CommandResult``. In most cases it is sufficient to return ``CommandResult.success()`` if the command was successful or ``CommandResult.empty()`` if it wasn't. 
-In cases where more information needs to be conveyed, a ``CommandResult.Builder`` should be used. It provides the methods ``affectedBlocks()``, ``affectedEntities()``, ``affectedItems()``, ``queryResult()`` and ``successCount()`` methods, each accepting an integer and setting the attribute of the same name. All attributes that are not set by the builder will be absent. 
+The ``CommandExecutor::execute()`` method must always return a ``CommandResult``. In most cases it is sufficient to return ``CommandResult.success()`` if the command was successful or ``CommandResult.empty()`` if it wasn't.
+In cases where more information needs to be conveyed, a ``CommandResult.builder()`` should be used. It provides the methods ``affectedBlocks()``, ``affectedEntities()``, ``affectedItems()``, ``queryResult()`` and ``successCount()`` methods, each accepting an integer and setting the attribute of the same name. All attributes that are not set by the builder will be absent.
+
+Command blocks can use those values to modify scoreboard stats, which then can be used for elaborate constructions consisting of multiple command blocks. A tutorial how the data is accessed can be found `here <https://minecraft.gamepedia.com/Tutorials/Command_stats>`_.
 
 Example: Building a CommandResult
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
