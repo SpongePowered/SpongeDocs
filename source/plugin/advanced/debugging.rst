@@ -15,7 +15,9 @@ server implementation and plugin at once, from within the IDE.
 How is that possible, you may be asking? Quite simple. Plugin Debugging is fairly easy to setup, once you know how. Once
 you're debugging, Hotswapping is the next step (which we'll cover later).
 
-.. tip:: See the `Setting Up Your Workspace <../basics/workspace>`_ documentation, before attempting to follow this guide.
+.. tip::
+
+    See the `Setting Up Your Workspace <../basics/workspace>`_ documentation, before attempting to follow this guide.
 
 Preparing your Plugin
 =====================
@@ -31,7 +33,9 @@ IntelliJ
 Eclipse
 ~~~~~~~
 
-.. tip:: You can use `Setting Up Eclipse <../basics/workspace/eclipse.rst>`_ to create a new Eclipse project. Eclipse, unlike IntelliJ, does not require any specific setup in regards to how you manage the plugin. Creating a new project is all you need to do.
+.. tip::
+
+    You can use `Setting Up Eclipse <../basics/workspace/eclipse.rst>`_ to create a new Eclipse project. Eclipse, unlike IntelliJ, does not require any specific setup in regards to how you manage the plugin. Creating a new project is all you need to do.
 
 Adding Plugin to Sponge classpath
 =================================
@@ -41,7 +45,9 @@ we'll be adding your plugin to the classpath. To do this should only take a few 
 having cut down on all of the time that you previously would have spent transferring files and manually starting your
 server.
 
-.. tip:: Please ensure that you have your Run/Debug Configuration(s) set appropriately, as shown in the Sponge `README.md <https://github.com/SpongePowered/Sponge/blob/master/README.md>`_
+.. tip::
+
+    Please ensure that you have your Run/Debug Configuration(s) set appropriately, as shown in the Sponge `README.md <https://github.com/SpongePowered/Sponge/blob/master/README.md>`_
 
 IntelliJ
 ~~~~~~~~
