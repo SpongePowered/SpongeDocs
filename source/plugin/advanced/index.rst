@@ -16,3 +16,4 @@ Contents
     services
     manager
     injection
+    debugging
