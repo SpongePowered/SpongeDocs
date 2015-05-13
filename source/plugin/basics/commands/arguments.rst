@@ -22,7 +22,7 @@ To create a new ``CommandElement`` (argument), use the ``GenericArguments`` fact
 Many command elements require a short text key, which is displayed in error and help messages.
 
 Apply the ``CommandElement`` to the command builder with the ``setArguments()`` method.
-Use the ``GenericArguments.seq()`` element to chain multiple arguments (e.g ``/msg <player> <msg>``).
+It is possible to pass more than one ``CommandElement`` to the method, thus chaining multiple arguments (e.g ``/msg <player> <msg>``). This has the same effect as wrapping the ``CommandElement`` objects in a ``GenericArguments.seq()`` element.
 
 Example: Building a Command with Multiple Arguments
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -43,9 +43,9 @@ Example: Building a Command with Multiple Arguments
             .setDescription(Texts.of("Send a message to a player"))
             .setPermission("myplugin.command.message")
 
-            .setArguments(GenericArguments.seq(
+            .setArguments(
                     GenericArguments.onlyOne(GenericArguments.player(Texts.of("player"), this.game)),
-                    GenericArguments.remainingJoinedStrings(Texts.of("message"))))
+                    GenericArguments.remainingJoinedStrings(Texts.of("message")))
 
             .setExecutor(new CommandExecutor() {
                 @Override
