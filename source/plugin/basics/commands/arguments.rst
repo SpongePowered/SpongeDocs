@@ -25,7 +25,7 @@ Apply the ``CommandElement`` to the command builder with the ``setArguments()`` 
 It is possible to pass more than one ``CommandElement`` to the method, thus chaining multiple arguments (e.g ``/msg <player> <msg>``). This has the same effect as wrapping the ``CommandElement`` objects in a ``GenericArguments.seq()`` element.
 
 Example: Building a Command with Multiple Arguments
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===================================================
 
 .. code-block:: java
 
@@ -65,7 +65,7 @@ Example: Building a Command with Multiple Arguments
     
 
 Overview of the ``GenericArguments`` command elements
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=====================================================
 
 .. _catalog type: spongepowered.github.io/SpongeAPI/org/spongepowered/api/CatalogTypes.html
 
@@ -136,7 +136,7 @@ Overview of the ``GenericArguments`` command elements
 +----------------------------+-----------------------------------------------------------------------------------------+-------------------------------+
 | ``flags``                  | Returns a builder for command flags (e.g. ``/cmd [-a] [-b <value>]``).                  | Short Flag: one ``Boolean``   |
 |                            |                                                                                         |                               |
-|                            | See :doc:`Advanced Command Arguments <../../advanced/commands/arguments>`               | Long Flag: one ``String``     |
+|                            | See `Flags`_                                                                            | Long Flag: one ``String``     |
 |                            |                                                                                         |                               |
 |                            |                                                                                         | Value Flag: inherited         |
 +----------------------------+-----------------------------------------------------------------------------------------+-------------------------------+
@@ -146,7 +146,12 @@ Overview of the ``GenericArguments`` command elements
     See the `documentation for GenericArguments <http://spongepowered.github.io/SpongeAPI/org/spongepowered/api/util/command/args/GenericArguments.html>`_ 
     for more information.
 
-.. tip::
+Flags
+=====
 
-    It is possible to create custom command elements (e.g. an URL parser or a ``Vector2i`` element). The procedure is described on
-    :doc:`this page <../../advanced/commands/arguments>` 
+Coming soon...
+
+Custom Command Elements
+=======================
+
+It is possible to create custom command elements (e.g. an URL parser or a ``Vector2i`` element).
