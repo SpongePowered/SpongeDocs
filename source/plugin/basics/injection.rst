@@ -54,9 +54,9 @@ Injection Examples
 There are a few references which are difficult to get - or, in some cases, impossible - without injection. While these
 may not be absolutely vital to every plugin, they're quite frequently used.
 
-.. tip::
+.. note::
 
-    Note that it's *almost always* recommended to Inject your objects within the main class, as it's instantiated with the Guice injector when the plugin is loaded.
+    Note that it's *almost always* recommended to inject your objects within the main class, as it's instantiated with the Guice injector when the plugin is loaded.
 
 Logger
 ~~~~~~
