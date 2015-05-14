@@ -1,31 +1,31 @@
-================   
+================
 Argument Parsing
 ================
 
-The Command Builder API comes with a powerful argument parser. 
-It converts the string input to java base types (integers, booleans, strings) or game objects (players, worlds, block types , ...). 
+The Command Builder API comes with a powerful argument parser.
+It converts the string input to java base types (integers, booleans, strings) or game objects (players, worlds, block types , ...).
 The parser supports optional arguments and flags. It also handles TAB completion of arguments.
 
-The parsed arguments are stored in the ``CommandContext`` object. 
-If the parser returns a single object, obtain it with ``args.<T>getOne(String key)`` (``T`` is the value type). 
+The parsed arguments are stored in the ``CommandContext`` object.
+If the parser returns a single object, obtain it with ``args.<T>getOne(String key)`` (``T`` is the value type).
 Optional and weak arguments may return ``Optional.absent()``.
 
 Many of the parsers may return more than one object (e.g. multiple players with a matching username).
-In that case, you must use the ``args.<T>getAll(String key)`` method to get the ``Collection`` of possible matches. 
+In that case, you must use the ``args.<T>getAll(String key)`` method to get the ``Collection`` of possible matches.
 **Otherwise, the context object will throw an exception!**
 
 .. tip::
 
    You can use the ``onlyOne`` element to limit the amount of returned values to a single one, so you can safely use ``args.<T>getOne(String key)``.
 
-To create a new ``CommandElement`` (argument), use the ``GenericArguments`` factory class. 
+To create a new ``CommandElement`` (argument), use the ``GenericArguments`` factory class.
 Many command elements require a short text key, which is displayed in error and help messages.
 
 Apply the ``CommandElement`` to the command builder with the ``setArguments()`` method.
 It is possible to pass more than one ``CommandElement`` to the method, thus chaining multiple arguments (e.g ``/msg <player> <msg>``). This has the same effect as wrapping the ``CommandElement`` objects in a ``GenericArguments.seq()`` element.
 
 Example: Building a Command with Multiple Arguments
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===================================================
 
 .. code-block:: java
 
@@ -60,12 +60,12 @@ Example: Building a Command with Multiple Arguments
                 }
             })
             .build();
-            
-    game.getCommandDispatcher().register(plugin, myCommandSpec, "message", "msg", "m");
-    
 
-Overview of the GenericArguments command elements
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    game.getCommandDispatcher().register(plugin, myCommandSpec, "message", "msg", "m");
+
+
+Overview of the ``GenericArguments`` command elements
+=====================================================
 
 .. _catalog type: http://spongepowered.github.io/SpongeAPI/org/spongepowered/api/CatalogTypes.html
 
@@ -136,7 +136,7 @@ Overview of the GenericArguments command elements
 +----------------------------+-----------------------------------------------------------------------------------------+-------------------------------+
 | ``flags``                  | Returns a builder for command flags (e.g. ``/cmd [-a] [-b <value>]``).                  | Short Flag: one ``Boolean``   |
 |                            |                                                                                         |                               |
-|                            | See :doc:`Advanced Command Arguments <../../advanced/commands/arguments>`               | Long Flag: one ``String``     |
+|                            | See `Flags`_                                                                            | Long Flag: one ``String``     |
 |                            |                                                                                         |                               |
 |                            |                                                                                         | Value Flag: inherited         |
 +----------------------------+-----------------------------------------------------------------------------------------+-------------------------------+
@@ -146,10 +146,15 @@ Overview of the GenericArguments command elements
 
 .. tip::
 
-    See the `documentation for GenericArguments <http://spongepowered.github.io/SpongeAPI/org/spongepowered/api/util/command/args/GenericArguments.html>`_ 
+    See the `documentation for GenericArguments <http://spongepowered.github.io/SpongeAPI/org/spongepowered/api/util/command/args/GenericArguments.html>`_
     for more information.
 
-.. tip::
+Flags
+=====
 
-    It is possible to create custom command elements (e.g. an URL parser or a ``Vector2i`` element). The procedure is described on
-    :doc:`this page <../../advanced/commands/arguments>` 
+Coming soon...
+
+Custom Command Elements
+=======================
+
+It is possible to create custom command elements (e.g. an URL parser or a ``Vector2i`` element).
