@@ -117,8 +117,8 @@ an injection.
 Config Directory
 ~~~~~~~~~~~~~~~~
 
-This is a big one, especially if you plan on having more than a single file stored for your plugin to later call.
-Thankfully, with the power of the Guice injector, it's never been easier to get your directory.
+This one is pretty important, especially if you plan on having more than a single file stored for your plugin to later call.
+Thankfully, using the Guice injector, it's easier to retrieve your configuration directory.
 
 .. tip::
 
