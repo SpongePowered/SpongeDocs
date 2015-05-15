@@ -17,7 +17,7 @@ you're debugging, Hotswapping is the next step (which we'll cover later).
 
 .. tip::
 
-    See the `Setting Up Your Workspace <../basics/workspace>`_ documentation, before attempting to follow this guide.
+    See the :doc:`../basics/workspace/index` documentation, before attempting to follow this guide.
 
 Preparing your Plugin
 =====================
@@ -35,7 +35,7 @@ Eclipse
 
 .. tip::
 
-    You can use `Setting Up Eclipse <../basics/workspace/eclipse.rst>`_ to create a new Eclipse project. Eclipse, unlike IntelliJ, does not require any specific setup in regards to how you manage the plugin. Creating a new project is all you need to do.
+    You can use :doc:`../hasics/workspace/eclipse` to create a new Eclipse project. Eclipse, unlike IntelliJ, does not require any specific setup in regards to how you manage the plugin. Creating a new project is all you need to do.
 
 Adding Plugin to Sponge classpath
 =================================
