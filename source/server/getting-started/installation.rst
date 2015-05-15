@@ -33,6 +33,21 @@ New Forge Server Installation
 #. You may now launch the server via command or launch script ``java -jar forge-version-XYZ.jar``.
 #. Set up :doc:`port-forward` to ensure others can connect.
 
+Headless Forge Server Installation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The sponge.jar file now has command-line functionality, and can be used to install and launch a server. 
+Please note that installing Forge, and using Sponge as a mod, should always be the preferred course of action for most users. The self-installer is primarily intended for headless servers.
+
+The commands required to set up and run the server are:
+
+* ``java -jar sponge.jar install``
+* ``java -jar sponge.jar run``
+
+There is also a command which does both:
+
+* ``java -jar sponge.jar go``
+
 Existing Forge Server Installation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
