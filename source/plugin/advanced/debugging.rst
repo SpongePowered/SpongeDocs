@@ -35,7 +35,7 @@ Eclipse
 
 .. tip::
 
-    You can use :doc:`../hasics/workspace/eclipse` to create a new Eclipse project. Eclipse, unlike IntelliJ, does not require any specific setup in regards to how you manage the plugin. Creating a new project is all you need to do.
+    You can use :doc:`../basics/workspace/eclipse` to create a new Eclipse project. Eclipse, unlike IntelliJ, does not require any specific setup in regards to how you manage the plugin. Creating a new project is all you need to do.
 
 Adding Plugin to Sponge classpath
 =================================
