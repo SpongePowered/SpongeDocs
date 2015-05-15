@@ -117,8 +117,7 @@ an injection.
 Config Directory
 ~~~~~~~~~~~~~~~~
 
-This one is pretty important, especially if you plan on having more than a single file stored for your plugin to later call.
-Thankfully, using the Guice injector, it's easier to retrieve your configuration directory.
+The recommended way to obtain your config file is through Guice, along with the @ConfigFile annotation.
 
 .. tip::
 
