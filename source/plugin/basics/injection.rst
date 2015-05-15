@@ -63,7 +63,7 @@ Logger
 
 .. tip::
 
-    View `Logging and Debugging <../basics/logging.rst>`_ for a complete guide, specifically for the Logger.
+    View :doc:`../basics/logging` for a complete guide, specifically for the Logger.
 
 Game
 ~~~~
@@ -174,4 +174,4 @@ The way that ``DefaultConfig`` works is very similar to ``ConfigDir``. The bigge
 
 .. tip::
 
-    View `Creating a Default Plugin Configuration <../basics/configuration.rst>`_ for a complete guide, specifically for ``DefaultConfig``.
+    View :doc:`../basics/configuration` for a complete guide, specifically for ``DefaultConfig``.
