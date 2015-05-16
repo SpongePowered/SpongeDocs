@@ -17,7 +17,7 @@ Getting Ready
 Worlds
 ~~~~~~
 
-Forge, and thus Sponge, uses the same world structure as vanilla Minecraft. Vanilla Minecraft places the nether (typically ``world_nether``) and the end (typically ``world_the_nether``) dimensions within the ``world`` folder.
+Forge, and thus Sponge, uses the same world structure as vanilla Minecraft. Vanilla Minecraft places the nether (typically ``world_nether``) and the end (typically ``world_the_end``) dimensions within the ``world`` folder.
 
 CraftBukkit relocates the nether and end dimensions outside of the ``world`` folder, which must be remedied if it is desired to retain the nether and end dimensions when running Sponge. To relocate the nether and end dimensions, follow the instructions below.
 
