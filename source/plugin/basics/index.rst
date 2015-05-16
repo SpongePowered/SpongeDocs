@@ -21,3 +21,4 @@ Contents
     blocks/index
     entities/index
     configuration
+    injection

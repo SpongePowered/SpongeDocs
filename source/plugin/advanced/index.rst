@@ -15,5 +15,4 @@ Contents
     permissions
     services
     manager
-    injection
     debugging
