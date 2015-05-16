@@ -12,41 +12,35 @@ Dependency injection allows plugins to designate a few API types that will be in
 Temporary List of Injected Types
 ================================
 
-* Game
+Game
+  The ``Game`` object is the core accessor of the SpongeAPI.
 
-    * The ``Game`` object is the core accessor of the SpongeAPI.
+PluginManager
+  Manages the plugins loaded by the implementation. 
+  Can retrieve another plugin's ``PluginContainer``.
 
-* PluginManager
+EventManager
+  Manages the registration of event handlers and the dispatching of events.
 
-    * Manages the plugins loaded by the implementation. Can retrieve another plugin's ``PluginContainer``.
+GameRegistry
+  Provides an easy way to retrieve types from a ``Game``.
 
-* EventManager
+PluginContainer
+  A ``@Plugin`` class wrapper, used to retrieve information from the annotation for easier use.
 
-    * Manages the registration of event handlers and the dispatching of events.
+Logger
+  Used to identify the plugin from which logged messages are sent.
 
-* GameRegistry
+File 
+  This must have an additional annotation specifying specific file!
+  Currently, specifications are ``ConfigFile`` and ``ConfigDir``.
 
-    * Provices an easy way to retrieve types from a ``Game``.
+ConfigDir
+  Used to inject the plugin's configuration directory:
+  ``./mods/`` OR ``./mods/<Plugin#id>/`` depending on ``sharedRoot``
 
-* PluginContainer
-
-    * A ``@Plugin`` class wrapper, used to retrieve information from the annotation for easier use.
-
-* Logger
-
-    * Used to identify the plugin from which logged messages are sent.
-
-* File (Has to have an additional annotation specifying specific file)
-
-    * Currently, specifications are ``ConfigFile`` and ``ConfigDir``.
-
-* ConfigDir
-
-    * Used to inject the plugin's configuration directory: ``./mods/`` OR ``./mods/<Plugin#id>/`` depending on ``sharedRoot``
-
-* ConfigFile
-
-    * Used to inject the plugin's specific configuration file: ``<Plugin#id>.conf``
+ConfigFile
+  Used to inject the plugin's specific configuration file: ``<Plugin#id>.conf``
 
 Injection Examples
 ==================
