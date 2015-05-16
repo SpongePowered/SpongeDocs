@@ -22,7 +22,7 @@ A data source can be accessed through the plugin's service manager:
 
 .. code-block:: java
 
-    private final SqlService sql;
+    private SqlService sql;
     public javax.sql.DataSource getDataSource(String jdbcUrl) throws SQLException {
         if (sql == null) {
             sql = game.getServiceManager().provide(SqlService.class).get();
@@ -41,7 +41,7 @@ A data source can be accessed through the plugin's service manager:
         
     }
 
-Because the SQL service provides a pooled connection, getting a Connection from the returned DataSource is not expensive. Because of this, it is recommended to not keep connections around, instead closing them soon after use, as shown in the above example. (yes, you do have to close connections. Proper resource management guys!)
+The SQL service provides a pooled connection, so getting a connection from the returned DataSource is not expensive. Therefore, we recommended not keeping connections around, and closing them soon after use instead, as shown in the above example. (Proper resource management means you *do* have to close connections).
 
 NoSQL
 -----
