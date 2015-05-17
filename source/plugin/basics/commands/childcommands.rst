@@ -9,43 +9,38 @@ The ``CommandSpec`` builder supports hierarchical command structures like this:
   * ``/mail send`` (child command)
   * ``/mail read`` (child command)
 
-Every child command is a separate ``CommandSpec`` with a list of aliases. 
-The specification of the child commands must be stored in a ``Map``:
+Every child command is a separate ``CommandSpec`` and can be created in the same way a regular command is. 
 
 .. code-block:: java
 
-    import java.util.Arrays;
-    import java.util.HashMap;
-    import java.util.List;
     import org.spongepowered.api.text.Texts;
     import org.spongepowered.api.util.command.spec.CommandSpec;
 
-    HashMap<List<String>, CommandSpec> subcommands = new HashMap<>();
-
     // /mail read
-    subcommands.put(Arrays.asList("read", "r", "inbox"), CommandSpec.builder()
-            .setPermission("myplugin.mail.read")
-            .setDescription(Texts.of("Read your inbox"))
-            .setExecutor(...)
-            .build());
+    CommandSpec readCmd = CommandSpec.builder()
+        .permission("myplugin.mail.read")
+        .description(Texts.of("Read your inbox"))
+        .executor(...)
+        .build();
 
     // /mail send
-    subcommands.put(Arrays.asList("send", "s", "write"), CommandSpec.builder()
-            .setPermission("myplugin.mail.send")
-            .setDescription(Texts.of("Send a mail"))
-            .setArguments(...)
-            .setExecutor(...)
-            .build());
+    CommandSpec sendCmd = CommandSpec.builder()
+        .permission("myplugin.mail.send")
+        .description(Texts.of("Send a mail"))
+        .arguments(...)
+        .executor(...)
+        .build();
 
-Use the ``setChildren()`` method of the parent command builder to apply the child command map: 
+Instead of registering them to the command service, child commands are registered on their parent command using the ``child()`` method. They are registered with a list of aliases. The first alias supplied is the primary one and will appear in the usage message.
 
 .. code-block:: java 
     
     CommandSpec mailCommandSpec = CommandSpec.builder()
-            .setPermission("myplugin.mail")
-            .setDescription(Texts.of("Send and receive mails"))
-            .setChildren(subcommands)
-            .build();
+        .permission("myplugin.mail")
+        .description(Texts.of("Send and receive mails"))
+        .child(readCmd, "read", "r", "inbox")
+        .child(sendCmd, "send", "s", "write")
+        .build();
             
     game.getCommandDispatcher().register(plugin, mailCommandSpec, "mail", "email");
             

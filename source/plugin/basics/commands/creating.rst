@@ -19,9 +19,9 @@ Example: Building a Simple Command
     import org.spongepowered.api.util.command.spec.CommandSpec;
 
     CommandSpec myCommandSpec = CommandSpec.builder()
-        .setDescription(Texts.of("Hello World Command"))
-        .setPermission("myplugin.command.helloworld")
-        .setExecutor(new HelloWorldCommand())
+        .description(Texts.of("Hello World Command"))
+        .permission("myplugin.command.helloworld")
+        .executor(new HelloWorldCommand())
         .build();
         
     game.getCommandDispatcher().register(plugin, myCommandSpec, "helloworld", "hello", "test");
@@ -32,21 +32,23 @@ Overview of the ``CommandSpec`` builder methods
 +----------------------------+---------------------------------------------------------------------------------------------------------+
 | Method                     | Description                                                                                             |
 +============================+=========================================================================================================+
-| ``setExecutor``            | Defines the command logic (See `Writing a Command Executor`_).                                          |
+| ``executor``               | Defines the command logic (See `Writing a Command Executor`_).                                          |
 |                            |                                                                                                         |
 |                            | **Setting the executor is required** if no child commands are set.                                      |
 +----------------------------+---------------------------------------------------------------------------------------------------------+
-| ``setArguments``           | Sets the argument specification for this command (See :doc:`arguments`).                                |                              
+| ``arguments``              | Sets the argument specification for this command (See :doc:`arguments`).                                | |                            |                                                                                                         |
 +----------------------------+---------------------------------------------------------------------------------------------------------+
-| ``setPermission``          | Set the permission that will be checked before using this command.                                      |
+| ``permission``             | Set the permission that will be checked before using this command.                                      |
 +----------------------------+---------------------------------------------------------------------------------------------------------+
-| ``setDescription``         | A short, one-line description of this command's purpose that will be displayed by the help system.      |
+| ``description``            | A short, one-line description of this command's purpose that will be displayed by the help system.      |
 +----------------------------+---------------------------------------------------------------------------------------------------------+
-| ``setExtendedDescription`` | Sets an extended description to use in longer help listings. Will be appended to the short description. |
+| ``extendedDescription``    | Sets an extended description to use in longer help listings. Will be appended to the short description. |
 +----------------------------+---------------------------------------------------------------------------------------------------------+
-| ``setChildren``            | Sets the child commands of this command with their aliases (See :doc:`childcommands`).                  |
+| ``child``                  | Adds a child command to this command with its aliases (See :doc:`childcommands`).                       |
 +----------------------------+---------------------------------------------------------------------------------------------------------+
-| ``setInputTokenizer``      | Defines how the arguments will be parsed. By default, the parser splits the command input by spaces.    |
+| ``children``               | Sets the child commands of this command with their aliases (See :doc:`childcommands`).                  |
++----------------------------+---------------------------------------------------------------------------------------------------------+
+| ``inputTokenizer``         | Defines how the arguments will be parsed. By default, the parser splits the command input by spaces.    |
 |                            | Quotations count as a single argument.                                                                  |
 |                            |                                                                                                         |
 |                            | Example: ``/tpworld Notch "My World"`` would result in two arguments: ``Notch`` and ``My World``.       |
@@ -136,9 +138,12 @@ Example: Building a CommandResult
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: java
-	
-	CommandResult result = CommandResult.builder().affectedEntities(42).successCount(1).build();
-	
+
+    CommandResult result = CommandResult.builder()
+        .affectedEntities(42)
+        .successCount(1)
+        .build();
+
 This example uses a builder to create a ``CommandResult`` for a command which affected 42 entities and was successful.
 
 Error Handling
