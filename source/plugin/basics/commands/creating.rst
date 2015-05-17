@@ -36,7 +36,7 @@ Overview of the ``CommandSpec`` builder methods
 |                            |                                                                                                         |
 |                            | **Setting the executor is required** if no child commands are set.                                      |
 +----------------------------+---------------------------------------------------------------------------------------------------------+
-| ``arguments``              | Sets the argument specification for this command (See :doc:`arguments`).                                | |                            |                                                                                                         |
+| ``arguments``              | Sets the argument specification for this command (See :doc:`arguments`).                                | 
 +----------------------------+---------------------------------------------------------------------------------------------------------+
 | ``permission``             | Set the permission that will be checked before using this command.                                      |
 +----------------------------+---------------------------------------------------------------------------------------------------------+
