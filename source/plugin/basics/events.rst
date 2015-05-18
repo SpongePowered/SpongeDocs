@@ -171,6 +171,51 @@ Example: Listen for Custom Event
         event.getReceipient().sendMessage(ChatTypes.CHAT, "PM from " + senderName + ": " + event.getMessage());
     }
 
+Dynamic Registering and Unregistering of Event Handlers
+=======================================================
+
+Some Plugins may wish to dynamically register or unregister an event handler. In that case the event handler is not a method annotated with ``@Subscribe`` but a class implementing the ``EventHandler`` interface. This event handler can then be registered by calling the event managers ``register()`` method, which accepts a reference to the plugin, the ``Class`` of events handled and the handler itself.
+
+Example: Event Handler class
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: java
+
+    public class ExampleHandler implements EventHandler<BlockBreakEvent> {
+
+        public void handle(BlockBreakEvent event) throws Exception {
+            ...
+        }
+    }
+
+Example: Dynamically Registering the Event Handler
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: java
+
+    EventHandler<BlockBreakEvent> handler = new ExampleHandler();
+    game.getEventManager().register(this, BlockBreakEvent.class, handler);
+
+
+.. note::
+
+        For event handlers created with the ``@Subscribe`` annotation, the order of the execution can be configured (see also `About @Subscribe`_). For dynamically registered handlers this is possible by passing an ``Order`` to the ``register()`` method.
+
+
+Example: Dynamically Unregistering the Event Handler
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: java
+
+    EventHandler handler = ...
+    game.getEventManager().unregister(handler);
+    
+.. note::
+
+    If all event handlers of a plugin need to be removed, the event managers ``unregisterPlugin()`` method may be called.    
+    Beware that this will remove *all* of the plugins event handlers, even those registered from ``@Subscribe`` annotations.
+
+
 Callbacks
 =========
 
