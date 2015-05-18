@@ -40,14 +40,14 @@ Example: Building a Command with Multiple Arguments
     import org.spongepowered.api.util.command.spec.CommandSpec;
 
     CommandSpec myCommandSpec = CommandSpec.builder()
-            .setDescription(Texts.of("Send a message to a player"))
-            .setPermission("myplugin.command.message")
+            .description(Texts.of("Send a message to a player"))
+            .permission("myplugin.command.message")
 
-            .setArguments(
+            .arguments(
                     GenericArguments.onlyOne(GenericArguments.player(Texts.of("player"), this.game)),
                     GenericArguments.remainingJoinedStrings(Texts.of("message")))
 
-            .setExecutor(new CommandExecutor() {
+            .executor(new CommandExecutor() {
                 @Override
                 public CommandResult execute(CommandSource src, CommandContext args) throws CommandException {
 
