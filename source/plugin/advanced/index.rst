@@ -11,6 +11,7 @@ Contents
 
     config-in-depth/index
     commands/index
+    data/index
     database
     permissions
     services
