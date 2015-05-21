@@ -14,7 +14,13 @@ The **Project Leaders** are the stewards of the Sponge project, and make the fin
 +===================================+===================================+
 | blood                             | Implementation Development Lead   |
 +-----------------------------------+-----------------------------------+
-| sk89q                             | Chief Swag Officer                |
+| Owexz                             | Support and Public Relations Lead |
+|                                   |                                   |
+|                                   | LLC Director                      |
++-----------------------------------+-----------------------------------+
+| sk89q                             | Absent until further notice       |
+|                                   |                                   |
+|                                   | Role fulfilled by Owexz           |
 +-----------------------------------+-----------------------------------+
 | Zidane                            | API Development Lead              |
 |                                   |                                   |
@@ -29,41 +35,35 @@ The **Team Leaders** of Sponge each coordinate a separate aspect of the Sponge p
 +-----------------------------------+-----------------------------------+
 | Name                              | Role                              |
 +===================================+===================================+
-| AbrarSyed                         | Master of ForgeGradle             |
-+-----------------------------------+-----------------------------------+
 | gratimax                          | Web Development Lead              |
 |                                   |                                   |
 |                                   | API and Implementation Developer  |
 +-----------------------------------+-----------------------------------+
 | Inscrutable                       | SpongeDocs Editor-in-Chief        |
 |                                   |                                   |
-|                                   | Chief Mad Scientist at Yggdrasyl  |
-|                                   | Laboratories, makers of FLARD     |
+|                                   | Mad Scientist, creator of FLARD   |
 +-----------------------------------+-----------------------------------+
 | lukegb                            | System Operations Lead            |
 +-----------------------------------+-----------------------------------+
 | Me4502                            | Subreddit Moderation Lead         |
 |                                   |                                   |
 |                                   | API and Implementation Developer  |
-|                                   |                                   |
-|                                   | Owexz's Minion (basically)        |
 +-----------------------------------+-----------------------------------+
-| Owexz                             | Support and Public Relations Lead |
-|                                   |                                   |
-|                                   | LLC Director                      |
-|                                   |                                   |
-|                                   | Chief of Pestering                |
+| progwml6                          | Distribution and IRC Leader       |
 +-----------------------------------+-----------------------------------+
+
 
 API and Implementation Developers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The **API and Implementation Developers** work on producing the Sponge API and Sponge coremod, respectively.
+The **API and Implementation Developers** work on producing the Sponge API, and the two official implementations Sponge (coremod) and SpongeVanilla.
 
 +-----------------------------------+-----------------------------------+
 | Name                              | Role                              |
 +===================================+===================================+
 | Aaron1011                         | Developer                         |
++-----------------------------------+-----------------------------------+
+| DDoS                              | Developer                         |
 +-----------------------------------+-----------------------------------+
 | Deamon                            | Developer & World Gen Maestro     |
 +-----------------------------------+-----------------------------------+
@@ -71,25 +71,17 @@ The **API and Implementation Developers** work on producing the Sponge API and S
 |                                   |                                   |
 |                                   | Master of "closing in favor of"   |
 +-----------------------------------+-----------------------------------+
-| kitskub                           | Developer                         |
-+-----------------------------------+-----------------------------------+
-| kobata                            | Developer                         |
-+-----------------------------------+-----------------------------------+
 | Minecrell                         | Developer                         |
 +-----------------------------------+-----------------------------------+
 | modwizcode                        | Developer                         |
 +-----------------------------------+-----------------------------------+
 | Mumfrey                           | Lord of Mixins                    |
 +-----------------------------------+-----------------------------------+
-| progwml6                          | Developer                         |
-|                                   |                                   |
-|                                   | DevOps and IRC Flag Lead          |
+| simon816                          | Developer                         |
 +-----------------------------------+-----------------------------------+
-| sibomots                          | Developer                         |
-|                                   |                                   |
-|                                   | LLC Leader                        |
+| Voltasalt                         | Developer                         |
 +-----------------------------------+-----------------------------------+
-| theresajayne                      | Developer                         |
+| zml                               | Developer                         |
 +-----------------------------------+-----------------------------------+
 
 Website Ninjas
@@ -121,7 +113,7 @@ The **SysOps ninjas** ensure the efficient performance of Sponge's servers.
 SpongeDocs Editors
 ~~~~~~~~~~~~~~~~~~
 
-The **SpongeDocs Editors** lovingly write articles for Sponge's official documentation.
+The **SpongeDocs Editors** diligently write articles for Sponge's official documentation.
 
 +-----------------------------------+-----------------------------------+
 | Name                              | Role                              |
@@ -133,6 +125,8 @@ The **SpongeDocs Editors** lovingly write articles for Sponge's official documen
 | Kodfod                            | Senior Editor                     |
 +-----------------------------------+-----------------------------------+
 | Pandette                          | Editor and Contributor            |
++-----------------------------------+-----------------------------------+
+| Saladoc                           | Editor and Contributor            |
 +-----------------------------------+-----------------------------------+
 | Tyrannokapi                       | Editor and Contributor            |
 |                                   |                                   |
@@ -162,6 +156,4 @@ Moderators and Support
 |                                   | Chief of Kittens                  |
 +-----------------------------------+-----------------------------------+
 | phroa                             | IRC Moderator                     |
-+-----------------------------------+-----------------------------------+
-| TnT                               | Cheerleader                       |
 +-----------------------------------+-----------------------------------+
