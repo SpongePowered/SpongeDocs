@@ -15,3 +15,9 @@ DataPriority
 ~~~~~~~~~~~~
 
 
+.. _dataapi-transactionresult:
+
+DataTransactionResult
+~~~~~~~~~~~~~~~~~~~~~
+
+
