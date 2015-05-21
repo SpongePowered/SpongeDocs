@@ -92,7 +92,7 @@ Links
 
 -  `Sponge Homepage <http://spongepowered.org>`__
 -  `Sponge Forums <http://forums.spongepowered.org>`__
--  `Sponge Issue Tracker <https://github.com/SpongePowered/SpongeAPI/issues?q=>`__
+-  `Sponge Issue Tracker <http://issues.spongepowered.org/>`__
 -  `Sponge Twitter <https://twitter.com/SpongePowered>`__
 -  `Sponge Subreddit <https://reddit.com/r/SpongeProject>`__
 -  `Sponge GitHub <https://github.com/SpongePowered>`__
