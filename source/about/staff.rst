@@ -12,9 +12,9 @@ The **Project Leaders** are the stewards of the Sponge project, and make the fin
 +-----------------------------------+-----------------------------------+
 | Name                              | Role                              |
 +===================================+===================================+
-| blood                             | Implementation Development Lead   |
+| blood                             | Implementation (Forge) Leader     |
 +-----------------------------------+-----------------------------------+
-| Owexz                             | Support and Public Relations Lead |
+| Owexz                             | Community Leader                  |
 |                                   |                                   |
 |                                   | LLC Director                      |
 +-----------------------------------+-----------------------------------+
@@ -22,9 +22,9 @@ The **Project Leaders** are the stewards of the Sponge project, and make the fin
 |                                   |                                   |
 |                                   | Role fulfilled by Owexz           |
 +-----------------------------------+-----------------------------------+
-| Zidane                            | API Development Lead              |
+| Zidane                            | Implementation (Vanilla) Leader   |
 |                                   |                                   |
-|                                   | LLC Director                      |
+|                                   | API Leader & LLC Director         |
 +-----------------------------------+-----------------------------------+
 
 Team Leaders
@@ -35,21 +35,15 @@ The **Team Leaders** of Sponge each coordinate a separate aspect of the Sponge p
 +-----------------------------------+-----------------------------------+
 | Name                              | Role                              |
 +===================================+===================================+
-| gratimax                          | Web Development Lead              |
-|                                   |                                   |
-|                                   | API and Implementation Developer  |
+| gratimax                          | Web Leader & Developer            |
 +-----------------------------------+-----------------------------------+
-| Inscrutable                       | SpongeDocs Editor-in-Chief        |
-|                                   |                                   |
-|                                   | Mad Scientist, creator of FLARD   |
+| Inscrutable                       | SpongeDocs Leader                 |
 +-----------------------------------+-----------------------------------+
-| lukegb                            | System Operations Lead            |
+| lukegb                            | System Operations Leader          |
 +-----------------------------------+-----------------------------------+
-| Me4502                            | Subreddit Moderation Lead         |
-|                                   |                                   |
-|                                   | API and Implementation Developer  |
+| Me4502                            | Subreddit Leader & Developer      |
 +-----------------------------------+-----------------------------------+
-| progwml6                          | Distribution and IRC Leader       |
+| progwml6                          | Distribution & IRC Leader         |
 +-----------------------------------+-----------------------------------+
 
 
@@ -63,35 +57,31 @@ The **API and Implementation Developers** work on producing the Sponge API, and 
 +===================================+===================================+
 | Aaron1011                         | Developer                         |
 +-----------------------------------+-----------------------------------+
-| AbrarSyed                         | Master of ForgeGradle             |
+| AbrarSyed                         | ForgeGradle Specialist            |
 +-----------------------------------+-----------------------------------+
-| AzureusNation                     | SpongeVanilla Developer           |
+| AzureusNation                     | Developer                         |
 +-----------------------------------+-----------------------------------+
 | DDoS                              | Developer                         |
 +-----------------------------------+-----------------------------------+
 | Deamon                            | Developer                         |
-|                                   |                                   |
-|                                   | World Gen Specialist              |
 +-----------------------------------+-----------------------------------+
 | gabizou                           | Developer                         |
 |                                   |                                   |
 |                                   | API Design Specialist             |
 +-----------------------------------+-----------------------------------+
-| jckf                              | SpongeVanilla Developer           |
+| jckf                              | Developer                         |
 +-----------------------------------+-----------------------------------+
 | Minecrell                         | Developer                         |
 +-----------------------------------+-----------------------------------+
 | modwizcode                        | Developer                         |
 +-----------------------------------+-----------------------------------+
 | Mumfrey                           | Bytecode Engineer & Developer     |
-|                                   |                                   |
-|                                   | Lord of Mixins                    |
 +-----------------------------------+-----------------------------------+
 | simon816                          | Developer                         |
 +-----------------------------------+-----------------------------------+
 | theresajayne                      | Developer                         |
 +-----------------------------------+-----------------------------------+
-| Voltasalt                         | SpongeVanilla Developer           |
+| Voltasalt                         | Developer                         |
 +-----------------------------------+-----------------------------------+
 | zml                               | Developer                         |
 +-----------------------------------+-----------------------------------+
@@ -104,15 +94,13 @@ The **Website Ninjas** make the Sponge website look completely awesome.
 +-----------------------------------+-----------------------------------+
 | Name                              | Role                              |
 +===================================+===================================+
-| Kornagan                          | Graphic Designer                  |
-|                                   |                                   |
-|                                   | Website Extraordinaire            |
+| Kornagan                          | Website Designer                  |
 +-----------------------------------+-----------------------------------+
 
 SysOps Ninjas
 ~~~~~~~~~~~~~
 
-The **SysOps ninjas** ensure the efficient performance of Sponge's servers.
+The **SysOps Ninjas** ensure the efficient performance of Sponge's servers.
 
 +-----------------------------------+-----------------------------------+
 | Name                              | Role                              |
@@ -132,15 +120,11 @@ The **SpongeDocs Editors** diligently write articles for Sponge's official docum
 +===================================+===================================+
 | boformer                          | Editor and Contributor            |
 +-----------------------------------+-----------------------------------+
-| Cedeel                            | Editor and Contributor            |
-+-----------------------------------+-----------------------------------+
 | hawtre                            | Editor and Contributor            |
 +-----------------------------------+-----------------------------------+
 | Saladoc                           | Editor and Contributor            |
 +-----------------------------------+-----------------------------------+
 | Tyrannokapi                       | Editor and Contributor            |
-|                                   |                                   |
-|                                   | Space-age Whiz Kid                |
 +-----------------------------------+-----------------------------------+
 
 Moderators and Support
@@ -152,18 +136,14 @@ Moderators and Support
 | Name                              | Role                              |
 +===================================+===================================+
 | Dockter                           | Moderator                         |
-|                                   |                                   |
-|                                   | Cat Aficionado                    |
 +-----------------------------------+-----------------------------------+
-| drtshock                          | Forum and IRC Moderator           |
+| drtshock                          | Moderator                         |
 +-----------------------------------+-----------------------------------+
 | FerusGrim                         | Moderator                         |
 +-----------------------------------+-----------------------------------+
 | Grinch                            | Moderator                         |
 +-----------------------------------+-----------------------------------+
 | mbaxter                           | Moderator                         |
-|                                   |                                   |
-|                                   | Chief of Kittens                  |
 +-----------------------------------+-----------------------------------+
 | phroa                             | IRC Moderator                     |
 +-----------------------------------+-----------------------------------+
@@ -178,9 +158,11 @@ This list is here to thank them and acknowledge their valuable contributions.
 +-----------------------------------+-----------------------------------+
 | Name                              | Role                              |
 +===================================+===================================+
+| Cedeel                            | Editor and Contributor            |
++-----------------------------------+-----------------------------------+
 | DarkArc                           | Developer                         |
 +-----------------------------------+-----------------------------------+
-| DarkArcana                        | Forum Admin, Support and PR       |
+| DarkArcana                        | Forum & IRC Admin                 |
 +-----------------------------------+-----------------------------------+
 | Disconsented                      | Moderator                         |
 +-----------------------------------+-----------------------------------+
@@ -194,5 +176,5 @@ This list is here to thank them and acknowledge their valuable contributions.
 +-----------------------------------+-----------------------------------+
 | sibomots                          | Developer, LLC Founder            |
 +-----------------------------------+-----------------------------------+
-| TnT                               | Cheerleader                       |
+| TnT                               | Consultant                        |
 +-----------------------------------+-----------------------------------+
