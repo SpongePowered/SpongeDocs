@@ -88,7 +88,7 @@ The **API and Implementation Developers** work on producing the Sponge API, and 
 
 
 Systems Management and Website Developers
-~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The **Systems Managers** ensure the efficient performance of Sponge's servers and the **Website Developers** make the Sponge website look completely awesome.
 
