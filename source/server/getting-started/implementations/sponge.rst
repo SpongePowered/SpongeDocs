@@ -1,26 +1,24 @@
-================
-Sponge (coremod)
-================
+==============
+Sponge Coremod
+==============
 
-Overview
-========
+Sponge Coremod integrates `Minecraft Forge <http://www.minecraftforge.net/>`__ so you can also run Minecraft Forge mods. In actually, it's more like Sponge itself is a Forge mod that then loads Sponge plugins, but this is a technical detail.
 
-Sponge (coremod) is a Forge implementation of the Sponge API.
+Users who do not want to use Minecraft Forge can consider :doc:`spongevanilla`.
 
 Download
 ========
 
 Check :doc:`../../../downloads` for further information.
 
-Choosing the correct version
-============================
+Reading the Download Filename
+=============================
 
-Compatibility Information
-~~~~~~~~~~~~~~~~~~~~~~~~~
+When you download Sponge Coremod, the name of the file will provide some important version information.
 
-All compatibility information for the Sponge coremod is encoded within the file name. The names are formed like this: ``{MCVersion}-{ForgeVersion}-{SpongeAPIVersion}{SpongeBuildId}``	
+The format of the filename is ``{MCVersion}-{ForgeVersion}-{SpongeAPIVersion}{SpongeBuildId}``	
 	
-Note that there is no separator between the Sponge API Version and the Sponge Build Id
+Note that there is no separator between the Sponge API Version and the Sponge Build ID.
 	
 +----------------------+-------------------------------------------------------------------------------------------------------------+
 | ``MCVersion``        | The minecraft version. Only clients compatible with this version can connect.                               |

@@ -2,33 +2,35 @@
 Choosing an Implementation
 ==========================
 
-Overview
-========
+Something that runs Sponge plugins is called an *implementation*. As long as a plugin is correctly made using the "Sponge API," it should run correctly on any sufficiently-complete implementation.
 
-What is an implementation?
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+Minecraft can't run Sponge plugins out of the box, but you can modify it to do so. 
 
-Think of implementations like chocolate chip cookies. There are tons of bakeries that sell chocolate chip cookies, and each bakery may bake their cookies differently from one another. Yet, every cookie shares one thing in common: they all have chocolate chips.
+The Sponge API itself is an `open standard <https://github.com/SpongePowered/SpongeAPI>`__.
 
-When using the analogy of chocolate chip cookies:
+Available Implementations
+=========================
 
-* The Sponge API is a chocolate chip.
-* The developers of each implementation are different bakeries.
-* Each implementation of the Sponge API is a different brand of chocolate chip cookies.
+There are currently three implementations:
 
-There are currently two official implementations of the Sponge API:
+.. csv-table::
+   :header: "Name", "Based on"
 
-* **Sponge Coremod**: The implementation of the Sponge API, created as a coremod for the Forge platform.
-* **SpongeVanilla**: The implementation of the Sponge API directly on top of the vanilla Minecraft server.
+   :doc:`Sponge Coremod <sponge>`,"Mojang's Minecraft and Minecraft Forge"
+   :doc:`Sponge Vanilla <spongevanilla>`,"Mojang's Minecraft"
+   :doc:`Glowstone <glowstone>` (not developed by the Sponge team),"(standalone)"
 
-And an unofficial implementation:
+Which do I choose?
+~~~~~~~~~~~~~~~~~~
 
-* **Glowstone**: The implementation of the Sponge API, based on a completely rewritten Minecraft server.
+The first two items listed in the table change Minecraft's existing code to run Sponge plugins and are ideal if you want something that plays exactly the same as unmodified Minecraft (same world generation, same Redstone mechanics). The first option also integrates `Minecraft Forge <http://www.minecraftforge.net/forum/>`__, which lets you run Minecraft Forge mods alongside Sponge plugins.
 
-How do I know which one to choose?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+While it would may appear that the Coremod option may be the best, you may want to consider the other options because of:
 
-It is necessary to evaluate your individual needs to determine which implementation is best for you. SpongeDocs provides articles covering each implementation to aid in your decision.
+* Performance concerns, as other options may use less memory and CPU to do the same task
+* Open source concerns, as only Glowstone is fully open source (Minecraft isn't)
+
+The goal is for all listed implementations to run all Sponge plugins correctly and in the same way, so you should be able to switch between different implementations at a later time (as far as plugins are concerned).
 
 Contents
 ========
