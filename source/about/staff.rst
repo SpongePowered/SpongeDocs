@@ -39,7 +39,7 @@ The **Team Leaders** of Sponge each coordinate a separate aspect of the Sponge p
 +-----------------------------------+-----------------------------------+
 | Inscrutable                       | SpongeDocs Leader                 |
 +-----------------------------------+-----------------------------------+
-| lukegb                            | System Operations Leader          |
+| lukegb                            | Systems Management Leader         |
 +-----------------------------------+-----------------------------------+
 | Me4502                            | Subreddit Leader & Developer      |
 +-----------------------------------+-----------------------------------+
@@ -57,17 +57,15 @@ The **API and Implementation Developers** work on producing the Sponge API, and 
 +===================================+===================================+
 | Aaron1011                         | Developer                         |
 +-----------------------------------+-----------------------------------+
-| AbrarSyed                         | ForgeGradle Specialist            |
-+-----------------------------------+-----------------------------------+
 | AzureusNation                     | Developer                         |
 +-----------------------------------+-----------------------------------+
 | DDoS                              | Developer                         |
 +-----------------------------------+-----------------------------------+
 | Deamon                            | Developer                         |
 +-----------------------------------+-----------------------------------+
-| gabizou                           | Developer                         |
+| gabizou                           | API Design Specialist             |  
 |                                   |                                   |
-|                                   | API Design Specialist             |
+|                                   | Developer                         |
 +-----------------------------------+-----------------------------------+
 | jckf                              | Developer                         |
 +-----------------------------------+-----------------------------------+
@@ -75,7 +73,9 @@ The **API and Implementation Developers** work on producing the Sponge API, and 
 +-----------------------------------+-----------------------------------+
 | modwizcode                        | Developer                         |
 +-----------------------------------+-----------------------------------+
-| Mumfrey                           | Bytecode Engineer & Developer     |
+| Mumfrey                           | Bytecode Engineer                 |
+|                                   |                                   |
+|                                   | Developer                         |
 +-----------------------------------+-----------------------------------+
 | simon816                          | Developer                         |
 +-----------------------------------+-----------------------------------+
@@ -86,46 +86,40 @@ The **API and Implementation Developers** work on producing the Sponge API, and 
 | zml                               | Developer                         |
 +-----------------------------------+-----------------------------------+
 
-Website Ninjas
+
+Systems Management and Website Developers
 ~~~~~~~~~~~~~~
 
-The **Website Ninjas** make the Sponge website look completely awesome.
+The **Systems Managers** ensure the efficient performance of Sponge's servers and the **Website Developers** make the Sponge website look completely awesome.
 
 +-----------------------------------+-----------------------------------+
 | Name                              | Role                              |
 +===================================+===================================+
-| Kornagan                          | Website Designer                  |
+| armed_troop                       | Systems Management                |
++-----------------------------------+-----------------------------------+
+| GenPage                           | Systems Management                |
++-----------------------------------+-----------------------------------+
+| Kornagan                          | Developer                         |
 +-----------------------------------+-----------------------------------+
 
-SysOps Ninjas
-~~~~~~~~~~~~~
-
-The **SysOps Ninjas** ensure the efficient performance of Sponge's servers.
-
-+-----------------------------------+-----------------------------------+
-| Name                              | Role                              |
-+===================================+===================================+
-| armed_troop                       | System Operations Ninja           |
-+-----------------------------------+-----------------------------------+
-| GenPage                           | System Operations Ninja           |
-+-----------------------------------+-----------------------------------+
 
 SpongeDocs Editors
 ~~~~~~~~~~~~~~~~~~
 
-The **SpongeDocs Editors** diligently write articles for Sponge's official documentation.
+The **SpongeDocs Editors** write, edit, and maintain articles for Sponge's official documentation.
 
 +-----------------------------------+-----------------------------------+
 | Name                              | Role                              |
 +===================================+===================================+
-| boformer                          | Editor and Contributor            |
+| boformer                          | Editor                            |
 +-----------------------------------+-----------------------------------+
-| hawtre                            | Editor and Contributor            |
+| hawtre                            | Editor                            |
 +-----------------------------------+-----------------------------------+
-| Saladoc                           | Editor and Contributor            |
+| Saladoc                           | Editor                            |
 +-----------------------------------+-----------------------------------+
-| Tyrannokapi                       | Editor and Contributor            |
+| Tyrannokapi                       | Editor                            |
 +-----------------------------------+-----------------------------------+
+
 
 Moderators and Support
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -145,7 +139,7 @@ Moderators and Support
 +-----------------------------------+-----------------------------------+
 | mbaxter                           | Moderator                         |
 +-----------------------------------+-----------------------------------+
-| phroa                             | IRC Moderator                     |
+| phroa                             | Moderator                         |
 +-----------------------------------+-----------------------------------+
 
 
@@ -158,11 +152,9 @@ This list is here to thank them and acknowledge their valuable contributions.
 +-----------------------------------+-----------------------------------+
 | Name                              | Role                              |
 +===================================+===================================+
-| Cedeel                            | Editor and Contributor            |
+| Cedeel                            | Editor                            |
 +-----------------------------------+-----------------------------------+
-| DarkArc                           | Developer                         |
-+-----------------------------------+-----------------------------------+
-| DarkArcana                        | Forum & IRC Admin                 |
+| DarkArcana                        | Community and IRC Leader          |
 +-----------------------------------+-----------------------------------+
 | Disconsented                      | Moderator                         |
 +-----------------------------------+-----------------------------------+
@@ -170,11 +162,11 @@ This list is here to thank them and acknowledge their valuable contributions.
 +-----------------------------------+-----------------------------------+
 | kobata                            | Developer                         |
 +-----------------------------------+-----------------------------------+
-| Kodfod                            | Senior Editor                     |
+| Kodfod                            | Docs Leader                       |
 +-----------------------------------+-----------------------------------+
-| Pandette                          | Editor and Contributor            |
+| Pandette                          | Editor                            |
 +-----------------------------------+-----------------------------------+
-| sibomots                          | Developer, LLC Founder            |
+| sibomots                          | Developer, LLC Director           |
 +-----------------------------------+-----------------------------------+
-| TnT                               | Consultant                        |
+| TnT                               | Moderator                         |
 +-----------------------------------+-----------------------------------+
