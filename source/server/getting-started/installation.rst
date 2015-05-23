@@ -9,7 +9,7 @@ Recall that there are two official variants of Sponge (coremod and SpongeVanilla
 
 Instructions for both are listed on this page.
 
-You will also need to :doc:`install Java <jre>`. To recap, Java 7 is recommended, but Java 8 should work too.
+You will also need to :doc:`install Java <jre>`. To recap, Java 8 is recommended, but Java 7 should work too.
 
 Installing Sponge (coremod)
 ===========================
