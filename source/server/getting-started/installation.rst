@@ -9,6 +9,8 @@ Recall that there are two official variants of Sponge (coremod and SpongeVanilla
 
 Instructions for both are listed on this page.
 
+You will also need to :doc:`install Java <jre>`. To recap, Java 7 is recommended, but Java 8 should work too.
+
 Installing Sponge (coremod)
 ===========================
 
@@ -16,15 +18,17 @@ Installing Sponge (coremod)
 
     If you use (or are planning to use) a game server host, they may have a control panel that can install Sponge for you.
 
-In-Game LAN Servers
-~~~~~~~~~~~~~~~~~~~
+Single Player / In-Game LAN Servers
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Download the Minecraft Forge installer from the `Minecraft Forge website <http://files.minecraftforge.net/>`_. The latest version, or any version that's newer than the one listed :doc:`in the filename of the Sponge download <implementations/sponge>`, should work.
 #. Run the provided Forge installer. A new Forge profile will be created in the Minecraft launcher.
 #. Open the Minecraft launcher, and select the new Forge profile.
 #. Click "Options" and click "Open Game Dir".
 #. Download the Sponge coremod from the Sponge website and put it into the ``mods`` folder. Create the folder if it does not yet exist.
-#. You may now open a single-player world to LAN.
+#. Sponge should work in both in single player and if you open your world to LAN.
+
+Next, learn :doc:`how you can configure Sponge <configuration/index>` and how to :doc:`how to manage your server <../management/index>` (including installing plugins).
 
 Dedicated Servers
 ~~~~~~~~~~~~~~~~~
@@ -42,6 +46,8 @@ Via GUI
 #. You may now launch the server via command or launch script ``java -jar forge-version-XYZ.jar``.
 #. Set up :doc:`port-forward` to ensure others can connect.
 
+Next, learn :doc:`how you can configure Sponge <configuration/index>` and how to :doc:`how to manage your server <../management/index>` (including installing plugins).
+
 Headless (Command-line)
 -----------------------
 
@@ -56,12 +62,16 @@ Or you can do both in one go:
 
 * ``java -jar sponge.jar go``
 
+Next, learn :doc:`how you can configure Sponge <configuration/index>` and how to :doc:`how to manage your server <../management/index>` (including installing plugins).
+
 .. tip::
 
     Developer Me4502 has provided a `tutorial video for installing Sponge (coremod). <https://www.youtube.com/watch?v=UTIyjjO6lxY>`__
 
 Installing SpongeVanilla
 ========================
+
+SpongeVanilla only works as a dedicated server.
 
 1. Download the SpongeVanilla .jar from the Sponge website.
 #. Run it via command line: ``java -jar spongevanilla-whatever.jar``
