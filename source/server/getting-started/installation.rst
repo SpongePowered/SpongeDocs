@@ -5,64 +5,66 @@ Installing Sponge
 Overview
 ========
 
-The intent of this article is to help new server owners install Sponge. Please note that the process described here may vary depending on the platform used.
+Recall that there are two official variants of Sponge (coremod and SpongeVanilla) — they both run Sponge plugins identically (that's the goal), but how either work behind the scenes (the code) differs. This is better explained in the :doc:`implementations/index` page.
+
+Instructions for both are listed on this page.
 
 Installing Sponge (coremod)
 ===========================
 
 .. note::
 
-    If you use (or are planning to use) a third-party dedicated server or shared hosting, you may be provided with a panel to aid in the management of your server. It may be unnecessary to follow the instructions detailed below, depending on what is provided by your host.
+    If you use (or are planning to use) a game server host, they may have a control panel that can install Sponge for you.
 
-Single Player LAN Servers
-~~~~~~~~~~~~~~~~~~~~~~~~~
+In-Game LAN Servers
+~~~~~~~~~~~~~~~~~~~
 
-1. Download the correct Forge release for your Minecraft version from the `Minecraft Forge website <http://files.minecraftforge.net/>`_. Sponge should be compatible with the latest 1.8 Forge build. If you're unsure which version to choose, take a look here: :doc:`implementations/sponge`
+1. Download the Minecraft Forge installer from the `Minecraft Forge website <http://files.minecraftforge.net/>`_. The latest version, or any version that's newer than the one listed :doc:`in the filename of the Sponge download <implementations/sponge>`, should work.
 #. Run the provided Forge installer. A new Forge profile will be created in the Minecraft launcher.
 #. Open the Minecraft launcher, and select the new Forge profile.
 #. Click "Options" and click "Open Game Dir".
 #. Download the Sponge coremod from the Sponge website and put it into the ``mods`` folder. Create the folder if it does not yet exist.
 #. You may now open a single-player world to LAN.
 
-New Forge Server Installation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Dedicated Servers
+~~~~~~~~~~~~~~~~~
 
-1. Download the correct Forge release for your Minecraft version from the `Minecraft Forge website <http://files.minecraftforge.net/>`_. Sponge should be compatible with the latest 1.8 Forge build. If you're unsure which version to choose, take a look here: :doc:`implementations/sponge`
-#. Run the provided Forge installer, and select "Install Server" in a clean directory.
+.. note::
+    
+    If you already have a Forge server, just put the Sponge mod into your ``mods`` folder. Remember to update your Forge version if it's older than the one that :doc:`sponge requires <implementations/sponge>`.
+
+Via GUI
+--------
+
+1. Download the Minecraft Forge installer from the `Minecraft Forge website <http://files.minecraftforge.net/>`_. The latest version, or any version that's newer than the one listed :doc:`in the filename of the Sponge download <implementations/sponge>`, should work.
+#. Run the provided Forge installer, select "Install Server", choose an empty folder to place the server's files, and then click OK.
 #. Download the Sponge coremod from the Sponge website and put it into the ``mods`` folder in your server directory. Create the folder if it does not yet exist.
 #. You may now launch the server via command or launch script ``java -jar forge-version-XYZ.jar``.
 #. Set up :doc:`port-forward` to ensure others can connect.
 
-Headless Forge Server Installation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Headless (Command-line)
+-----------------------
 
-The sponge.jar file now has command-line functionality, and can be used to install and launch a server. 
-Please note that installing Forge, and using Sponge as a mod, should always be the preferred course of action for most users. The self-installer is primarily intended for headless servers.
+If you are installing the server on your personal computer or via remote deskop, we recommend using the steps listed above instead.
 
-The commands required to set up and run the server are:
+However, if you are working via command line or SSH, run the following commands where you want to put the server's files (after downloading the Sponge coremod):
 
-* ``java -jar sponge.jar install``
-* ``java -jar sponge.jar run``
+1. ``java -jar sponge.jar install``
+#. ``java -jar sponge.jar run``
 
-There is also a command which does both:
+Or you can do both in one go:
 
 * ``java -jar sponge.jar go``
-
-Existing Forge Server Installation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Obtain the Sponge coremod from the Sponge website and place it into your server's ``mods`` folder.
 
 .. tip::
 
     Developer Me4502 has provided a `tutorial video for installing Sponge (coremod). <https://www.youtube.com/watch?v=UTIyjjO6lxY>`__
 
-
 Installing SpongeVanilla
 ========================
 
 1. Download the SpongeVanilla .jar from the Sponge website.
-#. Run it via CMD: ``java -jar spongevanilla-whatever.jar``
+#. Run it via command line: ``java -jar spongevanilla-whatever.jar``
 #. Set up :doc:`port-forward` to ensure others can connect.
 
 .. warning::
