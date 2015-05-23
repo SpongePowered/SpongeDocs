@@ -24,17 +24,17 @@ groupId         io.github.user             The maven groupId, useful more for pl
 artifactId      myproject                  The project id, also used as plugin id and name of the generated folder
 version         1.0-SNAPSHOT               The initial version for your plugin. Can (and should) be changed as development progresses
 package         io.github.user.myproject   The package your plugin class will be generated in
-githubProject   user/repo                  The github project. If a value is specified that is not user/repo, issue tracking and SCM sections are added to the pom 
+githubProject   user/repo                  The Github project. If a value is specified that is not user/repo, issue tracking and SCM sections are added to the pom 
 ============== ========================== =====================================================================
 
 These can be specified as arguments to Maven in the form ``-Dproperty=value``
 
 Usage
 ~~~~~
-This archetype requires Maven 3 or newer. Invoke maven with the goal archetype:generate. Maven will prompt for any required paramaters, but optional parameters must be specified on the command line.
+This archetype requires Maven 3 or newer. Invoke maven with the goal ``archetype:generate``. Maven will prompt for any required properties, but optional properties must be specified on the command line.
 
 .. code-block:: bash
 
-    $ mvn archetype:generate -DarchetypeCatalog=http://repo.spongepowered.org/maven -DgithubProject=waylon531/spongeparty
+    $ mvn archetype:generate -DarchetypeArtifactId=sponge-plugin-archetype -DarchetypeGroupId=org.spongepowered -DarchetypeRepository=http://repo.spongepowered.org/maven -DarchetypeVersion=1.0 -DgithubProject=waylon531/spongeparty
 
-This archetype will be in the presented list under the specifier org.spongepowered:sponge-plugin-archetype. 
+The first four arguments specify where maven will find the archetype and which version to use. The ``-DgithubProject=waylon531/spongeparty`` parameter is an optional property for the generated project and can be left out if you do not intend to host your plugin on Github. 
