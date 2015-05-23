@@ -1,51 +1,30 @@
-==================
-Installing the JRE
-==================
+===============
+Installing Java
+===============
 
-Introducing Java
-----------------
+Java is needed to run Sponge and Minecraft. You most likely already have Java, but you may need to update it.
 
-Java is a computer language used by programmers to develop their software,
-differing from many other languages in its "Write Once, Run Anywhere" capability.
-This means that any program using Java, such as Minecraft, can run on any Operating System,
-so long as that computer has hardware powerful enough to run the program. Java is able
-to run on this wide variety of systems by creating a virtual computer known as the
-"Java Virtual Machine", on which Java programs will run.
+Sponge recommends that you install Java 8 at this time. Java 7 will work as well, but Java 6 is not recommended and may not work correctly. The difference between major versions of Java (6, 7, 8) is fairly significant, and newer versions run much better.
 
+Installing Java
+===============
 
-What's the Difference Between JRE and JDK?
-------------------------------------------
+If you have Windows or Mac OS X for your computer, you can `download Java from the official website <https://java.com/en/download/manual.jsp>`__.
 
-**JRE**: The JRE (Java Runtime Environment) is required to run any Java program on a system,
-without it, the system cannot create the Java Virtual Machine. If you want to run a Sponge
-(Minecraft) server, you require the JRE.
+Linux users can install OpenJDK via their package manager. OpenJDK is the open source version of the Oracle version of Java, and it should work just as well, if not better. However, it's also possible to `download the Oracle version for Linux <http://www.oracle.com/technetwork/java/javase/downloads/index.html>`__, but be aware that many Java-dependent Linux packages will still install OpenJDK anyway.
 
-**JDK**: The JDK (Java Development Kit) is used by Developers to create programs such as Minecraft,
-as well as Mods and Plugins. If you do not need to do any coding and simply run a server, you will
-not need the JDK.
+32-bit vs. 64-bit
+~~~~~~~~~~~~~~~~
 
+If your computer supports it, you should use 64-bit versions of Java whenever possible. The Java installers from the linked website should detect whether your computer is ready for 64-bit.
 
-What's the Difference Between 32-bit and 64-bit?
-------------------------------------------------
+Because the 64-bit version of Java runs considerably better, and also lets Java use more than ~3 GB of your RAM (memory), we always recommend it over 32-bit.
 
-**32-bit**: 32-bit Java is the most common Java installation, due to it being the default download
-for most systems. Due to the small maximum RAM allocation of ~1.6 GB, 32-bit is not recommended
-for anything other than extremely small servers.
+Most modern computers support 64-bit.
 
-**64-bit**: 64-bit Java, while less commonly installed, has numerous advantages over 32-bit.
-The amount of memory that can be allocated increases to approximately 3 TB, so you can throw
-as much memory as your computer has towards your server. 64-bit Java can also run faster than
-32-bit, meaning that you can make the most of your processing power.
+JDK vs. JRE
+~~~~~~~~~~
 
+The JRE (Java Runtime Environment) is used to run Java applications. The download page linked above provides the JRE.
 
-How to Install Java On Your Computer
-------------------------------------
-
-Download and install the latest version of the Java Runtime
-Environment (JRE) available for your operating system. Sponge (and Minecraft)
-are built on Java 6, however you are recommended and encouraged to use Java 8.
-Earlier versions of Java are no longer supported and may have security issues. 
-Oracle Java is a good option for most Operating Systems.
-If you are running a 64-bit Operating System, use 64-bit Java.
-
--  `Java 8 <https://java.com/en/download/manual.jsp>`__
+The JDK (Java Development Kit) is used to create Java applications, and you do not need it unless you plan to make Sponge plugins or work on Sponge. However, in some cases, you may need the JDK to diagnose a running Java application such as Sponge. You can download the JDK `from a different site <http://www.oracle.com/technetwork/java/javase/downloads/index.html>`__.
