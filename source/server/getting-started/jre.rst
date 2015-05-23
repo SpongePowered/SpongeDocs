@@ -14,7 +14,7 @@ If you have Windows or Mac OS X for your computer, you can `download Java from t
 Linux users can install OpenJDK via their package manager. OpenJDK is the open source version of the Oracle version of Java, and it should work just as well, if not better. However, it's also possible to `download the Oracle version for Linux <http://www.oracle.com/technetwork/java/javase/downloads/index.html>`__, but be aware that many Java-dependent Linux packages will still install OpenJDK anyway.
 
 32-bit vs. 64-bit
-~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
 
 If your computer supports it, you should use 64-bit versions of Java whenever possible. The Java installers from the linked website should detect whether your computer is ready for 64-bit.
 
@@ -23,7 +23,7 @@ Because the 64-bit version of Java runs considerably better, and also lets Java 
 Most modern computers support 64-bit.
 
 JDK vs. JRE
-~~~~~~~~~~
+~~~~~~~~~~~
 
 The JRE (Java Runtime Environment) is used to run Java applications. The download page linked above provides the JRE.
 
