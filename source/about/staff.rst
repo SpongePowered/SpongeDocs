@@ -14,6 +14,10 @@ The **Project Leaders** are the stewards of the Sponge project, and make the fin
 +===================================+===================================+
 | blood                             | Implementation (Forge) Leader     |
 +-----------------------------------+-----------------------------------+
+| Owexz                             | Community Leader                  |
+|                                   |                                   |
+|                                   | LLC Director                      |
++-----------------------------------+-----------------------------------+
 | sk89q                             | Resources Leader                  |
 +-----------------------------------+-----------------------------------+
 | Zidane                            | Implementation (Vanilla) Leader   |
@@ -36,10 +40,6 @@ The **Team Leaders** of Sponge each coordinate a separate aspect of the Sponge p
 | lukegb                            | Systems Management Leader         |
 +-----------------------------------+-----------------------------------+
 | Me4502                            | Subreddit Leader & Developer      |
-+-----------------------------------+-----------------------------------+
-| Owexz                             | Community Leader                  |
-|                                   |                                   |
-|                                   | LLC Director                      |
 +-----------------------------------+-----------------------------------+
 | progwml6                          | Distribution & IRC Leader         |
 +-----------------------------------+-----------------------------------+
