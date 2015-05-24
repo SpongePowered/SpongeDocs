@@ -140,6 +140,9 @@ Overview of the ``GenericArguments`` command elements
 |                            |                                                                                         |                               |
 |                            |                                                                                         | Value Flag: inherited         |
 +----------------------------+-----------------------------------------------------------------------------------------+-------------------------------+
+| ``requiringPermission``    | Requires the command sender to have the specified permission in order to use the given  | inherited                     |
+|                            | command argument                                                                        |                               |
++----------------------------+-----------------------------------------------------------------------------------------+-------------------------------+
 
 .. tip::
 
