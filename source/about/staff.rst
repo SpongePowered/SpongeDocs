@@ -14,13 +14,7 @@ The **Project Leaders** are the stewards of the Sponge project, and make the fin
 +===================================+===================================+
 | blood                             | Implementation (Forge) Leader     |
 +-----------------------------------+-----------------------------------+
-| Owexz                             | Community Leader                  |
-|                                   |                                   |
-|                                   | LLC Director                      |
-+-----------------------------------+-----------------------------------+
-| sk89q                             | Absent until further notice       |
-|                                   |                                   |
-|                                   | Role fulfilled by Owexz           |
+| sk89q                             | Resources Leader                  |
 +-----------------------------------+-----------------------------------+
 | Zidane                            | Implementation (Vanilla) Leader   |
 |                                   |                                   |
@@ -43,6 +37,10 @@ The **Team Leaders** of Sponge each coordinate a separate aspect of the Sponge p
 +-----------------------------------+-----------------------------------+
 | Me4502                            | Subreddit Leader & Developer      |
 +-----------------------------------+-----------------------------------+
+| Owexz                             | Community Leader                  |
+|                                   |                                   |
+|                                   | LLC Director                      |
++-----------------------------------+-----------------------------------+
 | progwml6                          | Distribution & IRC Leader         |
 +-----------------------------------+-----------------------------------+
 
@@ -58,6 +56,8 @@ The **API and Implementation Developers** work on producing the Sponge API, and 
 | Aaron1011                         | Developer                         |
 +-----------------------------------+-----------------------------------+
 | AzureusNation                     | Developer                         |
++-----------------------------------+-----------------------------------+
+| Dark_Arc                          | Developer                         |
 +-----------------------------------+-----------------------------------+
 | DDoS                              | Developer                         |
 +-----------------------------------+-----------------------------------+
