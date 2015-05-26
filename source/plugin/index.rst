@@ -28,3 +28,5 @@ Contents
 
     basics/index
     advanced/index
+    tutorials
+    
