@@ -2,7 +2,7 @@
 Sponge Coremod
 ==============
 
-Sponge Coremod integrates `Minecraft Forge <http://www.minecraftforge.net/>`__ so you can also run Minecraft Forge mods. In actually, it's more like Sponge itself is a Forge mod that then loads Sponge plugins, but this is a technical detail.
+Sponge Coremod integrates `Minecraft Forge <http://www.minecraftforge.net/>`__ so you can also run Minecraft Forge mods. In fact, it's more like Sponge itself is a Forge mod that then loads Sponge plugins, but this is a technical detail.
 
 Users who do not want to use Minecraft Forge can consider :doc:`spongevanilla`.
 
