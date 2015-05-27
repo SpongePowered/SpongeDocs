@@ -32,11 +32,11 @@ Anything to do with intercepting packets, or introducing custom items/blocks/ent
 Using Forge or NMS Classes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mods that add to the SpongeAPI using code internals will have to specifically write an API, that does not rely on underlying Minecraft code, to be usable by Sponge plugins.
+Mods which add to the Sponge API using code internals will have to specifically write an API, that does not rely on underlying Minecraft code, to be usable by Sponge plugins.
 However, plugins can be created that load separate “compatibility” modules to interact with the underlying
 implementation (Sponge Coremod or SpongeVanilla).
 
-Plugins that use implementation specific code are very likely to break between versions, and should be clearly labelled as such wherever they are hosted. These may more appropriately labelled as "Mods".
+Plugins using implementation-specific code are very likely to break between versions, and should be clearly labelled as such wherever they are hosted. These may more appropriately labelled as "Mods".
 
 
 Plugin Interoperability
