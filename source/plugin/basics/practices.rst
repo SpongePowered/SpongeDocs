@@ -26,7 +26,7 @@ Mixins can not be used by Plugins. Mixins are specifically for transforming clas
 Packets
 ~~~~~~~
 
-Anything to do with intercepting packets, adding NPCs, or introducing custom items/blocks/entities/etc, is *not* planned to be part of the Sponge API. Plugins/mods that require these will need to invoke Forge/NMS code, or develop some form of compatibility module to perform a similar task.
+Anything to do with intercepting packets, or introducing custom items/blocks/entities/etc, is *not* planned to be part of the Sponge API. In some cases it may be possible to add whatever is needed to the Sponge API; otherwise, the alternative is to use the Forge API and create a Mod instead. 
 
 
 Plugin Interoperability
@@ -42,5 +42,5 @@ Mods that add to the SpongeAPI using code internals will have to specifically wr
 However, plugins can be created that load separate “compatibility” modules to interact with the underlying
 implementation (Sponge Coremod or SpongeVanilla).
 
-Plugins that use implementation specific code are very likely to break between versions, and should be clearly labelled as such wherever they are hosted.
+Plugins that use implementation specific code are very likely to break between versions, and should be clearly labelled as such wherever they are hosted. These may more appropriately labelled as 'Mods'.
 
