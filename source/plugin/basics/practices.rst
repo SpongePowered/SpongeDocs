@@ -20,7 +20,7 @@ An Economy API is currently in development, using the Services API. It is antici
 Mixins
 ~~~~~~
 
-Mixins are specifically for transforming classes before other mods/plugins start. ForgeModLoader calls these mods “Coremods”. Sponge is a Coremod, and deploys Mixins on startup. :doc:`../../contributing/common/mixins.rst` can not be used by plugins.
+Mixins are specifically for transforming classes before other mods/plugins start. ForgeModLoader calls these mods “Coremods”. Sponge is a Coremod, and deploys Mixins on startup. Mixins cannot be used by plugins.
 
 
 Packets
