@@ -20,7 +20,8 @@ An Economy API is currently in development, using the Services API. It is antici
 Mixins
 ~~~~~~
 
-Mixins can not be used by plugins. Mixins are specifically for transforming classes before other mods/plugins start. ForgeModLoader calls these mods “Coremods”. Sponge is a Coremod, and deploys Mixins on startup.  
+:doc:`Mixins <../../contributing/common/mixins.rst>` are specifically for transforming classes before other mods/plugins start. ForgeModLoader calls these mods “Coremods”. Sponge is a Coremod, and deploys Mixins on startup. Mixins can not be used by plugins.
+
 
 
 Packets
@@ -32,8 +33,8 @@ Anything to do with intercepting packets, or introducing custom items/blocks/ent
 Using Forge or NMS Classes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-We do not recommend working with Forge or Minecraft base classes at all, unless it is to provide compatibility with a mod for Sponge API.
-Mods which add to the Sponge API using code internals will have to specifically write an API, that does not rely on underlying Minecraft code, to be usable by Sponge plugins.
+We do not recommend working with Forge or Minecraft base classes at all, unless it is to provide compatibility with a mod for Sponge API. Most uses of NMS (Native Minecraft Server) code in plugins do not fail gracefully, making troubleshooting very difficult. Maintaining NMS modifications is also more difficult than using the Sponge API.
+Mods that add to the Sponge API using code internals will have to specifically write an API, which does not rely on underlying Minecraft code, to be usable by Sponge plugins.
 However, plugins can be created that load separate “compatibility” modules to interact with the underlying
 implementation (Sponge Coremod or SpongeVanilla).
 
