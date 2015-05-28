@@ -56,10 +56,6 @@ In addition, the object that has these methods must be registered with the event
 Note that, by default, ``@Subscribe`` is configured so that your event handler will *not* be called if the event in question is cancellable 
 and has been cancelled (such as by another plugin).
 
-.. note::
-
-    It is currently not possible to register a dynamic event handler by providing an event type and a handler.
-
 About @Subscribe
 ~~~~~~~~~~~~~~~~
 
