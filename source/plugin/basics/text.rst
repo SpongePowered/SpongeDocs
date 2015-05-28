@@ -21,7 +21,7 @@ Example:
 
     Text unformattedText = Texts.of("Hey! This is unformatted text!");
 
-The code excerpt illustrated above will return uncolored, unformatted text with no `text actions <#text-actions>`_ configured.
+The code excerpt illustrated above will return uncolored, unformatted text with no :ref:`text actions <text-actions>` configured.
 
 Working with the Text Builder
 =============================
@@ -109,6 +109,8 @@ Example: Color & Style Shortcut
     import org.spongepowered.api.text.Texts;
 
     Text colorAndStyleText = Texts.of(TextColors.RED, TextStyles.ITALIC, "Shortcuts for the win!");
+
+.. _text-actions:
 
 Text Actions
 ~~~~~~~~~~~~
