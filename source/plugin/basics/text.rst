@@ -21,7 +21,7 @@ Example:
 
     Text unformattedText = Texts.of("Hey! This is unformatted text!");
 
-The code excerpt illustrated above will return uncolored text, with no events configured.
+The code excerpt illustrated above will return uncolored, unformatted text with no `text actions <#text-actions>`_ configured.
 
 Working with the Text Builder
 =============================
