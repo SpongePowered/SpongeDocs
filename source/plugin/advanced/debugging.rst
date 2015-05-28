@@ -82,6 +82,10 @@ Testing the Configuration
 
 After you've followed the previous steps, you should be ready to start debugging.
 
+.. tip:: 
+    
+    Once a single server tick takes more than a given amount of time, the watchdog will consider the server crashed and forcefully shut it down. When working with breakpoints or executing code step by step this might occur, so it is recommended that you edit your test environments ``server.properties`` file and set the value of ``max-tick-time`` to either a very large number (the amount of milliseconds a tick may take) or ``-1`` (to disable the Watchdog completely).
+
 IntelliJ
 ~~~~~~~~
 
@@ -95,6 +99,7 @@ Rather than pressing the green right-pointing arrow to run your Run/Debug config
 the Debug icon (the one displaying a bug) and click your Sponge (Server) configuration. If it doesn't appear in the
 drop-down menu, click ``Debug Configurations``. Select ``Sponge (Server)`` configuration and hit the ``Debug`` button
 on the bottom left.
+
 
 Hotswapping
 ===========
