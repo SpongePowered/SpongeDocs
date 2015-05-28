@@ -25,7 +25,7 @@ Apply the ``CommandElement`` to the command builder with the ``setArguments()`` 
 It is possible to pass more than one ``CommandElement`` to the method, thus chaining multiple arguments (e.g ``/msg <player> <msg>``). This has the same effect as wrapping the ``CommandElement`` objects in a ``GenericArguments.seq()`` element.
 
 Example: Building a Command with Multiple Arguments
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+===================================================
 
 .. code-block:: java
 
@@ -65,7 +65,7 @@ Example: Building a Command with Multiple Arguments
     
 
 Overview of the ``GenericArguments`` command elements
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=====================================================
 
 .. _catalog type: spongepowered.github.io/SpongeAPI/org/spongepowered/api/CatalogTypes.html
 
@@ -136,7 +136,7 @@ Overview of the ``GenericArguments`` command elements
 +----------------------------+-----------------------------------------------------------------------------------------+-------------------------------+
 | ``flags``                  | Returns a builder for command flags (e.g. ``/cmd [-a] [-b <value>]``).                  | Short Flag: one ``Boolean``   |
 |                            |                                                                                         |                               |
-|                            | See :doc:`Advanced Command Arguments <../../advanced/commands/arguments>`               | Long Flag: one ``String``     |
+|                            | See `Flags`_                                                                            | Long Flag: one ``String``     |
 |                            |                                                                                         |                               |
 |                            |                                                                                         | Value Flag: inherited         |
 +----------------------------+-----------------------------------------------------------------------------------------+-------------------------------+
@@ -149,7 +149,74 @@ Overview of the ``GenericArguments`` command elements
     See the `documentation for GenericArguments <http://spongepowered.github.io/SpongeAPI/org/spongepowered/api/util/command/args/GenericArguments.html>`_ 
     for more information.
 
-.. tip::
+Flags
+=====
 
-    It is possible to create custom command elements (e.g. an URL parser or a ``Vector2i`` element). The procedure is described on
-    :doc:`this page <../../advanced/commands/arguments>` 
+Coming soon...
+
+Custom Command Elements
+=======================
+
+It is possible to create custom command elements (e.g. an URL parser or a ``Vector2i`` element).
+
+Example: ``Vector2i`` command element
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: java
+
+   import java.util.Collections;
+   import java.util.List;
+   
+   import org.spongepowered.api.text.Texts;
+   import com.flowpowered.math.vector.Vector2i;
+   import org.spongepowered.api.util.command.CommandSource;
+   import org.spongepowered.api.util.command.args.ArgumentParseException;
+   import org.spongepowered.api.util.command.args.CommandArgs;
+   import org.spongepowered.api.util.command.args.CommandContext;
+   import org.spongepowered.api.text.Text;
+   import org.spongepowered.api.util.command.args.CommandElement;
+   
+   public class Vector2iCommandElement extends CommandElement {
+   
+       protected Vector2iCommandElement(Text key) {
+           super(key);
+       }
+   
+       @Override
+       protected Object parseValue(CommandSource source, CommandArgs args) throws ArgumentParseException {
+       
+           // <x> <y>
+           
+           String xInput = args.next();
+           int x;
+           
+           try {
+               x = Integer.parseInt(xInput);
+           }
+           catch(NumberFormatException e) {
+               throw args.createError(Texts.of("'" + xInput + "' is not a valid number!"));
+           }
+           
+           String yInput = args.next();
+           int y;
+           
+           try {
+               y = Integer.parseInt(yInput);
+           }
+           catch(NumberFormatException e) {
+               throw args.createError(Texts.of("'" + yInput + "' is not a valid number!"));
+           }
+           
+           return new Vector2i(x, y);
+       }
+   
+       @Override
+       public List<String> complete(CommandSource src, CommandArgs args, CommandContext context) {
+           return Collections.emptyList();
+       }
+       
+       @Override
+       public Text getUsage(CommandSource src) {
+           return Texts.of("<x> <y>");
+       }
+   }

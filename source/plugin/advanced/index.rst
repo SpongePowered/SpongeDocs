@@ -10,7 +10,7 @@ Contents
     :titlesonly:
 
     config-in-depth/index
-    commands/index
+    commandcallable
     database
     permissions
     services
