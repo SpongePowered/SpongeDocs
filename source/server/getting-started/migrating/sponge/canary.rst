@@ -13,7 +13,7 @@ Getting Ready
 Worlds
 ~~~~~~
 
-Forge, and thus Sponge, uses the same world structure as vanilla Minecraft. Vanilla Minecraft places the nether (typically ``world_nether``) and the end (typically ``world_the_nether``) dimensions within the ``world`` folder.
+Forge, and thus Sponge, uses the same world structure as vanilla Minecraft. Vanilla Minecraft places the nether (typically ``world_nether``) and the end (typically ``world_the_end``) dimensions within the ``world`` folder.
 
 Canary relocates the nether and end dimensions outside of the ``world`` folder, which must be remedied if it is desired to retain the nether and end dimensions when running Sponge. However, Canary provides an easy method to convert Canary worlds to a structure usable by Sponge with the ``/makevanilla`` command. If the world conversion is successful, the output will be placed in the ``vanilla`` folder.
 
