@@ -41,7 +41,6 @@ Command               Description                               Permission
 ====================  ========================================  ======================
 
 |
-
 **Sponge Command Parameters**
 
 * /sponge chunks [-g] [-d dim] [-w world]
@@ -82,6 +81,7 @@ Command               Description                               Permission
 /forge track          Enable tile entity tracking.
 ====================  ========================================  ====================
 
+|
 For most Forge mods, command permissions are provided in the form ``<modid>.command.<commandname>``. This may not always be the case, so be sure to check the mods you use to be sure.
 
 
@@ -119,6 +119,7 @@ Command               Description                               Permission
 /worldborder          Manage the world border.                  minecraft.command.worldborder 
 ====================  ========================================  ================================
 
+|
 In addition, there are two permissions created by Sponge for controlling the ability to edit commandblocks. Note that this permission uses the actual *name* of the commandblock, which is normally ``@`` by default.
 
 * Allow editing an ordinary commandblock of the given name: minecraft.commandblock.edit.block.<name>
@@ -141,6 +142,6 @@ Command               Description                               Permission
 /tell                 Privately message another player.         minecraft.command.tell
 ====================  ========================================  ======================
 
-
+|
 A full list of vanilla commands can be found at: http://minecraft.gamepedia.com/Commands#List_of_commands.
 Permissions for vanilla Minecraft commands on a Sponge server are of the structure ``minecraft.command.<command>``.
