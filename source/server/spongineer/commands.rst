@@ -41,6 +41,7 @@ Command               Description                               Permission
 ====================  ========================================  ======================
 
 |
+
 **Sponge Command Parameters**
 
 * /sponge chunks [-g] [-d dim] [-w world]
@@ -115,7 +116,7 @@ Command               Description                               Permission
 /worldborder          Manage the world border.                  minecraft.command.worldborder 
 ====================  ========================================  ================================
 
-In addition, there are two permissions created by Sponge for controlling the ability to edit commandblocks:
+In addition, there are two permissions created by Sponge for controlling the ability to edit commandblocks. Note that this permission uses the actual *name* of the commandblock, which is normally ``@`` by default.
 
 * Allow editing an ordinary commandblock of the given name: minecraft.commandblock.edit.block.<name>
 * Allow editing a minecart commandblock of the given name: minecraft.commandblock.edit.minecart.<name>
