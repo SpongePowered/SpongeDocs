@@ -82,6 +82,9 @@ Command               Description                               Permission
 /forge track          Enable tile entity tracking.
 ====================  ========================================  ====================
 
+For most Forge mods, command permissions are provided in the form ``<modid>.command.<commandname>``. This may not always be the case, so be sure to check the mods you use to be sure.
+
+
 Vanilla
 ~~~~~~~
 
