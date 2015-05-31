@@ -40,7 +40,7 @@ The first step is to create a class for the command. The class has to implement 
         }
     
         public Optional<CommandResult> process(CommandSource source, String arguments) throws CommandException {
-            server.broadcastMessage(Texts.of(arguments));
+            server.getBroadcastSink().sendMessage(Texts.of(arguments));
             return Optional.of(CommandResult.success());
         }
     
