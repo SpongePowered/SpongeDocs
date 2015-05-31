@@ -96,7 +96,7 @@ Example: Multi-styled Text
 Coloring & Styling Shortcut
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The `org.spongepowered.api.text.Texts#of(Object... objects)` method provides a simple way to add color and styling to your text in a much more concise way.
+The ``org.spongepowered.api.text.Texts#of(Object... objects)`` method provides a simple way to add color and styling to your text in a much more concise way.
 
 Example: Color & Style Shortcut
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
