@@ -17,7 +17,7 @@ Contents
     :titlesonly:
 
     concepts
-    datamanipulator
     properties
+    datamanipulator
     immutabledata
     livedata

@@ -1,12 +1,6 @@
-================
-Datamanipulators
-================
-
-.. note::
-
-    As of writing, the features described in this document are not fully implemented yet.
-
-    If acquiring of a ``DataManipulator`` or a ``DataManipulatorBuilder`` fails, it is probably due to the implementation missing.
+=================
+Data Manipulators
+=================
 
 Data manipulators are the basic way to access and modify mutable data. All data manipulators implement the ``DataManipulator`` interface.
 
@@ -14,11 +8,11 @@ Acquiring Data Manipulators
 ===========================
 
 In general data manipulators are created using a ``DataManipulatorBuilder``. Those builders can be obtained from the ``DataManipulatorRegistry`` by calling the ``getBuilder()`` method with a class reference detailing what kind of ``DataManipulator`` the builder should construct.
-The ``getBuilder()`` method will return ``Optional.absent()`` if the registry contains no builder for the given manipulator class.
+The ``getBuilder()`` method will return ``Optional.absent()`` if the registry does not provide a builder for the given manipulator class.
 
 The builder can then be used to either construct a new ``DataManipulator`` containing default data by using the ``create()`` method or to construct a manipulator filled with the data from a given ``DataHolder`` with the ``createFrom()`` method. The latter will only return an ``Optional`` as it is possible that supplied ``DataHolder`` does not contain any data which can be represented by this type of ``DataManipulator``, in which case ``Optional.absent()`` will be returned.
 
-**Example: Getting a builder for ``WetData`` manipulators**
+**Example: Getting a builder**
 
 .. code-block:: java
 
@@ -29,7 +23,7 @@ The builder can then be used to either construct a new ``DataManipulator`` conta
     DataManipulatorRegistry registry = game.getRegistry().getManipulatorRegistry();
     Optional<DataManipulatorBuilder<TreeData>> builder = registry.getBuilder(TreeData.class);
 
-**Example: Creating ``TreeData`` objects using the builder**
+**Example: Creating TreeData objects using the builder**
 
 .. code-block:: java
 
@@ -45,88 +39,72 @@ The builder can then be used to either construct a new ``DataManipulator`` conta
 Manipulating Data
 =================
 
+Depending on its subclass, a data holder provides methods for accessing and modifying the contained data. Refer to the JavaDocs of the respective data manipulator class for further information. However, some common behaviours are explained below.
+
 Boolean Data
 ~~~~~~~~~~~~
 
-Some data manipulators represent a single boolean value. Those manipulators usually do not contain any methods for altering their contained data, since their mere presence on a data holder translates to ``true``, while absence signals ``false``.
+Data manipulators representing a single boolean value do not contain any methods for altering their data. If such a data manipulator can be built from a data holder, it means that the data represented evaluates to ``true``. If it cannot be built but is compatible to the data holder, it evaluates to ``false``.
 
 An example for this is ``Wetdata``. A data holder is wet, if and only if a ``WetData`` object can be created from it.
 
-**Example: Check if a DataHolder contains WetData**
+**Example: Check if a DataHolder is wet**
 
 .. code-block:: java
+
+    import org.spongepowered.api.data.DataHolder;
+    import org.spongepowered.api.data.DataManipulatorBuilder;
+    import org.spongepowered.api.data.manipulator.WetData;
 
     DataManipulatorBuilder<WetData> builder = ...;
     DataHolder holder = ...;
     boolean isWet = builder.createFrom(holder).isPresent();
 
-Single Value Data
-~~~~~~~~~~~~~~~~~
 
-A ``SingleValueData`` manipulator holds a single value of a specific type. For this value, ``getValue()`` and ``setValue()`` methods of the correct type are provided.
+Validity Checks
+~~~~~~~~~~~~~~~
 
-Common examples for this type of data manipulator are ``TreeData`` and ``ArtData``, both of which specify the :ref:`Type <dataapi-types>` of the ``DataHolder``.
+For some data manipulators, not every value that can be supplied will also be valid. Therefore, data manipulators may reject invalid values. There are currently two possibilities how invalid values may be handled.
 
-**Example: Changing TreeData from representing TreeTypes.BIRCH to TreeTypes.DARK_OAK**
+The common way of reacting to invalid input is throwing an ``IllegalArgumentException``. This is also what generally will occur on data manipulators. Some data manipulators will also provide means to check if a value is valid. Refer to the API docs of your respective data manipulator to learn which values are valid and if it is possible to perform a validity check before trying to set a value.
 
-.. code-block:: java
+However, if a data manipulator accepts data in key-value pairings (``Map``\ s) it may occur that only a portion of the supplied data is invalid and other portions can be applied. Since the operation of setting mapped data is not guaranteed to be atomic, it may be possible that the data was partially applied. The returned ``DataTransactionResult`` allows for checking if the operation was successful and also specifies which data was accepted. A more detailed take on ``DataTransactionResult`` can be found :ref:`here <dataapi-transactionresult>`. This validity check may be bypassed using the ``setUnsafe`` methods.
 
-    TreeData tree = ...;
-    if (tree.getValue() == TreeTypes.BIRCH) {
-        tree.setValue(TreeTypes.DARK_OAK);
-    }
+**Example: CooldownData**
 
-Integer Data
-~~~~~~~~~~~~
-
-``IntData`` is basically a single value data manipulator for ``Integer`` values. In addition to the above mentioned getters and setters, it has a range of valid inputs. This range is limited by a minimal and a maximal value, which are acquired by the ``getMinValue()`` and ``getMaxValue()`` methods respectively. Those boundaries are *inclusive*.
-
-An example for this type of data manipulator is ``ExpirableData``, which denotes the time until its holder expires. This applies, among others, to dropped items.
-
-**Example: Checking if a given integer is valid for a given IntData**
+``CooldownData`` stores a single integer as data. However, a cooldown can never be negative, therefore negative values are not valid.
 
 .. code-block:: java
 
-    public boolean isValid(IntData data, int value) {
-        return (data.getMinValue() <= value) && (value <= data.getMaxValue());
-    }
+    import org.spongepowered.api.data.manipulator.tileentity.CooldownData;
 
-Listed Data
-~~~~~~~~~~~
+    CooldownData cooldown = ...
+    cooldown.setValue(50);
 
-``ListData`` is pretty much self-explanatory. It provides some of the functions specified in javas ``List`` interface to allow convenient manipulation of the data.
+Will work perfectly fine since the supplied value ``50`` is within the allowed range. If a negative number like ``cooldown.setValue(-3)`` were set, it would fail and throw an ``IllegalArgumentException``.
 
-A notable example is ``LoreData``, which contains an ordered list of ``Text``\ s that makes up a description for the ``ItemStack`` it is applied to.
+**Example: EnchantmentData**
 
-**Example: Appending a line of text to a LoreData**
+``EnchantmentData`` maps ``Enchantment``\ s to their levels (represented as ``Integer``). When trying to set data using the ``set`` method, data is rejected if an enchantment is mapped to a level that is impossible to achieve in vanilla minecraft.
 
 .. code-block:: java
 
-    LoreData lore = ...;
-    lore.add(Texts.of("Infused with FLARD"));
+    import org.spongepowered.api.data.DataTransactionResult;
+    import org.spongepowered.api.data.manipulator.item.EnchantmentData;
+    import org.spongepowered.api.item.Enchantments;
 
-Mapped Data
-~~~~~~~~~~~
+    EnchantmentData enchantment = ...
+    DataTransactionResult result = enchantment.set(Enchantments.UNBREAKING, 3);
 
-In a ``MappedData`` manipulator, data is stored in key-value pairings, similar to a java ``Map``. For a given key, not all values may be accepted. Therefore, the ``set()`` methods will return a ``DataTransactionResult`` indicating whether a transfer was successful and, if not, why it was rejected.
-To overrule these restrictions, the ``setUnsafe()`` methods may be used instead.
+In the above example, the ``result`` will indicate success since an Unbreaking III enchantment is legally obtainable playing vanilla minecraft. 
 
-An example for this is ``EnchantmentData`` which maps ``Enchantment``\ s to an integer indicating the level of the enchantment.
-
-.. note::
-
-    For more Information about ``DataTransactionResult``\ s see :ref:`dataapi-transactionresult`.
-
-**Example: Safely applying the "Unbreaking III" enchantment without checking the result**
+Since the Sharpness enchantment can only be obtained up to level 5 using in-game means, in the following example ``result`` will indicate that the operation failed.
 
 .. code-block:: java
 
-    EnchantmentData enchantData = ...;
-    enchantData.set( Enchantments.UNBREAKING, 3);
+    import org.spongepowered.api.data.DataTransactionResult;
+    import org.spongepowered.api.data.manipulator.item.EnchantmentData;
+    import org.spongepowered.api.item.Enchantments;
 
-Other Data
-~~~~~~~~~~
-
-Even if many data manipulators belong to one of the above groups, the Data API is not limited to only those. Each data manipulator interface may provide their own methods of accessing and changing data, so that ultimately it is necessary to check their javadocs or source code to see how the contained data can be read and altered.
-
-An example for such a data manipulator is ``JoinData``, which differs from the above groups in two ways. First of all it contains three methods providing data of two types and in the second place, this data can only be read, not altered.
+    EnchantmentData enchantment = ...
+    DataTransactionResult result = enchantment.set(Enchantments.SHARPNESS, 10);
