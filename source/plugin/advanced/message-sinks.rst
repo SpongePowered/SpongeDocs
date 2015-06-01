@@ -65,7 +65,7 @@ by the ``MessageSink``.
     MessageSink combinedSink = MessageSinks.combined(sink1, sink2);
 
 Targeting CommandSourcess
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Lastly, a ``MessageSink`` can be used to target any number of CommandSources. This allows a finer control over who you would like to send the message to.
 
