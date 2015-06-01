@@ -47,7 +47,7 @@ Alternatively, you could retrieve the broadcast ``MessageSink`` provided by Spon
 Combining Message Sinks
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-The ``MessageSinkFactory`` can also be used to combine the recipients of any arbitrary number of other ``MessageSink``\ s:
+The ``MessageSinks`` class can also be used to combine the recipients of any arbitrary number of other ``MessageSink``\ s:
 
 **Example: Combined Message Sinks**
 
