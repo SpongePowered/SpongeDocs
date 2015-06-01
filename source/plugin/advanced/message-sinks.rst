@@ -8,10 +8,10 @@ appropriate recipients, as described below.
 Selecting MessageSink Recipients
 ================================
 
-Permissions
-~~~~~~~~~~~
+Permission-based Selection
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Message sinks can be employed to target any player that holds the specified permission.
+``MessageSinks`` can be employed to target any player that holds the specified permission.
 
 **Example: Permission-based Targeting**
 
@@ -38,7 +38,7 @@ In a broadcast, every ``CommandSource`` connected to the server will be sent the
 
     MessageSink broadcastSink = MessageSinks.toAll();
 
-Alternatively, you could retrieve the broadcast message sink provided by Sponge:
+Alternatively, you could retrieve the broadcast ``MessageSink`` provided by Sponge:
 
 .. code-block:: java
 
@@ -47,12 +47,12 @@ Alternatively, you could retrieve the broadcast message sink provided by Sponge:
 Combining Message Sinks
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-The ``MessageSinkFactory`` can also be used to combine the recipients any arbitrary number of other message sinks:
+The ``MessageSinkFactory`` can also be used to combine the recipients of any arbitrary number of other ``MessageSinks``:
 
 **Example: Combined Message Sinks**
 
 In the following block of code, any ``CommandSource`` that holds either the `com.example.myplugin.permission1` or the `com.example.myplugin.permission2` permissions will be targeted
-by the ``MessageSink``
+by the ``MessageSink``.
 
 .. code-block:: java
 
