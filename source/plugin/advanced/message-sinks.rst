@@ -11,7 +11,7 @@ Selecting MessageSink Recipients
 Permission-based Selection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-``MessageSinks`` can be employed to target any player that holds the specified permission.
+The ``MessageSinks`` class can be employed to target any player that holds the specified permission.
 
 **Example: Permission-based Targeting**
 
@@ -47,7 +47,7 @@ Alternatively, you could retrieve the broadcast ``MessageSink`` provided by Spon
 Combining Message Sinks
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-The ``MessageSinkFactory`` can also be used to combine the recipients of any arbitrary number of other ``MessageSinks``:
+The ``MessageSinkFactory`` can also be used to combine the recipients of any arbitrary number of other ``MessageSink``\ s:
 
 **Example: Combined Message Sinks**
 
@@ -64,8 +64,8 @@ by the ``MessageSink``.
 
     MessageSink combinedSink = MessageSinks.combined(sink1, sink2);
 
-Targeting CommandSourcess
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Targeting CommandSources
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 Lastly, a ``MessageSink`` can be used to target any number of CommandSources. This allows a finer control over who you would like to send the message to.
 
