@@ -63,7 +63,7 @@ The **API and Implementation Developers** work on producing the Sponge API, and 
 +-----------------------------------+-----------------------------------+
 | Deamon                            | Developer                         |
 +-----------------------------------+-----------------------------------+
-| gabizou                           | API Design Specialist             |  
+| gabizou                           | API Design Specialist             |
 |                                   |                                   |
 |                                   | Developer                         |
 +-----------------------------------+-----------------------------------+
@@ -119,7 +119,8 @@ The **SpongeDocs Editors** write, edit, and maintain articles for Sponge's offic
 +-----------------------------------+-----------------------------------+
 | Tyrannokapi                       | Editor                            |
 +-----------------------------------+-----------------------------------+
-
+| Zirconium                         | Editor                            |
++-----------------------------------+-----------------------------------+
 
 Moderators and Support
 ~~~~~~~~~~~~~~~~~~~~~~
