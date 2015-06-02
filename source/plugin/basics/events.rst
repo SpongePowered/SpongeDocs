@@ -2,7 +2,10 @@
 Working with Events
 ===================
 
-Sponge provides a system to (1) fire events and then (2) listen for events.
+Sponge provides a system to:
+
+- Listen for events
+- Fire events
 
 Overview
 ========
@@ -19,20 +22,18 @@ of other event handlers (such as those from other plugins). For example, an even
 Events cannot be sent to a specific set of plugins. All plugins that subscribe to an event will be notified of the event.
 
 The event bus or event manager is the class that keeps track of which plugins have subscribed to which event, 
-and is also responsible for distributing events to event handlers. Sponge comes with an event bus.
+and is also responsible for distributing events to event handlers.
 
-An important note about events in Sponge is that the event bus **supports supertypes**. 
-For example, there's a ``BlockBreakEvent`` that extends a ``BlockChangeEvent``. A plugin could subscribe to the ``BlockChangeEvent`` 
-and still receive ``BlockBreakEvent`` events. However, a plugin subscribed to just ``BlockBreakEvent`` would not receive other types of ``BlockChangeEvent``.
-
-The event bus in Sponge is a high-performance event bus.
+.. note::
+  The high-performance event bus **supports supertypes**. For example, ``BlockBreakEvent`` extends ``BlockChangeEvent``. Therefore, a plugin could subscribe
+  to ``BlockChangeEvent`` and still receive ``BlockBreakEvent`` events. However, a plugin subscribed to just ``BlockBreakEvent`` would not be notified of other
+  types of ``BlockChangeEvent``.
 
 Event Handlers
 ==============
 
-In order to listen for event, an event handler must be registered. This is done by making a method with any name, 
-having the first (and only) parameter be of the desired event type that you want to catch, and then affixing ``@Subscribe`` to the method. 
-This is illustrated below.
+In order to listen for an event, an event handler must be registered. This is done by making a method with any name,
+defining the first (and only) parameter to be the desired event type, and then affixing ``@Subscribe`` to the method, as illustrated below.
 
 .. code-block:: java
 
@@ -43,18 +44,59 @@ This is illustrated below.
         // Do something with the event
     }
 
-In addition, the object that has these methods must be registered with the event manager:
-
-.. code-block:: java
-
-    game.getEventManager().register(theObject);
+In addition, the class containing these methods must be registered with the event manager:
 
 .. tip::
 
-    For event handlers on your main plugin class, you do not need to register the object for events because Sponge will do it automatically.
+    For event handlers on your main plugin class (annotated by ``@Plugin``), you do not need to register the object for events because Sponge will do it
+    automatically.
 
-Note that, by default, ``@Subscribe`` is configured so that your event handler will *not* be called if the event in question is cancellable 
-and has been cancelled (such as by another plugin).
+Dynamic Registering and Unregistering of Event Handlers
+=======================================================
+
+Some plugins may wish to dynamically register or unregister an event handler. In that case the event handler is not a method annotated with ``@Subscribe``, but
+rather a class implementing the ``EventHandler`` interface. This event handler can then be registered by calling ``EventManager#register()``, which accepts a
+reference to the plugin, the ``Class`` of events handled, and the handler itself.
+
+Example: Event Handler class
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: java
+
+    public class ExampleHandler implements EventHandler<BlockBreakEvent> {
+
+        @Override
+        public void handle(BlockBreakEvent event) throws Exception {
+            ...
+        }
+    }
+
+Example: Dynamically Registering the Event Handler
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: java
+
+    EventHandler<BlockBreakEvent> handler = new ExampleHandler();
+    game.getEventManager().register(this, BlockBreakEvent.class, handler);
+
+.. tip::
+
+        For event handlers created with the ``@Subscribe`` annotation, the order of the execution can be configured (see also `About @Subscribe`_). For
+        dynamically registered handlers this is possible by passing an ``Order`` to the ``register()`` method.
+
+
+Example: Dynamically Unregistering the Event Handler
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: java
+
+    EventHandler handler = ...
+    game.getEventManager().unregister(handler);
+
+.. tip::
+
+    If all event handlers of a plugin need to be removed, ``EventManager#unregisterPlugin()`` may be called.
+    Beware that this will remove *all* of the plugin's event handlers, including those registered from ``@Subscribe`` annotations.
 
 .. note::
 
@@ -65,9 +107,12 @@ About @Subscribe
 
 The ``@Subscribe`` annotation has a few configurable fields:
 
-* ``order`` is the order in which the event handler is to be run. See the ``Order`` enum in Sponge to see the available options.
-* ``ignoreCancelled``, if true (which is default true), causes the event handler to be skipped if the event in question is cancellable 
+* ``order`` is the order in which the event handler is to be run. See the ``org.spongepowered.api.event.Order`` enum in Sponge to see the available options.
+* ``ignoreCancelled``, if true (which is default true), causes the event handler to be skipped if the event in question is cancellable
   and has been cancelled (by a previously-executed plugin, for example).
+
+By default, ``@Subscribe`` is configured so that your event handler will *not* be called if the event in question is cancellable
+and has been cancelled (such as by another plugin).
 
 Firing Events
 =============
@@ -93,7 +138,7 @@ Creating Custom Events
 
 You can write your own event classes and dispatch those events using the method described above.
 
-An event class must implement the ``Event`` interface. Alternatively you can extend the ``AbstractEvent`` class.
+An event class must implement the ``Event`` interface. Alternatively, you can extend the ``AbstractEvent`` class.
 
 If you want your event to be cancellable, the class must also implement ``Cancellable``.
 
@@ -170,51 +215,6 @@ Example: Listen for Custom Event
         String senderName = event.getSender().getName();
         event.getReceipient().sendMessage(ChatTypes.CHAT, "PM from " + senderName + ": " + event.getMessage());
     }
-
-Dynamic Registering and Unregistering of Event Handlers
-=======================================================
-
-Some Plugins may wish to dynamically register or unregister an event handler. In that case the event handler is not a method annotated with ``@Subscribe`` but a class implementing the ``EventHandler`` interface. This event handler can then be registered by calling the event managers ``register()`` method, which accepts a reference to the plugin, the ``Class`` of events handled and the handler itself.
-
-Example: Event Handler class
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. code-block:: java
-
-    public class ExampleHandler implements EventHandler<BlockBreakEvent> {
-
-        public void handle(BlockBreakEvent event) throws Exception {
-            ...
-        }
-    }
-
-Example: Dynamically Registering the Event Handler
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. code-block:: java
-
-    EventHandler<BlockBreakEvent> handler = new ExampleHandler();
-    game.getEventManager().register(this, BlockBreakEvent.class, handler);
-
-
-.. note::
-
-        For event handlers created with the ``@Subscribe`` annotation, the order of the execution can be configured (see also `About @Subscribe`_). For dynamically registered handlers this is possible by passing an ``Order`` to the ``register()`` method.
-
-
-Example: Dynamically Unregistering the Event Handler
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. code-block:: java
-
-    EventHandler handler = ...
-    game.getEventManager().unregister(handler);
-    
-.. note::
-
-    If all event handlers of a plugin need to be removed, the event managers ``unregisterPlugin()`` method may be called.    
-    Beware that this will remove *all* of the plugins event handlers, even those registered from ``@Subscribe`` annotations.
-
 
 Callbacks
 =========
