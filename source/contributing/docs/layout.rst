@@ -30,7 +30,8 @@ To make sure we have consistent format across all SpongeDocs pages, here are the
   
 10. Automated translations (eg. Google Translate) are strongly discouraged. These often contain serious errors, and are very likely to be rejected.
 11. Page Titles and Section Headings should be plain text, avoiding literal blocks and other formatting.
-12. References to class names should be capitalised properly and have no extra spaces (eg. blockState, not block state). These should also be formatted as a literal (eg. ``blockstate``) in body text.
+12. Code symbols should be capitalised in their original form and have no extra spaces (eg. blockState (a field name) or BlockState (a class name), rather than *block state*). They should also be formatted as a literal using double backticks (eg. ``blockState``) in body text.
+
 
 .. Note::
 
