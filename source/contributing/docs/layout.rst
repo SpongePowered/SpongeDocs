@@ -10,9 +10,9 @@ Style Guide
 
 To make sure we have consistent format across all SpongeDocs pages, here are the guidelines we have developed for writing Sponge Documentation. This list may get added to (or bent out of shape) as the Docs get bigger.
 
-1. Headings Should Be Written in Title Case (<- example)
+1. Headings Should Be Written in Title Case (<- example) [unless #8 applies]
 2. Page headings should be meaningful (the heading appears as a link)
-3. Program code should be contained in quotes or code blocks
+3. Program code should be contained in `inline literals <http://docutils.sourceforge.net/docs/ref/rst/roles.html#literal>`__ or code blocks
   
   i. Try not to put too much text in code blocks - they are not translated
 
@@ -30,7 +30,7 @@ To make sure we have consistent format across all SpongeDocs pages, here are the
   
 10. Automated translations (eg. Google Translate) are strongly discouraged. These often contain serious errors, and are very likely to be rejected.
 11. Page Titles and Section Headings should be plain text, avoiding literal blocks and other formatting.
-12. References to class names should have no extra spaces (eg. blockstate, not block state). These should also be formatted as a literal (eg. ``blockstate``) in body text.
+12. References to class names should be capitalised properly and have no extra spaces (eg. blockState, not block state). These should also be formatted as a literal (eg. ``blockstate``) in body text.
 
 .. Note::
 
