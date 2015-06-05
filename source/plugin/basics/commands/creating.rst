@@ -26,8 +26,8 @@ Example: Building a Simple Command
         
     game.getCommandDispatcher().register(plugin, myCommandSpec, "helloworld", "hello", "test");
 
-Overview of the ``CommandSpec`` builder methods
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Overview of the CommandSpec builder methods
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------------------------+---------------------------------------------------------------------------------------------------------+
 | Method                     | Description                                                                                             |

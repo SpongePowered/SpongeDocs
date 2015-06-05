@@ -64,8 +64,8 @@ Example: Building a Command with Multiple Arguments
     game.getCommandDispatcher().register(plugin, myCommandSpec, "message", "msg", "m");
     
 
-Overview of the ``GenericArguments`` command elements
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Overview of the GenericArguments command elements
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. _catalog type: spongepowered.github.io/SpongeAPI/org/spongepowered/api/CatalogTypes.html
 

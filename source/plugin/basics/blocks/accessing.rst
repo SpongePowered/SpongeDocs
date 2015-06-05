@@ -57,8 +57,8 @@ The ``Location`` class also provides means to check for environmental influences
         }
     }
         
-BlockStates
-~~~~~~~~~~~
+Block States
+~~~~~~~~~~~~
 
 Additional Data (like orientation, subtypes like granite vs regular stone, farm land moisture ... ) can be obtained from a ``BlockState``. A ``BlockState`` contains a ``BlockType`` and further data that can be accessed via a set of data manipulators that all extend the ``DataManipulator`` interface. The following example will return ``true`` if a the block at a given ``Location`` is a) a Sponge and b) wet, false otherwise.
 

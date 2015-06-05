@@ -5,8 +5,8 @@ Message Sinks
 A ``MessageSink`` enables you to easily control the recipients of a message. The ``org.spongepowered.api.text.sink.MessageSinks`` utility class provides methods for targeting
 appropriate recipients, as described below.
 
-Selecting MessageSink Recipients
-================================
+Selecting Message Sink Recipients
+=================================
 
 Permission-based Selection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -64,12 +64,12 @@ by the ``MessageSink``.
 
     MessageSink combinedSink = MessageSinks.combined(sink1, sink2);
 
-Targeting CommandSources
-~~~~~~~~~~~~~~~~~~~~~~~~
+Targeting Command Sources
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Lastly, a ``MessageSink`` can be used to target any number of CommandSources. This allows a finer control over who you would like to send the message to.
 
-**Example: Targeting CommandSources**
+**Example: Targeting Command Sources**
 
 In the following example, any ``Player`` whose display name contains the prefix "[Donor]" will be added as a recipient to a new ``MessageSink``, which could then be used to send a
 message thanking the players for their donations.
@@ -95,12 +95,12 @@ message thanking the players for their donations.
 
     MessageSink sink = MessageSinks.to(donors);
 
-Sending Messages with MessageSinks
+Sending Messages with Message Sinks
 ===================================
 
 Once you have defined an appropriate ``MessageSink``, you can use ``MessageSink#sendMessage(Text text)`` to send the message.
 
-**Example: Sending Messages with MessageSinks**
+**Example: Sending Messages with Message Sinks**
 
 .. code-block:: java
 

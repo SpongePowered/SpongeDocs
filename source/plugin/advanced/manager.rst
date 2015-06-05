@@ -4,8 +4,8 @@ Using the Plugin Manager
 
 The Plugin Manager is what your plugin gets sent to after being loaded by the server at startup. The server loads your plugin by finding its main class, annotated by the ``@Plugin`` annotation that holds its general information, and sends a new instance of it to the manager. The manager then keeps that instance in its own collection that you can look into and pull from using methods provided by itself, thus allowing you to easily interact with another loaded plugin if you so desire.
 
-The ``PluginManager`` Class
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The PluginManager Class
+~~~~~~~~~~~~~~~~~~~~~~~
 
 .. _documentation for PluginManager: http://spongepowered.github.io/SpongeAPI/org/spongepowered/api/plugin/PluginManager.html
 
