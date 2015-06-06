@@ -155,8 +155,7 @@ The recommended way to obtain your config file is through Guice, along with the 
     private File configDir;
 
     @Inject
-    @ConfigDir(sharedRoot = false)
-    public Orange(File configDir) {
+    public Orange(@ConfigDir(sharedRoot = false) File configDir) {
         this.configDir = configDir;
     }
 
