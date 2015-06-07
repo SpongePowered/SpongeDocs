@@ -78,7 +78,7 @@ To achieve the preceding output, we might use the following builder pattern:
 		.footer(Texts.of("Footer"))
 		.paddingString("p");
 
- .. note::
+.. note::
 
 	With the exception of contents, all components of the paginated list are optional. However, a title is strongly recommended
 
