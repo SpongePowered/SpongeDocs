@@ -154,10 +154,16 @@ Coming soon...
 Custom Command Elements
 =======================
 
-It is possible to create custom command elements (e.g. an URL parser or a ``Vector2i`` element).
+It is possible to create custom command elements (e.g. a URL parser or a ``Vector2i`` element) by extending the abstract ``CommandElement`` class.
 
-Example: ``Vector2i`` command element
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The ``parseValue`` method should fetch a raw argument string with ``args.next()`` and convert it to an object. The method should throw an ``ArgumentParseException`` if the parsing fails
+
+The ``complete`` method should use ``args.peek()`` to read the next raw argument. It returns a list of suggestions for TAB completion.
+
+Example: ``Vector2i`` command element definition
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The parser in this example reads two input arguments and converts them to a vector.
 
 .. code-block:: java
 
@@ -185,26 +191,20 @@ Example: ``Vector2i`` command element
            // <x> <y>
            
            String xInput = args.next();
-           int x;
-           
-           try {
-               x = Integer.parseInt(xInput);
-           }
-           catch(NumberFormatException e) {
-               throw args.createError(Texts.of("'" + xInput + "' is not a valid number!"));
-           }
+           int x = parseInt(xInput);
            
            String yInput = args.next();
-           int y;
-           
-           try {
-               y = Integer.parseInt(yInput);
-           }
-           catch(NumberFormatException e) {
-               throw args.createError(Texts.of("'" + yInput + "' is not a valid number!"));
-           }
+           int y = parseInt(yInput);
            
            return new Vector2i(x, y);
+       }
+       
+       private int parseInt(string input) throws ArgumentParseException {
+           try {
+               return Integer.parseInt(input);
+           } catch(NumberFormatException e) {
+               throw args.createError(Texts.of("'" + input + "' is not a valid number!"));
+           }
        }
    
        @Override
@@ -217,3 +217,27 @@ Example: ``Vector2i`` command element
            return Texts.of("<x> <y>");
        }
    }
+   
+Example: ``Vector2i`` command element usage
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: java
+
+    import org.spongepowered.api.text.Texts;
+    import org.spongepowered.api.entity.player.Player;
+    import org.spongepowered.api.util.command.spec.CommandSpec;
+
+    // /plottp <x> <y>
+    CommandSpec myCommandSpec = CommandSpec.builder()
+            .setDescription(Texts.of("Teleport to a plot"))
+            .setPermission("myplugin.command.plot.tp")
+
+            .setArguments(new Vector2iCommandElement(Texts.of("coordinates")))
+            
+            .setExecutor(new MyCommandExecutor())
+            .build();
+                    
+.. tip::
+
+    Look at the `source code <https://github.com/SpongePowered/SpongeAPI/blob/master/src/main/java/org/spongepowered/api/util/command/args/GenericArguments.java>`_ 
+    of the ``GenericArguments`` class for more examples.
