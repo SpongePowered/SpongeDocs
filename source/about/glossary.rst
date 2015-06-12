@@ -25,7 +25,7 @@ Developer
 FLARD
   It is green, edible, and explosive. Leave it alone and it will leave you alone.
 Forge
-  A long-standing Minecraft modding API, with its own installer. Forge enables mods in single player, LAN, and on dedicated servers.
+  A long-standing Minecraft modding API, with its own installer. Forge enables mods in single player, LAN, and on dedicated servers. http://www.minecraftforge.net/wiki/
 GitHub
   A free public web-based system for sharing code and creating projects. https://github.com/
 Implementation
@@ -45,7 +45,7 @@ Mod
 NPC
   Non-Player Character. Any character not controlled by a player, eg. a Villager.
 Ore
-  The Official Sponge plugin hosting site, not ready yet. Use the forums instead.
+  The Official Sponge plugin hosting site, not ready yet. Use the Sponge Forums instead.
 Plugin
   A Minecraft mod that extends and changes minecraft via the SpongeAPI, usable only on Sponge servers.
 Project Leaders
@@ -65,7 +65,7 @@ SpongeDocs
 Sponge Forums
   Home to the Sponge Project and the second best source of information on Sponge. Update announcements are posted regularly. https://forums.spongepowered.org/
 Sponge Foundation
-  The financial side of the project, a separate entity that accepts, manages and distributes donations.
+  The financial side of the project, a separate entity that accepts, manages and distributes donations. http://spongepowered-foundation.org/
 SpongeVanilla
   An implementation of Sponge API that runs on Vanilla Minecraft (and not Forge).
 Spongie
