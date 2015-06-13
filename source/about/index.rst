@@ -8,7 +8,7 @@ Overview
 What Is This About?
 ~~~~~~~~~~~~~~~~~~~
 
-The articles in this section explain the purpose and goals of the Sponge project. Think of this section as an extended FAQ. Rules and guidelines for the Sponge communication channels, including Sponge Forums, IRC Channels and subReddit are also provided below.
+The articles in this section explain the purpose and goals of the Sponge project. Think of this section as an extended FAQ. Rules and guidelines for the Sponge communication channels, including Sponge Forums, IRC Channels and subreddit, and a Glossary of common terms, are also provided below. 
 
 Who Should Read This?
 ~~~~~~~~~~~~~~~~~~~~~
@@ -31,3 +31,4 @@ Contents
     posting
     rules
     staff
+    glossary
