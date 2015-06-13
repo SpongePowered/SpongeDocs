@@ -35,7 +35,7 @@ The type of a tile entity can then be obtained by the ``getType()`` function whi
         }
     }
     
-After this performing this cast, the methods provided by the particular interface can be accessed (in this example the ``eject()`` method). For detailed information about ``TileEntity`` subtypes and their respective methods refer to the ``org.spongepowered.api.block.tile`` package and its subpackages in the API docs.
+After performing this cast, the methods provided by the particular interface can be accessed (in this example the ``eject()`` method). For detailed information about ``TileEntity`` subtypes and their respective methods refer to the ``org.spongepowered.api.block.tile`` package and its subpackages in the API docs.
 
 
 Accessing and Modifying a Tile Entity's Data
