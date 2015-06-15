@@ -32,7 +32,7 @@ soon-to-be Project was still nameless too. The first mention of Sponge as the
 projects name was on Sept, 6th by Firehead94. Obviously the name stuck.
 
 The initial commit to SpongeAPI and the Sponge Forge Coremod
-was made on September the 7th and the following day in 2014 by one of the Sponge
+was made on September, 7th and the following day in 2014 by one of the Sponge
 Project leaders, Zidane. This was the beginning of the development of the
 SpongeAPI and the Sponge Coremod.
 
@@ -42,20 +42,20 @@ implement it's own API and the SpongeAPI. Granite and the Sponge Coremod
 coexisted until April, 20th 2015.
 
 The development of Sponge and the API gained momentum leading to a first API
-release on Dec,1st 2014. However this version was far from feature complete and
+release on Dec, 1st 2014. However this version was far from feature complete and
 an API only release, meaning that there was no official implementation available
 at this time.
 
-On Dec,26 the Granite Team decided to limit Granite to the usage of SpongeAPI.
+On Dec, 26th the Granite Team decided to limit Granite to the usage of SpongeAPI.
 That made Granite the first unofficial Sponge Implementation for Vanilla Minecraft.
-On March,26 the Granite Team finally joined the Sponge Team and Granite became
+On March, 26th the Granite Team finally joined the Sponge Team and Granite became
 SpongeVanilla, the official SpongeAPI implementation for Vanilla Minecraft.
 About a month later the unification of the Granite and Sponge (Coremod) codebase
 began in SpongeCommon. SpongeCommon was created to hold all shared code between
 the two implementations while implementation-specific code remains in SpongeVanilla
 and Sponge.
 
-On April,21th SpongeAPI 2.0 is finally released. A week later development builds
+On April, 21th SpongeAPI 2.0 is finally released. A week later development builds
 of the Sponge Coremod were finally made available.
 
 
