@@ -5,8 +5,9 @@ Frequently Asked Questions
 For Everyone
 ============
 
-Can I Create Client Side Mods With Sponge, New Blocks, Entities, or Change The GUI for a Player?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Can I Create Client Side Mods With Sponge?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 **Not yet.** 
 
 The Sponge team do not want to get overcommitted with client side API until Sponge is competitive with other Minecraft modding API's.
@@ -14,8 +15,8 @@ No one is currently working to create client side API, but it's not been forgott
 This is a separate issue from single player! 
 Single player support using Sponge (coremod / forge) should work fine, any issues should be reported to the bug tracker.
 
-Are There Downloads Available?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Are Downloads Available?
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 Yes, see :doc:`/downloads`.
 
@@ -29,8 +30,8 @@ What Makes Sponge Different from Other Projects, Such as Bukkit?
 
 Sponge is using the MIT license, which is an extremely permissive open-source license. This means that, should our server implementation (the Sponge coremod) encounter any legal issues similar to those that fell upon Bukkit, it will be possible to reuse the Sponge API and start a new project without being further encumbered by legal issues.
 
-Which Parts Does the Sponge Project Consist Of?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+How is the Sponge Project Broken Down (Partitioned)?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 As you can see Sponge has several (mostly) independent parts:
 
@@ -75,8 +76,8 @@ The developers of Granite have joined the Sponge project, and Granite was rename
 For Server Owners
 =================
 
-I Am a Server Owner! How Will Switching to Sponge Affect My Server?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+I'm a Server Owner! How Will Switching to Sponge Affect My Server?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 For an existing Forge server, you will need to download Sponge and place it into the mods folder. The server can then be started like any other Forge server.
 
