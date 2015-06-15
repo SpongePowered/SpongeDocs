@@ -11,7 +11,7 @@ Feel free to use them to spread the word about Sponge.
   e.g. `Sponge Homepage <http://spongepowered.org>`__
 
 
-The official Sponge Logo
+The Official Sponge Logo
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 # official Logo goes here #
