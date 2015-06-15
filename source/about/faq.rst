@@ -5,10 +5,8 @@ Frequently Asked Questions
 For Everyone
 ============
 
-Can I use SpongeAPI to create client side plugins?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Can I create (client side mods with sponge) / (new GUI to a players screen) / (new blocks or entities)?
+Can I Create Client Side Mods With Sponge?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Not yet.** 
 
@@ -17,8 +15,8 @@ No one is currently working to create client side API, but it's not been forgott
 This is a separate issue from single player! 
 Single player support using Sponge (coremod / forge) should work fine, any issues should be reported to the bug tracker.
 
-Are There Downloads Available Yet?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Are Downloads Available?
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 Yes, see :doc:`/downloads`.
 
@@ -32,8 +30,8 @@ What Makes Sponge Different from Other Projects, Such as Bukkit?
 
 Sponge is using the MIT license, which is an extremely permissive open-source license. This means that, should our server implementation (the Sponge coremod) encounter any legal issues similar to those that fell upon Bukkit, it will be possible to reuse the Sponge API and start a new project without being further encumbered by legal issues.
 
-Which parts does the Sponge Project consist of?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+How is the Sponge Project Broken Down (Partitioned)?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 As you can see Sponge has several (mostly) independent parts:
 
@@ -69,7 +67,7 @@ I Haven't Kept Up. What Happened to Bukkit?
 
 The Bukkit project halted further development of their API and server modification. Shortly thereafter, one of the contributors to Bukkit sent a DMCA takedown notice to stop further distribution of CraftBukkit. He was within his legal right. Downloads, as well as source code, for CraftBukkit and its derivatives (such as Spigot and Cauldron) are no longer publicly available.
 
-What Happened to the Granite implementation?
+What Happened to the Granite Implementation?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The developers of Granite have joined the Sponge project, and Granite was renamed SpongeVanilla. It is now an officially supported Sponge API implementation, developed in parallel with Sponge coremod.
@@ -78,8 +76,8 @@ The developers of Granite have joined the Sponge project, and Granite was rename
 For Server Owners
 =================
 
-I Am a Server Owner! How Will Switching to Sponge Affect My Server?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+I'm a Server Owner! How Will Switching to Sponge Affect My Server?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 For an existing Forge server, you will need to download Sponge and place it into the mods folder. The server can then be started like any other Forge server.
 
@@ -103,7 +101,7 @@ I'm a Bukkit Plugin Developer! Why Can't Sponge Use Bukkit's API?
 
 Bukkit’s API contains code licensed under the GPL. This is a large reason why Bukkit met its demise in September; by moving forward with a new API licensed under the MIT license, we can avoid some of the problems that fell upon Bukkit. While this does not free us from Mojang’s control, as their code is proprietary, it is our belief that Mojang supports modding and will continue to do so.
 
-Will I be able to access the server internals in my plugins?
+Will I Be Able to Access the Server Internals In My Plugins?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Accessing the server internals (known as "NMS" or "net.minecraft.server" in CraftBukkit) can be done through Forge, which has a large number of names de-obfuscated. However, be aware that accessing the server internals raises the risk of your plugin breaking - this is your prerogative.
