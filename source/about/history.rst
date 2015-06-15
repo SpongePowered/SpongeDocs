@@ -32,7 +32,7 @@ soon-to-be Project was still nameless too. The first mention of Sponge as the
 projects name was on Sept, 6th by Firehead94. Obviously the name stuck.
 
 The initial commit to SpongeAPI and the Sponge Forge Coremod
-was made on September, 7th and the following day in 2014 by one of the Sponge
+was made on September, 7th and 8th in 2014 by one of the Sponge
 Project leaders, Zidane. This was the beginning of the development of the
 SpongeAPI and the Sponge Coremod.
 
