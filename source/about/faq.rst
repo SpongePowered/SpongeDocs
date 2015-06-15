@@ -30,8 +30,8 @@ What Makes Sponge Different from Other Projects, Such as Bukkit?
 
 Sponge is using the MIT license, which is an extremely permissive open-source license. This means that, should our server implementation (the Sponge coremod) encounter any legal issues similar to those that fell upon Bukkit, it will be possible to reuse the Sponge API and start a new project without being further encumbered by legal issues.
 
-How is the Sponge Project Broken Down (Partitioned)?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+How is the Sponge Project Broken Down?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 As you can see Sponge has several (mostly) independent parts:
 
