@@ -47,7 +47,7 @@ The **Team Leaders** of Sponge each coordinate a separate aspect of the Sponge p
 |                                   |                                   |
 |                                   | Developer                         |
 +-----------------------------------+-----------------------------------+
-| progwml6                          | Distribution & IRC Leader         |
+| progwml6                          | Distribution and IRC Leader       |
 +-----------------------------------+-----------------------------------+
 
 
