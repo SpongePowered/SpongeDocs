@@ -22,7 +22,9 @@ The **Project Leaders** are the stewards of the Sponge project, and make the fin
 +-----------------------------------+-----------------------------------+
 | Zidane                            | Implementation (Vanilla) Leader   |
 |                                   |                                   |
-|                                   | API Leader & LLC Director         |
+|                                   | API Leader                        |
+|                                   |                                   |
+|                                   | LLC Director                      |
 +-----------------------------------+-----------------------------------+
 
 Team Leaders
@@ -33,13 +35,17 @@ The **Team Leaders** of Sponge each coordinate a separate aspect of the Sponge p
 +-----------------------------------+-----------------------------------+
 | Name                              | Role                              |
 +===================================+===================================+
-| gratimax                          | Web Leader & Developer            |
+| gratimax                          | Web Leader                        |
+|                                   |                                   |
+|                                   | Developer                         |
 +-----------------------------------+-----------------------------------+
 | Inscrutable                       | SpongeDocs Leader                 |
 +-----------------------------------+-----------------------------------+
 | lukegb                            | Systems Management Leader         |
 +-----------------------------------+-----------------------------------+
-| Me4502                            | Subreddit Leader & Developer      |
+| Me4502                            | Subreddit Leader                  |
+|                                   |                                   |
+|                                   | Developer                         |
 +-----------------------------------+-----------------------------------+
 | progwml6                          | Distribution & IRC Leader         |
 +-----------------------------------+-----------------------------------+
@@ -130,7 +136,9 @@ Moderators and Support
 +-----------------------------------+-----------------------------------+
 | Name                              | Role                              |
 +===================================+===================================+
-| Dockter                           | Moderator & LLC Director          |
+| Dockter                           | Moderator                         |
+|                                   |                                   |
+|                                   | LLC Director                      |
 +-----------------------------------+-----------------------------------+
 | drtshock                          | Moderator                         |
 +-----------------------------------+-----------------------------------+
@@ -167,7 +175,9 @@ This list is here to thank them and acknowledge their valuable contributions.
 +-----------------------------------+-----------------------------------+
 | Pandette                          | Editor                            |
 +-----------------------------------+-----------------------------------+
-| sibomots                          | Developer & LLC Director          |
+| sibomots                          | Developer                         |
+|                                   |                                   |
+|                                   | LLC Director                      |
 +-----------------------------------+-----------------------------------+
 | TnT                               | Moderator                         |
 +-----------------------------------+-----------------------------------+
