@@ -130,7 +130,7 @@ Moderators and Support
 +-----------------------------------+-----------------------------------+
 | Name                              | Role                              |
 +===================================+===================================+
-| Dockter                           | Moderator                         |
+| Dockter                           | Moderator & LLC Director          |
 +-----------------------------------+-----------------------------------+
 | drtshock                          | Moderator                         |
 +-----------------------------------+-----------------------------------+
@@ -151,7 +151,7 @@ These people have assisted with the Sponge project in various ways, but are no l
 This list is here to thank them and acknowledge their valuable contributions.
 
 +-----------------------------------+-----------------------------------+
-| Name                              | Role                              |
+| Name                              | Former Role                       |
 +===================================+===================================+
 | Cedeel                            | Editor                            |
 +-----------------------------------+-----------------------------------+
@@ -167,7 +167,7 @@ This list is here to thank them and acknowledge their valuable contributions.
 +-----------------------------------+-----------------------------------+
 | Pandette                          | Editor                            |
 +-----------------------------------+-----------------------------------+
-| sibomots                          | Developer, LLC Director           |
+| sibomots                          | Developer & LLC Director          |
 +-----------------------------------+-----------------------------------+
 | TnT                               | Moderator                         |
 +-----------------------------------+-----------------------------------+
