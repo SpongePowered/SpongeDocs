@@ -18,7 +18,7 @@ happened the Minecraft community was shocked. Several developers from the
 above mentioned communities gathered in #nextstep on Esper.NET and discussed
 the future of Minecraft modding. It was decided that there definetely is a
 demand for a new API as the CraftBukkit repository (Cauldron and MCPC+ too)
-were taken down.
+was taken down.
 
 Severel goals should be achieved with the new API:
  * consistency
@@ -32,21 +32,21 @@ soon-to-be Project was still nameless too. The first mention of Sponge as the
 projects name was on Sept, 6th by Firehead94. Obviously the name stuck.
 
 The initial commit to SpongeAPI and the Sponge Forge Coremod
-was made on September, 7th and 8th in 2014 by one of the Sponge
+was made on Sept. 7th and 8th, 2014 by one of the Sponge
 Project leaders, Zidane. This was the beginning of the development of the
 SpongeAPI and the Sponge Coremod.
 
-On Sept, 7th the initial commit to Granite, an API based upon Vanilla Minecraft
+On Sept. 7th, 2014 the initial commit to Granite, an API based upon Vanilla Minecraft
 was made. Granite, originally started as an independant project, was planned to
 implement it's own API and the SpongeAPI. Granite and the Sponge Coremod
-coexisted until April, 20th 2015.
+coexisted until April 20th, 2015.
 
 The development of Sponge and the API gained momentum leading to a first API
-release on Dec, 1st 2014. However this version was far from feature complete and
+release on Dec. 1st, 2014. However this version was far from feature complete and
 an API only release, meaning that there was no official implementation available
-at this time.
+at that time.
 
-On Dec, 26th the Granite Team decided to limit Granite to the usage of SpongeAPI.
+On Dec. 26th, 2014 the Granite Team decided to limit Granite to the usage of SpongeAPI.
 That made Granite the first unofficial Sponge Implementation for Vanilla Minecraft.
 On March, 26th the Granite Team finally joined the Sponge Team and Granite became
 SpongeVanilla, the official SpongeAPI implementation for Vanilla Minecraft.
@@ -55,7 +55,7 @@ began in SpongeCommon. SpongeCommon was created to hold all shared code between
 the two implementations while implementation-specific code remains in SpongeVanilla
 and Sponge.
 
-On April, 21th SpongeAPI 2.0 is finally released. A week later development builds
+On April 21st, 2015 SpongeAPI 2.0 was finally released. A week later development builds
 of the Sponge Coremod were finally made available.
 
 
