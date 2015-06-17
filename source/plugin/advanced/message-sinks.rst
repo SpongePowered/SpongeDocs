@@ -64,6 +64,10 @@ by the ``MessageSink``.
 
     MessageSink combinedSink = MessageSinks.combined(sink1, sink2);
 
+.. tip::
+
+    ``MessageSinks#combined(MessageSink... sinks)`` can also be used to apply message transformations, as discussed below.
+
 Targeting Command Sources
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -111,4 +115,72 @@ Extended Application: Chat Channels
 
 Message sinks have a very useful application that they can be used to establish chat channels. For example, you could establish a message sink for every chat channel you wish to have.
 Then, when a ``CommandSource`` joins a channel, such as with ``/join <channel name>``, simply set the ``CommandSource``'s ``MessageSink`` to the appropriate channel using
-``CommandSource#setMessageSink(MessageSink sink)``. Alternatively, you could subscribe to ``MessageEvent``, and set the appropriate ``MessageSink`` using ``MessageEvent#setSink(MessageSink sink)``.
+``CommandSource#setMessageSink(MessageSink sink)``. Alternatively, you could subscribe to ``PlayerChatEvent``, and set the appropriate ``MessageSink`` using
+``MessageEvent#setSink(MessageSink sink)``.
+
+Transforming Messages with Message Sinks
+========================================
+
+You can apply a filter to all ``Text``\ s that pass through a ``MessageSink`` to change the message however you like. This is possible by creating a ``Class`` that extends
+``MessageSink`` and defining the appropriate behavior for the ``MessageSink#transformMessage(CommandSource target, Text text)`` method, as shown below.
+
+**Example: Transforming Messages with Message Sinks**
+
+The following code excerpt defines a ``DonorMessageSink`` class which overrides the default ``transformMessage`` method. The new transformation method will first check if the
+``CommandSource`` has the ``com.example.myplugin.donor`` permission, and if so, will append a `[Donor]` prefix, such as in a ranking system.
+
+.. code-block:: java
+
+    import org.spongepowered.api.text.Text;
+    import org.spongepowered.api.text.Texts;
+    import org.spongepowered.api.text.format.TextColors;
+    import org.spongepowered.api.text.sink.MessageSink;
+    import org.spongepowered.api.util.command.CommandSource;
+
+    import com.google.common.collect.Lists;
+
+    public class DonorMessageSink extends MessageSink {
+
+        @Override
+        public Text transformMessage(CommandSource target, Text input) {
+            if(target.hasPermission("com.example.myplugin.donor")) {
+                return Texts.of("[Donor]", input);
+            }
+            return input;
+        }
+
+        @Override
+        public Iterable<CommandSource> getRecipients() {
+            return Lists.newArrayList();
+        }
+
+    }
+
+Note that we do not wish to define any additional reecipients, so we return an empty ``List`` in the ``getRecipients`` method.
+
+Now that we have defined our custom ``DonorMessageSink`` that will append a prefix to a player's name, we need to apply a new ``MessageSink`` combining the existing one
+and the new one to the ``CommandSource``. We can do this by using the ``MessageSinks#combined(MessageSink... sinks)`` method. In the following code excerpt, the new
+``DonorMessageSink`` will be applied to any ``Player`` that joins the server.
+
+.. code-block:: java
+
+    import org.spongepowered.api.entity.player.Player;
+    import org.spongepowered.api.event.Subscribe;
+    import org.spongepowered.api.event.entity.player.PlayerJoinEvent;
+    import org.spongepowered.api.text.sink.MessageSink;
+    import org.spongepowered.api.text.sink.MessageSinks;
+
+    @Subscribe
+    public void playerJoin(PlayerJoinEvent event) {
+        Player player = event.getEntity();
+
+        MessageSink originalSink = player.getMessageSink();
+        MessageSink newSink = MessageSinks.combined(originalSink, new DonorMessageSink());
+
+        player.setMessageSink(newSink);
+    }
+
+.. note::
+
+    When combining multiple ``MessageSink``\ s defining different message transformations, the ``Text`` will be transformed in the order that the ``MessageSink``\ s
+    are passed in to the ``MessageSinks#combined(MessageSink... sinks)`` method.
