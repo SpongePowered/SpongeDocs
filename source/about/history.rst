@@ -16,11 +16,11 @@ different Communities, eg. Spout/Spoutcraft, Forge, Cauldron and a few others.
 When the Bukkit, Cauldron and MCPC+ DMCA and the development halt of Bukkit
 happened the Minecraft community was shocked. Several developers from the
 above mentioned communities gathered in #nextstep on Esper.NET and discussed
-the future of Minecraft modding. It was decided that there definetely is a
+the future of Minecraft modding. It was decided that there definitely is a
 demand for a new API as the CraftBukkit repository (Cauldron and MCPC+ too)
 was taken down.
 
-Severel goals should be achieved with the new API:
+Several goals should be achieved with the new API:
  * consistency
  * stable across Minecraft updates
  * easy to use
