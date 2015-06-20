@@ -17,38 +17,38 @@ When the Bukkit, Cauldron and MCPC+ DMCA and the development halt of Bukkit
 happened the Minecraft community was shocked. Several developers from the
 above mentioned communities gathered in #nextstep on Esper.NET and discussed
 the future of Minecraft modding. It was decided that there definitely is a
-demand for a new API as the CraftBukkit repository (Cauldron and MCPC+ too)
+demand for a new API as the Bukkit repository (Cauldron and MCPC+ too)
 was taken down.
 
 Several goals should be achieved with the new API:
- * consistency
+ * consistent
  * stable across Minecraft updates
  * easy to use
- * complying with the Mojang EULA
- * best possible protection against DMCA takedowns
+ * compliant with the Mojang EULA
+ * provide best possible protection against DMCA takedowns
 
 While the goals were mostly clear, the route to be taken was not. The
 soon-to-be Project was still nameless too. The first mention of Sponge as the
 projects name was on Sept, 6th by Firehead94. Obviously the name stuck.
 
 The initial commit to SpongeAPI and the Sponge Forge Coremod
-was made on Sept. 7th and 8th, 2014 by one of the Sponge
+was made on September 7th and 8th, 2014 by one of the Sponge
 Project leaders, Zidane. This was the beginning of the development of the
 SpongeAPI and the Sponge Coremod.
 
-On Sept. 7th, 2014 the initial commit to Granite, an API based upon Vanilla Minecraft
-was made. Granite, originally started as an independant project, was planned to
+On September 7th, 2014 the initial commit to Granite, an API based upon Vanilla Minecraft
+was made. Granite, originally started as an independent project, was planned to
 implement it's own API and the SpongeAPI. Granite and the Sponge Coremod
 coexisted until April 20th, 2015.
 
 The development of Sponge and the API gained momentum leading to a first API
-release on Dec. 1st, 2014. However this version was far from feature complete and
-an API only release, meaning that there was no official implementation available
+release on December 1st, 2014. However this version was far from feature complete and
+an API-only release, meaning that there was no official implementation available
 at that time.
 
-On Dec. 26th, 2014 the Granite Team decided to limit Granite to the usage of SpongeAPI.
+On December 26th, 2014 the Granite Team decided to limit Granite to the usage of SpongeAPI.
 That made Granite the first unofficial Sponge Implementation for Vanilla Minecraft.
-On March, 26th the Granite Team finally joined the Sponge Team and Granite became
+On March 26th, the Granite Team finally joined the Sponge Team and Granite became
 SpongeVanilla, the official SpongeAPI implementation for Vanilla Minecraft.
 About a month later the unification of the Granite and Sponge (Coremod) codebase
 began in SpongeCommon. SpongeCommon was created to hold all shared code between
@@ -71,7 +71,7 @@ The History of Spongie
 
 Spongie first appeared in #Sponge on Esper.NET around September 2014.
 She was created and posted by `DragonsPainter <http://dragonspainter.deviantart.com/>`__.
-Strad, another user, felt that Spongie would look better with a moogle like
+Strad, another user, felt that Spongie would look better with a moogle-like
 antenna, a Forge furnace instead of a Cauldron and replaced the Spigot with
 Spout. An anonymous user then removed all labels and introduced her as the icon
 and background logo for the Sponge reddit section.
