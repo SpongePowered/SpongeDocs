@@ -23,13 +23,14 @@ The following commands are available to players with operator status (or the cor
 ====================  ========================================  ======================
 Command               Description                               Permission
 ====================  ========================================  ======================
-/sponge audit         forces loading of unloaded classes to     sponge.command.audit 
+/sponge audit         Forces loading of unloaded classes to     sponge.command.audit 
                       enable mixin debugging.                                        
 /sponge chunks        Prints out the chunk data for a world, a  sponge.command.chunks
                       dimension, or globally.
 /sponge conf          Alters a global, world, or a dimension    sponge.command.config
                       config.
 /sponge heap          Dumps the JVM heap.                       sponge.command.heap  
+/sponge plugins       Lists currently installed plugins.        sponge.command.plugins
 /sponge reload        Reloads the global, world, or dimension   sponge.command.reload
                       config.
 /sponge reloadconfig  Send a message to all plugins and Sponge  *Not yet available*  
