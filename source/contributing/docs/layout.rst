@@ -14,7 +14,8 @@ To make sure we have consistent format across all SpongeDocs pages, here are the
 2. Page headings should be meaningful (the heading appears as a link).
 3. Program code should be contained in `inline literals <http://docutils.sourceforge.net/docs/ref/rst/roles.html#literal>`__ or code blocks.
   
-  i. Try not to put too much text in code blocks - they are not translated.
+  i. Try not to put too much text in code blocks, as they cannot be translated.
+     Contributors are discouraged from commenting in code blocks wherever possible. Simple place-holder text may be necessary in some examples. Ideally, code block examples will be short, and followed by an explanation for each example in the body text. Of course, there may be some concepts that cannot be illustrated with a short example. 
 
 4. Keep separate areas for Users, Plugin Devs, and Sponge Devs.
 5. Avoid repetition by sharing pages where possible.
