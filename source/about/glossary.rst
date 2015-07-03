@@ -31,7 +31,7 @@ GitHub
 Implementation
   A mod or program that enables the use of the SpongeAPI in Minecraft.
 IRC
-  Internet relay Chat, used as a chat platform. Provides chat rooms for all things Sponge.
+  Internet Relay Chat, used as a chat platform. Provides chat rooms for all things Sponge.
 Issue
   A way of flagging problems, bugs, improvements, and things-to-do on GitHub and elsewhere. The Sponge project uses GitHub as an Issue Tracker.
 Java
