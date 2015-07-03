@@ -13,8 +13,8 @@ Sponge was founded as a better alternative to the APIs that were available as of
 September 2014. The Sponge :doc:`staff` consists of many people from
 different Communities, eg. Spout/Spoutcraft, Forge, Cauldron and a few others.
 
-When the development of Bukkit, Cauldron and MCPC+ were halted by a DMCA
-take-down notice, the Minecraft community was shocked. Several developers from
+When the development of Bukkit and Cauldron reached an aburpt end,
+the Minecraft community was shocked. Several developers from
 the above mentioned communities gathered in #nextstep on Esper.NET and discussed
 the future of Minecraft modding. It was decided that there certainly was a
 demand for a new API as the CraftBukkit repository (Cauldron too)
