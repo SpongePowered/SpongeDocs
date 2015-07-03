@@ -45,4 +45,4 @@ The SQL service provides a pooled connection, so getting a connection from the r
 
 NoSQL
 -----
-Sponge does not currently provide any special abstraction over NoSQL databases (MongoDB etc). Plugins that wish to use NoSQL databases must provide their own connectors
+Sponge does not currently provide any special abstraction over NoSQL databases (MongoDB etc). Plugins that wish to use NoSQL databases must provide their own connectors.
