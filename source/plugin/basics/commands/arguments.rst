@@ -67,7 +67,7 @@ Example: Building a Command with Multiple Arguments
 Overview of the GenericArguments command elements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. _catalog type: spongepowered.github.io/SpongeAPI/org/spongepowered/api/CatalogTypes.html
+.. _catalog type: http://spongepowered.github.io/SpongeAPI/org/spongepowered/api/CatalogTypes.html
 
 +----------------------------+-----------------------------------------------------------------------------------------+-------------------------------+
 | Command Element            | Description                                                                             | Value Type & Amount           |
