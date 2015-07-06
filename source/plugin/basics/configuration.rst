@@ -49,6 +49,10 @@ If you are unsure of what to set the value of ``sharedRoot`` to, consider the fo
 
     When your plugin is running for the first time, the returned pathname may refer to a configuration file that does not yet exist.
 
+.. note::
+ 
+    The use of YAML format (http://www.yaml.org/spec/1.2/spec.html) is also supported, but the preferred config format for Sponge plugins is HOCON. 
+
 Working with the Configuration
 ==============================
 
