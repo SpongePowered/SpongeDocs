@@ -65,7 +65,7 @@ SpongeDocs
 Sponge Forums
   Home to the Sponge Project and the second best source of information on Sponge. Update announcements are posted regularly. https://forums.spongepowered.org/
 Sponge Foundation
-  The financial side of the project, a separate entity that accepts, manages and distributes donations. http://spongepowered-foundation.org/
+  The financial side of the project, a separate entity that accepts, manages and distributes donations. http://spongefoundation.org/
 SpongeVanilla
   An implementation of Sponge API that runs on Vanilla Minecraft (and not Forge).
 Spongie
