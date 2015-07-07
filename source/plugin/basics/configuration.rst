@@ -51,7 +51,28 @@ If you are unsure of what to set the value of ``sharedRoot`` to, consider the fo
 
 .. note::
  
-    The use of YAML format (http://www.yaml.org/spec/1.2/spec.html) is also supported, but the preferred config format for Sponge plugins is HOCON. 
+    The use of YAML format (http://yaml.org/spec/1.1/) is also supported, but the preferred config format for Sponge plugins is HOCON. Conversion from YAML to HOCON can be automated; a simple code snippet for converting a bukkit plugin configuration folder with a dedicated data folder is provided below.
+
+.. code-block:: java
+
+    private void convertFromBukkit() throws IOException {
+        File bukkitConfigDir = new File("plugins/" + PomData.NAME);
+        if (bukkitConfigDir.isDirectory() && !configDir.isDirectory()) {
+        logger.info(lf(_("Migrating configuration data from Bukkit")));
+            if (!bukkitConfigDir.renameTo(configDir)) {
+                throw new IOException(lf(_("Unable to move Bukkit configuration directory to location for Sponge!")));
+            }
+        }
+        File bukkitConfigFile = new File(configDir, "config.yml");
+        if (bukkitConfigFile.isFile()) {
+            ConfigurationLoader<ConfigurationNode> yamlReader = YAMLConfigurationLoader.builder().setFile(bukkitConfigFile).build();
+            ConfigurationNode bukkitConfig = yamlReader.load();
+            configLoader.save(bukkitConfig);
+            if (!bukkitConfigFile.renameTo(new File(configDir, "config.yml.bukkit"))) {
+                logger.warn(lf(_("Could not rename old Bukkit configuration file to old name")));
+            }
+        }
+    }
 
 Working with the Configuration
 ==============================
