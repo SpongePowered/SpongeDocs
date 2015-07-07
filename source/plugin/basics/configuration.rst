@@ -51,7 +51,7 @@ If you are unsure of what to set the value of ``sharedRoot`` to, consider the fo
 
 .. note::
  
-    The use of YAML format (http://yaml.org/spec/1.1/) is also supported, but the preferred config format for Sponge plugins is HOCON. Conversion from YAML to HOCON can be automated; a simple code snippet for converting a bukkit plugin configuration folder with a dedicated data folder is provided below.
+    The use of YAML format (http://yaml.org/spec/1.1/) is also supported, but the preferred config format for Sponge plugins is HOCON. Conversion from YAML to HOCON can be automated; a simple code snippet for converting a bukkit plugin configuration folder with a dedicated data folder (sharedRoot = false) is provided below.
 
 .. code-block:: java
 
