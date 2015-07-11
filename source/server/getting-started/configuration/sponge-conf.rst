@@ -62,16 +62,56 @@ The global.conf file contains the global configuration settings for Sponge. This
             aquatic-activation-range=32
             creature-activation-range=32
             minecraft {
+                ambient {
+                    bat=true
+                }
+                aquatic {
+                    squid=true
+                }
                 creature {
+                    chicken=true
                     cow=true
                     entityhorse=true
+                    mushroomcow=true
+                    ozelot=true
                     pig=true
+                    rabbit=true
                     sheep=true
+                    wolf=true
                 }
                 enabled=true
                 misc {
+                    arrow=true
+                    boat=true
                     fallingsand=true
                     item=true
+                    minecartchest=true
+                    minecartfurnace=true
+                    minecarthopper=true
+                    minecartrideable=true
+                    minecarttnt=true
+                    villager=true
+                    villagergolem=true
+                    xporb=true
+                }
+                monster {
+                    blaze=true
+                    cavespider=true
+                    creeper=true
+                    enderman=true
+                    endermite=true
+                    ghast=true
+                    giant=true
+                    guardian=true
+                    lavaslime=true
+                    pigzombie=true
+                    silverfish=true
+                    skeleton=true
+                    slime=true
+                    snowman=true
+                    spider=true
+                    witch=true
+                    zombie=true
                 }
             }
             misc-activation-range=16
@@ -114,6 +154,7 @@ The global.conf file contains the global configuration settings for Sponge. This
     }
 
 
+
 Global Properties of Sponge
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -151,15 +192,32 @@ max-speed                       integer   100       Square of the maximum speed 
 ambient-activation-range        integer   32        Range where ambient entities become active.
 aquatic-activation-range        integer   32        Range where aquatic entities become active.
 creature-activation-range       integer   32        Range where creatures become active.
-**Minecraft Creatures**         
-* cow                           boolean   true      Allow cows to spawn.
-* entityhorse                   boolean   true      Allow horses to spawn.
-* pig                           boolean   true      Allow pigs to spawn.
-* sheep                         boolean   true      Allow sheep to spawn.
+**Minecraft Creatures**
+* Ambient (bat)                 boolean   true      Allow bats to spawn.
+* Aquatic (squid)               boolean   true      Allow squid to spawn.
+* Creature <creature>           boolean   true      Allow <creature> to spawn. Permitted values:
+                                                    chicken, cow, entityhorse, mushroomcow, ozelot,
+                                                    pig, rabbit, sheep, wolf.
 enabled                         boolean   true      Enable the miscellaneous entities properties.
 **Miscellaneous Entities**
-* fallingsand                   boolean   true      Enable falling physics for sand and gravel.
+* arrow                         boolean   true      Allow arrow entities.
+* boat                          boolean   true      Allow boats.
+* fallingsand                   boolean   true      Enable falling sand (and gravel).
 * item                          boolean   true      Allow item entities.
+* minecartchest                 boolean   true      Allow minecarts with chests.
+* minecartfurnace               boolean   true      Allow minecarts with furnaces.
+* minecarthopper                boolean   true      Allow minecarts with hoppers.
+* xporb                         boolean   true      Allow experience orbs.
+* minecartrideable              boolean   true      Allow rideable minecarts.
+* minecarttnt                   boolean   true      Allow TNT-laden minecarts.
+* villager                      boolean   true      Allow villagers.
+* villagergolem                 boolean   true      Allow villager iron golems.
+**Minecraft Monsters**
+* Monster <monster>             boolean   true      Allow <monster> to spawn. Permitted values:
+                                                    blaze, cavespider, creeper, enderman,
+                                                    endermite, ghast, giant, guardian, lavaslime,
+                                                    pigzombie, silverfish, skeleton, slime,
+                                                    snowman, spider, witch, zombie.
 misc-activation-range           integer   16        Range where misc entities become active.
 monster-activation-range        integer   32        Range where monsters are activated.
 **General Settings**
@@ -180,15 +238,16 @@ log-stacktraces                 boolean   false     Add stack traces to dev logg
 entity-activation-range         boolean   true      Enables the entity activation range settings.
 **World Settings**
 flowing-lava-decay              boolean   false     Lava behaves like vanilla water when the source
-                                                    block is removed.
-infinite-water-source           boolean   false     Vanilla water source behaviour (infinite).
+                                                    block is removed, when set to true.
+infinite-water-source           boolean   false     False = Default vanilla water source behaviour.
 ==============================  ========  ========  ===============================================
 
 
-Sponge sql Service
+
+Sponge SQL Service
 ~~~~~~~~~~~~~~~~~~
 
-Sponge provides a rudimentary sql service. The sql properties are *not* created in the
+Sponge provides a rudimentary SQL service. The SQL properties are *not* created in the
 default global.conf file, and must be added by *manually* editing the file. This service
 permits assigning keys in the config file that can then be used by plugins.
 
@@ -197,7 +256,7 @@ permits assigning keys in the config file that can then be used by plugins.
 The keys define aliases (ie. key=url) for database connection URLs.
 These aliases can be used in place of database URLs in any plugin configuration
 that uses the Sponge services to establish database connections.
-An example of the completed sql settings is provided below.
+An example of the completed SQL settings is provided below.
         
 .. code-block:: none
 
