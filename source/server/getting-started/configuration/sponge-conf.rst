@@ -11,8 +11,8 @@ The global.conf file contains the global configuration settings for Sponge. This
     
     # 1.0
     # 
-    # # If you need help with the configuration or have any questions related to Sponge,
-    # # join us at the IRC or drop by our forums and leave a post.
+    # # If you need help with the configuration or have any questions related
+    # # to Sponge, join us at the IRC or drop by our forums and leave a post.
     # 
     # # IRC: #sponge @ irc.esper.net ( http://webchat.esper.net/?channel=sponge )
     # # Forums: https://forums.spongepowered.org/
@@ -162,7 +162,7 @@ Global Properties of Sponge
 Property                        Type      Default   Description
 ==============================  ========  ========  ===============================================
 **Commands**
-aliases                         string    null      Alias can resolving conflicts when multiple 
+aliases                         string    null      Alias will resolve conflicts when multiple 
                                                     plugins request a specific command. Syntax is
                                                     <unqualified command>=<plugin name>
                                                     eg. me=Minecraft, give=Essentials
