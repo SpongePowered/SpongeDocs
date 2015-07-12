@@ -81,15 +81,19 @@ The global.conf file contains the global configuration settings for Sponge. This
                 }
                 enabled=true
                 misc {
+                    armorstand=true
                     arrow=true
                     boat=true
                     fallingsand=true
                     item=true
+                    itemframe=true
+                    leashknot=true
                     minecartchest=true
                     minecartfurnace=true
                     minecarthopper=true
                     minecartrideable=true
                     minecarttnt=true
+                    painting=true
                     villager=true
                     villagergolem=true
                     xporb=true
@@ -163,9 +167,12 @@ Property                        Type      Default   Description
 ==============================  ========  ========  ===============================================
 **Commands**
 aliases                         string    null      Alias will resolve conflicts when multiple 
-                                                    plugins request a specific command. Syntax is
-                                                    <unqualified command>=<plugin name>
-                                                    eg. me=Minecraft, give=Essentials
+                                                    plugins request a specific command. Correct 
+                                                    syntax is <unqualified command>: <plugin name>
+                                                    ::
+                                                        eg.     aliases= {
+                                                                    title: myPlugin
+                                                                }
 config-enabled                  boolean   true      When true, World configs override Dimensions,
                                                     and both override Global. When false, settings
                                                     from Dimension and/or Global configs are used.
@@ -188,7 +195,8 @@ max-bounding-box-size           integer   1000      Maximum size of an entity's 
                                                     it is removed. Set to 0 to disable.
 max-speed                       integer   100       Square of the maximum speed of an entity before
                                                     it is removed. Set to 0 to disable
-**Entity Activation Range**
+**Entity Activation Range**                         *Note that entities from Mods are automatically
+                                                    to this list.*
 ambient-activation-range        integer   32        Range where ambient entities become active.
 aquatic-activation-range        integer   32        Range where aquatic entities become active.
 creature-activation-range       integer   32        Range where creatures become active.
@@ -200,18 +208,12 @@ creature-activation-range       integer   32        Range where creatures become
                                                     pig, rabbit, sheep, wolf.
 enabled                         boolean   true      Enable the miscellaneous entities properties.
 **Miscellaneous Entities**
-* arrow                         boolean   true      Allow arrow entities.
-* boat                          boolean   true      Allow boats.
-* fallingsand                   boolean   true      Enable falling sand (and gravel).
-* item                          boolean   true      Allow item entities.
-* minecartchest                 boolean   true      Allow minecarts with chests.
-* minecartfurnace               boolean   true      Allow minecarts with furnaces.
-* minecarthopper                boolean   true      Allow minecarts with hoppers.
-* xporb                         boolean   true      Allow experience orbs.
-* minecartrideable              boolean   true      Allow rideable minecarts.
-* minecarttnt                   boolean   true      Allow TNT-laden minecarts.
-* villager                      boolean   true      Allow villagers.
-* villagergolem                 boolean   true      Allow villager iron golems.
+* Misc <entity>                 boolean   true      Allow <entity> to spawn. Permitted values:
+                                                    armorstand, arrow, boat, fallingsand, item,
+                                                    itemframe, leashknot, minecartchest,
+                                                    minecartfurnace, minecarthopper, 
+                                                    minecartrideable, minecarttnt, painting,
+                                                    villager, villagergolem, xporb.
 **Minecraft Monsters**
 * Monster <monster>             boolean   true      Allow <monster> to spawn. Permitted values:
                                                     blaze, cavespider, creeper, enderman,
