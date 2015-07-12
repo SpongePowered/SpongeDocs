@@ -173,6 +173,7 @@ aliases                         string    null      Alias will resolve conflicts
                                                         eg.     aliases= {
                                                                     title: myPlugin
                                                                 }
+                                                    
 config-enabled                  boolean   true      When true, World configs override Dimensions,
                                                     and both override Global. When false, settings
                                                     from Dimension and/or Global configs are used.
