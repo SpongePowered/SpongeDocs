@@ -169,8 +169,9 @@ Property                        Type      Default   Description
 aliases                         string    null      Alias will resolve conflicts when multiple 
                                                     plugins request a specific command. Correct 
                                                     syntax is <unqualified command>: <plugin name>
-                                                    ::
-                                                        eg.     aliases= {
+                                                    eg. ::
+                                                    
+                                                                aliases= {
                                                                     title: myPlugin
                                                                 }
                                                     
