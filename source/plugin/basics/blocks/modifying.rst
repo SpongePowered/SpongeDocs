@@ -5,7 +5,7 @@ Modifying Blocks
 Changing a Blocks Type
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Changing the Type of a Block is as simple as calling the ``replaceWith()`` method of a ``Location`` with the new ``BlockType``. For example the following code turns the block at the given ``Location`` into a sponge.
+Changing the Type of a Block is as simple as calling the ``setBlockType()`` method of a ``Location`` with the new ``BlockType``. For example the following code turns the block at the given ``Location`` into a sponge.
 
  .. code-block:: java
  
@@ -13,22 +13,22 @@ Changing the Type of a Block is as simple as calling the ``replaceWith()`` metho
     import org.spongepowered.api.world.Location;
  
     public void setToSponge(Location block) { 
-        block.replaceWith(BlockTypes.SPONGE);
+        block.setBlockType(BlockTypes.SPONGE);
     }
 
-It's as simple as that. If you just want to 'delete' a block (which is done by replacing it with air), you may just use the ``remove()`` method provided by ``Location``.
+It's as simple as that. If you just want to 'delete' a block (which is done by replacing it with air), you may just use the ``removeBlock()`` method provided by ``Location``.
     
 Altering Block States
 ~~~~~~~~~~~~~~~~~~~~~
 
-Similar to the above example, the ``Location`` class provides a ``replaceWith()`` method accepting a new ``BlockState``. To make use of it, you first must acquire a ``BlockState`` you can modify. You can do so either by getting the block's current state via the ``getState()`` method provided by the ``Location`` class or by using a blocktype's default state. The latter is demonstrated below: The default state for a Sponge block is retrieved and then modified to directly create a wet sponge block.
+Similar to the above example, the ``Location`` class provides a ``setBlock()`` method accepting a new ``BlockState``. To make use of it, you first must acquire a ``BlockState`` you can modify. You can do so either by getting the block's current state via the ``getBlock()`` method provided by the ``Location`` class or by using a blocktype's default state. The latter is demonstrated below: The default state for a Sponge block is retrieved and then modified to directly create a wet sponge block.
 
  .. code-block:: java
  
     import org.spongepowered.api.Game;
     import org.spongepowered.api.block.BlockState;
     import org.spongepowered.api.block.BlockTypes;
-    import org.spongepowered.api.data.manipulators.WetData;
+    import org.spongepowered.api.data.manipulator.WetData;
     import org.spongepowered.api.world.Location;
  
     public void setToWetSponge(Location block) {
@@ -36,7 +36,7 @@ Similar to the above example, the ``Location`` class provides a ``replaceWith()`
         WetData wetness = game.getRegistry().getManipulatorRegistry()
             .getBuilder(WetData.class).get().create();
         BlockState newState = state.withData(wetness).get();
-        block.replaceWith(newState);
+        block.setBlock(newState);
     }
 
 A ``BlockState`` itself and its data are immutable, but it provides the methods ``withData()`` and ``withoutData()`` both of which will return a new altered ``BlockState`` or ``Optional.absent()`` if the given ``DataManipulator`` is not applicable to the kind of block represented by the ``BlockState``. 
@@ -46,12 +46,12 @@ The ``withData()`` method accepts a ``DataManipulator`` and will try to create a
  .. code-block:: java
     
     import org.spongepowered.api.block.BlockState;
-    import org.spongepowered.api.data.manipulators.blocks.DirtData;
-    import org.spongepowered.api.data.types.DirtTypes;
+    import org.spongepowered.api.data.manipulator.block.DirtData;
+    import org.spongepowered.api.data.type.DirtTypes;
     import org.spongepowered.api.world.Location;
     
     public void dirtToPodzol(Location block) {
-        BlockState state = block.getState();
+        BlockState state = block.getBlock();
         Optional<DirtData> dirtData = state.getManipulator(DirtData.class);
         if (dirtData.isPresent()) {
             DirtData coarseData = dirtData.get();
@@ -70,14 +70,14 @@ The following example will dry the block at a given ``Location``, if possible.
  .. code-block:: java
  
     import org.spongepowered.api.block.BlockState;
-    import org.spongepowered.api.data.manipulators.WetData;
+    import org.spongepowered.api.data.manipulator.WetData;
     import org.spongepowered.api.world.Location;
  
     public void dry(Location block) {
-        BlockState wetState = block.getState();
+        BlockState wetState = block.getBlock();
         Optional<BlockState> dryState = wetState.withoutData(WetData.class);
         if (dryState.isPresent()) {
-            block.replaceWith(dryState.get());
+            block.setBlock(dryState.get());
         }
     }
  
@@ -86,7 +86,7 @@ Since the ``WetData`` data manipulator represents boolean data, by removing it w
 Copying Blocks
 ~~~~~~~~~~~~~~
 
-If you want to copy all of a blocks data, the ``BlockSnapshot`` class is your best friend. While it doesn't expose all the data, it stores a Blocks type, its BlockState and, if necessary, all additional Tile Entity Data (for example chest inventories). Conventiently, the ``Location`` class provides a ``getSnapshot()`` method as well as a ``replaceWith()`` method accepting a ``BlockSnapshot``. That makes copying blocks from one location to another very simple:
+If you want to copy all of a blocks data, the ``BlockSnapshot`` class is your best friend. While it doesn't expose all the data, it stores a Blocks type, its BlockState and, if necessary, all additional Tile Entity Data (for example chest inventories). Conveniently, the ``Location`` class provides a ``getBlockSnapshot()`` method as well as a ``setBlockSnapshot()`` method accepting a ``BlockSnapshot``. That makes copying blocks from one location to another very simple:
 
  .. code-block:: java
      
@@ -94,6 +94,6 @@ If you want to copy all of a blocks data, the ``BlockSnapshot`` class is your be
     import org.spongepowered.api.world.Location;
  
     public void copyBlock(Location from, Location to) {
-        BlockSnapshot snapshot = from.getSnapshot();
-        to.replaceWith(snapshot);
+        BlockSnapshot snapshot = from.getBlockSnapshot();
+        to.setBlock(snapshot);
     }

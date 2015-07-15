@@ -24,7 +24,7 @@ Blocks are most commonly identified and accessed by their ``Location``. This loc
     Note that the above example does not check if the world exists. ``getWorld(worldName).get()`` will fail if there is no world of that name loaded.
 
     
-With this ``Location`` object you can then obtain further information about the block. The following code checks if a referenced block is any kind of banner by checking the blocks type
+With this ``Location`` object you can then obtain further information about the block. The following code checks if a referenced block is any kind of banner by checking the blocks type.
 
 .. code-block:: java
 
@@ -33,14 +33,14 @@ With this ``Location`` object you can then obtain further information about the 
     import org.spongepowered.api.world.Location;
     
     public boolean isBanner(Location block) {
-        BlockType type = block.getType();
+        BlockType type = block.getBlock().getType();
         return type == BlockTypes.STANDING_BANNER
                 || type == BlockTypes.WALL_BANNER;
     }
    
 .. tip ::
 
-    For every possible type of block, there is only one ``BlockType`` instance. Therefore, simple comparison with ``==`` can be used instead of using the ``equals()`` function
+    For every possible type of block, there is only one ``BlockType`` instance. Therefore, simple comparison with ``==`` can be used instead of using the ``equals()`` function.
 
 The ``Location`` class also provides means to check for environmental influences on the block (for example lighting and redstone power). The following example checks if a block is a regular chest directly or indirectly powered with redstone.
 
@@ -50,8 +50,8 @@ The ``Location`` class also provides means to check for environmental influences
     import org.spongepowered.api.world.Location;
     
     public boolean isPoweredChest(Location block) {
-        if (block.getType() == BlockTypes.CHEST) {
-            return block.isPowered() || block.isIndirectlyPowered();
+        if (block.getBlock().getType() == BlockTypes.CHEST) {
+            return block.isBlockPowered() || block.isBlockIndirectlyPowered();
         } else {
             return false;
         }
@@ -66,19 +66,19 @@ Additional Data (like orientation, subtypes like granite vs regular stone, farm 
 
     import org.spongepowered.api.block.BlockState;
     import org.spongepowered.api.block.BlockTypes;
-    import org.spongepowered.api.data.manipulators.WetData;
+    import org.spongepowered.api.data.manipulator.WetData;
     import org.spongepowered.api.world.Location;
     
     public boolean isWet(Location block) {
-        if (block.getType() != BlockTypes.SPONGE) {
+        if (block.getBlock().getType() != BlockTypes.SPONGE) {
             return false;
         }
-        BlockState sponge = block.getState();
+        BlockState sponge = block.getBlock();
         Optional<WetData> wetness = sponge.getManipulator(WetData.class);
         return wetness.isPresent();
     }   
 
-First, we need to know which ``DataManipulator`` subinterface we need. Those that are applicable to blocks are found in the ``org.spongepowered.api.data.manipulators`` and ``org.spongepowered.api.data.manipulators.block`` packages. Then we can just pass that class to the ``getManipulator()`` method and get an ``Optional`` in return which will be ``absent()`` if the ``BlockState`` does not contain data of that type.
+First, we need to know which ``DataManipulator`` subinterface we need. Those that are applicable to blocks are found in the ``org.spongepowered.api.data.manipulator`` and ``org.spongepowered.api.data.manipulator.block`` packages. Then we can just pass that class to the ``getManipulator()`` method and get an ``Optional`` in return which will be ``absent()`` if the ``BlockState`` does not contain data of that type.
 Since ``WetData`` represents a boolean value, its presence equates to ``true``. Its absence (if ``Optional.absent()`` was returned) either signifies ``false``.
 
 .. TODO refer and link to data api documentation

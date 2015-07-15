@@ -21,8 +21,8 @@ The type of a tile entity can then be obtained by the ``getType()`` function whi
 
  .. code-block:: java
   
-    import org.spongepowered.api.block.tile.TileEntity;
-    import org.spongepowered.api.block.tile.TileEntityTypes;
+    import org.spongepowered.api.block.tileentity.TileEntity;
+    import org.spongepowered.api.block.tileentity.TileEntityTypes;
     
     public boolean isJukebox(TileEntity entity) {
         return entity.getType() == TileEntityTypes.JUKEBOX;
@@ -31,11 +31,11 @@ The type of a tile entity can then be obtained by the ``getType()`` function whi
     public void ejectDiscFromJukebox(TileEntity entity) {
         if (isJukebox(entity)) {
             Jukebox jukebox = (Jukebox) entity);
-            jukebox.eject();
+            jukebox.ejectRecord();
         }
     }
     
-After performing this cast, the methods provided by the particular interface can be accessed (in this example the ``eject()`` method). For detailed information about ``TileEntity`` subtypes and their respective methods refer to the ``org.spongepowered.api.block.tile`` package and its subpackages in the API docs.
+After performing this cast, the methods provided by the particular interface can be accessed (in this example the ``ejectRecord()`` method). For detailed information about ``TileEntity`` subtypes and their respective methods refer to the ``org.spongepowered.api.block.tileentity`` package and its subpackages in the API docs.
 
 
 Accessing and Modifying a Tile Entity's Data
@@ -47,8 +47,8 @@ The following example contains two methods to alter the data of a sign. The firs
 
  .. code-block:: java
 
-    import org.spongepowered.api.block.tile.TileEntity;
-    import org.spongepowered.api.data.manipulators.tileentities.SignData;
+    import org.spongepowered.api.block.tileentity.TileEntity;
+    import org.spongepowered.api.data.manipulator.tileentities.SignData;
     import org.spongepowered.api.text.Text;
     
     public Optional<Text> getFirstLine(TileEntity entity) {
@@ -80,8 +80,8 @@ Quite a share of tile entities come with their own inventory, most notably chest
 
  .. code-block:: java
 
-    import org.spongepowered.api.block.tile.TileEntity;
-    import org.spongepowered.api.block.tile.carrier.TileEntityCarrier;
+    import org.spongepowered.api.block.tileentity.TileEntity;
+    import org.spongepowered.api.block.tileentity.carrier.TileEntityCarrier;
     import org.spongepowered.api.item.inventory.Inventory;
  
     public void useInventory(TileEntity entity) {
