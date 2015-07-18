@@ -36,7 +36,7 @@ How is the Sponge Project Broken Down?
 As you can see Sponge has several (mostly) independent parts:
 
  * sourcecode maintained on github.com
-    * Mixins
+    * Mixin
     * SpongeAPI
     * SpongeCommon
     * Sponge
