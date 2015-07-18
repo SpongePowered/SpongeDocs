@@ -72,7 +72,6 @@ What Happened to the Granite Implementation?
 
 The developers of Granite have joined the Sponge project, and Granite was renamed SpongeVanilla. It is now an officially supported Sponge API implementation, developed in parallel with Sponge coremod.
 
-
 For Server Owners
 =================
 
@@ -104,11 +103,11 @@ Bukkit’s API contains code licensed under the GPL. This is a large reason why 
 Will I Be Able to Access the Server Internals In My Plugins?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Accessing the server internals (known as "NMS" or "net.minecraft.server" in CraftBukkit) can be done through Forge, which has a large number of names de-obfuscated. However, be aware that accessing the server internals raises the risk of your plugin breaking - this is your prerogative.
+Accessing the server internals (known as "NMS" or "net.minecraft.server" in CraftBukkit) can be done through MCP, which has a large number of names de-obfuscated. However, be aware that accessing the server internals raises the risk of your plugin breaking - this is your prerogative.
 
 Will the Sponge API Be Similar to the Bukkit API in Terms of Usability?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Yes. It will also afford you more power because you will have access to Forge.
+Yes. It will also afford you more power because you will have access to MCP.
 
 It is worth noting that the Spout API is serving as inspiration for the development of the Sponge API, which reduces the amount of time spent on API design. We are also using portions of Flow's libraries from http://github.com/flow.
