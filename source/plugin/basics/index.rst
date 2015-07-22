@@ -20,6 +20,7 @@ Contents
     events
     blocks/index
     entities/index
+    items
     configuration
     injection
     scheduler
