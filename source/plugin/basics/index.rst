@@ -22,3 +22,4 @@ Contents
     entities/index
     configuration
     injection
+    scheduler
