@@ -18,6 +18,7 @@ Contents
     text/index
     commands/index
     events
+    data/index
     blocks/index
     entities/index
     configuration
