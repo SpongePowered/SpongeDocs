@@ -2,19 +2,28 @@
 Contribution Guidelines
 =======================
 
-We will always have a need for developers to help us improve SpongeAPI. There is no such thing as a perfect project and things can always be improved. If you are a developer and are interested in helping then please do not hesitate. Just make sure you follow our guidelines.
+We will always have a need for developers to help us improve SpongeAPI. There is no such thing as a perfect project and
+things can always be improved. If you are a developer and are interested in helping then please do not hesitate. Just
+make sure you follow our guidelines.
 
 General steps
 =============
 
 1. Setup your workspace as described in :doc:`../../preparing/index`.
 
-#. Check for existing issues in the `SpongeAPI <https://github.com/SpongePowered/SpongeAPI/issues>`_, `Sponge <https://github.com/SpongePowered/Sponge>`_, `SpongeVanilla <https://github.com/SpongePowered/SpongeVanilla>`_ and `SpongeCommon <https://github.com/SpongePowered/SpongeCommon>`_  repositories. There is possibly someone else already working on the same thing. You can also check `issues marked with "help wanted" <https://github.com/SpongePowered/SpongeAPI/labels/help%20wanted>`_ for existing issues we need your help with.
+#. Check for existing issues in the `SpongeAPI <https://github.com/SpongePowered/SpongeAPI/issues>`_, `Sponge
+   <https://github.com/SpongePowered/Sponge>`_, `SpongeVanilla <https://github.com/SpongePowered/SpongeVanilla>`_ and
+   `SpongeCommon <https://github.com/SpongePowered/SpongeCommon>`_  repositories. There is possibly someone else
+   already working on the same thing. You can also check `issues marked with "help wanted"
+   <https://github.com/SpongePowered/SpongeAPI/labels/help%20wanted>`_ for existing issues we need your help with.
 
 .. note::
-    Please don't submit pull request for small changes under 20 lines. Instead, `join #spongedev on IRC (irc.esper.net) <TODO>`_ and we'll change it together with the other smaller changes.
+    Please don't submit pull request for small changes under 20 lines. Instead, `join #spongedev on IRC (irc.esper.net)
+    <TODO>`_ and we'll change it together with the other smaller changes.
 
-#. If the issue requires a bigger change you may want to submit the issues without the necessary changes first, so we can confirm the issue and know that you're working on fixing it. You should also create a WIP (work in process) pull request prefixed with ``[WIP]`` early so we can already start reviewing them.
+#. If the issue requires a bigger change you may want to submit the issues without the necessary changes first, so we
+   can confirm the issue and know that you're working on fixing it. You should also create a WIP (work in process) pull
+   request prefixed with ``[WIP]`` early so we can already start reviewing them.
 
 #. Fork the project, clone it and make your changes in an extra branch.
 
@@ -22,15 +31,18 @@ General steps
 
 #. Submit the pull request with a short summary what you've changed and why it should be changed in that way.
 
-#. If you make additional changes, push new commits to your branch. **Do not squash your changes**, that makes it extremely hard to see what you've changed compared to the previous version of your pull request.
+#. If you make additional changes, push new commits to your branch. **Do not squash your changes**, that makes it
+   extremely hard to see what you've changed compared to the previous version of your pull request.
 
 Code Style
 ==========
 
-We follow `Google's Java Style Guidelines <https://google-styleguide.googlecode.com/svn/trunk/javaguide.html>`_ with a few additions and modifications, which are described herein.
+We follow `Google's Java Style Guidelines <https://google-styleguide.googlecode.com/svn/trunk/javaguide.html>`_ with a
+few additions and modifications, which are described herein.
 
 .. tip::
-    You can use our code styles for Eclipse or IntelliJ IDEA to let your IDE format the code correctly for you. See :doc:`../../preparing/index` for more information.
+    You can use our code styles for Eclipse or IntelliJ IDEA to let your IDE format the code correctly for you. See
+    :doc:`../../preparing/index` for more information.
 
 * Line endings
 
@@ -50,11 +62,13 @@ We follow `Google's Java Style Guidelines <https://google-styleguide.googlecode.
 
 * Vertical whitespace
 
-  * Place a blank line before the first member of a class, interface, enum, etc. (i.e. after ``class Example {``) as well as after the last member
+  * Place a blank line before the first member of a class, interface, enum, etc. (i.e. after ``class Example {``) as
+    well as after the last member
 
 * File headers
 
-  * File headers must contain the license headers for the project. Use the ``licenseFormat`` Gradle task to add them automatically.
+  * File headers must contain the license headers for the project. Use the ``licenseFormat`` Gradle task to add them
+    automatically.
 
 * Imports
 
@@ -79,19 +93,24 @@ We follow `Google's Java Style Guidelines <https://google-styleguide.googlecode.
 
   * Do not use ``@author``
   * Wrap additional paragraphs in ``<p>`` and ``</p>``
-  * Capitalize the first letter in the descriptions within each "at clause", i.e. ``@param name Player to affect``, no periods
+  * Capitalize the first letter in the descriptions within each "at clause", i.e. ``@param name Player to affect``, no
+    periods
 
 Code Conventions
 ================
 
-* Use `Optionals <https://code.google.com/p/guava-libraries/wiki/UsingAndAvoidingNullExplained>`_ instead of returning ``null`` in the API
-* Method parameters accepting ``null`` must be annotated with ``@Nullable`` (from javax.*), all methods and parameters are ``@Nonnull`` by default.
-* Use `Google Preconditions <https://code.google.com/p/guava-libraries/wiki/PreconditionsExplained>`_ for null- and argument checking.
+* Use `Optionals <https://code.google.com/p/guava-libraries/wiki/UsingAndAvoidingNullExplained>`_ instead of returning
+  ``null`` in the API
+* Method parameters accepting ``null`` must be annotated with ``@Nullable`` (from javax.*), all methods and parameters
+  are ``@Nonnull`` by default.
+* Use `Google Preconditions <https://code.google.com/p/guava-libraries/wiki/PreconditionsExplained>`_ for null- and
+  argument checking.
 
 The Gist
 ========
 
-While we urge that you read Google's Java conventions particularly, the two are fairly long documents. To get you started quickly, here is an example of properly formatted code:
+While we urge that you read Google's Java conventions particularly, the two are fairly long documents. To get you
+started quickly, here is an example of properly formatted code:
 
 .. code-block:: java
 

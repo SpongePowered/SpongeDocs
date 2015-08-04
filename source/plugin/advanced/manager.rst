@@ -2,7 +2,11 @@
 Using the Plugin Manager
 ========================
 
-The Plugin Manager is what your plugin gets sent to after being loaded by the server at startup. The server loads your plugin by finding its main class, annotated by the ``@Plugin`` annotation that holds its general information, and sends a new instance of it to the manager. The manager then keeps that instance in its own collection that you can look into and pull from using methods provided by itself, thus allowing you to easily interact with another loaded plugin if you so desire.
+The Plugin Manager is what your plugin gets sent to after being loaded by the server at startup. The server loads
+your plugin by finding its main class, annotated by the ``@Plugin`` annotation that holds its general information,
+and sends a new instance of it to the manager. The manager then keeps that instance in its own collection that you
+can look into and pull from using methods provided by itself, thus allowing you to easily interact with another
+loaded plugin if you so desire.
 
 The PluginManager Class
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -11,9 +15,14 @@ The PluginManager Class
 
 .. tip::
 
-    See the `documentation for PluginManager`_ for full information about the class, as well as its methods and their usage.
+    See the `documentation for PluginManager`_ for full information about the class, as well as its methods and their
+    usage.
 
-Public methods inside the ``PluginManager`` are used to grab information about the current collection of loaded plugins, alongside their instances. The plugins are stored inside a ``PluginContainer`` (discussed in next section) to allow for an easy center of information about the specific plugin. As an example, you can use the ``PluginManager`` to communicate with another plugin, grabbing its instance and using the methods it offers to provide compability or extended features by means of your calling plugin.
+Public methods inside the ``PluginManager`` are used to grab information about the current collection of loaded plugins,
+alongside their instances. The plugins are stored inside a ``PluginContainer`` (discussed in next section) to allow for
+an easy center of information about the specific plugin. As an example, you can use the ``PluginManager`` to communicate
+with another plugin, grabbing its instance and using the methods it offers to provide compability or extended features
+by means of your calling plugin.
 
 Obtaining the Plugin Manager
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -27,7 +36,8 @@ You can get an instance of the server's ``PluginManager`` using a few different 
 
     See the :doc:`../basics/injection` guide for help on using dependency injection.
 
-The ``PluginManager`` is one of the few API instances that are injected into the main class upon being loaded. To ask for a reference, create a new variable to hold the ``PluginManager`` instance and simply annotate it with ``@Inject``.
+The ``PluginManager`` is one of the few API instances that are injected into the main class upon being loaded. To ask
+for a reference, create a new variable to hold the ``PluginManager`` instance and simply annotate it with ``@Inject``.
 
 .. code-block:: java
 
@@ -46,7 +56,8 @@ The ``PluginManager`` is one of the few API instances that are injected into the
 
     See :doc:`services` for a full guide about the Service Manager.
 
-The service manager also holds an instance of the server's ``PluginManager``. Simply use the method ``ServiceManager.provide()``, passing the ``PluginManager``'s class (``PluginManager.class``) as a parameter.
+The service manager also holds an instance of the server's ``PluginManager``. Simply use the method
+``ServiceManager.provide()``, passing the ``PluginManager``'s class (``PluginManager.class``) as a parameter.
 
 .. code-block:: java
 
@@ -84,8 +95,8 @@ Using the Plugin Manager
 
 The plugin manager provides several methods for working with plugins.
 
-A lot of methods return plugin containers, which will be discussed in the next section.
-Plugin containers are pretty much self-explanatory "containers" of the actual plugin instance.
+A lot of methods return plugin containers, which will be discussed in the next section. Plugin containers are pretty
+much self-explanatory "containers" of the actual plugin instance.
 
 With the plugin manager, it is possible to get all plugins currently loaded through the plugin manager:
 
@@ -115,11 +126,17 @@ The PluginContainer Class
 
 .. tip::
 
-    See the `documentation for PluginContainer`_ for full information about the class, as well as its methods and their usage.
+    See the `documentation for PluginContainer`_ for full information about the class, as well as its methods and their
+    usage.
 
-When grabbing a plugin from the ``PluginManager``, you'll notice very quickly that you are not given an immediate instance of the requested plugin. Instead, you'll be greeted by a ``PluginContainer`` containing information about the plugin attained from its ``@Plugin`` annotation in its main class, as well as the loaded instance.
+When grabbing a plugin from the ``PluginManager``, you'll notice very quickly that you are not given an immediate
+instance of the requested plugin. Instead, you'll be greeted by a ``PluginContainer`` containing information about the
+plugin attained from its ``@Plugin`` annotation in its main class, as well as the loaded instance.
 
-The ``PluginContainer`` will hold any generic information about the plugin set by its owning developer. You can use information from here instead of hard-coding what you know about it in your supporting plugin. An example scenario would be if the owning developer changes the name of the plugin, references to the latter in the supporting plugin would not become wrong as a result of this change, provided you've used the method ``PluginContainer.getName()`` to get its name.
+The ``PluginContainer`` will hold any generic information about the plugin set by its owning developer. You can use
+information from here instead of hard-coding what you know about it in your supporting plugin. An example scenario would
+be if the owning developer changes the name of the plugin, references to the latter in the supporting plugin would not
+become wrong as a result of this change, provided you've used the method ``PluginContainer.getName()`` to get its name.
 
 .. code-block:: java
 
@@ -132,4 +149,5 @@ The ``PluginContainer`` will hold any generic information about the plugin set b
 
 .. note::
 
-    ``PluginContainer.getInstance()`` will return as an ``Object``. You need to cast it as the target plugin after obtaining it from the container.
+    ``PluginContainer.getInstance()`` will return as an ``Object``. You need to cast it as the target plugin after
+    obtaining it from the container.

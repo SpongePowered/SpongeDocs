@@ -35,7 +35,8 @@ Eclipse
 
 .. tip::
 
-    You can use :doc:`../basics/workspace/eclipse` to create a new Eclipse project. Eclipse, unlike IntelliJ, does not require any specific setup in regards to how you manage the plugin. Creating a new project is all you need to do.
+    You can use :doc:`../basics/workspace/eclipse` to create a new Eclipse project. Eclipse, unlike IntelliJ, does not
+    require any specific setup in regards to how you manage the plugin. Creating a new project is all you need to do.
 
 Adding Plugin to Sponge classpath
 =================================
@@ -47,7 +48,8 @@ server.
 
 .. tip::
 
-    Please ensure that you have your Run/Debug Configuration(s) set appropriately, as shown in the Sponge `README.md <https://github.com/SpongePowered/Sponge/blob/master/README.md>`_
+    Please ensure that you have your Run/Debug Configuration(s) set appropriately, as shown in the Sponge
+    `README.md <https://github.com/SpongePowered/Sponge/blob/master/README.md>`_
 
 IntelliJ
 ~~~~~~~~
@@ -68,7 +70,8 @@ Eclipse
 * Find your Run/Debug Configuration
 
   * Click ``Run``, followed by ``Run Configurations...``
-  * OR, click the drop-down arrow beside the Run/Debug icons and then ``Run Configurations...`` or ``Debug Configurations...``, respectively.
+  * OR, click the drop-down arrow beside the Run/Debug icons and then ``Run Configurations...`` or
+    ``Debug Configurations...``, respectively.
 
 * Select your Run/Debug Configuration for Sponge (Server) on the left side.
 * Switch to the ``Classpath`` tab.
@@ -82,9 +85,13 @@ Testing the Configuration
 
 After you've followed the previous steps, you should be ready to start debugging.
 
-.. tip:: 
-    
-    Once a single server tick takes more than a given amount of time, the watchdog will consider the server crashed and forcefully shut it down. When working with breakpoints or executing code step by step this might occur, so it is recommended that you edit your test environments ``server.properties`` file and set the value of ``max-tick-time`` to either a very large number (the amount of milliseconds a tick may take) or ``-1`` (to disable the Watchdog completely).
+.. tip::
+
+    Once a single server tick takes more than a given amount of time, the watchdog will consider the server crashed
+    and forcefully shut it down. When working with breakpoints or executing code step by step this might occur, so
+    it is recommended that you edit your test environments ``server.properties`` file and set the value of
+    ``max-tick-time`` to either a very large number (the amount of milliseconds a tick may take) or ``-1`` (to disable
+    the Watchdog completely).
 
 IntelliJ
 ~~~~~~~~
@@ -109,7 +116,8 @@ capabilities of Hotswapping:
 
 * You cannot create or remove methods.
 
-    * Changes to methods are limited to information *within* the method. You cannot modify its return type, nor its variable requirements
+    * Changes to methods are limited to information *within* the method. You cannot modify its return type, nor its
+      variable requirements
 
 * You cannot remove classes.
 
@@ -131,4 +139,3 @@ Eclipse
 In Eclipse, when a file is rebuilt, it is automatically hotswapped with the currently running debug. The default setting
 for building files insist that it is rebuilt upon every save. Meaning as soon as the file is saved, it's automatically
 built and swapped. If you have turned this feature off, you would have to build manually.
-

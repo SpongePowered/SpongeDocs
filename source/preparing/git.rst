@@ -7,9 +7,11 @@ Overview
 
 Git is an open-source version control system, and helps tremendously with collaborative project development.
 
-The Sponge project, alongside thousands of other open-source projects, hosts its Git repositories on GitHub. Thus, Git is a crucial tool in the development of Sponge and the Sponge API.
+The Sponge project, alongside thousands of other open-source projects, hosts its Git repositories on GitHub. Thus,
+Git is a crucial tool in the development of Sponge and the Sponge API.
 
-The `Git website <https://www.git-scm.com/>`__ has substantial documentation, and their downloads page offers a range of options for GUI clients suitable for various operating systems.
+The `Git website <https://www.git-scm.com/>`__ has substantial documentation, and their downloads page offers a range
+of options for GUI clients suitable for various operating systems.
 
 Download
 ========
@@ -17,7 +19,8 @@ Download
 Windows
 ~~~~~~~
 
-`GitHub for Windows <https://windows.github.com/>`_ is an easy method of installing Git on Windows, because Git is included as a part of the software.
+`GitHub for Windows <https://windows.github.com/>`_ is an easy method of installing Git on Windows, because Git is
+included as a part of the software.
 
 Rebooting your computer after installing Git is recommended.
 
@@ -30,14 +33,16 @@ The easiest method is to install Xcode Command Line Tools.
 
 .. warning::
 
-    These instructions do not work on Macs running a version older than Mavericks. If you are running a version of OS X older than Mavericks, install the GitHub client instead.
+    These instructions do not work on Macs running a version older than Mavericks. If you are running a version of OS X
+    older than Mavericks, install the GitHub client instead.
 
 #. Launch the Terminal.
 #. Run ``xcode-select --install``.
 #. Install it, and grab a cookie while you wait.
 #. Run ``git`` from the Terminal.
 
-Alternatively, you can install `GitHub for Mac <https://mac.github.com/>`_. Git is available as a part of the GitHub for Mac installation.
+Alternatively, you can install `GitHub for Mac <https://mac.github.com/>`_. Git is available as a part of the GitHub
+for Mac installation.
 
 Rebooting your computer after installing Git is recommended.
 

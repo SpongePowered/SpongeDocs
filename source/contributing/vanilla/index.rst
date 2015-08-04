@@ -5,7 +5,8 @@ SpongeVanilla Development
 Overview
 ========
 
-The SpongeVanilla implementation is an official implementation of the Sponge API that runs on a Vanilla Minecraft Server.
+The SpongeVanilla implementation is an official implementation of the Sponge API that runs on a Vanilla Minecraft
+Server.
 
 
 Contents

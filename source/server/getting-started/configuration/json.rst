@@ -2,7 +2,8 @@
 JSON Syntax
 ===========
 
-This is an example of a ``whitelist.json`` file with correct formatting (although the UUID-s are fictional). Your file should follow the same syntax.
+This is an example of a ``whitelist.json`` file with correct formatting (although the UUID-s are fictional). Your file
+should follow the same syntax.
 
 .. code-block:: json
 
@@ -26,4 +27,5 @@ Format Rules
 - If more than one exists, both entries and key/value pairs are comma separated
 - All strings are in quotation marks
 - UUID-s are 32 symbols long, and written in hexadecimal (0-9, a-f).
-- the UUID symbols are grouped. First is a group of 8, then three groups of 4, then a group of 12. The groups are separated by dashes (``-``)
+- the UUID symbols are grouped. First is a group of 8, then three groups of 4, then a group of 12. The groups are
+  separated by dashes (``-``)

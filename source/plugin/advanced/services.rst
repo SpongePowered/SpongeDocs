@@ -2,8 +2,8 @@
 Working with Services
 =====================
 
-Pretty much everything (events, permissions, etc.) is handled through services.
-All services are accessed through the service manager:
+Pretty much everything (events, permissions, etc.) is handled through services. All services are accessed through the
+service manager:
 
 .. code-block:: java
 
@@ -13,8 +13,8 @@ If you need to get an object reference to something, just get it off the service
 
 Providing your own service
 --------------------------
-Your plugin can provide the implementation for a core interface like ``PermissionService``,
-or for a custom interface that is not part of the Sponge API (e.g. economy, web server):
+Your plugin can provide the implementation for a core interface like ``PermissionService``, or for a custom interface
+that is not part of the Sponge API (e.g. economy, web server):
 
 .. code-block:: java
 
@@ -73,11 +73,11 @@ Now you can write the class that implements your interface:
     	}
     }
 
-Now we can register a new instance of the class in the service manager.
-We are using the interface ``EconomyService.class`` as the ``service`` key.
+Now we can register a new instance of the class in the service manager. We are using the interface
+``EconomyService.class`` as the ``service`` key.
 
-This makes it possible for other plugin developers to write their own implementation
-of your service (that implements the interface) and replace your version.
+This makes it possible for other plugin developers to write their own implementation of your service (that implements
+the interface) and replace your version.
 
 .. code-block:: java
 

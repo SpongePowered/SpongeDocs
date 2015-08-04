@@ -2,8 +2,9 @@
 Message Sinks
 =============
 
-A ``MessageSink`` enables you to easily control the recipients of a message. The ``org.spongepowered.api.text.sink.MessageSinks`` utility class provides methods for targeting
-appropriate recipients, as described below.
+A ``MessageSink`` enables you to easily control the recipients of a message. The
+``org.spongepowered.api.text.sink.MessageSinks`` utility class provides methods for targeting appropriate recipients,
+as described below.
 
 Selecting Message Sink Recipients
 =================================
@@ -27,7 +28,8 @@ For example, the code below will define a ``MessageSink`` targeting all players 
 Broadcasting
 ~~~~~~~~~~~~
 
-In a broadcast, every ``CommandSource`` connected to the server will be sent the same message. This can be achieved with a ``MessageSink``, as shown below:
+In a broadcast, every ``CommandSource`` connected to the server will be sent the same message. This can be achieved
+with a ``MessageSink``, as shown below:
 
 **Example: Broadcasting**
 
@@ -51,8 +53,8 @@ The ``MessageSinks`` class can also be used to combine the recipients of any arb
 
 **Example: Combined Message Sinks**
 
-In the following block of code, any ``CommandSource`` that holds either the `com.example.myplugin.permission1` or the `com.example.myplugin.permission2` permissions will be targeted
-by the ``MessageSink``.
+In the following block of code, any ``CommandSource`` that holds either the `com.example.myplugin.permission1` or the
+`com.example.myplugin.permission2` permissions will be targeted by the ``MessageSink``.
 
 .. code-block:: java
 
@@ -66,17 +68,19 @@ by the ``MessageSink``.
 
 .. tip::
 
-    ``MessageSinks#combined(MessageSink... sinks)`` can also be used to apply message transformations, as discussed below.
+    ``MessageSinks#combined(MessageSink... sinks)`` can also be used to apply message transformations, as discussed
+    below.
 
 Targeting Command Sources
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Lastly, a ``MessageSink`` can be used to target any number of CommandSources. This allows a finer control over who you would like to send the message to.
+Lastly, a ``MessageSink`` can be used to target any number of CommandSources. This allows a finer control over who
+you would like to send the message to.
 
 **Example: Targeting Command Sources**
 
-In the following example, any ``Player`` whose display name contains the prefix "[Donor]" will be added as a recipient to a new ``MessageSink``, which could then be used to send a
-message thanking the players for their donations.
+In the following example, any ``Player`` whose display name contains the prefix "[Donor]" will be added as a recipient
+to a new ``MessageSink``, which could then be used to send a message thanking the players for their donations.
 
 .. code-block:: java
 
@@ -102,7 +106,8 @@ message thanking the players for their donations.
 Sending Messages with Message Sinks
 ===================================
 
-Once you have defined an appropriate ``MessageSink``, you can use ``MessageSink#sendMessage(Text text)`` to send the message.
+Once you have defined an appropriate ``MessageSink``, you can use ``MessageSink#sendMessage(Text text)`` to send the
+message.
 
 **Example: Sending Messages with Message Sinks**
 
@@ -113,21 +118,24 @@ Once you have defined an appropriate ``MessageSink``, you can use ``MessageSink#
 Extended Application: Chat Channels
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Message sinks have a very useful application that they can be used to establish chat channels. For example, you could establish a message sink for every chat channel you wish to have.
-Then, when a ``CommandSource`` joins a channel, such as with ``/join <channel name>``, simply set the ``CommandSource``'s ``MessageSink`` to the appropriate channel using
-``CommandSource#setMessageSink(MessageSink sink)``. Alternatively, you could subscribe to ``PlayerChatEvent``, and set the appropriate ``MessageSink`` using
-``MessageEvent#setSink(MessageSink sink)``.
+Message sinks have a very useful application that they can be used to establish chat channels. For example, you could
+establish a message sink for every chat channel you wish to have. Then, when a ``CommandSource`` joins a channel, such
+as with ``/join <channel name>``, simply set the ``CommandSource``'s ``MessageSink`` to the appropriate channel using
+``CommandSource#setMessageSink(MessageSink sink)``. Alternatively, you could subscribe to ``PlayerChatEvent``, and set
+the appropriate ``MessageSink`` using ``MessageEvent#setSink(MessageSink sink)``.
 
 Transforming Messages with Message Sinks
 ========================================
 
-You can apply a filter to all ``Text``\ s that pass through a ``MessageSink`` to change the message however you like. This is possible by creating a ``Class`` that extends
-``MessageSink`` and defining the appropriate behavior for the ``MessageSink#transformMessage(CommandSource target, Text text)`` method, as shown below.
+You can apply a filter to all ``Text``\ s that pass through a ``MessageSink`` to change the message however you like.
+This is possible by creating a ``Class`` that extends ``MessageSink`` and defining the appropriate behavior for the
+``MessageSink#transformMessage(CommandSource target, Text text)`` method, as shown below.
 
 **Example: Transforming Messages with Message Sinks**
 
-The following code excerpt defines a ``DonorMessageSink`` class which overrides the default ``transformMessage`` method. The new transformation method will first check if the
-``CommandSource`` has the ``com.example.myplugin.donor`` permission, and if so, will append a `[Donor]` prefix, such as in a ranking system.
+The following code excerpt defines a ``DonorMessageSink`` class which overrides the default ``transformMessage`` method.
+The new transformation method will first check if the ``CommandSource`` has the ``com.example.myplugin.donor``
+permission, and if so, will append a `[Donor]` prefix, such as in a ranking system.
 
 .. code-block:: java
 
@@ -156,11 +164,13 @@ The following code excerpt defines a ``DonorMessageSink`` class which overrides 
 
     }
 
-Note that we do not wish to define any additional reecipients, so we return an empty ``List`` in the ``getRecipients`` method.
+Note that we do not wish to define any additional reecipients, so we return an empty ``List`` in the ``getRecipients``
+method.
 
-Now that we have defined our custom ``DonorMessageSink`` that will append a prefix to a player's name, we need to apply a new ``MessageSink`` combining the existing one
-and the new one to the ``CommandSource``. We can do this by using the ``MessageSinks#combined(MessageSink... sinks)`` method. In the following code excerpt, the new
-``DonorMessageSink`` will be applied to any ``Player`` that joins the server.
+Now that we have defined our custom ``DonorMessageSink`` that will append a prefix to a player's name, we need to apply
+a new ``MessageSink`` combining the existing one and the new one to the ``CommandSource``. We can do this by using the
+``MessageSinks#combined(MessageSink... sinks)`` method. In the following code excerpt, the new ``DonorMessageSink``
+will be applied to any ``Player`` that joins the server.
 
 .. code-block:: java
 
@@ -182,5 +192,6 @@ and the new one to the ``CommandSource``. We can do this by using the ``MessageS
 
 .. note::
 
-    When combining multiple ``MessageSink``\ s defining different message transformations, the ``Text`` will be transformed in the order that the ``MessageSink``\ s
-    are passed in to the ``MessageSinks#combined(MessageSink... sinks)`` method.
+    When combining multiple ``MessageSink``\ s defining different message transformations, the ``Text`` will be
+    transformed in the order that the ``MessageSink``\ s are passed in to the
+    ``MessageSinks#combined(MessageSink... sinks)`` method.

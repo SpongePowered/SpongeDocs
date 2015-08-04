@@ -16,7 +16,9 @@ The Sponge project currently has four main components:
 
 .. warning::
 
-    Sponge is still in development. Development builds are currently available for `download <https://repo.spongepowered.org/maven/org/spongepowered/sponge/>`__, but an official release will not be available until later in 2015.
+    Sponge is still in development. Development builds are currently available for `download
+    <https://repo.spongepowered.org/maven/org/spongepowered/sponge/>`__, but an official release will not be available
+    until later in 2015.
 
 Contents
 ========
@@ -62,7 +64,8 @@ This section is intended to help developers who have prior Java experience with 
 Contributing to Sponge
 ~~~~~~~~~~~~~~~~~~~~~~
 
-This section is intended to help developers who have prior Java experience with contributing code to the Sponge project. Instructions on contributing to SpongeDocs are also contained within. Make Spongie proud!
+This section is intended to help developers who have prior Java experience with contributing code to the Sponge project.
+Instructions on contributing to SpongeDocs are also contained within. Make Spongie proud!
 
 .. toctree::
     :maxdepth: 3
