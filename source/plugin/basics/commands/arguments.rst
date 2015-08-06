@@ -202,7 +202,7 @@ The parser in this example reads two input arguments and converts them to a vect
            return new Vector2i(x, y);
        }
        
-       private int parseInt(string input) throws ArgumentParseException {
+       private int parseInt(String input) throws ArgumentParseException {
            try {
                return Integer.parseInt(input);
            } catch(NumberFormatException e) {
