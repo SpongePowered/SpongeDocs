@@ -53,7 +53,7 @@ writing Sponge Documentation. This list may get added to (or bent out of shape) 
 12. Code symbols should be capitalised in their original form and have no extra spaces (eg. blockState (a field name) or
     BlockState (a class name), rather than *block state*). They should also be formatted as a literal using double
     backticks (eg. ``blockState``) in body text.
-
+13. Lines should have a maximum length of 120 characters.
 
 .. Note::
 
