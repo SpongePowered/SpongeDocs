@@ -7,7 +7,7 @@ This page is split into two main parts:
  * the history of our beloved mascot Spongie
 
 The History of the Project
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+==========================
 
 Sponge was founded as a better alternative to the APIs that were available as of September 2014. The Sponge :doc:`staff`
 consists of many people from different Communities, eg. Spout/Spoutcraft, Forge, Cauldron and a few others.
@@ -50,12 +50,12 @@ finally made available.
 
 
 Spongie - our Mascot
-~~~~~~~~~~~~~~~~~~~~
+====================
 
 Spongie is our friendly, helpful and somewhat soaky mascot. Don't make her cry, as she's a very sensitive person.
 
 The History of Spongie
-----------------------
+~~~~~~~~~~~~~~~~~~~~~~
 
 Spongie first appeared in #Sponge on Esper.NET around September 2014. She was created and posted by
 `DragonsPainter <http://dragonspainter.deviantart.com/>`__. Strad, another user, felt that Spongie would look better with

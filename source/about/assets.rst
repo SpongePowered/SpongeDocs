@@ -11,11 +11,11 @@ about Sponge.
 
 
 The Official Sponge Logo
-~~~~~~~~~~~~~~~~~~~~~~~~
+========================
 
 # official Logo goes here #
 
 Spongie - The Official Sponge Mascot
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+====================================
 
 # Spongie art goes here #

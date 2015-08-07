@@ -11,7 +11,7 @@ provided in some cases to provide more information. It is not intended to be a g
 
 
 Definitions
-~~~~~~~~~~~
+===========
 
 API
   Application Programming Interface - a way of making modding easier.

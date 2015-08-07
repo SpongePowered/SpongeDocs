@@ -35,8 +35,6 @@ There are two official implementations of the Sponge API: Sponge (coremod) and S
 much of their code is shared, and this is now contained in the SpongeCommon repository. This diagram shows an overview
 of the Sponge codebase and its dependencies:
 
-.. image:: /images/sponge-codebase-layout.png
-
 **SpongeCommon**  is the core of both official implementations of the Sponge API. Within it resides all core services
 and the common layer of implementation that is used in both Sponge and SpongeVanilla. Almost all implementation should
 reside in SpongeCommon, with separation of interfaces as necessary for special handling per implementation.
@@ -57,9 +55,7 @@ Contents
     :titlesonly:
 
     guidelines
-    coremod/index
-    vanilla/index
-    common/index
     api/index
-    docs/index
+    implementation/index
+    spongedocs
     porting
