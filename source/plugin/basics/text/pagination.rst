@@ -7,7 +7,8 @@ The Pagination Service
 	For a basic understanding of services, make sure you read :doc:`../../advanced/services` first.
 
 The ``PaginationService`` acts as a way to split up content into discrete pages.
-The service provides a ``PaginationBuilder`` with which you can specify attributes such as title, contents, header, and padding.
+The service provides a ``PaginationBuilder`` with which you can specify attributes such as title, contents, header,
+and padding.
 
 Working With the PaginationBuilder
 ==================================
@@ -42,7 +43,8 @@ There are two different ways to specify the contents of paginated list:
 
  .. note::
 
-	If the ``Iterable`` is a ``List``, then bidirectional navigation is supported. Otherwise, only forwards navigation is supported.
+	If the ``Iterable`` is a ``List``, then bidirectional navigation is supported. Otherwise, only forwards navigation
+	is supported.
 
 * With an array of ``Text``\ s
 
@@ -52,8 +54,9 @@ There are two different ways to specify the contents of paginated list:
 
 	builder.contents(Texts.of("Item 1"), Texts.of("Item 2"), Texts.of("Item 3"));
 
-You can also specify various other components of a paginated list, such as a title, header, footer, and padding. The diagram below shows which component is displayed
-in each part of the paginated list. In the following diagram, the padding string is shown as the letter `p`.
+You can also specify various other components of a paginated list, such as a title, header, footer, and padding. The
+diagram below shows which component is displayed in each part of the paginated list. In the following diagram, the
+padding string is shown as the letter `p`.
 
 ::
 
@@ -80,7 +83,8 @@ To achieve the preceding output, we might use the following builder pattern:
 
 .. note::
 
-	With the exception of contents, all components of the paginated list are optional. However, a title is strongly recommended
+	With the exception of contents, all components of the paginated list are optional. However, a title is strongly
+	recommended
 
 Finally, to send the paginated list to a ``CommandSource``, use ``PaginationBuilder#sendTo(CommandSource source)``.
 

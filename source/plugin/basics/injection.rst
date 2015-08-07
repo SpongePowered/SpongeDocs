@@ -16,7 +16,7 @@ Game
   The ``Game`` object is the core accessor of the SpongeAPI.
 
 PluginManager
-  Manages the plugins loaded by the implementation. 
+  Manages the plugins loaded by the implementation.
   Can retrieve another plugin's ``PluginContainer``.
 
 EventManager
@@ -31,7 +31,7 @@ PluginContainer
 Logger
   Used to identify the plugin from which logged messages are sent.
 
-File 
+File
   This must have an additional annotation specifying specific file!
   Currently, specifications are ``ConfigFile`` and ``ConfigDir``.
 
@@ -50,7 +50,8 @@ may not be absolutely vital to every plugin, they're quite frequently used.
 
 .. note::
 
-    Note that it's *almost always* recommended to inject your objects within the main class, as it's instantiated with the Guice injector when the plugin is loaded.
+    Note that it's *almost always* recommended to inject your objects within the main class, as it's instantiated with
+    the Guice injector when the plugin is loaded.
 
 Logger
 ~~~~~~
@@ -115,7 +116,9 @@ The recommended way to obtain your config file is through Guice, along with the 
 
 .. tip::
 
-    If you set ``sharedRoot`` to ``true``, your ``ConfigDir`` will be the same directory which - potentially - houses the configuration for other plugins. In most cases where grabbing the ``ConfigDir`` is required, this should be ``false``.
+    If you set ``sharedRoot`` to ``true``, your ``ConfigDir`` will be the same directory which - potentially - houses
+    \the configuration for other plugins. In most cases where grabbing the ``ConfigDir`` is required, this should be
+    ``false``.
 
 **Example - Field**
 

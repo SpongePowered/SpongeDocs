@@ -5,7 +5,9 @@ Installing a Text Editor
 Overview
 ========
 
-Articles on SpongeDocs are saved as text files in the `reStructuredText <http://sphinx-doc.org/rest.html>`_ markup language. Although your operating system's default text editor is likely sufficient for editing these files, installing a different text editor may prove to be useful.
+Articles on SpongeDocs are saved as text files in the `reStructuredText <http://sphinx-doc.org/rest.html>`_ markup
+language. Although your operating system's default text editor is likely sufficient for editing these files, installing
+a different text editor may prove to be useful.
 
 Downloads
 =========
@@ -13,7 +15,9 @@ Downloads
 Atom
 ~~~~
 
-Atom is an open-source text editor published under the MIT license. Atom has built-in support for projects stored in a Git repository, such as SpongeDocs. `This article <http://blog.atom.io/2014/03/13/git-integration.html>`_ goes more in depth about the features of Atom's Git integration.
+Atom is an open-source text editor published under the MIT license. Atom has built-in support for projects stored in a
+Git repository, such as SpongeDocs. `This article <http://blog.atom.io/2014/03/13/git-integration.html>`_ goes more in
+depth about the features of Atom's Git integration.
 
 **Atom** can be downloaded for free from https://atom.io/.
 
@@ -27,6 +31,8 @@ Notepad++ is, arguably, one of the most popular text editors.
 Sublime Text
 ~~~~~~~~~~~~
 
-Sublime Text is a multi-platform text editor, with quite a few useful features. It includes the ability to customize the look of the editor, create useful macros, and even includes a plugin API to make your editing even easier. Sublime Text provides both a free version and a paid version.
+Sublime Text is a multi-platform text editor, with quite a few useful features. It includes the ability to customize the
+look of the editor, create useful macros, and even includes a plugin API to make your editing even easier. Sublime Text
+provides both a free version and a paid version.
 
 **Sublime Text** can be downloaded for free from http://www.sublimetext.com/

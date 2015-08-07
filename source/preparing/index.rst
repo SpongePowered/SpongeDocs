@@ -13,7 +13,8 @@ The articles in this section explain how to best set up your development environ
 Who should read this?
 ~~~~~~~~~~~~~~~~~~~~~
 
-This section is intended for developers who wish to develop plugins with the Sponge API and for developers who wish to contribute to the Sponge project.
+This section is intended for developers who wish to develop plugins with the Sponge API and for developers who wish to
+contribute to the Sponge project.
 
 Contents
 ========

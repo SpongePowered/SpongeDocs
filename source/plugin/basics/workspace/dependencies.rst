@@ -12,7 +12,9 @@ The following information may come in handy when you are setting up a project wi
 
 .. note::
 
-    The syntax of Maven artifacts is ``<groupID>:<artifactID>:<version>`` Some IDEs, such as IntelliJ IDEA, allow you to input the full artifact string into a text field. Others, such as Eclipse, separate the Group ID, Artifact ID, and version.
+    The syntax of Maven artifacts is ``<groupID>:<artifactID>:<version>`` Some IDEs, such as IntelliJ IDEA, allow you to
+    input the full artifact string into a text field. Others, such as Eclipse, separate the Group ID, Artifact ID, and
+    version.
 
 Examples
 ========

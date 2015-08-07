@@ -2,27 +2,28 @@
 Argument Parsing
 ================
 
-The Command Builder API comes with a powerful argument parser.
-It converts the string input to java base types (integers, booleans, strings) or game objects (players, worlds, block types , ...).
-The parser supports optional arguments and flags. It also handles TAB completion of arguments.
+The Command Builder API comes with a powerful argument parser. It converts the string input to java base types
+(integers, booleans, strings) or game objects (players, worlds, block types , ...). The parser supports optional
+arguments and flags. It also handles TAB completion of arguments.
 
-The parsed arguments are stored in the ``CommandContext`` object.
-If the parser returns a single object, obtain it with ``args.<T>getOne(String key)`` (``T`` is the value type).
-Optional and weak arguments may return ``Optional.absent()``.
+The parsed arguments are stored in the ``CommandContext`` object. If the parser returns a single object, obtain it with
+``args.<T>getOne(String key)`` (``T`` is the value type). Optional and weak arguments may return ``Optional.absent()``.
 
-Many of the parsers may return more than one object (e.g. multiple players with a matching username).
-In that case, you must use the ``args.<T>getAll(String key)`` method to get the ``Collection`` of possible matches.
-**Otherwise, the context object will throw an exception!**
+Many of the parsers may return more than one object (e.g. multiple players with a matching username). In that case, you
+must use the ``args.<T>getAll(String key)`` method to get the ``Collection`` of possible matches. **Otherwise, the
+context object will throw an exception!**
 
 .. tip::
 
-   You can use the ``onlyOne`` element to limit the amount of returned values to a single one, so you can safely use ``args.<T>getOne(String key)``.
+   You can use the ``onlyOne`` element to limit the amount of returned values to a single one, so you can safely use
+   ``args.<T>getOne(String key)``.
 
-To create a new ``CommandElement`` (argument), use the ``GenericArguments`` factory class.
-Many command elements require a short text key, which is displayed in error and help messages.
+To create a new ``CommandElement`` (argument), use the ``GenericArguments`` factory class. Many command elements require
+a short text key, which is displayed in error and help messages.
 
-Apply the ``CommandElement`` to the command builder with the ``setArguments()`` method.
-It is possible to pass more than one ``CommandElement`` to the method, thus chaining multiple arguments (e.g ``/msg <player> <msg>``). This has the same effect as wrapping the ``CommandElement`` objects in a ``GenericArguments.seq()`` element.
+Apply the ``CommandElement`` to the command builder with the ``setArguments()`` method. It is possible to pass more than
+one ``CommandElement`` to the method, thus chaining multiple arguments (e.g ``/msg <player> <msg>``). This has the same
+effect as wrapping the ``CommandElement`` objects in a ``GenericArguments.seq()`` element.
 
 Example: Building a Command with Multiple Arguments
 ===================================================
@@ -62,7 +63,6 @@ Example: Building a Command with Multiple Arguments
             .build();
 
     game.getCommandDispatcher().register(plugin, myCommandSpec, "message", "msg", "m");
-
 
 Overview of the ``GenericArguments`` command elements
 =====================================================
@@ -157,11 +157,14 @@ Coming soon...
 Custom Command Elements
 =======================
 
-It is possible to create custom command elements (e.g. a URL parser or a ``Vector2i`` element) by extending the abstract ``CommandElement`` class.
+It is possible to create custom command elements (e.g. a URL parser or a ``Vector2i`` element) by extending the abstract
+``CommandElement`` class.
 
-The ``parseValue`` method should fetch a raw argument string with ``args.next()`` and convert it to an object. The method should throw an ``ArgumentParseException`` if the parsing fails
+The ``parseValue`` method should fetch a raw argument string with ``args.next()`` and convert it to an object. The method
+should throw an ``ArgumentParseException`` if the parsing fails
 
-The ``complete`` method should use ``args.peek()`` to read the next raw argument. It returns a list of suggestions for TAB completion.
+The ``complete`` method should use ``args.peek()`` to read the next raw argument. It returns a list of suggestions for
+TAB completion.
 
 Example: ``Vector2i`` command element definition
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -195,13 +198,13 @@ The parser in this example reads two input arguments and converts them to a vect
 
            String xInput = args.next();
            int x = parseInt(xInput);
-           
+
            String yInput = args.next();
            int y = parseInt(yInput);
-           
+
            return new Vector2i(x, y);
        }
-       
+
        private int parseInt(String input) throws ArgumentParseException {
            try {
                return Integer.parseInt(input);
@@ -220,7 +223,7 @@ The parser in this example reads two input arguments and converts them to a vect
            return Texts.of("<x> <y>");
        }
    }
-   
+
 Example: ``Vector2i`` command element usage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -236,11 +239,11 @@ Example: ``Vector2i`` command element usage
             .setPermission("myplugin.command.plot.tp")
 
             .setArguments(new Vector2iCommandElement(Texts.of("coordinates")))
-            
+
             .setExecutor(new MyCommandExecutor())
             .build();
-                    
+
 .. tip::
 
-    Look at the `source code <https://github.com/SpongePowered/SpongeAPI/blob/master/src/main/java/org/spongepowered/api/util/command/args/GenericArguments.java>`_ 
+    Look at the `source code <https://github.com/SpongePowered/SpongeAPI/blob/master/src/main/java/org/spongepowered/api/util/command/args/GenericArguments.java>`_
     of the ``GenericArguments`` class for more examples.
