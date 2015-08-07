@@ -10,14 +10,17 @@ This article describes how to configure your **NetBeans** workspace for plugin d
 Starting Your Project
 =====================
 
-We recommend using Gradle or Maven when developing plugins with the Sponge API. Gradle and Maven help significantly when managing dependencies, such as the Sponge API, for your project. This is preferable to including the ``.jar`` file in your project.
+We recommend using Gradle or Maven when developing plugins with the Sponge API. Gradle and Maven help significantly
+when managing dependencies, such as the Sponge API, for your project. This is preferable to including the ``.jar``
+file in your project.
 
 Gradle
 ~~~~~~
 
 **To create your project:**
 
-You must first install the **Gradle Support** plugin before using Gradle in NetBeans. This only needs to be done upon the creation of your first project.
+You must first install the **Gradle Support** plugin before using Gradle in NetBeans. This only needs to be done upon
+the creation of your first project.
 
 * Open **NetBeans**.
 * Click ``Tools > Plugins``.
@@ -41,7 +44,8 @@ You may then proceed to create your project.
 **To import the Sponge API as a dependency:**
 
 * Open ``common.gradle`` under the ``Projects`` tab.
-* Manually add the :doc:`official Sponge API Maven artifact <dependencies>` as a dependency. An example can be found on the aforementioned Artifacts article.
+* Manually add the :doc:`official Sponge API Maven artifact <dependencies>` as a dependency. An example can be found
+  on the aforementioned Artifacts article.
 * Right-click your primary project node under the **Projects** tab, and click ``Reload Project``.
 
 Maven
@@ -51,7 +55,8 @@ Maven
 
 * Open **NetBeans**.
 * Click ``File > New Project``.
-* Scroll to ``Maven`` in the popup window. Select ``Maven`` on the left and ``Java Application`` on the right. Click ``Next``.
+* Scroll to ``Maven`` in the popup window. Select ``Maven`` on the left and ``Java Application`` on the right. Click
+  ``Next``.
 * Enter your project's **name**.
 
 * Enter your **Group ID**, **Artifact ID**, and **Version**.

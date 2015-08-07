@@ -10,18 +10,22 @@ This article describes how to configure your **Eclipse** workspace for plugin de
 Starting Your Project
 =====================
 
-We recommend using Gradle or Maven when developing plugins with the Sponge API. Gradle and Maven help significantly when managing dependencies, such as the Sponge API, for your project. This is preferable to including the ``.jar`` file in your project.
+We recommend using Gradle or Maven when developing plugins with the Sponge API. Gradle and Maven help significantly
+when managing dependencies, such as the Sponge API, for your project. This is preferable to including the ``.jar``
+file in your project.
 
 Gradle
 ~~~~~~
 
 **To create your project:**
 
-You must first install the **Gradle Integration Plugin** before using Gradle in Eclipse. This only needs to be done upon the creation of your first project.
+You must first install the **Gradle Integration Plugin** before using Gradle in Eclipse. This only needs to be done
+upon the creation of your first project.
 
 .. note::
 
-    Typically, you do not need the optional Spring modules distributed with this plugin, so you can uncheck them during installation.
+    Typically, you do not need the optional Spring modules distributed with this plugin, so you can uncheck them during
+    installation.
 
 * Open **Eclipse**.
 * Click ``Help > Eclipse Marketplace``.
@@ -38,7 +42,8 @@ You may then proceed to create your project.
 **To import the Sponge API as a dependency:**
 
 * Open ``build.gradle`` in the navigator.
-* Manually add the :doc:`official Sponge API Maven artifact <dependencies>` as a dependency. An example can be found on the aforementioned Artifacts article.
+* Manually add the :doc:`official Sponge API Maven artifact <dependencies>` as a dependency. An example can be found
+  on the aforementioned Artifacts article.
 * Right-click your project, and select ``Gradle > Refresh Dependencies``.
 
 Maven
@@ -60,7 +65,8 @@ Maven
 
 .. tip::
 
-    Eclipse often does not open new projects after creating them. If this happens, try closing the Eclipse welcome screen; your project should be open behind it.
+    Eclipse often does not open new projects after creating them. If this happens, try closing the Eclipse welcome screen;
+    your project should be open behind it.
 
 **To import the Sponge API as a dependency:**
 

@@ -10,7 +10,9 @@ This article describes how to configure your **IntelliJ IDEA** workspace for plu
 Starting Your Project
 =====================
 
-We recommend using Gradle or Maven when developing plugins with the Sponge API. Gradle and Maven help significantly when managing dependencies, such as the Sponge API, for your project. This is preferable to including the ``.jar`` file in your project.
+We recommend using Gradle or Maven when developing plugins with the Sponge API. Gradle and Maven help significantly when
+managing dependencies, such as the Sponge API, for your project. This is preferable to including the ``.jar`` file in
+your project.
 
 Gradle
 ~~~~~~

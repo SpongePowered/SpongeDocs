@@ -7,7 +7,8 @@ Below is a list of staff members of the Sponge project. Each section is presente
 Project Leaders
 ~~~~~~~~~~~~~~~
 
-The **Project Leaders** are the stewards of the Sponge project, and make the final decisions to ensure the project operates efficiently.
+The **Project Leaders** are the stewards of the Sponge project, and make the final decisions to ensure the project
+operates efficiently.
 
 +-----------------------------------+-----------------------------------+
 | Name                              | Role                              |
@@ -54,7 +55,8 @@ The **Team Leaders** of Sponge each coordinate a separate aspect of the Sponge p
 API and Implementation Developers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The **API and Implementation Developers** work on producing the Sponge API, and the two official implementations Sponge (coremod) and SpongeVanilla.
+The **API and Implementation Developers** work on producing the Sponge API, and the two official implementations Sponge
+(coremod) and SpongeVanilla.
 
 +-----------------------------------+-----------------------------------+
 | Name                              | Role                              |
@@ -96,7 +98,8 @@ The **API and Implementation Developers** work on producing the Sponge API, and 
 Systems Management and Website Developers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The **Systems Managers** ensure the efficient performance of Sponge's servers and the **Website Developers** make the Sponge website look completely awesome.
+The **Systems Managers** ensure the efficient performance of Sponge's servers and the **Website Developers** make the
+Sponge website look completely awesome.
 
 +-----------------------------------+-----------------------------------+
 | Name                              | Role                              |
@@ -155,8 +158,8 @@ Moderators and Support
 Retired Staff
 ~~~~~~~~~~~~~
 
-These people have assisted with the Sponge project in various ways, but are no longer actively involved.
-This list is here to thank them and acknowledge their valuable contributions.
+These people have assisted with the Sponge project in various ways, but are no longer actively involved. This list is
+here to thank them and acknowledge their valuable contributions.
 
 +-----------------------------------+-----------------------------------+
 | Name                              | Former Role                       |

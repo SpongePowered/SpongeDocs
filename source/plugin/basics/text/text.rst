@@ -2,14 +2,15 @@
 Creating Text
 =============
 
-The Text API is used to create formatted text, which can be sent to players in chat messages, and can also be used in places such as books and signs.
-Sponge provides the ``org.spongepowered.api.text.Texts`` utility class to assist in creating and formatting text.
+The Text API is used to create formatted text, which can be sent to players in chat messages, and can also be used in
+places such as books and signs. Sponge provides the ``org.spongepowered.api.text.Texts`` utility class to assist in
+creating and formatting text.
 
 Unformatted Text
 ================
 
-Oftentimes, all you need is unformatted text. Unformatted text does not require the use of a text builder,
-and is the simplest form of text to create.
+Oftentimes, all you need is unformatted text. Unformatted text does not require the use of a text builder, and is the
+simplest form of text to create.
 
 Example:
 ~~~~~~~~
@@ -21,7 +22,8 @@ Example:
 
     Text unformattedText = Texts.of("Hey! This is unformatted text!");
 
-The code excerpt illustrated above will return uncolored, unformatted text with no :ref:`text actions <text-actions>` configured.
+The code excerpt illustrated above will return uncolored, unformatted text with no :ref:`text actions <text-actions>`
+configured.
 
 Working with the Text Builder
 =============================
@@ -30,7 +32,8 @@ The text builder interface allows for the creation of formatted text in a "build
 
 .. tip ::
 
-    Read this `Wikipedia article <http://en.wikipedia.org/wiki/Builder_pattern>`__ for help understanding the purpose of the builder pattern in software design.
+    Read this `Wikipedia article <http://en.wikipedia.org/wiki/Builder_pattern>`__ for help understanding the purpose
+    of the builder pattern in software design.
 
 Colors
 ~~~~~~
@@ -96,7 +99,8 @@ Example: Multi-styled Text
 Coloring & Styling Shortcut
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The ``org.spongepowered.api.text.Texts#of(Object... objects)`` method provides a simple way to add color and styling to your text in a much more concise way.
+The ``org.spongepowered.api.text.Texts#of(Object... objects)`` method provides a simple way to add color and styling to
+your text in a much more concise way.
 
 Example: Color & Style Shortcut
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -115,9 +119,9 @@ Example: Color & Style Shortcut
 Text Actions
 ~~~~~~~~~~~~
 
-The text builder also offers the ability to create actions for text.
-Any action specified within the ``org.spongepowered.api.text.action.TextActions`` class can be used when creating text actions for text.
-The method below is a small example of what text actions can do.
+The text builder also offers the ability to create actions for text. Any action specified within the
+``org.spongepowered.api.text.action.TextActions`` class can be used when creating text actions for text. The method
+below is a small example of what text actions can do.
 
 Example: Text with an Action
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -144,15 +148,16 @@ In the method above, players can click the "Click here!" text to run the specifi
 Selectors
 ~~~~~~~~~
 
-Target selectors are used to target players or entities that meet a specific criteria. Target selectors are particularly useful
-when creating minigame plugins, but have a broad range of applications.
+Target selectors are used to target players or entities that meet a specific criteria. Target selectors are particularly
+useful when creating minigame plugins, but have a broad range of applications.
 
 .. tip ::
 
     Read this `Minecraft wiki article <http://minecraft.gamepedia.com/Commands#Target_selectors>`__ for help understanding
     what target selectors are in Minecraft, and how to use them.
 
-To use selectors in text, you must use the ``org.spongepowered.api.text.selector.SelectorBuilder`` interface. This is illustrated in the example below.
+To use selectors in text, you must use the ``org.spongepowered.api.text.selector.SelectorBuilder`` interface. This is
+illustrated in the example below.
 
 Example: Selector-generated Text
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -167,5 +172,5 @@ Example: Selector-generated Text
             Texts.of(Selectors.parse("@a[m=2]"))
     ).build();
 
-In this example, the target selector ``@a[m=2]`` is targeting every online player who is in adventure mode. When the method is called,
-a Text will be returned containing the usernames of every online player who is in adventure mode.
+In this example, the target selector ``@a[m=2]`` is targeting every online player who is in adventure mode. When the
+method is called, a Text will be returned containing the usernames of every online player who is in adventure mode.
