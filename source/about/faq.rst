@@ -23,7 +23,7 @@ Sponge (and Minecraft) needs the Java Runtime Environment to run properly. You w
 the server on too, besides that nothing is required. Learn more about choosing the correct Java version here:
 :doc:`../server/getting-started/jre/`
 
-Where do i get Sponge?
+Where do I get Sponge?
 ----------------------
 
 Sponge currently isn't finished but there are development builds of the SpongeCoremod available: :doc:`/downloads`
@@ -41,11 +41,11 @@ The Sponge Project currently develops two implementations which both use the Spo
 (2) **SpongeVanilla**, a stand-alone implementation of the Sponge API, running on top of the vanilla Minecraft server.
     (SpongeVanilla was formerly known as Granite, until the development teams merged).
 
-Where do i get Plugins for Sponge?
+Where do I get Plugins for Sponge?
 ----------------------------------
 
-Yes, and it is called Ore. Development has already started on GitHub. Temporarily plugins are hosted on the
-SpongeForums.
+On our official plugin repository, which is called Ore. Development has already started on GitHub. Temporarily, plugins
+are hosted on the SpongeForums.
 
 For Server Owners
 =================
@@ -77,18 +77,18 @@ Forge installed - unless your server runs Forge mods, of course.
 For Developers
 ==============
 
-What can i do with Sponge?
+What can I do with Sponge?
 --------------------------
 
-Sponge provides a PluginAPI. This means that you can create new content and gamemodes on the go.
+Sponge provides a Plugin API. This means that you can create new content and gamemodes on the go.
 
 
-What can't i do with Sponge? / Limitations of Sponge?
+What can't I do with Sponge? / Limitations of Sponge?
 -----------------------------------------------------
 
 Sponge can't be used to create new blocks, textures, mobs or any other content which would need clientside modifications.
 However you can make use of the ForgeAPI for clients and create Sponge plugins for the serverside.
-It is even possible to use Sponge on the clientside, but for several tasks mods are still required.
+It is even possible to use Sponge on the client-side, but for several tasks mods are still required.
 
 I'm a Bukkit Plugin Developer! Why Can't Sponge Use Bukkit's API?
 -----------------------------------------------------------------
