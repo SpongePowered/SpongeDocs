@@ -57,9 +57,7 @@ Contents
     :titlesonly:
 
     guidelines
-    coremod/index
-    vanilla/index
-    common/index
     api/index
-    docs/index
+    implementation/index
+    spongedocs
     porting
