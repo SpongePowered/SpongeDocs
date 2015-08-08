@@ -81,8 +81,8 @@ Next, learn :doc:`how you can configure Sponge <configuration/index>` and how to
 
 .. tip::
 
-    Developer Me4502 has provided a `tutorial video for installing Sponge (coremod).
-    <https://www.youtube.com/watch?v=UTIyjjO6lxY>`__
+    Community member Joe_Schmo2840 has provided a `tutorial video for installing Sponge (coremod).
+    <https://www.youtube.com/watch?v=vaOe8x1ws0U>`__
 
 Installing SpongeVanilla
 ========================
