@@ -10,9 +10,9 @@ Contents
     :titlesonly:
 
     jre
-    migrating/index
+    migrating
     implementations/index
+    installation
     launch-script
     port-forward
-    installation
     configuration/index
