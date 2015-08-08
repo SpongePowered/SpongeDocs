@@ -14,7 +14,8 @@ What is Sponge?
 ---------------
 
 Sponge is a new versatile Minecraft API. It was made to enrich your Minecraft experience by allowing plugins to add
-functionality to Minecraft. Read more about Sponge here: :doc:`introduction`.
+functionality to Minecraft. Read more about Sponge here: :doc:`introduction` and about the history of Sponge here:
+:doc:`history`
 
 What is required to run Sponge?
 -------------------------------
@@ -29,8 +30,8 @@ Where do I get Sponge?
 Sponge currently isn't finished but there are development builds of the SpongeCoremod available: :doc:`/downloads`
 Unfortunately there currently aren't any build of SpongeVanilla available.
 
-Which different versions exist? / Whats the difference between the versions?
-----------------------------------------------------------------------------
+What Sponge implementations are available?
+------------------------------------------
 
 The Sponge Project currently develops two implementations which both use the SpongeAPI:
 
@@ -46,6 +47,21 @@ Where do I get Plugins for Sponge?
 
 On our official plugin repository, which is called Ore. Development has already started on GitHub. Temporarily, plugins
 are hosted on the SpongeForums.
+
+What happened to Bukkit?
+------------------------
+
+The Bukkit project halted further development of their API and server modification. Shortly thereafter, one of the
+contributors to Bukkit sent a DMCA takedown notice to stop further distribution of CraftBukkit. He was within his legal
+right. Downloads, as well as source code, for CraftBukkit and its derivatives (such as Spigot and Cauldron) are no
+longer publicly available. If you want to know the reasons why this affected Sponge development, have a look at our
+history page: :doc:`history`
+
+Can I run Bukkit Plugins with this?
+-----------------------------------
+
+Sadly no, not natively. Sponge is using its own API (Sponge API), while Bukkit is using the Bukkit API. However there is the
+possibility that a third-party plugin for Sponge implements the Bukkit API on top of Sponge API.
 
 For Server Owners
 =================
@@ -81,13 +97,14 @@ What can I do with Sponge?
 --------------------------
 
 Sponge provides a Plugin API. This means that you can create new content and gamemodes on the go.
-
+Have a look at your plugin pages to get a quick-start: :doc:`../plugin/index`
 
 What can't I do with Sponge? / Limitations of Sponge?
 -----------------------------------------------------
 
-Sponge can't be used to create new blocks, textures, mobs or any other content which would need clientside modifications.
-However you can make use of the ForgeAPI for clients and create Sponge plugins for the serverside.
+Sponge can't be used to create new blocks, textures, mobs on the clientside or any other content which would need
+clientside modifications. The Sponge API wont support sending mods or plugins to the client for now due to security
+concerns. However you can make use of the ForgeAPI for clients and create Sponge plugins for the serverside.
 It is even possible to use Sponge on the client-side, but for several tasks mods are still required.
 
 I'm a Bukkit Plugin Developer! Why Can't Sponge Use Bukkit's API?
