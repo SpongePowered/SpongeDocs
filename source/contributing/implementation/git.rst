@@ -1,9 +1,15 @@
-=================================
-Git Workflow for Sponge (coremod)
-=================================
+=======================================
+Git Workflow for Sponge implementations
+=======================================
 
-Development of Sponge (coremod) is focused in a repository on GitHub. Thus, working with Git is an essential element of
-contributing.
+
+ .. warning::
+
+    This page is probably outdated, the developers currently try to create better documentation for contributors.
+    You can find a temporary site here: `SpongeCommon Wiki <https://github.com/SpongePowered/SpongeCommon/wiki/>`__
+
+Development of Sponge implementations is focused in repositories on GitHub. Thus, working with Git is an essential
+element of contributing.
 
 The process of working with Git is shown below, and assumes a basic knowledge of using the Terminal or command line for
 your operating system:
@@ -21,10 +27,10 @@ your operating system:
 
 #. Use ``git status`` and ``git add FILE(S)`` as necessary to look for files that are not yet staged for a commit.
 
-#. Since you are working on the coremod, there is a possibility that your work included changes in the API. This is okay.
-   Just remember to ensure the pointers for the version of the SpongeAPI match the version of your branch prior to
-   committing and pushing. To do this, you may need to add the submodules to the commit (with ``git add SpongeAPI``
-   and/or ``git add Mixin``) prior to committing on your coremod work.
+#. Since you are working on the implementation, there is a possibility that your work included changes in the API.
+   This is okay. Just remember to ensure the pointers for the version of the SpongeAPI match the version of your branch
+   prior to committing and pushing. To do this, you may need to add the submodules to the commit
+   (with ``git add SpongeAPI`` and/or ``git add Mixin``) prior to committing on your implementation work.
 
 #. When you are ready, do ``git commit``.
 

@@ -2,7 +2,8 @@
 Mixins
 ======
 
-.. note:: this page is shared between Common, Sponge, and Vanilla.
+.. note::
+   This page applies to Common, Sponge, and Vanilla.
 
 Mixins are a way of modifying java code at runtime by adding additional behavior to classes. They enable transplanting
 of intended behavior into existing Minecraft objects. Mixins are necessary for the Sponge coremod to function.
@@ -18,6 +19,6 @@ the `Sponge repository <https://github.com/SpongePowered/Sponge/tree/master/src/
 are extensively documented and cover many of the more complex scenarios. You should also consult the Javadoc of the Mixin
 repository itself, since almost everything is already documented.
 
-.. Note::
+.. note::
   The Mixin project will be servicing a number of other projects in addition to Sponge itself. Therefore Mixin has its'
   own documentation together with the repository.

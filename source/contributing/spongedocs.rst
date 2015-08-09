@@ -1,13 +1,26 @@
-====================
-Layout of SpongeDocs
-====================
+==================
+SpongeDocs Writing
+==================
+
+Overview
+========
+
+The Sponge documentation, also referred to as "SpongeDocs," is the official documentation of the Sponge project. The
+goal of SpongeDocs is to:
+
+* Help users set up their own servers powered by a Sponge implementation.
+* Provide developers with information on how to contribute to the Sponge project.
+* Provide developers with information on how to get started with plugin development.
+
+Writing the Docs
+================
 
 Changes and additions to SpongeDocs should be submitted as a pull request to the `SpongeDocs repository on GitHub
 <https://github.com/SpongePowered/SpongeDocs>`__.
 
 
 Style Guide
-~~~~~~~~~~~
+===========
 
 To make sure we have consistent format across all SpongeDocs pages, here are the guidelines we have developed for
 writing Sponge Documentation. This list may get added to (or bent out of shape) as the Docs get bigger.
@@ -41,6 +54,7 @@ writing Sponge Documentation. This list may get added to (or bent out of shape) 
     BlockState (a class name), rather than *block state*). They should also be formatted as a literal using double
     backticks (eg. ``blockState``) in body text.
 13. Lines should have a maximum length of 120 characters.
+
 
 .. Note::
 
