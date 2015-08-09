@@ -2,89 +2,71 @@
 Frequently Asked Questions
 ==========================
 
+.. contents::
+   :depth: 2
+   :local:
+
 For Everyone
 ============
 
-Can I Create Client Side Mods With Sponge?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+What is Sponge?
+---------------
 
-**Not yet.**
+Sponge is a new versatile Minecraft API. It was made to enrich your Minecraft experience by allowing plugins to add
+functionality to Minecraft. Read more about Sponge here: :doc:`introduction` and about the history of Sponge here:
+:doc:`history`
 
-The Sponge team do not want to get overcommitted with client side API until Sponge is competitive with other Minecraft
-modding API's. No one is currently working to create client side API, but it's not been forgotten; it should be possible
-in the long term. This is a separate issue from single player! Single player support using Sponge (coremod / forge)
-should work fine, any issues should be reported to the bug tracker.
+What is required to run Sponge?
+-------------------------------
 
-Are Downloads Available?
-~~~~~~~~~~~~~~~~~~~~~~~~
+Sponge (and Minecraft) needs the Java Runtime Environment to run properly. You will obviously need a computer to run
+the server on too, besides that nothing is required. Learn more about choosing the correct Java version here:
+:doc:`../server/getting-started/jre/`
 
-Yes, see :doc:`/downloads`.
+Where do I get Sponge?
+----------------------
 
-Is the Official Sponge Implementation Built on Minecraft Forge?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Sponge currently isn't finished but there are development builds of the SpongeCoremod available: :doc:`/downloads`
+Unfortunately there currently aren't any builds of SpongeVanilla available.
 
-There are now TWO official implementations, Sponge (coremod) and SpongeVanilla. Sponge is a coremod for Minecraft Forge,
-and SpongeVanilla is a stand-alone server that does not use Forge. Take your pick!
+What Sponge implementations are available?
+------------------------------------------
 
-What Makes Sponge Different from Other Projects, Such as Bukkit?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The Sponge Project currently develops two implementations which both use the SpongeAPI:
 
-Sponge is using the MIT license, which is an extremely permissive open-source license. This means that, should our server
-implementation (the Sponge coremod) encounter any legal issues similar to those that fell upon Bukkit, it will be possible
-to reuse the Sponge API and start a new project without being further encumbered by legal issues.
+(1) **Sponge**, a coremod for Minecraft Forge, which is an existing Minecraft modding framework famous for spurring
+    the Minecraft modding scene. Forge lacks a cross-version API, and this is where Sponge steps in. Sponge allows
+    server owners to deploy Sponge plugins with ease, making server management easier.
 
-How is the Sponge Project Broken Down?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+(2) **SpongeVanilla**, a stand-alone implementation of the Sponge API, running on top of the vanilla Minecraft server.
+    (SpongeVanilla was formerly known as Granite, until the development teams merged).
 
-As you can see Sponge has several (mostly) independent parts:
+Where do I get Plugins for Sponge?
+----------------------------------
 
- * sourcecode maintained on github.com
-    * Mixin
-    * SpongeAPI
-    * SpongeCommon
-    * Sponge
-    * SpongeVanilla
-    * SpongeDocs
-    * Ore
+On our official plugin repository, which is called Ore. Development has already started on GitHub. Temporarily, plugins
+are hosted on the SpongeForums.
 
- * websites
-    * Sponge forums
-    * SpongeDocs
-    * SpongeDocs translations on Crowdin
-    * Ore
-
-Further information regarding the different parts of Sponge i.e. how to contribute can be found here: :doc:`/contributing/index`
-
-Is There an Official Plugin Repository?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Yes, and it is called Ore. Development has already started on GitHub.
-
-What Version of Java Is Sponge Using?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Sponge will be using Java 1.6, which is the minimum version supported by vanilla Minecraft and Forge.
-
-I Haven't Kept Up. What Happened to Bukkit?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+What happened to Bukkit?
+------------------------
 
 The Bukkit project halted further development of their API and server modification. Shortly thereafter, one of the
 contributors to Bukkit sent a DMCA takedown notice to stop further distribution of CraftBukkit. He was within his legal
 right. Downloads, as well as source code, for CraftBukkit and its derivatives (such as Spigot and Cauldron) are no
-longer publicly available.
+longer publicly available. If you want to know the reasons why this affected Sponge development, have a look at our
+history page: :doc:`history`
 
-What Happened to the Granite Implementation?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Can I run Bukkit Plugins with this?
+-----------------------------------
 
-The developers of Granite have joined the Sponge project, and Granite was renamed SpongeVanilla. It is now an officially
-supported Sponge API implementation, developed in parallel with Sponge coremod.
-
+Sadly no, not natively. Sponge is using its own API (Sponge API), while Bukkit is using the Bukkit API. However there is the
+possibility that a third-party plugin for Sponge implements the Bukkit API on top of Sponge API.
 
 For Server Owners
 =================
 
 I'm a Server Owner! How Will Switching to Sponge Affect My Server?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------------------------------------------
 
 For an existing Forge server, you will need to download Sponge and place it into the mods folder. The server can then
 be started like any other Forge server.
@@ -101,7 +83,7 @@ On a related note, we will not be providing support for Bukkit plugins on Sponge
 third-party to create a way for Bukkit plugins to work on Sponge.
 
 How Will Switching to Sponge Affect Players on My Server?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------------------------------------
 
 Switching to Sponge should not affect players on your server. If you (as a server owner) migrate correctly, players will
 be able to connect to your server the same way as they did before you migrated to Sponge. They will not need to have
@@ -110,8 +92,22 @@ Forge installed - unless your server runs Forge mods, of course.
 For Developers
 ==============
 
+What can I do with Sponge?
+--------------------------
+
+Sponge provides a Plugin API. This means that you can create new content and gamemodes on the go.
+Have a look at your plugin pages to get a quick-start: :doc:`../plugin/index`
+
+What can't I do with Sponge? / Limitations of Sponge?
+-----------------------------------------------------
+
+Sponge can't be used to create new blocks, textures, mobs on the clientside or any other content which would need
+clientside modifications. The Sponge API wont support sending mods or plugins to the client for now due to security
+concerns. However you can make use of the ForgeAPI for clients and create Sponge plugins for the serverside.
+It is even possible to use Sponge on the client-side, but for several tasks mods are still required.
+
 I'm a Bukkit Plugin Developer! Why Can't Sponge Use Bukkit's API?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------------------------------------------------
 
 Bukkit’s API contains code licensed under the GPL. This is a large reason why Bukkit met its demise in September; by
 moving forward with a new API licensed under the MIT license, we can avoid some of the problems that fell upon Bukkit.
@@ -119,16 +115,8 @@ While this does not free us from Mojang’s control, as their code is proprietar
 modding and will continue to do so.
 
 Will I Be Able to Access the Server Internals In My Plugins?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------------------------------------
 
 Accessing the server internals (known as "NMS" or "net.minecraft.server" in CraftBukkit) can be done through Forge,
 which has a large number of names de-obfuscated. However, be aware that accessing the server internals raises the risk
 of your plugin breaking - this is your prerogative.
-
-Will the Sponge API Be Similar to the Bukkit API in Terms of Usability?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Yes. It will also afford you more power because you will have access to Forge.
-
-It is worth noting that the Spout API is serving as inspiration for the development of the Sponge API, which reduces the
-amount of time spent on API design. We are also using portions of Flow's libraries from http://github.com/flow.
