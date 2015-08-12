@@ -2,12 +2,22 @@
 Changelog
 =========
 
-This page is a placeholder for the changelog of **Sponge**, the Forge
-implementation of *Sponge API* as a CoreMod). **Sponge** has not yet
-been officially released.
+In the future, this page will be used to display changelogs for releases of Sponge.
 
-Sponge Builds
--------------
+Releases
+========
 
-1. **Inspired Wallaroo** - Release Date: TBA (Santa may arrive first).
+Sponge (coremod)
+~~~~~~~~~~~~~~~~
 
+Inspired Wallaroo
+-----------------
+
+* **Status:** Build #428 (Inspired Wallaroo) was released on April 25th, 2015. 
+* **Description:** This is the first alpha release of the Sponge coremod.
+
+SpongeVanilla
+~~~~~~~~~~~~~
+
+* **Status:** Unreleased.
+* **Description:** This will be the first release of SpongeVanilla.

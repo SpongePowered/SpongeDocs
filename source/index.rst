@@ -2,53 +2,92 @@
 Sponge Documentation
 ====================
 
-Welcome to the documentation for `Sponge <http://spongepowered.org>`__! Sponge lets people write self-contained mods for Minecraft that work even across major updates to Minecraft. The project is free to use and open source.
+Introduction
+============
 
-Sponge produces an "API" -- a standard way to write mods. However, the API is like the DVD standard, a DVD player is required to actually play the DVD. In our case, we both define the standard (the Sponge API) as well as provide one way to run Sponge plugins: on top of Minecraft Forge, which some people may already be familiar with.
+Welcome to SpongeDocs, the official documentation for the open-source `Sponge <http://spongepowered.org>`__ project.
 
-Some general issues are addressed in the :doc:`faq`
+The Sponge project currently has four main components:
+
+* Sponge (coremod)
+* SpongeVanilla
+* Sponge API
+* SpongeDocs
 
 .. warning::
-    Sponge is currently in development as of writing, so no download is yet available for running Sponge plugins.
 
+    Sponge is still in development. Development builds are currently available for `download
+    <https://repo.spongepowered.org/maven/org/spongepowered/sponge/>`__, but an official release will not be available
+    until later in 2015.
 
-Documentation
-=============
+Contents
+========
 
-Using Sponge
-~~~~~~~~~~~~
- 
-.. toctree::
-    :maxdepth: 3
-    :titlesonly:
+Creating a Server
+~~~~~~~~~~~~~~~~~
 
-    users/index
-
-Developers
-~~~~~~~~~~
+This section is for users who have a Sponge server or are interested in creating one.
 
 .. toctree::
     :maxdepth: 3
     :titlesonly:
 
-    plugins/index
-    devs/index
-    porting/index
+    server/index
+
+Preparing for Development
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This section is for:
+
+* Developers who wish to create Sponge plugins or contribute code to the Sponge project
+* Users who wish to help with writing and editing articles in SpongeDocs
+
+Please read this section before `Creating Plugins`_ and `Contributing to Sponge`_.
+
+.. toctree::
+    :maxdepth: 3
+    :titlesonly:
+
+    preparing/index
+
+Creating Plugins
+~~~~~~~~~~~~~~~~
+
+This section is intended to help developers who have prior Java experience with writing plugins with the Sponge API.
+
+.. toctree::
+    :maxdepth: 3
+    :titlesonly:
+
+    plugin/index
+
+Contributing to Sponge
+~~~~~~~~~~~~~~~~~~~~~~
+
+This section is intended to help developers who have prior Java experience with contributing code to the Sponge project.
+Instructions on contributing to SpongeDocs are also contained within. Make Spongie proud!
+
+.. toctree::
+    :maxdepth: 3
+    :titlesonly:
+
+    contributing/index
 
 About Sponge
-============
- 
+~~~~~~~~~~~~
+
+This section is intended to help everyone understand the goals of the Sponge project.
+
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 3
     :titlesonly:
 
-    changelog
+    about/index
     downloads
-    contributing
-    license
+    changelog
 
 Links
-~~~~~
+=====
 
 .. toctree::
     :maxdepth: 2
@@ -59,10 +98,4 @@ Links
 -  `Sponge Issue Tracker <https://github.com/SpongePowered/SpongeAPI/issues?q=>`__
 -  `Sponge Twitter <https://twitter.com/SpongePowered>`__
 -  `Sponge Subreddit <https://reddit.com/r/SpongeProject>`__
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`search`
-
+-  `Sponge GitHub <https://github.com/SpongePowered>`__
