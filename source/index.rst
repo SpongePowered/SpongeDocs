@@ -11,7 +11,7 @@ The Sponge project currently has four main components:
 
 * Sponge (coremod)
 * SpongeVanilla
-* Sponge API
+* SpongeAPI
 * SpongeDocs
 
 .. warning::
@@ -53,7 +53,7 @@ Please read this section before `Creating Plugins`_ and `Contributing to Sponge`
 Creating Plugins
 ~~~~~~~~~~~~~~~~
 
-This section is intended to help developers who have prior Java experience with writing plugins with the Sponge API.
+This section is intended to help developers who have prior Java experience with writing plugins using SpongeAPI.
 
 .. toctree::
     :maxdepth: 3
