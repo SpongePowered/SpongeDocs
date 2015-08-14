@@ -11,41 +11,32 @@ For example, let's try to spawn a Creeper:
 
 .. code-block:: java
 
-    import org.spongepowered.api.data.manipulator.DisplayNameData;
-    import org.spongepowered.api.data.manipulator.entity.ChargedData;
-    import org.spongepowered.api.data.manipulator.entity.ExplosiveRadiusData;
+    import com.google.common.base.Optional;
+    import org.spongepowered.api.data.key.Keys;
     import org.spongepowered.api.entity.Entity;
     import org.spongepowered.api.entity.EntityTypes;
+    import org.spongepowered.api.text.Texts;
+    import org.spongepowered.api.text.format.TextColors;
     import org.spongepowered.api.world.Location;
     import org.spongepowered.api.world.extent.Extent;
 
-    import com.google.common.base.Optional;
-
     public void spawnEntity(Location location) {
         Extent extent = location.getExtent();
-         // We need to create the entity
+        // We need to create the entity
         Optional<Entity> optional = extent.createEntity(EntityTypes.CREEPER,
-            location.getPosition());
+                                                        location.getPosition());
         if (optional.isPresent()) {
-             // After this, we can use more API that relates to creeper
+            // After this, we can use more API that relates to creeper
             Entity creeper = optional.get();
+            // Here, we can use the handy Data API to simplify "setting" various
+            // data onto the creeper, such as the explosive radius
+            creeper.offer(Keys.EXPLOSIVE_RADIUS, 10);
+            // Or display name
+            creeper.offer(Keys.DISPLAY_NAME, Texts.of(TextColors.DARK_AQUA, "Dinnerbone"));
+            // Or even whether the creeper is "charged"
+            creeper.offer(Keys.CREEPER_CHARGED, true);
 
-            ExplosiveRadiusData radiusData = creeper.getData(ExplosiveRadiusData.class)
-                .get();
-            radiusData.setExplosionRadius(10);
-             // Return the modified explosive radius back to the creeper
-            creeper.offer(radiusData);
-
-             // We need to create the data since the creeper does not have a display name
-            DisplayNameData displayData = creeper.getOrCreate(DisplayNameData.class).get();
-            displayData.setDisplayName(Texts.of("Dinnerbone"));
-            creeper.offer(displayData);
-
-             // Same applies here
-            ChargedData chargedData = creeper.getOrCreate(ChargedData.class).get();
-            creeper.offer(chargedData);
-
-             // Now we're actually spawning in the creeper into the world
+            // Now we're actually spawning in the creeper into the world
             extent.spawnEntity(creeper);
         }
     }
