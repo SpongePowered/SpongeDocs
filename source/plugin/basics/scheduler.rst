@@ -17,7 +17,7 @@ First, obtain an instance of the ``SchedulerService``, and retrieve the ``TaskBu
     import org.spongepowered.api.service.scheduler.TaskBuilder;
 
     SchedulerService scheduler = game.getScheduler();
-    TaskBuilder taskBuilder = scheduler.getTaskBuilder();
+    TaskBuilder taskBuilder = scheduler.createTaskBuilder();
 
 The only required property is the `Runnable <http://docs.oracle.com/javase/7/docs/api/java/lang/Runnable.html>`_,
 which you can specify using ``TaskBuilder#execute(Runnable runnable)``:
@@ -79,7 +79,7 @@ initial delay of 100 milliseconds could be built and submitted using the followi
 	import org.spongepowered.api.service.scheduler.TaskBuilder;
 
 	SchedulerService scheduler = game.getScheduler();
-	TaskBuilder taskBuilder = scheduler.getTaskBuilder();
+	TaskBuilder taskBuilder = scheduler.createTaskBuilder();
 
 	Task task = taskBuilder.execute(new Runnable() {
 		public void run() {
