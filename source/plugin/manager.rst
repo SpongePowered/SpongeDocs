@@ -34,7 +34,7 @@ You can get an instance of the server's ``PluginManager`` using a few different 
 
 .. tip::
 
-    See the :doc:`../basics/injection` guide for help on using dependency injection.
+    See the :doc:`injection` guide for help on using dependency injection.
 
 The ``PluginManager`` is one of the few API instances that are injected into the main class upon being loaded. To ask
 for a reference, create a new variable to hold the ``PluginManager`` instance and simply annotate it with ``@Inject``.

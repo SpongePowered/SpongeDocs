@@ -13,7 +13,7 @@ The most comfortable way to create a new command is the ``CommandSpec`` builder,
 It supports child commands and argument parsing.
 
 Alternatively, you can use ``CommandCallable``, a lower-level interface which provides access to the raw command data.
-It is described on :doc:`this page <../../advanced/commandcallable>`.
+It is described on :doc:`this page <./commandcallable>`.
 
 Contents
 ========
@@ -26,3 +26,4 @@ Contents
 	arguments
 	childcommands
 	service
+	commandcallable

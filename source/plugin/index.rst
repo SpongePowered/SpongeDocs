@@ -30,6 +30,24 @@ Contents
     :maxdepth: 2
     :titlesonly:
 
-    basics/index
-    advanced/index
+    workspace/index
+    practices
+    templates
+    main-class
+    lifecycle
+    logging
+    text/index
+    commands/index
+    events
+    blocks/index
+    entities/index
+    configuration/index
+    injection
+    scheduler
+    database
+    permissions
+    services
+    manager
+    debugging
+    message-sinks
     tutorials

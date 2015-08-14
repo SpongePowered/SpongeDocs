@@ -201,7 +201,7 @@ max-bounding-box-size           integer   1000      Maximum size of an entity's 
 max-speed                       integer   100       Square of the maximum speed of an entity before
                                                     it is removed. Set to 0 to disable
 **Entity Activation Range**                         *Note that entities from Mods are automatically
-                                                    to this list.*
+                                                    added to this list.*
 ambient-activation-range        integer   32        Range where ambient entities become active.
 aquatic-activation-range        integer   32        Range where aquatic entities become active.
 creature-activation-range       integer   32        Range where creatures become active.

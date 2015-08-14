@@ -58,7 +58,7 @@ Logger
 
 .. tip::
 
-    View :doc:`../basics/logging` for a complete guide, specifically for the Logger.
+    View :doc:`logging` for a complete guide, specifically for the Logger.
 
 Game
 ~~~~
@@ -170,4 +170,4 @@ The way that ``DefaultConfig`` works is very similar to ``ConfigDir``. The bigge
 
 .. tip::
 
-    View :doc:`../basics/configuration` for a complete guide, specifically for ``DefaultConfig``.
+    View :doc:`configuration/index` for a complete guide, specifically for ``DefaultConfig``.
