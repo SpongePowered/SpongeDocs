@@ -41,6 +41,14 @@ ConfigDir
 
 ConfigFile
   Used to inject the plugin's specific configuration file: ``<Plugin#id>.conf``
+  
+Injector
+  ``com.google.inject.Injector`` is available from Guice, it is the injector that was used to inject your plugin's dependencies. 
+  You can use it to create a child injector with your own module in order to inject your own classes with either the Sponge
+  provided dependencies listed on this page, or configure your own classes.
+  
+GuiceObjectMapperFactory
+  Needs description...
 
 Injection Examples
 ==================
