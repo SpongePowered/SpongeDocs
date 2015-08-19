@@ -4,7 +4,7 @@ The Pagination Service
 
 .. tip::
 
-	For a basic understanding of services, make sure you read :doc:`../../advanced/services` first.
+	For a basic understanding of services, make sure you read :doc:`../services` first.
 
 The ``PaginationService`` acts as a way to split up content into discrete pages.
 The service provides a ``PaginationBuilder`` with which you can specify attributes such as title, contents, header,

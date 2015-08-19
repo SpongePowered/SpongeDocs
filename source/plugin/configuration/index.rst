@@ -1,6 +1,37 @@
-=======================================
+=======================
+Configuring Your Plugin
+=======================
+
+Configuration files allow your plugins to store data, as well as allow server administrators to easily take control over
+specific portions of your plugin, if you so choose to let them. Sponge uses Configurate to allow you to easily
+manipulate your configuration files. These pages will explain how to utilize Configurate in order to use configuration
+files to your full advantage.
+
+.. tip::
+
+    See the official `Configurate wiki <https://github.com/zml2008/configurate/wiki>`_ to gain more in-depth information
+    about working with its components.
+
+.. note::
+
+    Sponge makes use of the HOCON configuration format. The rest of this guide will assume you are as well. As working
+    with the different formats is made relatively similar by the system of Configurate, this should not pose too much
+    of an issue if you so choose to use an alternate format.
+
+.. toctree::
+    :maxdepth: 2
+    :titlesonly:
+
+    loaders
+    nodes
+    paths
+    values
+
+Quick Start
+===========
+
 Creating a Default Plugin Configuration
-=======================================
+---------------------------------------
 
 Plugins using the Sponge API have the option to use one or more configuration files. Configuration files allow plugins
 to store data, and they allow server administrators to customize plugin options (if applicable).
@@ -9,7 +40,7 @@ to store data, and they allow server administrators to customize plugin options 
 .. _getting-default-config:
 
 Getting your Default Plugin Configuration
-=========================================
+-----------------------------------------
 
 The Sponge API offers the use of the ``@DefaultConfig`` annotation on a field or method with the type ``File`` to get
 the default configuration file for your plugin.
@@ -20,7 +51,7 @@ will be ``your_plugin_id.conf`` (with "your_plugin_id" replaced with your plugin
 
 .. tip::
 
-    See :doc:`main-class` for information on configuring your plugin ID.
+    See :doc:`../main-class` for information on configuring your plugin ID.
 
 .. note::
 
@@ -82,8 +113,3 @@ If you are unsure of what to set the value of ``sharedRoot`` to, consider the fo
             }
         }
     }
-
-Working with the Configuration
-==============================
-
-See :doc:`../advanced/config-in-depth/index` to learn how to utilize the config file and loader.
