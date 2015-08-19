@@ -22,6 +22,7 @@ Contents
     debugging
     mixins
     git
+    datamanipulator
 
 
 .. tip::
