@@ -3,8 +3,8 @@ Implementing DataManipulators
 =============================
 
 This is a guide for contributors who want to help with Data API implementation by creating DataManipulators.
-An updated list of DataManipulators to be implemented can be found at 
-https://github.com/SpongePowered/SpongeCommon/issues/8.
+An updated list of DataManipulators to be implemented can be found at
+`SpongeCommon Issue #8 <https://github.com/SpongePowered/SpongeCommon/issues/8>`_.
 
 To fully implement a ``DataManipulator`` these steps must be followed:
 
@@ -16,6 +16,10 @@ When these steps are complete, the following must also be done:
 3. Register the ``Key`` in the ``KeyRegistry``
 #. Implement the ``DataProcessor``
 #. Implement the ``ValueProcessor`` for each value being represented by the ``DataManipulator``
+#. Register everything in ``SpongeGameRegistry``
+
+.. note::
+  Don't forget to add an empty line at the end of every file you create.
 
 1. Implementing the DataManipulator
 ===================================
@@ -47,8 +51,8 @@ In most cases while implementing an abstract Manipulator you want to have two co
 * and one single-argument constructor which is actually used for the provided ``value``
 
 Now, after the Manipulator is done you have to check if you are extending ``AbstractData`` or not.
-If you do, you must call ``registerFieldGetter()`` and ``registerFieldSetter`` in your constructor.
-Don't forget the ``Field`` registration!
+Remember that we decided to extend ``AbstractBooleanData`` above, hence now must call ``registerFieldGetter()`` and
+``registerFieldSetter()`` in your constructor. Don't forget the ``Field`` registration!
 
 .. code-block:: java
 
@@ -94,54 +98,122 @@ The next step is to register your ``KEYS`` in the ``KeyRegistry``:
 
 Next up is the ``DataProcessor``. A ``DataProcessor`` implements your ``DataManipulator`` to work semi-natively with
 Minecraft's objects. Unfortunately, since it's always easier to just directly implement all of the processing of a
-particular set of data in one place, we have ``DataProcessors`` to do just that.
-Currently, a ``DataProcessor`` has the following methods:
+particular set of data in one place, we have ``DataProcessor``\s to do just that. To simplify the implementation of
+``DataProcessor``\s, ``AbstractDataProcessor`` was developed to reduce boilerplate code. It brought up two additional
+``DataProcessor``\s, ``AbstractEntitySingleDataProcessor`` and ``AbstractEntityDataProcessor`` which are specifically
+targeted at ``Entities`` based on ``net.minecraft.entity.entity``. These two ``processor``\s reduce the needed code and
+leave us with this:
+
 
 .. code-block:: java
 
- public interface DataProcessor<M extends DataManipulator<M, I>, I extends ImmutableDataManipulator<I, M>> {
+ protected abstract M createManipulator();
 
-    int getPriority();
+  protected boolean supports(E entity) {
+      return true;
+  }
 
-    boolean supports(DataHolder dataHolder);
+  protected abstract boolean set(E entity, T value);
 
-    Optional<M> from(DataHolder dataHolder);
+  protected abstract Optional<T> getVal(E entity);
 
-    Optional<M> createFrom(DataHolder dataHolder);
+  protected abstract ImmutableValue<T> constructImmutableValue(T value);
 
-    Optional<M> fill(DataHolder dataHolder, M manipulator, MergeFunction overlap);
 
-    Optional<M> fill(DataContainer container, M m);
-
-    DataTransactionResult set(DataHolder dataHolder, M manipulator, MergeFunction function);
-
-    Optional<I> with(Key<? extends BaseValue<?>> key, Object value, I immutable);
-
-    DataTransactionResult remove(DataHolder dataHolder);
- }
-
-The first thing that we notice is a ``getPriority()`` method. This is used for multi-processor registration, or in more
-plain terms: A multi-processor registration system for mods to provide their own compatibility processors for their
-custom entity/itemstack/tileentity/blockstate types. The higher the priority return, the earlier the processor is used
-in what's called the ``DataProcessorDelegate``. The delegate is a collection of registered ``DataProcessor`` of a
-particular ``DataManipulator`` such that all registered ``DataProcessor`` can be used.
-
-Next up, we have ``supports(DataHolder)``. This is really simple, if your ``DataManipulator`` is supposed to be
-"supported" by the provided ``DataHolder`` (which can be an ItemStack, Entity, TileEntity, etc.) you can define this
-"support" in this method. So, if I have a ``VelocityDataProcessor``, my ``support(DataHolder)`` would look something like so:
+createManipulator() method
+--------------------------
 
 .. code-block:: java
 
  @Override
- public boolean supports(DataHolder dataHolder) {
-  return dataHolder instanceof Entity;
+ protected HealthData createManipulator() {
+    return new SpongeHealthData(20, 20);
  }
 
+doesDataExist() method
+----------------------
+
+.. code-block:: java
+
+ @Override
+ protected boolean doesDataExist(EntityLivingBase entity) {
+    return true;
+ }
+
+set() method
+------------
+
+.. code-block:: java
+
+ @Override
+ protected boolean set(EntityLivingBase entity, Map<Key<?>, Object> keyValues) {
+    entity.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(((Double) keyValues.get(Keys.MAX_HEALTH)).floatValue());
+    entity.setHealth(((Double) keyValues.get(Keys.HEALTH)).floatValue());
+    return true;
+ }
+
+getValues(DataContainer)
+------------------------
+
+.. code-block:: java
+
+ @Override
+ protected Map<Key<?>, ?> getValues(EntityLivingBase entity) {
+    final double health = entity.getHealth();
+    final double maxHealth = entity.getMaxHealth();
+    return ImmutableMap.<Key<?>, Object>of(Keys.HEALTH, health, Keys.MAX_HEALTH, maxHealth);
+ }
+
+
+fill(DataContainer)
+-------------------
+
+.. code-block:: java
+
+ @Override
+ public Optional<HealthData> fill(DataContainer container, HealthData healthData) {
+    healthData.set(Keys.MAX_HEALTH, getData(container, Keys.MAX_HEALTH));
+    healthData.set(Keys.HEALTH, getData(container, Keys.HEALTH));
+    return Optional.of(healthData);
+ }
+
+remove(DataHolder)
+------------------
+
+.. code-block:: java
+
+ @Override
+ public DataTransactionResult remove(DataHolder dataHolder) {
+    return DataTransactionBuilder.builder().result(DataTransactionResult.Type.FAILURE).build();
+ }
 
 5. Implement the ValueProcessor
 ===============================
 
-6. Examples
+6. Register everything in SpongeGameRegistry
+============================================
+
+When finally done, you have to register everything in ``SpongeGameRegistry``. As always, add all necessary imports, then the ``DataProcessor`` and
+``Databuilder``:
+
+.. code-block:: java
+
+ private void setupSerialization() {
+  final FlyingDataProcessor flyingDataProcessor = new FlyingDataProcessor();
+        final FlyingDataBuilder flyingDataBuilder = new FlyingDataBuilder();
+        service.registerBuilder(FlyingData.class, flyingDataBuilder);
+         dataRegistry.registerDataProcessorAndImpl(FlyingData.class, SpongeFlyingData.class, ImmutableFlyingData.class, ImmutableSpongeFlyingData.class, flyingDataProcessor, flyingDataBuilder);
+ }
+
+And finally the ``ValueProcessor``:
+
+.. code-block:: java
+
+ private void setupSerialization() {
+  dataRegistry.registerValueProcessor(Keys.IS_FLYING, new IsFlyingValueProcessor());
+ }
+
+7. Examples
 ===========
 
 Several ``DataManipulators`` have already been implemented. Have a look at them to get a quick overview on how to implement your own ``Manipulator``.
