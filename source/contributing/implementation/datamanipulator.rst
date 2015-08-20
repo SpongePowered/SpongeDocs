@@ -2,14 +2,18 @@
 Implementing DataManipulators
 =============================
 
-To implement a ``DataManipulator`` you have to:
+This is a guide for contributors who want to help with Data API implementation by creating DataManipulators.
+An updated list of DataManipulators to be implemented can be found at 
+https://github.com/SpongePowered/SpongeCommon/issues/8.
+
+To fully implement a ``DataManipulator`` these steps must be followed:
 
 1. Implement the ``DataManipulator`` itself
 #. Implement the ``ImmutableDataManipulator``
 
-Upon completion of the first steps you'll have to get this done too:
+When these steps are complete, the following must also be done:
 
-#. Register the ``Key`` in the ``KeyRegistry``
+3. Register the ``Key`` in the ``KeyRegistry``
 #. Implement the ``DataProcessor``
 #. Implement the ``ValueProcessor`` for each value being represented by the ``DataManipulator``
 
@@ -17,9 +21,9 @@ Upon completion of the first steps you'll have to get this done too:
 ===================================
 
 Implementing the ``DataManipulator`` is done by extending ``AbstractData`` in the easiest case. Let's assume we have a
-single value based manipulator, like for example the ``flying`` state on an entity which can be ``true`` or ``false``.
+single value based manipulator, eg. the ``flying`` state on an entity, which can be ``true`` or ``false``.
 We decide to abstract things, so now we're able to just extend ``AbstractBooleanData``.
-Heres a short example:
+Here is a short example:
 
 .. code-block:: java
 
@@ -27,8 +31,8 @@ Heres a short example:
  /* your code here */
   }
 
-The next step is to provide the generic ``DataManipulator`` that follows the generic of ``FlyingData``. In this case we
-use ``FlyingData.class`` in our ``super`` constructor, followed by the ``Key`` which identifies the recommended
+The next step is to provide the generic ``DataManipulator`` that follows the generic of ``FlyingData``. In this case
+we use ``FlyingData.class`` in our ``super`` constructor, followed by the ``Key`` which identifies the recommended
 ``value`` of the flying state and last but not least the ``Key`` itself: ``Keys.IS_FLYING``.
 
 .. code-block:: java
