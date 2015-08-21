@@ -33,7 +33,7 @@ Gradle
     }
 
     dependencies {
-        compile "org.spongepowered:spongeapi:2.1-SNAPSHOT"
+        compile 'org.spongepowered:spongeapi:2.1-SNAPSHOT'
     }
 
 Maven
