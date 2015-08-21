@@ -19,7 +19,7 @@ Download
 Windows
 ~~~~~~~
 
-`GitHub for Windows <https://windows.github.com/>`_ is an easy method of installing Git on Windows, because Git is
+`GitHub Desktop <https://desktop.github.com/>`_ is an easy method of installing Git on Windows, because Git is
 included as a part of the software.
 
 Rebooting your computer after installing Git is recommended.
@@ -41,8 +41,8 @@ The easiest method is to install Xcode Command Line Tools.
 #. Install it, and grab a cookie while you wait.
 #. Run ``git`` from the Terminal.
 
-Alternatively, you can install `GitHub for Mac <https://mac.github.com/>`_. Git is available as a part of the GitHub
-for Mac installation.
+Alternatively, you can install `GitHub Desktop <https://desktop.github.com/>`_. Git is available as a part of the GitHub
+Desktop installation.
 
 Rebooting your computer after installing Git is recommended.
 
@@ -58,6 +58,6 @@ The simplest method of installing Git on Linux is by using the package manager t
 #. Launch the Terminal.
 #. Run ``apt-get install git`` if you are on a Ubuntu or Debian-based distribution. Run ``yum install git`` if you are on Fedora.
 
-There is not a GitHub client available for Linux, unlike Windows and Mac.
+GitHub Desktop is currently not available for Linux, unlike Windows and Mac.
 
 Rebooting your computer after installing Git is recommended.
