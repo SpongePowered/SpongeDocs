@@ -5,11 +5,11 @@
 This is the repository where the Sponge documentation is held.
 
 
-The latest version may be viewed in full by visiting [Sponge at Read-the-Docs](https://docs.spongepowered.org/)
+The latest version may be viewed in full by visiting [Sponge Docs](https://docs.spongepowered.org/)
 
 ## Guidelines
 
-Guidelines for contributing to SpongeDocs may be found [here](https://docs.spongepowered.org/en/contributing/docs/layout.html).
+Guidelines for contributing to SpongeDocs may be found [here](https://docs.spongepowered.org/en/contributing/spongedocs.html).
 
 ## Translations
 
