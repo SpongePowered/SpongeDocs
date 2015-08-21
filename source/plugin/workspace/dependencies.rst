@@ -22,13 +22,13 @@ Examples
 Gradle
 ~~~~~~
 
-.. code-block:: none
+.. code-block:: groovy
 
     repositories {
         mavenCentral()
         maven {
-            name 'Sponge maven repo'
-            url 'http://repo.spongepowered.org/maven'
+            name = 'sponge'
+            url = 'http://repo.spongepowered.org/maven'
         }
     }
 
@@ -39,7 +39,7 @@ Gradle
 Maven
 ~~~~~
 
-.. code-block:: none
+.. code-block:: xml
 
     <repositories>
         <repository>
