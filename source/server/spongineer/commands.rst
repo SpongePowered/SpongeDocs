@@ -36,6 +36,7 @@ Command               Description                               Permission
 /sponge conf          Alters a global, world, or a dimension    sponge.command.config
                       config.
 /sponge heap          Dumps the JVM heap.                       sponge.command.heap
+/sponge help          Returns a list of all sponge commands     sponge.command.help
 /sponge plugins       Lists currently installed plugins.        sponge.command.plugins
 /sponge reload        Reloads the global, world, or dimension   sponge.command.reload
                       config.
@@ -97,7 +98,7 @@ Command               Description                               Permission
 |
 
 For most Forge mods, command permissions are provided in the form ``<modid>.command.<commandname>``. This may not always
-be the case, so be sure to check the mods you use to be sure.
+be the case, so check the mods you use to be sure.
 
 
 Vanilla
