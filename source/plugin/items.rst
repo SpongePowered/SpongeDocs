@@ -17,7 +17,7 @@ Checking the type of the item is very simple. You just need to call the ``getIte
     
     public boolean isStick(ItemStack stack) {
         ItemType type = stack.getItem();
-        return type == ItemTypes.STICK;
+        return type.equals(ItemTypes.STICK);
     }
     
 See how simple that is? Because sticks can stack, we can also find out how many are present.
