@@ -27,24 +27,31 @@ Getting the amount of items in an ``ItemStack`` is relatively easy. The ``getQua
 Modifying ItemStack Data
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-Manipulating data such as durability or the lore of an item is done with a data set. Using the ``getData()`` method, we can get any data type about an item and modify it.
+Manipulating data such as durability or the lore of an item is accomplished by simply using keys. You just need to specify the key that needs to be changed:
 
 .. code-block:: java
-
-    import org.spongepowered.api.data.manipulator.item.DurabilityData;
-    import org.spongepowered.api.item.inventory.ItemStack;
     
-    import com.google.common.base.Optional;
+    import org.spongepowered.api.data.key.Keys;
+    import org.spongepowered.api.item.inventory.ItemStack;
 
     public void setUnbreakable(ItemStack stack) {
-        Optional<DurabilityData> optional = stack.getData(DurabilityData.class);
-         // We need to make sure that our item can have durability
-        if (optional.isPresent()) {
-            DurabilityData durability = optional.get();
-            durability.setBreakable(false);
-             // Return the data back to the item
-            stack.offer(durability);
-        }
+        stack.offer(Keys.ITEM_DURABILITY, -1);
     }
     
-This code accepts an ``ItemStack`` and checks to see if it can have durability without having to check if it is a tool, weapon, or armour. If it does, then the durability is set so that it will never diminish.
+In this, we specified that the ``ITEM_DURABILITY`` key is the key that we would like to change. We then set its value to -1 to imply that the value will never diminish, thus creating an unbreakable item. All of this is enclosed within the ``offer()`` method of the ``ItemStack`` to return our changes back to the ``ItemStack``.
+
+Different keys will require different values based on their job. For example, to change the lore of an item, one would need to specify a ``List`` of ``Text`` rather than an integer. It is also important to perform checks to see if the key can actually apply to the item. For example, some items might not have durability or may already have lore applied to the item.
+
+.. code-block:: java
+    
+    import java.util.List;
+    
+    import org.spongepowered.api.data.key.Keys;
+    import org.spongepowered.api.item.inventory.ItemStack;
+    import org.spongepowered.api.text.Text;
+
+    public void setLore(ItemStack stack, List<Text> itemLore) {
+        if(item.get(Keys.ITEM_LORE).isPresent()) {
+            item.offer(Keys.ITEM_LORE, itemLore);
+        }
+    }
