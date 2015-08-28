@@ -35,10 +35,10 @@ Manipulating data such as durability or the lore of an item is accomplished by s
     import org.spongepowered.api.item.inventory.ItemStack;
 
     public void setUnbreakable(ItemStack stack) {
-        stack.offer(Keys.ITEM_DURABILITY, -1);
+        stack.offer(Keys.UNBREAKABLE, true);
     }
     
-In this, we specified that the ``ITEM_DURABILITY`` key is the key that we would like to change. We then set its value to -1 to imply that the value will never diminish, thus creating an unbreakable item. All of this is enclosed within the ``offer()`` method of the ``ItemStack`` to return our changes back to the ``ItemStack``.
+In this, we specified that the ``UNBREAKABLE`` key is the key that we would like to change. We then set its value to ``true`` to imply that the item will never break. All of this is enclosed within the ``offer()`` method of the ``ItemStack`` to return our changes back to the ``ItemStack``.
 
 Different keys will require different values based on their job. For example, to change the lore of an item, one would need to specify a ``List`` of ``Text`` rather than an integer. It is also important to perform checks to see if the key can actually apply to the item. For example, some items might not have durability or may already have lore applied to the item.
 
