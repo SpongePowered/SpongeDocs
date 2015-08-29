@@ -55,3 +55,29 @@ Different keys will require different values based on their job. For example, to
             item.offer(Keys.ITEM_LORE, itemLore);
         }
     }
+
+Item Properties
+~~~~~~~~~~~~~~~
+
+Certain items can contain specific properties. For example, certain items can mine specific blocks, such as a diamond pickaxe to obsidian. Properties are used for determining if an item can cause an action without actually checking up the type of the item. We can check if a block can mine obsidian by using the ``HarvestingProperty`` of that item.
+
+.. code-block:: java
+    
+    import org.spongepowered.api.block.BlockTypes;
+    import org.spongepowered.api.data.property.HarvestingProperty;
+    import org.spongepowered.api.item.inventory.ItemStack;
+    
+    import com.google.common.base.Optional;
+    
+    public boolean canMineObsidian(ItemStack item) {
+        Optional<HarvestingProperty> optional =
+            item.getProperty(HarvestingProperty.class);
+            
+        if(optional.isPresent()) {
+            HarvestingProperty property = optional.get();
+            return property.getValue().contains(BlockTypes.OBSIDIAN);
+        }
+        return false;
+    }
+
+This code will check to see if the item has a ``HarvestingProperty``, such as a pickaxe. If it does then it will return if this item can harvest obsidian without even needing to check the type of the item.
