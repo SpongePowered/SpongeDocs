@@ -4,9 +4,8 @@ Installing Java
 
 Java is needed to run Sponge and Minecraft. You most likely already have Java, but you may need to update it.
 
-Sponge recommends that you install Java 8 at this time. Java 7 will work as well, but Java 6 is not recommended and may
-not work correctly. The difference between major versions of Java (6, 7, 8) is fairly significant, and newer versions
-run much better.
+Sponge needs Java 8 at this time. Java 7 won't work, just like Java 6 as both are deprecated versions. The difference
+between major versions of Java (6, 7, 8) is fairly significant, and older versions won't run Sponge properly.
 
 Installing Java
 ===============

@@ -11,7 +11,7 @@ the :doc:`implementations/index` page.
 
 Instructions for both are listed on this page.
 
-You will also need to :doc:`install Java <jre>`. To recap, Java 8 is recommended, but Java 7 should work too.
+You will also need to :doc:`install Java <jre>`. To recap, Java 8 is recommended, Java 6 and 7 is no longer supported.
 
 Installing Sponge (coremod)
 ===========================
