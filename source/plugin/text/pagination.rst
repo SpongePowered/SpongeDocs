@@ -21,7 +21,7 @@ First obtain an instance of the ``PaginationService``, and create a new ``Pagina
 	import org.spongepowered.api.service.pagination.PaginationService;
 
 	PaginationService paginationService = plugin.getGame().getServiceManager().provide(PaginationService.class).get();
-	PaginationBuilder builder = paginationService.newBuilder();
+	PaginationBuilder builder = paginationService.builder();
 
 There are two different ways to specify the contents of paginated list:
 

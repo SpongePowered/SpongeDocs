@@ -16,6 +16,7 @@ The first step is to create a class for the command. The class has to implement 
 
     import java.util.Collections;
     import java.util.List;
+    import java.util.Optional;
 
     import org.spongepowered.api.Server;
     import org.spongepowered.api.text.Text;
@@ -25,13 +26,11 @@ The first step is to create a class for the command. The class has to implement 
     import org.spongepowered.api.util.command.CommandResult;
     import org.spongepowered.api.util.command.CommandSource;
 
-    import com.google.common.base.Optional;
-
     public class MyBroadcastCommand implements CommandCallable {
 
         private final Optional<Text> desc = Optional.of((Text) Texts.of("Displays a message to all players"));
         private final Optional<Text> help = Optional.of((Text) Texts.of("Displays a message to all players. It has no color support!"));
-        private final Text usage = (Text) Texts.of("<message>");
+        private final Text usage = Texts.of("<message>");
 
         private final Server server;
 
@@ -39,9 +38,9 @@ The first step is to create a class for the command. The class has to implement 
             this.server = server;
         }
 
-        public Optional<CommandResult> process(CommandSource source, String arguments) throws CommandException {
+        public CommandResult process(CommandSource source, String arguments) throws CommandException {
             server.getBroadcastSink().sendMessage(Texts.of(arguments));
-            return Optional.of(CommandResult.success());
+            return CommandResult.success();
         }
 
         public boolean testPermission(CommandSource source) {
@@ -68,7 +67,7 @@ The first step is to create a class for the command. The class has to implement 
 .. tip::
 
     See the `documentation for CommandCallable
-    <http://spongepowered.github.io/SpongeAPI/org/spongepowered/api/service/command/CommandService.html>`_ for the
+    <http://spongepowered.github.io/SpongeAPI/org/spongepowered/api/util/command/CommandCallable.html>`_ for the
     purposes of each method in this example.
 
 Registering the command

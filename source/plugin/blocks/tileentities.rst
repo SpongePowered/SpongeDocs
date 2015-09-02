@@ -10,7 +10,7 @@ Identifying Tile Entities and their Type
 ========================================
 
 Again, it all starts with a ``Location``. The ``getTileEntity()`` function will return the tile entity corresponding
-to the block or ``Optional.absent()`` if the block is not a tile entity.
+to the block or ``Optional.empty()`` if the block is not a tile entity.
 
  .. code-block:: java
 
@@ -66,7 +66,7 @@ line, the second attempts to set it and returns the boolean value indicating its
         if (data.isPresent()) {
             return Optional.of(data.get().getLine(0));
         } else {
-            return Optional.absent();
+            return Optional.empty();
         }
     }
 

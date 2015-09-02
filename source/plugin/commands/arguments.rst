@@ -7,7 +7,7 @@ The Command Builder API comes with a powerful argument parser. It converts the s
 arguments and flags. It also handles TAB completion of arguments.
 
 The parsed arguments are stored in the ``CommandContext`` object. If the parser returns a single object, obtain it with
-``args.<T>getOne(String key)`` (``T`` is the value type). Optional and weak arguments may return ``Optional.absent()``.
+``args.<T>getOne(String key)`` (``T`` is the value type). Optional and weak arguments may return ``Optional.empty()``.
 
 Many of the parsers may return more than one object (e.g. multiple players with a matching username). In that case, you
 must use the ``args.<T>getAll(String key)`` method to get the ``Collection`` of possible matches. **Otherwise, the
@@ -235,12 +235,12 @@ Example: ``Vector2i`` command element usage
 
     // /plottp <x> <y>
     CommandSpec myCommandSpec = CommandSpec.builder()
-            .setDescription(Texts.of("Teleport to a plot"))
-            .setPermission("myplugin.command.plot.tp")
+            .description(Texts.of("Teleport to a plot"))
+            .permission("myplugin.command.plot.tp")
 
-            .setArguments(new Vector2iCommandElement(Texts.of("coordinates")))
+            .arguments(new Vector2iCommandElement(Texts.of("coordinates")))
 
-            .setExecutor(new MyCommandExecutor())
+            .executor(new MyCommandExecutor())
             .build();
 
 .. tip::

@@ -167,7 +167,7 @@ started quickly, here is an example of properly formatted code:
             if (random.nextBoolean()) {
                 return Optional.of(this.id);
             } else {
-                return Optional.absent();
+                return Optional.empty();
             }
         }
 

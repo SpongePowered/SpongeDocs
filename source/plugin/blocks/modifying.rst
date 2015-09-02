@@ -46,7 +46,7 @@ a wet sponge block.
     }
 
 A ``BlockState`` itself and its data are immutable, but it provides the methods ``withData()`` and ``withoutData()``
-both of which will return a new altered ``BlockState`` or ``Optional.absent()`` if the given ``DataManipulator`` is
+both of which will return a new altered ``BlockState`` or ``Optional.empty()`` if the given ``DataManipulator`` is
 not applicable to the kind of block represented by the ``BlockState``.
 
 The ``withData()`` method accepts a ``DataManipulator`` and will try to create a new ``BlockState`` with the given
@@ -95,7 +95,7 @@ The following example will dry the block at a given ``Location``, if possible.
 
 Since the ``WetData`` data manipulator represents boolean data, by removing it we set the wetness of the block (if it
 has any) to false. The ``dryState.isPresent()`` check will fail on block states that can not be wet since ``dryState``
-will be ``Optional.absent()`` in that case.
+will be ``Optional.empty()`` in that case.
 
 Copying Blocks
 ~~~~~~~~~~~~~~

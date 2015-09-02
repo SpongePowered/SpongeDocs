@@ -88,8 +88,8 @@ at a given ``Location`` is a) a Sponge and b) wet, false otherwise.
 
 First, we need to know which ``DataManipulator`` subinterface we need. Those that are applicable to blocks are found in
 the ``org.spongepowered.api.data.manipulator`` and ``org.spongepowered.api.data.manipulator.block`` packages. Then we
-can just pass that class to the ``getManipulator()`` method and get an ``Optional`` in return which will be ``absent()``
+can just pass that class to the ``getManipulator()`` method and get an ``Optional`` in return which will be ``empty()``
 if the ``BlockState`` does not contain data of that type. Since ``WetData`` represents a boolean value, its presence
-equates to ``true``. Its absence (if ``Optional.absent()`` was returned) either signifies ``false``.
+equates to ``true``. Its absence (if ``Optional.empty()`` was returned) either signifies ``false``.
 
 .. TODO refer and link to data api documentation

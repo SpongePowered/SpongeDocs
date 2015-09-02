@@ -136,7 +136,7 @@ return ``CommandResult.success()`` if the command was successful or ``CommandRes
 where more information needs to be conveyed, a ``CommandResult.builder()`` should be used. It provides the methods
 ``affectedBlocks()``, ``affectedEntities()``, ``affectedItems()``, ``queryResult()`` and ``successCount()`` methods,
 each accepting an integer and setting the attribute of the same name. All attributes that are not set by the builder
-will be absent.
+will be empty.
 
 Command blocks can use those values to modify scoreboard stats, which then can be used for elaborate constructions
 consisting of multiple command blocks. A tutorial how the data is accessed can be found

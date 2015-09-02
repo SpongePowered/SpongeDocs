@@ -11,7 +11,7 @@ For example, let's try to spawn a Creeper:
 
 .. code-block:: java
 
-    import com.google.common.base.Optional;
+    import java.util.Optional;
     import org.spongepowered.api.data.key.Keys;
     import org.spongepowered.api.entity.Entity;
     import org.spongepowered.api.entity.EntityTypes;
