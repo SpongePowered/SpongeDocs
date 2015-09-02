@@ -18,11 +18,11 @@ modding. It was decided that there certainly was a demand for a new API as the C
 was taken down.
 
 Several goals should be achieved with the new API:
- * consistent
- * stable across Minecraft updates
- * easy to use
- * compliant with the Mojang EULA
- * provide best possible protection against DMCA takedowns
+ * consistency
+ * stability across Minecraft updates
+ * ease of use
+ * compliance with the Mojang EULA
+ * protection against DMCA takedowns
 
 While the goals were mostly clear, the route to be taken was not. The soon-to-be Project was still nameless too. The
 first mention of Sponge as the projects name was on Sept, 6th by Firehead94. Obviously the name stuck.
