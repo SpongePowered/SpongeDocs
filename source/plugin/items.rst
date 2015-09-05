@@ -63,11 +63,11 @@ Certain items can contain specific properties. For example, certain items can mi
 
 .. code-block:: java
     
+    import java.util.Optional;
+    
     import org.spongepowered.api.block.BlockTypes;
     import org.spongepowered.api.data.property.HarvestingProperty;
     import org.spongepowered.api.item.inventory.ItemStack;
-    
-    import com.google.common.base.Optional;
     
     public boolean canMineObsidian(ItemStack item) {
         Optional<HarvestingProperty> optional =
