@@ -91,14 +91,13 @@ API, such as SpongeVanilla, do not include these commands.
 ====================  ========================================  ====================
 Command               Description                               Permission
 ====================  ========================================  ====================
-/forge tps            Display ticks per second for each world.  Not yet available.
-/forge track          Enable tile entity tracking.
+/forge tps            Display ticks per second for each world.  forge.command.forge
+/forge track          Enable tile entity tracking.              forge.command.forge
 ====================  ========================================  ====================
 
 |
 
-For most Forge mods, command permissions are provided in the form ``<modid>.command.<commandname>``. This may not always
-be the case, so check the mods you use to be sure.
+For any Forge mods that use the vanilla command API, command permissions are provided in the form ``<modid>.command.<commandname>``.
 
 
 Vanilla
