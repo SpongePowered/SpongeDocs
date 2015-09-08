@@ -47,6 +47,9 @@ Injector
   You can use it to create a child injector with your own module in order to injector your own classes with either the Sponge
   provided dependencies listed on this page, or configure your own classes
 
+GuiceObjectMapperFactory
+  A tool provided by configurate to allow for easier mapping of objects to configuration nodes. See :doc:`configuration/serialization` for usage.
+
 Injection Examples
 ==================
 
