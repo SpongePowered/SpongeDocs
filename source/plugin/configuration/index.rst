@@ -26,6 +26,7 @@ files to your full advantage.
     nodes
     paths
     values
+    serialization
 
 Quick Start
 ===========
