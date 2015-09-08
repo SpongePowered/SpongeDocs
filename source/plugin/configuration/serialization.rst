@@ -12,7 +12,7 @@ Imagine a data structure tracking how many diamonds a player has mined. It might
         private UUID playerUUID;
         private int diamonds;
 
-        [...]
+        ...
     }
 
 And also some methods to access those fields, a nice constructor setting both of those etc.
@@ -64,7 +64,7 @@ Since in many cases the (de)serialization boils down to mapping fields to config
         @Setting(comment="Number of diamonds mined")
         private int diamonds;
 
-        [...]
+        ...
     }
 
 The above example can now be serialized and deserialized from config nodes without further registration. The ``@Setting`` annotations map a configuration node to the field annotated. It accepts two optional parameters, ``value`` and ``comment``. If the ``value`` parameter exists, it defines the name of the node the field will be saved in. If it is not present, the name of the field will be used instead. So in our above example, the annotation ensures that the contents of the field ``playerUUID`` are saved to the node "player". The ``diamonds`` field however will be saved under that exact name since its annotation only specifies a comment. That comment will be written to the config if the implementation supports commented configuration nodes, else it will be discarded.
