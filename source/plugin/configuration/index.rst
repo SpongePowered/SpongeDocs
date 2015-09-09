@@ -13,10 +13,10 @@ files to your full advantage.
     about working with its components.
 
 .. note::
-
-    Sponge makes use of the HOCON configuration format. The rest of this guide will assume you are as well. As working
-    with the different formats is made relatively similar by the system of Configurate, this should not pose too much
-    of an issue if you so choose to use an alternate format.
+    Sponge makes use of the HOCON configuration format, a superset of JSON, as the default format for saving
+    configuration files. The rest of this guide will assume you are using HOCON as well. See :doc:`../../server/getting-started/configuration/hocon` more for information regarding the HOCON format.
+    Working with different formats is made relatively similar by the Configurate system, so it should not
+    pose too much of an issue if you use an alternate format instead. 
 
 .. toctree::
     :maxdepth: 2
@@ -53,11 +53,6 @@ will be ``your_plugin_id.conf`` (with "your_plugin_id" replaced with your plugin
 .. tip::
 
     See :doc:`../main-class` for information on configuring your plugin ID.
-
-.. note::
-
-    The Sponge API uses HOCON, a superset of JSON, as the default format for saving configuration files. See
-    :doc:`../../server/getting-started/configuration/hocon` more for information regarding the HOCON format.
 
 If you set ``sharedRoot`` to ``false``, the returned pathname will refer to a file named ``{pluginname}.conf`` in a
 directory specific to your plugin.
