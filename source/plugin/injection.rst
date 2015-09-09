@@ -12,29 +12,6 @@ Dependency injection allows plugins to designate a few API types that will be in
 Temporary List of Injected Types
 ================================
 
-Game
-  The ``Game`` object is the core accessor of the SpongeAPI.
-
-PluginManager
-  Manages the plugins loaded by the implementation.
-  Can retrieve another plugin's ``PluginContainer``.
-
-EventManager
-  Manages the registration of event handlers and the dispatching of events.
-
-GameRegistry
-  Provides an easy way to retrieve types from a ``Game``.
-
-PluginContainer
-  A ``@Plugin`` class wrapper, used to retrieve information from the annotation for easier use.
-
-Logger
-  Used to identify the plugin from which logged messages are sent.
-
-File
-  This must have an additional annotation specifying specific file!
-  Currently, specifications are ``ConfigFile`` and ``ConfigDir``.
-
 ConfigDir
   Used to inject the plugin's configuration directory:
   ``./mods/`` OR ``./mods/<Plugin#id>/`` depending on ``sharedRoot``
@@ -42,13 +19,38 @@ ConfigDir
 ConfigFile
   Used to inject the plugin's specific configuration file: ``<Plugin#id>.conf``
 
-Injector
-  ``com.google.inject.Injector`` is available from Guice, it is the injector that was used to inject your plugin's dependencies.
-  You can use it to create a child injector with your own module in order to injector your own classes with either the Sponge
-  provided dependencies listed on this page, or configure your own classes
+EventManager
+  Manages the registration of event handlers and the dispatching of events.
+
+File
+  This must have an additional annotation specifying specific file!
+  Currently, specifications are ``ConfigFile`` and ``ConfigDir``.
+
+Game
+  The ``Game`` object is the core accessor of the SpongeAPI.
+
+GameRegistry
+  Provides an easy way to retrieve types from a ``Game``.
 
 GuiceObjectMapperFactory
-  A tool provided by configurate to allow for easier mapping of objects to configuration nodes. See :doc:`configuration/serialization` for usage.
+  A tool provided by configurate to allow easier mapping of objects to configuration nodes.
+  See :doc:`configuration/serialization` for usage.
+
+Injector
+  ``com.google.inject.Injector`` is available from Guice, it is the injector that was used to inject your plugin's
+  dependencies. You can use it to create a child injector with your own module in order to injector your own classes
+  with either the Sponge provided dependencies listed on this page, or configure your own classes
+
+Logger
+  Used to identify the plugin from which logged messages are sent.
+
+PluginContainer
+  A ``@Plugin`` class wrapper, used to retrieve information from the annotation for easier use.
+
+PluginManager
+  Manages the plugins loaded by the implementation.
+  Can retrieve another plugin's ``PluginContainer``.
+
 
 Injection Examples
 ==================
@@ -58,8 +60,8 @@ may not be absolutely vital to every plugin, they're quite frequently used.
 
 .. note::
 
-    Note that it's *almost always* recommended to inject your objects within the main class, as it's instantiated with
-    the Guice injector when the plugin is loaded.
+    Remember that it's *almost always* best practice to inject your objects within the main class, as it's
+    instantiated with the Guice injector when the plugin is loaded.
 
 Logger
 ~~~~~~
@@ -74,7 +76,7 @@ Game
 The ``Game`` object is the opening for many of the internal functions of the SpongeAPI, from the ``EventManager`` to the
 ``Server`` and even the Sync/Async ``Scheduler``.
 
-It's entirely possible to recieve the ``Game`` object from within most events, however it is commonly obtained through
+It's entirely possible to receive the ``Game`` object from within most events, however it is commonly obtained through
 an injection.
 
 **Example - Field**
@@ -103,12 +105,12 @@ an injection.
 
 **Example - Constructor**
 
+    *For the purpose of this tutorial, "Apple" is the class name.*
+
 .. code-block:: java
 
     import com.google.inject.Inject;
     import org.spongepowered.api.Game;
-
-    // For the purpose of this tutorial, "Apple" is the class name.
 
     private Game game;
 
@@ -125,7 +127,7 @@ The recommended way to obtain your config file is through Guice, along with the 
 .. tip::
 
     If you set ``sharedRoot`` to ``true``, your ``ConfigDir`` will be the same directory which - potentially - houses
-    \the configuration for other plugins. In most cases where grabbing the ``ConfigDir`` is required, this should be
+    the configuration for other plugins. In most cases where grabbing the ``ConfigDir`` is required, this should be
     ``false``.
 
 **Example - Field**
@@ -156,12 +158,12 @@ The recommended way to obtain your config file is through Guice, along with the 
 
 **Example - Constructor**
 
+  *For the purposes of this tutorial, "Orange" is the class name.*
+
 .. code-block:: java
 
     import com.google.inject.Inject;
     import org.spongepowered.api.service.config.ConfigDir;
-
-    // For the purposes of this tutorial, "Orange" is the class name.
 
     private File configDir;
 
