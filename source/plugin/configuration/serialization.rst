@@ -74,7 +74,7 @@ The ``@ConfigSerializable`` annotation eliminates the need for any registration 
 Providing a custom ObjectMapperFactory
 ======================================
 
-That restriction, however, can be lifted if another factory like the ``GuiceObjectMapperFactory``. Instead of requiring an empty constructor, it will work on any class that guice can create via dependency injection. This also allows for a mixture of ``@Inject`` and ``@Setting`` annotated fields.
+That restriction, however, can be lifted if we use a different ``ObjectMapperFactory``, for example a ``GuiceObjectMapperFactory``. Instead of requiring an empty constructor, it will work on any class that guice can create via dependency injection. This also allows for a mixture of ``@Inject`` and ``@Setting`` annotated fields.
 
 Your plugin can just acquire a ``GuiceObjectMapperFactory`` simply by dependency injection (see :doc:`../injection`) and then pass it to the ``ConfigurationOptions``.
 
@@ -95,4 +95,4 @@ Your plugin can just acquire a ``GuiceObjectMapperFactory`` simply by dependency
 
 .. note::
 
-    The above code is an example and therefore lacks proper exception handling.
+    The above code is an example and, for brevity, lacks proper exception handling.
