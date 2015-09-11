@@ -14,9 +14,10 @@ files to your full advantage.
 
 .. note::
     Sponge makes use of the HOCON configuration format, a superset of JSON, as the default format for saving
-    configuration files. The rest of this guide will assume you are using HOCON as well. See :doc:`../../server/getting-started/configuration/hocon` more for information regarding the HOCON format.
+    configuration files. The rest of this guide will assume you are using HOCON as well. See
+    :doc:`../../server/getting-started/configuration/hocon` more for information regarding the HOCON format.
     Working with different formats is made relatively similar by the Configurate system, so it should not
-    pose too much of an issue if you use an alternate format instead. 
+    pose too much of an issue if you use an alternate format instead.
 
 .. toctree::
     :maxdepth: 2
@@ -101,7 +102,8 @@ If you are unsure of what to set the value of ``sharedRoot`` to, consider the fo
         }
         File bukkitConfigFile = new File(configDir, "config.yml");
         if (bukkitConfigFile.isFile()) {
-            ConfigurationLoader<ConfigurationNode> yamlReader = YAMLConfigurationLoader.builder().setFile(bukkitConfigFile).build();
+            ConfigurationLoader<ConfigurationNode> yamlReader =
+              YAMLConfigurationLoader.builder().setFile(bukkitConfigFile).build();
             ConfigurationNode bukkitConfig = yamlReader.load();
             configLoader.save(bukkitConfig);
             if (!bukkitConfigFile.renameTo(new File(configDir, "config.yml.bukkit"))) {
