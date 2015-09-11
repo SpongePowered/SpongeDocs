@@ -121,7 +121,7 @@ Extended Application: Chat Channels
 Message sinks have a very useful application that they can be used to establish chat channels. For example, you could
 establish a message sink for every chat channel you wish to have. Then, when a ``CommandSource`` joins a channel, such
 as with ``/join <channel name>``, simply set the ``CommandSource``'s ``MessageSink`` to the appropriate channel using
-``CommandSource#setMessageSink(MessageSink sink)``. Alternatively, you could subscribe to ``PlayerChatEvent``, and set
+``CommandSource#setMessageSink(MessageSink sink)``. Alternatively, you could listen to ``MessageSinkEvent``, and set
 the appropriate ``MessageSink`` using ``MessageEvent#setSink(MessageSink sink)``.
 
 Transforming Messages with Message Sinks
@@ -175,13 +175,13 @@ will be applied to any ``Player`` that joins the server.
 .. code-block:: java
 
     import org.spongepowered.api.entity.player.Player;
-    import org.spongepowered.api.event.Subscribe;
-    import org.spongepowered.api.event.entity.player.PlayerJoinEvent;
+    import org.spongepowered.api.event.Listener;
+    import org.spongepowered.api.event.network.ClientConnectionEvent;
     import org.spongepowered.api.text.sink.MessageSink;
     import org.spongepowered.api.text.sink.MessageSinks;
 
-    @Subscribe
-    public void playerJoin(PlayerJoinEvent event) {
+    @Listener
+    public void onClientConnectionJoin(ClientConnectionEvent.Join event) {
         Player player = event.getEntity();
 
         MessageSink originalSink = player.getMessageSink();

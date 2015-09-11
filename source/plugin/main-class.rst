@@ -50,19 +50,19 @@ Plugins are loaded before the game and the world. This leaves a specific timefra
 interacting with the game, such as registering commands or events.
 
 Your plugin can listen for particular events, called **state events**, to be notified about changes in the state of the
-game. In the example below, ``onServerStart()`` is called when the ``ServerStartedEvent`` occurs; take note of the
-``@Subscribe`` annotation before the method.
+game. In the example below, ``onServerStart()`` is called when the ``GameStartedServerEvent`` occurs; take note of the
+``@Listener`` annotation before the method.
 
 .. code-block:: java
 
-    import org.spongepowered.api.event.Subscribe;
-    import org.spongepowered.api.event.state.ServerStartedEvent;
+    import org.spongepowered.api.event.Listener;
+    import org.spongepowered.api.event.game.state.GameStartedServerEvent;
     import org.spongepowered.api.plugin.Plugin;
 
     @Plugin(id = "example", name = "Example Project", version = "1.0")
     public class ExampleProject {
-        @Subscribe
-        public void onServerStart(ServerStartedEvent event) {
+        @Listener
+        public void onServerStart(GameStartedServerEvent event) {
             // Hey! The server has started!
             // Try instantiating your logger in here.
             // (There's a guide for that)
@@ -72,28 +72,28 @@ game. In the example below, ``onServerStart()`` is called when the ``ServerStart
 .. tip::
 
     The Sponge documentation provides a guide with more information on events (see :doc:`events`). Normally, in addition
-    to prefixing event-handler methods with ``@Subscribe``, you must also register your object with Sponge's event bus.
+    to prefixing event-handler methods with ``@Listener``, you must also register your object with Sponge's event bus.
     However, your main plugin class is registered automatically.
 
 State Events
 ~~~~~~~~~~~~
 
-It may also be desirable to listen for other state events, particularly the ``ServerStoppingEvent``. There are two
+It may also be desirable to listen for other state events, particularly the ``GameStoppingServerEvent``. There are two
 categories of state events:
 
 * **Initialization**: These events occur when Sponge and plugins are loading.
 
-  * ConstructionEvent
-  * PreInitializationEvent
-  * InitializationEvent
-  * PostInitializationEvent
-  * LoadCompleteEvent
+  * GameConstructionEvent
+  * GamePreInitializationEvent
+  * GameInitializationEvent
+  * GamePostInitializationEvent
+  * GameLoadCompleteEvent
 * **Running**: These events occur when the game and world are loading.
 
-  * ServerAboutToStartEvent
-  * ServerStartingEvent
-  * ServerStartedEvent
-  * ServerStoppingEvent
-  * ServerStoppedEvent
+  * GameAboutToStartServerEvent
+  * GameStartingServerEvent
+  * GameStartedServerEvent
+  * GameStoppingServerEvent
+  * GameStoppedServerEvent
 
 For information regarding when each state event occurs, see the :doc:`plugin lifecycle documentation <lifecycle>`.

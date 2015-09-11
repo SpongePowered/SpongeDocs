@@ -24,30 +24,30 @@ Initialization states only occur once during a single run.
 
 **CONSTRUCTION**
 
-The ``ConstructionEvent`` is triggered.
+The ``GameConstructionEvent`` is triggered.
 During this state, the ``@Plugin`` class instance for each plugin is triggered.
 
 **PRE_INITIALIZATION**
 
-The ``PreInitializationEvent`` is triggered.
+The ``GamePreInitializationEvent`` is triggered.
 During this state, the plugin gets ready for initialization. Access to a default logger instance and access to
 information regarding preferred configuration file locations is available.
 
 **INITIALIZATION**
 
-The ``InitializationEvent`` is triggered.
+The ``GameInitializationEvent`` is triggered.
 During this state, the plugin should finish any work needed in order to be functional. Global event handlers and command
 registration are handled during initialization.
 
 **POST_INITIALIZATION**
 
-The ``PostInitializationEvent`` is triggered.
+The ``GamePostInitializationEvent`` is triggered.
 By this state, inter-plugin communication should be ready to occur. Plugins providing an API should be ready to accept
 basic requests.
 
 **LOAD_COMPLETE**
 
-The ``LoadCompleteEvent`` is triggered.
+The ``GameLoadCompleteEvent`` is triggered.
 By this state, all plugin initialization should be completed.
 
 Running States
@@ -58,25 +58,25 @@ and ``SERVER_STOPPED`` may occur at any point during the process if there is an 
 
 **SERVER_ABOUT_TO_START**
 
-The ``ServerAboutToStart`` event is triggered.
+The ``GameAboutToStartServerEvent`` event is triggered.
 The server instance exists, but worlds are not yet loaded.
 
 **SERVER_STARTING**
 
-The ``ServerStartingEvent`` is triggered.
+The ``GameStartingServerEvent`` is triggered.
 The server instance exists, and worlds are loaded.
 
 **SERVER_STARTED**
 
-The ``ServerStartedEvent`` event is triggered.
+The ``GameStartedServerEvent`` event is triggered.
 The server instance exists, and worlds are loaded.
 
 **SERVER_STOPPING**
 
-The ``ServerStoppingEvent`` is triggered.
+The ``GameStoppingServerEvent`` is triggered.
 This state occurs immediately before the final tick, before the worlds are saved.
 
 **SERVER_STOPPED**
 
-The ``ServerStoppedEvent`` is triggered.
+The ``GameStoppedServerEvent`` is triggered.
 During this state, no players are connected and no changes to worlds are saved.
