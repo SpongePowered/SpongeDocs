@@ -81,3 +81,6 @@ Certain items can contain specific properties. For example, certain items can mi
     }
 
 This code will check to see if the item has a ``HarvestingProperty``, such as a pickaxe. If it does then it will return if this item can harvest obsidian without even needing to check the type of the item.
+
+.. note::
+    If you need to hold data of something that isn't covered by the API, such as mod data, you need to implement the ``DataTranslator`` interface to translate it to a ``DataContainer`` to be used with the rest of the API.
