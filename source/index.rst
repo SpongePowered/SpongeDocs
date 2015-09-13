@@ -84,7 +84,6 @@ This section is intended to help everyone understand the goals of the Sponge pro
 
     about/index
     downloads
-    changelog
 
 Links
 =====
