@@ -11,6 +11,7 @@ Sponge (coremod)
 ~~~~~~~~~~~~~~~~
 
 * **Status:** Alpha. The first alpha build of Sponge coremod (#428, Inspired Wallaroo) was released on April 25th, 2015.
+
 *Sponge coremod is soon to be known as SpongeForge.*
 
 `Sponge coremod alpha development builds are now available! <https://repo.spongepowered.org/maven/org/spongepowered/sponge/>`__
