@@ -20,7 +20,7 @@ Sponge (coremod)
 SpongeVanilla
 ~~~~~~~~~~~~~
 
-* **Status:** Alpha. The first alpha build of SpongeVanilla (DEV#17) was released on September 13th, 2014.
+* **Status:** Alpha. The first alpha build of SpongeVanilla (DEV#17) was released on September 13th, 2015.
 
 `SpongeVanilla alpha development builds are now available! <https://repo.spongepowered.org/maven/org/spongepowered/spongevanilla/>`__
 
