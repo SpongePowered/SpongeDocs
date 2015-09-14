@@ -44,3 +44,5 @@ Contents
     :titlesonly:
 
     keys
+    datamanipulators
+    serialization
