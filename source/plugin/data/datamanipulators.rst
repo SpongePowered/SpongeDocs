@@ -49,8 +49,8 @@ If you compared both of our healing examples, you may wonder 'Why bother with da
 
     public void swapHealth(DataHolder targetA, DataHolder targetB) {
         if (targetA.supports(HealthData.class) && targetB.supports(HealthData.class)) {
-            HealthData healthA = targetA.get(HealthData.class).orNull();
-            HealthData healthB = targetB.get(HealthData.class).orNull();
+            HealthData healthA = targetA.get(HealthData.class).get();
+            HealthData healthB = targetB.get(HealthData.class).get();
             targetA.offer(healthB);
             targetB.offer(healthA);
         }
@@ -67,8 +67,8 @@ This example done with ``Keys`` would be a bit longer and more complicated since
 
     public  <T extends DataManipulator<?,?>> void swapData(DataHolder targetA, DataHolder targetB, Class<T> dataClass) {
        if (targetA.supports(dataClass) && targetB.supports(dataClass)) {
-           T dataA = targetA.getOrCreate(dataClass).orNull();
-           T dataB = targetB.getOrCreate(dataClass).orNull();
+           T dataA = targetA.getOrCreate(dataClass).get();
+           T dataB = targetB.getOrCreate(dataClass).get();
            targetA.offer(dataB);
            targetB.offer(dataA);
        }
