@@ -6,7 +6,7 @@ The ``CommandService`` stands as the manager for watching what commands get type
 the right command handler. To register your command, use the method ``CommandService.register()``, passing your plugin,
 an instance of the command, and any needed aliases as parameters.
 
-Usually you want to register your commands when the ``InitializationEvent`` is called. If you are registering the
+Usually you want to register your commands when the ``GameInitializationEvent`` is called. If you are registering the
 commands from the main plugin class, use ``this`` as the ``plugin`` parameter.
 
 .. code-block:: java
