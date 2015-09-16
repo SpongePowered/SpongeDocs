@@ -32,7 +32,7 @@ For example, let's try to spawn a Creeper:
             // data onto the creeper, such as the explosive radius
             creeper.offer(Keys.EXPLOSIVE_RADIUS, 10);
             // Or display name
-            creeper.offer(Keys.DISPLAY_NAME, Texts.of(TextColors.DARK_AQUA, "Dinnerbone"));
+            creeper.offer(Keys.DISPLAY_NAME, Texts.of(TextColors.DARK_AQUA, "Inscrutable"));
             // Or even whether the creeper is "charged"
             creeper.offer(Keys.CREEPER_CHARGED, true);
 
@@ -41,5 +41,5 @@ For example, let's try to spawn a Creeper:
         }
     }
 
-The code excerpt illustrated above will spawn in an upside-down charged creeper with a higher than normal explosion
+The code excerpt illustrated above will spawn a charged creeper with a higher than normal explosion
 radius at the given location.
