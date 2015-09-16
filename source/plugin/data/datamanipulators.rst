@@ -13,30 +13,31 @@ try to heal someone (or something).
 
 .. code-block:: java
 
-    public void heal(DataHolder target) {
+    public static DataTransactionResult heal(DataHolder target) {
         Optional<HealthData> healthOptional = target.getOrCreate(HealthData.class);
         if (healthOptional.isPresent()) {
-            HealthData health = healthOptional.get();
-            double maxHealth = health.maxHealth().get();
-            health.health().set(maxHealth);
-            target.offer(health);
+            HealthData healthData = healthOptional.get();
+
+            double maxHealth = healthData.maxHealth().get();
+            MutableBoundedValue<Double> currentHealth = healthData.health();
+            currentHealth.set(maxHealth);
+            healthData.set(currentHealth);
+
+            target.offer(healthData);
         }
     }
 
-First we need to check if our target has health data. We do so by first asking it to provide us with its healthdata
-by passing its class to the ``getOrCreate()`` method. We get an ``Optional`` which we can use for our check. If the target does
-not support health data, it will be absent. But if the health data is present, it now contains a mutable copy of the
-data present on the data holder. We make our alterations and finally offer the changed data back to our target, where
-it is accepted (again, ``offer`` will return a ``DataTransactionResult`` which we will just discard here).
+First we need to check if our target has health data. We do so by first asking it to provide us with its health data by passing its class to the ``getOrCreate()`` method. We get an ``Optional`` which we can use for our check. If the target does not support health data, it will be absent. But if the health data is present, it now contains a mutable copy of the data present on the data holder. We make our alterations and finally offer the changed data back to our target, where it is accepted (again, ``offer`` will return a ``DataTransactionResult`` which we will just discard here).
 
-You may wonder about the additional ``get()`` necessary to obtain the maximum health. It is necessary since both
-``health()`` and ``maxHealth()`` do not return their values directly, but instead a ``Value`` object wrapping them.
-The purpose of those ``Value`` objects is mainly to provide additional information and to verify the validity of data
-passed to the ``set()`` method. For instance, both ``health()`` and ``maxHealth()`` yield a bounded value, which has
-both a minimum and a maximum value (obtainable via ``getMinValue()`` and ``getMaxValue()``) and will silently discard
-anything passed to ``set()`` lying outside of these bounds. Other than that, every ``Value`` also has a default value
-which will be used if it is urrently not filled. The ``get()`` method will always return a value since it can fall back
-to the default value.
+As you can see, the results for ``health()`` and ``maxHealth()`` are not the ``double`` values we might expect, but instead value containers - in this case ``MutableBoundedValue``. A value container in general contains two things: A ``Key`` to uniquely identify which data it holds and also the value itself. Not all value containers are mutable and some might reject data that they recognise as invalid. For instance, trying to set the value of ``currentHealth`` in the above example to ``-2`` will silently fail since ``currentHealth`` is a bounded value container which enforces a minimum value of ``0``.
+
+.. tip::
+
+    Rule #1 of the Data API: Everything you receive is a copy. So whenever you change something, make sure that your change is propagated back to where the original value came from.
+
+.. note::
+
+    The above example could have been a bit shorter if we were to ``offer()`` the ``currentHealth`` value container directly to the ``target``. This is possible since the value container contains both the ``Key`` and the value and thus makes the operation of offering a single value container equal to ``offer(key, value)``.
 
 DataManipulator vs. Keys
 ========================
