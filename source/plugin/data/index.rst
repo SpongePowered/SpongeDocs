@@ -36,6 +36,11 @@ Key
 
 A ``Key`` is a unique identifier for a single point of data and can be used to directly read or set that point of data without worrying about data manipulators. It was designed to provide a convenient way of accessing data similar to direct getter/setter methods. All keys used within Sponge are listed as constants in the ``org.spongepowered.api.data.key.Keys`` utility class.
 
+Value
+~~~~~
+
+Within the Data API, a value referred to by a ``Key`` is encoded in a container object. For this documentation, it is referred to as 'value container' to avoid confusion with the actual value, but note that the class name ``ValueContainer`` has another meaning in the API. A value container encapsulates the actual data value (if it is present), a default value (to be used if no direct value is present) and the Key by which the value is identified.
+
 Contents
 ========
 

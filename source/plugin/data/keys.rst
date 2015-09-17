@@ -56,3 +56,23 @@ Or, since we use Java 8 and are able to make use of its lambda expressions:
     }
 
 Note that in both cases we need to make sure our passed function can handle ``null``. You will also notice that no check has been performed if the target actually supports the ``MAX_HEALTH`` key. If a target does not support it, the ``transform()`` function will fail and return a ``DataTransactionResult`` indicating so.
+
+Value Containers
+================
+
+There are cases where you may care about not only the direct value for a Key, but the value container encapsulating it. In that case, use the ``getValue(key)`` method instead of ``get(key)``. You will receive an object inheriting from ``BaseValue`` which contains a copy of the original value. Since we know that current health is a ``MutableBoundedValue``, we can find out what is the minimum possible value and set our target's health just a tiny bit above that.
+
+**Code example: Bring a target to the brink of death**
+
+.. code-block:: java
+
+    public void scare(DataHolder target) {
+        if (target.supports(Keys.HEALTH)) {
+            MutableBoundedValue<Double> health = target.getValue(Keys.HEALTH).get();
+            double nearDeath = health.getMinValue() + 1;
+            health.set(nearDeath);
+            target.offer(health);
+        }
+    }
+
+Again, we check if our target support the health key and then obtain the value container. A ``MutableBoundedValue`` contains a ``getMinValue()`` method, so we obtain the minimal value, add 1 and then set it to our data container. Internally, the ``set()`` method performs a check if our supplied value is valid and silently fails if it is not. Calling ``health.set(-2)`` would not change the value within ``health`` since it would fail the validity checks. To finally apply our changes to the target, we need to offer the value container back to it. As a value container also contains the ``Key`` used to identify it, calling ``target.offer(health)`` is equivalent to ``target.offer(health.getKey(), health.get())``.

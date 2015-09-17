@@ -29,15 +29,12 @@ try to heal someone (or something).
 
 First we need to check if our target has health data. We do so by first asking it to provide us with its health data by passing its class to the ``getOrCreate()`` method. We get an ``Optional`` which we can use for our check. If the target does not support health data, it will be absent. But if the health data is present, it now contains a mutable copy of the data present on the data holder. We make our alterations and finally offer the changed data back to our target, where it is accepted (again, ``offer`` will return a ``DataTransactionResult`` which we will just discard here).
 
-As you can see, the results for ``health()`` and ``maxHealth()`` are not the ``double`` values we might expect, but instead value containers - in this case ``MutableBoundedValue``. A value container in general contains two things: A ``Key`` to uniquely identify which data it holds and also the value itself. Not all value containers are mutable and some might reject data that they recognise as invalid. For instance, trying to set the value of ``currentHealth`` in the above example to ``-2`` will silently fail since ``currentHealth`` is a bounded value container which enforces a minimum value of ``0``.
+As you can see, the results for ``health()`` and ``maxHealth()`` are again value containers we obtain from the ``DataHolder``. As the ``MutableBoundedValue`` we receive from calling ``health()`` again just contains a copy of the data, we first need to apply our changes back to the ``DataManipulator`` before we can offer the ``healthData`` back to our target.
 
 .. tip::
 
     Rule #1 of the Data API: Everything you receive is a copy. So whenever you change something, make sure that your change is propagated back to where the original value came from.
 
-.. note::
-
-    The above example could have been a bit shorter if we were to ``offer()`` the ``currentHealth`` value container directly to the ``target``. This is possible since the value container contains both the ``Key`` and the value and thus makes the operation of offering a single value container equal to ``offer(key, value)``.
 
 DataManipulator vs. Keys
 ========================
