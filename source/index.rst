@@ -9,10 +9,10 @@ Welcome to SpongeDocs, the official documentation for the open-source `Sponge <h
 
 The Sponge project currently has four main components:
 
-* Sponge (coremod)
-* SpongeVanilla
-* SpongeAPI
-* SpongeDocs
+* `Sponge (coremod) <https://github.com/spongepowered/sponge>`_
+* `SpongeVanilla <https://github.com/spongepowered/spongevanilla>`_
+* `SpongeAPI <https://github.com/spongepowered/spongeapi>`_
+* `SpongeDocs <https://github.com/spongepowered/spongedocs>`_
 
 .. warning::
 
