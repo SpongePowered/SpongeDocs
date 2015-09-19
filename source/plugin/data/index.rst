@@ -76,4 +76,3 @@ Contents
     keys
     datamanipulators
     transactions
-    serialization
