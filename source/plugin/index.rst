@@ -41,6 +41,7 @@ Contents
     events
     blocks/index
     entities/index
+    items
     configuration/index
     injection
     scheduler
