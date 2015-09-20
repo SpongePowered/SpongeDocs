@@ -11,7 +11,7 @@ object will contain the following:
 Type
 ~~~~
 
-The ``Type`` indicates whether the transaction was completed successfully. The following values are possible:
+The ``Type`` indicates whether the transaction was completed successfully and, if not, how it failed.
 
 +---------------+----------------------------------------------------------------------------+
 | ``UNDEFINED`` | No clear result for the transaction - indicates that something went wrong  |
@@ -25,10 +25,11 @@ The ``Type`` indicates whether the transaction was completed successfully. The f
 | ``CANCELLED`` | An event for this transaction was cancelled                                |
 +---------------+----------------------------------------------------------------------------+
 
-A ton of immutable data
-~~~~~~~~~~~~~~~~~~~~~~~
+The affected Data
+~~~~~~~~~~~~~~~~~
 
-The result also provides a couple of lists containing immutable value containers
+The result also provides a couple of immutable lists containing immutable value containers representing
+the data that was involved in the transaction.
 
 +-------------------------+---------------------------------------------------------------+
 | ``getSuccessfulData()`` | contains all data that was successfully set                   |
@@ -60,7 +61,7 @@ element: A value container for the ``Keys.MAX_HEALTH`` key with a value of 20.0.
 Offering HealthData to a block of stone
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Now our above-mentioned examples are coded in a Way that they will fail silently rather than try to offer the
+Now our above-mentioned examples are coded in a such a way that they will fail silently rather than try to offer the
 incompatible data. But imagine we took a (fully healed) player's ``HealthData`` and tried to offer it to the
 ``Location`` of the stone block he's currently standing on. We can do this, since ``Location`` is also a data
 holder. And if we do, it would reward us with a ``DataTransactionResult`` like this:
@@ -78,7 +79,7 @@ holder's ``undo()`` method. This is particularly useful since some data offering
 that one or more values are successfully written to the data holder, yet one more value cannot be accepted. Since
 you may wish to undo the partial successes.
 
-**Code example: Reverting a transaction**
+**Code Example: Reverting a transaction**
 
 .. code-block:: java
 

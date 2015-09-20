@@ -5,9 +5,7 @@ Using Keys
 Getting and offering data using a key
 =====================================
 
-Since accessing even a single point of data going from ``DataHolder`` to the correct ``DataManipulator`` tended to
-be quite tedious and bloat both the code and the import list, a more direct way of accessing values via ``Key``\ s
-was devised. Let's just start out with an example.
+A data holder provides methods to retrieve or alter a single point of data identified by a ``Key``. Let's just start out with an example:
 
 **Code Example: Healing a data holder, if possible**
 
@@ -18,25 +16,25 @@ was devised. Let's just start out with an example.
 
     public void heal(DataHolder target) {
         if (target.supports(Keys.HEALTH)) {
-            double maxHealth = target.getOrNull(Keys.MAX_HEALTH);
+            double maxHealth = target.get(Keys.MAX_HEALTH).get();
             target.offer(Keys.HEALTH, maxHealth);
         }
     }
 
 Now for the details of the above function.
 
-The first line checks if our given data holder possesses health. Only if he does, he can be healed after all.
-Since a data holder can not have health without having a maximum health and vice versa, a check for one of the
-keys using the ``supports()`` method suffices.
+The first line checks if our given data holder supports a current health value. Only if it does, it can be healed after
+all. Since a data holder can not have current health without having a maximum health and vice versa, a check for
+one of the keys using the ``supports()`` method suffices.
 
 The second line uses the ``getOrNull()`` function to ask the data holder for its maximum health. Besides
 ``getOrNull()``, the methods ``get()`` and ``getOrElse()`` exist, all of which accept a ``Key`` as their first
-parameter. Generally, ``get()`` should be used. It will return an ``Optional`` of the data requested or
-``Optional.absent()`` if the data holder does not support the supplied key. The ``getOrNull()`` method we used is
-no more than a shortcut for ``get(key).orNull()``. In our example it is safe to use ``getOrNull()`` since we
-already verified that the value will be present in the first line and therefore ``getOrNull()`` will just relieve
-us of the ``Optional``. The third possibility would be the ``getOrElse()``, which accepts a default value as a
-second parameter to be returned if the value is not present on the data holder.
+parameter. Generally, ``get()`` should be used, which will return an ``Optional`` of the data requested or
+``Optional.absent()`` if the data holder does not support the supplied key. Since we already verified that the
+``Key`` is supported, we can just call ``get()`` on the Optional without further checks. We could also use
+``getOrNull()`` which is basically a shortcut to call ``get(key).orNull()``, thus getting rid of the
+``Optional``. The third possibility would be the ``getOrElse()``, which accepts a default value as a second
+parameter to be returned if the value is not present on the data holder.
 
 In the third line, we offer data back to the data holder. We provide a ``Key`` denoting the current health and the
 before acquired maximum health, thus healing the data holder to full health. There are a variety of ``offer()``
@@ -48,8 +46,8 @@ holder supports it), we can silently discard the result.
 Transforming Data
 =================
 
-Other than getting a value, modify it and offer it back, there is another way of modifying data. Using a data
-holders ``transform()`` method we can pass a ``Key`` and a ``Function``. Internally, the value for the key will
+Other than getting, modifying and offering a value, there is another way of interacting with data. Using a data
+holder's ``transform()`` method we can pass a ``Key`` and a ``Function``. Internally, the value for the key will be
 retrieved and the given function applied to it. The result is then stored under the key and the ``transform()``
 method will return a ``DataTransactionResult`` accordingly.
 
@@ -87,7 +85,7 @@ object inheriting from ``BaseValue`` which contains a copy of the original value
 health is a ``MutableBoundedValue``, we can find out what is the minimum possible value and set our target's
 health just a tiny bit above that.
 
-**Code example: Bring a target to the brink of death**
+**Code Example: Bring a target to the brink of death**
 
 .. code-block:: java
 

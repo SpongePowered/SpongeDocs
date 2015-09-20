@@ -37,8 +37,8 @@ available (via ``Optional.absent()``) or not accepted.
 Property
 ~~~~~~~~
 
-A property is a read-only point of data. It provides information that is directly derived from its holders type,
-but, unlike other data, unchangeable (except for core mods). Example for this are the harvesting ablities on tools
+A property is a read-only point of data. It provides information that is directly derived from its holder's type,
+but, unlike other data, it is unchangeable (except for core mods). Examples of this are the harvesting ablities on tools
 (represented as ``HarvestingProperty``) or the damage absorption of an equippable armor item.
 
 DataManipulator
@@ -47,8 +47,8 @@ DataManipulator
 A data manipulator represents points of cohesive data that describes a certain component of its holder. For
 example ``HealthData``, which contains both current and maximum health. If a data holder has ``HealthData``, it
 has health that can somehow be depleted and replenished and can die if that health is depleted. This allows for
-the re-use of such components over the API and prevents duplication of accessor methods - as sheep, stained glass
-blocks and leather armor all can share the ``DyeableData`` holding the color they are dyed in.
+the re-use of such components over the API and prevents duplication of accessor methods. For example, sheep, stained
+glass blocks and leather armor all can share the ``DyeableData`` holding the color they are dyed in.
 
 Key
 ~~~

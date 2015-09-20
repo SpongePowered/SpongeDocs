@@ -9,7 +9,7 @@ A data manipulator represents a certain component and all of its data. It stores
 be offered to or created from data holders which possess a matching component. Again, let's use an example. And again
 try to heal someone (or something).
 
-**Code example: Healing with data manipulators**
+**Code Example: Healing with data manipulators**
 
 .. code-block:: java
 
@@ -31,7 +31,7 @@ First we need to check if our target has health data. We do so by first asking i
 data by passing its class to the ``getOrCreate()`` method. We get an ``Optional`` which we can use for our check.
 If the target does not support health data, it will be absent. But if the health data is present, it now contains
 a mutable copy of the data present on the data holder. We make our alterations and finally offer the changed data
-back to our target, where it is accepted (again, ``offer`` will return a ``DataTransactionResult`` which we will
+back to our target, where it is accepted (again, ``offer()`` will return a ``DataTransactionResult`` which we will
 just discard here).
 
 As you can see, the results for ``health()`` and ``maxHealth()`` are again value containers we obtain from the
@@ -96,13 +96,13 @@ holder demonstrates the core design goal of the Data API: Maximum compatibility 
 Mutable vs. Immutable Data Manipulators
 =======================================
 
-To every data manipulator, there is a matching ``ImmutableDataHolder``. For instance both ``HealthData`` and
+To every data manipulator, there is a matching ``ImmutableDataHolder``. For instance, both ``HealthData`` and
 ``ImmutableHealthData`` contain the same data, only the latter does not provide any means to make alterations to
 the data.
 
 Conversion between mutable and immutable data manipulators is done via the ``asImmutable()`` and ``asMutable()``
 methods, which each will return a copy of the data. Since the only way to obtain an immutable data manipulator
-from a data holder is obtaining a mutable one and then using ``asImmutable()`` in terms of processing power it
+from a data holder is obtaining a mutable one and then using ``asImmutable()``, in terms of processing power it
 might be cheaper to only use immutable data holders if it is to be passed around.
 
 A possible use case for this would be a custom event fired when someone is healed. It should provide copies of
