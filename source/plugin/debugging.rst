@@ -1,66 +1,69 @@
-================================
-Plugin Debugging and Hotswapping
-================================
+================
+Plugin Debugging
+================
 
-Every developer, at some point, has had the *pleasure* of debugging their plugin.
-Generally speaking, debugging is done by throwing a multitude of logs in specific areas to narrow down breakpoints,
-compiling the plugin, moving the result to the test folder, and running the server. Along that process, crossing every
-finger you have that something doesn't immediately fail and make the past hour or so of programming in vain.
+When bugs in your plugin's code are hard to pinpoint, you are tired of recompiling after every single change
+and logger outputs are cluttering your code, debugging can be very tedious. Therefore, this section will
+explain how to set up your plugin to utilize Java's debugging capabilities.
 
-However, what many newer programmers (and some seasoned!) don't know, is that there is an easier way. Why bother
-compiling and moving folders, when you can test your plugin from right within your IDE? Oh, of course you know how
-to run tests during compilation, but that's not quite what I'm talking about. We're talking about running the entire
-server implementation and plugin at once, from within the IDE.
+Preparing your workspace
+========================
 
-How is that possible, you may be asking? Quite simple. Plugin Debugging is fairly easy to setup, once you know how. Once
-you're debugging, Hotswapping is the next step (which we'll cover later).
+Since we will be running both Sponge and your plugin from within your IDE, you'll need to import either
+`Sponge <https://github.com/SpongePowered/Sponge>`_ or `SpongeVanilla
+<https://github.com/SpongePowered/SpongeVanilla>`_, depending on which you want to use, as a project into your
+workspace. The instructions to do so are found on the respective project's github page. Follow those instructions
+carefully before proceeding here.
+
+Now you need to make sure your plugin project is visible to the **Sponge(Vanilla)** project you just created.
+The steps necessary depend on your IDE.
+
+IntelliJ IDEA
+~~~~~~~~~~~~~
+
+In IntelliJ, every project has its own workspace(s). To make your project visible to the **Sponge(Vanilla)** project, it needs to be a *Module*. Assuming you already created your project as described in
+:doc:`workspace/idea`, import it using the following steps.
+
+* Open the **Sponge(Vanilla)** project.
+* Click ``File``, followed by ``New``, then ``Module from Existing Sources...``.
+* Navigate to the directory of your plugin project and select its ``.iml`` file (e.g. ``MyPlugin.iml``)
+* Click ``Finish``.
 
 .. tip::
 
-    See the :doc:`workspace/index` documentation before attempting to follow this guide.
-
-Preparing your Plugin
-=====================
-
-IntelliJ
-~~~~~~~~
-
-* Open the **Sponge(Vanilla)** project.
-* Click ``File``, followed by ``New``, then ``Module...``.
-* Select ``Gradle`` in the popup, and click Next.
-* After naming your new project, click ``Finish``.
+    If you have not yet created your plugin, click ``Module...`` instead of ``Module from Existing Sources...``,
+    then create your project in the following dialogue.
 
 Eclipse
 ~~~~~~~
 
-.. tip::
-
-    You can use :doc:`workspace/eclipse` to create a new Eclipse project. Eclipse, unlike IntelliJ, does not
-    require any specific setup in regards to how you manage the plugin. Creating a new project is all you need to do.
+Just create your project as described here: :doc:`workspace/eclipse`. As long as it is in the same workspace
+as your **Sponge(Vanilla)** project, it will be visible.
 
 Adding Plugin to Sponge classpath
 =================================
 
 The idea behind this is that we'll launch Sponge from within your IDE, like normal. However, the difference is that
-we'll be adding your plugin to the classpath. To do this should only take a few steps, and will enhance your workflow,
-having cut down on all of the time that you previously would have spent transferring files and manually starting your
-server.
+we'll be adding your plugin to the classpath. Since Sponge will per default load all plugins found in the classpath,
+adding the plugin project to Sponge's classpath will rid you of the necessity to rebuild and copy the artifact
+file into your server directory after every change.
 
-.. tip::
+First you need to ensure that you have your Run/Debug Configuration(s) set appropriately, as shown in the Sponge `README.md <https://github.com/SpongePowered/Sponge/blob/master/README.md#Running>`_
 
-    Please ensure that you have your Run/Debug Configuration(s) set appropriately, as shown in the Sponge
-    `README.md <https://github.com/SpongePowered/Sponge/blob/master/README.md>`_
+Then you'll need to edit that Run/Debug Configuration so that it will include your project on the class path.
+How to do this, depends on your IDE again:
 
-IntelliJ
-~~~~~~~~
+IntelliJ IDEA
+~~~~~~~~~~~~~
 
 * Open your Project Structure.
 
   * Click ``File``, followed by ``Project Structure...``.
   * OR, click the ``Project Structure`` icon, in the upper right-hand corner of the IDE, next to the ``Search`` icon.
 
-* Click ``Modules``.
-* Click the Green ``+`` symbol (``Add``), and select ``Module Dependency``
+* Click ``Modules``. Make sure Sponge / SpongeVanilla (depending on what you chose) is selected in the middle column
+* On the right column, select the ``Dependencies`` tab
+* Click the Green ``+`` symbol (``Add``) on the far right, and select ``Module Dependency``
 * Select your Module (Plugin).
 * Do NOT check the module, after it is added to the list.
 
@@ -80,24 +83,19 @@ Eclipse
 * Click the ``OK`` button.
 * Click the ``Apply`` button on the bottom right corner.
 
-Testing the Configuration
+Running the Configuration
 =========================
 
 After you've followed the previous steps, you should be ready to start debugging.
+If you start your server from your IDE as if it were run from the ``run/server`` directory in your
+Sponge(Vanilla) project. Which means, all config files, world files etc will be stored there and persist
+over multiple launches.
 
-.. tip::
-
-    Once a single server tick takes more than a given amount of time, the watchdog will consider the server crashed
-    and forcefully shut it down. When working with breakpoints or executing code step by step this might occur, so
-    it is recommended that you edit your test environments ``server.properties`` file and set the value of
-    ``max-tick-time`` to either a very large number (the amount of milliseconds a tick may take) or ``-1`` (to disable
-    the Watchdog completely).
-
-IntelliJ
-~~~~~~~~
+IntelliJ IDEA
+~~~~~~~~~~~~~
 
 Rather than pressing the Green right-pointing arrow to run your Run/Debug configuration, click the Green icon to the
-right of it, ``Debug``. This is to prepare for Hotswapping, which we're about to cover.
+right of it, ``Debug``.
 
 Eclipse
 ~~~~~~~
@@ -107,35 +105,76 @@ the Debug icon (the one displaying a bug) and click your Sponge (Server) configu
 drop-down menu, click ``Debug Configurations``. Select ``Sponge (Server)`` configuration and hit the ``Debug`` button
 on the bottom left.
 
+Using the Debugger
+==================
 
-Hotswapping
-===========
+Now that your server (and your Plugin) are running in the Debugger, you can make use of the features it holds.
+The most prominently used are explained below in short, though they are not features of Sponge, but the Java
+Debugger your IDE makes use of.
 
-Now that you've got the server, running, let's try to make some changes. Note, that there are limits to the built-in
-capabilities of Hotswapping:
+Breakpoints
+~~~~~~~~~~~
+
+Breakpoints are a useful tool to take a closer look at the code. A breakpoint can be set at the beginning of a
+line of code or a function. When reaching a breakpoint, the debugger will halt the code execution and your IDE
+will open up a view allowing you to inspect the content of all variables in the current scope. Code execution
+will not resume unless you press the according button in your IDE's debugging view.
+
+Breakpoints may also be added, removed or temporarily disabled while the debugging is in process.
+
+.. tip::
+
+    Once a single server tick takes more than a given amount of time, the watchdog will consider the server crashed
+    and forcefully shut it down. When working with breakpoints this might occur, so it is recommended that you
+    edit your test environments ``server.properties`` file and set the value of ``max-tick-time`` to either a
+    very large number (the amount of milliseconds a tick may take) or ``-1`` (to disable the Watchdog completely).
+
+IntelliJ IDEA
++++++++++++++
+
+To add or remove a breakpoint, just left click in the blank space just to the left of your editor.
+
+Alternatively, have your cursor be in the line where you want the breakpoint added or removed and then click
+``Run`` followed by ``Toggle Line Breakpoint``.
+
+Eclipse
++++++++
+
+To add or remove a breakpoint, just right click in the blank space just to the left of your editor and click
+``Toggle Breakpoint``.
+
+Alternatively, have your cursor be in the line where you want the breakpoint added or removed and then click ``Run`` followed by ``Toggle Breakpoint``.
+
+Code Hotswapping
+~~~~~~~~~~~~~~~~
+
+The other major feat of the debugger is that you will not have to restart your server for every small change you
+make, thanks to code hotswapping. This means that you can just recompile portions of your code while it is
+running in the debugger. However, there are a couple of limitations, the most important of which are:
 
 * You cannot create or remove methods.
 
-    * Changes to methods are limited to information *within* the method. You cannot modify its return type, nor its
-      variable requirements
+    * Changes to methods are limited to code *within* the method. You cannot modify its signature (that means its name, return type and parameter types)
 
 * You cannot remove classes.
 
-    * You cannot modify a class' type, extensions or implementations. Nor can you add an additional import.
+    * You cannot modify a class' name, superclass or the list of interfaces it implements.
     * You can add classes. However, once it's been built and hotswapped, the class follows the above rules.
 
-Go ahead and make a change to an existing method. Make sure that this is something you can trigger from within the
-server, to see the change. Once you've done that:
+You can test this functionality: Introduce a simple command to your plugin that just writes a word, like ``Sponge``
+Then save it and start the server as described above. Run the command. It will output sponge. Now change the command
+to write a different word to console, save the file. After a change, do as follows to hotswap the changes to
+the running program:
 
-IntelliJ
-~~~~~~~~
+IntelliJ IDEA
++++++++++++++
 
 * Open the ``Run`` menu, from the top of the IDE.
 * Below the first category break, click ``Reload Changed Classes``.
 
 Eclipse
-~~~~~~~
++++++++
 
-In Eclipse, when a file is rebuilt, it is automatically hotswapped with the currently running debug. The default setting
-for building files insist that it is rebuilt upon every save. Meaning as soon as the file is saved, it's automatically
-built and swapped. If you have turned this feature off, you would have to build manually.
+No action needed. As soon as you save the file, it will be rebuilt and automatically hotswapped with the
+currently running debug. So as long as you did not change this particular default behavior, you will not have to
+trigger a manual hotswap.
