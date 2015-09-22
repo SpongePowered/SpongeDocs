@@ -34,8 +34,10 @@ at the present moment does not hold any health data. In the second case there is
 data represented by it would not differ from the manipulator's default values. Since we can safely assume that
 if a data holder has the default ``HealthData``, it will already be at its full health, we won't need to heal it.
 
-If the health data is present (supported and different from the default), it now contains a mutable copy of the
-data present on the data holder. We make our alterations and finally offer the changed data back to our target, where it is accepted (again, ``offer()`` will return a ``DataTransactionResult`` which we will disregard in this example and get back to :doc:`at a later point <transactions>`).
+If the health data is present, it now contains a mutable copy of the data present on the data holder. We make
+our alterations and finally offer the changed data back to our target, where it is accepted (again, ``offer()``
+will return a ``DataTransactionResult`` which we will disregard in this example and get back to :doc:`at a later
+point <transactions>`).
 
 As you can see, the results for ``health()`` and ``maxHealth()`` are again keyed values we obtain from the
 ``DataHolder``. As the ``MutableBoundedValue`` we receive from calling ``health()`` again just contains a copy of
