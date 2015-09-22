@@ -5,12 +5,16 @@ The Data API
 Overview
 ========
 
-The unified Data API aims to provide a consistent way of accessing and modifying data of any kind. Where other
-approaches define the available data using interface and inheritance (like a ``LivingEntity`` interface providing
-getter and setter functions for current and maximum health), in Sponge every entity, block etc. is completely
-oblivious to what data it holds. While this may appear less straightforward than direct accessor methods, it is
-foremost far more extensible. And thanks to the addition of ``Key``\ s, simply accessing specific values is no
-less straightforward.
+The unified Data API aims to provide a consistent way of accessing and modifying data. 'Data', in this context
+means any data that is consistently synchronized between client and server. It can be changed server-side and
+then those changes will be synchronized to the connected clients. This includes, among many others, the text on
+a sign, the looks of a horse or the health of any living entity.
+
+Where other approaches define the available data using interfaces and inheritance (like a ``LivingEntity``
+interface providing getter and setter functions for current and maximum health), in Sponge every entity, block
+etc. is completely oblivious to what data it holds. While this may appear less straightforward than direct
+accessor methods, it is foremost far more extensible. And thanks to the addition of ``Key``\ s, simply accessing
+specific values is no less straightforward.
 
 .. warning::
 
@@ -32,14 +36,18 @@ A data holder is just that - something that holds data. It provides methods to r
 interface itself is completely oblivious to the type of data held. Since only the implementations will possess
 this knowledge, it is possible to ask a ``DataHolder`` to provide data it does not have or to accept data it
 cannot use. In those cases, the return values of the methods will provide the information that data is not
-available (via ``Optional.absent()``) or not accepted.
+available (via ``Optional.absent()``) or not accepted (via the :doc:`DataTransactionResult <transactions>`).
 
 Property
 ~~~~~~~~
 
-A property is a read-only point of data. It provides information that is directly derived from its holder's type,
-but, unlike other data, it is unchangeable (except for core mods). Examples of this are the harvesting ablities on tools
-(represented as ``HarvestingProperty``) or the damage absorption of an equippable armor item.
+A property too is data, but not synchronized between server and clients. Therefore, it can only be
+changed by modifications present on both client and server. Since Sponge is not intended to require a
+client-side counterpart, properties are not modifiable.
+Examples of properties are the harvesting ablities on tools (represented as `HarvestingProperty
+<https://spongepowered.github.io/SpongeAPI/org/spongepowered/api/data/property/HarvestingProperty.html>`_) or the
+damage absorption of an equippable armor item (represented as `DamageAbsorptionProperty
+<https://spongepowered.github.io/SpongeAPI/org/spongepowered/api/data/property/DamageAbsorptionProperty.html>`_).
 
 DataManipulator
 ~~~~~~~~~~~~~~~
@@ -61,10 +69,10 @@ similar to direct getter/setter methods. All keys used within Sponge are listed 
 Value
 ~~~~~
 
-Within the Data API, a value referred to by a ``Key`` is encoded in a container object. For this documentation, it
-is referred to as 'value container' to avoid confusion with the actual value, but note that the class name
-``ValueContainer`` has another meaning in the API. A value container encapsulates the actual data value (if it is
-present), a default value (to be used if no direct value is present) and the Key by which the value is identified.
+Within the Data API, a value referred to by a ``Key`` is encoded in a container object. For this documentation,
+it is referred to as 'keyed value' to avoid confusion with the actual value. A keyed value encapsulates the
+actual data value (if it is present), a default value (to be used if no direct value is present) and the Key by
+which the value is identified.
 
 Contents
 ========

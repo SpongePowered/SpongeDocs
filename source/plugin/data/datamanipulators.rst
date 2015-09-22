@@ -14,7 +14,7 @@ try to heal someone (or something).
 .. code-block:: java
 
     public static DataTransactionResult heal(DataHolder target) {
-        Optional<HealthData> healthOptional = target.getOrCreate(HealthData.class);
+        Optional<HealthData> healthOptional = target.get(HealthData.class);
         if (healthOptional.isPresent()) {
             HealthData healthData = healthOptional.get();
 
@@ -28,13 +28,16 @@ try to heal someone (or something).
     }
 
 First we need to check if our target has health data. We do so by first asking it to provide us with its health
-data by passing its class to the ``getOrCreate()`` method. We get an ``Optional`` which we can use for our check.
-If the target does not support health data, it will be absent. But if the health data is present, it now contains
-a mutable copy of the data present on the data holder. We make our alterations and finally offer the changed data
-back to our target, where it is accepted (again, ``offer()`` will return a ``DataTransactionResult`` which we will
-just discard here).
+data by passing its class to the ``get()`` method. We get an ``Optional`` which we can use for our check.
+This ``Optional`` will be absent if either our target does not support ``HealthData`` or if it supports it but
+at the present moment does not hold any health data. In the second case there is no data manipulator since the
+data represented by it would not differ from the manipulator's default values. Since we can safely assume that
+if a data holder has the default ``HealthData``, it will already be at its full health, we won't need to heal it.
 
-As you can see, the results for ``health()`` and ``maxHealth()`` are again value containers we obtain from the
+If the health data is present (supported and different from the default), it now contains a mutable copy of the
+data present on the data holder. We make our alterations and finally offer the changed data back to our target, where it is accepted (again, ``offer()`` will return a ``DataTransactionResult`` which we will disregard in this example and get back to :doc:`at a later point <transactions>`).
+
+As you can see, the results for ``health()`` and ``maxHealth()`` are again keyed values we obtain from the
 ``DataHolder``. As the ``MutableBoundedValue`` we receive from calling ``health()`` again just contains a copy of
 the data, we first need to apply our changes back to the ``DataManipulator`` before we can offer the
 ``healthData`` back to our target.
@@ -58,8 +61,8 @@ that it contains *all* data pertaining to a certain component. Let us take a loo
 
     public void swapHealth(DataHolder targetA, DataHolder targetB) {
         if (targetA.supports(HealthData.class) && targetB.supports(HealthData.class)) {
-            HealthData healthA = targetA.get(HealthData.class).get();
-            HealthData healthB = targetB.get(HealthData.class).get();
+            HealthData healthA = targetA.getOrCreate(HealthData.class).get();
+            HealthData healthB = targetB.getOrCreate(HealthData.class).get();
             targetA.offer(healthB);
             targetB.offer(healthA);
         }
@@ -96,14 +99,12 @@ holder demonstrates the core design goal of the Data API: Maximum compatibility 
 Mutable vs. Immutable Data Manipulators
 =======================================
 
-To every data manipulator, there is a matching ``ImmutableDataHolder``. For instance, both ``HealthData`` and
-``ImmutableHealthData`` contain the same data, only the latter does not provide any means to make alterations to
-the data.
+To every data manipulator, there is a matching ``ImmutableDataManipulator``. For instance, both ``HealthData`` and
+``ImmutableHealthData`` contain the same data, only the latter returns new instances when requesting modified data.
 
 Conversion between mutable and immutable data manipulators is done via the ``asImmutable()`` and ``asMutable()``
-methods, which each will return a copy of the data. Since the only way to obtain an immutable data manipulator
-from a data holder is obtaining a mutable one and then using ``asImmutable()``, in terms of processing power it
-might be cheaper to only use immutable data holders if it is to be passed around.
+methods, which each will return a copy of the data. The only way to obtain an immutable data manipulator
+from a data holder is obtaining a mutable one and then using ``asImmutable()``.
 
 A possible use case for this would be a custom event fired when someone is healed. It should provide copies of
 the health data before and after, but event listeners should not be able to change them. Therefore we can write

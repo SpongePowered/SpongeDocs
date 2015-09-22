@@ -27,8 +27,8 @@ The first line checks if our given data holder supports a current health value. 
 all. Since a data holder can not have current health without having a maximum health and vice versa, a check for
 one of the keys using the ``supports()`` method suffices.
 
-The second line uses the ``getOrNull()`` function to ask the data holder for its maximum health. Besides
-``getOrNull()``, the methods ``get()`` and ``getOrElse()`` exist, all of which accept a ``Key`` as their first
+The second line uses the ``get()`` function to ask the data holder for its maximum health. Besides
+``get()``, the methods ``getOrNull()`` and ``getOrElse()`` exist, all of which accept a ``Key`` as their first
 parameter. Generally, ``get()`` should be used, which will return an ``Optional`` of the data requested or
 ``Optional.absent()`` if the data holder does not support the supplied key. Since we already verified that the
 ``Key`` is supported, we can just call ``get()`` on the Optional without further checks. We could also use
@@ -64,7 +64,7 @@ Now, as an example, imagine we want to buff a data holder by doubling his maximu
         });
     }
 
-Or, since we use Java 8 and are able to make use of its lambda expressions:
+Or, if you use Java 8, you're able to shorten the line with lambda expressions:
 
 .. code-block:: java
 
@@ -76,10 +76,10 @@ Note that in both cases we need to make sure our passed function can handle ``nu
 check has been performed if the target actually supports the ``MAX_HEALTH`` key. If a target does not support it,
 the ``transform()`` function will fail and return a ``DataTransactionResult`` indicating so.
 
-Value Containers
-================
+Keyed Values
+============
 
-There are cases where you may care about not only the direct value for a Key, but the value container
+There are cases where you may care about not only the direct value for a Key, but the keyed value
 encapsulating it. In that case, use the ``getValue(key)`` method instead of ``get(key)``. You will receive an
 object inheriting from ``BaseValue`` which contains a copy of the original value. Since we know that current
 health is a ``MutableBoundedValue``, we can find out what is the minimum possible value and set our target's
@@ -98,10 +98,10 @@ health just a tiny bit above that.
         }
     }
 
-Again, we check if our target support the health key and then obtain the value container. A
+Again, we check if our target support the health key and then obtain the keyed value. A
 ``MutableBoundedValue`` contains a ``getMinValue()`` method, so we obtain the minimal value, add 1 and then set
 it to our data container. Internally, the ``set()`` method performs a check if our supplied value is valid and
 silently fails if it is not. Calling ``health.set(-2)`` would not change the value within ``health`` since it
-would fail the validity checks. To finally apply our changes to the target, we need to offer the value container
-back to it. As a value container also contains the ``Key`` used to identify it, calling ``target.offer(health)``
+would fail the validity checks. To finally apply our changes to the target, we need to offer the keyed value
+back to it. As a keyed value also contains the ``Key`` used to identify it, calling ``target.offer(health)``
 is equivalent to ``target.offer(health.getKey(), health.get())``.
