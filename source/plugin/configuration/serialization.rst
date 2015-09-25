@@ -68,7 +68,7 @@ annotate our class with the ``@ConfigSerializable`` and ``@Setting`` annotations
     @ConfigSerializable
     public class DiamondCounter {
 
-        @Setting(value="player")
+        @Setting(value="player", comment="Player UUID")
         private UUID playerUUID;
         @Setting(comment="Number of diamonds mined")
         private int diamonds;
@@ -80,10 +80,15 @@ The above example can now be serialized and deserialized from config nodes witho
 ``@Setting`` annotations map a configuration node to the field annotated. It accepts two optional parameters,
 ``value`` and ``comment``. If the ``value`` parameter exists, it defines the name of the node the field will be
 saved in. If it is not present, the name of the field will be used instead. So in our above example, the
-annotation ensures that the contents of the field ``playerUUID`` are saved to the node "player". The
-``diamonds`` field however will be saved under that exact name since its annotation only specifies a comment.
-That comment will be written to the config if the implementation supports commented configuration nodes, else
-it will be discarded.
+annotation ensures that the contents of the field ``playerUUID`` are saved to the node "player", commented with
+"Player UUID". The ``diamonds`` field however will be saved under that exact name since its annotation only
+specifies a comment. That comment will be written to the config if the implementation supports commented
+configuration nodes, else it will be discarded.
+
+.. tip::
+
+    You may also use the shorthand ``@Setting("someNode")`` instead of ``@Setting(value="someNode")``
+
 
 The ``@ConfigSerializable`` annotation eliminates the need for any registration since it allows configurate to
 just generate an ``ObjectMapper`` for the class. The only limitation is that configurate needs an empty
