@@ -22,14 +22,20 @@ Gradle
 * Open **IntelliJ IDEA**.
 * Click ``Create New Project``.
 * Select ``Gradle`` in the popup, and click ``Next``.
-* Name your project, and click ``Finish``.
+* Enter your **Group ID**, **Artifact ID**, and **Version**.
+
+  * Your **Group ID** should correspond to your organization name, or something similar.
+  * Your **Artifact ID** should correspond to your project name.
+  * Your **Version** is up to you.
+
+* Click ``Next`` twice, name your project, and click ``Finish``.
 
 **To import the Sponge API as a dependency:**
 
-* Open ``build.gradle`` in the navigator.
-* With the editor tab in focus, choose ``Code > Generate``.
-* Click ``Add Maven artifact dependency`` in the popup.
-* Search for the :doc:`official Sponge API Maven artifact <dependencies>` under **Search by artifact**, and click ``Add``.
+* Open ``build.gradle`` in the navigator and add the dependencies.
+* Have a look at the :doc:`dependencies page <dependencies>` for an example Gradle file.
+* Open the **Gradle tab** on the right of the IntelliJ window and hit the refresh button.
+* Gradle setup is done! Now you can start coding your plugin.
 
 Maven
 ~~~~~
