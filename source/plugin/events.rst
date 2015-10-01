@@ -230,7 +230,7 @@ Example: Fire Custom Event
 
 .. code-block:: java
 
-    game.getEventManager().post(new PrivateMessageEvent(playerA, playerB, "Hello World!");
+    game.getEventManager().post(new PrivateMessageEvent(playerA, playerB, "Hello World!"));
 
 
 Example: Listen for Custom Event
