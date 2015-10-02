@@ -85,6 +85,18 @@ This section is intended to help everyone understand the goals of the Sponge pro
     about/index
     downloads
 
+Acknowledgements
+~~~~~~~~~~~~~~~~
+
+.. image:: /images/yklogo.png
+
+The SpongePowered team are grateful to *YourKit* for providing its full-featured Java Profiler free to open source
+projects. YourKit, LLC is the creator of `YourKit Java Profiler <https://www.yourkit.com/java/profiler/index.jsp>`__
+and `YourKit .NET Profiler <https://www.yourkit.com/.net/profiler/index.jsp>`__, innovative and intelligent tools
+for profiling Java and .NET applications.
+
+
+
 Links
 =====
 
