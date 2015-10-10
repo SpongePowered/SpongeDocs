@@ -38,7 +38,7 @@ GuiceObjectMapperFactory
 
 Injector
   ``com.google.inject.Injector`` is available from Guice, it is the injector that was used to inject your plugin's
-  dependencies. You can use it to create a child injector with your own module in order to injector your own classes
+  dependencies. You can use it to create a child injector with your own module in order to inject your own classes
   with either the Sponge provided dependencies listed on this page, or configure your own classes
 
 Logger
