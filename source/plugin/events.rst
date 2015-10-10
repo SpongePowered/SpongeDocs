@@ -16,7 +16,7 @@ the event refers to can be prevented from occurring. Cancellable events implemen
 Sponge itself contains many events; however, plugins can create their own events which other plugins can listen to.
 
 Event listeners are assigned a priority that determines the order in which the event listener is run in context of other
-event listeners (such as those from other plugins). For example, an event listener with *EARLY* priority will return
+event listeners (such as those from other plugins). For example, an event listener with ``EARLY`` priority will return
 before most other event listeners.
 
 Events cannot be sent to a specific set of plugins. All plugins that listen to an event will be notified of the event.
@@ -25,9 +25,9 @@ The event bus or event manager is the class that keeps track of which plugins ar
 and is also responsible for distributing events to event listeners.
 
 .. note::
-  The event bus **supports supertypes**. For example, ``BreakBlockEvent`` extends ``ChangeBlockEvent``.
-  Therefore, a plugin could listen to ``ChangeBlockEvent`` and still receive ``BreakBlockEvent``\ s. However,
-  a plugin listening to just ``BreakBlockEvent`` would not be notified of other types of ``ChangeBlockEvent``.
+  The event bus **supports supertypes**. For example, ``ChangeBlockEvent.Break`` extends ``ChangeBlockEvent``.
+  Therefore, a plugin could listen to ``ChangeBlockEvent`` and still receive ``ChangeBlockEvent.Break``\ s. However,
+  a plugin listening to just ``ChangeBlockEvent.Break`` would not be notified of other types of ``ChangeBlockEvent``.
 
 Event Listeners
 ===============
@@ -68,12 +68,12 @@ of the class containing the event listeners.
     public class ExampleListener {
 
         @Listener
-        public void onBreakBlock(BreakBlockEvent event) {
+        public void onBreakBlock(ChangeBlockEvent.Break event) {
             ...
         }
     }
 
-    game.getEventManager().registerListeners(this, new Examplelistener());
+    game.getEventManager().registerListeners(this, new ExampleListener());
 
 
 
@@ -92,10 +92,10 @@ before other server modifications.
 
 .. code-block:: java
 
-    public class ExampleListener implements EventListener<BreakBlockEvent> {
+    public class ExampleListener implements EventListener<ChangeBlockEvent.Break> {
 
         @Override
-        public void handle(BreakBlockEvent event) throws Exception {
+        public void handle(ChangeBlockEvent.Break event) throws Exception {
             ...
         }
     }
@@ -104,8 +104,8 @@ before other server modifications.
 
 .. code-block:: java
 
-    EventListener<BreakBlockEvent> listener = new ExampleListener();
-    game.getEventManager().registerListener(this, BreakBlockEvent.class, listener);
+    EventListener<ChangeBlockEvent.Break> listener = new ExampleListener();
+    game.getEventManager().registerListener(this, ChangeBlockEvent.Break.class, listener);
 
 .. tip::
 
@@ -132,7 +132,7 @@ listeners, including those registered with ``@Listener`` annotations.
 .. code-block:: java
 
     MyPlugin plugin = ...
-    game.getEventManager.unregisterPluginListeners(plugin);
+    game.getEventManager().unregisterPluginListeners(plugin);
 
 About @Listener
 ~~~~~~~~~~~~~~~~
@@ -163,7 +163,16 @@ The method returns ``true`` if the event was cancelled, ``false`` if not.
 Firing Sponge Events
 ~~~~~~~~~~~~~~~~~~~~
 
-It is possible to generate instances of built-in events with the static ``SpongeEventFactory``.
+It is possible to generate instances of built-in events with the static ``SpongeEventFactory``. The events created by
+the ``SpongeEventFactory`` are then passed to ``EventManager#post``.
+
+Example: Firing LightningEvent
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: java
+
+  LightningEvent lightningEvent = SpongeEventFactory.createLightningEvent(game, Cause.empty());
+  game.getEventManager().post(lightningEvent);
 
 
 Creating Custom Events
@@ -241,125 +250,10 @@ Example: Listen for Custom Event
     @Listener
     public void onPrivateMessage(PrivateMessageEvent event) {
         if(event.getMessage().equals("hi i am from planetminecraft")) {
-           event.setCancelled();
-           return;
+            event.setCancelled(true);
+            return;
         }
 
         String senderName = event.getSender().getName();
-        event.getReceipient().sendMessage(ChatTypes.CHAT, "PM from " + senderName + ": " + event.getMessage());
+        event.getRecipient().sendMessage(ChatTypes.CHAT, Texts.of("PM from " + senderName + ": " + event.getMessage()));
     }
-
-Callbacks
-=========
-
-Callbacks are a more advanced feature of Sponge's event system.
-
-Callbacks allow plugins to cooperate better when they override vanilla behavior. When an event is invoked, Sponge runs
-through the event listeners in order from first to last. Then Sponge runs through the callback list in order from last
-to first. Vanilla is always the first callback added, meaning that vanilla's listener will be executed last.
-
-Plugins that don't use callbacks can also use the simpler ``setCancelled(boolean)`` method, which will disable all
-callbacks. However, some plugins may just need to disable vanilla behavior, modify another plugin's behavior, or disable
-that behavior completely. These are cases where the flexibility offered through callbacks is required.
-
-A plugin can add as many callbacks as it needs during an event, and plugins can cancel specific callbacks. However, a
-plugin cannot reorder or remove callbacks, as some behaviors (especially vanilla) cannot be reordered. Additionally, all
-modifications to the callback list, should be done in the event listener itself. Attempting to change the list during
-callback execution will cause a ``ConcurrentModificationException``. Callbacks should only be added or cancelled in
-event listeners who's ``Order`` property allows event cancellation.
-
-.. note::
-
-    ``ExplosionEvent`` doesn't exist in the API currently, it is just used for example purposes.
-
-
-Example: Adding a Callback to Disable Explosions and Spawn an Arrow
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. note::
-
-    This is a bad example, but use-cases for callbacks are going to be very specific so this just demonstrates the code
-    needed to add one.
-
-.. code-block:: java
-
-    @Listener
-    // final not required unless using an inner class that needs access to it.
-    public void onExplosion(final ExplosionEvent event) {
-        for (EventCallback callback : event.getCallbacks()) {
-            // Disable vanilla behavior
-            if (callback.isBaseGame()) {
-                if (callback instanceof Cancellable) {
-                    ((Cancellable) callback).setCancelled(true);
-                }
-            }
-        }
-
-        event.getCallbacks().add(new EventCallback() {
-            public boolean isBaseGame() {
-                // Not a base game (i.e. Vanilla) behavior
-                return false;
-            }
-
-            public void run() {
-                Extent extent = event.getEntity().getLocation().getExtent();
-
-                // Create an arrow
-                extent.createEntity(EntityTypes.ARROW, event.getEntity().getLocation().getPosition());
-            }
-        });
-    }
-
-Example: Disable Chair Sitting Added by CraftBook
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. note::
-
-    This example will break if other plugins enable or disable callbacks.
-
-.. code-block:: java
-
-    @Listener
-    public void onPlayerInteractBlock(PlayerInteractBlockEvent event) {
-        boolean foundChair = false;
-
-        for (Callback callback : event.getCallbacks())
-            if (callback instanceof com.sk89q.craftbook.mechanic.Chair) {
-                if (callback instanceof Cancellable) {
-                    ((Cancellable) callback).setCancelled(true);
-                }
-                foundChair = true;
-                break;
-            }
-        }
-
-        if (foundChair) {
-            for (Callback callback : event.getCallbacks()) {
-                if (!(callback instanceof com.sk89q.craftbook.mechanic.Chair)) {
-                  if (callback instanceof Cancellable) {
-                      ((Cancellable) callback).setCancelled(false);
-                  }
-                }
-            }
-        }
-    }
-
-Example: Modifying Behaviors
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. code-block:: java
-
-
-    @Listener
-    public void onExplosion(ExplosionEvent event) {
-        for (Callback callback : event.getCallbacks()) {
-            if (callback instanceof example.FireworksExplosion) {
-                ((example.FireworksExplosion) callback).setYield(200);
-            }
-        }
-    }
-
-
-
-Thanks to @sk89q for the callback examples. They were copied from his original
-`PR #232 <https://github.com/SpongePowered/SpongeAPI/pull/232>`_.
