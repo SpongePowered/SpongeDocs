@@ -15,10 +15,11 @@ Overview
 The purpose of the articles within this section is to help current server owners to migrate from other server platforms
 to Sponge.
 
-Migrating to Sponge (coremod)
-=============================
+Migrating to Sponge
+===================
 
-To migrate to a Forge server running the Sponge coremod, select the platform you are migrating from below.
+To migrate to SpongeForge or SpongeVanilla, look at the sections below. Most instructions are identical for both,
+differences are stated below.
 
 
 Migrating from CraftBukkit or Spigot
@@ -31,8 +32,9 @@ Migrating from CraftBukkit or Spigot
 Worlds
 ------
 
-Forge, and thus Sponge, uses the same world structure as vanilla Minecraft. Vanilla Minecraft places the nether
-(typically ``world_nether``) and the end (typically ``world_the_end``) dimensions within the ``world`` folder.
+Forge, and thus SpongeForge (and also SpongeVanilla), use the same world structure as vanilla Minecraft. Vanilla Minecraft
+places the nether (typically ``world_nether``) and the end (typically ``world_the_end``) dimensions within the
+``world`` folder.
 
 CraftBukkit relocates the nether and end dimensions outside of the ``world`` folder, which must be remedied if it is
 desired to retain the nether and end dimensions when running Sponge. To relocate the nether and end dimensions, follow
@@ -74,8 +76,8 @@ Plugins
 -------
 
 Sponge has no native support for Bukkit plugins. However, some members of the community are re-implementing the Bukkit
-API with a special Sponge plugin, which may allow Bukkit plugins to function on a Sponge server. This plugin has not yet
-been slated for release.
+API within a special Sponge plugin, which may allow Bukkit plugins to function on a Sponge server. This plugin has not
+yet been slated for release.
 
 Ore is Sponge's official repository for finding plugins, and it is recommended to download all Sponge plugins from Ore.
 When finding replacements for your Bukkit plugins, there are a few points to keep in mind:
@@ -93,8 +95,9 @@ Migrating from Canary
 Worlds
 ------
 
-Forge, and thus Sponge, uses the same world structure as vanilla Minecraft. Vanilla Minecraft places the nether
-(typically ``world_nether``) and the end (typically ``world_the_end``) dimensions within the ``world`` folder.
+Forge, and thus SpongeForge (and also SpongeVanilla), use the same world structure as vanilla Minecraft. Vanilla Minecraft
+places the nether (typically ``world_nether``) and the end (typically ``world_the_end``) dimensions within the
+``world`` folder.
 
 Canary relocates the nether and end dimensions outside of the ``world`` folder, which must be remedied if it is desired
 to retain the nether and end dimensions when running Sponge. However, Canary provides an easy method to convert Canary
@@ -147,11 +150,11 @@ When finding replacements for your Canary plugins, there are a few points to kee
 Migrating from Forge
 ~~~~~~~~~~~~~~~~~~~~
 
-Instructions
-------------
+Migrating from a plain Forge server to a SpongeForge or SpongeVanilla server is a fairly simple process that needs little-to-no
+preparatory work.
 
-Migrating from a plain Forge server to a Sponge server is a fairly simple process that needs little-to-no preparatory
-work.
+Migrating to SpongeForge
+------------------------
 
 You must first ensure you are running a version of Forge that is compatible with the version of Sponge your plan to use.
 You may find recommended builds of Forge at http://files.minecraftforge.net. If you are using any other mods, they must
@@ -160,8 +163,8 @@ also be updated.
 When you are ready to install Sponge, you may proceed with the following steps:
 
 1. Stop your Forge server if it is running.
-#. Download the Sponge coremod from the Sponge website.
-#. Place the Sponge coremod into your ``mods`` folder.
+#. Download SpongeForge from the Sponge website and Forge from MinecraftForge.
+#. Place SpongeForge into your ``mods`` folder.
 #. Start the server and party!
 
 .. note::
@@ -169,26 +172,43 @@ When you are ready to install Sponge, you may proceed with the following steps:
     If Sponge is the only mod on your server, players will be able to log in with a vanilla client. Other mods may
     require players to install Forge on their own computers.
 
+Migration to SpongeVanilla
+--------------------------
+
+.. warning::
+
+    If migrating to **SpongeVanilla**:
+    You will lose all Forge mod data, blocks and entities as SpongeVanilla can't run Forge mods.
+    Keep that in mind when deciding whether you go with SpongeForge or SpongeVanilla.
+
+The process of migration is almost the same as above:
+
+1. Stop your Forge server if it is still running.
+#. Download SpongeVanilla and the vanilla server from Mojang.
+#. Place your worlds and config files in the server folder.
+#. Run the server by launching the ``spongevanilla.jar``.
+
+
 Migrating from Vanilla
 ~~~~~~~~~~~~~~~~~~~~~~
 
-The intent of this article is to help people who currently run vanilla servers to migrate to Sponge.
+Administrators of vanilla Minecraft servers can migrate to Sponge easily because Forge, and thus SpongeForge
+(and SpongeVanilla), use the same world structure as vanilla Minecraft. Sponge also uses the same files used by
+vanilla Minecraft, such as ``server.properties``.
 
-Administrators of vanilla Minecraft servers can migrate to Sponge easily because Forge, and thus Sponge, uses the same
-world structure as vanilla Minecraft. Sponge also uses the same files used by vanilla Minecraft, such as
-``server.properties``.
-
-Migrating to SpongeVanilla
-==========================
-
-To migrate to a server running SpongeVanilla select the platform you are migrating from below.
+At first you should decide if you want to run SpongeForge or SpongeVanilla.
 
 .. note::
-    As there currently are no development builds of SpongeVanilla available, there currently are no guides available on
-    how to migrate to SpongeVanilla. These will be added when development builds are available.
+    Both flavours of Sponge are able to serve vanilla clients. Keep in mind that this only applies to SpongeForge as
+    long as you don't install Forge mods which require client modifications.
+
+1. Stop your Vanilla server if it is still running
+#. Download SpongeVanilla or SpongeForge.
+#. Place your worlds and config files in the server folder.
+#. Run your new server.
 
 Installing Sponge
 =================
 
-The guide at :doc:`../../../../server/getting-started/installation` provides instructions for installing Sponge, once
-the above steps have been completed.
+The guide at :doc:`../../../../server/getting-started/installation` provides instructions for installing Sponge while
+you're migrating.
