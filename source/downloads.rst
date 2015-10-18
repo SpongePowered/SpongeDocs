@@ -4,21 +4,21 @@ Download
 
 .. Note::
 
-    **Changelogs** for Sponge coremod, SpongeVanilla and SpongeAPI are now available on the respective Downloads
+    **Changelogs** for SpongeForge, SpongeVanilla and SpongeAPI are now available on the respective Downloads
     pages, along with links for Javadocs and sources. For the more adventurous, they may also be compiled from their
     respective GitHub repositories.
 
 
-Sponge coremod
-~~~~~~~~~~~~~~
+SpongeForge
+~~~~~~~~~~~
 
-* **Status:** Alpha. The first alpha build of Sponge coremod (#428, Inspired Wallaroo) was released on April 25th, 2015.
+* **Status:** Alpha. The first alpha build of SpongeForge (#428, Inspired Wallaroo) was released on April 25th, 2015.
 
-*Sponge coremod is soon to be known as SpongeForge.*
+*SpongeForge was formerly known as Sponge*
 
-`Sponge coremod alpha development builds are available here! <https://repo.spongepowered.org/maven/org/spongepowered/sponge/>`__
+`SpongeForge alpha development builds are available here! <http://files.minecraftforge.net/spongepowered>`__
 
-* `Sponge coremod on GitHub <https://github.com/SpongePowered/Sponge>`_
+* `SpongeForge on GitHub <https://github.com/SpongePowered/SpongeForge>`_
 
 
 SpongeVanilla
@@ -35,4 +35,3 @@ SpongeAPI
 ~~~~~~~~~
 
 `SpongeAPI builds may be downloaded here <https://repo.spongepowered.org/maven/org/spongepowered/spongeapi/>`__
-

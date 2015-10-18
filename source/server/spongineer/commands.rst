@@ -85,8 +85,8 @@ Command               Description                               Permission
 Forge
 ~~~~~
 
-The following commands are available only when using the Sponge coremod on Forge. Other implementations of the Sponge
-API, such as SpongeVanilla, do not include these commands.
+The following commands are available only when using the SpongeForge coremod on Forge. Other implementations of the
+Sponge API, such as SpongeVanilla, do not include these commands.
 
 ====================  ========================================  ====================
 Command               Description                               Permission

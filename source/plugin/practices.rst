@@ -26,7 +26,7 @@ Mixins
 ~~~~~~
 
 Mixins are specifically for transforming classes before other mods/plugins start. ForgeModLoader calls these mods
-“Coremods”. Sponge is a Coremod, and deploys Mixins on startup. Mixins cannot be used by plugins.
+“Coremods”. SpongeForge is a Coremod, and deploys Mixins on startup. Mixins cannot be used by plugins.
 
 
 Packets
@@ -46,7 +46,7 @@ mod for Sponge API. Most uses of NMS (Native Minecraft Server) code in plugins d
 troubleshooting very difficult. Maintaining NMS modifications is also more difficult than using the Sponge API. Mods that
 add to the Sponge API using code internals will have to specifically write an API, which does not rely on underlying
 Minecraft code, to be usable by Sponge plugins. However, plugins can be created that load separate “compatibility”
-modules to interact with the underlying implementation (Sponge Coremod or SpongeVanilla).
+modules to interact with the underlying implementation (SpongeForge or SpongeVanilla).
 
 Plugins using implementation-specific code are very likely to break between versions, and should be clearly labelled
 as such wherever they are hosted. These may more appropriately labelled as "Mods".

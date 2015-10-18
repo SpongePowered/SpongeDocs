@@ -5,7 +5,7 @@ SpongeDocs Writing
 Overview
 ========
 
-The Sponge documentation, also referred to as "SpongeDocs," is the official documentation of the Sponge project. The
+The Sponge documentation, also referred to as "SpongeDocs", is the official documentation of the Sponge project. The
 goal of SpongeDocs is to:
 
 * Help users set up their own servers powered by a Sponge implementation.
@@ -41,7 +41,7 @@ writing Sponge Documentation. This list may get added to (or bent out of shape) 
 
   i. Some exceptions are made for translation purposes.
 
-7. Make distinction between Sponge Coremod, SpongeVanilla and SpongeAPI.
+7. Make distinction between SpongeForge, SpongeVanilla and SpongeAPI.
 8. If it looks awful in your language, invent your own rules.
 9. Sponge is the Project Title and should NOT be translated.
 

@@ -2,7 +2,7 @@
 License
 =======
 
-The Sponge coremod for Minecraft Forge and the Sponge API are licensed under the MIT license. There is no contributor
+SpongeForge, SpongeVanilla, SpongeCommon and the Sponge API are licensed under the MIT license. There is no contributor
 license agreement, and contributions to the Sponge project are welcome.
 
 The MIT license is an extremely permissive license, placing almost no restrictions on what can be done with Sponge.

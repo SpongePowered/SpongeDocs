@@ -17,8 +17,8 @@ There are currently two implementations:
 .. csv-table::
    :header: "Name", "Based on"
 
-   :doc:`Sponge Coremod <sponge>`,"Mojang's Minecraft and Minecraft Forge"
-   :doc:`Sponge Vanilla <spongevanilla>`,"Mojang's Minecraft"
+   :doc:`SpongeForge <spongeforge>`,"Mojang's Minecraft and Minecraft Forge"
+   :doc:`SpongeVanilla <spongevanilla>`,"Mojang's Minecraft"
 
 Which do I choose?
 ~~~~~~~~~~~~~~~~~~
@@ -41,5 +41,5 @@ Contents
     :maxdepth: 2
     :titlesonly:
 
-    sponge
+    spongeforge
     spongevanilla

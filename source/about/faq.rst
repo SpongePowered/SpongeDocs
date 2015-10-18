@@ -26,7 +26,7 @@ the server on too, besides that nothing is required. Learn more about choosing t
 Where do I get Sponge?
 ----------------------
 
-Sponge currently isn't finished, but there are development builds of the SpongeCoremod and SpongeVanilla available:
+Sponge currently isn't finished, but there are development builds of SpongeForge and SpongeVanilla available:
 :doc:`/downloads`
 
 What Sponge implementations are available?
@@ -34,9 +34,10 @@ What Sponge implementations are available?
 
 The Sponge Project currently develops two implementations which both use the SpongeAPI:
 
-(1) **Sponge**, a coremod for Minecraft Forge, which is an existing Minecraft modding framework famous for spurring
+(1) **SpongeForge**, a coremod for Minecraft Forge, which is an existing Minecraft modding framework famous for spurring
     the Minecraft modding scene. Forge lacks a cross-version API, and this is where Sponge steps in. Sponge allows
     server owners to deploy Sponge plugins with ease, making server management easier.
+    (SpongeForge was formerly known as Sponge, until it was renamed to avoid confusion).
 
 (2) **SpongeVanilla**, a stand-alone implementation of the Sponge API, running on top of the vanilla Minecraft server.
     (SpongeVanilla was formerly known as Granite, until the development teams merged).

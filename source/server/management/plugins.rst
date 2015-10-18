@@ -18,8 +18,8 @@ Finding Plugins
 Installation
 ============
 
-Sponge Coremod
-~~~~~~~~~~~~~~
+SpongeForge
+~~~~~~~~~~~
 
 In order to install plugins, place them into the "mods" folder of your game or server directory.
 
@@ -28,7 +28,7 @@ If your download came in a .zip file, then you may need to extract it to find a 
 SpongeVanilla
 ~~~~~~~~~~~~~
 
-.. note:: For consistency between Sponge Coremod and SpongeVanilla, plugins are stored in the mods directory on SpongeVanilla.
+.. note:: For consistency between SpongeForge and SpongeVanilla, plugins are stored in the mods directory on SpongeVanilla.
 
 In order to install plugins, place them into the "mods" folder of your game or server directory.
 

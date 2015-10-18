@@ -27,24 +27,24 @@ Several goals should be achieved with the new API:
 While the goals were mostly clear, the route to be taken was not. The soon-to-be Project was still nameless too. The
 first mention of Sponge as the projects name was on Sept, 6th by Firehead94. Obviously the name stuck.
 
-The initial commit to SpongeAPI and the Sponge Forge Coremod was made on September 7th and 8th, 2014 by one of the Sponge
-Project leaders, Zidane. This was the beginning of the development of the SpongeAPI and the Sponge Coremod.
+The initial commit to SpongeAPI and SpongeForge was made on September 7th and 8th, 2014 by one of the Sponge
+Project leaders, Zidane. This was the beginning of the development of the SpongeAPI and SpongeForge (named Sponge at the time).
 
 On September 7th, 2014 the initial commit to Granite, an API based upon Vanilla Minecraft was made. Granite, originally
-started as an independent project, was planned to implement it's own API and the SpongeAPI. Granite and the Sponge
-Coremod coexisted until April 20th, 2015.
+started as an independent project, was planned to implement it's own API and the SpongeAPI. Granite and SpongeForge
+coexisted until April 20th, 2015.
 
-The development of Sponge and the API gained momentum leading to a first API release on December 1st, 2014. However this
+The development of SpongeForge and the API gained momentum leading to a first API release on December 1st, 2014. However this
 version was far from feature complete and an API-only release, meaning that there was no official implementation available
 at that time.
 
 On December 26th, 2014 the Granite Team decided to limit Granite to the usage of SpongeAPI. That made Granite the first
 unofficial Sponge Implementation for Vanilla Minecraft. On March 26th, the Granite Team finally joined the Sponge Team
 and Granite became SpongeVanilla, the official SpongeAPI implementation for Vanilla Minecraft. About a month later the
-unification of the Granite and Sponge (Coremod) codebase began in SpongeCommon. SpongeCommon was created to hold all
-shared code between the two implementations while implementation-specific code remains in SpongeVanilla and Sponge.
+unification of the Granite and SpongeForge codebase began in SpongeCommon. SpongeCommon was created to hold all
+shared code between the two implementations while implementation-specific code remains in SpongeVanilla and SpongeForge.
 
-On April 21st, 2015 SpongeAPI 2.0 was finally released. A week later development builds of the Sponge Coremod were
+On April 21st, 2015 SpongeAPI 2.0 was finally released. A week later development builds of SpongeForge were
 finally made available.
 
 
@@ -65,5 +65,3 @@ removed all labels and introduced her as the icon and background logo for the Sp
 This older version of Spongie sadly isn't available as vector graphic. Thus Sponge staff decided to create a new
 vectorized version. Two new drafts were then posted on
 `State of Spongie <https://forums.spongepowered.org/t/state-of-spongie-wip/6194>`__.
-
-The final decision on Spongie is still pending.

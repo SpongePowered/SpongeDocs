@@ -5,11 +5,11 @@ Implementation Development
 Overview
 ========
 
-SpongeCommon is the layer of shared code in the official implementations of the Sponge API. Sponge (coremod) and
+SpongeCommon is the layer of shared code in the official implementations of the Sponge API. SpongeForge and
 SpongeVanilla both extend SpongeCommon.
 
+* SpongeForge is the official forge-based implementation
 * SpongeVanilla is the official vanilla-based implementation
-* Sponge (coremod) is the official forge-based implementation
 
 
 Contents

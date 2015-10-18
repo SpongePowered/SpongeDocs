@@ -9,7 +9,7 @@ Welcome to SpongeDocs, the official documentation for the open-source `Sponge <h
 
 The Sponge project currently has four main components:
 
-* `Sponge (coremod) <https://github.com/spongepowered/sponge>`_
+* `SpongeForge <https://github.com/spongepowered/spongeforge>`_
 * `SpongeVanilla <https://github.com/spongepowered/spongevanilla>`_
 * `SpongeAPI <https://github.com/spongepowered/spongeapi>`_
 * `SpongeDocs <https://github.com/spongepowered/spongedocs>`_
@@ -17,7 +17,7 @@ The Sponge project currently has four main components:
 .. warning::
 
     Sponge is still in development. Development builds are currently available for `download
-    <https://repo.spongepowered.org/maven/org/spongepowered/sponge/>`__, but an official release will not be available
+    <http://files.minecraftforge.net/spongepowered>`__, but an official release will not be available
     until later in 2015.
 
 Contents
@@ -53,7 +53,7 @@ Please read this section before `Creating Plugins`_ and `Contributing to Sponge`
 Creating Plugins
 ~~~~~~~~~~~~~~~~
 
-This section is intended to help developers who have prior Java experience with writing plugins using SpongeAPI.
+This section is intended to help developers who have prior Java experience with writing plugins using the SpongeAPI.
 
 .. toctree::
     :maxdepth: 3
@@ -106,7 +106,7 @@ Links
 
 -  `Sponge Homepage <http://spongepowered.org>`__
 -  `Sponge Forums <http://forums.spongepowered.org>`__
--  `Sponge Issue Tracker <https://github.com/SpongePowered/SpongeAPI/issues?q=>`__
+-  `SpongeAPI Issue Tracker <https://github.com/SpongePowered/SpongeAPI/issues?q=>`__
 -  `Sponge Twitter <https://twitter.com/SpongePowered>`__
 -  `Sponge Subreddit <https://reddit.com/r/SpongeProject>`__
 -  `Sponge GitHub <https://github.com/SpongePowered>`__

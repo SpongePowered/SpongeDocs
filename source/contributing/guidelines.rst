@@ -11,8 +11,8 @@ General steps
 
 1. Setup your workspace as described in :doc:`../../preparing/index`.
 
-#. Check for existing issues in the `SpongeAPI <https://github.com/SpongePowered/SpongeAPI/issues>`_, `Sponge
-   <https://github.com/SpongePowered/Sponge>`_, `SpongeVanilla <https://github.com/SpongePowered/SpongeVanilla>`_ and
+#. Check for existing issues in the `SpongeAPI <https://github.com/SpongePowered/SpongeAPI/issues>`_, `SpongeForge
+   <https://github.com/SpongePowered/SpongeForge>`_, `SpongeVanilla <https://github.com/SpongePowered/SpongeVanilla>`_ and
    `SpongeCommon <https://github.com/SpongePowered/SpongeCommon>`_  repositories. There is possibly someone else
    already working on the same thing. You can also check `issues marked with "help wanted"
    <https://github.com/SpongePowered/SpongeAPI/labels/help%20wanted>`_ for existing issues we need your help with.

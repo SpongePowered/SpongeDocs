@@ -8,7 +8,7 @@ Overview
 What is this about?
 ~~~~~~~~~~~~~~~~~~~
 
-The articles in this section explain how to get involved with the Sponge Forge coremod, SpongeVanilla, SpongeCommon,
+The articles in this section explain how to get involved with SpongeForge, SpongeVanilla, SpongeCommon,
 the Sponge API, or SpongeDocs. These articles are essentially required reading for anyone who wishes to begin developing
 or writing for Sponge. We also recommend developers become familiar with the Sponge API `JavaDocs
 <https://spongepowered.github.io/SpongeAPI/>`__.
@@ -28,10 +28,10 @@ There are, of course, other ways to help if you'd like:
 * Join the Sponge forums and the #sponge IRC channel to help others and hang out.
 * Spread the word about Sponge!
 
-Sponge, SpongeVanilla and SpongeCommon
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SpongeForge, SpongeVanilla and SpongeCommon
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-There are two official implementations of the Sponge API: Sponge (coremod) and SpongeVanilla. Despite their differences,
+There are two official implementations of the Sponge API: SpongeForge and SpongeVanilla. Despite their differences,
 much of their code is shared, and this is now contained in the SpongeCommon repository. This diagram shows an overview
 of the Sponge codebase and its dependencies:
 
@@ -39,7 +39,7 @@ of the Sponge codebase and its dependencies:
 and the common layer of implementation that is used in both Sponge and SpongeVanilla. Almost all implementation should
 reside in SpongeCommon, with separation of interfaces as necessary for special handling per implementation.
 
-**Sponge** is the forge implementation extending SpongeCommon, with special handling for maximizing compatibility with
+**SpongeForge** is the forge implementation extending SpongeCommon, with special handling for maximizing compatibility with
 Forge, and therefore numerous Forge mods.
 
 **SpongeVanilla** is the vanilla implementation of the Sponge API. Acting as a standalone implementation having complete
