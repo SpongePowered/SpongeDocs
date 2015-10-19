@@ -56,6 +56,8 @@ list of do's and don'ts. This stuff should all be common sense.
 * Don’t spread rumors or falsehoods about the Sponge projects, staff members, affiliates or partners of Sponge, or any
   other defamatory statements that might harm the project.
 
+* If you're banned or suspended, it is for a reason. Don't evade or attempt to get around bans.
+
 * The moderator, administrator or manager(s) of the various communication channels in use by the Sponge project shall
   have the last word in any dispute.
 
