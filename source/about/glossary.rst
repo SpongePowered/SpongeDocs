@@ -60,13 +60,13 @@ Project Leaders
 Pull Request (PR)
   A method of submitting contributions to an open development project, such as the Sponge repositories on GitHub.
 Sponge
-  The name of the entire project. Also shorthand for the Forge Coremod implementation of the SpongeAPI.
+  The name of the entire project.
 SpongeAPI
   The Minecraft Plugin API developed by the Sponge project.
 SpongeCommon
-  A repository of code common to the official SpongeAPI implementations, used in building them. SpongeVanilla and Sponge
-  Coremod use this repository.
-Sponge Coremod
+  A repository of code common to the official SpongeAPI implementations, used in building them. SpongeVanilla and SpongeForge
+  use this repository.
+SpongeForge
   The implementation of SpongeAPI as a Forge Coremod.
 SpongeDocs
   Dedicated and frequently updated documentation, the best source of information on Sponge.

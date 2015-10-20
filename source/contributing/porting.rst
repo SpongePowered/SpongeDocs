@@ -9,7 +9,7 @@ This article is intended for those who wish to make the API available on other i
 
 Currently, two official Sponge implementations are being developed:
 
-* Sponge, a coremod for Minecraft Forge
+* SpongeForge, a coremod for Minecraft Forge
 * SpongeVanilla, based on the Vanilla Minecraft Server
 
 The developers of Glowstone plan to implement the Sponge API on top of their server as well.

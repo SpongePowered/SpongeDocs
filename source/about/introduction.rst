@@ -20,7 +20,7 @@ to be updated. This means that, for the most part, server owners do not need to 
 
 We have two other projects in addition to the Sponge API:
 
-(1) **Sponge**, a coremod for Minecraft Forge, which is an existing Minecraft modding framework famous for spurring
+(1) **SpongeForge**, a coremod for Minecraft Forge, which is an existing Minecraft modding framework famous for spurring
     the Minecraft modding scene. Forge lacks a cross-version API, and this is where Sponge steps in. Sponge allows
     server owners to deploy Sponge plugins with ease, making server management easier.
 
@@ -37,8 +37,7 @@ common functionality of mixins.
 Where Can I Download Sponge?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Sponge coremod is not ready yet but development builds can be found at :doc:`/downloads`. SpongeVanilla builds will
-be available shortly after it catches up to Sponge in implemented API.
+Neither SpongeForge nor SpongeVanilla is ready yet but development builds can be found at :doc:`/downloads`.
 
 Who Is behind Sponge?
 ~~~~~~~~~~~~~~~~~~~~~

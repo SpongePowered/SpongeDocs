@@ -55,8 +55,8 @@ The **Team Leaders** of Sponge each coordinate a separate aspect of the Sponge p
 API and Implementation Developers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The **API and Implementation Developers** work on producing the Sponge API, and the two official implementations Sponge
-(coremod) and SpongeVanilla.
+The **API and Implementation Developers** work on producing the Sponge API, and the two official implementations
+SpongeForge and SpongeVanilla.
 
 +-----------------------------------+-----------------------------------+
 | Name                              | Role                              |

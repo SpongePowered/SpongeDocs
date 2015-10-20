@@ -21,7 +21,6 @@ Migrating to Sponge
 To migrate to SpongeForge or SpongeVanilla, look at the sections below. Most instructions are identical for both,
 differences are stated below.
 
-
 Migrating from CraftBukkit or Spigot
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -37,7 +36,7 @@ places the nether (typically ``world_nether``) and the end (typically ``world_th
 ``world`` folder.
 
 CraftBukkit relocates the nether and end dimensions outside of the ``world`` folder, which must be remedied if it is
-desired to retain the nether and end dimensions when running Sponge. To relocate the nether and end dimensions, follow
+desired to retain the nether and end dimensions when running SpongeForge. To relocate the nether and end dimensions, follow
 the instructions below.
 
 .. tip::
@@ -94,6 +93,7 @@ Migrating from Canary
 
 Worlds
 ------
+
 
 Forge, and thus SpongeForge (and also SpongeVanilla), use the same world structure as vanilla Minecraft. Vanilla Minecraft
 places the nether (typically ``world_nether``) and the end (typically ``world_the_end``) dimensions within the
@@ -164,12 +164,12 @@ When you are ready to install Sponge, you may proceed with the following steps:
 
 1. Stop your Forge server if it is running.
 #. Download SpongeForge from the Sponge website and Forge from MinecraftForge.
-#. Place SpongeForge into your ``mods`` folder.
+#. Place ``SpongeForge.jar`` into your ``mods`` folder.
 #. Start the server and party!
 
 .. note::
 
-    If Sponge is the only mod on your server, players will be able to log in with a vanilla client. Other mods may
+    If SpongeForge is the only mod on your server, players will be able to log in with a vanilla client. Other mods may
     require players to install Forge on their own computers.
 
 Migration to SpongeVanilla
