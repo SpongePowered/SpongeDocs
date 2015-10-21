@@ -2,20 +2,52 @@
 Art Assets
 ==========
 
-This page will provide the official logo and other art assets in the future. Feel free to use them to spread the word
-about Sponge.
+This page provides the official logo and other art assets. Feel free to use them to spread the word about Sponge.
+However note that these images **aren't** provided under the MIT License.
 
 .. note::
-  The provided graphics should be used for non-commercial purposes only. Please provide a link to this project when
-  using some of our art. e.g. `Sponge Homepage <http://spongepowered.org>`__
+  If you're reading a translated version, please note that the English license is the one which counts. Translated
+  licenses are only provided for informational purposes.
+
+You may:
+
+* Make little modifications to Spongie’s facial expressions, such as making a cute smile,
+  making them perplexed or sad, adding a hat, or so on. It should be easily recognizable that the Spongie you create
+  is the Spongie mascot, but wearing a different expression or different clothing.
+
+* Use Spongie or the SpongePowered logo in an article or blog post about the Sponge project and to spread the word about
+  the SpongePowered project
+
+* Use the Spongepowered Logo to link to `Sponge Homepage <http://spongepowered.org>`__
+  (for example in your signature on forums etc.)
+
+You may not:
+
+* Use the mascot as a link to the Sponge project only. The SpongePowered logo (which retains Spongie’s form) is a better
+  representation of the Sponge project when used as an affiliate or reference.
+
+* Create a vastly modified version of Spongie, where they become unrecognizable or clearly different from the
+  original Spongie mascot.
+
+* Add your project image to Spongie or vice versa.
+
+* Claim Spongie as your own mascot or use them as a mascot for your own project
+
+* Use or sell Spongie without permission
+
+* Change any colors or dimensions
 
 
 The Official Sponge Logo
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-# official Logo goes here #
+.. image:: /images/logo-spongepowered.png
+    :align: center
+    :alt: official SpongePowered logo
 
 Spongie - The Official Sponge Mascot
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-# Spongie art goes here #
+.. image:: /images/logo-spongie.png
+    :align: center
+    :alt: Spongie the SpongePowered mascot
