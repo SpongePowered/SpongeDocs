@@ -1,0 +1,1130 @@
+[13:15:51] [main/INFO] [LaunchWrapper]: Loading tweak class name org.spongepowered.server.launch.VanillaServerTweaker
+[13:15:51] [main/INFO] [LaunchWrapper]: Using primary tweak class name org.spongepowered.server.launch.VanillaServerTweaker
+[13:15:51] [main/INFO] [LaunchWrapper]: Calling tweak class org.spongepowered.server.launch.VanillaServerTweaker
+[13:15:51] [main/INFO] [Sponge]: Initializing Sponge...
+[13:15:51] [main/DEBUG] [Sponge]: Applying runtime de-obfuscation...
+[13:15:51] [main/INFO] [Sponge]: De-obfuscation mappings are provided by MCP (http://www.modcoderpack.com)
+[13:15:52] [main/DEBUG] [Sponge]: Runtime de-obfuscation is applied.
+[13:15:52] [main/DEBUG] [Sponge]: Applying access transformer...
+[13:15:52] [main/DEBUG] [Sponge]: Initializing Mixin environment...
+[13:15:52] [main/INFO] [mixin]: SpongePowered MIXIN Subsystem Version=0.4.6 Source=file:.../spongevanilla-1.8-2.1-DEV-47.jar Env=UNKNOWN
+[13:15:52] [main/DEBUG] [mixin]: Adding new mixin transformer proxy #1
+[13:15:52] [main/INFO] [Sponge]: Initialization finished. Starting Minecraft server...
+[13:15:52] [main/INFO] [LaunchWrapper]: Loading tweak class name org.spongepowered.asm.mixin.MixinEnvironment$EnvironmentStateTweaker
+[13:15:52] [main/INFO] [LaunchWrapper]: Calling tweak class org.spongepowered.asm.mixin.MixinEnvironment$EnvironmentStateTweaker
+[13:15:52] [main/DEBUG] [mixin]: Adding new mixin transformer proxy #2
+[13:15:52] [main/DEBUG] [mixin]: Preparing mixins for MixinEnvironment[DEFAULT]
+[13:15:52] [main/DEBUG] [mixin]: Adding mixin config mixins.common.api.json
+[13:15:52] [main/DEBUG] [mixin]: Adding mixin config mixins.common.core.json
+[13:15:52] [main/DEBUG] [mixin]: Adding mixin config mixins.vanilla.json
+[13:15:52] [main/DEBUG] [mixin]: Rebuilding transformer delegation list:
+[13:15:52] [main/DEBUG] [mixin]:   Adding:    org.spongepowered.server.launch.transformers.DeobfuscationTransformer
+[13:15:52] [main/DEBUG] [mixin]:   Adding:    org.spongepowered.server.launch.transformers.AccessTransformer
+[13:15:52] [main/DEBUG] [mixin]:   Excluding: org.spongepowered.asm.mixin.transformer.MixinTransformer$Proxy
+[13:15:52] [main/DEBUG] [mixin]:   Excluding: org.spongepowered.asm.mixin.transformer.MixinTransformer$Proxy
+[13:15:52] [main/DEBUG] [mixin]: Transformer delegation list created with 2 entries
+[13:15:52] [main/DEBUG] [mixin]: Found name transformer: org.spongepowered.server.launch.transformers.DeobfuscationTransformer
+[13:15:52] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/text/Text to metadata cache
+[13:15:52] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/text/Text$Literal to metadata cache
+[13:15:52] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/text/Text$Placeholder to metadata cache
+[13:15:52] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/text/Text$Score to metadata cache
+[13:15:52] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/text/Text$Selector to metadata cache
+[13:15:52] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/text/Text$Translatable to metadata cache
+[13:15:52] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/text/title/Title to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for com/mojang/authlib/GameProfile to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/init/Bootstrap$7 to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/init/Bootstrap$8 to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/dispenser/BehaviorProjectileDispense to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/block/Block to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/block/BlockCake to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/block/BlockFlower to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/block/BlockLeaves to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/block/BlockLog to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/block/BlockSnow to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/block/BlockSponge to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/block/state/BlockState$StateImplementation to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/block/BlockTallGrass to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/block/properties/PropertyBool to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/block/properties/PropertyEnum to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/block/properties/PropertyHelper to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/block/properties/PropertyInteger to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/tileentity/TileEntity to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/tileentity/TileEntityBanner to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/tileentity/TileEntityBeacon to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/tileentity/TileEntityBrewingStand to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/tileentity/TileEntityChest to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/tileentity/TileEntityCommandBlock to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/tileentity/TileEntityComparator to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/tileentity/TileEntityDaylightDetector to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/tileentity/TileEntityDispenser to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/tileentity/TileEntityDropper to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/tileentity/TileEntityEnchantmentTable to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/tileentity/TileEntityEnderChest to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/tileentity/TileEntityEndPortal to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/tileentity/TileEntityFurnace to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/tileentity/TileEntityHopper to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/tileentity/TileEntityLockable to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/tileentity/TileEntityMobSpawner to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/tileentity/TileEntityNote to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/tileentity/TileEntitySign to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/tileentity/TileEntitySkull to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/Entity to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/item/ItemStack to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/entity/player/SpongeUser to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/block/state/BlockState to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/block/BlockButton to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/block/BlockLever to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/block/BlockStandingSign to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/block/BlockWallSign to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/block/BlockWall$EnumType to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/block/BlockDirt$DirtType to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/item/EntityPainting$EnumArt to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/tileentity/TileEntityBanner$EnumBannerPattern to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/block/BlockDoublePlant$EnumPlantType to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/item/EnumDyeColor to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/block/BlockFlower$EnumFlowerType to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/block/BlockLog$EnumAxis to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/block/BlockTallGrass$EnumType to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/item/ItemFishFood$FishType to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/world/WorldSettings$GameType to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/tileentity/TileEntityCommandBlock$1 to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/EntityMinecartCommandBlock to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/tileentity/TileEntitySign$2 to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/command/CommandExecuteAt$1 to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/command/CommandHandler to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/player/EntityPlayerMP to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/server/MinecraftServer to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/network/rcon/RConConsoleSource to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/command/server/CommandBlockLogic to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/EntityMinecartCommandBlock$1 to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/command/PlayerSelector to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/item/EntityArmorStand to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/monster/EntityGiantZombie to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/monster/EntitySkeleton to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/monster/EntityZombie to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/entity/living/human/EntityHuman to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/item/EntityEnderCrystal to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/item/EntityItem to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/EntityTrackerEntry to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/EntityTracker to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/item/EntityXPOrb to metadata cache
+[13:15:53] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/item/EntityFallingBlock to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/ai/EntityAIMate to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/projectile/EntityFireball to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/item/EntityTNTPrimed to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/item/EntityFireworkRocket to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/monster/EntityCreeper to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/item/EntityMinecartTNT to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/EntityHanging to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/item/EntityPainting to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/item/EntityItemFrame to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/EntityLeashKnot to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/EntityAgeable to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/EntityLiving to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/EntityLivingBase to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/passive/EntityBat to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/passive/EntityAnimal to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/passive/EntityChicken to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/passive/EntityCow to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/passive/EntityHorse to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/passive/EntityMooshroom to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/passive/EntityOcelot to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/passive/EntityPig to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/passive/EntityRabbit to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/passive/EntitySheep to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/passive/EntitySquid to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/passive/EntityWolf to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/boss/EntityDragon to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/boss/EntityDragonPart to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/monster/EntityGolem to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/monster/EntityIronGolem to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/monster/EntitySnowman to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/monster/EntityMob to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/monster/EntityBlaze to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/monster/EntityCaveSpider to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/monster/EntityEnderman to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/monster/EntityEndermite to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/monster/EntityGhast to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/monster/EntityGuardian to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/monster/EntityMagmaCube to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/monster/EntityPigZombie to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/monster/EntitySilverfish to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/monster/EntitySlime to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/monster/EntitySpider to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/monster/EntityWitch to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/boss/EntityWither to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/passive/EntityVillager to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/player/EntityPlayer to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/projectile/EntityArrow to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/projectile/EntityEgg to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/item/EntityEnderEye to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/item/EntityEnderPearl to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/item/EntityExpBottle to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/projectile/EntityFishHook to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/projectile/EntityPotion to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/projectile/EntitySnowball to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/projectile/EntityThrowable to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/projectile/EntityLargeFireball to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/projectile/EntitySmallFireball to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/projectile/EntityWitherSkull to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/item/EntityBoat to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/item/EntityMinecart to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/item/EntityMinecartChest to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/item/EntityMinecartContainer to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/item/EntityMinecartFurnace to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/ai/EntityMinecartMobSpawner to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/item/EntityMinecartEmpty to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/effect/EntityLightningBolt to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/effect/EntityWeatherEffect to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/util/DamageSource to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/util/EntityDamageSource to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/util/EntityDamageSourceIndirect to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/enchantment/Enchantment to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/item/Item to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/item/ItemBlock to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/item/ItemEmptyMap to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/item/ItemEnderEye to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/item/ItemFirework to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/item/ItemFishingRod to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/item/ItemMap to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/item/ItemEditableBook to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/item/ItemPotion to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/inventory/Container to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/village/MerchantRecipe to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/network/NetHandlerPlayServer to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/network/PacketBuffer to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/network/play/server/S3BPacketScoreboardObjective to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/network/play/server/S48PacketResourcePackSend to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/network/play/client/C08PacketPlayerBlockPlacement to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/potion/Potion to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/potion/PotionEffect to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/scoreboard/GoalColor to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/scoreboard/ScoreDummyCriteria to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/scoreboard/Score to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/scoreboard/Scoreboard to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/scoreboard/IScoreObjectiveCriteria$EnumRenderType to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/scoreboard/ScoreboardSaveData to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/scoreboard/ScoreObjective to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/scoreboard/ScorePlayerTeam to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/scoreboard/ServerScoreboard to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/scoreboard/Team to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/server/network/NetHandlerHandshakeTCP to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/network/NetworkManager to metadata cache
+[13:15:54] [main/TRACE] [mixin]: Added class metadata for net/minecraft/command/ServerCommandManager to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for net/minecraft/server/management/ServerConfigurationManager to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for net/minecraft/server/network/NetHandlerLoginServer to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for net/minecraft/server/network/NetHandlerLoginServer$2 to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for net/minecraft/network/ServerStatusResponse$MinecraftProtocolVersionIdentifier to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for net/minecraft/server/network/NetHandlerStatusServer to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for net/minecraft/network/PingResponseHandler to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for net/minecraft/network/ServerStatusResponse$PlayerCountData to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for net/minecraft/network/ServerStatusResponse to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/text/ChatComponentPlaceholder to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for net/minecraft/util/ChatComponentScore to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for net/minecraft/util/ChatComponentSelector to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for net/minecraft/util/IChatComponent$Serializer to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for net/minecraft/util/ChatComponentStyle to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for net/minecraft/util/ChatComponentText to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for net/minecraft/util/ChatComponentTranslation to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for net/minecraft/event/ClickEvent to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for net/minecraft/event/HoverEvent to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for net/minecraft/network/PacketThreadUtil$1 to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for net/minecraft/world/chunk/storage/AnvilSaveHandler to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for net/minecraft/world/chunk/Chunk to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for net/minecraft/world/Explosion to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for net/minecraft/world/NextTickListEntry to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for net/minecraft/world/SpawnerAnimals to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for net/minecraft/world/World to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for net/minecraft/world/border/WorldBorder to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for net/minecraft/world/WorldProvider to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for net/minecraft/world/WorldProviderEnd to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for net/minecraft/world/WorldProviderHell to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for net/minecraft/world/WorldServer to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for net/minecraft/world/WorldServerMulti to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for net/minecraft/world/WorldSettings to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for net/minecraft/world/WorldType to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for net/minecraft/world/biome/BiomeGenBase to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for net/minecraft/world/chunk/storage/AnvilChunkLoader to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for net/minecraft/world/EnumDifficulty to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/world/extent/ExtentViewDownsize to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/world/extent/ExtentViewTransform to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for net/minecraft/world/storage/WorldInfo to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for net/minecraft/world/storage/SaveHandler to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for net/minecraft/server/dedicated/DedicatedServer to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for net/minecraft/network/rcon/RConThreadClient to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for net/minecraft/init/Bootstrap to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for net/minecraft/server/management/ItemInWorldManager to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for net/minecraft/server/dedicated/DedicatedServer$2 to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for net/minecraft/world/gen/ChunkProviderServer to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/text/action/ShiftClickAction$InsertText to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for net/minecraft/network/play/server/S45PacketTitle$Type to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for net/minecraft/block/BlockBush to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for net/minecraft/block/BlockLeavesBase to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for com/google/common/collect/ImmutableList$Builder to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for net/minecraft/block/BlockRotatedPillar to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for net/minecraft/block/BlockPlanks$EnumType to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for com/google/common/collect/ImmutableMap$Builder to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for com/google/common/collect/ImmutableSet$Builder to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/data/DataTransactionResult$Type to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/mixin/core/data/MixinDataHolder$1 to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/mixin/core/data/holders/MixinBlockLever$1 to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for net/minecraft/block/BlockLever$EnumOrientation to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for net/minecraft/block/BlockSign to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for net/minecraft/block/BlockContainer to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/data/type/WallType to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/CatalogType to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/data/type/DirtType to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/data/type/DoublePlantType to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/data/type/DyeColor to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/data/type/PlantType to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/data/type/LogAxis to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/util/Cycleable to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/data/type/ShrubType to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/entity/living/player/gamemode/GameMode to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/text/translation/Translatable to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for net/minecraft/scoreboard/Team$EnumVisible to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/mixin/core/command/MixinSubject$1 to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/EntityCreature to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/entity/ArmorEquipable to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/entity/Equipable to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/util/Identifiable to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/item/inventory/Carrier to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for net/minecraft/network/play/server/S08PacketPlayerPosLook$EnumFlags to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/asm/mixin/injection/At$Shift to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/configuration/SpongeConfig$GlobalConfig to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for net/minecraft/network/play/server/S38PacketPlayerListItem$Action to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/configuration/SpongeConfig$ConfigBase to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/configuration/SpongeConfig$EntityCategory to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/event/entity/BreedEntityEvent$Breed to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/passive/EntityAmbientCreature to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/entity/living/animal/Animal to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/entity/living/Ageable to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/entity/living/Agent to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/entity/living/Living to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/entity/Entity to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/data/DataHolder to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/data/DataSerializable to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/data/property/PropertyHolder to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/data/value/mutable/CompositeValueStore to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/data/value/ValueContainer to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/scoreboard/TeamMember to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/entity/living/animal/Chicken to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/entity/living/animal/Cow to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/entity/living/animal/Mooshroom to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/passive/EntityTameable to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/entity/living/animal/Pig to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/entity/living/animal/Sheep to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/passive/EntityWaterMob to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/entity/living/Squid to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/entity/living/Aquatic to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/entity/living/animal/Wolf to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/interfaces/entity/IMixinAggressive to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/entity/living/golem/Golem to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/entity/living/golem/IronGolem to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/entity/living/golem/SnowGolem to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/entity/living/monster/Monster to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/entity/living/monster/Blaze to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/entity/projectile/source/ProjectileSource to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/entity/living/Aerial to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/entity/living/monster/CaveSpider to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/entity/living/monster/Spider to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/entity/living/monster/Creeper to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/entity/explosive/IgnitableExplosive to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/entity/explosive/FusedExplosive to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/entity/explosive/Explosive to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/entity/living/monster/Enderman to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/EntityFlying to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/entity/living/monster/Ghast to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/entity/living/monster/Giant to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/entity/living/monster/Guardian to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/entity/living/monster/MagmaCube to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/entity/living/monster/Slime to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/entity/living/monster/ZombiePigman to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/entity/living/monster/Zombie to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/entity/living/monster/Silverfish to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/entity/living/monster/Witch to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/entity/living/monster/Wither to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/entity/living/monster/Boss to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for com/google/common/base/Objects$ToStringHelper to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/entity/projectile/Arrow to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/entity/projectile/Projectile to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/entity/projectile/Egg to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/entity/projectile/EnderPearl to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/entity/projectile/ThrownExpBottle to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/event/action/FishingEvent$HookEntity to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/event/action/FishingEvent$Stop to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/entity/projectile/ThrownPotion to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/entity/projectile/Snowball to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/event/cause/entity/damage/source/DamageSource to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/item/ItemType to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/event/action/FishingEvent$Start to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/text/TextBuilder$Translatable to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/text/action/HoverAction$ShowItem to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/mixin/core/network/MixinNetHandlerPlayServer$1 to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/event/entity/DisplaceEntityEvent$Move to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/event/entity/DisplaceEntityEvent$Move$TargetPlayer to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/event/network/ClientConnectionEvent$Disconnect to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/event/entity/living/player/ResourcePackStatusEvent$ResourcePackStatus to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for net/minecraft/network/play/client/C19PacketResourcePackStatus$Action to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/network/ChannelBuf to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/potion/PotionEffectType to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/potion/PotionEffect to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/scoreboard/critieria/Criterion to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/scoreboard/objective/displaymode/ObjectiveDisplayMode to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/Platform$Type to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for net/minecraft/command/CommandResultStats$Type to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/event/network/ClientConnectionEvent$Login to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/event/network/ClientConnectionEvent$Join to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for net/minecraft/network/play/server/S44PacketWorldBorder$Action to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/event/network/ClientConnectionEvent$Auth to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/event/server/ClientPingServerEvent$Response to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/event/server/ClientPingServerEvent$Response$Players to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/text/TextBuilder$Placeholder to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/text/TextBuilder$Selector to metadata cache
+[13:15:55] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/text/TextBuilder$Literal to metadata cache
+[13:15:56] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/mixin/core/text/MixinClickEvent$1 to metadata cache
+[13:15:56] [main/TRACE] [mixin]: Added class metadata for net/minecraft/event/ClickEvent$Action to metadata cache
+[13:15:56] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/text/action/ClickAction$OpenUrl to metadata cache
+[13:15:56] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/text/action/ClickAction$ExecuteCallback to metadata cache
+[13:15:56] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/text/action/ClickAction$RunCommand to metadata cache
+[13:15:56] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/text/action/ClickAction$SuggestCommand to metadata cache
+[13:15:56] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/text/action/ClickAction$ChangePage to metadata cache
+[13:15:56] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/mixin/core/text/MixinHoverEvent$1 to metadata cache
+[13:15:56] [main/TRACE] [mixin]: Added class metadata for net/minecraft/event/HoverEvent$Action to metadata cache
+[13:15:56] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/text/action/HoverAction$ShowText to metadata cache
+[13:15:56] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/text/action/HoverAction$ShowAchievement to metadata cache
+[13:15:56] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/text/action/HoverAction$ShowEntity to metadata cache
+[13:15:56] [main/TRACE] [mixin]: Added class metadata for net/minecraft/world/chunk/Chunk$EnumCreateEntityType to metadata cache
+[13:15:56] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/configuration/SpongeConfig$BlockTrackingCategory to metadata cache
+[13:15:56] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/configuration/SpongeConfig$WorldConfig to metadata cache
+[13:15:56] [main/TRACE] [mixin]: Added class metadata for java/util/Map$Entry to metadata cache
+[13:15:56] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/event/world/chunk/PopulateChunkEvent$Post to metadata cache
+[13:15:56] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/configuration/SpongeConfig$Type to metadata cache
+[13:15:56] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/event/inventory/DropItemEvent$Custom to metadata cache
+[13:15:56] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/event/entity/SpawnEntityEvent$Custom to metadata cache
+[13:15:56] [main/TRACE] [mixin]: Added class metadata for net/minecraft/network/play/client/C07PacketPlayerDigging$Action to metadata cache
+[13:15:56] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/event/block/ChangeBlockEvent$Break to metadata cache
+[13:15:56] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/event/block/ChangeBlockEvent$Fluid to metadata cache
+[13:15:56] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/event/block/ChangeBlockEvent$Modify to metadata cache
+[13:15:56] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/event/block/ChangeBlockEvent$Place to metadata cache
+[13:15:56] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/event/inventory/DropItemEvent$Destruct to metadata cache
+[13:15:56] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/event/inventory/DropItemEvent$Dispense to metadata cache
+[13:15:56] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/event/entity/SpawnEntityEvent$Spawner to metadata cache
+[13:15:56] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/event/entity/SpawnEntityEvent$ChunkLoad to metadata cache
+[13:15:56] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/world/WorldBorder to metadata cache
+[13:15:56] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/configuration/SpongeConfig$DimensionConfig to metadata cache
+[13:15:56] [main/TRACE] [mixin]: Added class metadata for net/minecraft/world/gen/ChunkProviderSettings$Factory to metadata cache
+[13:15:56] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/mixin/core/world/extent/MixinExtent$1 to metadata cache
+[13:15:56] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/mixin/core/world/extent/MixinExtentViewDownsize$1 to metadata cache
+[13:15:56] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/mixin/core/world/extent/MixinExtentViewDownsize$TileEntityInBounds to metadata cache
+[13:15:56] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/mixin/core/world/extent/MixinExtentViewDownsize$EntityInBounds to metadata cache
+[13:15:56] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/mixin/core/world/extent/MixinExtentViewTransform$1 to metadata cache
+[13:15:56] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/mixin/core/world/extent/MixinExtentViewTransform$TileEntityInBounds to metadata cache
+[13:15:56] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/mixin/core/world/extent/MixinExtentViewTransform$EntityInBounds to metadata cache
+[13:15:56] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/world/extent/ExtentViewTransform$DiscreteTransform3to2 to metadata cache
+[13:15:56] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/world/storage/WorldProperties to metadata cache
+[13:15:56] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/event/network/rcon/RconConnectionEvent$Login to metadata cache
+[13:15:56] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/event/network/rcon/RconConnectionEvent$Disconnect to metadata cache
+[13:15:56] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/event/entity/ConstructEntityEvent$Post to metadata cache
+[13:15:56] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/event/block/InteractBlockEvent$Primary to metadata cache
+[13:15:56] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/event/block/InteractBlockEvent$Secondary to metadata cache
+[13:15:56] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/event/inventory/UseItemStackEvent$Start to metadata cache
+[13:15:56] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/util/blockray/BlockRay$BlockRayBuilder to metadata cache
+[13:15:56] [main/TRACE] [mixin]: Added class metadata for net/minecraft/block/BlockDoor$EnumDoorHalf to metadata cache
+[13:15:56] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/server/launch/console/VanillaConsole$Formatter to metadata cache
+[13:15:56] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/event/world/ExplosionEvent$Detonate to metadata cache
+[13:15:56] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/event/world/ExplosionEvent$Pre to metadata cache
+[13:15:56] [main/INFO] [LaunchWrapper]: Launching wrapped minecraft {org.spongepowered.server.SpongeVanilla}
+[13:15:59] [main/DEBUG] [mixin]: Mixing item.MixinItem from mixins.common.core.json into net.minecraft.item.Item
+[13:15:59] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/registry/SpongeGameRegistry to metadata cache
+[13:15:59] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/data/manipulator/mutable/item/EnchantmentData to metadata cache
+[13:15:59] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/data/manipulator/mutable/DisplayNameData to metadata cache
+[13:15:59] [main/DEBUG] [mixin]: Mixing event.cause.entity.damage.MixinDamageSource from mixins.common.core.json into net.minecraft.util.DamageSource
+[13:15:59] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/event/cause/entity/damage/DamageTypes to metadata cache
+[13:15:59] [main/DEBUG] [mixin]: Mixing data.types.MixinGameType from mixins.common.core.json into net.minecraft.world.WorldSettings$GameType
+[13:15:59] [main/TRACE] [mixin]: Added class metadata for java/lang/Enum to metadata cache
+[13:15:59] [main/TRACE] [mixin]: Added class metadata for java/lang/StringBuilder to metadata cache
+[13:15:59] [main/TRACE] [mixin]: Added class metadata for java/lang/String to metadata cache
+[13:15:59] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/text/translation/SpongeTranslation to metadata cache
+[13:15:59] [main/DEBUG] [mixin]: Mixing command.MixinCommandSource from mixins.common.core.json into net.minecraft.server.MinecraftServer
+[13:15:59] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/text/sink/SpongeMessageSinkFactory to metadata cache
+[13:15:59] [main/DEBUG] [mixin]: Mixing command.MixinICommandSender from mixins.common.core.json into net.minecraft.server.MinecraftServer
+[13:15:59] [main/DEBUG] [mixin]: Mixing command.MixinSubject from mixins.common.core.json into net.minecraft.server.MinecraftServer
+[13:15:59] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/service/permission/PermissionService to metadata cache
+[13:15:59] [main/DEBUG] [mixin]: Mixing server.MixinMinecraftServer from mixins.common.core.json into net.minecraft.server.MinecraftServer
+[13:15:59] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/world/storage/SpongeChunkLayout to metadata cache
+[13:15:59] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/util/Tristate to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for java/io/File to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/world/GeneratorTypes to metadata cache
+[13:16:00] [main/DEBUG] [mixin]: Mixing server.MixinMinecraftServer from mixins.vanilla.json into net.minecraft.server.MinecraftServer
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/server/SpongeVanilla to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/event/game/state/GameStartedServerEvent to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/GameState to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/event/game/state/GameStoppingServerEvent to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/event/game/state/GameStoppedServerEvent to metadata cache
+[13:16:00] [main/DEBUG] [mixin]: Mixing world.MixinWorld from mixins.common.core.json into net.minecraft.world.World
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/world/CaptureType to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/util/StaticMixinHelper to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for net/minecraft/init/Blocks to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for net/minecraft/world/gen/feature/WorldGenerator to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for net/minecraft/world/gen/feature/WorldGenHugeTrees to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/entity/living/player/User to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/block/BlockSnapshot to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/block/tileentity/TileEntity to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for net/minecraft/stats/StatList to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/world/Chunk to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/player/InventoryPlayer to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for net/minecraft/inventory/Slot to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/entity/living/player/Player to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for net/minecraft/util/EnumFacing to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/world/weather/Weathers to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/data/merge/MergeFunction to metadata cache
+[13:16:00] [main/DEBUG] [mixin]: Mixing world.extent.MixinExtent from mixins.common.core.json into net.minecraft.world.World
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/world/extent/StorageType to metadata cache
+[13:16:00] [main/DEBUG] [mixin]: Mixing world.MixinWorld from mixins.vanilla.json into net.minecraft.world.World
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for net/minecraft/network/play/client/C01PacketChatMessage to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for java/util/Iterator to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for net/minecraft/network/play/client/C07PacketPlayerDigging to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/event/entity/SpawnEntityEvent to metadata cache
+[13:16:00] [main/DEBUG] [mixin]: Mixing world.MixinWorldServer from mixins.common.core.json into net.minecraft.world.WorldServer
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for java/util/Set to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for java/util/TreeSet to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/asm/mixin/injection/callback/CallbackInfo to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/world/GeneratorType to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for net/minecraft/util/BlockPos to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for net/minecraft/village/VillageCollection to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/interfaces/IMixinScoreboardSaveData to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/scoreboard/SpongeScoreboard to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/scoreboard/Scoreboard to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/interfaces/IMixinWorldInfo to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/interfaces/IMixinWorld to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for net/minecraft/block/state/IBlockState to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for java/util/Random to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/block/SpongeBlockSnapshot to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/event/cause/Cause to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for net/minecraft/block/BlockEventData to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for java/util/Collection to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/block/ScheduledBlockUpdate to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for com/google/common/collect/ImmutableList to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/interfaces/IMixinBlockUpdate to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for net/minecraft/world/WorldSavedData to metadata cache
+[13:16:00] [main/DEBUG] [mixin]: Mixing world.MixinWorldServer from mixins.vanilla.json into net.minecraft.world.WorldServer
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for net/minecraft/world/storage/ISaveHandler to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for net/minecraft/profiler/Profiler to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/SpongeGame to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/world/explosion/Explosion to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/world/World to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/Game to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/service/event/EventManager to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/event/Event to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for net/minecraft/network/Packet to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for net/minecraft/network/play/server/S27PacketExplosion to metadata cache
+[13:16:00] [main/DEBUG] [mixin]: Mixing item.MixinItemBlock from mixins.common.core.json into net.minecraft.item.ItemBlock
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/block/BlockType to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for java/util/Optional to metadata cache
+[13:16:00] [main/DEBUG] [mixin]: Mixing block.MixinBlock from mixins.common.core.json into net.minecraft.block.Block
+[13:16:00] [main/DEBUG] [mixin]: Mixing data.MixinPropertyHolder from mixins.common.core.json into net.minecraft.block.Block
+[13:16:00] [main/DEBUG] [mixin]: Mixing block.MixinBlock from mixins.vanilla.json into net.minecraft.block.Block
+[13:16:00] [main/DEBUG] [mixin]: Mixing block.MixinBlockLeaves from mixins.common.core.json into net.minecraft.block.BlockLeaves
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/world/Location to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for com/flowpowered/math/vector/Vector3i to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/world/extent/Extent to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/block/BlockTypes to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/block/BlockState to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/data/Transaction to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for java/util/List to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/event/block/DecayBlockEvent to metadata cache
+[13:16:00] [main/DEBUG] [mixin]: Mixing block.MixinBlockTallGrass from mixins.common.core.json into net.minecraft.block.BlockTallGrass
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for java/lang/Class to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/data/manipulator/immutable/block/ImmutableShrubData to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/data/manipulator/ImmutableDataManipulator to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/data/value/immutable/ImmutableValue to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for net/minecraft/block/properties/IProperty to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for java/lang/Comparable to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/data/key/Key to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/data/key/Keys to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/data/manipulator/immutable/block/ImmutableSpongeShrubData to metadata cache
+[13:16:00] [main/DEBUG] [mixin]: Mixing block.MixinBlockFlower from mixins.common.core.json into net.minecraft.block.BlockFlower
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/data/manipulator/immutable/block/ImmutablePlantData to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/data/manipulator/immutable/block/ImmutableSpongePlantData to metadata cache
+[13:16:00] [main/DEBUG] [mixin]: Mixing data.MixinDataHolder from mixins.common.core.json into net.minecraft.item.ItemStack
+[13:16:00] [main/DEBUG] [mixin]: Mixing data.MixinPropertyHolder from mixins.common.core.json into net.minecraft.item.ItemStack
+[13:16:00] [main/DEBUG] [mixin]: Mixing item.inventory.MixinItemStack from mixins.common.core.json into net.minecraft.item.ItemStack
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/data/util/DataQueries to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for com/google/common/collect/HashMultimap to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for com/google/common/collect/Multimap to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for com/google/common/collect/AbstractSetMultimap to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for com/google/common/collect/AbstractMapBasedMultimap to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for com/google/common/collect/AbstractMultimap to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/text/TextBuilder to metadata cache
+[13:16:00] [main/DEBUG] [mixin]: Mixing entity.living.MixinEntityLivingBase from mixins.common.core.json into net.minecraft.entity.EntityLivingBase
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/entity/EntitySnapshot to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for net/minecraft/util/CombatTracker to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/ai/attributes/IAttribute to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/SharedMonsterAttributes to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/ai/attributes/IAttributeInstance to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/entity/living/Human to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for java/util/ArrayList to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for com/flowpowered/math/vector/Vector3d to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for net/minecraft/nbt/NBTTagCompound to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for java/util/UUID to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for net/minecraft/util/AxisAlignedBB to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/event/entity/CollideEntityEvent to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for net/minecraft/nbt/NBTTagList to metadata cache
+[13:16:00] [main/DEBUG] [mixin]: Mixing data.MixinDataHolder from mixins.common.core.json into net.minecraft.entity.Entity
+[13:16:00] [main/DEBUG] [mixin]: Mixing data.MixinCustomDataHolder from mixins.common.core.json into net.minecraft.entity.Entity
+[13:16:00] [main/DEBUG] [mixin]: Mixing data.MixinPropertyHolder from mixins.common.core.json into net.minecraft.entity.Entity
+[13:16:00] [main/DEBUG] [mixin]: Mixing entity.MixinEntity from mixins.common.core.json into net.minecraft.entity.Entity
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/util/RelativePositions to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/service/user/UserStorage to metadata cache
+[13:16:00] [main/DEBUG] [mixin]: Mixing entity.MixinEntity from mixins.vanilla.json into net.minecraft.entity.Entity
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for java/util/EnumSet to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for java/util/AbstractSet to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for java/util/AbstractCollection to metadata cache
+[13:16:00] [main/DEBUG] [mixin]: Mixing entity.player.MixinEntityPlayer from mixins.common.core.json into net.minecraft.entity.player.EntityPlayer
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/player/PlayerCapabilities to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for net/minecraft/util/FoodStats to metadata cache
+[13:16:00] [main/DEBUG] [mixin]: Mixing entity.player.MixinEntityPlayer from mixins.vanilla.json into net.minecraft.entity.player.EntityPlayer
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for java/util/HashMap to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/server/interfaces/IMixinEntityPlayer to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for net/minecraft/nbt/NBTBase to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for java/lang/Integer to metadata cache
+[13:16:00] [main/TRACE] [mixin]: Added class metadata for java/lang/Boolean to metadata cache
+[13:16:01] [main/DEBUG] [mixin]: Mixing world.difficulty.MixinEnumDifficulty from mixins.common.core.json into net.minecraft.world.EnumDifficulty
+[13:16:01] [main/DEBUG] [mixin]: Mixing scoreboard.MixinScoreboardObjectiveDisplayType from mixins.common.core.json into net.minecraft.scoreboard.IScoreObjectiveCriteria$EnumRenderType
+[13:16:01] [main/DEBUG] [mixin]: Mixing data.types.MixinEnumShrubType from mixins.common.core.json into net.minecraft.block.BlockTallGrass$EnumType
+[13:16:01] [main/DEBUG] [mixin]: Mixing data.types.MixinEnumDoublePlant from mixins.common.core.json into net.minecraft.block.BlockDoublePlant$EnumPlantType
+[13:16:01] [main/DEBUG] [mixin]: Mixing data.types.MixinEnumFlowerType from mixins.common.core.json into net.minecraft.block.BlockFlower$EnumFlowerType
+[13:16:01] [main/DEBUG] [mixin]: Mixing data.types.MixinEnumLogAxis from mixins.common.core.json into net.minecraft.block.BlockLog$EnumAxis
+[13:16:01] [main/DEBUG] [mixin]: Mixing data.types.MixinBlockWallEnumType from mixins.common.core.json into net.minecraft.block.BlockWall$EnumType
+[13:16:01] [main/DEBUG] [mixin]: Mixing data.types.MixinDirtType from mixins.common.core.json into net.minecraft.block.BlockDirt$DirtType
+[13:16:01] [main/DEBUG] [mixin]: Mixing MixinBootstrap from mixins.vanilla.json into net.minecraft.init.Bootstrap
+[13:16:01] [main/DEBUG] [mixin]: Mixing entity.MixinEntityItem from mixins.common.core.json into net.minecraft.entity.item.EntityItem
+[13:16:01] [main/DEBUG] [mixin]: Mixing entity.MixinEntityXPOrb from mixins.common.core.json into net.minecraft.entity.item.EntityXPOrb
+[13:16:01] [main/DEBUG] [mixin]: Mixing data.MixinPropertyHolder from mixins.common.core.json into net.minecraft.block.state.BlockState
+[13:16:01] [main/DEBUG] [mixin]: Mixing block.MixinBlockState from mixins.common.core.json into net.minecraft.block.state.BlockState$StateImplementation
+[13:16:01] [main/TRACE] [mixin]: Added class metadata for net/minecraft/block/state/BlockStateBase to metadata cache
+[13:16:01] [main/DEBUG] [mixin]: Mixing block.properties.MixinPropertyEnum from mixins.common.core.json into net.minecraft.block.properties.PropertyEnum
+[13:16:01] [main/DEBUG] [mixin]: Mixing block.properties.MixinPropertyHelper from mixins.common.core.json into net.minecraft.block.properties.PropertyHelper
+[13:16:01] [main/DEBUG] [mixin]: Mixing block.properties.MixinPropertyBoolean from mixins.common.core.json into net.minecraft.block.properties.PropertyBool
+[13:16:01] [main/DEBUG] [mixin]: Mixing block.properties.MixinPropertyInteger from mixins.common.core.json into net.minecraft.block.properties.PropertyInteger
+[13:16:01] [main/DEBUG] [mixin]: Mixing entity.MixinEntityFallingBlock from mixins.common.core.json into net.minecraft.entity.item.EntityFallingBlock
+[13:16:01] [main/DEBUG] [mixin]: Mixing block.MixinBlockLog from mixins.common.core.json into net.minecraft.block.BlockLog
+[13:16:01] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/data/manipulator/immutable/block/ImmutableTreeData to metadata cache
+[13:16:01] [main/TRACE] [mixin]: Added class metadata for net/minecraft/block/BlockOldLog to metadata cache
+[13:16:01] [main/TRACE] [mixin]: Added class metadata for net/minecraft/block/BlockNewLog to metadata cache
+[13:16:01] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/data/type/TreeType to metadata cache
+[13:16:01] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/data/manipulator/immutable/block/ImmutableSpongeTreeData to metadata cache
+[13:16:01] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/data/manipulator/immutable/block/ImmutableLogAxisData to metadata cache
+[13:16:01] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/data/manipulator/immutable/block/ImmutableSpongeLogAxisData to metadata cache
+[13:16:01] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/data/type/TreeTypes to metadata cache
+[13:16:01] [main/DEBUG] [mixin]: Mixing block.MixinBlockSponge from mixins.common.core.json into net.minecraft.block.BlockSponge
+[13:16:01] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/data/manipulator/immutable/ImmutableWetData to metadata cache
+[13:16:01] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/data/manipulator/immutable/ImmutableSpongeWetData to metadata cache
+[13:16:01] [main/DEBUG] [mixin]: Mixing data.MixinDataHolder from mixins.common.core.json into net.minecraft.tileentity.TileEntity
+[13:16:01] [main/DEBUG] [mixin]: Mixing block.tiles.MixinTileEntity from mixins.common.core.json into net.minecraft.tileentity.TileEntity
+[13:16:01] [main/DEBUG] [mixin]: Mixing data.MixinCustomDataHolder from mixins.common.core.json into net.minecraft.tileentity.TileEntity
+[13:16:01] [main/DEBUG] [mixin]: Mixing data.MixinPropertyHolder from mixins.common.core.json into net.minecraft.tileentity.TileEntity
+[13:16:01] [main/DEBUG] [mixin]: Mixing tileentity.MixinTileEntity from mixins.vanilla.json into net.minecraft.tileentity.TileEntity
+[13:16:01] [main/TRACE] [mixin]: Added class metadata for java/lang/Exception to metadata cache
+[13:16:01] [main/TRACE] [mixin]: Added class metadata for java/lang/Throwable to metadata cache
+[13:16:01] [main/DEBUG] [mixin]: Mixing block.tiles.MixinTileEntityDispenser from mixins.common.core.json into net.minecraft.tileentity.TileEntityDispenser
+[13:16:01] [main/DEBUG] [mixin]: Mixing block.tiles.MixinTileEntityLockable from mixins.common.core.json into net.minecraft.tileentity.TileEntityLockable
+[13:16:01] [main/TRACE] [mixin]: Added class metadata for net/minecraft/world/LockCode to metadata cache
+[13:16:01] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/data/DataContainer to metadata cache
+[13:16:01] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/data/DataQuery to metadata cache
+[13:16:01] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/data/MemoryDataContainer to metadata cache
+[13:16:01] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/item/inventory/ItemStack to metadata cache
+[13:16:01] [main/DEBUG] [mixin]: Mixing block.tiles.MixinTileEntityNote from mixins.common.core.json into net.minecraft.tileentity.TileEntityNote
+[13:16:01] [main/TRACE] [mixin]: Added class metadata for java/lang/Byte to metadata cache
+[13:16:01] [main/DEBUG] [mixin]: Mixing data.types.MixinEnumDyeColor from mixins.common.core.json into net.minecraft.item.EnumDyeColor
+[13:16:01] [main/TRACE] [mixin]: Added class metadata for net/minecraft/block/material/MapColor to metadata cache
+[13:16:01] [main/TRACE] [mixin]: Added class metadata for java/awt/Color to metadata cache
+[13:16:01] [main/DEBUG] [mixin]: Mixing entity.explosive.MixinExplosive from mixins.common.core.json into net.minecraft.entity.item.EntityTNTPrimed
+[13:16:01] [main/DEBUG] [mixin]: Mixing entity.explosive.MixinFusedExplosive from mixins.common.core.json into net.minecraft.entity.item.EntityTNTPrimed
+[13:16:01] [main/DEBUG] [mixin]: Mixing entity.explosive.MixinEntityTNTPrimed from mixins.common.core.json into net.minecraft.entity.item.EntityTNTPrimed
+[13:16:01] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/service/persistence/InvalidDataException to metadata cache
+[13:16:04] [main/DEBUG] [mixin]: Mixing block.tiles.MixinTileEntityMobSpawner from mixins.common.core.json into net.minecraft.tileentity.TileEntityMobSpawner
+[13:16:04] [main/TRACE] [mixin]: Added class metadata for net/minecraft/tileentity/MobSpawnerBaseLogic to metadata cache
+[13:16:04] [main/DEBUG] [mixin]: Mixing block.tiles.MixinTileEntityChest from mixins.common.core.json into net.minecraft.tileentity.TileEntityChest
+[13:16:05] [main/DEBUG] [mixin]: Mixing block.tiles.MixinTileEntityFurnace from mixins.common.core.json into net.minecraft.tileentity.TileEntityFurnace
+[13:16:05] [main/DEBUG] [mixin]: Mixing data.holders.MixinBlockStandingSign from mixins.common.core.json into net.minecraft.block.BlockStandingSign
+[13:16:05] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/data/manipulator/immutable/block/ImmutableDirectionalData to metadata cache
+[13:16:05] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/data/manipulator/mutable/block/SpongeDirectionalData to metadata cache
+[13:16:05] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/util/Direction to metadata cache
+[13:16:05] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/data/manipulator/DataManipulator to metadata cache
+[13:16:05] [main/DEBUG] [mixin]: Mixing block.tiles.MixinTileEntitySign from mixins.common.core.json into net.minecraft.tileentity.TileEntitySign
+[13:16:05] [main/TRACE] [mixin]: Added class metadata for net/minecraft/util/IChatComponent to metadata cache
+[13:16:05] [main/TRACE] [mixin]: Added class metadata for com/google/gson/JsonParseException to metadata cache
+[13:16:05] [main/TRACE] [mixin]: Added class metadata for java/lang/RuntimeException to metadata cache
+[13:16:05] [main/DEBUG] [mixin]: Mixing data.holders.MixinBlockWallSign from mixins.common.core.json into net.minecraft.block.BlockWallSign
+[13:16:05] [main/TRACE] [mixin]: Added class metadata for net/minecraft/block/properties/PropertyDirection to metadata cache
+[13:16:05] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/data/manipulator/immutable/block/ImmutableSpongeDirectionalData to metadata cache
+[13:16:05] [main/DEBUG] [mixin]: Mixing data.holders.MixinBlockLever from mixins.common.core.json into net.minecraft.block.BlockLever
+[13:16:05] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/data/manipulator/immutable/block/ImmutablePoweredData to metadata cache
+[13:16:05] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/data/manipulator/immutable/block/ImmutableSpongePoweredData to metadata cache
+[13:16:05] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/data/manipulator/immutable/block/ImmutableAxisData to metadata cache
+[13:16:05] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/util/Axis to metadata cache
+[13:16:05] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/data/manipulator/immutable/block/ImmutableSpongeAxisData to metadata cache
+[13:16:05] [main/DEBUG] [mixin]: Mixing data.holders.MixinBlockButton from mixins.common.core.json into net.minecraft.block.BlockButton
+[13:16:05] [main/DEBUG] [mixin]: Mixing block.MixinBlockSnowLayer from mixins.common.core.json into net.minecraft.block.BlockSnow
+[13:16:05] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/data/manipulator/immutable/block/ImmutableLayeredData to metadata cache
+[13:16:05] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/data/manipulator/immutable/block/ImmutableSpongeLayeredData to metadata cache
+[13:16:05] [main/DEBUG] [mixin]: Mixing entity.living.golem.MixinEntitySnowman from mixins.common.core.json into net.minecraft.entity.monster.EntitySnowman
+[13:16:05] [main/DEBUG] [mixin]: Mixing entity.living.golem.MixinEntityGolem from mixins.common.core.json into net.minecraft.entity.monster.EntityGolem
+[13:16:05] [main/DEBUG] [mixin]: Mixing entity.living.MixinEntityLiving from mixins.common.core.json into net.minecraft.entity.EntityLiving
+[13:16:05] [main/TRACE] [mixin]: Added class metadata for java/lang/UnsupportedOperationException to metadata cache
+[13:16:05] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/event/entity/LeashEntityEvent to metadata cache
+[13:16:05] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/event/entity/UnleashEntityEvent to metadata cache
+[13:16:05] [main/DEBUG] [mixin]: Mixing entity.living.golem.MixinEntityIronGolem from mixins.common.core.json into net.minecraft.entity.monster.EntityIronGolem
+[13:16:05] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/DataWatcher to metadata cache
+[13:16:05] [main/DEBUG] [mixin]: Mixing block.MixinBlockCake from mixins.common.core.json into net.minecraft.block.BlockCake
+[13:16:05] [main/DEBUG] [mixin]: Mixing entity.living.monster.MixinEntitySilverfish from mixins.common.core.json into net.minecraft.entity.monster.EntitySilverfish
+[13:16:05] [main/DEBUG] [mixin]: Mixing entity.living.monster.MixinEntityMob from mixins.common.core.json into net.minecraft.entity.monster.EntityMob
+[13:16:05] [main/DEBUG] [mixin]: Mixing block.tiles.MixinTileEntityEnchantmentTable from mixins.common.core.json into net.minecraft.tileentity.TileEntityEnchantmentTable
+[13:16:06] [main/DEBUG] [mixin]: Mixing block.tiles.MixinTileEntityBrewingStand from mixins.common.core.json into net.minecraft.tileentity.TileEntityBrewingStand
+[13:16:06] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/data/DataView to metadata cache
+[13:16:06] [main/DEBUG] [mixin]: Mixing item.data.MixinItemPotion from mixins.common.core.json into net.minecraft.item.ItemPotion
+[13:16:06] [main/DEBUG] [mixin]: Mixing block.tiles.MixinTileEntityEndPortal from mixins.common.core.json into net.minecraft.tileentity.TileEntityEndPortal
+[13:16:06] [main/DEBUG] [mixin]: Mixing block.tiles.MixinTileEntityEnderChest from mixins.common.core.json into net.minecraft.tileentity.TileEntityEnderChest
+[13:16:06] [main/DEBUG] [mixin]: Mixing block.tiles.MixinTileEntityCommandBlock from mixins.common.core.json into net.minecraft.tileentity.TileEntityCommandBlock
+[13:16:06] [main/TRACE] [mixin]: Added class metadata for net/minecraft/command/ICommandSender to metadata cache
+[13:16:06] [main/DEBUG] [mixin]: Mixing command.MixinCommandBlockSource from mixins.common.core.json into net.minecraft.tileentity.TileEntityCommandBlock
+[13:16:06] [main/DEBUG] [mixin]: Mixing command.MixinCommandSource from mixins.common.core.json into net.minecraft.tileentity.TileEntityCommandBlock
+[13:16:06] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/text/sink/MessageSink to metadata cache
+[13:16:06] [main/TRACE] [mixin]: Added class metadata for java/lang/Iterable to metadata cache
+[13:16:06] [main/TRACE] [mixin]: Added class metadata for net/minecraft/world/GameRules to metadata cache
+[13:16:06] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/interfaces/IMixinTeam to metadata cache
+[13:16:06] [main/DEBUG] [mixin]: Mixing command.MixinLocatedSource from mixins.common.core.json into net.minecraft.tileentity.TileEntityCommandBlock
+[13:16:06] [main/TRACE] [mixin]: Added class metadata for net/minecraft/util/Vec3 to metadata cache
+[13:16:06] [main/DEBUG] [mixin]: Mixing command.MixinSubject from mixins.common.core.json into net.minecraft.tileentity.TileEntityCommandBlock
+[13:16:06] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/service/permission/Subject to metadata cache
+[13:16:06] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/service/ServiceManager to metadata cache
+[13:16:06] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/service/ServiceReference to metadata cache
+[13:16:06] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/service/permission/SubjectSettingCallback to metadata cache
+[13:16:06] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/interfaces/IMixinSubject to metadata cache
+[13:16:06] [main/TRACE] [mixin]: Added class metadata for java/util/function/Predicate to metadata cache
+[13:16:06] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/service/permission/SubjectCollection to metadata cache
+[13:16:06] [main/TRACE] [mixin]: Added class metadata for java/lang/IllegalStateException to metadata cache
+[13:16:06] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/service/permission/SubjectData to metadata cache
+[13:16:06] [main/DEBUG] [mixin]: Mixing block.tiles.MixinTileEntityBeacon from mixins.common.core.json into net.minecraft.tileentity.TileEntityBeacon
+[13:16:06] [main/DEBUG] [mixin]: Mixing entity.living.monster.MixinEntityWither from mixins.common.core.json into net.minecraft.entity.boss.EntityWither
+[13:16:06] [main/DEBUG] [mixin]: Mixing block.tiles.MixinTileEntitySkull from mixins.common.core.json into net.minecraft.tileentity.TileEntitySkull
+[13:16:06] [main/DEBUG] [mixin]: Mixing block.tiles.MixinTileEntityComparator from mixins.common.core.json into net.minecraft.tileentity.TileEntityComparator
+[13:16:06] [main/DEBUG] [mixin]: Mixing block.tiles.MixinTileEntityDaylightDetector from mixins.common.core.json into net.minecraft.tileentity.TileEntityDaylightDetector
+[13:16:06] [main/DEBUG] [mixin]: Mixing block.tiles.MixinTileEntityHopper from mixins.common.core.json into net.minecraft.tileentity.TileEntityHopper
+[13:16:06] [main/TRACE] [mixin]: Added class metadata for net/minecraft/world/ILockableContainer to metadata cache
+[13:16:06] [main/TRACE] [mixin]: Added class metadata for net/minecraft/inventory/IInventory to metadata cache
+[13:16:06] [main/DEBUG] [mixin]: Mixing block.tiles.MixinTileEntityDropper from mixins.common.core.json into net.minecraft.tileentity.TileEntityDropper
+[13:16:07] [main/DEBUG] [mixin]: Mixing block.tiles.MixinTileEntityBanner from mixins.common.core.json into net.minecraft.tileentity.TileEntityBanner
+[13:16:07] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/GameRegistry to metadata cache
+[13:16:07] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/data/meta/SpongePatternLayer to metadata cache
+[13:16:07] [main/TRACE] [mixin]: Added class metadata for java/util/Map to metadata cache
+[13:16:07] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/data/type/BannerPatternShape to metadata cache
+[13:16:07] [main/DEBUG] [mixin]: Mixing entity.projectile.MixinEntityArrow from mixins.common.core.json into net.minecraft.entity.projectile.EntityArrow
+[13:16:07] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/entity/projectile/source/UnknownProjectileSource to metadata cache
+[13:16:07] [main/DEBUG] [mixin]: Mixing potion.MixinPotion from mixins.common.core.json into net.minecraft.potion.Potion
+[13:16:07] [main/DEBUG] [mixin]: Mixing entity.hanging.MixinEntityHanging from mixins.common.core.json into net.minecraft.entity.EntityHanging
+[13:16:07] [main/DEBUG] [mixin]: Mixing entity.hanging.MixinEntityPainting from mixins.common.core.json into net.minecraft.entity.item.EntityPainting
+[13:16:07] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/data/manipulator/mutable/entity/ArtData to metadata cache
+[13:16:07] [main/DEBUG] [mixin]: Mixing entity.hanging.MixinEntityItemFrame from mixins.common.core.json into net.minecraft.entity.item.EntityItemFrame
+[13:16:07] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/util/rotation/Rotation to metadata cache
+[13:16:07] [main/DEBUG] [mixin]: Mixing entity.vehicle.minecart.MixinEntityMinecart from mixins.common.core.json into net.minecraft.entity.item.EntityMinecart
+[13:16:07] [main/DEBUG] [mixin]: Mixing entity.vehicle.MixinEntityMinecart from mixins.vanilla.json into net.minecraft.entity.item.EntityMinecart
+[13:16:07] [main/DEBUG] [mixin]: Mixing entity.living.animal.MixinEntityPig from mixins.common.core.json into net.minecraft.entity.passive.EntityPig
+[13:16:07] [main/DEBUG] [mixin]: Mixing entity.living.animal.MixinEntityAnimal from mixins.common.core.json into net.minecraft.entity.passive.EntityAnimal
+[13:16:07] [main/DEBUG] [mixin]: Mixing entity.living.MixinEntityAgeable from mixins.common.core.json into net.minecraft.entity.EntityAgeable
+[13:16:07] [main/DEBUG] [mixin]: Mixing entity.projectile.MixinEntitySnowball from mixins.common.core.json into net.minecraft.entity.projectile.EntitySnowball
+[13:16:07] [main/DEBUG] [mixin]: Mixing entity.projectile.MixinEntityThrowable from mixins.common.core.json into net.minecraft.entity.projectile.EntityThrowable
+[13:16:07] [main/DEBUG] [mixin]: Mixing entity.vehicle.MixinEntityBoat from mixins.common.core.json into net.minecraft.entity.item.EntityBoat
+[13:16:07] [main/DEBUG] [mixin]: Mixing entity.projectile.MixinEntityEgg from mixins.common.core.json into net.minecraft.entity.projectile.EntityEgg
+[13:16:07] [main/DEBUG] [mixin]: Mixing item.MixinItemFishingRod from mixins.common.core.json into net.minecraft.item.ItemFishingRod
+[13:16:07] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/interfaces/IMixinEntityFishHook to metadata cache
+[13:16:07] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/entity/projectile/FishHook to metadata cache
+[13:16:07] [main/TRACE] [mixin]: Added class metadata for net/minecraft/stats/StatBase to metadata cache
+[13:16:07] [main/DEBUG] [mixin]: Mixing entity.projectile.MixinEntityFishHook from mixins.common.core.json into net.minecraft.entity.projectile.EntityFishHook
+[13:16:07] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/item/inventory/ItemStackSnapshot to metadata cache
+[13:16:07] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/item/ItemTypes to metadata cache
+[13:16:07] [main/DEBUG] [mixin]: Mixing item.MixinItemMap from mixins.common.core.json into net.minecraft.item.ItemMap
+[13:16:07] [main/TRACE] [mixin]: Added class metadata for net/minecraft/item/ItemMapBase to metadata cache
+[13:16:07] [main/TRACE] [mixin]: Added class metadata for net/minecraft/world/storage/MapData to metadata cache
+[13:16:07] [main/DEBUG] [mixin]: Mixing entity.projectile.MixinEntityEnderPearl from mixins.common.core.json into net.minecraft.entity.item.EntityEnderPearl
+[13:16:07] [main/DEBUG] [mixin]: Mixing entity.projectile.MixinEntityPotion from mixins.common.core.json into net.minecraft.entity.projectile.EntityPotion
+[13:16:07] [main/TRACE] [mixin]: Added class metadata for net/minecraft/init/Items to metadata cache
+[13:16:07] [main/DEBUG] [mixin]: Mixing item.MixinItemEnderEye from mixins.common.core.json into net.minecraft.item.ItemEnderEye
+[13:16:07] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/entity/projectile/EyeOfEnder to metadata cache
+[13:16:07] [main/DEBUG] [mixin]: Mixing entity.projectile.MixinEntityEnderEye from mixins.common.core.json into net.minecraft.entity.item.EntityEnderEye
+[13:16:07] [main/DEBUG] [mixin]: Mixing entity.projectile.MixinEntityExpBottle from mixins.common.core.json into net.minecraft.entity.item.EntityExpBottle
+[13:16:07] [main/DEBUG] [mixin]: Mixing item.data.MixinItemEditableBook from mixins.common.core.json into net.minecraft.item.ItemEditableBook
+[13:16:07] [main/DEBUG] [mixin]: Mixing item.MixinItemEmptyMap from mixins.common.core.json into net.minecraft.item.ItemEmptyMap
+[13:16:07] [main/DEBUG] [mixin]: Mixing item.MixinItemFirework from mixins.common.core.json into net.minecraft.item.ItemFirework
+[13:16:07] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/entity/projectile/Firework to metadata cache
+[13:16:07] [main/DEBUG] [mixin]: Mixing entity.explosive.MixinExplosive from mixins.common.core.json into net.minecraft.entity.item.EntityFireworkRocket
+[13:16:07] [main/DEBUG] [mixin]: Mixing entity.explosive.MixinFusedExplosive from mixins.common.core.json into net.minecraft.entity.item.EntityFireworkRocket
+[13:16:07] [main/DEBUG] [mixin]: Mixing entity.projectile.MixinEntityFireworkRocket from mixins.common.core.json into net.minecraft.entity.item.EntityFireworkRocket
+[13:16:07] [main/DEBUG] [mixin]: Mixing entity.MixinArmorEquipable from mixins.common.core.json into net.minecraft.entity.item.EntityArmorStand
+[13:16:07] [main/DEBUG] [mixin]: Mixing entity.living.MixinArmorStand from mixins.common.core.json into net.minecraft.entity.item.EntityArmorStand
+[13:16:07] [main/DEBUG] [mixin]: Mixing entity.hanging.MixinEntityLeashKnot from mixins.common.core.json into net.minecraft.entity.EntityLeashKnot
+[13:16:07] [main/DEBUG] [mixin]: Mixing text.MixinChatComponentTranslation from mixins.common.core.json into net.minecraft.util.ChatComponentTranslation
+[13:16:07] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/text/translation/Translation to metadata cache
+[13:16:07] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/text/ChatComponentIterable to metadata cache
+[13:16:07] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/interfaces/text/IMixinChatComponent to metadata cache
+[13:16:07] [main/TRACE] [mixin]: Added class metadata for net/minecraft/util/ChatComponentTranslationFormatException to metadata cache
+[13:16:07] [main/DEBUG] [mixin]: Mixing text.MixinChatComponentStyle from mixins.common.core.json into net.minecraft.util.ChatComponentStyle
+[13:16:07] [main/TRACE] [mixin]: Added class metadata for net/minecraft/util/EnumChatFormatting to metadata cache
+[13:16:07] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/text/ResolvedChatStyle to metadata cache
+[13:16:07] [main/TRACE] [mixin]: Added class metadata for net/minecraft/util/ChatStyle to metadata cache
+[13:16:07] [main/DEBUG] [mixin]: Mixing scoreboard.MixinCriterion from mixins.common.core.json into net.minecraft.scoreboard.ScoreDummyCriteria
+[13:16:07] [main/DEBUG] [mixin]: Mixing scoreboard.MixinCriterion from mixins.common.core.json into net.minecraft.scoreboard.GoalColor
+[13:16:07] [main/DEBUG] [mixin]: Mixing text.MixinChatComponentText from mixins.common.core.json into net.minecraft.util.ChatComponentText
+[13:16:08] [main/DEBUG] [mixin]: Mixing text.MixinHoverEvent from mixins.common.core.json into net.minecraft.event.HoverEvent
+[13:16:08] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/entity/EntityType to metadata cache
+[13:16:08] [main/DEBUG] [mixin]: Mixing data.types.MixinFishType from mixins.common.core.json into net.minecraft.item.ItemFishFood$FishType
+[13:16:08] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/data/type/CookedFish to metadata cache
+[13:16:08] [main/DEBUG] [mixin]: Mixing entity.projectile.fireball.MixinEntityLargeFireball from mixins.common.core.json into net.minecraft.entity.projectile.EntityLargeFireball
+[13:16:08] [main/DEBUG] [mixin]: Mixing entity.explosive.MixinExplosive from mixins.common.core.json into net.minecraft.entity.projectile.EntityFireball
+[13:16:08] [main/DEBUG] [mixin]: Mixing entity.projectile.fireball.MixinEntityFireball from mixins.common.core.json into net.minecraft.entity.projectile.EntityFireball
+[13:16:08] [main/TRACE] [mixin]: Added class metadata for net/minecraft/util/MovingObjectPosition to metadata cache
+[13:16:08] [main/DEBUG] [mixin]: Mixing entity.projectile.fireball.MixinEntitySmallFireball from mixins.common.core.json into net.minecraft.entity.projectile.EntitySmallFireball
+[13:16:08] [main/DEBUG] [mixin]: Mixing entity.projectile.fireball.MixinEntityWitherSkull from mixins.common.core.json into net.minecraft.entity.projectile.EntityWitherSkull
+[13:16:08] [main/DEBUG] [mixin]: Mixing entity.vehicle.minecart.MixinEntityMinecartRideable from mixins.common.core.json into net.minecraft.entity.item.EntityMinecartEmpty
+[13:16:08] [main/DEBUG] [mixin]: Mixing entity.vehicle.minecart.MixinEntityMinecartChest from mixins.common.core.json into net.minecraft.entity.item.EntityMinecartChest
+[13:16:08] [main/DEBUG] [mixin]: Mixing entity.vehicle.minecart.MixinEntityMinecartContainer from mixins.common.core.json into net.minecraft.entity.item.EntityMinecartContainer
+[13:16:08] [main/DEBUG] [mixin]: Mixing entity.vehicle.minecart.MixinEntityMinecartFurnace from mixins.common.core.json into net.minecraft.entity.item.EntityMinecartFurnace
+[13:16:08] [main/DEBUG] [mixin]: Mixing entity.explosive.MixinExplosive from mixins.common.core.json into net.minecraft.entity.item.EntityMinecartTNT
+[13:16:08] [main/DEBUG] [mixin]: Mixing entity.explosive.MixinFusedExplosive from mixins.common.core.json into net.minecraft.entity.item.EntityMinecartTNT
+[13:16:08] [main/DEBUG] [mixin]: Mixing entity.vehicle.minecart.MixinEntityMinecartTNT from mixins.common.core.json into net.minecraft.entity.item.EntityMinecartTNT
+[13:16:08] [main/DEBUG] [mixin]: Mixing entity.vehicle.minecart.MixinEntityMinecartMobSpawner from mixins.common.core.json into net.minecraft.entity.ai.EntityMinecartMobSpawner
+[13:16:08] [main/DEBUG] [mixin]: Mixing command.MixinCommandBlockSource from mixins.common.core.json into net.minecraft.entity.EntityMinecartCommandBlock
+[13:16:08] [main/DEBUG] [mixin]: Mixing command.MixinCommandSource from mixins.common.core.json into net.minecraft.entity.EntityMinecartCommandBlock
+[13:16:08] [main/DEBUG] [mixin]: Mixing command.MixinLocatedSource from mixins.common.core.json into net.minecraft.entity.EntityMinecartCommandBlock
+[13:16:08] [main/DEBUG] [mixin]: Mixing command.MixinSubject from mixins.common.core.json into net.minecraft.entity.EntityMinecartCommandBlock
+[13:16:08] [main/DEBUG] [mixin]: Mixing entity.vehicle.minecart.MixinEntityMinecartCommandBlock from mixins.common.core.json into net.minecraft.entity.EntityMinecartCommandBlock
+[13:16:08] [main/DEBUG] [mixin]: Mixing entity.explosive.MixinExplosive from mixins.common.core.json into net.minecraft.entity.monster.EntityCreeper
+[13:16:08] [main/DEBUG] [mixin]: Mixing entity.explosive.MixinFusedExplosive from mixins.common.core.json into net.minecraft.entity.monster.EntityCreeper
+[13:16:08] [main/DEBUG] [mixin]: Mixing entity.living.monster.MixinEntityCreeper from mixins.common.core.json into net.minecraft.entity.monster.EntityCreeper
+[13:16:08] [main/DEBUG] [mixin]: Mixing entity.MixinArmorEquipable from mixins.common.core.json into net.minecraft.entity.monster.EntitySkeleton
+[13:16:08] [main/DEBUG] [mixin]: Mixing entity.living.monster.MixinEntitySkeleton from mixins.common.core.json into net.minecraft.entity.monster.EntitySkeleton
+[13:16:08] [main/DEBUG] [mixin]: Mixing entity.living.monster.MixinEntitySpider from mixins.common.core.json into net.minecraft.entity.monster.EntitySpider
+[13:16:08] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/monster/EntitySpider$GroupData to metadata cache
+[13:16:08] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/IEntityLivingData to metadata cache
+[13:16:08] [main/DEBUG] [mixin]: Mixing entity.MixinArmorEquipable from mixins.common.core.json into net.minecraft.entity.monster.EntityGiantZombie
+[13:16:08] [main/DEBUG] [mixin]: Mixing entity.living.monster.MixinEntityGiantZombie from mixins.common.core.json into net.minecraft.entity.monster.EntityGiantZombie
+[13:16:08] [main/DEBUG] [mixin]: Mixing entity.MixinArmorEquipable from mixins.common.core.json into net.minecraft.entity.monster.EntityZombie
+[13:16:08] [main/DEBUG] [mixin]: Mixing entity.living.monster.MixinEntityZombie from mixins.common.core.json into net.minecraft.entity.monster.EntityZombie
+[13:16:08] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/monster/EntityZombie$GroupData to metadata cache
+[13:16:08] [main/DEBUG] [mixin]: Mixing entity.living.monster.MixinEntitySlime from mixins.common.core.json into net.minecraft.entity.monster.EntitySlime
+[13:16:08] [main/DEBUG] [mixin]: Mixing entity.living.monster.MixinEntityGhast from mixins.common.core.json into net.minecraft.entity.monster.EntityGhast
+[13:16:08] [main/DEBUG] [mixin]: Mixing entity.living.monster.MixinEntityPigZombie from mixins.common.core.json into net.minecraft.entity.monster.EntityPigZombie
+[13:16:08] [main/DEBUG] [mixin]: Mixing entity.living.monster.MixinEntityEnderman from mixins.common.core.json into net.minecraft.entity.monster.EntityEnderman
+[13:16:08] [main/TRACE] [mixin]: Added class metadata for java/lang/Short to metadata cache
+[13:16:08] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/data/manipulator/mutable/entity/ScreamingData to metadata cache
+[13:16:08] [main/DEBUG] [mixin]: Mixing entity.living.monster.MixinEntityCaveSpider from mixins.common.core.json into net.minecraft.entity.monster.EntityCaveSpider
+[13:16:08] [main/DEBUG] [mixin]: Mixing entity.living.monster.MixinEntityBlaze from mixins.common.core.json into net.minecraft.entity.monster.EntityBlaze
+[13:16:08] [main/DEBUG] [mixin]: Mixing entity.living.monster.MixinEntityMagmaCube from mixins.common.core.json into net.minecraft.entity.monster.EntityMagmaCube
+[13:16:08] [main/DEBUG] [mixin]: Mixing entity.living.complex.MixinEntityDragon from mixins.common.core.json into net.minecraft.entity.boss.EntityDragon
+[13:16:08] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/entity/living/complex/EnderDragonPart to metadata cache
+[13:16:08] [main/TRACE] [mixin]: Added class metadata for com/google/common/collect/ImmutableSet to metadata cache
+[13:16:08] [main/DEBUG] [mixin]: Mixing entity.living.MixinEntityBat from mixins.common.core.json into net.minecraft.entity.passive.EntityBat
+[13:16:08] [main/DEBUG] [mixin]: Mixing entity.living.monster.MixinEntityWitch from mixins.common.core.json into net.minecraft.entity.monster.EntityWitch
+[13:16:08] [main/DEBUG] [mixin]: Mixing entity.living.monster.MixinEntityEndermite from mixins.common.core.json into net.minecraft.entity.monster.EntityEndermite
+[13:16:08] [main/DEBUG] [mixin]: Mixing entity.living.monster.MixinEntityGuardian from mixins.common.core.json into net.minecraft.entity.monster.EntityGuardian
+[13:16:08] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/data/manipulator/mutable/entity/ElderData to metadata cache
+[13:16:08] [main/DEBUG] [mixin]: Mixing entity.living.animal.MixinEntitySheep from mixins.common.core.json into net.minecraft.entity.passive.EntitySheep
+[13:16:08] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/data/manipulator/mutable/entity/ShearedData to metadata cache
+[13:16:08] [main/DEBUG] [mixin]: Mixing entity.living.animal.MixinEntityCow from mixins.common.core.json into net.minecraft.entity.passive.EntityCow
+[13:16:08] [main/DEBUG] [mixin]: Mixing entity.living.animal.MixinEntityChicken from mixins.common.core.json into net.minecraft.entity.passive.EntityChicken
+[13:16:08] [main/DEBUG] [mixin]: Mixing entity.living.animal.MixinEntitySquid from mixins.common.core.json into net.minecraft.entity.passive.EntitySquid
+[13:16:08] [main/DEBUG] [mixin]: Mixing entity.living.animal.MixinEntityWolf from mixins.common.core.json into net.minecraft.entity.passive.EntityWolf
+[13:16:08] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/event/entity/TameEntityEvent to metadata cache
+[13:16:08] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/data/manipulator/mutable/entity/SittingData to metadata cache
+[13:16:08] [main/DEBUG] [mixin]: Mixing entity.living.animal.MixinEntityMooshroom from mixins.common.core.json into net.minecraft.entity.passive.EntityMooshroom
+[13:16:08] [main/DEBUG] [mixin]: Mixing entity.living.animal.MixinEntityOcelot from mixins.common.core.json into net.minecraft.entity.passive.EntityOcelot
+[13:16:08] [main/DEBUG] [mixin]: Mixing entity.living.animal.MixinEntityHorse from mixins.common.core.json into net.minecraft.entity.passive.EntityHorse
+[13:16:08] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/passive/EntityHorse$GroupData to metadata cache
+[13:16:08] [main/DEBUG] [mixin]: Mixing entity.living.animal.MixinEntityRabbit from mixins.common.core.json into net.minecraft.entity.passive.EntityRabbit
+[13:16:08] [main/TRACE] [mixin]: Added class metadata for net/minecraft/entity/passive/EntityRabbit$RabbitTypeData to metadata cache
+[13:16:08] [main/DEBUG] [mixin]: Mixing entity.living.villager.MixinEntityVillager from mixins.common.core.json into net.minecraft.entity.passive.EntityVillager
+[13:16:08] [main/TRACE] [mixin]: Added class metadata for net/minecraft/village/MerchantRecipeList to metadata cache
+[13:16:08] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/data/type/Profession to metadata cache
+[13:16:08] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/data/type/Career to metadata cache
+[13:16:08] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/data/type/Professions to metadata cache
+[13:16:08] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/entity/SpongeEntityMeta to metadata cache
+[13:16:08] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/entity/SpongeCareer to metadata cache
+[13:16:08] [main/DEBUG] [mixin]: Mixing entity.MixinEntityEnderCrystal from mixins.common.core.json into net.minecraft.entity.item.EntityEnderCrystal
+[13:16:08] [main/DEBUG] [mixin]: Mixing block.MixinBehaviorProjectileDispense from mixins.common.core.json into net.minecraft.dispenser.BehaviorProjectileDispense
+[13:16:08] [main/TRACE] [mixin]: Added class metadata for net/minecraft/dispenser/BehaviorDefaultDispenseItem to metadata cache
+[13:16:08] [main/DEBUG] [mixin]: Mixing MixinBootstrapAnonInner7 from mixins.common.core.json into net.minecraft.init.Bootstrap$7
+[13:16:08] [main/DEBUG] [mixin]: Mixing MixinBootstrapAnonInner8 from mixins.common.core.json into net.minecraft.init.Bootstrap$8
+[13:16:08] [main/DEBUG] [mixin]: Mixing server.MixinDedicatedServer from mixins.common.core.json into net.minecraft.server.dedicated.DedicatedServer
+[13:16:08] [main/TRACE] [mixin]: Added class metadata for java/net/Proxy to metadata cache
+[13:16:08] [main/TRACE] [mixin]: Added class metadata for java/net/InetSocketAddress to metadata cache
+[13:16:08] [main/DEBUG] [mixin]: Mixing server.MixinDedicatedServer from mixins.vanilla.json into net.minecraft.server.dedicated.DedicatedServer
+[13:16:08] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/event/game/state/GameAboutToStartServerEvent to metadata cache
+[13:16:08] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/event/game/state/GameStartingServerEvent to metadata cache
+[13:16:08] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/service/scheduler/SpongeScheduler to metadata cache
+[13:16:08] [main/DEBUG] [mixin]: Mixing server.MixinServerConfigurationManager from mixins.common.core.json into net.minecraft.server.management.ServerConfigurationManager
+[13:16:08] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/data/manipulator/mutable/entity/RespawnLocationData to metadata cache
+[13:16:08] [main/TRACE] [mixin]: Added class metadata for net/minecraft/world/demo/DemoWorldManager to metadata cache
+[13:16:08] [main/DEBUG] [mixin]: Mixing server.MixinConsoleHandler from mixins.vanilla.json into net.minecraft.server.dedicated.DedicatedServer$2
+[13:16:08] [main/TRACE] [mixin]: Added class metadata for java/lang/Thread to metadata cache
+[13:16:08] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/server/console/ConsoleFormatter to metadata cache
+[13:16:08] [main/DEBUG] [mixin]: Mixing status.MixinServerStatusResponse from mixins.common.core.json into net.minecraft.network.ServerStatusResponse
+[13:16:09] [main/DEBUG] [mixin]: Mixing server.MixinServerCommandManager from mixins.common.core.json into net.minecraft.command.ServerCommandManager
+[13:16:09] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/util/command/CommandSource to metadata cache
+[13:16:09] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/service/command/CommandService to metadata cache
+[13:16:09] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/util/command/CommandResult to metadata cache
+[13:16:09] [main/TRACE] [mixin]: Added class metadata for net/minecraft/command/ICommand to metadata cache
+[13:16:09] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/command/MinecraftCommandWrapper to metadata cache
+[13:16:09] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/plugin/PluginContainer to metadata cache
+[13:16:09] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/util/command/CommandCallable to metadata cache
+[13:16:09] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/service/permission/SpongePermissionService to metadata cache
+[13:16:09] [main/DEBUG] [mixin]: Mixing command.MixinCommandHandler from mixins.common.core.json into net.minecraft.command.CommandHandler
+[13:16:09] [main/TRACE] [mixin]: Added class metadata for net/minecraft/command/CommandException to metadata cache
+[13:16:09] [main/TRACE] [mixin]: Added class metadata for net/minecraft/command/WrongUsageException to metadata cache
+[13:16:09] [main/TRACE] [mixin]: Added class metadata for net/minecraft/command/SyntaxErrorException to metadata cache
+[13:16:09] [main/DEBUG] [mixin]: Mixing command.MixinCommandSource from mixins.common.core.json into net.minecraft.entity.player.EntityPlayerMP
+[13:16:09] [main/DEBUG] [mixin]: Mixing command.MixinICommandSender from mixins.common.core.json into net.minecraft.entity.player.EntityPlayerMP
+[13:16:09] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/util/command/CommandMapping to metadata cache
+[13:16:09] [main/DEBUG] [mixin]: Mixing command.MixinLocatedSource from mixins.common.core.json into net.minecraft.entity.player.EntityPlayerMP
+[13:16:09] [main/DEBUG] [mixin]: Mixing command.MixinSubject from mixins.common.core.json into net.minecraft.entity.player.EntityPlayerMP
+[13:16:09] [main/DEBUG] [mixin]: Mixing entity.MixinArmorEquipable from mixins.common.core.json into net.minecraft.entity.player.EntityPlayerMP
+[13:16:09] [main/DEBUG] [mixin]: Mixing entity.player.MixinEntityPlayerMP from mixins.common.core.json into net.minecraft.entity.player.EntityPlayerMP
+[13:16:09] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/GameProfile to metadata cache
+[13:16:09] [main/TRACE] [mixin]: Added class metadata for net/minecraft/scoreboard/IScoreObjectiveCriteria to metadata cache
+[13:16:09] [main/TRACE] [mixin]: Added class metadata for java/util/Locale to metadata cache
+[13:16:09] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/text/chat/ChatType to metadata cache
+[13:16:09] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/text/chat/ChatTypes to metadata cache
+[13:16:09] [main/TRACE] [mixin]: Added class metadata for net/minecraft/network/play/server/S02PacketChat to metadata cache
+[13:16:09] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/text/chat/SpongeChatType to metadata cache
+[13:16:09] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/interfaces/text/IMixinTitle to metadata cache
+[13:16:09] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/text/title/Titles to metadata cache
+[13:16:09] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/effect/particle/ParticleEffect to metadata cache
+[13:16:09] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/effect/particle/SpongeParticleEffect to metadata cache
+[13:16:09] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/network/PlayerConnection to metadata cache
+[13:16:09] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/data/manipulator/mutable/entity/BanData to metadata cache
+[13:16:09] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/interfaces/IMixinServerScoreboard to metadata cache
+[13:16:09] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/effect/sound/SoundType to metadata cache
+[13:16:09] [main/TRACE] [mixin]: Added class metadata for net/minecraft/network/play/server/S29PacketSoundEffect to metadata cache
+[13:16:09] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/resourcepack/ResourcePack to metadata cache
+[13:16:09] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/interfaces/IMixinPacketResourcePackSend to metadata cache
+[13:16:09] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/network/RemoteConnection to metadata cache
+[13:16:09] [main/DEBUG] [mixin]: Mixing entity.player.MixinEntityPlayerMP from mixins.vanilla.json into net.minecraft.entity.player.EntityPlayerMP
+[13:16:09] [main/TRACE] [mixin]: Added class metadata for io/netty/util/AttributeKey to metadata cache
+[13:16:09] [main/DEBUG] [mixin]: Mixing text.MixinText from mixins.common.api.json into org.spongepowered.api.text.Text
+[13:16:09] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/api/text/format/TextColors to metadata cache
+[13:16:09] [main/DEBUG] [mixin]: Mixing text.MixinTextTranslatable from mixins.common.api.json into org.spongepowered.api.text.Text$Translatable
+[13:16:09] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/interfaces/text/IMixinChatComponentTranslation to metadata cache
+[13:16:09] [main/TRACE] [mixin]: Added class metadata for org/spongepowered/common/interfaces/text/IMixinText to metadata cache
+[13:16:09] [main/DEBUG] [mixin]: Mixing text.MixinTextLiteral from mixins.common.api.json into org.spongepowered.api.text.Text$Literal
+[13:16:09] [main/DEBUG] [mixin]: Mixing entity.weather.MixinEntityLightningBolt from mixins.common.core.json into net.minecraft.entity.effect.EntityLightningBolt
+[13:16:09] [main/DEBUG] [mixin]: Mixing entity.weather.MixinEntityWeatherEffect from mixins.common.core.json into net.minecraft.entity.effect.EntityWeatherEffect
+[13:16:09] [main/DEBUG] [mixin]: Mixing MixinGameProfile from mixins.common.core.json into com.mojang.authlib.GameProfile
+[13:16:09] [Server thread/INFO] [DedicatedServer]: Starting minecraft server version 1.8
+[13:16:09] [Server thread/INFO] [Sponge]: Loading Sponge...
+[13:16:11] [Server thread/INFO] [Sponge]: Loading plugins...
+[13:16:11] [Server thread/INFO] [Sponge]: Initializing plugins...
+[13:16:12] [Server thread/INFO] [DedicatedServer]: Loading properties
+[13:16:12] [Server thread/DEBUG] [mixin]: Mixing world.MixinWorldSettings from mixins.common.core.json into net.minecraft.world.WorldSettings
+[13:16:12] [Server thread/INFO] [DedicatedServer]: Default game type: SURVIVAL
+[13:16:12] [Server thread/INFO] [DedicatedServer]: Generating keypair
+[13:16:12] [Server thread/INFO] [DedicatedServer]: Starting Minecraft server on *:25565
+[13:16:12] [Server thread/DEBUG] [InternalLoggerFactory]: Using SLF4J as the default logging framework
+[13:16:12] [Server thread/DEBUG] [MultithreadEventLoopGroup]: -Dio.netty.eventLoopThreads: 8
+[13:16:12] [Server thread/DEBUG] [PlatformDependent0]: sun.nio.ch.DirectBuffer.cleaner(): available
+[13:16:12] [Server thread/DEBUG] [PlatformDependent0]: java.nio.Buffer.address: available
+[13:16:12] [Server thread/DEBUG] [PlatformDependent0]: sun.misc.Unsafe.theUnsafe: available
+[13:16:12] [Server thread/DEBUG] [PlatformDependent0]: sun.misc.Unsafe.copyMemory: available
+[13:16:12] [Server thread/DEBUG] [PlatformDependent0]: java.nio.Bits.unaligned: true
+[13:16:12] [Server thread/DEBUG] [PlatformDependent]: Platform: Windows
+[13:16:12] [Server thread/DEBUG] [PlatformDependent]: Java version: 8
+[13:16:12] [Server thread/DEBUG] [PlatformDependent]: -Dio.netty.noUnsafe: false
+[13:16:12] [Server thread/DEBUG] [PlatformDependent]: sun.misc.Unsafe: available
+[13:16:12] [Server thread/DEBUG] [PlatformDependent]: -Dio.netty.noJavassist: false
+[13:16:12] [Server thread/DEBUG] [PlatformDependent]: Javassist: unavailable
+[13:16:12] [Server thread/DEBUG] [PlatformDependent]: You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+[13:16:12] [Server thread/DEBUG] [PlatformDependent]: -Dio.netty.tmpdir: C:\Users\Olli\AppData\Local\Temp (java.io.tmpdir)
+[13:16:12] [Server thread/DEBUG] [PlatformDependent]: -Dio.netty.bitMode: 64 (sun.arch.data.model)
+[13:16:12] [Server thread/DEBUG] [PlatformDependent]: -Dio.netty.noPreferDirect: false
+[13:16:12] [Server thread/DEBUG] [NioEventLoop]: -Dio.netty.noKeySetOptimization: false
+[13:16:12] [Server thread/DEBUG] [NioEventLoop]: -Dio.netty.selectorAutoRebuildThreshold: 512
+[13:16:12] [Server thread/TRACE] [NioEventLoop]: Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@253ccc23
+[13:16:12] [Server thread/TRACE] [NioEventLoop]: Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@76a902d9
+[13:16:12] [Server thread/TRACE] [NioEventLoop]: Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@28dcbfae
+[13:16:12] [Server thread/TRACE] [NioEventLoop]: Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@4383d4f2
+[13:16:12] [Server thread/TRACE] [NioEventLoop]: Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@9d4575
+[13:16:12] [Server thread/TRACE] [NioEventLoop]: Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@3e1c2075
+[13:16:12] [Server thread/TRACE] [NioEventLoop]: Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@7370d9d7
+[13:16:12] [Server thread/TRACE] [NioEventLoop]: Instrumented an optimized java.util.Set into: sun.nio.ch.WindowsSelectorImpl@2e89a70f
+[13:16:12] [Server thread/DEBUG] [ThreadLocalRandom]: -Dio.netty.initialSeedUniquifier: 0x46da074f56791d22
+[13:16:12] [Server thread/DEBUG] [ChannelOutboundBuffer]: -Dio.netty.threadLocalDirectBufferSize: 65536
+[13:16:12] [Server thread/DEBUG] [Recycler]: -Dio.netty.recycler.maxCapacity.default: 262144
+[13:16:12] [Server thread/DEBUG] [ByteBufUtil]: -Dio.netty.allocator.type: unpooled
+[13:16:12] [Server thread/DEBUG] [NetUtil]: Loopback interface: lo (Software Loopback Interface 1, 127.0.0.1)
+[13:16:12] [Server thread/DEBUG] [mixin]: Mixing server.management.MixinItemInWorldManager from mixins.vanilla.json into net.minecraft.server.management.ItemInWorldManager
+[13:16:12] [Server thread/TRACE] [mixin]: Added class metadata for net/minecraft/block/BlockDoor to metadata cache
+[13:16:12] [Server thread/DEBUG] [mixin]: Mixing world.MixinWorldProviderHell from mixins.common.core.json into net.minecraft.world.WorldProviderHell
+[13:16:12] [Server thread/TRACE] [mixin]: Added class metadata for net/minecraft/world/chunk/IChunkProvider to metadata cache
+[13:16:12] [Server thread/TRACE] [mixin]: Added class metadata for net/minecraft/world/gen/ChunkProviderHell to metadata cache
+[13:16:12] [Server thread/DEBUG] [mixin]: Mixing world.MixinWorldProvider from mixins.common.core.json into net.minecraft.world.WorldProvider
+[13:16:12] [Server thread/DEBUG] [mixin]: Mixing world.MixinWorldProvider from mixins.vanilla.json into net.minecraft.world.WorldProvider
+[13:16:12] [Server thread/DEBUG] [mixin]: Mixing world.MixinWorldProviderEnd from mixins.common.core.json into net.minecraft.world.WorldProviderEnd
+[13:16:12] [Server thread/TRACE] [mixin]: Added class metadata for net/minecraft/world/gen/ChunkProviderEnd to metadata cache
+[13:16:12] [Server thread/DEBUG] [mixin]: Mixing item.MixinEnchantment from mixins.common.core.json into net.minecraft.enchantment.Enchantment
+[13:16:12] [Server thread/DEBUG] [mixin]: Mixing item.MixinEnchantment from mixins.vanilla.json into net.minecraft.enchantment.Enchantment
+[13:16:13] [Server thread/DEBUG] [mixin]: Mixing data.types.MixinEnumArt from mixins.common.core.json into net.minecraft.entity.item.EntityPainting$EnumArt
+[13:16:13] [Server thread/DEBUG] [mixin]: Mixing data.types.MixinEnumBannerPattern from mixins.common.core.json into net.minecraft.tileentity.TileEntityBanner$EnumBannerPattern
+[13:16:13] [Server thread/DEBUG] [mixin]: Mixing world.MixinWorldType from mixins.common.core.json into net.minecraft.world.WorldType
+[13:16:13] [Server thread/DEBUG] [mixin]: Mixing world.MixinWorldType from mixins.vanilla.json into net.minecraft.world.WorldType
+[13:16:13] [Server thread/DEBUG] [mixin]: Mixing event.cause.entity.damage.MixinEntityDamageSource from mixins.common.core.json into net.minecraft.util.EntityDamageSource
+[13:16:13] [Server thread/DEBUG] [mixin]: Mixing world.biome.MixinBiomeGenBase from mixins.common.core.json into net.minecraft.world.biome.BiomeGenBase
+[13:16:13] [Server thread/DEBUG] [mixin]: Mixing entity.living.complex.MixinEntityDragonPart from mixins.common.core.json into net.minecraft.entity.boss.EntityDragonPart
+[13:16:13] [Server thread/TRACE] [mixin]: Added class metadata for net/minecraft/entity/IEntityMultiPart to metadata cache
+[13:16:13] [Server thread/TRACE] [mixin]: Added class metadata for org/spongepowered/api/entity/living/complex/EnderDragon to metadata cache
+[13:16:13] [Server thread/TRACE] [mixin]: Added class metadata for org/spongepowered/api/entity/living/complex/ComplexLiving to metadata cache
+[13:16:13] [Server thread/DEBUG] [mixin]: Mixing entity.MixinArmorEquipable from mixins.common.core.json into org.spongepowered.common.entity.living.human.EntityHuman
+[13:16:13] [Server thread/DEBUG] [mixin]: Mixing entity.living.MixinHuman from mixins.common.core.json into org.spongepowered.common.entity.living.human.EntityHuman
+[13:16:13] [Server thread/TRACE] [mixin]: Added class metadata for org/spongepowered/api/item/inventory/Inventory to metadata cache
+[13:16:13] [Server thread/TRACE] [mixin]: Added class metadata for java/util/AbstractList to metadata cache
+[13:16:13] [Server thread/INFO] [Sponge]: Successfully loaded and initialized plugins.
+[13:16:13] [Server thread/WARN] [DedicatedPlayerList]: Failed to load user banlist: 
+java.io.FileNotFoundException: banned-players.json (Das System kann die angegebene Datei nicht finden)
+	at java.io.FileInputStream.open0(Native Method) ~[?:1.8.0_51]
+	at java.io.FileInputStream.open(Unknown Source) ~[?:1.8.0_51]
+	at java.io.FileInputStream.<init>(Unknown Source) ~[?:1.8.0_51]
+	at com.google.common.io.Files.newReader(Files.java:86) ~[minecraft_server.1.8.jar:?]
+	at net.minecraft.server.management.UserList.func_152679_g(SourceFile:124) ~[ss.class:?]
+	at net.minecraft.server.dedicated.DedicatedPlayerList.func_152620_y(SourceFile:99) [pn.class:?]
+	at net.minecraft.server.dedicated.DedicatedPlayerList.<init>(SourceFile:25) [pn.class:?]
+	at net.minecraft.server.dedicated.DedicatedServer.func_71197_b(SourceFile:171) [po.class:?]
+	at net.minecraft.server.MinecraftServer.run(SourceFile:417) [MinecraftServer.class:?]
+	at java.lang.Thread.run(Unknown Source) [?:1.8.0_51]
+[13:16:13] [Server thread/WARN] [DedicatedPlayerList]: Failed to load ip banlist: 
+java.io.FileNotFoundException: banned-ips.json (Das System kann die angegebene Datei nicht finden)
+	at java.io.FileInputStream.open0(Native Method) ~[?:1.8.0_51]
+	at java.io.FileInputStream.open(Unknown Source) ~[?:1.8.0_51]
+	at java.io.FileInputStream.<init>(Unknown Source) ~[?:1.8.0_51]
+	at com.google.common.io.Files.newReader(Files.java:86) ~[minecraft_server.1.8.jar:?]
+	at net.minecraft.server.management.UserList.func_152679_g(SourceFile:124) ~[ss.class:?]
+	at net.minecraft.server.dedicated.DedicatedPlayerList.func_152619_x(SourceFile:91) [pn.class:?]
+	at net.minecraft.server.dedicated.DedicatedPlayerList.<init>(SourceFile:27) [pn.class:?]
+	at net.minecraft.server.dedicated.DedicatedServer.func_71197_b(SourceFile:171) [po.class:?]
+	at net.minecraft.server.MinecraftServer.run(SourceFile:417) [MinecraftServer.class:?]
+	at java.lang.Thread.run(Unknown Source) [?:1.8.0_51]
+[13:16:13] [Server thread/WARN] [DedicatedPlayerList]: Failed to load operators list: 
+java.io.FileNotFoundException: ops.json (Das System kann die angegebene Datei nicht finden)
+	at java.io.FileInputStream.open0(Native Method) ~[?:1.8.0_51]
+	at java.io.FileInputStream.open(Unknown Source) ~[?:1.8.0_51]
+	at java.io.FileInputStream.<init>(Unknown Source) ~[?:1.8.0_51]
+	at com.google.common.io.Files.newReader(Files.java:86) ~[minecraft_server.1.8.jar:?]
+	at net.minecraft.server.management.UserList.func_152679_g(SourceFile:124) ~[ss.class:?]
+	at net.minecraft.server.dedicated.DedicatedPlayerList.func_72417_t(SourceFile:107) [pn.class:?]
+	at net.minecraft.server.dedicated.DedicatedPlayerList.<init>(SourceFile:29) [pn.class:?]
+	at net.minecraft.server.dedicated.DedicatedServer.func_71197_b(SourceFile:171) [po.class:?]
+	at net.minecraft.server.MinecraftServer.run(SourceFile:417) [MinecraftServer.class:?]
+	at java.lang.Thread.run(Unknown Source) [?:1.8.0_51]
+[13:16:13] [Server thread/WARN] [DedicatedPlayerList]: Failed to load white-list: 
+java.io.FileNotFoundException: whitelist.json (Das System kann die angegebene Datei nicht finden)
+	at java.io.FileInputStream.open0(Native Method) ~[?:1.8.0_51]
+	at java.io.FileInputStream.open(Unknown Source) ~[?:1.8.0_51]
+	at java.io.FileInputStream.<init>(Unknown Source) ~[?:1.8.0_51]
+	at com.google.common.io.Files.newReader(Files.java:86) ~[minecraft_server.1.8.jar:?]
+	at net.minecraft.server.management.UserList.func_152679_g(SourceFile:124) ~[ss.class:?]
+	at net.minecraft.server.dedicated.DedicatedPlayerList.func_72418_v(SourceFile:123) [pn.class:?]
+	at net.minecraft.server.dedicated.DedicatedPlayerList.<init>(SourceFile:30) [pn.class:?]
+	at net.minecraft.server.dedicated.DedicatedServer.func_71197_b(SourceFile:171) [po.class:?]
+	at net.minecraft.server.MinecraftServer.run(SourceFile:417) [MinecraftServer.class:?]
+	at java.lang.Thread.run(Unknown Source) [?:1.8.0_51]
+[13:16:13] [Server thread/INFO] [DedicatedServer]: Preparing level "world"
+[13:16:13] [Server thread/DEBUG] [mixin]: Mixing world.MixinAnvilSaveHandler from mixins.common.core.json into net.minecraft.world.chunk.storage.AnvilSaveHandler
+[13:16:13] [Server thread/TRACE] [mixin]: Added class metadata for net/minecraft/world/chunk/storage/IChunkLoader to metadata cache
+[13:16:13] [Server thread/DEBUG] [mixin]: Mixing world.storage.MixinSaveHandler from mixins.common.core.json into net.minecraft.world.storage.SaveHandler
+[13:16:13] [Server thread/TRACE] [mixin]: Added class metadata for java/io/OutputStream to metadata cache
+[13:16:13] [Server thread/TRACE] [mixin]: Added class metadata for java/io/FileOutputStream to metadata cache
+[13:16:13] [Server thread/DEBUG] [mixin]: Mixing world.storage.MixinSaveHandler from mixins.vanilla.json into net.minecraft.world.storage.SaveHandler
+[13:16:13] [Server thread/TRACE] [mixin]: Added class metadata for java/io/InputStream to metadata cache
+[13:16:13] [Server thread/TRACE] [mixin]: Added class metadata for java/io/FileInputStream to metadata cache
+[13:16:13] [Server thread/DEBUG] [mixin]: Mixing world.storage.MixinWorldInfo from mixins.common.core.json into net.minecraft.world.storage.WorldInfo
+[13:16:14] [Server thread/DEBUG] [mixin]: Mixing scoreboard.MixinScoreboard from mixins.common.core.json into net.minecraft.scoreboard.Scoreboard
+[13:16:14] [Server thread/TRACE] [mixin]: Added class metadata for java/util/AbstractMap to metadata cache
+[13:16:14] [Server thread/TRACE] [mixin]: Added class metadata for org/spongepowered/common/scoreboard/SpongeObjective to metadata cache
+[13:16:14] [Server thread/DEBUG] [mixin]: Mixing scoreboard.MixinServerScoreboard from mixins.common.core.json into net.minecraft.scoreboard.ServerScoreboard
+[13:16:14] [Server thread/TRACE] [mixin]: Added class metadata for net/minecraft/network/play/server/S3EPacketTeams to metadata cache
+[13:16:14] [Server thread/DEBUG] [mixin]: Mixing scoreboard.MixinScoreboardSaveData from mixins.common.core.json into net.minecraft.scoreboard.ScoreboardSaveData
+[13:16:14] [Server thread/DEBUG] [mixin]: Mixing scoreboard.MixinScoreObjective from mixins.common.core.json into net.minecraft.scoreboard.ScoreObjective
+[13:16:14] [Server thread/DEBUG] [mixin]: Mixing world.MixinWorldBorder from mixins.common.core.json into net.minecraft.world.border.WorldBorder
+[13:16:14] [Server thread/TRACE] [mixin]: Added class metadata for net/minecraft/world/border/EnumBorderStatus to metadata cache
+[13:16:14] [Server thread/DEBUG] [mixin]: Mixing world.MixinSpawnerAnimals from mixins.common.core.json into net.minecraft.world.SpawnerAnimals
+[13:16:14] [Server thread/DEBUG] [mixin]: Mixing entity.MixinEntityTracker from mixins.common.core.json into net.minecraft.entity.EntityTracker
+[13:16:14] [Server thread/DEBUG] [mixin]: Mixing world.chunk.storage.MixinAnvilChunkLoader from mixins.common.core.json into net.minecraft.world.chunk.storage.AnvilChunkLoader
+[13:16:14] [Server thread/TRACE] [mixin]: Added class metadata for net/minecraft/world/chunk/storage/ExtendedBlockStorage to metadata cache
+[13:16:14] [Server thread/TRACE] [mixin]: Added class metadata for java/io/DataInputStream to metadata cache
+[13:16:14] [Server thread/DEBUG] [mixin]: Mixing world.gen.MixinChunkProviderServer from mixins.vanilla.json into net.minecraft.world.gen.ChunkProviderServer
+[13:16:14] [Server thread/DEBUG] [mixin]: Mixing world.MixinChunk from mixins.common.core.json into net.minecraft.world.chunk.Chunk
+[13:16:14] [Server thread/TRACE] [mixin]: Added class metadata for net/minecraft/world/EnumSkyBlock to metadata cache
+[13:16:14] [Server thread/DEBUG] [mixin]: Mixing world.extent.MixinExtent from mixins.common.core.json into net.minecraft.world.chunk.Chunk
+[13:16:14] [Server thread/DEBUG] [mixin]: Mixing world.MixinChunk from mixins.vanilla.json into net.minecraft.world.chunk.Chunk
+[13:16:14] [Server thread/INFO] [Sponge]: Loading dimension 0 (world) (net.minecraft.server.dedicated.DedicatedServer@3368e237)
+[13:16:14] [Server thread/INFO] [Sponge]: Loading dimension 1 (DIM1) (net.minecraft.server.dedicated.DedicatedServer@3368e237)
+[13:16:14] [Server thread/INFO] [Sponge]: Loading dimension -1 (DIM-1) (net.minecraft.server.dedicated.DedicatedServer@3368e237)
+[13:16:14] [Server thread/INFO] [MinecraftServer]: Preparing start region for level -1
+[13:16:16] [Server thread/DEBUG] [mixin]: Mixing world.MixinNextTickListEntry from mixins.common.core.json into net.minecraft.world.NextTickListEntry
+[13:16:16] [Server thread/INFO] [MinecraftServer]: Preparing spawn area: 4%
+[13:16:17] [Server thread/INFO] [MinecraftServer]: Preparing spawn area: 13%
+[13:16:18] [Server thread/INFO] [MinecraftServer]: Preparing spawn area: 26%
+[13:16:18] [Server thread/DEBUG] [mixin]: Mixing item.inventory.MixinContainer from mixins.common.core.json into net.minecraft.inventory.Container
+[13:16:19] [Server thread/INFO] [MinecraftServer]: Preparing spawn area: 36%
+[13:16:20] [Server thread/INFO] [MinecraftServer]: Preparing spawn area: 50%
+[13:16:21] [Server thread/INFO] [MinecraftServer]: Preparing spawn area: 68%
+[13:16:22] [Server thread/INFO] [MinecraftServer]: Preparing spawn area: 87%
+[13:16:23] [Server thread/INFO] [MinecraftServer]: Preparing spawn area: 99%
+[13:16:23] [Server thread/INFO] [MinecraftServer]: Preparing start region for level 1
+[13:16:24] [Server thread/INFO] [MinecraftServer]: Preparing spawn area: 27%
+[13:16:24] [Server thread/DEBUG] [mixin]: Mixing entity.MixinEntityTrackerEntry from mixins.common.core.json into net.minecraft.entity.EntityTrackerEntry
+[13:16:24] [Server thread/TRACE] [mixin]: Added class metadata for net/minecraft/network/play/server/S14PacketEntity$S16PacketEntityLook to metadata cache
+[13:16:24] [Server thread/TRACE] [mixin]: Added class metadata for net/minecraft/network/play/server/S18PacketEntityTeleport to metadata cache
+[13:16:24] [Server thread/TRACE] [mixin]: Added class metadata for net/minecraft/network/play/server/S14PacketEntity to metadata cache
+[13:16:24] [Server thread/TRACE] [mixin]: Added class metadata for net/minecraft/network/play/server/S14PacketEntity$S15PacketEntityRelMove to metadata cache
+[13:16:24] [Server thread/TRACE] [mixin]: Added class metadata for net/minecraft/network/play/server/S14PacketEntity$S17PacketEntityLookMove to metadata cache
+[13:16:25] [Server thread/DEBUG] [mixin]: Mixing scoreboard.MixinTeam from mixins.common.core.json into net.minecraft.scoreboard.Team
+[13:16:25] [Server thread/DEBUG] [mixin]: Mixing scoreboard.MixinScorePlayerTeam from mixins.common.core.json into net.minecraft.scoreboard.ScorePlayerTeam
+[13:16:25] [Server thread/TRACE] [mixin]: Added class metadata for org/spongepowered/common/scoreboard/SpongeTeam to metadata cache
+[13:16:25] [Server thread/TRACE] [mixin]: Added class metadata for org/spongepowered/api/text/TextRepresentation to metadata cache
+[13:16:25] [Server thread/TRACE] [mixin]: Added class metadata for org/spongepowered/api/scoreboard/Visibility to metadata cache
+[13:16:25] [Server thread/TRACE] [mixin]: Added class metadata for org/spongepowered/api/text/format/TextColor to metadata cache
+[13:16:25] [Server thread/TRACE] [mixin]: Added class metadata for org/spongepowered/common/interfaces/IMixinScoreboard to metadata cache
+[13:16:25] [Server thread/TRACE] [mixin]: Added class metadata for java/util/HashSet to metadata cache
+[13:16:25] [Server thread/INFO] [MinecraftServer]: Preparing spawn area: 56%
+[13:16:26] [Server thread/INFO] [MinecraftServer]: Preparing spawn area: 95%
+[13:16:26] [Server thread/INFO] [MinecraftServer]: Preparing start region for level 0
+[13:16:26] [Server thread/DEBUG] [mixin]: Mixing entity.ai.MixinEntityAIMate from mixins.common.core.json into net.minecraft.entity.ai.EntityAIMate
+[13:16:26] [Server thread/TRACE] [mixin]: Added class metadata for net/minecraft/entity/ai/EntityAIBase to metadata cache
+[13:16:26] [Server thread/TRACE] [mixin]: Added class metadata for net/minecraft/stats/Achievement to metadata cache
+[13:16:28] [Server thread/INFO] [MinecraftServer]: Preparing spawn area: 5%
+[13:16:29] [Server thread/INFO] [MinecraftServer]: Preparing spawn area: 8%
+[13:16:30] [Server thread/INFO] [MinecraftServer]: Preparing spawn area: 13%
+[13:16:31] [Server thread/INFO] [MinecraftServer]: Preparing spawn area: 19%
+[13:16:32] [Server thread/INFO] [MinecraftServer]: Preparing spawn area: 25%
+[13:16:33] [Server thread/INFO] [MinecraftServer]: Preparing spawn area: 31%
+[13:16:34] [Server thread/INFO] [MinecraftServer]: Preparing spawn area: 37%
+[13:16:35] [Server thread/INFO] [MinecraftServer]: Preparing spawn area: 45%
+[13:16:36] [Server thread/INFO] [MinecraftServer]: Preparing spawn area: 53%
+[13:16:37] [Server thread/INFO] [MinecraftServer]: Preparing spawn area: 61%
+[13:16:38] [Server thread/INFO] [MinecraftServer]: Preparing spawn area: 70%
+[13:16:39] [Server thread/INFO] [MinecraftServer]: Preparing spawn area: 80%
+[13:16:40] [Server thread/INFO] [MinecraftServer]: Preparing spawn area: 90%
+[13:16:41] [Server thread/INFO] [MinecraftServer]: Preparing spawn area: 99%
+[13:16:41] [Server thread/INFO] [DedicatedServer]: Done (27,634s)! For help, type "help" or "?"
+[13:16:41] [Server thread/DEBUG] [mixin]: Mixing status.MixinMinecraftProtocolVersionIdentifier from mixins.common.core.json into net.minecraft.network.ServerStatusResponse$MinecraftProtocolVersionIdentifier
+[13:16:41] [Server thread/DEBUG] [mixin]: Mixing status.MixinPlayerCountData from mixins.common.core.json into net.minecraft.network.ServerStatusResponse$PlayerCountData
+[13:16:43] [Server thread/WARN] [MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 2078ms behind, skipping 41 tick(s)
+[13:19:01] [Server thread/DEBUG] [mixin]: Mixing command.MixinICommandSender from mixins.common.core.json into net.minecraft.command.server.CommandBlockLogic
+[13:19:01] [Server thread/INFO] [MinecraftServer]: Stopping the server
+[13:19:01] [Server thread/INFO] [MinecraftServer]: Stopping server
+[13:19:01] [Server thread/INFO] [MinecraftServer]: Saving players
+[13:19:01] [Server thread/INFO] [MinecraftServer]: Saving worlds
+[13:19:01] [Server thread/INFO] [MinecraftServer]: Saving chunks for level 'world'/Overworld
+[13:19:01] [Server thread/INFO] [MinecraftServer]: Saving chunks for level 'DIM-1'/Nether
+[13:19:01] [Server thread/INFO] [MinecraftServer]: Saving chunks for level 'DIM1'/The End
+[13:19:02] [Server Shutdown Thread/INFO] [MinecraftServer]: Stopping server

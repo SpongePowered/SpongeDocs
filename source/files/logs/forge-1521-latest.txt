@@ -1,0 +1,29 @@
+[09:37:08] [Server thread/INFO]: Starting minecraft server version 1.8
+[09:37:15] [Server thread/INFO]: Loading properties
+[09:37:15] [Server thread/INFO]: Default game type: SURVIVAL
+[09:37:15] [Server thread/INFO]: Generating keypair
+[09:37:15] [Server thread/INFO]: Starting Minecraft server on *:25565
+[09:37:17] [Server thread/INFO]: Preparing level "world"
+[09:37:18] [Server thread/INFO]: Preparing start region for level -1
+[09:37:19] [Server thread/INFO]: Preparing spawn area: 4%
+[09:37:20] [Server thread/INFO]: Preparing spawn area: 9%
+[09:37:21] [Server thread/INFO]: Preparing spawn area: 22%
+[09:37:22] [Server thread/INFO]: Preparing spawn area: 40%
+[09:37:23] [Server thread/INFO]: Preparing spawn area: 57%
+[09:37:24] [Server thread/INFO]: Preparing spawn area: 75%
+[09:37:25] [Server thread/INFO]: Preparing spawn area: 94%
+[09:37:25] [Server thread/INFO]: Preparing start region for level 1
+[09:37:26] [Server thread/INFO]: Preparing spawn area: 26%
+[09:37:27] [Server thread/INFO]: Preparing spawn area: 51%
+[09:37:28] [Server thread/INFO]: Preparing spawn area: 81%
+[09:37:29] [Server thread/INFO]: Preparing start region for level 0
+[09:37:30] [Server thread/INFO]: Preparing spawn area: 33%
+[09:37:30] [Server thread/INFO]: Done (13,601s)! For help, type "help" or "?"
+[09:37:35] [Server thread/WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 2877ms behind, skipping 57 tick(s)
+[09:37:47] [Server thread/INFO]: Stopping the server
+[09:37:47] [Server thread/INFO]: Stopping server
+[09:37:47] [Server thread/INFO]: Saving players
+[09:37:47] [Server thread/INFO]: Saving worlds
+[09:37:47] [Server thread/INFO]: Saving chunks for level 'world'/Overworld
+[09:37:48] [Server thread/INFO]: Saving chunks for level 'DIM-1'/Nether
+[09:37:48] [Server thread/INFO]: Saving chunks for level 'DIM1'/The End

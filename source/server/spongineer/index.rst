@@ -11,4 +11,5 @@ Contents
 
     commands
     troubleshooting
+    logs
     debugging
