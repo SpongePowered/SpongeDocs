@@ -46,7 +46,7 @@ in mind, it is not recommended to change the ID after releasing the plugin.
 Initializing Your Plugin
 ========================
 
-Plugins are loaded before the game and the world. This leaves a specific timeframe when your plugin should begin
+Plugins are loaded before the game and the world(s). This leaves a specific timeframe when your plugin should begin
 interacting with the game, such as registering commands or events.
 
 Your plugin can listen for particular events, called **state events**, to be notified about changes in the state of the

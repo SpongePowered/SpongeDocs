@@ -10,7 +10,7 @@ What is this about?
 
 The articles in this section explain the basic concepts behind creating plugins using the Sponge API. It is important
 to understand that the intent of this section is to help developers get started with the Sponge API, not to cover
-every concept. The `Javadocs <https://spongepowered.github.io/SpongeAPI/>`__ will be of great help to you once you are
+every concept. The `Javadocs <https://jd.spongepowered.org/>`__ will be of great help to you once you are
 comfortable with the API.
 
 .. warning::
