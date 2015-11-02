@@ -7,9 +7,9 @@ This is the repository where the Sponge documentation is held.
 
 The latest version may be viewed in full by visiting [Sponge Docs](https://docs.spongepowered.org/)
 
-## Guidelines
+## Contributing
 
-Guidelines for contributing to SpongeDocs may be found [here](https://docs.spongepowered.org/en/contributing/spongedocs.html).
+Instructions and Guidelines on how to contribute can be found on [the Docs themselves](https://docs.spongepowered.org/en/contributing/spongedocs.html).
 
 ## Translations
 
