@@ -29,7 +29,7 @@ Creating a Server
 This section is for users who have a Sponge server or are interested in creating one.
 
 .. toctree::
-    :maxdepth: 3
+    :maxdepth: 2
     :titlesonly:
 
     server/index
@@ -45,7 +45,7 @@ This section is for:
 Please read this section before `Creating Plugins`_ and `Contributing to Sponge`_.
 
 .. toctree::
-    :maxdepth: 3
+    :maxdepth: 2
     :titlesonly:
 
     preparing/index
@@ -56,7 +56,7 @@ Creating Plugins
 This section is intended to help developers who have prior Java experience with writing plugins using the SpongeAPI.
 
 .. toctree::
-    :maxdepth: 3
+    :maxdepth: 2
     :titlesonly:
 
     plugin/index
@@ -68,7 +68,7 @@ This section is intended to help developers who have prior Java experience with 
 Instructions on contributing to SpongeDocs are also contained within. Make Spongie proud!
 
 .. toctree::
-    :maxdepth: 3
+    :maxdepth: 2
     :titlesonly:
 
     contributing/index
