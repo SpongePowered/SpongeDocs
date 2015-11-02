@@ -93,9 +93,6 @@ an injection.
 
 .. code-block:: java
 
-    import com.google.inject.Inject;
-    import org.spongepowered.api.Game;
-
     private Game game;
 
     @Inject
@@ -108,9 +105,6 @@ an injection.
     *For the purpose of this tutorial, "Apple" is the class name.*
 
 .. code-block:: java
-
-    import com.google.inject.Inject;
-    import org.spongepowered.api.Game;
 
     private Game game;
 
@@ -134,7 +128,6 @@ The recommended way to obtain your config file is through Guice, along with the 
 
 .. code-block:: java
 
-    import com.google.inject.Inject;
     import org.spongepowered.api.service.config.ConfigDir;
 
     @Inject
@@ -144,9 +137,6 @@ The recommended way to obtain your config file is through Guice, along with the 
 **Example - Method**
 
 .. code-block:: java
-
-    import com.google.inject.Inject;
-    import org.spongepowered.api.service.config.ConfigDir;
 
     private File configDir;
 
@@ -161,9 +151,6 @@ The recommended way to obtain your config file is through Guice, along with the 
   *For the purposes of this tutorial, "Orange" is the class name.*
 
 .. code-block:: java
-
-    import com.google.inject.Inject;
-    import org.spongepowered.api.service.config.ConfigDir;
 
     private File configDir;
 

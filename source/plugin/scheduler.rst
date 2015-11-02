@@ -74,9 +74,7 @@ initial delay of 100 milliseconds could be built and submitted using the followi
 
 .. code-block:: java
 
-	import org.spongepowered.api.service.scheduler.SchedulerService;
 	import org.spongepowered.api.service.scheduler.Task;
-	import org.spongepowered.api.service.scheduler.TaskBuilder;
 
 	SchedulerService scheduler = game.getScheduler();
 	TaskBuilder taskBuilder = scheduler.createTaskBuilder();

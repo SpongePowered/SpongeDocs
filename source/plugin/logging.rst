@@ -35,8 +35,6 @@ correct plugin ID.
 
 .. code-block:: java
 
-    import com.google.inject.Inject;
-    import org.slf4j.Logger;
 
     private Logger logger;
 
@@ -48,9 +46,6 @@ correct plugin ID.
 **Example - Constructor**
 
 .. code-block:: java
-
-    import com.google.inject.Inject;
-    import org.slf4j.Logger;
 
     // For the purpose of this example, "Banana" is the class name
 
@@ -69,9 +64,6 @@ example getter method is illustrated below.
 
 .. code-block:: java
 
-    import com.google.inject.Inject;
-    import org.slf4j.Logger;
-
     public Logger getLogger() {
         return logger;
     }
@@ -87,8 +79,6 @@ Emitting a message with your logger is very simple.
     previous section. This may differ for you depending on what you named your getter method.
 
 .. code-block:: java
-
-    import org.slf4j.Logger;
 
     getLogger().info(String);
     getLogger().debug(String);

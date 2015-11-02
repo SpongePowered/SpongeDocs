@@ -63,7 +63,6 @@ The service manager also holds an instance of the server's ``PluginManager``. Si
 
     package examples.plugin;
 
-    import org.spongepowered.api.plugin.PluginManager;
     import org.spongepowered.api.service.ServiceManager;
 
     private PluginManager pluginManager = serviceManager.provide(PluginManager.class);
@@ -84,7 +83,6 @@ A game instance can provide a reference to the server's ``PluginManager`` as wel
     package examples.plugin;
 
     import org.spongepowered.api.Game;
-    import org.spongepowered.api.plugin.PluginManager;
 
     private PluginManager pluginManager = game.getPluginManager();
 
@@ -115,8 +113,6 @@ Or, it is possible to obtain an instance to a plugin container directly, by the 
 
     package examples.plugin;
 
-    import org.spongepowered.api.plugin.PluginContainer;
-
     private PluginContainer myOtherPlugin = pluginManager.getPlugin("myOtherPluginId").orNull();
 
 The PluginContainer Class
@@ -141,8 +137,6 @@ become wrong as a result of this change, provided you've used the method ``Plugi
 .. code-block:: java
 
     package examples.plugin;
-
-    import org.spongepowered.api.plugin.PluginContainer;
 
     private PluginContainer myOtherPlugin = pluginManager.getPlugin("myOtherPluginId").orNull();
     private MyOtherPlugin pluginInstance = (MyOtherPlugin) myOtherPlugin.getInstance();

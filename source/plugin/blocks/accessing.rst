@@ -33,7 +33,6 @@ referenced block is any kind of banner by checking the blocks type.
 
     import org.spongepowered.api.block.BlockType;
     import org.spongepowered.api.block.BlockTypes;
-    import org.spongepowered.api.world.Location;
 
     public boolean isBanner(Location block) {
         BlockType type = block.getBlock().getType();
@@ -50,9 +49,6 @@ The ``Location`` class also provides means to check for environmental influences
 redstone power). The following example checks if a block is a regular chest directly or indirectly powered with redstone.
 
 .. code-block:: java
-
-    import org.spongepowered.api.block.BlockTypes;
-    import org.spongepowered.api.world.Location;
 
     public boolean isPoweredChest(Location block) {
         if (block.getBlock().getType() == BlockTypes.CHEST) {
@@ -73,9 +69,7 @@ at a given ``Location`` is a) a Sponge and b) wet, false otherwise.
 .. code-block:: java
 
     import org.spongepowered.api.block.BlockState;
-    import org.spongepowered.api.block.BlockTypes;
     import org.spongepowered.api.data.manipulator.WetData;
-    import org.spongepowered.api.world.Location;
 
     public boolean isWet(Location block) {
         if (block.getBlock().getType() != BlockTypes.SPONGE) {

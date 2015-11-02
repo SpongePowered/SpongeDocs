@@ -72,7 +72,6 @@ Example: Simple Command Executor
 
 .. code-block:: java
 
-    import org.spongepowered.api.text.Texts;
     import org.spongepowered.api.util.command.CommandException;
     import org.spongepowered.api.util.command.CommandResult;
     import org.spongepowered.api.util.command.CommandSource;
@@ -102,7 +101,6 @@ Perform an ``instanceof`` check to determine the type of the ``CommandSource``:
 
 .. code-block:: java
 
-    import org.spongepowered.api.text.Texts;
     import org.spongepowered.api.entity.player.Player;
     import org.spongepowered.api.util.command.source.ConsoleSource;
     import org.spongepowered.api.util.command.source.CommandBlockSource;

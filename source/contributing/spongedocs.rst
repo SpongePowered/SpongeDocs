@@ -54,6 +54,8 @@ writing Sponge Documentation. This list may get added to (or bent out of shape) 
     BlockState (a class name), rather than *block state*). They should also be formatted as a literal using double
     backticks (eg. ``blockState``) in body text.
 13. Lines should have a maximum length of 120 characters.
+14. Imports should be written out in code blocks the first time they are referenced in each article, but not repeated
+    after the first time.
 
 
 .. Note::

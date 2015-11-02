@@ -176,12 +176,9 @@ The parser in this example reads two input arguments and converts them to a vect
    import java.util.Collections;
    import java.util.List;
 
-   import org.spongepowered.api.text.Texts;
    import com.flowpowered.math.vector.Vector2i;
-   import org.spongepowered.api.util.command.CommandSource;
    import org.spongepowered.api.util.command.args.ArgumentParseException;
    import org.spongepowered.api.util.command.args.CommandArgs;
-   import org.spongepowered.api.util.command.args.CommandContext;
    import org.spongepowered.api.text.Text;
    import org.spongepowered.api.util.command.args.CommandElement;
 
@@ -228,10 +225,6 @@ Example: ``Vector2i`` command element usage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: java
-
-    import org.spongepowered.api.text.Texts;
-    import org.spongepowered.api.entity.player.Player;
-    import org.spongepowered.api.util.command.spec.CommandSpec;
 
     // /plottp <x> <y>
     CommandSpec myCommandSpec = CommandSpec.builder()

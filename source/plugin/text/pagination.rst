@@ -50,8 +50,6 @@ There are two different ways to specify the contents of paginated list:
 
  .. code-block:: java
 
-	import org.spongepowered.api.text.Texts;
-
 	builder.contents(Texts.of("Item 1"), Texts.of("Item 2"), Texts.of("Item 3"));
 
 You can also specify various other components of a paginated list, such as a title, header, footer, and padding. The
@@ -73,8 +71,6 @@ To achieve the preceding output, we might use the following builder pattern:
 
 .. code-block:: java
 
-	import org.spongepowered.api.text.Texts;
-
 	builder.title(Texts.of("Title"))
 		.contents(Texts.of("Item 1"), Texts.of("Item 2"), Texts.of("Item 3"))
 		.header(Texts.of("Header"))
@@ -92,10 +88,6 @@ And thats it! To recap, a fully functional paginated list could be generated and
 ``cmdSource`` using the following code:
 
 .. code-block:: java
-
-	import org.spongepowered.api.service.pagination.PaginationService;
-	import org.spongepowered.api.text.Text;
-	import org.spongepowered.api.text.Texts;
 
 	PaginationService paginationService = event.getGame()
 		.getServiceManager().provide(PaginationService.class).get();

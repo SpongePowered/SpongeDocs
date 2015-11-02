@@ -52,7 +52,6 @@ Now you can write the class that implements your interface:
     package test.service.economy;
 
     import java.util.HashMap;
-    import org.spongepowered.api.entity.player.Player;
 
     public class SimpleEconomyService implements EconomyService
     {

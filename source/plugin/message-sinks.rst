@@ -35,9 +35,6 @@ with a ``MessageSink``, as shown below:
 
 .. code-block:: java
 
-    import org.spongepowered.api.text.sink.MessageSink;
-    import org.spongepowered.api.text.sink.MessageSinks;
-
     MessageSink broadcastSink = MessageSinks.toAll();
 
 Alternatively, you could retrieve the broadcast ``MessageSink`` provided by Sponge:
@@ -57,9 +54,6 @@ In the following block of code, any ``CommandSource`` that holds either the `com
 `com.example.myplugin.permission2` permissions will be targeted by the ``MessageSink``.
 
 .. code-block:: java
-
-    import org.spongepowered.api.text.sink.MessageSink;
-    import org.spongepowered.api.text.sink.MessageSinks;
 
     MessageSink sink1 = MessageSinks.toPermission("com.example.myplugin.permission1");
     MessageSink sink2 = MessageSinks.toPermission("com.example.myplugin.permission2");
@@ -89,8 +83,6 @@ to a new ``MessageSink``, which could then be used to send a message thanking th
     import org.spongepowered.api.data.manipulator.DisplayNameData;
     import org.spongepowered.api.entity.player.Player;
     import org.spongepowered.api.text.Texts;
-    import org.spongepowered.api.text.sink.MessageSink;
-    import org.spongepowered.api.text.sink.MessageSinks;
     import org.spongepowered.api.util.command.CommandSource;
 
     Set<CommandSource> donors = new HashSet<CommandSource>();
@@ -140,10 +132,7 @@ permission, and if so, will append a `[Donor]` prefix, such as in a ranking syst
 .. code-block:: java
 
     import org.spongepowered.api.text.Text;
-    import org.spongepowered.api.text.Texts;
     import org.spongepowered.api.text.format.TextColors;
-    import org.spongepowered.api.text.sink.MessageSink;
-    import org.spongepowered.api.util.command.CommandSource;
 
     import com.google.common.collect.Lists;
 
@@ -174,11 +163,8 @@ will be applied to any ``Player`` that joins the server.
 
 .. code-block:: java
 
-    import org.spongepowered.api.entity.player.Player;
     import org.spongepowered.api.event.Listener;
     import org.spongepowered.api.event.network.ClientConnectionEvent;
-    import org.spongepowered.api.text.sink.MessageSink;
-    import org.spongepowered.api.text.sink.MessageSinks;
 
     @Listener
     public void onClientConnectionJoin(ClientConnectionEvent.Join event) {
