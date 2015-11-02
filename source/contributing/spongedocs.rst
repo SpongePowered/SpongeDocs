@@ -12,12 +12,25 @@ goal of SpongeDocs is to:
 * Provide developers with information on how to contribute to the Sponge project.
 * Provide developers with information on how to get started with plugin development.
 
+
+Reporting Problems
+==================
+
+It may always occur that a page gets outdated, an error sneaks in or you just look at a page and think "Well, there is a
+better way of explaining this." If that is the case and you are for some reason not able to provide a fix yourself,
+there are three ways of making us aware of the problem:
+
+#. Create an `Issue on the SpongeDocs GitHub <https://github.com/SpongePowered/SpongeDocs/issues>`_
+#. Create a Posting on the `SpongeDocs Forums Category <https://forums.spongepowered.org/c/sponge-docs>`_
+#. Visit us in the `#spongedocs channel on irc.esper.net <irc://irc.esper.net:6667/spongedocs>`_ (need to be registered)
+
 Writing the Docs
 ================
 
 Changes and additions to SpongeDocs should be submitted as a pull request to the `SpongeDocs repository on GitHub
-<https://github.com/SpongePowered/SpongeDocs>`__.
-
+<https://github.com/SpongePowered/SpongeDocs>`_. We do not require it to be perfect right away as it is common for pull
+requests to be refined during the review process. Incomplete explanations are also welcome, so don't shy away if there
+are some parts you do not understand. There will always be someone able to fill in the gaps.
 
 Style Guide
 ===========
