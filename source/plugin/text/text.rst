@@ -46,8 +46,6 @@ Example: Colored Text
 .. code-block:: java
 
     import org.spongepowered.api.text.format.TextColors;
-    import org.spongepowered.api.text.Text;
-    import org.spongepowered.api.text.Texts;
 
     Text coloredText = Texts.builder("Woot! Golden text is golden.").color(TextColors.GOLD).build();
 
@@ -58,10 +56,6 @@ Example: Multi-colored Text
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: java
-
-    import org.spongepowered.api.text.format.TextColors;
-    import org.spongepowered.api.text.Text;
-    import org.spongepowered.api.text.Texts;
 
     Text multiColoredText = Texts.builder("Sponges are ").color(TextColors.YELLOW).append(
             Texts.builder("invincible!").color(TextColors.RED).build()).build();
@@ -77,8 +71,6 @@ Example: Styled Text
 .. code-block:: java
 
     import org.spongepowered.api.text.format.TextStyles;
-    import org.spongepowered.api.text.Text;
-    import org.spongepowered.api.text.Texts;
 
     Text styledText = Texts.builder("Yay! Styled text!").style(TextStyles.ITALIC).build();
 
@@ -88,10 +80,6 @@ Example: Multi-styled Text
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: java
-
-    import org.spongepowered.api.text.format.TextStyles;
-    import org.spongepowered.api.text.Text;
-    import org.spongepowered.api.text.Texts;
 
     Text multiStyledText = Texts.builder("I'm italicized! ").style(TextStyles.ITALIC)
             .append(Texts.builder("I'm bold!").style(TextStyles.BOLD).build()).build();
@@ -106,11 +94,6 @@ Example: Color & Style Shortcut
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: java
-
-    import org.spongepowered.api.text.format.TextColors;
-    import org.spongepowered.api.text.format.TextStyles;
-    import org.spongepowered.api.text.Text;
-    import org.spongepowered.api.text.Texts;
 
     Text colorAndStyleText = Texts.of(TextColors.RED, TextStyles.ITALIC, "Shortcuts for the win!");
 
@@ -129,8 +112,6 @@ Example: Text with an Action
 .. code-block:: java
 
     import org.spongepowered.api.text.action.TextActions;
-    import org.spongepowered.api.text.Text;
-    import org.spongepowered.api.text.Texts;
 
     Text clickableText = Texts.builder("Click here!").onClick(TextActions.runCommand("tell Spongesquad I'm ready!")).build();
 
@@ -164,8 +145,6 @@ Example: Selector-generated Text
 
 .. code-block:: java
 
-    import org.spongepowered.api.text.Text;
-    import org.spongepowered.api.text.Texts;
     import org.spongepowered.api.text.selector.Selectors;
 
     Text adventurers = Texts.builder("These players are in adventure mode: ").append(

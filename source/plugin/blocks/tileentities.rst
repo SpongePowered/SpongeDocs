@@ -57,7 +57,6 @@ line, the second attempts to set it and returns the boolean value indicating its
 
  .. code-block:: java
 
-    import org.spongepowered.api.block.tileentity.TileEntity;
     import org.spongepowered.api.data.manipulator.tileentities.SignData;
     import org.spongepowered.api.text.Text;
 
@@ -93,7 +92,6 @@ an inventory extend the ``TileEntityCarrier`` interface it suffices to cast to t
 
  .. code-block:: java
 
-    import org.spongepowered.api.block.tileentity.TileEntity;
     import org.spongepowered.api.block.tileentity.carrier.TileEntityCarrier;
     import org.spongepowered.api.item.inventory.Inventory;
 

@@ -33,9 +33,7 @@ a wet sponge block.
 
     import org.spongepowered.api.Game;
     import org.spongepowered.api.block.BlockState;
-    import org.spongepowered.api.block.BlockTypes;
     import org.spongepowered.api.data.manipulator.WetData;
-    import org.spongepowered.api.world.Location;
 
     public void setToWetSponge(Location block) {
         BlockState state = BlockTypes.SPONGE.getDefaultState();
@@ -54,10 +52,8 @@ data set, overwriting existing values. The following example will change any dir
 
  .. code-block:: java
 
-    import org.spongepowered.api.block.BlockState;
     import org.spongepowered.api.data.manipulator.block.DirtData;
     import org.spongepowered.api.data.type.DirtTypes;
-    import org.spongepowered.api.world.Location;
 
     public void dirtToPodzol(Location block) {
         BlockState state = block.getBlock();
@@ -80,10 +76,6 @@ So if the ``DirtData`` from a dirt blocks state is removed, it will fall back to
 The following example will dry the block at a given ``Location``, if possible.
 
  .. code-block:: java
-
-    import org.spongepowered.api.block.BlockState;
-    import org.spongepowered.api.data.manipulator.WetData;
-    import org.spongepowered.api.world.Location;
 
     public void dry(Location block) {
         BlockState wetState = block.getBlock();
@@ -109,7 +101,6 @@ simple:
  .. code-block:: java
 
     import org.spongepowered.api.block.BlockSnapshot;
-    import org.spongepowered.api.world.Location;
 
     public void copyBlock(Location from, Location to) {
         BlockSnapshot snapshot = from.getBlockSnapshot();
