@@ -5,6 +5,12 @@ Sponge Documentation
 Introduction
 ============
 
+Package: :jdpackage:`org.spongepowered.data.manipulator <org/spongepowered/api/data/manipulator>`
+
+Class: :jd:`org.spongepowered.api.event.impl.AbstractEvent <org/spongepowered/api/event/impl/AbstractEvent>`
+
+Interface: :jd:`org.spongepowered.api.CatalogType <org/spongepowered/api/CatalogType>`
+
 Welcome to SpongeDocs, the official documentation for the open-source `Sponge <http://spongepowered.org>`__ project.
 
 The Sponge project currently has four main components:
