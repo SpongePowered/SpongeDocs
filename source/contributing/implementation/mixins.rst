@@ -20,6 +20,54 @@ the `SpongeForge repository <https://github.com/SpongePowered/SpongeForge/tree/m
 are extensively documented and cover many of the more complex scenarios. You should also consult the Javadoc of the Mixin
 repository itself, since almost everything is already documented.
 
+**Caveat: When contributing mixins, note that you can use neither anonymous classes nor lambda expressions.**
+
+This means expressions like the following will cause mixins to fail horribly and bring death and destruction upon all
+that attempt to use Sponge.
+
+.. code-block:: java
+
+    return new Predicate<ItemStack>() {
+        @Override
+        public boolean test(ItemStack input) {
+            return input.getItem().equals(Items.golden_apple);
+        }
+    }
+
+.. code-block:: java
+
+    return input -> input.getItem().equals(Items.golden_apple);
+
+.. code-block:: java
+
+    return this::checkItem;
+
+This applies to all classes that are annotated with ``@Mixin``. Classes that are not touched by the mixin processor may
+make use of those features. However, you can use a static utility class to create your anonymous classes, as unlike
+your mixin class that utility class will still exist at runtime, while your mixin class will be merged into the
+specified target class. The following code therefore will work.
+
+.. code-block:: java
+
+    public class ItemUtil {
+        public static Predicate<ItemStack> typeChecker(final Item item) {
+            return new Predicate<ItemStack>() {
+                @Override
+                public boolean test(ItemStack input) {
+                    return input.getItem().equals(item);
+                }
+            }
+        }
+    }
+
+    @Mixin(TargetClass.class)
+    public abstract class SomeMixin {
+        public Predicate<ItemStack> someFunction() {
+            return ItemUtil.typeChecker(Items.golden_apple);
+        }
+    }
+
 .. note::
+
   The Mixin project will be servicing a number of other projects in addition to Sponge itself. Therefore Mixin has its'
   own documentation together with the repository.
