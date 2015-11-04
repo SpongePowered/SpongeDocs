@@ -39,11 +39,11 @@ Contents
     text/index
     commands/index
     events
+    configuration/index
     data/index
     blocks/index
     entities/index
     items
-    configuration/index
     injection
     scheduler
     database

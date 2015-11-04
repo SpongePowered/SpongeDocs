@@ -1,0 +1,90 @@
+================
+Serializing Data
+================
+
+While an ``ImmutableDataManipulator`` is a good way to store data while the server is running, it will not persist over
+a restart. However, every ``DataManipulator`` implements the ``DataSerializable`` interface and thus can be serialized
+to a ``DataContainer`` and deserialized by a ``DataBuilder``.
+
+After this initial conversion from the specialized ``DataManipulator`` to a more general structure, the ``DataContainer``
+can be further processed.
+
+DataContainer and DataView
+==========================
+
+A ``DataView`` is a general-purpose structure for holding any kind of data. It supports multiple values and even nested
+``DataView``\ s as a value, thus allowing for a tree-like structure. Every value is identified by a ``DataQuery``.
+A ``DataContainer`` is a root ``DataView``.
+
+Every ``DataSerializable`` provides a ``toContainer()`` method which will create and return a ``DataContainer``.
+As an example, calling ``toContainer()`` on a ``HealthData`` instance will yield a ``DataContainer`` containing two
+values, one for the current and one for the maximum health, each identified by the ``DataQuery`` of the respective
+``Key``.
+
+.. code-block:: java
+
+    DataContainer serializedHealth = healthData.toContainer();
+    double currentHealth = serializedHealth.getDouble(Keys.HEALTH.getQuery()).get();
+    currentHealth == healthData.health().get();  // true
+
+Converting this container back into a ``HealthData`` instance is done by the corresponding ``DataBuilder``. Those are
+registered and managed by the ``SerializationService``, which, as described on the :doc:`Services <../services>` page,
+can be obtained from the ``ServiceManager``. The ``SerializationService`` provides a method to get the appropriate
+``DataBuilder`` to deserialize a given class and additionally a shorthand method to get the ``DataBuilder`` and have it
+do the deserialization in one step. Both of the following code examples are functionally equivalent.
+
+**Code Example: Deserialization, the long way**
+
+.. code-block:: java
+
+    public Optional<HealthData> deserializeHealth(DataView container) {
+        final SerializationService service = this.game.getServiceManager().provideUnchecked(SerializationService.class);
+        final Optional<DataBuilder<HealthData>> builder = service.getBuilder(HealthData.class);
+        if (builder.isPresent()) {
+            return builder.get().build(container);
+        }
+        return Optional.empty();
+    }
+
+**Code Example: Deserialization, the short way**
+
+.. code-block:: java
+
+    public Optional<HealthData> deserializeHealth(DataView container) {
+        final SerializationService service = this.game.getServiceManager().provideUnchecked(SerializationService.class);
+        return service.deserialize(HealthData.class, container);
+    }
+
+The ``deserializeHealth`` function will return ``Optional.empty()`` if there is no ``DataBuilder`` registered for
+``HealthData`` or the supplied ``DataContainer`` is empty. If invalid data is present in the ``DataContainer``, an
+``InvalidDataException`` will be thrown.
+
+DataTranslator
+==============
+
+In Sponge, generally the implementations ``MemoryDataView`` and ``MemoryDataContainer`` are used, which reside in
+memory only and thus will not persist over a server restart. In order to persistently store a ``DataContainer``, it
+first has to be converted into a storable representation. This can be done by using an implementation of the
+``DataTranslator`` interface, for example the ``ConfigurateTranslator``, which can convert a ``DataView`` to a
+``ConfigurationNode`` and vice versa. ``ConfigurationNode``\ s can then be written to and read from persistent files
+using the :doc:`Configurate Library <../configuration/index>`.
+
+**Code Example: Serializing a HealthData instance to Configurate**
+
+.. code-block:: java
+
+    public void writeToConfig(HealthData data, ConfigurationNode config) {
+        final ConfigurateTranslator translator = ConfigurateTranslator.instance();
+        final DataView container = data.toContainer();
+        translator.translateContainerToData(config, container);
+    }
+
+**Code Example: Deserializing a HealthData instance from Configurate**
+
+.. code-block:: java
+
+    public Optional<HealthData> readHealthFromConfig(ConfigurationNode config) {
+        final ConfigurateTranslator translator = ConfigurateTranslator.instance();
+        final DataView container = translator.translateFrom(config);
+        return deserializeHealth(container);
+    }
