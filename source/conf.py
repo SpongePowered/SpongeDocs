@@ -27,7 +27,11 @@ import sponge_docs_theme
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
-extensions = []
+extensions = ['sphinx.ext.extlinks']
+
+extlinks = {
+'jdpackage': ('https://jd.spongepowered.org/index.html?%s/package-summary.html',' '),
+'jd': ('https://jd.spongepowered.org/index.html?%s.html',' ')}
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
