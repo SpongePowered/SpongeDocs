@@ -14,6 +14,12 @@
 import sys, os
 import sponge_docs_theme
 
+# Set your Github user, repo and branch here. This will be used to link to the
+# sourcecode in the top right corner of the pages.
+github_repo = 'SpongeDocs'
+github_user = 'SpongePowered'
+github_host = 'github.com'
+github_branch = 'master'
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -93,6 +99,16 @@ pygments_style = 'sphinx'
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
+
+# adds the actual variables for calling in layout.html to allow for
+# fully configurable sourcecode linking
+html_context = {
+    'github_user' : github_user,
+    'github_repo' : github_repo,
+    'source_suffix' : source_suffix,
+    'github_host' : github_host,
+    'github_branch' : github_branch
+    }
 
 # readability
 html_theme = 'sponge_docs_theme'
