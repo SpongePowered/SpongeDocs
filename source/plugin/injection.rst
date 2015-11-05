@@ -12,19 +12,24 @@ Dependency injection allows plugins to designate a few API types that will be in
 Temporary List of Injected Types
 ================================
 
-ConfigDir
+ConfigDir (annotation on Path or File)
   Used to inject the plugin's configuration directory:
   ``./mods/`` OR ``./mods/<Plugin#id>/`` depending on ``sharedRoot``
 
-ConfigFile
+ConfigurationLoader<CommentedConfigurationNode>
+  Must be annotated with ``@DefaultConfig``.
+  Used to inject a pre-generated ``ConfigurationLoader`` for the ``File`` of the same annotation.
+
+DefaultConfig (annotation on Path, ConfigurationLoader or File)
   Used to inject the plugin's specific configuration file: ``<Plugin#id>.conf``
 
 EventManager
   Manages the registration of event handlers and the dispatching of events.
 
 File
-  This must have an additional annotation specifying specific file!
-  Currently, specifications are ``ConfigFile`` and ``ConfigDir``.
+  Must be annotated with either ``@DefaultConfig`` or ``@ConfigDir``.
+  Depending on the annotation given this will contain a file reference to the plugins default config file or the
+  directory used for storing configuration files. However, Path (see below) should be preferred.
 
 Game
   The ``Game`` object is the core accessor of the SpongeAPI.
@@ -33,7 +38,7 @@ GameRegistry
   Provides an easy way to retrieve types from a ``Game``.
 
 GuiceObjectMapperFactory
-  A tool provided by configurate to allow easier mapping of objects to configuration nodes.
+  A tool provided by Configurate to allow easier mapping of objects to configuration nodes.
   See :doc:`configuration/serialization` for usage.
 
 Injector
@@ -43,6 +48,11 @@ Injector
 
 Logger
   Used to identify the plugin from which logged messages are sent.
+
+Path
+  Must be annotated with either ``@DefaultConfig`` or ``@ConfigDir``.
+  Depending on the annotation given this will contain a path reference to the plugins default config file or the
+  directory used for storing configuration files.
 
 PluginContainer
   A ``@Plugin`` class wrapper, used to retrieve information from the annotation for easier use.
@@ -130,21 +140,21 @@ The recommended way to obtain your config file is through Guice, along with the 
 
     import org.spongepowered.api.service.config.ConfigDir;
 
-    import java.io.File;
+    import java.nio.file.Path;
 
     @Inject
     @ConfigDir(sharedRoot = false)
-    private File configDir;
+    private Path configDir;
 
 **Example - Method**
 
 .. code-block:: java
 
-    private File configDir;
+    private Path configDir;
 
     @Inject
     @ConfigDir(sharedRoot = false)
-    private void setConfigDir(File configDir) {
+    private void setConfigDir(Path configDir) {
         this.configDir = configDir;
     }
 
@@ -154,10 +164,10 @@ The recommended way to obtain your config file is through Guice, along with the 
 
 .. code-block:: java
 
-    private File configDir;
+    private Path configDir;
 
     @Inject
-    public Orange(@ConfigDir(sharedRoot = false) File configDir) {
+    public Orange(@ConfigDir(sharedRoot = false) Path configDir) {
         this.configDir = configDir;
     }
 

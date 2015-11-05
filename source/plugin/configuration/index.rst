@@ -1,16 +1,17 @@
-=======================
-Configuring Your Plugin
-=======================
+===================
+Configuring Plugins
+===================
 
-Configuration files allow your plugins to store data, as well as allow server administrators to easily take control over
-specific portions of your plugin, if you so choose to let them. Sponge uses Configurate to allow you to easily
-manipulate your configuration files. These pages will explain how to utilize Configurate in order to use configuration
-files to your full advantage.
+Configuration files allow plugins to store data, as well as allow server administrators to easily take control over
+specific portions of a plugin, if you so choose to let them. Sponge uses Configurate to allow you to easily
+manipulate configuration files. These pages will explain how to utilize Configurate in order to use configuration
+files to full advantage.
 
 .. tip::
 
     See the official `Configurate wiki <https://github.com/zml2008/configurate/wiki>`_ to gain more in-depth information
     about working with its components.
+
 
 .. note::
     Sponge makes use of the HOCON configuration format, a superset of JSON, as the default format for saving
@@ -25,8 +26,6 @@ files to your full advantage.
 
     loaders
     nodes
-    paths
-    values
     serialization
 
 Quick Start
@@ -44,8 +43,8 @@ to store data, and they allow server administrators to customize plugin options 
 Getting your Default Plugin Configuration
 -----------------------------------------
 
-The Sponge API offers the use of the ``@DefaultConfig`` annotation on a field or method with the type ``File`` to get
-the default configuration file for your plugin.
+The Sponge API offers the use of the ``@DefaultConfig`` annotation on a field or setter method with the type ``Path``
+to get the default configuration file for your plugin.
 
 The ``@DefaultConfig`` annotation requires a ``sharedRoot`` boolean. If you set ``sharedRoot`` to ``true``, then the
 returned pathname will be in a shared configuration directory. In that case, the configuration file for your plugin
@@ -63,51 +62,45 @@ If you are unsure of what to set the value of ``sharedRoot`` to, consider the fo
 * If you plan on having multiple configuration files (complex plugins) in the future, set the value to ``false``.
 * If you plan on having a single configuration file (less-complex plugins), set the value to ``true``.
 
+You can also obtain a ``Path`` instance pointing to the config directory instead of a particular file. Just
+have it injected using the ``@ConfigDir`` annotation, either with ``sharedRoot`` set to ``false`` for a plugin specific
+directory or to ``true`` to get the shared configuration directory.
+
+.. note::
+
+    While it may be possible to get a ``File`` instead of a ``Path``, Configurate (and Sponge) recommend using ``Path``.
 
 **Example - Field using** ``@DefaultConfig``
 
 .. code-block:: java
 
+    import java.nio.file.Path;
     import com.google.inject.Inject;
+    import org.spongepowered.api.service.config.ConfigDir;
     import org.spongepowered.api.service.config.DefaultConfig;
+    import ninja.leaping.configurate.commented.CommentedConfigurationNode;
+    import ninja.leaping.configurate.loader.ConfigurationLoader;
 
     @Inject
     @DefaultConfig(sharedRoot = true)
-    private File defaultConfig;
+    private Path defaultConfig;
 
     @Inject
     @DefaultConfig(sharedRoot = true)
     private ConfigurationLoader<CommentedConfigurationNode> configManager;
 
+    @Inject
+    @ConfigDir(sharedRoot = false)
+    private Path privateConfigDir;
+
 .. warning::
 
-    When your plugin is running for the first time, the returned pathname may refer to a configuration file that does
-    not yet exist.
+    When your plugin is running for the first time, returned pathnames for configuration files and directories may not
+    yet exist. If you delegate all reading / writing of files to Configurate, you do not need to worry about
+    non-existant paths as the library will handle them appropriately.
 
 .. note::
 
     The use of YAML format (http://yaml.org/spec/1.1/) is also supported, but the preferred config format for Sponge
-    plugins is HOCON. Conversion from YAML to HOCON can be automated; a simple code snippet for converting a Bukkit
-    plugin configuration folder with a dedicated data folder (sharedRoot = false) is provided below.
-
-.. code-block:: java
-
-    private void convertFromBukkit() throws IOException {
-        File bukkitConfigDir = new File("plugins/" + PomData.NAME);
-        if (bukkitConfigDir.isDirectory() && !configDir.isDirectory()) {
-        logger.info(lf(_("Migrating configuration data from Bukkit")));
-            if (!bukkitConfigDir.renameTo(configDir)) {
-                throw new IOException(lf(_("Unable to move Bukkit configuration directory to location for Sponge!")));
-            }
-        }
-        File bukkitConfigFile = new File(configDir, "config.yml");
-        if (bukkitConfigFile.isFile()) {
-            ConfigurationLoader<ConfigurationNode> yamlReader =
-              YAMLConfigurationLoader.builder().setFile(bukkitConfigFile).build();
-            ConfigurationNode bukkitConfig = yamlReader.load();
-            configLoader.save(bukkitConfig);
-            if (!bukkitConfigFile.renameTo(new File(configDir, "config.yml.bukkit"))) {
-                logger.warn(lf(_("Could not rename old Bukkit configuration file to old name")));
-            }
-        }
-    }
+    plugins is HOCON. Conversion from YAML to HOCON can be automated by using a ``YamlConfigurationLoader`` to load
+    the old config and then saving it using a ``HoconConfigurationLoader``.
