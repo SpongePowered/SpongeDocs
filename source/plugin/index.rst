@@ -46,6 +46,7 @@ Contents
     permissions
     economy/index
     services
+    wgen/index
     manager
     debugging
     message-sinks
