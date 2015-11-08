@@ -4,8 +4,8 @@ Staff
 
 Below is a list of staff members of the Sponge project. Each section is presented alphabetically.
 
-Project Leaders
-~~~~~~~~~~~~~~~
+Sponge Leaders
+~~~~~~~~~~~~~~
 
 The **Project Leaders** are the stewards of the Sponge project, and make the final decisions to ensure the project
 operates efficiently.
@@ -15,47 +15,45 @@ operates efficiently.
 +===================================+===================================+
 | blood                             | Implementation (Forge) Leader     |
 +-----------------------------------+-----------------------------------+
-| Owexz                             | Community Leader                  |
-|                                   |                                   |
-|                                   | LLC Director                      |
-+-----------------------------------+-----------------------------------+
-| sk89q                             | Resources Leader                  |
+| gabizou                           | API Design Leader                 |
 +-----------------------------------+-----------------------------------+
 | Zidane                            | Implementation (Vanilla) Leader   |
-|                                   |                                   |
-|                                   | API Leader                        |
-|                                   |                                   |
-|                                   | LLC Director                      |
 +-----------------------------------+-----------------------------------+
 
-Team Leaders
-~~~~~~~~~~~~
+Project Managers
+~~~~~~~~~~~~~~~~
 
-The **Team Leaders** of Sponge each coordinate a separate aspect of the Sponge project.
+The **Project Managers** of Sponge each coordinate a separate aspect of the Sponge project.
 
 +-----------------------------------+-----------------------------------+
 | Name                              | Role                              |
 +===================================+===================================+
-| gratimax                          | Web Leader                        |
+| Dockter                           | Chief Financial Officer           |
+|                                   |                                   |
+|                                   | Chief Technology Officer          |
++-----------------------------------+-----------------------------------+
+| gratimax                          | Web Manager                       |
 |                                   |                                   |
 |                                   | Developer                         |
 +-----------------------------------+-----------------------------------+
-| Inscrutable                       | SpongeDocs Leader                 |
+| Inscrutable                       | SpongeDocs Chief Editor           |
 +-----------------------------------+-----------------------------------+
-| lukegb                            | Systems Management Leader         |
+| lukegb                            | Systems Management Manager        |
 +-----------------------------------+-----------------------------------+
-| Me4502                            | Subreddit Leader                  |
+| Me4502                            | Subreddit Manager                 |
 |                                   |                                   |
 |                                   | Developer                         |
 +-----------------------------------+-----------------------------------+
-| progwml6                          | Distribution and IRC Leader       |
+| Owexz                             | Forum & Community Manager         |
++-----------------------------------+-----------------------------------+
+| progwml6                          | IRC Manager                       |
 +-----------------------------------+-----------------------------------+
 
 
 API and Implementation Developers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The **API and Implementation Developers** work on producing the Sponge API, and the two official implementations
+The **API and Implementation Developers** work on producing SpongeAPI, and the two official implementations
 SpongeForge and SpongeVanilla.
 
 +-----------------------------------+-----------------------------------+
@@ -63,19 +61,11 @@ SpongeForge and SpongeVanilla.
 +===================================+===================================+
 | Aaron1011                         | Developer                         |
 +-----------------------------------+-----------------------------------+
-| AzureusNation                     | Developer                         |
-+-----------------------------------+-----------------------------------+
 | Dark_Arc                          | Developer                         |
 +-----------------------------------+-----------------------------------+
 | DDoS                              | Developer                         |
 +-----------------------------------+-----------------------------------+
 | Deamon                            | Developer                         |
-+-----------------------------------+-----------------------------------+
-| gabizou                           | API Design Specialist             |
-|                                   |                                   |
-|                                   | Developer                         |
-+-----------------------------------+-----------------------------------+
-| jckf                              | Developer                         |
 +-----------------------------------+-----------------------------------+
 | Minecrell                         | Developer                         |
 +-----------------------------------+-----------------------------------+
@@ -87,19 +77,14 @@ SpongeForge and SpongeVanilla.
 +-----------------------------------+-----------------------------------+
 | simon816                          | Developer                         |
 +-----------------------------------+-----------------------------------+
-| theresajayne                      | Developer                         |
-+-----------------------------------+-----------------------------------+
-| Voltasalt                         | Developer                         |
-+-----------------------------------+-----------------------------------+
 | zml                               | Developer                         |
 +-----------------------------------+-----------------------------------+
 
 
-Systems Management and Website Developers
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Systems Managers
+~~~~~~~~~~~~~~~~
 
-The **Systems Managers** ensure the efficient performance of Sponge's servers and the **Website Developers** make the
-Sponge website look completely awesome.
+The **Systems Managers** ensure the efficient performance of Sponge's servers.
 
 +-----------------------------------+-----------------------------------+
 | Name                              | Role                              |
@@ -108,8 +93,7 @@ Sponge website look completely awesome.
 +-----------------------------------+-----------------------------------+
 | GenPage                           | Systems Management                |
 +-----------------------------------+-----------------------------------+
-| Kornagan                          | Developer                         |
-+-----------------------------------+-----------------------------------+
+
 
 
 SpongeDocs Editors
@@ -122,9 +106,13 @@ The **SpongeDocs Editors** write, edit, and maintain articles for Sponge's offic
 +===================================+===================================+
 | boformer                          | Editor                            |
 +-----------------------------------+-----------------------------------+
+| FLARD                             | Classified Biowaste               |
++-----------------------------------+-----------------------------------+
 | hawtre                            | Editor                            |
 +-----------------------------------+-----------------------------------+
 | Saladoc                           | Editor                            |
++-----------------------------------+-----------------------------------+
+| theresajayne                      | Editor                            |
 +-----------------------------------+-----------------------------------+
 | Tzk                               | Editor                            |
 +-----------------------------------+-----------------------------------+
@@ -139,10 +127,6 @@ Moderators and Support
 +-----------------------------------+-----------------------------------+
 | Name                              | Role                              |
 +===================================+===================================+
-| Dockter                           | Moderator                         |
-|                                   |                                   |
-|                                   | LLC Director                      |
-+-----------------------------------+-----------------------------------+
 | drtshock                          | Moderator                         |
 +-----------------------------------+-----------------------------------+
 | FerusGrim                         | Moderator                         |
@@ -164,25 +148,33 @@ here to thank them and acknowledge their valuable contributions.
 +-----------------------------------+-----------------------------------+
 | Name                              | Former Role                       |
 +===================================+===================================+
+| AzureusNation                     | Developer                         |
++-----------------------------------+-----------------------------------+
 | Cedeel                            | Editor                            |
 +-----------------------------------+-----------------------------------+
-| DarkArcana                        | Community and IRC Leader          |
+| DarkArcana                        | Community and IRC Manager         |
 +-----------------------------------+-----------------------------------+
 | Disconsented                      | Moderator                         |
++-----------------------------------+-----------------------------------+
+| jckf                              | Developer                         |
 +-----------------------------------+-----------------------------------+
 | kitsub                            | Developer                         |
 +-----------------------------------+-----------------------------------+
 | kobata                            | Developer                         |
 +-----------------------------------+-----------------------------------+
-| Kodfod                            | Docs Leader                       |
+| Kodfod                            | Docs Chief Editor                 |
++-----------------------------------+-----------------------------------+
+| Kornagan                          | Developer                         |
 +-----------------------------------+-----------------------------------+
 | Pandette                          | Editor                            |
 +-----------------------------------+-----------------------------------+
 | sibomots                          | Developer                         |
-|                                   |                                   |
-|                                   | LLC Director                      |
++-----------------------------------+-----------------------------------+
+| sk89q                             | Resources Leader                  |
 +-----------------------------------+-----------------------------------+
 | TnT                               | Moderator                         |
 +-----------------------------------+-----------------------------------+
 | Tyrannokapi                       | Editor                            |
++-----------------------------------+-----------------------------------+
+| Voltasalt                         | Developer                         |
 +-----------------------------------+-----------------------------------+
