@@ -28,11 +28,15 @@ The **Project Managers** of Sponge each coordinate a separate aspect of the Spon
 +-----------------------------------+-----------------------------------+
 | Name                              | Role                              |
 +===================================+===================================+
+| Dockter                           | Chief Financial Officer           |
+|                                   |                                   |
+|                                   | Chief Technology Officer          |
++-----------------------------------+-----------------------------------+
 | gratimax                          | Web Manager                       |
 |                                   |                                   |
 |                                   | Developer                         |
 +-----------------------------------+-----------------------------------+
-| Inscrutable                       | SpongeDocs Manager                |
+| Inscrutable                       | SpongeDocs Chief Editor           |
 +-----------------------------------+-----------------------------------+
 | lukegb                            | Systems Management Manager        |
 +-----------------------------------+-----------------------------------+
@@ -42,7 +46,7 @@ The **Project Managers** of Sponge each coordinate a separate aspect of the Spon
 +-----------------------------------+-----------------------------------+
 | Owexz                             | Forum & Community Manager         |
 +-----------------------------------+-----------------------------------+
-| progwml6                          | Distribution and IRC Manager      |
+| progwml6                          | IRC Manager                       |
 +-----------------------------------+-----------------------------------+
 
 
@@ -122,10 +126,6 @@ Moderators and Support
 +-----------------------------------+-----------------------------------+
 | Name                              | Role                              |
 +===================================+===================================+
-| Dockter                           | Moderator                         |
-|                                   |                                   |
-|                                   | Finance Director                  |
-+-----------------------------------+-----------------------------------+
 | drtshock                          | Moderator                         |
 +-----------------------------------+-----------------------------------+
 | FerusGrim                         | Moderator                         |
