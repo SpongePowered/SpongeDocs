@@ -53,7 +53,7 @@ The **Project Managers** of Sponge each coordinate a separate aspect of the Spon
 API and Implementation Developers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The **API and Implementation Developers** work on producing the Sponge API, and the two official implementations
+The **API and Implementation Developers** work on producing SpongeAPI, and the two official implementations
 SpongeForge and SpongeVanilla.
 
 +-----------------------------------+-----------------------------------+
@@ -77,17 +77,14 @@ SpongeForge and SpongeVanilla.
 +-----------------------------------+-----------------------------------+
 | simon816                          | Developer                         |
 +-----------------------------------+-----------------------------------+
-| theresajayne                      | Developer                         |
-+-----------------------------------+-----------------------------------+
 | zml                               | Developer                         |
 +-----------------------------------+-----------------------------------+
 
 
-Systems Management and Website Developers
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Systems Managers
+~~~~~~~~~~~~~~~~
 
-The **Systems Managers** ensure the efficient performance of Sponge's servers and the **Website Developers** make the
-Sponge website look completely awesome.
+The **Systems Managers** ensure the efficient performance of Sponge's servers.
 
 +-----------------------------------+-----------------------------------+
 | Name                              | Role                              |
@@ -108,6 +105,8 @@ The **SpongeDocs Editors** write, edit, and maintain articles for Sponge's offic
 | Name                              | Role                              |
 +===================================+===================================+
 | boformer                          | Editor                            |
++-----------------------------------+-----------------------------------+
+| FLARD                             | Classified Biowaste               |
 +-----------------------------------+-----------------------------------+
 | hawtre                            | Editor                            |
 +-----------------------------------+-----------------------------------+
@@ -151,7 +150,7 @@ here to thank them and acknowledge their valuable contributions.
 +-----------------------------------+-----------------------------------+
 | Cedeel                            | Editor                            |
 +-----------------------------------+-----------------------------------+
-| DarkArcana                        | Community and IRC Leader          |
+| DarkArcana                        | Community and IRC Manager         |
 +-----------------------------------+-----------------------------------+
 | Disconsented                      | Moderator                         |
 +-----------------------------------+-----------------------------------+
@@ -161,17 +160,17 @@ here to thank them and acknowledge their valuable contributions.
 +-----------------------------------+-----------------------------------+
 | kobata                            | Developer                         |
 +-----------------------------------+-----------------------------------+
-| Kodfod                            | Docs Leader                       |
+| Kodfod                            | Docs Chief Editor                 |
 +-----------------------------------+-----------------------------------+
 | Kornagan                          | Developer                         |
 +-----------------------------------+-----------------------------------+
 | Pandette                          | Editor                            |
 +-----------------------------------+-----------------------------------+
 | sibomots                          | Developer                         |
-|                                   |                                   |
-|                                   | LLC Director                      |
 +-----------------------------------+-----------------------------------+
 | sk89q                             | Resources Leader                  |
++-----------------------------------+-----------------------------------+
+| theresajayne                      | Developer                         |
 +-----------------------------------+-----------------------------------+
 | TnT                               | Moderator                         |
 +-----------------------------------+-----------------------------------+
