@@ -45,17 +45,16 @@ Forge, and therefore numerous Forge mods.
 **SpongeVanilla** is the vanilla implementation of the Sponge API. Acting as a standalone implementation having complete
 control over the Minecraft Server, this implementation does not support mods wishing to add new things like blocks and items.
 
-
-
-Contents
-========
-
-.. toctree::
-    :maxdepth: 2
-    :titlesonly:
-
-    guidelines
-    api/index
-    implementation/index
-    spongedocs
-    porting
++-------------------------+
+| Table of Contents       |
++=========================+
+|.. toctree::             |
+|    :maxdepth: 2         |
+|    :titlesonly:         |
+|                         |
+|    guidelines           |
+|    api/index            |
+|    implementation/index |
+|    spongedocs           |
+|    porting              |
++-------------------------+

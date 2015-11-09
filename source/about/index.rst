@@ -19,20 +19,21 @@ Everybody should read this!
 
 If you refuse to read this section, Spongie will be very upset. Don't make Spongie upset.
 
-Contents
-========
-
-.. toctree::
-    :maxdepth: 2
-    :titlesonly:
-
-    introduction
-    faq
-    future
-    license
-    posting
-    rules
-    staff
-    glossary
-    assets
-    history
++-------------------+
+| Table of Contents |
++===================+
+|.. toctree::       |
+|    :maxdepth: 2   |
+|    :titlesonly:   |
+|                   |
+|    introduction   |
+|    faq            |
+|    future         |
+|    license        |
+|    posting        |
+|    rules          |
+|    assets         |
+|    staff          |
+|    glossary       |
+|    history        |
++-------------------+

@@ -2,12 +2,6 @@
 Creating a Server
 =================
 
-Overview
-========
-
-What is this about?
-~~~~~~~~~~~~~~~~~~~
-
 The articles in this section explain how to create and run a server powered by an implementation of the Sponge API.
 
 .. note::
@@ -22,13 +16,13 @@ This section is intended for users who wish to create a new server using an impl
 existing server to an implementation of Sponge. Plugin developers may also be interested in the articles contained
 within this section - test servers can be useful for plugin development.
 
-Contents
-========
-
-.. toctree::
-    :maxdepth: 2
-    :titlesonly:
-
-    getting-started/index
-    management/index
-    spongineer/index
++---------------------------+-+-------------------------+
+| Table of Contents                                     |
++===========================+=+=========================+
+| .. toctree::              | | .. toctree::            |
+|     :maxdepth: 2          | |     :maxdepth: 2        |
+|     :titlesonly:          | |     :titlesonly:        |
+|                           | |                         |
+|     getting-started/index | |     management/index    |
+|                           | |     spongineer/index    |
++---------------------------+-+-------------------------+

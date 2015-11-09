@@ -2,12 +2,6 @@
 Creating a Plugin
 =================
 
-Overview
-========
-
-What is this about?
-~~~~~~~~~~~~~~~~~~~
-
 The articles in this section explain the basic concepts behind creating plugins using the Sponge API. It is important
 to understand that the intent of this section is to help developers get started with the Sponge API, not to cover
 every concept. The `Javadocs <https://jd.spongepowered.org/>`__ will be of great help to you once you are
@@ -24,38 +18,24 @@ comfortable with the API.
     demonstrate a specific part of the SpongeAPI. These plugin "recipes" are standalone and are compilable via Gradle
     or Maven. Some of them demonstrate how to create plugins using other JVM languages such as Scala and Kotlin.
 
-Who should read this?
-~~~~~~~~~~~~~~~~~~~~~
-
-This section is intended for developers who wish to develop plugins with the Sponge API.
-
-Contents
-========
-
-.. toctree::
-    :maxdepth: 2
-    :titlesonly:
-
-    workspace/index
-    practices
-    templates
-    main-class
-    lifecycle
-    logging
-    text/index
-    commands/index
-    events
-    configuration/index
-    data/index
-    blocks/index
-    entities/index
-    items
-    injection
-    scheduler
-    database
-    permissions
-    services
-    manager
-    debugging
-    message-sinks
-    tutorials
++------------------------+--+------------------------+
+| Table of Contents                                  |
++========================+==+========================+
+|.. toctree::            |  |.. toctree::            |
+|    :maxdepth: 2        |  |    :maxdepth: 2        |
+|    :titlesonly:        |  |    :titlesonly:        |
+|                        |  |                        |
+|    workspace/index     |  |    data/index          |
+|    practices           |  |    blocks/index        |
+|    templates           |  |    entities/index      |
+|    main-class          |  |    items               |
+|    lifecycle           |  |    injection           |
+|    logging             |  |    scheduler           |
+|    text/index          |  |    database            |
+|    commands/index      |  |    permissions         |
+|    events              |  |    services            |
+|    configuration/index |  |    manager             |
+|                        |  |    debugging           |
+|                        |  |    message-sinks       |
+|                        |  |    tutorials           |
++------------------------+--+------------------------+
