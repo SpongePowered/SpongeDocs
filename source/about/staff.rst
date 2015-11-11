@@ -39,7 +39,7 @@ The **Project Managers** of Sponge each coordinate a separate aspect of the Spon
 +-----------------------------------+------------------------------------+
 | Inscrutable                       | SpongeDocs Chief Editor            |
 +-----------------------------------+------------------------------------+
-| lukegb                            | Systems Management Manager         |
+| lukegb                            | Systems Manager                    |
 +-----------------------------------+------------------------------------+
 | Me4502                            | Subreddit Manager                  |
 |                                   |                                    |
@@ -150,6 +150,8 @@ here to thank them and acknowledge their valuable contributions.
 | DarkArcana                        | Community and IRC Manager          |
 +-----------------------------------+------------------------------------+
 | Disconsented                      | Moderator                          |
++-----------------------------------+------------------------------------+
+| drtshock                          | Moderator                          |
 +-----------------------------------+------------------------------------+
 | jckf                              | Developer                          |
 +-----------------------------------+------------------------------------+
