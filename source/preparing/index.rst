@@ -2,12 +2,6 @@
 Preparing for Development
 =========================
 
-Overview
-========
-
-What is this about?
-~~~~~~~~~~~~~~~~~~~
-
 The articles in this section explain how to best set up your development environment.
 
 Who should read this?
