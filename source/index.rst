@@ -22,26 +22,28 @@ If you just want to download SpongeForge or SpongeVanilla, then head to :doc:`do
 Version 1
 =========
 
-+---------------------------+------------------------------------------------------------------------------------------+
-| Section                   | Description                                                                              |
-+===========================+==========================================================================================+
-|.. toctree::               |This section is for users who have a Sponge server or are interested in creating one.     |
-|    :maxdepth: 2           |It tells you how to install Java, get Sponge set up correctly and will even show you      |
-|    :titlesonly:           |how what Sponge provides to help you out, while managing your server.                     |
-|                           |                                                                                          |
-|    server/index           |                                                                                          |
-+---------------------------+------------------------------------------------------------------------------------------+
-|.. toctree::               |This section covers the basic setup (and how to do it) of your workspace. you want to     |
-|    :maxdepth: 2           |develop for Sponge, your own plugins or help out expanding our Docs. We advise that you   |
-|    :titlesonly:           |read this section before `Creating Plugins`_ and `Contributing to Sponge`_, if you're not |
-|                           |already familiar with the basic setup. Advanced users might want to skip it and dive      |
-|    preparing/index        |directly into the advanced topics.                                                        |
-+---------------------------+------------------------------------------------------------------------------------------+
-|.. toctree::               |This section is intended to help developers who have prior Java experience with writing   |
-|    :maxdepth: 2           |plugins using the SpongeAPI.                                                              |
-|    :titlesonly:           |                                                                                          |
-|                           |                                                                                          |
-|    plugin/index           |                                                                                          |
++------------------------------------------------------------------------------------------+---------------------------+
+| Description                                                                              | Section                   |
++==========================================================================================+===========================+
+|This section is for users who have a Sponge server or are interested in creating one.     |.. toctree::               |
+|It tells you how to install Java, get Sponge set up correctly and will even show you      |    :maxdepth: 2           |
+|how what Sponge provides to help you out, while managing your server.                     |    :titlesonly:           |
+|                                                                                          |                           |
+|                                                                                          |    server/index           |
++------------------------------------------------------------------------------------------+---------------------------+
+|This section covers the basic setup (and how to do it) of your workspace. you want to     |.. toctree::               |
+|develop for Sponge, your own plugins or help out expanding our Docs. We advise that you   |    :maxdepth: 2           |
+|read this section before `Creating Plugins`_ and `Contributing to Sponge`_, if you're not |    :titlesonly:           |
+|already familiar with the basic setup. Advanced users might want to skip it and dive      |                           |
+|directly into the advanced topics.                                                        |    preparing/index        |
++------------------------------------------------------------------------------------------+---------------------------+
+|This section is intended to help developers who have prior Java experience with writing   |.. toctree::               |
+|plugins using the SpongeAPI.                                                              |    :maxdepth: 2           |
+|                                                                                          |    :titlesonly:           |
+|                                                                                          |                           |
+|                                                                                          |    plugin/index           |
++------------------------------------------------------------------------------------------+---------------------------+
+
 +---------------------------+------------------------------------------------------------------------------------------+
 |.. toctree::               |This section is intended to help with contributing code to the Sponge project.            |
 |    :maxdepth: 2           |Instructions on contributing to SpongeDocs are also contained within. Make Spongie proud! |
