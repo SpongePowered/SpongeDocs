@@ -19,6 +19,52 @@ If you just want to download SpongeForge or SpongeVanilla, then head to :doc:`do
     Sponge is still in development. Development builds are currently available for :doc:`download <downloads>`, but an official
     release will not be available until later in 2015.
 
+NEWER VERSION
+=============
+
++---------------------------+------------------------------------------------------------------------------------------+
+| Section                   | Description                                                                              |
++===========================+==========================================================================================+
+|.. toctree::               |This section is for users who have a Sponge server or are interested in creating one.     |
+|    :maxdepth: 2           |It tells you how to install Java, get Sponge set up correctly and will even show you      |
+|    :titlesonly:           |how what Sponge provides to help you out, while managing your server.                     |
+|                           |                                                                                          |
+|    server/index           |                                                                                          |
++---------------------------+------------------------------------------------------------------------------------------+
+|.. toctree::               |This section covers the basic setup (and how to do it) of your workspace. you want to     |
+|    :maxdepth: 2           |develop for Sponge, your own plugins or help out expanding our Docs. We advise that you   |
+|    :titlesonly:           |read this section before `Creating Plugins`_ and `Contributing to Sponge`_, if you're not |
+|                           |already familiar with the basic setup. Advanced users might want to skip it and dive      |
+|    preparing/index        |directly into the advanced topics.                                                        |
++---------------------------+------------------------------------------------------------------------------------------+
+|.. toctree::               |This section is intended to help developers who have prior Java experience with writing   |
+|    :maxdepth: 2           |plugins using the SpongeAPI.                                                              |
+|    :titlesonly:           |                                                                                          |
+|                           |                                                                                          |
+|    plugin/index           |                                                                                          |
++---------------------------+------------------------------------------------------------------------------------------+
+|.. toctree::               |This section is intended to help with contributing code to the Sponge project.            |
+|    :maxdepth: 2           |Instructions on contributing to SpongeDocs are also contained within. Make Spongie proud! |
+|    :titlesonly:           |                                                                                          |
+|                           |                                                                                          |
+|    contributing/index     |                                                                                          |
++---------------------------+------------------------------------------------------------------------------------------+
+|.. toctree::               |Read about the past and future of Sponge. This sections explains what we're doing and     |
+|    :maxdepth: 2           |why we chose to do it. You'll find some basic rules and even a glossary in here, too.     |
+|    :titlesonly:           |                                                                                          |
+|                           |                                                                                          |
+|    about/index            |                                                                                          |
++---------------------------+------------------------------------------------------------------------------------------+
+|.. toctree::               |                                                                                          |
+|    :maxdepth: 2           |                                                                                          |
+|    :titlesonly:           |                                                                                          |
+|                           |                                                                                          |
+|    downloads              |                                                                                          |
++---------------------------+------------------------------------------------------------------------------------------+
+
+OLDER VERSION
+=============
+
 +--------------------+--+-----------------------+
 | Table of Contents                             |
 +====================+==+=======================+
@@ -44,8 +90,8 @@ If you just want to download SpongeForge or SpongeVanilla, then head to :doc:`do
 
 
 
-The Sections in Detail
-======================
+Section Summaries
+=================
 
 Creating a Server
 ~~~~~~~~~~~~~~~~~
@@ -56,7 +102,7 @@ get Sponge set up correctly and will even show you how what Sponge provides to h
 Preparing for Development
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This section is covers the basic setup (and how to do it) of your workspace wether you want to develop for Sponge your
+This section covers the basic setup (and how to do it) of your workspace. you want to develop for Sponge, your
 own plugins or help out expanding our Docs.
 
 We advise that you read this section before `Creating Plugins`_ and `Contributing to Sponge`_, if you're not already
