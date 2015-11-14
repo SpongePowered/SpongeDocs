@@ -42,7 +42,7 @@ Using Forge or NMS Classes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 We do not recommend working with Forge or Minecraft base classes at all, unless it is to provide compatibility with a
-mod for Sponge API. Most uses of NMS (Native Minecraft Server) code in plugins do not fail gracefully, making
+mod for Sponge API. Most uses of NMS (net.minecraft.server) code in plugins do not fail gracefully, making
 troubleshooting very difficult. Maintaining NMS modifications is also more difficult than using the Sponge API. Mods that
 add to the Sponge API using code internals will have to specifically write an API, which does not rely on underlying
 Minecraft code, to be usable by Sponge plugins. However, plugins can be created that load separate “compatibility”
