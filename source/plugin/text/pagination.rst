@@ -29,10 +29,11 @@ There are two different ways to specify the contents of paginated list:
 
  .. code-block:: java
 
-	import java.util.ArrayList;
-	import java.util.List;
 	import org.spongepowered.api.text.Text;
 	import org.spongepowered.api.text.Texts;
+
+	import java.util.ArrayList;
+	import java.util.List;
 
 	List<Text> contents = new ArrayList<>();
 	contents.add(Texts.of("Item 1"));

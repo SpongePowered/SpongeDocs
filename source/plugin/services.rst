@@ -35,8 +35,6 @@ The first step is optional, but recommended. You specify the public methods of y
 
 .. code-block:: java
 
-    package test.service.economy;
-
     import org.spongepowered.api.entity.player.Player;
 
     public interface EconomyService
@@ -48,8 +46,6 @@ The first step is optional, but recommended. You specify the public methods of y
 Now you can write the class that implements your interface:
 
 .. code-block:: java
-
-    package test.service.economy;
 
     import java.util.HashMap;
 

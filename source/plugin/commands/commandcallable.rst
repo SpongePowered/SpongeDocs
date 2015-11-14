@@ -14,10 +14,6 @@ The first step is to create a class for the command. The class has to implement 
 
 .. code-block:: java
 
-    import java.util.Collections;
-    import java.util.List;
-    import java.util.Optional;
-
     import org.spongepowered.api.Server;
     import org.spongepowered.api.text.Text;
     import org.spongepowered.api.text.Texts;
@@ -25,6 +21,10 @@ The first step is to create a class for the command. The class has to implement 
     import org.spongepowered.api.util.command.CommandException;
     import org.spongepowered.api.util.command.CommandResult;
     import org.spongepowered.api.util.command.CommandSource;
+
+    import java.util.Collections;
+    import java.util.List;
+    import java.util.Optional;
 
     public class MyBroadcastCommand implements CommandCallable {
 
@@ -79,6 +79,8 @@ method ``CommandService.register()``, passing your plugin, an instance of the co
 
 .. code-block:: java
 
+    import org.spongepowered.api.service.command.CommandService;
+
     CommandService cmdService = game.getCommandDispatcher();
     cmdService.register(plugin, new MyBroadcastCommand(server), "message", "broadcast");
 
@@ -98,6 +100,8 @@ The default implementation of the ``Dispatcher`` interface is the ``SimpleDispat
 A ``Dispatcher`` is also a ``CommandCallable``, so it can be registered like any other command.
 
 .. code-block:: java
+
+     import org.spongepowered.api.util.command.dispatcher.SimpleDispatcher;
 
      CommandCallable subCommand1 = ...;
      CommandCallable subCommand2 = ...;

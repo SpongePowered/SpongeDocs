@@ -68,8 +68,8 @@ of the class containing the event listeners.
     public class ExampleListener {
 
         @Listener
-        public void onBreakBlock(ChangeBlockEvent.Break event) {
-            ...
+        public void onSomeEvent(SomeEvent event) {
+            // Do something with the event
         }
     }
 
@@ -91,6 +91,9 @@ before other server modifications.
 **Example: Implementing EventListener**
 
 .. code-block:: java
+
+    import org.spongepowered.api.event.EventListener;
+    import org.spongepowered.api.event.block.ChangeBlockEvent;
 
     public class ExampleListener implements EventListener<ChangeBlockEvent.Break> {
 
@@ -171,8 +174,12 @@ Example: Firing LightningEvent
 
 .. code-block:: java
 
-  LightningEvent lightningEvent = SpongeEventFactory.createLightningEvent(game, Cause.empty());
-  game.getEventManager().post(lightningEvent);
+    import org.spongepowered.api.event.SpongeEventFactory;
+    import org.spongepowered.api.event.action.LightningEvent;
+    import org.spongepowered.api.event.cause.Cause;
+
+    LightningEvent lightningEvent = SpongeEventFactory.createLightningEvent(game, Cause.empty());
+    game.getEventManager().post(lightningEvent);
 
 
 Creating Custom Events
@@ -188,8 +195,6 @@ Example: Custom Event Class
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: java
-
-    package example.event;
 
     import org.spongepowered.api.entity.player.Player;
     import org.spongepowered.api.event.impl.AbstractEvent;
@@ -246,6 +251,9 @@ Example: Listen for Custom Event
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: java
+
+    import org.spongepowered.api.text.Texts;
+    import org.spongepowered.api.text.chat.ChatTypes;
 
     @Listener
     public void onPrivateMessage(PrivateMessageEvent event) {
