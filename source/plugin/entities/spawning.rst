@@ -11,7 +11,6 @@ For example, let's try to spawn a Creeper:
 
 .. code-block:: java
 
-    import java.util.Optional;
     import org.spongepowered.api.data.key.Keys;
     import org.spongepowered.api.entity.Entity;
     import org.spongepowered.api.entity.EntityTypes;
@@ -19,6 +18,8 @@ For example, let's try to spawn a Creeper:
     import org.spongepowered.api.text.format.TextColors;
     import org.spongepowered.api.world.Location;
     import org.spongepowered.api.world.extent.Extent;
+
+    import java.util.Optional;
 
     public void spawnEntity(Location location) {
         Extent extent = location.getExtent();

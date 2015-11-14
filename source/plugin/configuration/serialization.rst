@@ -11,6 +11,8 @@ Imagine a data structure tracking how many diamonds a player has mined. It might
 
 .. code-block:: java
 
+    import java.util.UUID;
+
     public class DiamondCounter {
         private UUID playerUUID;
         private int diamonds;
@@ -28,6 +30,11 @@ The ``TypeSerializer`` interface provides two methods, one to write the data fro
 and one to create an object from a given configuration node.
 
 .. code-block:: java
+
+    import com.google.common.reflect.TypeToken;
+    import ninja.leaping.configurate.ConfigurationNode;
+    import ninja.leaping.configurate.objectmapping.ObjectMappingException;
+    import ninja.leaping.configurate.objectmapping.serialize.TypeSerializer;
 
     public class DiamondCounterSerializer implements TypeSerializer<DiamondCounter> {
 
@@ -64,6 +71,9 @@ Since in many cases the (de)serialization boils down to mapping fields to config
 annotate our class with the ``@ConfigSerializable`` and ``@Setting`` annotations.
 
 .. code-block:: java
+
+    import ninja.leaping.configurate.objectmapping.Setting;
+    import ninja.leaping.configurate.objectmapping.serialize.ConfigSerializable;
 
     @ConfigSerializable
     public class DiamondCounter {
@@ -105,6 +115,15 @@ Your plugin can just acquire a ``GuiceObjectMapperFactory`` simply by dependency
 (see :doc:`../injection`) and then pass it to the ``ConfigurationOptions``.
 
 .. code-block:: java
+
+    import com.google.common.eventbus.Subscribe;
+    import com.google.inject.Inject;
+    import ninja.leaping.configurate.ConfigurationOptions;
+    import ninja.leaping.configurate.commented.CommentedConfigurationNode;
+    import ninja.leaping.configurate.loader.ConfigurationLoader;
+    import ninja.leaping.configurate.objectmapping.GuiceObjectMapperFactory;
+    import org.spongepowered.api.event.game.state.GamePreInitializationEvent;
+    import org.spongepowered.api.plugin.Plugin;
 
     @Plugin(name="IStoleThisFromZml", id="shamelesslystolen", version="0.8.15")
     public class StolenCodeExample {

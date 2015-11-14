@@ -69,7 +69,11 @@ If you are unsure of what to set the value of ``sharedRoot`` to, consider the fo
 .. code-block:: java
 
     import com.google.inject.Inject;
+    import ninja.leaping.configurate.commented.CommentedConfigurationNode;
+    import ninja.leaping.configurate.loader.ConfigurationLoader;
     import org.spongepowered.api.service.config.DefaultConfig;
+
+    import java.io.File;
 
     @Inject
     @DefaultConfig(sharedRoot = true)
@@ -91,6 +95,11 @@ If you are unsure of what to set the value of ``sharedRoot`` to, consider the fo
     plugin configuration folder with a dedicated data folder (sharedRoot = false) is provided below.
 
 .. code-block:: java
+
+    import ninja.leaping.configurate.ConfigurationNode;
+    import ninja.leaping.configurate.yaml.YAMLConfigurationLoader;
+
+    import java.io.IOException;
 
     private void convertFromBukkit() throws IOException {
         File bukkitConfigDir = new File("plugins/" + PomData.NAME);

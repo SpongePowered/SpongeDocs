@@ -23,6 +23,9 @@ values, one for the current and one for the maximum health, each identified by t
 
 .. code-block:: java
 
+    import org.spongepowered.api.data.DataContainer;
+    import org.spongepowered.api.data.key.Keys;
+
     DataContainer serializedHealth = healthData.toContainer();
     double currentHealth = serializedHealth.getDouble(Keys.HEALTH.getQuery()).get();
     currentHealth == healthData.health().get();  // true
@@ -37,6 +40,13 @@ do the deserialization in one step. Both of the following code examples are func
 
 .. code-block:: java
 
+    import org.spongepowered.api.data.DataView;
+    import org.spongepowered.api.data.manipulator.mutable.entity.HealthData;
+    import org.spongepowered.api.service.persistence.DataBuilder;
+    import org.spongepowered.api.service.persistence.SerializationService;
+
+    import java.util.Optional;
+
     public Optional<HealthData> deserializeHealth(DataView container) {
         final SerializationService service = this.game.getServiceManager().provideUnchecked(SerializationService.class);
         final Optional<DataBuilder<HealthData>> builder = service.getBuilder(HealthData.class);
@@ -49,6 +59,8 @@ do the deserialization in one step. Both of the following code examples are func
 **Code Example: Deserialization, the short way**
 
 .. code-block:: java
+
+    import org.spongepowered.api.data.manipulator.mutable.entity.HealthData;
 
     public Optional<HealthData> deserializeHealth(DataView container) {
         final SerializationService service = this.game.getServiceManager().provideUnchecked(SerializationService.class);
@@ -72,6 +84,9 @@ using the :doc:`Configurate Library <../configuration/index>`.
 **Code Example: Serializing a HealthData instance to Configurate**
 
 .. code-block:: java
+
+    import ninja.leaping.configurate.ConfigurationNode;
+    import org.spongepowered.api.data.translator.ConfigurateTranslator;
 
     public void writeToConfig(HealthData data, ConfigurationNode config) {
         final ConfigurateTranslator translator = ConfigurateTranslator.instance();

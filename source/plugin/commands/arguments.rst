@@ -173,14 +173,14 @@ The parser in this example reads two input arguments and converts them to a vect
 
 .. code-block:: java
 
-   import java.util.Collections;
-   import java.util.List;
-
    import com.flowpowered.math.vector.Vector2i;
    import org.spongepowered.api.util.command.args.ArgumentParseException;
    import org.spongepowered.api.util.command.args.CommandArgs;
    import org.spongepowered.api.text.Text;
    import org.spongepowered.api.util.command.args.CommandElement;
+
+   import java.util.Collections;
+   import java.util.List;
 
    public class Vector2iCommandElement extends CommandElement {
 

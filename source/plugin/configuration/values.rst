@@ -11,6 +11,9 @@ Reading Values
 
 .. code-block:: java
 
+    import ninja.leaping.configurate.ConfigurationNode;
+    import ninja.leaping.configurate.ConfigurationOptions;
+
     ConfigurationNode rootNode = loader.createEmptyNode(ConfigurationOptions.defaults());
     ConfigurationNode valueNode = rootNode.getNode((Object[]) "config.blockCheats.enabled".split("\\."));
 
@@ -50,6 +53,8 @@ node of your configuration file, the node that is able to list all the values ex
 to handle the IOException that can be thrown if saving goes wrong.
 
 .. code-block:: java
+
+    import java.io.IOException;
 
     try {
         loader.save(rootNode);

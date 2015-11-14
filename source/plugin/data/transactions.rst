@@ -83,6 +83,10 @@ you may wish to undo the partial successes.
 
 .. code-block:: java
 
+    import org.spongepowered.api.data.DataHolder;
+    import org.spongepowered.api.data.DataTransactionResult;
+    import org.spongepowered.api.data.manipulator.DataManipulator;
+
     public void safeOffer(DataHolder target, DataManipulator data) {
         DataTransactionResult result = target.offer(data);
         if (result.getType() != DataTransactionResult.Type.SUCCESS) {

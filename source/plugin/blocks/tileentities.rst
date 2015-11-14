@@ -26,6 +26,7 @@ cast to the according subtype.
 
  .. code-block:: java
 
+    import org.spongepowered.api.block.tileentity.Jukebox;
     import org.spongepowered.api.block.tileentity.TileEntity;
     import org.spongepowered.api.block.tileentity.TileEntityTypes;
 
@@ -56,9 +57,11 @@ The following example contains two methods to alter the data of a sign. The firs
 line, the second attempts to set it and returns the boolean value indicating its success.
 
  .. code-block:: java
-
+ 
     import org.spongepowered.api.data.manipulator.tileentities.SignData;
     import org.spongepowered.api.text.Text;
+
+    import java.util.Optional;
 
     public Optional<Text> getFirstLine(TileEntity entity) {
         Optional<SignData> data = entity.getOrCreate(SignData.class);

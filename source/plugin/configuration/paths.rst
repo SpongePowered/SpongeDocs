@@ -33,6 +33,9 @@ Let's start off by defining our root node again. We'll be using a blank node to 
 
 .. code-block:: java
 
+    import ninja.leaping.configurate.ConfigurationNode;
+    import ninja.leaping.configurate.ConfigurationOptions;
+
     ConfigurationNode rootNode = loader.createEmptyNode(ConfigurationOptions.defaults());
 
 The method to get a node from a node is the ``getNode(Object...)`` method. Note that ``Object...`` type for the parameter,

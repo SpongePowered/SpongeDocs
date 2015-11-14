@@ -130,6 +130,8 @@ The recommended way to obtain your config file is through Guice, along with the 
 
     import org.spongepowered.api.service.config.ConfigDir;
 
+    import java.io.File;
+
     @Inject
     @ConfigDir(sharedRoot = false)
     private File configDir;

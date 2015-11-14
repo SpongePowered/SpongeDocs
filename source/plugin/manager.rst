@@ -41,8 +41,6 @@ for a reference, create a new variable to hold the ``PluginManager`` instance an
 
 .. code-block:: java
 
-    package examples.plugin;
-
     import com.google.inject.Inject;
     import org.spongepowered.api.plugin.PluginManager;
 
@@ -61,10 +59,6 @@ The service manager also holds an instance of the server's ``PluginManager``. Si
 
 .. code-block:: java
 
-    package examples.plugin;
-
-    import org.spongepowered.api.service.ServiceManager;
-
     private PluginManager pluginManager = serviceManager.provide(PluginManager.class);
 
 3. The Game Instance
@@ -79,10 +73,6 @@ The service manager also holds an instance of the server's ``PluginManager``. Si
 A game instance can provide a reference to the server's ``PluginManager`` as well for convenience.
 
 .. code-block:: java
-
-    package examples.plugin;
-
-    import org.spongepowered.api.Game;
 
     private PluginManager pluginManager = game.getPluginManager();
 
@@ -100,18 +90,15 @@ With the plugin manager, it is possible to get all plugins currently loaded thro
 
 .. code-block:: java
 
-    package examples.plugin;
-
-    import java.util.Collection;
     import org.spongepowered.api.plugin.PluginContainer;
+
+    import java.util.List;
 
     private List<PluginContainer> plugins = pluginManager.getPlugins();
 
 Or, it is possible to obtain an instance to a plugin container directly, by the example shown below:
 
 .. code-block:: java
-
-    package examples.plugin;
 
     private PluginContainer myOtherPlugin = pluginManager.getPlugin("myOtherPluginId").orNull();
 
@@ -135,8 +122,6 @@ be if the owning developer changes the name of the plugin, references to the lat
 become wrong as a result of this change, provided you've used the method ``PluginContainer.getName()`` to get its name.
 
 .. code-block:: java
-
-    package examples.plugin;
 
     private PluginContainer myOtherPlugin = pluginManager.getPlugin("myOtherPluginId").orNull();
     private MyOtherPlugin pluginInstance = (MyOtherPlugin) myOtherPlugin.getInstance();

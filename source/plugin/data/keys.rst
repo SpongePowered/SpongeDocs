@@ -55,6 +55,8 @@ Now, as an example, imagine we want to buff a data holder by doubling his maximu
 
 .. code-block:: java
 
+    import java.util.function.Function;
+
     public void buff(DataHolder target) {
         target.transform(Keys.MAX_HEALTH, new Function<Double,Double>() {
             @Override
@@ -88,6 +90,8 @@ health just a tiny bit above that.
 **Code Example: Bring a target to the brink of death**
 
 .. code-block:: java
+
+    import org.spongepowered.api.data.value.mutable.MutableBoundedValue;
 
     public void scare(DataHolder target) {
         if (target.supports(Keys.HEALTH)) {

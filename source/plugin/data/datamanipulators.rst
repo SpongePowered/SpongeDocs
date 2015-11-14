@@ -13,6 +13,13 @@ try to heal someone (or something).
 
 .. code-block:: java
 
+    import org.spongepowered.api.data.DataHolder;
+    import org.spongepowered.api.data.DataTransactionResult;
+    import org.spongepowered.api.data.manipulator.mutable.entity.HealthData;
+    import org.spongepowered.api.data.value.mutable.MutableBoundedValue;
+
+    import java.util.Optional;
+
     public static DataTransactionResult heal(DataHolder target) {
         Optional<HealthData> healthOptional = target.get(HealthData.class);
         if (healthOptional.isPresent()) {
@@ -85,6 +92,8 @@ data between two holders.
 **Code Example: Swapping any data manipulator**
 
 .. code-block:: java
+
+    import org.spongepowered.api.data.manipulator.DataManipulator;
 
     public  <T extends DataManipulator<?,?>> void swapData(DataHolder targetA, DataHolder targetB, Class<T> dataClass) {
        if (targetA.supports(dataClass) && targetB.supports(dataClass)) {

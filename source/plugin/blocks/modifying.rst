@@ -31,7 +31,6 @@ a wet sponge block.
 
  .. code-block:: java
 
-    import org.spongepowered.api.Game;
     import org.spongepowered.api.block.BlockState;
     import org.spongepowered.api.data.manipulator.WetData;
 
