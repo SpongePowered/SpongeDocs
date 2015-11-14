@@ -14,12 +14,6 @@ First, let's grab a new ``HoconConfigurationLoader`` that points to our configur
 
 .. code-block:: java
 
-    import ninja.leaping.configurate.commented.CommentedConfigurationNode;
-    import ninja.leaping.configurate.hocon.HoconConfigurationLoader;
-    import ninja.leaping.configurate.loader.ConfigurationLoader;
-
-    import java.io.File;
-
     File potentialFile = new File("config.conf");
     ConfigurationLoader<CommentedConfigurationNode> loader =
       HoconConfigurationLoader.builder().setFile(potentialFile).build();
@@ -40,8 +34,6 @@ Example: Loading a default config from the plugin jar file
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: java
-
-    import java.net.URL;
 
     URL jarConfigFile = this.getClass().getResource("defaultConfig.conf");
     ConfigurationLoader<CommentedConfigurationNode> loader =

@@ -23,14 +23,6 @@ thrown when loading the node from the file and handle it accordingly.
 
 .. code-block:: java
 
-    import ninja.leaping.configurate.ConfigurationNode;
-    import ninja.leaping.configurate.commented.CommentedConfigurationNode;
-    import ninja.leaping.configurate.hocon.HoconConfigurationLoader;
-    import ninja.leaping.configurate.loader.ConfigurationLoader;
-
-    import java.io.File;
-    import java.io.IOException;
-
     File potentialFile = new File("config.conf");
     ConfigurationLoader<CommentedConfigurationNode> loader = HoconConfigurationLoader.builder().setFile(potentialFile).build();
     ConfigurationNode rootNode;
@@ -45,8 +37,6 @@ can be done with a simple call to ``ConfigurationLoader.createEmptyNode(Configur
 have an ``IOException`` to catch!)
 
 .. code-block:: java
-
-    import ninja.leaping.configurate.ConfigurationOptions;
 
     File potentialFile = new File("config.conf");
     ConfigurationLoader<CommentedConfigurationNode> loader = HoconConfigurationLoader.builder().setFile(potentialFile).build();
