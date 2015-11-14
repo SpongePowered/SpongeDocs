@@ -18,6 +18,12 @@ comfortable with the API.
     It is recommended to have prior experience with developing in Java! Copying-and-pasting examples from the
     documentation likely will not work, especially without modification.
 
+.. tip::
+
+    The `Cookbook <https://github.com/SpongePowered/Cookbook>`__ is a collection of fully functional plugins that each
+    demonstrate a specific part of the SpongeAPI. These plugin "recipes" are standalone and are compilable via Gradle
+    or Maven. Some of them demonstrate how to create plugins using other JVM languages such as Scala and Kotlin.
+
 Who should read this?
 ~~~~~~~~~~~~~~~~~~~~~
 
