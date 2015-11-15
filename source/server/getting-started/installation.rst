@@ -43,20 +43,38 @@ Dedicated Servers
 .. note::
 
     If you already have a Forge server, just put the Sponge mod into your ``mods`` folder. Remember to update your Forge
-    version if it's older than the one that :doc:`sponge requires <implementations/spongeforge>`.
+    version to match the one that :doc:`sponge requires <implementations/spongeforge>`.
 
-Via GUI
---------
+Installing Forge via Commandline
+--------------------------------
 
-1. Download the Minecraft Forge installer from the `Minecraft Forge website <http://files.minecraftforge.net/>`_. The
-   latest version, or any version that's newer than the one listed :doc:`in the filename of the Sponge download
-   <implementations/spongeforge>`, should work.
+1. Visit the `Minecraft Forge website <http://files.minecraftforge.net/>`_ and click "Show all downloads" to view the full
+   set of available options. Identify the version matching the one listed :doc:`in the filename of the SpongeForge download
+   <implementations/spongeforge>`, and hover over the (i) next to "Installer" to get the direct download link.
+#. Use your favorite download method to download the jar to its destination.
+   Example: ``wget http://url.to/forge-version-installer.jar``
+#. From the folder in which you wish to install Forge, execute the jar with the ``--installServer`` option. Example:
+   ``java -jar forge-version-installer.jar --installServer``
+#.  Continue to Adding SpongeForge to Forge below.
+
+
+Installing Forge via GUI
+------------------------
+
+1. Download the Minecraft Forge installer from the `Minecraft Forge website <http://files.minecraftforge.net/>`_ for the version
+   matching the one listed :doc:`in the filename of the SpongeForge download <implementations/spongeforge>`.
 #. Run the provided Forge installer, select "Install Server", choose an empty folder to place the server's files,
    and then click OK.
-#. Download SpongeForge from the Sponge website and put it into the ``mods`` folder in your server directory.
+#. Continue to Adding SpongeForge to Forge below.
+
+
+Adding SpongeForge to Forge
+---------------------------
+
+1. Download SpongeForge from the Sponge website and put it into the ``mods`` folder in your server directory.
    Create the folder if it does not yet exist.
 #. You may now launch the server via command or launch script ``java -jar forge-version-XYZ.jar``.
-#. Set up :doc:`port-forward` to ensure others can connect.
+#. If operating from home, set up :doc:`port-forward` to ensure others can connect.
 
 Next, learn :doc:`how you can configure Sponge <configuration/index>` and how to :doc:`how to manage your server
 <../management/index>` (including installing plugins).
