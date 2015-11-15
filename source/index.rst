@@ -5,14 +5,14 @@ The Sponge Documentation
 Welcome to SpongeDocs, the official documentation for the open-source `Sponge <http://spongepowered.org>`__ project.
 
 The Sponge project currently offers two Implementations, **SpongeForge** and **SpongeVanilla**.
-Both make use of our **SpongeAPI**.
+Both make use of our **SpongeAPI**, allowing you to customise and enhance your Minecraft Server.
 
 If you want to dive into Sponge real quick, have a look at our :doc:`server/getting-started/index` section.
-You'll learn how to setup your server there. If you want to help us developing Sponge or you're planning to create your
-own plugins, then :doc:`plugin/index` and :doc:`contributing/index` are the right places to start. If you want to know
-more about Sponge, then give :doc:`about/index` a try.
+You'll learn how to setup your server there. If you're planning to create your own plugins or want to help us
+developing Sponge, then :doc:`plugin/index` and :doc:`contributing/index` are the right places to start. If you want to
+know more about Sponge, then give :doc:`about/index` a try.
 
-If you just want to download SpongeForge or SpongeVanilla, then head to :doc:`downloads`.
+If you just want to download SpongeForge or SpongeVanilla or read our changelogs, then head to :doc:`downloads`.
 
 .. note::
 
