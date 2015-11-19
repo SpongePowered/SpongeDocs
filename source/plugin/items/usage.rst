@@ -4,7 +4,8 @@ Basic Item Usage
 
 Items are represented through an ``ItemStack``. An ``ItemStack`` is an inventory item with information such as the
 amount of the item in the stack, the type of the item, and extra data such as durability. An ``Item`` itself is the
-graphical representation of an ``ItemStack`` as an entity.
+graphical representation of an ``ItemStack`` as an entity. Be aware that you'll always get a copy and *not* the actual
+``ItemStack``.
 
 Checking an Item's Type
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -88,18 +89,9 @@ the type of the item. We can check if a block can mine obsidian by using the ``H
         return false;
     }
 
-<<<<<<< ed196e3d3a276dc7fb6a2d76b7bec29161cfac5c:source/plugin/items.rst
 This code will check to see if the item has a ``HarvestingProperty``, such as a pickaxe. If it does then it will return
 if this item can harvest obsidian without even needing to check the type of the item.
 
 .. note::
     If you need to hold data of something that isn't covered by the API, such as mod data, you need to implement the
     ``DataTranslator`` interface to translate it to a ``DataContainer`` to be used with the rest of the API.
-=======
-This code will check to see if the item has a ``HarvestingProperty``, such as a pickaxe. If it does then it will
-return if this item can harvest obsidian without even needing to check the type of the item.
-
-.. note::
-    If you need to hold data of something that isn't covered by the API, such as mod data, you need to implement
-    the ``DataTranslator`` interface to translate it to a ``DataContainer`` to be used with the rest of the API.
->>>>>>> add explanations:source/plugin/items/usage.rst

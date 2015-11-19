@@ -71,7 +71,7 @@ Finally we want it to be unbreakable:
 That's it. you now have a fully enchanted, unbreakable and beautifully named sword which you can spawn or give to
 players. The sword goes by the name "SUPERMEGAAWESOME Diamond Sword".
 
-If you're still unsure how the complete example looks, this is for you:
+If you're still unsure how the complete example looks, here's the final result:
 
 
 .. code-block:: java
