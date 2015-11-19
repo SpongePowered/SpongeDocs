@@ -61,13 +61,13 @@ The second constructor must
     public class SpongeHealthData {
 
         public SpongeHealthData() {
-            this(20D, 20D);
+            this(DataConstants.DEFAULT_HEALTH, DataConstants.DEFAULT_HEALTH);
         }
 
         public SpongeHealthData(double currentHealth, double maxHealth) {
             super(HealthData.class);
-            checkArgument(currentHealth >= 0.0 && currentHealth <= (double) Float.MAX_VALUE);
-            checkArgument(maxHealth >= 0.0 && maxHealth <= (double) Float.MAX_VALUE);
+            checkArgument(currentHealth >= DataConstants.MINIMUM_HEALTH && currentHealth <= (double) Float.MAX_VALUE);
+            checkArgument(maxHealth >= DataConstants.MINIMUM_HEALTH && maxHealth <= (double) Float.MAX_VALUE);
             this.currentHealth = currentHealth;
             this.maximumHealth = maxHealth;
             this.registerGettersAndSetters();
@@ -81,6 +81,12 @@ Since we know that both current health and maximum health are bounded values, we
 outside of these bounds can be passed. To achieve this we use guava's ``Preconditions`` of which we import the
 required methods statically.
 
+.. note::
+
+    Never use so-called magic values (arbitrary numbers, booleans etc) in your code. Instead, locate the
+    ``org.spongepowered.common.data.util.DataConstants`` class and use a fitting constant - or create one, if
+    necessary.
+
 Accessors defined by the Interface
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -91,7 +97,7 @@ The interface we implement specifies some methods to access ``Value`` objects. F
 
     public MutableBoundedValue<Double> health() {
         return SpongeValueBuilder.boundedBuilder(Keys.HEALTH)
-            .minimum(0.0)
+            .minimum(DataConstants.MINIMUM_HEALTH)
             .maximum(this.maximumHealth)
             .defaultValue(this.maximumHealth)
             .actualValue(this.currentHealth)
@@ -138,7 +144,7 @@ by ``AbstractData``, but we must tell it which data it can access and how. There
 .. code-block:: java
 
     private void setCurrentHealthIfValid(double value) {
-        if (value >= 0.0 && value <= (double) Float.MAX_VALUE) {
+        if (value >= DataConstants.MINIMUM_HEALTH && value <= (double) Float.MAX_VALUE) {
             this.currentHealth = value;
         } else {
             throw new IllegalArgumentException("Invalid value for current health");
@@ -146,7 +152,7 @@ by ``AbstractData``, but we must tell it which data it can access and how. There
     }
 
     private void setMaximumHealthIfValid(double value) {
-        if (value >= 0.0 && value <= (double) Float.MAX_VALUE) {
+        if (value >= DataConstants.MINIMUM_HEALTH && value <= (double) Float.MAX_VALUE) {
             this.maximumHealth = value;
         } else {
             throw new IllegalArgumentException("Invalid value for maximum health");
@@ -441,9 +447,9 @@ a ``Value`` and its immutable counterpart and three methods to get, set and remo
 
     protected MutableBoundedValue<Double> constructValue(Double value) {
         return SpongeValueBuilder.boundedBuilder(Keys.HEALTH)
-            .minimum(0.0)
+            .minimum(DataConstants.MINIMUM_HEALTH)
             .maximum((double) Float.MAX_VALUE)
-            .defaultValue(20.0)
+            .defaultValue(DataConstants.DEFAULT_HEALTH)
             .actualValue(value)
             .build();
     }
@@ -466,7 +472,7 @@ Since it is impossible for an ``EntityLivingBase`` to not have health, this meth
 .. code-block:: java
 
     protected boolean set(EntityLivingBase container, Double value) {
-        if (value >= 0D && value <= (double) Float.MAX_VALUE) {
+        if (value >= DataConstants.MINIMUM_HEALTH && value <= (double) Float.MAX_VALUE) {
             container.setHealth(value.floatValue());
             return true;
         }
