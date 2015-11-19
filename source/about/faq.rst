@@ -97,7 +97,7 @@ What can I do with Sponge?
 --------------------------
 
 Sponge provides a Plugin API. This means that you can create new content and gamemodes on the go.
-Have a look at your plugin pages to get a quick-start: :doc:`../plugin/index`
+Have a look at our plugin pages to get a quick-start: :doc:`../plugin/index`
 
 What can't I do with Sponge? / Limitations of Sponge?
 -----------------------------------------------------
