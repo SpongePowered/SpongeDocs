@@ -1,6 +1,6 @@
-==================
-Working with Items
-==================
+================
+Basic Item Usage
+================
 
 Items are represented through an ``ItemStack``. An ``ItemStack`` is an inventory item with information such as the
 amount of the item in the stack, the type of the item, and extra data such as durability. An ``Item`` itself is the
@@ -50,6 +50,7 @@ need to specify a ``List`` of ``Text`` rather than an boolean or other value. It
 see if the key can actually apply to the item. For example, some items might not have durability or may already have
 lore applied to the item.
 
+
 .. code-block:: java
 
     import org.spongepowered.api.text.Text;
@@ -87,9 +88,18 @@ the type of the item. We can check if a block can mine obsidian by using the ``H
         return false;
     }
 
+<<<<<<< ed196e3d3a276dc7fb6a2d76b7bec29161cfac5c:source/plugin/items.rst
 This code will check to see if the item has a ``HarvestingProperty``, such as a pickaxe. If it does then it will return
 if this item can harvest obsidian without even needing to check the type of the item.
 
 .. note::
     If you need to hold data of something that isn't covered by the API, such as mod data, you need to implement the
     ``DataTranslator`` interface to translate it to a ``DataContainer`` to be used with the rest of the API.
+=======
+This code will check to see if the item has a ``HarvestingProperty``, such as a pickaxe. If it does then it will
+return if this item can harvest obsidian without even needing to check the type of the item.
+
+.. note::
+    If you need to hold data of something that isn't covered by the API, such as mod data, you need to implement
+    the ``DataTranslator`` interface to translate it to a ``DataContainer`` to be used with the rest of the API.
+>>>>>>> add explanations:source/plugin/items/usage.rst
