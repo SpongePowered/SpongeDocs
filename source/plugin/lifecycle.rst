@@ -85,8 +85,10 @@ During this state, no players are connected and no changes to worlds are saved.
 Stopping States
 ~~~~~~~~~~~~~~~
 
-Stopping states occur only once during a single run. ``SERVER_ABOUT_TO_START`` may follow ``SERVER_STOPPED``,
-and ``SERVER_STOPPED`` may occur at any point during the process if there is an error.
+Stopping states never occur more than once during a single run. They occur when the game stops normally (when the Close button is clicked, the ``/stop`` command is typed, or the "Quit Game" button is clicked).
+
+.. warning::
+    Stopping states are not guaranteed to be run during shutdown. They will not fire if the game is forced stopped via Ctrl-C, Task Manager, a computer crash, or similar situations.
 
 **GAME_STOPPING**
 
