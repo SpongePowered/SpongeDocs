@@ -83,7 +83,7 @@ The ``GameStoppedServerEvent`` is triggered.
 During this state, no players are connected and no changes to worlds are saved.
 
 Stopping States
-~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
 
 Stopping states occur only once during a single run. ``SERVER_ABOUT_TO_START`` may follow ``SERVER_STOPPED``,
 and ``SERVER_STOPPED`` may occur at any point during the process if there is an error.
