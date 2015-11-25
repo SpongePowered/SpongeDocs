@@ -96,7 +96,7 @@ The interface we implement specifies some methods to access ``Value`` objects. F
 .. code-block:: java
 
     public MutableBoundedValue<Double> health() {
-        return SpongeValueBuilder.boundedBuilder(Keys.HEALTH)
+        return SpongeValueFactory.boundedBuilder(Keys.HEALTH)
             .minimum(DataConstants.MINIMUM_HEALTH)
             .maximum(this.maximumHealth)
             .defaultValue(this.maximumHealth)
@@ -446,7 +446,7 @@ a ``Value`` and its immutable counterpart and three methods to get, set and remo
 .. code-block:: java
 
     protected MutableBoundedValue<Double> constructValue(Double value) {
-        return SpongeValueBuilder.boundedBuilder(Keys.HEALTH)
+        return SpongeValueFactory.boundedBuilder(Keys.HEALTH)
             .minimum(DataConstants.MINIMUM_HEALTH)
             .maximum((double) Float.MAX_VALUE)
             .defaultValue(DataConstants.DEFAULT_HEALTH)
