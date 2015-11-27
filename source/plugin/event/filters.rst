@@ -1,6 +1,7 @@
-======================================
-Advansed Event Handling: Event Filters
-======================================
+=============
+Event Filters
+=============
+
 Now that you've spent a bit of time working with events you've probably noticed that there are several preconditions that you
 very commonly check while writing an event listener. Event filters are a group of annotations that assist you by allowing you
 to automatically validate aspects of the event, and if the validation fails then your listener will not be called. This allows
@@ -16,7 +17,8 @@ parameter sources and parameter filters. Each additional parameter must have one
 any number of filter annotations.
 
 Event Type Filters
-~~~~~~~~~~~~~~~~~~
+==================
+
 **@Include/@Exclude**
 These two parameters are used in conjunction with listening for supertype events such as ``EntityEvent`` while narrowing the
 events that you receive to just a subset of the events extending the event you're listening for.
@@ -25,11 +27,11 @@ For example:
 
 .. code-block:: java
 
-	@Listener
-	@Exclude(InteractBlockEvent.Primary.class)
-	public void onInterace(InteractBlockEvent event) {
-		// do something
-	}
+    @Listener
+    @Exclude(InteractBlockEvent.Primary.class)
+    public void onInterace(InteractBlockEvent event) {
+        // do something
+    }
 
 This listener will be called for all events extending InteractBlockEvent **except** for the ``InteractBlockEvent.Primary``
 event (leaving just the ``InteractBlockEvent.Secondary`` event).
@@ -38,11 +40,11 @@ An example with ``@Include`` could be:
 
 .. code-block:: java
 
-	@Listener
-	@Include({InteractBlockEvent.Primary.class, InteractBlockEvent.Secondary.class})
-	public void onInterace(InteractBlockEvent event) {
-		// do something
-	}
+    @Listener
+    @Include({InteractBlockEvent.Primary.class, InteractBlockEvent.Secondary.class})
+    public void onInterace(InteractBlockEvent event) {
+        // do something
+    }
 
 This listener will be called for all events extending InteractBlockEvent which are also in the list of events within the
 ``@Include`` annotation (which is all of them as it happens).
@@ -55,11 +57,10 @@ annotation.
 
 - ``CancellationState.FALSE`` is the default behavior and will not call your listener if the event has been cancelled.
 - ``CancellationState.IGNORE`` will cause your listener to be called regardless of the cancellation state of the event.
-- ``CancellationState.TRUE`` will cause your listener to be called only if the event has been cancelled by a previous event
-listener.
+- ``CancellationState.TRUE`` will cause your listener to be called only if the event has been cancelled by a previous event listener.
 
 Parameter Filters
-~~~~~~~~~~~~~~~~~
+=================
 
 Parameter filters allow you to filter based on objects within the event. These annotations come in two types, sources and
 filters. Each additional parameter for your listener method, beyond the normal event parameter, requires exactly one source
@@ -80,19 +81,19 @@ will be set to the first player present the cause.**
 
 .. code-block:: java
 
-	@Listener
-	public void onInteract(InteractBlockEvent.Secondary event, @First Player player) {
-		// do something
-	}
+    @Listener
+    public void onInteract(InteractBlockEvent.Secondary event, @First Player player) {
+        // do something
+    }
 
 **@Last** This is similar to ``@First`` however it instead makes a call to ``Cause#last(Class<?>)``.
 
 .. code-block:: java
 
-	@Listener
-	public void onInteract(InteractBlockEvent.Secondary event, @Last Player player) {
-		// do something
-	}
+    @Listener
+    public void onInteract(InteractBlockEvent.Secondary event, @Last Player player) {
+        // do something
+    }
 
 **@All** This parameter source annotation is a little special in that it requires that the annotated parameter be an array
 type. The returned array will be equivalent to the result of ``Cause#all(Class<?>)``. By default if the returned array would
@@ -103,10 +104,10 @@ no players.**
 
 .. code-block:: java
 
-	@Listener
-	public void onInteract(InteractBlockEvent.Secondary event, @All(ignoreEmpty=false) Player[] players) {
-		// do something
-	}
+    @Listener
+    public void onInteract(InteractBlockEvent.Secondary event, @All(ignoreEmpty=false) Player[] players) {
+        // do something
+    }
 
 Parameter Filter Annotations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -124,10 +125,10 @@ the data manipulator ``FlyingData``.**
 
 .. code-block:: java
 
-	@Listener
-	public void onInteract(InteractBlockEvent.Secondary event, @First @Supports(FlyingData.class) Entity entity) {
-		// do something
-	}
+    @Listener
+    public void onInteract(InteractBlockEvent.Secondary event, @First @Supports(FlyingData.class) Entity entity) {
+        // do something
+    }
 
 **@Has**
 This parameter filter is similar to the ``@Supports`` parameter filter except that it additionally validates that the
@@ -139,7 +140,7 @@ instance of ``FlyingData`` available.**
 
 .. code-block:: java
 
-	@Listener
-	public void onInteract(InteractBlockEvent.Secondary event, @First @Has(FlyingData.class) Entity entity) {
-		// do something
-	}
+    @Listener
+    public void onInteract(InteractBlockEvent.Secondary event, @First @Has(FlyingData.class) Entity entity) {
+        // do something
+    }

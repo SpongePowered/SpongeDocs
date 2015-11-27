@@ -1,34 +1,4 @@
-===================
-Working with Events
-===================
-
-Sponge provides a system to:
-
-- Listen for events
-- Fire events
-
-Overview
-========
-
-Events are used to inform plugins of certain happenings. Many events can also be *cancelled* -- that is, the action that
-the event refers to can be prevented from occurring. Cancellable events implement the ``Cancellable`` interface.
-
-Sponge itself contains many events; however, plugins can create their own events which other plugins can listen to.
-
-Event listeners are assigned a priority that determines the order in which the event listener is run in context of other
-event listeners (such as those from other plugins). For example, an event listener with ``EARLY`` priority will return
-before most other event listeners.
-
-Events cannot be sent to a specific set of plugins. All plugins that listen to an event will be notified of the event.
-
-The event bus or event manager is the class that keeps track of which plugins are listening to which event,
-and is also responsible for distributing events to event listeners.
-
-.. note::
-  The event bus **supports supertypes**. For example, ``ChangeBlockEvent.Break`` extends ``ChangeBlockEvent``.
-  Therefore, a plugin could listen to ``ChangeBlockEvent`` and still receive ``ChangeBlockEvent.Break``\ s. However,
-  a plugin listening to just ``ChangeBlockEvent.Break`` would not be notified of other types of ``ChangeBlockEvent``.
-
+===============
 Event Listeners
 ===============
 
@@ -52,6 +22,11 @@ In addition, the class containing these methods must be registered with the even
     For event listeners on your main plugin class (annotated by ``@Plugin``), you do not need to register the object for
     events because Sponge will do it automatically.
 
+
+.. note::
+    The event bus **supports supertypes**. For example, ``ChangeBlockEvent.Break`` extends ``ChangeBlockEvent``.
+    Therefore, a plugin could listen to ``ChangeBlockEvent`` and still receive ``ChangeBlockEvent.Break``\ s. However,
+    a plugin listening to just ``ChangeBlockEvent.Break`` would not be notified of other types of ``ChangeBlockEvent``.
 
 
 Registering and Unregistering Event Listeners
@@ -180,88 +155,3 @@ Example: Firing LightningEvent
 
     LightningEvent lightningEvent = SpongeEventFactory.createLightningEvent(game, Cause.empty());
     game.getEventManager().post(lightningEvent);
-
-
-Creating Custom Events
-======================
-
-You can write your own event classes and dispatch those events using the method described above.
-
-An event class must either implement the ``Event`` interface or extend the ``AbstractEvent`` class.
-
-If you want your event to be cancellable, the class must also implement ``Cancellable``.
-
-Example: Custom Event Class
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. code-block:: java
-
-    import org.spongepowered.api.entity.player.Player;
-    import org.spongepowered.api.event.impl.AbstractEvent;
-    import org.spongepowered.api.event.Cancellable;
-
-    public class PrivateMessageEvent extends AbstractEvent implements Cancellable {
-
-       private boolean cancelled = false;
-
-       private Player sender;
-       private Player recipient;
-
-       private String message;
-
-       public Player getSender() {
-          return sender;
-       }
-
-       public Player getRecipient() {
-          return recipient;
-       }
-
-       public String getMessage() {
-          return message;
-       }
-
-       @Override
-       public boolean isCancelled() {
-          return cancelled;
-       }
-
-       @Override
-       public void setCancelled(boolean cancel) {
-          cancelled = cancel;
-       }
-
-       public PrivateMessageEvent(Player sender, Player recipient, String message) {
-          this.sender = sender;
-          this.recipient = recipient;
-          this.message = message;
-       }
-    }
-
-
-Example: Fire Custom Event
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. code-block:: java
-
-    game.getEventManager().post(new PrivateMessageEvent(playerA, playerB, "Hello World!"));
-
-
-Example: Listen for Custom Event
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. code-block:: java
-
-    import org.spongepowered.api.text.Texts;
-    import org.spongepowered.api.text.chat.ChatTypes;
-
-    @Listener
-    public void onPrivateMessage(PrivateMessageEvent event) {
-        if(event.getMessage().equals("hi i am from planetminecraft")) {
-            event.setCancelled(true);
-            return;
-        }
-
-        String senderName = event.getSender().getName();
-        event.getRecipient().sendMessage(ChatTypes.CHAT, Texts.of("PM from " + senderName + ": " + event.getMessage()));
-    }
