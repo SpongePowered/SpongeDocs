@@ -85,17 +85,21 @@ During this state, no players are connected and no changes to worlds are saved.
 Stopping States
 ~~~~~~~~~~~~~~~
 
-Stopping states never occur more than once during a single run. They occur when the game stops normally (when the Close button is clicked, the ``/stop`` command is typed, or the "Quit Game" button is clicked).
+Stopping states never occur more than once during a single run. They occur when the game stops normally. (On Servers:
+the ``/stop`` command is typed. On Clients: The "Close" button or the "Quit Game" button are clicked)
 
 .. warning::
-    Stopping states are not guaranteed to be run during shutdown. They will not fire if the game is forced stopped via Ctrl-C, Task Manager, a computer crash, or similar situations.
+    Stopping states are not guaranteed to be run during shutdown. They may not fire if the game is force-stopped via
+    Ctrl-C, Task Manager, a computer crash, or similar situations.
 
 **GAME_STOPPING**
 
 The ``GameStoppingEvent`` is triggered.
-This state occurs immediately before ``GAME_STOPPED``.
+This state occurs immediately before ``GAME_STOPPED``. Plugins providing an API should still be capable of accepting
+basic requests.
 
 **GAME_STOPPED**
 
 The ``GameStoppedEvent`` is triggered.
-Once this event has finished executing, Minecraft will shut down.
+Once this event has finished executing, Minecraft will shut down. No further interaction with the game or other plugins
+should be attempted at this point.
