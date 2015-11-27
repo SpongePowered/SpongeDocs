@@ -6,7 +6,7 @@ very commonly check while writing an event listener. Event filters are a group o
 to automatically validate aspects of the event, and if the validation fails then your listener will not be called. This allows
 your listener to be dedicated to the logic of your handler, rather than the preconditions, resulting in cleaner code.
 
-Event filters come in two varieties, event type and parameter filters. 
+Event filters come in two varieties, event type and parameter filters.
 
 Event type filters are method annotations that are applied to your listener method along with the ``@Listener`` annotation and
 provide several filters based on the type or state of the event.
@@ -75,11 +75,13 @@ cause or in a member of the event object itself.
 the type of your parameter (This is equivalent to ``Cause#first(Class<?>)``). If no object is found matching this parameter
 then your listener is not called.
 
+**In this example your listener will only be called if there is a player in the event's cause, and the ``player`` parameter
+will be set to the first player present the cause.**
+
 .. code-block:: java
 
 	@Listener
 	public void onInteract(InteractBlockEvent.Secondary event, @First Player player) {
-		// This will only be called if there is a player in the event cause
 		// do something
 	}
 
@@ -89,7 +91,6 @@ then your listener is not called.
 
 	@Listener
 	public void onInteract(InteractBlockEvent.Secondary event, @Last Player player) {
-		// This will only be called if there is a player in the event cause
 		// do something
 	}
 
@@ -97,11 +98,13 @@ then your listener is not called.
 type. The returned array will be equivalent to the result of ``Cause#all(Class<?>)``. By default if the returned array would
 be empty then the validation fails however this can be disabled by setting ``ignoreEmpty=false``.
 
+**In this example your listener will always be called, although the players array may be empty if the event's cause contained
+no players.**
+
 .. code-block:: java
 
 	@Listener
 	public void onInteract(InteractBlockEvent.Secondary event, @All(ignoreEmpty=false) Player[] players) {
-		// This listener will always be called, though the player array may be empty at times
 		// do something
 	}
 
@@ -116,12 +119,13 @@ This parameter filter may be applied to any type which is a ``DataHolder``. It t
 its parameter and validates that the annotated DataHolder supports the given DataManipulator type. This validation is
 equivalent to ``DataHolder#supports(Class<? extends DataManipulator>)``.
 
+**In this example the listener will be called only if there is an entity in the event's cause, and if that entity supports
+the data manipulator ``FlyingData``.**
+
 .. code-block:: java
 
 	@Listener
 	public void onInteract(InteractBlockEvent.Secondary event, @First @Supports(FlyingData.class) Entity entity) {
-		// This listener be called so long as the first entity in the event's cause
-		//   supports FlyingData
 		// do something
 	}
 
@@ -130,12 +134,12 @@ This parameter filter is similar to the ``@Supports`` parameter filter except th
 ``DataHolder`` contains an instance of the given ``DataManipulator``. This validation is equivalent to
 ``DataHolder#hasData(Class<? extends DataManipulator>)``.
 
+**In this example the listener will be called only if there is an entity in the event's cause, and if that entity has an
+instance of ``FlyingData`` available.**
+
 .. code-block:: java
 
 	@Listener
 	public void onInteract(InteractBlockEvent.Secondary event, @First @Has(FlyingData.class) Entity entity) {
-		// This listener be called so long as the first entity in the event's cause
-		//   has an instance of FlyingData
 		// do something
 	}
-
