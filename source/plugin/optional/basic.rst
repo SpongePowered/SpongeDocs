@@ -23,10 +23,10 @@ In the olden times of yore, our plugin might fetch and use the ``Foo`` from the 
 
 .. code-block:: java
 
- public void someEventHandler(Entity someEntity) {
-  Foo entityFoo = someEntity.getFoo();
-  entityFoo.bar();
- }
+    public void someEventHandler(Entity someEntity) {
+        Foo entityFoo = someEntity.getFoo();
+        entityFoo.bar();
+    }
 
 The problem arises because - when designing the API - we have to rely an *implicit* contract on the ``getFoo`` method
 with respect to whether the method can (or cannot) return ``null``. This *implicit contract* can be defined in one of
@@ -38,38 +38,32 @@ two ways:
 .. image:: /images/optionals2.png
 
 Let's assume that the ``getFoo()`` method can - as part of its contract - return null. This suddenly means that our
-code above is unsafe as it may result in a ``NullPointerException``:
+code above is unsafe as it may result in a ``NullPointerException`` if ``entityFoo`` is null.
 
 .. code-block:: java
 
- public void someEventHandler(Entity someEntity) {
-  Foo entityFoo = someEntity.getFoo();
-  entityFoo.bar(); // If entityFoo is null, this line now
-                     // generates a NullPointerException!
- }
+    public void someEventHandler(Entity someEntity) {
+        Foo entityFoo = someEntity.getFoo();
+        entityFoo.bar();
+    }
 
 Let's assume our plugin author is savvy to the nullable nature of our ``getFoo`` method and decides to fix the problem
-with null checking. The resultant code looks like this:
+with null checking. Assuming they have defined a local constant ``Foo``, the resultant code looks like this:
 
 
 .. code-block:: java
 
- public void someEventHandler(Entity someEntity) {
-  Foo entityFoo = someEntity.getFoo();
-  if (entityFoo == null) {
-        // Assume we have some local constant Foo to use as
-        // a backup.
-        entityFoo = MyPlugin.DEFAULT_FOO;
+    public void someEventHandler(Entity someEntity) {
+        Foo entityFoo = someEntity.getFoo();
+        if (entityFoo == null) {
+            entityFoo = MyPlugin.DEFAULT_FOO;
+        }
+        entityFoo.bar();
     }
-    // Definitely not null now, but this call has ended up
-    // disconnected (visually) from the original getter by
-    // the need to explicitly handle the possible null.
-    entityFoo.bar();
- }
 
 In this example, the plugin author is aware that the method can return null and has a constant available with a
 default instance of ``Foo`` which can be used instead. Of course the plugin could just short-circuit the call entirely,
-or it could attempt to fetch `Foo` from somewhere else. The key take-away is that handling nulls even in simple cases
+or it could attempt to fetch `Foo` from somewhere else. The key message is that handling nulls even in simple cases
 can lead to spaghetti code quite quickly, and moreover relies on the plugin author to explicitly visit the method's
 contract to check whether a null check is necessary in the first place.
 
@@ -77,8 +71,8 @@ That's not the only drawback however. Let's consider the API over the longer ter
 writes their plugin, they visit the method javadoc and see that the method is guaranteed to never return null
 (since every `Entity` always has a ``Foo`` available). Great! No convoluted null check required!
 
-However, let's now assume that several versions of the game along the line, the game developers remove or deprecate
-the concept of ``Foo``. The API authors update the API accordingly and state that from now on the ``getFoo()`` method
+However, let's now assume that in a later version of the game, the game developers remove or deprecate the concept of
+``Foo``. The API authors update the API accordingly and state that from now on the ``getFoo()`` method
 **can** return ``null`` and write this into the method javadoc. Now there's a problem: even diligent plugin authors who
 checked the method contract when they first wrote their code are unwittingly handling the method incorrectly: with no
 null check in place any code using the ``Foo`` returned from ``getFoo`` is going to raise an NPE.
@@ -94,7 +88,7 @@ choose from:
  * Return a "fake" object or invalid value - this means that consuming (plugin) code will continue to work, but creates an ever-increasing burden on the API developers going forward since every deprecated feature will require the creation of yet more fake objects. This could soon lead to the situation where a big chunk of the API is filled with junk objects whose only purpose is to support parts of the API which are no longer in service.
 
 It should be pretty clear by now that there are some sizable headaches attached to *implicit* nullable contracts, made
-all the more poingant when the API in question is a layer over an extremely unstable base product. Fortunately,
+all the more poignant when the API in question is a layer over an extremely unstable base product. Fortunately,
 there is a better way:
 
 2. Optional and the Explicit Nullable Contract
@@ -118,22 +112,22 @@ By encoding the possibility of returning ``null`` into an explicit contract, we 
 
 So what does this mean?
 
-In a nutshell, no longer do plugin authors have to worry about may/may not return ``null``, instead the very
-possibility of a particular object not being available becomes encoded in the very fabric of their plugin code. This
-has the same level of inherent safety as just null-checking the hell out of everything, but with the benefit of much
-more elegant and readable code in order to do so.
+In a nutshell, no longer do plugin authors have to worry about the possibility of ``null`` being returned. Instead the
+very possibility of a particular object not being available becomes encoded in the very fabric of their plugin code.
+This has the same level of inherent safety as constantly performing null-checks, but with the benefit of much more
+elegant and readable code in order to do so.
 
 To see why, let's take a look at the above example, converted to use a ``getFoo`` method which returns
 ``Optional<Foo>`` instead:
 
 .. code-block:: java
 
- public void someEventHandler(Entity someEntity) {
-    Optional<Foo> entityFoo = someEntity.getFoo();
-    if (entityFoo.isPresent()) {
-        entityFoo.get().bar();
+    public void someEventHandler(Entity someEntity) {
+        Optional<Foo> entityFoo = someEntity.getFoo();
+        if (entityFoo.isPresent()) {
+            entityFoo.get().bar();
+        }
     }
- }
 
 You may note that this example looks very much like a standard null-check, however the use of ``Optional`` actually
 carries a little more information in the same amount of code. For example, it is not necessary for someone reading
@@ -144,23 +138,23 @@ So what? Our explicit contract in this case results in basically the same amount
 one that is contractually *enforced* by the getter. *"Whoop de do,"* you say, *"so what?"*
 
 Well the `Optional` boxing allows us to take some of the traditionally more awkward aspects of null-checking and
-make them orders of magnitude more elegant: consider the following code:
+make them more elegant: consider the following code:
 
 .. code-block:: java
 
- public void someEventHandler(Entity someEntity) {
-    Foo entityFoo = someEntity.getFoo().orElse(MyPlugin.DEFAULT_FOO);
-    entityFoo.bar();
- }
+    public void someEventHandler(Entity someEntity) {
+        Foo entityFoo = someEntity.getFoo().orElse(MyPlugin.DEFAULT_FOO);
+        entityFoo.bar();
+    }
 
 Hold the phone! Did we just replace the tedious null-check-and-default-assignment from the example above with a
 single line of code? Yes indeed we did. In fact, for simple use cases we can even dispense with the assignment:
 
 .. code-block:: java
 
- public void someEventHandler(Entity someEntity) {
-    someEntity.getFoo().orElse(MyPlugin.DEFAULT_FOO).bar();
- }
+    public void someEventHandler(Entity someEntity) {
+        someEntity.getFoo().orElse(MyPlugin.DEFAULT_FOO).bar();
+    }
 
 This is perfectly safe provided that ``MyPlugin.DEFAULT_FOO`` is always available.
 
@@ -170,30 +164,32 @@ available:
 
 .. code-block:: java
 
- public void someEventHandler(Entity someEntity, Entity entity2) {
-    Foo entityFoo = someEntity.getFoo();
-    if (entityFoo == null) {
-        entityFoo = entity2.getFoo();
+    public void someEventHandler(Entity someEntity, Entity entity2) {
+        Foo entityFoo = someEntity.getFoo();
+        if (entityFoo == null) {
+            entityFoo = entity2.getFoo();
+        }
+        if (entityFoo == null) {
+            entityFoo = MyPlugin.DEFAULT_FOO;
+        }
+        entityFoo.bar();
     }
-    if (entityFoo == null) {
-        entityFoo = MyPlugin.DEFAULT_FOO;
-    }
-    entityFoo.bar();
- }
 
 Using ``Optional`` we can encode this much much more cleanly as:
 
 .. code-block:: java
 
- public void someEventHandler(Entity someEntity, Entity entity2) {
-    someEntity.getFoo().orElse(entity2.getFoo().orElse(MyPlugin.DEFAULT_FOO)).bar();
- }
+    public void someEventHandler(Entity someEntity, Entity entity2) {
+        someEntity.getFoo().orElse(entity2.getFoo().orElse(MyPlugin.DEFAULT_FOO)).bar();
+    }
 
 This is merely the tip of the ``Optional`` iceberg. In java 8 ``Optional`` also supports the ``Consumer`` and
-``Supplier`` interfaces, allowing lambas to be used for *absent* failover.
+``Supplier`` interfaces, allowing lambas to be used for *absent* failover. Usage examples for those can be found on the
+:doc:`usage` page.
 
 .. note::
 
- Further explanations are provided here: `Guava: Using And Avoiding Null Explained <https://github.com/google/guava/wiki/UsingAndAvoidingNullExplained/>`_
-
-If you want to know more about the usage of Optionals, then head over to: :doc:`usage`
+    Another explanation on the rationale behind avoiding null references can be found on
+    `Guava: Using And Avoiding Null Explained <https://github.com/google/guava/wiki/UsingAndAvoidingNullExplained/>`_.
+    Beware that the guava ``Optional`` class mentioned in the linked article is different from java's
+    ``java.util.Optional`` and therefore will have method names different from those used here.
