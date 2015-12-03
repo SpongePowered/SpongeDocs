@@ -2,18 +2,14 @@
 Migrating to Sponge
 ===================
 
+The purpose of the articles within this section is to help current server owners to migrate from other server platforms
+to Sponge.
+
 .. only:: html
 
 .. contents::
    :depth: 2
    :local:
-
-
-Overview
-========
-
-The purpose of the articles within this section is to help current server owners to migrate from other server platforms
-to Sponge.
 
 Migrating to Sponge
 ===================

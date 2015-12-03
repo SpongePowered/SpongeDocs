@@ -3,10 +3,6 @@ Dependency Injection
 ====================
 
 Sponge uses dependency injection to provide instances of the API to plugins.
-
-Overview
-========
-
 Dependency injection allows plugins to designate a few API types that will be injected after construction.
 
 Temporary List of Injected Types

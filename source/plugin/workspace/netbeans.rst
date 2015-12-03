@@ -2,9 +2,6 @@
 Setting Up NetBeans
 ===================
 
-Overview
-========
-
 This article describes how to configure your **NetBeans** workspace for plugin development with the Sponge API.
 
 Starting Your Project

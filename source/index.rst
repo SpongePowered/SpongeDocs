@@ -14,7 +14,7 @@ The Sponge project currently has four main components:
 * `SpongeAPI <https://github.com/spongepowered/spongeapi>`_
 * `SpongeDocs <https://github.com/spongepowered/spongedocs>`_
 
-.. warning::
+.. note::
 
     Sponge is still in development. Development builds are currently available for `download
     <http://files.minecraftforge.net/spongepowered>`__, but an official release will not be available
@@ -110,3 +110,4 @@ Links
 -  `Sponge Twitter <https://twitter.com/SpongePowered>`__
 -  `Sponge Subreddit <https://reddit.com/r/SpongeProject>`__
 -  `Sponge GitHub <https://github.com/SpongePowered>`__
+-  `Sponge Patreon Donation Page <https://www.patreon.com/Sponge?ty=h>`__

@@ -2,9 +2,6 @@
 Setting Up IntelliJ IDEA
 ========================
 
-Overview
-========
-
 This article describes how to configure your **IntelliJ IDEA** workspace for plugin development with the Sponge API.
 
 Starting Your Project

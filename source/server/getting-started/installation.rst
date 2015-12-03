@@ -2,9 +2,6 @@
 Installing Sponge
 =================
 
-Overview
-========
-
 Recall that there are two official variants of Sponge (SpongeForge and SpongeVanilla) — they both run Sponge plugins
 identically (that's the goal), but how either work behind the scenes (the code) differs. This is better explained in
 the :doc:`implementations/index` page.

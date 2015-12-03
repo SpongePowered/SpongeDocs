@@ -2,9 +2,6 @@
 Setting Up Eclipse
 ==================
 
-Overview
-========
-
 This article describes how to configure your **Eclipse** workspace for plugin development with the Sponge API.
 
 Starting Your Project

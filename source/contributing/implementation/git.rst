@@ -3,10 +3,10 @@ Git Workflow for Sponge implementations
 =======================================
 
 
- .. warning::
+.. warning::
 
-    This page is probably outdated, the developers currently try to create better documentation for contributors.
-    You can find a temporary site here: `SpongeCommon Wiki <https://github.com/SpongePowered/SpongeCommon/wiki/>`__
+  This page is probably outdated, the developers currently try to create better documentation for contributors.
+  You can find a temporary site here: `SpongeCommon Wiki <https://github.com/SpongePowered/SpongeCommon/wiki/>`__
 
 Development of Sponge implementations is focused in repositories on GitHub. Thus, working with Git is an essential
 element of contributing.

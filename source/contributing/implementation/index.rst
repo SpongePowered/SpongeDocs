@@ -2,9 +2,6 @@
 Implementation Development
 ==========================
 
-Overview
-========
-
 SpongeCommon is the layer of shared code in the official implementations of the Sponge API. SpongeForge and
 SpongeVanilla both extend SpongeCommon.
 

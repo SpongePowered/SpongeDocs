@@ -2,9 +2,6 @@
 Installing the JDK
 ==================
 
-Overview
-========
-
 The Java Development Kit - also known as the JDK - is required in order to develop Sponge plugins and/or work on Sponge
 itself.
 

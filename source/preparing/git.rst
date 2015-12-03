@@ -2,9 +2,6 @@
 Installing Git
 ==============
 
-Overview
-========
-
 Git is an open-source version control system, and helps tremendously with collaborative project development.
 
 The Sponge project, alongside thousands of other open-source projects, hosts its Git repositories on GitHub. Thus,
