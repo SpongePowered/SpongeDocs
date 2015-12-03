@@ -2,13 +2,7 @@
 Working with Events
 ===================
 
-Sponge provides a system to:
-
-- Listen for events
-- Fire events
-
-Overview
-========
+Sponge currently provides a system to listen for events and fire them.
 
 Events are used to inform plugins of certain happenings. Many events can also be *cancelled* -- that is, the action that
 the event refers to can be prevented from occurring. Cancellable events implement the ``Cancellable`` interface.

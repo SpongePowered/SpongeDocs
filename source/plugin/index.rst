@@ -2,18 +2,12 @@
 Creating a Plugin
 =================
 
-Overview
-========
+This section is intended for developers who wish to develop plugins with the Sponge API. The articles cover various
+aspects of the Sponge API and the concepts behind it. It is important to understand that the intent of this section is
+to help developers get started with the Sponge API, not to cover every concept. The
+`Javadocs <https://jd.spongepowered.org/>`__ will be of great help to you once you are comfortable with the API.
 
-What is this about?
-~~~~~~~~~~~~~~~~~~~
-
-The articles in this section explain the basic concepts behind creating plugins using the Sponge API. It is important
-to understand that the intent of this section is to help developers get started with the Sponge API, not to cover
-every concept. The `Javadocs <https://jd.spongepowered.org/>`__ will be of great help to you once you are
-comfortable with the API.
-
-.. warning::
+.. note::
 
     It is recommended to have prior experience with developing in Java! Copying-and-pasting examples from the
     documentation likely will not work, especially without modification.
@@ -23,11 +17,6 @@ comfortable with the API.
     The `Cookbook <https://github.com/SpongePowered/Cookbook>`__ is a collection of fully functional plugins that each
     demonstrate a specific part of the SpongeAPI. These plugin "recipes" are standalone and are compilable via Gradle
     or Maven. Some of them demonstrate how to create plugins using other JVM languages such as Scala and Kotlin.
-
-Who should read this?
-~~~~~~~~~~~~~~~~~~~~~
-
-This section is intended for developers who wish to develop plugins with the Sponge API.
 
 Contents
 ========

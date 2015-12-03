@@ -2,17 +2,12 @@
 Porting Sponge to Other Platforms
 =================================
 
-Overview
-========
-
-This article is intended for those who wish to make the API available on other implementations.
-
 Currently, two official Sponge implementations are being developed:
 
 * SpongeForge, a coremod for Minecraft Forge
 * SpongeVanilla, based on the Vanilla Minecraft Server
 
-The developers of Glowstone plan to implement the Sponge API on top of their server as well.
+If you plan to implement the Sponge API on another platform, please make sure to provide all needed dependencies.
 
 Expected Dependencies
 =====================

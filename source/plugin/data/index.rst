@@ -2,9 +2,6 @@
 The Data API
 ============
 
-Overview
-========
-
 The unified Data API aims to provide a consistent way of accessing and modifying data. 'Data', in this context
 means any data that is consistently synchronized between client and server. It can be changed server-side and
 then those changes will be synchronized to the connected clients. This includes, among many others, the text on
