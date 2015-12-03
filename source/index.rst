@@ -110,3 +110,4 @@ Links
 -  `Sponge Twitter <https://twitter.com/SpongePowered>`__
 -  `Sponge Subreddit <https://reddit.com/r/SpongeProject>`__
 -  `Sponge GitHub <https://github.com/SpongePowered>`__
+-  `Sponge Patreon Donation Page <https://www.patreon.com/Sponge?ty=h>`__

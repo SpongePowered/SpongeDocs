@@ -2,9 +2,6 @@
 SpongeDocs Writing
 ==================
 
-Overview
-========
-
 The Sponge documentation, also referred to as "SpongeDocs", is the official documentation of the Sponge project. The
 goal of SpongeDocs is to:
 
