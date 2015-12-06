@@ -2,25 +2,25 @@
 Using the Scheduler
 ===================
 
-Sponge exposes the ``SchedulerService`` to allow you to designate tasks to be executed in the future. The
-``SchedulerService`` provides a ``TaskBuilder`` with which you can specify task properties such as the delay, interval,
+Sponge exposes the ``Scheduler`` to allow you to designate tasks to be executed in the future. The
+``Scheduler`` provides a ``Task.Builder`` with which you can specify task properties such as the delay, interval,
 name, (a)synchronicity, and ``Runnable`` (see :ref:`task-properties`).
 
-Working With the TaskBuilder
+Working With the Task.Builder
 ============================
 
-First, obtain an instance of the ``SchedulerService``, and retrieve the ``TaskBuilder``:
+First, obtain an instance of the ``Scheduler``, and retrieve the ``Task.Builder``:
 
 .. code-block:: java
 
-    import org.spongepowered.api.service.scheduler.SchedulerService;
-    import org.spongepowered.api.service.scheduler.TaskBuilder;
+    import org.spongepowered.api.scheduler.Scheduler;
+    import org.spongepowered.api.scheduler.Task;
 
-    SchedulerService scheduler = game.getScheduler();
-    TaskBuilder taskBuilder = scheduler.createTaskBuilder();
+    Scheduler scheduler = game.getScheduler();
+    Task.Builder taskBuilder = scheduler.createTaskBuilder();
 
 The only required property is the `Runnable <http://docs.oracle.com/javase/7/docs/api/java/lang/Runnable.html>`_,
-which you can specify using ``TaskBuilder#execute(Runnable runnable)``:
+which you can specify using ``Task.Builder#execute(Runnable runnable)``:
 
 .. code-block:: java
 
@@ -35,25 +35,29 @@ which you can specify using ``TaskBuilder#execute(Runnable runnable)``:
 Task Properties
 ~~~~~~~~~~~~~~~
 
-Using the ``TaskBuilder``, you can specify other, optional properties, as described below.
+Using the ``Task.Builder``, you can specify other, optional properties, as described below.
 
 .. _TimeUnit: http://docs.oracle.com/javase/7/docs/api/java/util/concurrent/TimeUnit.html
 
 +-----------------+-------------------------+--------------------------------------------------------------------------+
 | Property        | Method Used             | Description                                                              |
 +=================+=========================+==========================================================================+
-| delay           | delay(long delay)       | The amount of time in ticks before the task is to be run. Optionally,    |
-|                 |                         | specify a TimeUnit_ as the second argument (applicable only for          |
-|                 |                         | asynchronous tasks). If a ``TimeUnit``  is not specified  for an         |
-|                 |                         | asynchronous task, the specified time in ticks will be converted to the  |
-|                 |                         | equivalent wall clock time.                                              |
+| delay           |  delayTicks(long delay) | The optional amount of time to pass before the task is to be run.        |
+|                 |                         |                                                                          |
+|                 |  delay(long delay,      | The time is specified as a number of ticks with the ``delayTicks()``     |
+|                 |        TimeUnit unit)   | method, or it may be provided as a number of a more convenient time      |
+|                 |                         | unit by specifying a TimeUnit_ with the delay() method.                  |
+|                 |                         |                                                                          |
+|                 |                         | *Either method, but not both, can specified per task.*                   |
 +-----------------+-------------------------+--------------------------------------------------------------------------+
-| interval        | interval(long interval) | The amount of time in ticks between repetitions of the task. If an       |
-|                 |                         | interval is not specified, the task will not be repeated. Optionally,    |
-|                 |                         | specify a TimeUnit_ as the second argument (applicable only for          |
-|                 |                         | asynchronous tasks). If a ``TimeUnit`` is not specified for an           |
-|                 |                         | asynchronous task, the specified time in ticks will be converted to the  |
-|                 |                         | equivalent wall clock time.                                              |
+| interval        |  intervalTicks(         | The amount of time between repetitions of the task.  If an interval is   |
+|                 |          long interval) | not specified, the task will not be repeated.                            |
+|                 |                         |                                                                          |
+|                 |                         | The time is specified as a number of ticks with the ``intervalTicks()``  |
+|                 |                         | method, or it may be provided as a number of a more convenient time      |
+|                 |  interval(long interval,| unit by specifying a TimeUnit_ with the interval() method.               |
+|                 |          TimeUnit unit) |                                                                          |
+|                 |                         | *Either method, but not both, can specified per task.*                   |
 +-----------------+-------------------------+--------------------------------------------------------------------------+
 | synchronization | async()                 | A synchronous task is run in the game's main loop in series with the     |
 |                 |                         | tick cycle. If ``TaskBuilder#async`` is used, the task will be run       |
@@ -67,24 +71,24 @@ Using the ``TaskBuilder``, you can specify other, optional properties, as descri
 |                 |                         | it should be descriptive and aid users in debugging your plugin.         |
 +-----------------+-------------------------+--------------------------------------------------------------------------+
 
-Last, submit the task to the scheduler using ``TaskBuilder#submit(Object plugin)``.
+Lastly, submit the task to the scheduler using ``Task.Builder#submit(Object plugin)``.
 
 And that's it! To summarize, a fully functional scheduled task that would run asynchronously every 5 minutes after an
 initial delay of 100 milliseconds could be built and submitted using the following code:
 
 .. code-block:: java
 
-	import org.spongepowered.api.service.scheduler.Task;
+    import java.util.concurrent.TimeUnit;    
+    
+    Scheduler scheduler = game.getScheduler();
+    Task.Builder taskBuilder = scheduler.createTaskBuilder();
 
-	SchedulerService scheduler = game.getScheduler();
-	TaskBuilder taskBuilder = scheduler.createTaskBuilder();
-
-	Task task = taskBuilder.execute(new Runnable() {
-		public void run() {
-			logger.info("Yay! Schedulers!");
-		}
-	}).async().delay(100, TimeUnit.MILLISECONDS).interval(5, TimeUnit.MINUTES)
-        .name("ExamplePlugin - Fetch Stats from Database").submit(plugin);
+    Task task = taskBuilder.execute(new Runnable() {
+        public void run() {
+            logger.info("Yay! Schedulers!");
+        }
+    }).async().delay(100, TimeUnit.MILLISECONDS).interval(5, TimeUnit.MINUTES)
+    .name("ExamplePlugin - Fetch Stats from Database").submit(plugin);
 
 To cancel a task, simply call the ``Task#cancel`` method:
 
