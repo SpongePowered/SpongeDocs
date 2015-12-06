@@ -190,7 +190,7 @@ The parser in this example reads two input arguments and converts them to a vect
 
        @Override
        protected Object parseValue(CommandSource source, CommandArgs args) throws ArgumentParseException {
-
+           CommandArgs errorargs; 
            // <x> <y>
 
            String xInput = args.next();
@@ -206,7 +206,7 @@ The parser in this example reads two input arguments and converts them to a vect
            try {
                return Integer.parseInt(input);
            } catch(NumberFormatException e) {
-               throw args.createError(Texts.of("'" + input + "' is not a valid number!"));
+               throw errorargs.createError(Texts.of("'" + input + "' is not a valid number!"));
            }
        }
 
