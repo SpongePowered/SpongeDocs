@@ -14,7 +14,7 @@ Every child command is a separate ``CommandSpec`` and can be created in the same
 .. code-block:: java
 
     import org.spongepowered.api.text.Texts;
-    import org.spongepowered.api.util.command.spec.CommandSpec;
+    import org.spongepowered.api.command.spec.CommandSpec;
 
     // /mail read
     CommandSpec readCmd = CommandSpec.builder()
@@ -44,7 +44,7 @@ appear in the usage message.
         .child(sendCmd, "send", "s", "write")
         .build();
 
-    game.getCommandDispatcher().register(plugin, mailCommandSpec, "mail", "email");
+    game.getCommandManager().register(plugin, mailCommandSpec, "mail", "email");
 
 .. note::
 
