@@ -1,92 +1,49 @@
-====================
-Sponge Documentation
-====================
-
-Introduction
-============
+========================
+The Sponge Documentation
+========================
 
 Welcome to SpongeDocs, the official documentation for the open-source `Sponge <http://spongepowered.org>`__ project.
 
-The Sponge project currently has four main components:
+The Sponge project currently offers two Implementations, **SpongeForge** and **SpongeVanilla**.
+Both make use of our **SpongeAPI**, allowing you to customise and enhance your Minecraft Server.
 
-* `SpongeForge <https://github.com/spongepowered/spongeforge>`_
-* `SpongeVanilla <https://github.com/spongepowered/spongevanilla>`_
-* `SpongeAPI <https://github.com/spongepowered/spongeapi>`_
-* `SpongeDocs <https://github.com/spongepowered/spongedocs>`_
+If you want to dive into Sponge real quick, have a look at our :doc:`server/getting-started/index` section.
+You'll learn how to setup your server there. If you're planning to create your own plugins or want to help us
+developing Sponge, then :doc:`plugin/index` and :doc:`contributing/index` are the right places to start. If you want to
+know more about Sponge, then give :doc:`about/index` a try.
 
-.. warning::
+If you just want to download SpongeForge or SpongeVanilla or read our changelogs, then head to :doc:`downloads`.
 
-    Sponge is still in development. Development builds are currently available for `download
-    <http://files.minecraftforge.net/spongepowered>`__, but an official release will not be available
-    until later in 2015.
+.. note::
 
-Contents
-========
+    Sponge is still in development. Development builds are currently available for :doc:`download <downloads>`, but an official
+    release will not be available until later in 2015.
 
-Creating a Server
-~~~~~~~~~~~~~~~~~
-
-This section is for users who have a Sponge server or are interested in creating one.
-
-.. toctree::
-    :maxdepth: 2
-    :titlesonly:
-
-    server/index
-
-Preparing for Development
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-This section is for:
-
-* Developers who wish to create Sponge plugins or contribute code to the Sponge project
-* Users who wish to help with writing and editing articles in SpongeDocs
-
-Please read this section before `Creating Plugins`_ and `Contributing to Sponge`_.
-
-.. toctree::
-    :maxdepth: 2
-    :titlesonly:
-
-    preparing/index
-
-Creating Plugins
-~~~~~~~~~~~~~~~~
-
-This section is intended to help developers who have prior Java experience with writing plugins using the SpongeAPI.
-
-.. toctree::
-    :maxdepth: 2
-    :titlesonly:
-
-    plugin/index
-
-Contributing to Sponge
-~~~~~~~~~~~~~~~~~~~~~~
-
-This section is intended to help developers who have prior Java experience with contributing code to the Sponge project.
-Instructions on contributing to SpongeDocs are also contained within. Make Spongie proud!
-
-.. toctree::
-    :maxdepth: 2
-    :titlesonly:
-
-    contributing/index
-
-About Sponge
-~~~~~~~~~~~~
-
-This section is intended to help everyone understand the goals of the Sponge project.
-
-.. toctree::
-    :maxdepth: 3
-    :titlesonly:
-
-    about/index
-    downloads
++--------------------+--+-----------------------+
+| Table of Contents                             |
++====================+==+=======================+
+|.. toctree::        |  |.. toctree::           |
+|    :maxdepth: 2    |  |    :maxdepth: 2       |
+|    :titlesonly:    |  |    :titlesonly:       |
+|                    |  |                       |
+|    server/index    |  |    contributing/index |
+|                    |  |                       |
+|.. toctree::        |  |.. toctree::           |
+|    :maxdepth: 2    |  |    :maxdepth: 2       |
+|    :titlesonly:    |  |    :titlesonly:       |
+|                    |  |                       |
+|    preparing/index |  |    about/index        |
+|                    |  |                       |
+|.. toctree::        |  |.. toctree::           |
+|    :maxdepth: 2    |  |    :maxdepth: 2       |
+|    :titlesonly:    |  |    :titlesonly:       |
+|                    |  |                       |
+|    plugin/index    |  |    downloads          |
+|                    |  |                       |
++--------------------+--+-----------------------+
 
 Acknowledgements
-~~~~~~~~~~~~~~~~
+================
 
 .. image:: /images/yklogo.png
 
@@ -95,14 +52,8 @@ projects. YourKit, LLC is the creator of `YourKit Java Profiler <https://www.you
 and `YourKit .NET Profiler <https://www.yourkit.com/.net/profiler/index.jsp>`__, innovative and intelligent tools
 for profiling Java and .NET applications.
 
-
-
 Links
 =====
-
-.. toctree::
-    :maxdepth: 2
-    :titlesonly:
 
 -  `Sponge Homepage <http://spongepowered.org>`__
 -  `Sponge Forums <http://forums.spongepowered.org>`__
@@ -110,3 +61,4 @@ Links
 -  `Sponge Twitter <https://twitter.com/SpongePowered>`__
 -  `Sponge Subreddit <https://reddit.com/r/SpongeProject>`__
 -  `Sponge GitHub <https://github.com/SpongePowered>`__
+-  `Sponge Javadocs <https://jd.spongepowered.org>`__

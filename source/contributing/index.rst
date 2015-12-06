@@ -2,12 +2,6 @@
 Contributing to Sponge
 ======================
 
-Overview
-========
-
-What is this about?
-~~~~~~~~~~~~~~~~~~~
-
 The articles in this section explain how to get involved with SpongeForge, SpongeVanilla, SpongeCommon,
 the Sponge API, or SpongeDocs. These articles are essentially required reading for anyone who wishes to begin developing
 or writing for Sponge. We also recommend developers become familiar with the Sponge API `JavaDocs
@@ -45,17 +39,16 @@ Forge, and therefore numerous Forge mods.
 **SpongeVanilla** is the vanilla implementation of the Sponge API. Acting as a standalone implementation having complete
 control over the Minecraft Server, this implementation does not support mods wishing to add new things like blocks and items.
 
-
-
-Contents
-========
-
-.. toctree::
-    :maxdepth: 2
-    :titlesonly:
-
-    guidelines
-    api/index
-    implementation/index
-    spongedocs
-    porting
++-------------------------+
+| Table of Contents       |
++=========================+
+|.. toctree::             |
+|    :maxdepth: 2         |
+|    :titlesonly:         |
+|                         |
+|    guidelines           |
+|    api/index            |
+|    implementation/index |
+|    spongedocs           |
+|    porting              |
++-------------------------+
