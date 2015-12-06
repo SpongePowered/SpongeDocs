@@ -60,7 +60,7 @@ values.
 
 Using the ``load()`` method you can attempt to load the configuration contents from the source specified upon creation
 of the ``ConfigurationLoader``. It also expects a ``ConfigurationOptions`` instance, but also provides a no-args form
-that is shorthand for ``load(ConfigurationOptions.defauls())``.
+that is shorthand for ``load(ConfigurationOptions.defaults())``.
 
 .. code-block:: java
 
