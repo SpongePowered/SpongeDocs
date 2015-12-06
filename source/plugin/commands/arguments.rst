@@ -183,16 +183,18 @@ The parser in this example reads two input arguments and converts them to a vect
    import java.util.List;
 
    public class Vector2iCommandElement extends CommandElement {
-
+       CommandArgs errorargs;
+    
        protected Vector2iCommandElement(Text key) {
            super(key);
        }
 
        @Override
        protected Object parseValue(CommandSource source, CommandArgs args) throws ArgumentParseException {
-           CommandArgs errorargs; 
+            
            // <x> <y>
-
+           errorargs=args;
+            
            String xInput = args.next();
            int x = parseInt(xInput);
 
