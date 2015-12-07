@@ -7,7 +7,7 @@ very commonly check while writing an event listener. Event filters are a group o
 to automatically validate aspects of the event, and if the validation fails then your listener will not be called. This allows
 your listener to be dedicated to the logic of your handler, rather than the preconditions, resulting in cleaner code.
 
-Event filters come in two varieties, event type and parameter filters.
+Event filters come in two varieties, event type filters and parameter filters.
 
 Event type filters are method annotations that are applied to your listener method along with the ``@Listener`` annotation and
 provide several filters based on the type or state of the event.
@@ -29,35 +29,37 @@ For example:
 
     @Listener
     @Exclude(InteractBlockEvent.Primary.class)
-    public void onInterace(InteractBlockEvent event) {
+    public void onInteract(InteractBlockEvent event) {
         // do something
     }
 
-This listener will be called for all events extending InteractBlockEvent **except** for the ``InteractBlockEvent.Primary``
-event (leaving just the ``InteractBlockEvent.Secondary`` event).
+This listener would normally be called for all events extending InteractBlockEvent. However, the ``Exclude`` annotation
+will prevent your listener from being called for the ``InteractBlockEvent.Primary`` event (leaving just the
+``InteractBlockEvent.Secondary`` event).
 
 An example with ``@Include`` could be:
 
 .. code-block:: java
 
     @Listener
-    @Include({InteractBlockEvent.Primary.class, InteractBlockEvent.Secondary.class})
-    public void onInterace(InteractBlockEvent event) {
+    @Include({DamageEntityEvent.class, DestructEntityEvent.class})
+    public void onEvent(EntityEvent event) {
         // do something
     }
 
-This listener will be called for all events extending InteractBlockEvent which are also in the list of events within the
-``@Include`` annotation (which is all of them as it happens).
+This listener would normally be called for all EntityEvents, however the ``Include`` annotation narrows it to
+only recieve ``DamageEntityEvent`` and ``DestructEntityEvent``\ s. 
 
 **@IsCancelled**
 This annotation allows filtering events by their cancellation state at the time that your event listener would normally be
 called. By default your event listener will not be called if the event has been cancelled by a previous event listener.
-However you can change this behavior to one of three states depending on the Cancellation state value in the ``@IsCancelled``
+However you can change this behavior to one of three states depending on the ``Tristate`` value in the ``@IsCancelled``
 annotation.
 
-- ``CancellationState.FALSE`` is the default behavior and will not call your listener if the event has been cancelled.
-- ``CancellationState.IGNORE`` will cause your listener to be called regardless of the cancellation state of the event.
-- ``CancellationState.TRUE`` will cause your listener to be called only if the event has been cancelled by a previous event listener.
+- ``Tristate.FALSE`` is the default behavior if the ``IsCancelled`` annotation is not present, and will not call your
+listener if the event has been cancelled.
+- ``Tristate.UNDEFINED`` will cause your listener to be called regardless of the cancellation state of the event.
+- ``Tristate.TRUE`` will cause your listener to be called only if the event has been cancelled by a previous event listener.
 
 Parameter Filters
 =================
@@ -95,9 +97,9 @@ will be set to the first player present the cause.**
         // do something
     }
 
-**@All** This parameter source annotation is a little special in that it requires that the annotated parameter be an array
-type. The returned array will be equivalent to the result of ``Cause#all(Class<?>)``. By default if the returned array would
-be empty then the validation fails however this can be disabled by setting ``ignoreEmpty=false``.
+**@All** This parameter source annotation requires that the annotated parameter be an array
+type. The returned array will be equivalent to the contents of calling ``Cause#all(Class<?>)``. By default if the
+returned array would be empty then the validation fails however this can be disabled by setting ``ignoreEmpty=false``.
 
 **In this example your listener will always be called, although the players array may be empty if the event's cause contained
 no players.**
@@ -108,6 +110,9 @@ no players.**
     public void onInteract(InteractBlockEvent.Secondary event, @All(ignoreEmpty=false) Player[] players) {
         // do something
     }
+    
+**@Root** This parameter source annotation will fetch the root object of the cause, equivalent to ``Cause#root()``.
+It also performs an additional check that the type of the root object matches the type of your parameter.
 
 Parameter Filter Annotations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -116,9 +121,9 @@ Parameter filter annotations add additional validation to objects returned from 
 event filters if any of these validations fail then your listener will not be called.
 
 **@Supports**
-This parameter filter may be applied to any type which is a ``DataHolder``. It takes a class extending ``DataManipulator`` as
-its parameter and validates that the annotated DataHolder supports the given DataManipulator type. This validation is
-equivalent to ``DataHolder#supports(Class<? extends DataManipulator>)``.
+This parameter filter may be applied to any parameter type which is a ``DataHolder``. It takes a class extending
+``DataManipulator`` as its parameter and validates that the annotated DataHolder supports the given DataManipulator
+ype. This validation is equivalent to ``DataHolder#supports(Class<? extends DataManipulator>)``.
 
 **In this example the listener will be called only if there is an entity in the event's cause, and if that entity supports
 the data manipulator ``FlyingData``.**
@@ -144,3 +149,7 @@ instance of ``FlyingData`` available.**
     public void onInteract(InteractBlockEvent.Secondary event, @First @Has(FlyingData.class) Entity entity) {
         // do something
     }
+
+.. note::
+    Both ``@Has`` and ``@Supports`` have an optional parameter ``inverse()`` which can be set to cause validation
+    to fail if the does have, or does support, the target DataManipulator.
