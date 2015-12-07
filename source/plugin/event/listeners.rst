@@ -3,7 +3,7 @@ Event Listeners
 ===============
 
 In order to listen for an event, an event listener must be registered. This is done by making a method with any name,
-defining the first (and only) parameter to be the desired event type, and then affixing ``@Listener`` to the method,
+defining the first parameter to be the desired event type, and then affixing ``@Listener`` to the method,
 as illustrated below.
 
 .. code-block:: java
@@ -119,8 +119,6 @@ The ``@Listener`` annotation has a few configurable fields:
 
 * ``order`` is the order in which the event listener is to be run. See the ``org.spongepowered.api.event.Order`` enum
   in Sponge to see the available options.
-* ``ignoreCancelled``, if true (which is default true), causes the event listener to be skipped if the event in question
-  is cancellable and has been cancelled (by a previously-executed plugin, for example).
 
 By default, ``@Listener`` is configured so that your event listener will *not* be called if the event in question is
 cancellable and has been cancelled (such as by another plugin).
