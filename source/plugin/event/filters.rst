@@ -56,10 +56,10 @@ called. By default your event listener will not be called if the event has been 
 However you can change this behavior to one of three states depending on the ``Tristate`` value in the ``@IsCancelled``
 annotation.
 
-- ``Tristate.FALSE`` is the default behavior if the ``IsCancelled`` annotation is not present, and will not call your
-listener if the event has been cancelled.
-- ``Tristate.UNDEFINED`` will cause your listener to be called regardless of the cancellation state of the event.
-- ``Tristate.TRUE`` will cause your listener to be called only if the event has been cancelled by a previous event listener.
+  - ``Tristate.FALSE`` is the default behavior if the ``IsCancelled`` annotation is not present, and will not call your 
+    listener if the event has been cancelled.
+  - ``Tristate.UNDEFINED`` will cause your listener to be called regardless of the cancellation state of the event.
+  - ``Tristate.TRUE`` will cause your listener to be called only if the event has been cancelled by a previous event listener.
 
 Parameter Filters
 =================
