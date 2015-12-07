@@ -7,7 +7,7 @@ Sponge exposes the ``Scheduler`` to allow you to designate tasks to be executed 
 name, (a)synchronicity, and ``Runnable`` (see :ref:`task-properties`).
 
 Working With the Task.Builder
-============================
+=============================
 
 First, obtain an instance of the ``Scheduler``, and retrieve the ``Task.Builder``:
 
