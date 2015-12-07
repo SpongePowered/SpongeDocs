@@ -11,7 +11,7 @@ What is this about?
 The articles in this section explain how to get involved with SpongeForge, SpongeVanilla, SpongeCommon,
 the Sponge API, or SpongeDocs. These articles are essentially required reading for anyone who wishes to begin developing
 or writing for Sponge. We also recommend developers become familiar with the Sponge API `JavaDocs
-<https://spongepowered.github.io/SpongeAPI/>`__.
+<https://jd.spongepowered.org/>`__.
 
 Who should read this?
 ~~~~~~~~~~~~~~~~~~~~~
