@@ -2,8 +2,8 @@
 Art Assets
 ==========
 
-This page provides the official logo and other art assets. Feel free to use them to spread the word about Sponge.
-However note that these images **aren't** provided under the MIT License.
+This page provides the official SpongePowered logo and mascot. Feel free to use them to spread the word about Sponge.
+However note that these images are **not** provided under the MIT License.
 
 .. note::
   If you're reading a translated version, please note that the English license is the one which counts. Translated
@@ -11,12 +11,11 @@ However note that these images **aren't** provided under the MIT License.
 
 You may:
 
-* Make little modifications to Spongie’s facial expressions, such as making a cute smile,
-  making them perplexed or sad, adding a hat, or so on. It should be easily recognizable that the Spongie you create
-  is the Spongie mascot, but wearing a different expression or different clothing.
+* Make minor modifications to Spongie’s facial expressions - such as making a cute smile,
+  making them perplexed or sad, adding a hat, and so on. It should be easily recognizable that the Spongie you create
+  is the Spongie mascot, but wearing a different expression or clothing.
 
-* Use Spongie or the SpongePowered logo in an article or blog post about the Sponge project and to spread the word about
-  the SpongePowered project
+* Use Spongie or the SpongePowered logo in an article or blog post about the Sponge project, and to spread the word.
 
 * Use the Spongepowered Logo to link to `Sponge Homepage <http://spongepowered.org>`__
   (for example in your signature on forums etc.)
@@ -29,13 +28,13 @@ You may not:
 * Create a vastly modified version of Spongie, where they become unrecognizable or clearly different from the
   original Spongie mascot.
 
-* Add your project image to Spongie or vice versa.
+* Add your project image to Spongie, or vice versa.
 
-* Claim Spongie as your own mascot or use them as a mascot for your own project
+* Claim Spongie as your own mascot, or use them as a mascot for your own project.
 
-* Use or sell Spongie without permission
+* Sell or use Spongie in commerce without permission.
 
-* Change any colors or dimensions
+* Change any colors or dimensions.
 
 
 The Official Sponge Logo
