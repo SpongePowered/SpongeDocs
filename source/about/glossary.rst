@@ -42,7 +42,7 @@ Issue
 Java
   The programming language that Minecraft and Sponge are written in, and require to run. http://java.com/en/
 MCP
-  The Minecraft Coder Pack helps developers create mods for both the Minecraft server and client.
+  The Mod Coder Pack helps developers create mods for both the Minecraft server and client. http://www.modcoderpack.com/website
 Mixins
   Specialised program components that inject Sponge into Minecraft. https://github.com/SpongePowered/Mixin/wiki
 Mod
