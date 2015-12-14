@@ -45,7 +45,7 @@ Contents
     :titlesonly:
 
     guidelines
-    api/index
+    howtogit
     implementation/index
     spongedocs
     porting

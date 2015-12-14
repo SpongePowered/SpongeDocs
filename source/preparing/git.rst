@@ -33,7 +33,7 @@ The easiest method is to install Xcode Command Line Tools.
     These instructions do not work on Macs running a version older than Mavericks. If you are running a version of OS X
     older than Mavericks, install the GitHub client instead.
 
-#. Launch the Terminal.
+1. Launch the Terminal.
 #. Run ``xcode-select --install``.
 #. Install it, and grab a cookie while you wait.
 #. Run ``git`` from the Terminal.
@@ -52,9 +52,35 @@ The simplest method of installing Git on Linux is by using the package manager t
 
     You may need to prefix these commands with ``sudo``.
 
-#. Launch the Terminal.
+1. Launch the Terminal.
 #. Run ``apt-get install git`` if you are on a Ubuntu or Debian-based distribution. Run ``yum install git`` if you are on Fedora.
 
 GitHub Desktop is currently not available for Linux, unlike Windows and Mac.
 
 Rebooting your computer after installing Git is recommended.
+
+Setup
+=====
+
+Who Are You?
+~~~~~~~~~~~~
+
+Before you even start to work with git and the repository, make sure your
+git configuration has your identity set up. Open up your CLI and enter:
+
+.. code-block:: none
+
+   git config --list
+
+Look for ``user.name`` and ``user.email``. If they are not the same username and email as your Github account
+then set them:
+
+.. code-block:: none
+
+   git config --global user.name "John Doe"
+   git config --global user.email johndoe@example.com
+
+
+.. tip::
+
+   Do not proceed with any contribution in any Sponge repository until you establish your ``user.name`` and ``user.email``.

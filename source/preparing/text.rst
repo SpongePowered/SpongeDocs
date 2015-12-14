@@ -14,7 +14,8 @@ Atom
 
 Atom is an open-source text editor published under the MIT license. Atom has built-in support for projects stored in a
 Git repository, such as SpongeDocs. `This article <http://blog.atom.io/2014/03/13/git-integration.html>`_ goes more in
-depth about the features of Atom's Git integration.
+depth about the features of Atom's Git integration. If you're interested in adding reST support to Atom, check out
+`this package <https://atom.io/packages/language-restructuredtext>`__.
 
 **Atom** can be downloaded for free from https://atom.io/.
 
