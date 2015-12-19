@@ -31,14 +31,14 @@ Example: Building a Command with Multiple Arguments
 .. code-block:: java
 
     import org.spongepowered.api.text.Texts;
-    import org.spongepowered.api.entity.player.Player;
-    import org.spongepowered.api.util.command.CommandException;
-    import org.spongepowered.api.util.command.CommandResult;
-    import org.spongepowered.api.util.command.CommandSource;
-    import org.spongepowered.api.util.command.args.CommandContext;
-    import org.spongepowered.api.util.command.args.GenericArguments;
-    import org.spongepowered.api.util.command.spec.CommandExecutor;
-    import org.spongepowered.api.util.command.spec.CommandSpec;
+    import org.spongepowered.api.entity.living.player.Player;
+    import org.spongepowered.api.command.CommandException;
+    import org.spongepowered.api.command.CommandResult;
+    import org.spongepowered.api.command.CommandSource;
+    import org.spongepowered.api.command.args.CommandContext;
+    import org.spongepowered.api.command.args.GenericArguments;
+    import org.spongepowered.api.command.spec.CommandExecutor;
+    import org.spongepowered.api.command.spec.CommandSpec;
 
     CommandSpec myCommandSpec = CommandSpec.builder()
             .description(Texts.of("Send a message to a player"))
@@ -62,7 +62,7 @@ Example: Building a Command with Multiple Arguments
             })
             .build();
 
-    game.getCommandDispatcher().register(plugin, myCommandSpec, "message", "msg", "m");
+    game.getCommandManager().register(plugin, myCommandSpec, "message", "msg", "m");
 
 Overview of the ``GenericArguments`` command elements
 =====================================================
@@ -174,25 +174,27 @@ The parser in this example reads two input arguments and converts them to a vect
 .. code-block:: java
 
    import com.flowpowered.math.vector.Vector2i;
-   import org.spongepowered.api.util.command.args.ArgumentParseException;
-   import org.spongepowered.api.util.command.args.CommandArgs;
+   import org.spongepowered.api.command.args.ArgumentParseException;
+   import org.spongepowered.api.command.args.CommandArgs;
    import org.spongepowered.api.text.Text;
-   import org.spongepowered.api.util.command.args.CommandElement;
+   import org.spongepowered.api.command.args.CommandElement;  
 
    import java.util.Collections;
    import java.util.List;
 
    public class Vector2iCommandElement extends CommandElement {
-
+       CommandArgs errorargs;
+    
        protected Vector2iCommandElement(Text key) {
            super(key);
        }
 
        @Override
        protected Object parseValue(CommandSource source, CommandArgs args) throws ArgumentParseException {
-
+            
            // <x> <y>
-
+           errorargs=args;
+            
            String xInput = args.next();
            int x = parseInt(xInput);
 
@@ -206,7 +208,7 @@ The parser in this example reads two input arguments and converts them to a vect
            try {
                return Integer.parseInt(input);
            } catch(NumberFormatException e) {
-               throw args.createError(Texts.of("'" + input + "' is not a valid number!"));
+               throw errorargs.createError(Texts.of("'" + input + "' is not a valid number!"));
            }
        }
 

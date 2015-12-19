@@ -15,7 +15,7 @@ Example: Building a Simple Command
 .. code-block:: java
 
     import org.spongepowered.api.text.Texts;
-    import org.spongepowered.api.util.command.spec.CommandSpec;
+    import org.spongepowered.api.command.spec.CommandSpec;
 
     CommandSpec myCommandSpec = CommandSpec.builder()
         .description(Texts.of("Hello World Command"))
@@ -23,7 +23,7 @@ Example: Building a Simple Command
         .executor(new HelloWorldCommand())
         .build();
 
-    game.getCommandDispatcher().register(plugin, myCommandSpec, "helloworld", "hello", "test");
+    game.getCommandManager().register(plugin, myCommandSpec, "helloworld", "hello", "test");
 
 Overview of the CommandSpec builder methods
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -72,11 +72,11 @@ Example: Simple Command Executor
 
 .. code-block:: java
 
-    import org.spongepowered.api.util.command.CommandException;
-    import org.spongepowered.api.util.command.CommandResult;
-    import org.spongepowered.api.util.command.CommandSource;
-    import org.spongepowered.api.util.command.args.CommandContext;
-    import org.spongepowered.api.util.command.spec.CommandExecutor;
+    import org.spongepowered.api.command.CommandException;
+    import org.spongepowered.api.command.CommandResult;
+    import org.spongepowered.api.command.CommandSource;
+    import org.spongepowered.api.command.args.CommandContext;
+    import org.spongepowered.api.command.spec.CommandExecutor;
 
     public class HelloWorldCommand implements CommandExecutor {
 
@@ -101,9 +101,9 @@ Perform an ``instanceof`` check to determine the type of the ``CommandSource``:
 
 .. code-block:: java
 
-    import org.spongepowered.api.entity.player.Player;
-    import org.spongepowered.api.util.command.source.ConsoleSource;
-    import org.spongepowered.api.util.command.source.CommandBlockSource;
+    import org.spongepowered.api.entity.living.player.Player; 
+    import org.spongepowered.api.command.source.CommandBlockSource;
+    import org.spongepowered.api.command.source.ConsoleSource;   
 
     if(src instanceof Player) {
         Player player = (Player) src;
