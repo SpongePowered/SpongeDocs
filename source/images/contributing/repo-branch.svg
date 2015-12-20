@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generiert durch Microsoft Visio, SVG Export repo-branch.svg Page-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="11.048in" height="7.49979in"
+		viewBox="0 0 795.458 539.985" xml:space="preserve" color-interpolation-filters="sRGB" class="st16">
+	<v:documentProperties v:langID="1031" v:metric="true" v:viewMarkup="false">
+		<v:userDefs>
+			<v:ud v:nameU="msvNoAutoConnect" v:val="VT0(0):26"/>
+			<v:ud v:nameU="visV14CFF" v:prompt="" v:val="VT0(1):26"/>
+			<v:ud v:nameU="visFlowchartType" v:prompt="" v:val="VT4(CrossFunctional)"/>
+		</v:userDefs>
+	</v:documentProperties>
+
+	<style type="text/css">
+	<![CDATA[
+		.st1 {fill:#000000;stroke:#c7c8c8;stroke-width:0.25}
+		.st2 {fill:#ededed;stroke:#90aadb;stroke-dasharray:6,6;stroke-width:2}
+		.st3 {fill:#ededed;stroke:none;stroke-width:0.25}
+		.st4 {fill:#000000;font-family:Montserrat;font-size:1.5em}
+		.st5 {fill:none;stroke:none;stroke-width:2}
+		.st6 {fill:#c9c9c9;stroke:none;stroke-width:0.25}
+		.st7 {fill:#ededed;stroke:#a8d08d;stroke-dasharray:6,6;stroke-width:2}
+		.st8 {fill:#90aadb;stroke:none;stroke-width:2}
+		.st9 {fill:#a8d08d;stroke:none;stroke-width:2}
+		.st10 {fill:#ededed;stroke:#ffc000;stroke-dasharray:6,6;stroke-width:2}
+		.st11 {fill:#ffc000;stroke:none;stroke-width:2}
+		.st12 {fill:#000000;stroke:#ededed;stroke-width:4.5}
+		.st13 {fill:#ed7d31;stroke:none;stroke-width:2}
+		.st14 {stroke:#000000;stroke-width:2.75}
+		.st15 {fill:none;stroke:#ed7d31;stroke-dasharray:6,6;stroke-width:2}
+		.st16 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<v:userDefs>
+			<v:ud v:nameU="msvThemeOrder" v:val="VT0(0):26"/>
+		</v:userDefs>
+		<title>Zeichenblatt-1</title>
+		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
+				v:shadowOffsetY="-8.50394"/>
+		<v:layer v:name="Verbinder" v:index="0"/>
+		<g id="shape131-1" v:mID="131" v:groupContext="shape" transform="translate(342.157,-114.362)">
+			<title>Rechteck.131</title>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<rect x="0" y="537.15" width="358.583" height="2.83465" class="st1"/>
+		</g>
+		<g id="shape25-3" v:mID="25" v:groupContext="shape" transform="translate(30.3465,-276.213)">
+			<title>Rechteck.25</title>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<path d="M0 539.98 L732.52 539.98 L732.52 454.08 L0 454.08 L0 539.98 Z" class="st2"/>
+		</g>
+		<g id="group37-5" transform="translate(272.709,-295.929)" v:mID="37" v:groupContext="group">
+			<title>Tabelle.37</title>
+		</g>
+		<g id="shape23-6" v:mID="23" v:groupContext="shape" transform="translate(159.323,-304.008)">
+			<title>Rechteck.23</title>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<rect x="0" y="537.15" width="538" height="2.83465" class="st1"/>
+		</g>
+		<g id="shape42-8" v:mID="42" v:groupContext="shape" transform="translate(53.0236,-295.929)">
+			<title>Rechteck</title>
+			<desc>Master</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="49.6063" cy="530.489" width="99.22" height="18.9921"/>
+			<rect x="0" y="520.993" width="99.2126" height="18.9921" class="st3"/>
+			<text x="19.28" y="535.89" class="st4" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>Master</text>		</g>
+		<g id="shape52-11" v:mID="52" v:groupContext="shape" transform="translate(54.4409,-282.04)">
+			<title>Tabelle.52</title>
+			<rect x="0" y="493.213" width="676.898" height="46.7717" class="st5"/>
+		</g>
+		<g id="shape36-13" v:mID="36" v:groupContext="shape" transform="translate(30.3465,-333.772)">
+			<title>Tabelle.36</title>
+			<desc>YourUsername/SpongePowered</desc>
+			<v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197"/>
+			<v:textRect cx="366.261" cy="525.811" width="732.53" height="28.3464"/>
+			<rect x="0" y="511.638" width="732.522" height="28.3464" class="st6"/>
+			<text x="222.29" y="531.21" class="st4" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>YourUsername/SpongePowered</text>		</g>
+		<g id="shape66-16" v:mID="66" v:groupContext="shape" transform="translate(56.4409,-150.386)">
+			<title>Tabelle.66</title>
+			<rect x="0" y="493.213" width="676.898" height="46.7717" class="st5"/>
+		</g>
+		<g id="shape74-18" v:mID="74" v:groupContext="shape" transform="translate(32.5892,-72.8661)">
+			<title>Rechteck.74</title>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<path d="M0 539.98 L732.52 539.98 L732.52 392.46 L0 392.46 L0 539.98 Z" class="st7"/>
+		</g>
+		<g id="group75-20" transform="translate(274.709,-154.197)" v:mID="75" v:groupContext="group">
+			<title>Tabelle.75</title>
+		</g>
+		<g id="shape76-21" v:mID="76" v:groupContext="shape" transform="translate(150.819,-162.276)">
+			<title>Rechteck.76</title>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<rect x="0" y="537.15" width="548.504" height="2.83465" class="st1"/>
+		</g>
+		<g id="shape80-23" v:mID="80" v:groupContext="shape" transform="translate(44.5197,-154.197)">
+			<title>Rechteck.80</title>
+			<desc>Master</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="41.3983" cy="530.489" width="82.8" height="18.9921"/>
+			<rect x="0" y="520.993" width="82.7967" height="18.9921" class="st3"/>
+			<text x="11.07" y="535.89" class="st4" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>Master</text>		</g>
+		<g id="shape81-26" v:mID="81" v:groupContext="shape" transform="translate(56.4409,-140.307)">
+			<title>Tabelle.81</title>
+			<rect x="0" y="493.213" width="676.898" height="46.7717" class="st5"/>
+		</g>
+		<g id="shape82-28" v:mID="82" v:groupContext="shape" transform="translate(32.3465,-192.04)">
+			<title>Tabelle.82</title>
+			<desc>YourLocalClone</desc>
+			<v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197"/>
+			<v:textRect cx="366.261" cy="525.811" width="732.53" height="28.3464"/>
+			<rect x="0" y="511.638" width="732.522" height="28.3464" class="st6"/>
+			<text x="296.23" y="531.21" class="st4" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>YourLocalClone</text>		</g>
+		<g id="shape88-31" v:mID="88" v:groupContext="shape" transform="translate(56.4409,-78.6538)">
+			<title>Tabelle.88</title>
+			<rect x="0" y="493.213" width="676.898" height="46.7717" class="st5"/>
+		</g>
+		<g id="shape91-33" v:mID="91" v:groupContext="shape" transform="translate(30.3465,-234.559)">
+			<title>Rechteck.91</title>
+			<desc>Your Fork</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="56.6929" cy="525.811" width="113.39" height="28.3464"/>
+			<rect x="0" y="511.638" width="113.386" height="28.3464" class="st8"/>
+			<text x="13.89" y="531.21" class="st4" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>Your Fork</text>		</g>
+		<g id="shape92-36" v:mID="92" v:groupContext="shape" transform="translate(30.3465,-30.3465)">
+			<title>Rechteck.92</title>
+			<desc>Your local Clone</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="85.0394" cy="525.811" width="170.08" height="28.3464"/>
+			<rect x="0" y="511.638" width="170.079" height="28.3464" class="st9"/>
+			<text x="12.52" y="531.21" class="st4" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>Your local Clone</text>		</g>
+		<g id="shape97-39" v:mID="97" v:groupContext="shape" transform="translate(32.3465,-418.811)">
+			<title>Rechteck.97</title>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<path d="M0 539.98 L732.52 539.98 L732.52 449.16 L0 449.16 L0 539.98 Z" class="st10"/>
+		</g>
+		<g id="group98-41" transform="translate(274.709,-443.449)" v:mID="98" v:groupContext="group">
+			<title>Tabelle.98</title>
+		</g>
+		<g id="shape99-42" v:mID="99" v:groupContext="shape" transform="translate(161.323,-451.528)">
+			<title>Rechteck.99</title>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<rect x="0" y="537.15" width="538" height="2.83465" class="st1"/>
+		</g>
+		<g id="shape103-44" v:mID="103" v:groupContext="shape" transform="translate(55.0236,-443.449)">
+			<title>Rechteck.103</title>
+			<desc>Master</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="49.6063" cy="530.489" width="99.22" height="18.9921"/>
+			<rect x="0" y="520.993" width="99.2126" height="18.9921" class="st3"/>
+			<text x="19.28" y="535.89" class="st4" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>Master</text>		</g>
+		<g id="shape104-47" v:mID="104" v:groupContext="shape" transform="translate(56.4409,-429.559)">
+			<title>Tabelle.104</title>
+			<rect x="0" y="493.213" width="676.898" height="46.7717" class="st5"/>
+		</g>
+		<g id="shape105-49" v:mID="105" v:groupContext="shape" transform="translate(32.3465,-481.292)">
+			<title>Tabelle.105</title>
+			<desc>SpongePowered</desc>
+			<v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197"/>
+			<v:textRect cx="366.261" cy="525.811" width="732.53" height="28.3464"/>
+			<rect x="0" y="511.638" width="732.522" height="28.3464" class="st6"/>
+			<text x="291.91" y="531.21" class="st4" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>SpongePowered</text>		</g>
+		<g id="shape111-52" v:mID="111" v:groupContext="shape" transform="translate(56.4409,-367.906)">
+			<title>Tabelle.111</title>
+			<rect x="0" y="493.213" width="676.898" height="46.7717" class="st5"/>
+		</g>
+		<g id="shape115-54" v:mID="115" v:groupContext="shape" transform="translate(30.3465,-376.292)">
+			<title>Rechteck.115</title>
+			<desc>Our Repository</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="85.0394" cy="525.811" width="170.08" height="28.3464"/>
+			<rect x="0" y="511.638" width="170.079" height="28.3464" class="st11"/>
+			<text x="18.06" y="531.21" class="st4" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>Our Repository</text>		</g>
+		<g id="shape32-57" v:mID="32" v:groupContext="shape" transform="translate(172.042,-295.929)">
+			<title>Kreis.32</title>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<path d="M0 530.49 A9.49606 9.49606 0 1 1 18.99 530.49 A9.49606 9.49606 0 0 1 0 530.49 Z" class="st12"/>
+		</g>
+		<g id="shape100-59" v:mID="100" v:groupContext="shape" transform="translate(174.042,-443.449)">
+			<title>Kreis.100</title>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<path d="M0 530.49 A9.49606 9.49606 0 1 1 18.99 530.49 A9.49606 9.49606 0 0 1 0 530.49 Z" class="st12"/>
+		</g>
+		<g id="shape116-61" v:mID="116" v:groupContext="shape" transform="translate(43.811,-106.283)">
+			<title>Rechteck.116</title>
+			<desc>Feature/YourFeature</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="102.756" cy="530.489" width="205.52" height="18.9921"/>
+			<rect x="0" y="520.993" width="205.512" height="18.9921" class="st3"/>
+			<text x="10.76" y="535.89" class="st4" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>Feature/YourFeature</text>		</g>
+		<g id="shape124-64" v:mID="124" v:groupContext="shape" transform="translate(222.986,-30.3465)">
+			<title>Rechteck.124</title>
+			<desc>Your local Branch</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="102.756" cy="525.811" width="205.52" height="28.3464"/>
+			<rect x="0" y="511.638" width="205.512" height="28.3464" class="st13"/>
+			<text x="23.81" y="531.21" class="st4" v:langID="1031"><v:paragraph v:horizAlign="1"/><v:tabList/>Your local Branch</text>		</g>
+		<g id="shape119-67" v:mID="119" v:groupContext="shape" v:layerMember="0" transform="translate(150.819,-163.693)">
+			<title>Dynamischer Verbinder.119</title>
+			<path d="M0 539.98 L106.44 539.98 A23.9568 23.9568 0 0 1 130.39 563.94 L130.39 563.94 A23.9568 23.9568 -180 0 0 154.35
+						 587.9 L549.92 587.9" class="st14"/>
+		</g>
+		<g id="shape77-70" v:mID="77" v:groupContext="shape" transform="translate(174.042,-154.197)">
+			<title>Kreis.77</title>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<path d="M0 530.49 A9.49606 9.49606 0 1 1 18.99 530.49 A9.49606 9.49606 0 0 1 0 530.49 Z" class="st12"/>
+		</g>
+		<g id="shape133-72" v:mID="133" v:groupContext="shape" transform="translate(44.5197,-89.1654)">
+			<title>Rechteck.133</title>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+			</v:userDefs>
+			<path d="M0 539.98 L708.66 539.98 L708.66 487.54 L0 487.54 L0 539.98 Z" class="st15"/>
+		</g>
+	</g>
+</svg>

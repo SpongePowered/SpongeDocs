@@ -2,12 +2,11 @@
 Developing Sponge
 =================
 
-SpongeCommon is the layer of shared code in the official implementations of the Sponge API. SpongeForge and
-SpongeVanilla both extend SpongeCommon.
+This sections describes the best way to approach the project when you're intending to develop Sponge itself. It is
+mandatory to be familiar with :doc:`git <../howtogit>` and our :doc:`codestyle`. Basic knowledge of the
+:doc:`../structure` is also very helpful.
 
-* SpongeForge is the official forge-based implementation
-* SpongeVanilla is the official vanilla-based implementation
-
+If you want to join us in creating Sponge, head straight over to the :doc:`pr` page.
 
 Contents
 ========
