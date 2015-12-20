@@ -37,7 +37,7 @@ Task Properties
 
 Using the ``Task.Builder``, you can specify other, optional properties, as described below.
 
-.. _TimeUnit: http://docs.oracle.com/javase/7/docs/api/java/util/concurrent/TimeUnit.html
+.. _TimeUnit: http://docs.oracle.com/javase/8/docs/api/java/util/concurrent/TimeUnit.html
 
 +-----------------+-------------------------+--------------------------------------------------------------------------+
 | Property        | Method Used             | Description                                                              |
@@ -60,7 +60,7 @@ Using the ``Task.Builder``, you can specify other, optional properties, as descr
 |                 |                         | *Either method, but not both, can specified per task.*                   |
 +-----------------+-------------------------+--------------------------------------------------------------------------+
 | synchronization | async()                 | A synchronous task is run in the game's main loop in series with the     |
-|                 |                         | tick cycle. If ``TaskBuilder#async`` is used, the task will be run       |
+|                 |                         | tick cycle. If ``Task.Builder#async`` is used, the task will be run      |
 |                 |                         | asynchronously. Therefore, it will run in its own thread, independently  |
 |                 |                         | of the tick cycle, and will not be thread safe with game data.           |
 +-----------------+-------------------------+--------------------------------------------------------------------------+
@@ -78,17 +78,14 @@ initial delay of 100 milliseconds could be built and submitted using the followi
 
 .. code-block:: java
 
-    import java.util.concurrent.TimeUnit;    
-    
+    import java.util.concurrent.TimeUnit;
+
     Scheduler scheduler = game.getScheduler();
     Task.Builder taskBuilder = scheduler.createTaskBuilder();
 
-    Task task = taskBuilder.execute(new Runnable() {
-        public void run() {
-            logger.info("Yay! Schedulers!");
-        }
-    }).async().delay(100, TimeUnit.MILLISECONDS).interval(5, TimeUnit.MINUTES)
-    .name("ExamplePlugin - Fetch Stats from Database").submit(plugin);
+    Task task = taskBuilder.execute(() -> logger.info("Yay! Schedulers!"))
+          .async().delay(100, TimeUnit.MILLISECONDS).interval(5, TimeUnit.MINUTES)
+          .name("ExamplePlugin - Fetch Stats from Database").submit(plugin);
 
 To cancel a task, simply call the ``Task#cancel`` method:
 
