@@ -2,40 +2,67 @@
 Contributing to Sponge
 ======================
 
-The articles in this section are intended for people who wish to:
+This sections intends to show you ways to get involved with Sponge.
 
-* Volunteer to help with Sponge API or Sponge implementation development by planning, developing, and submitting a
-  quality PR on GitHub.
-* Volunteer to help with the Sponge documentation with top-notch articles and edits.
-* Make Spongie, our squishy yellow mascot, proud.
+What are the projects I can help with?
+======================================
 
-There are, of course, other ways to help if you'd like:
+The Sponge Project and its parts are maintained on `GitHub <https://github.com/spongepowered>`_. If you're unfamiliar
+with GitHub and the tool git, then take a look at :doc:`howtogit` first. A read of our :doc:`guidelines` is strongly
+advised before starting any work. There are several projects we're currently maintaining:
 
-* Join the Sponge forums and the #sponge IRC channel to help others and hang out.
-* Spread the word about Sponge!
+* SpongeAPI
+* SpongeForge
+* SpongeVanilla
+* SpongeCommon
+* Mixin
+* SpongeDocs
+* Ore
 
-This section shows you how to get involved with SpongeForge, SpongeVanilla, SpongeCommon, the Sponge API, or
-SpongeDocs. These articles are essentially required reading for anyone who wishes to begin developing
-or writing for Sponge. We also recommend future contributors to become familiar with the Sponge API `JavaDocs
-<https://jd.spongepowered.org/>`__.
+If you want to know more about the structure of the project and how everythings tied together, head over to
+:doc:`structure`.
 
-SpongeForge, SpongeVanilla and SpongeCommon
-===========================================
+What kind of help is needed?
+============================
 
-There are two official implementations of the Sponge API: SpongeForge and SpongeVanilla. Despite their differences,
-much of their code is shared, and this is now contained in the SpongeCommon repository.
+Basic contributions
+~~~~~~~~~~~~~~~~~~~
 
-**SpongeCommon**  is the core of both official implementations of the Sponge API. Within it resides all core services
-and the common layer of implementation that is used in both Sponge and SpongeVanilla. Almost all implementation should
-reside in SpongeCommon, with separation of interfaces as necessary for special handling per implementation.
+This can be done by almost everyone. You don't need to know a programming language like Java or Python to:
 
-**SpongeForge** is the forge implementation extending SpongeCommon, with special handling for maximizing compatibility with
-Forge, and therefore numerous Forge mods.
+* test SpongeForge or SpongeVanilla and report bugs or usage quirks
+* report or suggest any errors, faults or bugs you encounter
+* post suggestions or idea you have which would make Sponge better
 
-**SpongeVanilla** is the vanilla implementation of the Sponge API. Acting as a standalone implementation having complete
-control over the Minecraft Server, this implementation does not support mods wishing to add new things like blocks and items.
+Reporting bugs best via our `Github repositories <https://github.com/spongepowered/>`_, suggestions fit onto our
+`forums <https://forums.spongepowered.org/>`_. Just have a look at our
+:doc:`Bug Reporting page <../server/spongineer/bugreport>` for further instructions.
 
+Intermediate Contributions
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+You should at least have basic knowledge of Java, Python or reST to help out on the following tasks:
+
+* help fixing bugs
+* finish the implementation of the API (SpongeForge and SpongeVanilla)
+* :doc:`help writing the SpongeDocs <spongedocs>`
+* help `translate the Docs on Crowdin <https://crowdin.com/project/sponge-docs>`_
+* help out developing Ore
+
+The development of the `Sponge API <https://github.com/spongepowered/SpongeAPI>`_,
+`SpongeForge <https://github.com/spongepowered/SpongeForge>`_,
+`SpongeVanilla <https://github.com/spongepowered/SpongeVanilla>`_ and `Ore <https://github.com/spongepowered/Ore>`_ as
+well as the `SpongeDocs <https://github.com/spongepowered/SpongeDocs>`_ is done in several repositories hosted on Github.
+
+Advanced Contributions
+~~~~~~~~~~~~~~~~~~~~~~
+
+And finally these are the most difficult things you can help out with. Advanced knowledge of Java, Minecraft and at
+least basic knowledge of the `Sponge API <https://github.com/spongepowered/SpongeAPI>`_ and its
+`structure <https://jd.spongepowered.org>`_ is strongly advised before attempting to help out with:
+
+* adding functionality to the API (:doc:`implementation/pr`)
+* implementing advanced API functionality in the implementations
 
 Contents
 ========
@@ -44,6 +71,7 @@ Contents
     :maxdepth: 2
     :titlesonly:
 
+    structure
     guidelines
     howtogit
     implementation/index

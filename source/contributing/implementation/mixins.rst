@@ -3,7 +3,8 @@ Mixins
 ======
 
 .. note::
-   This page applies to SpongeCommon, SpongeForge, and SpongeVanilla.
+   This page applies to SpongeCommon, SpongeForge, and SpongeVanilla as these three repositories utilize Mixins to hook
+   into the underlying implementations (Vanilla Minecraft server and Forge).
 
 Mixins are a way of modifying java code at runtime by adding additional behavior to classes. They enable transplanting
 of intended behavior into existing Minecraft objects. Mixins are necessary for all official Sponge implementations

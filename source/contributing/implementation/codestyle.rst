@@ -2,7 +2,7 @@
 Code Style
 ==========
 
-We follow `Google's Java Style Guidelines <https://google-styleguide.googlecode.com/svn/trunk/javaguide.html>`_ with a
+We follow `Google's Java Style Guidelines <https://google.github.io/styleguide/javaguide.html>`_ with a
 few additions and modifications, which are described herein.
 
 .. tip::
@@ -64,7 +64,7 @@ few additions and modifications, which are described herein.
 Code Conventions
 ================
 
-* Use `Optionals <https://code.google.com/p/guava-libraries/wiki/UsingAndAvoidingNullExplained>`_ instead of returning
+* Use :doc:`/plugin/optional/index` instead of returning
   ``null`` in the API
 * Method parameters accepting ``null`` must be annotated with ``@Nullable`` (from javax.*), all methods and parameters
   are ``@Nonnull`` by default.
@@ -103,14 +103,13 @@ started quickly, here is an example of properly formatted code:
      * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
      * THE SOFTWARE.
      */
-
     package com.example.java;
 
-    import com.google.common.base.Optional;
     import org.slf4j.Logger;
     import org.slf4j.LoggerFactory;
 
     import java.util.Random;
+    import java.util.Optional;
 
     public class Example {
 
@@ -147,7 +146,7 @@ started quickly, here is an example of properly formatted code:
          * @return The ID half of the time, the given fallback the other half
          */
         public String resolveId(String fallback) {
-            return resolveId().or(fallback);
+            return resolveId().orElse(fallback);
         }
 
     }
