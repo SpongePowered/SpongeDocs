@@ -2,8 +2,8 @@
 How to Git(Hub)
 ===============
 
-If you want to join us while creating Sponge, you got an awesome addition to the API or you want to improve our Docs,
-then you'll need to get familiar with ``git`` and GitHub. If you're already familiar with forking, branches,
+If you want to assist in creating Sponge, you have an awesome addition to the API, or you want to improve our Docs,
+then you'll need to become familiar with ``git`` and GitHub. If you're already familiar with forking, branches,
 issues, pull-requests and commits, then just skip this topic. If you have no clue what we're talking about, then read on.
 
 .. note::
@@ -13,8 +13,8 @@ issues, pull-requests and commits, then just skip this topic. If you have no clu
 The Basic Concept of Git and GitHub
 ===================================
 
-Git allows different developers to develop a single piece of software at the same time. Before we start here's a
-short glossary for you to get familiar with:
+Git allows many different developers to develop a single piece of software at the same time. Before we start, here
+is a short glossary to help you to get familiar with the topic:
 
 +---------------------------------------+----------------------------------------------------------------+
 |Git                                    | Tool to manage a project with many contributors                |
@@ -30,66 +30,69 @@ short glossary for you to get familiar with:
 +---------------------------------------+----------------------------------------------------------------+
 |Pull-Request "PR"                      | A proposed addition or change to a repository                  |
 +---------------------------------------+----------------------------------------------------------------+
-|Issue                                  | This one is self-explanatory, this is a flaw in the            |
-|                                       | repository that needs to be addressed                          |
+|Issue                                  | The method to report problems and propose improvements to a    |
+|                                       | repository.                                                    |
 +---------------------------------------+----------------------------------------------------------------+
 |Commit                                 | Changes to the repository that are packed to a single package  |
 +---------------------------------------+----------------------------------------------------------------+
 
-Now that you know some of the most important vocabularies, we must put them into context. Let's start with the repository.
-The repository (short: repo) is the place where a project stores its files. Our repositories are located at
-`GitHub <http://github.com/spongepowered>`__. However our repo has some access restrictions to preserve it from
-unwanted or abusive changes. You can't add changes yourself, as the repo is read-only for normal users. Now you ask
-yourself how you're supposed to file proposes and changes, right? Well, that's where forks come into play. You can grab
-yourself a copy of our repos and make your changes there. After you're done you open a PR on our repository. By doing
-this you propose your additions and changes to us. We'll review your changes, tell you if something is wrong or needs
-improvement and will hopefully pull them in.
+Now that you know some of the vocabulary, let's put these terms into context - beginning with the *repository*.
+The repository (*repo*) is the place where a project stores its files. The SpongePowered repositories are located at
+`GitHub <http://github.com/spongepowered>`__. However, this repo has some access restrictions to preserve it from
+unwanted or malicious changes. You can't simply make changes yourself, as the repo is read-only for regular users.
+Now you may wonder how you're supposed to file proposals and changes. Well, that's where *forks* come into play.
+You can grab a copy of the SpongePowered repos, and make your changes there. When you're done, you open it as a PR
+on our repository. Your proposed additions and changes can then be reviewed, and staff will tell you if something is
+wrong, or needs improvement, and eventually merge the final PR.
 
-Here's a short summary of the above said, before we go into details:
+Here's a short summary of the procedure described above, before we go into detail:
 
 1. Fork the repo of your choice
-#. clone it to your local machine
-#. create a new branch
-#. make the desired changes
-#. Test if everything working
-#. commit the changes
-#. sync them to GitHub
-#. propose the changes in a PR on our repo
-#. adjust your PR if necessary
-#. your PR gets pulled in
+#. Clone it to your local machine
+#. Create a new branch
+#. Make the desired changes
+#. Test if everything works
+#. Commit the changes
+#. Sync them to GitHub
+#. Propose the changes in a PR to the SpongePowered Repo
+#. Amend to your PR if necessary
+#. Your PR gets pulled into master by staff
 
-Spare me the Details!
+Spare Me the Details!
 =====================
 
 1. Forking a Repo
 -----------------
 
-Now that you know the basic concept, we'll talk about the details. First you need to fork the repository you want to
-make changes to. This can be done on GitHub.com, you'll find a ``Fork`` button at the top of the repositories page.
+Now that you know the basic concept, we'll discuss the details. First you need to fork the repository you want to
+make changes to. This can be done on GitHub.com, where you'll find a ``Fork`` button at the top of the repositories page.
 After pressing it, GitHub will do some work and present a clone of the original repo to you. You'll notice that the
 clone is now located at ``YourGitHubAccount/ClonedRepoName``. Alright, first step completed.
 
-2. Cloning the Fork to your Machine
+2. Cloning the Fork to Your Machine
 -----------------------------------
 
 Now you need to get this fork to your local machine to make your changes. Open the Git Client of your choice
 (:doc:`../preparing/git`) and ``clone`` your fork to your local machine. The client will ask you for a folder to store
-everything. Second step finished, well done! Time to give yourself a pat on the back. Alternatively you can do this via
-CLI. Note that you need to create the folder everything is getting cloned to yourself:
+everything in. Second step finished, well done! 
+
+Alternatively you can do this via CLI. Note that you need to create the folder everything is getting cloned
+to yourself:
 
 .. code-block:: none
 
   git clone git://github.com/YourGitHubAccount/ClonedRepoName.git
 
-3. Creating a new Branch
+3. Creating a New Branch
 ------------------------
 
-Ok, now that you've got a local copy of your fork, it's time to introduce branches. Branches were designed to be able
-to develop and test different features or additions at the same time without causing problems and errors due to
-interferences of the additions. It's strongly advised that you **don't** make your changes on the ``master`` branch but
-create a new branch with a sane name yourself and make the changes there. Doing it this way will keep you out of
-trouble. This implies that we need to create a ``branch`` first, so let's go! You can do this via your client (there
-should be a ``create branch`` button somewhere) or you can use the CLI with git:
+Now that you have a local copy of your fork, it's time to introduce branches. Branches were designed to be able
+to develop and test different features or additions at the same time, without causing problems and errors due to
+interferences of the additions. It's strongly advised that you **don't** make your changes on the ``master`` branch; instead,
+create a new branch yourself (with a sensible name) and make the changes there.
+
+This implies that we need to create a ``branch`` first, so let's go! You can do this via your client (there
+should be a ``create branch`` button somewhere), or you can use the CLI with git:
 
 .. code-block:: none
 
@@ -103,25 +106,25 @@ done! Good job so far! To get an overview of your branches, just have a look at 
 
   git branch
 
-4. Making your Changes
+4. Making Your Changes
 ----------------------
 
 **Now it's time to make your changes**. Use the editor or IDE of your choice to do this.
 
-5. Test if your changes work
+5. Test if Your Changes Work
 ----------------------------
 
 For SpongeAPI and the implementations you have to run ``gradle compileJava``. Proceed to the next step if it finishes
-without errors. If it doesn't make the appropriate changes and try again.
+without errors. If it doesn't, make the appropriate corrections and try again.
 
 For SpongeDocs you can just submit your PR. It will get built automatically and reveal possible errors. Another option
 is to build the Docs locally. Have a look at the
 `Readme.md on the Docs <https://github.com/SpongePowered/SpongeDocs/blob/master/README.md>`_ for further instructions.
 
-6. Commit the changes
+6. Commit the Changes
 ---------------------
 
-When you're done, you need to bundle them into a nice package (a ``commit``) and get them into the branch. Again your
+When you're done, you need to bundle them into a single package (a ``commit``) and get them into the branch. Again your
 git client will help you out. Add a meaningful name to your commit and a short description if needed. This can be done
 via CLI too:
 
@@ -132,45 +135,44 @@ First collect all files and folders you want to put into a commit:
   git add <file>
   git add <folder>
 
-Now that the files are added to your list of changes you want to include in the commit, just do
+Now that the files are added to your list of changes you want included in the commit, just do
 
 .. code-block:: none
 
   git commit
 
-It will open a text window, where you can add a message if you want to.
+It will open a text window, where you can add a message if you desire.
 
 .. note::
-  You can have multiple commits in a PR. So just change everything you need and commit the changes. You can merge the
-  commits onto a single commit later.
+  You can have multiple commits in a PR. Just go ahead and change everything you need and commit the changes.
+  You can merge the commits onto a single commit later.
 
-So, sixth step is done. Again: Well done!
+So now, the sixth step is done. Almost there!
 
 7. Sync to GitHub
 -----------------
 
-Now we need to get the changes to your fork on GitHub. Everything you've
-made so far is only stored locally right now. As always you can use your git client to do this
-(there's a button somewhere) or you can do it via CLI:
+Now we need to get the changes to your fork on GitHub. Everything you've made so far is only stored locally
+right now. As always, you can use your git client to do this (there's a button somewhere), or you can do it via CLI:
 
 .. code-block:: none
 
   git push
 
-8. propose the changes in a PR on our repo
-------------------------------------------
+8. Propose the Changes in a PR to the SpongePowered Repo
+--------------------------------------------------------
 
-Now you can either go to your forks page on GitHub.com (there should be a notice to guide you) or you can use your
+You can either go to your forks page on GitHub.com (there should be a notice to guide you), or you can use your
 GitHub client to create a pull-request. The official GitHub client uses the the top right corner of the window for this.
 
-9. adjust your PR if necessary
-------------------------------
+9. Amend Your PR if Necessary
+-----------------------------
 
-If we want you to make changes to your PR, then just commit to the above created branch. The commits will be added to
-your PR automatically.
+If we want you to make changes to your PR, then just make more commits to the branch created above.
+Further commits will be added to your PR automatically.
 
-10. your PR gets pulled in
---------------------------
+10. Your PR Gets Pulled
+-----------------------
 
 That's it. We're all set! Great job!
 
@@ -179,33 +181,33 @@ Advanced Git
 
 .. ToDo: add squashing, setting up a remote, rebasing
 
-Squashing with rebase
+Squashing with Rebase
 ---------------------
 
-Let's say you have finished your additions to our repo and let's pretend that you made like 100 comments while getting
-it done. Your commit history will look cluttered for sure. It would be a shame if all of your "fixup" commits would go
-into our repo, wouldn't it? Fortunately Git has a nice tool to circumvent this, it's called ``rebase``. Rebase can take
-your 100 small commits and just turn them into a single big commit. Awesome, isn't it? Instead of reinventing the
-wheel, we'll just pass you a link to a very short and easily understandable squashing tutorial:
+Let's say you have finished your additions to the repo, and let's pretend that you made 137 commits while getting it done.
+Your commit history will certainly look cluttered. It would be a shame if they were all recorded into the repo, wouldn't it?
+Too many trivial commits also clutters the project commit history. Fortunately Git has a nice tool to circumvent this, it's
+called a ``rebase``. Rebasing can take your 137 small commits and just turn them into one big commit. Awesome, isn't it?
+Instead of reinventing the wheel, we'll just pass you a link to a very short and easily understandable squashing tutorial:
 
 `Gitready: Squashing with Rebase <http://gitready.com/advanced/2009/02/10/squashing-commits-with-rebase.html>`_
 
-Setting up a remote
+Setting Up a Remote
 -------------------
 
-If you see this warning ``fatal: The current branch YourBranchName has no upstream branch.`` the branch may not be on
+If you see the warning ``fatal: The current branch YourBranchName has no upstream branch.``, then the branch may not be on
 the upstream remote. This may happen if this is the first time you are pushing a commit for the new branch. To push the
 current branch and set the remote as upstream, use ``git push --set-upstream origin YourBranchName``.
 
 Rebasing
 --------
 
-Let's say you made some changes to your desired branch and in the meantime someone else updated the Sponge repo. This
-means that your fork is outdated, that's not a big problem, but to avoid problems when merging your additions later on,
+Let's say you made some changes to your desired branch, but in the meantime someone else updated the repo. This
+means that your fork is outdated, which is not a big problem, but to avoid problems when merging your additions later on,
 it's strongly advised to ``rebase`` your changes against the lastest changes in the original repo. If you haven't set up
 the remote repo yet, do it before trying to rebase.
 
-A successfull rebase requires different steps:
+A successfull rebase requires several steps:
 
 
 .. CHECK IF BELOW IS CORRECT!!!
