@@ -107,6 +107,7 @@ Links
 -  `Sponge Homepage <http://spongepowered.org>`__
 -  `Sponge Forums <http://forums.spongepowered.org>`__
 -  `SpongeAPI Issue Tracker <https://github.com/SpongePowered/SpongeAPI/issues?q=>`__
+-  `SpongeAPI Javadocs <https://jd.spongepowered.com>`__
 -  `Sponge Twitter <https://twitter.com/SpongePowered>`__
 -  `Sponge Subreddit <https://reddit.com/r/SpongeProject>`__
 -  `Sponge GitHub <https://github.com/SpongePowered>`__
