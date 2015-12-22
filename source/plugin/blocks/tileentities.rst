@@ -15,9 +15,10 @@ to the block or ``Optional.empty()`` if the block is not a tile entity.
  .. code-block:: java
 
     import org.spongepowered.api.world.Location;
+    import org.spongepowered.api.world.World;
 
-    public boolean isTileEntity(Location block) {
-        return block.getTileEntity().isPresent();
+    public boolean isTileEntity(Location<World> blockLoc) {
+        return blockLoc.getTileEntity().isPresent();
     }
 
 The type of a tile entity can then be obtained by the ``getType()`` function which returns a ``TileEntityType``. Which
@@ -31,12 +32,12 @@ cast to the according subtype.
     import org.spongepowered.api.block.tileentity.TileEntityTypes;
 
     public boolean isJukebox(TileEntity entity) {
-        return entity.getType() == TileEntityTypes.JUKEBOX;
+        return entity.getType().equals(TileEntityTypes.JUKEBOX);
     }
 
     public void ejectDiscFromJukebox(TileEntity entity) {
         if (isJukebox(entity)) {
-            Jukebox jukebox = (Jukebox) entity);
+            Jukebox jukebox = (Jukebox) entity;
             jukebox.ejectRecord();
         }
     }
@@ -58,7 +59,7 @@ line, the second attempts to set it and returns the boolean value indicating its
 
  .. code-block:: java
  
-    import org.spongepowered.api.data.manipulator.tileentities.SignData;
+    import org.spongepowered.api.data.manipulator.mutable.tileentity.SignData;
     import org.spongepowered.api.text.Text;
 
     import java.util.Optional;
@@ -66,21 +67,19 @@ line, the second attempts to set it and returns the boolean value indicating its
     public Optional<Text> getFirstLine(TileEntity entity) {
         Optional<SignData> data = entity.getOrCreate(SignData.class);
         if (data.isPresent()) {
-            return Optional.of(data.get().getLine(0));
-        } else {
-            return Optional.empty();
+            return Optional.of(data.get().lines().get(0));
         }
+        return Optional.empty();
     }
 
     public boolean setFirstLine(TileEntity entity, Text line) {
-        if (entity.isCompatible(SignData.class)) {
+        if (entity.supports(SignData.class)) {
             SignData sign = entity.getOrCreate(SignData.class).get();
-            sign.setLine(0, line);
+            sign.set(sign.lines().set(0, line));
             entity.offer(sign);
             return true;
-        } else {
-            return false;
         }
+        return false;
     }
 
 The main difference to working with a ``BlockState`` is that a tile entity is a mutable ``DataHolder`` as opposed to
