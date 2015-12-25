@@ -15,4 +15,5 @@ Contents
     installation
     launch-script
     port-forward
+    bungeecord
     configuration/index
