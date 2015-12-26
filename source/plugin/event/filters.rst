@@ -48,7 +48,7 @@ An example with ``@Include`` could be:
     }
 
 This listener would normally be called for all EntityEvents, however the ``Include`` annotation narrows it to
-only recieve ``DamageEntityEvent`` and ``DestructEntityEvent``\ s. 
+only recieve ``DamageEntityEvent`` and ``DestructEntityEvent``\ s.
 
 **@IsCancelled**
 This annotation allows filtering events by their cancellation state at the time that your event listener would normally be
@@ -56,7 +56,7 @@ called. By default your event listener will not be called if the event has been 
 However you can change this behavior to one of three states depending on the ``Tristate`` value in the ``@IsCancelled``
 annotation.
 
-  - ``Tristate.FALSE`` is the default behavior if the ``IsCancelled`` annotation is not present, and will not call your 
+  - ``Tristate.FALSE`` is the default behavior if the ``IsCancelled`` annotation is not present, and will not call your
     listener if the event has been cancelled.
   - ``Tristate.UNDEFINED`` will cause your listener to be called regardless of the cancellation state of the event.
   - ``Tristate.TRUE`` will cause your listener to be called only if the event has been cancelled by a previous event listener.
@@ -97,6 +97,23 @@ will be set to the first player present the cause.**
         // do something
     }
 
+**@Before** This parameter source annotation tells the event system to find the object before
+the one of the type specified by the annotation parameter (This is equivalent to ``Cause#before(Class<?>)``).
+Additionally, the found object must match the type of the parameter. If no object is found meeting these criteria,
+then your listener is not called.
+
+**In this example your listener will only be called if there is a player located before a plugin container in the event's cause.
+The ``player`` parameter will be set to that player.**
+
+.. code-block:: java
+
+    @Listener
+    public void onInteract(InteractBlockEvent.Secondary event, @Before(PluginContainer.class) Player player) {
+        // do something
+    }
+
+**@After** This is similar to ``@Before``, but it instead uses ``Cause#after(Class<?>)``.
+
 **@All** This parameter source annotation requires that the annotated parameter be an array
 type. The returned array will be equivalent to the contents of calling ``Cause#all(Class<?>)``. By default if the
 returned array would be empty then the validation fails however this can be disabled by setting ``ignoreEmpty=false``.
@@ -110,9 +127,23 @@ no players.**
     public void onInteract(InteractBlockEvent.Secondary event, @All(ignoreEmpty=false) Player[] players) {
         // do something
     }
-    
+
 **@Root** This parameter source annotation will fetch the root object of the cause, equivalent to ``Cause#root()``.
 It also performs an additional check that the type of the root object matches the type of your parameter.
+
+**@Named** This parameter source annotation tells the event system to find the object with the name specified by the annotation
+parameter (This is equivalent to ``Cause#get(String)``). Additionally, the found object must match the type of the parameter. If
+no object is found meeting these criteria, then your listener is not called.
+
+**In this example your listener will only be called if there is a player associated with the name ``NamedCause.OWNER``.
+The ``player`` parameter will be set to that player.^^
+
+.. code-block:: java
+
+    @Listener
+    public void onInteract(InteractBlockEvent.Secondary event, @Named(NamedCause.OWNER) Player player) {
+        // do something
+    }
 
 Parameter Filter Annotations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
