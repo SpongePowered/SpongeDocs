@@ -136,7 +136,7 @@ parameter (This is equivalent to ``Cause#get(String)``). Additionally, the found
 no object is found meeting these criteria, then your listener is not called.
 
 **In this example your listener will only be called if there is a player associated with the name ``NamedCause.OWNER``.
-The ``player`` parameter will be set to that player.^^
+The ``player`` parameter will be set to that player.**
 
 .. code-block:: java
 
