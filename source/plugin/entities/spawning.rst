@@ -14,7 +14,7 @@ For example, let's try to spawn a Creeper:
     import org.spongepowered.api.data.key.Keys;
     import org.spongepowered.api.entity.Entity;
     import org.spongepowered.api.entity.EntityTypes;
-    import org.spongepowered.api.text.Texts;
+    import org.spongepowered.api.text.Text;
     import org.spongepowered.api.text.format.TextColors;
     import org.spongepowered.api.world.Location;
     import org.spongepowered.api.world.extent.Extent;
@@ -33,7 +33,7 @@ For example, let's try to spawn a Creeper:
             // data onto the creeper, such as the explosive radius
             creeper.offer(Keys.EXPLOSIVE_RADIUS, 10);
             // Or display name
-            creeper.offer(Keys.DISPLAY_NAME, Texts.of(TextColors.DARK_AQUA, "Inscrutable"));
+            creeper.offer(Keys.DISPLAY_NAME, Text.of(TextColors.DARK_AQUA, "Inscrutable"));
             // Or even whether the creeper is "charged"
             creeper.offer(Keys.CREEPER_CHARGED, true);
 

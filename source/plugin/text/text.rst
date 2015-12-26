@@ -3,8 +3,7 @@ Creating Text
 =============
 
 The Text API is used to create formatted text, which can be sent to players in chat messages, and can also be used in
-places such as books and signs. Sponge provides the ``org.spongepowered.api.text.Texts`` utility class to assist in
-creating and formatting text.
+places such as books and signs.
 
 Unformatted Text
 ================
@@ -18,9 +17,8 @@ Example:
 .. code-block:: java
 
     import org.spongepowered.api.text.Text;
-    import org.spongepowered.api.text.Texts;
 
-    Text unformattedText = Texts.of("Hey! This is unformatted text!");
+    Text unformattedText = Text.of("Hey! This is unformatted text!");
 
 The code excerpt illustrated above will return uncolored, unformatted text with no :ref:`text actions <text-actions>`
 configured.
@@ -47,7 +45,7 @@ Example: Colored Text
 
     import org.spongepowered.api.text.format.TextColors;
 
-    Text coloredText = Texts.builder("Woot! Golden text is golden.").color(TextColors.GOLD).build();
+    Text coloredText = Text.builder("Woot! Golden text is golden.").color(TextColors.GOLD).build();
 
 Any color specified within the ``org.spongepowered.api.text.format.TextColors`` class can be used when coloring text.
 Multiple colors can be used in text by appending additional texts with different colors:
@@ -57,8 +55,8 @@ Example: Multi-colored Text
 
 .. code-block:: java
 
-    Text multiColoredText = Texts.builder("Sponges are ").color(TextColors.YELLOW).append(
-            Texts.builder("invincible!").color(TextColors.RED).build()).build();
+    Text multiColoredText = Text.builder("Sponges are ").color(TextColors.YELLOW).append(
+            Text.builder("invincible!").color(TextColors.RED).build()).build();
 
 Styling
 ~~~~~~~
@@ -72,7 +70,7 @@ Example: Styled Text
 
     import org.spongepowered.api.text.format.TextStyles;
 
-    Text styledText = Texts.builder("Yay! Styled text!").style(TextStyles.ITALIC).build();
+    Text styledText = Text.builder("Yay! Styled text!").style(TextStyles.ITALIC).build();
 
 Just like with colors, multiple styles can be used by chaining together separately styled texts.
 
@@ -81,13 +79,13 @@ Example: Multi-styled Text
 
 .. code-block:: java
 
-    Text multiStyledText = Texts.builder("I'm italicized! ").style(TextStyles.ITALIC)
-            .append(Texts.builder("I'm bold!").style(TextStyles.BOLD).build()).build();
+    Text multiStyledText = Text.builder("I'm italicized! ").style(TextStyles.ITALIC)
+            .append(Text.builder("I'm bold!").style(TextStyles.BOLD).build()).build();
 
 Coloring & Styling Shortcut
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The ``org.spongepowered.api.text.Texts#of(Object... objects)`` method provides a simple way to add color and styling to
+The ``org.spongepowered.api.text.Text#of(Object... objects)`` method provides a simple way to add color and styling to
 your text in a much more concise way.
 
 Example: Color & Style Shortcut
@@ -95,7 +93,7 @@ Example: Color & Style Shortcut
 
 .. code-block:: java
 
-    Text colorAndStyleText = Texts.of(TextColors.RED, TextStyles.ITALIC, "Shortcuts for the win!");
+    Text colorAndStyleText = Text.of(TextColors.RED, TextStyles.ITALIC, "Shortcuts for the win!");
 
 .. _text-actions:
 
@@ -113,7 +111,7 @@ Example: Text with an Action
 
     import org.spongepowered.api.text.action.TextActions;
 
-    Text clickableText = Texts.builder("Click here!").onClick(TextActions.runCommand("tell Spongesquad I'm ready!")).build();
+    Text clickableText = Text.builder("Click here!").onClick(TextActions.runCommand("tell Spongesquad I'm ready!")).build();
 
 In the method above, players can click the "Click here!" text to run the specified command.
 
@@ -147,8 +145,8 @@ Example: Selector-generated Text
 
     import org.spongepowered.api.text.selector.Selectors;
 
-    Text adventurers = Texts.builder("These players are in adventure mode: ").append(
-            Texts.of(Selectors.parse("@a[m=2]"))
+    Text adventurers = Text.builder("These players are in adventure mode: ").append(
+            Text.of(Selector.parse("@a[m=2]"))
     ).build();
 
 In this example, the target selector ``@a[m=2]`` is targeting every online player who is in adventure mode. When the

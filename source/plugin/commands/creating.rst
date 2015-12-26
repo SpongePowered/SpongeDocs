@@ -14,11 +14,11 @@ Example: Building a Simple Command
 
 .. code-block:: java
 
-    import org.spongepowered.api.text.Texts;
+    import org.spongepowered.api.text.Text;
     import org.spongepowered.api.command.spec.CommandSpec;
 
     CommandSpec myCommandSpec = CommandSpec.builder()
-        .description(Texts.of("Hello World Command"))
+        .description(Text.of("Hello World Command"))
         .permission("myplugin.command.helloworld")
         .executor(new HelloWorldCommand())
         .build();
@@ -82,7 +82,7 @@ Example: Simple Command Executor
 
         @Override
         public CommandResult execute(CommandSource src, CommandContext args) throws CommandException {
-            src.sendMessage(Texts.of("Hello World!"));
+            src.sendMessage(Text.of("Hello World!"));
             return CommandResult.success();
         }
     }
@@ -107,14 +107,14 @@ Perform an ``instanceof`` check to determine the type of the ``CommandSource``:
 
     if(src instanceof Player) {
         Player player = (Player) src;
-        player.sendMessage(Texts.of("Hello " + player.getName() + "!"));
+        player.sendMessage(Text.of("Hello " + player.getName() + "!"));
     }
     else if(src instanceof ConsoleSource) {
-        src.sendMessage(Texts.of("Hello GLaDOS!"));
+        src.sendMessage(Text.of("Hello GLaDOS!"));
         // The Cake Is a Lie
     }
     else if(src instanceof CommandBlockSource) {
-        src.sendMessage(Texts.of("Hello Companion Cube!"));
+        src.sendMessage(Text.of("Hello Companion Cube!"));
         // <3
     }
 

@@ -246,7 +246,7 @@ Example: Listen for Custom Event
 
 .. code-block:: java
 
-    import org.spongepowered.api.text.Texts;
+    import org.spongepowered.api.text.Text;
     import org.spongepowered.api.text.chat.ChatTypes;
 
     @Listener
@@ -257,5 +257,5 @@ Example: Listen for Custom Event
         }
 
         String senderName = event.getSender().getName();
-        event.getRecipient().sendMessage(ChatTypes.CHAT, Texts.of("PM from " + senderName + ": " + event.getMessage()));
+        event.getRecipient().sendMessage(ChatTypes.CHAT, Text.of("PM from " + senderName + ": " + event.getMessage()));
     }

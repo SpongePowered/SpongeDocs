@@ -30,15 +30,14 @@ There are two different ways to specify the contents of paginated list:
  .. code-block:: java
 
 	import org.spongepowered.api.text.Text;
-	import org.spongepowered.api.text.Texts;
 
 	import java.util.ArrayList;
 	import java.util.List;
 
 	List<Text> contents = new ArrayList<>();
-	contents.add(Texts.of("Item 1"));
-	contents.add(Texts.of("Item 2"));
-	contents.add(Texts.of("Item 3"));
+	contents.add(Text.of("Item 1"));
+	contents.add(Text.of("Item 2"));
+	contents.add(Text.of("Item 3"));
 
 	builder.contents(contents);
 
@@ -51,7 +50,7 @@ There are two different ways to specify the contents of paginated list:
 
  .. code-block:: java
 
-	builder.contents(Texts.of("Item 1"), Texts.of("Item 2"), Texts.of("Item 3"));
+	builder.contents(Text.of("Item 1"), Text.of("Item 2"), Text.of("Item 3"));
 
 You can also specify various other components of a paginated list, such as a title, header, footer, and padding. The
 diagram below shows which component is displayed in each part of the paginated list. In the following diagram, the
@@ -72,10 +71,10 @@ To achieve the preceding output, we might use the following builder pattern:
 
 .. code-block:: java
 
-	builder.title(Texts.of("Title"))
-		.contents(Texts.of("Item 1"), Texts.of("Item 2"), Texts.of("Item 3"))
-		.header(Texts.of("Header"))
-		.footer(Texts.of("Footer"))
+	builder.title(Text.of("Title"))
+		.contents(Text.of("Item 1"), Text.of("Item 2"), Text.of("Item 3"))
+		.header(Text.of("Header"))
+		.footer(Text.of("Footer"))
 		.paddingString("p");
 
 .. note::
@@ -94,9 +93,9 @@ And thats it! To recap, a fully functional paginated list could be generated and
 		.getServiceManager().provide(PaginationService.class).get();
 
 	paginationService.builder()
-		.title(Texts.of("Title"))
-		.contents(Texts.of("Item 1"), Texts.of("Item 2"), Texts.of("Item 3"))
-		.header(Texts.of("Header"))
-		.footer(Texts.of("Footer"))
+		.title(Text.of("Title"))
+		.contents(Text.of("Item 1"), Text.of("Item 2"), Text.of("Item 3"))
+		.header(Text.of("Header"))
+		.footer(Text.of("Footer"))
 		.paddingString("p")
 		.sendTo(cmdSource);

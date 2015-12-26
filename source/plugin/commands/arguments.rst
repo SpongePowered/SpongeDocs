@@ -30,7 +30,7 @@ Example: Building a Command with Multiple Arguments
 
 .. code-block:: java
 
-    import org.spongepowered.api.text.Texts;
+    import org.spongepowered.api.text.Text;
     import org.spongepowered.api.entity.living.player.Player;
     import org.spongepowered.api.command.CommandException;
     import org.spongepowered.api.command.CommandResult;
@@ -41,12 +41,12 @@ Example: Building a Command with Multiple Arguments
     import org.spongepowered.api.command.spec.CommandSpec;
 
     CommandSpec myCommandSpec = CommandSpec.builder()
-            .description(Texts.of("Send a message to a player"))
+            .description(Text.of("Send a message to a player"))
             .permission("myplugin.command.message")
 
             .arguments(
-                    GenericArguments.onlyOne(GenericArguments.player(Texts.of("player"), this.game)),
-                    GenericArguments.remainingJoinedStrings(Texts.of("message")))
+                    GenericArguments.onlyOne(GenericArguments.player(Text.of("player"), this.game)),
+                    GenericArguments.remainingJoinedStrings(Text.of("message")))
 
             .executor(new CommandExecutor() {
                 @Override
@@ -55,7 +55,7 @@ Example: Building a Command with Multiple Arguments
                     Player player = args.<Player>getOne("player").get();
                     String message = args.<String>getOne("message").get();
 
-                    player.sendMessage(Texts.of(message));
+                    player.sendMessage(Text.of(message));
 
                     return CommandResult.success();
                 }
@@ -208,7 +208,7 @@ The parser in this example reads two input arguments and converts them to a vect
            try {
                return Integer.parseInt(input);
            } catch(NumberFormatException e) {
-               throw errorargs.createError(Texts.of("'" + input + "' is not a valid number!"));
+               throw errorargs.createError(Text.of("'" + input + "' is not a valid number!"));
            }
        }
 
@@ -219,7 +219,7 @@ The parser in this example reads two input arguments and converts them to a vect
 
        @Override
        public Text getUsage(CommandSource src) {
-           return Texts.of("<x> <y>");
+           return Text.of("<x> <y>");
        }
    }
 
@@ -230,10 +230,10 @@ Example: ``Vector2i`` command element usage
 
     // /plottp <x> <y>
     CommandSpec myCommandSpec = CommandSpec.builder()
-            .description(Texts.of("Teleport to a plot"))
+            .description(Text.of("Teleport to a plot"))
             .permission("myplugin.command.plot.tp")
 
-            .arguments(new Vector2iCommandElement(Texts.of("coordinates")))
+            .arguments(new Vector2iCommandElement(Text.of("coordinates")))
 
             .executor(new MyCommandExecutor())
             .build();

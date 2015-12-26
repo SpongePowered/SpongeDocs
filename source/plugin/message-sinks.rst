@@ -80,16 +80,15 @@ to a new ``MessageSink``, which could then be used to send a message thanking th
 
     import org.spongepowered.api.data.manipulator.DisplayNameData;
     import org.spongepowered.api.entity.player.Player;
-    import org.spongepowered.api.text.Texts;
     import org.spongepowered.api.util.command.CommandSource;
 
     import java.util.HashSet;
     import java.util.Set;
 
     Set<CommandSource> donors = new HashSet<CommandSource>();
-    for(Player player: event.getGame().getServer().getOnlinePlayers()) {
+    for (Player player: event.getGame().getServer().getOnlinePlayers()) {
         DisplayNameData displayNameData = player.getDisplayNameData();
-        if(Texts.toPlain(displayNameData.getDisplayName()).contains("[Donor]")) {
+        if (displayNameData.getDisplayName().toPlain().contains("[Donor]")) {
             donors.add(player);
         }
     }
@@ -106,7 +105,9 @@ message.
 
 .. code-block:: java
 
-    messageSink.sendMessage(Texts.of("Yay! Message sinks!"));
+    import org.spongepowered.api.text.Text;
+
+    messageSink.sendMessage(Text.of("Yay! Message sinks!"));
 
 Extended Application: Chat Channels
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -132,7 +133,6 @@ permission, and if so, will append a `[Donor]` prefix, such as in a ranking syst
 
 .. code-block:: java
 
-    import org.spongepowered.api.text.Text;
     import org.spongepowered.api.text.format.TextColors;
 
     import com.google.common.collect.Lists;
@@ -142,7 +142,7 @@ permission, and if so, will append a `[Donor]` prefix, such as in a ranking syst
         @Override
         public Text transformMessage(CommandSource target, Text input) {
             if(target.hasPermission("com.example.myplugin.donor")) {
-                return Texts.of("[Donor]", input);
+                return Text.of("[Donor]", input);
             }
             return input;
         }
