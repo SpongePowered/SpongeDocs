@@ -37,9 +37,7 @@ try to heal someone (or something).
 First we need to check if our target has health data. We do so by first asking it to provide us with its health
 data by passing its class to the ``get()`` method. We get an ``Optional`` which we can use for our check.
 This ``Optional`` will be absent if either our target does not support ``HealthData`` or if it supports it but
-at the present moment does not hold any health data. In the second case there is no data manipulator since the
-data represented by it would not differ from the manipulator's default values. Since we can safely assume that
-if a data holder has the default ``HealthData``, it will already be at its full health, we won't need to heal it.
+at the present moment does not hold any health data.
 
 If the health data is present, it now contains a mutable copy of the data present on the data holder. We make
 our alterations and finally offer the changed data back to our target, where it is accepted (again, ``offer()``
@@ -56,6 +54,20 @@ the data, we first need to apply our changes back to the ``DataManipulator`` bef
     Rule #1 of the Data API: Everything you receive is a copy. So whenever you change something, make sure that
     your change is propagated back to where the original value came from.
 
+Another possible modification is fully removing a ``DataManipulator``. This is done via the ``remove()`` method which
+accepts a class reference for the type of ``DataManipulator`` to remove. Some data cannot be removed and attempts to
+do so will always return a ``DataTransactionResult`` indicating failure. The following code attempts to remove a
+custom name from a given ``DataHolder``. Again, the result of the transaction is discarded.
+
+**Code Example: Removing a custom display name**
+
+.. code-block:: java
+
+    import org.spongepowered.api.data.manipulator.mutable.DisplayNameData;
+
+    public void removeName(DataHolder target) {
+        dataHolder.remove(DisplayNameData.class);
+    }
 
 DataManipulator vs. Keys
 ========================
@@ -121,3 +133,18 @@ A possible use case for this would be a custom event fired when someone is heale
 the health data before and after, but event listeners should not be able to change them. Therefore we can write
 our event to only provide ``ImmutableHealthData`` instances. That way, even if third party code gets to interact
 with our data, we can rest assured that it will not be changed.
+
+Absent Data
+===========
+
+As mentioned above, the ``get()`` method may return an empty ``Optional`` if one of the following is true:
+
+* The ``DataHolder`` does not support the given ``DataManipulator``
+* The ``DataHolder`` does support the ``DataManipulator``, but currently holds no data of that type
+
+There is a big semantic difference between data not being present and the data consisting of default values. While the
+latter is always possible, there are cases where it is impossible for a ``DataHolder`` to support a type of data and
+then not hold it. Examples of those include:
+
+* ``HealthData`` is always present on every (vanilla) ``DataHolder`` that supports it
+* ``DisplayNameData`` is always present on a ``Player``, but may be absent on other entities
