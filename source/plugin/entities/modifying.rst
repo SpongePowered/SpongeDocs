@@ -42,8 +42,7 @@ example of changing an ``Entity``\s explosive radius to 50 can be seen below:
     
     public void explosionRadius50(Entity creeper) {
         ExplosiveRadiusData radiusData = creeper.get(ExplosiveRadiusData.class).get();
-        radiusData.explosiveRadius().set(50);
-        creeper.offer(radiusData);
+        creeper.offer(radiusData.explosiveRadius().set(50));
     }
     
 This will get the ``ExplosiveRadiusData`` of our ``Entity`` for our use. We then use that data to set the explosive
@@ -61,8 +60,8 @@ An example of this in action can be seen below:
     
     public void setDisplayName(Entity creeper) {
         DisplayNameData displayData = creeper.get(DisplayNameData.class).get();
-        displayData.displayName().set(Texts.of(TextColors.DARK_AQUA, "Inscrutable"));
-        creeper.offer(displayData);
+        creeper.offer(displayData.displayName().set(Texts.of(TextColors.DARK_AQUA,
+                                                              "Inscrutable")));
     }
 
 Another, shorter way to do this is by just using ``Keys`` on our ``Entity`` instead of using ``DataManipulator``\s.
