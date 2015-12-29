@@ -13,3 +13,4 @@ Contents
     troubleshooting
     logs
     debugging
+    bugreport
