@@ -67,7 +67,7 @@ To apply your WorldGeneratorModifier to a world you must add it to the ``world-g
 the world config file found at ``config/sponge/worlds/[dimension]/[worldName]/world.conf``. For example to apply
 the skylands WorldGeneratorModifier to a world you would add the skylands modifier's id to the modifiers list.
 
-.. code-block:: hocon
+.. code-block:: none
 
 	# WorldGenerationModifiers to apply to the world
 	world-generation-modifiers=[

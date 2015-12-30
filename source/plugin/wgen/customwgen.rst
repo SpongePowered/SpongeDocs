@@ -14,7 +14,7 @@ Modifying Vanilla Generation
 .. note::
 
     This page assumes that you are familiar with setting up your ``WorldGeneratorModifier``.
-    If not then please see the article on setting up your modifier :doc:`modifiers`
+    If not, then please read the article on setting up your modifier at :doc:`modifiers`
 
 Sponge exposes a great deal of vanilla world generation, which can be manipulated through the various interfaces.
 Currently, the only elements of the generation process that are *easily* exposed to manipulation are the populators.
@@ -40,7 +40,7 @@ Start by getting the ``BiomeGenerationSettings`` for the desert biome. This obje
 settings relating to that biome. Next, iterate through the list of all ``Cactus`` populators and set the height to 5,
 which means it can only generate cactii which are 5 blocks tall.
 
-..note::
+.. note::
 
     The ``setHeight``, and many other similar methods on other populators, also takes a ``VariableAmount`` which
     can be used to specify the height as a range or other custom value.
@@ -74,8 +74,8 @@ Voila, now we have pumpkins everywhere.
     as is usually a good idea with Forest populators, then your should add your populator to the start of the list.
 
 These two examples should serve to help you get familiar with the realm of working with vanilla populators.
-This only touches the surface of what is possible. For a complete listing of available populators, and their
-properties, see the javadocs for a complete listing of available populators and their properties.
+This only touches the surface of what is possible. See the javadocs for a complete listing of available populators
+and their properties.
 
 
 Creating Custom Base Terrain
@@ -125,7 +125,9 @@ in everything below that with stone and leave everything above it as air (or wat
 Creating Custom GenerationPopulators
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-[TBA]
+.. note::
+  
+  The API for custom GenerationPopulators isn't finished yet. This section will be expanded in the future.
 
 Creating Custom Populators
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -140,7 +142,7 @@ offset by 8 in both the x and z directions.
 Creating Custom Biomes
 ~~~~~~~~~~~~~~~~~~~~~~
 
-While it is currently not possible to create entirely new biomes from within sponge you can replace the system
+While it is currently not possible to create entirely new biomes from within sponge, you can replace the system
 by which they are arranged in the world be implementing the ``BiomeGenerator`` interface and setting your custom
 biome generator onto a WorldGenerator.
 
