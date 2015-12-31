@@ -44,6 +44,7 @@ Contents
     scheduler
     database
     permissions
+    economy/index
     services
     manager
     debugging
