@@ -49,5 +49,5 @@ Contents
     wgen/index
     manager
     debugging
-    message-sinks
+    messagechannels
     tutorials
