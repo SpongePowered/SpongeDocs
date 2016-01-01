@@ -37,7 +37,6 @@ specify the type of ``Entity`` to spawn, and the co-ordinates from our ``Locatio
 
 The ``createEntity()`` method returns an ``Optional`` as the ``Location`` may not be suitable for spawning an
 ``Entity``. We then just grab our ``Entity`` from the ``Optional`` and can then use ``Extent`` for spawning the
-``Entity`` into the world. We will need to specify a ``Cause`` for the spawning. For spawning ``Entity``\s, it is best to
+``Entity`` into the world. We will need to specify a ``Cause`` for the spawning. For spawning ``Entity``\ s, it is best to
 use ``EntitySpawnCause``. In this example, we stated that our entity was spawned from a plugin, however we can make it
-any cause that best describes why we are spawning this in, such as a mob spawner, or spawn egg. It is best to include
-as much information in the ``EntitySpawnCause``.
+any cause that best describes why we are spawning this in, such as a mob spawner, or spawn egg.
