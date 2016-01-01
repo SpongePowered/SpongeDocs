@@ -16,7 +16,6 @@ The first step is to create a class for the command. The class has to implement 
 
     import org.spongepowered.api.Server;
     import org.spongepowered.api.text.Text;
-    import org.spongepowered.api.text.Texts;
     import org.spongepowered.api.util.command.CommandCallable;
     import org.spongepowered.api.util.command.CommandException;
     import org.spongepowered.api.util.command.CommandResult;
@@ -28,9 +27,9 @@ The first step is to create a class for the command. The class has to implement 
 
     public class MyBroadcastCommand implements CommandCallable {
 
-        private final Optional<Text> desc = Optional.of((Text) Texts.of("Displays a message to all players"));
-        private final Optional<Text> help = Optional.of((Text) Texts.of("Displays a message to all players. It has no color support!"));
-        private final Text usage = Texts.of("<message>");
+        private final Optional<Text> desc = Optional.of(Text.of("Displays a message to all players"));
+        private final Optional<Text> help = Optional.of(Text.of("Displays a message to all players. It has no color support!"));
+        private final Text usage = Text.of("<message>");
 
         private final Server server;
 
@@ -39,7 +38,7 @@ The first step is to create a class for the command. The class has to implement 
         }
 
         public CommandResult process(CommandSource source, String arguments) throws CommandException {
-            server.getBroadcastSink().sendMessage(Texts.of(arguments));
+            server.getBroadcastSink().sendMessage(Text.of(arguments));
             return CommandResult.success();
         }
 

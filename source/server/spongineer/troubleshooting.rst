@@ -94,7 +94,9 @@ There is a Bug in Sponge
 
 **Symptom**: None of the above apply, and it still doesn't work as it should.
 
-**Solution**: Time to get out the big guns. File a report on the Sponge issue tracker, remembering to include details
+**Solution**: Time to get out the big guns. File a report on the
+`SpongeForge <https://github.com/spongepowered/SpongeForge/issues>`_ or
+`SpongeVanilla <https://github.com/spongepowered/SpongeVanilla/issues>`_ issue tracker, remembering to include details
 of the version of Forge and Sponge you are using, and a link to the relevant server log file.
 
 There is Something Wrong With the Universe

@@ -99,7 +99,7 @@ few additions and modifications, which are described herein.
 Code Conventions
 ================
 
-* Use `Optionals <https://code.google.com/p/guava-libraries/wiki/UsingAndAvoidingNullExplained>`_ instead of returning
+* Use :doc:`optionals<../plugin/optional/index>` instead of returning
   ``null`` in the API
 * Method parameters accepting ``null`` must be annotated with ``@Nullable`` (from javax.*), all methods and parameters
   are ``@Nonnull`` by default.

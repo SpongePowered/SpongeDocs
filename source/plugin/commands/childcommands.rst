@@ -13,20 +13,20 @@ Every child command is a separate ``CommandSpec`` and can be created in the same
 
 .. code-block:: java
 
-    import org.spongepowered.api.text.Texts;
+    import org.spongepowered.api.text.Text;
     import org.spongepowered.api.command.spec.CommandSpec;
 
     // /mail read
     CommandSpec readCmd = CommandSpec.builder()
         .permission("myplugin.mail.read")
-        .description(Texts.of("Read your inbox"))
+        .description(Text.of("Read your inbox"))
         .executor(...)
         .build();
 
     // /mail send
     CommandSpec sendCmd = CommandSpec.builder()
         .permission("myplugin.mail.send")
-        .description(Texts.of("Send a mail"))
+        .description(Text.of("Send a mail"))
         .arguments(...)
         .executor(...)
         .build();
@@ -39,7 +39,7 @@ appear in the usage message.
 
     CommandSpec mailCommandSpec = CommandSpec.builder()
         .permission("myplugin.mail")
-        .description(Texts.of("Send and receive mails"))
+        .description(Text.of("Send and receive mails"))
         .child(readCmd, "read", "r", "inbox")
         .child(sendCmd, "send", "s", "write")
         .build();
