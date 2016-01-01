@@ -16,9 +16,8 @@ The Sponge project currently has four main components:
 
 .. note::
 
-    Sponge is still in development. Development builds are currently available for `download
-    <http://files.minecraftforge.net/spongepowered>`__, but an official release will not be available
-    until later in 2015.
+    Sponge is still in development. Beta builds of SpongeForge and alpha builds of SpongeVanilla are currently
+    available for :doc:`downloads`, but an official release will not be available until later in 2016.
 
 Contents
 ========
