@@ -2,45 +2,41 @@
 Spawning an Entity
 ==================
 
-In almost all cases, to spawn an entity, you need an
-`EntityType <http://spongepowered.github.io/SpongeAPI/org/spongepowered/api/entity/EntityType.html>`__,
-an `Extent <http://spongepowered.github.io/SpongeAPI/org/spongepowered/api/world/extent/Extent.html>`__,
-and a `Location <http://spongepowered.github.io/SpongeAPI/org/spongepowered/api/world/Location.html>`__ to do so.
+You will need three things for spawning in an ``Entity``, a ``Location``, an ``Extent``, and an ``EntityType``.
+The process for getting these is quite simple, you just need to grab a ``Location`` from somewhere in your plugin
+code and choose the type of ``Entity`` you wish to spawn.
 
 For example, let's try to spawn a Creeper:
 
 .. code-block:: java
 
-    import org.spongepowered.api.data.key.Keys;
     import org.spongepowered.api.entity.Entity;
     import org.spongepowered.api.entity.EntityTypes;
-    import org.spongepowered.api.text.Text;
-    import org.spongepowered.api.text.format.TextColors;
+    import org.spongepowered.api.event.cause.entity.spawn.SpawnCause;
+    import org.spongepowered.api.event.cause.entity.spawn.SpawnTypes;
     import org.spongepowered.api.world.Location;
+    import org.spongepowered.api.world.World;
     import org.spongepowered.api.world.extent.Extent;
 
     import java.util.Optional;
-
-    public void spawnEntity(Location location) {
-        Extent extent = location.getExtent();
-        // We need to create the entity
-        Optional<Entity> optional = extent.createEntity(EntityTypes.CREEPER,
-                                                        location.getPosition());
+    
+    public void spawnEntity(Location<World> spawnLocation) {
+        Extent extent = spawnLocation.getExtent();
+        Optional<Entity> optional = extent
+            .createEntity(EntityTypes.CREEPER, spawnLocation.getPosition());
         if (optional.isPresent()) {
-            // After this, we can use more API that relates to creeper
             Entity creeper = optional.get();
-            // Here, we can use the handy Data API to simplify "setting" various
-            // data onto the creeper, such as the explosive radius
-            creeper.offer(Keys.EXPLOSIVE_RADIUS, 10);
-            // Or display name
-            creeper.offer(Keys.DISPLAY_NAME, Text.of(TextColors.DARK_AQUA, "Inscrutable"));
-            // Or even whether the creeper is "charged"
-            creeper.offer(Keys.CREEPER_CHARGED, true);
-
-            // Now we're actually spawning in the creeper into the world
-            extent.spawnEntity(creeper);
+            extent.spawnEntity(creeper, Cause.of(EntitySpawnCause.builder()
+                .entity(creeper).type(SpawnTypes.PLUGIN).build()));
         }
     }
 
-The code excerpt illustrated above will spawn a charged creeper with a higher than normal explosion
-radius at the given location.
+This will grab the extent from our ``Location``, which we will need for the actual spawning. Next, it uses this extent
+to create the entity, but do note that this does not spawn the entity in, it just will create it. We will need to
+specify the type of ``Entity`` to spawn, and the co-ordinates from our ``Location``.
+
+The ``createEntity()`` method returns an ``Optional`` as the ``Location`` may not be suitable for spawning an
+``Entity``. We then just grab our ``Entity`` from the ``Optional`` and can then use ``Extent`` for spawning the
+``Entity`` into the world. We will need to specify a ``Cause`` for the spawning. For spawning ``Entity``\ s, it is best to
+use ``EntitySpawnCause``. In this example, we stated that our entity was spawned from a plugin, however we can make it
+any cause that best describes why we are spawning this in, such as a mob spawner, or spawn egg.
