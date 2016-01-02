@@ -5,7 +5,8 @@ Using Keys
 Getting and offering data using a key
 =====================================
 
-A data holder provides methods to retrieve or alter a single point of data identified by a ``Key``. Let's just start out with an example:
+A data holder provides methods to retrieve or alter a single point of data identified by a ``Key``. Let's just start
+out with an example:
 
 **Code Example: Healing a data holder, if possible**
 
@@ -30,7 +31,7 @@ one of the keys using the ``supports()`` method suffices.
 The second line uses the ``get()`` function to ask the data holder for its maximum health. Besides
 ``get()``, the methods ``getOrNull()`` and ``getOrElse()`` exist, all of which accept a ``Key`` as their first
 parameter. Generally, ``get()`` should be used, which will return an ``Optional`` of the data requested or
-``Optional.absent()`` if the data holder does not support the supplied key. Since we already verified that the
+``Optional.empty()`` if the data holder does not support the supplied key. Since we already verified that the
 ``Key`` is supported, we can just call ``get()`` on the Optional without further checks. We could also use
 ``getOrNull()`` which is basically a shortcut to call ``get(key).orNull()``, thus getting rid of the
 ``Optional``. The third possibility would be the ``getOrElse()``, which accepts a default value as a second
