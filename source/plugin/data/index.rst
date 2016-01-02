@@ -33,7 +33,7 @@ A data holder is just that - something that holds data. It provides methods to r
 interface itself is completely oblivious to the type of data held. Since only the implementations will possess
 this knowledge, it is possible to ask a ``DataHolder`` to provide data it does not have or to accept data it
 cannot use. In those cases, the return values of the methods will provide the information that data is not
-available (via ``Optional.absent()``) or not accepted (via the :doc:`DataTransactionResult <transactions>`).
+available (via ``Optional.empty()``) or not accepted (via the :doc:`DataTransactionResult <transactions>`).
 
 Property
 ~~~~~~~~
