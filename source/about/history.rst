@@ -47,7 +47,7 @@ shared code between the two implementations while implementation-specific code r
 On April 21st, 2015 SpongeAPI 2.0 was finally released. A week later development builds of SpongeForge were
 finally made available.
 
-
+On December 31st, 2015 SpongeAPI 3.0.0 was released, along with SpongeForge entering its beta.
 
 Spongie - our Mascot
 ~~~~~~~~~~~~~~~~~~~~
