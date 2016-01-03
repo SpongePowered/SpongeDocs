@@ -33,19 +33,18 @@ Command               Description                               Permission
                       enable mixin debugging.
 /sponge chunks        Prints out the chunk data for a world, a  sponge.command.chunks
                       dimension, or globally.
-/sponge conf          Alters a global, world, or a dimension    sponge.command.config
+/sponge config        Alters a global, world, or a dimension    sponge.command.config
                       config.
 /sponge heap          Dumps the JVM heap.                       sponge.command.heap
-/sponge help          Returns a list of all sponge commands     sponge.command.help
 /sponge plugins       Lists currently installed plugins.        sponge.command.plugins
 /sponge reload        Reloads the global, world, or dimension   sponge.command.reload
                       config.
-/sponge reloadconfig  Send a message to all plugins and Sponge  *Not yet available*
-                      to reload their configuration.
 /sponge save          Saves the global, world, or dimension     sponge.command.save
                       config.
 /sponge version       Prints the Sponge/SpongeAPI versions to   sponge.command.version
                       the console.
+/sponge timings       Generates a report on the server          sponge.command.timings
+                      performance.
 ====================  ========================================  ======================
 
 |
@@ -53,7 +52,7 @@ Command               Description                               Permission
 **Sponge Command Parameters**
 
 * /sponge chunks [-g] [-d dim] [-w world]
-* /sponge conf [-g] [-d dim] [-w world] key value
+* /sponge config [-g] [-d dim] [-w world] key value
 * /sponge save [-g] [-d dim|*] [-w world|*]
 * /sponge reload [-g] [-d dim|*] [-w world|*]
 
@@ -65,19 +64,19 @@ Command               Description                               Permission
 
 .. tip::
 
-    Here are a few simple examples of the sponge conf command in action. Please see
+    Here are a few simple examples of the sponge config command in action. Please see
     :doc:`../getting-started/configuration/index` for a more detailed explanation.
 
-    a. ``/sponge conf logging.chunk-load true``
+    a. ``/sponge config logging.chunk-load true``
 
       Since no dimension was specified, the dimension would default to the sender(player) dimension. So if you were in a
       mystcraft dimension, this would alter the mystcraft dimension config.
 
-    b. ``/sponge conf -d nether logging.chunk-load true``
+    b. ``/sponge config -d nether logging.chunk-load true``
 
     Since a dimension type was specified, this would alter the nether dimension config (and hence all nether worlds).
 
-    c. ``/sponge conf -w DIM1 logging.chunk-load true``
+    c. ``/sponge config -w DIM1 logging.chunk-load true``
 
     This would alter the config of world named DIM1.
 
