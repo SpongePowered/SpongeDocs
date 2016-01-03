@@ -42,25 +42,69 @@ Dimension configuration files are used to affect a certain dimension or group of
 override the global config files. World configuration files are used to modify individual worlds only. World configs
 override dimension and global configs.
 
-It is possible to modify these configs through the in-game command ``/sponge conf``.
+Modifying the Config In-Game
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The sponge conf command syntax looks like this:
+It is possible to modify these configs through the in-game command ``/sponge config``. The syntax for the config
+command looks like this:
 
-``/sponge conf <flag> <name> <key> <value>``
+.. code-block:: java
 
-The *flag* is the group you are targeting, such as global, dimension, or world.
+    /sponge config <flag> <key> <value>
+    
+There are *flags* for specifying the target that you would wish to change. These flags are global, dimension, and world.
 
 * ``-g`` is the flag for global
-* ``-d dim`` targets a dimension (replacing *dim* with the dimension you want to configure)
-* ``-w world`` targets one world (replacing *world* with your chosen world).
+* ``-d <dim>`` targets a dimension (replacing *<dim>* with the dimension you want to configure)
+* ``-w <world>`` targets one world (replacing *<world>* with your chosen world).
 
 The *key* is the value you want to change. The *value* is whatever you want to change the value of the key to.
 
-An example of this command in action:
+Here is an example of this command in action:
 
-``/sponge conf -d nether logging.chunk-load true``
+.. code-block:: java
 
-.. tip::
-    Changing a configuration file will not necessarily take effect right away if your game or server is currently
-    running. Use the ``/sponge reloadconfig`` command to send a message to all plugins and Sponge to reload their
-    configuration. However, you may need to restart your game or server for some changes to take effect.
+    /sponge config -d nether logging.chunk-load true
+
+This will set the config to log when chunks are loaded for the nether.
+
+If you need to check the value of a key, you would need to omit the *value*. Checking the value of a key such as
+``logging.chunk-load`` in the nether would be done like so:
+
+.. code-block:: java
+
+    /sponge config -d nether logging.chunk-load
+
+Saving a World Config
+~~~~~~~~~~~~~~~~~~~~~
+
+Saving a world config may be desired after making modifications to the file. This would be useful in the event of an
+unexpected server crash. This would be done by using the ``/sponge save`` command on the sponge server. The syntax for
+this command is similar to the config command:
+
+.. code-block:: java
+
+    /sponge save <flag> <name>
+
+Here is an example for saving the global config:
+
+.. code-block:: java
+
+    /sponge save -g
+
+Reloading a World Config
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Sometimes it may be desired that a world config is reloaded while the server is still running. This would be useful if
+you have made changes to the local config file and would like to reload it for use on the live server. This is made
+possible by the command ``/sponge reload``. The syntax for the command is as follows:
+
+.. code-block:: java
+
+    /sponge reload <flag> <name>
+
+Here is an example of reloading the end world config file:
+
+.. code-block:: java
+
+    /sponge reload -d the_end
