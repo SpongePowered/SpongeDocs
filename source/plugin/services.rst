@@ -11,8 +11,21 @@ service manager:
 
 If you need to get an object reference to something, just get it off the service manager.
 
+Service Guidelines
+==================
+
+* Services should be registered during the ``POST_INITIALIZATION`` game state at the latest.
+* Services should be fully operational by the end of the ``SERVER_ABOUT_TO_START`` game state.
+
+You can read more about game states on the :doc:`lifecycle` page.
+
+.. note::
+
+    It is a good practice to register services as soon as possible so that other plugins can note that the service will
+    be provided.
+
 Providing your own service
---------------------------
+==========================
 Your plugin can provide the implementation for a core interface like ``PermissionService``, or for a custom interface
 that is not part of the Sponge API (e.g. economy, web server):
 
