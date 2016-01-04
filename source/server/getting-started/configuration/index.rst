@@ -84,7 +84,7 @@ this command is similar to the config command:
 
 .. code-block:: java
 
-    /sponge save <flag> <name>
+    /sponge save <flag>
 
 Here is an example for saving the global config:
 
@@ -101,7 +101,7 @@ possible by the command ``/sponge reload``. The syntax for the command is as fol
 
 .. code-block:: java
 
-    /sponge reload <flag> <name>
+    /sponge reload <flag>
 
 Here is an example of reloading the end world config file:
 
