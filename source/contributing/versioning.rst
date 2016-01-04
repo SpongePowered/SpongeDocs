@@ -1,6 +1,6 @@
-=========================================================
-The Sponge Versioning System and Repository Branch Layout
-=========================================================
+==============================================
+Versioning System and Repository Branch Layout
+==============================================
 
 With the release for beta we've moved the SpongeAPI versioning to semantic versioning (see http://semver.org/).
 This change means that every time that we make a release we have to increment the version according to the rules
@@ -68,7 +68,31 @@ changes include any breaking changes however, then the feature branch must be me
 SpongeDocs
 ==========
 
-The SpongeDocs follow their own versioning scheme which takes the other projcts parts versioning scheme (see above) into
-account.
+The SpongeDocs themselves are unversioned following our philosophy that they will never be finished, but instead in a
+constant flux of ever increasing usability. However they *target* a specific version of the API, generally the most
+recent *release* of SpongeAPI.
 
-.. todo WE NEED OUR OWN VERSIONING SCHEME ON THE DOCS
+Core Branch
+~~~~~~~~~~~
+
+The core branch for the SpongeDocs is ``master``. Each new commit to ``master`` triggers a rebuild of the `docs website
+<https://docs.spongepowered.org/>`_. Commits to ``master`` are generally only made when a feature branch is merged or
+a small fix not requiring review is made by SpongeDocs Staff.
+
+Feature Branches
+~~~~~~~~~~~~~~~~
+
+Whenever a new feature is described, older texts are updated or reworded or the documents are restructured it is done
+in a ``feature/foo`` or ``fix/bar`` branch. Those branches will then be reviewed and, once they are deemed complete,
+may be merged.
+
+A feature branch may only be merged into master if the changes / additions made in it are correct regarding the
+**SpongeAPI release currently targeted by the SpongeDocs**. Any feature branches that describe features not yet included
+in a release stay unmerged until the corresponding API version is released and becomes the new targeted version for the
+SpongeDocs.
+
+Release Branches
+~~~~~~~~~~~~~~~~
+
+If two or more feature branches are waiting on the release of their corresponding API version, they will be accumulated
+in a ``release/x.y.z`` branch before being merged into master so that any conflics may be resolved beforehand.
