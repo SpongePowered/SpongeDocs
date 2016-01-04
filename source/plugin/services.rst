@@ -28,62 +28,65 @@ Designing the API this way makes Sponge extremely modular.
 
     Plugins should provide options to not install their providers if the plugin is not dedicated to a single function.
 
-Example: Providing a simple economy service
+Example: Providing a simple warp service
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The first step is optional, but recommended. You specify the public methods of your service class in an interface:
 
 .. code-block:: java
 
-    import org.spongepowered.api.entity.player.Player;
+    import org.spongepowered.api.world.Location;
+    import org.spongepowered.api.world.World;
 
-    public interface EconomyService
+    public interface WarpService
     {
-    	public int getBalance(Player player);
-    	public void setBalance(Player player, int amount);
+        public void setWarp(String name, Location<World> location);
+        public void getWarp(String name);
     }
 
 Now you can write the class that implements your interface:
 
 .. code-block:: java
 
+    import org.spongepowered.api.world.Location;
+    import org.spongepowered.api.world.World;
     import java.util.HashMap;
 
-    public class SimpleEconomyService implements EconomyService
+    public class SimpleWarpService implements WarpService
     {
-    	HashMap<Player, Integer> balanceMap = new HashMap<Player, Integer>();
+        HashMap<String, Location<World>> warpMap = new HashMap<String, Location<World>>();
 
-    	@Override
-    	public int getBalance(Player player)
-    	{
-    		if(!balanceMap.containsKey(player)) return 0; //no stored balance for player
+        @Override
+        public Location<World> getWarp(String name)
+        {
+            if(!warpMap.containsKey(name)) return 0; //no stored warp with that name
 
-    		else return balanceMap.get(player);
-    	}
+            else return warpMap.get(name);
+        }
 
-    	@Override
-    	public void setBalance(Player player, int amount)
-    	{
-    		balanceMap.put(player, amount);
-    	}
+        @Override
+    	public void setWarp(String name, Location<World> location)
+        {
+            warpMap.put(name, location);
+        }
     }
 
 Now we can register a new instance of the class in the service manager. We are using the interface
-``EconomyService.class`` as the ``service`` key.
+``WarpService.class`` as the ``service`` key.
 
 This makes it possible for other plugin developers to write their own implementation of your service (that implements
 the interface) and replace your version.
 
 .. code-block:: java
 
-    game.getServiceManager().setProvider(yourPluginInstance, EconomyService.class, new SimpleEconomyService());
+    game.getServiceManager().setProvider(yourPluginInstance, WarpService.class, new SimpleWarpService());
 
 Other plugins can now access your service through the service manager:
 
 .. code-block:: java
 
-    game.getServiceManager().provide(EconomyService.class)
+    game.getServiceManager().provide(WarpService.class);
 
 .. tip::
     If you don't want to use interfaces,
-    just replace the ``service`` key with your class (``SimpleEconomyService.class`` in the example).
+    just replace the ``service`` key with your class (``SimpleWarpService.class`` in the example).
