@@ -91,8 +91,14 @@ A feature branch may only be merged into master if the changes / additions made 
 in a release stay unmerged until the corresponding API version is released and becomes the new targeted version for the
 SpongeDocs.
 
+.. image:: /images/contributing/versioning-release-branch.svg
+    :alt: release branch example
+
 Release Branches
 ~~~~~~~~~~~~~~~~
 
 If two or more feature branches are waiting on the release of their corresponding API version, they will be accumulated
 in a ``release/x.y.z`` branch before being merged into master so that any conflics may be resolved beforehand.
+
+.. image:: /images/contributing/versioning-future-release-branch.svg
+    :alt: future release branch example

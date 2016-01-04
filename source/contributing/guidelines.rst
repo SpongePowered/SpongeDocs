@@ -44,5 +44,4 @@ General steps
    rebasing it, just ask!
 
 .. tip::
-  If you're unsure which branch you should base your work on, read about our branching and versioning model here:
-  TODO: <INSERT LINK HERE> when your PR is done.
+  If you're unsure which branch you should base your work on, read about our :doc:`versioning` before submitting your PR.
