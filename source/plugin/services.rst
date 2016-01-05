@@ -39,8 +39,7 @@ The first step is optional, but recommended. You specify the public methods of y
     import org.spongepowered.api.world.World;
     import java.util.Optional;	
 
-    public interface WarpService
-    {
+    public interface WarpService {
         public void setWarp(String name, Location<World> location);
         public Optional<Location<World>> getWarp(String name);
     }
@@ -54,21 +53,20 @@ Now you can write the class that implements your interface:
     import java.util.HashMap;
     import java.util.Optional;
 
-    public class SimpleWarpService implements WarpService
-    {
+    public class SimpleWarpService implements WarpService {
         HashMap<String, Location<World>> warpMap = new HashMap<String, Location<World>>();
 
         @Override
-        public Optional<Location<World>> getWarp(String name)
-        {
-            if(!warpMap.containsKey(name)) return Optional.empty();
-
-            else return Optional.of(warpMap.get(name));
+        public Optional<Location<World>> getWarp(String name) {
+            if(!warpMap.containsKey(name)) {
+                return Optional.empty();
+			} else {
+                return Optional.of(warpMap.get(name));
+            }
         }
 
         @Override
-        public void setWarp(String name, Location<World> location)
-        {
+        public void setWarp(String name, Location<World> location) {
             warpMap.put(name, location);
         }
     }
