@@ -13,3 +13,4 @@ Contents
     bans
     permissions
     plugins
+    exploit-patches
