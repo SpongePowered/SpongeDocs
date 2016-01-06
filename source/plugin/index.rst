@@ -28,6 +28,7 @@ Contents
     workspace/index
     practices
     templates
+    bukkit-sponge-compare
     main-class
     lifecycle
     optional/index
