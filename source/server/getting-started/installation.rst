@@ -8,7 +8,8 @@ the :doc:`implementations/index` page.
 
 Instructions for both are listed on this page.
 
-You will also need to :doc:`install Java <jre>`. To recap, Java 8 is the minimum version required; older versions (ie Java 6 and 7) are no longer supported.
+You will also need to :doc:`install Java <jre>`. To recap, Java 8 is the minimum version required; older versions
+(ie Java 6 and 7) are no longer supported.
 
 Installing SpongeForge
 ======================
@@ -21,9 +22,9 @@ Single Player / In-Game LAN Servers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. warning::
-  When using the Mojang Minecraft installer for Windows, Mojang makes use of their own Java version and not the one one
-  you installed on your system. The installer currently ships with Java ``1.8.0_25``, note that Sponge requires
-  **at least** ``1.8.0_40`` or above to run properly. You can grab the Launcher without included Java here:
+  When using the Mojang Minecraft installer for *Windows*, Mojang makes use of their own Java version and not the one
+  you installed on your system. The installer currently ships with Java ``1.8.0_25``. Note that Sponge requires
+  **at least** ``1.8.0_40`` or above to run properly. You can grab the Windows Launcher without included Java here:
   `official Minecraft Launcher <https://s3.amazonaws.com/Minecraft.Download/launcher/Minecraft.exe>`_
 
 1. Download the Minecraft Forge installer from the `Minecraft Forge website <http://files.minecraftforge.net/>`_. The
