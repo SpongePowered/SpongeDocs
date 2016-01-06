@@ -18,9 +18,8 @@ solutions.
 Economy API
 ~~~~~~~~~~~
 
-An Economy API is currently in development, using the Services API. It is anticipated that plugins wishing to deploy
-economy features will utilise this service once available.
-
+The Economy API is used to link economy plugins with other plugins that use the economy (i.e. shops). You can read
+about :doc:`economy/index` on the docs page, which details everything you need to know about the API.
 
 Mixins
 ~~~~~~
