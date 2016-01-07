@@ -15,11 +15,15 @@ Check :doc:`../../../downloads` for further information.
 Reading the Download Filename
 =============================
 
-When you download SpongeForge, the name of the file will provide some important version information.
+When you download SpongeForge, the name of the file will provide some important version information. It includes a
+Forge build number which this version of SpongeForge is compatible with. Other builds, even ones differing by only a
+few build numbers are not supported.
 
-The format of the filename is ``{MCVersion}-{ForgeVersion}-{SpongeAPIVersion}{SpongeBuildId}``
+However, SpongeForge usually updates to a new Forge build fairly soon after it's released, so you needn't
+worry about always having to run an outdated Forge version in order to use SpongeForge.
 
-Note that there is no separator between the Sponge API Version and the Sponge Build ID.
+
+The format of the filename is ``spongeforge-{MCVersion}-{ForgeVersion}-{SpongeAPIVersion}-{SpongeBuildId}``
 
 +----------------------+----------------------------------------------------------------------------------------------+
 | ``MCVersion``        | The minecraft version. Only clients compatible with this version can connect.                |
@@ -36,8 +40,15 @@ Note that there is no separator between the Sponge API Version and the Sponge Bu
 Example
 ~~~~~~~
 
-For example the file name ``1.8-1371-2.1DEV-439`` tells us that this SpongeForge version is compatible to Minecraft ``1.8``,
-best used with Forge version ``1371``, provides the API Version ``2.1`` and has the build id ``Dev-439``
+The file name ``spongeforge-1.8-1577-3.0.0-BETA-1000.jar`` is compatible with minecraft version 1.8, requires build
+``1.8-11.14.4.1577`` of Forge, provides SpongeAPI v3.0.0 and was the 1000th build of SpongeForge.
+
+.. note::
+
+    Normal Forge mods can usually run on any build of Forge for a given minecraft version (e.g. 1.8.0) without
+    any problems. However, SpongeForge needs to access, among other things, internal parts of Forge, which
+    most mods shouldn't be touching, let alone modifying as Sponge does. Since Forge is free to change internal
+    code whenever they want to, its normal guarantee of backwards-compatibility doesn't apply to SpongeForge.
 
 Links
 =====

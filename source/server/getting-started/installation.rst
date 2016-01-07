@@ -4,9 +4,7 @@ Installing Sponge
 
 Recall that there are two official variants of Sponge (SpongeForge and SpongeVanilla) — they both run Sponge plugins
 identically (that's the goal), but how either work behind the scenes (the code) differs. This is better explained in
-the :doc:`implementations/index` page.
-
-Instructions for both are listed on this page.
+the :doc:`implementations/index` page. Instructions for both are listed on this page.
 
 You will also need to :doc:`install Java <jre>`. To recap, Java 8 is the minimum version required; older versions
 (ie Java 6 and 7) are no longer supported.
@@ -18,8 +16,6 @@ Installing SpongeForge
 
     If you use (or are planning to use) a game server host, they may have a control panel that can install Sponge for you.
 
-Single Player / In-Game LAN Servers
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. warning::
   When using the Mojang installer, Mojang makes use of their own Java version and not the one you installed on your
@@ -27,9 +23,12 @@ Single Player / In-Game LAN Servers
   requires **at least** ``1.8.0_40`` or above to run properly. You can grab the Launcher without included Java here:
   `official Minecraft Launcher <https://minecraft.net/download>`_
 
-1. Download the Minecraft Forge installer from the `Minecraft Forge website <http://files.minecraftforge.net/>`_. The
-   latest version, or any version that's newer than the one listed :doc:`in the filename of the Sponge download
-   <implementations/spongeforge>`, should work.
+Single Player / In-Game LAN Servers
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. Download the Minecraft Forge installer from the `Minecraft Forge website <http://files.minecraftforge.net/>`_. Make
+   sure to use **exactly the same build number** as :doc:`the one listed in the filename of the Sponge download
+   <implementations/spongeforge>`.
 #. Run the provided Forge installer. A new Forge profile will be created in the Minecraft launcher.
 #. Open the Minecraft launcher, and select the new Forge profile.
 #. Click "Options" and click "Open Game Dir".
