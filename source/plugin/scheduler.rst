@@ -15,8 +15,9 @@ First, obtain an instance of the ``Scheduler``, and retrieve the ``Task.Builder`
 
     import org.spongepowered.api.scheduler.Scheduler;
     import org.spongepowered.api.scheduler.Task;
+    import org.spongepowered.api.Sponge;
 
-    Scheduler scheduler = game.getScheduler();
+    Scheduler scheduler = Sponge.getScheduler();
     Task.Builder taskBuilder = scheduler.createTaskBuilder();
 
 The only required property is the `Runnable <http://docs.oracle.com/javase/7/docs/api/java/lang/Runnable.html>`_,
@@ -29,6 +30,26 @@ which you can specify using ``Task.Builder#execute(Runnable runnable)``:
             logger.info("Yay! Schedulers!");
         }
     });
+
+or using Java 8 syntax with ``Task.Builder#execute(Runnable runnable)``
+
+.. code-block:: java
+
+    taskBuilder.execute(
+        () -> {
+            logger.info("Yay! Schedulers!");
+        }
+    );
+
+or using Java 8 syntax with ``Task.Builder#execute(Consumer<Task> task)``
+
+.. code-block:: java
+
+    taskBuilder.execute(
+        task -> {
+            logger.info("Yay! Schedulers! :" + task.getName());
+        }
+    );
 
 .. _task-properties:
 
@@ -80,18 +101,47 @@ initial delay of 100 milliseconds could be built and submitted using the followi
 
     import java.util.concurrent.TimeUnit;
 
-    Scheduler scheduler = game.getScheduler();
+    Scheduler scheduler = Sponge.getScheduler();
     Task.Builder taskBuilder = scheduler.createTaskBuilder();
 
     Task task = taskBuilder.execute(() -> logger.info("Yay! Schedulers!"))
-          .async().delay(100, TimeUnit.MILLISECONDS).interval(5, TimeUnit.MINUTES)
-          .name("ExamplePlugin - Fetch Stats from Database").submit(plugin);
+        .async().delay(100, TimeUnit.MILLISECONDS).interval(5, TimeUnit.MINUTES)
+        .name("ExamplePlugin - Fetch Stats from Database").submit(plugin);
 
 To cancel a task, simply call the ``Task#cancel`` method:
 
 .. code-block:: java
 
 	task.cancel();
+
+If you need to cancel the task from within the runnable itself, you can instead opt to use a `Consumer<Task>` in order to
+access the task. The below example will schedule a task that will count down from 60 and cancel itself upon reaching 0.
+
+.. code-block:: java
+
+    @Listener
+    onGameInit(GameInitializationEvent event){
+        Scheduler scheduler = Sponge.getScheduler();
+        Task.Builder taskBuilder = scheduler.createTaskBuilder();
+        Task task = taskBuilder.execute(new CancellingTimerTask())
+            .interval(1, TimeUnit.SECONDS)
+            .name("Self-Cancelling Timer Task").submit(plugin);
+    }
+
+    private class CancellingTimerTask implements Consumer<Task> {
+        private int seconds = 60;
+        @Override
+        public void accept(Task task) {
+            seconds--;
+            Sponge.getGame()
+                .getServer()
+                .getBroadcastChannel()
+                .send(Text.of("Remaining Time: "+seconds+"s"));
+            if(seconds < 1) {
+                task.cancel();
+            }
+        }
+    }
 
 Asynchronous Tasks
 ~~~~~~~~~~~~~~~~~~
