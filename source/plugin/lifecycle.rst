@@ -19,7 +19,7 @@ There are three categories of state events:
 3. **Stopping:** When the game is shutting down. Stopping states, like initialization states, only occur once.
 
 Initialization States
-~~~~~~~~~~~~~~~~~~~~~
+=====================
 
 Initialization states only occur once during a single run.
 
@@ -37,8 +37,8 @@ information regarding preferred configuration file locations is available.
 **INITIALIZATION**
 
 The ``GameInitializationEvent`` is triggered.
-During this state, the plugin should finish any work needed in order to be functional. Global event handlers and command
-registration are handled during initialization.
+During this state, the plugin should finish any work needed in order to be functional. Global event handlers should get
+registered in this stage.
 
 **POST_INITIALIZATION**
 
@@ -52,7 +52,7 @@ The ``GameLoadCompleteEvent`` is triggered.
 By this state, all plugin initialization should be completed.
 
 Running States
-~~~~~~~~~~~~~~
+==============
 
 Running States can occur multiple times during a single run. ``SERVER_ABOUT_TO_START`` may follow ``SERVER_STOPPED``,
 and ``SERVER_STOPPED`` may occur at any point during the process if there is an error.
@@ -65,7 +65,7 @@ The server instance exists, but worlds are not yet loaded.
 **SERVER_STARTING**
 
 The ``GameStartingServerEvent`` is triggered.
-The server instance exists, and worlds are loaded.
+The server instance exists, and worlds are loaded. Command registration is handled during this state.
 
 **SERVER_STARTED**
 
@@ -83,13 +83,13 @@ The ``GameStoppedServerEvent`` is triggered.
 During this state, no players are connected and no changes to worlds are saved.
 
 Stopping States
-~~~~~~~~~~~~~~~
+===============
 
 Stopping states never occur more than once during a single run. They occur when the game stops normally. (On Servers:
 the ``/stop`` command is typed. On Clients: The "Close" button or the "Quit Game" button are clicked)
 
 .. warning::
-    Stopping states are not guaranteed to be run during shutdown. They may not fire if the game is force-stopped via
+    Stopping states are not guaranteed to be run during shutdown. They may **not** fire if the game is force-stopped via
     Ctrl-C, Task Manager, a computer crash, or similar situations.
 
 **GAME_STOPPING**
