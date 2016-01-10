@@ -12,7 +12,7 @@ ChangeBlockEvent to occur before they can decide if the event should be cancelle
 Rather than go with the traditional route of creating a multitude of subevents for the different source
 conditions this information is instead provided in the ``Cause`` of the event.
 
-Any event which extends ``CauseTracked`` provides a ``Cause`` object which can be interogated
+Every event provides a ``Cause`` object which can be interogated
 for the information pertaining to why the event was fired. The Cause object can be retrived from
 an event by simply calling ``event.getCause()``.
 
@@ -103,12 +103,10 @@ the cause.
 
     Cause objects are immutable therefore cannot be modified once created.
 
-In the simplest case where you don't want to provide any information you can simply use
-``Cause.of()`` to get a cause which contains no objects.
-
-Using ``Cause.of(Object...)`` or ``Cause.ofNullable(Object...)`` you can construct a cause
+Using ``Cause.of(Object, Object...)`` or ``Cause.ofNullable(Object, Object...)`` you can construct a cause
 from a series of objects. The objects will be added to the cause chain in the order that they
 are passed to the method, so the first object parameter will become the root cause.
+Remember that a ``Cause`` may not be empty, so at least one non-null parameter is always required.
 
 If you already have a cause object and would like to append some more objects to the
 chain you can use ``Cause.with(Object...)``. This constructs a new Cause object containing
