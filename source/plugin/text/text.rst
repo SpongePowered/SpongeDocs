@@ -143,7 +143,7 @@ Example: Selector-generated Text
 
 .. code-block:: java
 
-    import org.spongepowered.api.text.selector.Selectors;
+    import org.spongepowered.api.text.selector.Selector;
 
     Text adventurers = Text.builder("These players are in adventure mode: ").append(
             Text.of(Selector.parse("@a[m=2]"))

@@ -16,10 +16,10 @@ The first step is to create a class for the command. The class has to implement 
 
     import org.spongepowered.api.Server;
     import org.spongepowered.api.text.Text;
-    import org.spongepowered.api.util.command.CommandCallable;
-    import org.spongepowered.api.util.command.CommandException;
-    import org.spongepowered.api.util.command.CommandResult;
-    import org.spongepowered.api.util.command.CommandSource;
+    import org.spongepowered.api.command.CommandCallable;
+    import org.spongepowered.api.command.CommandException;
+    import org.spongepowered.api.command.CommandResult;
+    import org.spongepowered.api.command.CommandSource;
 
     import java.util.Collections;
     import java.util.List;
@@ -72,15 +72,15 @@ The first step is to create a class for the command. The class has to implement 
 Registering the command
 =======================
 
-Now we can register the class in the ``CommandService``. The ``CommandService`` stands as the manager for watching what
+Now we can register the class in the ``CommandManager``. The ``CommandManager`` stands as the manager for watching what
 commands get typed into chat, and redirecting them to the right command handler. To register your command, use the
-method ``CommandService.register()``, passing your plugin, an instance of the command, and any needed aliases as parameters.
+method ``CommandManager.register()``, passing your plugin, an instance of the command, and any needed aliases as parameters.
 
 .. code-block:: java
 
-    import org.spongepowered.api.service.command.CommandService;
+    import org.spongepowered.api.command.CommandManager;
 
-    CommandService cmdService = game.getCommandDispatcher();
+    CommandManager cmdService = game.getCommandManager();
     cmdService.register(plugin, new MyBroadcastCommand(server), "message", "broadcast");
 
 .. note::
@@ -100,7 +100,7 @@ A ``Dispatcher`` is also a ``CommandCallable``, so it can be registered like any
 
 .. code-block:: java
 
-     import org.spongepowered.api.util.command.dispatcher.SimpleDispatcher;
+     import org.spongepowered.api.command.dispatcher.SimpleDispatcher;
 
      CommandCallable subCommand1 = ...;
      CommandCallable subCommand2 = ...;
@@ -110,4 +110,4 @@ A ``Dispatcher`` is also a ``CommandCallable``, so it can be registered like any
      rootCommand.register(subCommand1, "subcommand1", "sub1");
      rootCommand.register(subCommand2, "subcommand2", "sub2");
 
-     game.getCommandDispatcher().register(this, rootCommand, "root");
+     game.getCommandManager().register(this, rootCommand, "root");

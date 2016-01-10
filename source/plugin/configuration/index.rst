@@ -76,8 +76,8 @@ directory or to ``true`` to get the shared configuration directory.
 
     import java.nio.file.Path;
     import com.google.inject.Inject;
-    import org.spongepowered.api.service.config.ConfigDir;
-    import org.spongepowered.api.service.config.DefaultConfig;
+    import org.spongepowered.api.config.ConfigDir;
+    import org.spongepowered.api.config.DefaultConfig;
     import ninja.leaping.configurate.commented.CommentedConfigurationNode;
     import ninja.leaping.configurate.loader.ConfigurationLoader;
 

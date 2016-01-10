@@ -31,8 +31,8 @@ values, one for the current and one for the maximum health, each identified by t
     currentHealth == healthData.health().get();  // true
 
 Converting this container back into a ``HealthData`` instance is done by the corresponding ``DataBuilder``. Those are
-registered and managed by the ``SerializationService``, which, as described on the :doc:`Services <../services>` page,
-can be obtained from the ``ServiceManager``. The ``SerializationService`` provides a method to get the appropriate
+registered and managed by the ``DataManager``. It can either be obtained from a valid ``Game`` instance or using the
+``Sponge`` utility class. The ``DataManager`` provides a method to get the appropriate
 ``DataBuilder`` to deserialize a given class and additionally a shorthand method to get the ``DataBuilder`` and have it
 do the deserialization in one step. Both of the following code examples are functionally equivalent.
 
@@ -42,8 +42,7 @@ do the deserialization in one step. Both of the following code examples are func
 
     import org.spongepowered.api.data.DataView;
     import org.spongepowered.api.data.manipulator.mutable.entity.HealthData;
-    import org.spongepowered.api.service.persistence.DataBuilder;
-    import org.spongepowered.api.service.persistence.SerializationService;
+    import org.spongepowered.api.util.persistence.DataBuilder;
 
     import java.util.Optional;
 

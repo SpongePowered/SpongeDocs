@@ -134,7 +134,7 @@ The recommended way to obtain your config file is through Guice, along with the 
 
 .. code-block:: java
 
-    import org.spongepowered.api.service.config.ConfigDir;
+    import org.spongepowered.api.config.ConfigDir;
 
     import java.nio.file.Path;
 

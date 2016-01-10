@@ -78,9 +78,9 @@ to a new ``MessageSink``, which could then be used to send a message thanking th
 
 .. code-block:: java
 
-    import org.spongepowered.api.data.manipulator.DisplayNameData;
-    import org.spongepowered.api.entity.player.Player;
-    import org.spongepowered.api.util.command.CommandSource;
+    import org.spongepowered.api.data.manipulator.mutable.DisplayNameData;
+    import org.spongepowered.api.entity.living.player.Player;
+    import org.spongepowered.api.command.CommandSource;
 
     import java.util.HashSet;
     import java.util.Set;
