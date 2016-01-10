@@ -34,7 +34,7 @@ Contents
     logging
     text/index
     commands/index
-    events
+    event/index
     configuration/index
     data/index
     blocks/index
