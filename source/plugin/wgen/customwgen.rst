@@ -9,7 +9,7 @@ Modifying World Generation
 - Creating Custom Biomes
 
 Modifying Vanilla Generation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+============================
 
 .. note::
 
@@ -79,7 +79,7 @@ and their properties.
 
 
 Creating Custom Base Terrain
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+============================
 
 Changing the base ``GenerationPopulator`` of a world generator allows you to change the base terrain shape
 generation of the world. A generator populator will roughly follow the procedure of using the seed and biome
@@ -123,14 +123,14 @@ calculate the height). For each column in the buffered area we want to calculate
 in everything below that with stone and leave everything above it as air (or water if we're still below sea-level).
 
 Creating Custom GenerationPopulators
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+====================================
 
 .. note::
-  
+
   The API for custom GenerationPopulators isn't finished yet. This section will be expanded in the future.
 
 Creating Custom Populators
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+==========================
 
 Custom populators can be used to add a great variety of custom features. To create a custom populator you need
 only create a class implementing the Populator interface and add it to the list of populators attached to a
@@ -140,7 +140,7 @@ The key thing to remember when creating a populator is that the area affected by
 offset by 8 in both the x and z directions.
 
 Creating Custom Biomes
-~~~~~~~~~~~~~~~~~~~~~~
+======================
 
 While it is currently not possible to create entirely new biomes from within sponge, you can replace the system
 by which they are arranged in the world be implementing the ``BiomeGenerator`` interface and setting your custom

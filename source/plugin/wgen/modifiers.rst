@@ -1,3 +1,4 @@
+====================================
 Working with WorldGeneratorModifiers
 ====================================
 
@@ -8,8 +9,8 @@ These modifiers are registered globally with a unique id, which must be added to
 by a server admin. With the id specified in the world config, a ``WorldGeneratorModifer`` will be
 automatically called when the generator for that world is set up, allowing it to make changes to the generator.
 
-Creating a WorldGeneratorModifer
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Creating a WorldGeneratorModifier
+=================================
 
 Let's start with the format of a ``WorldGeneratorModifier``. First, you need a class which implements
 the WorldGeneratorModifier interface:
@@ -50,8 +51,8 @@ The ``WorldGenerationSettings`` and a ``DataContainer`` of additional properties
 in order to give context for your changes. For instance, you can use the ``WorldCreationSettings`` to only apply your
 generator changes to nether worlds.
 
-Registering a WorldGeneratorModifer
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Registering a WorldGeneratorModifier
+====================================
 
 Now that you have created our modifier, you need to register it. A good place to do this is in an
 ``GameInitializationEvent``. To register it, simply call ``GameRegistry.registerWorldGeneratorModifier``.

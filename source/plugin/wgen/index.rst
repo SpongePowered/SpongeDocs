@@ -16,14 +16,14 @@ You may choose to skip this and move directly to the API details at:
 
 
 An Overview of World Generation in Minecraft
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+============================================
 
 World generation in Minecraft is based on *chunks*. Whenever the game calls for a chunk which does not yet exist,
 a request is made to the world generator to provide that chunk. The process to provide this
 chunk is split into two distinct phases, named **Generation** and **Population**.
 
 The Generation Phase
---------------------
+~~~~~~~~~~~~~~~~~~~~
 
 The first phase in providing a chunk is the *Generation Phase*. This is primarily responsible for the
 creation of the base terrain shape, the generation of biomes, and larger features such as villages and caves.
@@ -57,7 +57,7 @@ Finally, with the base terrain created, the biomes applied, and the ``Generation
 completed the generation phase, and the Chunk object can be constructed and returned.
 
 The Population Phase
---------------------
+~~~~~~~~~~~~~~~~~~~~
 
 The *Population Phase* can only run on a chunk once the three chunks adjacent to it in the positive x and z directions
 are loaded. This allows objects during this phase to expand outside the 16x16 chunk area being populated, without
