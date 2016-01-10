@@ -48,8 +48,7 @@ do the deserialization in one step. Both of the following code examples are func
     import java.util.Optional;
 
     public Optional<HealthData> deserializeHealth(DataView container) {
-        final SerializationService service = this.game.getServiceManager().provideUnchecked(SerializationService.class);
-        final Optional<DataBuilder<HealthData>> builder = service.getBuilder(HealthData.class);
+        final Optional<DataBuilder<HealthData>> builder = Sponge.getDataManager().getBuilder(HealthData.class);
         if (builder.isPresent()) {
             return builder.get().build(container);
         }
@@ -63,8 +62,7 @@ do the deserialization in one step. Both of the following code examples are func
     import org.spongepowered.api.data.manipulator.mutable.entity.HealthData;
 
     public Optional<HealthData> deserializeHealth(DataView container) {
-        final SerializationService service = this.game.getServiceManager().provideUnchecked(SerializationService.class);
-        return service.deserialize(HealthData.class, container);
+        return Sponge.getDataManager().deserialize(HealthData.class, container);
     }
 
 The ``deserializeHealth`` function will return ``Optional.empty()`` if there is no ``DataBuilder`` registered for

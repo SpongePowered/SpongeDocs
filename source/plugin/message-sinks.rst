@@ -86,7 +86,7 @@ to a new ``MessageSink``, which could then be used to send a message thanking th
     import java.util.Set;
 
     Set<CommandSource> donors = new HashSet<CommandSource>();
-    for (Player player: event.getGame().getServer().getOnlinePlayers()) {
+    for (Player player: Sponge.getServer().getOnlinePlayers()) {
         DisplayNameData displayNameData = player.getDisplayNameData();
         if (displayNameData.getDisplayName().toPlain().contains("[Donor]")) {
             donors.add(player);
@@ -169,7 +169,7 @@ will be applied to any ``Player`` that joins the server.
 
     @Listener
     public void onClientConnectionJoin(ClientConnectionEvent.Join event) {
-        Player player = event.getEntity();
+        Player player = event.getTargetEntity();
 
         MessageSink originalSink = player.getMessageSink();
         MessageSink newSink = MessageSinks.combined(originalSink, new DonorMessageSink());
