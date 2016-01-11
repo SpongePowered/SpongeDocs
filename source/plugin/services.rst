@@ -15,7 +15,7 @@ Service Guidelines
 ==================
 
 * Services should be registered during the ``POST_INITIALIZATION`` game state at the latest.
-* Services should be fully operational by the end of the ``SERVER_ABOUT_TO_START`` game state.
+* Services should be fully operational by the ``SERVER_ABOUT_TO_START`` game state.
 
 You can read more about game states on the :doc:`lifecycle` page.
 
@@ -100,3 +100,4 @@ Other plugins can now access your service through the service manager:
 .. tip::
     If you don't want to use interfaces,
     just replace the ``service`` key with your class (``SimpleWarpService.class`` in the example).
+
