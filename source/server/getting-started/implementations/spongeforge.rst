@@ -40,8 +40,8 @@ The format of the filename is ``spongeforge-{MCVersion}-{ForgeVersion}-{SpongeAP
 Example
 ~~~~~~~
 
-The file name ``spongeforge-1.8-1577-3.0.0-BETA-1000.jar`` is compatible with minecraft version 1.8, requires build
-``1.8-11.14.4.1577`` of Forge, provides SpongeAPI v3.0.0 and was the 1000th build of SpongeForge.
+The file name ``spongeforge-1.8-1577-3.0.0-BETA-1000.jar`` is compatible with minecraft version ``1.8``, requires build
+``1.8-11.14.4.1577`` of Forge, provides SpongeAPI ``3.0.0`` and was build ``1000`` of SpongeForge.
 
 .. note::
 
