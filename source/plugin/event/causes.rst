@@ -12,8 +12,8 @@ ChangeBlockEvent to occur before they can decide if the event should be cancelle
 Rather than go with the traditional route of creating a multitude of subevents for the different source
 conditions this information is instead provided in the ``Cause`` of the event.
 
-Every event provides a ``Cause`` object which can be interogated
-for the information pertaining to why the event was fired. The Cause object can be retrived from
+Every event provides a ``Cause`` object which can be interrogated
+for the information pertaining to why the event was fired. The Cause object can be retrieved from
 an event by simply calling ``event.getCause()``.
 
 Retrieving objects from a Cause
