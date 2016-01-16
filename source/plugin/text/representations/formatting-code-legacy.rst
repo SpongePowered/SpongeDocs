@@ -11,9 +11,9 @@ It is important to note that the Minecraft Wiki only displays the use of the sec
 work with the ampersand (&) as well.
 
 .. warning::
-    Text serialization using any kind of formatting code is limited to representing only a limited portion of the
-    capabilities of a ``Text``, namely formatting. It cannot represent any kind of click or hover actions. If brevity
-    is not an issue (as it is in Minecraft chat), it is recommended to use either the :doc:`./xml` or the :doc:`./json`.
+    Text serialization using any kind of formatting code is limited to representing only some of the capabilities
+    of a ``Text``, namely formatting. It cannot represent any kind of click or hover actions. If brevity is not an
+    issue (as it is in Minecraft chat), it is recommended to use either the :doc:`./xml` or the :doc:`./json`.
 
 Ampersand Formatting
 ====================
