@@ -15,13 +15,14 @@ Since we will be running both Sponge and your plugin from within your IDE, you'l
 workspace. The instructions to do so are found on the respective project's github page. Follow those instructions
 carefully before proceeding here.
 
-Now you need to make sure your plugin project is visible to the **Sponge(Vanilla)** project you just created.
+Now you need to make sure your plugin project is visible to the **SpongeForge/SpongeVanilla** project you just created.
 The steps necessary depend on your IDE.
 
 IntelliJ IDEA
 ~~~~~~~~~~~~~
 
-In IntelliJ, every project has its own workspace(s). To make your project visible to the **Sponge(Vanilla)** project, it needs to be a *Module*. Assuming you already created your project as described in
+In IntelliJ, every project has its own workspace(s). To make your project visible to the **Sponge(Vanilla)** project,
+it needs to be a *Module*. Assuming you already created your project as described in
 :doc:`workspace/idea`, import it using the following steps.
 
 * Open the **Sponge(Vanilla)** project.
@@ -48,7 +49,8 @@ we'll be adding your plugin to the classpath. Since Sponge will per default load
 adding the plugin project to Sponge's classpath will rid you of the necessity to rebuild and copy the artifact
 file into your server directory after every change.
 
-First you need to ensure that you have your Run/Debug Configuration(s) set appropriately, as shown in the Sponge `README.md <https://github.com/SpongePowered/Sponge/blob/master/README.md#Running>`_
+First you need to ensure that you have your Run/Debug Configuration(s) set appropriately, as shown in the Sponge
+`README.md <https://github.com/SpongePowered/Sponge/blob/master/README.md#Running>`_
 
 Then you'll need to edit that Run/Debug Configuration so that it will include your project on the class path.
 How to do this, depends on your IDE again:
@@ -87,9 +89,10 @@ Running the Configuration
 =========================
 
 After you've followed the previous steps, you should be ready to start debugging.
-If you start your server from your IDE as if it were run from the ``run/server`` directory in your
-Sponge(Vanilla) project. Which means, all config files, world files etc will be stored there and persist
-over multiple launches.
+If you start your server from your IDE, its working directory will be the ``run`` directory in your
+SpongeForge/SpongeVanilla project. All the files usually created by a server (worlds, configs etc) will be stored in
+that ``run`` directory and persist over multiple runs of your local test server, just as if you manually copied a
+server .jar to the ``run`` directory and started it from there.
 
 IntelliJ IDEA
 ~~~~~~~~~~~~~
@@ -101,8 +104,8 @@ Eclipse
 ~~~~~~~
 
 Rather than pressing the green right-pointing arrow to run your Run/Debug configuration, click the drop down arrow of
-the Debug icon (the one displaying a bug) and click your Sponge (Server) configuration. If it doesn't appear in the
-drop-down menu, click ``Debug Configurations``. Select ``Sponge (Server)`` configuration and hit the ``Debug`` button
+the Debug icon (the one displaying a bug) and click your ``Test (Server)`` configuration. If it doesn't appear in the
+drop-down menu, click ``Debug Configurations``. Select ``Test (Server)`` configuration and hit the ``Debug`` button
 on the bottom left.
 
 Using the Debugger
@@ -143,7 +146,8 @@ Eclipse
 To add or remove a breakpoint, just right click in the blank space just to the left of your editor and click
 ``Toggle Breakpoint``.
 
-Alternatively, have your cursor be in the line where you want the breakpoint added or removed and then click ``Run`` followed by ``Toggle Breakpoint``.
+Alternatively, have your cursor be in the line where you want the breakpoint added or removed and then click ``Run``
+followed by ``Toggle Breakpoint``.
 
 Code Hotswapping
 ~~~~~~~~~~~~~~~~
@@ -154,7 +158,8 @@ running in the debugger. However, there are a couple of limitations, the most im
 
 * You cannot create or remove methods.
 
-    * Changes to methods are limited to code *within* the method. You cannot modify its signature (that means its name, return type and parameter types)
+    * Changes to methods are limited to code *within* the method. You cannot modify its signature (that means its name,
+      return type and parameter types)
 
 * You cannot remove classes.
 
@@ -162,8 +167,8 @@ running in the debugger. However, there are a couple of limitations, the most im
     * You can add classes. However, once it's been built and hotswapped, the class follows the above rules.
 
 You can test this functionality: Introduce a simple command to your plugin that just writes a word, like ``Sponge``
-Then save it and start the server as described above. Run the command. It will output sponge. Now change the command
-to write a different word to console, save the file. After a change, do as follows to hotswap the changes to
+Then save it and start the server as described above. Run the command. It will output ``Sponge``. Now change the
+command to write a different word to console, save the file. After a change, do as follows to hotswap the changes to
 the running program:
 
 IntelliJ IDEA
@@ -176,5 +181,5 @@ Eclipse
 +++++++
 
 No action needed. As soon as you save the file, it will be rebuilt and automatically hotswapped with the
-currently running debug. So as long as you did not change this particular default behavior, you will not have to
-trigger a manual hotswap.
+currently running debug. Unless you changed this particular default behavior, you will not have to trigger a manual
+hotswap.
