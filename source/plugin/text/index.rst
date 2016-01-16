@@ -16,4 +16,5 @@ Contents
 	:titlesonly:
 
 	text
+	representations/index
 	pagination
