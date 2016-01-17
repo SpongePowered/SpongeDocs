@@ -31,8 +31,8 @@ files to full advantage.
 Quick Start
 ===========
 
-Creating a Default Plugin Configuration
----------------------------------------
+Creating a Plugin Configuration
+-------------------------------
 
 Plugins using the Sponge API have the option to use one or more configuration files. Configuration files allow plugins
 to store data, and they allow server administrators to customize plugin options (if applicable).
@@ -40,31 +40,34 @@ to store data, and they allow server administrators to customize plugin options 
 
 .. _getting-default-config:
 
-Getting your Default Plugin Configuration
------------------------------------------
+Getting your Plugin Configuration
+---------------------------------
 
-The Sponge API offers the use of the ``@DefaultConfig`` annotation on a field or setter method with the type ``Path``
-to get the default configuration file for your plugin.
+The Sponge API offers the use of the ``@DefaultConfig`` annotation on a field or setter method with the type 
+``ConfigurationLoader<CommentedConfigurationNode>`` to get the configuration file for your plugin from it's default
+location.
 
 The ``@DefaultConfig`` annotation requires a ``sharedRoot`` boolean. If you set ``sharedRoot`` to ``true``, then the
-returned pathname will be in a shared configuration directory. In that case, the configuration file for your plugin
-will be ``your_plugin_id.conf`` (with "your_plugin_id" replaced with your plugin's specified ID).
+returned pathname will be in a shared configuration directory. In that case, the configuration file for your plugin will
+be ``your_plugin_id.conf`` (with "your_plugin_id" replaced with your plugin's specified ID).
 
 .. tip::
 
     See :doc:`../main-class` for information on configuring your plugin ID.
 
-If you set ``sharedRoot`` to ``false``, the returned pathname will refer to a file named ``{pluginname}.conf`` in a
-directory specific to your plugin.
+If you set ``sharedRoot`` to ``false``, the returned pathname will refer to a file named ``pluginname.conf`` in a
+directory specific to your plugin. e.g. ``./config/exampleplugin/ExamplePlugin.conf``
 
 If you are unsure of what to set the value of ``sharedRoot`` to, consider the following:
 
 * If you plan on having multiple configuration files (complex plugins) in the future, set the value to ``false``.
 * If you plan on having a single configuration file (less-complex plugins), set the value to ``true``.
 
-You can also obtain a ``Path`` instance pointing to the config directory instead of a particular file. Just
-have it injected using the ``@ConfigDir`` annotation, either with ``sharedRoot`` set to ``false`` for a plugin specific
-directory or to ``true`` to get the shared configuration directory.
+If you do not want to use Configurate directly, you can also obtain a ``Path`` to the default config locations by 
+annotating a field or setter method with either ``@DefaultConfig`` which gives a path to your plugins personal config or
+``ConfigDir`` which instead points to the config directory instead of a particular file. Just inject it with either 
+``sharedRoot`` set to ``false`` for a plugin specific directory or to ``true`` to get the shared configuration
+directory.
 
 .. note::
 
