@@ -51,14 +51,15 @@ location.
 
 The ``@DefaultConfig`` annotation requires a ``sharedRoot`` boolean. If you set ``sharedRoot`` to ``true``, then the
 returned pathname will be in a shared configuration directory. In that case, the configuration file for your plugin will
-be ``your_plugin_id.conf`` (with "your_plugin_id" replaced with your plugin's specified ID).
+be ``./config/examplepluginid.conf`` (with ``examplepluginid`` replaced with your plugin's specified ID).
 
 .. tip::
 
     See :doc:`../main-class` for information on configuring your plugin ID.
 
-If you set ``sharedRoot`` to ``false``, the returned pathname will refer to a file named ``pluginname.conf`` in a
-directory specific to your plugin. e.g. ``./config/exampleplugin/ExamplePlugin.conf``
+If you set ``sharedRoot`` to ``false``, the returned pathname will refer to a file named ``pluginid.conf`` in a
+directory specific to your plugin. e.g. ``./config/examplepluginid/examplepluginid.conf`` for a plugin with id 
+``ExamplePluginID``
 
 If you are unsure of what to set the value of ``sharedRoot`` to, consider the following:
 
