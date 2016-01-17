@@ -13,7 +13,7 @@ Creating a WorldGeneratorModifier
 =================================
 
 Let's start with the format of a ``WorldGeneratorModifier``. First, you need a class which implements
-the WorldGeneratorModifier interface:
+the ``WorldGeneratorModifier`` interface:
 
 .. code-block:: java
 
@@ -38,10 +38,10 @@ the WorldGeneratorModifier interface:
 
     }
 
-As you can see, ``WorldGeneratorModifier`` has three methods which we override. ``getId()`` must be overridden to return a constant
-and unique identifier for your ``WorldGeneratorModifier``, this is the identifier which will be used in the world
-configration to specify which worlds your modifier should be applied to. ``getName()`` must be overriden with a constant and simple
-human-readable name for your modifier.
+As you can see, ``WorldGeneratorModifier`` has three methods which we override. ``getId()`` must be overridden to return
+a constant and unique identifier for your ``WorldGeneratorModifier``, this is the identifier which will be used in the
+world configuration to specify which worlds your modifier should be applied to. ``getName()`` must be overriden with a
+constant and simple human-readable name for your modifier.
 
 The third overridden method is where you make your changes to the world generator. This method is called by
 the implementation when it is creating the world generator for a world which has specified that your
@@ -54,14 +54,15 @@ generator changes to nether worlds.
 Registering a WorldGeneratorModifier
 ====================================
 
-Now that you have created our modifier, you need to register it. A good place to do this is in an
-``GameInitializationEvent``. To register it, simply call ``GameRegistry.registerWorldGeneratorModifier``.
+Now that you have created our modifier, you need to register it. A good time to do this is during the ``INITIALIZATION``
+State. To register it, simply call ``GameRegistry.register()`` with ``WorldGeneratorModifier.class``
+as the first argument and your modifier as the second.
 
 .. code-block:: java
 
     @Listener
     public void onGameInitialization(GameInitializationEvent event) {
-        Sponge.getRegistry().registerWorldGeneratorModifier(new MyModifier());
+        Sponge.getRegistry().register(WorldGeneratorModifier.class , new MyModifier());
     }
 
 To apply your WorldGeneratorModifier to a world you must add it to the ``world-generation-modifiers`` array within
