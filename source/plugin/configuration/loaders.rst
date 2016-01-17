@@ -105,6 +105,9 @@ Example: Loading a default config from the plugin jar file
 For this example it is important to note that the ``getResource(...)`` method works relative to the location of the
 class it is called on. So if in the above example the class lies in the package ``me.username.myplugin``, the
 ``defaultConfig.conf`` file must not lie in the jar file root, but instead in the directory ``me/username/myplugin``.
+This is usually accomplished by placing the ``defaultConfig.conf`` in a resources file in your project, be careful when
+creating the package, as it sometimes creates a folder **Named** ``me.username.myplugin`` instead of a series of nested
+folders like a package is supposed to be.
 
 .. warning::
 
