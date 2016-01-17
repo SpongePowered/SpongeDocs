@@ -3,8 +3,8 @@ Configuration Loaders
 =====================
 
 Let's break down how Configurate works, beginning with the loading process. Configurate provides ``ConfigurationLoaders``
-for common configuration formats, standing as the manager of the physical configuration file, allowing you to
-save and load data from the given resource. They also allow you to load empty configurations, giving you the option of
+for common configuration formats, standing as the manager of the physical configuration file, allowing you to save and 
+load data from the given resource. They also allow you to load empty configurations, giving you the option of
 hard-coding default values or loading from a pre-written file.
 
 Getting your Loader
@@ -26,15 +26,15 @@ First, let's grab a new ``HoconConfigurationLoader`` that points to our configur
 The loader will also hold a generic type depending what kind of node it will build. These *Configuration Nodes* will be
 discussed in :doc:`a later section <nodes>`.
 
-``ConfigurationLoader``\ s usually hold a builder for you to statically access and create a new instance of the loader of
-your desired type. For a basic configuration, we don't really need to specify anything other than the file we want to
+``ConfigurationLoader``\ s usually hold a builder for you to statically access and create a new instance of the loader
+of your desired type. For a basic configuration, we don't really need to specify anything other than the file we want to
 load from and/or save to, so all we'll do is tell it exactly that, using
 ``HoconConfigurationLoader.builder().setPath(path)``. We then tell the builder to build the instance (``build()``) for
 it and store it in a variable.
 
-Of course, this isn't the only way to load a file. The builder also has the method ``setURL(URL)``, in case you want
-to load a resource without using a ``Path`` object. Bear in mind that configuration loaders created from an ``URL``
-are read-only as they have no way of writing back data to the URL.
+Of course, this isn't the only way to load a file. The builder also has the method ``setURL(URL)``, in case you want to
+load a resource without using a ``Path`` object. Bear in mind that configuration loaders created from an ``URL`` are
+read-only as they have no way of writing back data to the URL.
 
 This functionality may be used to bundle default configurations with your plugin jar file and load them as initial
 configuration to be edited by the server administrator (or your plugin itself).
@@ -54,9 +54,8 @@ Once you obtained your ``ConfigurationLoader`` you can use it to obtain an empty
     ConfigurationLoader<CommentedConfigurationNode> loader = HoconConfigurationLoader.builder().setPath(potentialFile).build();
     ConfigurationNode rootNode = loader.createEmptyNode(ConfigurationOptions.defaults());
 
-This method expects the ``ConfigurationOptions`` to use as a parameter. Unless you want to use features like custom
-type serialization, you can just use ``ConfigurationOptions.defaults()`` to create an options object with default
-values.
+This method expects the ``ConfigurationOptions`` to use as a parameter. Unless you want to use features like custom type
+serialization, you can just use ``ConfigurationOptions.defaults()`` to create an options object with default values.
 
 Using the ``load()`` method you can attempt to load the configuration contents from the source specified upon creation
 of the ``ConfigurationLoader``. It also expects a ``ConfigurationOptions`` instance, but also provides a no-args form
@@ -114,3 +113,18 @@ class it is called on. So if in the above example the class lies in the package 
     overwritten by) identically named resources in another jar. Placing those resources in unique folder structures
     similar to your java packages will mitigate the danger of accidentally having a resource file overwritten by
     another plugin.
+
+.. tip::
+
+    If you are having troubles getting your resource while in an IntelliJ dev environment, and you are not using 
+    ForgeGradle the resource files in your plugin may not be available on the classpath unless you enable the following
+    options either in your build.gradle or your IntelliJ project structure.
+.. code-block:: groovy
+
+        idea { module { inheritOutputDirs = true } }
+
+.. figure:: /images/InheritProjectCompileOutputPath.png
+    :alt: a screenshot of IntelliJ Project Structure options.
+
+    ``File`` > ``Project Structure`` > ``Modules`` > ``ExamplePlugin`` > ``Paths`` > ``Inherit Project Compile Output Path``
+
