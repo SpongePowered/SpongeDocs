@@ -40,5 +40,10 @@ folders like a package is supposed to be.
 .. figure:: /images/InheritProjectCompileOutputPath.png
     :alt: a screenshot of IntelliJ Project Structure options.
 
-    ``File`` > ``Project Structure`` > ``Modules`` > ``ExamplePlugin`` > ``Paths`` > ``Inherit Project Compile Output Path``
+    File> Project Structure> Modules> ExamplePlugin> Paths> ``Inherit Project Compile Output Path``
+
+Now that you have your default configuration, we need to detect / merge it with the @DefaultConfig annotated
+configuration.
+
+
 
