@@ -183,3 +183,11 @@ with ``ConfigurationOptions`` that enable copying of default values and get an e
 line ``rootNode.getNode("modules", "blockCheats", "enabled").getBoolean(true)``. As the node does not yet exist,
 configurate creates it and writes the value ``true`` to it as per the ``ConfigurationOptions`` before returning it.
 When the config is then finished, the value ``true`` will persist on the node without ever being explicitly set.
+
+.. tip::
+
+    You may be tempted to use this to upgrade configs between versions or packaging a default configuration with your
+    plugin, however except for very basic configuration files this is likely to get awkward fast. at the end of this 
+    section we cover how to deal with merging multiple configs from defaults, and upgrading between incompatible config
+    versions.
+

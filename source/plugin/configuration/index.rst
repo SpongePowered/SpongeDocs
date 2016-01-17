@@ -27,6 +27,8 @@ files to full advantage.
     loaders
     nodes
     serialization
+    defaults
+    updating
 
 Quick Start
 ===========
