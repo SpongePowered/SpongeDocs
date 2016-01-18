@@ -140,6 +140,18 @@ addition of the ``AdminMessageChannel``, a red ``[Admin]`` tag will be prefixed.
         }
     }
 
+Note that this will prefix `all` messages pertaining to a player. This includes death messages, leave messages, etc. If
+you only want to prefix all `chat` messages, you would need to listen to ``MessageChannelEvent.Chat`` and set the
+channel onto the event rather than the player. This would be done using ``event.setChannel(newChannel)`` onto the
+``MessageChannelEvent.Chat`` event. To get the player from the event to check for permissions, you would need to get a
+``Player`` from the ``Cause`` of the event. This is demonstrated below:
+
+.. code-block:: java
+
+    Optional<Player> playerOptional = event.getCause().<Player>first(Player.class);
+
+More on causes can be found on the :doc:`causes page <event/causes>`
+
 .. note::
 
     When combining multiple ``MessageChannel``\ s defining different message transformations, the ``Text`` will be
