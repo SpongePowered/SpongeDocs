@@ -185,6 +185,15 @@ enabled                          boolean   true        Adds player tracking supp
 **Bungeecord**
 ip-forwarding                    boolean   false       Allows bungeecord to forward ip address, UUID,
                                                        and Game Profile to the server.
+**Commands**
+aliases                          string    null        Alias will resolve conflicts when multiple plugins
+                                                       request a specific command. Correct syntax is
+                                                       ``<unqualified command>: <plugin name>``
+                                                       Example: ::
+
+                                                           aliases = {
+                                                               title: myPlugin
+                                                           }
 **Debug Options**
 dump-chunks-on-deadlock          boolean   false       Dumps chunks in the event of a deadlock.
 dump-heap-on-deadlock            boolean   false       Dump the heap in the event of a deadlock.
@@ -261,16 +270,21 @@ timings                          boolean   true        Enables timing settings.
 shutdown-server                  boolean   true        Enables if the server should be shut down if
                                                        the EULA has not been accepted.
 **SQL**
-aliases                          string    null        Aliases for SQL connections.
+aliases                          string    null        Aliases for SQL connections. This is done
+                                                       in the format
+                                                       ``jdbc:protocol://[username[:password]@]host/database``
 **Timings**
 enabled                          boolean   true        If timings are enabled.
 hidden-config-entries            string    sponge.sql  The hidden config entries.
-history-interval                 integer   300         The timings history interval.
-history-length                   integer   3600        The timings history length.
+history-interval                 integer   300         The interval between timing history report
+                                                       generation.
+history-length                   integer   3600        How long, in ticks, that the timing history
+                                                       will be kept for the server.
 server-name-privacy              boolean   false       Whether to include information such as the
                                                        server name, motd, online-mode, and server
                                                        icon in the report.
-verbose                          boolean   false       Whether or not to give a verbose report.
+verbose                          boolean   false       Whether or not for timings to monitor at the
+                                                       the verbose level.
 **World Settings**
 flowing-lava-decay               boolean   false       Lava behaves like vanilla water when the source
                                                        block is removed, when set to true.
