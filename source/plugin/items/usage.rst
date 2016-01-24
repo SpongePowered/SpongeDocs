@@ -5,7 +5,7 @@ Basic Item Usage
 Items are represented through an ``ItemStack``. An ``ItemStack`` is an inventory item with information such as the
 amount of the item in the stack, the type of the item, and extra data such as durability. An ``Item`` itself is the
 graphical representation of an ``ItemStack`` as an entity. Be aware that you'll always get a copy and *not* the actual
-``ItemStack``.
+``ItemStack`` and thus, you will need to set it back into an inventory if desired.
 
 Checking an Item's Type
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -51,7 +51,6 @@ need to specify a ``List`` of ``Text`` rather than an boolean or other value. It
 see if the key can actually apply to the item. For example, some items might not have durability or may already have
 lore applied to the item.
 
-
 .. code-block:: java
 
     import org.spongepowered.api.text.Text;
@@ -59,15 +58,15 @@ lore applied to the item.
     import java.util.List;
 
     public void setLore(ItemStack stack, List<Text> itemLore) {
-        if(item.get(Keys.ITEM_LORE).isPresent()) {
-            item.offer(Keys.ITEM_LORE, itemLore);
+        if (stack.get(Keys.ITEM_LORE).isPresent()) {
+            stack.offer(Keys.ITEM_LORE, itemLore);
         }
     }
 
 Item Properties
 ~~~~~~~~~~~~~~~
 
-Certain items can contain specific properties. For example, certain items can mine specific blocks, such as a diamond
+Certain items may hold specific properties. For example, certain items can mine specific blocks, such as a diamond
 pickaxe to obsidian. Properties are used for determining if an item can cause an action without actually checking up
 the type of the item. We can check if a block can mine obsidian by using the ``HarvestingProperty`` of that item.
 
@@ -78,20 +77,19 @@ the type of the item. We can check if a block can mine obsidian by using the ``H
 
     import java.util.Optional;
 
-    public boolean canMineObsidian(ItemStack item) {
+    public boolean canMineObsidian(ItemStack stack) {
         Optional<HarvestingProperty> optional =
-            item.getProperty(HarvestingProperty.class);
+            stack.getProperty(HarvestingProperty.class);
 
-        if(optional.isPresent()) {
+        if (optional.isPresent()) {
             HarvestingProperty property = optional.get();
             return property.getValue().contains(BlockTypes.OBSIDIAN);
         }
         return false;
     }
 
-This code will check to see if the item has a ``HarvestingProperty``, such as a pickaxe. If it does then it will return
-if this item can harvest obsidian without even needing to check the type of the item.
+This code will check to see if the item has a ``HarvestingProperty``, such as a pickaxe. If present, it will then
+return if this item can harvest obsidian without the need to check the type of the item. This is useful in the event
+that a mod or a Minecraft update adds a new tool with the capabilities of mining obsidian.
 
-.. note::
-    If you need to hold data of something that isn't covered by the API, such as mod data, you need to implement the
-    ``DataTranslator`` interface to translate it to a ``DataContainer`` to be used with the rest of the API.
+.. TODO Link to docs on custom datamaipulators
