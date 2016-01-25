@@ -14,6 +14,7 @@ Example: Building a Simple Command
 
 .. code-block:: java
 
+    import org.spongepowered.api.Sponge;
     import org.spongepowered.api.text.Text;
     import org.spongepowered.api.command.spec.CommandSpec;
 
@@ -23,7 +24,7 @@ Example: Building a Simple Command
         .executor(new HelloWorldCommand())
         .build();
 
-    game.getCommandManager().register(plugin, myCommandSpec, "helloworld", "hello", "test");
+    Sponge.getCommandManager().register(plugin, myCommandSpec, "helloworld", "hello", "test");
 
 Overview of the CommandSpec builder methods
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -101,9 +102,9 @@ Perform an ``instanceof`` check to determine the type of the ``CommandSource``:
 
 .. code-block:: java
 
-    import org.spongepowered.api.entity.living.player.Player; 
+    import org.spongepowered.api.entity.living.player.Player;
     import org.spongepowered.api.command.source.CommandBlockSource;
-    import org.spongepowered.api.command.source.ConsoleSource;   
+    import org.spongepowered.api.command.source.ConsoleSource;
 
     if(src instanceof Player) {
         Player player = (Player) src;

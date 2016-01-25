@@ -133,8 +133,7 @@ access the task. The below example will schedule a task that will count down fro
         @Override
         public void accept(Task task) {
             seconds--;
-            Sponge.getGame()
-                .getServer()
+            Sponge.getServer()
                 .getBroadcastChannel()
                 .send(Text.of("Remaining Time: "+seconds+"s"));
             if(seconds < 1) {

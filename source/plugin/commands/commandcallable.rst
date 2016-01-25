@@ -78,9 +78,10 @@ method ``CommandManager.register()``, passing your plugin, an instance of the co
 
 .. code-block:: java
 
+    import org.spongepowered.api.Sponge;
     import org.spongepowered.api.command.CommandManager;
 
-    CommandManager cmdService = game.getCommandManager();
+    CommandManager cmdService = Sponge.getCommandManager();
     cmdService.register(plugin, new MyBroadcastCommand(server), "message", "broadcast");
 
 .. note::
@@ -110,4 +111,4 @@ A ``Dispatcher`` is also a ``CommandCallable``, so it can be registered like any
      rootCommand.register(subCommand1, "subcommand1", "sub1");
      rootCommand.register(subCommand2, "subcommand2", "sub2");
 
-     game.getCommandManager().register(this, rootCommand, "root");
+     Sponge.getCommandManager().register(this, rootCommand, "root");

@@ -24,6 +24,7 @@ A data source can be accessed through the plugin's service manager:
 
 .. code-block:: java
 
+    import org.spongepowered.api.Sponge;
     import org.spongepowered.api.service.sql.SqlService;
 
     import java.sql.Connection;
@@ -32,7 +33,7 @@ A data source can be accessed through the plugin's service manager:
     private SqlService sql;
     public javax.sql.DataSource getDataSource(String jdbcUrl) throws SQLException {
         if (sql == null) {
-            sql = game.getServiceManager().provide(SqlService.class).get();
+            sql = Sponge.getServiceManager().provide(SqlService.class).get();
         }
         return sql.getDataSource(jdbcUrl);
     }

@@ -40,6 +40,8 @@ of the class containing the event listeners.
 
 .. code-block:: java
 
+    import org.spongepowered.api.Sponge;
+
     public class ExampleListener {
 
         @Listener
@@ -48,7 +50,7 @@ of the class containing the event listeners.
         }
     }
 
-    game.getEventManager().registerListeners(this, new ExampleListener());
+    Sponge.getEventManager().registerListeners(this, new ExampleListener());
 
 
 
@@ -83,7 +85,7 @@ before other server modifications.
 .. code-block:: java
 
     EventListener<ChangeBlockEvent.Break> listener = new ExampleListener();
-    game.getEventManager().registerListener(this, ChangeBlockEvent.Break.class, listener);
+    Sponge.getEventManager().registerListener(this, ChangeBlockEvent.Break.class, listener);
 
 .. tip::
 
@@ -101,7 +103,7 @@ an instance of the class containing the event listeners.
 .. code-block:: java
 
     EventListener listener = ...
-    game.getEventManager().unregisterListeners(listener);
+    Sponge.getEventManager().unregisterListeners(listener);
 
 Alternatively, you can use ``EventManager#unregisterPluginListeners``, passing in a reference to the plugin, to
 unregister all event listeners associated with that plugin. Note that this will remove *all* of the plugin's event
@@ -110,7 +112,7 @@ listeners, including those registered with ``@Listener`` annotations.
 .. code-block:: java
 
     MyPlugin plugin = ...
-    game.getEventManager().unregisterPluginListeners(plugin);
+    Sponge.getEventManager().unregisterPluginListeners(plugin);
 
 About @Listener
 ~~~~~~~~~~~~~~~~
@@ -132,7 +134,7 @@ You can fire events using the event bus (``org.spongepowered.api.service.event.E
 
 .. code-block:: java
 
-    boolean cancelled = game.getEventManager().post(theEventObject);
+    boolean cancelled = Sponge.getEventManager().post(theEventObject);
 
 The method returns ``true`` if the event was cancelled, ``false`` if not.
 
@@ -152,7 +154,7 @@ Example: Firing LightningEvent
     import org.spongepowered.api.event.cause.Cause;
 
     LightningEvent lightningEvent = SpongeEventFactory.createLightningEvent(Cause.of(plugin));
-    game.getEventManager().post(lightningEvent);
+    Sponge.getEventManager().post(lightningEvent);
 
 .. warning::
 

@@ -32,13 +32,13 @@ a wet sponge block.
 
  .. code-block:: java
 
-    import org.spongepowered.api.Game;
+    import org.spongepowered.api.Sponge;
     import org.spongepowered.api.block.BlockState;
     import org.spongepowered.api.data.manipulator.mutable.WetData;
 
     public void setToWetSponge(Location<World> blockLoc) {
         BlockState state = BlockTypes.SPONGE.getDefaultState();
-        WetData wetness = game.getDataManager().
+        WetData wetness = Sponge.getDataManager().
             getManipulatorBuilder(WetData.class).get().create();
         wetness.set(wetness.wet().set(true));
         BlockState newState = state.with(wetness.asImmutable()).get();
@@ -87,7 +87,7 @@ The following example will dry the block at a given ``Location``, if possible.
 
     import
         org.spongepowered.api.data.manipulator.immutable.block.ImmutableWetData;
- 
+
     public void dry(Location<World> blockLoc) {
         BlockState wetState = blockLoc.getBlock();
         Optional<BlockState> dryState = wetState.without(ImmutableWetData.class);

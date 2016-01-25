@@ -10,12 +10,12 @@ within an ``Extent``. In most cases a ``World`` will be used as the Extent.
 
 .. code-block:: java
 
-    import org.spongepowered.api.Game;
+    import org.spongepowered.api.Sponge;
     import org.spongepowered.api.world.Location;
     import org.spongepowered.api.world.World;
 
     public Location<World> getBlockAt(String worldName, int posX, int posY, int posZ) {
-        World world = game.getServer().getWorld(worldName).get();
+        World world = Sponge.getServer().getWorld(worldName).get();
         Location<World> blockLoc = new Location<World>(world, posX, posY, posZ);
         return blockLoc;
     }

@@ -11,9 +11,10 @@ commands from the main plugin class, use ``this`` as the ``plugin`` parameter.
 
 .. code-block:: java
 
+    import org.spongepowered.api.Sponge;
     import org.spongepowered.api.command.CommandManager;
 
-    CommandManager cmdManager = game.getCommandManager();
+    CommandManager cmdManager = Sponge.getCommandManager();
     cmdManager.register(this, myCommandSpec, "alias1", "alias2", "alias3");
 
 .. note::
@@ -32,4 +33,4 @@ You can also send a command from the server console:
 
 .. code-block:: java
 
-    cmdManager.process(game.getServer().getConsole(), "kill Notch");
+    cmdManager.process(Sponge.getServer().getConsole(), "kill Notch");

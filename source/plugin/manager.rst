@@ -78,6 +78,19 @@ A game instance can provide a reference to the server's ``PluginManager`` as wel
 
 Now that you have an instance to the plugin manager, let's use it.
 
+4. Using the Sponge Class
+-------------------------
+
+The ``Sponge`` class works similarly to ``Game``, with the exception that since ``Sponge`` contains static methods,
+it can be accessed anywhere throughout your plugin. You also do not need to store an instance of it, as you would need
+to do with ``Game``.
+
+.. code-block:: java
+
+    import org.spongepowered.api.Sponge;
+
+    private PluginManager pluginManager = Sponge.getPluginManager();
+
 Using the Plugin Manager
 ~~~~~~~~~~~~~~~~~~~~~~~~
 

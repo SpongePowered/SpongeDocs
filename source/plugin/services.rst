@@ -7,7 +7,9 @@ service manager:
 
 .. code-block:: java
 
-    game.getServiceManager().provide(EventManager.class);
+    import org.spongepowered.api.Sponge;
+
+    Sponge.getServiceManager().provide(EventManager.class);
 
 If you need to get an object reference to something, just get it off the service manager.
 
@@ -31,7 +33,7 @@ that is not part of the Sponge API (e.g. economy, web server):
 
 .. code-block:: java
 
-    game.getServiceManager().setProvider(Object plugin, Class<T> service, T provider);
+    Sponge.getServiceManager().setProvider(Object plugin, Class<T> service, T provider);
 
 The ``provider`` object has to implement the ``service`` interface or class.
 
@@ -50,7 +52,7 @@ The first step is optional, but recommended. You specify the public methods of y
 
     import org.spongepowered.api.world.Location;
     import org.spongepowered.api.world.World;
-    import java.util.Optional;	
+    import java.util.Optional;
 
     public interface WarpService {
         void setWarp(String name, Location<World> location);
@@ -89,15 +91,14 @@ the interface) and replace your version.
 
 .. code-block:: java
 
-    game.getServiceManager().setProvider(yourPluginInstance, WarpService.class, new SimpleWarpService());
+    Sponge.getServiceManager().setProvider(yourPluginInstance, WarpService.class, new SimpleWarpService());
 
 Other plugins can now access your service through the service manager:
 
 .. code-block:: java
 
-    game.getServiceManager().provide(WarpService.class);
+    Sponge.getServiceManager().provide(WarpService.class);
 
 .. tip::
     If you don't want to use interfaces,
     just replace the ``service`` key with your class (``SimpleWarpService.class`` in the example).
-

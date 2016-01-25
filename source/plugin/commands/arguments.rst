@@ -30,6 +30,7 @@ Example: Building a Command with Multiple Arguments
 
 .. code-block:: java
 
+    import org.spongepowered.api.Sponge;
     import org.spongepowered.api.text.Text;
     import org.spongepowered.api.entity.living.player.Player;
     import org.spongepowered.api.command.CommandException;
@@ -45,7 +46,7 @@ Example: Building a Command with Multiple Arguments
             .permission("myplugin.command.message")
 
             .arguments(
-                    GenericArguments.onlyOne(GenericArguments.player(Text.of("player"), this.game)),
+                    GenericArguments.onlyOne(GenericArguments.player(Text.of("player"))),
                     GenericArguments.remainingJoinedStrings(Text.of("message")))
 
             .executor(new CommandExecutor() {
@@ -62,7 +63,7 @@ Example: Building a Command with Multiple Arguments
             })
             .build();
 
-    game.getCommandManager().register(plugin, myCommandSpec, "message", "msg", "m");
+    Sponge.getCommandManager().register(plugin, myCommandSpec, "message", "msg", "m");
 
 Overview of the ``GenericArguments`` command elements
 =====================================================
