@@ -43,8 +43,9 @@ Command               Description                               Permission
                       config.
 /sponge version       Prints the Sponge/SpongeAPI versions to   sponge.command.version
                       the console.
-/sponge timings       Generates a report on the server          sponge.command.timings
-                      performance.
+/sponge timings       The command ``/sponge timings report`` 
+                      generates a report on your server          sponge.command.timings
+                      performance at http://timings.aikar.co
 ====================  ========================================  ======================
 
 |
