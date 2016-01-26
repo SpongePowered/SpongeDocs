@@ -43,9 +43,7 @@ Command               Description                               Permission
                       config.
 /sponge version       Prints the Sponge/SpongeAPI versions to   sponge.command.version
                       the console.
-/sponge timings       The command ``/sponge timings report`` 
-                      generates a report on your server          sponge.command.timings
-                      performance at http://timings.aikar.co
+/sponge timings       The main command for the timings module.  sponge.command.timings
 ====================  ========================================  ======================
 
 |
@@ -81,6 +79,37 @@ Command               Description                               Permission
 
     This would alter the config of world named DIM1.
 
+Timings
+~~~~~~~
+
+Timings are a tool built into Sponge that allows server administrators to monitor the performance of their server.
+Timings will collect information about a server so that a report may later be generated on the data. Information that
+is recorded by timings include the server motd, version, uptime, memory, installed plugins, tps, percent of tps loss,
+amount of players, tile entities, entities, and chunks.
+Below is a list of sub-commands to ``/sponge timings``:
+
+========================  ========================================
+Command                   Description
+========================  ========================================
+/sponge timings on        Enables timings. Note that this will
+                          also reset timings data.
+/sponge timings off       Disables timings. Note that most timings
+                          commands will not function and timings
+                          will not be recorded if timings are
+                          disabled.
+/sponge timings reset     Resets all timing data and begins
+                          recording timing data after the time
+                          this command was done.
+/sponge timings report    Generates the timings report on your
+                          server performance at
+                          http://timings.aikar.co
+/sponge timings verbon    Enables timings monitoring at the
+                          verbose level.
+/sponge timings verboff   Disables timings monitoring at the
+                          verbose level. Note that high-frequency
+                          timings will not be available.
+/sponge timings cost      Gets the cost of using timings.
+========================  ========================================
 
 Forge
 ~~~~~
