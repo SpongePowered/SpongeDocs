@@ -42,7 +42,7 @@ followed by an entity ``[Player, Entity, ...]``
     public void onEvent(ExampleCauseEvent event) {
         Cause cause = event.getCause(); // [Player, Entity]
         Optional<Player> firstPlayer = cause.first(Player.class); // 1
-        Optionml<Entity> firstEntity = cause.first(Entity.class); // 2
+        Optional<Entity> firstEntity = cause.first(Entity.class); // 2
     }
 
 Both optionals would contain the player object as it's type directly matched request for a
