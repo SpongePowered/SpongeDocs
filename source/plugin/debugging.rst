@@ -69,6 +69,14 @@ IntelliJ IDEA
 * Select your Module (Plugin).
 * Do NOT check the module, after it is added to the list.
 
+If you are using Gradle to build your plugin:
+
+* Open the Gradle Pane on the right side of the IDE window.
+* Click the Green ``+`` Symbol under ``Gradle Projects``.
+* Navigate to the your plugin's folder on the file system.
+* Double click the build.gradle file.
+* Click the Blue refresh icon (two arrows in a circle) to load your plugin's dependencies into the workspace.
+
 Eclipse
 ~~~~~~~
 
