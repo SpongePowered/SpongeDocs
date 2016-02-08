@@ -163,7 +163,7 @@ Instead of
 .. code-block:: java
 
     Optional<String> optionalString = getOptionalString();
-    if (optinalString.isPresent()) {
+    if (optionalString.isPresent()) {
         String someString = optionalString.get();
         if (stringTester.isPalindromic(someString)) {
             myPlugin.doSomethingWithString(someString);
