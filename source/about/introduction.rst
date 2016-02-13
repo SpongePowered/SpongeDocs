@@ -27,7 +27,7 @@ We have two other projects in addition to the Sponge API:
 (2) **SpongeVanilla**, a stand-alone implementation of the Sponge API, running on top of the vanilla Minecraft server.
     (SpongeVanilla was formerly known as Granite, until the development teams merged).
 
-Players on servers running Sponge or SpongeVanilla do not need to install any client-side mods. They are able to join
+Players on servers running SpongeForge or SpongeVanilla do not need to install any client-side mods. They are able to join
 servers running Sponge using the vanilla Minecraft client provided by Mojang.
 
 The Sponge API is not tied to any platform. This means that server owners can run Sponge plugins on any official
@@ -42,7 +42,7 @@ Neither SpongeForge nor SpongeVanilla is ready yet but development builds can be
 Who Is behind Sponge?
 ~~~~~~~~~~~~~~~~~~~~~
 
-The project leaders are blood, sk89q and Zidane. We are trying to be very open with the team to ensure the project leaders
+The project leaders are blood, gabizou and Zidane. We are trying to be very open with the team to ensure the project leaders
 do not end up “holding all of the keys.” Nonetheless, these three people make the final decisions to ensure the efficient
 operation of the project.
 
