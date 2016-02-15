@@ -4,7 +4,7 @@ Developing Sponge
 
 This sections describes the best way to approach the project when you're intending to develop Sponge itself. It is
 mandatory to be familiar with :doc:`git <../howtogit>` and our :doc:`codestyle`. Basic knowledge of the
-:doc:`../structure` is also very helpful.
+:doc:`/about/structure` is also very helpful.
 
 If you want to join us in creating Sponge, head straight over to the :doc:`pr` page.
 

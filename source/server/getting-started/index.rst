@@ -12,7 +12,6 @@ Contents
     jre
     migrating
     implementations/index
-    installation
     launch-script
     port-forward
     bungeecord

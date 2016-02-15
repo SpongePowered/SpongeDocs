@@ -64,4 +64,5 @@ removed all labels and introduced her as the icon and background logo for the Sp
 
 This older version of Spongie sadly isn't available as vector graphic. Thus Sponge staff decided to create a new
 vectorized version. Two new drafts were then posted on
-`State of Spongie <https://forums.spongepowered.org/t/state-of-spongie-wip/6194>`__.
+`State of Spongie <https://forums.spongepowered.org/t/state-of-spongie-wip/6194>`__. The currently used assets are
+located :doc:`here <assets>`. 

@@ -46,7 +46,7 @@ Where do I get Plugins for Sponge?
 ----------------------------------
 
 On our official plugin repository, which is called Ore. Development has already started on GitHub. Temporarily, plugins
-are hosted on the SpongeForums.
+are hosted on the `SpongeForums <https://forums.spongepowered.org/c/plugins/plugin-releases>`_.
 
 What happened to Bukkit?
 ------------------------

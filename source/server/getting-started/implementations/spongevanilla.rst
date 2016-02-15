@@ -1,6 +1,6 @@
-=============
-SpongeVanilla
-=============
+========================
+Installing SpongeVanilla
+========================
 
 SpongeVanilla is a vanilla implementation of the Sponge API as a stand-alone server.
 
@@ -17,7 +17,21 @@ do not want to run a Forge server. Originally started as an independent project 
 Download
 ========
 
-Check :doc:`../../../downloads` for further information.
+Check :doc:`/downloads` for further information.
+
+Installing SpongeVanilla
+========================
+
+SpongeVanilla only works as a dedicated server.
+
+1. Download the SpongeVanilla .jar from the Sponge website.
+#. Run it via command line: ``java -jar spongevanilla-whatever.jar``
+#. Set up :doc:`../port-forward` to ensure others can connect.
+
+.. warning::
+
+    Don't double-click the ``.jar`` file!
+
 
 Links
 =====

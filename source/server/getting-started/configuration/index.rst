@@ -51,7 +51,7 @@ command looks like this:
 .. code-block:: java
 
     /sponge config <flag> <key> <value>
-    
+
 There are *flags* for specifying the target that you would wish to change. These flags are global, dimension, and world.
 
 * ``-g`` is the flag for global
@@ -78,7 +78,7 @@ If you need to check the value of a key, you would need to omit the *value*. Che
 Saving a World Config
 ~~~~~~~~~~~~~~~~~~~~~
 
-Saving a world config may be desired after making modifications to the file. This would be useful in the event of an
+Saving a world config to the file may be desired after making modifications. This would be useful in the event of an
 unexpected server crash. This would be done by using the ``/sponge save`` command on the sponge server. The syntax for
 this command is similar to the config command:
 

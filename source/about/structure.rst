@@ -39,12 +39,12 @@ building SpongeForge or SpongeVanilla from the repository *without* including Sp
 Ore
 ===
 
-Ore is our very own plugin hosting solution. It's written in Python and based on Django and of course open-source!
+Ore is our very own plugin hosting solution. It's written in Python, based on Django and of course open-source!
 
-How everything works together
-=============================
+How everything is tied together
+===============================
 
-The next image shows the various parts of the Sponge Implementations and how they interact with each other and their dependencies.
+The image shows the various parts of the Sponge Implementations and how they interact with each other and their dependencies.
 On the left side is a typical SpongeForge setup with some SpongeAPI plugins, a Forge mod and a hybrid which uses Forge
 (as a mod) and Sponge (as a plugin) to interact. On the right side there's a typical SpongeVanilla setup. You'll notice
 that SpongeVanilla doesn't support Forge mods or the hybrid, because SpongeVanilla is missing the Forge functionality:
