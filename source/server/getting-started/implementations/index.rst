@@ -3,7 +3,7 @@ Choosing an Implementation
 ==========================
 
 Something that runs Sponge plugins is called an *implementation*. As long as a plugin is correctly made using the
-"Sponge API," it should run correctly on any sufficiently-complete implementation.
+SpongeAPI, it should run correctly on any sufficiently-complete implementation.
 
 Minecraft can't run Sponge plugins out of the box, but you can modify it to do so.
 
@@ -14,25 +14,26 @@ Available Implementations
 
 There are currently two implementations:
 
-.. csv-table::
-   :header: "Name", "Based on"
++--------------------------------------+--------------------------------------------------+
+| Name                                 | Based on                                         |
++======================================+==================================================+
+| :doc:`SpongeForge <spongeforge>`     | Mojang's "vanilla" Minecraft and Minecraft Forge |
++--------------------------------------+--------------------------------------------------+
+| :doc:`SpongeVanilla <spongevanilla>` | Mojang's "vanilla" Minecraft                     |
++--------------------------------------+--------------------------------------------------+
 
-   :doc:`SpongeForge <spongeforge>`,"Mojang's Minecraft and Minecraft Forge"
-   :doc:`SpongeVanilla <spongevanilla>`,"Mojang's Minecraft"
 
 Which do I choose?
 ~~~~~~~~~~~~~~~~~~
 
-These two items listed in the table change Minecraft's existing code to run Sponge plugins and are ideal if you want
-something that plays exactly the same as unmodified Minecraft (same world generation, same Redstone mechanics). The first
-option also integrates `Minecraft Forge <http://www.minecraftforge.net/forum/>`__, which lets you run Minecraft Forge
-mods alongside Sponge plugins.
+If you want to run MinecraftForge mods or you prefer to use Sponge in singleplayer, then choose :doc:`spongeforge`.
 
-While the Coremod option may appear to be the best, depending on your desired setup you may want to consider other
-options as well, maybe because of performance concerns, as other options may use less memory and CPU to do the same task.
+If you only want to run a Mincraft server with plugins on it (but no mods), then you can choose :doc:`SpongeForge <spongeforge>` or
+:doc:`SpongeVanilla <spongevanilla>`. SpongeForge supports vanilla clients, as long as you don't install Forge mods which require
+clientside mods. If you prefer to run a server without Forge, then SpongeVanilla is your preferred option.
 
-The goal is for all listed implementations to run all Sponge plugins correctly and in the same way, so you should be able
-to switch between different implementations at a later time (as far as plugins are concerned).
+SpongeVanilla and SpongeForge (without mods) behave the same, so the decision between the two is a matter of preference,
+not a choice of functionality or features.
 
 Contents
 ========

@@ -7,12 +7,21 @@ Introduction
 
 Welcome to SpongeDocs, the official documentation for the open-source `Sponge <http://spongepowered.org>`__ project.
 
-The Sponge project currently has four main components:
+The SpongeAPI is your all new plugin API for Minecraft. You can run it on a plain vanilla server (as SpongeVanilla) or
+on your fully modded MinecraftForge server (as SpongeForge). Grab your your copy :doc:`here <downloads>`.
 
-* `SpongeForge <https://github.com/spongepowered/spongeforge>`_
-* `SpongeVanilla <https://github.com/spongepowered/spongevanilla>`_
-* `SpongeAPI <https://github.com/spongepowered/spongeapi>`_
-* `SpongeDocs <https://github.com/spongepowered/spongedocs>`_
+Not sure what you're looking for? Try our :doc:`about/index` section, which contains a short :doc:`about/introduction`,
+our :doc:`about/faq` and an article about :doc:`about/structure`.
+
+Server owners should read our tips and instructions in :doc:`server/index` on how to install, run and maintain a Sponge
+based server.
+
+
+The Sponge project has several main components currently, visit their repositories on GitHub or learn more about them
+:doc:`here <about/structure>`: `SpongeForge <https://github.com/spongepowered/spongeforge>`_ |
+`SpongeVanilla <https://github.com/spongepowered/spongevanilla>`_ | `SpongeAPI <https://github.com/spongepowered/spongeapi>`_ |
+`SpongeDocs <https://github.com/spongepowered/spongedocs>`_ | `Mixin <https://github.com/SpongePowered/Mixin>`_ |
+`Ore <https://github.com/SpongePowered/Ore>`_
 
 .. note::
 
@@ -36,12 +45,8 @@ This section is for users who have a Sponge server or are interested in creating
 Preparing for Development
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This section is for:
-
-* Developers who wish to create Sponge plugins or contribute code to the Sponge project
-* Users who wish to help with writing and editing articles in SpongeDocs
-
-Please read this section before `Creating Plugins`_ and `Contributing to Sponge`_.
+Get yourself and your machine ready to develop Sponge itself or your own plugins! Please read this section before
+`Creating Plugins`_ and `Contributing to Sponge`_.
 
 .. toctree::
     :maxdepth: 2
@@ -52,7 +57,7 @@ Please read this section before `Creating Plugins`_ and `Contributing to Sponge`
 Creating Plugins
 ~~~~~~~~~~~~~~~~
 
-This section is intended to help developers who have prior Java experience with writing plugins using the SpongeAPI.
+Need help and information while coding your plugin for the SpongeAPI? Look no further!
 
 .. toctree::
     :maxdepth: 2
@@ -63,8 +68,7 @@ This section is intended to help developers who have prior Java experience with 
 Contributing to Sponge
 ~~~~~~~~~~~~~~~~~~~~~~
 
-This section is intended to help developers who have prior Java experience with contributing code to the Sponge project.
-Instructions on contributing to SpongeDocs are also contained within. Make Spongie proud!
+Look here if you want to help out in making Sponge better. Make Spongie proud!
 
 .. toctree::
     :maxdepth: 2
@@ -75,7 +79,8 @@ Instructions on contributing to SpongeDocs are also contained within. Make Spong
 About Sponge
 ~~~~~~~~~~~~
 
-This section is intended to help everyone understand the goals of the Sponge project.
+This section contains basic information about the project, read this if you're confused about Sponge, its parts and our
+goals.
 
 .. toctree::
     :maxdepth: 3
