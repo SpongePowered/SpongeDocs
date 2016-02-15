@@ -78,9 +78,8 @@ Single Player / In-Game LAN Servers
    not yet exist.
 #. Sponge should work in both in single player and if you open your world to LAN.
 
-Next, learn how you can create and use a :doc:`launch-script <../launch-script>`, how to
-:doc:`configure Sponge <../configuration/index>` and how to :doc:`manage your server </server/management/index>`
-(including installing plugins).
+Next, learn how you can :doc:`configure Sponge <../configuration/index>` and how to
+:doc:`manage your instance of Sponge </server/management/index>` (including installing plugins).
 
 Dedicated Servers
 ~~~~~~~~~~~~~~~~~
@@ -121,7 +120,8 @@ Adding SpongeForge to Forge
 #. You may now launch the server via command or launch script ``java -jar forge-version-XYZ.jar``.
 #. If operating from home, set up :doc:`../port-forward` to ensure others can connect.
 
-Next, learn :doc:`how you can configure Sponge <../configuration/index>` and how to :doc:`how to manage your server
+Next, learn how you can create and use a :doc:`launch-script <../launch-script>`,
+:doc:`how you can configure Sponge <../configuration/index>` and how to :doc:`how to manage your server
 </server/management/index>` (including installing plugins).
 
 Links
