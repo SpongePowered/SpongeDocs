@@ -20,7 +20,7 @@ advised before starting any work. There are several projects we're currently mai
 * Ore
 
 If you want to know more about the structure of the project and how everythings tied together, head over to
-:doc:`structure`.
+:doc:`../about/structure`.
 
 What kind of help is needed?
 ============================
@@ -71,7 +71,6 @@ Contents
     :maxdepth: 2
     :titlesonly:
 
-    structure
     guidelines
     howtogit
     implementation/index

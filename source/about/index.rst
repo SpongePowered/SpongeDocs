@@ -17,6 +17,7 @@ Contents
 
     introduction
     faq
+    structure
     future
     license
     posting
