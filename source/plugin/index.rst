@@ -30,7 +30,7 @@ Contents
     templates
     main-class
     lifecycle
-    optional/index
+    concepts/index
     logging
     text/index
     commands/index
