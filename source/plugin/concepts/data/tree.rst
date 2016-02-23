@@ -4,7 +4,7 @@ Data Tree
 
 This article is not for the faint of heart. A reasonable understanding of how traversal works is expected.
 
-1. The Structure of a Data Tree
+The Structure of a Data Tree
 ===============================
 
 For our purposes, let's say that the tree is made up of two types of data: Nodes, which are points on the tree that can
