@@ -64,7 +64,7 @@ few additions and modifications, which are described herein.
 Code Conventions
 ================
 
-* Use :doc:`/plugin/optional/index` instead of returning
+* Use :doc:`/plugin/concepts/optional/index` instead of returning
   ``null`` in the API
 * Method parameters accepting ``null`` must be annotated with ``@Nullable`` (from javax.*), all methods and parameters
   are ``@Nonnull`` by default.
