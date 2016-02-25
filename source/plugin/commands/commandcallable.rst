@@ -31,14 +31,8 @@ The first step is to create a class for the command. The class has to implement 
         private final Optional<Text> help = Optional.of(Text.of("Displays a message to all players. It has no color support!"));
         private final Text usage = Text.of("<message>");
 
-        private final Server server;
-
-        public MyBroadcastCommand(Server server) {
-            this.server = server;
-        }
-
         public CommandResult process(CommandSource source, String arguments) throws CommandException {
-            server.getBroadcastSink().sendMessage(Text.of(arguments));
+            Sponge.getServer().getBroadcastChannel().send(Text.of(arguments));
             return CommandResult.success();
         }
 
