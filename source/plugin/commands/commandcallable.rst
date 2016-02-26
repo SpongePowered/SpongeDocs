@@ -5,7 +5,7 @@ Low-Level Command API
 The ``CommandCallable`` and ``Dispatcher`` interfaces can be used to define commands. The interfaces can be used as a
 base for custom command APIs.
 
-It is recommended to use the `Command Builder API <../../basics/commands>`_ for simple command definitions.
+It is recommended to use the `Command Builder API <../creating>`_ for simple command definitions.
 
 Writing a command
 =================
@@ -59,8 +59,8 @@ The first step is to create a class for the command. The class has to implement 
 
 .. tip::
 
-    See the `documentation for CommandCallable
-    <http://spongepowered.github.io/SpongeAPI/org/spongepowered/api/util/command/CommandCallable.html>`_ for the
+    See the `Javadocs for CommandCallable
+    <https://jd.spongepowered.org/3.0.0/org/spongepowered/api/command/CommandCallable.html>`_ for the
     purposes of each method in this example.
 
 Registering the command
@@ -76,7 +76,7 @@ method ``CommandManager.register()``, passing your plugin, an instance of the co
     import org.spongepowered.api.command.CommandManager;
 
     CommandManager cmdService = Sponge.getCommandManager();
-    cmdService.register(plugin, new MyBroadcastCommand(server), "message", "broadcast");
+    cmdService.register(plugin, new MyBroadcastCommand(), "message", "broadcast");
 
 .. note::
 

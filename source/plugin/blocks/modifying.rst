@@ -62,14 +62,14 @@ data set, overwriting existing values. The following example will change any dir
 
     public void dirtToPodzol(Location<World> blockLoc) {
         BlockState state = blockLoc.getBlock();
-        Optional<ImmutableDirtData> dirtData =
+        Optional<ImmutableDirtData> dirtDataOpt =
             state.get(ImmutableDirtData.class);
-        
-        if (dirtData.isPresent()) {
-            DirtData coarseData = dirtData.get().asMutable();
-            coarseData.set(Keys.DIRT_TYPE, DirtTypes.PODZOL);
-            BlockState courseState = state.with(coarseData.asImmutable()).get();
-            blockLoc.setBlock(courseState);
+
+        if (dirtDataOpt.isPresent()) {
+            DirtData dirtData = dirtDataOpt.get().asMutable();
+            dirtData.set(Keys.DIRT_TYPE, DirtTypes.PODZOL);
+            BlockState dirtState = state.with(dirtData.asImmutable()).get();
+            blockLoc.setBlock(dirtState);
         }
     }
 

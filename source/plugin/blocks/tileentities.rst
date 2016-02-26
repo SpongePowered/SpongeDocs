@@ -58,7 +58,7 @@ The following example contains two methods to alter the data of a sign. The firs
 line, the second attempts to set it and returns the boolean value indicating its success.
 
  .. code-block:: java
- 
+
     import org.spongepowered.api.data.manipulator.mutable.tileentity.SignData;
     import org.spongepowered.api.text.Text;
 
@@ -105,6 +105,6 @@ an inventory extend the ``TileEntityCarrier`` interface it suffices to cast to t
         }
     }
 
-On how to manipulate the inventory please refer to the according documentation.
+Refer to the inventory documentation regarding the manipulation of the inventory.
 
 .. TODO Link to inventory docs

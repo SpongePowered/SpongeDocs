@@ -68,7 +68,7 @@ Example: Building a Command with Multiple Arguments
 Overview of the ``GenericArguments`` command elements
 =====================================================
 
-.. _catalog type: http://spongepowered.github.io/SpongeAPI/org/spongepowered/api/CatalogTypes.html
+.. _catalog type: https://jd.spongepowered.org/3.0.0/org/spongepowered/api/CatalogType.html
 
 +----------------------------+-----------------------------------------------------------------------------------------+-------------------------------+
 | Command Element            | Description                                                                             | Value Type & Amount           |
@@ -149,7 +149,7 @@ Overview of the ``GenericArguments`` command elements
 
 .. tip::
 
-    See the `documentation for GenericArguments <https://jd.spongepowered.org/org/spongepowered/api/command/args/GenericArguments.html>`_
+    See the `Javadocs for GenericArguments <https://jd.spongepowered.org/org/spongepowered/api/command/args/GenericArguments.html>`_
     for more information.
 
 Flags
@@ -243,5 +243,5 @@ Example: ``Vector2i`` command element usage
 
 .. tip::
 
-    Look at the `source code <https://github.com/SpongePowered/SpongeAPI/blob/master/src/main/java/org/spongepowered/api/util/command/args/GenericArguments.java>`_
+    Look at the `source code <https://github.com/SpongePowered/SpongeAPI/blob/master/src/main/java/org/spongepowered/api/command/args/GenericArguments.java>`_
     of the ``GenericArguments`` class for more examples.

@@ -11,11 +11,11 @@ loaded plugin if you so desire.
 The PluginManager Class
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-.. _documentation for PluginManager: http://spongepowered.github.io/SpongeAPI/org/spongepowered/api/plugin/PluginManager.html
+.. _Javadocs for PluginManager: https://jd.spongepowered.org/3.0.0/org/spongepowered/api/plugin/PluginManager.html
 
 .. tip::
 
-    See the `documentation for PluginManager`_ for full information about the class, as well as its methods and their
+    See the `Javadocs for PluginManager`_ for full information about the class, as well as its methods and their
     usage.
 
 Public methods inside the ``PluginManager`` are used to grab information about the current collection of loaded plugins,
@@ -64,11 +64,11 @@ The service manager also holds an instance of the server's ``PluginManager``. Si
 3. The Game Instance
 --------------------
 
-.. _documentation for Game: http://spongepowered.github.io/SpongeAPI/org/spongepowered/api/Game.html
+.. _Javadocs for Game: https://jd.spongepowered.org/3.0.0/org/spongepowered/api/Game.html
 
 .. tip::
 
-    See the `documentation for Game`_ for full information about the class, as well as its methods and their usage.
+    See the `Javadocs for Game`_ for full information about the class, as well as its methods and their usage.
 
 A game instance can provide a reference to the server's ``PluginManager`` as well for convenience.
 
@@ -118,11 +118,11 @@ Or, it is possible to obtain an instance to a plugin container directly, by the 
 The PluginContainer Class
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. _documentation for PluginContainer: http://spongepowered.github.io/SpongeAPI/org/spongepowered/api/plugin/PluginContainer.html
+.. _Javadocs for PluginContainer: https://jd.spongepowered.org/3.0.0/org/spongepowered/api/plugin/PluginContainer.html
 
 .. tip::
 
-    See the `documentation for PluginContainer`_ for full information about the class, as well as its methods and their
+    See the `Javadocs for PluginContainer`_ for full information about the class, as well as its methods and their
     usage.
 
 When grabbing a plugin from the ``PluginManager``, you'll notice very quickly that you are not given an immediate

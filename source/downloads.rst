@@ -4,9 +4,9 @@ Download
 
 .. Note::
 
-    **Changelogs** for SpongeForge, SpongeVanilla and SpongeAPI are now available on the respective Downloads
-    pages, along with links for Javadocs and sources. For the more adventurous, they may also be compiled from their
-    respective GitHub repositories.
+    **Changelogs, Javadocs, and sources** for SpongeForge, SpongeVanilla and SpongeAPI are now available on their
+    respective downloads pages. The sources for these projects are also available at their corresponding GitHub
+    repositories.
 
 
 SpongeForge

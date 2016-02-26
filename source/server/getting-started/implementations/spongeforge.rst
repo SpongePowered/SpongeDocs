@@ -121,7 +121,7 @@ Adding SpongeForge to Forge
 #. If operating from home, set up :doc:`../port-forward` to ensure others can connect.
 
 Next, learn how you can create and use a :doc:`launch-script <../launch-script>`,
-:doc:`how you can configure Sponge <../configuration/index>` and how to :doc:`how to manage your server
+:doc:`configure Sponge <../configuration/index>` and :doc:`manage your server
 </server/management/index>` (including installing plugins).
 
 Links
