@@ -14,7 +14,7 @@ The first step is to create a class for the command. The class has to implement 
 
 .. code-block:: java
 
-    import org.spongepowered.api.Server;
+    import org.spongepowered.api.Sponge;
     import org.spongepowered.api.text.Text;
     import org.spongepowered.api.command.CommandCallable;
     import org.spongepowered.api.command.CommandException;
@@ -72,7 +72,6 @@ method ``CommandManager.register()``, passing your plugin, an instance of the co
 
 .. code-block:: java
 
-    import org.spongepowered.api.Sponge;
     import org.spongepowered.api.command.CommandManager;
 
     CommandManager cmdService = Sponge.getCommandManager();
