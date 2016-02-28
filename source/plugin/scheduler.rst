@@ -83,7 +83,8 @@ Using the ``Task.Builder``, you can specify other, optional properties, as descr
 | synchronization | async()                 | A synchronous task is run in the game's main loop in series with the     |
 |                 |                         | tick cycle. If ``Task.Builder#async`` is used, the task will be run      |
 |                 |                         | asynchronously. Therefore, it will run in its own thread, independently  |
-|                 |                         | of the tick cycle, and will not be thread safe with game data.           |
+|                 |                         | of the tick cycle, and may not safely use game state.                    |
+|                 |                         | (See `Asynchronous Tasks`_.)                                             |
 +-----------------+-------------------------+--------------------------------------------------------------------------+
 | name            | name(String name)       | The name of the task. By default, the name of the task will be           |
 |                 |                         | PLUGIN_ID "-" ( "A-" | "S-" ) SERIAL_ID. For example, a default task name|
@@ -120,7 +121,7 @@ access the task. The below example will schedule a task that will count down fro
 .. code-block:: java
 
     @Listener
-    onGameInit(GameInitializationEvent event){
+    public void onGameInit(GameInitializationEvent event){
         Scheduler scheduler = Sponge.getScheduler();
         Task.Builder taskBuilder = scheduler.createTaskBuilder();
         Task task = taskBuilder.execute(new CancellingTimerTask())
@@ -156,6 +157,7 @@ with `asynchronously`, including:
 
 * Chat
 * Sponge's built-in Permissions handling
+* Sponge's scheduler
 
 In addition, there are a few other operations that are safe to do asynchronously:
 
