@@ -84,7 +84,7 @@ Using the ``Task.Builder``, you can specify other, optional properties, as descr
 |                 |                         | tick cycle. If ``Task.Builder#async`` is used, the task will be run      |
 |                 |                         | asynchronously. Therefore, it will run in its own thread, independently  |
 |                 |                         | of the tick cycle, and may not safely use game state.                    |
-|                 |                         | (See :ref:`asynchronous-tasks`.)                                         |
+|                 |                         | (See `Asynchronous Tasks`_.)                                             |
 +-----------------+-------------------------+--------------------------------------------------------------------------+
 | name            | name(String name)       | The name of the task. By default, the name of the task will be           |
 |                 |                         | PLUGIN_ID "-" ( "A-" | "S-" ) SERIAL_ID. For example, a default task name|
@@ -142,8 +142,6 @@ access the task. The below example will schedule a task that will count down fro
             }
         }
     }
-
-.. _asynchronous-tasks:
 
 Asynchronous Tasks
 ~~~~~~~~~~~~~~~~~~
