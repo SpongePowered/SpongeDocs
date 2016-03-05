@@ -74,7 +74,7 @@ This would be done like so:
     
     public void explosionRadius50(Entity creeper) {
         creeper.offer(Keys.EXPLOSIVE_RADIUS, 50);
-        creeper.offer(Keys.DISPLAY_NAME, Texts.of(TextColors.DARK_AQUA, "Inscrutable"));
+        creeper.offer(Keys.DISPLAY_NAME, Text.of(TextColors.DARK_AQUA, "Inscrutable"));
     }
 
 This would neaten our code and is easier to perform. See the :doc:`data documentation <../data/datamanipulators>` on

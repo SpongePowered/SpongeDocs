@@ -56,8 +56,9 @@ Sending Messages
 
 Once you have obtained a ``MessageChannel`` you can send a message through it via the ``send(Object sender, Text
 message)`` method. This method is preferred over the ``send(Text message)`` method, as the ``Object`` can be
-used for identification or for performing other various actions.
-The channel will then transform the message for every recipient and send the transformed message.
+used for identification or for performing other various actions. Alternatively, you can use a ``ChatType`` to specify
+where the message will be sent to. Using the ``send(Object sender, Text message, ChatType type)`` method will allow you
+to accomplish this. The channel will then transform the message for every recipient and send the transformed message.
 
 Extended Application: Chat Channels
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

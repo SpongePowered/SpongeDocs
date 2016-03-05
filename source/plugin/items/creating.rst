@@ -83,6 +83,7 @@ graphical representation of an ``ItemStack`` is ``Item``, we can spawn it in sim
     import org.spongepowered.api.entity.Entity;
     import org.spongepowered.api.entity.EntityTypes;
     import org.spongepowered.api.event.cause.Cause;
+    import org.spongepowered.api.event.cause.NamedCause;
     import org.spongepowered.api.event.cause.entity.spawn.EntitySpawnCause;
     import org.spongepowered.api.event.cause.entity.spawn.SpawnTypes;
     import org.spongepowered.api.world.Location;
@@ -98,20 +99,10 @@ graphical representation of an ``ItemStack`` is ``Item``, we can spawn it in sim
         if (optional.isPresent()) {
             Entity item = optional.get();
             item.offer(Keys.REPRESENTED_ITEM, superMegaAwesomeSword.createSnapshot());
-            extent.spawnEntity(item, Cause.of(EntitySpawnCause.builder()
-                .entity(item).type(SpawnTypes.PLUGIN).build()));
+            extent.spawnEntity(item, Cause.of(NamedCause.source(EntitySpawnCause.builder()
+                .entity(item).type(SpawnTypes.PLUGIN).build())));
         }
     }
-
-.. warning::
-    
-    Note that as of API 3.0, ``SpawnCause`` is NOT implemented. Until then, you will need to specify some other cause,
-    such as a ``CommandSource`` or a ``Player``. If you cannot find one that would suit your needs, simply specify your
-    main plugin instance as the ``Cause``. Here is an example of specifying a ``CommandSource`` as the ``Cause``:
-
-    ``extent.spawnEntity(item, Cause.of(src));``
-    
-    Take a look at the :doc:`cause documentation <../event/causes>` for more information.
 
 Creating an ItemStack From a Block
 ==================================
