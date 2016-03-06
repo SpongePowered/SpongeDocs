@@ -7,7 +7,7 @@ This section shows the basic setup for your IDE, to get yourself ready to develo
 Choosing a Plugin Identifier
 =============================
 
-Sponge plugins are identified using an unique **plugin ID**, and a human-readable **plugin name**. It is important that
+Sponge plugins are identified using a unique **plugin ID**, and a human-readable **plugin name**. It is important that
 you choose a proper name for your project now, because later plugins will interact with your plugin under your chosen
 plugin ID (e.g. when defining plugin dependencies). The plugin ID is also used for creating the default configuration
 folders for your plugin.

@@ -33,7 +33,7 @@ for Sponge plugins due to the fact that Sponge API is not currently hosted on Ma
 Properties
 ~~~~~~~~~~
 
-The archetype plugin accepts a few properties
+The archetype plugin accepts a few properties:
 
 ============== ========================== =============================================================================
 Property        Example value              Description

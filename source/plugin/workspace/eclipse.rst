@@ -6,7 +6,7 @@ This article describes how to configure your **Eclipse** workspace for plugin de
 build system such as Maven or Gradle <../buildsystem/>`.
 
 Gradle
-~~~~~~
+======
 
 Creating your project
 ~~~~~~~~~~~~~~~~~~~~~
@@ -47,7 +47,7 @@ of re-creating it inside your IDE:
 .. TODO
 
 Maven
-~~~~~
+=====
 
 Creating your project
 ~~~~~~~~~~~~~~~~~~~~~

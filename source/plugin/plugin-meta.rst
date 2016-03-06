@@ -2,8 +2,8 @@
 Plugin Metadata
 ===============
 
-Adding plugin metadata helps users to identify your plugin more easily by giving them the changes to check the name,
-version, description or even the authors of a plugin at runtime. It is (or will) be also used heavily when publishing
+Adding plugin metadata helps users to identify your plugin more easily by giving them the ability to check the name,
+version, description, or even the authors of a plugin at runtime. It is (or will) be also used heavily when publishing
 plugins on a plugin portal like Ore_.
 
 Currently, Sponge supports the following types of plugin metadata:
@@ -46,9 +46,9 @@ an extra file in the JAR, which has several advantages:
 The mcmod.info format
 ~~~~~~~~~~~~~~~~~~~~~
 
-For Sponge plugins we use a file called ``mcmod.info`` which is included in the root of your plugin JAR. The format is
-orginally coming from Forge, but has been used by several projects in the Minecraft community therefore we have chosen
-to use the same.
+For Sponge plugins, we use a file called ``mcmod.info``, which is included in the root of your plugin JAR. The format
+is originally coming from Forge, but has been used by several projects in the Minecraft community, and therefore we
+have chosen to use the same.
 
 ``mcmod.info`` is basically a simple JSON_ file which defines the plugin metadata as simple fields. Here is an example
 file that could be used by a Sponge plugin:
@@ -69,15 +69,15 @@ file that could be used by a Sponge plugin:
 Using the Annotation Processor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Writing extra file is quite annoying. Fortunately usually there is nothing extra you need to do, when compiling your
-plugin SpongeAPI is able to generate this file automatically based on the information provided in your ``@Plugin``
-annotation.
+Writing an extra file is quite annoying. Fortunately, usually there is nothing extra you need to do. When compiling
+your plugin, SpongeAPI is able to generate this file automatically based on the information provided in your
+``@Plugin`` annotation.
 
 Enabling
 --------
 
-If you're using a build system such as Gradle or Maven and have not explicitely disabled annotation processing there is
-nothing extra you need to do. By default the annotation processor will run automatically and generate a ``mcmod.info``
+If you're using a build system such as Gradle or Maven and have not explicitly disabled annotation processing there is
+nothing extra you need to do. By default the annotation processor will automatically run and generate a ``mcmod.info``
 file based on the contents of your ``@Plugin`` annotation.
 
 If you're not using a build system you need to manually enable annotation processing: TODO
@@ -85,9 +85,9 @@ If you're not using a build system you need to manually enable annotation proces
 Build system integration
 ------------------------
 
-If you're using Gradle, `SpongeGradle <start/project/gradle>`_ will provide additional integration for Gradleand plugin
-metadata. For example it will automatically include the project version defined in the Gradle build script in your
-plugin metadata. See :doc:`project/gradle` for details.
+If you're using Gradle, `SpongeGradle <start/project/gradle>`_ will provide additional integration for Gradle and
+plugin metadata. For example, it will automatically include the project version defined in the Gradle build script in
+your plugin metadata. See :doc:`project/gradle` for details.
 
 .. _Ore: https://github.com/SpongePowered/Ore
 .. _JSON: https://en.wikipedia.org/wiki/JSON
