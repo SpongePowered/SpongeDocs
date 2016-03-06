@@ -87,7 +87,7 @@ Build system integration
 
 If you're using Gradle, `SpongeGradle <start/project/gradle>`_ will provide additional integration for Gradleand plugin
 metadata. For example it will automatically include the project version defined in the Gradle build script in your
-plugin metadata. See :doc:`start/project/gradle` for details.
+plugin metadata. See :doc:`project/gradle` for details.
 
 .. _Ore: https://github.com/SpongePowered/Ore
 .. _JSON: https://en.wikipedia.org/wiki/JSON

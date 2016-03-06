@@ -25,7 +25,10 @@ Contents
     :maxdepth: 2
     :titlesonly:
 
-    start/index
+    buildsystem
+    workspace/index
+    project/index
+    plugin-class
     lifecycle
     injection
     practices

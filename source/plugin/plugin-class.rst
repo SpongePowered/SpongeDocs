@@ -68,7 +68,7 @@ game. In the example below, ``onServerStart()`` is called when the ``GameStarted
 
 .. tip::
 
-    The Sponge documentation provides a guide with more information on events (see :doc:`../event/index`). Normally, in addition
+    The Sponge documentation provides a guide with more information on events (see :doc:`event/index`). Normally, in addition
     to prefixing event-handler methods with ``@Listener``, you must also register your object with Sponge's event bus.
     However, your main plugin class is registered automatically.
 
@@ -93,4 +93,4 @@ categories of state events:
   * GameStoppingServerEvent
   * GameStoppedServerEvent
 
-For information regarding when each state event occurs, see the :doc:`plugin lifecycle documentation <../lifecycle>`.
+For information regarding when each state event occurs, see the :doc:`plugin lifecycle documentation <lifecycle>`.

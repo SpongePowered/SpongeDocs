@@ -23,7 +23,7 @@ IntelliJ IDEA
 
 In IntelliJ, every project has its own workspace(s). To make your project visible to the **Sponge(Vanilla)** project,
 it needs to be a *Module*. Assuming you already created your project as described in
-:doc:`start/workspace/idea`, import it using the following steps.
+:doc:`workspace/idea`, import it using the following steps.
 
 * Open the **Sponge(Vanilla)** project.
 * Click ``File``, followed by ``New``, then ``Module from Existing Sources...``.
@@ -38,7 +38,7 @@ it needs to be a *Module*. Assuming you already created your project as describe
 Eclipse
 ~~~~~~~
 
-Just create your project as described here: :doc:`start/workspace/eclipse`. As long as it is in the same workspace
+Just create your project as described here: :doc:`workspace/eclipse`. As long as it is in the same workspace
 as your **Sponge(Vanilla)** project, it will be visible.
 
 Adding Plugin to Sponge classpath
