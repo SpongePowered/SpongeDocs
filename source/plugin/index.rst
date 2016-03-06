@@ -45,6 +45,7 @@ Contents
     scheduler
     database
     permissions
+    bans
     economy/index
     services
     wgen/index
