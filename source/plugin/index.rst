@@ -25,30 +25,28 @@ Contents
     :maxdepth: 2
     :titlesonly:
 
-    workspace/index
-    practices
-    templates
-    bukkit-sponge-compare
-    main-class
+    start/index
     lifecycle
+    injection
+    practices
     optional/index
     logging
-    text/index
     commands/index
     event/index
     configuration/index
+    text/index
     data/index
     blocks/index
     entities/index
     items/index
-    injection
     scheduler
+    services
     database
     permissions
     economy/index
-    services
     wgen/index
     manager
     debugging
-    messagechannels
+    plugin-meta
+    bukkit-sponge-compare
     tutorials
