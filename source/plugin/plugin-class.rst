@@ -39,7 +39,7 @@ easily find your main plugin class when your plugin is loaded. An example usage 
     }
 
 .. note::
-    Refer to :doc:`workspace/index` if you've not chosen your plugin ID yet.
+    Refer to :doc:`plugin-identifier` if you've not chosen your plugin ID yet.
 
 Initializing Your Plugin
 ========================

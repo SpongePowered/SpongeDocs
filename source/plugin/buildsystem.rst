@@ -26,7 +26,7 @@ file in your project's root directory, which tells Gradle_ how to build the proj
     you're only interested in how to use Gradle_ for a simple Java project, a good place to start would be the `Gradle
     Java Quickstart`_.
 
-Continue at :doc:`workspace/index` for an introduction how to set up Gradle_ in your IDE.
+Continue at :doc:`plugin-identifier` for choosing a plugin identifier and then setting up Gradle_ in your IDE.
 
 Maven
 =====
@@ -39,7 +39,7 @@ build the project.
     you're only interested in how to use Maven_ for a simple Java project, a good place to start would be `Maven in 5
     Minutes`_.
 
-Continue at :doc:`workspace/index` for an introduction on how to set up Maven_ in your IDE.
+Continue at :doc:`plugin-identifier` for choosing a plugin identifier and then setting up Maven_ in your IDE.
 
 Creating a plugin without a build system
 ========================================
@@ -57,7 +57,7 @@ For developing plugins without a build system you need to download the SpongeAPI
 dependencies that would normally be automatically downloaded by the build system.
 
 After you have downloaded the ``shaded`` artifact and have added it to a project in your IDE, you can start developing
-your plugin. Continue at :doc:`workspace/index` for choosing an identifier for your project, then continue at TODO:
+your plugin. Continue at :doc:`plugin-identifier` for choosing an identifier for your project, then continue at TODO:
 
 .. _Gradle: https://gradle.org/
 .. _Maven: https://maven.apache.org/

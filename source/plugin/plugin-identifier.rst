@@ -24,3 +24,5 @@ as ``io.github.username``).
 
 The resulting **plugin ID** should be prefixed with the group ID separated by a **dot**. A good example for a qualified
 plugin ID would be ``io.github.username.myplugin`` or ``com.example.myplugin`` if you own the ``example.com`` domain.
+
+Continue at :doc:`workspace/index` for an introduction how to set up your project in your IDE.
