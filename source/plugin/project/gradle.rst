@@ -38,8 +38,6 @@ only need to update your plugin version in one file.
 Below is a simple template that should be usable for most plugins. **Make sure to replace the group with the group ID
 you have chosen before.**
 
-.. TODO: This is not working, not published on plugin portal yet
-
 .. code-block:: groovy
 
     plugins {
@@ -50,7 +48,7 @@ you have chosen before.**
     version = '1.0-SNAPSHOT'
     description = 'An example plugin'
 
-    depdendencies {
+    dependencies {
         compile 'org.spongepowered:spongeapi:4.0.3'
     }
 
