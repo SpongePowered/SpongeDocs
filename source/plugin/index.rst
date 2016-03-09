@@ -26,6 +26,7 @@ Contents
     :titlesonly:
 
     buildsystem
+    plugin-identifier
     workspace/index
     project/index
     plugin-class
