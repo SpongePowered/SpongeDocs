@@ -16,7 +16,7 @@ dependency to your project:
     }
 
     dependencies {
-        compile 'org.spongepowered:spongeapi:4.0.0'
+        compile 'org.spongepowered:spongeapi:4.0.3'
     }
 
 However, for further Gradle integration with :doc:`/plugin/plugin-meta`, we're providing an additional **Gradle
@@ -43,7 +43,7 @@ you have chosen before.**
 .. code-block:: groovy
 
     plugins {
-        id 'org.spongepowered.plugin' version '0.6'
+        id 'org.spongepowered.plugin' version '0.5.1'
     }
 
     group = 'com.example' // TODO
@@ -51,7 +51,7 @@ you have chosen before.**
     description = 'An example plugin'
 
     depdendencies {
-        compile 'org.spongepowered:spongeapi:4.0.0'
+        compile 'org.spongepowered:spongeapi:4.0.3'
     }
 
 These few lines handle most settings you would normally do manually:
