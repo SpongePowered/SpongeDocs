@@ -82,7 +82,7 @@ Example: Fire Custom Event
     import org.spongepowered.api.Sponge;
 
     PlayerMutationEvent event = new PlayerMutationEvent(victim, PlayerMutationEvent.Mutation.ROTTED_SOCKS,
-            Cause.of(flardSource));
+            Cause.of(NamedCause.source(flardSource)));
     Sponge.getEventManager().post(event);
     if (!event.isCancelled()) {
         // Mutation code

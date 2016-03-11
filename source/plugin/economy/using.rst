@@ -74,5 +74,5 @@ Some ``Account`` methods require variables such as:
 These are for more advanced uses, but still must be filled in. Below is a list of acceptable default values:
 
 * Currency: ``economyService.getDefaultCurrency()``
-* Cause: ``Cause.of("MyPluginName")``
+* Cause: ``Cause.of(NamedCause.source("MyPluginName"))``
 * Context: ``new HashSet<Context>()``

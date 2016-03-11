@@ -29,7 +29,8 @@ This code illustrates what **not** to do:
             // You don't have enough money!
         } else {
             // The account has enough, let's withdraw some cash!
-            account.withdraw(service.getDefaultCurrency(), requiredAmount, Cause.of(this));
+            account.withdraw(service.getDefaultCurrency(), requiredAmount,
+                Cause.of(NamedCause.source(this)));
         }
 
 
@@ -46,7 +47,8 @@ Here's how you **should** withdraw money:
         Account account = ...
         BigDecimal requiredAmount = BigDecimal.valueOf(20);
 
-        TransactionResult result = account.withdraw(service.getDefaultCurrency(), requiredAmount, Cause.of(this));
+        TransactionResult result = account.withdraw(service.getDefaultCurrency(),
+            requiredAmount, Cause.of(NamedCause.source(this)));
         if (result.getResult() == ResultType.SUCCESS)) {
             // Success!
         } else if (result.getResult() == ResultType.FAILED || result.getResult() == ResultType.ACCOUNT_NO_FUNDS) {
