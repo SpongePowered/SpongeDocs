@@ -44,7 +44,10 @@ Importing your project
 If you've already started with your project and want to import it again at a later point you need to import it instead
 of re-creating it inside your IDE:
 
-.. TODO
+* Click ``File > Import``
+* Select ``Gradle > Gradle Project``
+* Navigate to the root folder of the project
+* Click Finish
 
 Maven
 =====
@@ -88,7 +91,10 @@ Importing your project
 If you've already started with your project and want to import it again at a later point you need to import it instead
 of re-creating it inside your IDE:
 
-.. TODO
+* Click ``File > Import``
+* Select ``Maven > Existing Maven Projects``
+* Navigate to the root folder of the project
+* Click Finish
 
 Git Integration
 ===============

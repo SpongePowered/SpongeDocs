@@ -38,7 +38,9 @@ Importing your project
 If you've already started with your project and want to import it again at a later point you need to import it instead
 of re-creating it inside your IDE:
 
-.. TODO
+* Click ``File > Open``
+* Navigate to the project's ``build.gradle`` file
+* Click Ok
 
 Maven
 =====
@@ -77,7 +79,9 @@ Importing your project
 If you've already started with your project and want to import it again at a later point you need to import it instead
 of re-creating it inside your IDE:
 
-.. TODO
+* Click ``File > Open``
+* Navigate to the project's ``pom.xml`` file
+* Click Ok
 
 Git Integration
 ===============
