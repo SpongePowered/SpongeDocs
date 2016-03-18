@@ -4,6 +4,7 @@ import sys
 import os.path
 import os
 
+# list of languages:
 with open('langs.json', 'r') as f:
     langs_list = [l for l in reversed(json.loads(f.read()))]
     langs_mapper = {lang['locale'].replace('-', '_'): lang['crowdin_code'] for lang in langs_list}
@@ -21,7 +22,7 @@ def listdirs(folder):
 # get list of versions
 vers_list = (listdirs("deploy/"))
 list.sort(vers_list, reverse=True)
-#remove unwanted dirs from list as we don't need them
+# remove unwanted dirs from list as we don't need them
 vers_list.remove("master")
 vers_list.remove(".git")
 vers_list.remove("_static")
@@ -35,15 +36,31 @@ for i in vers_list:
     newlist.append(create_dicts)
 # result: newlist = [{'apiversion': '3.0.0'},{'apiversion': '2.1.0'},{'apiversion': 'master'}]
 
+# get the current branch
+v = os.getenv('BRANCHNAME')
+
+curverdict = {'currentversion': v}
+curverlist = []
+curverlist.append(dict(curverdict))
+
+# construct the path to the theme in virtualenv
+layout_path = os.path.join(os.sep, os.environ['VIRTUAL_ENV'], 'src', 'sponge-docs-theme', 'sponge_docs_theme', 'layout.html')
+
 # write to file
-with open('etc/home.html', 'r') as f:
+with open(layout_path , 'r') as f:
     tpl = f.read()
 
-with open('dist/temp.html', 'w') as f:
+with open(layout_path , 'w') as f:
+    f.write(pystache.render('{{={[ ]}=}} ' + tpl, dict(vers=newlist)))
+
+with open(layout_path , 'r') as f:
+    tpl = f.read()
+
+with open(layout_path , 'w') as f:
     f.write(pystache.render('{{={| |}=}} ' + tpl, dict(langs=used_langs)))
 
-with open('dist/temp.html', 'r') as f:
+with open(layout_path , 'r') as f:
     tpl = f.read()
 
-with open('dist/index.html', 'w') as f:
-    f.write(pystache.render('{{={[ ]}=}} ' + tpl, dict(vers=newlist)))
+with open(layout_path , 'w') as f:
+    f.write(pystache.render('{{={§ §}=}} ' + tpl, dict(curver=curverlist)))
