@@ -21,15 +21,18 @@ else
 fi
 
 # strip the branchname and make it a variable
-if [[ $TRAVIS_BRANCH = release/[0-9]+$.[0-9]+$.[0-9]+$ ]]; then
+if [[ $TRAVIS_BRANCH =~ release\/[0-9]*\.[0-9]*\.[0-9]* ]]; then
 
   export BRANCHNAME=`sed 's/release\///' <<<$TRAVIS_BRANCH`
 
 else
-  
+
   export BRANCHNAME=$TRAVIS_BRANCH
 
 fi
+
+echo "$TRAVIS_BRANCH"
+echo "$BRANCHNAME"
 
 # If we're on master or a release/* branch, deploy
 
@@ -41,7 +44,7 @@ if [[ $TRAVIS_PULL_REQUEST = false && $TRAVIS_BRANCH = master ]]; then
     # Deploy docs
     ./etc/docs.sh
 
-  elif [[ $TRAVIS_PULL_REQUEST = false && $BRANCHNAME = [0-9]+$.[0-9]+$.[0-9]+$ ]]; then
+  elif [[ $TRAVIS_PULL_REQUEST = false && $BRANCHNAME =~ [0-9]*\.[0-9]*\.[0-9]* ]]; then
 
     # Add the api key to the crowdin configuration (because it is stupid)
     echo -e \\napi_key: ${CROWDIN_API_KEY} >> ./crowdin.yaml
