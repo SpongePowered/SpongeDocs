@@ -37,7 +37,8 @@ git init
 # add origin as remote
 git remote add origin https://spongy:${GH_TOKEN}@github.com/Spongy/SpongeDocs >/dev/null
 git checkout --orphan gh-pages
-git pull origin gh-pages
+#don't pull for first build!
+#git pull origin gh-pages
 cd ..
 
 # We need the platform for xargs args
@@ -46,7 +47,7 @@ unamestr=$(uname)
 
 if [[ "$unamestr" == 'FreeBSD' || "$unamestr" == 'Darwin'  ]]; then
 
-    # create topbar and modifiy theme before building the docs
+    # create topbar and modify theme before building the docs
     python ./etc/menubar.py $(find locale -d 1 |
     sed 's/locale\///' |
     tr '\n' ',' |
