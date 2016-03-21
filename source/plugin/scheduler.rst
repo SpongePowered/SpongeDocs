@@ -163,3 +163,80 @@ In addition, there are a few other operations that are safe to do asynchronously
 
 * Independent network requests
 * Filesystem I/O (excluding files used by Sponge)
+
+Compatibility with other libraries
+==================================
+
+TODO: larger plugins mean you probably want to do some work asynchronously, note about standard java concurrency interfaces and thread-safety
+
+TODO: interfaces for both sync and async scheduling, sync is the most interesting.
+
+.. code-block:: java
+
+    import org.spongepowered.api.scheduler.SpongeExecutorService;
+    
+    SpongeExecutorService executor = Sponge.getScheduler().createSyncExecutor(plugin);
+    
+    // Execute a task on the primary server thread
+    executor.submit(() -> { ... });
+    // Execute a task on the primary server thread after 10 seconds
+    executor.schedule(() -> { ... }, 10, TimeUnit.SECONDS);
+
+TODO: nearly all large concurrency frameworks support some way of running using this interface
+
+CompletableFuture (Java 8)
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+TODO: difference between methods without and with *Async in their name
+
+.. code-block:: java
+
+    import java.util.concurrent.CompletableFuture;
+    
+    SpongeExecutorService executor = Sponge.getScheduler().createSyncExecutor(plugin);
+
+    CompletableFuture.supplyAsync(() -> {
+        // *Async methods default to running on ForkJoinPool.commonPool()
+        return /* awesome value */
+    }).thenAcceptAsync((awesomeValue) -> {
+        /* use awesomeValue on the main thread */
+    }, executor); // Run this future on our executor
+
+RxJava
+~~~~~~
+
+TODO: link to documentation on schedulers
+
+.. code-block:: java
+
+    import rx.Scheduler;
+    import rx.schedulers.Schedulers;
+
+    SpongeExecutorService executor = Sponge.getScheduler().createSyncExecutor(plugin);
+    Scheduler minecraftScheduler = Schedulers.from(executor);
+
+    Observable<T> someObservable = createObservable();
+    someObservable.subscribeOn(Schedulers.io()) // perform calulation on io pool
+                  .observeOn(minecraftScheduler) // Recieve the values on the main thread
+                  .subscribe();
+
+Scala
+~~~~~
+
+TODO: be explicit about the executioncontext, implicit is dangerous in this situation.
+
+.. code-block:: scala
+
+    import scala.concurrent.ExecutionContext
+
+    val executor = Sponge.getScheduler().createSyncExecutor(plugin)
+
+    // It is a bad idea to make this executioncontext implicit since it might accidentally
+    // force work onto the server thread.
+    /* implicit */ val ec = ExecutionContext.fromExecutorService(executor)
+	
+    Future {
+        /* Do some calculation on the implicit ExecutionContext */
+    } foreach {
+        /* use the value on the main thread */
+    }(ec) // Override implicit ExecutionContext with the sponge scheduler
