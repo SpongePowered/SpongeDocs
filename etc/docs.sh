@@ -122,4 +122,13 @@ cp -R ./dist/. deploy/
 cd deploy
 git add .
 git commit -q -m "Deploy $(date)" &> /dev/null
-git push -q -f origin gh-pages &> /dev/null
+git push -q -f origin gh-pages &> /dev/null || exit $?
+
+if [[ -n "$FASTLY_API_KEY" ]]; then
+     echo Performing instant purge of docs.spongepowered.org
+     curl -s -H "Fastly-Key: ${FASTLY_API_KEY}" -H "Accept: application/json" -X POST -d '' "https://api.fastly.com/service/${FASTLY_API_SERVICE}/purge_all" 2>/dev/null
+     # this echo needed since JSON doesn't terminate with newline, and I want a newline here
+     echo
+else
+     echo Unable to purge; FASTLY_API_KEY or FASTLY_API_SERVICE not set
+fi
