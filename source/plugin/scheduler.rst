@@ -187,7 +187,9 @@ TODO: nearly all large concurrency frameworks support some way of running using 
 CompletableFuture (Java 8)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-TODO: difference between methods without and with *Async in their name
+TODO: difference between methods without and with \*Async in their name
+
+`CompletableFuture <https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletableFuture.html>`_
 
 .. code-block:: java
 
@@ -207,6 +209,8 @@ RxJava
 
 TODO: link to documentation on schedulers
 
+`Scheduler <http://reactivex.io/RxJava/javadoc/rx/Scheduler.html>`_
+
 .. code-block:: java
 
     import rx.Scheduler;
@@ -214,16 +218,25 @@ TODO: link to documentation on schedulers
 
     SpongeExecutorService executor = Sponge.getScheduler().createSyncExecutor(plugin);
     Scheduler minecraftScheduler = Schedulers.from(executor);
-
-    Observable<T> someObservable = createObservable();
-    someObservable.subscribeOn(Schedulers.io()) // perform calulation on io pool
-                  .observeOn(minecraftScheduler) // Recieve the values on the main thread
-                  .subscribe();
+    
+    Observable.defer(() -> Observable.from(Sponge.getServer().getOnlinePlayers())
+              .subscribeOn(minecraftScheduler) // Get the player list on the main thread
+              .observeOn(Schedulers.io()) // Process it asynchronously
+              .filter(player -> {
+                  /* do something that requires some work, 
+                     like checking player UUID in a database */
+              })
+              .observeOn(minecraftScheduler) // Finish work on minecraft's thread
+              .subscribe(player -> {
+                  player.kick(Text.of("Computer says no"));
+              });
 
 Scala
 ~~~~~
 
 TODO: be explicit about the executioncontext, implicit is dangerous in this situation.
+
+`ExecutionContext <http://www.scala-lang.org/api/current/index.html#scala.concurrent.ExecutionContext$>`_
 
 .. code-block:: scala
 
