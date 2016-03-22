@@ -240,6 +240,7 @@ Use ``Observable#observeOn(Scheduler scheduler)`` to move between threads.
 
 .. code-block:: java
 
+    import rx.Observable;
     import rx.Scheduler;
     import rx.schedulers.Schedulers;
 
