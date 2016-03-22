@@ -169,11 +169,19 @@ In addition, there are a few other operations that are safe to do asynchronously
 Compatibility with other libraries
 ==================================
 
-:ref:`asynchronous-tasks`
+.. _ExecutorService: https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ExecutorService.html
 
-TODO: larger plugins mean you probably want to do some work asynchronously, note about standard java concurrency interfaces and thread-safety
+As your plugin grows in size and scope you might want to start using one of the many concurrency libraries available 
+for Java and the JVM.
+These libraries do tend to support Java's ExecutorService_ as a means of directing on which thread the task is executed.
 
-TODO: interfaces for both sync and async scheduling, sync is the most interesting.
+For compatibility Sponge can create an ``ExecutorService`` using the ``Scheduler#createSyncExecutor(Object plugin)`` or 
+``Scheduler#createAsyncExecutor(Object plugin)`` methods which executes tasks on Sponge's synchronous or asynchronous 
+schedulers respectively.
+
+One thing to keep in mind is that any tasks that interacts with Sponge outside of the interactions listed in 
+:ref:`asynchronous-tasks` need to be executed on the ExecutorService created with 
+``Scheduler#createSyncExecutor(Object plugin)`` to be thread-safe.
 
 .. code-block:: java
 
@@ -186,7 +194,8 @@ TODO: interfaces for both sync and async scheduling, sync is the most interestin
     // Execute a task on the primary server thread after 10 seconds
     minecraftExecutor.schedule(() -> { ... }, 10, TimeUnit.SECONDS);
 
-TODO: nearly all large concurrency frameworks support some way of running using this interface
+Almost all libraries have some way of adapting the ``ExecutorService`` to natively schedule tasks.
+As an example the following paragraphs will explain how the ``ExecutorService`` is used in a number of libraries.
 
 CompletableFuture (Java 8)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -202,8 +211,6 @@ CompletableFuture_ is a fluent interface which usually has the following 3 varia
 * ``CompletableFuture#<function>Async(..., Executor ex)`` Executes this function through ``ex``
 * ``CompletableFuture#<function>Async(...)`` Executes this function through ``ForkJoinPool.commonPool()``
 * ``CompletableFuture#<function>(...)`` Executes this function on whatever thread the previous ``CompletableFuture`` was completed on.
-
-It is important to keep in mind where each part of the future is being executed to ensure you maintain thread safety. (See :ref:`asynchronous-tasks`)
 
 .. code-block:: java
 
@@ -241,12 +248,12 @@ Use ``Observable#observeOn(Scheduler scheduler)`` to move between threads.
     
     Observable.defer(() -> Observable.from(Sponge.getServer().getOnlinePlayers()))
               .subscribeOn(minecraftScheduler) // Get the player list on the main thread
-              .observeOn(Schedulers.io()) // Process it asynchronously
+              .observeOn(Schedulers.io()) // Move all future work to other thread
               .filter(player -> {
                   /* do something that requires some work, 
                      like checking player UUID in a database */
               })
-              .observeOn(minecraftScheduler) // Finish work on minecraft's thread
+              .observeOn(minecraftScheduler) // Move back to the server thread
               .subscribe(player -> {
                   player.kick(Text.of("Computer says no"));
               });
@@ -268,8 +275,20 @@ TODO: be explicit about the executioncontext, implicit is dangerous in this situ
     // force work onto the server thread.
     /* implicit */ val ec = ExecutionContext.fromExecutorService(executor)
 	
-    Future {
+    val future = Future {
         /* Do some calculation on the implicit ExecutionContext */
-    } foreach {
-        /* use the value on the main thread */
+    } 
+    
+    // Example of using the value on the server thread
+    future foreach {
+        case value => /* use the value on the main thread */
     }(ec) // Override implicit ExecutionContext with the sponge scheduler
+    
+    // Chaining futures
+    future map {
+        /* turn the future into a Future[Int] on the server thread */
+        case value => 20
+    }(ec).foreach {
+        /* running on the implicit executioncontext */
+        case value => println(value)
+    }
