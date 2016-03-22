@@ -261,9 +261,14 @@ Use ``Observable#observeOn(Scheduler scheduler)`` to move between threads.
 Scala
 ~~~~~
 
-TODO: be explicit about the executioncontext, implicit is dangerous in this situation.
+.. _ExecutionContext: http://www.scala-lang.org/api/current/index.html#scala.concurrent.ExecutionContext$
 
-`ExecutionContext <http://www.scala-lang.org/api/current/index.html#scala.concurrent.ExecutionContext$>`_
+Scala comes with a built-in `Future <http://www.scala-lang.org/api/current/#scala.concurrent.Future>`_ object which a lot of scala framework mirror in design.
+Most methods of the Future accept an ExecutionContext_ which determined where that part of the operation is executed.
+This is different from the CompletableFuture or RxJava since they default to executing on the same thread on which the previous operation ended.
+
+The fact that all these operation try to implicitly find an ``ExecutionContext`` means that you can easily use the default ``ExecutionContext.global`` and 
+specifically run the parts that need to be thread-safe on the Sponge server thread.
 
 .. code-block:: scala
 
@@ -274,6 +279,9 @@ TODO: be explicit about the executioncontext, implicit is dangerous in this situ
     // It is a bad idea to make this executioncontext implicit since it might accidentally
     // force work onto the server thread.
     /* implicit */ val ec = ExecutionContext.fromExecutorService(executor)
+    
+    // Implicitly use the default executor if none are specified
+    import ExecutionContext.Implicits.global
 	
     val future = Future {
         /* Do some calculation on the implicit ExecutionContext */
