@@ -142,8 +142,6 @@ access the task. The below example will schedule a task that will count down fro
             }
         }
     }
-
-.. _asynchronous-tasks:
     
 Asynchronous Tasks
 ~~~~~~~~~~~~~~~~~~
@@ -169,18 +167,21 @@ In addition, there are a few other operations that are safe to do asynchronously
 Compatibility with other libraries
 ==================================
 
-.. _ExecutorService: https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ExecutorService.html
-
 As your plugin grows in size and scope you might want to start using one of the many concurrency libraries available 
 for Java and the JVM.
-These libraries do tend to support Java's ExecutorService_ as a means of directing on which thread the task is executed.
+These libraries do tend to support Java's 
+`ExecutorService <https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ExecutorService.html>` as a means 
+of directing on which thread the task is executed.
 
-For compatibility Sponge can create an ``ExecutorService`` using the ``Scheduler#createSyncExecutor(Object plugin)`` or 
-``Scheduler#createAsyncExecutor(Object plugin)`` methods which executes tasks on Sponge's synchronous or asynchronous 
-schedulers respectively.
+To allow these libraries to work with Sponge's ``Scheduler`` the following methods can be used:
+
+* ``Scheduler#createSyncExecutor(Object plugin)`` creates a ``ScheduledExecutorService`` which executes tasks
+  through Sponge's synchronous scheduler.
+* ``Scheduler#createAsyncExecutor(Object plugin)`` creates a ``ScheduledExecutorService`` which executes tasks
+  through Sponge's asynchronous scheduler. Tasks are subject to the restrictions mentioned in `Asynchronous Tasks`_.
 
 One thing to keep in mind is that any tasks that interacts with Sponge outside of the interactions listed in 
-:ref:`asynchronous-tasks` need to be executed on the ExecutorService created with 
+`Asynchronous Tasks`_ need to be executed on the ExecutorService created with 
 ``Scheduler#createSyncExecutor(Object plugin)`` to be thread-safe.
 
 .. code-block:: java
@@ -203,10 +204,10 @@ CompletableFuture (Java 8)
 .. _CompletableFuture: https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletableFuture.html
 
 With Java 8 the CompletableFuture_ object was added to the standard library.
-Compared to the ``Future`` object this allows for the developer to provide a callback that is called when the future
+Compared to the ``Future`` object, this allows for the developer to provide a callback that is called when the future
 completes rather than blocking the thread until the future eventually completes.
 
-CompletableFuture_ is a fluent interface which usually has the following 3 variations for each of its functions:
+CompletableFuture_ is a fluent interface which usually has the following three variations for each of its functions:
 
 * ``CompletableFuture#<function>Async(..., Executor ex)`` Executes this function through ``ex``
 * ``CompletableFuture#<function>Async(...)`` Executes this function through ``ForkJoinPool.commonPool()``
@@ -262,14 +263,17 @@ Use ``Observable#observeOn(Scheduler scheduler)`` to move between threads.
 Scala
 ~~~~~
 
-.. _ExecutionContext: http://www.scala-lang.org/api/current/index.html#scala.concurrent.ExecutionContext$
+Scala comes with a built-in `Future <http://www.scala-lang.org/api/current/#scala.concurrent.Future>`_ object which 
+a lot of scala framework mirror in design.
+Most methods of the Future accept an 
+`ExecutionContext <http://www.scala-lang.org/api/current/index.html#scala.concurrent.ExecutionContext$>`_ which
+determined where that part of the operation is executed.
+This is different from the CompletableFuture or RxJava since they default to executing on the same thread on which
+the previous operation ended.
 
-Scala comes with a built-in `Future <http://www.scala-lang.org/api/current/#scala.concurrent.Future>`_ object which a lot of scala framework mirror in design.
-Most methods of the Future accept an ExecutionContext_ which determined where that part of the operation is executed.
-This is different from the CompletableFuture or RxJava since they default to executing on the same thread on which the previous operation ended.
-
-The fact that all these operation try to implicitly find an ``ExecutionContext`` means that you can easily use the default ``ExecutionContext.global`` and 
-specifically run the parts that need to be thread-safe on the Sponge server thread.
+The fact that all these operation try to implicitly find an ``ExecutionContext`` means that you can easily use 
+the default ``ExecutionContext.global`` and specifically run the parts that need to be thread-safe on the Sponge 
+server thread.
 
 .. code-block:: scala
 
