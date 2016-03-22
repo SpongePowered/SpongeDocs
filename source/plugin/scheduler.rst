@@ -143,6 +143,8 @@ access the task. The below example will schedule a task that will count down fro
         }
     }
 
+.. _asynchronous-tasks:
+    
 Asynchronous Tasks
 ~~~~~~~~~~~~~~~~~~
 
@@ -167,6 +169,8 @@ In addition, there are a few other operations that are safe to do asynchronously
 Compatibility with other libraries
 ==================================
 
+:ref:`asynchronous-tasks`
+
 TODO: larger plugins mean you probably want to do some work asynchronously, note about standard java concurrency interfaces and thread-safety
 
 TODO: interfaces for both sync and async scheduling, sync is the most interesting.
@@ -175,41 +179,57 @@ TODO: interfaces for both sync and async scheduling, sync is the most interestin
 
     import org.spongepowered.api.scheduler.SpongeExecutorService;
     
-    SpongeExecutorService executor = Sponge.getScheduler().createSyncExecutor(plugin);
+    SpongeExecutorService minecraftExecutor = Sponge.getScheduler().createSyncExecutor(plugin);
     
     // Execute a task on the primary server thread
-    executor.submit(() -> { ... });
+    minecraftExecutor.submit(() -> { ... });
     // Execute a task on the primary server thread after 10 seconds
-    executor.schedule(() -> { ... }, 10, TimeUnit.SECONDS);
+    minecraftExecutor.schedule(() -> { ... }, 10, TimeUnit.SECONDS);
 
 TODO: nearly all large concurrency frameworks support some way of running using this interface
 
 CompletableFuture (Java 8)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-TODO: difference between methods without and with \*Async in their name
+.. _CompletableFuture: https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletableFuture.html
 
-`CompletableFuture <https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletableFuture.html>`_
+With Java 8 the CompletableFuture_ object was added to the standard library.
+Compared to the ``Future`` object this allows for the developer to provide a callback that is called when the future
+completes rather than blocking the thread until the future eventually completes.
+
+CompletableFuture_ is a fluent interface which usually has the following 3 variations for each of its functions:
+
+* ``CompletableFuture#<function>Async(..., Executor ex)`` Executes this function through ``ex``
+* ``CompletableFuture#<function>Async(...)`` Executes this function through ``ForkJoinPool.commonPool()``
+* ``CompletableFuture#<function>(...)`` Executes this function on whatever thread the previous ``CompletableFuture`` was completed on.
+
+It is important to keep in mind where each part of the future is being executed to ensure you maintain thread safety. (See :ref:`asynchronous-tasks`)
 
 .. code-block:: java
 
     import java.util.concurrent.CompletableFuture;
     
-    SpongeExecutorService executor = Sponge.getScheduler().createSyncExecutor(plugin);
+    SpongeExecutorService minecraftExecutor = Sponge.getScheduler().createSyncExecutor(plugin);
 
     CompletableFuture.supplyAsync(() -> {
-        // *Async methods default to running on ForkJoinPool.commonPool()
+        /* Running on ForkJoinPool.commonPool() */
         return /* awesome value */
     }).thenAcceptAsync((awesomeValue) -> {
-        /* use awesomeValue on the main thread */
-    }, executor); // Run this future on our executor
+        /* Running on the server thread */
+    }, minecraftExecutor).thenRun(() -> {
+        /* Beware, this is still running on the server thread */
+    });
 
 RxJava
 ~~~~~~
 
-TODO: link to documentation on schedulers
+`RxJava <https://github.com/ReactiveX/RxJava>`_ is an implementation of the `Reactive Extensions <http://reactivex.io/>`_ concept for the JVM.
 
-`Scheduler <http://reactivex.io/RxJava/javadoc/rx/Scheduler.html>`_
+Multithreading in Rx is managed through various `Schedulers <http://reactivex.io/documentation/scheduler.html>`_.
+Using the ``Schedulers#from(Executor executor)`` function the ``Executor`` provided by Sponge can be turned into a ``Scheduler``.
+
+Much like ``CompletableFuture`` by default actions are executed on the same thread that completed the previous part of the chain.
+Use ``Observable#observeOn(Scheduler scheduler)`` to move between threads.
 
 .. code-block:: java
 
@@ -219,7 +239,7 @@ TODO: link to documentation on schedulers
     SpongeExecutorService executor = Sponge.getScheduler().createSyncExecutor(plugin);
     Scheduler minecraftScheduler = Schedulers.from(executor);
     
-    Observable.defer(() -> Observable.from(Sponge.getServer().getOnlinePlayers())
+    Observable.defer(() -> Observable.from(Sponge.getServer().getOnlinePlayers()))
               .subscribeOn(minecraftScheduler) // Get the player list on the main thread
               .observeOn(Schedulers.io()) // Process it asynchronously
               .filter(player -> {
