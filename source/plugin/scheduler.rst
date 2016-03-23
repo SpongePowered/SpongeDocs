@@ -256,15 +256,15 @@ synchronously using ``Observable#subscribeOn(Scheduler scheduler)``.
     Scheduler minecraftScheduler = Schedulers.from(executor);
     
     Observable.defer(() -> Observable.from(Sponge.getServer().getOnlinePlayers()))
-              .subscribeOn(minecraftScheduler) // defer -> SYNC
-              .observeOn(Schedulers.io()) // -> ASYNC
+              .subscribeOn(minecraftScheduler) // defer -> SYNC: minecraftScheduler
+              .observeOn(Schedulers.io()) // -> ASYNC: Schedulers.io()
               .filter(player -> {
-                  // ASYNC
+                  // ASYNC: Schedulers.io()
                   return "Flards".equals(player.getName());
               })
-              .observeOn(minecraftScheduler) // -> SYNC
+              .observeOn(minecraftScheduler) // -> SYNC: minecraftScheduler
               .subscribe(player -> {
-                  // SYNC
+                  // SYNC: minecraftScheduler
                   player.kick(Text.of("Computer says no"));
               });
 
