@@ -190,9 +190,8 @@ One thing to keep in mind is that any tasks that interacts with Sponge outside o
     
     SpongeExecutorService minecraftExecutor = Sponge.getScheduler().createSyncExecutor(plugin);
     
-    // Execute a task on the primary server thread
     minecraftExecutor.submit(() -> { ... });
-    // Execute a task on the primary server thread after 10 seconds
+    
     minecraftExecutor.schedule(() -> { ... }, 10, TimeUnit.SECONDS);
 
 Almost all libraries have some way of adapting the ``ExecutorService`` to natively schedule tasks.
@@ -220,24 +219,32 @@ CompletableFuture_ is a fluent interface which usually has the following three v
     SpongeExecutorService minecraftExecutor = Sponge.getScheduler().createSyncExecutor(plugin);
 
     CompletableFuture.supplyAsync(() -> {
-        /* Running on ForkJoinPool.commonPool() */
-        return /* awesome value */
+        // ASYNC: ForkJoinPool.commonPool()
+        return 42
     }).thenAcceptAsync((awesomeValue) -> {
-        /* Running on the server thread */
+        // SYNC: minecraftExecutor
     }, minecraftExecutor).thenRun(() -> {
-        /* Beware, this is still running on the server thread */
+        // SYNC: minecraftExecutor
     });
 
 RxJava
 ~~~~~~
 
-`RxJava <https://github.com/ReactiveX/RxJava>`_ is an implementation of the `Reactive Extensions <http://reactivex.io/>`_ concept for the JVM.
+`RxJava <https://github.com/ReactiveX/RxJava>`_ is an implementation of the 
+`Reactive Extensions <http://reactivex.io/>`_ concept for the JVM.
 
-Multithreading in Rx is managed through various `Schedulers <http://reactivex.io/documentation/scheduler.html>`_.
-Using the ``Schedulers#from(Executor executor)`` function the ``Executor`` provided by Sponge can be turned into a ``Scheduler``.
+Multithreading in Rx is managed through various 
+`Schedulers <http://reactivex.io/documentation/scheduler.html>`_.
+Using the ``Schedulers#from(Executor executor)`` function the ``Executor`` provided by Sponge can be turned into a 
+``Scheduler``.
 
-Much like ``CompletableFuture`` by default actions are executed on the same thread that completed the previous part of the chain.
+Much like ``CompletableFuture`` by default actions are executed on the same thread that completed the previous part 
+of the chain.
 Use ``Observable#observeOn(Scheduler scheduler)`` to move between threads.
+
+One important thing to bear in mind is that the root ``Observable`` gets invoked on whatever thread 
+``Observable#subscribe()`` was called on. If the root observable interacts with Sponge it should be forced to run 
+synchronously using ``Observable#subscribeOn(Scheduler scheduler)``.
 
 .. code-block:: java
 
@@ -249,14 +256,15 @@ Use ``Observable#observeOn(Scheduler scheduler)`` to move between threads.
     Scheduler minecraftScheduler = Schedulers.from(executor);
     
     Observable.defer(() -> Observable.from(Sponge.getServer().getOnlinePlayers()))
-              .subscribeOn(minecraftScheduler) // Get the player list on the main thread
-              .observeOn(Schedulers.io()) // Move all future work to other thread
+              .subscribeOn(minecraftScheduler) // defer -> SYNC
+              .observeOn(Schedulers.io()) // -> ASYNC
               .filter(player -> {
-                  /* do something that requires some work, 
-                     like checking player UUID in a database */
+                  // ASYNC
+                  return "Flards".equals(player.getName());
               })
-              .observeOn(minecraftScheduler) // Move back to the server thread
+              .observeOn(minecraftScheduler) // -> SYNC
               .subscribe(player -> {
+                  // SYNC
                   player.kick(Text.of("Computer says no"));
               });
 
@@ -275,33 +283,29 @@ The fact that all these operation try to implicitly find an ``ExecutionContext``
 the default ``ExecutionContext.global`` and specifically run the parts that need to be thread-safe on the Sponge 
 server thread.
 
+To avoid accidentally scheduling work on through the Sponge ``ExecutorContext`` another context should be implicitly
+defined so it acts as the default choice. To maintain thread safety only the functions that actually interact with Sponge
+will need to have the Sponge executor specified.
+
 .. code-block:: scala
 
     import scala.concurrent.ExecutionContext
 
     val executor = Sponge.getScheduler().createSyncExecutor(plugin)
 
-    // It is a bad idea to make this executioncontext implicit since it might accidentally
-    // force work onto the server thread.
-    /* implicit */ val ec = ExecutionContext.fromExecutorService(executor)
-    
-    // Implicitly use the default executor if none are specified
     import ExecutionContext.Implicits.global
+    val ec = ExecutionContext.fromExecutorService(executor)
 	
     val future = Future {
-        /* Do some calculation on the implicit ExecutionContext */
+        // ASYNC: ExecutionContext.Implicits.global
     } 
     
-    // Example of using the value on the server thread
     future foreach {
-        case value => /* use the value on the main thread */
-    }(ec) // Override implicit ExecutionContext with the sponge scheduler
+        case value => // SYNC: ec
+    }(ec)
     
-    // Chaining futures
     future map {
-        /* turn the future into a Future[Int] on the server thread */
-        case value => 20
+        case value => 42 // SYNC: ec
     }(ec).foreach {
-        /* running on the implicit executioncontext */
-        case value => println(value)
+        case value => println(value) // ASYNC: ExecutionContext.Implicits.global
     }
