@@ -51,4 +51,5 @@ Contents
     manager
     debugging
     messagechannels
+    ray-tracing
     tutorials
