@@ -2,8 +2,8 @@
 Art Assets
 ==========
 
-This page provides the official SpongePowered logo and mascot. Feel free to use them to spread the word about Sponge.
-However note that these images are **not** provided under the MIT License.
+This page provides links to the official SpongePowered logo and mascot. Feel free to use them to spread the word about
+Sponge. However note that these images are **not** provided under the MIT License.
 
 .. note::
   If you're reading a translated version, please note that the English license is the one which counts. Translated
@@ -37,16 +37,8 @@ You may not:
 * Change any colors or dimensions.
 
 
-The Official Sponge Logo
-~~~~~~~~~~~~~~~~~~~~~~~~
+The Official Sponge Art Assets Repository
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: /images/logo-spongepowered.png
-    :align: center
-    :alt: official SpongePowered logo
-
-Spongie - The Official Sponge Mascot
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. image:: /images/logo-spongie.png
-    :align: center
-    :alt: Spongie the SpongePowered mascot
+In the future all Sponge related assets are available on our assets repository. You'll find it here: 
+`Official SpongePowered Art Assets Repository <https://github.com/SpongePowered/SpongeAssets/>`_
