@@ -220,7 +220,7 @@ CompletableFuture_ is a fluent interface which usually has the following three v
 
     CompletableFuture.supplyAsync(() -> {
         // ASYNC: ForkJoinPool.commonPool()
-        return 42
+        return 42;
     }).thenAcceptAsync((awesomeValue) -> {
         // SYNC: minecraftExecutor
     }, minecraftExecutor).thenRun(() -> {
