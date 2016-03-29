@@ -114,13 +114,17 @@ listeners, including those registered with ``@Listener`` annotations.
     MyPlugin plugin = ...
     Sponge.getEventManager().unregisterPluginListeners(plugin);
 
+.. _about_listener:
+
 About @Listener
 ~~~~~~~~~~~~~~~~
 
 The ``@Listener`` annotation has a few configurable fields:
 
-* ``order`` is the order in which the event listener is to be run. See the ``org.spongepowered.api.event.Order`` enum
-  in Sponge to see the available options.
+* ``order`` is the priority in which the event listener is to be run. See the ``org.spongepowered.api.event.Order``
+  enum in the SpongeAPI to see the available options.
+* ``beforeModifications`` specifies if the event listener should be called before other server mods, such as Forge
+  mods. By default, this is set to false.
 
 By default, ``@Listener`` is configured so that your event listener will *not* be called if the event in question is
 cancellable and has been cancelled (such as by another plugin).
