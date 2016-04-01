@@ -28,7 +28,7 @@ Editing the build script
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 * Open ``build.gradle`` in the navigator and add the dependencies.
-* Edit the build script according to the instructions at :doc:`dependencies`.
+* Edit the build script according to the instructions :doc:`here <../project/gradle>`.
 * Open the **Gradle tab** on the right of the IntelliJ window and hit the refresh button.
 * Gradle setup is done! Now you can start coding your plugin.
 
