@@ -57,7 +57,7 @@ For developing plugins without a build system you need to download the SpongeAPI
 dependencies that would normally be automatically downloaded by the build system.
 
 After you have downloaded the ``shaded`` artifact and have added it to a project in your IDE, you can start developing
-your plugin. Continue at :doc:`plugin-identifier` for choosing an identifier for your project, then continue at TODO:
+your plugin. Continue at :doc:`plugin-identifier` for choosing an identifier for your project, then continue at :doc:`plugin-class`.
 
 .. _Gradle: https://gradle.org/
 .. _Maven: https://maven.apache.org/
