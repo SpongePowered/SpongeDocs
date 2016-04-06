@@ -139,7 +139,7 @@ Overview of the ``GenericArguments`` command elements
 +----------------------------+-----------------------------------------------------------------------------------------+-------------------------------+
 | ``flags``                  | Returns a builder for command flags (e.g. ``/cmd [-a] [-b <value>]``).                  | Short Flag: one ``Boolean``   |
 |                            |                                                                                         |                               |
-|                            | See `Flags`_                                                                            | Long Flag: one ``String``     |
+|                            | See :doc:`flags`                                                                        | Long Flag: one ``String``     |
 |                            |                                                                                         |                               |
 |                            |                                                                                         | Value Flag: inherited         |
 +----------------------------+-----------------------------------------------------------------------------------------+-------------------------------+
@@ -151,11 +151,6 @@ Overview of the ``GenericArguments`` command elements
 
     See the `Javadocs for GenericArguments <https://jd.spongepowered.org/org/spongepowered/api/command/args/GenericArguments.html>`_
     for more information.
-
-Flags
-=====
-
-Coming soon...
 
 Custom Command Elements
 =======================

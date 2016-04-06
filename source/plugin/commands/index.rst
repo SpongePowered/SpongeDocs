@@ -24,6 +24,7 @@ Contents
 
 	creating
 	arguments
+	flags
 	childcommands
 	service
 	commandcallable
