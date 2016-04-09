@@ -30,20 +30,23 @@
   <body class="homepage">
     <div class="topbar">
       <div role="navigation" aria-label="related navigation">
-        <div class="menu-left">
-          <a href="https://docs.spongepowered.org">
-            <img src="_static/spongelogo.png" height="40px" style="vertical-align:middle"/>
-            <i class="icon-down-open-big lights-icon" style="vertical-align:middle"></i>
+        <div class="sp-logo-container sp-not-mobileview sp-mobileview">
+          <a class="sp-logo-link" data-auto-route="true" href="/">
+            <img height="40px" id="site-logo" class="logo-big" alt="Sponge Forums" src="_static/spongelogo.png">
           </a>
-          <ul class="dropdown" id="ddleft">
-            <a href="https://www.spongepowered.org"><li><i class="icon-home lights-icon"></i> Homepage</li></a>
-            <a href="https://forums.spongepowered.org"><li><i class="icon-pencil lights-icon"></i> Forums</li></a>
-            <a href="https://github.com/SpongePowered"><li><i class="icon-code lights-icon"></i> Code</li></a>
-            <a href="https://docs.spongepowered.org"><li class="active"><i class="icon-book-open lights-icon"></i> SpongeDocs</li></a>
-            <a href="https://jd.spongepowered.org"><li><i class="icon-graduation-cap lights-icon"></i> JavaDocs</li></a>
-            <a href="https://forums.spongepowered.org/c/plugins/plugin-releases"><li><i class="icon-tools lights-icon"></i> Plugins</li></a>
-            <a href="https://forums.spongepowered.org/t/sponge-downloads/11448"><li><i class="icon-download lights-icon"></i> Get Sponge</li></a>
-          </ul>
+          <div class="sp-logo-bg"></div>
+          <div class="sp-logo-chevron"><i style="vertical-align:middle" class="icon-down-open-big lights-icon"></i></div>
+          <div class="sp-logo-menu sp-skip-handler">
+            <ul class="sp-logo-dropdown" id="ddleft">
+              <a href="https://www.spongepowered.org"><li><i class="icon-home lights-icon"></i> Homepage</li></a>
+              <a href="https://forums.spongepowered.org"><li><i class="icon-pencil lights-icon"></i> Forums</li></a>
+              <a href="https://github.com/SpongePowered"><li><i class="icon-code lights-icon"></i> Code</li></a>
+              <a class="sp-forums-home" href="https://docs.spongepowered.org"><li class="active"><i class="icon-book-open lights-icon"></i> SpongeDocs</li></a>
+              <a href="https://jd.spongepowered.org"><li><i class="icon-graduation-cap lights-icon"></i> JavaDocs</li></a>
+              <a href="https://forums.spongepowered.org/c/plugins/plugin-releases"><li><i class="icon-tools lights-icon"></i> Plugins</li></a>
+              <a href="https://forums.spongepowered.org/t/sponge-downloads/11448"><li><i class="icon-download lights-icon"></i> Get Sponge</li></a>
+            </ul>
+          </div>
         </div>
         <div class="menu-right">
           <div><i class="icon-language lights-icon"></i></div>
