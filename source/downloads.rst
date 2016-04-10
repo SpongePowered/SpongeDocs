@@ -27,9 +27,12 @@ SpongeForge
 SpongeVanilla
 ~~~~~~~~~~~~~
 
-* **Status:** Alpha. The first alpha build of SpongeVanilla (DEV#17) was released on September 13th, 2015.
+* **Status:** Beta. 
 
-`SpongeVanilla alpha development builds are available here! <https://repo.spongepowered.org/maven/org/spongepowered/spongevanilla/>`__
+* The first alpha build of SpongeVanilla (DEV#17) was released on September 13th, 2015.
+* The first beta build of SpongeVanilla (BETA#129) was released on December 31st, 2015.
+
+`SpongeVanilla beta development builds are available here! <https://repo.spongepowered.org/maven/org/spongepowered/spongevanilla/>`__
 
 * `SpongeVanilla on GitHub <https://github.com/SpongePowered/SpongeVanilla>`_
 
