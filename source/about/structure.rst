@@ -2,7 +2,7 @@
 The Structure of the Sponge Project
 ===================================
 
-The Sponge Project consists of different subprojects, hosted in various repositories on Github. Here's a short overview
+The Sponge Project consists of different subprojects, hosted in various repositories on GitHub. Here's a short overview
 before going into detail:
 
 +-------------------------------------------------------------------+-------------------------------------------------------+---------------------------------------------------------------------------------+
@@ -39,7 +39,7 @@ building SpongeForge or SpongeVanilla from the repository *without* including Sp
 Ore
 ===
 
-Ore is our very own plugin hosting solution. It's written in Python, based on Django and of course open-source!
+Ore is our very own plugin hosting solution. It's written in Scala, based on the Play Framework and of course open-source!
 
 How everything is tied together
 ===============================
