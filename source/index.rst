@@ -22,8 +22,8 @@ or visit their repositories on GitHub:
 
 `SpongeForge <https://github.com/spongepowered/spongeforge>`_ |
 `SpongeVanilla <https://github.com/spongepowered/spongevanilla>`_ | `SpongeAPI <https://github.com/spongepowered/spongeapi>`_ |
-`SpongeDocs <https://github.com/spongepowered/spongedocs>`_ | `Mixin <https://github.com/SpongePowered/Mixin>`_ |
-`Ore <https://github.com/SpongePowered/Ore>`_
+`SpongeDocs <https://github.com/spongepowered/spongedocs>`_ | `SpongeHome <https://github.com/SpongePowered/SpongeHome>`_ |
+`Mixin <https://github.com/SpongePowered/Mixin>`_ |  `Ore <https://github.com/SpongePowered/Ore>`_
 
 .. note::
 
