@@ -13,7 +13,6 @@ For example, let's try to spawn a Creeper:
     import org.spongepowered.api.entity.Entity;
     import org.spongepowered.api.entity.EntityTypes;
     import org.spongepowered.api.event.cause.Cause;
-    import org.spongepowered.api.event.cause.NamedCause;
     import org.spongepowered.api.event.cause.entity.spawn.EntitySpawnCause;
     import org.spongepowered.api.event.cause.entity.spawn.SpawnTypes;
     import org.spongepowered.api.world.Location;
@@ -29,8 +28,8 @@ For example, let's try to spawn a Creeper:
         if (optional.isPresent()) {
             Entity creeper = optional.get();
             extent.spawnEntity(creeper,
-                Cause.of(NamedCause.source(EntitySpawnCause.builder()
-                .entity(creeper).type(SpawnTypes.PLUGIN).build())));
+                Cause.source(EntitySpawnCause.builder()
+                .entity(creeper).type(SpawnTypes.PLUGIN).build()).build());
         }
     }
 

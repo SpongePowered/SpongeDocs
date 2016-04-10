@@ -83,7 +83,6 @@ graphical representation of an ``ItemStack`` is ``Item``, we can spawn it in sim
     import org.spongepowered.api.entity.Entity;
     import org.spongepowered.api.entity.EntityTypes;
     import org.spongepowered.api.event.cause.Cause;
-    import org.spongepowered.api.event.cause.NamedCause;
     import org.spongepowered.api.event.cause.entity.spawn.EntitySpawnCause;
     import org.spongepowered.api.event.cause.entity.spawn.SpawnTypes;
     import org.spongepowered.api.world.Location;
@@ -99,8 +98,8 @@ graphical representation of an ``ItemStack`` is ``Item``, we can spawn it in sim
         if (optional.isPresent()) {
             Entity item = optional.get();
             item.offer(Keys.REPRESENTED_ITEM, superMegaAwesomeSword.createSnapshot());
-            extent.spawnEntity(item, Cause.of(NamedCause.source(EntitySpawnCause.builder()
-                .entity(item).type(SpawnTypes.PLUGIN).build())));
+            extent.spawnEntity(item, Cause.source(EntitySpawnCause.builder()
+                .entity(item).type(SpawnTypes.PLUGIN).build()).build());
         }
     }
 
