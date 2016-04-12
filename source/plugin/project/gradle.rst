@@ -63,18 +63,15 @@ These few lines handle most settings you would normally do manually:
 Manually setting the plugin ID
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-By default, the Gradle plugin will configure your **plugin ID** with the group and project name (in lowercase) you have
-configured. If you want to use a custom **plugin ID** and still use the :doc:`/plugin/plugin-meta` integration you can
-change it manually:
-
-.. warning::
-    You need to set the **plugin ID group** manually when changing the plugin ID.
+By default, the Gradle plugin will configure your **plugin ID** with project name (in lowercase) you have configured.
+If you want to use a custom **plugin ID** and still use the :doc:`/plugin/plugin-meta` integration you can change it
+manually:
 
 .. code-block:: groovy
 
     sponge {
         plugin {
-            id = 'com.example.mypluginid'
+            id = 'mypluginid'
         }
     }
 
