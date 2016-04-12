@@ -23,7 +23,7 @@ You can define the additional (optional) plugin metadata on your ``@Plugin`` ann
 
     import org.spongepowered.api.plugin.Plugin;
 
-    @Plugin(id = "com.example.myplugin", name = "My Plugin", version = "1.0",
+    @Plugin(id = "myplugin", name = "My Plugin", version = "1.0",
         description = "This is a very cool plugin I made for me",
         authors = {"Spongie", "FLARD"},
         url = "http://example.com")
@@ -56,7 +56,7 @@ file that could be used by a Sponge plugin:
 .. code-block:: json
 
     [{
-        "modid": "com.example.myplugin",
+        "modid": "myplugin",
         "name": "My Plugin",
         "version": "1.0",
         "description": "This is a very cool plugin I made for me",

@@ -21,9 +21,6 @@ package name, if you own a domain. However, in the event that you do not own a d
 email address (such as ``com.gmail.username.project``) or an open-source repository
 (such as ``io.github.username.project``).
 
-If you're using a full qualified plugin ID (e.g. ``io.github.username.myplugin``) you can use that directly as your
-package name.
-
 After creating your main class, the ``@Plugin`` annotation must be affixed to it. This annotation allows Sponge to
 easily find your main plugin class when your plugin is loaded. An example usage is illustrated below.
 
@@ -33,7 +30,7 @@ easily find your main plugin class when your plugin is loaded. An example usage 
 
     import org.spongepowered.api.plugin.Plugin;
 
-    @Plugin(id = "io.github.username.exampleplugin", name = "Example Plugin", version = "1.0")
+    @Plugin(id = "exampleplugin", name = "Example Plugin", version = "1.0")
     public final class ExamplePlugin {
 
     }
@@ -56,7 +53,7 @@ game. In the example below, ``onServerStart()`` is called when the ``GameStarted
     import org.spongepowered.api.event.Listener;
     import org.spongepowered.api.event.game.state.GameStartedServerEvent;
 
-    @Plugin(id = "io.github.username.exampleplugin", name = "Example Plugin", version = "1.0")
+    @Plugin(id = "exampleplugin", name = "Example Plugin", version = "1.0")
     public final class ExampleProject {
         @Listener
         public void onServerStart(GameStartedServerEvent event) {

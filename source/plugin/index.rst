@@ -26,9 +26,9 @@ Contents
     :titlesonly:
 
     buildsystem
-    plugin-identifier
     workspace/index
     project/index
+    plugin-identifier
     plugin-class
     lifecycle
     injection

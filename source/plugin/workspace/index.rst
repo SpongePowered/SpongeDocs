@@ -13,4 +13,3 @@ Contents
 
     idea
     eclipse
-    netbeans

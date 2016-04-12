@@ -62,10 +62,8 @@ Creating your project
 * Select ``Create a simple project``, unless you require a more advanced setup.
 * Enter your **Group ID**, **Artifact ID**, **Version**, project name, and project description.
 
-  * Your **Group ID** should usually correspond to your the **plugin group ID** you chose earlier, e.g.
-    ``io.github.username``.
-  * Your **Artifact ID** should usually correspond to your **unqualified plugin ID** you chose earlier, e.g.
-    ``myplugin``.
+  * Your **Group ID** should usually correspond to your Java package name. See :doc`../plugin-class` for details.
+  * Your **Artifact ID** should usually correspond to your **plugin ID** you chose earlier, e.g. ``myplugin``.
   * Your **Version** is up to you.
 
 * Click ``Finish``.

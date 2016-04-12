@@ -8,21 +8,12 @@ plugin ID (e.g. when defining plugin dependencies). The plugin ID is also used f
 folders for your plugin.
 
 .. note::
-    Plugin IDs must be lowercase and only contain characters from a-z, dashes, underscores or dots. It cannot end with a
-    dash, underscore or dot. The plugin name does **not** have such a limitation and can even contain spaces or special
-    characters.
+    Plugin IDs must be lowercase and may only contain characters from a-z, dashes, underscores or dots. It cannot end
+    with a dash, underscore or dot. The plugin name does **not** have such a limitation and can even contain spaces or
+    special characters.
 
-While it is valid to use a plugin ID like ``exampleplugin`` we recommend **qualified plugin IDs** for public plugins.
-Qualifying your plugin ID with a **group ID** ensures there are no conflicts between plugins, even if they would
-normally have the same plugin ID.
-
-The recommended format for **group IDs** follows the `naming conventions of Java packages
-<http://docs.oracle.com/javase/tutorial/java/package/namingpkgs.html>`_. If you own a domain (for example
-``example.com``), the group ID you would use would be ``com.example``. However, in the event that you do not own a
-domain, a common practice is to use an email address (such as ``com.gmail.username``) or an open-source repository (such
-as ``io.github.username``).
-
-The resulting **plugin ID** should be prefixed with the group ID separated by a **dot**. A good example for a qualified
-plugin ID would be ``io.github.username.myplugin`` or ``com.example.myplugin`` if you own the ``example.com`` domain.
+Keep in mind your plugin ID will be the main identification of your plugin, used in other plugins as dependencies, for
+your configuration files, as well as other properties stored for your plugin. That's why it is important you always
+choose a proper plugin ID directly, because changing it again later will be difficult.
 
 Continue at :doc:`workspace/index` for an introduction how to set up your project in your IDE.
