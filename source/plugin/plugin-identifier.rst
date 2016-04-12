@@ -16,4 +16,4 @@ Keep in mind your plugin ID will be the main identification of your plugin, used
 your configuration files, as well as other properties stored for your plugin. That's why it is important you always
 choose a proper plugin ID directly, because changing it again later will be difficult.
 
-Continue at :doc:`workspace/index` for an introduction how to set up your project in your IDE.
+Continue at :doc:`plugin-class` for an introduction how to set up your plugin class.
