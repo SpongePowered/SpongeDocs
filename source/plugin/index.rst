@@ -51,7 +51,7 @@ Contents
     wgen/index
     manager
     debugging
-    plugin-
+    plugin-meta
     ray-tracing
     bukkit-sponge-compare
     tutorials
