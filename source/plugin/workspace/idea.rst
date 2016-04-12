@@ -16,7 +16,7 @@ Creating your project
 * Select ``Gradle`` in the popup, and click ``Next``.
 * Enter your **Group ID**, **Artifact ID**, and **Version**.
 
-  * Your **Group ID** should usually correspond to your Java package name. See :doc`../plugin-class` for details.
+  * Your **Group ID** should usually correspond to your Java package name. See :doc:`../plugin-class` for details.
   * Your **Artifact ID** should usually correspond to your **plugin ID** you chose earlier, e.g. ``myplugin``.
   * Your **Version** is up to you.
 
@@ -26,7 +26,7 @@ Editing the build script
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 * Open ``build.gradle`` in the navigator and add the dependencies.
-* Edit the build script according to the instructions :doc:`here <../project/gradle>`.
+* Edit the build script according to the instructions at :doc:`../project/gradle`.
 * Open the **Gradle tab** on the right of the IntelliJ window and hit the refresh button.
 * Gradle setup is done! Now you can start coding your plugin.
 
@@ -51,7 +51,7 @@ Creating your project
 * Select ``Maven`` in the popup, and click ``Next``.
 * Enter your **Group ID**, **Artifact ID**, and **Version**.
 
-  * Your **Group ID** should usually correspond to your Java package name. See :doc`../plugin-class` for details.
+  * Your **Group ID** should usually correspond to your Java package name. See :doc:`../plugin-class` for details.
   * Your **Artifact ID** should usually correspond to your **plugin ID** you chose earlier, e.g. ``myplugin``.
   * Your **Version** is up to you.
 
@@ -61,12 +61,9 @@ Creating your project
 Editing the project configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. TODO: How does this work? That wouldn't add Sponge's Maven repository
-
 * Open ``pom.xml`` in the navigator.
-* With the editor tab in focus, choose ``Code > Generate``.
-* Click ``Dependency`` in the popup.
-* Search for the Sponge API Maven artifact under **Search by artifact**, and click ``Add``. See TODO for details.
+* Edit the build configuration according to the instructions at :doc:`../project/maven`.
+* Refresh your Maven project.
 * Import the Maven changes, if prompted.
 
 Importing your project

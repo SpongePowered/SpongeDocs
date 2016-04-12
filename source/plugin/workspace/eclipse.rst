@@ -35,7 +35,7 @@ Editing the build script
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 * Open ``build.gradle`` in the navigator.
-* Edit the build script according to the instructions at TODO.
+* Edit the build script according to the instructions at :doc:`../project/gradle`.
 * Right-click your project, and select ``Gradle > Refresh Dependencies``.
 
 Importing your project
@@ -62,7 +62,7 @@ Creating your project
 * Select ``Create a simple project``, unless you require a more advanced setup.
 * Enter your **Group ID**, **Artifact ID**, **Version**, project name, and project description.
 
-  * Your **Group ID** should usually correspond to your Java package name. See :doc`../plugin-class` for details.
+  * Your **Group ID** should usually correspond to your Java package name. See :doc:`../plugin-class` for details.
   * Your **Artifact ID** should usually correspond to your **plugin ID** you chose earlier, e.g. ``myplugin``.
   * Your **Version** is up to you.
 
@@ -76,12 +76,9 @@ Creating your project
 Editing the project configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. TODO: How does this work? That wouldn't add Sponge's Maven repository
-
 * Open ``pom.xml`` in the navigator.
-* Click the ``Dependencies`` tab on the bottom, and click ``Add``.
-* Enter the **Group ID**, **Artifact ID**, and **Version** of the Sponge API Maven artifact. See TODO for details.
-* Click ``OK``.
+* Edit the build configuration according to the instructions at :doc:`../project/maven`.
+* Refresh your Maven project.
 
 Importing your project
 ~~~~~~~~~~~~~~~~~~~~~~

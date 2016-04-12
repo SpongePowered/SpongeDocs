@@ -1,6 +1,6 @@
-======
-Gradle
-======
+=================
+Setting Up Gradle
+=================
 
 Generally, everything necessary to compile a Sponge plugin using Gradle can be done by simply adding the SpongeAPI
 dependency to your project:
