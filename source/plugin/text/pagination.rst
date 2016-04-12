@@ -7,22 +7,23 @@ The Pagination Service
     For a basic understanding of services, make sure you read :doc:`../services` first.
 
 The ``PaginationService`` acts as a way to split up content into discrete pages.
-The service provides a ``PaginationBuilder`` with which you can specify attributes such as title, contents, header,
+The service provides a ``PaginationList.Builder`` with which you can specify attributes such as title, contents, header,
 and padding.
 
-Working With the PaginationBuilder
-==================================
+Working With the Pagination Builder
+===================================
 
-First obtain an instance of the ``PaginationService``, and create a new ``PaginationBuilder``:
+First obtain an instance of the ``PaginationService``, and create a new ``PaginationList.Builder``:
 
 .. code-block:: java
 
     import org.spongepowered.api.Sponge;
-    import org.spongepowered.api.service.pagination.PaginationBuilder;
+    import org.spongepowered.api.service.pagination.PaginationList;
     import org.spongepowered.api.service.pagination.PaginationService;
 
-    PaginationService paginationService = Sponge.getServiceManager().provide(PaginationService.class).get();
-    PaginationBuilder builder = paginationService.builder();
+    PaginationService paginationService =
+        Sponge.getServiceManager().provide(PaginationService.class).get();
+    PaginationList.Builder builder = paginationService.builder();
 
 There are two different ways to specify the contents of paginated list:
 
@@ -76,17 +77,17 @@ To achieve the preceding output, we might use the following builder pattern:
         .contents(Text.of("Item 1"), Text.of("Item 2"), Text.of("Item 3"))
         .header(Text.of("Header"))
         .footer(Text.of("Footer"))
-        .paddingString("p");
+        .padding(Text.of("p"));
 
 .. note::
 
     With the exception of contents, all components of the paginated list are optional. However, a title is strongly
-    recommended
+    recommended.
 
-Finally, to send the paginated list to a ``CommandSource``, use ``PaginationBuilder#sendTo(CommandSource source)``.
+Finally, to send the paginated list to a ``CommandSource``, use ``PaginationList.Builder#sendTo()``.
 
 And thats it! To recap, a fully functional paginated list could be generated and sent to a previously defined
-``cmdSource`` using the following code:
+``msgReceiver`` using the following code:
 
 .. code-block:: java
 
@@ -97,5 +98,5 @@ And thats it! To recap, a fully functional paginated list could be generated and
         .contents(Text.of("Item 1"), Text.of("Item 2"), Text.of("Item 3"))
         .header(Text.of("Header"))
         .footer(Text.of("Footer"))
-        .paddingString("p")
-        .sendTo(cmdSource);
+        .padding(Text.of("p"))
+        .sendTo(msgReceiver);

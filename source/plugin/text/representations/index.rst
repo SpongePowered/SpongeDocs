@@ -12,6 +12,7 @@ applicable formats:
     formatting-code-legacy
     xml
     json
+    configurate
 
 The ``org.spongepowered.api.text.serializer.TextSerializers`` class provides three ``TextSerializer``\ s for serializing
 to a representative ``String`` or deserializing to a ``Text`` instance:

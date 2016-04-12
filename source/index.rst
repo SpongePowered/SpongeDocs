@@ -17,15 +17,17 @@ Server owners should read our tips and instructions in :doc:`server/index` on ho
 based server.
 
 
-The Sponge project has several main components currently, visit their repositories on GitHub or learn more about them
-:doc:`here <about/structure>`: `SpongeForge <https://github.com/spongepowered/spongeforge>`_ |
+The Sponge project has several main components. Learn more about the project structure :doc:`here <about/structure>`
+or visit their repositories on GitHub: 
+
+`SpongeForge <https://github.com/spongepowered/spongeforge>`_ |
 `SpongeVanilla <https://github.com/spongepowered/spongevanilla>`_ | `SpongeAPI <https://github.com/spongepowered/spongeapi>`_ |
 `SpongeDocs <https://github.com/spongepowered/spongedocs>`_ | `Mixin <https://github.com/SpongePowered/Mixin>`_ |
 `Ore <https://github.com/SpongePowered/Ore>`_
 
 .. note::
 
-    Sponge is still in development. Beta builds of SpongeForge and alpha builds of SpongeVanilla are currently
+    Sponge is still in development. Beta builds of both SpongeForge and SpongeVanilla are currently
     available for :doc:`downloads`, but an official release will not be available until later in 2016.
 
 Contents
@@ -79,7 +81,7 @@ Look here if you want to help out in making Sponge better. Make Spongie proud!
 About Sponge
 ~~~~~~~~~~~~
 
-This section contains basic information about the project, read this if you're confused about Sponge, its parts and our
+This section contains basic information about the project, read this if you're confused about Sponge, its parts, or our
 goals.
 
 .. toctree::

@@ -3,11 +3,11 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <link rel="stylesheet" href="en/_static/basic.css" type="text/css" />
-    <link rel="stylesheet" href="en/_static/sponge.css" type="text/css" />
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sponge.css" type="text/css" />
     <link href='//fonts.googleapis.com/css?family=Roboto:400italic,700italic,700,400' rel='stylesheet' type='text/css'>
 
-    <script src="en/_static/jquery.js"></script>
+    <script src="_static/jquery.js"></script>
     <script>
       $(function () {
         $('.langs').css('visibility', 'visible').hide().fadeIn(200);
@@ -28,28 +28,75 @@
     <title>Sponge Documentation</title>
   </head>
   <body class="homepage">
+    <div class="topbar">
+      <div role="navigation" aria-label="related navigation">
+        <div class="sp-logo-container sp-not-mobileview sp-mobileview">
+          <a class="sp-logo-link" data-auto-route="true" href="/">
+            <img height="40px" id="site-logo" class="logo-big" alt="Sponge Forums" src="_static/spongelogo.png">
+          </a>
+          <div class="sp-logo-bg"></div>
+          <div class="sp-logo-chevron"><i style="vertical-align:middle" class="icon-down-open-big lights-icon"></i></div>
+          <div class="sp-logo-menu sp-skip-handler">
+            <ul class="sp-logo-dropdown" id="ddleft">
+              <a href="https://www.spongepowered.org"><li><i class="icon-home lights-icon"></i> Homepage</li></a>
+              <a href="https://forums.spongepowered.org"><li><i class="icon-pencil lights-icon"></i> Forums</li></a>
+              <a href="https://github.com/SpongePowered"><li><i class="icon-code lights-icon"></i> Code</li></a>
+              <a class="sp-forums-home" href="https://docs.spongepowered.org"><li class="active"><i class="icon-book-open lights-icon"></i> SpongeDocs</li></a>
+              <a href="https://jd.spongepowered.org"><li><i class="icon-graduation-cap lights-icon"></i> JavaDocs</li></a>
+              <a href="https://forums.spongepowered.org/c/plugins/plugin-releases"><li><i class="icon-tools lights-icon"></i> Plugins</li></a>
+              <a href="https://forums.spongepowered.org/t/sponge-downloads/11448"><li><i class="icon-download lights-icon"></i> Get Sponge</li></a>
+            </ul>
+          </div>
+        </div>
+        <div class="menu-right">
+          <div><i class="icon-language lights-icon"></i></div>
+            <ul class="dropdown" id="ddlang">
+              {|#langs|}
+              <li><a href="master/{|crowdin_code|}/" class="lang"><img src="//d1ztvzf22lmr1j.cloudfront.net/images/flags/{|crowdin_code|}.png" alt="Flag for {|name|}"/></a></li>
+              {|/langs|}
+            </ul>
+        </div>
+        <div class="menu-right">
+          <div><i class="icon-tag lights-icon"></i><a>Version</a></div>
+            <ul class="dropdown" id="ddvers">
+              <li><a href="master/en/"><i class="icon-tag lights-icon"></i> latest</a></li>
+              {[#vers]}
+              <li><a href="{[apiversion]}/en/"><i class="icon-tag lights-icon"></i> {[apiversion]}</a></li>
+              {[/vers]}
+            </ul>
+        </div>
+        <h3>{{ _('Navigation') }}</h3>
+      </div>
+    </div>
+
     <div class="landing">
       <div class="row center">
         <h1>Welcome to the Sponge Documentation</h1>
-        <p class="info-text">The official, curated documentation for the Sponge project.</p>
-        <div class="search-wrapper">
-          <form class="search" action="en/search" method="get">
-            <input class="field" type="text" name="q" autocomplete="off" />
-            <button class="submit" type="submit"><i class="icon-search"></i></button>
-            <input type="hidden" name="check_keywords" value="yes" />
-            <input type="hidden" name="area" value="default" />
-          </form>
+        <p class="info-text">The official, curated documentation for the Sponge project. Please choose a language below:</p>
+      </div>
+      <div class="row langs">
+        {|#langs|}
+          <a href="master/{|crowdin_code|}/" class="lang">
+            <img src="//d1ztvzf22lmr1j.cloudfront.net/images/flags/{|crowdin_code|}.png" alt="Flag for {|name|}"/><br/>
+            {|name|}
+          </a>
+        {|/langs|}
+      </div>
+      <div class="row center">
+        <h1>Old API Releases</h1>
+      </div>
+      {[#vers]}
+      <div class="row langs-old">
+        <h2>API {[apiversion]}</h2>
+        <div class="langslist">
+        {|#langs|}
+            <a href="{[apiversion]}/{|crowdin_code|}/" class="lang">
+              <img src="//d1ztvzf22lmr1j.cloudfront.net/images/flags/{|crowdin_code|}.png" alt="Flag for {|name|}"/><br/>
+            </a>
+        {|/langs|}
         </div>
       </div>
-    </div>
-    <div class="row langs">
-      <h1>Available Languages</h1>
-      {{#langs}}
-        <a href="{{crowdin_code}}/" class="lang">
-          <img src="//d1ztvzf22lmr1j.cloudfront.net/images/flags/{{crowdin_code}}.png" alt="Flag for {{name}}"/><br/>
-          {{name}}
-        </a>
-      {{/langs}}
+      {[/vers]}
     </div>
   </body>
 </html>

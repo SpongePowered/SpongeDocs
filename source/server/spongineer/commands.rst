@@ -168,11 +168,13 @@ Command               Description                               Permission
 
 |
 
-In addition, there are two permissions created by Sponge for controlling the ability to edit commandblocks. Note that
-this permission uses the actual *name* of the commandblock, which is normally ``@`` by default.
+Sponge also creates a spawn-protection bypass permission, and two permissions for controlling the
+ability to edit commandblocks. Note that these permissions use the actual *name* of the commandblock,
+which is normally ``@`` by default. 
 
-* Allow editing an ordinary commandblock of the given name: minecraft.commandblock.edit.block.<name>
-* Allow editing a minecart commandblock of the given name: minecraft.commandblock.edit.minecart.<name>
+* Allow player to bypass spawn-protection on all worlds: ``minecraft.spawn-protection.override``
+* Allow editing an ordinary commandblock of the given name: ``minecraft.commandblock.edit.block.<name>``
+* Allow editing a minecart commandblock of the given name: ``minecraft.commandblock.edit.minecart.<name>``
 
 
 Player Commands

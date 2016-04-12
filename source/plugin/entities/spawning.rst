@@ -27,8 +27,9 @@ For example, let's try to spawn a Creeper:
             .createEntity(EntityTypes.CREEPER, spawnLocation.getPosition());
         if (optional.isPresent()) {
             Entity creeper = optional.get();
-            extent.spawnEntity(creeper, Cause.of(EntitySpawnCause.builder()
-                .entity(creeper).type(SpawnTypes.PLUGIN).build()));
+            extent.spawnEntity(creeper,
+                Cause.source(EntitySpawnCause.builder()
+                .entity(creeper).type(SpawnTypes.PLUGIN).build()).build());
         }
     }
 
@@ -41,13 +42,3 @@ The ``createEntity()`` method returns an ``Optional`` as the ``Location`` may no
 ``Entity`` into the world. We will need to specify a ``Cause`` for the spawning. For spawning ``Entity``\ s, it is best to
 use ``EntitySpawnCause``. In this example, we stated that our entity was spawned from a plugin, however we can make it
 any cause that best describes why we are spawning this in, such as a mob spawner, or spawn egg.
-
-.. warning::
-
-    Note that as of API 3.0, ``SpawnCause`` is NOT implemented. Until then, you will need to specify some other cause,
-    such as a ``CommandSource`` or a ``Player``. If you cannot find one that would suit your needs, simply specify your
-    main plugin instance as the ``Cause``. Here is an example of specifying a ``CommandSource`` as the ``Cause``:
-
-    ``extent.spawnEntity(item, Cause.of(src));``
-    
-    Take a look at the :doc:`cause documentation <../event/causes>` for more information.

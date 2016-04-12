@@ -19,3 +19,4 @@ Contents
 	representations/index
 	pagination
 	messagechannels
+	templates

@@ -67,19 +67,19 @@ Sometimes the ordering of objects within the cause isn't enough to get the prope
 an object represents in relation to the event. This is where ``NamedCause`` comes in. Named
 causes provide a method for tagging objects within a cause with a **unique** name allowing them
 to be easily identified and requested. Some examples of use cases for named causes is the
-`Notifier` of a GrowBlockEvent or the `Source` of a DamageEntityEvent.
+`Notifier` of a ChangeBlockEvent.Grow or the `Source` of a DamageEntityEvent.
 
 **Retrieving a named entry from a cause**
 
 .. code-block:: java
 
     @Listener
-    public void onGrow(GrowBlockEvent event) {
-        Optional<Player> notifier = event.getCause().get(NamedCause.NOTIFIER);
+    public void onGrow(ChangeBlockEvent.Grow event) {
+        Optional<Player> notifier = event.getCause().get(NamedCause.NOTIFIER, Player.class);
     }
 
-This example makes use of ``Cause.get(String name)`` which can be used to retrive the object
-associated with a name if it is present within the cause chain. Additionally
+This example makes use of ``Cause.get(String named, Class<T> expected)`` which can be used to retrieve the expected
+object associated with a name if it is present within the cause chain. Additionally
 ``Cause.getNamedCauses()`` provides a ``Map<String, Object>`` which can be used to find all
 present names and their associated objects.
 
@@ -103,18 +103,16 @@ the cause.
 
     Cause objects are immutable therefore cannot be modified once created.
 
-Using ``Cause.of(Object, Object...)`` or ``Cause.ofNullable(Object, Object...)`` you can construct a cause
+Using ``Cause.of()``, you can construct a cause
 from a series of objects. The objects will be added to the cause chain in the order that they
 are passed to the method, so the first object parameter will become the root cause.
 Remember that a ``Cause`` may not be empty, so at least one non-null parameter is always required.
 
 If you already have a cause object and would like to append some more objects to the
-chain you can use ``Cause.with(Object...)``. This constructs a new Cause object containing
+chain you can use ``Cause.with(NamedCause)``. This constructs a new Cause object containing
 first the objects already present in the original cause, then followed by the additional
 objects that you provided.
 
 Finally if you wish to add an object to a cause with a defined named first call
 ``NamedCause.of(String name, Object object)`` and then pass the returned ``NamedCause`` instance
-to the cause chain as you would a normal object. Simply calling ``Cause.of(name, object)``
-will result in a cause chain containing two objects (the String name, and then the object),
-rather than one object with an attached name.
+to the cause chain as you would a normal object.

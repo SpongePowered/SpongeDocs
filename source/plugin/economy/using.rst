@@ -53,17 +53,17 @@ Example: Getting a player's balance
 
 .. code-block:: java
 
-	import org.spongepowered.api.entity.living.player.Player;
-	import org.spongepowered.api.service.economy.EconomyService;
-	import org.spongepowered.api.service.economy.account.UniqueAccount;
-	import java.math.BigDecimal;
-	import java.util.Optional;
-
-	Optional<UniqueAccount> uOpt = economyService.getAccount(player.getUniqueId());
-	if (uOpt.isPresent()) {
-		UniqueAccount acc = uOpt.get();
-		BigDecimal balance = acc.getBalance(economyService.getDefaultCurrency());
-	}
+    import org.spongepowered.api.entity.living.player.Player;
+    import org.spongepowered.api.service.economy.EconomyService;
+    import org.spongepowered.api.service.economy.account.UniqueAccount;
+    import java.math.BigDecimal;
+    import java.util.Optional;
+    
+    Optional<UniqueAccount> uOpt = economyService.getOrCreateAccount(player.getUniqueId());
+    if (uOpt.isPresent()) {
+        UniqueAccount acc = uOpt.get();
+    	BigDecimal balance = acc.getBalance(economyService.getDefaultCurrency());
+    }
 
 Some ``Account`` methods require variables such as:
 
@@ -74,5 +74,5 @@ Some ``Account`` methods require variables such as:
 These are for more advanced uses, but still must be filled in. Below is a list of acceptable default values:
 
 * Currency: ``economyService.getDefaultCurrency()``
-* Cause: ``Cause.of("MyPluginName")``
+* Cause: ``Cause.source(myPlugin).build()``
 * Context: ``new HashSet<Context>()``
