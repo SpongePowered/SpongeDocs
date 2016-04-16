@@ -19,7 +19,7 @@ field, method, or constructor with ``@Inject`` to get the logger for your plugin
 correct plugin ID.
 
 .. note::
-    See :doc:`main-class` for information on configuring your plugin ID.
+    See :doc:`plugin-class` for information on configuring your plugin ID.
 
 **Example - Field**
 

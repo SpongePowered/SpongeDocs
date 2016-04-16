@@ -2,19 +2,19 @@
 Setting Up Eclipse
 ==================
 
-This article describes how to configure your **Eclipse** workspace for plugin development with the Sponge API.
+This article describes how to configure your **Eclipse** workspace for plugin development with SpongeAPI and :doc:`a
+build system such as Maven or Gradle <../buildsystem/>`.
 
-Starting Your Project
-=====================
+.. note::
 
-We recommend using Gradle or Maven when developing plugins with the Sponge API. Gradle and Maven help significantly
-when managing dependencies, such as the Sponge API, for your project. This is preferable to including the ``.jar``
-file in your project.
-
+    A tutorial by Mumfrey showing the setup of a Sponge workspace in Eclipse, using the new features in Buildship and ForgeGradle,
+    can be viewed `Here. <https://www.youtube.com/watch?v=R8NcakQtHVI>`_
+    
 Gradle
-~~~~~~
+======
 
-**To create your project:**
+Creating your project
+~~~~~~~~~~~~~~~~~~~~~
 
 You must first install the **Gradle Integration Plugin** before using Gradle in Eclipse. This only needs to be done
 upon the creation of your first project.
@@ -36,17 +36,29 @@ You may then proceed to create your project.
 * Click ``Next``.
 * Enter a project name, then click ``Finish``.
 
-**To import the Sponge API as a dependency:**
+Editing the build script
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 * Open ``build.gradle`` in the navigator.
-* Manually add the :doc:`official Sponge API Maven artifact <dependencies>` as a dependency. An example can be found
-  on the aforementioned Artifacts article.
+* Edit the build script according to the instructions at :doc:`../project/gradle`.
 * Right-click your project, and select ``Gradle > Refresh Dependencies``.
 
-Maven
-~~~~~
+Importing your project
+~~~~~~~~~~~~~~~~~~~~~~
 
-**To create your project:**
+If you've already started with your project and want to import it again at a later point you need to import it instead
+of re-creating it inside your IDE:
+
+* Click ``File > Import``
+* Select ``Gradle > Gradle Project``
+* Navigate to the root folder of the project
+* Click Finish
+
+Maven
+=====
+
+Creating your project
+~~~~~~~~~~~~~~~~~~~~~
 
 * Open **Eclipse**.
 * Click ``File > New > Other``.
@@ -55,22 +67,34 @@ Maven
 * Select ``Create a simple project``, unless you require a more advanced setup.
 * Enter your **Group ID**, **Artifact ID**, **Version**, project name, and project description.
 
-  * Your **Group ID** should correspond to your organization name, or something similar.
-  * Your **Artifact ID** should correspond to your project name.
+  * Your **Group ID** should usually correspond to your Java package name. See :doc:`../plugin-class` for details.
+  * Your **Artifact ID** should usually correspond to your **plugin ID** you chose earlier, e.g. ``myplugin``.
   * Your **Version** is up to you.
+
 * Click ``Finish``.
 
 .. tip::
 
-    Eclipse often does not open new projects after creating them. If this happens, try closing the Eclipse welcome screen;
-    your project should be open behind it.
+    Eclipse often does not open new projects after creating them. If this happens, try closing the Eclipse welcome
+    screen; your project should be open behind it.
 
-**To import the Sponge API as a dependency:**
+Editing the project configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * Open ``pom.xml`` in the navigator.
-* Click the ``Dependencies`` tab on the bottom, and click ``Add``.
-* Enter the **Group ID**, **Artifact ID**, and **Version** of the :doc:`official Sponge API Maven artifact <dependencies>`.
-* Click ``OK``.
+* Edit the build configuration according to the instructions at :doc:`../project/maven`.
+* Refresh your Maven project.
+
+Importing your project
+~~~~~~~~~~~~~~~~~~~~~~
+
+If you've already started with your project and want to import it again at a later point you need to import it instead
+of re-creating it inside your IDE:
+
+* Click ``File > Import``
+* Select ``Maven > Existing Maven Projects``
+* Navigate to the root folder of the project
+* Click Finish
 
 Git Integration
 ===============

@@ -18,4 +18,5 @@ Contents
 	text
 	representations/index
 	pagination
+	messagechannels
 	templates

@@ -13,5 +13,3 @@ Contents
 
     idea
     eclipse
-    netbeans
-    dependencies

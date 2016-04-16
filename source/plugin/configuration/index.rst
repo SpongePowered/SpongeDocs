@@ -52,7 +52,7 @@ will be ``your_plugin_id.conf`` (with "your_plugin_id" replaced with your plugin
 
 .. tip::
 
-    See :doc:`../main-class` for information on configuring your plugin ID.
+    See :doc:`../plugin-class` for information on configuring your plugin ID.
 
 If you set ``sharedRoot`` to ``false``, the returned pathname will refer to a file named ``{pluginname}.conf`` in a
 directory specific to your plugin.
