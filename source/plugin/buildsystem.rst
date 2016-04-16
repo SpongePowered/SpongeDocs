@@ -30,8 +30,8 @@ Continue at :doc:`plugin-identifier` for choosing a plugin identifier and then s
 
 Maven
 =====
-Maven_ is using a XML-based configuration called `Project Object Model`_ (or short *POM*) for configuring projects. A
-Maven_ project typically consists out of a ``pom.xml`` file in your project root directory which tells Maven_ how to
+Maven_ uses a XML-based configuration called `Project Object Model`_ (or *POM*) for configuring projects.
+A Maven_ project typically contains a ``pom.xml`` file in the project root directory which tells Maven_ how to
 build the project.
 
 .. tip::
