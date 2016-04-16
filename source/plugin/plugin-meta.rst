@@ -3,8 +3,8 @@ Plugin Metadata
 ===============
 
 Adding plugin metadata helps users to identify your plugin more easily by giving them the ability to check the name,
-version, description, or even the authors of a plugin at runtime. It is (or will) be also used heavily when publishing
-plugins on a plugin portal like Ore_.
+version, description, or even the authors of a plugin at runtime. It will also be used when publishing plugins on a plugin
+portal like Ore_.
 
 Currently, Sponge supports the following types of plugin metadata:
 
@@ -39,16 +39,15 @@ an extra file in the JAR, which has several advantages:
 * Easier for plugin portals to obtain the plugin metadata (no parsing of class files necessary)
 
 .. note::
-    **We strongly recommend public plugins to include file metadata.** Plugin portals such as Ore_ will likely require
-    file metadata in the future. See `Using the Annotation Processor`_ for a simple way to generate it. The
-    implementation will print a warning if a plugin is missing file metadata.
+    **We strongly recommend public plugins to include file metadata.** Plugin portals such as Ore_ may require
+    file metadata. See `Using the Annotation Processor`_ for a simple way to generate it. The
+    implementation may print a warning if a plugin is missing file metadata.
 
 The mcmod.info format
 ~~~~~~~~~~~~~~~~~~~~~
 
 For Sponge plugins, we use a file called ``mcmod.info``, which is included in the root of your plugin JAR. The format
-is originally coming from Forge, but has been used by several projects in the Minecraft community, and therefore we
-have chosen to use the same.
+originates from Forge, and has been used by several projects in the Minecraft community, so we have chosen to use the same.
 
 ``mcmod.info`` is basically a simple JSON_ file which defines the plugin metadata as simple fields. Here is an example
 file that could be used by a Sponge plugin:
