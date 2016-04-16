@@ -18,7 +18,7 @@ developers can collaborate and share their work with others. GitHub relies on Gi
 
 .. tip::
   If you're unfamiliar with the Git and GitHub vocabulary, have a look at the
-  `glossary page on Github <https://help.github.com/articles/github-glossary/>`_.
+  `glossary page on GitHub <https://help.github.com/articles/github-glossary/>`_.
 
 .. image:: /images/contributing/repo-overview.svg
     :alt: Repo Overview
