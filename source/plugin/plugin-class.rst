@@ -54,7 +54,7 @@ game. In the example below, ``onServerStart()`` is called when the ``GameStarted
     import org.spongepowered.api.event.game.state.GameStartedServerEvent;
 
     @Plugin(id = "exampleplugin", name = "Example Plugin", version = "1.0")
-    public final class ExamplePlugin {
+    public class ExamplePlugin {
         @Listener
         public void onServerStart(GameStartedServerEvent event) {
             // Hey! The server has started!
