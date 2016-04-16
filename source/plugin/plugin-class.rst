@@ -12,7 +12,7 @@ Creating Your Plugin Class
 Starting Your Class
 ===================
 
-The next step after adding the Sponge API as a dependency is creating a new class. The class can be named however you'd
+The next step after adding the Sponge API as a dependency is creating a new class. The class can be named however you
 like, and can be in any package that does **not** begin with ``org.spongepowered``. By convention, class names should be
 in title case.
 
@@ -31,7 +31,7 @@ easily find your main plugin class when your plugin is loaded. An example usage 
     import org.spongepowered.api.plugin.Plugin;
 
     @Plugin(id = "exampleplugin", name = "Example Plugin", version = "1.0")
-    public final class ExamplePlugin {
+    public class ExamplePlugin {
 
     }
 
@@ -54,7 +54,7 @@ game. In the example below, ``onServerStart()`` is called when the ``GameStarted
     import org.spongepowered.api.event.game.state.GameStartedServerEvent;
 
     @Plugin(id = "exampleplugin", name = "Example Plugin", version = "1.0")
-    public final class ExampleProject {
+    public final class ExamplePlugin {
         @Listener
         public void onServerStart(GameStartedServerEvent event) {
             // Hey! The server has started!
