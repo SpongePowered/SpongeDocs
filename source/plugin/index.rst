@@ -47,6 +47,7 @@ Contents
     services
     database
     permissions
+    bans
     economy/index
     wgen/index
     manager
