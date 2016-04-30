@@ -16,13 +16,13 @@ was generated using SpongeForge build 1185, SpongeAPI version 4.0.2:
 .. code-block:: none
 
     # 1.0
-    #
-    # # If you need help with the configuration or have any questions related
-    # # to Sponge, join us at the IRC or drop by our forums and leave a post.
-    #
+    # 
+    # # If you need help with the configuration or have any questions related to Sponge,
+    # # join us at the IRC or drop by our forums and leave a post.
+    # 
     # # IRC: #sponge @ irc.esper.net ( http://webchat.esper.net/?channel=sponge )
     # # Forums: https://forums.spongepowered.org/
-    #
+    # 
 
     sponge {
         block-tracking {
@@ -203,11 +203,11 @@ was generated using SpongeForge build 1185, SpongeAPI version 4.0.2:
             infinite-water-source=false
             # Enable if this world's spawn should remain loaded with no players.
             keep-spawn-loaded=true
-            # Enable if this world should load on startup.
+            # Enable if this world should be loaded on startup.
             load-on-startup=true
             # Enable if this world allows PVP combat.
             pvp-enabled=true
-            # Enable if this world should be allowed to load.
+            # Enable if this world should be registered.
             world-enabled=true
         }
     }
