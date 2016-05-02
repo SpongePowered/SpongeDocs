@@ -26,11 +26,11 @@ easily find your main plugin class when your plugin is loaded. An example usage 
 
 .. code-block:: java
 
-    package io.github.username.project;
+    package io.github.username.exampleplugin;
 
     import org.spongepowered.api.plugin.Plugin;
 
-    @Plugin(id = "exampleplugin", name = "Example Plugin", version = "1.0")
+    @Plugin(id = "io.github.username.exampleplugin", name = "Example Plugin", version = "1.0")
     public class ExamplePlugin {
 
     }

@@ -10,7 +10,7 @@ folders for your plugin.
 .. note::
     Plugin IDs must be lowercase and may only contain characters from a-z, dashes, underscores or dots. It cannot end
     with a dash, underscore or dot. The plugin name does **not** have such a limitation and can even contain spaces or
-    special characters.
+    special characters. It is also recommended to use a qualified ID such as ``some.package.exampleplugin``.
 
 Keep in mind your plugin ID will be the main identification of your plugin, used in other plugins as dependencies, for
 your configuration files, as well as other properties stored for your plugin. That's why it is important you always
