@@ -22,6 +22,8 @@ before going into detail:
 +-------------------------------------------------------------------+-------------------------------------------------------+---------------------------------------------------------------------------------+
 | `SpongeDocs <https://github.com/Spongepowered/SpongeDocs>`_       | The official SpongeProject Documentation              | Expanding, fixing and writing the SpongeDocs                                    |
 +-------------------------------------------------------------------+-------------------------------------------------------+---------------------------------------------------------------------------------+
+| `SpongeHome <https://github.com/Spongepowered/SpongeHome>`_       | The website for the SpongeProject                     | Development of our website                                                      |
++-------------------------------------------------------------------+-------------------------------------------------------+---------------------------------------------------------------------------------+
 | `Ore <https://github.com/Spongepowered/Ore>`_                     | Plugin hosting solution                               | Development of our plugin hosting solution                                      |
 +-------------------------------------------------------------------+-------------------------------------------------------+---------------------------------------------------------------------------------+
 
@@ -35,6 +37,12 @@ Forge requires some Forge specific things which won't work on Vanilla and vice v
 When you refer to the SpongeForge implementation, you're basically talking about everything contained in the
 SpongeCommon and SpongeForge repositories. The same applies for SpongeVanilla and SpongeCommon. This is the reason why
 building SpongeForge or SpongeVanilla from the repository *without* including SpongeCommon won't work.
+
+SpongeHome
+==========
+
+SpongeHome is the SpongeProject's website. It's written in Golang, using the go-macaron library. It uses SCSS as it's
+CSS preprocessor.
 
 Ore
 ===
