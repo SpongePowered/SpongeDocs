@@ -151,7 +151,7 @@ Now that the files are added to your list of changes you want included in the co
   git commit
 
 It will open a text window, where you can add a message if you desire. Have a look at the image below. You'll notice
-that your commits are still stored locally only and not on your fork on Github.
+that your commits are still stored locally only and not on your fork on GitHub.
 
 .. note::
   You can have multiple commits in a PR. Just go ahead and change everything you need and commit the changes.

@@ -530,6 +530,6 @@ acquire the needed data from the Minecraft classes itself. It may be helpful to 
 implemented processors similar to the one you are working on to get a better understanding of how it should work.
 
 If you are stuck or are unsure about certain aspects, go visit the ``#spongedev`` IRC channel, the forums, or
-open up an Issue on github. Be sure to check the `Data Processor Implementation Checklist
+open up an Issue on GitHub. Be sure to check the `Data Processor Implementation Checklist
 <https://github.com/SpongePowered/SpongeCommon/issues/8>`_ for general
 contribution requirements.

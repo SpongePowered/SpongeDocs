@@ -14,7 +14,7 @@
 import sys, os
 import sponge_docs_theme
 
-# Set your Github user, repo and branch here. This will be used to link to the
+# Set your GitHub user, repo and branch here. This will be used to link to the
 # sourcecode in the top right corner of the pages.
 github_repo = 'SpongeDocs'
 github_user = 'SpongePowered'

@@ -7,7 +7,7 @@ of our various methods of communications, including (but not limited to):
 
 * Official IRC channels: #sponge, #spongedev, #spongedocs
 * Sponge Forums
-* Github and Bug/Issue tracker
+* GitHub and Bug/Issue tracker
 * Sponge subReddit
 * Any other official means of communication by the Sponge project.
 
