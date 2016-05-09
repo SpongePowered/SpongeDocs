@@ -44,7 +44,7 @@ artifactId      myproject                  The project id, also used as plugin i
 version         1.0-SNAPSHOT               The initial version for your plugin. Can (and should) be changed as
                                            development progresses
 package         io.github.user.myproject   The package your plugin class will be generated in
-githubProject   user/repo                  The Github project. If a value is specified that is not user/repo, issue
+githubProject   user/repo                  The GitHub project. If a value is specified that is not user/repo, issue
                                            tracking and SCM sections are added to the pom
 ============== ========================== =============================================================================
 

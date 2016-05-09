@@ -72,7 +72,7 @@ git configuration has your identity set up. Open up your CLI and enter:
 
    git config --list
 
-Look for ``user.name`` and ``user.email``. If they are not the same username and email as your Github account
+Look for ``user.name`` and ``user.email``. If they are not the same username and email as your GitHub account
 then set them:
 
 .. code-block:: none
