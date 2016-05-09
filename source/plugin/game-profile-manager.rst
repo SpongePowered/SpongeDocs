@@ -71,14 +71,13 @@ method.
 Creating GameProfiles
 =====================
 
-You can generate a new ``GameProfile`` using ``GameProfileManager#createProfile(UUID, String)``. Note that the username
+You can generate a new ``GameProfile`` using ``GameProfile#of(UUID, String)``. Note that the username
 does not necessarily need to correspond to the ``UUID`` of that player. Likewise, the ``UUID`` does not need to belong
 to a valid player.
 
 .. code-block:: java
 
-    GameProfile gameProfile =
-        profileManager.createProfile(
+    GameProfile gameProfile = GameProfile.of(
             UUID.fromString("00000000-0000-0000-0000-000000000000"),
             "Herobrine");
 
@@ -103,9 +102,8 @@ Working with ProfileProperties
 not be used as a permanent data store, as the data is not persisted across server restarts. We can retrieve the properties
 of a ``GameProfile`` using the ``GameProfile#getPropertyMap`` method, which returns a ``Multimap``. From there, you can
 retrieve existing or store new ``ProfileProperty``\ s, which are represented as a key value pair. To generate a new
-``ProfileProperty``, simply call the ``GameProfileManager#createProfileProperty(String, String, @Nullable String)``
-method. The third argument (signature) is optional. However, a valid signature from Mojang must be specified for certain
-properties.
+``ProfileProperty``, simply call the ``ProfileProperty#of(String, String)`` method. The third argument (signature) is
+optional. However, a valid signature from Mojang must be specified for certain properties.
 
 .. code-block:: java
 
@@ -114,7 +112,7 @@ properties.
     import java.util.Collection;
 
     profile.getPropertyMap().put(
-        "key", profileManager.createProfileProperty("foo", "bar", null));
+        "key", ProfileProperty.of("foo", "bar", null));
     Collection<ProfileProperty> customProperties = profile.getPropertyMap().get("key");
 
 Working with the GameProfileCache
@@ -129,10 +127,14 @@ constructed ``GameProfile``\ s, and fill profiles with data stored in the cache.
     import org.spongepowered.api.profile.GameProfileCache;
 
     GameProfile fakeProfile =
-        profileManager.createProfile(UUID.fromString("00000000-0000-0000-0000-000000000000"), "Herobrine");
+        GameProfile.of(UUID.fromString("00000000-0000-0000-0000-000000000000"),
+        "Herobrine");
     GameProfileCache cache = profileManager.getCache();
     cache.add(profile);
 
 .. tip::
     ``GameProfileCache#add`` also accepts a ``boolean`` second argument determining whether existing cache entries
     should be overwritten, and a ``Date`` third argument setting the expiry of the ``GameProfile``.
+
+The ``GameProfileCache`` may also be set by plugins with the ``GameProfileManager#setCache(GameProfileManager)`` method.
+To restore the original cache, use the same method, passing in the result of ``GameProfileManager#getDefaultCache``.
