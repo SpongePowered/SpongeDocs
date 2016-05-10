@@ -101,7 +101,7 @@ Working with ProfileProperties
 ==============================
 
 ``GameProfile``\ s can be used to store arbitrary data about a player using ``ProfileProperty``\ s. However, this cannot
-not be used as a permanent data store, as the data is not persisted across server restarts. We can retrieve the properties
+not be used as a permanent data store, as the data does not persist across server restarts. We can retrieve the properties
 of a ``GameProfile`` using the ``GameProfile#getPropertyMap`` method, which returns a ``Multimap``. From there, you can
 retrieve existing or store new ``ProfileProperty``\ s, which are represented as a key value pair. To generate a new
 ``ProfileProperty``, simply call the ``ProfileProperty#of(String, String)`` method. The third argument (signature) is
