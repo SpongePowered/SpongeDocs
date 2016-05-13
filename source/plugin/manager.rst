@@ -1,6 +1,6 @@
-========================
-Using the Plugin Manager
-========================
+==============
+Plugin Manager
+==============
 
 The Plugin Manager is what your plugin gets sent to after being loaded by the server at startup. The server loads
 your plugin by finding its main class, annotated by the ``@Plugin`` annotation that holds its general information,

@@ -1,6 +1,6 @@
-====================
-Working with Effects
-====================
+=======
+Effects
+=======
 
 Using the effect API in Sponge, we can create special effects to be used on a server. Using a ``Viewer``, we can play
 sounds or spawn particles on the server.

@@ -1,6 +1,6 @@
-=====================
-Working with Services
-=====================
+========
+Services
+========
 
 Pretty much everything (events, permissions, etc.) is handled through services. All services are accessed through the
 service manager:

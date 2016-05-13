@@ -1,6 +1,6 @@
-===================
-Working with Blocks
-===================
+======
+Blocks
+======
 
 Blocks are the very foundation of every Minecraft world, the element that makes Minecraft minecraft-y. This section
 details how information about a block's type and attributes are read and set via the SpongeAPI, what tile entities are

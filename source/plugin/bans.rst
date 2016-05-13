@@ -1,6 +1,6 @@
-========================
-Working with the Ban API
-========================
+====
+Bans
+====
 
 The ``BanService`` is a service built into the SpongeAPI that adds the functionality for you to ban or pardon users in
 your plugin. The ``BanService`` provides several methods to do things such as banning users, pardoning users, or even

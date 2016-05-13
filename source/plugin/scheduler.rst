@@ -1,6 +1,6 @@
-===================
-Using the Scheduler
-===================
+=========
+Scheduler
+=========
 
 Sponge exposes the ``Scheduler`` to allow you to designate tasks to be executed in the future. The
 ``Scheduler`` provides a ``Task.Builder`` with which you can specify task properties such as the delay, interval,

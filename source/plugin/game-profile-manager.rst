@@ -1,6 +1,6 @@
-===================================
-Working with the GameProfileManager
-===================================
+====================
+Game Profile Manager
+====================
 
 A ``GameProfile`` represents the profile of a player, including such data as a name, ``UUID``, and other arbitrary data
 known as properties. SpongeAPI provides the ``org.spongepowered.api.profile.GameProfileManager`` class to get, create,
