@@ -52,6 +52,7 @@ Contents
     economy/index
     wgen/index
     manager
+    game-profile-manager
     debugging
     plugin-meta
     ray-tracing
