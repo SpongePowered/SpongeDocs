@@ -62,8 +62,9 @@ Now let's break this down. We set the list associated with the ``TabListEntry`` 
 determine various things. On the client, it is used to determine if a player is in creative or perhaps a spectator. If
 the game mode is spectator, then their name will also appears gray and italicized. We then need to specify the
 ``GameProfile`` that the entry is associated with. The ``GameProfile`` may be constructed using the
-``GameProfile.of()`` method, or it can be obtained from a real profile, such as a player. To apply the entry to the tab
-list, we simply need to call the ``addEntry()`` method off of our ``TabList``.
+``GameProfile.of()`` method, or it can be obtained from a real profile, such as a player. For more information, see the
+:doc:`game-profile-manager` article. To apply the entry to the tab list, we simply need to call the ``addEntry()`` method
+off of our ``TabList``.
 
 We can flesh out our basic example by specifying things such as the display name or latency of the entry:
 
