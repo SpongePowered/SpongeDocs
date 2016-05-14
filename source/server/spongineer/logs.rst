@@ -60,7 +60,7 @@ The example log indicates that we're running:
  [main/INFO] [FML/]: Loading tweaker org.spongepowered.asm.launch.MixinTweaker from spongeforge-1.8-1521-2.1-DEV-750.jar
 
 This indicates that SpongeForge 750 was found and loaded by Forge. For further help regarding the SpongeForge
-naming scheme, have a look here: :doc:`../getting-started/implementations/spongeforge/`
+naming scheme, have a look here: :doc:`../getting-started/implementations/spongeforge/`.
 
 latest.log
 ~~~~~~~~~~
@@ -92,7 +92,7 @@ Reading logfiles
 
 If you're unsure on how to read a common crashlog, you'll find help here, but first we need a crashlog. For this short
 introduction we will just use an example crash from the :doc:`debugging` page:
-:download:`Example crashlog of an outdated SpongeForge build </files/crashlogs/crashlog-sponge575-plugin750.txt>`
+:download:`Example crashlog of an outdated SpongeForge build </files/crashlogs/crashlog-sponge575-plugin750.txt>`.
 
 .. code-block:: none
 

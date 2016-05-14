@@ -22,9 +22,6 @@ to a representative ``String`` or deserializing to a ``Text`` instance:
 * ``JSON``
 * ``TEXT_XML``
 
-Working with TextSerializers
-============================
-
 Serializing Text
 ~~~~~~~~~~~~~~~~
 

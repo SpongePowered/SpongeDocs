@@ -151,7 +151,7 @@ channel onto the event rather than the player. This would be done using ``event.
 
     Optional<Player> playerOptional = event.getCause().<Player>first(Player.class);
 
-More on causes can be found on the :doc:`causes page <../event/causes>`
+More on causes can be found on the :doc:`causes page <../event/causes>`.
 
 .. note::
 

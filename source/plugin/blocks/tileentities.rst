@@ -1,6 +1,6 @@
-==========================
-Working with Tile Entities
-==========================
+=============
+Tile Entities
+=============
 
 Tile entities are blocks that are capable of additional operations like autonomically crafting (furnaces and brewing
 stands) or provide effects (like a beacon or a note block). They also contain additional data like an inventory or
