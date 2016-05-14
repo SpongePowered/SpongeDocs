@@ -25,8 +25,9 @@ You can define the additional (optional) plugin metadata on your ``@Plugin`` ann
 
     @Plugin(id = "myplugin", name = "My Plugin", version = "1.0",
         description = "This is a very cool plugin I made for me",
+        url = "http://example.com",
         authors = {"Spongie", "FLARD"},
-        url = "http://example.com")
+        dependencies = {@Dependency(id = "otherplugin", optional = true)})
 
 
 File metadata
