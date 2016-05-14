@@ -54,6 +54,7 @@ Contents
     manager
     game-profile-manager
     debugging
+    tab-lists
     plugin-meta
     ray-tracing
     bukkit-sponge-compare
