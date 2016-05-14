@@ -1,6 +1,6 @@
-======================
-Creating Custom Events
-======================
+=============
+Custom Events
+=============
 
 You can write your own event classes and dispatch those events using the method described above. An event class must
 either implement the ``Event`` interface and, if it should be possible to cancel the event, ``Cancellable``.

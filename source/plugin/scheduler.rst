@@ -1,13 +1,13 @@
-===================
-Using the Scheduler
-===================
+=========
+Scheduler
+=========
 
 Sponge exposes the ``Scheduler`` to allow you to designate tasks to be executed in the future. The
 ``Scheduler`` provides a ``Task.Builder`` with which you can specify task properties such as the delay, interval,
 name, (a)synchronicity, and ``Runnable`` (see :ref:`task-properties`).
 
-Working With the Task.Builder
-=============================
+Task Builder
+============
 
 First, obtain an instance of the ``Scheduler``, and retrieve the ``Task.Builder``:
 

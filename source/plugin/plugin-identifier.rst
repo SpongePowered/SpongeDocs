@@ -1,6 +1,6 @@
-============================
-Choosing a Plugin Identifier
-============================
+==================
+Plugin Identifiers
+==================
 
 Sponge plugins are identified using a unique **plugin ID**, and a human-readable **plugin name**. It is important that
 you choose a proper name for your project now, because later plugins will interact with your plugin under your chosen

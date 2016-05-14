@@ -1,6 +1,6 @@
-===============
-The Economy API
-===============
+=======
+Economy
+=======
 
 Sponge provides an Economy API that unifies all economy plugins under one single API. The API can be used by both
 economy plugins providing the API, and other plugins using the API (i.e. shop plugins). This allows for all

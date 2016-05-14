@@ -1,6 +1,6 @@
-===================================
-Working with the GameProfileManager
-===================================
+====================
+Game Profile Manager
+====================
 
 A ``GameProfile`` represents the profile of a player, including such data as a name, ``UUID``, and other arbitrary data
 known as properties. SpongeAPI provides the ``org.spongepowered.api.profile.GameProfileManager`` class to get, create,
@@ -97,8 +97,8 @@ the Mojang API.
 
     GameProfile filledProfile = profileManager.fill(gameProfile).get();
 
-Working with ProfileProperties
-==============================
+ProfileProperties
+=================
 
 ``GameProfile``\ s can be used to store arbitrary data about a player using ``ProfileProperty``\ s. However, this cannot
 not be used as a permanent data store, as the data does not persist across server restarts. We can retrieve the properties
@@ -117,8 +117,8 @@ optional. However, a valid signature from Mojang must be specified for certain p
         "key", ProfileProperty.of("foo", "bar", null));
     Collection<ProfileProperty> customProperties = profile.getPropertyMap().get("key");
 
-Working with the GameProfileCache
-=================================
+GameProfileCache
+================
 
 You can also directly access the ``GameProfileCache`` used by Sponge to store ``GameProfile``\ s. To do so, simply call
 the ``GameProfileManager#getCache`` method. Using the ``GameProfileCache``, you can look up ``GameProfile``\ s, add newly

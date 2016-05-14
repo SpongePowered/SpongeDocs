@@ -23,8 +23,8 @@ Example:
 The code excerpt illustrated above will return uncolored, unformatted text with no :ref:`text actions <text-actions>`
 configured.
 
-Working with the Text Builder
-=============================
+Text Builder
+============
 
 The text builder interface allows for the creation of formatted text in a "building-block" style.
 

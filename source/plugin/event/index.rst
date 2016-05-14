@@ -1,6 +1,6 @@
-===================
-Working with Events
-===================
+======
+Events
+======
 
 Events are used to inform plugins of certain happenings. Many events can also be *cancelled* -- that is, the action that
 the event refers to can be prevented from occurring. Cancellable events implement the ``Cancellable`` interface.

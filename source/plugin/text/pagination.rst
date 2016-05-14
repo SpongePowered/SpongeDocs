@@ -10,8 +10,8 @@ The ``PaginationService`` acts as a way to split up content into discrete pages.
 The service provides a ``PaginationList.Builder`` with which you can specify attributes such as title, contents, header,
 and padding.
 
-Working With the Pagination Builder
-===================================
+Pagination List Builder
+=======================
 
 First obtain an instance of the ``PaginationService``, and create a new ``PaginationList.Builder``:
 

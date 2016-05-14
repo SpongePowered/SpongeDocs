@@ -1,6 +1,6 @@
-=======================
-Choosing a Build System
-=======================
+=============
+Build Systems
+=============
 
 Build systems such as Gradle_ or Maven_ can manage the build process of your projects. As an independent tool from your
 IDE, you can use them to manage your dependency on SpongeAPI or other plugins and give other people an easy way to

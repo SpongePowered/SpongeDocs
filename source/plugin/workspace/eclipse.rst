@@ -8,7 +8,7 @@ build system such as Maven or Gradle <../buildsystem/>`.
 .. note::
 
     A tutorial by Mumfrey showing the setup of a Sponge workspace in Eclipse, using the new features in Buildship and ForgeGradle,
-    can be viewed `Here. <https://www.youtube.com/watch?v=R8NcakQtHVI>`_
+    can be viewed `here <https://www.youtube.com/watch?v=R8NcakQtHVI>`_.
     
 Gradle
 ======

@@ -1,6 +1,6 @@
-=====================
-Working with Entities
-=====================
+========
+Entities
+========
 
 Entities are a huge part of Minecraft, and the Sponge API in general.
 
