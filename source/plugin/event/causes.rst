@@ -103,7 +103,7 @@ the cause.
 
     Cause objects are immutable therefore cannot be modified once created.
 
-Using ``Cause.of(NamedCause)``, you can construct a cause
+Using ``Cause.of()``, you can construct a cause
 from a series of objects. The objects will be added to the cause chain in the order that they
 are passed to the method, so the first object parameter will become the root cause.
 Remember that a ``Cause`` may not be empty, so at least one non-null parameter is always required.

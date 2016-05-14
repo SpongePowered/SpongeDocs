@@ -68,7 +68,7 @@ Here are some common exceptions and some reasons why you might encounter them.
 .. note::
 
  If you encountered a crash, error or any other malfunction **not** listed here, please report it on the
- `Sponge Forums <https://forums.spongepowered.org/>`_ or on `Github <https://github.com/spongepowered/>`_.
+ `Sponge Forums <https://forums.spongepowered.org/>`_ or on `GitHub <https://github.com/spongepowered/>`_.
  This will help others, who are running into the same issue.
 
 Mismatched SpongeForge and Forge

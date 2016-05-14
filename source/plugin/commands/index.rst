@@ -1,6 +1,6 @@
-=================
-Creating Commands
-=================
+========
+Commands
+========
 
 .. tip::
 
@@ -24,6 +24,7 @@ Contents
 
 	creating
 	arguments
+	flags
 	childcommands
 	service
 	commandcallable

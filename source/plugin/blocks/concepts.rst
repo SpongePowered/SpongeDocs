@@ -2,8 +2,6 @@
 Concepts
 ========
 
-Blocks in Minecraft are stored in a peculiar way.
-
 Properties
 ~~~~~~~~~~
 

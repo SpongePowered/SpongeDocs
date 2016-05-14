@@ -1,10 +1,6 @@
-===============================
-Creating Your Main Plugin Class
-===============================
-
-.. tip::
-    Using a common build system like Maven or Gradle? We might just have an existing template for you. Check
-    :doc:`templates` to see!
+=================
+Main Plugin Class
+=================
 
 .. note::
 
@@ -16,7 +12,7 @@ Creating Your Main Plugin Class
 Starting Your Class
 ===================
 
-The next step after adding the Sponge API as a dependency is creating a new class. The class can be named however you'd
+The next step after adding the Sponge API as a dependency is creating a new class. The class can be named however you
 like, and can be in any package that does **not** begin with ``org.spongepowered``. By convention, class names should be
 in title case.
 
@@ -25,8 +21,8 @@ package name, if you own a domain. However, in the event that you do not own a d
 email address (such as ``com.gmail.username.project``) or an open-source repository
 (such as ``io.github.username.project``).
 
-After creating your main class, the ``@Plugin`` annotation must be affixed to it. This annotation allows Sponge to easily
-find your main plugin class when your plugin is loaded. An example usage is illustrated below.
+After creating your main class, the ``@Plugin`` annotation must be affixed to it. This annotation allows Sponge to
+easily find your main plugin class when your plugin is loaded. An example usage is illustrated below.
 
 .. code-block:: java
 
@@ -34,14 +30,13 @@ find your main plugin class when your plugin is loaded. An example usage is illu
 
     import org.spongepowered.api.plugin.Plugin;
 
-    @Plugin(id = "example", name = "Example Project", version = "1.0")
-    public class ExampleProject {
-        // Woot! This is a comment!
+    @Plugin(id = "exampleplugin", name = "Example Plugin", version = "1.0")
+    public class ExamplePlugin {
+
     }
 
-Remember to change the ID, name, and version of your plugin in the annotation. The ID should be a simple identifier with
-no special characters or spaces, as it is used for generating configuration files and for identification purposes. That
-in mind, it is not recommended to change the ID after releasing the plugin.
+.. note::
+    Refer to :doc:`plugin-identifier` if you've not chosen your plugin ID yet.
 
 Initializing Your Plugin
 ========================
@@ -58,8 +53,8 @@ game. In the example below, ``onServerStart()`` is called when the ``GameStarted
     import org.spongepowered.api.event.Listener;
     import org.spongepowered.api.event.game.state.GameStartedServerEvent;
 
-    @Plugin(id = "example", name = "Example Project", version = "1.0")
-    public class ExampleProject {
+    @Plugin(id = "exampleplugin", name = "Example Plugin", version = "1.0")
+    public class ExamplePlugin {
         @Listener
         public void onServerStart(GameStartedServerEvent event) {
             // Hey! The server has started!

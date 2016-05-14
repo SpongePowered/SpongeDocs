@@ -25,32 +25,37 @@ Contents
     :maxdepth: 2
     :titlesonly:
 
+    buildsystem
     workspace/index
-    practices
-    templates
-    bukkit-sponge-compare
-    main-class
+    project/index
+    plugin-identifier
+    plugin-class
     lifecycle
+    injection
+    practices
     optional/index
     logging
-    text/index
     commands/index
     event/index
     configuration/index
+    text/index
     data/index
     blocks/index
     entities/index
     items/index
-    injection
+    effects
     scheduler
+    services
     database
     permissions
+    bans
     economy/index
-    services
     wgen/index
     manager
+    game-profile-manager
     debugging
-    messagechannels
     tab-lists
+    plugin-meta
     ray-tracing
+    bukkit-sponge-compare
     tutorials

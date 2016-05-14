@@ -375,7 +375,7 @@ Credit goes to the editors at the `Minecraft Wiki <http://minecraft.gamepedia.co
 |                               |             |             | *reduce this value.*                                       |
 +-------------------------------+-------------+-------------+------------------------------------------------------------+
 | white-list                    | boolean     | false       | Enables a whitelist on the server.                         |
-|                               |             |             | See :doc:`../../../server/management/whitelist`            |
+|                               |             |             | See :doc:`../../../server/management/whitelist`.           |
 |                               |             |             | With a whitelist enabled, users not on the whitelist will  |
 |                               |             |             | be unable to connect. Intended for private servers, such   |
 |                               |             |             | as those for real-life friends or strangers carefully      |

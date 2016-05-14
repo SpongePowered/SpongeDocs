@@ -1,13 +1,13 @@
-===================
-Using the Scheduler
-===================
+=========
+Scheduler
+=========
 
 Sponge exposes the ``Scheduler`` to allow you to designate tasks to be executed in the future. The
 ``Scheduler`` provides a ``Task.Builder`` with which you can specify task properties such as the delay, interval,
 name, (a)synchronicity, and ``Runnable`` (see :ref:`task-properties`).
 
-Working With the Task.Builder
-=============================
+Task Builder
+============
 
 First, obtain an instance of the ``Scheduler``, and retrieve the ``Task.Builder``:
 
@@ -170,7 +170,7 @@ Compatibility with other libraries
 As your plugin grows in size and scope you might want to start using one of the many concurrency libraries available 
 for Java and the JVM.
 These libraries do tend to support Java's 
-`ExecutorService <https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ExecutorService.html>` as a means 
+`ExecutorService <https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ExecutorService.html>`_ as a means 
 of directing on which thread the task is executed.
 
 To allow these libraries to work with Sponge's ``Scheduler`` the following methods can be used:

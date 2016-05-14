@@ -19,19 +19,25 @@ or players with a certain permission. By performing the check yourself, you take
 This code illustrates what **not** to do:
 
 .. code-block:: java
+    
+    import java.math.BigDecimal;
+    
+    import org.spongepowered.api.event.cause.Cause;
+    import org.spongepowered.api.service.economy.EconomyService;
+    import org.spongepowered.api.service.economy.account.Account;
+        
+    EconomyService service = ...;
+    Account account = ...;
+    BigDecimal requiredAmount = BigDecimal.valueOf(20);
 
-        EconomyService service = ...
-        Account account = ...
-        BigDecimal requiredAmount = BigDecimal.valueOf(20);
-
-        // BAD: Don't perform this check
-        if (account.getBalance(service.getDefaultCurrency()).compareTo(requiredAmount) < 0) {
-            // You don't have enough money!
-        } else {
-            // The account has enough, let's withdraw some cash!
-            account.withdraw(service.getDefaultCurrency(), requiredAmount,
-                Cause.of(NamedCause.source(this)));
-        }
+    // BAD: Don't perform this check
+    if (account.getBalance(service.getDefaultCurrency()).compareTo(requiredAmount) < 0) {
+        // You don't have enough money!
+    } else {
+        // The account has enough, let's withdraw some cash!
+        account.withdraw(service.getDefaultCurrency(), requiredAmount,
+            Cause.source(this).build());
+    }
 
 
 Instead of this, the best thing to do is simply withdraw the amount you need, and check the ``ResultType``
@@ -40,19 +46,21 @@ simply return ``ResultType.ACCOUNT_NO_FUNDS``, or ``ResultType.FAILED`` in this 
 
 Here's how you **should** withdraw money:
 
-
 .. code-block:: java
+    
+    import org.spongepowered.api.service.economy.transaction.ResultType;
+    import org.spongepowered.api.service.economy.transaction.TransactionResult;
+    
+    EconomyService service = ...
+    Account account = ...
+    BigDecimal requiredAmount = BigDecimal.valueOf(20);
 
-        EconomyService service = ...
-        Account account = ...
-        BigDecimal requiredAmount = BigDecimal.valueOf(20);
-
-        TransactionResult result = account.withdraw(service.getDefaultCurrency(),
-            requiredAmount, Cause.of(NamedCause.source(this)));
-        if (result.getResult() == ResultType.SUCCESS)) {
-            // Success!
-        } else if (result.getResult() == ResultType.FAILED || result.getResult() == ResultType.ACCOUNT_NO_FUNDS) {
-            // Something went wrong!
-        } else {
-            // Handle other conditions
-        }
+    TransactionResult result = account.withdraw(service.getDefaultCurrency(),
+        requiredAmount, Cause.source(this).build());
+    if (result.getResult() == ResultType.SUCCESS)) {
+        // Success!
+    } else if (result.getResult() == ResultType.FAILED || result.getResult() == ResultType.ACCOUNT_NO_FUNDS) {
+        // Something went wrong!
+    } else {
+        // Handle other conditions
+    }

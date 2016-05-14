@@ -1,6 +1,6 @@
-==========================
-Working with TextTemplates
-==========================
+=============
+TextTemplates
+=============
 
 ``TextTemplate``\s are an easy and convenient way to store messages with variable elements. For instance, you may find
 yourself wanting to create a configurable message for players who have joined the server for the first time. This is
@@ -138,4 +138,3 @@ joins the server for the first time. We can achieve that using the following cod
             event.setMessage(message);
         }
     }
-

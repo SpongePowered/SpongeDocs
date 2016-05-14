@@ -19,7 +19,7 @@ advised before starting any work. There are several projects we're currently mai
 * SpongeDocs
 * Ore
 
-If you want to know more about the structure of the project and how everythings tied together, head over to
+If you want to know more about the structure of the project and how everything is tied together, head over to
 :doc:`../about/structure`.
 
 What kind of help is needed?
@@ -34,7 +34,7 @@ This can be done by almost everyone. You don't need to know a programming langua
 * report or suggest any errors, faults or bugs you encounter
 * post suggestions or idea you have which would make Sponge better
 
-Reporting bugs best via our `Github repositories <https://github.com/spongepowered/>`_, suggestions fit onto our
+Reporting bugs best via our `GitHub repositories <https://github.com/spongepowered/>`_, suggestions fit onto our
 `forums <https://forums.spongepowered.org/>`_. Just have a look at our
 :doc:`Bug Reporting page <../server/spongineer/bugreport>` for further instructions.
 
@@ -52,7 +52,7 @@ You should at least have basic knowledge of Java, Python or reST to help out on 
 The development of the `Sponge API <https://github.com/spongepowered/SpongeAPI>`_,
 `SpongeForge <https://github.com/spongepowered/SpongeForge>`_,
 `SpongeVanilla <https://github.com/spongepowered/SpongeVanilla>`_ and `Ore <https://github.com/spongepowered/Ore>`_ as
-well as the `SpongeDocs <https://github.com/spongepowered/SpongeDocs>`_ is done in several repositories hosted on Github.
+well as the `SpongeDocs <https://github.com/spongepowered/SpongeDocs>`_ is done in several repositories hosted on GitHub.
 
 Advanced Contributions
 ~~~~~~~~~~~~~~~~~~~~~~

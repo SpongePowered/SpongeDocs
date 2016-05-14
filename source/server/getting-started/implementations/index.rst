@@ -26,7 +26,7 @@ There are currently two implementations:
 Which do I choose?
 ~~~~~~~~~~~~~~~~~~
 
-If you want to run MinecraftForge mods or you prefer to use Sponge in singleplayer, then choose :doc:`spongeforge`.
+If you want to run MinecraftForge mods or you prefer to use Sponge in singleplayer, then choose :doc:`SpongeForge <spongeforge>`.
 
 If you only want to run a Mincraft server with plugins on it (but no mods), then you can choose :doc:`SpongeForge <spongeforge>` or
 :doc:`SpongeVanilla <spongevanilla>`. SpongeForge supports vanilla clients, as long as you don't install Forge mods which require

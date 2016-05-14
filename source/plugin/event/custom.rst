@@ -1,6 +1,6 @@
-======================
-Creating Custom Events
-======================
+=============
+Custom Events
+=============
 
 You can write your own event classes and dispatch those events using the method described above. An event class must
 either implement the ``Event`` interface and, if it should be possible to cancel the event, ``Cancellable``.
@@ -82,7 +82,7 @@ Example: Fire Custom Event
     import org.spongepowered.api.Sponge;
 
     PlayerMutationEvent event = new PlayerMutationEvent(victim, PlayerMutationEvent.Mutation.ROTTED_SOCKS,
-            Cause.of(NamedCause.source(flardSource)));
+            Cause.source(flardSource).build());
     Sponge.getEventManager().post(event);
     if (!event.isCancelled()) {
         // Mutation code

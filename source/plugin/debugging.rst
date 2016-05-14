@@ -12,7 +12,7 @@ Preparing your workspace
 Since we will be running both Sponge and your plugin from within your IDE, you'll need to import either
 `SpongeForge <https://github.com/SpongePowered/SpongeForge>`_ or `SpongeVanilla
 <https://github.com/SpongePowered/SpongeVanilla>`_, depending on which you want to use, as a project into your
-workspace. The instructions to do so are found on the respective project's github page. Follow those instructions
+workspace. The instructions to do so are found on the respective project's GitHub page. Follow those instructions
 carefully before proceeding here.
 
 Now you need to make sure your plugin project is visible to the **SpongeForge/SpongeVanilla** project you just created.

@@ -11,18 +11,18 @@ using the config files in the subfolders of config/worlds.
 
 Below is a complete global.conf file with all possible nodes that may be present on a server. Note that certain
 sections will not be present immediately, and will be added to the file when the server encounters them. This config
-was generated using SpongeForge build 1181, SpongeAPI version 3.1.0:
+was generated using SpongeForge build 1185, SpongeAPI version 4.0.2:
 
 .. code-block:: none
 
     # 1.0
-    #
-    # # If you need help with the configuration or have any questions related
-    # # to Sponge, join us at the IRC or drop by our forums and leave a post.
-    #
+    # 
+    # # If you need help with the configuration or have any questions related to Sponge,
+    # # join us at the IRC or drop by our forums and leave a post.
+    # 
     # # IRC: #sponge @ irc.esper.net ( http://webchat.esper.net/?channel=sponge )
     # # Forums: https://forums.spongepowered.org/
-    #
+    # 
 
     sponge {
         block-tracking {
@@ -203,11 +203,11 @@ was generated using SpongeForge build 1181, SpongeAPI version 3.1.0:
             infinite-water-source=false
             # Enable if this world's spawn should remain loaded with no players.
             keep-spawn-loaded=true
-            # Enable if this world should load on startup.
+            # Enable if this world should be loaded on startup.
             load-on-startup=true
             # Enable if this world allows PVP combat.
             pvp-enabled=true
-            # Enable if this world should be allowed to load.
+            # Enable if this world should be registered.
             world-enabled=true
         }
     }
