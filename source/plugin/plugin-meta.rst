@@ -27,7 +27,7 @@ You can define the additional (optional) plugin metadata on your ``@Plugin`` ann
         description = "This is a very cool plugin I made for me",
         url = "http://example.com",
         authors = {"Spongie", "FLARD"},
-        dependencies = {@Dependency(id = "otherplugin", optional = true)})
+        dependencies = @Dependency(id = "otherplugin", optional = true))
 
 
 File metadata
@@ -63,6 +63,9 @@ file that could be used by a Sponge plugin:
         "authorList": [
             "Spongie",
             "FLARD"
+        ],
+        "dependencies": [
+            "otherplugin"
         ]
     }]
 

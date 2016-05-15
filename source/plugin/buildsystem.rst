@@ -26,7 +26,7 @@ file in your project's root directory, which tells Gradle_ how to build the proj
     you're only interested in how to use Gradle_ for a simple Java project, a good place to start would be the `Gradle
     Java Quickstart`_.
 
-Continue at :doc:`plugin-identifier` for choosing a plugin identifier and then setting up Gradle_ in your IDE.
+Setup your workspace as explained in :doc:`workspace/index` then follow :doc:`project/gradle`.
 
 Maven
 =====
@@ -39,7 +39,7 @@ build the project.
     you're only interested in how to use Maven_ for a simple Java project, a good place to start would be `Maven in 5
     Minutes`_.
 
-Continue at :doc:`plugin-identifier` for choosing a plugin identifier and then setting up Maven_ in your IDE.
+Setup your workspace as explained in :doc:`workspace/index` then follow :doc:`project/maven`.
 
 Creating a plugin without a build system
 ========================================
