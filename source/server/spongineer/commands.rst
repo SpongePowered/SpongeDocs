@@ -41,9 +41,10 @@ Command               Description                               Permission
                       config.
 /sponge save          Saves the global, world, or dimension     sponge.command.save
                       config.
+/sponge timings       The main command for the timings module.  sponge.command.timings
+/sponge tps           Display ticks per second for each world.  sponge.command.tps
 /sponge version       Prints the Sponge/SpongeAPI versions to   sponge.command.version
                       the console.
-/sponge timings       The main command for the timings module.  sponge.command.timings
 ====================  ========================================  ======================
 
 |
