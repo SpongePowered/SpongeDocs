@@ -26,9 +26,9 @@ Sponge
 The following commands are available to players with operator status (or the correct permission node) on servers powered
 by Sponge.
 
-======================  ========================================  ======================
+======================  ========================================  =============================
 Command                 Description                               Permission
-======================  ========================================  ======================
+======================  ========================================  =============================
 /sponge audit           Forces loading of unloaded classes to     sponge.command.audit
                         enable mixin debugging.
 /sponge chunks          Prints out the chunk data for a world, a  sponge.command.chunks
@@ -37,7 +37,7 @@ Command                 Description                               Permission
                         config.
 /sponge heap            Dumps the JVM heap.                       sponge.command.heap
 /sponge plugins         Lists currently installed plugins.        sponge.command.plugins
-/sponge plugins reload  Asks plugins to perform their own reload  sponge.command.plugins
+/sponge plugins reload  Asks plugins to perform their own reload  sponge.command.plugins.reload
                         procedures.
 /sponge reload          Reloads the global, world, or dimension   sponge.command.reload
                         config.
@@ -47,7 +47,7 @@ Command                 Description                               Permission
 /sponge tps             Display ticks per second for each world.  sponge.command.tps
 /sponge version         Prints the Sponge/SpongeAPI versions to   sponge.command.version
                         the console.
-======================  ========================================  ======================
+======================  ========================================  =============================
 
 |
 
