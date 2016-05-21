@@ -37,7 +37,8 @@ Command                 Description                               Permission
                         config.
 /sponge heap            Dumps the JVM heap.                       sponge.command.heap
 /sponge plugins         Lists currently installed plugins.        sponge.command.plugins
-/sponge plugins reload  Requests plugins to reload configs.       sponge.command.plugins
+/sponge plugins reload  Asks plugins to perform their own reload  sponge.command.plugins
+                        procedures.
 /sponge reload          Reloads the global, world, or dimension   sponge.command.reload
                         config.
 /sponge save            Saves the global, world, or dimension     sponge.command.save
