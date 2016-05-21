@@ -24,7 +24,8 @@ Example: Building a Simple Command
         .executor(new HelloWorldCommand())
         .build();
 
-    Sponge.getCommandManager().register(plugin, myCommandSpec, "helloworld", "hello", "test");
+    Sponge.getCommandManager().register(plugin, myCommandSpec, "helloworld", "hello",
+        "test");
 
 Overview of the CommandSpec builder methods
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -82,7 +83,8 @@ Example: Simple Command Executor
     public class HelloWorldCommand implements CommandExecutor {
 
         @Override
-        public CommandResult execute(CommandSource src, CommandContext args) throws CommandException {
+        public CommandResult execute(CommandSource src, CommandContext args)
+                                                            throws CommandException {
             src.sendMessage(Text.of("Hello World!"));
             return CommandResult.success();
         }
@@ -106,17 +108,15 @@ Perform an ``instanceof`` check to determine the type of the ``CommandSource``:
     import org.spongepowered.api.command.source.CommandBlockSource;
     import org.spongepowered.api.command.source.ConsoleSource;
 
-    if(src instanceof Player) {
+    if (src instanceof Player) {
         Player player = (Player) src;
         player.sendMessage(Text.of("Hello " + player.getName() + "!"));
     }
-    else if(src instanceof ConsoleSource) {
+    else if (src instanceof ConsoleSource) {
         src.sendMessage(Text.of("Hello GLaDOS!"));
-        // The Cake Is a Lie
     }
-    else if(src instanceof CommandBlockSource) {
+    else if (src instanceof CommandBlockSource) {
         src.sendMessage(Text.of("Hello Companion Cube!"));
-        // <3
     }
 
 .. note::

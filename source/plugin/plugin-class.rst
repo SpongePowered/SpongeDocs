@@ -55,6 +55,7 @@ game. In the example below, ``onServerStart()`` is called when the ``GameStarted
 
     @Plugin(id = "exampleplugin", name = "Example Plugin", version = "1.0")
     public class ExamplePlugin {
+        
         @Listener
         public void onServerStart(GameStartedServerEvent event) {
             // Hey! The server has started!
