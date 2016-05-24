@@ -9,6 +9,7 @@ of our various methods of communications, including (but not limited to):
 * Sponge Forums
 * GitHub and Bug/Issue tracker
 * Sponge subReddit
+* Sponge TeamSpeak Server
 * Any other official means of communication by the Sponge project.
 
 The Sponge project adheres primarily to Wheaton's Law: "Don't be a dick." We expect everyone using our communication
