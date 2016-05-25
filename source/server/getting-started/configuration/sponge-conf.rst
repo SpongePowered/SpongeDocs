@@ -11,7 +11,7 @@ using the config files in the subfolders of config/worlds.
 
 Below is a complete global.conf file with all possible nodes that may be present on a server. Note that certain
 sections will not be present immediately, and will be added to the file when the server encounters them. This config
-was generated using SpongeForge build 1185, SpongeAPI version 4.0.2:
+was generated using SpongeForge build 1360, SpongeAPI version 4.1:
 
 .. code-block:: none
 
@@ -60,73 +60,59 @@ was generated using SpongeForge build 1185, SpongeAPI version 4.0.2:
             human-player-list-remove-delay=10
             # Controls the time in ticks for when an item despawns.
             item-despawn-rate=6000
-            # Max size of an entity's bounding box before removing it. Set to 0 to disable
+            # Max size of an entities bounding box before removing it. Set to 0 to disable
             max-bounding-box-size=1000
             # Square of the max speed of an entity before removing it. Set to 0 to disable
             max-speed=100
         }
         entity-activation-range {
-            ambient-activation-range=32
-            aquatic-activation-range=32
-            creature-activation-range=32
-            minecraft {
-                ambient {
-                    bat=true
-                }
-                aquatic {
-                    squid=true
-                }
-                creature {
-                    chicken=true
-                    cow=true
-                    entityhorse=true
-                    mushroomcow=true
-                    ocelot=true
-                    pig=true
-                    rabbit=true
-                    sheep=true
-                    wolf=true
-                }
-                enabled=true
-                misc {
-                    armorstand=true
-                    arrow=true
-                    boat=true
-                    fallingsand=true
-                    item=true
-                    itemframe=true
-                    leashknot=true
-                    minecartchest=true
-                    minecartfurnace=true
-                    minecarthopper=true
-                    minecartrideable=true
-                    minecarttnt=true
-                    villager=true
-                    villagergolem=true
-                    xporb=true
-                }
-                monster {
-                    blaze=true
-                    cavespider=true
-                    creeper=true
-                    enderman=true
-                    endermite=true
-                    ghast=true
-                    giant=true
-                    guardian=true
-                    lavaslime=true
-                    pigzombie=true
-                    silverfish=true
-                    skeleton=true
-                    slime=true
-                    snowman=true
-                    spider=true
-                    witch=true
-                    zombie=true
+            # If enabled, newly discovered entities will be added to this config with a default value.
+            auto-populate=false
+            # Default activation ranges used for all entities unless overidden.
+            defaults {
+                ambient=32
+                aquatic=32
+                creature=32
+                misc=16
+                monster=32
+            }
+            # Per-mod overrides. Refer to the minecraft default mod for example.
+            mods {}
+        }
+        entity-collisions {
+            # If enabled, newly discovered entities/blocks will be added to this config with a default value.
+            auto-populate=false
+            # Default max collisions used for all entities/blocks unless overidden.
+            defaults {
+                blocks=8
+                entities=8
+            }
+            # Max amount of entities any given entity or block can collide with. This improves performance when there are more than 8 entities on top of eachother such as a 1x1 spawn pen. Set to 0 to disable.
+            max-entities-within-aabb=8
+            # Per-mod overrides. Refer to the minecraft default mod for example.
+            mods {
+                minecraft {
+                    blocks {
+                        "detector_rail"=1
+                        "heavy_weighted_pressure_plate"=150
+                        "light_weighted_pressure_plate"=15
+                        "mob_spawner"=-1
+                        "stone_pressure_plate"=1
+                        "wooden_button"=1
+                        "wooden_pressure_plate"=1
+                    }
+                    # Default max collisions used for all entities/blocks unless overidden.
+                    defaults {
+                        blocks=8
+                        entities=8
+                    }
+                    # Set to false if you want mod to ignore entity collision rules.
+                    enabled=true
+                    entities {
+                        thrownpotion=-1
+                    }
                 }
             }
-            misc-activation-range=16
-            monster-activation-range=32
         }
         exploits {
             prevent-creative-itemstack-name-exploit=true
@@ -176,8 +162,18 @@ was generated using SpongeForge build 1185, SpongeAPI version 4.0.2:
         modules {
             bungeecord=false
             entity-activation-range=true
+            entity-collisions=true
             exploits=true
+            optimizations=true
             timings=true
+        }
+        optimizations {
+            # Caches chunks internally for faster returns when querying at various positions
+            chunk-map-caching=true
+            # A simple patch to reduce a few sanity checks for the sake of speed when performing block state operations
+            fast-blockstate-lookup=true
+            # This prevents chunks being loaded for getting light values at specific block positions. May have side effects.
+            ignore-unloaded-chunks-on-get-light=true
         }
         # Configuration options related to the Sql service, including connection aliases etc
         sql {
@@ -192,7 +188,7 @@ was generated using SpongeForge build 1185, SpongeAPI version 4.0.2:
             history-interval=300
             history-length=3600
             server-name-privacy=false
-            verbose=false
+            verbose=true
         }
         world {
             # Lava behaves like vanilla water when source block is removed
@@ -205,6 +201,8 @@ was generated using SpongeForge build 1185, SpongeAPI version 4.0.2:
             keep-spawn-loaded=true
             # Enable if this world should be loaded on startup.
             load-on-startup=true
+            # Specifies the radius (in chunks) of where creatures will spawn. This value is capped to the current view distance setting in server.properties
+            mob-spawn-range=8
             # Enable if this world allows PVP combat.
             pvp-enabled=true
             # Enable if this world should be registered.
@@ -256,37 +254,51 @@ human-player-list-remove-delay            integer   10          Number of ticks 
                                                                 a human is removed from the tab list. The
                                                                 allowed range is 0 - 100.
 item-despawn-rate                         integer   6000        The time in ticks before an item despawns.
-max-bounding-box-size                     integer   1000        Maximum size of an entity's bounding box before
+max-bounding-box-size                     integer   1000        Maximum size of an entities bounding box before
                                                                 it is removed. Set to 0 to disable.
 max-speed                                 integer   100         Square of the maximum speed of an entity before
                                                                 it is removed. Set to 0 to disable
-**Entity Activation Range**                                     *Note that entities from Mods are automatically
-                                                                added to this list.*
-ambient-activation-range                  integer   32          Range where ambient entities become active.
-aquatic-activation-range                  integer   32          Range where aquatic entities become active.
-creature-activation-range                 integer   32          Range where creatures become active.
-**Minecraft Creatures**
-ambient (bat)                             boolean   true        Use activation range on bats.
-aquatic (squid)                           boolean   true        Use activation range on squid.
-creature <creature>                       boolean   true        Use activation range on <creature>. Permitted
-                                                                values: chicken, cow, entityhorse, mushroomcow,
-                                                                ocelot, pig, rabbit, sheep, wolf.
-enabled                                   boolean   true        Enable activation range on Minecraft entities.
-**Miscellaneous Entities**
-misc <entity>                             boolean   true        Use activation range on <entity>. Permitted
-                                                                values: armorstand, arrow, boat, fallingsand,
-                                                                item, itemframe, leashknot, minecartchest,
-                                                                minecartfurnace, minecarthopper,
-                                                                minecartrideable, minecarttnt, villager,
-                                                                villagergolem, xporb.
-**Minecraft Monsters**
-monster <monster>                         boolean   true        Use activation range on <monster>. Permitted
-                                                                values: blaze, cavespider, creeper, enderman,
-                                                                endermite, ghast, giant, guardian, lavaslime,
-                                                                pigzombie, silverfish, skeleton, slime,
-                                                                snowman, spider, witch, zombie.
-misc-activation-range                     integer   16          Range where misc entities become active.
-monster-activation-range                  integer   32          Range where monsters are activated.
+**Entity Activation Range**
+auto-populate                             boolean   false       If enabled, newly discovered entities will be
+                                                                added to this config with a default value.
+**Defaults**                                                    Default activation ranges for all entities unless
+                                                                overridden.
+ambient                                   integer   32          Default activation range for ambient entities.
+aquatic                                   integer   32          Default activation range for aquatic entities.
+creature                                  integer   16          Default activation range for creatures.
+misc                                      integer   16          Default activation range for miscellaneous
+                                                                entities.
+monster                                   integer   32          Default activation range for monsters.
+**Mods**                                                        Per-mod overrides. Refer to the minecraft default
+                                                                mod for example.
+**Entity Collisions**
+auto-populate                             boolean   false       If enabled, newly discovered entities/blocks will
+                                                                be added to this config with a default value.
+**Defaults**                                                    Default max collisions used for all entities/blocks
+                                                                unless overridden.
+blocks                                    integer   8           Default max collisions for blocks.
+entities                                  integer   8           Default max collisions for entities.
+max-entities-within-aabb                  integer   8           Max amount of entities any given entity or block
+                                                                can collide with. Set to 0 to disable.
+**Mods**                                                        Per-mod overrides. Refer to the minecraft default
+                                                                mod for example.
+**Minecraft**
+**Blocks**
+"detector_rail"                           integer   1           Max collisions for a "detector_rail".
+"heavy_weighted_pressure_plate"           integer   150         Max collisions for a "heavy_weighted_pressure_plate".
+"light_weighted_pressure_plate"           integer   15          Max collisions for a "light_weighted_pressure_plate".
+"mob_spawner"                             integer   -1          Max collisions for a "mob_spawner".
+"stone_pressure_plate"                    integer   1           Max collisions for a "stone_pressure_plate".
+"wooden_button"                           integer   1           Max collisions for a "wooden_button".
+"wooden_pressure_plate"                   integer   1           Max collisions for a "wooden_pressure_plate".
+**Defaults**                                                    Default max collisions used for all entities/blocks
+                                                                unless overridden.
+blocks                                    integer   8           Default max collisions for blocks.
+entities                                  integer   8           Default max collisions for entities.
+enabled                                   boolean   true        Set to false if you want mod to ignore entity
+                                                                collision rules.
+**Entities**
+thrownpotion                              integer   -1          Max collisions for a thrown potion.
 **Exploits**
 prevent-creative-itemstack-name-exploit   boolean   true        Prevents an exploit in which the client sends a
                                                                 packet with the itemstack name exceeding the
@@ -328,7 +340,9 @@ log-stacktraces                           boolean   false       Add stack traces
 **Modules**
 bungeecord                                boolean   false       Enables bungeecord support.
 entity-activation-range                   boolean   true        Enables the entity activation range settings.
+entity-collisions                         boolean   true        Enables entity collision settings.
 exploits                                  boolean   true        Enables the exploit prevention module.
+optimizations                             boolean   true        Enables the optimizations module.
 timings                                   boolean   true        Enables timing settings.
 **SQL**
 aliases                                   string    null        Aliases for SQL connections. This is done in
@@ -344,7 +358,7 @@ history-length                            integer   3600        How long, in tic
 server-name-privacy                       boolean   false       Whether to include information such as the
                                                                 server name, motd, online-mode, and server
                                                                 icon in the report.
-verbose                                   boolean   false       Whether or not for timings to monitor at
+verbose                                   boolean   true        Whether or not for timings to monitor at
                                                                 the verbose level.
 **World Settings**
 flowing-lava-decay                        boolean   false       Lava behaves like vanilla water when the source
@@ -353,7 +367,10 @@ generate-spawn-on-load                    boolean   true        If the world sho
                                                                 world is loaded.
 infinite-water-source                     boolean   false       False = Default vanilla water source behaviour.
 keep-spawn-loaded                         boolean   true        If the spawn should stay loaded with no players.
-load-on-startup                           boolean   true        If the world should load on startup.
+load-on-startup                           boolean   true        If the world should be loaded on startup.
+mob-spawn-range                           integer   8           Specifies the radius (in chunks) of where creatures
+                                                                will spawn. This value is capped to the current
+                                                                view distance setting in server.properties.
 pvp-enabled                               boolean   true        If the would allows PVP combat.
-world-enabled                             boolean   true        Enable if this world should be allowed to load.
+world-enabled                             boolean   true        Enable if this world should be registered.
 ========================================  ========  ==========  ===============================================
