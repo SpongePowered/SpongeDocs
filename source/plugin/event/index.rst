@@ -16,6 +16,8 @@ Events cannot be sent to a specific set of plugins. All plugins that listen to a
 The event bus or event manager is the class that keeps track of which plugins are listening to which event,
 and is also responsible for distributing events to event listeners.
 
+Sponge provides a built in callback for plugin reloading. See the :ref:`game-reload` section for more information.
+
 
 Contents
 ========
