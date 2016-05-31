@@ -18,3 +18,4 @@ Contents
     accessing
     modifying
     tileentities
+    virtualblock
