@@ -54,6 +54,7 @@ Contents
     wgen/index
     manager
     game-profile-manager
+    virtualblock
     debugging
     tab-lists
     plugin-meta
