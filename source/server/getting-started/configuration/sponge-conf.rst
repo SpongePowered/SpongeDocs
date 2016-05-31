@@ -60,6 +60,12 @@ was generated using SpongeForge build 1360, SpongeAPI version 4.1:
             human-player-list-remove-delay=10
             # Controls the time in ticks for when an item despawns.
             item-despawn-rate=6000
+            # The upper bounded range where living entities farther from a player will likely despawn
+            living-hard-despawn-range=128
+            # The amount of seconds before a living entity between the soft and hard despawn ranges from a player to be considered for despawning
+            living-soft-despawn-minimum-life=30
+            # The lower bounded range where living entities near a player may potentially despawn
+            living-soft-despawn-range=32
             # Max size of an entities bounding box before removing it. Set to 0 to disable
             max-bounding-box-size=1000
             # Square of the max speed of an entity before removing it. Set to 0 to disable
@@ -203,6 +209,11 @@ was generated using SpongeForge build 1360, SpongeAPI version 4.1:
             load-on-startup=true
             # Specifies the radius (in chunks) of where creatures will spawn. This value is capped to the current view distance setting in server.properties
             mob-spawn-range=8
+            # A list of all detected portal agents used in this world. In order to override, change the target world name to any other valid world. Note: If world is not found, it will fallback to default.
+            portal-agents {
+                "minecraft:default_nether"=DIM-1
+                "minecraft:default_the_end"=DIM1
+            }
             # Enable if this world allows PVP combat.
             pvp-enabled=true
             # Enable if this world should be registered.
@@ -254,6 +265,13 @@ human-player-list-remove-delay            integer   10          Number of ticks 
                                                                 a human is removed from the tab list. The
                                                                 allowed range is 0 - 100.
 item-despawn-rate                         integer   6000        The time in ticks before an item despawns.
+living-hard-despawn-range                 integer   128         The upper bounded range where living entities farther
+                                                                from a player will likely despawn
+living-soft-despawn-minimum-life          integer   30          The amount of seconds before a living entity between
+                                                                the soft and hard despawn ranges from a player to be
+                                                                considered for despawning
+living-soft-despawn-range                 integer   32          The lower bounded range where living entities near a
+                                                                player may potentially despawn
 max-bounding-box-size                     integer   1000        Maximum size of an entities bounding box before
                                                                 it is removed. Set to 0 to disable.
 max-speed                                 integer   100         Square of the maximum speed of an entity before
@@ -371,6 +389,12 @@ load-on-startup                           boolean   true        If the world sho
 mob-spawn-range                           integer   8           Specifies the radius (in chunks) of where creatures
                                                                 will spawn. This value is capped to the current
                                                                 view distance setting in server.properties.
+**Portal Agents**                                               A list of all detected portal agents used in this
+                                                                world. In order to override, change the target world
+                                                                name to any other valid world. If world is not found,
+                                                                it will fallback to default.
+"minecraft:default_nether"                world     DIM-1       The default nether world.
+"minecraft:default_the_end"               world     DIM1        The default end world.
 pvp-enabled                               boolean   true        If the would allows PVP combat.
 world-enabled                             boolean   true        Enable if this world should be registered.
 ========================================  ========  ==========  ===============================================
