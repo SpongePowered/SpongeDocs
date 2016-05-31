@@ -11,7 +11,7 @@ using the config files in the subfolders of config/worlds.
 
 Below is a complete global.conf file with all possible nodes that may be present on a server. Note that certain
 sections will not be present immediately, and will be added to the file when the server encounters them. This config
-was generated using SpongeForge build 1360, SpongeAPI version 4.1:
+was generated using SpongeForge build 1371, SpongeAPI version 4.1:
 
 .. code-block:: none
 
