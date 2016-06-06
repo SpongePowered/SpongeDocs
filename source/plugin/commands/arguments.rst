@@ -93,6 +93,8 @@ Overview of the ``GenericArguments`` command elements
 +----------------------------+-----------------------------------------------------------------------------------------+-------------------------------+
 | ``playerOrSource``         | Like ``player``, but returns the sender of the command if no matching player was found. | multiple ``Player`` instances |
 +----------------------------+-----------------------------------------------------------------------------------------+-------------------------------+
+| ``userOrSource``           | Like ``playerOrSource``, but returns a user instead of a player.                        | multiple ``User`` instances   |
++----------------------------+-----------------------------------------------------------------------------------------+-------------------------------+
 | ``world``                  | Expect an argument to represent a world (also includes unloaded worlds).                | multiple ``WorldProperties``  |
 +----------------------------+-----------------------------------------------------------------------------------------+-------------------------------+
 | ``dimension``              | Expect an argument to represent a dimension (``END``, ``NETHER``, ``OVERWORLD``).       | multiple ``DimensionType``    |
