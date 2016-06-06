@@ -11,7 +11,7 @@ using the config files in the subfolders of config/worlds.
 
 Below is a complete global.conf file with all possible nodes that may be present on a server. Note that certain
 sections will not be present immediately, and will be added to the file when the server encounters them. This config
-was generated using SpongeForge build 1371, SpongeAPI version 4.1:
+was generated using SpongeForge build 1399, SpongeAPI version 4.1:
 
 .. code-block:: none
 
@@ -66,7 +66,7 @@ was generated using SpongeForge build 1371, SpongeAPI version 4.1:
             living-soft-despawn-minimum-life=30
             # The lower bounded range where living entities near a player may potentially despawn
             living-soft-despawn-range=32
-            # Max size of an entities bounding box before removing it. Set to 0 to disable
+            # Max size of an entity's bounding box before removing it. Set to 0 to disable
             max-bounding-box-size=1000
             # Square of the max speed of an entity before removing it. Set to 0 to disable
             max-speed=100
@@ -89,10 +89,7 @@ was generated using SpongeForge build 1371, SpongeAPI version 4.1:
             # If enabled, newly discovered entities/blocks will be added to this config with a default value.
             auto-populate=false
             # Default max collisions used for all entities/blocks unless overidden.
-            defaults {
-                blocks=8
-                entities=8
-            }
+            defaults {}
             # Max amount of entities any given entity or block can collide with. This improves performance when there are more than 8 entities on top of eachother such as a 1x1 spawn pen. Set to 0 to disable.
             max-entities-within-aabb=8
             # Per-mod overrides. Refer to the minecraft default mod for example.
@@ -164,6 +161,8 @@ was generated using SpongeForge build 1371, SpongeAPI version 4.1:
             exploit-sign-command-updates=false
             # Add stack traces to dev logging
             log-stacktraces=false
+            # Log when a world auto-saves its chunk data. Note: This may be spammy depending on the auto-save-interval configured for world.
+            world-auto-save=false
         }
         modules {
             bungeecord=false
@@ -197,6 +196,10 @@ was generated using SpongeForge build 1371, SpongeAPI version 4.1:
             verbose=true
         }
         world {
+            # The auto-save tick interval used when saving global player data. Set to 0 to disable. (Default: 900) Note: 20 ticks is equivalent to 1 second.
+            auto-player-save-interval=900
+            # The auto-save tick interval used to save all loaded chunks in a world. Set to 0 to disable. (Default: 900) Note: 20 ticks is equivalent to 1 second.
+            auto-save-interval=900
             # Lava behaves like vanilla water when source block is removed
             flowing-lava-decay=false
             # Enable if you want the world to generate spawn the moment its loaded.
@@ -272,7 +275,7 @@ living-soft-despawn-minimum-life          integer   30          The amount of se
                                                                 considered for despawning
 living-soft-despawn-range                 integer   32          The lower bounded range where living entities near a
                                                                 player may potentially despawn
-max-bounding-box-size                     integer   1000        Maximum size of an entities bounding box before
+max-bounding-box-size                     integer   1000        Maximum size of an entity's bounding box before
                                                                 it is removed. Set to 0 to disable.
 max-speed                                 integer   100         Square of the maximum speed of an entity before
                                                                 it is removed. Set to 0 to disable
@@ -294,8 +297,6 @@ auto-populate                             boolean   false       If enabled, newl
                                                                 be added to this config with a default value.
 **Defaults**                                                    Default max collisions used for all entities/blocks
                                                                 unless overridden.
-blocks                                    integer   8           Default max collisions for blocks.
-entities                                  integer   8           Default max collisions for entities.
 max-entities-within-aabb                  integer   8           Max amount of entities any given entity or block
                                                                 can collide with. Set to 0 to disable.
 **Mods**                                                        Per-mod overrides. Refer to the minecraft default
@@ -355,6 +356,7 @@ exploit-sign-command-updates              boolean   false       Logs when a serv
                                                                 containing commands from a player with no
                                                                 permission.
 log-stacktraces                           boolean   false       Add stack traces to dev logging.
+world-auto-save                           boolean   false       If true, logs when a world auto-saves its chunk data.
 **Modules**
 bungeecord                                boolean   false       Enables bungeecord support.
 entity-activation-range                   boolean   true        Enables the entity activation range settings.
@@ -379,6 +381,10 @@ server-name-privacy                       boolean   false       Whether to inclu
 verbose                                   boolean   true        Whether or not for timings to monitor at
                                                                 the verbose level.
 **World Settings**
+auto-player-save-interval                 integer   900         The auto-save tick interval used when saving global
+                                                                player data.
+auto-save-interval                        integer   900         The auto-save tick interval used to save all loaded
+                                                                chunks in a world.
 flowing-lava-decay                        boolean   false       Lava behaves like vanilla water when the source
                                                                 block is removed, when set to true.
 generate-spawn-on-load                    boolean   true        If the world should generate spawn when the
