@@ -129,6 +129,27 @@ The ``@Listener`` annotation has a few configurable fields:
 By default, ``@Listener`` is configured so that your event listener will *not* be called if the event in question is
 cancellable and has been cancelled (such as by another plugin).
 
+.. _game-reload:
+
+GameReloadEvent
+~~~~~~~~~~~~~~~
+
+To prevent all plugins providing their own reload commands, Sponge provides a built in callback for plugins to listen
+to, and when executed, perform any reloading actions. What constitutes as a 'reloading action' is purely up to the
+plugin to decide. The event is not necessarily limited to reloading configuration.
+
+.. code-block:: java
+
+    import org.spongepowered.api.event.game.GameReloadEvent;
+
+    @Listener
+    public void reload(GameReloadEvent event) {
+        // Do reload stuff
+    }
+
+Note that this is different for what generally is considered a 'reload', as the event is purely all callback for
+plugins and does not do any reloading on its own.
+
 Firing Events
 =============
 

@@ -93,3 +93,16 @@ return if this item can harvest obsidian without the need to check the type of t
 that a mod or a Minecraft update adds a new tool with the capabilities of mining obsidian.
 
 .. TODO Link to docs on custom datamaipulators
+
+Comparing ItemStacks
+~~~~~~~~~~~~~~~~~~~~
+
+The ``ItemStack`` class contains a neat method for comparing two ``ItemStack``\ s. By using the ``equalsTo(ItemStack)``
+method off of an already existing ``ItemStack``, we can see if the two ``ItemStack``\ s are 'equal'. That is, they
+share the same stack size, ``ItemType``, and data. An example is show below:
+
+.. code-block:: java
+
+    public boolean isEqual(ItemStack stack1, ItemStack stack2) {
+        return stack1.equalTo(stack2);
+    }
