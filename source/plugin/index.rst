@@ -50,6 +50,7 @@ Contents
     database
     permissions
     bans
+    bookview
     economy/index
     wgen/index
     manager
