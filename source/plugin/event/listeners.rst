@@ -136,7 +136,8 @@ GameReloadEvent
 
 To prevent all plugins providing their own reload commands, Sponge provides a built in callback for plugins to listen
 to, and when executed, perform any reloading actions. What constitutes as a 'reloading action' is purely up to the
-plugin to decide. The event is not necessarily limited to reloading configuration.
+plugin to decide. The ``GameReloadEvent`` will fire when a player executes the ``/sponge plugins reload`` command. The
+event is not necessarily limited to reloading configuration.
 
 .. code-block:: java
 
