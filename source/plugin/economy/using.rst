@@ -44,9 +44,8 @@ Example: Loading the EconomyService
 Using the EconomyService
 ========================
 
-After loading the ``EconomyService`` and assigning it to a variable, you are ready to access all of the features the
-Economy API has to offer. You can view said functions
-`here <https://jd.spongepowered.org/?org/spongepowered/api/service/economy/EconomyService.html>`_.
+After loading the :javadoc:`org.spongepowered.api.service.economy.EconomyService` and assigning it to a variable, you
+are ready to access all of the features the Economy API has to offer.
 
 Example: Getting a player's balance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

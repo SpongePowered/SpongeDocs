@@ -59,9 +59,8 @@ The first step is to create a class for the command. The class has to implement 
 
 .. tip::
 
-    See the `Javadocs for CommandCallable
-    <https://jd.spongepowered.org/3.0.0/org/spongepowered/api/command/CommandCallable.html>`_ for the
-    purposes of each method in this example.
+    See the Javadocs for :javadoc:`org.spongepowered.api.command.CommandCallable` for the purposes of each method in
+    this example.
 
 Registering the command
 =======================

@@ -68,8 +68,6 @@ Example: Building a Command with Multiple Arguments
 Overview of the ``GenericArguments`` command elements
 =====================================================
 
-.. _catalog type: https://jd.spongepowered.org/3.0.0/org/spongepowered/api/CatalogType.html
-
 +----------------------------+-----------------------------------------------------------------------------------------+-------------------------------+
 | Command Element            | Description                                                                             | Value Type & Amount           |
 +============================+=========================================================================================+===============================+
@@ -104,8 +102,8 @@ Overview of the ``GenericArguments`` command elements
 +----------------------------+-----------------------------------------------------------------------------------------+-------------------------------+
 | ``vector3d``               | Expect an argument to represent a ``Vector3d``.                                         | one ``Vector3d``              |
 +----------------------------+-----------------------------------------------------------------------------------------+-------------------------------+
-| ``catalogedElement``       | Expect an argument that is a member of the specified `catalog type`_.                   | multiple matching elements    |
-|                            |                                                                                         | of the specified catalog type |
+| ``catalogedElement``       | Expect an argument that is a member of the specified                                    | multiple matching elements    |
+|                            | :javadoc:`org.spongepowered.api.CatalogType`.                                           | of the specified catalog type |
 +----------------------------+-----------------------------------------------------------------------------------------+-------------------------------+
 | **Matchers**                                                                                                                                         |
 +----------------------------+-----------------------------------------------------------------------------------------+-------------------------------+
@@ -151,8 +149,7 @@ Overview of the ``GenericArguments`` command elements
 
 .. tip::
 
-    See the `Javadocs for GenericArguments <https://jd.spongepowered.org/org/spongepowered/api/command/args/GenericArguments.html>`_
-    for more information.
+    See the Javadocs for :javadoc:`org.spongepowered.api.command.args.GenericArguments` for more information.
 
 Custom Command Elements
 =======================

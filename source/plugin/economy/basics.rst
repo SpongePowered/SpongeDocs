@@ -13,8 +13,8 @@ The EconomyService
 ==================
 
 The ``EconomyService`` is the basis of the Economy API. It is used to interact via the Economy API, stores an
-economy's currencies and provides methods for account management. The ``EconomyService`` JavaDocs can be found
-`here <https://jd.spongepowered.org/index.html?org/spongepowered/api/service/economy/EconomyService.html>`__.
+economy's currencies and provides methods for account management. The JavaDocs for the ``EconomyService`` can be
+found on the :javadoc:`org.spongepowered.api.service.economy.EconomyService` JavaDocs page.
 
 .. warning::
 
@@ -25,10 +25,9 @@ economy's currencies and provides methods for account management. The ``EconomyS
 Currency
 ========
 
-The `org.spongepowered.api.service.economy.Currency <https://jd.spongepowered.org/org/spongepowered/api/service/economy/Currency.html>`_
-object represents a form of Currency. ``Currency`` stores a display name (plural and singular), a symbol, the amount of
-fractional digits, and whether the currency is the default currency for the economy. If the economy plugin chooses, it
-can support multiple currencies.
+The :javadoc:`org.spongepowered.api.service.economy.Currency` object represents a form of Currency. ``Currency`` stores
+a display name (plural and singular), a symbol, the amount of fractional digits, and whether the currency is the
+default currency for the economy. If the economy plugin chooses, it can support multiple currencies.
 
 Accounts
 ========
@@ -66,5 +65,5 @@ The ``TransactionResult`` stores data about the transaction that occurred, inclu
 - Transaction type
 - Result of the transaction
 
-You can view all possible transaction results at the
-`Sponge JavaDocs <https://jd.spongepowered.org/index.html?org/spongepowered/api/service/economy/transaction/ResultType.html>`_.
+You can view all possible transaction results on the
+:javadoc:`org.spongepowered.api.service.economy.transaction.ResultType` JavaDocs page.

@@ -306,9 +306,8 @@ whether the operation was successful or not.
 .. tip::
 
     To understand ``DataTransactionResult`` \ s, check the :doc:`corresponding docs page
-    <../../plugin/data/transactions>` and refer to the `DataTransactionBuilder API
-    Docs <https://jd.spongepowered.org/index.html?org/spongepowered/api/data/DataTransactionBuilder.html>`_ to
-    create one.
+    <../../plugin/data/transactions>` and refer to the
+    :javadoc:`org.spongepowered.api.data.DataTransactionResult.Builder` docs to create one.
 
 .. warning::
 
