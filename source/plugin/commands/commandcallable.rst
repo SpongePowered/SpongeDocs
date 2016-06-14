@@ -5,7 +5,7 @@ Low-Level Command API
 The ``CommandCallable`` and ``Dispatcher`` interfaces can be used to define commands. The interfaces can be used as a
 base for custom command APIs.
 
-It is recommended to use the `Command Builder API <../creating>`_ for simple command definitions.
+It is recommended to use the :doc:`Command Builder API <creating>` for simple command definitions.
 
 Writing a command
 =================
