@@ -8,18 +8,18 @@ Dependency injection allows plugins to designate a few API types that will be in
 Temporary List of Injected Types
 ================================
 
-ConfigDir (annotation on Path or File)
+:javadoc:`org.spongepowered.api.config.ConfigDir` (annotation on Path or File)
   Used to inject the plugin's configuration directory:
-  ``./mods/`` OR ``./mods/<Plugin#id>/`` depending on ``sharedRoot``
+  ``./mods/`` OR ``./mods/<Plugin#id>/`` depending on :javadoc:`org.spongepowered.api.config.ConfigDir#sharedRoot()`
 
 ConfigurationLoader<CommentedConfigurationNode>
   Must be annotated with ``@DefaultConfig``.
   Used to inject a pre-generated ``ConfigurationLoader`` for the ``File`` of the same annotation.
 
-DefaultConfig (annotation on Path, ConfigurationLoader or File)
+:javadoc:`org.spongepowered.api.config.DefaultConfig` (annotation on Path, ConfigurationLoader or File)
   Used to inject the plugin's specific configuration file: ``<Plugin#id>.conf``
 
-EventManager
+:javadoc:`org.spongepowered.api.event.EventManager`
   Manages the registration of event handlers and the dispatching of events.
 
 File
@@ -27,11 +27,14 @@ File
   Depending on the annotation given this will contain a file reference to the plugins default config file or the
   directory used for storing configuration files. However, Path (see below) should be preferred.
 
-Game
+:javadoc:`org.spongepowered.api.Game`
   The ``Game`` object is the core accessor of the SpongeAPI.
 
-GameRegistry
+:javadoc:`org.spongepowered.api.GameRegistry`
   Provides an easy way to retrieve types from a ``Game``.
+
+.. NOTE: STOPPING HERE FOR NOW. Will finish this later once more features are in sponge-javadocs. This note
+   will be removed once I've come back here to finish this page.
 
 GuiceObjectMapperFactory
   A tool provided by Configurate to allow easier mapping of objects to configuration nodes.
