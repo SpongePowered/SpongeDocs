@@ -172,8 +172,11 @@ def simple_with_arguments(text, inliner, text_before_parenthesis):
             url_method_text = '-' + non_generic_text_in_parenthesis + '-'
         else:
             url_method_text = '-' + text_in_parenthesis + '-'
+    # Replace the text down to just the packages. Remove the classes, methods, arguments, everything else.
+    text = text.replace(text_in_parenthesis, '').replace('()', '').replace(text_object, '').replace(text_method, '')\
+        .replace('#', '')
     url_method_text = url_method_text.replace(' ', '')
-    return [javadoc_text], [__jd_link__ + + inliner.document.settings.env.app.config.release + '/' +
+    return [javadoc_text], [__jd_link__ + inliner.document.settings.env.app.config.release + '/' +
                             text.replace('.', '/') + text_object + '.html#' + text_method + url_method_text]
 
 
