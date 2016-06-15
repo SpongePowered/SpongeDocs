@@ -18,19 +18,21 @@
 ' which displays SomeClass.SomeInternalClass#someMethod()
 '
 ' Linking to methods with arguments are also supported:
-' :javadoc:`com.some.package.SomeClass#someClass(com.some.package.SomeArgumentObject)`
+' :javadoc:`com.some.package.SomeClass#someMethod(com.some.package.SomeArgumentObject)`
 ' (Note: do not include a variable, just the argument type)
 '
 ' Linking to methods with generic arguments is also supported:
-' :javadoc:`com.some.package.SomeClass#someClass(com.some.package.SomeGenericArg<SomeGenericThing>)`
+' :javadoc:`com.some.package.SomeClass#someMethod(com.some.package.SomeGenericArg<SomeGenericThing>)`
 ' (Note: do not fully declare the path to the generic within the <>. The javadocs do not require it, and I'm certainly
-' not requiring it. It is only really there for visual purposes.)
+' not requiring it. It is only really there for the text that will be displayed and is not used in the javadoc url.)
+'
+' Multiple arguments within methods as well as primitive types are supported:
+' :javadoc:`com.some.package.SomeClass#someMethod(com.some.package.SomeClass, double)`
 '
 '  ~ Original Author: 12AwsomeMan34 (aaronlingerfelt@yahoo.com)
 '
 """
 from docutils import nodes, utils
-from docutils.parsers.rst.roles import set_classes
 
 
 __version__ = '1.0'
@@ -83,11 +85,12 @@ def internal_page_link(text, inliner, text_before_last_object):
 
 """
 '
-' Same as simple_page_link(text, inliner), except this one is for linking to a specific method rather than just the page.
-' Note that this is only for no-argument methods. Examples:
+' Same as simple_page_link(text, inliner), except this one is for linking to a specific method rather than just the
+' page. Note that this is only for no-argument methods. Examples:
 '
 ' Input: ('org.spongepowered.api.text.BookView#builder()', inliner)
-' Output: ('BookView#builder()', 'https://jd.spongepowered.org/4.1.0/org/spongepowered/api/text/BookView.html#builder--')
+' Output: ('BookView#builder()',
+            'https://jd.spongepowered.org/4.1.0/org/spongepowered/api/text/BookView.html#builder--')
 '
 """
 def simple_with_method_page_link(text, inliner):
