@@ -90,7 +90,7 @@ def internal_page_link(text, inliner, text_before_last_object):
 '
 ' Input: ('org.spongepowered.api.text.BookView#builder()', inliner)
 ' Output: ('BookView#builder()',
-            'https://jd.spongepowered.org/4.1.0/org/spongepowered/api/text/BookView.html#builder--')
+'           'https://jd.spongepowered.org/4.1.0/org/spongepowered/api/text/BookView.html#builder--')
 '
 """
 def simple_with_method_page_link(text, inliner):
@@ -135,6 +135,7 @@ def internal_with_method_page_link(text, inliner, text_before_last_object):
 """
 '
 ' Same as simple_with_method_page_link(), except this one is for methods with arguments. Example:
+'
 ' Input: ('org.spongepowered.api.util.blockray.BlockRay#maxDistanceFilter(com.flowpowered.math.vector.Vector3d, double)',
 '           inliner, text_before_parenthesis)
 ' Output: ('BlockRay#maxDistanceFilter(Vector3d, double)',
@@ -186,6 +187,7 @@ def simple_with_arguments(text, inliner, text_before_parenthesis):
 """
 '
 ' Same as above, except with internal classes 'n stuff.
+'
 ' Input: ('org.spongepowered.api.text.BookView.Builder#insertPage(int, org.spongepowered.api.text.Text)', inliner,
 '           text_before_last_object)
 ' Output: ('BookView.Builder#insertPage(int, Text)',
@@ -235,6 +237,56 @@ def internal_with_arguments(text, inliner, text_before_last_object):
                             text.replace('.', '/') + text_object + '.html#' + text_method + url_method_text]
 
 
+"""
+'
+' Used for linking to a field on a specific page rather than a method. Example:
+'
+' Input: ('org.spongepowered.api.text.serializer.TextSerializers#FORMATTING_CODE', inliner)
+' Output: ('TextSerializers#FORMATTING_CODE',
+'           'https://jd.spongepowered.org/4.1.0/org/spongepowered/api/text/serializer/TextSerializers.html
+'               #FORMATTING_CODE')
+'
+"""
+def simple_field(text, inliner):
+    # Partition out the class from the last dot so that we may display it on the docs. Example:
+    # Input: 'org.spongepowered.api.text.serializer.TextSerializers#FORMATTING_CODE'
+    # Output: 'TextSerializers'
+    javadoc_text = text.rpartition('.')[2]
+    # Gets the field from after the hash.
+    field_text = text.rpartition('#')[2]
+    # Remove the field_text as it will be added to the end of the url later
+    text = text.replace(field_text, '').replace('#', '')
+    # Returns the javadoc display text as well as the url to the javadoc.
+    return [javadoc_text], [__jd_link__ + inliner.document.settings.env.app.config.release + '/' +
+                            text.replace('.', '/') + '.html#' + field_text]
+
+
+"""
+'
+' Same as above except for internal classes. Fake example:
+'
+' Input: ('some.package.SomeClass.SomeInternalClass#SOME_FIELD', inliner, text_before_last_object)
+' Output: ('SomeClass.SomeInternalClass#SOME_FIELD', some_jd_link_see_above_function_for_example_output_here)
+'
+"""
+def internal_field(text, inliner, text_before_last_object):
+    # Takes the text_before_last_object (i.e. the base class/interface/whatever) and appends its internal class.
+    # Example:
+    # Input: text_before_last_object = 'BookView', text = org.spongepowered.api.text.BookView.Builder
+    # Output: 'BookView.Builder'
+    javadoc_text = text_before_last_object + '.' + text.rpartition('.')[2]
+    # Gets the field from after the hash.
+    field_text = text.rpartition('#')[2]
+    # Removes the field part from the text so we can just have the object text.
+    object_text = javadoc_text.rpartition('#')[0]
+    # Remove the javadoc text from the original text. We are going to replace the dots to dashes (/) later on, however
+    # for internal classes, this cannot be. Internal classes need the dot in their url. So remove it from here and
+    # re-add the one with the dot in it afterwards. Also remove the hash and the field.
+    text = text.replace(object_text, '').replace(field_text, '').replace('#', '')
+    return [javadoc_text], [__jd_link__ + inliner.document.settings.env.app.config.release + '/' +
+                            text.replace('.', '/') + object_text + '.html#' + field_text]
+
+
 def javadoc_role(name, rawtext, text, lineno, inliner, options={}, content=[]):
     # Gets the text before any specified parenthesis. If there aren't any, then this just returns the original string
     # unmodified. This is useful in-case a method is specified that contains any arguments, and we don't want to touch
@@ -279,6 +331,12 @@ def javadoc_role(name, rawtext, text, lineno, inliner, options={}, content=[]):
     # argument. If the text_before_last_object starts with a capital letter, then this is an internal class.
     elif '#' in text and text_before_last_object[0].isupper() and '(' in text and '()' not in text:
         display_and_url = internal_with_arguments(text, inliner, text_before_last_object)
+    # If there is a hash but no opening parenthesis, then this is likely referring to a field.
+    elif '#' in text and '(' not in text and not text_before_last_object[0].isupper():
+        display_and_url = simple_field(text, inliner)
+    # If text_before_last_object starts with a capital letter then this is a field of an internal class
+    elif '#' in text and '(' not in text and text_before_last_object[0].isupper():
+        display_and_url = internal_field(text, inliner, text_before_last_object)
     # Incorrect input was sent through. Throw some defaults up I suppose.
     else:
         display_and_url = ['[Sponge-JavaDoc] Unable to parse ' + text], ['https://www.youtube.com/watch?v=KMU0tzLwhbE']
