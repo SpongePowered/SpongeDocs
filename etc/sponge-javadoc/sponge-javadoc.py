@@ -246,6 +246,11 @@ def javadoc_role(name, rawtext, text, lineno, inliner, options={}, content=[]):
     # If com.some.package.SomeClass is specified, then 'package' is returned.
     # If com.some.package.SomeClass.SomeInternalClass is specified, then 'SomeClass' is returned.
     # This is useful for telling if the specified class is an internal class.
+    if '.' not in text:
+        # If there is no dot in the text, then the documenter goofed. To prevent a python error later on, make
+        # a return statement here.
+        return [nodes.reference(rawtext, utils.unescape('[Sponge-JavaDoc] Unable to parse ' + text),
+                                refuri='https://www.youtube.com/watch?v=KMU0tzLwhbE', **options)], []
     text_before_last_object = text_before_parenthesis.rpartition('.')[0].rpartition('.')[2]
     # If there is no hash (#), then we know that this is not specifying a method. Rather, it is specifying some object.
     # This could be an internal class or a normal class however, so we need to check the text before the object and see
