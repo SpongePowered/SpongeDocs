@@ -131,6 +131,3 @@ sponge-theme/
 
 # Source code created by pip
 src/
-
-# compiled sponge-javadoc extension
-etc/sponge-javadoc/sponge-javadoc.pyc
