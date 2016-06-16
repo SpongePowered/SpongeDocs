@@ -32,6 +32,19 @@ Linking to fields is also supported:
 :javadoc:`org.spongepowered.api.text.serializer.TextSerializers#FORMATTING_CODE`
 which will display TextSerializers#FORMATTING_CODE
 
+Sponge-Javadoc currently supports liking to the following javadocs:
+* The Sponge JavaDocs (https://jd.spongepowered.org)
+* Configurate JavaDocs (http://zml2008.github.io/configurate/apidocs/)
+
+Found an issue with Sponge-JavaDoc? Report it to the SpongeDocs repo (https://github.com/SpongePowered/SpongeDocs).
+Make sure to include a description of what went wrong, including the javadoc role used (i.e. the
+:javadoc:`some.package.SomeClass` thing), the actual displayed text output, and the actual javadoc link output, if
+possible.
+If an error is thrown into the console that prevents sphinx from continuing (likely a python error), report it to the
+docs repo as well! Even if what you inputted to the javadoc role was incorrect, reporting it will allow us to add a
+check that will send a 'fake' output so it does not bring sphinx down entirely. Make sure to include the error log
+in your report (the error message in the console will tell you where to find the log).
+
  ~ Original Author: 12AwsomeMan34 (aaronlingerfelt@yahoo.com)
 
 """
@@ -84,7 +97,7 @@ def internal_page_link(text, inliner, text_before_last_object):
     text = text.replace(javadoc_text, '')
     if 'ninja.leaping.configurate' in text:
         return [javadoc_text], [__configurate_link__ + text.replace('.', '/') + javadoc_text + '.html']
-    else :
+    else:
         return [javadoc_text], [__jd_link__ + inliner.document.settings.env.app.config.release + '/' +
                                 text.replace('.', '/') + javadoc_text + '.html']
 
@@ -173,18 +186,28 @@ def simple_with_arguments(text, inliner, text_before_parenthesis):
         for x in text_in_parenthesis.split(','):
             partitioned_text = x
             if '<' in x:
+                inside_generic = x.rpartition('<')[2].rpartition('>')[0]
+                if '.' in inside_generic:
+                    javadoc_text += x.rpartition('<')[0].rpartition('.')[2] + '<' + inside_generic + '>' + ', '
+                else:
+                    javadoc_text += x.rpartition('.')[2] + ", "
                 partitioned_text = x.rpartition('<')[0]
-            javadoc_text += x.rpartition('.')[2] + ", "
+            else:
+                javadoc_text += x.rpartition('.')[2] + ", "
             url_method_text += partitioned_text + '-'
         # Remove the last two characters to prevent a command and a space at the end of the text from the for loop.
         javadoc_text = javadoc_text[:-2] + ')'
     else:
-        # Single argument. Just add the argument in.
-        javadoc_text += text_in_parenthesis.rpartition('.')[2] + ')'
         if '<' in text_in_parenthesis:
+            inside_generic = text_in_parenthesis.rpartition('<')[2].rpartition('>')[0]
+            if '.' in inside_generic:
+                javadoc_text += text_in_parenthesis.rpartition('<')[0].rpartition('.')[2] + '<' + inside_generic + '>'
+            else:
+                javadoc_text += text_in_parenthesis.rpartition('.')[2] + ')'
             non_generic_text_in_parenthesis = text_in_parenthesis.rpartition('<')[0]
             url_method_text = '-' + non_generic_text_in_parenthesis + '-'
         else:
+            javadoc_text += text_in_parenthesis.rpartition('.')[2] + ')'
             url_method_text = '-' + text_in_parenthesis + '-'
     # Replace the text down to just the packages. Remove the classes, methods, arguments, everything else.
     text = text.replace(text_in_parenthesis, '').replace('()', '').replace(text_object, '').replace(text_method, '')\
@@ -265,11 +288,16 @@ def simple_field(text, inliner):
     # Partition out the class from the last dot so that we may display it on the docs. Example:
     # Input: 'org.spongepowered.api.text.serializer.TextSerializers#FORMATTING_CODE'
     # Output: 'TextSerializers'
-    javadoc_text = text.rpartition('.')[2]
+    if '<' in text:
+        object_text = text.rpartition('<')[0].rpartition('.')[2]
+        javadoc_text = object_text + '<' + text.rpartition('<')[2].rpartition('>')[0] + '>' + '#' +\
+            text.rpartition('#')[2]
+    else:
+        javadoc_text = text.rpartition('.')[2]
+        object_text = javadoc_text
     # Gets the field from after the hash.
     field_text = text.rpartition('#')[2]
-    # Remove the field_text as it will be added to the end of the url later
-    text = text.replace(field_text, '').replace('#', '')
+    text = text.replace(javadoc_text, '').replace('#', '') + object_text
     if 'ninja.leaping.configurate' in text:
         return [javadoc_text], [__configurate_link__ + text.replace('.', '/') + '.html#' + field_text]
     else:
@@ -288,7 +316,18 @@ def internal_field(text, inliner, text_before_last_object):
     # Example:
     # Input: text_before_last_object = 'BookView', text = org.spongepowered.api.text.BookView.Builder
     # Output: 'BookView.Builder'
-    javadoc_text = text_before_last_object + '.' + text.rpartition('.')[2]
+    if '<' in text:
+        # If there are generics, consider the original text_before_last_object not usable. As in the generic,
+        # it's possible that it was referencing an internal object as well.
+        text_before_last_object = text.rpartition('<')[0].rpartition('.')[0].rpartition('.')[2]
+        if text_before_last_object[0].isupper():
+            # Add the text before the last object and its internal class
+            javadoc_text = text_before_last_object + '.' + text.rpartition('<')[0].rpartition('.')[2] + '<' +\
+                           text.rpartition('<')[2]
+        else:
+            javadoc_text = text_before_last_object + '<' + text.rpartition('<')[2]
+    else:
+        javadoc_text = text_before_last_object + '.' + text.rpartition('.')[2]
     # Gets the field from after the hash.
     field_text = text.rpartition('#')[2]
     # Removes the field part from the text so we can just have the object text.
@@ -314,6 +353,8 @@ def javadoc_role(name, rawtext, text, lineno, inliner, options={}, content=[]):
     text_before_parenthesis = text
     if '(' in text:
         text_before_parenthesis = text.rpartition('(')[0]
+    elif '<' in text:
+        text_before_parenthesis = text.rpartition('<')[0]
     # Gets the text that is specified before that last specified class/interface/whatever. For example:
     # If com.some.package.SomeClass is specified, then 'package' is returned.
     # If com.some.package.SomeClass.SomeInternalClass is specified, then 'SomeClass' is returned.
