@@ -1,36 +1,35 @@
 """
-'
-' Sponge-JavaDoc is a custom sphinx extension designed to create a role that links to the official Sponge JavaDocs for
-' the SpongeDocs reStructuredText files.
-'
-' As a slight tutorial for others wishing to use it in the SpongeDocs:
-'
-' Simply use the `:javadoc:` role specifying the javadoc you would like to link to. For example:
-' :javadoc:`com.some.package.SomeClass`
-' will link to the javadocs for SomeClass as well as display SomeClass as the hyperlink text.
-'
-' To link to a method, simply use a hash (#) as well as the target method:
-' :javadoc:`com.some.package.SomeClass#someMethod()`
-' which will display SomeClass#someMethod()
-'
-' Internal classes are also supported:
-' :javadoc:`com.some.package.SomeClass.SomeInternalClass#someMethod()`
-' which displays SomeClass.SomeInternalClass#someMethod()
-'
-' Linking to methods with arguments are also supported:
-' :javadoc:`com.some.package.SomeClass#someMethod(com.some.package.SomeArgumentObject)`
-' (Note: do not include a variable, just the argument type)
-'
-' Linking to methods with generic arguments is also supported:
-' :javadoc:`com.some.package.SomeClass#someMethod(com.some.package.SomeGenericArg<SomeGenericThing>)`
-' (Note: do not fully declare the path to the generic within the <>. The javadocs do not require it, and I'm certainly
-' not requiring it. It is only really there for the text that will be displayed and is not used in the javadoc url.)
-'
-' Multiple arguments within methods as well as primitive types are supported:
-' :javadoc:`com.some.package.SomeClass#someMethod(com.some.package.SomeClass, double)`
-'
-'  ~ Original Author: 12AwsomeMan34 (aaronlingerfelt@yahoo.com)
-'
+Sponge-JavaDoc is a custom sphinx extension designed to create a role that links to the official Sponge JavaDocs for
+the SpongeDocs reStructuredText files.
+
+As a slight tutorial for others wishing to use it in the SpongeDocs:
+
+Simply use the `:javadoc:` role specifying the javadoc you would like to link to. For example:
+:javadoc:`com.some.package.SomeClass`
+will link to the javadocs for SomeClass as well as display SomeClass as the hyperlink text.
+
+To link to a method, simply use a hash (#) as well as the target method:
+:javadoc:`com.some.package.SomeClass#someMethod()`
+which will display SomeClass#someMethod()
+
+Internal classes are also supported:
+:javadoc:`com.some.package.SomeClass.SomeInternalClass#someMethod()`
+which displays SomeClass.SomeInternalClass#someMethod()
+
+Linking to methods with arguments are also supported:
+:javadoc:`com.some.package.SomeClass#someMethod(com.some.package.SomeArgumentObject)`
+(Note: do not include a variable, just the argument type)
+
+Linking to methods with generic arguments is also supported:
+:javadoc:`com.some.package.SomeClass#someMethod(com.some.package.SomeGenericArg<SomeGenericThing>)`
+(Note: do not fully declare the path to the generic within the <>. The javadocs do not require it, and I'm certainly
+not requiring it. It is only really there for the text that will be displayed and is not used in the javadoc url.)
+
+Multiple arguments within methods as well as primitive types are supported:
+:javadoc:`com.some.package.SomeClass#someMethod(com.some.package.SomeClass, double)`
+
+ ~ Original Author: 12AwsomeMan34 (aaronlingerfelt@yahoo.com)
+
 """
 from docutils import nodes, utils
 
@@ -39,18 +38,16 @@ __version__ = '1.0'
 __jd_link__ = 'https://jd.spongepowered.org/'
 
 
-"""
-'
-' Creates a simple page link. To explain this, here is an example:
-'
-' Input: ('org.spongepowered.api.text.Text', inliner)
-' Output: ('Text', 'https://jd.spongepowered.org/4.1.0/org/spongepowered/api/text/Text.html')
-'
-' The input is a 'simple page link'. That is, it is not an internal class, nor does it contain a method. It links to
-' one thing, and the created link will link straight to its page.
-'
-"""
 def simple_page_link(text, inliner):
+    """
+    Creates a simple page link. To explain this, here is an example:
+
+    Input: ('org.spongepowered.api.text.Text', inliner)
+    Output: ('Text', 'https://jd.spongepowered.org/4.1.0/org/spongepowered/api/text/Text.html')
+
+    The input is a 'simple page link'. That is, it is not an internal class, nor does it contain a method. It links to
+    one thing, and the created link will link straight to its page.
+    """
     # Partition out the class from the last dot so that we may display it on the docs. Example:
     # Input: 'org.spongepowered.api.text.Text'
     # Output: 'Text'
@@ -60,16 +57,15 @@ def simple_page_link(text, inliner):
                             text.replace('.', '/') + '.html']
 
 
-"""
-'
-' Same as the function above, with the exception that this one specifically deals with internal classes. Here is an
-' example of a proper input and expected output:
-'
-' Input: ('org.spongepowered.api.text.BookView.Builder', inliner, text_before_last_object)
-' Output: ('BookView.Builder', 'https://jd.spongepowered.org/4.1.0/org/spongepowered/api/text/BookView.Builder.html')
-'
-"""
 def internal_page_link(text, inliner, text_before_last_object):
+    """
+    Same as the function above, with the exception that this one specifically deals with internal classes. Here is an
+    example of a proper input and expected output:
+
+    Input: ('org.spongepowered.api.text.BookView.Builder', inliner, text_before_last_object)
+    Output: ('BookView.Builder', 'https://jd.spongepowered.org/4.1.0/org/spongepowered/api/text/BookView.Builder
+              .html')
+    """
     # Takes the text_before_last_object (i.e. the base class/interface/whatever) and appends its internal class.
     # Example:
     # Input: text_before_last_object = 'BookView', text = org.spongepowered.api.text.BookView.Builder
@@ -83,17 +79,15 @@ def internal_page_link(text, inliner, text_before_last_object):
                             text.replace('.', '/') + javadoc_text + '.html']
 
 
-"""
-'
-' Same as simple_page_link(text, inliner), except this one is for linking to a specific method rather than just the
-' page. Note that this is only for no-argument methods. Examples:
-'
-' Input: ('org.spongepowered.api.text.BookView#builder()', inliner)
-' Output: ('BookView#builder()',
-'           'https://jd.spongepowered.org/4.1.0/org/spongepowered/api/text/BookView.html#builder--')
-'
-"""
 def simple_with_method_page_link(text, inliner):
+    """
+    Same as simple_page_link(text, inliner), except this one is for linking to a specific method rather than just the
+    page. Note that this is only for no-argument methods. Examples:
+
+    Input: ('org.spongepowered.api.text.BookView#builder()', inliner)
+    Output: ('BookView#builder()',
+              'https://jd.spongepowered.org/4.1.0/org/spongepowered/api/text/BookView.html#builder--')
+    """
     # Partitions the text before the parenthesis so that we can get the text of the last object. Example:
     # Input: 'org.spongepowered.api.text.BookView#builder'
     # Output: 'BookView#builder'
@@ -109,16 +103,14 @@ def simple_with_method_page_link(text, inliner):
                             text.replace('.', '/') + text_object + '.html#' + text_method]
 
 
-"""
-'
-' Same as above except for internal classes/interfaces/you-get-the-idea. Examples:
-'
-' Input: ('org.spongepowered.api.text.BookView.Builder#build()', inliner, text_before_last_object)
-' Output: ('BookView.Builder#build()',
-'           'https://jd.spongepowered.org/4.1.0/org/spongepowered/api/text/BookView.Builder.html#build--')
-'
-"""
 def internal_with_method_page_link(text, inliner, text_before_last_object):
+    """
+    Same as above except for internal classes/interfaces/you-get-the-idea. Examples:
+
+    Input: ('org.spongepowered.api.text.BookView.Builder#build()', inliner, text_before_last_object)
+    Output: ('BookView.Builder#build()',
+              'https://jd.spongepowered.org/4.1.0/org/spongepowered/api/text/BookView.Builder.html#build--')
+    """
     # Takes the text_before_last_object (i.e. the base class/interface/whatever) and appends its internal class.
     # Example:
     # Input: text_before_last_object = 'BookView', text = 'org.spongepowered.api.text.BookView.Builder#build()'
@@ -132,18 +124,16 @@ def internal_with_method_page_link(text, inliner, text_before_last_object):
                             text.replace('.', '/') + text_object + '.html#' + text_method.replace('()', '--')]
 
 
-"""
-'
-' Same as simple_with_method_page_link(), except this one is for methods with arguments. Example:
-'
-' Input: ('org.spongepowered.api.util.blockray.BlockRay#maxDistanceFilter(com.flowpowered.math.vector.Vector3d, double)',
-'           inliner, text_before_parenthesis)
-' Output: ('BlockRay#maxDistanceFilter(Vector3d, double)',
-'   'https://jd.spongepowered.org/4.1.0/org/spongepowered/api/util/blockray/BlockRay.html#maxDistanceFilter
-'       -com.flowpowered.math.vector.Vector3d-double-')
-'
-"""
 def simple_with_arguments(text, inliner, text_before_parenthesis):
+    """
+    Same as simple_with_method_page_link(), except this one is for methods with arguments. Example:
+
+    Input: ('org.spongepowered.api.util.blockray.BlockRay#maxDistanceFilter(com.flowpowered.math.vector.Vector3d,
+              double)', inliner, text_before_parenthesis)
+    Output: ('BlockRay#maxDistanceFilter(Vector3d, double)',
+      'https://jd.spongepowered.org/4.1.0/org/spongepowered/api/util/blockray/BlockRay.html#maxDistanceFilter
+          -com.flowpowered.math.vector.Vector3d-double-')
+    """
     # Get the text object from text_before_parenthesis. Example:
     # Input: 'org.spongepowered.api.util.blockray.BlockRay#maxDistanceFilter'
     # Output: 'BlockRay'
@@ -184,18 +174,16 @@ def simple_with_arguments(text, inliner, text_before_parenthesis):
                             text.replace('.', '/') + text_object + '.html#' + text_method + url_method_text]
 
 
-"""
-'
-' Same as above, except with internal classes 'n stuff.
-'
-' Input: ('org.spongepowered.api.text.BookView.Builder#insertPage(int, org.spongepowered.api.text.Text)', inliner,
-'           text_before_last_object)
-' Output: ('BookView.Builder#insertPage(int, Text)',
-'   'https://jd.spongepowered.org/4.1.0/org/spongepowered/api/text/BookView.Builder.html#insertPage-int
-'       -org.spongepowered.api.text.Text-')
-'
-"""
 def internal_with_arguments(text, inliner, text_before_last_object):
+    """
+    Same as above, except with internal classes 'n stuff.
+
+    Input: ('org.spongepowered.api.text.BookView.Builder#insertPage(int, org.spongepowered.api.text.Text)', inliner,
+              text_before_last_object)
+    Output: ('BookView.Builder#insertPage(int, Text)',
+      'https://jd.spongepowered.org/4.1.0/org/spongepowered/api/text/BookView.Builder.html#insertPage-int
+          -org.spongepowered.api.text.Text-')
+    """
     # Get the text object from text_before_parenthesis. Example:
     # Input: text_before_last_object = 'BookView', text =
     #   'org.spongepowered.api.text.BookView.Builder#insertPage(int, org.spongepowered.api.text.Text)'
@@ -237,17 +225,15 @@ def internal_with_arguments(text, inliner, text_before_last_object):
                             text.replace('.', '/') + text_object + '.html#' + text_method + url_method_text]
 
 
-"""
-'
-' Used for linking to a field on a specific page rather than a method. Example:
-'
-' Input: ('org.spongepowered.api.text.serializer.TextSerializers#FORMATTING_CODE', inliner)
-' Output: ('TextSerializers#FORMATTING_CODE',
-'           'https://jd.spongepowered.org/4.1.0/org/spongepowered/api/text/serializer/TextSerializers.html
-'               #FORMATTING_CODE')
-'
-"""
 def simple_field(text, inliner):
+    """
+    Used for linking to a field on a specific page rather than a method. Example:
+
+    Input: ('org.spongepowered.api.text.serializer.TextSerializers#FORMATTING_CODE', inliner)
+    Output: ('TextSerializers#FORMATTING_CODE',
+              'https://jd.spongepowered.org/4.1.0/org/spongepowered/api/text/serializer/TextSerializers.html
+                  #FORMATTING_CODE')
+    """
     # Partition out the class from the last dot so that we may display it on the docs. Example:
     # Input: 'org.spongepowered.api.text.serializer.TextSerializers#FORMATTING_CODE'
     # Output: 'TextSerializers'
@@ -261,15 +247,13 @@ def simple_field(text, inliner):
                             text.replace('.', '/') + '.html#' + field_text]
 
 
-"""
-'
-' Same as above except for internal classes. Fake example:
-'
-' Input: ('some.package.SomeClass.SomeInternalClass#SOME_FIELD', inliner, text_before_last_object)
-' Output: ('SomeClass.SomeInternalClass#SOME_FIELD', some_jd_link_see_above_function_for_example_output_here)
-'
-"""
 def internal_field(text, inliner, text_before_last_object):
+    """
+    Same as above except for internal classes. Fake example:
+
+    Input: ('some.package.SomeClass.SomeInternalClass#SOME_FIELD', inliner, text_before_last_object)
+    Output: ('SomeClass.SomeInternalClass#SOME_FIELD', some_jd_link_see_above_function_for_example_output_here)
+    """
     # Takes the text_before_last_object (i.e. the base class/interface/whatever) and appends its internal class.
     # Example:
     # Input: text_before_last_object = 'BookView', text = org.spongepowered.api.text.BookView.Builder
@@ -345,12 +329,8 @@ def javadoc_role(name, rawtext, text, lineno, inliner, options={}, content=[]):
     return [node], []
 
 
-"""""
-'
-' Sphinx extension setup. Nothing fancy here. Go find something more interesting. :S
-'
-"""""
 def setup(app):
+    """Sphinx extension setup. Nothing fancy here. Go find something more interesting. :S"""
     app.info('Initializing Sponge-Javadoc version ' + __version__ + '!')
     app.add_role('javadoc', javadoc_role)
     return {'version': __version__}
