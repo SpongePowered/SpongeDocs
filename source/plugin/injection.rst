@@ -12,7 +12,7 @@ Temporary List of Injected Types
   Used to inject the plugin's configuration directory:
   ``./mods/`` OR ``./mods/<Plugin#id>/`` depending on :javadoc:`org.spongepowered.api.config.ConfigDir#sharedRoot()`
 
-ConfigurationLoader<CommentedConfigurationNode>
+:javadoc:`ninja.leaping.configurate.loader.ConfigurationLoader<CommentedConfigurationNode>`
   Must be annotated with ``@DefaultConfig``.
   Used to inject a pre-generated ``ConfigurationLoader`` for the ``File`` of the same annotation.
 
@@ -33,10 +33,7 @@ File
 :javadoc:`org.spongepowered.api.GameRegistry`
   Provides an easy way to retrieve types from a ``Game``.
 
-.. NOTE: STOPPING HERE FOR NOW. Will finish this later once more features are in sponge-javadocs. This note
-   will be removed once I've come back here to finish this page.
-
-GuiceObjectMapperFactory
+:javadoc:`ninja.leaping.configurate.objectmapping.GuiceObjectMapperFactory`
   A tool provided by Configurate to allow easier mapping of objects to configuration nodes.
   See :doc:`configuration/serialization` for usage.
 
@@ -53,10 +50,11 @@ Path
   Depending on the annotation given this will contain a path reference to the plugins default config file or the
   directory used for storing configuration files.
 
-PluginContainer
-  A ``@Plugin`` class wrapper, used to retrieve information from the annotation for easier use.
+:javadoc:`org.spongepowered.api.plugin.PluginContainer`
+  A :javadoc:`org.spongepowered.api.plugin.Plugin` class wrapper, used to retrieve information from the
+  annotation for easier use.
 
-PluginManager
+:javadoc:`org.spongepowered.api.plugin.PluginManager`
   Manages the plugins loaded by the implementation.
   Can retrieve another plugin's ``PluginContainer``.
 
@@ -83,7 +81,7 @@ Game
 ~~~~
 
 The ``Game`` object is the opening for many of the internal functions of the SpongeAPI, from the ``EventManager`` to the
-``Server`` and even the Sync/Async ``Scheduler``.
+:javadoc:`org.spongepowered.api.Server` and even the Sync/Async :javadoc:`org.spongepowered.api.scheduler.Scheduler`.
 
 It's entirely possible to receive the ``Game`` object from within most events, however it is commonly obtained through
 an injection.
@@ -125,7 +123,8 @@ an injection.
 Config Directory
 ~~~~~~~~~~~~~~~~
 
-The recommended way to obtain your config file is through Guice, along with the @ConfigFile annotation.
+The recommended way to obtain your config file is through Guice, along with the
+:javadoc:`org.spongepowered.api.config.ConfigDir` annotation.
 
 .. tip::
 
@@ -173,9 +172,9 @@ The recommended way to obtain your config file is through Guice, along with the 
 DefaultConfig
 ~~~~~~~~~~~~~
 
-The way that ``DefaultConfig`` works is very similar to ``ConfigDir``. The biggest difference obviously being that
-``DefaultConfig`` refers to a specific file, where ``ConfigDir`` refers to a directory.
+The way that ``@DefaultConfig`` works is very similar to ``@ConfigDir``. The biggest difference obviously being that
+``@DefaultConfig`` refers to a specific file, where ``@ConfigDir`` refers to a directory.
 
 .. tip::
 
-    View :doc:`configuration/index` for a complete guide, specifically for ``DefaultConfig``.
+    View :doc:`configuration/index` for a complete guide, specifically for ``@DefaultConfig``.

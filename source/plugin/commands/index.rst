@@ -6,8 +6,8 @@ Commands
 
 	Since the Command API makes use of the Text API, make sure you read :doc:`../text/index` first.
 
-There are two different APIs to create commands in Sponge: The ``CommandCallable`` interface and the ``CommandSpec``
-builder.
+There are two different APIs to create commands in Sponge: The :javadoc:`org.spongepowered.api.command.CommandCallable`
+interface and the :javadoc:`org.spongepowered.api.command.spec.CommandSpec` builder.
 
 The most comfortable way to create a new command is the ``CommandSpec`` builder, which will be detailed in this section.
 It supports child commands and argument parsing.

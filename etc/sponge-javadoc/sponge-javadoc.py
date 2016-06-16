@@ -66,10 +66,13 @@ def simple_page_link(text, inliner):
     The input is a 'simple page link'. That is, it is not an internal class, nor does it contain a method. It links to
     one thing, and the created link will link straight to its page.
     """
+    text = text.replace('\n', ' ')
     # Partition out the class from the last dot so that we may display it on the docs. Example:
     # Input: 'org.spongepowered.api.text.Text'
     # Output: 'Text'
     javadoc_text = text.rpartition('.')[2]
+    if '<' in text:
+        text = text.rpartition('<')[0]
     if 'ninja.leaping.configurate' in text:
         return [javadoc_text], [__configurate_link__ + text.replace('.', '/') + '.html']
     else:
@@ -86,11 +89,14 @@ def internal_page_link(text, inliner, text_before_last_object):
     Output: ('BookView.Builder', 'https://jd.spongepowered.org/4.1.0/org/spongepowered/api/text/BookView.Builder
               .html')
     """
+    text = text.replace('\n', ' ')
     # Takes the text_before_last_object (i.e. the base class/interface/whatever) and appends its internal class.
     # Example:
     # Input: text_before_last_object = 'BookView', text = org.spongepowered.api.text.BookView.Builder
     # Output: 'BookView.Builder'
     javadoc_text = text_before_last_object + '.' + text.rpartition('.')[2]
+    if '<' in text:
+        text = text.rpartition('<')
     # Remove the javadoc text from the original text. We are going to replace the dots to dashes (/) later on, however
     # for internal classes, this cannot be. Internal classes need the dot in their url. So remove it from here and
     # re-add the one with the dot in it afterwards.
@@ -111,6 +117,7 @@ def simple_with_method_page_link(text, inliner):
     Output: ('BookView#builder()',
               'https://jd.spongepowered.org/4.1.0/org/spongepowered/api/text/BookView.html#builder--')
     """
+    text = text.replace('\n', ' ')
     # Partitions the text before the parenthesis so that we can get the text of the last object. Example:
     # Input: 'org.spongepowered.api.text.BookView#builder'
     # Output: 'BookView#builder'
@@ -137,6 +144,7 @@ def internal_with_method_page_link(text, inliner, text_before_last_object):
     Output: ('BookView.Builder#build()',
               'https://jd.spongepowered.org/4.1.0/org/spongepowered/api/text/BookView.Builder.html#build--')
     """
+    text = text.replace('\n', ' ')
     # Takes the text_before_last_object (i.e. the base class/interface/whatever) and appends its internal class.
     # Example:
     # Input: text_before_last_object = 'BookView', text = 'org.spongepowered.api.text.BookView.Builder#build()'
@@ -167,6 +175,7 @@ def simple_with_arguments(text, inliner, text_before_parenthesis):
       'https://jd.spongepowered.org/4.1.0/org/spongepowered/api/util/blockray/BlockRay.html#maxDistanceFilter
           -com.flowpowered.math.vector.Vector3d-double-')
     """
+    text = text.replace('\n', ' ')
     # Get the text object from text_before_parenthesis. Example:
     # Input: 'org.spongepowered.api.util.blockray.BlockRay#maxDistanceFilter'
     # Output: 'BlockRay'
@@ -231,6 +240,7 @@ def internal_with_arguments(text, inliner, text_before_last_object):
       'https://jd.spongepowered.org/4.1.0/org/spongepowered/api/text/BookView.Builder.html#insertPage-int
           -org.spongepowered.api.text.Text-')
     """
+    text = text.replace('\n', ' ')
     # Get the text object from text_before_parenthesis. Example:
     # Input: text_before_last_object = 'BookView', text =
     #   'org.spongepowered.api.text.BookView.Builder#insertPage(int, org.spongepowered.api.text.Text)'
@@ -285,6 +295,7 @@ def simple_field(text, inliner):
               'https://jd.spongepowered.org/4.1.0/org/spongepowered/api/text/serializer/TextSerializers.html
                   #FORMATTING_CODE')
     """
+    text = text.replace('\n', ' ')
     # Partition out the class from the last dot so that we may display it on the docs. Example:
     # Input: 'org.spongepowered.api.text.serializer.TextSerializers#FORMATTING_CODE'
     # Output: 'TextSerializers'
@@ -312,6 +323,7 @@ def internal_field(text, inliner, text_before_last_object):
     Input: ('some.package.SomeClass.SomeInternalClass#SOME_FIELD', inliner, text_before_last_object)
     Output: ('SomeClass.SomeInternalClass#SOME_FIELD', some_jd_link_see_above_function_for_example_output_here)
     """
+    text = text.replace('\n', ' ')
     # Takes the text_before_last_object (i.e. the base class/interface/whatever) and appends its internal class.
     # Example:
     # Input: text_before_last_object = 'BookView', text = org.spongepowered.api.text.BookView.Builder

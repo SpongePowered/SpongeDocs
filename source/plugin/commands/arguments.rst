@@ -6,17 +6,23 @@ The Command Builder API comes with a powerful argument parser. It converts the s
 (integers, booleans, strings) or game objects (players, worlds, block types , ...). The parser supports optional
 arguments and flags. It also handles TAB completion of arguments.
 
-The parsed arguments are stored in the ``CommandContext`` object. If the parser returns a single object, obtain it with
-``args.<T>getOne(String key)`` (``T`` is the value type). Optional and weak arguments may return ``Optional.empty()``.
+The parsed arguments are stored in the :javadoc:`org.spongepowered.api.command.args.CommandContext` object. If the
+parser returns a single object, obtain it with
+:javadoc:`org.spongepowered.api.command.args.CommandContext#getOne(java.lang.String)`. Optional and
+weak arguments may return ``Optional.empty()``.
 
 Many of the parsers may return more than one object (e.g. multiple players with a matching username). In that case, you
-must use the ``args.<T>getAll(String key)`` method to get the ``Collection`` of possible matches. **Otherwise, the
-context object will throw an exception!**
+must use the :javadoc:`org.spongepowered.api.command.args.CommandContext#getAll(java.lang.String)` method to get the
+``Collection`` of possible matches. **Otherwise, the context object will throw an exception!**
 
 .. tip::
 
-   You can use the ``onlyOne`` element to limit the amount of returned values to a single one, so you can safely use
-   ``args.<T>getOne(String key)``.
+   You can use the
+   :javadoc:`org.spongepowered.api.command.args.GenericArguments#onlyOne(org.spongepowered.api.command.args.
+   CommandElement)` element to limit the amount of returned values to a single one, so you can safely use
+   ``args.<T>getOne(String)``.
+
+.. note: stopping here for now
 
 To create a new ``CommandElement`` (argument), use the ``GenericArguments`` factory class. Many command elements require
 a short text key, which is displayed in error and help messages.

@@ -2,10 +2,11 @@
 Building a Command
 ==================
 
-The first step is to get a new ``CommandSpec`` builder. The builder provides methods to modify the command help
-messages, command arguments and the command logic. These methods can be chained.
+The first step is to get a new :javadoc:`org.spongepowered.api.command.spec.CommandSpec` builder. The builder provides
+methods to modify the command help messages, command arguments and the command logic. These methods can be chained.
 
-To finally build the command, call the ``build()`` method of the builder.
+To finally build the command, you'll want to call the
+:javadoc:`org.spongepowered.api.command.spec.CommandSpec.Builder#build()` method.
 
 After that, you have to register the command.
 
@@ -62,8 +63,10 @@ Writing a Command Executor
 The only required component to build a simple command is the command executor class, which contains the logic of the
 command.
 
-The class has to implement the ``CommandExecutor`` interface, which defines the ``execute`` method. The method is called
-on command execution and has two arguments:
+The class has to implement the :javadoc:`org.spongepowered.api.command.spec.CommandExecutor` interface, which defines
+the :javadoc:`org.spongepowered.api.command.spec.CommandExecutor#execute(org.spongepowered.api.command.CommandSource,
+org.spongepowered.api.command.args.CommandContext)` method. The method is called on command execution and has two
+arguments:
 
 * The source of the command call (e.g. the console, a command block or a player)
 * The command context object, which contains the parsed arguments (See :doc:`arguments`)
@@ -98,7 +101,7 @@ Player-Only Commands
 
 Sometimes it is neccessary that only players can execute a command (e.g. a ``/suicide`` command).
 
-Perform an ``instanceof`` check to determine the type of the ``CommandSource``:
+Perform an ``instanceof`` check to determine the type of the :javadoc:`org.spongepowered.api.command.CommandSource`:
 
 .. code-block:: java
 
@@ -130,12 +133,12 @@ Perform an ``instanceof`` check to determine the type of the ``CommandSource``:
 Command Results
 ===============
 
-The ``CommandExecutor::execute()`` method must always return a ``CommandResult``. In most cases it is sufficient to
-return ``CommandResult.success()`` if the command was successful or ``CommandResult.empty()`` if it wasn't. In cases
-where more information needs to be conveyed, a ``CommandResult.builder()`` should be used. It provides the methods
-``affectedBlocks()``, ``affectedEntities()``, ``affectedItems()``, ``queryResult()`` and ``successCount()`` methods,
-each accepting an integer and setting the attribute of the same name. All attributes that are not set by the builder
-will be empty.
+The ``CommandExecutor#execute()`` method must always return a :javadoc:`org.spongepowered.api.command.CommandResult`.
+In most cases it is sufficient to return :javadoc:`org.spongepowered.api.command.CommandResult#success()` if the
+command was successful or :javadoc:`org.spongepowered.api.command.CommandResult#empty()` if it wasn't. In cases
+where more information needs to be conveyed, a :javadoc:`org.spongepowered.api.command.CommandResult#builder()` should
+be used. The builder provides the several various methods that accepts an integer and will set the attribute of the
+same name. All attributes that are not set by the builder will be empty.
 
 Command blocks can use those values to modify scoreboard stats, which then can be used for elaborate constructions
 consisting of multiple command blocks. A tutorial how the data is accessed can be found
@@ -156,7 +159,8 @@ This example uses a builder to create a ``CommandResult`` for a command which af
 Error Handling
 ==============
 
-The ``execute()`` method may also throw a ``CommandException``, signaling that an error occured while trying to execute
-the command. If such an Exception is thrown, its message will be displayed to the command source, formatted as an error.
-Also, the commands usage message will be displayed. An ``ArgumentParseException``, a subtype of ``CommandException`` is
+The ``execute()`` method may also throw a :javadoc:`org.spongepowered.api.command.CommandException`, signaling that an
+error occured while trying to execute the command. If such an Exception is thrown, its message will be displayed to the
+command source, formatted as an error. Also, the commands usage message will be displayed. An
+:javadoc:`org.spongepowered.api.command.args.ArgumentParseException`, a subtype of ``CommandException`` is
 automatically thrown if the commands arguments could not be parsed.
