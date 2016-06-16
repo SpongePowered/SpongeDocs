@@ -28,6 +28,10 @@ not requiring it. It is only really there for the text that will be displayed an
 Multiple arguments within methods as well as primitive types are supported:
 :javadoc:`com.some.package.SomeClass#someMethod(com.some.package.SomeClass, double)`
 
+Linking to fields is also supported:
+:javadoc:`org.spongepowered.api.text.serializer.TextSerializers#FORMATTING_CODE`
+which will display TextSerializers#FORMATTING_CODE
+
  ~ Original Author: 12AwsomeMan34 (aaronlingerfelt@yahoo.com)
 
 """
