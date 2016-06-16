@@ -40,6 +40,7 @@ from docutils import nodes, utils
 
 __version__ = '1.0'
 __jd_link__ = 'https://jd.spongepowered.org/'
+__configurate_link__ = 'http://zml2008.github.io/configurate/apidocs/'
 
 
 def simple_page_link(text, inliner):
@@ -56,9 +57,11 @@ def simple_page_link(text, inliner):
     # Input: 'org.spongepowered.api.text.Text'
     # Output: 'Text'
     javadoc_text = text.rpartition('.')[2]
-    # Returns the javadoc display text as well as the url to the javadoc.
-    return [javadoc_text], [__jd_link__ + inliner.document.settings.env.app.config.release + '/' +
-                            text.replace('.', '/') + '.html']
+    if 'ninja.leaping.configurate' in text:
+        return [javadoc_text], [__configurate_link__ + text.replace('.', '/') + '.html']
+    else:
+        return [javadoc_text], [__jd_link__ + inliner.document.settings.env.app.config.release + '/' +
+                                text.replace('.', '/') + '.html']
 
 
 def internal_page_link(text, inliner, text_before_last_object):
@@ -79,8 +82,11 @@ def internal_page_link(text, inliner, text_before_last_object):
     # for internal classes, this cannot be. Internal classes need the dot in their url. So remove it from here and
     # re-add the one with the dot in it afterwards.
     text = text.replace(javadoc_text, '')
-    return [javadoc_text], [__jd_link__ + inliner.document.settings.env.app.config.release + '/' +
-                            text.replace('.', '/') + javadoc_text + '.html']
+    if 'ninja.leaping.configurate' in text:
+        return [javadoc_text], [__configurate_link__ + text.replace('.', '/') + javadoc_text + '.html']
+    else :
+        return [javadoc_text], [__jd_link__ + inliner.document.settings.env.app.config.release + '/' +
+                                text.replace('.', '/') + javadoc_text + '.html']
 
 
 def simple_with_method_page_link(text, inliner):
@@ -103,8 +109,11 @@ def simple_with_method_page_link(text, inliner):
     # Remove the javadoc text from the original text as we will need to modify the url around to accommodate for the
     # method linking.
     text = text.replace(javadoc_text, '')
-    return [javadoc_text], [__jd_link__ + inliner.document.settings.env.app.config.release + '/' +
-                            text.replace('.', '/') + text_object + '.html#' + text_method]
+    if 'ninja.leaping.configurate' in text:
+        return [javadoc_text], [__configurate_link__ + text.replace('.', '/') + text_object + '.html#' + text_method]
+    else:
+        return [javadoc_text], [__jd_link__ + inliner.document.settings.env.app.config.release + '/' +
+                                text.replace('.', '/') + text_object + '.html#' + text_method]
 
 
 def internal_with_method_page_link(text, inliner, text_before_last_object):
@@ -119,13 +128,20 @@ def internal_with_method_page_link(text, inliner, text_before_last_object):
     # Example:
     # Input: text_before_last_object = 'BookView', text = 'org.spongepowered.api.text.BookView.Builder#build()'
     # Output = 'BookView.Builder#build()'
-    javadoc_text = text_before_last_object + text.rpartition('.')[2]
+    javadoc_text = text_before_last_object + '.' + text.rpartition('.')[2]
     # Gets the object text. Using the above example output, this would be 'BookView.Builder'.
     text_object = javadoc_text.rpartition('#')[0]
     # Gets the method text. Using the above example output, this would be 'build()'
     text_method = javadoc_text.rpartition('#')[2]
-    return [javadoc_text], [__jd_link__ + inliner.document.settings.env.app.config.release + '/' +
-                            text.replace('.', '/') + text_object + '.html#' + text_method.replace('()', '--')]
+    # Remove the javadoc text from the original text as we will need to modify the url around to accommodate for the
+    # method linking.
+    text = text.replace(javadoc_text, '')
+    if 'ninja.leaping.configurate' in text:
+        return [javadoc_text], [__configurate_link__ + text.replace('.', '/') + text_object + '.html#' +
+                                text_method.replace('()', '--')]
+    else:
+        return [javadoc_text], [__jd_link__ + inliner.document.settings.env.app.config.release + '/' +
+                                text.replace('.', '/') + text_object + '.html#' + text_method.replace('()', '--')]
 
 
 def simple_with_arguments(text, inliner, text_before_parenthesis):
@@ -174,8 +190,12 @@ def simple_with_arguments(text, inliner, text_before_parenthesis):
     text = text.replace(text_in_parenthesis, '').replace('()', '').replace(text_object, '').replace(text_method, '')\
         .replace('#', '')
     url_method_text = url_method_text.replace(' ', '')
-    return [javadoc_text], [__jd_link__ + inliner.document.settings.env.app.config.release + '/' +
-                            text.replace('.', '/') + text_object + '.html#' + text_method + url_method_text]
+    if 'ninja.leaping.configurate' in text:
+        return [javadoc_text], [__configurate_link__ + text.replace('.', '/') + text_object + '.html#' + text_method +
+                                url_method_text]
+    else:
+        return [javadoc_text], [__jd_link__ + inliner.document.settings.env.app.config.release + '/' +
+                                text.replace('.', '/') + text_object + '.html#' + text_method + url_method_text]
 
 
 def internal_with_arguments(text, inliner, text_before_last_object):
@@ -225,8 +245,12 @@ def internal_with_arguments(text, inliner, text_before_last_object):
     text = text.replace(text_in_parenthesis, '').replace('()', '').replace(text_object, '').replace(text_method, '')\
         .replace('#', '')
     url_method_text = url_method_text.replace(' ', '')
-    return [javadoc_text], [__jd_link__ + inliner.document.settings.env.app.config.release + '/' +
-                            text.replace('.', '/') + text_object + '.html#' + text_method + url_method_text]
+    if 'ninja.leaping.configurate' in text:
+        return [javadoc_text], [__configurate_link__ + text.replace('.', '/') + text_object + '.html#' + text_method +
+                                url_method_text]
+    else:
+        return [javadoc_text], [__jd_link__ + inliner.document.settings.env.app.config.release + '/' +
+                                text.replace('.', '/') + text_object + '.html#' + text_method + url_method_text]
 
 
 def simple_field(text, inliner):
@@ -246,9 +270,11 @@ def simple_field(text, inliner):
     field_text = text.rpartition('#')[2]
     # Remove the field_text as it will be added to the end of the url later
     text = text.replace(field_text, '').replace('#', '')
-    # Returns the javadoc display text as well as the url to the javadoc.
-    return [javadoc_text], [__jd_link__ + inliner.document.settings.env.app.config.release + '/' +
-                            text.replace('.', '/') + '.html#' + field_text]
+    if 'ninja.leaping.configurate' in text:
+        return [javadoc_text], [__configurate_link__ + text.replace('.', '/') + '.html#' + field_text]
+    else:
+        return [javadoc_text], [__jd_link__ + inliner.document.settings.env.app.config.release + '/' +
+                                text.replace('.', '/') + '.html#' + field_text]
 
 
 def internal_field(text, inliner, text_before_last_object):
@@ -271,8 +297,14 @@ def internal_field(text, inliner, text_before_last_object):
     # for internal classes, this cannot be. Internal classes need the dot in their url. So remove it from here and
     # re-add the one with the dot in it afterwards. Also remove the hash and the field.
     text = text.replace(object_text, '').replace(field_text, '').replace('#', '')
-    return [javadoc_text], [__jd_link__ + inliner.document.settings.env.app.config.release + '/' +
-                            text.replace('.', '/') + object_text + '.html#' + field_text]
+    # Remove generics in field link
+    if '<' in object_text:
+        object_text = object_text.rpartition('<')[0].rpartition('>')[2]
+    if 'ninja.leaping.configurate' in text:
+        return [javadoc_text], [__configurate_link__ + text.replace('.', '/') + object_text + '.html#' + field_text]
+    else:
+        return [javadoc_text], [__jd_link__ + inliner.document.settings.env.app.config.release + '/' +
+                                text.replace('.', '/') + object_text + '.html#' + field_text]
 
 
 def javadoc_role(name, rawtext, text, lineno, inliner, options={}, content=[]):
