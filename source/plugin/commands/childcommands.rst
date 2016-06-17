@@ -2,7 +2,8 @@
 Child Commands
 ==============
 
-The ``CommandSpec`` builder supports hierarchical command structures like this:
+The :javadoc:`org.spongepowered.api.command.spec.CommandSpec` builder supports hierarchical command structures like
+this:
 
 * ``/mail`` (parent command)
 
@@ -32,8 +33,9 @@ Every child command is a separate ``CommandSpec`` and can be created in the same
         .build();
 
 Instead of registering them to the command service, child commands are registered on their parent command using the
-``child()`` method. They are registered with a list of aliases. The first alias supplied is the primary one and will
-appear in the usage message.
+:javadoc:`org.spongepowered.api.command.spec.CommandSpec.Builder#child(org.spongepowered.api.command.CommandCallable,
+java.lang.String...)` method. They are registered with a list of aliases. The first alias supplied is the primary one
+and will appear in the usage message.
 
 .. code-block:: java
 
@@ -48,5 +50,5 @@ appear in the usage message.
 
 .. note::
 
-    If a ``CommandExecutor`` was set for the parent command, it is used as a fallback if the arguments do not match
-    one of the child command aliases. Setting an executor is not required.
+    If a :javadoc:`org.spongepowered.api.command.spec.CommandExecutor` was set for the parent command, it is used as a
+    fallback if the arguments do not match one of the child command aliases. Setting an executor is not required.

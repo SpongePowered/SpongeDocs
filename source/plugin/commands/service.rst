@@ -2,11 +2,14 @@
 The Command Manager
 ===================
 
-The ``CommandManager`` stands as the manager for watching what commands get typed into chat, and redirecting them to
-the right command handler. To register your command, use the method ``CommandManager.register()``, passing your plugin,
-an instance of the command, and any needed aliases as parameters.
+The :javadoc:`org.spongepowered.api.command.CommandManager` stands as the manager for watching what commands get typed
+into chat, and redirecting them to the right command handler. To register your command, use the method
+:javadoc:`org.spongepowered.api.command.CommandManager#register(java.lang.Object,
+org.spongepowered.api.command.CommandCallable, java.lang.String...)` passing your plugin, an instance of the command,
+and any needed aliases as parameters.
 
-Usually you want to register your commands when the ``GameInitializationEvent`` is called. If you are registering the
+Usually you want to register your commands when the
+:javadoc:`org.spongepowered.api.event.game.state.GameInitializationEvent` is called. If you are registering the
 commands from the main plugin class, use ``this`` as the ``plugin`` parameter.
 
 .. code-block:: java

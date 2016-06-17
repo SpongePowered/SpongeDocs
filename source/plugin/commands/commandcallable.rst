@@ -2,8 +2,9 @@
 Low-Level Command API
 =====================
 
-The ``CommandCallable`` and ``Dispatcher`` interfaces can be used to define commands. The interfaces can be used as a
-base for custom command APIs.
+The :javadoc:`org.spongepowered.api.command.CommandCallable` and
+:javadoc:`org.spongepowered.api.command.dispatcher.Dispatcher` interfaces can be used to define commands. The interfaces
+can be used as a base for custom command APIs.
 
 It is recommended to use the `Command Builder API <../creating>`_ for simple command definitions.
 
@@ -65,9 +66,11 @@ The first step is to create a class for the command. The class has to implement 
 Registering the command
 =======================
 
-Now we can register the class in the ``CommandManager``. The ``CommandManager`` stands as the manager for watching what
-commands get typed into chat, and redirecting them to the right command handler. To register your command, use the
-method ``CommandManager.register()``, passing your plugin, an instance of the command, and any needed aliases as parameters.
+Now we can register the class in the :javadoc:`org.spongepowered.api.command.CommandManager`. The ``CommandManager``
+stands as the manager for watching what commands get typed into chat, and redirecting them to the right command handler.
+To register your command, use the method :javadoc:`org.spongepowered.api.command.CommandManager#register(java.lang.
+Object, org.spongepowered.api.command.CommandCallable, java.lang.String...)`, passing your plugin, an instance of the
+command, and any needed aliases as parameters.
 
 .. code-block:: java
 
@@ -87,7 +90,8 @@ Command Dispatchers
 
 Command dispatchers can be used to create hierarchical command structures (subcommands).
 
-The default implementation of the ``Dispatcher`` interface is the ``SimpleDispatcher`` class.
+The default implementation of the ``Dispatcher`` interface is the
+:javadoc:`org.spongepowered.api.command.dispatcher.SimpleDispatcher` class.
 
 A ``Dispatcher`` is also a ``CommandCallable``, so it can be registered like any other command.
 

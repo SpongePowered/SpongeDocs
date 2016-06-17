@@ -41,9 +41,9 @@ Make sure to include a description of what went wrong, including the javadoc rol
 :javadoc:`some.package.SomeClass` thing), the actual displayed text output, and the actual javadoc link output, if
 possible.
 If an error is thrown into the console that prevents sphinx from continuing (likely a python error), report it to the
-docs repo as well! Even if what you inputted to the javadoc role was incorrect, reporting it will allow us to add a
-check that will send a 'fake' output so it does not bring sphinx down entirely. Make sure to include the error log
-in your report (the error message in the console will tell you where to find the log).
+docs repo as well! Even if the input to the javadoc role was incorrect, reporting it will allow us to add a check that
+will send a 'fake' output so it does not bring sphinx down entirely. Make sure to include the error log in your report
+(the error message in the console will tell you where to find the log).
 
  ~ Original Author: 12AwsomeMan34 (aaronlingerfelt@yahoo.com)
 
@@ -225,9 +225,7 @@ def simple_with_arguments(text, inliner, text_before_parenthesis):
             else:
                 javadoc_text += text_in_parenthesis.rpartition('.')[2] + ')'
             url_method_text = '-' + text_in_parenthesis + '-'
-    # Replace the text down to just the packages. Remove the classes, methods, arguments, everything else.
-    text = text.replace(text_in_parenthesis, '').replace('()', '').replace(text_object, '').replace(text_method, '')\
-        .replace('#', '')
+    text = text_before_parenthesis.rpartition('#')[0].rpartition('.')[0] + '.'  # TODO: APPLY FIX TO OTHER FUNCTIONS
     url_method_text = url_method_text.replace(' ', '')
     if 'ninja.leaping.configurate' in text:
         return [javadoc_text], [__configurate_link__ + text.replace('.', '/') + text_object + '.html#' + text_method +
@@ -316,7 +314,7 @@ def simple_field(text, inliner):
             text.rpartition('#')[2]
     else:
         javadoc_text = text.rpartition('.')[2]
-        object_text = javadoc_text
+        object_text = javadoc_text.rpartition('#')[0]
     # Gets the field from after the hash.
     field_text = text.rpartition('#')[2]
     text = text.replace(javadoc_text, '').replace('#', '') + object_text
