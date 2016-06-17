@@ -22,14 +22,17 @@ must use the :javadoc:`org.spongepowered.api.command.args.CommandContext#getAll(
    CommandElement)` element to limit the amount of returned values to a single one, so you can safely use
    ``args.<T>getOne(String)``.
 
-.. note: stopping here for now
+To create a new :javadoc:`org.spongepowered.api.command.args.CommandElement` (argument), use the
+:javadoc:`org.spongepowered.api.command.args.GenericArguments` factory class. Many command elements require a short
+text key, which is displayed in error and help messages.
 
-To create a new ``CommandElement`` (argument), use the ``GenericArguments`` factory class. Many command elements require
-a short text key, which is displayed in error and help messages.
-
-Apply the ``CommandElement`` to the command builder with the ``setArguments()`` method. It is possible to pass more than
+Apply the ``CommandElement`` to the command builder with the
+:javadoc:`org.spongepowered.api.command.spec.CommandSpec.Builder#arguments(org.spongepowered.api.command.args.
+CommandElement...)` method. It is possible to pass more than
 one ``CommandElement`` to the method, thus chaining multiple arguments (e.g ``/msg <player> <msg>``). This has the same
-effect as wrapping the ``CommandElement`` objects in a ``GenericArguments.seq()`` element.
+effect as wrapping the ``CommandElement`` objects in a
+:javadoc:`org.spongepowered.api.command.args.GenericArguments#seq(org.spongepowered.api.command.args.CommandElement...)`
+element.
 
 Example: Building a Command with Multiple Arguments
 ===================================================
@@ -163,11 +166,16 @@ Custom Command Elements
 It is possible to create custom command elements (e.g. a URL parser or a ``Vector2i`` element) by extending the abstract
 ``CommandElement`` class.
 
-The ``parseValue`` method should fetch a raw argument string with ``args.next()`` and convert it to an object. The method
-should throw an ``ArgumentParseException`` if the parsing fails
+The :javadoc:`org.spongepowered.api.command.args.CommandElement#parseValue(org.spongepowered.api.command.CommandSource,
+org.spongepowered.api.command.args.CommandArgs)` method should fetch a raw argument string with
+:javadoc:`org.spongepowered.api.command.args.CommandArgs#next()` and
+convert it to an object. The method should throw an :javadoc:`org.spongepowered.api.command.args.ArgumentParseException`
+if the parsing fails.
 
-The ``complete`` method should use ``args.peek()`` to read the next raw argument. It returns a list of suggestions for
-TAB completion.
+The :javadoc:`org.spongepowered.api.command.args.CommandElement#complete(org.spongepowered.api.command.CommandSource,
+org.spongepowered.api.command.args.CommandArgs, org.spongepowered.api.command.args.CommandContext)` method should use
+:javadoc:`org.spongepowered.api.command.args.CommandArgs#peek()` to read the next raw argument. It returns a list of
+suggestions for TAB completion.
 
 Example: ``Vector2i`` command element definition
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

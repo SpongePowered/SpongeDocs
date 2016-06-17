@@ -192,12 +192,21 @@ def simple_with_arguments(text, inliner, text_before_parenthesis):
             if '<' in x:
                 inside_generic = x.rpartition('<')[2].rpartition('>')[0]
                 if '.' in inside_generic:
-                    javadoc_text += x.rpartition('<')[0].rpartition('.')[2] + '<' + inside_generic + '>' + ', '
+                    if '...' in x:
+                        javadoc_text += x[:-3].rpartition('<')[0].rpartition('.')[2] + '<' + inside_generic + '>' + ', '
+                    else:
+                        javadoc_text += x.rpartition('<')[0].rpartition('.')[2] + '<' + inside_generic + '>' + ', '
                 else:
-                    javadoc_text += x.rpartition('.')[2] + ", "
+                    if '...' in x:
+                        javadoc_text += x[:-3].rpartition('.')[2] + ", "
+                    else:
+                        javadoc_text += x.rpartition('.')[2] + ", "
                 partitioned_text = x.rpartition('<')[0]
             else:
-                javadoc_text += x.rpartition('.')[2] + ", "
+                if '...' in x:
+                    javadoc_text += x[:-3].rpartition('.')[2] + "..., "
+                else:
+                    javadoc_text += x.rpartition('.')[2] + ", "
             url_method_text += partitioned_text + '-'
         # Remove the last two characters to prevent a command and a space at the end of the text from the for loop.
         javadoc_text = javadoc_text[:-2] + ')'
@@ -211,7 +220,10 @@ def simple_with_arguments(text, inliner, text_before_parenthesis):
             non_generic_text_in_parenthesis = text_in_parenthesis.rpartition('<')[0]
             url_method_text = '-' + non_generic_text_in_parenthesis + '-'
         else:
-            javadoc_text += text_in_parenthesis.rpartition('.')[2] + ')'
+            if '...' in text_in_parenthesis:
+                javadoc_text += text_in_parenthesis[:-3].rpartition('.')[2] + '...)'
+            else:
+                javadoc_text += text_in_parenthesis.rpartition('.')[2] + ')'
             url_method_text = '-' + text_in_parenthesis + '-'
     # Replace the text down to just the packages. Remove the classes, methods, arguments, everything else.
     text = text.replace(text_in_parenthesis, '').replace('()', '').replace(text_object, '').replace(text_method, '')\
@@ -256,13 +268,19 @@ def internal_with_arguments(text, inliner, text_before_last_object):
             partitioned_text = x
             if '<' in x:
                 partitioned_text = x.rpartition('<')[0]
-            javadoc_text += x.rpartition('.')[2] + ", "
+            if '...' in x:
+                javadoc_text += x[:-3].rpartition('.')[2] + "..., "
+            else:
+                javadoc_text += x.rpartition('.')[2] + ", "
             url_method_text += partitioned_text + '-'
         # Remove the last two characters to prevent a command and a space at the end of the text from the for loop.
         javadoc_text = javadoc_text[:-2] + ')'
     else:
         # Single argument. Just add the argument in.
-        javadoc_text += text_in_parenthesis.rpartition('.')[2] + ')'
+        if '...' in text_in_parenthesis:
+            javadoc_text += text_in_parenthesis[:-3].rpartition('.')[2] + '...)'
+        else:
+            javadoc_text += text_in_parenthesis.rpartition('.')[2] + ')'
         if '<' in text_in_parenthesis:
             non_generic_text_in_parenthesis = text_in_parenthesis.rpartition('<')[0]
             url_method_text = '-' + non_generic_text_in_parenthesis + '-'
