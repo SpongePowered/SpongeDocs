@@ -12,15 +12,17 @@ work with the ampersand (&) as well.
 
 .. warning::
     Text serialization using any kind of formatting code is limited to representing only some of the capabilities
-    of a ``Text``, namely formatting. It cannot represent any kind of click or hover actions. If brevity is not an
-    issue (as it is in Minecraft chat), it is recommended to use either the :doc:`./xml` or the :doc:`./json`.
+    of a :javadoc:`org.spongepowered.api.text.Text`, namely formatting. It cannot represent any kind of click or hover
+    actions. If brevity is not an issue (as it is in Minecraft chat), it is recommended to use either the :doc:`./xml`
+    or the :doc:`./json`.
 
 Ampersand Formatting
 ====================
 By default, Sponge supports the formatting character `&` (ampersand). Using the ampersand format allows for easier user
 input of text formatting and is useful in such cases where brevity is necessary, such as in the Minecraft chat console.
 
-To use this formatting, you can access its corresponding ``TextSerializer`` with ``TextSerializers.FORMATTING_CODE``.
+To use this formatting, you can access its corresponding :javadoc:`org.spongepowered.api.text.serializer.TextSerializer`
+with :javadoc:`org.spongepowered.api.text.serializer.TextSerializers#FORMATTING_CODE`.
 From there, you can use the ``serialize`` or ``deserialize`` methods as normal:
 
 .. code-block:: java
@@ -46,8 +48,8 @@ detailed above. The legacy formatting has a few limitations that the ampersand f
 obvious among them being that users cannot easily type the section character into the chat.
 
 To use this formatting, you can access its corresponding ``TextSerializer`` with
-``TextSerializers.LEGACY_FORMATTING_CODE``. From there, you can use the ``serialize`` or ``deserialize`` methods as
-normal:
+:javadoc:`org.spongepowered.api.text.serializer.TextSerializers#LEGACY_FORMATTING_CODE`. From there, you can use the
+``serialize`` or ``deserialize`` methods as normal:
 
 .. code-block:: java
 
@@ -58,5 +60,7 @@ For example, the text "Hello World!", formatted with the color red and an underl
 in the legacy format: `§c§nHello World!`
 
 .. tip::
-    Although its use is not recommended, you can get a ``FormattingCodeSerializer`` using whichever formatting character you
-    need by calling ``TextSerializers#formattingCode``, passing in a ``char`` as the only argument.
+    Although its use is not recommended, you can get a
+    :javadoc:`org.spongepowered.api.text.serializer.FormattingCodeTextSerializer` using whichever formatting character
+    you need by calling :javadoc:`org.spongepowered.api.text.serializer.TextSerializers#formattingCode(char)`, passing
+    in a ``char`` as the only argument.

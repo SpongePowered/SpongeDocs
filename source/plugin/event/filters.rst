@@ -182,8 +182,7 @@ the data manipulator ``FlyingData``.**
 
 **@Has**
 This parameter filter is similar to the ``@Supports`` parameter filter except that it additionally validates that the
-``DataHolder`` contains an instance of the given ``DataManipulator``. This validation is equivalent to
-``DataHolder#hasData(Class<? extends DataManipulator>)``.
+``DataHolder`` contains an instance of the given ``DataManipulator``.
 
 **In this example the listener will be called only if there is an entity in the event's cause, and if that entity has an
 instance of ``FlyingData`` available.**

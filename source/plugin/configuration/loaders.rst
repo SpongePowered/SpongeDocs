@@ -2,15 +2,17 @@
 Configuration Loaders
 =====================
 
-Let's break down how Configurate works, beginning with the loading process. Configurate provides ``ConfigurationLoaders``
-for common configuration formats, standing as the manager of the physical configuration file, allowing you to
-save and load data from the given resource. They also allow you to load empty configurations, giving you the option of
-hard-coding default values or loading from a pre-written file.
+Let's break down how Configurate works, beginning with the loading process. Configurate provides
+:javadoc:`ninja.leaping.configurate.loader.ConfigurationLoader`\ s for common configuration formats, standing as the
+manager of the physical configuration file, allowing you to save and load data from the given resource. They also
+allow you to load empty configurations, giving you the option of hard-coding default values or loading from a
+pre-written file.
 
 Getting your Loader
 ~~~~~~~~~~~~~~~~~~~
 
-First, let's grab a new ``HoconConfigurationLoader`` that points to our configuration file.
+First, let's grab a new :javadoc:`ninja.leaping.configurate.hocon.HoconConfigurationLoader` that points to our
+configuration file.
 
 .. code-block:: java
 
@@ -42,8 +44,8 @@ configuration to be edited by the server administrator (or your plugin itself).
 Loading and Saving
 ~~~~~~~~~~~~~~~~~~
 
-Once you obtained your ``ConfigurationLoader`` you can use it to obtain an empty ``ConfigurationNode`` using the
-``createEmptyNode()`` method.
+Once you obtained your ``ConfigurationLoader`` you can use it to obtain an empty
+:javadoc:`ninja.leaping.configurate.ConfigurationNode` using the ``createEmptyNode()`` method.
 
 .. code-block:: java
 
@@ -54,9 +56,9 @@ Once you obtained your ``ConfigurationLoader`` you can use it to obtain an empty
     ConfigurationLoader<CommentedConfigurationNode> loader = HoconConfigurationLoader.builder().setPath(potentialFile).build();
     ConfigurationNode rootNode = loader.createEmptyNode(ConfigurationOptions.defaults());
 
-This method expects the ``ConfigurationOptions`` to use as a parameter. Unless you want to use features like custom
-type serialization, you can just use ``ConfigurationOptions.defaults()`` to create an options object with default
-values.
+This method expects the `ninja.leaping.configurate.ConfigurationOptions` to use as a parameter. Unless you want to use
+features like custom type serialization, you can just use
+:javadoc:`ninja.leaping.configurate.ConfigurationOptions#defaults()` to create an options object with default values.
 
 Using the ``load()`` method you can attempt to load the configuration contents from the source specified upon creation
 of the ``ConfigurationLoader``. It also expects a ``ConfigurationOptions`` instance, but also provides a no-args form

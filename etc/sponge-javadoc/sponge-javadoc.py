@@ -174,12 +174,12 @@ def simple_with_arguments(text, inliner, text_before_parenthesis):
     # Get the text object from text_before_parenthesis. Example:
     # Input: 'org.spongepowered.api.util.blockray.BlockRay#maxDistanceFilter'
     # Output: 'BlockRay'
-    text_object = text_before_parenthesis.rpartition('#')[0].rpartition('.')[2]
+    text_object = text_before_parenthesis.rpartition('#')[0].rpartition('.')[2].replace(' ', '')  # TODO: CENTRALIZE
     # Gets the method text. Using the above example, we'd get 'maxDistanceFilter'.
     text_method = text_before_parenthesis.rpartition('#')[2]
     # Gets the text in the parenthesis by removing the part from before the parenthesis and removing the parenthesis
     # themselves. This simply leaving the text that was inside the parenthesis.
-    text_in_parenthesis = text.replace(text_before_parenthesis, '').replace('(', '').replace(')', '')
+    text_in_parenthesis = text.rpartition('(')[2].rpartition(')')[0]  # TODO: APPLY FIX TO OTHER FUNCTIONS
     # Start our javadoc text by taking the text_object#text_method and adding (.
     javadoc_text = text_object + '#' + text_method + '('
     # If there is a comma, then there are multiple arguments.
@@ -385,8 +385,8 @@ def javadoc_role(name, rawtext, text, lineno, inliner, options={}, content=[]):
         return [nodes.reference(rawtext, utils.unescape('[Sponge-JavaDoc] Unable to parse ' + text),
                                 refuri='https://www.youtube.com/watch?v=KMU0tzLwhbE', **options)], []
     text_before_last_object = text_before_parenthesis.rpartition('.')[0].rpartition('.')[2]
-    # Replace any new lines with simple spaces
-    text = text.replace('\n', '')
+    # Replace any new lines and spaces
+    text = text.replace('\n', '').replace(' ', '')
     # If there is no hash (#), then we know that this is not specifying a method. Rather, it is specifying some object.
     # This could be an internal class or a normal class however, so we need to check the text before the object and see
     # if it starts with a capital letter. If it does, then this is an internal class. Otherwise, the text before is

@@ -3,8 +3,8 @@ Configuration Format
 ====================
 
 SpongeAPI offers support to serialize text directly to a Configurate configuration file through the use of
-the ``TypeToken`` class. ``Text`` objects are saved using the same node structure as the ``Text``\'s JSON
-representation.
+the ``TypeToken`` class. :javadoc:`org.spongepowered.api.text.Text` objects are saved using the same node structure as
+the ``Text``\'s JSON representation.
 
 .. tip::
 
@@ -45,4 +45,5 @@ You can then load a ``Text`` object using the following code:
 
 .. note::
 
-    This strategy is not limited to ``HoconConfigurationLoader``\; any ``ConfigurationLoader`` will suffice.
+    This strategy is not limited to :javadoc:`ninja.leaping.configurate.hocon.HoconConfigurationLoader`\; any
+    :javadoc:`ninja.leaping.configurate.loader.ConfigurationLoader` will suffice.

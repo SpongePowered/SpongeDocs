@@ -2,16 +2,17 @@
 Configuration Nodes
 ===================
 
-In memory, the configuration is represented using ``ConfigurationNode``\ s. A ``ConfigurationNode`` either holds a
-value (like a number, a string or a list) or has child nodes, a tree-like configuration structure.
-When using a ``ConfigurationLoader`` to load or create new configurations, it will return the **root node**. It is
-recommended that you always keep a reference to that root node stored somewhere.
+In memory, the configuration is represented using :javadoc:`ninja.leaping.configurate.ConfigurationNode`\ s. A
+``ConfigurationNode`` either holds a value (like a number, a string or a list) or has child nodes, a tree-like
+configuration structure. When using a :javadoc:`ninja.leaping.configurate.loader.ConfigurationLoader` to load or create
+new configurations, it will return the **root node**. It is recommended that you always keep a reference to that root
+node stored somewhere.
 
 .. note::
 
-    Depending on the ``ConfigurationLoader`` used, you might even get a ``CommentedConfigurationNode``, which in
-    addition to normal ``ConfigurationNode`` behavior is able to retain a comment that will persist on the saved
-    config file.
+    Depending on the ``ConfigurationLoader`` used, you might even get a :javadoc:`ninja.leaping.configurate.commented.
+    CommentedConfigurationNode`, which in addition to normal ``ConfigurationNode`` behavior is able to retain a comment
+    that will persist on the saved config file.
 
 
 Navigating Nodes
@@ -66,11 +67,14 @@ administrator wants our plugin to enable its blockCheats module by checking the 
 
     boolean shouldEnable = rootNode.getNode("modules", "blockCheats", "enabled").getBoolean();
 
-Yes, it's really as simple as that. Similar to the above example, methods like ``getInt()``, ``getDouble()`` or
-``getString()`` exist that allow you to conveniently grab a value of that type.
+Yes, it's really as simple as that. Similar to the above example, methods like :javadoc:`ninja.leaping.configurate.
+ConfigurationNode#getInt()`, :javadoc:`ninja.leaping.configurate.ConfigurationNode#getDouble()` or
+:javadoc:`ninja.leaping.configurate.ConfigurationNode#getString()` exist that allow you to conveniently grab a value of
+that type.
 
-To set a basic value to a node, just use the ``setValue()`` method. Don't be confused that it accepts an ``Object`` -
-this means that it can take anything and will determine how to proceed from there by itself.
+To set a basic value to a node, just use the
+:javadoc:`ninja.leaping.configurate.ConfigurationNode#setValue(java.lang.Object)` method. Don't be confused that it
+accepts an ``Object`` - this means that it can take anything and will determine how to proceed from there by itself.
 
 Imagine the blockCheats module is deactivated by a user command. This change will need to be reflected in the config
 and can be done as follows:
@@ -92,8 +96,8 @@ and can be done as follows:
 
 If you attempt to read or write an object that is not one of the basic types mentioned above, you will need to pass it
 through deserialization first. In the ``ConfigurationOptions`` used to create your root ``ConfigurationNode``, there
-is a collection of ``TypeSerializer``\ s that Configurate uses to convert your objects to a ``ConfigurationNode`` and
-vice versa.
+is a collection of :javadoc:`ninja.leaping.configurate.objectmapping.serialize.TypeSerializer`\ s that Configurate uses
+to convert your objects to a ``ConfigurationNode`` and vice versa.
 
 In order to tell Configurate what type it is dealing with, we have to provide a guava ``TypeToken``. Imagine we want
 to read a player ``UUID`` from the config node ``towns.aFLARDia.mayor``. To do so, we need to call the ``getValue()``

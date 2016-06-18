@@ -47,8 +47,8 @@ Example: Colored Text
 
     Text coloredText = Text.builder("Woot! Golden text is golden.").color(TextColors.GOLD).build();
 
-Any color specified within the ``org.spongepowered.api.text.format.TextColors`` class can be used when coloring text.
-Multiple colors can be used in text by appending additional texts with different colors:
+Any color specified within the :javadoc:`org.spongepowered.api.text.format.TextColors` class can be used when coloring
+text. Multiple colors can be used in text by appending additional texts with different colors:
 
 Example: Multi-colored Text
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -85,8 +85,8 @@ Example: Multi-styled Text
 Coloring & Styling Shortcut
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The ``org.spongepowered.api.text.Text#of(Object... objects)`` method provides a simple way to add color and styling to
-your text in a much more concise way.
+The :javadoc:`org.spongepowered.api.text.Text#of(java.lang.Object...)` method provides a simple way to add color and
+styling to your text in a much more concise way.
 
 Example: Color & Style Shortcut
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -101,8 +101,8 @@ Text Actions
 ~~~~~~~~~~~~
 
 The text builder also offers the ability to create actions for text. Any action specified within the
-``org.spongepowered.api.text.action.TextActions`` class can be used when creating text actions for text. The method
-below is a small example of what text actions can do.
+:javadoc:`org.spongepowered.api.text.action.TextActions` class can be used when creating text actions for text. The
+method below is a small example of what text actions can do.
 
 Example: Text with an Action
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -117,7 +117,8 @@ In the method above, players can click the "Click here!" text to run the specifi
 
 .. note ::
 
-    Some text actions, such as ``ChangePage``, can only be used with book items.
+    Some text actions, such as :javadoc:`org.spongepowered.api.text.action.TextActions#changePage(int)`, can only be
+    used with book items.
 
 .. tip ::
 
@@ -135,8 +136,8 @@ useful when creating minigame plugins, but have a broad range of applications.
     Read this `Minecraft wiki article <http://minecraft.gamepedia.com/Commands#Target_selectors>`__ for help understanding
     what target selectors are in Minecraft, and how to use them.
 
-To use selectors in text, you must use the ``org.spongepowered.api.text.selector.SelectorBuilder`` interface. This is
-illustrated in the example below.
+To use selectors in text, you must use the :javadoc:`org.spongepowered.api.text.selector.Selector.Builder` interface.
+This is illustrated in the example below.
 
 Example: Selector-generated Text
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

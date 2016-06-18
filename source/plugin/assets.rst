@@ -2,7 +2,7 @@
 The Asset API
 =============
 
-The ``AssetManager`` allows developers to retrieve resources from a plugin JAR.
+The :javadoc:`org.spongepowered.api.asset.AssetManager` allows developers to retrieve resources from a plugin JAR.
 
 By default, a plugin's assets resides in a directory named ``assets/com/example/myplugin`` where
 ``com.example.myplugin`` is the plugin ID. In most cases this default directory should be used but if you *need* to
@@ -32,9 +32,10 @@ Alternatively, you can retrieve assets through the ``AssetManager`` class:
 Working with Assets
 ===================
 
-The ``Asset`` class is essentially just a wrapper around a ``URL`` with some common I/O operations built in. The use
-cases of ``Assets``\s is essentially unbounded but one common use case is to generate a default configuration file if
-your plugin's configuration file is not found. You can achieve this using a `PluginContainer` with the following code:
+The :javadoc:`org.spongepowered.api.asset.Asset` class is essentially just a wrapper around a ``URL`` with some common
+I/O operations built in. The use cases of ``Assets``\s is essentially unbounded but one common use case is to generate
+a default configuration file if your plugin's configuration file is not found. You can achieve this using a
+:javadoc:`org.spongepowered.api.plugin.PluginContainer` with the following code:
 
 .. code-block:: java
 
