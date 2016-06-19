@@ -36,17 +36,19 @@ try to heal someone (or something).
 
 First we need to check if our target has health data. We do so by first asking it to provide us with its health
 data by passing its class to the ``get()`` method. We get an ``Optional`` which we can use for our check.
-This ``Optional`` will be absent if either our target does not support ``HealthData`` or if it supports it but
-at the present moment does not hold any health data.
+This ``Optional`` will be absent if either our target does not support
+:javadoc:`org.spongepowered.api.data.manipulator.mutable.entity.HealthData` or if it supports it but at the present
+moment does not hold any health data.
 
 If the health data is present, it now contains a mutable copy of the data present on the data holder. We make
 our alterations and finally offer the changed data back to our target, where it is accepted (again, ``offer()``
-will return a ``DataTransactionResult`` which we will disregard in this example and get back to :doc:`at a later
-point <transactions>`).
+will return a :javadoc:`org.spongepowered.api.data.DataTransactionResult` which we will disregard in this example and
+get back to :doc:`at a later point <transactions>`).
 
 As you can see, the results for ``health()`` and ``maxHealth()`` are again keyed values we obtain from the
-``DataHolder``. As the ``MutableBoundedValue`` we receive from calling ``health()`` again just contains a copy of
-the data, we first need to apply our changes back to the ``DataManipulator`` before we can offer the
+:javadoc:`org.spongepowered.api.data.DataHolder`. As the :javadoc:`org.spongepowered.api.data.value.mutable.
+MutableBoundedValue` we receive from calling ``health()`` again just contains a copy of the data, we first need to
+apply our changes back to the :javadoc:`org.spongepowered.api.data.manipulator.DataManipulator` before we can offer the
 ``healthData`` back to our target.
 
 .. tip::
@@ -97,9 +99,9 @@ Then we just offer the saved health data to the *other* target, thus switching t
 
 This example done with ``Keys`` would be a bit longer and more complicated since we'd have to take care of each
 individual key by ourself. And if instead of health we swapped another data manipulator containing even more data
-(maybe ``InvisibilityData`` which even contains a list), we'd have a lot more work to do. But since the data
-holder itself takes care of all data pertaining to it, we could even modify the above function to swap arbitrary
-data between two holders.
+(maybe :javadoc:`org.spongepowered.api.data.manipulator.mutable.entity.InvisibilityData` which even contains a list),
+we'd have a lot more work to do. But since the data holder itself takes care of all data pertaining to it, we could
+even modify the above function to swap arbitrary data between two holders.
 
 **Code Example: Swapping any data manipulator**
 
@@ -122,8 +124,10 @@ holder demonstrates the core design goal of the Data API: Maximum compatibility 
 Mutable vs. Immutable Data Manipulators
 =======================================
 
-To every data manipulator, there is a matching ``ImmutableDataManipulator``. For instance, both ``HealthData`` and
-``ImmutableHealthData`` contain the same data, only the latter returns new instances when requesting modified data.
+To every data manipulator, there is a matching :javadoc:`org.spongepowered.api.data.manipulator.
+ImmutableDataManipulator`. For instance, both ``HealthData`` and
+:javadoc:`org.spongepowered.api.data.manipulator.immutable.entity.ImmutableHealthData` contain the same data, only the
+latter returns new instances when requesting modified data.
 
 Conversion between mutable and immutable data manipulators is done via the ``asImmutable()`` and ``asMutable()``
 methods, which each will return a copy of the data. The only way to obtain an immutable data manipulator
@@ -147,4 +151,5 @@ latter is always possible, there are cases where it is impossible for a ``DataHo
 then not hold it. Examples of those include:
 
 * ``HealthData`` is always present on every (vanilla) ``DataHolder`` that supports it
-* ``DisplayNameData`` is always present on a ``Player``, but may be absent on other entities
+* :javadoc:`org.spongepowered.api.data.manipulator.mutable.DisplayNameData` is always present on a
+  :javadoc:`org.spongepowered.api.entity.living.player.Player`, but may be absent on other entities.

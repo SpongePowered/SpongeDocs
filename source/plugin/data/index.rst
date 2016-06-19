@@ -10,8 +10,8 @@ a sign, the looks of a horse or the health of any living entity.
 Where other approaches define the available data using interfaces and inheritance (like a ``LivingEntity``
 interface providing getter and setter functions for current and maximum health), in Sponge every entity, block
 etc. is completely oblivious to what data it holds. While this may appear less straightforward than direct
-accessor methods, it is foremost far more extensible. And thanks to the addition of ``Key``\ s, simply accessing
-specific values is no less straightforward.
+accessor methods, it is foremost far more extensible. And thanks to the addition of
+:javadoc:`org.spongepowered.api.data.key.Key`\ s, simply accessing specific values is no less straightforward.
 
 .. warning::
 
@@ -31,9 +31,10 @@ DataHolder
 
 A data holder is just that - something that holds data. It provides methods to retrieve and offer back data. The
 interface itself is completely oblivious to the type of data held. Since only the implementations will possess
-this knowledge, it is possible to ask a ``DataHolder`` to provide data it does not have or to accept data it
-cannot use. In those cases, the return values of the methods will provide the information that data is not
-available (via ``Optional.empty()``) or not accepted (via the :doc:`DataTransactionResult <transactions>`).
+this knowledge, it is possible to ask a :javadoc:`org.spongepowered.api.data.DataHolder` to provide data it does not
+have or to accept data it cannot use. In those cases, the return values of the methods will provide the information
+that data is not available (via ``Optional.empty()``) or not accepted (via the
+:doc:`DataTransactionResult <transactions>`).
 
 Property
 ~~~~~~~~
@@ -49,10 +50,11 @@ DataManipulator
 ~~~~~~~~~~~~~~~
 
 A data manipulator represents points of cohesive data that describes a certain component of its holder. For
-example ``HealthData``, which contains both current and maximum health. If a data holder has ``HealthData``, it
-has health that can somehow be depleted and replenished and can die if that health is depleted. This allows for
-the re-use of such components over the API and prevents duplication of accessor methods. For example, sheep, stained
-glass blocks and leather armor all can share the ``DyeableData`` holding the color they are dyed in.
+example :javadoc:`org.spongepowered.api.data.manipulator.mutable.entity.HealthData`, which contains both current and
+maximum health. If a data holder has ``HealthData``, it has health that can somehow be depleted and replenished and can
+die if that health is depleted. This allows for the re-use of such components over the API and prevents duplication of
+accessor methods. For example, sheep, stained glass blocks and leather armor all can share the
+:javadoc:`org.spongepowered.api.data.manipulator.mutable.DyeableData` holding the color they are dyed in.
 
 Key
 ~~~
@@ -60,7 +62,7 @@ Key
 A ``Key`` is a unique identifier for a single point of data and can be used to directly read or set that point of
 data without worrying about data manipulators. It was designed to provide a convenient way of accessing data
 similar to direct getter/setter methods. All keys used within Sponge are listed as constants in the
-``org.spongepowered.api.data.key.Keys`` utility class.
+:javadoc:`org.spongepowered.api.data.key.Keys` utility class.
 
 Value
 ~~~~~

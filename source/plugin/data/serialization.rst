@@ -2,9 +2,12 @@
 Serializing Data
 ================
 
-While an ``ImmutableDataManipulator`` is a good way to store data while the server is running, it will not persist over
-a restart. However, every ``DataManipulator`` implements the ``DataSerializable`` interface and thus can be serialized
-to a ``DataContainer`` and deserialized by a ``DataBuilder``.
+While an :javadoc:`org.spongepowered.api.data.manipulator.ImmutableDataManipulator` is a good way to store data while
+the server is running, it will not persist over a restart. However, every
+:javadoc:`org.spongepowered.api.data.manipulator.DataManipulator` implements the
+:javadoc:`org.spongepowered.api.data.DataSerializable` interface and thus can be serialized to a
+:javadoc:`org.spongepowered.api.data.DataContainer` and deserialized by a
+:javadoc:`org.spongepowered.api.data.persistence.DataBuilder`.
 
 After this initial conversion from the specialized ``DataManipulator`` to a more general structure, the ``DataContainer``
 can be further processed.
@@ -12,14 +15,14 @@ can be further processed.
 DataContainer and DataView
 ==========================
 
-A ``DataView`` is a general-purpose structure for holding any kind of data. It supports multiple values and even nested
-``DataView``\ s as a value, thus allowing for a tree-like structure. Every value is identified by a ``DataQuery``.
-A ``DataContainer`` is a root ``DataView``.
+A :javadoc:`org.spongepowered.api.data.DataView` is a general-purpose structure for holding any kind of data. It
+supports multiple values and even nested ``DataView``\ s as a value, thus allowing for a tree-like structure. Every
+value is identified by a :javadoc:`org.spongepowered.api.data.DataQuery`. A ``DataContainer`` is a root ``DataView``.
 
 Every ``DataSerializable`` provides a ``toContainer()`` method which will create and return a ``DataContainer``.
-As an example, calling ``toContainer()`` on a ``HealthData`` instance will yield a ``DataContainer`` containing two
-values, one for the current and one for the maximum health, each identified by the ``DataQuery`` of the respective
-``Key``.
+As an example, calling ``toContainer()`` on a :javadoc:`org.spongepowered.api.data.manipulator.mutable.entity.
+HealthData` instance will yield a ``DataContainer`` containing two values, one for the current and one for the maximum
+health, each identified by the ``DataQuery`` of the respective ``Key``.
 
 .. code-block:: java
 
@@ -31,10 +34,11 @@ values, one for the current and one for the maximum health, each identified by t
     currentHealth == healthData.health().get();  // true
 
 Converting this container back into a ``HealthData`` instance is done by the corresponding ``DataBuilder``. Those are
-registered and managed by the ``DataManager``. It can either be obtained from a valid ``Game`` instance or using the
-``Sponge`` utility class. The ``DataManager`` provides a method to get the appropriate
-``DataBuilder`` to deserialize a given class and additionally a shorthand method to get the ``DataBuilder`` and have it
-do the deserialization in one step. Both of the following code examples are functionally equivalent.
+registered and managed by the :javadoc:`org.spongepowered.api.data.DataManager`. It can either be obtained from a valid
+:javadoc:`org.spongepowered.api.Game` instance or using the :javadoc:`org.spongepowered.api.Sponge` utility class. The
+``DataManager`` provides a method to get the appropriate ``DataBuilder`` to deserialize a given class and additionally
+a shorthand method to get the ``DataBuilder`` and have it do the deserialization in one step. Both of the following
+code examples are functionally equivalent.
 
 **Code Example: Deserialization, the long way**
 
@@ -66,17 +70,19 @@ do the deserialization in one step. Both of the following code examples are func
 
 The ``deserializeHealth`` function will return ``Optional.empty()`` if there is no ``DataBuilder`` registered for
 ``HealthData`` or the supplied ``DataContainer`` is empty. If invalid data is present in the ``DataContainer``, an
-``InvalidDataException`` will be thrown.
+:javadoc:`org.spongepowered.api.data.persistence.InvalidDataException` will be thrown.
 
 DataTranslator
 ==============
 
-In Sponge, generally the implementations ``MemoryDataView`` and ``MemoryDataContainer`` are used, which reside in
-memory only and thus will not persist over a server restart. In order to persistently store a ``DataContainer``, it
-first has to be converted into a storable representation. This can be done by using an implementation of the
-``DataTranslator`` interface, for example the ``ConfigurateTranslator``, which can convert a ``DataView`` to a
-``ConfigurationNode`` and vice versa. ``ConfigurationNode``\ s can then be written to and read from persistent files
-using the :doc:`Configurate Library <../configuration/index>`.
+In Sponge, generally the implementations :javadoc:`org.spongepowered.api.data.MemoryDataView` and
+:javadoc:`org.spongepowered.api.data.MemoryDataContainer` are used, which reside in memory only and thus will not
+persist over a server restart. In order to persistently store a ``DataContainer``, it first has to be converted into a
+storable representation. This can be done by using an implementation of the
+:javadoc:`org.spongepowered.api.data.translator.DataTranslator` interface, for example the
+:javadoc:`org.spongepowered.api.data.translator.ConfigurateTranslator`, which can convert a ``DataView`` to a
+:javadoc:`ninja.leaping.configurate.ConfigurationNode` and vice versa. ``ConfigurationNode``\ s can then be written to
+and read from persistent files using the :doc:`Configurate Library <../configuration/index>`.
 
 **Code Example: Serializing a HealthData instance to Configurate**
 
