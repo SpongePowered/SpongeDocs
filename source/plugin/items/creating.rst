@@ -5,10 +5,11 @@ Creating an ItemStack
 If you want to create your own items, you need to go through several steps. Let's go through a basic example and create
 an enchanted diamond sword.
 
-To create an ``ItemStack``, we need to first grab the builder from the ``ItemStack``. This is done with the
-``ItemStack.builder()`` method. In the builder, we can specify things such as the ``ItemType`` or the quantity of the
-item. In our example, we will be creating a diamond sword that contains enchantments, a custom name, and is
-unbreakable. If you want a plain sword without any other data, then this is all you need to do:
+To create an :javadoc:`org.spongepowered.api.item.inventory.ItemStack`, we need to first grab the builder from the
+``ItemStack``. This is done with the :javadoc:`org.spongepowered.api.item.inventory.ItemStack#builder()` method. In the
+builder, we can specify things such as the :javadoc:`org.spongepowered.api.item.ItemType` or the quantity of the item.
+In our example, we will be creating a diamond sword that contains enchantments, a custom name, and is unbreakable. If
+you want a plain sword without any other data, then this is all you need to do:
 
 .. code-block:: java
 
@@ -22,9 +23,10 @@ unbreakable. If you want a plain sword without any other data, then this is all 
     }
 
 Creating the basic item is done. Now this is a normal diamond sword that we created, but what if we wanted something
-more interesting? What about enchanting and naming our sword? We can use ``EnchantmentData`` to give our sword some
-enchantments. The following example will give our sword every enchantment in the game, to level 1000. Make sure to
-include this all before ``return superMegaAwesomeSword;``.
+more interesting? What about enchanting and naming our sword? We can use
+:javadoc:`org.spongepowered.api.data.manipulator.mutable.item.EnchantmentData` to give our sword some enchantments. The
+following example will give our sword every enchantment in the game, to level 1000. Make sure to include this all
+before ``return superMegaAwesomeSword;``.
 
 .. code-block:: java
 
@@ -74,9 +76,11 @@ Spawning the Item
 =================
 Sure we can simply put the sword into a player's inventory, but what if we wanted to throw it out into the open world
 and spawn the item? This is where :doc:`entity spawning <../entities/spawning>` comes into play. Since the in-game
-graphical representation of an ``ItemStack`` is ``Item``, we can spawn it in similarly to a normal ``Entity``. The
-``EntityType`` will simply be ``EntityTypes.ITEM`` and we will need to specify that the ``Entity`` will represent our
-``ItemStack``. This can be done using the ``REPRESENTED_ITEM`` key. An example is shown below:
+graphical representation of an ``ItemStack`` is :javadoc:`org.spongepowered.api.entity.Item`, we can spawn it in
+similarly to a normal :javadoc:`org.spongepowered.api.entity.Entity`. The :javadoc:`org.spongepowered.api.entity.
+EntityType` will simply be :javadoc:`org.spongepowered.api.entity.EntityTypes#ITEM` and we will need to specify that
+the ``Entity`` will represent our ``ItemStack``. This can be done using the
+:javadoc:`org.spongepowered.api.data.key.Keys#REPRESENTED_ITEM` key. An example is shown below:
 
 .. code-block:: java
 
@@ -106,10 +110,13 @@ graphical representation of an ``ItemStack`` is ``Item``, we can spawn it in sim
 Creating an ItemStack From a Block
 ==================================
 
-An ``ItemStack`` for a block can be created by using the method ``itemType()`` on the builder similarly to normal
-items, but what if we wanted to create an ``ItemStack`` from a ``BlockState`` itself? To create an ``ItemStack`` from a
-``BlockState``, you would need to use the ``fromBlockState()`` method on the ``ItemStack`` builder. An example of this
-is shown below:
+An ``ItemStack`` for a block can be created by using the method
+:javadoc:`org.spongepowered.api.item.inventory.ItemStack.Builder#itemType(org.spongepowered.api.item.ItemType)`
+similarly to normal items, but what if we wanted to create an ``ItemStack`` from a
+:javadoc:`org.spongepowered.api.block.BlockState` itself? To create an ``ItemStack`` from a ``BlockState``, you would
+need to use the
+:javadoc:`org.spongepowered.api.item.inventory.ItemStack.Builder#fromBlockState(org.spongepowered.api.block.BlockState)`
+method on the ``ItemStack`` builder. An example of this is shown below:
 
 .. code-block:: java
 

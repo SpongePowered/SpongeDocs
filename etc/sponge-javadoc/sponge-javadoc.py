@@ -367,6 +367,8 @@ def internal_field(text, inliner, text_before_last_object):
 
 
 def javadoc_role(name, rawtext, text, lineno, inliner, options={}, content=[]):
+    # Replace any new lines and spaces
+    text = text.replace('\n', '').replace(' ', '')
     # Gets the text before any specified parenthesis. If there aren't any, then this just returns the original string
     # unmodified. This is useful in-case a method is specified that contains any arguments, and we don't want to touch
     # those in the declaration after this one: text_before_last_class
@@ -385,8 +387,6 @@ def javadoc_role(name, rawtext, text, lineno, inliner, options={}, content=[]):
         return [nodes.reference(rawtext, utils.unescape('[Sponge-JavaDoc] Unable to parse ' + text),
                                 refuri='https://www.youtube.com/watch?v=KMU0tzLwhbE', **options)], []
     text_before_last_object = text_before_parenthesis.rpartition('.')[0].rpartition('.')[2]
-    # Replace any new lines and spaces
-    text = text.replace('\n', '').replace(' ', '')
     # If there is no hash (#), then we know that this is not specifying a method. Rather, it is specifying some object.
     # This could be an internal class or a normal class however, so we need to check the text before the object and see
     # if it starts with a capital letter. If it does, then this is an internal class. Otherwise, the text before is
