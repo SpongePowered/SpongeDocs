@@ -9,9 +9,11 @@ the Economy API in your own plugin.
 Loading the EconomyService
 ==========================
 
-In order to utilize the Economy API, you must first load the ``EconomyService`` class:
+In order to utilize the Economy API, you must first load the
+:javadoc:`org.spongepowered.api.service.economy.EconomyService` class:
 
-#. Listen to the ``ChangeServiceProviderEvent`` in order to grab an instance of the EconomyService when it is registered.
+#. Listen to the :javadoc:`org.spongepowered.api.event.service.ChangeServiceProviderEvent` in order to grab an instance
+   of the EconomyService when it is registered.
 
 #. When the event is fired, check if the service added was the ``EconomyService``. If this is ``true``, you'll assign
    it to a variable for later access to the Economy API.
@@ -44,8 +46,8 @@ Example: Loading the EconomyService
 Using the EconomyService
 ========================
 
-After loading the :javadoc:`org.spongepowered.api.service.economy.EconomyService` and assigning it to a variable, you
-are ready to access all of the features the Economy API has to offer.
+After loading the ``EconomyService`` and assigning it to a variable, you are ready to access all of the features the
+Economy API has to offer.
 
 Example: Getting a player's balance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -64,7 +66,7 @@ Example: Getting a player's balance
     	BigDecimal balance = acc.getBalance(economyService.getDefaultCurrency());
     }
 
-Some ``Account`` methods require variables such as:
+Some :javadoc:`org.spongepowered.api.service.economy.account.Account` methods require variables such as:
 
 * Currency: The currency involved in the exchange
 * Cause: What caused the change to the account
@@ -72,6 +74,6 @@ Some ``Account`` methods require variables such as:
 
 These are for more advanced uses, but still must be filled in. Below is a list of acceptable default values:
 
-* Currency: ``economyService.getDefaultCurrency()``
+* Currency: :javadoc:`org.spongepowered.api.service.economy.EconomyService#getDefaultCurrency()`
 * Cause: ``Cause.source(myPlugin).build()``
 * Context: ``new HashSet<Context>()``

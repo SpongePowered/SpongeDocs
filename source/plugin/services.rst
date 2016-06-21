@@ -28,8 +28,9 @@ You can read more about game states on the :doc:`lifecycle` page.
 
 Providing your own service
 ==========================
-Your plugin can provide the implementation for a core interface like ``PermissionService``, or for a custom interface
-that is not part of the Sponge API (e.g. economy, web server):
+Your plugin can provide the implementation for a core interface like
+:javadoc:`org.spongepowered.api.service.permission.PermissionService`, or for a custom interface that is not part of
+the Sponge API (e.g. economy, web server):
 
 .. code-block:: java
 

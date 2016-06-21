@@ -108,7 +108,7 @@ on block states that can not be wet since ``dryState`` will be ``Optional.empty(
 Copying Blocks
 ~~~~~~~~~~~~~~
 
-If you want to copy all of a blocks data, the :javadoc:`org.spongepowered.api.block.BlockSnapshot` class is your best
+If you want to copy all of a block's data, the :javadoc:`org.spongepowered.api.block.BlockSnapshot` class is your best
 friend. While it doesn't expose all the data, it stores a ``BlockType``, its ``BlockState`` and, if necessary, all
 additional Tile Entity Data (for example chest inventories). Conveniently, the ``Location`` class provides a
 :javadoc:`org.spongepowered.api.world.Location#createSnapshot()` method to create a snapshot of the block at that point

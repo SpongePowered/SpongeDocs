@@ -2,9 +2,10 @@
 Scheduler
 =========
 
-Sponge exposes the ``Scheduler`` to allow you to designate tasks to be executed in the future. The
-``Scheduler`` provides a ``Task.Builder`` with which you can specify task properties such as the delay, interval,
-name, (a)synchronicity, and ``Runnable`` (see :ref:`task-properties`).
+Sponge exposes the :javadoc:`org.spongepowered.api.scheduler.Scheduler` to allow you to designate tasks to be executed
+in the future. The ``Scheduler`` provides a :javadoc:`org.spongepowered.api.scheduler.Task.Builder` with which you can
+specify task properties such as the delay, interval, name, (a)synchronicity, and ``Runnable``
+(see :ref:`task-properties`).
 
 Task Builder
 ============
@@ -20,8 +21,8 @@ First, obtain an instance of the ``Scheduler``, and retrieve the ``Task.Builder`
     Scheduler scheduler = Sponge.getScheduler();
     Task.Builder taskBuilder = scheduler.createTaskBuilder();
 
-The only required property is the `Runnable <http://docs.oracle.com/javase/7/docs/api/java/lang/Runnable.html>`_,
-which you can specify using ``Task.Builder#execute(Runnable runnable)``:
+The only required property is the `Runnable <http://docs.oracle.com/javase/8/docs/api/java/lang/Runnable.html>`_,
+which you can specify using :javadoc:`org.spongepowered.api.scheduler.Task.Builder#execute(java.lang.Runnable)`:
 
 .. code-block:: java
 
@@ -93,7 +94,8 @@ Using the ``Task.Builder``, you can specify other, optional properties, as descr
 |                 |                         | it should be descriptive and aid users in debugging your plugin.         |
 +-----------------+-------------------------+--------------------------------------------------------------------------+
 
-Lastly, submit the task to the scheduler using ``Task.Builder#submit(Object plugin)``.
+Lastly, submit the task to the scheduler using
+:javadoc:`org.spongepowered.api.scheduler.Task.Builder#submit(java.lang.Object)`.
 
 And that's it! To summarize, a fully functional scheduled task that would run asynchronously every 5 minutes after an
 initial delay of 100 milliseconds could be built and submitted using the following code:
@@ -109,19 +111,20 @@ initial delay of 100 milliseconds could be built and submitted using the followi
         .async().delay(100, TimeUnit.MILLISECONDS).interval(5, TimeUnit.MINUTES)
         .name("ExamplePlugin - Fetch Stats from Database").submit(plugin);
 
-To cancel a task, simply call the ``Task#cancel`` method:
+To cancel a task, simply call the :javadoc:`org.spongepowered.api.scheduler.Task#cancel()` method:
 
 .. code-block:: java
 
 	task.cancel();
 
-If you need to cancel the task from within the runnable itself, you can instead opt to use a `Consumer<Task>` in order to
-access the task. The below example will schedule a task that will count down from 60 and cancel itself upon reaching 0.
+If you need to cancel the task from within the runnable itself, you can instead opt to use a ``Consumer<Task>``` in
+order to access the task. The below example will schedule a task that will count down from 60 and cancel itself upon
+reaching 0.
 
 .. code-block:: java
 
     @Listener
-    public void onGameInit(GameInitializationEvent event){
+    public void onGameInit(GameInitializationEvent event) {
         Scheduler scheduler = Sponge.getScheduler();
         Task.Builder taskBuilder = scheduler.createTaskBuilder();
         Task task = taskBuilder.execute(new CancellingTimerTask())
@@ -137,7 +140,7 @@ access the task. The below example will schedule a task that will count down fro
             Sponge.getServer()
                 .getBroadcastChannel()
                 .send(Text.of("Remaining Time: "+seconds+"s"));
-            if(seconds < 1) {
+            if (seconds < 1) {
                 task.cancel();
             }
         }
@@ -175,14 +178,16 @@ of directing on which thread the task is executed.
 
 To allow these libraries to work with Sponge's ``Scheduler`` the following methods can be used:
 
-* ``Scheduler#createSyncExecutor(Object plugin)`` creates a ``ScheduledExecutorService`` which executes tasks
-  through Sponge's synchronous scheduler.
-* ``Scheduler#createAsyncExecutor(Object plugin)`` creates a ``ScheduledExecutorService`` which executes tasks
-  through Sponge's asynchronous scheduler. Tasks are subject to the restrictions mentioned in `Asynchronous Tasks`_.
+* :javadoc:`org.spongepowered.api.scheduler.Scheduler#createSyncExecutor(java.lang.Object)` creates a
+  :javadoc:`org.spongepowered.api.scheduler.SpongeExecutorService` which executes tasks through Sponge's synchronous
+  scheduler.
+* :javadoc:`org.spongepowered.api.scheduler.Scheduler#createAsyncExecutor(java.lang.Object)` creates a
+  ``SpongeExecutorService`` which executes tasks through Sponge's asynchronous scheduler. Tasks are subject to the
+  restrictions mentioned in `Asynchronous Tasks`_.
 
 One thing to keep in mind is that any tasks that interacts with Sponge outside of the interactions listed in 
-`Asynchronous Tasks`_ need to be executed on the ExecutorService created with 
-``Scheduler#createSyncExecutor(Object plugin)`` to be thread-safe.
+`Asynchronous Tasks`_ need to be executed on the ExecutorService created with  ``Scheduler#createSyncExecutor(Object)``
+to be thread-safe.
 
 .. code-block:: java
 

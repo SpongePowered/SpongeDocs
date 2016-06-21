@@ -40,9 +40,12 @@ This code illustrates what **not** to do:
     }
 
 
-Instead of this, the best thing to do is simply withdraw the amount you need, and check the ``ResultType``
-of the returned ``TransactionResult``. An economy plugin which doesn't want to allow negative balances will
-simply return ``ResultType.ACCOUNT_NO_FUNDS``, or ``ResultType.FAILED`` in this case.
+Instead of this, the best thing to do is simply withdraw the amount you need, and check the
+:javadoc:`org.spongepowered.api.service.economy.transaction.ResultType` of the returned
+:javadoc:`org.spongepowered.api.service.economy.transaction.TransactionResult`. An economy plugin which doesn't want to
+allow negative balances will simply return :javadoc:`org.spongepowered.api.service.economy.transaction.
+ResultType#ACCOUNT_NO_FUNDS`, or :javadoc:`org.spongepowered.api.service.economy.transaction.ResultType#FAILED` in this
+case.
 
 Here's how you **should** withdraw money:
 
