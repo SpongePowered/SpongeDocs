@@ -284,9 +284,7 @@ def internal_with_arguments(text, inliner, text_before_last_object):
             url_method_text = '-' + non_generic_text_in_parenthesis + '-'
         else:
             url_method_text = '-' + text_in_parenthesis + '-'
-    # Replace the text down to just the packages. Remove the classes, methods, arguments, everything else.
-    text = text.replace(text_in_parenthesis, '').replace('()', '').replace(text_object, '').replace(text_method, '')\
-        .replace('#', '')
+    text = text.rpartition('#')[0].rpartition('.')[0].rpartition('.')[0] + '.'  # TODO: APPLY FIX TO OTHER FUNCTIONS
     url_method_text = url_method_text.replace(' ', '')
     if 'ninja.leaping.configurate' in text:
         return [javadoc_text], [__configurate_link__ + text.replace('.', '/') + text_object + '.html#' + text_method +
