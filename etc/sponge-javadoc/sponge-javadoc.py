@@ -32,7 +32,7 @@ Linking to fields is also supported:
 :javadoc:`org.spongepowered.api.text.serializer.TextSerializers#FORMATTING_CODE`
 which will display TextSerializers#FORMATTING_CODE
 
-Sponge-Javadoc currently supports liking to the following javadocs:
+Sponge-JavaDoc currently supports liking to the following JavaDocs:
 * The Sponge JavaDocs (https://jd.spongepowered.org)
 * Configurate JavaDocs (http://zml2008.github.io/configurate/apidocs/)
 
@@ -44,6 +44,31 @@ If an error is thrown into the console that prevents sphinx from continuing (lik
 docs repo as well! Even if the input to the javadoc role was incorrect, reporting it will allow us to add a check that
 will send a 'fake' output so it does not bring sphinx down entirely. Make sure to include the error log in your report
 (the error message in the console will tell you where to find the log).
+
+
+The sponge-javadoc.py file is licensed under the MIT License (MIT). A copy of the license may be found below:
+
+Copyright (c) SpongePowered <https://www.spongepowered.org>
+Copyright (c) contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
 
  ~ Original Author: 12AwsomeMan34 (aaronlingerfelt@yahoo.com)
 
