@@ -199,12 +199,11 @@ def simple_with_arguments(text, inliner, text_before_parenthesis):
     # Get the text object from text_before_parenthesis. Example:
     # Input: 'org.spongepowered.api.util.blockray.BlockRay#maxDistanceFilter'
     # Output: 'BlockRay'
-    text_object = text_before_parenthesis.rpartition('#')[0].rpartition('.')[2].replace(' ', '')  # TODO: CENTRALIZE
+    text_object = text_before_parenthesis.rpartition('#')[0].rpartition('.')[2].replace(' ', '')
     # Gets the method text. Using the above example, we'd get 'maxDistanceFilter'.
     text_method = text_before_parenthesis.rpartition('#')[2]
-    # Gets the text in the parenthesis by removing the part from before the parenthesis and removing the parenthesis
-    # themselves. This simply leaving the text that was inside the parenthesis.
-    text_in_parenthesis = text.rpartition('(')[2].rpartition(')')[0]  # TODO: APPLY FIX TO OTHER FUNCTIONS
+    # Gets the text in the parenthesis by partitioning the parts out from the text.
+    text_in_parenthesis = text.rpartition('(')[2].rpartition(')')[0]
     # Start our javadoc text by taking the text_object#text_method and adding (.
     javadoc_text = text_object + '#' + text_method + '('
     # If there is a comma, then there are multiple arguments.
@@ -250,7 +249,7 @@ def simple_with_arguments(text, inliner, text_before_parenthesis):
             else:
                 javadoc_text += text_in_parenthesis.rpartition('.')[2] + ')'
             url_method_text = '-' + text_in_parenthesis + '-'
-    text = text_before_parenthesis.rpartition('#')[0].rpartition('.')[0] + '.'  # TODO: APPLY FIX TO OTHER FUNCTIONS
+    text = text_before_parenthesis.rpartition('#')[0].rpartition('.')[0] + '.'
     url_method_text = url_method_text.replace(' ', '')
     if 'ninja.leaping.configurate' in text:
         return [javadoc_text], [__configurate_link__ + text.replace('.', '/') + text_object + '.html#' + text_method +
@@ -277,9 +276,8 @@ def internal_with_arguments(text, inliner, text_before_last_object):
     text_object = text_before_last_object + '.' + text.rpartition('#')[0].rpartition('.')[2]
     # Gets the method text. Using the above example, we'd get 'insertPage'.
     text_method = text.rpartition('(')[0].rpartition('#')[2]
-    # Gets the text in the parenthesis by removing the part from before the parenthesis and removing the ) parenthesis
-    # itself. This simply leaving the text that was inside the parenthesis.
-    text_in_parenthesis = text.rpartition('(')[2].replace(')', '')
+    # Gets the text in the parenthesis by partitioning the parts out from the text.
+    text_in_parenthesis = text.rpartition('(')[2].rpartition(')')[0]
     # Start our javadoc text by taking the text_object#text_method and adding (.
     javadoc_text = text_object + '#' + text_method + '('
     # If there is a comma, then there are multiple arguments.
@@ -309,7 +307,7 @@ def internal_with_arguments(text, inliner, text_before_last_object):
             url_method_text = '-' + non_generic_text_in_parenthesis + '-'
         else:
             url_method_text = '-' + text_in_parenthesis + '-'
-    text = text.rpartition('#')[0].rpartition('.')[0].rpartition('.')[0] + '.'  # TODO: APPLY FIX TO OTHER FUNCTIONS
+    text = text.rpartition('#')[0].rpartition('.')[0].rpartition('.')[0] + '.'
     url_method_text = url_method_text.replace(' ', '')
     if 'ninja.leaping.configurate' in text:
         return [javadoc_text], [__configurate_link__ + text.replace('.', '/') + text_object + '.html#' + text_method +
@@ -332,6 +330,7 @@ def simple_field(text, inliner):
     # Input: 'org.spongepowered.api.text.serializer.TextSerializers#FORMATTING_CODE'
     # Output: 'TextSerializers'
     if '<' in text:
+        # If there are generics in the text, then we want to avoid using them
         object_text = text.rpartition('<')[0].rpartition('.')[2]
         javadoc_text = object_text + '<' + text.rpartition('<')[2].rpartition('>')[0] + '>' + '#' +\
             text.rpartition('#')[2]
@@ -340,7 +339,7 @@ def simple_field(text, inliner):
         object_text = javadoc_text.rpartition('#')[0]
     # Gets the field from after the hash.
     field_text = text.rpartition('#')[2]
-    text = text.replace(javadoc_text, '').replace('#', '') + object_text
+    text = text.rpartition('#')[0].rpartition('.')[0] + '.' + object_text
     if 'ninja.leaping.configurate' in text:
         return [javadoc_text], [__configurate_link__ + text.replace('.', '/') + '.html#' + field_text]
     else:
@@ -375,10 +374,8 @@ def internal_field(text, inliner, text_before_last_object):
     field_text = text.rpartition('#')[2]
     # Removes the field part from the text so we can just have the object text.
     object_text = javadoc_text.rpartition('#')[0]
-    # Remove the javadoc text from the original text. We are going to replace the dots to dashes (/) later on, however
-    # for internal classes, this cannot be. Internal classes need the dot in their url. So remove it from here and
-    # re-add the one with the dot in it afterwards. Also remove the hash and the field.
-    text = text.replace(object_text, '').replace(field_text, '').replace('#', '')
+    # Partition out the text before the hash, as well as the objects to get the package. Then append a dot.
+    text = text.rpartition('#')[0].rpartition('.')[0].rpartition('.')[0] + '.'
     # Remove generics in field link
     if '<' in object_text:
         object_text = object_text.rpartition('<')[0].rpartition('>')[2]
@@ -390,7 +387,8 @@ def internal_field(text, inliner, text_before_last_object):
 
 
 def javadoc_role(name, rawtext, text, lineno, inliner, options={}, content=[]):
-    # Replace any new lines and spaces
+    # Replace any new lines and spaces. This will allow input spanning multiple lines and the spaces have no real
+    # effect in the calculation of the display text and the javadoc link.
     text = text.replace('\n', '').replace(' ', '')
     # Gets the text before any specified parenthesis. If there aren't any, then this just returns the original string
     # unmodified. This is useful in-case a method is specified that contains any arguments, and we don't want to touch
