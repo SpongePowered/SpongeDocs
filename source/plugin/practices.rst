@@ -14,6 +14,12 @@ The following guidelines have been prepared to aid Sponge plugin developers. It 
 list, merely an attempt to detail some issues that are likely to arise during plugin development, and propose our best
 solutions.
 
+.. note::
+
+   We reserve the use of *Sponge* for official SpongePowered works. Please don't use *Sponge* as part of your plugin
+   name, unless (1) your plugin primarily concerns the minecraft block "Sponge", or (2) your plugin also has versions
+   for other APIs (in which case you may append "for Sponge" to the title).
+
 
 Economy API
 ~~~~~~~~~~~
@@ -54,4 +60,4 @@ as such wherever they are hosted. These may more appropriately labelled as "Mods
 Plugin Interoperability
 =======================
 
-An explanation of how to communicate with other plugins, *coming soon*.
+An explanation of how to communicate with other plugins, *TBA*.
