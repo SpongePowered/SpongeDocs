@@ -52,7 +52,8 @@ list of do's and don'ts. This stuff should all be common sense.
   of Sponge Staff.
 
 * Please don't include *Sponge* in your plugin name. We reserve the use of *Sponge* for official SpongePowered works.
-  There is one exception: you may append "for Sponge" to the title if your plugin also has versions for other APIs. 
+  There are two exceptions: You may append "for Sponge" to the title if your plugin also has versions for other APIs,
+  and you may use *Sponge* in the title if your plugin primarily concerns the minecraft block "Sponge".
 
 * We aim to comply entirely with the Mojang EULA, to that end any plugins, services, posts and/or links suspected of
   violating the EULA may be removed at the discretion of the Sponge Staff or at the request of Mojang AB.
