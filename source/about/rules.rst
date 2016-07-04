@@ -8,7 +8,7 @@ of our various methods of communications, including (but not limited to):
 * Official IRC channels: #sponge, #spongedev, #spongedocs
 * Sponge Forums
 * GitHub and Bug/Issue tracker
-* Sponge subReddit
+* Sponge subreddit
 * Sponge TeamSpeak Server
 * Any other official means of communication by the Sponge project.
 
@@ -71,7 +71,7 @@ list of do's and don'ts. This stuff should all be common sense.
 
     Any of the above rules are subject to change at any time without warning. Any content found to be in violation of
     these rules, even if the content was created before a rule was in place, can be removed by moderator approval. These
-    rules apply generally to all Sponge methods of communication, but each individual sub method (eg: subReddit or Forum
+    rules apply generally to all Sponge methods of communication, but each individual sub method (eg: subreddit or Forum
     category) may have its own set of additional rules and guidelines to add on top of these general rules. If this is
     the case, both sets of rules must be followed. Rules and guidelines evolve as the Sponge community evolves. Use only
     as directed; excessive use of FLARD may rot your socks.
