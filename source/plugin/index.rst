@@ -54,6 +54,7 @@ Contents
     economy/index
     wgen/index
     manager
+    modularization
     game-profile-manager
     debugging
     tab-lists
