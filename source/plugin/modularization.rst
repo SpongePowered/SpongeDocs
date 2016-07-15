@@ -53,6 +53,10 @@ dependency is added to your plugin's runtime.
 Problem 2: Getting an Instance Another Plugin
 =============================================
 
-So now that you've got your dependencies straight, you want to get an instance of the other plugin's main class. In
-Sponge, all plugins are Singletons and you can use the ``PluginManager`` to retrieve an instance of another plugin (by
-ID). Be sure to read about the :doc:`manager`.
+So now that you've got your dependencies straight, you want to get an instance of the other plugin's main class.
+
+Solution: ``PluginManager``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In Sponge, all plugins are Singletons and you can use the ``PluginManager`` to retrieve an instance of another plugin
+(by ID). Be sure to read about the :doc:`manager`.
