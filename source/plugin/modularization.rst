@@ -4,7 +4,7 @@ Code Modularization
 
 When writing Sponge plugins, you may find that you need to modularize your code. Maybe you want to split your core into
 another project so that others can make use of it, or maybe you want to utilize a service another plugin provides. With
-Sponge, begone the days of shading or shadowing entire plugins into your plugin.
+Sponge, gone are the days of shading or shadowing entire plugins into your plugin.
 
 Problem 1: Providing Good Service
 =================================
