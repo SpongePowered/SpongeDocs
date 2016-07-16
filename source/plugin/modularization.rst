@@ -4,14 +4,14 @@ Code Modularization
 
 When writing Sponge plugins, you may find that you need to modularize your code. Maybe you want to split your core into
 another project so that others can make use of it, or maybe you want to utilize a service another plugin provides. With
-Sponge, gone are the days of shading or shadowing entire plugins into your plugin.
+Sponge, gone are the days of shading entire plugins into your plugin.
 
 Problem 1: Providing Good Service
 =================================
 
-Let's say you want to provide some awesome service for ``WarpService``. You took a day or two to write
-``AwesomeWarpService`` that uses SQL to back warps. So now you can override some other plugin's ``CoreWarpService`` that
-uses mere flatfiles with your own service.
+Let's say you want to provide some awesome service for ``WarpService``. You wrote ``AwesomeWarpService`` that uses SQL
+to back warps. So now you can override some other plugin's ``CoreWarpService`` that uses mere flatfiles with your own
+service.
 
 But when you go to use ``Sponge.getServiceManager().provide(WarpService.class)``, you are shocked to find that referencing
 ``WarpService`` throws a ``ClassNotFoundException``!
@@ -37,7 +37,7 @@ Using Sponge's dependency system, you can declare hard and soft dependencies usi
       version = "1.0-SNAPSHOT",
       description = "Example Plugin",
       url = "https://example.com",
-      authors = { "AniSkywalker" },
+      authors = { "Spongie" },
       dependencies = {
         @Dependency(
           id="examplecore",
