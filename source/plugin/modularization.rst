@@ -9,9 +9,8 @@ Sponge, gone are the days of shading entire plugins into your plugin.
 Problem 1: Providing Good Service
 =================================
 
-Let's say you want to provide some awesome service for ``WarpService``. You wrote ``AwesomeWarpService`` that uses SQL
-to back warps. So now you can override some other plugin's ``CoreWarpService`` that uses mere flatfiles with your own
-service.
+Let's say you want to provide some awesome service for ``WarpService``. You want to make ``AwesomeWarpService`` override
+some other plugin's ``CoreWarpService`` with your own.
 
 But when you go to use ``Sponge.getServiceManager().provide(WarpService.class)``, you are shocked to find that referencing
 ``WarpService`` throws a ``ClassNotFoundException``!
