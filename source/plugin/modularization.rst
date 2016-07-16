@@ -6,10 +6,10 @@ When writing Sponge plugins, you may find that you need to modularize your code.
 another project so that others can make use of it, or maybe you want to utilize a service another plugin provides. With
 Sponge, begone the days of shading or shadowing entire plugins into your plugin.
 
-Problem 1: ClassNotFoundException
+Problem 1: Providing Good Service
 =================================
 
-Let's say you want to provide some awesome serice for ``WarpService``. You took a day or two to write
+Let's say you want to provide some awesome service for ``WarpService``. You took a day or two to write
 ``AwesomeWarpService`` that uses SQL to back warps. So now you can override some other plugin's ``CoreWarpService`` that
 uses mere flatfiles with your own service.
 
@@ -23,8 +23,8 @@ When you compile your plugin, the compiler finds ``WarpService.class`` because i
 a build tool like Gradle or by just adding it to the classpath). However, when Sponge goes to run your plugin, it can't
 find the referenced ``WarpService.class`` in your plugin's "container".
 
-Solution: Dependencies
-~~~~~~~~~~~~~~~~~~~~~~~~
+Solution
+~~~~~~~~
 
 Using Sponge's dependency system, you can declare hard and soft dependencies using the ``dependencies`` field of the
 ``@Plugin`` tag. Here's an example:
@@ -52,10 +52,11 @@ dependency is added to your plugin's runtime.
 Problem 2: Getting an Instance Another Plugin
 =============================================
 
-So now that you've got your dependencies straight, you want to get an instance of the other plugin's main class.
+So now that you've got your dependencies straight, you want to get an instance of the other plugin's main class. This
+could be in order to interface with an API or whatnot.
 
-Solution: ``PluginManager``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Solution
+~~~~~~~~
 
 In Sponge, all plugins are Singletons and you can use the ``PluginManager`` to retrieve an instance of another plugin
 (by ID). Be sure to read about the :doc:`manager`.
