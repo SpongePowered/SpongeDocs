@@ -13,8 +13,8 @@ Let's say you want to provide some awesome service for ``WarpService``. You took
 ``AwesomeWarpService`` that uses SQL to back warps. So now you can override some other plugin's ``CoreWarpService`` that
 uses mere flatfiles with your own service.
 
-So you go to use ``Sponge.getServiceManager().provide(WarpService.class)``, but you are shocked to find that referencing
-``WarpService`` will throw a ``ClassNotFoundException``! Oh noes!
+But when you go to use ``Sponge.getServiceManager().provide(WarpService.class)``, you are shocked to find that referencing
+``WarpService`` throws a ``ClassNotFoundException``!
 
 What's Happening
 ~~~~~~~~~~~~~~~~
