@@ -3,9 +3,8 @@ Code Modularization
 ===================
 
 When writing Sponge plugins, you may find that you need to modularize your code. Maybe you want to split your core into
-another project so that others can make use of it. Maybe you want to utilize a service another plugin provides. Or maybe
-you just come from a country where you die if you don't modularize code (it's called Heaven). Well, with Sponge, begone
-the days of shading or shadowing entire plugins into your plugin!
+another project so that others can make use of it, or maybe you want to utilize a service another plugin provides. With
+Sponge, begone the days of shading or shadowing entire plugins into your plugin.
 
 Problem 1: ClassNotFoundException
 =================================
