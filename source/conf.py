@@ -26,7 +26,7 @@ github_branch = 'master'
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #sys.path.insert(0, os.path.abspath('.'))
 
-sys.path.append(os.path.abspath('../etc/sponge-javadoc'))
+sys.path.append(os.path.abspath('../etc/sphinx-JDLinker'))
 
 # -- General configuration -----------------------------------------------------
 
@@ -35,7 +35,7 @@ sys.path.append(os.path.abspath('../etc/sponge-javadoc'))
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
-extensions = ['sponge-javadoc']
+extensions = ['sphinx-jdlinker']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -269,3 +269,10 @@ texinfo_documents = [
 
 locale_dirs = ['../locale/']   #path is example but recommended.
 gettext_compact = False     #optional.
+
+# -- sphinx-JDLinker Configuration ------------------------------------------------
+
+javadoc_links = [
+    ('https://jd.spongepowered.org/%s/; org.spongepowered.api' % release,
+    'http://zml2008.github.io/configurate/apidocs/; ninja.leaping.configurate'),
+]
