@@ -1,11 +1,12 @@
-=======================================
-Accessing data of offline Users/Players 
-=======================================
+===================
+Offline Player Data
+===================
 
 It may be necessary for plugins to access player data even when the player is offline.
-Since ``Sponge.getServer().getPlayer()`` does only return Players who are online one needs to find another solution.
+One could guess that ``Sponge.getServer().getPlayer()`` returning a ``Player`` can be used for this.
+But since ``Player`` objects only exist for online players, another solution has to be used.
 
-Some plugins store the relevant data themselves and associate the user by using ``Sponge.getServer().getGameProfileManager()``.
+Some plugins store the relevant data themselves and associate the user by using the ``GameProfileManager``.
 But writing different code for offline and online users is not necessary:
 
 The Service Manager natively provides a service called ``UserStorageService`` which is capable of returning ``User`` instances for Players who are currently offline
