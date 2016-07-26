@@ -55,15 +55,4 @@ Here's an example for a utility method that can be used to get a ``User``:
     }
 
 
-This solution can be used to get online and offline Users which makes it dynamically usable within your plugin.
-Now you only need to differenciate online and offline when it's really necessary.
-    
-    
-UUID or UserName ?  
-~~~~~~~~~~~~~~~~~~
-
-Most guides here give another example about how to use usernames instead of UUIDs.  
-If you want to use usernames instead of UUIDs, apply these replacements:  
-
-* The name of the variable ``uuid`` with ``username`` or better ``lastKnownUsername``  
-* The type ``UUID`` with ``String``  
+This solution can be used to get online and offline ``User``\s which makes it dynamically usable within your plugin.    
