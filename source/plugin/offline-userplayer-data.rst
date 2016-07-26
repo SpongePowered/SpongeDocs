@@ -16,7 +16,7 @@ For example:
 * ``#hasPermission(String permission)`` is available from both instances.
 
 Code Example
-----------------------------------
+------------
 
 Here's an example for a utility method that can be used to get a ``User``:
 
