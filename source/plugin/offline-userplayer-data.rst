@@ -18,7 +18,7 @@ For example:
 Code Example
 ----------------------------------
 
-Here's an example for a utility method that can be used to get a User:
+Here's an example for a utility method that can be used to get a ``User``:
 
 .. code-block:: java
 
@@ -36,8 +36,9 @@ Here's an example for a utility method that can be used to get a User:
         Optional<Player> onlinePlayer = Sponge.getServer().getPlayer(uuid);
     
         //if the user is online, all work is done
-        if (onlinePlayer.isPresent())
+        if (onlinePlayer.isPresent()) {
             return onlinePlayer;
+        }
             
         //Player is not online, use UserStorageService
         //See "Services" for detailed info on this:
@@ -49,10 +50,7 @@ Here's an example for a utility method that can be used to get a User:
             //You could send an error to your log for example
         }
         
-        Optional<User> user = userStorage.get().get(uuid);
-        
-        //Since we return an optional there's nothing more to do
-        return user;
+        return userStorage.get().get(uuid);
         
     }
 
