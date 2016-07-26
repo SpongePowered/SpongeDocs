@@ -73,7 +73,7 @@ UUID or UserName ?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
 
 Most guides here give another example about how to use usernames instead of UUIDs.  
-I don't recommend using usernames when it's not impossible to use UUIDs, but if you want to use usernames,  
-you can just replace the following:  
+If you want to use usernames instead of UUIDs, apply these replacements:  
+
 * The name of the variable ``uuid`` with ``username`` or better ``lastKnownUsername``  
 * The type ``UUID`` with ``String``  
