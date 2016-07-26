@@ -2,7 +2,7 @@
 Accessing data of offline Users/Players 
 =======================================
 
-In almost every plugin it's necessary to get access to player information even when the player is offline.
+It may be necessary for plugins to access player data even when the player is offline.
 Since ``Sponge.getServer().getPlayer()`` does only return Players who are online one needs to find another solution.
 
 Some plugins store the relevant data themselves and associate the user by using ``Sponge.getServer().getGameProfileManager()``.
@@ -18,7 +18,6 @@ For example:
 Code Example
 ----------------------------------
 
-Getting a User instance is a few more lines more efford that getting a Player.
 Here's an example for a utility method that can be used to get a User:
 
 .. code-block:: java
@@ -29,44 +28,37 @@ Here's an example for a utility method that can be used to get a User:
     import org.spongepowered.api.service.user.UserStorageService;
     
     /**
-     * Some random class
+     * A method that can return offline and online users
+     * @return Optional<User> User reference. Non present means unknown
      */
-    
-    public class UserUtils {
-    
-        /**
-         * A method that can return offline and online users
-         * @return Optional<User> User reference. Non present means unknown
-         */
-        public Optional<User> getUser(UUID uuid) {
-            
-            Optional<Player> onlinePlayer = Sponge.getServer().getPlayer(uuid);
+    public Optional<User> getUser(UUID uuid) {
         
-            //if the user is online, all work is done
-            if (onlinePlayer.isPresent())
-                return onlinePlayer;
-                
-            //Player is not online, use UserStorageService
-            //See "Services" for detailed info on this:
-            Optional<UserStorageService> userStorage = Sponge.getServiceManager().provide(UserStorageService.class);
-            
-            if (!userStorage.isPresent()) {
-                //UserStorageService wasn't found
-                //Although this is not supposed to happen, include some warning here.
-                //You could send an error to your log for example
-            }
-            
-            Optional<User> user = userStorage.get().get(uuid);
-            
-            //Since we return an optional there's nothing more to do
-            return user;
-            
-        }
+        Optional<Player> onlinePlayer = Sponge.getServer().getPlayer(uuid);
     
-    }  
+        //if the user is online, all work is done
+        if (onlinePlayer.isPresent())
+            return onlinePlayer;
+            
+        //Player is not online, use UserStorageService
+        //See "Services" for detailed info on this:
+        Optional<UserStorageService> userStorage = Sponge.getServiceManager().provide(UserStorageService.class);
+        
+        if (!userStorage.isPresent()) {
+            //UserStorageService wasn't found
+            //Although this is not supposed to happen, include some warning here.
+            //You could send an error to your log for example
+        }
+        
+        Optional<User> user = userStorage.get().get(uuid);
+        
+        //Since we return an optional there's nothing more to do
+        return user;
+        
+    }
+
 
 This solution can be used to get online and offline Users which makes it dynamically usable within your plugin.
-Now you only need to difference online and offline when it's really necessary.
+Now you only need to differenciate online and offline when it's really necessary.
     
     
 UUID or UserName ?  
