@@ -1,6 +1,6 @@
-==================================
+=======================================
 Accessing data of offline Users/Players 
-==================================
+=======================================
 
 In almost every plugin it's necessary to get access to player information even when the player is offline.
 Since ``Sponge.getServer().getPlayer()`` does only return Players who are online one needs to find another solution.
@@ -70,7 +70,7 @@ Now you only need to difference online and offline when it's really necessary.
     
     
 UUID or UserName ?  
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
+~~~~~~~~~~~~~~~~~~
 
 Most guides here give another example about how to use usernames instead of UUIDs.  
 If you want to use usernames instead of UUIDs, apply these replacements:  
