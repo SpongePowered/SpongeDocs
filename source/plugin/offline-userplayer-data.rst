@@ -10,7 +10,9 @@ But writing different code for offline and online users is not necessary:
 
 The Service Manager natively prodives a service called ``UserStorageService`` which is capable of returning ``User`` instances for Players who are currently offline
 And since the ``Player`` interface extends ``User`` a ``User`` can often be used the same way as the ``Player`` instance.
+
 For example:
+
 * ``#hasPermission(String permission)`` is available from both instances.
 
 Code Example
