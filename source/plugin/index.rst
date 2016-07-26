@@ -55,6 +55,7 @@ Contents
     wgen/index
     manager
     game-profile-manager
+    offline-userplayer-data
     debugging
     tab-lists
     plugin-meta
