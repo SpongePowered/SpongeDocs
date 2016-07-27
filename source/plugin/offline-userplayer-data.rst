@@ -42,7 +42,7 @@ Here's an example for a utility method that can be used to get a ``User``:
 
 First check if a ``Player`` instance exists meaning that the user is online.
 If so, the object is returned. 
-If not we get the ``UserStorageService`` from the ``ServiceManager`` and then retrieve the ``User`` from there.
+If not get the ``UserStorageService`` from the ``ServiceManager`` and then retrieve the ``User`` from there.
 .. note::
     The ``UserStorageService`` can only return ``User``\s who previously were connected.
 
