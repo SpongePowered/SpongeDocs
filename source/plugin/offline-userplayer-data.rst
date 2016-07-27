@@ -27,7 +27,6 @@ Here's an example for a utility method that can be used to get a ``User``:
     import org.spongepowered.api.service.user.UserStorageService;
     
     public Optional<User> getUser(UUID uuid) {
-        
         Optional<Player> onlinePlayer = Sponge.getServer().getPlayer(uuid);
     
         if (onlinePlayer.isPresent()) {
@@ -37,7 +36,6 @@ Here's an example for a utility method that can be used to get a ``User``:
         Optional<UserStorageService> userStorage = Sponge.getServiceManager().provide(UserStorageService.class);
         
         return userStorage.get().get(uuid);
-        
     }
 
 First check if a ``Player`` instance exists meaning that the user is online.
