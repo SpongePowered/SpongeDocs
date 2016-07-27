@@ -3,8 +3,8 @@ Offline Player Data
 ===================
 
 It may be necessary for plugins to access player data even when the player is offline.
-One could guess that ``Sponge.getServer().getPlayer()`` returning a ``Player`` can be used for this.
-But since ``Player`` objects only exist for online players, another solution has to be used.
+You might think that ``Sponge.getServer().getPlayer()`` returning a ``Player`` can be used for this.
+But since ``Player`` objects only exist for online players, another solution must be used.
 
 Some plugins store the relevant data themselves and associate the user by using the ``GameProfileManager``.
 But writing different code for offline and online users is not necessary:
@@ -21,38 +21,28 @@ Code Example
 Here's an example for a utility method that can be used to get a ``User``:
 
 .. code-block:: java
-
-    //(Only sponge imports listed)
+    
     import org.spongepowered.api.Sponge;
     import org.spongepowered.api.entity.living.player.User;
     import org.spongepowered.api.service.user.UserStorageService;
     
-    /**
-     * A method that can return offline and online users
-     * @return Optional<User> User reference. Non present means unknown
-     */
     public Optional<User> getUser(UUID uuid) {
         
         Optional<Player> onlinePlayer = Sponge.getServer().getPlayer(uuid);
     
-        //if the user is online, all work is done
         if (onlinePlayer.isPresent()) {
             return onlinePlayer;
         }
-            
-        //Player is not online, use UserStorageService
-        //See "Services" for detailed info on this:
-        Optional<UserStorageService> userStorage = Sponge.getServiceManager().provide(UserStorageService.class);
         
-        if (!userStorage.isPresent()) {
-            //UserStorageService wasn't found
-            //Although this is not supposed to happen, include some warning here.
-            //You could send an error to your log for example
-        }
+        Optional<UserStorageService> userStorage = Sponge.getServiceManager().provide(UserStorageService.class);
         
         return userStorage.get().get(uuid);
         
     }
 
+First we check if a ``Player`` instance exists meaning that the user is online.
+If he's we return that object. 
+If not we get the ``UserStorageService`` from the ``ServiceManager`` and then retrieve the ``User`` from there.
+Remember: The ``UserStorageService`` can only return ``User``\s who previously were connected.
 
 This solution can be used to get online and offline ``User``\s which makes it dynamically usable within your plugin.    
