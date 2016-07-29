@@ -129,6 +129,10 @@ The ``@Listener`` annotation has a few configurable fields:
 By default, ``@Listener`` is configured so that your event listener will *not* be called if the event in question is
 cancellable and has been cancelled (such as by another plugin).
 
+.. note::
+    
+    Events cancelled early on will still trigger listeners registered with a later ``Order``.
+
 .. _game-reload:
 
 GameReloadEvent
