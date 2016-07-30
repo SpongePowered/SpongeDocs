@@ -62,3 +62,4 @@ Contents
     plugin-meta
     ray-tracing
     tutorials
+    internals/index
