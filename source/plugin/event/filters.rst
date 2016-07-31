@@ -78,8 +78,8 @@ cause or in a member of the event object itself.
 the type of your parameter (This is equivalent to ``Cause#first(Class<?>)``). If no object is found matching this parameter
 then your listener is not called.
 
-**In this example your listener will only be called if there is a player in the event's cause, and the ``player`` parameter
-will be set to the first player present the cause.**
+**In this example your listener will only be called if there is a player in the event's cause, and the** ``player`` 
+**parameter will be set to the first player present the cause.**
 
 .. code-block:: java
 
@@ -103,7 +103,7 @@ Additionally, the found object must match the type of the parameter. If no objec
 then your listener is not called.
 
 **In this example your listener will only be called if there is a player located before a plugin container in the event's cause.
-The ``player`` parameter will be set to that player.**
+The** ``player`` **parameter will be set to that player.**
 
 .. code-block:: java
 
@@ -135,8 +135,8 @@ It also performs an additional check that the type of the root object matches th
 parameter (This is equivalent to ``Cause#get(String)``). Additionally, the found object must match the type of the parameter. If
 no object is found meeting these criteria, then your listener is not called.
 
-**In this example your listener will only be called if there is a player associated with the name ``NamedCause.OWNER``.
-The ``player`` parameter will be set to that player.**
+**In this example your listener will only be called if there is a player associated with the name** ``NamedCause.OWNER`` **.
+The** ``player`` **parameter will be set to that player.**
 
 .. code-block:: java
 
@@ -157,7 +157,7 @@ This parameter filter may be applied to any parameter type which is a ``DataHold
 ype. This validation is equivalent to ``DataHolder#supports(Class<? extends DataManipulator>)``.
 
 **In this example the listener will be called only if there is an entity in the event's cause, and if that entity supports
-the data manipulator ``FlyingData``.**
+the data manipulator** ``FlyingData``.
 
 .. code-block:: java
 
@@ -172,7 +172,7 @@ This parameter filter is similar to the ``@Supports`` parameter filter except th
 ``DataHolder#hasData(Class<? extends DataManipulator>)``.
 
 **In this example the listener will be called only if there is an entity in the event's cause, and if that entity has an
-instance of ``FlyingData`` available.**
+instance of** ``FlyingData`` **available.**
 
 .. code-block:: java
 
