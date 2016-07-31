@@ -22,6 +22,9 @@ Here's an example for a utility method that can be used to get a ``User``:
 
 .. code-block:: java
     
+    import java.util.Optional;
+    import java.util.UUID;
+    
     import org.spongepowered.api.Sponge;
     import org.spongepowered.api.entity.living.player.User;
     import org.spongepowered.api.service.user.UserStorageService;
