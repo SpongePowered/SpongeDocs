@@ -1,6 +1,6 @@
-===================
-Serializing Objects
-===================
+========================
+Serializing Custom Types
+========================
 
 The Configurate library also provides the means to tweak automatic serialization and deserialization of objects.
 Per default, a set of data types can be (de)serialized: among others Strings, ints, doubles, UUIDs, Lists
