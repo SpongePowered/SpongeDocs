@@ -2,13 +2,20 @@
 Command Flags
 =============
 
+.. javadoc-import::
+    org.spongepowered.api.command.args.CommandContext
+    org.spongepowered.api.command.args.CommandElement
+    org.spongepowered.api.command.args.CommandFlags.Builder
+    org.spongepowered.api.command.args.GenericArguments
+    org.spongepowered.api.text.Text
+    java.lang.String
+
 Command flags are useful for specifying extra parameters to be used for the processing of a command that doesn't belong
 as a command argument.
 
-To create a flag, we first need a builder for flags. We can simply use the
-:javadoc:`org.spongepowered.api.command.args.GenericArguments#flags()` method provided by
-:javadoc:`org.spongepowered.api.command.args.GenericArguments` to obtain the builder we need. From there, we can
-specify what type of flag we would like to create. Note that flags are specified as an argument.
+To create a flag, we first need a builder for flags. We can simply use the :javadoc:`GenericArguments#flags()` method
+provided by :javadoc:`GenericArguments` to obtain the builder we need. From there, we can specify what type of flag we
+would like to create. Note that flags are specified as an argument.
 
 .. code-block:: java
     
@@ -21,15 +28,13 @@ specify what type of flag we would like to create. Note that flags are specified
         .build();
 
 This will create a command flag, so that when the player performs ``/our-command -s``, the flag for ``s`` will be true.
-Note that building with :javadoc:`org.spongepowered.api.command.args.GenericArguments#none()` will prevent the command
-from having any arguments. If you wish for the command to have arguments and flags, you will need to specify your
-arguments within the :javadoc:`org.spongepowered.api.command.args.CommandFlags.Builder#buildWith(org.spongepowered.api.
-command.args.CommandElement)` method.
+Note that building with :javadoc:`GenericArguments#none()` will prevent the command from having any arguments. If you
+wish for the command to have arguments and flags, you will need to specify your arguments within the
+:javadoc:`CommandFlags.Builder#buildWith(CommandElement)` method.
 
 Now that we have specified that our command may be run with the flag, we can now get the value of the flag. For a
 simple boolean flag like the one we have specified above, we can simply just check if it exists. In the example below,
-we are checking if the :javadoc:`org.spongepowered.api.command.args.CommandContext` for the command has a value for
-``s``.
+we are checking if the :javadoc:`CommandContext` for the command has a value for ``s``.
 
 .. code-block:: java
     
@@ -43,9 +48,8 @@ Permission Flags
 ================
 
 Our flags so far are great, but what if we wanted to have it so that a player needs a permission to use a flag? We can
-instead use the :javadoc:`org.spongepowered.api.command.args.CommandFlags.Builder#permissionFlag(java.lang.String,
-java.lang.String...)` method on our flag builder. This will require the player to have a specific permission to run the
-command with the flag. An example of this is below:
+instead use the :javadoc:`CommandFlags.Builder#permissionFlag(String, String...)` method on our flag builder. This will
+require the player to have a specific permission to run the command with the flag. An example of this is below:
 
 .. code-block:: java
     
@@ -62,10 +66,9 @@ Value Flags
 ===========
 
 Booleans can be great, but what if we wanted flags for things such as strings or integers? This is where value flags
-come into play. We simply need to use the :javadoc:`org.spongepowered.api.command.args.CommandFlags.Builder
-#valueFlag(org.spongepowered.api.command.args.CommandElement, java.lang.String...)` method on our flag builder. Using
-the ``valueFlag()`` method, we can specify the type of flag we want to create, such as an integer or string. Creating
-an integer value flag can be done like so:
+come into play. We simply need to use the :javadoc:`CommandFlags.Builder#valueFlag(CommandElement, String...)` method
+on our flag builder. Using the ``valueFlag()`` method, we can specify the type of flag we want to create, such as an
+integer or string. Creating an integer value flag can be done like so:
 
 .. code-block:: java
     
@@ -75,9 +78,8 @@ an integer value flag can be done like so:
                     .integer(Text.of("value")), "s").buildWith(GenericArguments.none()))
             .build();
 
-You may replace :javadoc:`org.spongepowered.api.command.args.GenericArguments#integer(org.spongepowered.api.text.Text)`
-with any other flag type you would like to specify, such as
-:javadoc:`org.spongepowered.api.command.args.GenericArguments#string(org.spongepowered.api.text.Text)`.
+You may replace :javadoc:`GenericArguments#integer(Text)` with any other flag type you would like to specify, such as
+:javadoc:`GenericArguments#string(Text)`.
 
 Now to retrieve the flag value from our command, we can simply treat it like any other command argument. We simply need
 to check if it exists before retrieving it:

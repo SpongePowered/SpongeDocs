@@ -2,15 +2,23 @@
 Implementing the Economy API
 ============================
 
+.. javadoc-import::
+    org.spongepowered.api.service.economy.Currency
+    org.spongepowered.api.service.economy.EconomyService
+    org.spongepowered.api.service.economy.account.UniqueAccount
+    org.spongepowered.api.service.economy.account.VirtualAccount
+    org.spongepowered.api.service.economy.transaction.TransactionResult
+    org.spongepowered.api.service.economy.transaction.TransferResult
+
 Sponge provides interfaces for economy plugins to implement and create an API. In order to build a complete Economy
 API, you must implement six classes:
 
-* :javadoc:`org.spongepowered.api.service.economy.Currency`
-* :javadoc:`org.spongepowered.api.service.economy.EconomyService`
-* :javadoc:`org.spongepowered.api.service.economy.transaction.TransactionResult`
-* :javadoc:`org.spongepowered.api.service.economy.transaction.TransferResult`
-* :javadoc:`org.spongepowered.api.service.economy.account.UniqueAccount`
-* :javadoc:`org.spongepowered.api.service.economy.account.VirtualAccount`
+* :javadoc:`Currency`
+* :javadoc:`EconomyService`
+* :javadoc:`TransactionResult`
+* :javadoc:`TransferResult`
+* :javadoc:`UniqueAccount`
+* :javadoc:`VirtualAccount`
 
 Things to consider when implementing the Economy API
 ====================================================

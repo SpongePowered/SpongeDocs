@@ -2,6 +2,14 @@
 Basic Concepts
 ==============
 
+.. javadoc-import::
+	org.spongepowered.api.event.economy.EconomyTransactionEvent
+	org.spongepowered.api.service.economy.Currency
+	org.spongepowered.api.service.economy.EconomyService
+	org.spongepowered.api.service.economy.account.Account
+	org.spongepowered.api.service.economy.transaction.ResultType
+	org.spongepowered.api.service.economy.transaction.TransactionResult
+
 The Sponge Economy API has a few basic components that developers should be familiar with:
 
 * EconomyService
@@ -12,8 +20,8 @@ The Sponge Economy API has a few basic components that developers should be fami
 The EconomyService
 ==================
 
-The :javadoc:`org.spongepowered.api.service.economy.EconomyService` is the basis of the Economy API. It is used to
-interact via the Economy API, stores an economy's currencies and provides methods for account management.
+The :javadoc:`EconomyService` is the basis of the Economy API. It is used to interact via the Economy API, stores an
+economy's currencies and provides methods for account management.
 
 .. warning::
 
@@ -24,15 +32,15 @@ interact via the Economy API, stores an economy's currencies and provides method
 Currency
 ========
 
-The :javadoc:`org.spongepowered.api.service.economy.Currency` object represents a form of Currency. ``Currency`` stores
-a display name (plural and singular), a symbol, the amount of fractional digits, and whether the currency is the
-default currency for the economy. If the economy plugin chooses, it can support multiple currencies.
+The :javadoc:`Currency` object represents a form of Currency. ``Currency`` stores a display name (plural and singular),
+a symbol, the amount of fractional digits, and whether the currency is the default currency for the economy. If the
+economy plugin chooses, it can support multiple currencies.
 
 Accounts
 ========
 
-:javadoc:`org.spongepowered.api.service.economy.account.Account`\ s are used to store economy information about a
-specific player or other object (i.e. bank, business, entity). There are two account types in the Sponge Economy API:
+:javadoc:`Account`\ s are used to store economy information about a specific player or other object (i.e. bank,
+business, entity). There are two account types in the Sponge Economy API:
 
 Virtual Accounts
 ~~~~~~~~~~~~~~~~
@@ -55,9 +63,8 @@ Transactions represent an account's change in balance. There are currently three
 - Withdraw: Occurs when an account has funds removed from it
 - Transfer: Occurs when an account exchanges funds with another account
 
-When a transfer occurs, the :javadoc:`org.spongepowered.api.event.economy.EconomyTransactionEvent` is fired. Using this
-event, you can get the :javadoc:`org.spongepowered.api.service.economy.transaction.TransactionResult`.
-The ``TransactionResult`` stores data about the transaction that occurred, including:
+When a transfer occurs, the :javadoc:`EconomyTransactionEvent` is fired. Using this event, you can get the
+:javadoc:`TransactionResult`. The ``TransactionResult`` stores data about the transaction that occurred, including:
 
 - Account involved
 - Currency involved
@@ -65,5 +72,4 @@ The ``TransactionResult`` stores data about the transaction that occurred, inclu
 - Transaction type
 - Result of the transaction
 
-You can view all possible transaction results on the
-:javadoc:`org.spongepowered.api.service.economy.transaction.ResultType` JavaDocs page.
+You can view all possible transaction results on the :javadoc:`ResultType` JavaDocs page.

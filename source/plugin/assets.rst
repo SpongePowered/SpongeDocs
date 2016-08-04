@@ -2,7 +2,12 @@
 The Asset API
 =============
 
-The :javadoc:`org.spongepowered.api.asset.AssetManager` allows developers to retrieve resources from a plugin JAR.
+.. javadoc-import::
+    org.spongepowered.api.asset.Asset
+    org.spongepowered.api.asset.AssetManager
+    org.spongepowered.api.plugin.PluginContainer
+
+The :javadoc:`AssetManager` allows developers to retrieve resources from a plugin JAR.
 
 By default, a plugin's assets resides in a directory named ``assets/myplugin/`` where ``myplugin`` is the plugin ID. In
 most cases this default directory should be used but if you *need* to change it, you may do so by setting the
@@ -31,16 +36,16 @@ Alternatively, you can retrieve assets through the ``AssetManager`` class:
 
 .. note::
     
-    The examples above assume that ``myfile.txt`` exists as an :javadoc:`org.spongepowered.api.asset.Asset`. If it does
-    not, then ``getAsset()`` will return ``Optional#empty()``.
+    The examples above assume that ``myfile.txt`` exists as an :javadoc:`Asset`. If it does not, then ``getAsset()``
+    will return ``Optional#empty()``.
 
 Working with Assets
 ===================
 
 The ``Asset`` class is essentially just a wrapper around a ``URL`` with some common I/O operations built in. The use
 cases of ``Assets``\s is essentially unbounded but one common use case is to generate a default configuration file if
-your plugin's configuration file is not found. You can achieve this using a
-:javadoc:`org.spongepowered.api.plugin.PluginContainer` with the following code:
+your plugin's configuration file is not found. You can achieve this using a :javadoc:`PluginContainer` with the
+following code:
 
 .. code-block:: java
 

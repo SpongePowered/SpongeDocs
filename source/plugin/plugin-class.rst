@@ -2,6 +2,20 @@
 Main Plugin Class
 =================
 
+.. javadoc-import::
+    org.spongepowered.api.event.Listener
+    org.spongepowered.api.event.game.state.GameConstructionEvent
+    org.spongepowered.api.event.game.state.GamePreInitializationEvent
+    org.spongepowered.api.event.game.state.GameInitializationEvent
+    org.spongepowered.api.event.game.state.GamePostInitializationEvent
+    org.spongepowered.api.event.game.state.GameLoadCompleteEvent
+    org.spongepowered.api.event.game.state.GameAboutToStartServerEvent
+    org.spongepowered.api.event.game.state.GameStartingServerEvent
+    org.spongepowered.api.event.game.state.GameStartedServerEvent
+    org.spongepowered.api.event.game.state.GameStoppingServerEvent
+    org.spongepowered.api.event.game.state.GameStoppedServerEvent
+    org.spongepowered.api.plugin.Plugin
+
 .. note::
 
     The instructions within the Sponge Documentation assume that you have prior knowledge of Java. The Sponge API
@@ -21,9 +35,8 @@ package name, if you own a domain. However, in the event that you do not own a d
 email address (such as ``com.gmail.username.project``) or an open-source repository
 (such as ``io.github.username.project``).
 
-After creating your main class, the :javadoc:`org.spongepowered.api.plugin.Plugin` annotation must be affixed to it.
-This annotation allows Sponge to easily find your main plugin class when your plugin is loaded. An example usage is
-illustrated below.
+After creating your main class, the :javadoc:`Plugin` annotation must be affixed to it. This annotation allows Sponge
+to easily find your main plugin class when your plugin is loaded. An example usage is illustrated below.
 
 .. code-block:: java
 
@@ -46,9 +59,8 @@ Plugins are loaded before the game and the world(s). This leaves a specific time
 interacting with the game, such as registering commands or events.
 
 Your plugin can listen for particular events, called **state events**, to be notified about changes in the state of the
-game. In the example below, ``onServerStart()`` is called when the
-:javadoc:`org.spongepowered.api.event.game.state.GameStartedServerEvent` occurs; take note of the
-:javadoc:`org.spongepowered.api.event.Listener` annotation before the method.
+game. In the example below, ``onServerStart()`` is called when the :javadoc:`GameStartedServerEvent` occurs; take note
+of the :javadoc:`Listener` annotation before the method.
 
 .. code-block:: java
 
@@ -79,17 +91,17 @@ categories of state events:
 
 * **Initialization**: These events occur when Sponge and plugins are loading.
 
-  * :javadoc:`org.spongepowered.api.event.game.state.GameConstructionEvent`
-  * :javadoc:`org.spongepowered.api.event.game.state.GamePreInitializationEvent`
-  * :javadoc:`org.spongepowered.api.event.game.state.GameInitializationEvent`
-  * :javadoc:`org.spongepowered.api.event.game.state.GamePostInitializationEvent`
-  * :javadoc:`org.spongepowered.api.event.game.state.GameLoadCompleteEvent`
+  * :javadoc:`GameConstructionEvent`
+  * :javadoc:`GamePreInitializationEvent`
+  * :javadoc:`GameInitializationEvent`
+  * :javadoc:`GamePostInitializationEvent`
+  * :javadoc:`GameLoadCompleteEvent`
 * **Running**: These events occur when the game and world are loading.
 
-  * :javadoc:`org.spongepowered.api.event.game.state.GameAboutToStartServerEvent`
-  * :javadoc:`org.spongepowered.api.event.game.state.GameStartingServerEvent`
-  * :javadoc:`org.spongepowered.api.event.game.state.GameStartedServerEvent`
-  * :javadoc:`org.spongepowered.api.event.game.state.GameStoppingServerEvent`
-  * :javadoc:`org.spongepowered.api.event.game.state.GameStoppedServerEvent`
+  * :javadoc:`GameAboutToStartServerEvent`
+  * :javadoc:`GameStartingServerEvent`
+  * :javadoc:`GameStartedServerEvent`
+  * :javadoc:`GameStoppingServerEvent`
+  * :javadoc:`GameStoppedServerEvent`
 
 For information regarding when each state event occurs, see the :doc:`plugin lifecycle documentation <lifecycle>`.

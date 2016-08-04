@@ -2,9 +2,22 @@
 Event Listeners
 ===============
 
+.. javadoc-import::
+    org.spongepowered.api.event.Event
+    org.spongepowered.api.event.EventManager
+    org.spongepowered.api.event.Listener
+    org.spongepowered.api.event.Order
+    org.spongepowered.api.event.SpongeEventFactory
+    org.spongepowered.api.event.block.ChangeBlockEvent
+    org.spongepowered.api.event.block.ChangeBlockEvent.Break
+    org.spongepowered.api.event.cause.Cause
+    org.spongepowered.api.event.game.GameReloadEvent
+    org.spongepowered.api.plugin.Plugin
+    java.lang.Object
+
 In order to listen for an event, an event listener must be registered. This is done by making a method with any name,
-defining the first parameter to be the desired event type, and then affixing the
-:javadoc:`org.spongepowered.api.event.Listener` annotation to the method, as illustrated below.
+defining the first parameter to be the desired event type, and then affixing the :javadoc:`Listener` annotation to the
+method, as illustrated below.
 
 .. code-block:: java
 
@@ -19,23 +32,23 @@ In addition, the class containing these methods must be registered with the even
 
 .. tip::
 
-    For event listeners on your main plugin class (annotated by :javadoc:`org.spongepowered.api.plugin.Plugin`), you do
-    not need to register the object for events as Sponge will do it automatically.
+    For event listeners on your main plugin class (annotated by :javadoc:`Plugin`), you do not need to register the
+    object for events as Sponge will do it automatically.
 
 
 .. note::
-    The event bus **supports supertypes**. For example, :javadoc:`org.spongepowered.api.event.block.ChangeBlockEvent.
-    Break` extends :javadoc:`org.spongepowered.api.event.block.ChangeBlockEvent`. Therefore, a plugin could listen to
-    ``ChangeBlockEvent`` and still receive ``ChangeBlockEvent.Break``\ s. However, a plugin listening to just
-    ``ChangeBlockEvent.Break`` would not be notified of other types of ``ChangeBlockEvent``.
+    The event bus **supports supertypes**. For example, :javadoc:`ChangeBlockEvent.Break` extends
+    :javadoc:`ChangeBlockEvent`. Therefore, a plugin could listen to ``ChangeBlockEvent`` and still receive
+    ``ChangeBlockEvent.Break``\ s. However, a plugin listening to just ``ChangeBlockEvent.Break`` would not be notified
+    of other types of ``ChangeBlockEvent``.
 
 
 Registering and Unregistering Event Listeners
 =============================================
 
 To register event listeners annotated by ``@Listener`` that are not in the main plugin class, you can use
-:javadoc:`org.spongepowered.api.event.EventManager#registerListeners(java.lang.Object, java.lang.Object)`, which
-accepts a reference to the plugin and an instance of the class containing the event listeners.
+:javadoc:`EventManager#registerListeners(Object, Object)`, which accepts a reference to the plugin and an instance of
+the class containing the event listeners.
 
 **Example: Registering Event Listeners in Other Classes**
 
@@ -62,9 +75,9 @@ Some plugins (such as scripting plugins) may wish to dynamically register an eve
 listener is not a method annotated with ``@Listener``, but rather a class implementing the ``EventListener`` interface.
 This event listener can then be registered by calling ``EventManager#registerListener``, which accepts a reference to the
 plugin as the first argument, the ``Class`` of events handled as the second argument, and the listener itself as the
-final argument. Optionally, you can specify an :javadoc:`org.spongepowered.api.event.Order` to run the event listener
-in as the third argument or a boolean value as the fourth argument (before the instance of the listener) which
-determines whether to call the listener before other server modifications.
+final argument. Optionally, you can specify an :javadoc:`Order` to run the event listener in as the third argument or a
+boolean value as the fourth argument (before the instance of the listener) which determines whether to call the listener
+before other server modifications.
 
 **Example: Implementing EventListener**
 
@@ -98,19 +111,17 @@ determines whether to call the listener before other server modifications.
 Unregistering Event Listeners
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To unregister a single event listener, you can use the
-:javadoc:`org.spongepowered.api.event.EventManager#unregisterListeners(java.lang.Object)` method, which accepts an
-instance of the class containing the event listeners.
+To unregister a single event listener, you can use the :javadoc:`EventManager#unregisterListeners(Object)` method,
+which accepts an instance of the class containing the event listeners.
 
 .. code-block:: java
 
     EventListener listener = ...
     Sponge.getEventManager().unregisterListeners(listener);
 
-Alternatively, you can use
-:javadoc:`org.spongepowered.api.event.EventManager#unregisterPluginListeners(java.lang.Object)`, passing in a reference
-to the plugin, to unregister all event listeners associated with that plugin. Note that this will remove *all* of the
-plugin's event listeners, including those registered with ``@Listener`` annotations.
+Alternatively, you can use :javadoc:`EventManager#unregisterPluginListeners(Object)`, passing in a reference to the
+plugin, to unregister all event listeners associated with that plugin. Note that this will remove *all* of the plugin's
+event listeners, including those registered with ``@Listener`` annotations.
 
 .. code-block:: java
 
@@ -124,8 +135,8 @@ About @Listener
 
 The ``@Listener`` annotation has a few configurable fields:
 
-* ``order`` is the priority in which the event listener is to be run. See the ``org.spongepowered.api.event.Order``
-  enum in the SpongeAPI to see the available options.
+* ``order`` is the priority in which the event listener is to be run. See the :javadoc:`Order` enum in the SpongeAPI to
+  see the available options.
 * ``beforeModifications`` specifies if the event listener should be called before other server mods, such as Forge
   mods. By default, this is set to false.
 
@@ -139,7 +150,7 @@ GameReloadEvent
 
 To prevent all plugins providing their own reload commands, Sponge provides a built in callback for plugins to listen
 to, and when executed, perform any reloading actions. What constitutes as a 'reloading action' is purely up to the
-plugin to decide. The :javadoc:`org.spongepowered.api.event.game.GameReloadEvent` will fire when a player executes the
+plugin to decide. The :javadoc:`GameReloadEvent` will fire when a player executes the
 ``/sponge plugins reload`` command. The event is not necessarily limited to reloading configuration.
 
 .. code-block:: java
@@ -157,9 +168,9 @@ plugins and does not do any reloading on its own.
 Firing Events
 =============
 
-To dispatch an event, you need an object that implements the :javadoc:`org.spongepowered.api.event.Event` interface.
+To dispatch an event, you need an object that implements the :javadoc:`Event` interface.
 
-You can fire events using the event bus (:javadoc:`org.spongepowered.api.event.EventManager`):
+You can fire events using the event bus (:javadoc:`EventManager`):
 
 .. code-block:: java
 
@@ -170,9 +181,8 @@ The method returns ``true`` if the event was cancelled, ``false`` if not.
 Firing Sponge Events
 ~~~~~~~~~~~~~~~~~~~~
 
-It is possible to generate instances of built-in events with the static
-:javadoc:`org.spongepowered.api.event.SpongeEventFactory`. The events created by the ``SpongeEventFactory`` are then
-passed to :javadoc:`org.spongepowered.api.event.EventManager#post(org.spongepowered.api.event.Event)`.
+It is possible to generate instances of built-in events with the static :javadoc:`SpongeEventFactory`. The events
+created by the ``SpongeEventFactory`` are then passed to :javadoc:`EventManager#post(Event)`.
 
 Example: Firing LightningEvent
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -188,5 +198,4 @@ Example: Firing LightningEvent
 
 .. warning::
 
-    A :javadoc:`org.spongepowered.api.event.cause.Cause` can never be empty. At the very least it should contain your
-    plugin.
+    A :javadoc:`Cause` can never be empty. At the very least it should contain your plugin.

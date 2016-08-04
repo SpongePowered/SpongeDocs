@@ -2,6 +2,16 @@
 Tile Entities
 =============
 
+.. javadoc-import::
+    org.spongepowered.api.block.BlockType
+    org.spongepowered.api.block.tileentity.Jukebox
+    org.spongepowered.api.block.tileentity.TileEntity
+    org.spongepowered.api.block.tileentity.TileEntityType
+    org.spongepowered.api.block.tileentity.carrier.TileEntityCarrier
+    org.spongepowered.api.data.DataHolder
+    org.spongepowered.api.data.manipulator.DataManipulator
+    org.spongepowered.api.world.Location
+
 Tile entities are blocks that are capable of additional operations like autonomically crafting (furnaces and brewing
 stands) or provide effects (like a beacon or a note block). They also contain additional data like an inventory or
 text (like chests, signs or command blocks).
@@ -9,9 +19,8 @@ text (like chests, signs or command blocks).
 Identifying Tile Entities and their Type
 ========================================
 
-Again, it all starts with a :javadoc:`org.spongepowered.api.world.Location`. The
-:javadoc:`org.spongepowered.api.world.Location#getTileEntity()` function will return the tile entity corresponding to
-the block or ``Optional.empty()`` if the block is not a tile entity.
+Again, it all starts with a :javadoc:`Location`. The :javadoc:`Location#getTileEntity()` function will return the tile
+entity corresponding to the block or ``Optional.empty()`` if the block is not a tile entity.
 
  .. code-block:: java
 
@@ -22,11 +31,9 @@ the block or ``Optional.empty()`` if the block is not a tile entity.
         return blockLoc.getTileEntity().isPresent();
     }
 
-The type of a tile entity can then be obtained by the
-:javadoc:`org.spongepowered.api.block.tileentity.TileEntity#getType()` function which returns a
-:javadoc:`org.spongepowered.api.block.tileentity.TileEntityType`. Which can then be compared similar to a
-:javadoc:`org.spongepowered.api.block.BlockType`. After performing this check the
-:javadoc:`org.spongepowered.api.block.tileentity.TileEntity` variable can safely be cast to the according subtype.
+The type of a tile entity can then be obtained by the :javadoc:`TileEntity#getType()` function which returns a
+:javadoc:`TileEntityType`. Which can then be compared similar to a :javadoc:`BlockType`. After performing this check
+the :javadoc:`TileEntity` variable can safely be cast to the according subtype.
 
  .. code-block:: java
 
@@ -46,18 +53,16 @@ The type of a tile entity can then be obtained by the
     }
 
 After performing this cast, the methods provided by the particular interface can be accessed (in this example the
-:javadoc:`org.spongepowered.api.block.tileentity.Jukebox#ejectRecord()` method). For detailed information about
-``TileEntity`` subtypes and their respective methods refer to the ``org.spongepowered.api.block.tileentity`` package
-and its subpackages in the API.
+:javadoc:`Jukebox#ejectRecord()` method). For detailed information about ``TileEntity`` subtypes and their respective
+methods refer to the :javadoc:`org.spongepowered.api.block.tileentity` package and its subpackages in the API.
 
 
 Accessing and Modifying a Tile Entity's Data
 ============================================
 
-Similar to block states, the data stored in a tile entity is accessed using a
-:javadoc:`org.spongepowered.api.data.manipulator.DataManipulator`. Since the kind of a data is fully described by the
-``DataManipulator`` used, all data manipulation can be done with the ``TileEntity`` interface itself and does not
-require a cast.
+Similar to block states, the data stored in a tile entity is accessed using a :javadoc:`DataManipulator`. Since the
+kind of a data is fully described by the ``DataManipulator`` used, all data manipulation can be done with the
+``TileEntity`` interface itself and does not require a cast.
 
 The following example contains two methods to alter the data of a sign. The first method reads (if possible) the first
 line, the second attempts to set it and returns the boolean value indicating its success.
@@ -87,16 +92,15 @@ line, the second attempts to set it and returns the boolean value indicating its
         return false;
     }
 
-The main difference to working with a ``BlockState`` is that a tile entity is a mutable
-:javadoc:`org.spongepowered.api.data.DataHolder` as opposed to the immutable ``BlockState``.
+The main difference to working with a ``BlockState`` is that a tile entity is a mutable :javadoc:`DataHolder` as
+opposed to the immutable ``BlockState``.
 
 Accessing Inventories
 =====================
 
 Quite a share of tile entities come with their own inventory, most notably chests and furnaces. That inventory can not
 be accessed directly from the ``TileEntity`` interface. So a cast will be necessary. Since all tile entities containing
-an inventory extend the :javadoc:`org.spongepowered.api.block.tileentity.carrier.TileEntityCarrier` interface it
-suffices to cast to that interface as shown below.
+an inventory extend the :javadoc:`TileEntityCarrier` interface it suffices to cast to that interface as shown below.
 
  .. code-block:: java
 

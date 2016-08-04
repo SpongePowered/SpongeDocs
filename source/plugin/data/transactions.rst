@@ -2,16 +2,22 @@
 Transactions
 ============
 
+.. javadoc-import::
+    org.spongepowered.api.data.DataTransactionResult
+    org.spongepowered.api.data.DataTransactionResult.Type
+    org.spongepowered.api.data.manipulator.mutable.entity.HealthData
+    org.spongepowered.api.world.Location
+
 Reading the Result
 ==================
 
-For everything you ``offer`` to a data holder, the ``offer`` method will yield a
-:javadoc:`org.spongepowered.api.data.DataTransactionResult`. This object will contain the following:
+For everything you ``offer`` to a data holder, the ``offer`` method will yield a :javadoc:`DataTransactionResult`. This
+object will contain the following:
 
 Type
 ~~~~
 
-The :javadoc:`org.spongepowered.api.data.DataTransactionResult.Type` indicates whether the transaction was completed
+The :javadoc:`DataTransactionResult.Type` indicates whether the transaction was completed
 successfully and, if not, how it failed.
 
 +---------------+----------------------------------------------------------------------------+
@@ -55,18 +61,17 @@ Surely you remember the healing example in the :doc:`keys` page. Imagine a playe
 - ``getSuccessfulData()`` would contain one value container for the ``Keys.HEALTH`` key with a value of 20.0
 
 Now what would be different if we used the healing example from the :doc:`datamanipulators` page instead? Since the
-:javadoc:`org.spongepowered.api.data.manipulator.mutable.entity.HealthData` data manipulator contains values for both
-the current and the maximum health, in addition to the above result, both the ``getReplacedData()`` list and the
-``getSuccessfulData()`` list would contain one more element: A value container for the ``Keys.MAX_HEALTH`` key with a
-value of 20.0.
+:javadoc:`HealthData` data manipulator contains values for both the current and the maximum health, in addition to the
+above result, both the ``getReplacedData()`` list and the ``getSuccessfulData()`` list would contain one more element:
+A value container for the ``Keys.MAX_HEALTH`` key with a value of 20.0.
 
 Offering HealthData to a block of stone
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Now our above-mentioned examples are coded in a such a way that they will fail silently rather than try to offer the
 incompatible data. But imagine we took a (fully healed) player's ``HealthData`` and tried to offer it to the
-:javadoc:`org.spongepowered.api.world.Location` of the stone block he's currently standing on. We can do this, since
-``Location`` is also a data holder. And if we do, it would reward us with a ``DataTransactionResult`` like this:
+:javadoc:`Location` of the stone block he's currently standing on. We can do this, since ``Location`` is also a data
+holder. And if we do, it would reward us with a ``DataTransactionResult`` like this:
 
 - ``getType()`` would return ``FAILURE``
 - ``getRejectedData()`` would contain two value containers for the ``HEALTH`` and ``MAX_HEALTH`` keys, each with a value of 20.0

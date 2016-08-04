@@ -2,6 +2,10 @@
 Economy API Best Practices
 ==========================
 
+.. javadoc-import::
+    org.spongepowered.api.service.economy.transaction.ResultType
+    org.spongepowered.api.service.economy.transaction.TransactionResult
+
 The Economy API tries to be abstract enough to give economy plugins flexibility in how they operate.
 In order to give economy plugins as much control as possible, plugins consuming the Economy API should
 follow some guidelines when working with it:
@@ -40,12 +44,9 @@ This code illustrates what **not** to do:
     }
 
 
-Instead of this, the best thing to do is simply withdraw the amount you need, and check the
-:javadoc:`org.spongepowered.api.service.economy.transaction.ResultType` of the returned
-:javadoc:`org.spongepowered.api.service.economy.transaction.TransactionResult`. An economy plugin which doesn't want to
-allow negative balances will simply return :javadoc:`org.spongepowered.api.service.economy.transaction.
-ResultType#ACCOUNT_NO_FUNDS`, or :javadoc:`org.spongepowered.api.service.economy.transaction.ResultType#FAILED` in this
-case.
+Instead of this, the best thing to do is simply withdraw the amount you need, and check the :javadoc:`ResultType` of
+the returned :javadoc:`TransactionResult`. An economy plugin which doesn't want to allow negative balances will simply
+return :javadoc:`ResultType#ACCOUNT_NO_FUNDS`, or :javadoc:`ResultType#FAILED` in this case.
 
 Here's how you **should** withdraw money:
 

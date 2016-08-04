@@ -2,6 +2,11 @@
 Using the Economy API
 =====================
 
+.. javadoc-import::
+    org.spongepowered.api.event.service.ChangeServiceProviderEvent
+    org.spongepowered.api.service.economy.EconomyService
+    org.spongepowered.api.service.economy.account.Account
+
 The Economy API unifies all economy plugins under one API. This means any plugin using the Economy API
 will be compatible with all economy plugins that implement said API. This page guides you through the steps of using
 the Economy API in your own plugin.
@@ -9,11 +14,10 @@ the Economy API in your own plugin.
 Loading the EconomyService
 ==========================
 
-In order to utilize the Economy API, you must first load the
-:javadoc:`org.spongepowered.api.service.economy.EconomyService` class:
+In order to utilize the Economy API, you must first load the :javadoc:`EconomyService` class:
 
-#. Listen to the :javadoc:`org.spongepowered.api.event.service.ChangeServiceProviderEvent` in order to grab an instance
-   of the EconomyService when it is registered.
+#. Listen to the :javadoc:`ChangeServiceProviderEvent` in order to grab an instance of the EconomyService when it is
+   registered.
 
 #. When the event is fired, check if the service added was the ``EconomyService``. If this is ``true``, you'll assign
    it to a variable for later access to the Economy API.
@@ -66,7 +70,7 @@ Example: Getting a player's balance
     	BigDecimal balance = acc.getBalance(economyService.getDefaultCurrency());
     }
 
-Some :javadoc:`org.spongepowered.api.service.economy.account.Account` methods require variables such as:
+Some :javadoc:`Account` methods require variables such as:
 
 * Currency: The currency involved in the exchange
 * Cause: What caused the change to the account
@@ -74,6 +78,6 @@ Some :javadoc:`org.spongepowered.api.service.economy.account.Account` methods re
 
 These are for more advanced uses, but still must be filled in. Below is a list of acceptable default values:
 
-* Currency: :javadoc:`org.spongepowered.api.service.economy.EconomyService#getDefaultCurrency()`
+* Currency: :javadoc:`EconomyService#getDefaultCurrency()`
 * Cause: ``Cause.source(myPlugin).build()``
 * Context: ``new HashSet<Context>()``

@@ -2,37 +2,41 @@
 Argument Parsing
 ================
 
+.. javadoc-import::
+    org.spongepowered.api.CatalogType
+    org.spongepowered.api.command.CommandSource
+    org.spongepowered.api.command.args.ArgumentParseException
+    org.spongepowered.api.command.args.CommandArgs
+    org.spongepowered.api.command.args.CommandContext
+    org.spongepowered.api.command.args.CommandElement
+    org.spongepowered.api.command.args.GenericArguments
+    org.spongepowered.api.command.spec.CommandSpec.Builder
+    java.lang.String
+
 The Command Builder API comes with a powerful argument parser. It converts the string input to java base types
 (integers, booleans, strings) or game objects (players, worlds, block types , ...). The parser supports optional
 arguments and flags. It also handles TAB completion of arguments.
 
-The parsed arguments are stored in the :javadoc:`org.spongepowered.api.command.args.CommandContext` object. If the
-parser returns a single object, obtain it with
-:javadoc:`org.spongepowered.api.command.args.CommandContext#getOne(java.lang.String)`. Optional and
-weak arguments may return ``Optional.empty()``.
+The parsed arguments are stored in the :javadoc:`CommandContext` object. If the parser returns a single object, obtain
+it with :javadoc:`CommandContext#getOne(String)`. Optional and weak arguments may return ``Optional.empty()``.
 
 Many of the parsers may return more than one object (e.g. multiple players with a matching username). In that case, you
-must use the :javadoc:`org.spongepowered.api.command.args.CommandContext#getAll(java.lang.String)` method to get the
-``Collection`` of possible matches. **Otherwise, the context object will throw an exception!**
+must use the :javadoc:`CommandContext#getAll(String)` method to get the ``Collection`` of possible matches.
+**Otherwise, the context object will throw an exception!**
 
 .. tip::
 
    You can use the
-   :javadoc:`org.spongepowered.api.command.args.GenericArguments#onlyOne(org.spongepowered.api.command.args.
-   CommandElement)` element to limit the amount of returned values to a single one, so you can safely use
-   ``args.<T>getOne(String)``.
+   :javadoc:`GenericArguments#onlyOne(CommandElement)` element to limit the amount of returned values to a single one,
+   so you can safely use ``args.<T>getOne(String)``.
 
-To create a new :javadoc:`org.spongepowered.api.command.args.CommandElement` (argument), use the
-:javadoc:`org.spongepowered.api.command.args.GenericArguments` factory class. Many command elements require a short
-text key, which is displayed in error and help messages.
+To create a new :javadoc:`CommandElement` (argument), use the :javadoc:`GenericArguments` factory class. Many command
+elements require a short text key, which is displayed in error and help messages.
 
-Apply the ``CommandElement`` to the command builder with the
-:javadoc:`org.spongepowered.api.command.spec.CommandSpec.Builder#arguments(org.spongepowered.api.command.args.
-CommandElement...)` method. It is possible to pass more than
-one ``CommandElement`` to the method, thus chaining multiple arguments (e.g ``/msg <player> <msg>``). This has the same
-effect as wrapping the ``CommandElement`` objects in a
-:javadoc:`org.spongepowered.api.command.args.GenericArguments#seq(org.spongepowered.api.command.args.CommandElement...)`
-element.
+Apply the ``CommandElement`` to the command builder with the :javadoc:`CommandSpec.Builder#arguments(CommandElement...)`
+method. It is possible to pass more than one ``CommandElement`` to the method, thus chaining multiple arguments (e.g
+``/msg <player> <msg>``). This has the same effect as wrapping the ``CommandElement`` objects in a
+:javadoc:`GenericArguments#seq(CommandElement...)` element.
 
 Example: Building a Command with Multiple Arguments
 ===================================================
@@ -112,7 +116,7 @@ Overview of the ``GenericArguments`` command elements
 | ``vector3d``               | Expect an argument to represent a ``Vector3d``.                                         | one ``Vector3d``              |
 +----------------------------+-----------------------------------------------------------------------------------------+-------------------------------+
 | ``catalogedElement``       | Expect an argument that is a member of the specified                                    | multiple matching elements    |
-|                            | :javadoc:`org.spongepowered.api.CatalogType`.                                           | of the specified catalog type |
+|                            | :javadoc:`CatalogType`.                                                                 | of the specified catalog type |
 +----------------------------+-----------------------------------------------------------------------------------------+-------------------------------+
 | **Matchers**                                                                                                                                         |
 +----------------------------+-----------------------------------------------------------------------------------------+-------------------------------+
@@ -158,7 +162,7 @@ Overview of the ``GenericArguments`` command elements
 
 .. tip::
 
-    See the Javadocs for :javadoc:`org.spongepowered.api.command.args.GenericArguments` for more information.
+    See the Javadocs for :javadoc:`GenericArguments` for more information.
 
 Custom Command Elements
 =======================
@@ -166,16 +170,12 @@ Custom Command Elements
 It is possible to create custom command elements (e.g. a URL parser or a ``Vector2i`` element) by extending the abstract
 ``CommandElement`` class.
 
-The :javadoc:`org.spongepowered.api.command.args.CommandElement#parseValue(org.spongepowered.api.command.CommandSource,
-org.spongepowered.api.command.args.CommandArgs)` method should fetch a raw argument string with
-:javadoc:`org.spongepowered.api.command.args.CommandArgs#next()` and
-convert it to an object. The method should throw an :javadoc:`org.spongepowered.api.command.args.ArgumentParseException`
+The :javadoc:`CommandElement#parseValue(CommandSource, CommandArgs)` method should fetch a raw argument string with
+:javadoc:`CommandArgs#next()` and convert it to an object. The method should throw an :javadoc:`ArgumentParseException`
 if the parsing fails.
 
-The :javadoc:`org.spongepowered.api.command.args.CommandElement#complete(org.spongepowered.api.command.CommandSource,
-org.spongepowered.api.command.args.CommandArgs, org.spongepowered.api.command.args.CommandContext)` method should use
-:javadoc:`org.spongepowered.api.command.args.CommandArgs#peek()` to read the next raw argument. It returns a list of
-suggestions for TAB completion.
+The :javadoc:`CommandElement#complete(CommandSource, CommandArgs, CommandContext)` method should use
+:javadoc:`CommandArgs#peek()` to read the next raw argument. It returns a list of suggestions for TAB completion.
 
 Example: ``Vector2i`` command element definition
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
