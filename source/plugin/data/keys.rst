@@ -103,8 +103,8 @@ Keyed Values
 There are cases where you may care about not only the direct value for a Key, but the keyed value
 encapsulating it. In that case, use the ``getValue(key)`` method instead of ``get(key)``. You will receive an
 object inheriting from :javadoc:`BaseValue` which contains a copy of the original value. Since we know that current
-health is a :javadoc:`MutableBoundedValue`, we can find out what is the minimum possible value and set our target's
-health just a tiny bit above that.
+health is a :javadoc:`MutableBoundedValue`, we can find out the minimum possible value and set our target's health just
+a tiny bit above that.
 
 **Code Example: Bring a target to the brink of death**
 
