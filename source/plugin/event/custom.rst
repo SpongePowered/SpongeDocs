@@ -2,14 +2,22 @@
 Custom Events
 =============
 
+.. javadoc-import::
+    org.spongepowered.api.entity.living.player.Player
+    org.spongepowered.api.event.Cancellable
+    org.spongepowered.api.event.Event
+    org.spongepowered.api.event.cause.Cause
+    org.spongepowered.api.event.entity.living.humanoid.player.TargetPlayerEvent
+
 You can write your own event classes and dispatch those events using the method described above. An event class must
-either implement the ``Event`` interface and, if it should be possible to cancel the event, ``Cancellable``.
+either implement the :javadoc:`Event` interface and, if it should be possible to cancel the event,
+:javadoc:`Cancellable`.
 
 .. tip::
 
     Depending on what type of event you want to create, there might be another interface to implement instead of
-    ``Event``. For example if your event describes something that happens to a ``Player``, you should have your custom
-    Event class implement ``TargetPlayerEvent``.
+    ``Event``. For example if your event describes something that happens to a :javadoc:`Player`, you should have your
+    custom event class implement :javadoc:`TargetPlayerEvent`.
 
 Example: Custom Event Class
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -19,8 +27,8 @@ mutate in a way specified by the event. Since the event targets a player and can
 implements both the ``TargetPlayerEvent`` and ``Cancellable`` interfaces.
 
 Since generally custom events are intended to be listened to by other plugins, it is in your best interest to document
-them appropriately. This includes a list of objects typically found in the ``Cause``. In the below example, it would
-probably be mentioned that the root cause is generally an object of the fictitious ``FLARDSource`` class.
+them appropriately. This includes a list of objects typically found in the :javadoc:`Cause`. In the below example, it
+would probably be mentioned that the root cause is generally an object of the fictitious ``FLARDSource`` class.
 
 .. code-block:: java
 

@@ -2,11 +2,27 @@
 Accessing Blocks
 ================
 
+.. javadoc-import::
+    org.spongepowered.api.block.BlockState
+    org.spongepowered.api.block.BlockType
+    org.spongepowered.api.block.trait.BlockTrait
+    org.spongepowered.api.block.trait.BooleanTrait
+    org.spongepowered.api.data.manipulator.DataManipulator
+    org.spongepowered.api.data.manipulator.ImmutableDataManipulator
+    org.spongepowered.api.data.manipulator.mutable.block.DirectionalData
+    org.spongepowered.api.data.property.BooleanProperty
+    org.spongepowered.api.data.property.DoubleProperty
+    org.spongepowered.api.data.property.block.BlastResistanceProperty
+    org.spongepowered.api.data.property.block.PoweredProperty
+    org.spongepowered.api.world.Location
+    org.spongepowered.api.world.World
+    org.spongepowered.api.world.extent.Extent
+
 Basic Information
 ~~~~~~~~~~~~~~~~~
 
-Blocks are most commonly identified and accessed by their ``Location``. This location points to a certain coordinate
-within an ``Extent``. In most cases a ``World`` will be used as the Extent.
+Blocks are most commonly identified and accessed by their :javadoc:`Location`. This location points to a certain
+coordinate within an :javadoc:`Extent`. In most cases a :javadoc:`World` will be used as the ``Extent``.
 
 .. code-block:: java
 
@@ -40,18 +56,18 @@ referenced block is any kind of banner by checking the blocks type.
                 || type.equals(BlockTypes.WALL_BANNER);
     }
 
-.. tip ::
+.. tip::
     
-    The function ``==`` could be used in place of ``equals()`` as there is only one ``BlockType`` instance
-    for every block, however it is recommended to use ``equals()``.
+    The function ``==`` could be used in place of ``equals()`` as there is only one :javadoc:`BlockType` instance for
+    every block, however it is generally recommended to use ``equals()``.
 
 Block Data Manipulators
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-The data of a block is held as a ``DataManipulator``, similar to other parts of the API. This is the container that
-holds information on components of our block such as the orientation of a block, specific types (stone vs. granite),
-and so on. Checking the values of these manipulators is easy, you just need to check the block's direction
-``DirectionalData``.
+The data of a block is held as a :javadoc:`DataManipulator`, similar to other parts of the API. This is the container
+that holds information on components of our block such as the orientation of a block, specific types (stone vs.
+granite), and so on. Checking the values of these manipulators is easy, you just need to check the block's direction
+:javadoc:`DirectionalData`.
 
 .. code-block:: java
 
@@ -71,14 +87,14 @@ and so on. Checking the values of these manipulators is easy, you just need to c
     }
 
 First, we need to know which ``DataManipulator`` sub-interface we need. Those that are applicable to blocks are found
-in the ``org.spongepowered.api.data.manipulator.mutable`` and ``org.spongepowered.api.data.manipulator.mutable.block``
-packages. Then, we can just pass that class to the ``get(DataManipulator)`` method of ``Location`` which will return
-an ``Optional``. We then have to check if our ``DataManipulator`` actually exists for our block by checking
-``ifPresent()``. If it exists, then we can use it.
+in the :javadoc:`org.spongepowered.api.data.manipulator.mutable` and
+:javadoc:`org.spongepowered.api.data.manipulator.mutable.block` packages. Then, we can just pass that class to the
+``get(DataManipulator)`` method of ``Location`` which will return an ``Optional``. We then have to check if our
+``DataManipulator`` actually exists for our block by checking ``ifPresent()``. If it exists, then we can use it.
 
 More on ``DataManipulator``\s can be found in the :doc:`data documentation <../data/datamanipulators>`.
 
-.. tip ::
+.. tip::
     
     If a block will never stop supporting a particular ``DataManipulator``, such as ``DirectionalData`` with stairs,
     then there is no need to check for ``isPresent()``. Just remove the optional around the ``DataManipulator`` and
@@ -88,9 +104,9 @@ More on ``DataManipulator``\s can be found in the :doc:`data documentation <../d
 Block States
 ~~~~~~~~~~~~
 
-A ``BlockState`` contains a ``BlockType``,  any ``DataManipulator``\s and properties that are applied to the
-block, and any ``BlockTrait``\s for a block. It stores all immutable value's for a particular block. One use of this
-is getting an  ``ImmutableDataManipulator``, as shown below:
+A :javadoc:`BlockState` contains a :javadoc:`BlockType`,  any ``DataManipulator``\ s and properties that are applied to
+the block, and any :javadoc:`BlockTrait`\ s for a block. It stores all immutable value's for a particular block. One
+use of this is getting an :javadoc:`ImmutableDataManipulator`, as shown below:
 
 .. code-block:: java
 
@@ -111,6 +127,7 @@ More information on mutable and immutable ``DataManipulator``\s can be found in 
 
 Block Properties
 ~~~~~~~~~~~~~~~~
+
 Blocks can contain certain properties. A property is a pre-set value that defines the game logic of that particular
 block. For example, blocks can contain pre-determined blast-resistance values that can be used to determine what
 you're working with, without actually checking the type of block it could be one by one. For example, if we wanted to
@@ -133,15 +150,15 @@ get the blast resistance of a block and checking if it is greater than or equal 
         return false;
     }
 
-This will get the blast resistance of our block and compare it to a new ``DoubleProperty``, as
-``BlastResistanceProperty`` inherits from ``DoubleProperty``. The method will then return if the blast resistance of
-our block is greater than one, the value in placed ``matches()``. If we wanted to see if it was less than two, we
-would replace it with ``lessThan()``.
+This will get the blast resistance of our block and compare it to a new :javadoc:`DoubleProperty`, as
+:javadoc:`BlastResistanceProperty` inherits from ``DoubleProperty``. The method will then return if the blast
+resistance of our block is greater than one, the value in placed ``matches()``. If we wanted to see if it was less than
+two, we would replace it with ``lessThan()``.
 
 If we were comparing two pre-existing properties, it will take the ``Operator`` of our first value, the one we are
 creating a double property for. If the ``Operator`` is ``DELEGATE``, which is the none operator, then it will take the
 ``Operator`` of the second value, the one in ``matches()``. Comparison will return false if both are ``DELEGATE``.
-An example of comparing two ``PoweredProperty``\s, a ``BooleanProperty``, can be seen below:
+An example of comparing two :javadoc:`PoweredProperty`\ s, a :javadoc:`BooleanProperty`, can be seen below:
 
 .. code-block:: java
 
@@ -168,14 +185,16 @@ The second ``if`` check checks if one of the properties is true. If it is true a
 of the values must be true. Therefore, eliminating the need to check the second value. Now we know that both
 blocks are being powered.
 
-A list of possible block properties can be found in the package ``org.spongepowered.api.data.property.block``.
+A list of possible block properties can be found in the :javadoc:`org.spongepowered.api.data.property.block` package.
 
 Block Traits
 ~~~~~~~~~~~~
+
 A block trait is a certain value on the current state of a block. A block may or may not contain block traits depending
-on the type of block. For example, a bed has a ``BooleanTrait`` called ``BED_OCCUPIED``. As a boolean can only have two
-values, true and false, the ``BED_OCCUPIED`` trait can only be true or false. Checking this value is simple, just call
-the ``getTraitValue()`` method on a ``BlockState``. An example of this with a bed is shown below:
+on the type of block. For example, a bed has a :javadoc:`BooleanTrait` called
+``BED_OCCUPIED``. As a boolean can only have two values, true and false, the ``BED_OCCUPIED`` trait can only be true or
+false. Checking this value is simple, just call the :javadoc:`BlockState#getTraitValue(BlockTrait)` method. An example
+of this with a bed is shown below:
 
 .. code-block:: java
 

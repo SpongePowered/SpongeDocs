@@ -2,8 +2,11 @@
 Events
 ======
 
+.. javadoc-import::
+	org.spongepowered.api.event.Cancellable
+
 Events are used to inform plugins of certain happenings. Many events can also be *cancelled* -- that is, the action that
-the event refers to can be prevented from occurring. Cancellable events implement the ``Cancellable`` interface.
+the event refers to can be prevented from occurring. Cancellable events implement the :javadoc:`Cancellable` interface.
 
 Sponge itself contains many events; however, plugins can create their own events which other plugins can listen to.
 

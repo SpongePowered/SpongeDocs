@@ -2,9 +2,17 @@
 Bans
 ====
 
-The ``BanService`` is a service built into the SpongeAPI that adds the functionality for you to ban or pardon users in
-your plugin. The ``BanService`` provides several methods to do things such as banning users, pardoning users, or even
-getting a ``Ban`` and the information on the ``Ban``.
+.. javadoc-import::
+    org.spongepowered.api.entity.living.player.User
+    org.spongepowered.api.profile.GameProfile
+    org.spongepowered.api.service.ban.BanService
+    org.spongepowered.api.text.Text
+    org.spongepowered.api.util.ban.Ban
+    org.spongepowered.api.util.ban.Ban.Builder
+
+The :javadoc:`BanService` is a service built into the SpongeAPI that adds the functionality for you to ban or pardon
+users in your plugin. The ``BanService`` provides several methods to do things such as banning users, pardoning users,
+or even getting a :javadoc:`Ban` and the information on the ``Ban``.
 
 .. tip::
 
@@ -24,9 +32,9 @@ other services in the Sponge API:
     BanService service = Sponge.getServiceManager().provide(BanService.class).get();
 
 Now with the ``BanService``, we can perform additional operations. For example, if we want to check if a provided
-``User`` is already banned, we can use the ``isBanned(GameProfile profile)`` method on the ``BanService``. Or perhaps
-if we wanted to get information on a ban from a ``User``, we can use the ``getBanFor(GameProfile profile)`` method. An
-example of this is shown below:
+:javadoc:`User` is already banned, we can use the :javadoc:`BanService#isBanned(GameProfile)` method. Or perhaps if we
+wanted to get information on a ban from a ``User``, we can use the :javadoc:`BanService#getBanFor(GameProfile)` method.
+An example of this is shown below:
 
 .. code-block:: java
     
@@ -51,9 +59,9 @@ Creating a Ban
 ==============
 
 So now we can obtain the ``BanService`` and the information on a ``Ban``, but what if we wanted to create our own bans?
-We can use a ``Ban.Builder`` to create our own ``Ban``. To get a ``Ban.Builder``, simply call the ``builder()`` method
-on ``Ban``. Using our builder, we can specify things such as the type of the ban, the reason for the ban, or the
-``User`` we wish to ban. An example of all of these things is shown below:
+We can use a :javadoc:`Ban.Builder` to create our own ``Ban``. To get a ``Ban.Builder``, simply call the
+:javadoc:`Ban#builder()` method. Using our builder, we can specify things such as the type of the ban, the reason for
+the ban, or the ``User`` we wish to ban. An example of all of these things is shown below:
 
 .. code-block:: java
     
@@ -70,26 +78,26 @@ Alternatively, you can specify an ip ban on an online player:
         .address(player.getConnection().getAddress().getAddress())
         .reason(Text.of("The Sponge Council has Spoken!")).build();
 
-Note that if you wish to create a simple, indefinite ban on a ``User``, you can use the ``Ban.of(GameProfile profile)``
-method or the ``Ban.of(GameProfile profile, Text reason)`` methods to quickly construct a ban.
+Note that if you wish to create a simple, indefinite ban on a ``User``, you can use the :javadoc:`Ban#of(GameProfile)`
+method or the :javadoc:`Ban#of(GameProfile, Text)` method to quickly construct a ban.
 
 Adding a Ban
 ~~~~~~~~~~~~
 
 Now that we have created our ban, we can now register it to be used in Sponge. Using our ``BanService`` from before, we
-can use the ``addBan(Ban ban)`` method to accomplish this. Note that adding a ban will remove any previously existing
-ban.
+can use the :javadoc:`BanService#addBan(Ban)` method to accomplish this. Note that adding a ban will remove any
+previously existing ban.
 
 Pardoning
 ~~~~~~~~~
 
-Now let's say we wanted to remove a ban from a user. We can use the ``pardon(GameProfile)`` method from our
-``BanService``. This method returns a boolean, which specifies if the user had a ban in place previously.
+Now let's say we wanted to remove a ban from a user. We can use the :javadoc:`BanService#pardon(GameProfile)` method.
+This method returns a boolean, which specifies if the user had a ban in place previously.
 
 Putting it All Together
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-We can create a ``Ban`` using a ``Ban.Builder`` that is obtained using the ``Ban.builder()`` method. We can specify
+We can create a ``Ban`` using a ``Ban.Builder`` that is obtained using the ``Ban#builder()`` method. We can specify
 things such as the type, the ``User`` to be banned, or the reason for the ban. We then simply grab our ``BanService``
 and use it to add our ``Ban``. Here is the full code for doing this:
 

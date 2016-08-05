@@ -2,8 +2,16 @@
 Low-Level Command API
 =====================
 
-The ``CommandCallable`` and ``Dispatcher`` interfaces can be used to define commands. The interfaces can be used as a
-base for custom command APIs.
+.. javadoc-import::
+    org.spongepowered.api.command.CommandCallable
+    org.spongepowered.api.command.CommandManager
+    org.spongepowered.api.command.dispatcher.Dispatcher
+    org.spongepowered.api.command.dispatcher.SimpleDispatcher
+    java.lang.Object
+    java.lang.String
+
+The :javadoc:`CommandCallable` and :javadoc:`Dispatcher` interfaces can be used to define commands. The interfaces can
+be used as a base for custom command APIs.
 
 It is recommended to use the :doc:`Command Builder API <creating>` for simple command definitions.
 
@@ -59,16 +67,15 @@ The first step is to create a class for the command. The class has to implement 
 
 .. tip::
 
-    See the `Javadocs for CommandCallable
-    <https://jd.spongepowered.org/3.0.0/org/spongepowered/api/command/CommandCallable.html>`_ for the
-    purposes of each method in this example.
+    See the JavaDoc for :javadoc:`CommandCallable` for the purposes of each method in this example.
 
 Registering the command
 =======================
 
-Now we can register the class in the ``CommandManager``. The ``CommandManager`` stands as the manager for watching what
-commands get typed into chat, and redirecting them to the right command handler. To register your command, use the
-method ``CommandManager.register()``, passing your plugin, an instance of the command, and any needed aliases as parameters.
+Now we can register the class in the :javadoc:`CommandManager`. The ``CommandManager`` stands as the manager for
+watching what commands get typed into chat, and redirecting them to the right command handler.
+To register your command, use the method :javadoc:`CommandManager#register(Object, CommandCallable, String...)`,
+passing your plugin, an instance of the command, and any needed aliases as parameters.
 
 .. code-block:: java
 
@@ -88,7 +95,7 @@ Command Dispatchers
 
 Command dispatchers can be used to create hierarchical command structures (subcommands).
 
-The default implementation of the ``Dispatcher`` interface is the ``SimpleDispatcher`` class.
+The default implementation of the ``Dispatcher`` interface is the :javadoc:`SimpleDispatcher` class.
 
 A ``Dispatcher`` is also a ``CommandCallable``, so it can be registered like any other command.
 

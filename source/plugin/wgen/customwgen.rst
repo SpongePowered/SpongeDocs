@@ -2,6 +2,14 @@
 Modifying World Generation
 ==========================
 
+.. javadoc-import::
+    org.spongepowered.api.world.biome.BiomeGenerationSettings
+    org.spongepowered.api.util.weighted.VariableAmount
+    org.spongepowered.api.world.gen.BiomeGenerator
+    org.spongepowered.api.world.gen.GenerationPopulator
+    org.spongepowered.api.world.gen.WorldGeneratorModifier
+    org.spongepowered.api.world.gen.populator.Cactus
+
 - Modifying Vanilla Generation
 - Creating Custom Base Terrain
 - Creating Custom GenerationPopulators
@@ -13,8 +21,8 @@ Modifying Vanilla Generation
 
 .. note::
 
-    This page assumes that you are familiar with setting up your ``WorldGeneratorModifier``.
-    If not, then please read the article on setting up your modifier at :doc:`modifiers`.
+    This page assumes that you are familiar with setting up your :javadoc:`WorldGeneratorModifier`. If not, then please
+    read the article on setting up your modifier at :doc:`modifiers`.
 
 Sponge exposes a great deal of vanilla world generation, which can be manipulated through the various interfaces.
 Currently, the only elements of the generation process that are *easily* exposed to manipulation are the populators.
@@ -36,14 +44,14 @@ For a quick example, let's look at how we would change the cactii that spawn in 
         }
     }
 
-Start by getting the ``BiomeGenerationSettings`` for the desert biome. This object is a container for all generation
-settings relating to that biome. Next, iterate through the list of all ``Cactus`` populators and set the height to 5,
-which means it can only generate cactii which are 5 blocks tall.
+Start by getting the :javadoc:`BiomeGenerationSettings` for the desert biome. This object is a container for all
+generation settings relating to that biome. Next, iterate through the list of all :javadoc:`Cactus` populators and set
+the height to 5, which means it can only generate cactii which are 5 blocks tall.
 
 .. note::
 
-    The ``setHeight``, and many other similar methods on other populators, also takes a ``VariableAmount`` which
-    can be used to specify the height as a range or other custom value.
+    The :javadoc:`Cactus#setHeight(int)`, and many other similar methods on other populators, also takes a
+    :javadoc:`VariableAmount` which can be used to specify the height as a range or other custom value.
 
 This has been a simple example of how to modify an existing populator. Let's look at how we can add a new
 instance of a vanilla populator. This time the populator will be added globally, which means it will be
@@ -61,9 +69,9 @@ scattered everywhere throughout the world.
     }
 
 Contrary to the previous example, this time you are creating an entirely new populator. To do this, first you need to
-get a builder for that populator from the ``PopulatorFactory`` (which can be fetched from the game registry).
-Then set your desired settings for the populator into it - in this case, we want a dozen pumpkins to spawn per patch.
-Finally, add your new populator to the list of populators that are applied globally to the world.
+get a builder for that populator. Then set your desired settings for the populator into it - in this case, we want a
+dozen pumpkins to spawn per patch. Finally, add your new populator to the list of populators that are applied globally
+to the world.
 
 Voila, now we have pumpkins everywhere.
 
@@ -81,11 +89,11 @@ and their properties.
 Creating Custom Base Terrain
 ============================
 
-Changing the base ``GenerationPopulator`` of a world generator allows you to change the base terrain shape
-generation of the world. A generator populator will roughly follow the procedure of using the seed and biome
-information to seed and modify a series of noise maps, from which the terrain is formed. The terrain created
-in a modified base generator populator should only consist of stone blocks, to allow the biomes to properly replace
-blocks for biome-specific ground cover.
+Changing the base :javadoc:`GenerationPopulator` of a world generator allows you to change the base terrain shape
+generation of the world. A generator populator will roughly follow the procedure of using the seed and biome information
+to seed and modify a series of noise maps, from which the terrain is formed. The terrain created in a modified base
+generator populator should only consist of stone blocks, to allow the biomes to properly replace blocks for
+biome-specific ground cover.
 
 .. code-block:: java
 
@@ -143,7 +151,7 @@ Creating Custom Biomes
 ======================
 
 While it is currently not possible to create entirely new biomes from within sponge, you can replace the system
-by which they are arranged in the world be implementing the ``BiomeGenerator`` interface and setting your custom
+by which they are arranged in the world be implementing the :javadoc:`BiomeGenerator` interface and setting your custom
 biome generator onto a WorldGenerator.
 
 Below is an example of a biome generator which creates one large island centered around (0, 0).

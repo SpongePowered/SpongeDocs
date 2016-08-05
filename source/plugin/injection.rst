@@ -2,24 +2,38 @@
 Dependency Injection
 ====================
 
+.. javadoc-import::
+    org.spongepowered.api.Game
+    org.spongepowered.api.GameRegistry
+    org.spongepowered.api.Server
+    org.spongepowered.api.config.ConfigDir
+    org.spongepowered.api.config.DefaultConfig
+    org.spongepowered.api.event.EventManager
+    org.spongepowered.api.plugin.Plugin
+    org.spongepowered.api.plugin.PluginContainer
+    org.spongepowered.api.plugin.PluginManager
+    org.spongepowered.api.scheduler.Scheduler
+    ninja.leaping.configurate.loader.ConfigurationLoader
+    ninja.leaping.configurate.objectmapping.GuiceObjectMapperFactory
+
 Sponge uses dependency injection to provide instances of the API to plugins.
 Dependency injection allows plugins to designate a few API types that will be injected after construction.
 
 Temporary List of Injected Types
 ================================
 
-ConfigDir (annotation on Path or File)
+:javadoc:`ConfigDir` (annotation on Path or File)
   Used to inject the plugin's configuration directory:
-  ``./mods/`` OR ``./mods/<Plugin#id>/`` depending on ``sharedRoot``
+  ``./mods/`` OR ``./mods/<Plugin#id>/`` depending on :javadoc:`ConfigDir#sharedRoot()`
 
-ConfigurationLoader<CommentedConfigurationNode>
+:javadoc:`ConfigurationLoader<CommentedConfigurationNode>`
   Must be annotated with ``@DefaultConfig``.
   Used to inject a pre-generated ``ConfigurationLoader`` for the ``File`` of the same annotation.
 
-DefaultConfig (annotation on Path, ConfigurationLoader or File)
+:javadoc:`DefaultConfig` (annotation on Path, ConfigurationLoader or File)
   Used to inject the plugin's specific configuration file: ``<Plugin#id>.conf``
 
-EventManager
+:javadoc:`EventManager`
   Manages the registration of event handlers and the dispatching of events.
 
 File
@@ -27,13 +41,13 @@ File
   Depending on the annotation given this will contain a file reference to the plugins default config file or the
   directory used for storing configuration files. However, Path (see below) should be preferred.
 
-Game
+:javadoc:`Game`
   The ``Game`` object is the core accessor of the SpongeAPI.
 
-GameRegistry
+:javadoc:`GameRegistry`
   Provides an easy way to retrieve types from a ``Game``.
 
-GuiceObjectMapperFactory
+:javadoc:`GuiceObjectMapperFactory`
   A tool provided by Configurate to allow easier mapping of objects to configuration nodes.
   See :doc:`configuration/serialization` for usage.
 
@@ -50,10 +64,10 @@ Path
   Depending on the annotation given this will contain a path reference to the plugins default config file or the
   directory used for storing configuration files.
 
-PluginContainer
-  A ``@Plugin`` class wrapper, used to retrieve information from the annotation for easier use.
+:javadoc:`PluginContainer`
+  A :javadoc:`Plugin` class wrapper, used to retrieve information from the annotation for easier use.
 
-PluginManager
+:javadoc:`PluginManager`
   Manages the plugins loaded by the implementation.
   Can retrieve another plugin's ``PluginContainer``.
 
@@ -80,7 +94,7 @@ Game
 ~~~~
 
 The ``Game`` object is the opening for many of the internal functions of the SpongeAPI, from the ``EventManager`` to the
-``Server`` and even the Sync/Async ``Scheduler``.
+:javadoc:`Server` and even the Sync/Async :javadoc:`Scheduler`.
 
 It's entirely possible to receive the ``Game`` object from within most events, however it is commonly obtained through
 an injection.
@@ -122,7 +136,7 @@ an injection.
 Config Directory
 ~~~~~~~~~~~~~~~~
 
-The recommended way to obtain your config file is through Guice, along with the @ConfigFile annotation.
+The recommended way to obtain your config file is through Guice, along with the :javadoc:`ConfigDir` annotation.
 
 .. tip::
 
@@ -170,9 +184,9 @@ The recommended way to obtain your config file is through Guice, along with the 
 DefaultConfig
 ~~~~~~~~~~~~~
 
-The way that ``DefaultConfig`` works is very similar to ``ConfigDir``. The biggest difference obviously being that
-``DefaultConfig`` refers to a specific file, where ``ConfigDir`` refers to a directory.
+The way that ``@DefaultConfig`` works is very similar to ``@ConfigDir``. The biggest difference obviously being that
+``@DefaultConfig`` refers to a specific file, where ``@ConfigDir`` refers to a directory.
 
 .. tip::
 
-    View :doc:`configuration/index` for a complete guide, specifically for ``DefaultConfig``.
+    View :doc:`configuration/index` for a complete guide, specifically for ``@DefaultConfig``.

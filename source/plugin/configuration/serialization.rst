@@ -2,6 +2,16 @@
 Serializing Objects
 ===================
 
+.. javadoc-import::
+    ninja.leaping.configurate.ConfigurationOptions
+    ninja.leaping.configurate.objectmapping.GuiceObjectMapperFactory
+    ninja.leaping.configurate.objectmapping.ObjectMapper
+    ninja.leaping.configurate.objectmapping.ObjectMapperFactory
+    ninja.leaping.configurate.objectmapping.Setting
+    ninja.leaping.configurate.objectmapping.serialize.ConfigSerializable
+    ninja.leaping.configurate.objectmapping.serialize.TypeSerializer
+    ninja.leaping.configurate.objectmapping.serialize.TypeSerializerCollection
+
 The Configurate library also provides the means to tweak automatic serialization and deserialization of objects.
 Per default, a set of data types can be (de)serialized: among others Strings, ints, doubles, UUIDs, Lists
 (of serializable values) and Maps (where both keys and values are serializable). But if you want to write your
@@ -23,9 +33,9 @@ Also assume some methods to access those fields, a nice constructor setting both
 Creating a custom TypeSerializer
 ================================
 
-A very straightforward way of writing and loading such a data structure is providing a custom ``TypeSerializer``.
-The ``TypeSerializer`` interface provides two methods, one to write the data from an object to a configuration node
-and one to create an object from a given configuration node.
+A very straightforward way of writing and loading such a data structure is providing a custom :javadoc:`TypeSerializer`.
+The ``TypeSerializer`` interface provides two methods, one to write the data from an object to a configuration node and
+one to create an object from a given configuration node.
 
 .. code-block:: java
 
@@ -52,8 +62,8 @@ and one to create an object from a given configuration node.
     }
 
 This ``TypeSerializer`` must then be registered with Configurate. This can be done either globally, by registering to
-the default ``TypeSerializerCollection`` or locally, by specifying it in the ``ConfigurationOptions`` when loading your
-config.
+the default :javadoc:`TypeSerializerCollection` or locally, by specifying it in the :javadoc:`ConfigurationOptions`
+when loading your config.
 
 **Code Example: Registering a TypeSerializer globally**
 
@@ -88,8 +98,8 @@ Using ObjectMappers
 ===================
 
 Since in many cases the (de)serialization boils down to mapping fields to configuration nodes, writing such a
-``TypeSerializer`` is a rather dull affair and something we'd like Configurate to do on its own. So let's
-annotate our class with the ``@ConfigSerializable`` and ``@Setting`` annotations.
+``TypeSerializer`` is a rather dull affair and something we'd like Configurate to do on its own. So let's annotate our
+class with the :javadoc:`ConfigSerializable` and :javadoc:`Setting` annotations.
 
 .. code-block:: java
 
@@ -122,14 +132,14 @@ configuration nodes, otherwise it will be discarded.
 
 
 The ``@ConfigSerializable`` annotation eliminates the need for any registration since it allows Configurate to
-just generate an ``ObjectMapper`` for the class. The only limitation is that Configurate needs an empty
+just generate an :javadoc:`ObjectMapper` for the class. The only limitation is that Configurate needs an empty
 constructor to instantiate a new object before filling in the annotated fields.
 
 Providing a custom ObjectMapperFactory
 ======================================
 
-That restriction, however, can be lifted if we use a different ``ObjectMapperFactory``, for example a
-``GuiceObjectMapperFactory``. Instead of requiring an empty constructor, it will work on any class that guice
+That restriction, however, can be lifted if we use a different :javadoc:`ObjectMapperFactory`, for example a
+:javadoc:`GuiceObjectMapperFactory`. Instead of requiring an empty constructor, it will work on any class that guice
 can create via dependency injection. This also allows for a mixture of ``@Inject`` and ``@Setting`` annotated fields.
 
 Your plugin can just acquire a ``GuiceObjectMapperFactory`` simply by dependency injection

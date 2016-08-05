@@ -131,3 +131,6 @@ sponge-theme/
 
 # Source code created by pip
 src/
+
+# Any javadoc link dumps provided by sphinx-JDLinker.
+javadoc_dump.txt

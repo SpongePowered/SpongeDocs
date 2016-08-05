@@ -2,6 +2,12 @@
 Configuring Plugins
 ===================
 
+.. javadoc-import::
+    ninja.leaping.configurate.hocon.HoconConfigurationLoader
+    ninja.leaping.configurate.yaml.YAMLConfigurationLoader
+    org.spongepowered.api.config.ConfigDir
+    org.spongepowered.api.config.DefaultConfig
+
 Configuration files allow plugins to store data, as well as allow server administrators to easily take control over
 specific portions of a plugin, if you so choose to let them. Sponge uses Configurate to allow you to easily
 manipulate configuration files. These pages will explain how to utilize Configurate in order to use configuration
@@ -43,8 +49,8 @@ to store data, and they allow server administrators to customize plugin options 
 Getting your Default Plugin Configuration
 -----------------------------------------
 
-The Sponge API offers the use of the ``@DefaultConfig`` annotation on a field or setter method with the type ``Path``
-to get the default configuration file for your plugin.
+The Sponge API offers the use of the :javadoc:`DefaultConfig` annotation on a field or setter method with the type
+``Path`` to get the default configuration file for your plugin.
 
 The ``@DefaultConfig`` annotation requires a ``sharedRoot`` boolean. If you set ``sharedRoot`` to ``true``, then the
 returned pathname will be in a shared configuration directory. In that case, the configuration file for your plugin
@@ -63,8 +69,8 @@ If you are unsure of what to set the value of ``sharedRoot`` to, consider the fo
 * If you plan on having a single configuration file (less-complex plugins), set the value to ``true``.
 
 You can also obtain a ``Path`` instance pointing to the config directory instead of a particular file. Just
-have it injected using the ``@ConfigDir`` annotation, either with ``sharedRoot`` set to ``false`` for a plugin specific
-directory or to ``true`` to get the shared configuration directory.
+have it injected using the :javadoc:`ConfigDir` annotation, either with ``sharedRoot`` set to ``false`` for a plugin
+specific directory or to ``true`` to get the shared configuration directory.
 
 .. note::
 
@@ -102,5 +108,5 @@ directory or to ``true`` to get the shared configuration directory.
 .. note::
 
     The use of YAML format (http://yaml.org/spec/1.1/) is also supported, but the preferred config format for Sponge
-    plugins is HOCON. Conversion from YAML to HOCON can be automated by using a ``YamlConfigurationLoader`` to load
-    the old config and then saving it using a ``HoconConfigurationLoader``.
+    plugins is HOCON. Conversion from YAML to HOCON can be automated by using a :javadoc:`YAMLConfigurationLoader` to
+    load the old config and then saving it using a :javadoc:`HoconConfigurationLoader`.

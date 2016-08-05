@@ -2,11 +2,19 @@
 Using Keys
 ==========
 
+.. javadoc-import::
+    org.spongepowered.api.data.DataHolder
+    org.spongepowered.api.data.DataTransactionResult
+    org.spongepowered.api.data.key.Key
+    org.spongepowered.api.data.key.Keys
+    org.spongepowered.api.data.value.BaseValue
+    org.spongepowered.api.data.value.mutable.MutableBoundedValue
+
 Getting and offering data using a key
 =====================================
 
-A data holder provides methods to retrieve or alter a single point of data identified by a ``Key``. Let's just start
-out with an example:
+A data holder provides methods to retrieve or alter a single point of data identified by a :javadoc:`Key`. Let's just
+start out with an example:
 
 **Code Example: Healing a data holder, if possible**
 
@@ -39,14 +47,14 @@ parameter to be returned if the value is not present on the data holder.
 
 In the third line, we offer data back to the data holder. We provide a ``Key`` denoting the current health and the
 before acquired maximum health, thus healing the data holder to full health. There are a variety of ``offer()``
-methods accepting different parameter sets, all of which return a ``DataTransactionResult`` containing information
-if the offer was accepted. For now, we'll use the one accepting a ``Key`` and a corresponding value, but we will
-encounter more in the next pages. Since we already know that our offer of current health is accepted (as the data
+methods accepting different parameter sets, all of which return a :javadoc:`DataTransactionResult` containing
+information if the offer was accepted. For now, we'll use the one accepting a ``Key`` and a corresponding value, but we
+will encounter more in the next pages. Since we already know that our offer of current health is accepted (as the data
 holder supports it), we can silently discard the result.
 
-It is also possible to completely remove data from a ``DataHolder`` using the ``remove()`` function. Simply provide a
-``Key`` representing the data you want removed. The following example will attempt to remove a custom name from a given
-data holder
+It is also possible to completely remove data from a :javadoc:`DataHolder` using the ``remove()`` function. Simply
+provide a ``Key`` representing the data you want removed. The following example will attempt to remove a custom name
+from a given data holder:
 
 .. code-block:: java
 
@@ -86,17 +94,17 @@ Or, if you use Java 8, you're able to shorten the line with lambda expressions:
     }
 
 Note that in both cases we need to make sure our passed function can handle ``null``. You will also notice that no
-check has been performed if the target actually supports the ``MAX_HEALTH`` key. If a target does not support it,
-the ``transform()`` function will fail and return a ``DataTransactionResult`` indicating so.
+check has been performed if the target actually supports the :javadoc:`Keys#MAX_HEALTH` key. If a target does not
+support it, the ``transform()`` function will fail and return a ``DataTransactionResult`` indicating so.
 
 Keyed Values
 ============
 
 There are cases where you may care about not only the direct value for a Key, but the keyed value
 encapsulating it. In that case, use the ``getValue(key)`` method instead of ``get(key)``. You will receive an
-object inheriting from ``BaseValue`` which contains a copy of the original value. Since we know that current
-health is a ``MutableBoundedValue``, we can find out what is the minimum possible value and set our target's
-health just a tiny bit above that.
+object inheriting from :javadoc:`BaseValue` which contains a copy of the original value. Since we know that current
+health is a :javadoc:`MutableBoundedValue`, we can find out the minimum possible value and set our target's health just
+a tiny bit above that.
 
 **Code Example: Bring a target to the brink of death**
 

@@ -2,14 +2,24 @@
 Modifying an Entity
 ===================
 
-Sure, spawning a regular-old entity is nice and all, but there has to be something more interesting than that? This is
-where ``DataManipulator``\ s come into play. An ``Entity`` is a ``DataHolder``, which means that our ``Entity`` can
-hold data. More on ``DataHolder``\ s can be found in the :doc:`data documentation <../data/index>`.
+.. javadoc-import::
+    org.spongepowered.api.data.DataHolder
+    org.spongepowered.api.data.key.Keys
+    org.spongepowered.api.data.manipulator.DataManipulator
+    org.spongepowered.api.data.manipulator.mutable.DisplayNameData
+    org.spongepowered.api.data.manipulator.mutable.entity.ExplosiveRadiusData
+    org.spongepowered.api.data.manipulator.mutable.entity.FoodData
+    org.spongepowered.api.data.manipulator.mutable.entity.HealthData
+    org.spongepowered.api.entity.Entity
 
-``DataManipulator``\ s that apply to ``Entity``\ s are things such as ``FoodData`` or ``HealthData``.
-A list of applicable ``DataManipulator``\ s can be found at ``org.spongepowered.api.data.manipulator.mutable`` and
-``org.spongepowered.api.data.manipulator.mutable.entity``. Note that not all ``DataManipulator``\ s found may apply to
-all entities.
+Sure, spawning a regular-old entity is nice and all, but there has to be something more interesting than that? This is
+where :javadoc:`DataManipulator`\ s come into play. An :javadoc:`Entity` is a :javadoc:`DataHolder`, which means that
+our ``Entity`` can hold data. More on ``DataHolder``\ s can be found in the :doc:`data documentation <../data/index>`.
+
+``DataManipulator``\ s that apply to ``Entity``\ s are things such as :javadoc:`FoodData` or :javadoc:`HealthData`. A
+list of applicable ``DataManipulator``\ s can be found at :javadoc:`org.spongepowered.api.data.manipulator.mutable` and
+:javadoc:`org.spongepowered.api.data.manipulator.mutable.entity`. Note that not all ``DataManipulator``\ s found there
+may apply to all entities.
 
 Entity Type
 ~~~~~~~~~~~
@@ -34,8 +44,8 @@ Entity Data Manipulators
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 Now that we are certain that our ``Entity`` is a creeper, we can apply creeper specific ``DataManipulator``\ s to it.
-For example, ``ExplosiveRadiusData`` is a ``DataManipulator`` that creepers can have, but not all ``Entity``\ s. An
-example of changing an ``Entity``\ s explosive radius to 50 can be seen below:
+For example, :javadoc:`ExplosiveRadiusData` is a ``DataManipulator`` that creepers can have, but not all ``Entity``\ s.
+An example of changing an ``Entity``\ s explosive radius to 50 can be seen below:
 
 .. code-block:: java
 
@@ -50,8 +60,8 @@ This will get the ``ExplosiveRadiusData`` of our ``Entity`` for our use. We then
 radius of our creeper to 50. We then have to offer the data back to the creeper, as the data we received from our
 ``Entity`` is only a copy of the live data.
 
-Perhaps we want to give our ``Entity`` a name to customize it a bit! This would be done by using ``DisplayNameData``.
-An example of this in action can be seen below:
+Perhaps we want to give our ``Entity`` a name to customize it a bit! This would be done by using
+:javadoc:`DisplayNameData`. An example of this in action can be seen below:
 
 .. code-block:: java
 
@@ -65,8 +75,8 @@ An example of this in action can be seen below:
                                                               "Inscrutable")));
     }
 
-Another, shorter way to do this is by just using ``Keys`` on our ``Entity`` instead of using ``DataManipulator``\ s.
-This would be done like so:
+Another, shorter way to do this is by just using :javadoc:`Keys` on our ``Entity`` instead of using
+``DataManipulator``\ s. This would be done like so:
 
 .. code-block:: java
 

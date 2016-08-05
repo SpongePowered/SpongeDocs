@@ -2,63 +2,79 @@
 Message Channels
 ================
 
-In Sponge, every object that messages may be sent to implements the ``MessageReceiver`` interface. A ``MessageChannel``
-is a device that may send messages to an arbitrary number of ``MessageReceiver``\ s and even perform actions like
-recipient-specific formatting of the message.
+.. javadoc-import::
+    org.spongepowered.api.Server
+    org.spongepowered.api.entity.living.player.Player
+    org.spongepowered.api.event.message.MessageChannelEvent
+    org.spongepowered.api.event.message.MessageChannelEvent.Chat
+    org.spongepowered.api.service.permission.PermissionService
+    org.spongepowered.api.text.Text
+    org.spongepowered.api.text.channel.AbstractMutableMessageChannel
+    org.spongepowered.api.text.channel.MessageChannel
+    org.spongepowered.api.text.channel.MessageReceiver
+    org.spongepowered.api.text.channel.MutableMessageChannel
+    org.spongepowered.api.text.chat.ChatType
+    java.lang.Object
+    java.lang.String
+
+In Sponge, every object that messages may be sent to implements the :javadoc:`MessageReceiver` interface. A
+:javadoc:`MessageChannel` is a device that may send messages to an arbitrary number of ``MessageReceiver``\ s and even
+perform actions like recipient-specific formatting of the message.
 
 Selecting Message Recipients
 ============================
 
 Within the ``MessageChannel`` interface there are constants and static methods that can be used to obtain or create
 commonly used channels. There are also other classes and interfaces that can be used to create a ``MessageChannel``,
-such as ``AbstractMutableMessageChannel`` and ``MutableMessageChannel``. A complete list of these can be found at
-``org.spongepowered.api.text.channel`` and its sub-packages.
+such as :javadoc:`AbstractMutableMessageChannel` and :javadoc:`MutableMessageChannel`. A complete list of these can be
+found at :javadoc:`org.spongepowered.api.text.channel` and its sub-packages.
 
 Broadcasting
 ~~~~~~~~~~~~
 
-The most common channel will be the broadcasting channel. It can be obtained either from the ``Server`` via the
-``getBroadcastChannel()`` method or from either the ``MessageChannel.TO_PLAYERS`` or ``MessageChannel.TO_ALL``
-constant. The only difference is that ``TO_ALL`` includes not only every player connected to the server but also the
-server ``Console``.
+The most common channel will be the broadcasting channel. It can be obtained either from the
+:javadoc:`Server` via the :javadoc:`Server#getBroadcastChannel()` method or from either the
+:javadoc:`MessageChannel#TO_PLAYERS` or :javadoc:`MessageChannel#TO_ALL` constant. The only difference is that
+``TO_ALL`` includes not only every player connected to the server but also the server ``Console``.
 
 The channel returned by ``getBroadcastChannel()`` will generally be the ``MessageChannel.TO_ALL`` channel, however a
-different channel may be set using the ``setBroadcastChannel()`` method.
+different channel may be set using the :javadoc:`Server#setBroadcastChannel(MessageChannel)` method.
 
 
 Sending to a Fixed List of MessageReceivers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 It is also possible to send a message not to all players connected, but to a number of hand-selected receivers. This
-can be done by passing the list of the intended recipients to the ``MessageChannel.fixed(MessageReceiver... receiver)``
+can be done by passing the list of the intended recipients to the :javadoc:`MessageChannel#fixed(MessageReceiver...)`
 method. Unlike most other channels, the list of recipients will not be generated dynamically every time something is
 sent through the channel but remains static for the rest of its existence. However, the references kept are *weak*.
-This means that if for example a player disconnects and the corresponding ``Player`` object is removed by Java's
+This means that if for example a player disconnects and the corresponding :javadoc:`Player` object is removed by Java's
 *garbage collector*, that player will also vanish from the channels recipient list.
 
 Permission-based Selection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 It is also possible to create a channel sending to all recipients that hold a specific permission. The channel is
-obtained from the ``MessageChannel.permission(String permission)`` method with the permission to check for as an
-argument. When a message is then sent through this channel, it will obtain all subjects from the ``PermissionManager``
+obtained from the :javadoc:`MessageChannel#permission(String)` method with the permission to check for as an argument.
+When a message is then sent through this channel, it will obtain all subjects from the :javadoc:`PermissionService`
 that have the given permission.
 
 Combining Channels
 ~~~~~~~~~~~~~~~~~~
 
 It is also possible to combine multiple channels into one. This can be done by passing all channels into the
-``MessageChannel.combined(MessageChannel... channels)`` method. The resulting channel will relay messages to every
+:javadoc:`MessageChannel#combined(MessageChannel...)` method. The resulting channel will relay messages to every
 recipient that is targeted by at least one of the combined channels.
 
 Sending Messages
 ================
 
-Once you have obtained a ``MessageChannel`` you can send a message through it via the ``send(Object sender, Text
-message)`` method. This method is preferred over the ``send(Text message)`` method, as the ``Object`` can be
-used for identification or for performing other various actions. Alternatively, you can use a ``ChatType`` to specify
-where the message will be sent to. Using the ``send(Object sender, Text message, ChatType type)`` method will allow you
-to accomplish this. The channel will then transform the message for every recipient and send the transformed message.
+Once you have obtained a ``MessageChannel`` you can send a message through it via the
+:javadoc:`MessageChannel#send(Object, Text)` method. This method is preferred over the
+:javadoc:`MessageChannel#send(Text)` method, as the ``Object`` can be used for identification or for performing other
+various actions. Alternatively, you can use a :javadoc:`ChatType` to specify where the message will be sent to. Using
+the :javadoc:`MessageChannel#send(Object, Text, ChatType)` method will allow you to accomplish this. The channel will
+then transform the message for every recipient and send the transformed message.
 
 Extended Application: Chat Channels
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -66,24 +82,26 @@ Extended Application: Chat Channels
 Message channels have a very useful application as they can be used to establish chat channels. For example, you could
 establish a message channel for every chat channel you wish to have. Then, when a ``MessageReceiver`` joins a channel,
 such as with ``/join <channel name>``, simply set the ``MessageReceiver``'s ``MessageChannel`` to the appropriate
-channel using the ``MessageReceiver#setMessageChannel(MessageChannel channel)``. This will cause every message sent
-*from* the ``MessageReceiver`` to be passed to the given ``MessageChannel`` instead of the default one. Alternatively,
-you could listen to ``MessageChannelEvent``, and set the appropriate ``MessageChannel`` using
-``MessageChannelEvent#setChannel(MessageChannel channel)``. Passing ``null`` to that method will unset any custom
+channel using :javadoc:`MessageReceiver#setMessageChannel(MessageChannel)`. This will cause every message sent *from*
+the ``MessageReceiver`` to be passed to the given ``MessageChannel`` instead of the default one. Alternatively,
+you could listen to :javadoc:`MessageChannelEvent`, and set the appropriate ``MessageChannel`` using
+:javadoc:`MessageChannelEvent#setChannel(MessageChannel)`. Passing ``null`` to that method will unset any custom
 channel, causing the message to be sent to the original MessageChannel instead.
 
 Transforming Messages
 =====================
 
 You can apply a filter to all ``Text``\ s that pass through a ``MessageChannel`` to change the message however you
-like. This is possible by extending ``MessageChannel`` and overriding the ``transformMessage(Object sender,
-MessageReceiver recipient, Text original)`` method as demonstrated below.
+like. This is possible by extending ``MessageChannel`` and overriding the
+:javadoc:`MessageChannel#transformMessage(Object, MessageReceiver, Text, ChatType)` method as demonstrated below.
 
 **Example: Transforming Messages**
 
 The following code excerpt defines an ``AdminMessageChannel`` class which overrides the default ``transformMessage``
 method. The new ``transformMessage`` method will take the original message and append a red ``[Admin]`` tag to the
 front of the message.
+
+.. TODO: UPDATE FOR CHATTYPE
 
 .. code-block:: java
 
@@ -113,8 +131,8 @@ front of the message.
     }
 
 
-Note that we do not wish to define any additional recipients, so we return an empty collection in the ``getMembers``
-method.
+Note that we do not wish to define any additional recipients, so we return an empty collection in the
+:javadoc:`MessageChannel#getMembers()` method.
 
 Thanks to the capabilities of combined ``MessageChannel``\ s, we can combine our newly created ``AdminMessageChannel``
 with any other ``MessageChannel``. Now if a player joins with the ``myplugin.admin`` permission, we will obtain the
@@ -142,8 +160,8 @@ addition of the ``AdminMessageChannel``, a red ``[Admin]`` tag will be prefixed.
     }
 
 Note that this will prefix `all` messages pertaining to a player. This includes death messages, leave messages, etc. If
-you only want to prefix all `chat` messages, you would need to listen to ``MessageChannelEvent.Chat`` and set the
-channel onto the event rather than the player. This would be done using ``event.setChannel(newChannel)`` onto the
+you only want to prefix all `chat` messages, you would need to listen to :javadoc:`MessageChannelEvent.Chat` and set
+the channel onto the event rather than the player. This would be done using ``event.setChannel(newChannel)`` onto the
 ``MessageChannelEvent.Chat`` event. To get the player from the event to check for permissions, you would need to get a
 ``Player`` from the ``Cause`` of the event. This is demonstrated below:
 
@@ -163,8 +181,8 @@ More on causes can be found on the :doc:`causes page <../event/causes>`.
 Mutable Message Channels
 ========================
 
-A ``MutableMessageChannel`` contains methods for changing who may receive the messages sent through our channel. As
-such, we must implement methods for performing actions that modify our members. To do this, we simply will create a
+A :javadoc:`MutableMessageChannel` contains methods for changing who may receive the messages sent through our channel.
+As such, we must implement methods for performing actions that modify our members. To do this, we simply will create a
 class named ``MutableAdminMessageChannel`` that will implement a ``MutableMessageChannel``.
 
 .. code-block:: java
@@ -231,5 +249,6 @@ Modifying the Members
 ~~~~~~~~~~~~~~~~~~~~~
 
 To make full use of our ``MutableAdminMessageChannel``, we need to be able to add and remove members from the channel.
-To do this, we can simply call our ``addMember(MessageReceiver member)`` and ``removeMember(MessageReceiver member)``
-methods we implemented previously whenever we need to add or remove a member from the member set.
+To do this, we can simply call our :javadoc:`MutableMessageChannel#addMember(MessageReceiver)`
+and :javadoc:`MutableMessageChannel#removeMember(MessageReceiver)` methods we implemented previously whenever we need
+to add or remove a member from the member set.

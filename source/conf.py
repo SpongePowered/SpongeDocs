@@ -13,6 +13,7 @@
 
 import sys, os
 import sponge_docs_theme
+import jdlinker
 
 # Set your GitHub user, repo and branch here. This will be used to link to the
 # sourcecode in the top right corner of the pages.
@@ -33,7 +34,7 @@ github_branch = 'master'
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
-extensions = []
+extensions = ['jdlinker']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -267,3 +268,13 @@ texinfo_documents = [
 
 locale_dirs = ['../locale/']   #path is example but recommended.
 gettext_compact = False     #optional.
+
+# -- sphinx-JDLinker Configuration ------------------------------------------------
+
+javadoc_links = {
+    'https://jd.spongepowered.org/%s/' % release: ['org.spongepowered.api'],
+    'http://zml2008.github.io/configurate/apidocs/': ['ninja.leaping.configurate']
+}
+
+# Set to true to enable sphinx-JDLinker debug dump.
+javadoc_dump = False

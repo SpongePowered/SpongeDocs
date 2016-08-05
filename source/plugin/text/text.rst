@@ -2,6 +2,13 @@
 Creating Text
 =============
 
+.. javadoc-import::
+    org.spongepowered.api.text.Text
+    org.spongepowered.api.text.action.TextActions
+    org.spongepowered.api.text.format.TextColors
+    org.spongepowered.api.text.selector.Selector.Builder
+    java.lang.Object
+
 The Text API is used to create formatted text, which can be sent to players in chat messages, and can also be used in
 places such as books and signs.
 
@@ -28,7 +35,7 @@ Text Builder
 
 The text builder interface allows for the creation of formatted text in a "building-block" style.
 
-.. tip ::
+.. tip::
 
     Read this `Wikipedia article <http://en.wikipedia.org/wiki/Builder_pattern>`__ for help understanding the purpose
     of the builder pattern in software design.
@@ -47,8 +54,8 @@ Example: Colored Text
 
     Text coloredText = Text.builder("Woot! Golden text is golden.").color(TextColors.GOLD).build();
 
-Any color specified within the ``org.spongepowered.api.text.format.TextColors`` class can be used when coloring text.
-Multiple colors can be used in text by appending additional texts with different colors:
+Any color specified within the :javadoc:`TextColors` class can be used when coloring text. Multiple colors can be used
+in text by appending additional texts with different colors:
 
 Example: Multi-colored Text
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -85,8 +92,8 @@ Example: Multi-styled Text
 Coloring & Styling Shortcut
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The ``org.spongepowered.api.text.Text#of(Object... objects)`` method provides a simple way to add color and styling to
-your text in a much more concise way.
+The :javadoc:`Text#of(Object...)` method provides a simple way to add color and styling to your text in a much more
+concise way.
 
 Example: Color & Style Shortcut
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -101,8 +108,8 @@ Text Actions
 ~~~~~~~~~~~~
 
 The text builder also offers the ability to create actions for text. Any action specified within the
-``org.spongepowered.api.text.action.TextActions`` class can be used when creating text actions for text. The method
-below is a small example of what text actions can do.
+:javadoc:`TextActions` class can be used when creating text actions for text. The method below is a small example of
+what text actions can do.
 
 Example: Text with an Action
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -115,11 +122,11 @@ Example: Text with an Action
 
 In the method above, players can click the "Click here!" text to run the specified command.
 
-.. note ::
+.. note::
 
-    Some text actions, such as ``ChangePage``, can only be used with book items.
+    Some text actions, such as :javadoc:`TextActions#changePage(int)`, can only be used with book items.
 
-.. tip ::
+.. tip::
 
     Just like with colors, multiple actions can be appended to text. Text actions can even be used in tandem with colors
     because of the builder pattern interface.
@@ -130,13 +137,13 @@ Selectors
 Target selectors are used to target players or entities that meet a specific criteria. Target selectors are particularly
 useful when creating minigame plugins, but have a broad range of applications.
 
-.. tip ::
+.. tip::
 
     Read this `Minecraft wiki article <http://minecraft.gamepedia.com/Commands#Target_selectors>`__ for help understanding
     what target selectors are in Minecraft, and how to use them.
 
-To use selectors in text, you must use the ``org.spongepowered.api.text.selector.SelectorBuilder`` interface. This is
-illustrated in the example below.
+To use selectors in text, you must use the :javadoc:`Selector.Builder` interface. This is illustrated in the example
+below.
 
 Example: Selector-generated Text
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -2,6 +2,14 @@
 World Generation
 ================
 
+.. javadoc-import::
+    org.spongepowered.api.block.BlockState
+    org.spongepowered.api.world.biome.GroundCoverLayer
+    org.spongepowered.api.world.gen.BiomeGenerator
+    org.spongepowered.api.world.gen.GenerationPopulator
+    org.spongepowered.api.world.gen.Populator
+    org.spongepowered.api.world.gen.WorldGenerator
+
 World Generation in Minecraft is a complicated process, and Sponge adds its own complications too.
 Here we provide a basic overview of how it works for the interested reader.
 You may choose to skip this and move directly to the API details at:
@@ -32,20 +40,22 @@ creation of the base terrain shape, the generation of biomes, and larger feature
 	Block placement in the generation phase takes place entirely within a buffer,
 	as the Chunk object is not created until the last step in the phase.
 
-The first step is for the biome generator to populate a 2d biome buffer with the biomes that
-will correspond to each 1x1 column within the chunk. Next, the base ``GenerationPopulator`` creates the basic shape
-of the terrain. At this stage the world is entirely made of stone. Default generation is simply a heightmap generated
-from perlin noise, then filled in - leaving air if higher than sea level, and water if below. This step can be
-overridden by calling ``setBaseGeneratorPopulator`` to provide your own custom populator to the world generator.
+The first step is for the biome generator to populate a 2d biome buffer with the biomes that will correspond to each
+1x1 column within the chunk. Next, the base :javadoc:`GenerationPopulator` creates the basic shape of the terrain. At
+this stage the world is entirely made of stone. Default generation is simply a heightmap generated from perlin noise,
+then filled in - leaving air if higher than sea level, and water if below. This step can be overridden by calling
+:javadoc:`WorldGenerator#setBaseGenerationPopulator(GenerationPopulator)` to provide your own custom populator to the
+world generator.
 
 Next, using the biome buffer created above, the generator replaces the top layers of the terrain with the
-``BlockState``\ s and depths specified by the biome's ``GroundCoverLayers``. The biomes are provided by a
-``BiomeGenerator`` - which may also be applied to the world generator with the ``setBiomeGenerator`` method.
+:javadoc:`BlockState`\ s and depths specified by the biome's :javadoc:`GroundCoverLayer`\ s. The biomes are provided by
+a :javadoc:`BiomeGenerator` - which may also be applied to the world generator with the
+:javadoc:`WorldGenerator#setBiomeGenerator(BiomeGenerator)` method.
 
-Now that the base terrain has been generated and primed, we run through the ``GenerationPopulator``\ s. These
-come in two groups: those specified globally for the world generator, and those specified for
-a specific biome. The set of ``GenerationPopulator``\ s used is the union of the ``GenerationPopulator``\ s
-specified for each of the unique biomes within the chunk.
+Now that the base terrain has been generated and primed, we run through the :javadoc:`GenerationPopulator`\ s. These
+come in two groups: those specified globally for the world generator, and those specified for a specific biome. The set
+of ``GenerationPopulator``\ s used is the union of the ``GenerationPopulator``\ s specified for each of the unique
+biomes within the chunk.
 
 ``GenerationPopulator``\ s are designed for large intensive operations, and are applied to the buffer rather than
 the (as yet non-existent) Chunk object. This means that there must be the restriction that ``GenerationPopulator``\ s may not place
@@ -64,8 +74,8 @@ are loaded. This allows objects during this phase to expand outside the 16x16 ch
 requiring the partial generation used for ``GenerationPopulator``\ s. To support this, the actual area populated
 during this phase is a 16x16 area offset by 8 in each of the x and z axes.
 
-Only the ``Populator``\ s of the biome at the position (x*16+16, 0, z*16+16) are applied to this area.
-It does not apply a union of all the biomes as is the case for ``GenerationPopulator``\ s.
+Only the :javadoc:`Populator`\ s of the biome at the position (x*16+16, 0, z*16+16) are applied to this area. It does
+not apply a union of all the biomes as is the case for ``GenerationPopulator``\ s.
 
 Populators are ideal for small features (eg. desert wells) and additional terrain covering (eg. trees).
 Sponge provides access to a great number of vanilla specified populators which may be reconfigured for your use.

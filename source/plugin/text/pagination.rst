@@ -2,13 +2,17 @@
 The Pagination Service
 ======================
 
+.. javadoc-import::
+    org.spongepowered.api.service.pagination.PaginationList.Builder
+    org.spongepowered.api.service.pagination.PaginationService
+    org.spongepowered.api.text.channel.MessageReceiver
+
 .. tip::
 
     For a basic understanding of services, make sure you read :doc:`../services` first.
 
-The ``PaginationService`` acts as a way to split up content into discrete pages.
-The service provides a ``PaginationList.Builder`` with which you can specify attributes such as title, contents, header,
-and padding.
+The :javadoc:`PaginationService` acts as a way to split up content into discrete pages. The service provides a
+:javadoc:`PaginationList.Builder` with which you can specify attributes such as title, contents, header, and padding.
 
 Pagination List Builder
 =======================
@@ -84,7 +88,8 @@ To achieve the preceding output, we might use the following builder pattern:
     With the exception of contents, all components of the paginated list are optional. However, a title is strongly
     recommended.
 
-Finally, to send the paginated list to a ``CommandSource``, use ``PaginationList.Builder#sendTo()``.
+Finally, to send the paginated list to a :javadoc:`MessageReceiver`, use
+:javadoc:`PaginationList.Builder#sendTo(MessageReceiver)`.
 
 And thats it! To recap, a fully functional paginated list could be generated and sent to a previously defined
 ``msgReceiver`` using the following code:

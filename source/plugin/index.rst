@@ -37,7 +37,7 @@ Contents
     logging
     commands/index
     event/index
-    assets/index
+    assets
     configuration/index
     text/index
     data/index
