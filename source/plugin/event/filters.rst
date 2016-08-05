@@ -165,6 +165,19 @@ The** ``player`` **parameter will be set to that player.**
         // do something
     }
 
+**@Getter** This parameter source annotation will fetch a getter on the event with the specified name. If the specified
+getter returns an ``Optional``, ``@Getter`` will automatically unwrap the ``Optional``.
+
+**In this example, we attempt to retrieve the value of** ``getUseItemResult`` **using the** ``@Getter``
+**annotation.**
+
+.. code-block:: java
+
+    @Listener
+    public void onInteract(InteractBlockEvent.Secondary event, @Getter("getUseItemResult") Tristate result) {
+        // do something
+    }
+
 Parameter Filter Annotations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
