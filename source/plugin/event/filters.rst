@@ -15,6 +15,7 @@ Event Filters
     org.spongepowered.api.event.filter.type.Include
     org.spongepowered.api.data.DataHolder
     org.spongepowered.api.data.manipulator.DataManipulator
+    org.spongepowered.api.data.manipulator.mutable.entity.FlyingData
     org.spongepowered.api.data.value.mutable.CompositeValueStore
     org.spongepowered.api.util.Tristate
     java.lang.Class
@@ -176,7 +177,7 @@ This parameter filter may be applied to any parameter type which is a :javadoc:`
 ``DataManipulator``. This validation is equivalent to :javadoc:`CompositeValueStore#supports(Class<? extends H>)`.
 
 **In this example the listener will be called only if there is an entity in the event's cause, and if that entity supports
-the data manipulator** ``FlyingData``.
+the data manipulator** :javadoc:`FlyingData`.
 
 .. code-block:: java
 

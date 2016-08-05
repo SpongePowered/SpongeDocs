@@ -2,13 +2,21 @@
 Offline Player Data
 ===================
 
+.. javadoc-import::
+    org.spongepowered.api.entity.living.player.Player
+    org.spongepowered.api.entity.living.player.User
+    org.spongepowered.api.profile.GameProfileManager
+    org.spongepowered.api.service.ServiceManager
+    org.spongepowered.api.service.user.UserStorageService
+
 It may be necessary for plugins to access player data even when the player is offline.
-You might think that ``Sponge.getServer().getPlayer()`` returning a ``Player`` can be used for this.
+You might think that ``Sponge.getServer().getPlayer()`` returning a :javadoc:`Player` can be used for this.
 But since ``Player`` objects only exist for online players, another solution must be used.
 
-Some plugins store the relevant data themselves and associate the user by using the ``GameProfileManager``.
+Some plugins store the relevant data themselves and associate the user by using the :javadoc:`GameProfileManager`.
 But writing different code for offline and online users is not necessary.
-The ``ServiceManager`` natively provides a service known as the ``UserStorageService`` which is capable of returning ``User`` instances for ``Player``\s who are currently offline.
+The :javadoc:`ServiceManager` natively provides a service known as the :javadoc:`UserStorageService` which is capable
+of returning :javadoc:`User` instances for ``Player``\s who are currently offline.
 Since the ``Player`` interface extends ``User`` most methods you call on a ``Player`` are also available. 
 
 For example:
