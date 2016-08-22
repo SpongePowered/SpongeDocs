@@ -67,6 +67,17 @@ Need help and information while coding your plugin for the SpongeAPI? Look no fu
 
     plugin/index
 
+Ore
+~~~
+
+Learn how to publish, install, browse, and use our Web API for our custom built plugin hosting solution, Ore.
+
+.. toctree::
+    :maxdepth: 2
+    :titlesonly:
+
+    ore/index
+
 Contributing to Sponge
 ~~~~~~~~~~~~~~~~~~~~~~
 
