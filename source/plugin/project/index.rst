@@ -23,7 +23,7 @@ Maven dependency
 ============= ============================================================================
 Group ID      ``org.spongepowered``
 Artifact ID   ``spongeapi``
-Version       For example: ``4.0.3`` (stable), or ``5.0.0-SNAPSHOT`` (dev build, unstable)
+Version       For example: ``4.1.0`` (stable), or ``5.0.0-SNAPSHOT`` (dev build, unstable)
 ============= ============================================================================
 
 Setting Up Your Project
