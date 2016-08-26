@@ -198,4 +198,4 @@ Example: Firing LightningEvent
 
 .. warning::
 
-    A :javadoc:`Cause` can never be empty. At the very least it should contain your plugin.
+    A :javadoc:`Cause` can never be empty. At the very least it should contain your plugin container.
