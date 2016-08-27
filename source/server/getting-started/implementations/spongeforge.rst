@@ -26,7 +26,7 @@ worry about always having to run an outdated Forge version in order to use Spong
 The format of the filename is ``spongeforge-{MCVersion}-{ForgeVersion}-{SpongeAPIVersion}-{SpongeBuildId}``
 
 +----------------------+----------------------------------------------------------------------------------------------+
-| ``MCVersion``        | The minecraft version. Only clients compatible with this version can connect.                |
+| ``MCVersion``        | The Minecraft version. Only clients compatible with this version can connect.                |
 +----------------------+----------------------------------------------------------------------------------------------+
 | ``ForgeVersion``     | The version of Forge this file is built for. Preferably your server should run this exact    |
 |                      | version of Forge.                                                                            |
@@ -40,12 +40,12 @@ The format of the filename is ``spongeforge-{MCVersion}-{ForgeVersion}-{SpongeAP
 Example
 ~~~~~~~
 
-The file name ``spongeforge-1.8-1577-3.0.0-BETA-1000.jar`` is compatible with minecraft version ``1.8``, requires build
+The file name ``spongeforge-1.8-1577-3.0.0-BETA-1000.jar`` is compatible with Minecraft version ``1.8``, requires build
 ``1.8-11.14.4.1577`` of Forge, provides SpongeAPI ``3.0.0`` and was build ``1000`` of SpongeForge.
 
 .. note::
 
-    Normal Forge mods can usually run on any build of Forge for a given minecraft version (e.g. 1.8.0) without
+    Normal Forge mods can usually run on any build of Forge for a given Minecraft version (e.g. 1.8.0) without
     any problems. However, SpongeForge needs to access, among other things, internal parts of Forge, which
     most mods shouldn't be touching, let alone modifying as Sponge does. Since Forge is free to change internal
     code whenever they want to, its normal guarantee of backwards-compatibility doesn't apply to SpongeForge.

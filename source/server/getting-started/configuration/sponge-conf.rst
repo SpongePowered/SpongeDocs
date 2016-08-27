@@ -82,7 +82,7 @@ was generated using SpongeForge build 1399, SpongeAPI version 4.1:
                 misc=16
                 monster=32
             }
-            # Per-mod overrides. Refer to the minecraft default mod for example.
+            # Per-mod overrides. Refer to the Minecraft default mod for example.
             mods {}
         }
         entity-collisions {
@@ -92,7 +92,7 @@ was generated using SpongeForge build 1399, SpongeAPI version 4.1:
             defaults {}
             # Max amount of entities any given entity or block can collide with. This improves performance when there are more than 8 entities on top of eachother such as a 1x1 spawn pen. Set to 0 to disable.
             max-entities-within-aabb=8
-            # Per-mod overrides. Refer to the minecraft default mod for example.
+            # Per-mod overrides. Refer to the Minecraft default mod for example.
             mods {
                 minecraft {
                     blocks {
@@ -290,7 +290,7 @@ creature                                  integer   16          Default activati
 misc                                      integer   16          Default activation range for miscellaneous
                                                                 entities.
 monster                                   integer   32          Default activation range for monsters.
-**Mods**                                                        Per-mod overrides. Refer to the minecraft default
+**Mods**                                                        Per-mod overrides. Refer to the Minecraft default
                                                                 mod for example.
 **Entity Collisions**
 auto-populate                             boolean   false       If enabled, newly discovered entities/blocks will
@@ -299,7 +299,7 @@ auto-populate                             boolean   false       If enabled, newl
                                                                 unless overridden.
 max-entities-within-aabb                  integer   8           Max amount of entities any given entity or block
                                                                 can collide with. Set to 0 to disable.
-**Mods**                                                        Per-mod overrides. Refer to the minecraft default
+**Mods**                                                        Per-mod overrides. Refer to the Minecraft default
                                                                 mod for example.
 **Minecraft**
 **Blocks**

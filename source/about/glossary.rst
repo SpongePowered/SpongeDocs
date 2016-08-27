@@ -56,7 +56,7 @@ Patreon
   A Service that allows for donations to projects and organizations. If you want to support Sponge, this is the place to
   look at! `Sponge Patreon Donation Page <https://www.patreon.com/Sponge?ty=h>`__
 Plugin
-  A Minecraft mod that extends and changes minecraft via the SpongeAPI, usable only on Sponge servers.
+  A Minecraft mod that extends and changes Minecraft via the SpongeAPI, usable only on Sponge servers.
 Project Leaders
   The folks in charge of the entire Sponge Project, responsible for co-ordinating the activities of the various Teams and
   sub-projects.

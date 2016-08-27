@@ -17,7 +17,7 @@ solutions.
 .. note::
 
    We reserve the use of *Sponge* for official SpongePowered works. Please don't use *Sponge* as part of your plugin
-   name, unless (1) your plugin primarily concerns the minecraft block "Sponge", or (2) your plugin also has versions
+   name, unless (1) your plugin primarily concerns the Minecraft block "Sponge", or (2) your plugin also has versions
    for other APIs (in which case you may append "for Sponge" to the title).
 
 

@@ -63,7 +63,7 @@ of the script and run it. Keep in mind that you must agree to the Mojang EULA in
 
 .. note::
 
-    The default minecraft server GUI console is disabled by Sponge, because it is very processor-intensive.
+    The default Minecraft server GUI console is disabled by Sponge, because it is very processor-intensive.
 
 .. warning::
 
