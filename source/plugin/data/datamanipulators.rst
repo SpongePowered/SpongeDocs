@@ -78,7 +78,7 @@ custom name from a given ``DataHolder``. Again, the result of the transaction is
     import org.spongepowered.api.data.manipulator.mutable.DisplayNameData;
 
     public void removeName(DataHolder target) {
-        dataHolder.remove(DisplayNameData.class);
+        target.remove(DisplayNameData.class);
     }
 
 DataManipulator vs. Keys
