@@ -12,8 +12,12 @@ Creating your project
 ~~~~~~~~~~~~~~~~~~~~~
 
 * Open **IntelliJ IDEA**.
+* Click ``Configure``, then click ``plugins``.
+* Click ``Browse Repositories``
+* Search for ``Minecraft Development``, and install the first result
+* Restart **IntelliJ IDEA**
 * Click ``Create New Project``.
-* Select ``Gradle`` in the popup, and click ``Next``.
+* Select ``Minecraft Plugin`` in the popup, select ``Sponge Plugin``, and click ``Next``.
 * Enter your **Group ID**, **Artifact ID**, and **Version**.
 
   * Your **Group ID** should usually correspond to your Java package name. See :doc:`../plugin-class` for details.
@@ -21,14 +25,6 @@ Creating your project
   * Your **Version** is up to you.
 
 * Click ``Next`` twice, name your project, and click ``Finish``.
-
-Editing the build script
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-* Open ``build.gradle`` in the navigator and add the dependencies.
-* Edit the build script according to the instructions at :doc:`../project/gradle`.
-* Open the **Gradle tab** on the right of the IntelliJ window and hit the refresh button.
-* Gradle setup is done! Now you can start coding your plugin.
 
 Importing your project
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -47,24 +43,20 @@ Creating your project
 ~~~~~~~~~~~~~~~~~~~~~
 
 * Open **IntelliJ IDEA**.
+* Click ``Configure``, then click ``plugins``.
+* Click ``Browse Repositories``
+* Search for ``Minecraft Development``, and install the first result
+* Restart **IntelliJ IDEA**
 * Click ``Create New Project``.
-* Select ``Maven`` in the popup, and click ``Next``.
-* Enter your **Group ID**, **Artifact ID**, and **Version**.
+* Select ``Minecraft Plugin`` in the popup, select ``Sponge Plugin``, and click ``Next``.
+* Enter your **Group ID**, **Artifact ID**, and **Version**, click on the popup menu in the corner, and change the selected option from **Gradle** to **Maven**.
 
   * Your **Group ID** should usually correspond to your Java package name. See :doc:`../plugin-class` for details.
   * Your **Artifact ID** should usually correspond to your **plugin ID** you chose earlier, e.g. ``myplugin``.
   * Your **Version** is up to you.
 
-* Click ``Next``.
+* Click ``Next`` twice.
 * Enter your project's name, and click ``Finish``.
-
-Editing the project configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-* Open ``pom.xml`` in the navigator.
-* Edit the build configuration according to the instructions at :doc:`../project/maven`.
-* Refresh your Maven project.
-* Import the Maven changes, if prompted.
 
 Importing your project
 ~~~~~~~~~~~~~~~~~~~~~~
