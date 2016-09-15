@@ -9,7 +9,9 @@ The Asset API
 
 The :javadoc:`AssetManager` allows developers to retrieve resources from a plugin JAR.
 
-A plugin's assets resides in a directory named ``assets/myplugin/`` where ``myplugin`` is the plugin ID.
+By default, a plugin's assets resides in a directory named ``assets/myplugin/`` where ``myplugin`` is the plugin ID. In
+most cases this default directory should be used but if you *need* to change it, you may do so by setting the
+``assets`` attribute in your ``@Plugin`` annotation or ``mcmod.info`` file.
 
 Once properly configured you can retrieve a resource for your (or any) plugin using the following code:
 
