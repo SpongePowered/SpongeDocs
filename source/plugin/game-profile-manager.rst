@@ -145,8 +145,13 @@ simply call the :javadoc:`GameProfileManager#getCache()` method. Using the ``Gam
     cache.add(profile);
 
 .. tip::
-    ``GameProfileCache#add`` also accepts a ``boolean`` second argument determining whether existing cache entries
-    should be overwritten, and a ``Date`` third argument setting the expiry of the ``GameProfile``.
+    :javadoc:`GameProfileCache#add(GameProfile)` also accepts a ``boolean`` second argument determining whether
+    existing cache entries should be overwritten, and a ``Date`` third argument setting the expiry of the
+    ``GameProfile``.
+
+If you ever decide you need to remove a ``GameProfile`` from the cache, you may call
+:javadoc:`GameProfileCache#remove(GameProfile)`. If you need to remove all ``GameProfile``\ s from the cache, you may
+call :javadoc:`GameProfileCache#clear()`.
 
 The ``GameProfileCache`` may also be set by plugins with the :javadoc:`GameProfileManager#setCache(GameProfileCache)`
 method. To restore the original cache, use the same method, passing in the result of

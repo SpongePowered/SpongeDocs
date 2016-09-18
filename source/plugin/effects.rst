@@ -10,6 +10,8 @@ Effects
     org.spongepowered.api.effect.particle.ParticleTypes
     org.spongepowered.api.effect.potion.PotionEffect
     org.spongepowered.api.effect.sound.PitchModulation
+    org.spongepowered.api.effect.sound.SoundCategories
+    org.spongepowered.api.effect.sound.SoundCategory
     org.spongepowered.api.effect.sound.SoundType
     org.spongepowered.api.world.Location
 
@@ -37,15 +39,18 @@ coordinates ``1, 65, 1``. Lastly, we have the volume that the sound will be play
 ranges from zero to two.
 
 Now that we can play basic sounds, we can go further in-depth with our sounds. Let's say we wanted to play our sound at
-a specified pitch. We can use the :javadoc:`PitchModulation` class to modulate the pitch to a specified note. An
-example of this is shown below:
+a specified pitch. We can use the :javadoc:`PitchModulation` class to modulate the pitch to a specified note. We can
+also use a :javadoc:`SoundCategory` to specify what sound category we are playing. An example of these are shown below:
 
 .. code-block:: java
     
     import org.spongepowered.api.effect.sound.PitchModulation;
+    import org.spongepowered.api.effect.sound.SoundCategories;
     
-    viewer.playSound(SoundTypes.CREEPER_HISS, new Vector3d(1, 65, 1), 1,
-        PitchModulation.AFLAT0);
+    viewer.playSound(SoundTypes.CREEPER_HISS, SoundCategories.HOSTILE,
+        new Vector3d(1, 65, 1), 1, PitchModulation.AFLAT0);
+
+If a ``SoundCategory`` isn't specified when playing a sound, :javadoc:`SoundCategories#MASTER` will be used.
 
 Spawning Particles
 ==================

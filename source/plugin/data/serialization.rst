@@ -17,9 +17,9 @@ Serializing Data
     org.spongepowered.api.data.manipulator.ImmutableDataManipulator
     org.spongepowered.api.data.manipulator.mutable.entity.HealthData
     org.spongepowered.api.data.persistence.DataBuilder
+    org.spongepowered.api.data.persistence.DataTranslator
+    org.spongepowered.api.data.persistence.DataTranslators
     org.spongepowered.api.data.persistence.InvalidDataException
-    org.spongepowered.api.data.translator.ConfigurateTranslator
-    org.spongepowered.api.data.translator.DataTranslator
 
 While an :javadoc:`ImmutableDataManipulator` is a good way to store data while the server is running, it will not
 persist over a restart. However, every :javadoc:`DataManipulator` implements the :javadoc:`DataSerializable` interface
@@ -92,30 +92,34 @@ DataTranslator
 
 In Sponge, generally the implementations :javadoc:`MemoryDataView` and :javadoc:`MemoryDataContainer` are used, which
 reside in memory only and thus will not persist over a server restart. In order to persistently store a
-``DataContainer``, it first has to be converted into a storable representation. This can be done by using an
-implementation of the :javadoc:`DataTranslator` interface, for example the :javadoc:`ConfigurateTranslator`, which can
-convert a ``DataView`` to a :javadoc:`ConfigurationNode` and vice versa. ``ConfigurationNode``\ s can then be written
-to and read from persistent files using the :doc:`Configurate Library <../configuration/index>`.
+``DataContainer``, it first has to be converted into a storable representation.
+
+Using the :javadoc:`DataTranslators#CONFIGURATION_NODE` implementation of :javadoc:`DataTranslator`, we can convert a
+``DataView`` to a :javadoc:`ConfigurationNode` and vice versa. ``ConfigurationNode``\ s can then be written to and read
+from persistent files using the :doc:`Configurate Library <../configuration/index>`.
 
 **Code Example: Serializing a HealthData instance to Configurate**
 
 .. code-block:: java
 
     import ninja.leaping.configurate.ConfigurationNode;
-    import org.spongepowered.api.data.translator.ConfigurateTranslator;
+    import org.spongepowered.api.data.persistence.DataTranslator;
+    import org.spongepowered.api.data.persistence.DataTranslators;
 
-    public void writeToConfig(HealthData data, ConfigurationNode config) {
-        final ConfigurateTranslator translator = ConfigurateTranslator.instance();
+    public ConfigurationNode translateToConfig(HealthData data) {
+        final DataTranslator<ConfigurationNode> translator = DataTranslators.CONFIGURATION_NODE;
         final DataView container = data.toContainer();
-        translator.translateContainerToData(config, container);
+        return translator.translate(container);
     }
 
 **Code Example: Deserializing a HealthData instance from Configurate**
 
 .. code-block:: java
 
-    public Optional<HealthData> readHealthFromConfig(ConfigurationNode config) {
-        final ConfigurateTranslator translator = ConfigurateTranslator.instance();
-        final DataView container = translator.translateFrom(config);
+    import java.util.Optional;
+
+    public Optional<HealthData> translateFromConfig(ConfigurationNode node) {
+        final DataTranslator<ConfigurationNode> translator = DataTranslators.CONFIGURATION_NODE;
+        final DataView container = translator.translate(node);
         return deserializeHealth(container);
     }

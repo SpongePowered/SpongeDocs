@@ -7,7 +7,7 @@ Modifying an Entity
     org.spongepowered.api.data.key.Keys
     org.spongepowered.api.data.manipulator.DataManipulator
     org.spongepowered.api.data.manipulator.mutable.DisplayNameData
-    org.spongepowered.api.data.manipulator.mutable.entity.ExplosiveRadiusData
+    org.spongepowered.api.data.manipulator.mutable.entity.ExplosionRadiusData
     org.spongepowered.api.data.manipulator.mutable.entity.FoodData
     org.spongepowered.api.data.manipulator.mutable.entity.HealthData
     org.spongepowered.api.entity.Entity
@@ -44,7 +44,7 @@ Entity Data Manipulators
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 Now that we are certain that our ``Entity`` is a creeper, we can apply creeper specific ``DataManipulator``\ s to it.
-For example, :javadoc:`ExplosiveRadiusData` is a ``DataManipulator`` that creepers can have, but not all ``Entity``\ s.
+For example, :javadoc:`ExplosionRadiusData` is a ``DataManipulator`` that creepers can have, but not all ``Entity``\ s.
 An example of changing an ``Entity``\ s explosive radius to 50 can be seen below:
 
 .. code-block:: java

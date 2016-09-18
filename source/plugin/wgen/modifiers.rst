@@ -6,8 +6,8 @@ WorldGeneratorModifiers
     org.spongepowered.api.CatalogType
     org.spongepowered.api.GameRegistry
     org.spongepowered.api.data.DataContainer
-    org.spongepowered.api.world.WorldCreationSettings
     org.spongepowered.api.world.gen.WorldGeneratorModifier
+    org.spongepowered.api.world.storage.WorldProperties
     java.lang.Class
 
 For a brief overview of the World Generation process in Sponge, please read :doc:`index`.
@@ -26,7 +26,7 @@ the ``WorldGeneratorModifier`` interface:
 
 .. code-block:: java
 
-    import org.spongepowered.api.world.gen.WorldGeneratorModifier;
+    import org.spongepowered.api.world.storage.WorldProperties;
 
     private class MyModifier implements WorldGeneratorModifier {
 
@@ -41,7 +41,7 @@ the ``WorldGeneratorModifier`` interface:
         }
 
         @Override
-        public void modifyWorldGenerator(WorldCreationSettings world, DataContainer settings, WorldGenerator worldGenerator) {
+        public void modifyWorldGenerator(WorldProperties world, DataContainer settings, WorldGenerator worldGenerator) {
 
         }
 
@@ -56,9 +56,9 @@ The third overridden method is where you make your changes to the world generato
 the implementation when it is creating the world generator for a world which has specified that your
 ``WorldGeneratorModifier`` should be applied.
 
-The :javadoc:`WorldCreationSettings` and a :javadoc:`DataContainer` of additional properties for the world are passed
-to this method in order to give context for your changes. For instance, you can use the ``WorldCreationSettings`` to
-only apply your generator changes to nether worlds.
+The :javadoc:`WorldProperties` and a :javadoc:`DataContainer` of additional properties for the world are passed
+to this method in order to give context for your changes. For instance, you can use the ``WorldProperties`` to only
+apply your generator changes to nether worlds.
 
 Registering a WorldGeneratorModifier
 ====================================

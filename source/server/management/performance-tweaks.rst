@@ -37,6 +37,36 @@ servers performance, especially with high entity and player counts.
             monster=32
         }
 
+Cache Tameable Owners
+=====================
+
+This setting will cache tameable entities owners' UUID to save constant lookups from the data watcher.
+
+.. code-block:: none
+
+  optimizations {
+      # Caches tameable entities owners to avoid constant lookups against data watchers. If mods cause issue, disable.
+      cache-tameable-owners=true
+      }
+
+Drops Pre Merge
+===============
+
+This setting will pre-process and potentially merge item drops to avoid spawning extra entities that are then merged
+post-spawning.
+
+.. code-block:: none
+
+  optimizations {
+      # If enabled, block item drops are pre-processed to avoid 
+      # having to spawn extra entities that will be merged post spawning.
+      # Usually, Sponge is smart enough to determine when to attempt an item pre-merge
+      # and when not to, however, in certain cases, some mods rely on items not being
+      # pre-merged and actually spawned, in which case, the items will flow right through
+      # without being merged.
+      drops-pre-merge=true
+      }
+
 Lighting Patch to Ignore Unloaded Chunks
 ========================================
 
@@ -65,21 +95,21 @@ amount of memory for caching purposes. If you run out of memory, try to disable 
         chunk-map-caching=true
         }
 
-Reduce Hash Lookups on BlockState Queries
-=========================================
+Inline Block Position Checks
+============================
 
-Enabling this patch reduces hash lookups. This is achieved by removing a 2nd unnecessary lookup, which the server would
-only need when a blockstate becomes null. If you run into issues, disable this patch to revert the server to vanilla
-behaviour.
+This setting inlines the check for if a block position is valid in a world.
 
 .. code-block:: none
 
-  optimizations {
-        # A simple patch to reduce a few sanity checks for the sake of speed when
-        # performing block state operations
-        fast-blockstate-lookup=true
+  optimizations{
+        # Inlines a simple check for whether a BlockPosition is valid
+        # in a world. By patching the check, the JVM can optimize the
+        # method further while reducing the number of operations performed
+        # for such a simple check. This may however break mods that alter
+        # world heights and can thus be disabled in those cases.
+        inline-block-position-checks=true
         }
-
 
 Auto-Saving Interval Adjustment
 ===============================
