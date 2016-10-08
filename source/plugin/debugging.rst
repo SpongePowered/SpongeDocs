@@ -25,9 +25,13 @@ In IntelliJ, every project has its own workspace(s). To make your project visibl
 it needs to be a *Module*. Assuming you already created your project as described in
 :doc:`workspace/idea`, import it using the following steps.
 
-* Open the **Sponge(Vanilla)** project.
+* Open the ``SpongeVanilla``/``SpongeForge`` project.
 * Click ``File``, followed by ``New``, then ``Module from Existing Sources...``.
-* Navigate to the directory of your plugin project and select its ``.iml`` file (e.g. ``MyPlugin.iml``)
+* Navigate to the directory of your plugin project.
+
+  * If you're using Gradle, select the ``build.gradle`` file, in the next dialog check ``Use auto-import`` and confirm.
+  * Otherwise, just select the whole directory and click ``Finish``.
+
 * Click ``Finish``.
 
 .. tip::
@@ -39,7 +43,7 @@ Eclipse
 ~~~~~~~
 
 Just create your project as described here: :doc:`workspace/eclipse`. As long as it is in the same workspace
-as your **Sponge(Vanilla)** project, it will be visible.
+as your ``SpongeVanilla``/``SpongeForge`` project, it will be visible.
 
 Adding Plugin to Sponge classpath
 =================================
@@ -63,19 +67,12 @@ IntelliJ IDEA
   * Click ``File``, followed by ``Project Structure...``.
   * OR, click the ``Project Structure`` icon, in the upper right-hand corner of the IDE, next to the ``Search`` icon.
 
-* Click ``Modules``. Make sure Sponge / SpongeVanilla (depending on what you chose) is selected in the middle column
-* On the right column, select the ``Dependencies`` tab
-* Click the Green ``+`` symbol (``Add``) on the far right, and select ``Module Dependency``
-* Select your Module (Plugin).
-* Do NOT check the module, after it is added to the list.
-
-If you are using Gradle to build your plugin:
-
-* Open the Gradle Pane on the right side of the IDE window.
-* Click the Green ``+`` Symbol under ``Gradle Projects``.
-* Navigate to the your plugin's folder on the file system.
-* Double click the build.gradle file.
-* Click the Blue refresh icon (two arrows in a circle) to load your plugin's dependencies into the workspace.
+* Click ``Modules``. Expand the ``SpongeForge`` or ``SpongeVanilla`` group (depending on what you chose).
+* Make sure ``SpongeForge_main`` or ``SpongeVanilla_main`` is selected.
+* On the right column, select the ``Dependencies`` tab.
+* Click the ``+`` symbol (``Add``) on the bottom of the column, and select ``Module Dependency``.
+* Select ``yourplugin_main``.
+* Do NOT check the ``Export`` option on the module, after it is added to the list.
 
 Eclipse
 ~~~~~~~
