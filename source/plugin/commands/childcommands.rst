@@ -44,6 +44,8 @@ The first alias supplied is the primary one and will appear in the usage message
 
 .. code-block:: java
 
+    import org.spongepowered.api.Sponge;
+
     CommandSpec mailCommandSpec = CommandSpec.builder()
         .permission("myplugin.mail")
         .description(Text.of("Send and receive mails"))
@@ -51,7 +53,7 @@ The first alias supplied is the primary one and will appear in the usage message
         .child(sendCmd, "send", "s", "write")
         .build();
 
-    game.getCommandManager().register(plugin, mailCommandSpec, "mail", "email");
+    Sponge.getCommandManager().register(plugin, mailCommandSpec, "mail", "email");
 
 .. note::
 

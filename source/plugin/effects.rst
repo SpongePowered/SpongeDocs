@@ -30,7 +30,7 @@ With any given ``Viewer``, we can simply play a sound at a location:
     
     import com.flowpowered.math.vector.Vector3d;
     
-    viewer.playSound(SoundTypes.CREEPER_HISS, new Vector3d(1, 65, 1), 1);
+    viewer.playSound(SoundTypes.ENTITY_CREEPER_PRIMED, new Vector3d(1, 65, 1), 1);
 
 Now let's break this down. First, we have the :javadoc:`SoundType` being played. This is simply the sound that will be
 played. Next we have a ``Vector3d`` position. This position can be constructed, or it can be retrieved from a
@@ -47,7 +47,7 @@ also use a :javadoc:`SoundCategory` to specify what sound category we are playin
     import org.spongepowered.api.effect.sound.PitchModulation;
     import org.spongepowered.api.effect.sound.SoundCategories;
     
-    viewer.playSound(SoundTypes.CREEPER_HISS, SoundCategories.HOSTILE,
+    viewer.playSound(SoundTypes.ENTITY_CREEPER_PRIMED, SoundCategories.HOSTILE,
         new Vector3d(1, 65, 1), 1, PitchModulation.AFLAT0);
 
 If a ``SoundCategory`` isn't specified when playing a sound, :javadoc:`SoundCategories#MASTER` will be used.
