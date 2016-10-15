@@ -16,7 +16,7 @@ dependency to your project:
     }
 
     dependencies {
-        compile 'org.spongepowered:spongeapi:4.1.0'
+        compile 'org.spongepowered:spongeapi:5.0.0'
     }
 
 However, for further Gradle integration with :doc:`/plugin/plugin-meta`, we're providing an additional **Gradle
@@ -49,7 +49,7 @@ you have chosen before.**
     description = 'An example plugin'
 
     dependencies {
-        compile 'org.spongepowered:spongeapi:4.1.0'
+        compile 'org.spongepowered:spongeapi:5.0.0'
     }
 
 These few lines handle most settings you would normally do manually:
