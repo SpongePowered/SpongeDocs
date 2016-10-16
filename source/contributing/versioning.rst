@@ -77,20 +77,20 @@ Core Branch
 ~~~~~~~~~~~
 
 The core branch for the SpongeDocs is ``master``. Each new commit to ``master`` triggers a rebuild of the `docs website
-<https://docs.spongepowered.org/>`_. Commits to ``master`` are generally only made when a feature branch is merged or
-a small fix not requiring review is made by SpongeDocs Staff.
+<https://docs.spongepowered.org/>`_. Commits to ``master`` are generally made to document the most current SpongeAPI
+release or to fix minor mistakes on the Docs.
 
 Feature Branches
 ~~~~~~~~~~~~~~~~
 
-Whenever a new feature is described, older texts are updated or reworded or the documents are restructured it is done
+Whenever a new feature is described, older texts are updated or reworded or the documents are restructured, it is done
 in a ``feature/foo`` or ``fix/bar`` branch. Those branches will then be reviewed and, once they are deemed complete,
 may be merged.
 
 A feature branch may only be merged into master if the changes / additions made in it are correct regarding the
-**SpongeAPI release currently targeted by the SpongeDocs**. Any feature branches that describe features not yet
-included in a release stay unmerged until the corresponding API version is released and becomes the new targeted
-version for the SpongeDocs.
+**SpongeAPI release currently targeted by the SpongeDocs**. Any feature branches that describe features not yet included
+in a release stay unmerged until the corresponding API version is released and becomes the new targeted version for the
+SpongeDocs. However the Docs team might collect additions for a specific version on a single branch.
 
 .. image:: /images/contributing/versioning-release-branch.svg
     :alt: release branch example
@@ -98,8 +98,7 @@ version for the SpongeDocs.
 Release Branches
 ~~~~~~~~~~~~~~~~
 
-If two or more feature branches are waiting on the release of their corresponding API version, they will be accumulated
-in a ``release/x.y.z`` branch before being merged into master so that any conflics may be resolved beforehand.
-
-.. image:: /images/contributing/versioning-future-release-branch.svg
-    :alt: future release branch example
+SpongeDocs uses ``release/x.y.z`` branches to publish Docs for older API versions like API ``3.1.0``. Older API releases
+are available on their respective branches. Whenever a new API version is released, the Docs Staff will create a new
+``release/x.y.z`` branch and bump master to the new API version afterwards. A commit to a ``release`` branch also
+triggers a rebuild of the older Docs release, just like on the core branch.
