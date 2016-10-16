@@ -20,6 +20,10 @@ order. For example, plugin A containing "[required-]after:B" will get each event
 the given state. Additionally, lifecycle states are global. This means that all plugins visible to each other must be
 transitioned through all states at once.
 
+.. warning::
+    The Sponge ``Server`` object is not always available. Availability can be checked using the method
+    ``Sponge.isServerAvailable()`` or ``Game.isServerAvailable()``.
+
 State Events
 ============
 
