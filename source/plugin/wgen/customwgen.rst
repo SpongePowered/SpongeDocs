@@ -144,8 +144,14 @@ Custom populators can be used to add a great variety of custom features. To crea
 only create a class implementing the Populator interface and add it to the list of populators attached to a
 biome, or to a world generator if you want it applied globally.
 
-The key thing to remember when creating a populator is that the area affected by the populator is a 16x16 area
-offset by 8 in both the x and z directions.
+Your custom populator will be passed an ``Extent`` which is a view onto the world covering the area that you
+should be applying your populator. It is advised that you do not make any assumptions as to the expected size
+or position of this extent, as it may be larger or smaller for operations such as regenerating a chunk.
+
+.. note::
+
+  To allow your populator to overlap chunk boundaries your populator is allowed to extend up to 8 blocks outside
+  of the boundaries of the extent.
 
 Creating Custom Biomes
 ======================
