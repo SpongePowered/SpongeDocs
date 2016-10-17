@@ -16,11 +16,11 @@ sphinx-intl update -p build/locale -l en -d locale-src 1>/dev/null
 
 if [[ $BRANCHNAME = master ]]; then
      crowdin-cli upload sources
-     travis_wait crowdin-cli download
+     crowdin-cli download
 
 else
      crowdin-cli upload sources -b $BRANCHNAME
-     travis_wait crowdin-cli download -b $BRANCHNAME
+     crowdin-cli download -b $BRANCHNAME
 fi
 
 # *.po -> *.mo in  /locale/lang_code/
