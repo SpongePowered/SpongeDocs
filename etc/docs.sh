@@ -13,15 +13,10 @@ sphinx-intl update -p build/locale -l en -d locale-src 1>/dev/null
 
 # upload sources to the corresponding Crowdin branch
 # if master, then upload to root; else upload to $branchname
+# this is done in travis-fix.sh to avoid travis timing out.
+# !!! using travis_wait instead didn't work out !!!
 
-if [[ $BRANCHNAME = master ]]; then
-     crowdin-cli upload sources
-     crowdin-cli download
-
-else
-     crowdin-cli upload sources -b $BRANCHNAME
-     crowdin-cli download -b $BRANCHNAME
-fi
+./etc/travis-fix.sh
 
 # *.po -> *.mo in  /locale/lang_code/
 sphinx-intl build -d locale/ 1>/dev/null
