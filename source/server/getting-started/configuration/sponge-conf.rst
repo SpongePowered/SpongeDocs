@@ -254,10 +254,10 @@ was generated using SpongeForge build 1399, SpongeAPI version 4.1:
             chunk-gc-load-threshold=0
             # The tick interval used to cleanup all inactive chunks in a world. 
             # Set to 0 to disable which restores vanilla handling. (Default: 1)
-            chunk-gc-tick-interval=1
+            chunk-gc-tick-interval=600
             # The number of seconds to delay a chunk unload once marked inactive. (Default: 30)
             # Note: This gets reset if the chunk becomes active again.
-            chunk-unload-delay=30
+            chunk-unload-delay=15
             # If enabled, any request for a chunk not currently loaded will be denied (exceptions apply for things like world gen and player movement). 
             # Note: As this is an experimental setting for performance gain, if you encounter any issues then we recommend disabling it.
             deny-chunk-requests=true
