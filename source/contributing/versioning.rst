@@ -41,7 +41,7 @@ readily.
 Stable Branches
 ~~~~~~~~~~~~~~~~
 
-Stable branches represent a much more stable platform which mods and server implementations can be built upon. There
+Stable branches represent a much more stable platform which plugins and server implementations can be built upon. There
 will be no breakages to API, only non-breaking additions. There is a branch named after each major API release, which
 contains the latest API/implementation for that release including any minor or patch releases.
 
