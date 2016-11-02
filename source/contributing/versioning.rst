@@ -39,7 +39,7 @@ tested by people in the community that want the very latest, and it means that w
 readily.
 
 Stable Branches
-~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
 
 Stable branches represent a much more stable platform which plugins and server implementations can be built upon. There
 will be no breakages to API, only non-breaking additions. There is a branch named after each major API release, which
