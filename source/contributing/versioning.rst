@@ -26,44 +26,45 @@ SpongeCommon, SpongeForge, and SpongeVanilla repositories but not to the SpongeD
 SpongeAPI, SpongeCommon, SpongeForge and SpongeVanilla
 ======================================================
 
-The Core Branches
-~~~~~~~~~~~~~~~~~
+The Bleeding Branch
+~~~~~~~~~~~~~~~~~~~
 
-There are three branches which form the core of our repositories; they are ``master``, ``bleeding``, and
-``release``. The ``master`` and ``bleeding`` branches are for active development and the ``release`` branch tracks
-the commit as of the most recent release build.
+The core of our repositories is the ``bleeding`` branch. Almost all changes will be added to ``bleeding``, including
+new features, changes, and bugfixes. The version of ``bleeding`` will always be the next major release version
+appended with ``-SNAPSHOT`` (eg ``6.0.0-SNAPSHOT``) to denote that it is not yet a final build and subject to change.
 
-The key differences between the ``master`` and ``bleeding`` branches is that any ``feature`` branches which are
-breaking *must* be merged into the bleeding branch. This allows the ``master`` branch to only contain
-backwards-compatible changes allowing minor versions to be released based on it if necessary.
+The primary reason for having the ``bleeding`` branch is to have a testing ground for changes. Even experienced
+members of the Sponge team can accidentally cause a build to fail or miss a bug. The ``bleeding`` branch will be
+tested by people in the community that want the very latest, and it means that we can fix bugs that arise far more
+readily.
 
-Release Branches
+Stable Branches
 ~~~~~~~~~~~~~~~~
 
-Prior to releasing builds the content of the release should be first moved to a release prep branch.
-This branch allows dedicated testing to be performed for a release without forcing a code freeze on
-the development branches. Any bugfixes applied to the ``release`` branch are merged back to the ``master``
-branch when the release is finalized. Once a release is made the version of the ``master`` and ``bleeding``
-branches are both updated: the ``master`` branch to the next minor version and the ``bleeding`` branch to
-the next major version (assuming it was not already on the next major version).
+Stable branches represent a much more stable platform which mods and server implementations can be built upon. There
+will be no breakages to API, only non-breaking additions. There is a branch named after each major API release, which
+contains the latest API/implementation for that release including any minor or patch releases.
 
-Hotfix Branches
-~~~~~~~~~~~~~~~
+When the time comes to release a major version, a new ``stable-x`` branch will be created from ``bleeding``, where
+``x`` is the new major version - for example, ``stable-5``. ``bleeding`` will be appropriately updated to be the next
+major release as described above.
 
-If after a release is made, and a significant bug is found, a ``hotfix/foo`` branch can be created based on the
-last release version and a new release can be made from this hotfix branch with the patch version
-incremented by one. The hotfix branch can then be merged back into ``master`` for inclusion into future
-versions.
+Changes that have been in ``bleeding`` for a while with no issues will be cherry-picked to the stable branch for
+future release. Changes will be grouped into a new minor version, unless an immediate fix is preferred in which case a
+bugfix version will be created instead. When a version is released, the API repository will have a tag created
+pointing to that release's commit.
 
 Feature Branches
 ~~~~~~~~~~~~~~~~
 
-New features or changes will continue to be done in a ``feature/foo`` or ``fix/bar`` branch. When merging
-back into a development branch (``master`` or ``bleeding``) you should consider whether the changes are
-breaking or are strictly backwards-compatible. If the changes are purely new features, or
-binary-compatible bugfixes, then the feature branch can be merged into the ``master`` branch. If the
-changes include any breaking changes however, then the feature branch must be merged into the
-``bleeding`` branch to be included in the next major release.
+New features or changes should be created in a ``feature/foo`` or ``fix/bar`` branch. This should be based on the most
+recent commit to ``bleeding`` The only exeption to this is if the changes are incompatible with the breaking changes
+in ``bleeding``, in which case you should base against the relevant ``stable-x``. You should state in your pull
+request why your change cannot be included in ``bleeding`` - such as fixing a bug in a feature that was removed by
+Mojang in a later release.
+
+If the changes made are not breaking for a previous release, the Sponge team may also cherry-pick the changes to one
+or more ``stable`` brannches assuming that no problems arise after the change is merged into ``bleeding``.
 
 SpongeDocs
 ==========
@@ -87,9 +88,9 @@ in a ``feature/foo`` or ``fix/bar`` branch. Those branches will then be reviewed
 may be merged.
 
 A feature branch may only be merged into master if the changes / additions made in it are correct regarding the
-**SpongeAPI release currently targeted by the SpongeDocs**. Any feature branches that describe features not yet included
-in a release stay unmerged until the corresponding API version is released and becomes the new targeted version for the
-SpongeDocs.
+**SpongeAPI release currently targeted by the SpongeDocs**. Any feature branches that describe features not yet
+included in a release stay unmerged until the corresponding API version is released and becomes the new targeted
+version for the SpongeDocs.
 
 .. image:: /images/contributing/versioning-release-branch.svg
     :alt: release branch example
