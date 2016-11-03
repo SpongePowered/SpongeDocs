@@ -49,22 +49,22 @@ When the time comes to release a major version, a new ``stable-x`` branch will b
 ``x`` is the new major version - for example, ``stable-5``. ``bleeding`` will be appropriately updated to be the next
 major release as described above.
 
-Changes that have been in ``bleeding`` for a while with no issues will be cherry-picked to the stable branch for
-future release. Changes will be grouped into a new minor version, unless an immediate fix is preferred in which case a
-bugfix version will be created instead. When a version is released, the API repository will have a tag created
-pointing to that release's commit.
+Changes that have been in ``bleeding`` for a while, which have no known bugs, and that can be applied to a previous
+major release will be cherry-picked to the relevant ``stable`` branch for future release. Changes will be grouped into
+a new minor version, unless an immediate fix is preferred in which case a bugfix version will be created instead. When
+a version is released, the API repository will have a tag created pointing to that release's commit.
 
 Feature Branches
 ~~~~~~~~~~~~~~~~
 
 New features or changes should be created in a ``feature/foo`` or ``fix/bar`` branch. This should be based on the most
-recent commit to ``bleeding`` The only exeption to this is if the changes are incompatible with the breaking changes
+recent commit to ``bleeding``. The only exeption to this is if the changes are incompatible with the breaking changes
 in ``bleeding``, in which case you should base against the relevant ``stable-x``. You should state in your pull
 request why your change cannot be included in ``bleeding`` - such as fixing a bug in a feature that was removed by
 Mojang in a later release.
 
 If the changes made are not breaking for a previous release, the Sponge team may also cherry-pick the changes to one
-or more ``stable`` brannches assuming that no problems arise after the change is merged into ``bleeding``.
+or more ``stable`` branches assuming that no problems arise after the change is merged into ``bleeding``.
 
 SpongeDocs
 ==========
