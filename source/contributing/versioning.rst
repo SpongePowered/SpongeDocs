@@ -58,7 +58,7 @@ Feature Branches
 ~~~~~~~~~~~~~~~~
 
 New features or changes should be created in a ``feature/foo`` or ``fix/bar`` branch. This should be based on the most
-recent commit to ``bleeding``. The only exeption to this is if the changes are incompatible with the breaking changes
+recent commit to ``bleeding``. The only exception to this is if the changes are incompatible with the breaking changes
 in ``bleeding``, in which case you should base against the relevant ``stable-x``. You should state in your pull
 request why your change cannot be included in ``bleeding`` - such as fixing a bug in a feature that was removed by
 Mojang in a later release.
