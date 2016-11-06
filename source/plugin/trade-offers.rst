@@ -79,11 +79,16 @@ that villager.
 This ``TradeOfferGenerator`` will randomly generate ``TradeOffers`` that will 
 
 * buy 5-8 ``DIRT`` 
-* sell  ``GRASS``
+* sell 5 ``GRASS``
 * has 2-4 remaining initial uses 
 * 5 max uses
 
 The chance that the generated ``TradeOffer`` will grant experience is 50%.
+
+.. note::
+
+    You can use ``ItemStackGenerators`` to dynamically apply enchantments or other custom data to the buying and
+    selling items.
 
 VillagerRegistry
 ================
