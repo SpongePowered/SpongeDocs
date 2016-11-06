@@ -98,8 +98,7 @@ The ``VillagerRegistry`` can be obtained from the ``GameRegistry``. It will be u
 
 .. code-block:: java
 
-    GameRegistry registry = this.game.getRegistry();
-    VillagerRegistry villagerRegistry = registry.getVillagerRegistry();
+    VillagerRegistry villagerRegistry = this.game.getRegistry().getVillagerRegistry();
     List<TradeOfferListMutator> generators = new ArrayList<>(villagerRegistry.getMutatorsForCareer(Careers.FARMER, 1));
     generators.addAll(additionalFarmerLevel1TradeOffers());
     villagerRegistry.setMutators(Careers.FARMER, 1, generators);
