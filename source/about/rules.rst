@@ -50,9 +50,9 @@ list of do's and don'ts. This stuff should all be common sense.
   *allow* offering a bounty in an *original post* in the **Devs Wanted** area, and developers may seek commissioned work
   in the **Devs Available** category. Any further discussion of payment in these (or any other) threads is prohibited.
 
-* If it comes to our attention that a plugin hosted by Sponge is being used as a promotion as a for-sale "lite" version,
-  we reserve the right to remove the plugin listing. What constitutes as a for-sale "lite" version will be decided at the
-  discretion of Sponge Staff.
+* If it comes to our attention that a "lite" version plugin hosted by Sponge is being used as a promotion as a for-sale
+  "premium" version, we reserve the right to remove the plugin listing. What constitutes a "lite" or "premium" version
+  will be decided at the discretion of Sponge Staff.
 
 * Please don't include *Sponge* in your plugin name. We reserve the use of *Sponge* for official SpongePowered works.
   There are two exceptions: You may append "for Sponge" to the title if your plugin also has versions for other APIs,
