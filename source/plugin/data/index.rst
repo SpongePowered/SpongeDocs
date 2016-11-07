@@ -24,7 +24,8 @@ specific values is no less straightforward.
 
 .. warning::
 
-    As of writing, the Data API is not yet fully implemented. Refer to the `Implementation Tracker
+    As of writing, a few parts of the Data API are not implemented. If you are trying to access an API and are receiving
+    an empty ``Optional`` when one is not expected, refer to the `Implementation Tracker
     <https://github.com/SpongePowered/SpongeCommon/issues/8>`_, ask in the ``#spongedev`` IRC channel or on the
     `Forums <https://forums.spongepowered.org>`_ to find out if the data you need to work with is available yet.
 
@@ -85,6 +86,7 @@ Contents
     :maxdepth: 2
     :titlesonly:
 
+    custom/index
     keys
     datamanipulators
     transactions

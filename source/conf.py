@@ -273,7 +273,9 @@ gettext_compact = False     #optional.
 
 javadoc_links = {
     'https://jd.spongepowered.org/%s/' % release: ['org.spongepowered.api'],
-    'http://zml2008.github.io/configurate/apidocs/': ['ninja.leaping.configurate']
+    'http://zml2008.github.io/configurate/apidocs/': ['ninja.leaping.configurate'],
+    'https://docs.oracle.com/javase/8/docs/api/': ['java'],
+    'https://google.github.io/guava/releases/17.0/api/docs/': ['com.google.common']
 }
 
 # Set to true to enable sphinx-JDLinker debug dump.
