@@ -205,7 +205,7 @@ just use
 .. code-block:: java
 
     getOptionalString()
-          .map(s -> s.toLowerCase)
+          .map(s -> s.toLowerCase())
           .ifPresent(myPlugin::doSomethingWithString);
 
 .. tip::
