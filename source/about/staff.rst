@@ -100,6 +100,10 @@ The **Systems Maintainers** ensure the efficient performance of Sponge's servers
 +===================================+====================================+
 | GenPage                           | Systems Management                 |
 +-----------------------------------+------------------------------------+
+| progwml6                          | Systems Management                 |
+|                                   |                                    |
+|                                   | Web Development                    |
++-----------------------------------+------------------------------------+
 
 
 Web Developers
@@ -111,8 +115,6 @@ Our **Web Developers** maintain, update and integrate the Sponge website.
 | Name                              | Role                               |
 +===================================+====================================+
 | jamierocks                        | Web Development                    |
-+-----------------------------------+------------------------------------+
-| progwml6                          | Web Development                    |
 +-----------------------------------+------------------------------------+
 
 
@@ -127,6 +129,8 @@ The **SpongeDocs Editors** write, edit, and maintain articles for Sponge's offic
 | 12AwsomeMan34                     | Editor                             |
 |                                   |                                    |
 |                                   | Moderator                          |
++-----------------------------------+------------------------------------+
+| ST-DDT                            | Editor                             |
 +-----------------------------------+------------------------------------+
 | ZephireNZ                         | Editor                             |
 +-----------------------------------+------------------------------------+
