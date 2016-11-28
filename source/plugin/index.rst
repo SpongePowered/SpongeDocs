@@ -60,5 +60,4 @@ Contents
     tab-lists
     plugin-meta
     ray-tracing
-    bukkit-sponge-compare
     tutorials
