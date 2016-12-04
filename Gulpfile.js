@@ -1,7 +1,7 @@
-var gulp = require('gulp'),
-    shell = require('gulp-shell'),
+var gulp      = require('gulp'),
+    shell     = require('gulp-shell'),
     webserver = require('gulp-webserver'),
-    del = require('del');
+    del       = require('del');
 
 var target = 'dirhtml';
 
@@ -25,7 +25,7 @@ gulp.task('webserver', ['sphinx'], function () {
 });
 
 gulp.task('watch', function () {
-    gulp.watch(['source/**/*'], ['sphinx']);
+    gulp.watch('./source/**/*', ['sphinx']);
 });
 
 gulp.task('default', ['clean', 'sphinx', 'webserver', 'watch']);
