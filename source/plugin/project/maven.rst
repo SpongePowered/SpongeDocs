@@ -57,7 +57,7 @@ required properties, but optional properties must be specified on the command li
 
 .. code-block:: bash
 
-    $ mvn archetype:generate -DarchetypeArtifactId=sponge-plugin-archetype -DarchetypeGroupId=org.spongepowered -DarchetypeRepository=http://repo.spongepowered.org/maven -DarchetypeVersion=1.1 -DgithubProject=waylon531/spongeparty
+    $ mvn archetype:generate -DarchetypeArtifactId=sponge-plugin-archetype -DarchetypeGroupId=org.spongepowered -DarchetypeRepository=http://repo.spongepowered.org/maven -DarchetypeVersion=1.2 -DgithubProject=waylon531/spongeparty
 
 The first four arguments specify where maven will find the archetype and which version to use. The
 ``-DgithubProject=waylon531/spongeparty`` parameter is an optional property for the generated project and can be left
