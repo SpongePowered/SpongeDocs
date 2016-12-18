@@ -2,7 +2,18 @@
 Trade-Offers
 ============
 
-This topic covers the ingame ``TradeOffers`` offered by ``Villagers``/``Merchants``.
+.. javadoc-import::
+    org.spongepowered.api.GameRegistry
+    org.spongepowered.api.data.manipulator.mutable.entity.TradeOfferData
+    org.spongepowered.api.entity.living.Villager
+    org.spongepowered.api.item.inventory.ItemStackSnapshot
+    org.spongepowered.api.item.merchant.Merchant
+    org.spongepowered.api.item.merchant.TradeOffer
+    org.spongepowered.api.item.merchant.TradeOfferGenerator
+    org.spongepowered.api.item.merchant.TradeOfferListMutator
+    org.spongepowered.api.item.merchant.VillagerRegistry
+
+This topic covers the ingame :javadoc:`TradeOffer`\s offered by :javadoc:`Villager`\s/:javadoc:`Merchant`\s.
 
 Merchant
 ========
@@ -10,21 +21,21 @@ Merchant
 A ``Merchant`` is a container for ``TradeOffers``. Its most common variant is the ``Villager``.
 The ``Merchant`` interface can be used to open trading windows.
 
-``TradeOffers`` can be added to and removed from ``Merchants`` using ``TradeOfferData``.
+``TradeOffers`` can be added to and removed from ``Merchants`` using :javadoc:`TradeOfferData`.
 
 TradeOffer
 ==========
 
 A trade offer consists of
 
-* an primary/first buying ``ItemStackSnapshot``
+* an primary/first buying :javadoc:`ItemStackSnapshot`
 * an optional secondary buying ``ItemStackSnapshot``
 * a selling ``ItemStackSnapshot``
 * already used uses
 * maximal available uses
 * a flag to indicate whether experience orbs are spawned on trade
 
-``TradeOffers`` can be created using a  ``Builder`` or a ``TradeOfferGenerator``.
+``TradeOffers`` can be created using a  ``Builder`` or a :javadoc:`TradeOfferGenerator`.
 
 TradeOfferBuilder
 ~~~~~~~~~~~~~~~~~
@@ -48,10 +59,10 @@ block items. This trade offer has four initial uses, after that the ``Merchant``
 TradeOfferListMutator
 ~~~~~~~~~~~~~~~~~~~~~
 
-A ``TradeOfferListMutator`` is an interface that is invoked during ``Villager`` level ups.
+A :javadoc:`TradeOfferListMutator` is an interface that is invoked during ``Villager`` level ups.
 It can be used to replace existing ``TradeOffers`` (ex higher tier) and add new ``TradeOffers``.
 Its simplist and only API provided variant is the ``TradeOfferGenerator``.
-The different ``TradeOfferListMutators`` for each level and ``Career`` can be configured in the ``VillagerRegistry``.
+The different ``TradeOfferListMutators`` for each level and ``Career`` can be configured in the :javadoc:`VillagerRegistry`.
 
 .. note::
 
@@ -93,7 +104,7 @@ The chance that the generated ``TradeOffer`` will grant experience is 50%.
 VillagerRegistry
 ================
 
-The ``VillagerRegistry`` can be obtained from the ``GameRegistry``. It will be used to configure the
+The ``VillagerRegistry`` can be obtained from the :javadoc:`GameRegistry`. It will be used to configure the
 ``TradeOfferListMutator`` that will be applied on a ``Villager``'s level-up .
 
 .. code-block:: java
