@@ -3,9 +3,13 @@ Best Practices
 ==============
 
 .. javadoc-import::
+    org.spongepowered.api.block.tileentity.TileEntity
     org.spongepowered.api.command.CommandSource
+    org.spongepowered.api.data.DataHolder
+    org.spongepowered.api.entity.Entity
     org.spongepowered.api.entity.living.player.Player
     org.spongepowered.api.service.permission.Subject
+    org.spongepowered.api.world.World
 
 There are many ways to create a plugin, and many pitfalls for an unwary developer. Here we describe the plugin
 development practices that will make the most of the Sponge API, setting sensible boundaries for the benefit of
@@ -79,12 +83,13 @@ Storing References
 
 Some instances such as 
 
-* ``Block``
-* ``CommandSource``
-* ``Entity``
-* ``Player``
-* ``Subject``
-* ``World``
+* :javadoc:`DataHolder`
+* :javadoc:`TileEntity`
+* :javadoc:`CommandSource`
+* :javadoc:`Entity`
+* :javadoc:`Player`
+* :javadoc:`Subject`
+* :javadoc:`World`
 * and containers that **MIGHT** contain any of the above elements, including
     * ``Collections``
     * ``Maps``
@@ -95,6 +100,8 @@ These are the main reasons for this:
 
 * The references prevent proper garbage collection
 * The instances might no longer be valid
+
+This can easily be avoided by using the corresponding snapshots or saving the UUID of given the instances.
 
 
 IO on the main thread
