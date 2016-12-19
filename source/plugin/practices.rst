@@ -2,6 +2,11 @@
 Best Practices
 ==============
 
+.. javadoc-import::
+    org.spongepowered.api.command.CommandSource
+    org.spongepowered.api.entity.living.player.Player
+    org.spongepowered.api.service.permission.Subject
+
 There are many ways to create a plugin, and many pitfalls for an unwary developer. Here we describe the plugin
 development practices that will make the most of the Sponge API, setting sensible boundaries for the benefit of
 compatibility. This information may change and expand as the Sponge project matures.
@@ -61,3 +66,55 @@ Plugin Interoperability
 =======================
 
 An explanation of how to communicate with other plugins, *TBA*.
+
+
+Bad Practices
+=============
+
+These should practices should be avoided. As they lead to memory leaks (``OutOfMemoryError``), lags or inconsistencies.
+
+
+Storing References
+~~~~~~~~~~~~~~~~~~
+
+Some instances such as 
+
+* ``Block``
+* ``CommandSource``
+* ``Entity``
+* ``Player``
+* ``Subject``
+* ``World``
+* and containers that **MIGHT** contain any of the above elements, including
+    * ``Collections``
+    * ``Maps``
+
+should **NEVER** be stored or be cached in plugins.
+
+These are the main reasons for this:
+
+* The references prevent proper garbage collection
+* The instances might no longer be valid
+
+
+IO on the main thread
+~~~~~~~~~~~~~~~~~~~~~
+
+Executing some IO operations such as loading a config/data file or checking for updates/connecting to a website takes
+much time and greatly affects the TPS on the server. Such tasks should be either done in their own threads or using the
+inbuilt scheduller's async feature.
+
+.. code-block:: text
+
+    this.game.getScheduler().createAsyncExecutor(this).execute(this::checkForUpdates);
+
+For more details refer to the :doc:`scheduler` docs.
+
+
+Accessing game objects outside the main thread
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Accessing game objects outside of the main thread can lead to crashes, inconsistencies and various other problems and
+should be avoided. If you have a lengthy operation on a different thread use the :doc:`scheduler` to execute the apply
+part on the main thread. If you want to use an game object in a different thread use a snapshot of the instance or
+detached data container.
