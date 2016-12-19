@@ -1,5 +1,5 @@
 sphinx-intl==0.9.9
-sphinx==1.4.9
+sphinx==1.5.1
 colorama==0.3.7
 pystache==0.5.4
 requests==2.12.4
