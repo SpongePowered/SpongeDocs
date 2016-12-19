@@ -101,7 +101,8 @@ These are the main reasons for this:
 * The references prevent proper garbage collection
 * The instances might no longer be valid
 
-This can easily be avoided by using the corresponding snapshots or saving the UUID of given the instances.
+This can easily be avoided by using the corresponding snapshots or saving the UUID of given the instances and request a
+live instance when you need it.
 
 
 IO on the main thread
@@ -123,5 +124,5 @@ Accessing game objects outside the main thread
 
 Accessing game objects outside of the main thread can lead to crashes, inconsistencies and various other problems and
 should be avoided. If you have a lengthy operation on a different thread use the :doc:`scheduler` to execute the apply
-part on the main thread. If you want to use an game object in a different thread use a snapshot of the instance or
+part on the main thread. If you want to use an game object in a different thread use a snapshot of the instance or a
 detached data container.
