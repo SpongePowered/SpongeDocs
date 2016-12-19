@@ -44,6 +44,7 @@ Contents
     blocks/index
     entities/index
     items/index
+    trade-offers
     effects
     scheduler
     services
