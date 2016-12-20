@@ -119,6 +119,8 @@ inbuilt scheduler's async feature.
 
 For more details refer to the :doc:`scheduler` docs.
 
+If this is done wrong, you will see clients timing out or the server's watchdog might kill the server.
+
 
 Accessing game objects outside the main thread
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -127,3 +129,8 @@ Accessing game objects outside of the main thread can lead to crashes, inconsist
 should be avoided. If you have a lengthy operation on a different thread use the :doc:`scheduler` to execute the apply
 part on the main thread. If you want to use an game object in a different thread use a snapshot of the instance or a
 detached data container.
+
+.. warning::
+
+    If this is done wrong, you can get a ``ConcurrentModificationException`` with or without a server crash at best and
+    a corrupted player/world/server at worst.

@@ -173,6 +173,12 @@ In addition, there are a few other operations that are safe to do asynchronously
 * Independent network requests
 * Filesystem I/O (excluding files used by Sponge)
 
+.. warning::
+
+    Accessing game objects outside of the main thread can lead to crashes, inconsistencies and various other problems
+    and should be avoided. If this is done wrong, you can get a ``ConcurrentModificationException`` with or without a
+    server crash at best and a corrupted player/world/server at worst.
+
 Compatibility with other libraries
 ==================================
 
