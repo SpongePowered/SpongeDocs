@@ -75,7 +75,8 @@ An explanation of how to communicate with other plugins, *TBA*.
 Bad Practices
 =============
 
-These should practices should be avoided. As they lead to memory leaks (``OutOfMemoryError``), lags or inconsistencies.
+These should practices should be avoided, as they can lead to memory leaks (``OutOfMemoryError``), lag or
+inconsistencies.
 
 
 Storing References
@@ -94,23 +95,23 @@ Some instances such as
     * ``Collections``
     * ``Maps``
 
-should **NEVER** be stored or be cached in plugins.
+should **NEVER** be stored or cached in plugins.
 
 These are the main reasons for this:
 
 * The references prevent proper garbage collection
 * The instances might no longer be valid
 
-This can easily be avoided by using the corresponding snapshots or saving the UUID of given the instances and request a
-live instance when you need it.
+This can easily be avoided by using the corresponding snapshots or saving the UUID of the given instances and requesting
+a live instance when you need it.
 
 
 IO on the main thread
 ~~~~~~~~~~~~~~~~~~~~~
 
 Executing some IO operations such as loading a config/data file or checking for updates/connecting to a website takes
-much time and greatly affects the TPS on the server. Such tasks should be either done in their own threads or using the
-inbuilt scheduller's async feature.
+much time and greatly affects the TPS on the server. Such tasks should be done either in their own threads, or using the
+inbuilt scheduler's async feature.
 
 .. code-block:: text
 
