@@ -5,7 +5,8 @@
 
     <link rel="stylesheet" href="_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="_static/sponge.css" type="text/css" />
-    <link href='//fonts.googleapis.com/css?family=Roboto:400italic,700italic,700,400' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400italic,700italic,700,400|Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 
     <script src="_static/jquery.js"></script>
     <script>
@@ -30,35 +31,40 @@
   <body class="homepage">
     <div class="topbar">
       <div role="navigation" aria-label="related navigation">
-        <div class="menu-left">
-          <a href="https://docs.spongepowered.org">
-            <img src="_static/spongelogo.png" height="40px" style="vertical-align:middle"/>
-            <i class="icon-down-open-big lights-icon" style="vertical-align:middle"></i>
+        <div class="sp-logo-container sp-not-mobileview sp-mobileview">
+          <a class="sp-logo-link" data-auto-route="true" href="/">
+            <img height="40px" id="site-logo" class="logo-big" alt="" src="https://www.spongepowered.org/assets/img/icons/spongie-mark.svg">
+            <span id="sp-site-title">Sponge</span>
           </a>
-          <ul class="dropdown" id="ddleft">
-            <a href="https://www.spongepowered.org"><li><i class="icon-home lights-icon"></i> Homepage</li></a>
-            <a href="https://forums.spongepowered.org"><li><i class="icon-pencil lights-icon"></i> Forums</li></a>
-            <a href="https://github.com/SpongePowered"><li><i class="icon-code lights-icon"></i> Code</li></a>
-            <a href="https://docs.spongepowered.org"><li class="active"><i class="icon-book-open lights-icon"></i> SpongeDocs</li></a>
-            <a href="https://jd.spongepowered.org"><li><i class="icon-graduation-cap lights-icon"></i> JavaDocs</li></a>
-            <a href="https://forums.spongepowered.org/c/plugins/plugin-releases"><li><i class="icon-tools lights-icon"></i> Plugins</li></a>
-            <a href="https://forums.spongepowered.org/t/sponge-downloads/11448"><li><i class="icon-download lights-icon"></i> Get Sponge</li></a>
-          </ul>
+          <div class="sp-logo-bg"></div>
+          <div class="sp-logo-chevron"><i class="fa fa-fw fa-chevron-down"></i></div>
+          <div class="sp-logo-menu sp-skip-handler">
+            <ul class="sp-logo-dropdown" id="ddleft">
+              <a href="https://www.spongepowered.org"><li><i class="fa-fw fa fa-home"></i>Homepage</li></a>
+              <a href="https://forums.spongepowered.org"><li><i class="fa-fw fa fa-comments"></i>Forums</li></a>
+              <a href="https://github.com/SpongePowered"><li><i class="fa-fw fa fa-code"></i>Code</li></a>
+              <a class="sp-forums-home" href="https://docs.spongepowered.org"><li class="active"><i class="fa-fw fa fa-book"></i>Docs</li></a>
+              <a href="https://jd.spongepowered.org"><li><i class="fa-fw fa fa-graduation-cap"></i>Javadocs</li></a>
+              <a href="https://forums.spongepowered.org/c/plugins/plugin-releases"><li><i class="fa-fw fa fa-plug"></i>Plugins</li></a>
+              <a href="https://www.spongepowered.org/downloads"><li><i class="fa-fw fa fa-download"></i>Downloads</li></a>
+              <a href="https://www.spongepowered.org/chat"><li><i class="fa-fw fa fa-comment"></i>Chat</li></a>
+            </ul>
+          </div>
         </div>
         <div class="menu-right">
-          <div><i class="icon-language lights-icon"></i></div>
+          <div><i class="fa fa-fw fa-globe"></i></div>
             <ul class="dropdown" id="ddlang">
               {|#langs|}
-              <li><a href="master/{|crowdin_code|}/" class="lang"><img src="http://d1ztvzf22lmr1j.cloudfront.net/images/flags/{|crowdin_code|}.png" alt="Flag for {|name|}"/></a></li>
+              <li><a href="master/{|crowdin_code|}/" class="lang"><img src="//d1ztvzf22lmr1j.cloudfront.net/images/flags/{|crowdin_code|}.png" alt="Flag for {|name|}"/></a></li>
               {|/langs|}
             </ul>
         </div>
         <div class="menu-right">
-          <div><i class="icon-tag lights-icon"></i><a>Version</a></div>
+          <div><i class="fa fa-fw fa-tag"></i><a>Version</a></div>
             <ul class="dropdown" id="ddvers">
-              <li><a href="master/en/"><i class="icon-tag lights-icon"></i> latest</a></li>
+              <li><a href="master/en/"><i class="fa fa-fw fa-tag"></i> latest</a></li>
               {[#vers]}
-              <li><a href="{[apiversion]}/en/"><i class="icon-tag lights-icon"></i> {[apiversion]}</a></li>
+              <li><a href="{[apiversion]}/en/"><i class="fa fa-fw fa-tag"></i> {[apiversion]}</a></li>
               {[/vers]}
             </ul>
         </div>
