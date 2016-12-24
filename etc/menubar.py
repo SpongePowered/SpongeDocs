@@ -12,21 +12,17 @@ with open('langs.json', 'r') as f:
 def get_lang(lang):
     return [l for l in langs_list if l['crowdin_code'] == lang][0]
 
-langs_args = sorted(sys.argv[1].split(',') + ['en_US'])
-used_langs = [get_lang(langs_mapper[lang]) for lang in langs_args]
 
-#get list of current deployed releases including 'master'
 def listdirs(folder):
     return [d for d in os.listdir(folder) if os.path.isdir(os.path.join(folder, d))]
 
-# get list of versions
-vers_list = (listdirs("deploy/"))
+langs_args = sorted(listdirs("locale/") + ['en_US'])
+used_langs = [get_lang(langs_mapper[lang]) for lang in langs_args]
+
+#get list of current deployed releases excluding 'master'
+vers_list = [os.path.basename(b) for b in os.getenv('BRANCHES').split(' ') if b != "master"]
 list.sort(vers_list, reverse=True)
-# remove unwanted dirs from list as we don't need them
-vers_list.remove("master")
-vers_list.remove(".git")
-vers_list.remove("_static")
-# result: verslist = ['2.1.0','3.0.0','master']
+# result: verslist = ['2.1.0','3.0.0']
 
 newlist = []
 # step 1: create a dictionary out of the list for every list item
@@ -37,7 +33,7 @@ for i in vers_list:
 # result: newlist = [{'apiversion': '3.0.0'},{'apiversion': '2.1.0'},{'apiversion': 'master'}]
 
 # get the current branch
-v = os.getenv('BRANCHNAME')
+v = os.getenv('VERSION')
 
 curverdict = {'currentversion': v}
 curverlist = []

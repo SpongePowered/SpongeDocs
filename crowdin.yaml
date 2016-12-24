@@ -1,7 +1,6 @@
 project_identifier: sponge-docs
-base_url: https://api.crowdin.com
+api_key_env: CROWDIN_API_KEY
 
 files:
-  -
-    source: '/locale-src/en/LC_MESSAGES/**/*.po'
+  - source: '/locale-src/en/LC_MESSAGES/**/*.po'
     translation: '/locale/%locale_with_underscore%/LC_MESSAGES/**/%original_file_name%'
