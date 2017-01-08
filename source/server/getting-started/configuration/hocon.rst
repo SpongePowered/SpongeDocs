@@ -16,7 +16,7 @@ Components
 
 **Example:**
 
-.. code-block:: json
+.. code-block:: none
 
       yellow-thing: "Sponge"
 

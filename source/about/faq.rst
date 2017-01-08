@@ -26,7 +26,7 @@ the server on too, besides that nothing is required. Learn more about choosing t
 Where do I get Sponge?
 ----------------------
 
-Sponge currently isn't finished, but there are development builds of SpongeForge and SpongeVanilla available:
+Beta development builds of SpongeForge and SpongeVanilla are available:
 :doc:`/downloads`
 
 What Sponge implementations are available?

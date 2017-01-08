@@ -44,6 +44,7 @@ Contents
     blocks/index
     entities/index
     items/index
+    trade-offers
     effects
     scheduler
     services
@@ -60,5 +61,4 @@ Contents
     tab-lists
     plugin-meta
     ray-tracing
-    bukkit-sponge-compare
     tutorials

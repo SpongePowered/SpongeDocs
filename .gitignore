@@ -134,3 +134,6 @@ src/
 
 # Any javadoc link dumps provided by sphinx-JDLinker.
 javadoc_dump.txt
+
+# OS Files
+.DS_Store

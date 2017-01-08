@@ -37,7 +37,7 @@ common functionality of mixins.
 Where Can I Download Sponge?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Neither SpongeForge nor SpongeVanilla is ready yet but development builds can be found at :doc:`/downloads`.
+Beta development builds of SpongeForge and SpongeVanilla can be found at :doc:`/downloads`.
 
 Who Is behind Sponge?
 ~~~~~~~~~~~~~~~~~~~~~

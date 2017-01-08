@@ -6,20 +6,14 @@ This section is a repository of links to instructional videos about sponge plugi
 developers. We hope these help guide you to great heights in sponge plugin development.
 
 
-IDEA
-====
+Intellij IDEA
+=============
 
-Sponge Developer Gabizou has prepared several instructional videos using Intellij IDEA.
+Long-time Sponge Contributor Sibomots has prepared a series of instructional videos using Intellij IDEA.
 
-* `Setting up a Sponge development workspace <https://www.youtube.com/watch?v=bvyzyvqopG0>`__
+* `Setting up SpongeForge with IntelliJ IDEA <https://www.youtube.com/playlist?list=PLGqUurDwlOGfmRM_UkAVR0xrvIi9B6BQN>`__
 
-* `Running the server from the workspace <https://www.youtube.com/watch?v=XYhqdvbwyiQ>`__
-
-* `Debugging and hot-swapping in IntelliJ <https://www.youtube.com/watch?v=DxDOUG0sEyk>`__
-
-
-More information and discussion on these three tutorials can be found on the related
-`Sponge Forum thread <https://forums.spongepowered.org/t/a-collection-of-how-to-videos-for-sponge-development/6992>`__.
+More information and discussion on these topics can be found on the Sponge Forums.
 
 
 We hope there are many more to come!
