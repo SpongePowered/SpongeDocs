@@ -10,8 +10,8 @@ directory in your server folder. Many of these properties can be also overridden
 using the config files in the subfolders of config/worlds.
 
 Below is a complete global.conf file with all possible nodes that may be present on a server. Note that certain
-sections will not be present immediately, and will be added to the file when the server encounters them. This config
-was generated using SpongeForge build 1399, SpongeAPI version 4.1:
+sections will not be filled immediately, and may optionally be added to the file when the server encounters them.
+This config was generated using SpongeForge build 2022 (with Forge 2202), SpongeAPI version 5.1:
 
 .. code-block:: none
 
@@ -25,6 +25,21 @@ was generated using SpongeForge build 1399, SpongeAPI version 4.1:
     # 
 
     sponge {
+        block-capturing {
+            # If enabled, newly discovered blocks will be added to this config with a default value.
+            auto-populate=false
+            # Per-mod block id mappings for controlling capturing behavior
+            mods {
+                extrautils2 {
+                    # Set to true to perform individual capturing (i.e. skip bulk capturing) for scheduled ticks for a block type
+                    block-tick-capturing {
+                        RedstoneClock=true
+                    }
+                    # Set to false if you want to ignore all specific rules for this mod
+                    enabled=true
+                }
+            }
+        }
         block-tracking {
             # Add block ids you wish to blacklist for player block placement tracking.
             block-blacklist=[]
@@ -50,10 +65,24 @@ was generated using SpongeForge build 1399, SpongeAPI version 4.1:
             # If this is not reported yet, please report to Sponge. If it has been
             # reported, you may disable this.
             verbose=false
+            # If true, the cause tracker will dump extra information about the current phaseswhen certain non-CauseTracker related exceptions occur. This is usually not necessary, as the information in the exception itself can normally be used to determine the cause of the issue
+            verbose-errors=false
         }
         commands {
             # A mapping from unqualified command alias to plugin id of the plugin that should handle a certain command
             aliases {}
+            # Patches the specified commands to respect the world of the sender instead of applying the changes on the all worlds.
+            multi-world-patches {
+                defaultgamemode=true
+                difficulty=true
+                gamerule=true
+                seed=true
+                setdefaultspawnpoint=true
+                time=true
+                toggledownfall=true
+                weather=true
+                worldborder=true
+            }
         }
         # This setting does nothing in the global config. In dimension/world configs, it allows the config to override config(s) that it inherits from
         config-enabled=false
@@ -118,6 +147,16 @@ was generated using SpongeForge build 1399, SpongeAPI version 4.1:
             max-entities-within-aabb=8
             # Per-mod overrides. Refer to the minecraft default mod for example.
             mods {
+                botania {
+                    blocks {}
+                    # Default max collisions used for all entities/blocks unless overidden.
+                    defaults {}
+                    # Set to false if you want mod to ignore entity collision rules.
+                    enabled=true
+                    entities {
+                        botaniaspark=-1
+                    }
+                }
                 minecraft {
                     blocks {
                         "detector_rail"=1
@@ -143,6 +182,15 @@ was generated using SpongeForge build 1399, SpongeAPI version 4.1:
             prevent-sign-command-exploit=true
         }
         general {
+            # The directory for Sponge plugin configurations, relative to the 
+            # execution root or specified as an absolute path.
+            # Note that the default: "${CANONICAL_GAME_DIR}/config"
+            # is going to use the "plugins" directory in the root game directory.
+            # If you wish for plugin configs to reside within a child of the configuration
+            # directory, change the value to, for example, "${CANONICAL_CONFIG_DIR}/sponge/plugins".
+            # Note: It is not recommended to set this to "${CANONICAL_CONFIG_DIR}/sponge", as there is
+            # a possibility that plugin configurations can conflict the Sponge core configurations.
+            config-dir="${CANONICAL_GAME_DIR}/config"
             # Disable warning messages to server admins
             disable-warnings=false
             # Additional directory to search for plugins, relative to the 
@@ -193,14 +241,18 @@ was generated using SpongeForge build 1399, SpongeAPI version 4.1:
             world-auto-save=false
         }
         modules {
+            block-capturing-control=true
             bungeecord=false
             entity-activation-range=true
             entity-collisions=true
             exploits=true
-            game-fixes=true
+            game-fixes=false
             optimizations=true
             # Use real (wall) time instead of ticks as much as possible
             realtime=false
+            # Controls block range and tick rate of tileentities.
+            # Use with caution as this can break intended functionality.
+            tileentity-activation=false
             timings=true
             tracking=true
         }
@@ -215,7 +267,7 @@ was generated using SpongeForge build 1399, SpongeAPI version 4.1:
             # and when not to, however, in certain cases, some mods rely on items not being
             # pre-merged and actually spawned, in which case, the items will flow right through
             # without being merged.
-            drops-pre-merge=true
+            drops-pre-merge=false
             # This prevents chunks being loaded for getting light values at specific block positions. May have side effects.
             ignore-unloaded-chunks-on-get-light=true
             # Inlines a simple check for whether a BlockPosition is valid
@@ -224,11 +276,39 @@ was generated using SpongeForge build 1399, SpongeAPI version 4.1:
             # for such a simple check. This may however break mods that alter
             # world heights and can thus be disabled in those cases.
             inline-block-position-checks=true
+            # Handles structures that are saved to disk. Certain structures can take up large amounts
+            # of disk space for very large maps and the data for these structures is only needed while the world
+            # around them is generating. Disabling saving of these structures can save disk space and time during
+            # saves if your world is already fully generated.
+            structure-saving {
+                # If enabled, newly discovered structures will be added to this config with a default value.
+                auto-populate=false
+                enabled=false
+                # Per-mod overrides. Refer to the minecraft default mod for example.
+                mods {
+                    minecraft {
+                        enabled=true
+                        structures {
+                            mineshaft=false
+                        }
+                    }
+                }
+            }
         }
         # Configuration options related to the Sql service, including connection aliases etc
         sql {
             # Aliases for SQL connections, in the format jdbc:protocol://[username[:password]@]host/database
             aliases {}
+        }
+        tileentity-activation {
+            # If enabled, newly discovered tileentities will be added to this config with default settings.
+            auto-populate=false
+            # Default activation block range used for all tileentities unless overidden.
+            default-block-range=64
+            # Default tick rate used for all tileentities unless overidden.
+            default-tick-rate=1
+            # Per-mod overrides. Refer to the minecraft default mod for example.
+            mods {}
         }
         timings {
             enabled=true
@@ -252,10 +332,10 @@ was generated using SpongeForge build 1399, SpongeAPI version 4.1:
             # Note: When triggered, the loaded chunk threshold will reset and start incrementing. 
             # Disabled by default.
             chunk-gc-load-threshold=0
-            # The tick interval used to cleanup all inactive chunks in a world. 
-            # Set to 0 to disable which restores vanilla handling. (Default: 1)
+            # The tick interval used to cleanup all inactive chunks that have leaked in a world. 
+            # Set to 0 to disable which restores vanilla handling. (Default: 600)
             chunk-gc-tick-interval=600
-            # The number of seconds to delay a chunk unload once marked inactive. (Default: 30)
+            # The number of seconds to delay a chunk unload once marked inactive. (Default: 15)
             # Note: This gets reset if the chunk becomes active again.
             chunk-unload-delay=15
             # If enabled, any request for a chunk not currently loaded will be denied (exceptions apply for things like world gen and player movement). 
@@ -270,11 +350,11 @@ was generated using SpongeForge build 1399, SpongeAPI version 4.1:
             # Finally, if set to 0 or less, the default batch size will be used.
             # For more information visit http://wiki.vg/Mojang_API
             gameprofile-lookup-batch-size=1
-            # The interval, in seconds, used by the GameProfileQueryTask to process queued gameprofile requests. (Default: 1)
+            # The interval, in seconds, used by the GameProfileQueryTask to process queued gameprofile requests. (Default: 4)
             # Note: This setting should be raised if you experience the following error:
             # "The client has sent too many requests within a certain amount of time".
             # Finally, if set to 0 or less, the default interval will be used.
-            gameprofile-lookup-task-interval=1
+            gameprofile-lookup-task-interval=4
             # Enable if you want the world to generate spawn the moment its loaded.
             generate-spawn-on-load=true
             # Vanilla water source behavior - is infinite
@@ -308,7 +388,7 @@ was generated using SpongeForge build 1399, SpongeAPI version 4.1:
             max-chunk-unloads-per-tick=100
             # Specifies the radius (in chunks) of where creatures will spawn. 
             # This value is capped to the current view distance setting in server.properties
-            mob-spawn-range=8
+            mob-spawn-range=4
             # A list of all detected portal agents used in this world. 
             # In order to override, change the target world name to any other valid world. 
             # Note: If world is not found, it will fallback to default.
