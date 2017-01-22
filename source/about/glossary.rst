@@ -22,7 +22,7 @@ Coremod
   code. http://www.minecraftforge.net/wiki/Core_Mod
 Crowdin
   A web-based translation system for documentation. SpongeDocs uses it to provide translated Docs in many languages.
-  https://translate.spongepowered.org/project/sponge-docs
+  https://crowdin.com/project/sponge-docs
 Developer
   Someone who programs code (Sponge, Plugins, Mods, ...).
 FLARD
