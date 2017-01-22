@@ -1,12 +1,10 @@
 {
-  "name": "Docs",
+  "name": "SpongeDocs",
   "version": "0.0.1",
   "private": true,
-  "dependencies": {},
   "devDependencies": {
     "del": "^2.2.2",
     "gulp": "^3.9.1",
-    "gulp-shell": "^0.5.2",
     "gulp-webserver": "^0.9.1"
   }
 }
