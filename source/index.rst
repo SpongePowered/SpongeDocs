@@ -8,7 +8,8 @@ Introduction
 Welcome to SpongeDocs, the official documentation for the open-source `Sponge <http://spongepowered.org>`__ project.
 
 The SpongeAPI is your all new plugin API for Minecraft. You can run it on a plain vanilla server (as SpongeVanilla) or
-on your fully modded MinecraftForge server (as SpongeForge). Grab your copy :doc:`here <downloads>`.
+on your fully modded MinecraftForge server (as SpongeForge). Grab your copy
+`here <https://spongepowered.org/downloads>`_.
 
 Not sure what you're looking for? Try our :doc:`about/index` section, which contains a short :doc:`about/introduction`,
 our :doc:`about/faq` and an article about :doc:`about/structure`.
@@ -18,7 +19,7 @@ based server.
 
 
 The Sponge project has several main components. Learn more about the project structure :doc:`here <about/structure>`
-or visit their repositories on GitHub: 
+or visit their repositories on GitHub:
 
 `SpongeForge <https://github.com/spongepowered/spongeforge>`_ |
 `SpongeVanilla <https://github.com/spongepowered/spongevanilla>`_ | `SpongeAPI <https://github.com/spongepowered/spongeapi>`_ |
@@ -28,7 +29,7 @@ or visit their repositories on GitHub:
 .. note::
 
     Sponge development is ongoing. Beta and Experimental builds of both SpongeForge and SpongeVanilla are currently
-    available for :doc:`downloads`.
+    available for `download <https://spongepowered.org/downloads>`_.
 
 Contents
 ========
@@ -100,7 +101,6 @@ goals.
     :titlesonly:
 
     about/index
-    downloads
 
 Acknowledgements
 ~~~~~~~~~~~~~~~~
@@ -108,8 +108,8 @@ Acknowledgements
 .. image:: /images/yklogo.png
 
 The SpongePowered team are grateful to *YourKit* for providing its full-featured Java Profiler free to open source
-projects. YourKit, LLC is the creator of `YourKit Java Profiler <https://www.yourkit.com/java/profiler/index.jsp>`__
-and `YourKit .NET Profiler <https://www.yourkit.com/.net/profiler/index.jsp>`__, innovative and intelligent tools
+projects. YourKit, LLC is the creator of `YourKit Java Profiler <https://www.yourkit.com/java/profiler/index.jsp>`_
+and `YourKit .NET Profiler <https://www.yourkit.com/.net/profiler/index.jsp>`_, innovative and intelligent tools
 for profiling Java and .NET applications.
 
 
@@ -121,11 +121,12 @@ Links
     :maxdepth: 2
     :titlesonly:
 
--  `Sponge Homepage <http://spongepowered.org>`__
--  `Sponge Forums <http://forums.spongepowered.org>`__
--  `SpongeAPI Issue Tracker <https://github.com/SpongePowered/SpongeAPI/issues?q=>`__
--  `SpongeAPI Javadocs <https://jd.spongepowered.org>`__
--  `Sponge Twitter <https://twitter.com/SpongePowered>`__
--  `Sponge Subreddit <https://reddit.com/r/SpongeProject>`__
--  `Sponge GitHub <https://github.com/SpongePowered>`__
--  `Sponge Patreon Donation Page <https://www.patreon.com/Sponge?ty=h>`__
+-  `Sponge Homepage <https://spongepowered.org>`_
+-  `Sponge Forums <https://forums.spongepowered.org>`_
+-  `Sponge Downloads <https://spongepowered.org/downloads>`_
+-  `SpongeAPI Issue Tracker <https://github.com/SpongePowered/SpongeAPI/issues?q=>`_
+-  `SpongeAPI Javadocs <https://jd.spongepowered.org>`_
+-  `Sponge Twitter <https://twitter.com/SpongePowered>`_
+-  `Sponge Subreddit <https://reddit.com/r/SpongeProject>`_
+-  `Sponge GitHub <https://github.com/SpongePowered>`_
+-  `Sponge Patreon Donation Page <https://www.patreon.com/Sponge?ty=h>`_

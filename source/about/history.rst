@@ -44,10 +44,12 @@ and Granite became SpongeVanilla, the official SpongeAPI implementation for Vani
 unification of the Granite and SpongeForge codebase began in SpongeCommon. SpongeCommon was created to hold all
 shared code between the two implementations while implementation-specific code remains in SpongeVanilla and SpongeForge.
 
-On April 21st, 2015 SpongeAPI 2.0 was finally released. A week later development builds of SpongeForge were
-finally made available.
+On April 21st, 2015 SpongeAPI 2.0 was finally released. On April 25th, 2015 development builds of SpongeForge
+(#428, Inspired Wallaroo) were finally made available. The first alpha build of SpongeVanilla (DEV#17) was
+released on September 13th, 2015.
 
-On December 31st, 2015 SpongeAPI 3.0.0 was released, along with SpongeForge entering its beta.
+On December 31st, 2015 SpongeAPI 3.0.0 was released, along with SpongeForge (#1000) and SpongeVanilla (#129)
+entering their beta.
 
 Spongie - our Mascot
 ~~~~~~~~~~~~~~~~~~~~
@@ -65,4 +67,4 @@ removed all labels and introduced her as the icon and background logo for the Sp
 This older version of Spongie sadly isn't available as vector graphic. Thus Sponge staff decided to create a new
 vectorized version. Two new drafts were then posted on
 `State of Spongie <https://forums.spongepowered.org/t/state-of-spongie-wip/6194>`__. The currently used assets are
-located :doc:`here <assets>`. 
+located :doc:`here <assets>`.

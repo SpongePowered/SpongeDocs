@@ -26,8 +26,8 @@ the server on too, besides that nothing is required. Learn more about choosing t
 Where do I get Sponge?
 ----------------------
 
-Beta development builds of SpongeForge and SpongeVanilla are available:
-:doc:`/downloads`
+Beta development builds of SpongeForge and SpongeVanilla are already available:
+`Sponge Downloads <https://spongepowered.org/downloads>`_
 
 What Sponge implementations are available?
 ------------------------------------------
