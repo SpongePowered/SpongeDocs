@@ -25,8 +25,8 @@ The Sponge project has several main components currently, visit their repositori
 
 .. note::
 
-    Sponge is still in development. Beta builds of SpongeForge and alpha builds of SpongeVanilla are currently
-    available for :doc:`downloads`, but an official release will not be available until later in 2016.
+    Sponge development is ongoing. Beta and Experimental builds of both SpongeForge and SpongeVanilla are currently
+    available for :doc:`downloads`.
 
 Contents
 ========
