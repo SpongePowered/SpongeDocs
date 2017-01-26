@@ -11,7 +11,7 @@ Sponge properly.
 Installing Java
 ===============
 
-If you have Windows or Mac OS X for your computer, you can `download Java from the official website
+If you have Windows or macOS for your computer, you can `download Java from the official website
 <https://java.com/en/download/manual.jsp>`__.
 
 Linux users can install OpenJDK via their package manager. OpenJDK is the open source version of the Oracle version of
