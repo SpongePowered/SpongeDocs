@@ -24,7 +24,7 @@ Rebooting your computer after installing Git is recommended.
 Mac
 ~~~
 
-There are a couple of ways to install Git on Mac OS X.
+There are a couple of ways to install Git on macOS.
 
 The easiest method is to install Xcode Command Line Tools.
 

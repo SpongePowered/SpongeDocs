@@ -11,7 +11,7 @@ Writing a Launch Script
 =======================
 
 First, open a text editor such as Atom, Sublime Text, or Notepad. Write (or paste) a launch script for your server.
-Examples of simple launch scripts for Windows, Mac OS X, and Linux have been provided below. Keep the RAM limitations
+Examples of simple launch scripts for Windows, macOS, and Linux have been provided below. Keep the RAM limitations
 of your machine in mind.
 
 .. note::
@@ -30,8 +30,8 @@ Windows
 
 Save your Windows launch script as ``launch.bat``.
 
-Mac OS X
-~~~~~~~~
+macOS
+~~~~~
 
 .. code-block:: none
 
