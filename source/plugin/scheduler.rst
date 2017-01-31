@@ -17,16 +17,12 @@ provides a :javadoc:`Task.Builder` with which you can specify task properties su
 Task Builder
 ============
 
-First, obtain an instance of the ``Scheduler``, and retrieve the ``Task.Builder``:
+First, obtain an instance of the ``Task.Builder``:
 
 .. code-block:: java
-
-    import org.spongepowered.api.scheduler.Scheduler;
     import org.spongepowered.api.scheduler.Task;
-    import org.spongepowered.api.Sponge;
 
-    Scheduler scheduler = Sponge.getScheduler();
-    Task.Builder taskBuilder = scheduler.createTaskBuilder();
+    Task.Builder taskBuilder = Task.builder();
 
 The only required property is the `Runnable <http://docs.oracle.com/javase/8/docs/api/java/lang/Runnable.html>`_,
 which you can specify using :javadoc:`Task.Builder#execute(Runnable)`:
@@ -110,10 +106,7 @@ initial delay of 100 milliseconds could be built and submitted using the followi
 
     import java.util.concurrent.TimeUnit;
 
-    Scheduler scheduler = Sponge.getScheduler();
-    Task.Builder taskBuilder = scheduler.createTaskBuilder();
-
-    Task task = taskBuilder.execute(() -> logger.info("Yay! Schedulers!"))
+    Task task = Task.builder().execute(() -> logger.info("Yay! Schedulers!"))
         .async().delay(100, TimeUnit.MILLISECONDS).interval(5, TimeUnit.MINUTES)
         .name("ExamplePlugin - Fetch Stats from Database").submit(plugin);
 
@@ -131,9 +124,7 @@ reaching 0.
 
     @Listener
     public void onGameInit(GameInitializationEvent event) {
-        Scheduler scheduler = Sponge.getScheduler();
-        Task.Builder taskBuilder = scheduler.createTaskBuilder();
-        Task task = taskBuilder.execute(new CancellingTimerTask())
+        Task task = Task.builder().execute(new CancellingTimerTask())
             .interval(1, TimeUnit.SECONDS)
             .name("Self-Cancelling Timer Task").submit(plugin);
     }

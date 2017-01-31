@@ -17,17 +17,13 @@ The :javadoc:`PaginationService` acts as a way to split up content into discrete
 Pagination List Builder
 =======================
 
-First obtain an instance of the ``PaginationService``, and create a new ``PaginationList.Builder``:
+First obtain an instance of a ``PaginationList.Builder``:
 
 .. code-block:: java
 
-    import org.spongepowered.api.Sponge;
     import org.spongepowered.api.service.pagination.PaginationList;
-    import org.spongepowered.api.service.pagination.PaginationService;
 
-    PaginationService paginationService =
-        Sponge.getServiceManager().provide(PaginationService.class).get();
-    PaginationList.Builder builder = paginationService.builder();
+    PaginationList.Builder builder = PaginationList.builder();
 
 There are two different ways to specify the contents of paginated list:
 
@@ -96,9 +92,7 @@ And thats it! To recap, a fully functional paginated list could be generated and
 
 .. code-block:: java
 
-    PaginationService paginationService = Sponge.getServiceManager().provide(PaginationService.class).get();
-
-    paginationService.builder()
+    PaginationList.builder()
         .title(Text.of("Title"))
         .contents(Text.of("Item 1"), Text.of("Item 2"), Text.of("Item 3"))
         .header(Text.of("Header"))
