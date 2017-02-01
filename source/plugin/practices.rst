@@ -31,7 +31,8 @@ Mixins
 ~~~~~~
 
 Mixins are specifically for transforming classes before other mods/plugins start. ForgeModLoader calls these mods
-“Coremods”. SpongeForge is a Coremod, and deploys Mixins on startup. Mixins cannot be used by plugins.
+“Coremods”. SpongeForge is a Coremod, and deploys mixins on startup. It is possible for plugins to use mixins, but
+by that point they are better classified as mods.
 
 
 Packets
