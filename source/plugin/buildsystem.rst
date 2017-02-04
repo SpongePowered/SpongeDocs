@@ -16,6 +16,8 @@ majority of build systems for Java projects. The following sections will focus o
 most common choices as build systems. If you're unsure which one to use we recommend using Gradle_ as it is also used
 for the Sponge projects and provides the best integration for Sponge plugins.
 
+.. _gradle-setup:
+
 Gradle
 ======
 Gradle_ uses Groovy_-based scripts for configuring projects. A Gradle_ project typically consists of a ``build.gradle``
