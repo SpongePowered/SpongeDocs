@@ -9,7 +9,6 @@ goal of SpongeDocs is to:
 * Provide developers with information on how to contribute to the Sponge project.
 * Provide developers with information on how to get started with plugin development.
 
-
 Reporting Problems
 ==================
 
@@ -32,6 +31,8 @@ are some parts you do not understand. There will always be someone able to fill 
 The Docs are written in reStructuredText (reST), if you're familiar with Markdown (md) the step to reST shouldn't be to
 hard. If you're having issues with it we suggest that you join our `forums <https://forums.spongepowered.org/>`_ or
 `#SpongeDocs <irc://irc.esper.net:6667/spongedocs>`_ on Esper.net and ask for help there.
+
+The Sponge Documentation is licensed under the `Creative Commons - Share-Alike license <https://creativecommons.org/licenses/by-sa/4.0/>`_. Art assets are held under the related `Creative Commons - Non Commercial, No Derivatives license <https://creativecommons.org/licenses/by-nc-nd/4.0/>`_. Contributions implicitly accept this licensing.
 
 Style Guide
 ===========
