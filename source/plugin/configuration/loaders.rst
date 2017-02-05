@@ -117,7 +117,7 @@ Example: Loading a default config from the plugin jar file
     ConfigurationLoader<CommentedConfigurationNode> loader =
       HoconConfigurationLoader.builder().setURL(jarConfigFile).build();
 
-For this example it is important to note that the :javadoc:`AssetManager#getAsset` method works relative to the
+For this example it is important to note that the :javadoc:`AssetManager#getAsset(String)` method works relative to the
 plugin's asset folder. So if in the above example the plugin ID is ``myplugin``, the ``defaultConfig.conf`` file
 must not lie in the jar file root, but instead in the directory ``assets/myplugin``. For more information, see
 :doc:`the Asset API page <assets>`.
