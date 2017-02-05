@@ -18,7 +18,8 @@ Getting your Loader
 ~~~~~~~~~~~~~~~~~~~
 
 ..note::
-    The default :javadoc:`ConfigurationLoader` can be used instead; see the :doc:`main configuration page <index>`
+    The default :javadoc:`ConfigurationLoader` can be used instead if you're using HOCON; see the 
+    :doc:`main configuration page <index>`.
 
 First, let's grab a new :javadoc:`HoconConfigurationLoader` that points to our configuration file.
 
