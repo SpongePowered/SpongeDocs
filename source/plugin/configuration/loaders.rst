@@ -18,7 +18,7 @@ configurations, giving you the option of hard-coding default values or loading f
 Getting your Loader
 ~~~~~~~~~~~~~~~~~~~
 
-..note::
+.. note::
     The default :javadoc:`ConfigurationLoader` can be used instead if you're using HOCON; see the 
     :doc:`main configuration page <index>`.
 
