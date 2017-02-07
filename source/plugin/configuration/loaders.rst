@@ -8,6 +8,7 @@ Configuration Loaders
     ninja.leaping.configurate.hocon.HoconConfigurationLoader
     ninja.leaping.configurate.loader.ConfigurationLoader
     org.spongepowered.api.asset.AssetManager
+    java.lang.String
 
 Let's break down how Configurate works, beginning with the loading process. Configurate provides
 :javadoc:`ConfigurationLoader`\ s for common configuration formats, standing as the manager of the physical
