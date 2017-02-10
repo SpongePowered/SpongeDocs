@@ -7,6 +7,8 @@ Configuration Loaders
     ninja.leaping.configurate.ConfigurationOptions
     ninja.leaping.configurate.hocon.HoconConfigurationLoader
     ninja.leaping.configurate.loader.ConfigurationLoader
+    org.spongepowered.api.asset.AssetManager
+    java.lang.String
 
 Let's break down how Configurate works, beginning with the loading process. Configurate provides
 :javadoc:`ConfigurationLoader`\ s for common configuration formats, standing as the manager of the physical
@@ -15,6 +17,10 @@ configurations, giving you the option of hard-coding default values or loading f
 
 Getting your Loader
 ~~~~~~~~~~~~~~~~~~~
+
+.. note::
+    The default :javadoc:`ConfigurationLoader` can be used instead if you're using HOCON; see the 
+    :doc:`main configuration page <index>`.
 
 First, let's grab a new :javadoc:`HoconConfigurationLoader` that points to our configuration file.
 
@@ -84,6 +90,9 @@ that is shorthand for ``load(ConfigurationOptions.defaults())``.
 If the ``Path`` given does not exist, the ``load()`` method will create an empty ``ConfigurationNode``. Any other error
 will lead to an ``IOException`` being thrown which you will need to handle properly.
 
+If you have injected the default loader, it's a good idea to get its ``ConfigurationOptions``, since they contain the 
+ability to serialize and deserialize a large number of Sponge objects.
+
 Once you modified your ``ConfigurationNode`` to hold the data you like to be saved, you can use the
 ``ConfigurationLoader`` to save the node to the file specified while creating the loader. If that file does not exist,
 it will be created. If it does exist, all contents will be overwritten.
@@ -105,18 +114,11 @@ Example: Loading a default config from the plugin jar file
 
     import java.net.URL;
 
-    URL jarConfigFile = this.getClass().getResource("defaultConfig.conf");
+    URL jarConfigFile = Sponge.getAssetManager().getAsset("defaultConfig.conf").get().getUrl();
     ConfigurationLoader<CommentedConfigurationNode> loader =
       HoconConfigurationLoader.builder().setURL(jarConfigFile).build();
 
-For this example it is important to note that the ``getResource(...)`` method works relative to the location of the
-class it is called on. So if in the above example the class lies in the package ``me.username.myplugin``, the
-``defaultConfig.conf`` file must not lie in the jar file root, but instead in the directory ``me/username/myplugin``.
-
-.. warning::
-
-    Since all Sponge plugins share a single namespace, all resources available to the ``getResource()`` method are
-    visible to all other plugins as well. Therefore, resources placed in the root of a jar may overwrite (or be
-    overwritten by) identically named resources in another jar. Placing those resources in unique folder structures
-    similar to your java packages will mitigate the danger of accidentally having a resource file overwritten by
-    another plugin.
+For this example it is important to note that the :javadoc:`AssetManager#getAsset(String)` method works relative to the
+plugin's asset folder. So if in the above example the plugin ID is ``myplugin``, the ``defaultConfig.conf`` file
+must not lie in the jar file root, but instead in the directory ``assets/myplugin``. For more information, see
+:doc:`the Asset API page <../assets>`.
