@@ -8,16 +8,13 @@ Custom Events
     org.spongepowered.api.event.Event
     org.spongepowered.api.event.cause.Cause
     org.spongepowered.api.event.entity.living.humanoid.player.TargetPlayerEvent
+    org.spongepowered.api.event.impl.AbstractEvent
 
 You can write your own event classes and dispatch those events using the method described above. An event class must
-either implement the :javadoc:`Event` interface and, if it should be possible to cancel the event,
-:javadoc:`Cancellable`.
-
-.. tip::
-
-    Depending on what type of event you want to create, there might be another interface to implement instead of
-    ``Event``. For example if your event describes something that happens to a :javadoc:`Player`, you should have your
-    custom event class implement :javadoc:`TargetPlayerEvent`.
+extend the :javadoc:`AbstractEvent` class, thus implementing the :javadoc:`Event` interface. Depending on the exact
+nature of the event, more interfaces should be implemented, like :javadoc:`Cancellable` for events that can be
+cancelled by a listener or interfaces like :javadoc:`TargetPlayerEvent` clarifying what sort of object is affected by
+your event.
 
 Example: Custom Event Class
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -36,10 +33,11 @@ would probably be mentioned that the root cause is generally an object of the fi
     import org.spongepowered.api.event.Cancellable;
     import org.spongepowered.api.event.cause.Cause;
     import org.spongepowered.api.event.entity.living.humanoid.player.TargetPlayerEvent;
+    import org.spongepowered.api.event.impl.AbstractEvent;
 
-    public class PlayerMutationEvent implements TargetPlayerEvent, Cancellable {
+    public class PlayerMutationEvent extends AbstractEvent implements TargetPlayerEvent, Cancellable {
 
-        public static enum Mutation {
+        public enum Mutation {
             COMPULSIVE_POETRY,
             ROTTED_SOCKS,
             SPONTANEOUS_COMBUSTION;

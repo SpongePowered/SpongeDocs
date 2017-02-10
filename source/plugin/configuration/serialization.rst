@@ -147,9 +147,9 @@ Your plugin can just acquire a ``GuiceObjectMapperFactory`` simply by dependency
 
 .. code-block:: java
 
+    import org.spongepowered.api.event.Listener;
     import org.spongepowered.api.event.game.state.GamePreInitializationEvent;
     import org.spongepowered.api.plugin.Plugin;
-    import com.google.common.eventbus.Subscribe;
     import com.google.inject.Inject;
     import ninja.leaping.configurate.commented.CommentedConfigurationNode;
     import ninja.leaping.configurate.loader.ConfigurationLoader;
@@ -161,7 +161,7 @@ Your plugin can just acquire a ``GuiceObjectMapperFactory`` simply by dependency
         @Inject private GuiceObjectMapperFactory factory;
         @Inject private ConfigurationLoader<CommentedConfigurationNode> loader;
 
-        @Subscribe
+        @Listener
         public void enable(GamePreInitializationEvent event) {
             CommentedConfigurationNode node =
               loader.load(ConfigurationOptions.defaults().setObjectMapperFactory(factory));
