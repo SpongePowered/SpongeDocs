@@ -3,8 +3,7 @@ project_identifier: sponge-docs
 base_path: .
 
 files:
-  # TODO: Change *.po -> *.pot
-  - source: '/build/locale/en/LC_MESSAGES/**/*.po'
+  - source: '/build/locale/**/*.pot'
     translation: '/locale/%locale_with_underscore%/LC_MESSAGES/**/%file_name%.po'
 
     languages_mapping:
