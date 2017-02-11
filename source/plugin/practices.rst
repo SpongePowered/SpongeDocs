@@ -27,13 +27,6 @@ Economy API
 The Economy API is used to link economy plugins with other plugins that use the economy (i.e. shops). You can read
 about the Economy API :doc:`here <economy/index>`, which details everything you need to know about the API.
 
-Mixins
-~~~~~~
-
-Mixins are specifically for transforming classes before other mods/plugins start. ForgeModLoader calls these mods
-“Coremods”. SpongeForge is a Coremod, and deploys mixins on startup. It is possible for plugins to use mixins, but
-by that point they are better classified as mods.
-
 
 Packets
 ~~~~~~~
@@ -56,6 +49,70 @@ modules to interact with the underlying implementation (SpongeForge or SpongeVan
 
 Plugins using implementation-specific code are very likely to break between versions, and should be clearly labelled
 as such wherever they are hosted. These may more appropriately labelled as "Mods".
+
+
+Mixins
+~~~~~~
+
+Mixins are specifically for transforming classes before other mods/plugins start. ForgeModLoader calls these mods
+“Coremods”. SpongeForge is a Coremod, and deploys mixins on startup. Mixins can be used by plugins, but be aware of the
+additional complexities involved. 
+
+**Hybrid Mods**
+
+Sponge plugins which leverage mixins may also be a considered core mods, based on content.
+
+- To use mixins in FML, it must be a coremod. The jar may also contain a Sponge plugin,
+  so most properly the container is a "hybrid mod".
+- To use mixins in SpongeVanilla, intentions must be declared in the manifest.
+  SpongeVanilla then injects the mixins.
+- Having both types in a single jar is entirely possible. (Indeed, a single jar could
+  easily contain a tweaker, FML mod, coremod, bukkit plugin, sponge plugin, and/or litemod.)
+  
+Some definitions may be helpful here. 
+
+Tweak Mod (aka Tweaker)
+  a subsystem-level mod which hooks directly into the game using LaunchWrapper, usually used for
+  ModSystems (eg. LiteLoader, FML) and stand-alone mods (eg. Optifine). Can interact with any aspect
+  of the game environment directly. Generally breaks every version.
+
+Core Mod
+  has almost equivalent power of a Tweak Mod but must be bootstrapped by a ModSystem.
+  Can interact with any aspect of the game environment directly. Generally breaks on every new Game version.
+
+Mod
+  interacts with the game only via a ModSystem, the mod is exposed to game objects directly but will
+  generally only hook into the game via hooks provided by the ModSystem. Generally breaks every major
+  version of the Game (depending on features used). The term mod is also used as an umbrella term for
+  anything which modifies the game, though for the sake of clarity we'll use this definition.
+
+Plugin
+  interacts with the game only via an API, does not interact with game objects directly in any way,
+  only leverages objects exposed by the API. Generally breaks only when the API is revised
+  (and sometimes not even then).
+
+It's also important to distinguish the container from the contents. Issues with terminology tends to
+arise because a jar containing a mod tends to get referred to as a "mod".
+Any plugin which is not fully decoupled via the API puts itself into the category of Mod.
+This type of "plugin" may be prevalent where there are shortcomings in an API.
+
+**Advantages of Hybrid Mods**
+
+A hybrid mod leverages both a plugin component which interacts via the API, and a mod (or even coremod)
+in the same package. This has the disadvantages of a mod (breaks every version) but also the power of a
+mod (can interact with the game directly) coupled with some of the benefits of a Plugin (high-level
+abstract access to the game, and can also interact with other plugins as a peer).
+
+The primary benefit of this system is that the maintenance burden is reduced when updating the mod,
+because any features accessed via the API are likely to be much more stable.
+
+This type of mod can be used to implement plugins whose needs overflow the capability of the API (in
+the case of a plugin which needs to leverage mixins for a particular feature); but can also be used
+for mods which want to leverage services afforded by the API (eg. a mod which wants to provide direct
+support for permissions or chat channels).
+
+Unlike NMS-exploiting "plugins", a hybrid mod makes its' nature clear.
+
 
 
 Plugin Interoperability
