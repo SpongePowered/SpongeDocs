@@ -111,7 +111,7 @@ the case of a plugin which needs to leverage mixins for a particular feature); b
 for mods which want to leverage services afforded by the API (eg. a mod which wants to provide direct
 support for permissions or chat channels).
 
-Unlike NMS-exploiting "plugins", a hybrid mod makes its' nature clear.
+Unlike NMS-exploiting "plugins", a hybrid mod makes its nature clear.
 
 
 
