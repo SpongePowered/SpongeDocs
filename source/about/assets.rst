@@ -17,7 +17,7 @@ You may:
 
 * Use Spongie or the SpongePowered logo in an article or blog post about the Sponge project, and to spread the word.
 
-* Use the Spongepowered Logo to link to `Sponge Homepage <http://spongepowered.org>`__
+* Use the SpongePowered Logo to link to `Sponge Homepage <https://www.spongepowered.org>`__
   (for example in your signature on forums etc.)
 
 You may not:

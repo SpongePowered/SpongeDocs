@@ -37,7 +37,7 @@ The text builder interface allows for the creation of formatted text in a "build
 
 .. tip::
 
-    Read this `Wikipedia article <http://en.wikipedia.org/wiki/Builder_pattern>`__ for help understanding the purpose
+    Read this `Wikipedia article <https://en.wikipedia.org/wiki/Builder_pattern>`__ for help understanding the purpose
     of the builder pattern in software design.
 
 Colors

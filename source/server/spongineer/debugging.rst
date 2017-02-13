@@ -27,7 +27,7 @@ If you're unsure which Forge build you need, take a look at :doc:`/server/gettin
 
 Some coremods modify Forge in a way that makes it impossible to run SpongeForge properly. If you have coremods installed
 and Sponge crashes, try to remove them and test again. Please report any incompatible Coremods on
-`GitHub <https://github.com/SpongePowered>`__ or the `Sponge Forums <http://forums.spongepowered.org>`__. This allows
+`GitHub <https://github.com/SpongePowered>`__ or the `Sponge Forums <https://forums.spongepowered.org>`__. This allows
 staff to solve these issues as soon as possible.
 
 4. Is every plugin you're using built against your desired Sponge build?

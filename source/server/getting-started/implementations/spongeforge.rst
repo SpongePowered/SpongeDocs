@@ -127,5 +127,5 @@ Next, learn how you can create and use a :doc:`launch-script <../launch-script>`
 Links
 =====
 
-* `Homepage <http://spongepowered.org/>`__
+* `Homepage <https://www.spongepowered.org/>`__
 * `GitHub <https://github.com/SpongePowered/SpongeForge>`__

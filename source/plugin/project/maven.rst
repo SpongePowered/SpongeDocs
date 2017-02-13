@@ -9,7 +9,7 @@ Add the following to the ``<project>`` block of your ``pom.xml`` to add the Spon
     <repositories>
         <repository>
             <id>sponge</id>
-            <url>http://repo.spongepowered.org/maven</url>
+            <url>https://repo.spongepowered.org/maven</url>
         </repository>
     </repositories>
 

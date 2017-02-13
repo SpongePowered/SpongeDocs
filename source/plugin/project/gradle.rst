@@ -104,7 +104,7 @@ dependency to your project:
         mavenCentral()
         maven {
             name = 'sponge'
-            url = 'http://repo.spongepowered.org/maven'
+            url = 'https://repo.spongepowered.org/maven'
         }
     }
 

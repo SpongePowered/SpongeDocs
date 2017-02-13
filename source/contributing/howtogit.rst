@@ -27,7 +27,7 @@ In this case the repo is named ``SpongePowered``, has two branches named ``maste
 ``feature 1`` and also some commits on both branches.
 
 Let's put these terms into context - beginning with the *repository*. The repository (short: *repo*) is the place where
-a project stores its files. The SpongePowered repositories are located at `GitHub <http://github.com/spongepowered>`__.
+a project stores its files. The SpongePowered repositories are located at `GitHub <https://github.com/SpongePowered>`__.
 However, this repo has some access restrictions to preserve it from unwanted or malicious changes. You can't simply make
 changes yourself, as the repo is read-only for regular users. Now you may wonder how you're supposed to file proposals
 and changes. Well, that's where *forks* come into play. You can grab a copy of the SpongePowered repos, and make your
