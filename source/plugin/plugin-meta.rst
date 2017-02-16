@@ -2,6 +2,9 @@
 Plugin Metadata
 ===============
 
+.. javadoc-import::
+    org.spongepowered.api.plugin.Dependency
+
 Adding plugin metadata helps users to identify your plugin more easily by giving them the ability to check the name,
 version, description, or even the authors of a plugin at runtime. It will also be used when publishing plugins on a plugin
 portal like Ore_.
@@ -31,10 +34,10 @@ available looks like this:
         authors = {"Spongie", "FLARD"},
         dependencies = {@Dependency(id = "otherplugin", optional = true)})
 
-For every ``@Dependency`` you provide, you may also give a ``version`` attribute specifying a `maven version range
-<https://docs.oracle.com/middleware/1212/core/MAVEN/maven_version.htm#MAVEN8903>`_ like ``[1.3,)`` for ``Version 1.5 or
-higher``. The ``optional`` attribute specifies that your plugin may be loaded even if the dependency is not available.
-Unless explicitly specified as optional, the absence of any dependency will prevent your plugin from being loaded.
+For every ``@Dependency`` you provide, you may also give a ``version`` attribute specifying a version range according to
+:javadoc:`Dependency#version()`. The ``optional`` attribute specifies that your plugin may be loaded even if the
+dependency is not available. Unless explicitly specified as optional, the absence of any dependency will prevent your
+plugin from being loaded.
 
 .. note::
     For both ``authors`` and ``dependencies``, the curly brackets may be left out if only one element is supplied, e.g.
