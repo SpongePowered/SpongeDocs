@@ -8,8 +8,8 @@ plugin ID (e.g. when defining plugin dependencies). The plugin ID is also used f
 folders for your plugin.
 
 .. note::
-    Plugin IDs must be lowercase and may only contain characters from a-z, dashes, underscores or dots. It cannot end
-    with a dash, underscore or dot. The plugin name does **not** have such a limitation and can even contain spaces or
+    The plugin ID must be lowercase and start with a alphabetic character. It may only contain alphanumeric characters,
+    dashes or underscores. The plugin name does **not** have such a limitation and can even contain spaces or
     special characters.
 
 Keep in mind your plugin ID will be the main identification of your plugin, used in other plugins as dependencies, for
