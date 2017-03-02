@@ -9,7 +9,7 @@ make sure you follow our guidelines.
 .. note::
     Developers who show determination and consistency in their contributions to the project may be invited to join the
     Sponge Staff by Team Leaders, at their discretion. There is no formal application process.
-    Please don't ask to be staff, we'll ask you."
+    Please don't ask to be staff, we'll ask you.
 
 General steps
 =============
