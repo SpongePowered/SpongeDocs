@@ -6,6 +6,11 @@ There will always be a need for developers to help us improve SpongeAPI. There i
 things can always be improved. If you are a developer and are interested in helping then please do not hesitate. Just
 make sure you follow our guidelines.
 
+.. note::
+    Developers who show determination and consistency in their contributions to the project may be invited to join the
+    Sponge Staff by Team Leaders, at their discretion. There is no formal application process.
+    Please don't ask to be staff, we'll ask you.
+
 General steps
 =============
 
