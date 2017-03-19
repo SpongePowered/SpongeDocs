@@ -35,11 +35,14 @@ The first step is to create a class for the command. The class has to implement 
 
     public class MyBroadcastCommand implements CommandCallable {
 
-        private final Optional<Text> desc = Optional.of(Text.of("Displays a message to all players"));
-        private final Optional<Text> help = Optional.of(Text.of("Displays a message to all players. It has no color support!"));
+        private final Optional<Text> desc = Optional.of(Text.of("Displays a message to all"
+            + " players"));
+        private final Optional<Text> help = Optional.of(Text.of("Displays a message to all"
+            + " players. It has no color support!"));
         private final Text usage = Text.of("<message>");
 
-        public CommandResult process(CommandSource source, String arguments) throws CommandException {
+        public CommandResult process(CommandSource source, String arguments)
+                                                        throws CommandException {
             Sponge.getServer().getBroadcastChannel().send(Text.of(arguments));
             return CommandResult.success();
         }
@@ -60,7 +63,8 @@ The first step is to create a class for the command. The class has to implement 
             return usage;
         }
 
-        public List<String> getSuggestions(CommandSource source, String arguments) throws CommandException {
+        public List<String> getSuggestions(CommandSource source, String arguments)
+                                                                throws CommandException {
             return Collections.emptyList();
         }
     }

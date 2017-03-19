@@ -64,13 +64,13 @@ Example: Building a Command with Multiple Arguments
 
             .executor(new CommandExecutor() {
                 @Override
-                public CommandResult execute(CommandSource src, CommandContext args) throws CommandException {
-
+                public CommandResult execute(CommandSource src, CommandContext args)
+                                                                  throws CommandException {
                     Player player = args.<Player>getOne("player").get();
                     String message = args.<String>getOne("message").get();
-
+                    
                     player.sendMessage(Text.of(message));
-
+                    
                     return CommandResult.success();
                 }
             })
@@ -194,6 +194,7 @@ The parser in this example reads two input arguments and converts them to a vect
    import java.util.List;
 
    public class Vector2iCommandElement extends CommandElement {
+       
        CommandArgs errorargs;
 
        protected Vector2iCommandElement(Text key) {
@@ -201,10 +202,10 @@ The parser in this example reads two input arguments and converts them to a vect
        }
 
        @Override
-       protected Object parseValue(CommandSource source, CommandArgs args) throws ArgumentParseException {
-
+       protected Object parseValue(CommandSource source, CommandArgs args)
+                                                          throws ArgumentParseException {
            // <x> <y>
-           errorargs=args;
+           errorargs = args;
 
            String xInput = args.next();
            int x = parseInt(xInput);
@@ -219,12 +220,14 @@ The parser in this example reads two input arguments and converts them to a vect
            try {
                return Integer.parseInt(input);
            } catch(NumberFormatException e) {
-               throw errorargs.createError(Text.of("'" + input + "' is not a valid number!"));
+               throw errorargs.createError(Text.of("'" + input + "' is not a valid "
+                    + "number!"););
            }
        }
 
        @Override
-       public List<String> complete(CommandSource src, CommandArgs args, CommandContext context) {
+       public List<String> complete(CommandSource src, CommandArgs args,
+                                                    CommandContext context) {
            return Collections.emptyList();
        }
 

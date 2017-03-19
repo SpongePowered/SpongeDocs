@@ -69,6 +69,7 @@ of the :javadoc:`Listener` annotation before the method.
 
     @Plugin(id = "exampleplugin", name = "Example Plugin", version = "1.0")
     public class ExamplePlugin {
+        
         @Listener
         public void onServerStart(GameStartedServerEvent event) {
             // Hey! The server has started!
