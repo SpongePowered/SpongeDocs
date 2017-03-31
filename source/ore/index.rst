@@ -26,6 +26,7 @@ Contents
 
      guidelines
      publish
+     gradle-deploy
      security
      api
 
