@@ -22,7 +22,7 @@ You can setup an environment so you can instantly see the changes that make to t
 
 In terminal or the command line, within the directory containing this README, run the following commands:
 
-	npm install -g gulp
+	npm install -g gulp gulp-webserver
 	npm install
 	pip install -r requirements.txt
 	gulp
