@@ -8,6 +8,7 @@ of our various methods of communications, including (but not limited to):
 * Official IRC channels: #sponge, #spongedev, #spongedocs
 * Sponge Forums
 * GitHub and Bug/Issue tracker
+* Sponge Discord
 * Sponge subreddit
 * Sponge TeamSpeak Server
 * Any other official means of communication by the Sponge project.
@@ -20,7 +21,7 @@ list of do's and don'ts. This stuff should all be common sense.
 
 * Follow Support Guidelines (when they exist) for any issues you may have.
 
-* Don't abuse the channel (IRC, Forum, etc). This means don't spam, multipost, crosspost, or flood it. Be nice and
+* Don't abuse the channel (IRC, Forum, Discord, etc). This means don't spam, multipost, crosspost, or flood it. Be nice and
   remember that we're all sharing the same virtual space.
 
 * Try to keep the language at least PG-13. We're not your nanny and we're not going to give you grief over the odd curse
