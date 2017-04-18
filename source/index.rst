@@ -123,6 +123,7 @@ Links
 
 -  `Sponge Homepage <https://spongepowered.org>`_
 -  `Sponge Forums <https://forums.spongepowered.org>`_
+-  `Sponge Discord <https://discord.gg/qXD2weC>`_
 -  `Sponge Downloads <https://spongepowered.org/downloads>`_
 -  `SpongeAPI Issue Tracker <https://github.com/SpongePowered/SpongeAPI/issues?q=>`_
 -  `SpongeAPI Javadocs <https://jd.spongepowered.org>`_
