@@ -41,11 +41,11 @@ usage is explained on :doc:`plugin-meta`.
 
 .. code-block:: java
 
-    package io.github.username.project;
+    package io.github.username.exampleplugin;
 
     import org.spongepowered.api.plugin.Plugin;
 
-    @Plugin(id = "exampleplugin", name = "Example Plugin", version = "1.0")
+    @Plugin(id = "io.github.username.exampleplugin", name = "Example Plugin", version = "1.0")
     public class ExamplePlugin {
 
     }
