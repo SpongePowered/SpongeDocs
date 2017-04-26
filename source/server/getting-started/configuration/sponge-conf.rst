@@ -204,9 +204,9 @@ infinite-water-source                     boolean   false       False = Default 
 invalid-lookup-uuids                      array     See config  The list of uuid's that shouldn't be looked up on
                                                                 Mojang's session server.
 item-merge-radius                         integer   2.5         The merge radius for item entities.
-keep-spawn-loaded                         boolean   true        If the spawn should stay loaded with no players.
+keep-spawn-loaded                         boolean   true        If the spawn should stay loaded with no players. Has no effect in global config. Config doesn't need to be enabled either, because it will always fall back to the world config.
 leaf-decay                                boolean   true        If enabled, allows natural leaf decay.
-load-on-startup                           boolean   true        If the world should be loaded on startup.
+load-on-startup                           boolean   true        If the world should be loaded on startup. Has no effect in global config. Config doesn't need to be enabled either, because it will always fall back to the world config.
 mob-spawn-range                           integer   8           Specifies the radius (in chunks) of where creatures
                                                                 will spawn. This value is capped to the current
                                                                 view distance setting in server.properties.
