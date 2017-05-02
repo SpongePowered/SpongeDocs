@@ -25,7 +25,7 @@ First, obtain an instance of the ``Task.Builder``:
 
     Task.Builder taskBuilder = Task.builder();
 
-The only required property is the `Runnable <http://docs.oracle.com/javase/8/docs/api/java/lang/Runnable.html>`_,
+The only required property is the `Runnable <https://docs.oracle.com/javase/8/docs/api/java/lang/Runnable.html>`_,
 which you can specify using :javadoc:`Task.Builder#execute(Runnable)`:
 
 .. code-block:: java
@@ -63,7 +63,7 @@ Task Properties
 
 Using the ``Task.Builder``, you can specify other, optional properties, as described below.
 
-.. _TimeUnit: http://docs.oracle.com/javase/8/docs/api/java/util/concurrent/TimeUnit.html
+.. _TimeUnit: https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/TimeUnit.html
 
 +-----------------+-------------------------+--------------------------------------------------------------------------+
 | Property        | Method Used             | Description                                                              |
@@ -272,10 +272,10 @@ synchronously using ``Observable#subscribeOn(Scheduler scheduler)``.
 Scala
 ~~~~~
 
-Scala comes with a built-in `Future <http://www.scala-lang.org/api/current/#scala.concurrent.Future>`_ object which 
+Scala comes with a built-in `Future <https://www.scala-lang.org/api/current/#scala.concurrent.Future>`_ object which
 a lot of scala framework mirror in design.
 Most methods of the Future accept an 
-`ExecutionContext <http://www.scala-lang.org/api/current/index.html#scala.concurrent.ExecutionContext$>`_ which
+`ExecutionContext <https://www.scala-lang.org/api/current/index.html#scala.concurrent.ExecutionContext$>`_ which
 determined where that part of the operation is executed.
 This is different from the CompletableFuture or RxJava since they default to executing on the same thread on which
 the previous operation ended.

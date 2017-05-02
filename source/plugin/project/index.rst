@@ -14,7 +14,7 @@ Maven repository
 
 ==== =======================================
 Name ``sponge``
-URL  ``http://repo.spongepowered.org/maven``
+URL  ``https://repo.spongepowered.org/maven``
 ==== =======================================
 
 Maven dependency

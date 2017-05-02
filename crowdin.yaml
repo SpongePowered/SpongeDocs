@@ -1,6 +1,12 @@
-project_identifier: sponge-docs
 api_key_env: CROWDIN_API_KEY
+project_identifier: sponge-docs
+base_path: .
 
 files:
-  - source: '/locale-src/en/LC_MESSAGES/**/*.po'
-    translation: '/locale/%locale_with_underscore%/LC_MESSAGES/**/%original_file_name%'
+  - source: '/build/locale/**/*.pot'
+    translation: '/locale/%locale_with_underscore%/LC_MESSAGES/**/%file_name%.po'
+
+    languages_mapping:
+      locale_with_underscore:
+        # Pseudo-language used for In-Context Localization
+        lol: translate

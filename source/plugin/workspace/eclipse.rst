@@ -101,4 +101,4 @@ Git Integration
 
 The Eclipse Foundation offers documentation on using Eclipse's EGit plugin:
 
-http://www.eclipse.org/egit/documentation/
+https://www.eclipse.org/egit/documentation/

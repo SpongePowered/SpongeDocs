@@ -19,7 +19,7 @@ there are three ways of making us aware of the problem:
 
 #. Create an `Issue on the SpongeDocs GitHub <https://github.com/SpongePowered/SpongeDocs/issues>`_
 #. Create a Posting on the `SpongeDocs Forums Category <https://forums.spongepowered.org/c/sponge-docs>`_
-#. Visit us in the `#spongedocs channel on irc.esper.net <irc://irc.esper.net:6667/spongedocs>`_ (you need to be registered)
+#. Visit us in the `#spongedocs channel on irc.esper.net <ircs://irc.esper.net:6697/#spongedocs>`_ (you need to be registered)
 
 Writing the Docs
 ================
@@ -31,7 +31,7 @@ are some parts you do not understand. There will always be someone able to fill 
 
 The Docs are written in reStructuredText (reST), if you're familiar with Markdown (md) the step to reST shouldn't be to
 hard. If you're having issues with it we suggest that you join our `forums <https://forums.spongepowered.org/>`_ or
-`#SpongeDocs <irc://irc.esper.net:6667/spongedocs>`_ on Esper.net and ask for help there.
+`#SpongeDocs <ircs://irc.esper.net:6697/#spongedocs>`_ on Esper.net and ask for help there.
 
 Style Guide
 ===========

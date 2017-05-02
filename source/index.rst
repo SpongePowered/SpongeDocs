@@ -5,7 +5,7 @@ Sponge Documentation
 Introduction
 ============
 
-Welcome to SpongeDocs, the official documentation for the open-source `Sponge <http://spongepowered.org>`__ project.
+Welcome to SpongeDocs, the official documentation for the open-source `Sponge <https://www.spongepowered.org>`__ project.
 
 The SpongeAPI is your all new plugin API for Minecraft. You can run it on a plain vanilla server (as SpongeVanilla) or
 on your fully modded MinecraftForge server (as SpongeForge). Grab your copy

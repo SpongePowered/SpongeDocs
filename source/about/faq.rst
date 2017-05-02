@@ -118,6 +118,8 @@ modding and will continue to do so.
 Will I Be Able to Access the Server Internals In My Plugins?
 ------------------------------------------------------------
 
-Accessing the server internals (known as "NMS" or "net.minecraft.server" in CraftBukkit) can be done through Forge,
+Accessing the server internals (known as "NMS" or "net.minecraft.server" in CraftBukkit) can be done through MCP,
 which has a large number of names de-obfuscated. However, be aware that accessing the server internals raises the risk
 of your plugin breaking - this is your prerogative.
+
+See :doc:`../plugin/internals/index` for an introduction about using MCP in your plugin.

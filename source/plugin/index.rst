@@ -55,6 +55,7 @@ Contents
     economy/index
     wgen/index
     manager
+    modularization
     game-profile-manager
     offline-userplayer-data
     debugging
@@ -62,3 +63,4 @@ Contents
     plugin-meta
     ray-tracing
     tutorials
+    internals/index

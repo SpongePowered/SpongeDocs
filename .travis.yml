@@ -1,12 +1,17 @@
-language: python
 sudo: false
-python:
-- '3.4'
-install: "./etc/install.sh"
-script: "./etc/build.sh"
-notifications:
-  email: false
+
+language: python
+python: 3.6
+
+before_script: source travis-prepare
+script: sphinx-build -W -d build/doctrees source build/html
+
+# Deploy PR preview if this build is a pull request
+after_success: '[[ "$TRAVIS_PULL_REQUEST" != "false" ]] && pr-deploy'
+
 env:
   global:
-  - secure: "eqEdHuWpxExydgV9CrTwGF9UiVX+rTzOWN9Yru9yjmaoYate44h4p7a8GtxwAHL3wFOycmmF1Q3Ygezzly2GvubOwFDKE6R7wb+Me7Zkt9IUCOczsHQoWw6voZN1pgJYJU13kZMaDfonqheVrXDNx6dJY3pCxIZCnZvhUBcMX0M="
-  - secure: "KKQfrtg1UUepRdHLiqjRkEJTSc/p4ovhNTK+kSyAFseMF7YwwbIOO9rkouJfJwzqMcXu2vPim8assHWrrsnG5GHMUDscNEOyqwF7Pp2d+LS+xitkBOScVhvorteRCRSxGyR0QX5GjDBsCJBvsh5GW/GY7a+SSxwle0s4pph1+gc="
+  - secure: "S4ZpYUToi3L0Stus5/7eCsr634zby+Y/is1CZBX3VLHTQ8XZNr/4SIeEcd6foUTEvY+nAiQnpXoEVph8kqZjp3ATVJbyV4qK0HTSCEm+TAG0Xk/pMixvb8wx7zsQN94Z3KDTCG2UKcmIMUU2EYMRlhCl+RVBU5DxOPO+4TOFVQ0="
+
+notifications:
+  email: false

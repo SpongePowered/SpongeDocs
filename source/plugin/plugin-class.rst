@@ -30,13 +30,14 @@ The next step after adding the Sponge API as a dependency is creating a new clas
 like, and can be in any package that does **not** begin with ``org.spongepowered``. By convention, class names should be
 in title case.
 
-Oracle `recommends <http://docs.oracle.com/javase/tutorial/java/package/namingpkgs.html>`_ to use your domain as your
+Oracle `recommends <https://docs.oracle.com/javase/tutorial/java/package/namingpkgs.html>`_ to use your domain as your
 package name, if you own a domain. However, in the event that you do not own a domain, a common practice is to use an
 email address (such as ``com.gmail.username.project``) or an open-source repository
 (such as ``io.github.username.project``).
 
 After creating your main class, the :javadoc:`Plugin` annotation must be affixed to it. This annotation allows Sponge
-to easily find your main plugin class when your plugin is loaded. An example usage is illustrated below.
+to easily find your main plugin class when your plugin is loaded. An example usage is illustrated below, more detailed
+usage is explained on :doc:`plugin-meta`.
 
 .. code-block:: java
 
@@ -51,6 +52,7 @@ to easily find your main plugin class when your plugin is loaded. An example usa
 
 .. note::
     Refer to :doc:`plugin-identifier` if you've not chosen your plugin ID yet.
+
 
 Initializing Your Plugin
 ========================

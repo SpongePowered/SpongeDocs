@@ -2,38 +2,20 @@
 Setting Up Gradle
 =================
 
-Generally, everything necessary to compile a Sponge plugin using Gradle can be done by simply adding the SpongeAPI
-dependency to your project:
-
-.. code-block:: groovy
-
-    repositories {
-        mavenCentral()
-        maven {
-            name = 'sponge'
-            url = 'http://repo.spongepowered.org/maven'
-        }
-    }
-
-    dependencies {
-        compile 'org.spongepowered:spongeapi:5.0.0'
-    }
-
-However, for further Gradle integration with :doc:`/plugin/plugin-meta`, we're providing an additional **Gradle
-plugin** (called SpongeGradle_) for Sponge plugins to use which allows you to minimize the necessary configuration for
-setting up a plugin project using Gradle.
+.. _using-spongegradle:
 
 Using SpongeGradle
 ==================
-
-.. note::
-    We recommend using **the latest Gradle version** together with SpongeGradle_. The Gradle plugin may not work
-    properly with very old Gradle versions.
 
 Using SpongeGradle_ is very simple and allows you to minimize the necessary Gradle configuration for setting up a
 Sponge plugin on Gradle. Additionally, it provides integration for :doc:`/plugin/plugin-meta`, such as automatically
 contributing the group, project name, version and description defined in your build script to the built plugin, so you
 only need to update your plugin version in one file.
+
+.. tip::
+  Most problems are caused by attempting to use an outdated Gradle version. We recommend using the latest Gradle
+  version together with SpongeGradle_. :ref:`The Gradle section of the build systems page <gradle-setup>` explains how
+  to setup Gradle on your computer.
 
 Below is a simple template that should be usable for most plugins. **Make sure to replace the group with the group ID
 you have chosen before.**
@@ -41,7 +23,7 @@ you have chosen before.**
 .. code-block:: groovy
 
     plugins {
-        id 'org.spongepowered.plugin' version '0.6'
+        id 'org.spongepowered.plugin' version '0.8.1'
     }
 
     group = 'com.example' // TODO
@@ -104,6 +86,30 @@ You can also remove a default value entirely:
                 description = null
             }
         }
+    }
+
+Without SpongeGradle
+====================
+
+.. warning::
+  We recommend using :ref:`SpongeGradle <using-spongegradle>` for Gradle plugins since it will provide additional Gradle
+  integration for Sponge plugins.
+
+Generally, everything necessary to compile a Sponge plugin using Gradle can be done by simply adding the SpongeAPI
+dependency to your project:
+
+.. code-block:: groovy
+
+    repositories {
+        mavenCentral()
+        maven {
+            name = 'sponge'
+            url = 'https://repo.spongepowered.org/maven'
+        }
+    }
+
+    dependencies {
+        compile 'org.spongepowered:spongeapi:5.0.0'
     }
 
 .. _SpongeGradle: https://github.com/SpongePowered/SpongeGradle

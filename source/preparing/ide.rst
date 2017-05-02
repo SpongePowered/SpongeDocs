@@ -21,5 +21,5 @@ Downloads
 =========
 
 * `IntelliJ IDEA <https://www.jetbrains.com/idea/download/>`__
-* `Eclipse <http://www.eclipse.org/downloads/>`__
+* `Eclipse <https://www.eclipse.org/downloads/>`__
 * `NetBeans <https://netbeans.org/downloads/index.html>`__
