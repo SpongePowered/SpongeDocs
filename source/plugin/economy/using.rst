@@ -34,7 +34,7 @@ Example: Loading the EconomyService
 
 	Optional<EconomyService> serviceOpt = Sponge.getServiceManager().provide(EconomyService.class);
 	if (!serviceOpt.isPresent()) {
-	    // handle silly users who don't install economy plugins on their servers
+	    // handle there not being an economy implementation
 	}
 	EconomyService economyService = serviceOpt.get();
 	
