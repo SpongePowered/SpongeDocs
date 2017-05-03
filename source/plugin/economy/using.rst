@@ -14,7 +14,7 @@ the Economy API in your own plugin.
 Loading the EconomyService
 ==========================
 
-In order to utilize the Economy API, you must first load the :javadoc:`EconomyService` class using the :javadoc:`ServiceManager` class. 
+In order to utilize the Economy API, you must first load the :javadoc:`EconomyService` class using the :javadoc:`ServiceManager`. 
 
 .. warning::
   Please note that you need to pay attention to different ``game states`` while the server is starting, stopping or
