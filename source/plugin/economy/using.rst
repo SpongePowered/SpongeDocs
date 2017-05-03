@@ -3,9 +3,10 @@ Using the Economy API
 =====================
 
 .. javadoc-import::
-    org.spongepowered.api.event.service.ChangeServiceProviderEvent
     org.spongepowered.api.service.economy.EconomyService
     org.spongepowered.api.service.economy.account.Account
+    org.spongepowered.api.service.ServiceManager
+    org.spongepowered.api.event.service.ChangeServiceProviderEvent
 
 The Economy API unifies all economy plugins under one API. This means any plugin using the Economy API
 will be compatible with all economy plugins that implement said API. This page guides you through the steps of using
@@ -14,13 +15,7 @@ the Economy API in your own plugin.
 Loading the EconomyService
 ==========================
 
-In order to utilize the Economy API, you must first load the :javadoc:`EconomyService` class:
-
-#. Listen to the :javadoc:`ChangeServiceProviderEvent` in order to grab an instance of the EconomyService when it is
-   registered.
-
-#. When the event is fired, check if the service added was the ``EconomyService``. If this is ``true``, you'll assign
-   it to a variable for later access to the Economy API.
+In order to utilize the Economy API, you must first load the :javadoc:`EconomyService` class using the :javadoc:`ServiceManager`. 
 
 .. warning::
   Please note that you need to pay attention to different ``game states`` while the server is starting, stopping or
@@ -34,18 +29,24 @@ Example: Loading the EconomyService
 
 .. code-block:: java
 
-	import org.spongepowered.api.event.Listener;
-	import org.spongepowered.api.event.service.ChangeServiceProviderEvent;
 	import org.spongepowered.api.service.economy.EconomyService;
+	import org.spongepowered.api.Sponge;
 
-	private EconomyService economyService;
-
-	@Listener
-	public void onChangeServiceProvider(ChangeServiceProviderEvent event) {
-		if (event.getService().equals(EconomyService.class)) {
-			economyService = (EconomyService) event.getNewProviderRegistration().getProvider();
-		}
+	Optional<EconomyService> serviceOpt = Sponge.getServiceManager().provide(EconomyService.class);
+	if (!serviceOpt.isPresent()) {
+	    // handle silly users who don't install economy plugins on their servers
 	}
+	EconomyService economyService = serviceOpt.get();
+	
+.. warning:: 
+  Keep this service in a local variable instead of a member variable, since the provider (implementation) 
+  could change at any point. If you need to place it in a member variable, for whatever reason, use 
+  :javadoc:`ChangeServiceProviderEvent` to keep the implementation updated.
+
+.. note::
+  Unlike other services, you should try to use :javadoc:`ServiceManager#provide(java.lang.Class)` instead of
+  :javadoc:`ServiceManager#provideUnchecked(java.lang.Class)` because Sponge does not provide a default implementation 
+  of the :javadoc:`EconomyService`, and therefore it is not guaranteed that it exists.
 
 Using the EconomyService
 ========================
