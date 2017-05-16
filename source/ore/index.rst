@@ -24,7 +24,7 @@ Contents
      :maxdepth: 2
      :titlesonly:
 
-     oreguidelines
+     guidelines
      publish
      security
      api
