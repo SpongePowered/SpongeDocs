@@ -7,7 +7,9 @@ Welcome to the Ore submission guidelines. This document provides an outline of o
 Remember that these are just guidelines and the Ore team, referred to as the “staff” throughout these guidelines, may choose to allow
 or disallow an action that is not explicitly listed here at our own discretion. 
 
+--------
 
+========
 Projects
 ========
 
@@ -30,23 +32,22 @@ project: commands, configuration, and permission nodes. Additionally, the below 
 if relevant:
 
 
-External Connections
---------------------
+    **External Connections**
 
-If your project utilizes a web API, phones home to collect data, or otherwise connects to a system external to the server it is
-running on, the presence of this feature as well as information on how to enable or disable it must be displayed prominently on
-the main page. If your project’s sole purpose involves utilizing an external system [such as a Sponge plugin that translates
-chat between languages], a configuration option to toggle making connections to that service is not required. If your plugin
-sends information (for example, plugin list or player data), the information collected must be listed on the main page.
+    If your project utilizes a web API, phones home to collect data, or otherwise connects to a system external to the server it is
+    running on, the presence of this feature as well as information on how to enable or disable it must be displayed prominently on
+    the main page. If your project’s sole purpose involves utilizing an external system (such as a Sponge plugin that translates
+    chat between languages), a configuration option to toggle making connections to that service is not required. If your plugin
+    sends information (for example, plugin list or player data), the information collected must be listed on the main page.
 
-Examples of systems that require documentation:
+    Examples of systems that require documentation:
 
- - Statistics or usage information collection (‘metrics’)
- - Geolocation
- - Translation service
- - Web server that runs on the plugin, serving information to users
- - Server that runs on the plugin, listening to requests from other services
- - IRC/Discord/Telegram/WhatsApp bot or relay
+     - Statistics or usage information collection (‘metrics’)
+     - Geolocation
+     - Translation service
+     - Web server that runs on the plugin, serving information to users
+     - Server that runs on the plugin, listening to requests from other services
+     - IRC/Discord/Telegram/WhatsApp bot or relay
 
 
 Category
@@ -104,7 +105,9 @@ Either:
     
 Acknowledge or credit the past plugin and developers. Essentially, don’t claim it is a new plugin and exclusively your creation.
 
+--------
 
+=====
 Files
 =====
 
@@ -116,8 +119,7 @@ Obfuscation
 
 A file that utilizes obfuscation will be denied unless it falls under the following exception:
 
-NMS Obfuscation
----------------
+    **NMS Obfuscation**
 
     This only applies for plugins which reference Minecraft or a Forge mod. Examples would be a plugin using Mixins or a plugin
     which doubles as a Forge mod (hybrid plugin). Provided that the only obfuscated references are to obfuscated source generated
