@@ -15,6 +15,8 @@ issue with Ore that you believe is a bug, please take the time to report it to o
 If you need help using Ore, create a new topic on our
 `Ore Support Forum <https://forums.spongepowered.org/c/plugins/ore-support>`__.
 
+If you'd like to submit a plugin to Ore, please read and follow the Ore plugin submission guidelines linked below. 
+
 Contents
 ========
 
@@ -22,6 +24,8 @@ Contents
      :maxdepth: 2
      :titlesonly:
 
+     guidelines
      publish
      security
      api
+
