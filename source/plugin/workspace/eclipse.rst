@@ -13,13 +13,17 @@ build system such as Maven or Gradle <../buildsystem/>`.
 Gradle
 ======
 
-Creating your project
-~~~~~~~~~~~~~~~~~~~~~
+Preparing Gradle
+~~~~~~~~~~~~~~~~
+
+.. note::
+
+    Gradle is automatically included in Eclipse starting from the Neon release (June 22, 2016) and later. These steps are only required for earlier versions.
 
 You must first install the **Gradle Integration Plugin** before using Gradle in Eclipse. This only needs to be done
 upon the creation of your first project.
 
-.. note::
+.. tip::
 
     Typically, you do not need the optional Spring modules distributed with this plugin, so you can uncheck them during
     installation.
@@ -29,8 +33,10 @@ upon the creation of your first project.
 * Search for ``Gradle Integration Plugin``.
 * Install the **Gradle Integration Plugin**.
 
-You may then proceed to create your project.
+Creating your project
+~~~~~~~~~~~~~~~~~~~~~
 
+* Open **Eclipse**.
 * Click ``File > New > Other``.
 * Select ``Gradle > Gradle Project``.
 * Click ``Next``.
