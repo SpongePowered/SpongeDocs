@@ -41,7 +41,7 @@ Editing the build script
 
 * Open ``build.gradle`` in the navigator.
 * Edit the build script according to the instructions at :doc:`../project/gradle`.
-* Right-click your project, and select ``Gradle > Refresh Dependencies``.
+* Right-click your project, and select ``Gradle > Refresh Gradle Project``.
 
 Importing your project
 ~~~~~~~~~~~~~~~~~~~~~~
