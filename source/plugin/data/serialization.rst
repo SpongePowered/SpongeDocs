@@ -150,6 +150,7 @@ For this example we will use :javadoc:`DataFormats#JSON` to translate a player t
 **Code Example: Serializing a Player to json format**
     
 .. code-block:: java
+
     public OutputStream toJsonFormat(Player player){
         DataContainer playerDataContainer = player.toContainer();
         DataFormat dataFormat = DataFormats.JSON;
@@ -165,7 +166,8 @@ For this example we will use :javadoc:`DataFormats#JSON` to translate a player t
 
 **Code Example: Serializing a PlayerContainer to json format**
 
-.. code-block:: java   
+.. code-block:: java
+
         public Optional<DataContainer> fromJsonFormat(InputStream inputStream){
         DataFormat df = DataFormats.JSON;
         Optional<DataContainer> dataContainer = null;
