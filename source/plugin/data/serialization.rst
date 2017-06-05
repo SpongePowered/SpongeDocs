@@ -127,7 +127,7 @@ from persistent files using the :doc:`Configurate Library <../configuration/inde
 
 DataFormat
 ==========
-A alternative to DataTranslators is using :javadoc:`DataFormat` which allows you to convert a data container this allows you to store a data container as a hocon, json or even NBT you can of course retrive data using data format.
+A alternative to DataTranslators is using :javadoc:`DataFormat.readFrom` or :javadoc:`DataFormat.writeTo` which allows you to convert a data container this allows you to store a data container as a hocon, json or even NBT you can of course retrive data using data format.
 
 This is very useful if your for example using a database to store information as you can then serialize any data container to for example json format
 
