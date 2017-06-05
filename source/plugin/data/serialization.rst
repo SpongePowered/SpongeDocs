@@ -123,3 +123,62 @@ from persistent files using the :doc:`Configurate Library <../configuration/inde
         final DataView container = translator.translate(node);
         return deserializeHealth(container);
     }
+
+
+DataFormat
+==========
+A alternative to DataTranslators is using :javadoc:`DataFormat` which allows you to convert a data container this allows you to store a data container as a hocon, json or even NBT you can of course retrive data using data format.
+
+This is very useful if your for example using a database to store information as you can then serialize any data container to for example json format
+
+For this example we will use :javadoc:`DataFormats#JSON` to translate a player to json and back!
+
+**Code Example: Serializing a Player to json format**
+
+.. code-block:: java
+
+    import org.spongepowered.api.data.DataContainer;
+    import org.spongepowered.api.data.persistence.DataFormat;
+    import org.spongepowered.api.data.persistence.DataFormats;
+    import org.spongepowered.api.entity.living.player.Player;
+    import org.spongepowered.api.plugin.Plugin;
+
+    import java.io.ByteArrayOutputStream;
+    import java.io.IOException;
+    import java.io.OutputStream;
+    
+    public OutputStream toJsonFormat(Player player){
+        DataContainer playerDataContainer = player.toContainer();
+        DataFormat dataFormat = DataFormats.JSON;
+        OutputStream outputStream = new ByteArrayOutputStream();
+        try {
+            dataFormat.writeTo(outputStream, playerDataContainer);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return outputStream;
+    }
+
+**Code Example: Serializing a PlayerContainer to json format**
+
+.. code-block:: java
+    import org.spongepowered.api.data.DataContainer;
+    import org.spongepowered.api.data.persistence.DataFormat;
+    import org.spongepowered.api.data.persistence.DataFormats;
+    import org.spongepowered.api.plugin.Plugin;
+
+    import java.io.IOException;
+    import java.io.InputStream;
+    import java.util.Optional;
+    
+        public Optional<DataContainer> fromJsonFormat(InputStream inputStream){
+        DataFormat df = DataFormats.JSON;
+        Optional<DataContainer> dataContainer = null;
+        try {
+            dataContainer = Optional.of(df.readFrom(inputStream));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return dataContainer;
+    }
