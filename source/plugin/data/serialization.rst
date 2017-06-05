@@ -133,7 +133,7 @@ A alternative to DataTranslators is using :javadoc:`DataFormat` which allows you
 
 This is very useful if your for example using a database to store information as you can then serialize any data container to for example json format
 
-For this example we will use :javadoc:`DataFormats#JSON` to translate a player to json and back!
+For this example we will use :javadoc:`DataFormats#JSON` to translate a player to json and back! 
 
 **Imports for code examples**
     import org.spongepowered.api.data.DataContainer;
@@ -168,13 +168,13 @@ For this example we will use :javadoc:`DataFormats#JSON` to translate a player t
 
 .. code-block:: java
 
-        public Optional<DataContainer> fromJsonFormat(InputStream inputStream){
+    public DataContainer fromJsonFormat(InputStream inputStream){
         DataFormat df = DataFormats.JSON;
-        Optional<DataContainer> dataContainer = null;
+
         try {
-            dataContainer = Optional.of(df.readFrom(inputStream));
+            return df.readFrom(inputStream);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return dataContainer;
+        return null;
     }
