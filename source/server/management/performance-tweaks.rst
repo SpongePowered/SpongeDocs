@@ -37,6 +37,18 @@ servers performance, especially with high entity and player counts.
             monster=32
         }
 
+Async Lighting
+==============
+
+This setting will run lighting checks on a separate thread to improve performance.
+
+.. code-block:: none
+
+  optimizations {
+      # Runs lighting updates async.
+      async-lighting=true
+      }
+
 Cache Tameable Owners
 =====================
 
@@ -58,7 +70,7 @@ post-spawning.
 .. code-block:: none
 
   optimizations {
-      # If enabled, block item drops are pre-processed to avoid 
+      # If enabled, block item drops are pre-processed to avoid
       # having to spawn extra entities that will be merged post spawning.
       # Usually, Sponge is smart enough to determine when to attempt an item pre-merge
       # and when not to, however, in certain cases, some mods rely on items not being
@@ -66,50 +78,6 @@ post-spawning.
       # without being merged.
       drops-pre-merge=true
       }
-
-Lighting Patch to Ignore Unloaded Chunks
-========================================
-
-Enabling this setting avoids loading lighting data from not yet generated chunks. This reduces disk access and chunk
-generation and thus improves performances while applying light levels to blocks.
-
-.. code-block:: none
-
-  optimizations {
-        # This prevents chunks being loaded for getting light values at specific
-        # block positions. May have side effects.
-        ignore-unloaded-chunks-on-get-light=true
-        }
-
-Cache Chunk Lookups
-===================
-
-This setting enables Sponge's internal chunk caching to improve the server's performance. It uses a small, additional
-amount of memory for caching purposes. If you run out of memory, try to disable it.
-
-.. code-block:: none
-
-  optimizations {
-        # Caches chunks internally for faster returns when querying at various
-        # positions
-        chunk-map-caching=true
-        }
-
-Inline Block Position Checks
-============================
-
-This setting inlines the check for if a block position is valid in a world.
-
-.. code-block:: none
-
-  optimizations{
-        # Inlines a simple check for whether a BlockPosition is valid
-        # in a world. By patching the check, the JVM can optimize the
-        # method further while reducing the number of operations performed
-        # for such a simple check. This may however break mods that alter
-        # world heights and can thus be disabled in those cases.
-        inline-block-position-checks=true
-        }
 
 Auto-Saving Interval Adjustment
 ===============================

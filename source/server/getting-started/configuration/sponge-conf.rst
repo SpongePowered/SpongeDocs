@@ -31,7 +31,7 @@ ip-forwarding                             boolean   false       Allows bungeecor
 **Cause Tracker**
 report-different-world-changes            boolean   false       If enabled, Sponge will report when a mod makes
                                                                 an unexpected world change.
-verbose                                   boolean   false       If enabled, the cause tracker will print out
+verbose                                   boolean   true        If enabled, the cause tracker will print out
                                                                 when there are too many phases being entered.
 **Commands**
 aliases                                   string    null        Alias will resolve conflicts when multiple
@@ -122,7 +122,9 @@ prevent-sign-command-exploit              boolean   true        Prevents an expl
                                                                 packet to update a sign containing commands from
                                                                 a player without permission.
 **General Settings**
+config-dir                                string    see config  Sets the directory for plugin configurations.
 disable-warnings                          boolean   false       Disable warning messages to server Admins.
+file-io-thread-sleep                      boolean   false       Enables sleeping between chunk saves.
 plugins-dir                               string    See config  Sets an additional directory to search for plugins.
 **Ip Sets**
 
@@ -163,6 +165,15 @@ realtime                                  boolean   false       Use real time in
 timings                                   boolean   true        Enables timing settings.
 tracking                                  boolean   true        Enables the tracking module.
 **Optimizations**                                               See :doc:`../../management/performance-tweaks`
+**Spawner**
+spawn-limit-ambient                       int       15          The number of ambients that can spawn around the player.
+spawn-limit-animal                        int       15          The number of animals that can spawn around the player.
+spawn-limit-aquatic                       int       5           The number of aquatics that can spawn around the player.
+spawn-limit-monster                       int       70          The number of monsters that can spawn around the player.
+tick-rate-ambient                         int       400         The ambient spawn tick rate.
+tick-rate-animal                          int       400         The animal spawn tick rate.
+tick-rate-aquatic                         int       400         The aquatic spawn tick rate.
+tick-rate-monster                         int       1           The monster spawn tick rate.
 **SQL**
 aliases                                   string    null        Aliases for SQL connections. This is done in
                                                                 the format
@@ -198,15 +209,15 @@ gameprofile-lookup-batch-size             integer   1           The amount of Ga
                                                                 Mojang's session server.
 gameprofile-lookup-task-interval          integer   1           The interval used to process queued GameProfile
                                                                 requests.
-generate-spawn-on-load                    boolean   true        If the world should generate spawn when the
+generate-spawn-on-load                    boolean   false       If the world should generate spawn when the
                                                                 world is loaded.
 infinite-water-source                     boolean   false       False = Default vanilla water source behaviour.
 invalid-lookup-uuids                      array     See config  The list of uuid's that shouldn't be looked up on
                                                                 Mojang's session server.
 item-merge-radius                         integer   2.5         The merge radius for item entities.
-keep-spawn-loaded                         boolean   true        If the spawn should stay loaded with no players. Has no effect in global config. Config doesn't need to be enabled either, because it will always fall back to the world config.
+keep-spawn-loaded                         boolean   false       If the spawn should stay loaded with no players. Has no effect in global config. Config doesn't need to be enabled either, because it will always fall back to the world config.
 leaf-decay                                boolean   true        If enabled, allows natural leaf decay.
-load-on-startup                           boolean   true        If the world should be loaded on startup. Has no effect in global config. Config doesn't need to be enabled either, because it will always fall back to the world config.
+load-on-startup                           boolean   false       If the world should be loaded on startup. Has no effect in global config. Config doesn't need to be enabled either, because it will always fall back to the world config.
 mob-spawn-range                           integer   8           Specifies the radius (in chunks) of where creatures
                                                                 will spawn. This value is capped to the current
                                                                 view distance setting in server.properties.
@@ -223,7 +234,7 @@ weather-thunder                           boolean   true        Enable to initia
 world-enabled                             boolean   true        Enable if this world should be registered.
 ========================================  ========  ==========  ===============================================
 
-This config was generated using SpongeForge build 2022 (with Forge 2202), SpongeAPI version 5.1:
+This config was generated using SpongeForge build 2360 (with Forge 2282), SpongeAPI version 6.0:
 
 .. code-block:: none
 
@@ -232,7 +243,7 @@ This config was generated using SpongeForge build 2022 (with Forge 2202), Sponge
     # # If you need help with the configuration or have any questions related to Sponge,
     # # join us at the IRC or drop by our forums and leave a post.
     #
-    # # IRC: #sponge @ irc.esper.net ( https://webchat.esper.net/?channel=sponge )
+    # # IRC: #sponge @ irc.esper.net ( http://webchat.esper.net/?channel=sponge )
     # # Forums: https://forums.spongepowered.org/
     #
 
@@ -276,7 +287,7 @@ This config was generated using SpongeForge build 2022 (with Forge 2202), Sponge
             # indicates an unexpected issue of tracking phases not to complete.
             # If this is not reported yet, please report to Sponge. If it has been
             # reported, you may disable this.
-            verbose=false
+            verbose=true
             # If true, the cause tracker will dump extra information about the current phaseswhen certain non-CauseTracker related exceptions occur. This is usually not necessary, as the information in the exception itself can normally be used to determine the cause of the issue
             verbose-errors=false
         }
@@ -300,7 +311,7 @@ This config was generated using SpongeForge build 2022 (with Forge 2202), Sponge
         config-enabled=false
         debug {
             # Detect and prevent certain attempts to use entities concurrently.
-            # WARNING: May drastically decrase server performance. Only enable this to debug a pre-existing issue
+            # WARNING: May drastically decrease server performance. Only enable this to debug a pre-existing issue
             concurrent-entity-checks=false
             # Dump chunks in the event of a deadlock
             dump-chunks-on-deadlock=false
@@ -336,7 +347,7 @@ This config was generated using SpongeForge build 2022 (with Forge 2202), Sponge
         entity-activation-range {
             # If enabled, newly discovered entities will be added to this config with a default value.
             auto-populate=false
-            # Default activation ranges used for all entities unless overidden.
+            # Default activation ranges used for all entities unless overridden.
             defaults {
                 ambient=32
                 aquatic=32
@@ -350,7 +361,7 @@ This config was generated using SpongeForge build 2022 (with Forge 2202), Sponge
         entity-collisions {
             # If enabled, newly discovered entities/blocks will be added to this config with a default value.
             auto-populate=false
-            # Default max collisions used for all entities/blocks unless overidden.
+            # Default max collisions used for all entities/blocks unless overridden.
             defaults {
                 blocks=8
                 entities=8
@@ -361,11 +372,12 @@ This config was generated using SpongeForge build 2022 (with Forge 2202), Sponge
             mods {
                 botania {
                     blocks {}
-                    # Default max collisions used for all entities/blocks unless overidden.
+                    # Default max collisions used for all entities/blocks unless overridden.
                     defaults {}
                     # Set to false if you want mod to ignore entity collision rules.
                     enabled=true
                     entities {
+                        botaniacorporeaspark=-1
                         botaniaspark=-1
                     }
                 }
@@ -379,7 +391,7 @@ This config was generated using SpongeForge build 2022 (with Forge 2202), Sponge
                         "wooden_button"=1
                         "wooden_pressure_plate"=1
                     }
-                    # Default max collisions used for all entities/blocks unless overidden.
+                    # Default max collisions used for all entities/blocks unless overridden.
                     defaults {}
                     # Set to false if you want mod to ignore entity collision rules.
                     enabled=true
@@ -405,6 +417,8 @@ This config was generated using SpongeForge build 2022 (with Forge 2202), Sponge
             config-dir="${CANONICAL_GAME_DIR}/config"
             # Disable warning messages to server admins
             disable-warnings=false
+            # Enabled sleeping between chunk saves, beware of memory issues
+            file-io-thread-sleep=false
             # Additional directory to search for plugins, relative to the
             # execution root or specified as an absolute path.
             # Note that the default: "${CANONICAL_MODS_DIR}/plugins"
@@ -469,29 +483,22 @@ This config was generated using SpongeForge build 2022 (with Forge 2202), Sponge
             tracking=true
         }
         optimizations {
+            # Runs lighting updates async.
+            async-lighting=true
             # Caches tameable entities owners to avoid constant lookups against data watchers. If mods cause issue, disable.
             cache-tameable-owners=true
-            # Caches chunks internally for faster returns when querying at various positions
-            chunk-map-caching=true
             # If enabled, block item drops are pre-processed to avoid
             # having to spawn extra entities that will be merged post spawning.
             # Usually, Sponge is smart enough to determine when to attempt an item pre-merge
             # and when not to, however, in certain cases, some mods rely on items not being
             # pre-merged and actually spawned, in which case, the items will flow right through
             # without being merged.
-            drops-pre-merge=false
-            # This prevents chunks being loaded for getting light values at specific block positions. May have side effects.
-            ignore-unloaded-chunks-on-get-light=true
-            # Inlines a simple check for whether a BlockPosition is valid
-            # in a world. By patching the check, the JVM can optimize the
-            # method further while reducing the number of operations performed
-            # for such a simple check. This may however break mods that alter
-            # world heights and can thus be disabled in those cases.
-            inline-block-position-checks=true
+            drops-pre-merge=true
             # Handles structures that are saved to disk. Certain structures can take up large amounts
             # of disk space for very large maps and the data for these structures is only needed while the world
             # around them is generating. Disabling saving of these structures can save disk space and time during
             # saves if your world is already fully generated.
+            # Warning: disabling structure saving will break the vanilla locate command.
             structure-saving {
                 # If enabled, newly discovered structures will be added to this config with a default value.
                 auto-populate=false
@@ -499,6 +506,7 @@ This config was generated using SpongeForge build 2022 (with Forge 2202), Sponge
                 # Per-mod overrides. Refer to the minecraft default mod for example.
                 mods {
                     minecraft {
+                        # Set to false if you want mod to never save structures.
                         enabled=true
                         structures {
                             mineshaft=false
@@ -506,6 +514,26 @@ This config was generated using SpongeForge build 2022 (with Forge 2202), Sponge
                     }
                 }
             }
+        }
+        # Used to control spawn limits around players.
+        # Note: The radius uses the lower value of mob spawn range and server's view distance.
+        spawner {
+            # The number of ambients the spawner can potentially spawn around a player.
+            spawn-limit-ambient=15
+            # The number of animals the spawner can potentially spawn around a player.
+            spawn-limit-animal=15
+            # The number of aquatics the spawner can potentially spawn around a player.
+            spawn-limit-aquatic=5
+            # The number of monsters the spawner can potentially spawn around a player.
+            spawn-limit-monster=70
+            # The ambient spawning tick rate. Default: 400
+            tick-rate-ambient=400
+            # The animal spawning tick rate. Default: 400
+            tick-rate-animal=400
+            # The aquatic spawning tick rate. Default: 400
+            tick-rate-aquatic=400
+            # The monster spawning tick rate. Default: 1
+            tick-rate-monster=1
         }
         # Configuration options related to the Sql service, including connection aliases etc
         sql {
@@ -515,9 +543,9 @@ This config was generated using SpongeForge build 2022 (with Forge 2202), Sponge
         tileentity-activation {
             # If enabled, newly discovered tileentities will be added to this config with default settings.
             auto-populate=false
-            # Default activation block range used for all tileentities unless overidden.
+            # Default activation block range used for all tileentities unless overridden.
             default-block-range=64
-            # Default tick rate used for all tileentities unless overidden.
+            # Default tick rate used for all tileentities unless overridden.
             default-tick-rate=1
             # Per-mod overrides. Refer to the minecraft default mod for example.
             mods {}
@@ -568,7 +596,7 @@ This config was generated using SpongeForge build 2022 (with Forge 2202), Sponge
             # Finally, if set to 0 or less, the default interval will be used.
             gameprofile-lookup-task-interval=4
             # Enable if you want the world to generate spawn the moment its loaded.
-            generate-spawn-on-load=true
+            generate-spawn-on-load=false
             # Vanilla water source behavior - is infinite
             infinite-water-source=false
             # The list of uuid's that should never perform a lookup against Mojang's session server.
@@ -587,11 +615,11 @@ This config was generated using SpongeForge build 2022 (with Forge 2202), Sponge
             # areas for more items. Setting to a negative value is not supported!
             item-merge-radius=2.5
             # Enable if this world's spawn should remain loaded with no players.
-            keep-spawn-loaded=true
+            keep-spawn-loaded=false
             # Enable to allow natural leaf decay.
             leaf-decay=true
             # Enable if this world should be loaded on startup.
-            load-on-startup=true
+            load-on-startup=false
             # The maximum number of queued unloaded chunks that will be unloaded in a single tick.
             # Note: With the chunk gc enabled, this setting only applies to the ticks
             # where the gc runs (controlled by 'chunk-gc-tick-interval')
