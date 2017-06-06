@@ -17,7 +17,7 @@ Add the following to the ``<project>`` block of your ``pom.xml`` to add the Spon
         <dependency>
             <groupId>org.spongepowered</groupId>
             <artifactId>spongeapi</artifactId>
-            <version>5.1.0</version>
+            <version>6.0.0</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
