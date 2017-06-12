@@ -129,11 +129,11 @@ from persistent files using the :doc:`Configurate Library <../configuration/inde
 
 DataFormat
 ==========
-An alternative to DataTranslators is to use :javadoc:DataFormat, which allows you to store a ``DataContainer`` as a hocon, json or NBT file. You can also retrieve data using ``DataFormat``.
+An alternative to DataTranslators is to use :javadoc:DataFormat, which allows you to store a ``DataContainer`` as a HOCON, JSON or NBT file. You can also retrieve data using ``DataFormat``.
 
 This is very useful if you're for example using a database to store information, as you can then serialize any ``DataContainer`` to json format.
 
-For this example we will use :javadoc:`DataFormats#JSON` to translate a player to json and back! 
+For this example we will use :javadoc:`DataFormats#JSON` to translate a ItemStack to json and back! 
 
 **Imports for code examples**
     import org.spongepowered.api.data.DataContainer;
@@ -147,14 +147,14 @@ For this example we will use :javadoc:`DataFormats#JSON` to translate a player t
     import java.io.InputStream;
     import java.util.Optional;
 
-**Code Example: Serializing a Player to json format**
+**Code Example: Serializing a ItemStack to json format**
     
 .. code-block:: java
 
-    public OutputStream toJsonFormat(Player player){
-        DataContainer playerDataContainer = player.toContainer();
+    public ByteArrayOutputStream toJsonFormat(ItemStack itemStack){
+        DataContainer playerDataContainer = itemStack.toContainer();
         DataFormat dataFormat = DataFormats.JSON;
-        OutputStream outputStream = new ByteArrayOutputStream();
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         try {
             dataFormat.writeTo(outputStream, playerDataContainer);
         } catch (IOException e) {
@@ -164,7 +164,7 @@ For this example we will use :javadoc:`DataFormats#JSON` to translate a player t
         return outputStream;
     }
 
-**Code Example: Serializing a PlayerContainer to json format**
+**Code Example: Serializing a ItemStack from json format**
 
 .. code-block:: java
 
