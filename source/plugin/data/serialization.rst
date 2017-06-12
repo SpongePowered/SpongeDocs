@@ -131,9 +131,9 @@ DataFormat
 ==========
 An alternative to DataTranslators is to use :javadoc:DataFormat, which allows you to store a ``DataContainer`` as a HOCON, JSON or NBT file. You can also retrieve data using ``DataFormat``.
 
-This is very useful if you're for example using a database to store information, as you can then serialize any ``DataContainer`` to json format.
+This is very useful if you're for example using a database to store information, as you can then serialize any ``DataContainer`` to JSON format.
 
-For this example we will use :javadoc:`DataFormats#JSON` to translate a ItemStack to json and back! 
+For this example we will use :javadoc:`DataFormats#JSON` to translate a ItemStack to JSON and back! 
 
 **Imports for code examples**
     import org.spongepowered.api.data.DataContainer;
@@ -147,7 +147,7 @@ For this example we will use :javadoc:`DataFormats#JSON` to translate a ItemStac
     import java.io.InputStream;
     import java.util.Optional;
 
-**Code Example: Serializing a ItemStack to json format**
+**Code Example: Serializing a ItemStack to JSON format**
     
 .. code-block:: java
 
