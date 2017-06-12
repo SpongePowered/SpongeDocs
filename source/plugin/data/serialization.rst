@@ -129,7 +129,7 @@ from persistent files using the :doc:`Configurate Library <../configuration/inde
 
 DataFormat
 ==========
-An alternative to DataTranslators is to use :javadoc:DataFormat, which allows you to store a ``DataContainer`` as a HOCON, JSON or NBT file. You can also retrieve data using ``DataFormat``.
+An alternative to DataTranslators is to use :javadoc:DataFormat, which allows you to store a ``DataContainer`` in HOCON, JSON or NBT format. You can also recreate DataConainters using ``DataFormats``.
 
 This is very useful if you're for example using a database to store information, as you can then serialize any ``DataContainer`` to JSON format.
 
@@ -164,17 +164,26 @@ For this example we will use :javadoc:`DataFormats#JSON` to translate a ItemStac
         return outputStream;
     }
 
-**Code Example: Serializing a ItemStack from json format**
+**Code Example: Deserializing a ItemStack from json format**
 
 .. code-block:: java
 
-    public Optional<DataContainer> fromJsonFormat(InputStream inputStream){
+    public Optional<ItemStack> fromJsonFormat(InputStream inputStream){
         DataFormat df = DataFormats.JSON;
         try {
-            return Optional.of(df.readFrom(inputStream));
+            Optional<DataContainer> dataContainerOptional = Optional.of(df.readFrom(inputStream));
+            if (dataContainerOptional.isPresent()){
+                DataContainer dataContainer = dataContainerOptional.get();
+                final Optional<DataBuilder<ItemStack>> itemStackDataBuilder = Sponge.getDataManager().getBuilder(ItemStack.class);
+                if (itemStackDataBuilder.isPresent()){
+                    DataBuilder<ItemStack> itemStackBuilder =  itemStackDataBuilder.get();
+                    return itemStackBuilder.build(dataContainer);
+                    
+                }
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
-        
+
         return Optional.empty();
     }
