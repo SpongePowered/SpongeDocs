@@ -174,7 +174,7 @@ For this example we will use :javadoc:`DataFormats#JSON` to translate a ItemStac
         final Optional<DataBuilder<ItemStackSnapshot>> dataBuilderOptional =            Sponge.getDataManager().getBuilder(ItemStackSnapshot.class);
         if (dataBuilderOptional.isPresent()){
             DataBuilder<ItemStackSnapshot> itemStackSnapshotDataBuilder = dataBuilderOptional.get();
-            Optional<DataView> dataViewOptional = dataContainer.getView(DataQuery.of("item"));
+            Optional<DataView> dataViewOptional = dataContainer;
             if (dataViewOptional.isPresent()){
                 return itemStackSnapshotDataBuilder.build(dataViewOptional.get());
             }
