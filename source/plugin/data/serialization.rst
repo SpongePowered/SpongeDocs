@@ -151,7 +151,7 @@ For this example we will use :javadoc:`DataFormats#JSON` to translate a ItemStac
     
 .. code-block:: java
 
-    public ByteArrayOutputStream toJsonFormat(ItemStack itemStack){
+    public ByteArrayOutputStream toJsonFormat(ItemStackSnapshot itemStack){
         DataContainer playerDataContainer = itemStack.toContainer();
         DataFormat dataFormat = DataFormats.JSON;
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
@@ -168,22 +168,14 @@ For this example we will use :javadoc:`DataFormats#JSON` to translate a ItemStac
 
 .. code-block:: java
 
-    public Optional<ItemStack> fromJsonFormat(InputStream inputStream){
-        DataFormat df = DataFormats.JSON;
-        try {
-            Optional<DataContainer> dataContainerOptional = Optional.of(df.readFrom(inputStream));
-            if (dataContainerOptional.isPresent()){
-                DataContainer dataContainer = dataContainerOptional.get();
-                final Optional<DataBuilder<ItemStack>> itemStackDataBuilder = Sponge.getDataManager().getBuilder(ItemStack.class);
-                if (itemStackDataBuilder.isPresent()){
-                    DataBuilder<ItemStack> itemStackBuilder =  itemStackDataBuilder.get();
-                    return itemStackBuilder.build(dataContainer);
-                    
-                }
+    public static Optional<ItemStackSnapshot> getItemStackSnapshotFromDataContainer(DataContainer dataContainer){
+        final Optional<DataBuilder<ItemStackSnapshot>> dataBuilderOptional =            Sponge.getDataManager().getBuilder(ItemStackSnapshot.class);
+        if (dataBuilderOptional.isPresent()){
+            DataBuilder<ItemStackSnapshot> itemStackSnapshotDataBuilder = dataBuilderOptional.get();
+            Optional<DataView> dataViewOptional = dataContainer.getView(DataQuery.of("item"));
+            if (dataViewOptional.isPresent()){
+                return itemStackSnapshotDataBuilder.build(dataViewOptional.get());
             }
-        } catch (IOException e) {
-            e.printStackTrace();
         }
-
         return Optional.empty();
     }
