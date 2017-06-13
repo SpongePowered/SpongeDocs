@@ -171,13 +171,5 @@ For this example we will use :javadoc:`DataFormats#JSON` to translate a ItemStac
 .. code-block:: java
 
     public Optional<ItemStackSnapshot> getItemStackSnapshotFromDataContainer(DataContainer dataContainer){
-        final Optional<DataBuilder<ItemStackSnapshot>> dataBuilderOptional =            Sponge.getDataManager().getBuilder(ItemStackSnapshot.class);
-        if (dataBuilderOptional.isPresent()){
-            DataBuilder<ItemStackSnapshot> itemStackSnapshotDataBuilder = dataBuilderOptional.get();
-            Optional<DataView> dataViewOptional = dataContainer;
-            if (dataViewOptional.isPresent()){
-                return itemStackSnapshotDataBuilder.build(dataViewOptional.get());
-            }
-        }
-        return Optional.empty();
+        return Sponge.getDataManager().deserialize(ItemStackSnapshot.class, dataContainer);
     }
