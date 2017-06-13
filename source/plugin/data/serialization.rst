@@ -131,7 +131,7 @@ DataFormat
 ==========
 An alternative to DataTranslators is to use :javadoc:DataFormat, which allows you to store a ``DataContainer`` in HOCON, JSON or NBT format. You can also recreate DataConainters using ``DataFormats``.
 
-This is very useful if you're for example using a database to store information, as you can then serialize any ``DataContainer`` to JSON format.
+For example, you could use ``DataFormat`` to create a json repusentation of a ``DataContainer``, which you could then easily store in a database as JSON. ``DataFormat`` can then be used to recreate the original ``DataContainer`` from json where required.
 
 For this example we will use :javadoc:`DataFormats#JSON` to translate a ItemStackSnapshot to JSON and back! 
 
