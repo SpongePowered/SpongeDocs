@@ -133,21 +133,23 @@ An alternative to DataTranslators is to use :javadoc:DataFormat, which allows yo
 
 This is very useful if you're for example using a database to store information, as you can then serialize any ``DataContainer`` to JSON format.
 
-For this example we will use :javadoc:`DataFormats#JSON` to translate a ItemStack to JSON and back! 
+For this example we will use :javadoc:`DataFormats#JSON` to translate a ItemStackSnapshot to JSON and back! 
 
 **Imports for code examples**
+    import org.spongepowered.api.Sponge;
     import org.spongepowered.api.data.DataContainer;
+    import org.spongepowered.api.data.DataQuery;
+    import org.spongepowered.api.data.DataView;
+    import org.spongepowered.api.data.persistence.DataBuilder;
     import org.spongepowered.api.data.persistence.DataFormat;
     import org.spongepowered.api.data.persistence.DataFormats;
-    import org.spongepowered.api.entity.living.player.Player;
+    import org.spongepowered.api.item.inventory.ItemStackSnapshot;
 
     import java.io.ByteArrayOutputStream;
     import java.io.IOException;
-    import java.io.OutputStream;
-    import java.io.InputStream;
     import java.util.Optional;
 
-**Code Example: Serializing a ItemStack to JSON format**
+**Code Example: Serializing a ItemStackSnapshot to JSON format**
     
 .. code-block:: java
 
@@ -164,11 +166,11 @@ For this example we will use :javadoc:`DataFormats#JSON` to translate a ItemStac
         return outputStream;
     }
 
-**Code Example: Deserializing a ItemStack from json format**
+**Code Example: Deserializing a ItemStackSnapshot from json format**
 
 .. code-block:: java
 
-    public static Optional<ItemStackSnapshot> getItemStackSnapshotFromDataContainer(DataContainer dataContainer){
+    public Optional<ItemStackSnapshot> getItemStackSnapshotFromDataContainer(DataContainer dataContainer){
         final Optional<DataBuilder<ItemStackSnapshot>> dataBuilderOptional =            Sponge.getDataManager().getBuilder(ItemStackSnapshot.class);
         if (dataBuilderOptional.isPresent()){
             DataBuilder<ItemStackSnapshot> itemStackSnapshotDataBuilder = dataBuilderOptional.get();
