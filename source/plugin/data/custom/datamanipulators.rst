@@ -3,6 +3,9 @@ Custom DataManipulators
 =======================
 
 .. javadoc-import::
+    org.spongepowered.api.event.game.state.GameInitializationEvent
+    org.spongepowered.api.data.DataManager
+    org.spongepowered.api.data.DataRegistration
     org.spongepowered.api.data.DataSerializable
     org.spongepowered.api.data.DataHolder
     org.spongepowered.api.data.DataQuery
@@ -20,6 +23,7 @@ Custom DataManipulators
     org.spongepowered.api.data.value.mutable.BoundedComparableValue
     org.spongepowered.api.data.value.ValueContainer
     org.spongepowered.api.inventory.ItemStack
+    org.spongepowered.api.util.TypeTokens
     java.util.Comparable
     java.util.Comparator
     com.google.common.reflect.TypeToken
@@ -108,8 +112,10 @@ You need to pass one ``TypeToken`` representing the *raw* type of your value, an
 
 .. note::
 
-    :javadoc:`TypeToken`\ s are used by the server implementation to preserve the generic type of your
-    values. They are created in one of two ways:
+    :javadoc:`TypeToken`\ s are used by the implementation to preserve the generic type of your
+    values. Sponge provides a long list of pre-built tokens for the API in :javadoc:`TypeTokens`.
+
+    If you need to create your own, you can do this in one of two ways:
 
     - For non-generic types, use ``TypeToken.of(MyType.class)``
     - For generic types, create an anonymous class with ``TypeToken<MyGenericType<String>>() {}``
@@ -143,6 +149,49 @@ change is made to the format of your serialized data, and use :ref:`content-upda
 
         return container;
     }
+
+Registration
+============
+
+Registering your ``DataManipulator`` allows it to be accessible by Sponge and by other plugins in a generic way. The
+game/plugin can create copies of your data and serialize/deserialize your data without referencing any of your classes
+directly.
+
+To register a ``DataManipulator`` Sponge has the :javadoc:`DataRegistration#builder()` helper. This will build a
+:javadoc:`DataRegistration` and automatically register it.
+
+
+.. note::
+
+    Due to the nature of Data, you *must* register your ``DataManipulator`` during initialization - generally by
+    listening to :javadoc:`GameInitializationEvent` such as in the example below. If you try to register a
+    ``DataManipulator`` once initialization is complete an exception will be thrown.
+
+.. code-block:: java
+
+    import org.spongepowered.api.event.game.state.GameInitializationEvent;
+    import org.spongepowered.api.data.DataRegistration;
+
+    import org.example.MyCustomData;
+    import org.example.ImmutableCustomData;
+    import org.example.CustomDataBuilder;
+
+    @Listener
+    public void onInit(GameInitializationEvent event) {
+      DataRegistration.builder()
+          .dataClass(MyCustomData.class)
+          .immutableClass(ImmutableCustomData.class)
+          .builder(new CustomDataBuilder())
+          .manipulatorId("my-custom")
+          .dataName("My Custom")
+          .buildAndRegister(myPluginContainer);
+    }
+
+.. warning::
+
+    Data that was serialized prior to ``6.0.0``, or data where you have changed the ID, will *not* be recognised unless
+    registered with :javadoc:`DataManager#registerLegacyManipulatorIds(String, DataRegistration)`. If registering a
+    pre-6.0.0 ``DataManipulator`` the ID is taken from `Class.getName()`, such as ``com.example.MyCustomData``.
 
 .. _single-data-types:
 
