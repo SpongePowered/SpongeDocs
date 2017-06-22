@@ -15,7 +15,7 @@ Serializing Custom Data
     org.spongepowered.api.data.persistence.DataTranslators
     org.spongepowered.api.data.serialization.DataSerializable
 
-Without a method serializing and deserializng, your data will not persist across restarts. Sponge has a few different 
+Without a method for serializing and deserializing, your data will not persist across restarts. Sponge has a few different 
 ways to serialize/deserialize data based on the type of data:
 
 - :javadoc:`DataSerializable`\ s implement an interface to perform serialization, and use :javadoc:`DataBuilder` for 
