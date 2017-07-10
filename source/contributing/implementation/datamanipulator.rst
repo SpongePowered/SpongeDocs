@@ -18,6 +18,8 @@ When these steps are complete, the following must also be done:
 #. Implement the ``ValueProcessor`` for each value being represented by the ``DataManipulator``
 #. Register everything in the ``SpongeSerializationRegistry``
 
+If the data applies to a block, several methods must also be mixed in to the block.
+
 .. note::
     Make sure you follow our :doc:`../guidelines`.
 
@@ -520,6 +522,75 @@ can be registered by subsequent calls of the ``registerValueProcessor()`` method
 
     dataRegistry.registerValueProcessor(Keys.HEALTH, new HealthValueProcessor());
     dataRegistry.registerValueProcessor(Keys.MAX_HEALTH, new MaxHealthValueProcessor());
+
+
+Implementing Block Data
+=======================
+
+Block data is somewhat different from other types of data in that it is implemented by mixing in to the block itself.
+There are several methods in ``org.spongepowered.mixin.core.block.MixinBlock`` that must be overridden to implement
+data for blocks.
+
+.. code-block:: java
+    
+    @Mixin(BlockHorizontal.class)
+    public abstract class MixinBlockHorizontal extends MixinBlock {
+
+        [...]
+    }
+
+``supports()`` should return ``true`` if either the ``ImmutableDataManipulator`` interface is assignable from the
+``Class`` passed in as the argument, or the superclass supports it.
+
+.. code-block:: java
+
+    @Override
+    public boolean supports(Class<? extends ImmutableDataManipulator<?, ?>> immutable) {
+        return super.supports(immutable) || ImmutableDirectionalData.class.isAssignableFrom(immutable);
+    }
+
+``getStateWithData()`` should return a new ``BlockState`` with the data from the ``ImmutableDataManipulator`` applied
+to it. If the manipulator is not directly supported, the method should delegate to the superclass.
+
+.. code-block:: java
+
+    @Override
+    public Optional<BlockState> getStateWithData(IBlockState blockState, ImmutableDataManipulator<?, ?> manipulator) {
+        if (manipulator instanceof ImmutableDirectionalData) {
+            final Direction direction = ((ImmutableDirectionalData) manipulator).direction().get();
+            final EnumFacing facing = DirectionResolver.getFor(direction);
+            return Optional.of((BlockState) blockState.withProperty(BlockHorizontal.FACING, facing));
+        }
+        return super.getStateWithData(blockState, manipulator);
+    }
+
+``getStateWithValue()`` is the equivalent of ``getStateWithData()``, but works with single ``Key``s.
+
+.. code-block:: java
+
+    @Override
+    public <E> Optional<BlockState> getStateWithValue(IBlockState blockState, Key<? extends BaseValue<E>> key, E value) {
+        if (key.equals(Keys.DIRECTION)) {
+            final Direction direction = (Direction) value;
+            final EnumFacing facing = DirectionResolver.getFor(direction);
+            return Optional.of((BlockState) blockState.withProperty(BlockHorizontal.FACING, facing));
+        }
+        return super.getStateWithValue(blockState, key, value);
+    }
+
+Finally, ``getManipulators()`` should return a list of all ``ImmutableDataManipulator``s the block supports, along with
+the current values for the provided ``IBlockState``. It should include all ``ImmutableDataManipulator``s from the
+superclass.
+
+.. code-block:: java
+
+    @Override
+    public List<ImmutableDataManipulator<?, ?>> getManipulators(IBlockState blockState) {
+        return ImmutableList.<ImmutableDataManipulator<?, ?>>builder()
+                .addAll(super.getManipulators(blockState))
+                .add(new ImmutableSpongeDirectionalData(DirectionResolver.getFor(blockState.getValue(BlockHorizontal.FACING))))
+                .build();
+    }
 
 
 Further Information
