@@ -564,7 +564,7 @@ to it. If the manipulator is not directly supported, the method should delegate 
         return super.getStateWithData(blockState, manipulator);
     }
 
-``getStateWithValue()`` is the equivalent of ``getStateWithData()``, but works with single ``Key``s.
+``getStateWithValue()`` is the equivalent of ``getStateWithData()``, but works with single ``Key``\ s.
 
 .. code-block:: java
 
@@ -578,8 +578,8 @@ to it. If the manipulator is not directly supported, the method should delegate 
         return super.getStateWithValue(blockState, key, value);
     }
 
-Finally, ``getManipulators()`` should return a list of all ``ImmutableDataManipulator``s the block supports, along with
-the current values for the provided ``IBlockState``. It should include all ``ImmutableDataManipulator``s from the
+Finally, ``getManipulators()`` should return a list of all ``ImmutableDataManipulator``\ s the block supports, along with
+the current values for the provided ``IBlockState``. It should include all ``ImmutableDataManipulator``\ s from the
 superclass.
 
 .. code-block:: java
