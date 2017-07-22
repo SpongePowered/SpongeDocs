@@ -184,8 +184,8 @@ The recommended way to obtain your config file is through Guice, along with the 
 DefaultConfig
 ~~~~~~~~~~~~~
 
-The way that ``@DefaultConfig`` works is very similar to ``@ConfigDir``. The biggest difference obviously being that
-``@DefaultConfig`` refers to a specific file, where ``@ConfigDir`` refers to a directory.
+The way that ``@DefaultConfig`` works is very similar to ``@ConfigDir``. The biggest difference is that
+``@DefaultConfig`` refers to a specific file, whereas ``@ConfigDir`` refers to a directory.
 
 .. tip::
 
