@@ -381,11 +381,11 @@ Credit goes to the editors at the `Minecraft Wiki <http://minecraft.gamepedia.co
 |                               |             |             | as those for real-life friends or strangers carefully      |
 |                               |             |             | selected via an application process, for example.          |
 |                               |             |             |                                                            |
-|                               |             |             |  **false** - No white list is used.                        |
+|                               |             |             |  **false** - No whitelist is used.                         |
 |                               |             |             |                                                            |
 |                               |             |             |  **true** - The file ``whitelist.json`` is used to         |
-|                               |             |             |  generate the white list.                                  |
+|                               |             |             |  generate the whitelist.                                   |
 |                               |             |             |                                                            |
-|                               |             |             | **Note:** *Ops are automatically white listed, and there*  |
+|                               |             |             | **Note:** *Ops are automatically whitelisted, and there*   |
 |                               |             |             | *is no need to add them to the whitelist.*                 |
 +-------------------------------+-------------+-------------+------------------------------------------------------------+
