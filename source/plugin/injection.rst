@@ -24,7 +24,7 @@ Temporary List of Injected Types
 
 :javadoc:`ConfigDir` (annotation on Path or File)
   Used to inject the plugin's configuration directory:
-  ``./mods/`` OR ``./mods/<Plugin#id>/`` depending on :javadoc:`ConfigDir#sharedRoot()`
+  ``./config/`` OR ``./config/<Plugin#id>/`` depending on :javadoc:`ConfigDir#sharedRoot()`
 
 :javadoc:`ConfigurationLoader<CommentedConfigurationNode>`
   Must be annotated with ``@DefaultConfig``.
