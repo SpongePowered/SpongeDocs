@@ -37,13 +37,13 @@ Allowed characters are:
 Inheritance
 ~~~~~~~~~~~
 
-If a user has the permission ``myPlugin.commands`` then they automatically have all sub permissions such as
-``myPlugin.commands.teleport`` unless the permissions are explicitly removed.
+If a user has the permission ``myplugin.commands`` then they automatically have all sub permissions such as
+``myplugin.commands.teleport`` unless the permissions are explicitly removed.
 
 .. note::
 
-    There is no such thing as a ``myPlugin.commands.*`` wildcard permission.
-    Use ``myPlugin.commands`` for that.
+    There is no such thing as a ``myplugin.commands.*`` wildcard permission.
+    Use ``myplugin.commands`` for that.
 
 Structure-Example
 ~~~~~~~~~~~~~~~~~
@@ -51,24 +51,24 @@ Structure-Example
 The following example show one possible way of structuring permissions, but following this structure is not required at
 all.
 
-* ``myPlugin``
+* ``myplugin``
     * Grants **full** access to all plugin's permissions.
 
-* ``myPlugin.commands``
+* ``myplugin.commands``
     * Grants **full** access to all plugin's commands.
 
-* ``myPlugin.commands.teleport.execute``
+* ``myplugin.commands.teleport.execute``
     * Only grants the user the permission to execute the command. Without this permission he is not able to execute the
       command even if he has other `teleport` permissions.
       (With this permission alone the user would only be able to teleport himself to others in his current world.)
 
-* ``myPlugin.commands.teleport.all``
+* ``myplugin.commands.teleport.all``
     * Only grants the user the permission to teleport all players at once.
 
-* ``myPlugin.commands.teleport.worlds``
+* ``myplugin.commands.teleport.worlds``
     * Only grants the user the permission to teleport to all worlds.
 
-* ``myPlugin.commands.teleport.worlds.mynetherworld``
+* ``myplugin.commands.teleport.worlds.mynetherworld``
     * Only grants the user the permission to teleport to *mynetherworld*.
 
 PermissionDescription
@@ -99,10 +99,10 @@ Usage-Example
     import org.spongepowered.api.text.Text;
     import java.util.Optional;
 
-    Optional<Builder> optBuilder = permissionService.newDescriptionBuilder(myPlugin);
+    Optional<Builder> optBuilder = permissionService.newDescriptionBuilder(myplugin);
     if (optBuilder.isPresent()) {
         Builder builder = optBuilder.get();
-        builder.id("myPlugin.commands.teleport.execute")
+        builder.id("myplugin.commands.teleport.execute")
                .description(Text.of("Allows the user to execute the teleport command."))
                .assign(PermissionDescription.ROLE_STAFF, true)
                .register();
@@ -113,7 +113,7 @@ Simple-Result
 
 .. code-block:: text
     
-    myPlugin.commands.teleport.execute
+    myplugin.commands.teleport.execute
     
     Description: Allows the user to execute the teleport command.
     Role: user
@@ -124,7 +124,7 @@ Template-Result
 
 .. code-block:: text
     
-    myPlugin.commands.teleport.worlds.<World>
+    myplugin.commands.teleport.worlds.<World>
     
     Description: Allows the user to teleport to the world <World>.
     Role: staff
@@ -132,8 +132,8 @@ Template-Result
 
 .. tip::
 
-    You might skip writing descriptions for some parent permission groups such as ``myPlugin.commands.teleport.worlds``
-    or ``myPlugin.commands`` as their meaning can be derived from the permission structure and the defined children
+    You might skip writing descriptions for some parent permission groups such as ``myplugin.commands.teleport.worlds``
+    or ``myplugin.commands`` as their meaning can be derived from the permission structure and the defined children
     alone.
 
 Subject
@@ -160,9 +160,9 @@ The following example could be used to check whether the Player is allowed to ex
     import org.spongepowered.api.world.World;
 
     public boolean canTeleport(Player subject, World targetWorld) {
-        return subject.hasPermission("myPlugin.command.teleport.execute") 
+        return subject.hasPermission("myplugin.command.teleport.execute") 
                 && (subject.getWorld() == targetWorld
-                        || subject.hasPermission("myPlugin.command.teleport." + targetWorld.getName()));
+                        || subject.hasPermission("myplugin.command.teleport." + targetWorld.getName()));
     }
 
 Inheritance
@@ -307,9 +307,9 @@ Your ``ContextCalculator`` may look like this:
 
     public class ExampleCalculator implements ContextCalculator<Subject> {
     
-        private static final Context IN_ANY_ARENA = new Context("myArenaPlugin-inAnyArena", "true");
-        private static final Context NOT_ANY_ARENA = new Context("myArenaPlugin-inAnyArena", "false");
-        private static final String ARENA_KEY = "myArenaPlugin-arena";
+        private static final Context IN_ANY_ARENA = new Context("myarenaplugin-inAnyArena", "true");
+        private static final Context NOT_ANY_ARENA = new Context("myarenaplugin-inAnyArena", "false");
+        private static final String ARENA_KEY = "myarenaplugin-arena";
     
         private final Map<UUID, String> playerArenas = new HashMap<>();
     

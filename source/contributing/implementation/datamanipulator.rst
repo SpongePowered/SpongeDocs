@@ -43,7 +43,7 @@ second is the interface implemented by the corresponding ``ImmutableDataManipula
 The Constructor
 ~~~~~~~~~~~~~~~
 
-In most cases while implementing an abstract Manipulator you want to have two constructors:
+In most cases while implementing an abstract ``DataManipulator`` you need to have two constructors:
 
 * One without arguments (no-args) which calls the second constructor with "default" values
 * The second constructor that takes all the values it supports.

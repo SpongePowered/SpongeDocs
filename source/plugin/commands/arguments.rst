@@ -145,7 +145,7 @@ Overview of the ``GenericArguments`` command elements
 |                            | is of invalid format and there are no more args.                                        |                               |
 +----------------------------+-----------------------------------------------------------------------------------------+-------------------------------+
 | ``firstParsing``           | Returns a command element that matches the first of the provided elements that parses   | inherited                     |
-|                            | (useful for command overloading, e.g. ``/settime <day|night|<number>>``).               |                               |
+|                            | (useful for command overloading, e.g. ``/settime <day|night|<number>``).                |                               |
 +----------------------------+-----------------------------------------------------------------------------------------+-------------------------------+
 | ``onlyOne``                | Restricts the given command element to only insert one value into the context at the    | inherited                     |
 |                            | provided key.                                                                           |                               |

@@ -24,7 +24,7 @@ Temporary List of Injected Types
 
 :javadoc:`ConfigDir` (annotation on Path or File)
   Used to inject the plugin's configuration directory:
-  ``./mods/`` OR ``./mods/<Plugin#id>/`` depending on :javadoc:`ConfigDir#sharedRoot()`
+  ``./config/`` OR ``./config/<Plugin#id>/`` depending on :javadoc:`ConfigDir#sharedRoot()`
 
 :javadoc:`ConfigurationLoader<CommentedConfigurationNode>`
   Must be annotated with ``@DefaultConfig``.
@@ -96,8 +96,8 @@ Game
 The ``Game`` object is the opening for many of the internal functions of the SpongeAPI, from the ``EventManager`` to the
 :javadoc:`Server` and even the Sync/Async :javadoc:`Scheduler`.
 
-It's entirely possible to receive the ``Game`` object from within most events, however it is commonly obtained through
-an injection.
+While it is entirely possible to retrieve the ``Game`` object through ``Sponge.getGame()``, it is commonly obtained
+through an injection.
 
 **Example - Field**
 
@@ -184,8 +184,8 @@ The recommended way to obtain your config file is through Guice, along with the 
 DefaultConfig
 ~~~~~~~~~~~~~
 
-The way that ``@DefaultConfig`` works is very similar to ``@ConfigDir``. The biggest difference obviously being that
-``@DefaultConfig`` refers to a specific file, where ``@ConfigDir`` refers to a directory.
+The way that ``@DefaultConfig`` works is very similar to ``@ConfigDir``. The biggest difference is that
+``@DefaultConfig`` refers to a specific file, whereas ``@ConfigDir`` refers to a directory.
 
 .. tip::
 
