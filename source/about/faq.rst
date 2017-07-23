@@ -110,8 +110,8 @@ It is even possible to use Sponge on the client-side, but for several tasks mods
 I'm a Bukkit Plugin Developer! Why Can't Sponge Use Bukkit's API?
 -----------------------------------------------------------------
 
-Bukkit’s API contains code licensed under the GPL. This is a large reason why Bukkit met its demise in September; by
-moving forward with a new API licensed under the MIT license, we can avoid some of the problems that fell upon Bukkit.
+Bukkit’s API contains code licensed under the GPL. This is a large reason why Bukkit met its demise in September 2014; 
+by moving forward with a new API licensed under the MIT license, we can avoid some of the problems that fell upon Bukkit.
 While this does not free us from Mojang’s control, as their code is proprietary, it is our belief that Mojang supports
 modding and will continue to do so.
 
