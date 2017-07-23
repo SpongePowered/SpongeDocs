@@ -14,8 +14,8 @@ Event Causes
 
 Events are great for attaching additional logic to game actions, but they have the drawback of providing next to no
 context as to what has **caused** that event to occur. The :javadoc:`Cause` object allows providing and receiving
-additional contextual information about the event. This contextual information can then used to modify the behavior of
-your event listener.
+additional contextual information about the event. This contextual information can then be used to modify the behavior
+of your event listener.
 
 For example, a world protection plugin needs information on what player has caused a :javadoc:`ChangeBlockEvent` to
 occur before they can decide if the event should be cancelled or not. Rather than go with the traditional route of
@@ -30,7 +30,7 @@ Retrieving objects from a Cause
 
 Structurally, a ``Cause`` object contains a sequential list of objects. There are several methods of
 retrieving information from a Cause object which we will discuss here, for a more complete
-listing please see the javadocs **link**.
+listing please see the `Javadocs <https://jd.spongepowered.org>`_.
 
 .. note::
 
