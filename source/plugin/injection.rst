@@ -96,8 +96,8 @@ Game
 The ``Game`` object is the opening for many of the internal functions of the SpongeAPI, from the ``EventManager`` to the
 :javadoc:`Server` and even the Sync/Async :javadoc:`Scheduler`.
 
-It's entirely possible to receive the ``Game`` object from within most events, however it is commonly obtained through
-an injection.
+While it is entirely possible to retrieve the ``Game`` object through ``Sponge.getGame()``, it is commonly obtained
+through an injection.
 
 **Example - Field**
 
