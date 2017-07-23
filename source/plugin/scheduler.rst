@@ -93,7 +93,7 @@ Using the ``Task.Builder``, you can specify other, optional properties, as descr
 +-----------------+-------------------------+--------------------------------------------------------------------------+
 | name            | name(String name)       | The name of the task. By default, the name of the task will be           |
 |                 |                         | PLUGIN_ID "-" ( "A-" | "S-" ) SERIAL_ID. For example, a default task name|
-|                 |                         | could look like "FooPlugin-A-12". No two active tasks will have the same |
+|                 |                         | could look like "fooplugin-A-12". No two active tasks will have the same |
 |                 |                         | serial ID for the same synchronization type. If a task name is specified,|
 |                 |                         | it should be descriptive and aid users in debugging your plugin.         |
 +-----------------+-------------------------+--------------------------------------------------------------------------+
