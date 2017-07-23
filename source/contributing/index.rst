@@ -2,7 +2,7 @@
 Contributing to Sponge
 ======================
 
-This sections intends to show you ways to get involved with Sponge.
+This section shows you how to get involved with Sponge.
 
 What are the projects I can help with?
 ======================================
