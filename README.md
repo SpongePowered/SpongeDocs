@@ -15,7 +15,7 @@ We're eagerly looking for translators! Please visit the [CrowdIn translation pag
 
 ## Local Environment
 
-You can setup an environment so you can instantly see the changes that make to the docs.
+You can setup an environment so you can instantly see the changes that have been made to the docs.
 
 1. [Install Python 3](https://www.python.org)
 2. [Install node.js](https://nodejs.org)
