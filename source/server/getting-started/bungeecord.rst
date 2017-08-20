@@ -55,7 +55,7 @@ Using BungeeCord with IP Forwarding
 If you wish to use IP Forwarding:
 
 * In the BungeeCord ``config.yml``, set ``ip_forward`` to ``true``
-* In Sponge's config (config/global.conf), set ``modules.bungeecord`` to ``true`` and ``bungeecord.ip-forwarding`` to
+* In Sponge's config (config/sponge/global.conf), set ``modules.bungeecord`` to ``true`` and ``bungeecord.ip-forwarding`` to
   ``true``
 * If you have any other server software, consult the documentation for that server.
 
