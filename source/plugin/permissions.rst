@@ -387,7 +387,7 @@ Example
 
 .. code-block:: java
 
-    public Block AwesomeBlock extends Block {
+    public class AwesomeBlock extends Block {
         @Override
         public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumFacing side, float hitX, float hitY, float hitZ) {
             if (player.canCommandSenderUseCommand(4, "examplemod.awesomeblock.interact")) {
