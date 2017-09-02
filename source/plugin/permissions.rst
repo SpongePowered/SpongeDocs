@@ -390,17 +390,18 @@ Example
     public Block AwesomeBlock extends Block {
         @Override
         public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumFacing side, float hitX, float hitY, float hitZ) {
-            if(player.canCommandSenderUseCommand(4, "examplemod.awesomeblock.interact")) {
-                //Do cool stuff
+            if (player.canCommandSenderUseCommand(4, "examplemod.awesomeblock.interact")) {
+                // Do cool stuff
                 return true;
             }
-        return false;
+            return false;
         }
     }
 
 As you can see, we simply check for the OP level and pass in an arbitrary String we want to use as a permission when Sponge is used.
 When Forge is used by itself the player simply requires the OP level, so passing a value of 0 would allow all users to interact with
 the block, but when SpongeForge is added they require the permission node of ``examplemod.awesomeblock.interact``.
+It is recommended to follow the permission structure as described above. The permission inheritance does also apply to these checks.
 
 .. note::
     
