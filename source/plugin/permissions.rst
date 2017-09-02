@@ -372,11 +372,15 @@ The ``ContextCalculator`` can be registered via:
     permissionService.registerContextCalculator(contextCalculator);
 
 For Forge Mods
-========
+==============
 
-If you are the author of a Forge mod and are not using the new Forge PermissionsAPI but are doing OP checks then you are already on the right path for Sponge to pick up permissions.
+If you are the author of a Forge mod and are not using the new Forge PermissionsAPI but are doing OP checks, then you are already
+on the right path for Sponge to pick up permissions.
 
-The simplest way to create a Sponge permission in a Forge mod without soft-depending on SpongeAPI is to use the method provided by Vanilla Minecraft code in ``ICommandSender``, namely ``ICommandSender.canCommandSenderUseCommand(int permLevel, String commandName)``. The String passed into that method has no use at all in a Vanilla Forge environment but when Sponge Forge is added it automatically takes that String and converts it into a working permission.
+The simplest way to create a Sponge permission in a Forge mod without soft-depending on SpongeAPI is to use the method provided by
+Vanilla Minecraft code in ``ICommandSender``, namely ``ICommandSender.canCommandSenderUseCommand(int permLevel, String commandName)``.
+The String passed into that method has no use at all in a Vanilla Forge environment, but when SpongeForge is added it automatically
+takes that String and converts it into a working permission.
 
 Example
 ~~~~~~~
@@ -394,7 +398,9 @@ Example
         }
     }
 
-As you can see, we simply check for the OP level and pass in a random String we want to use as a permission when Sponge is used. When Forge is used by itself the player simply requires the OP level, passing a value of 0 would allow all users to interact with the block but when SpongeForge is added they require the permission node of ``examplemod.awesomeblock.interact``.
+As you can see, we simply check for the OP level and pass in an arbitrary String we want to use as a permission when Sponge is used.
+When Forge is used by itself the player simply requires the OP level, so passing a value of 0 would allow all users to interact with
+the block, but when SpongeForge is added they require the permission node of ``examplemod.awesomeblock.interact``.
 
 .. note::
     
