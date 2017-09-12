@@ -405,4 +405,4 @@ It is recommended to follow the permission structure as described above. The per
 
 .. note::
     
-    The srg name for this method is ``func_70003_b``
+    The SRG name for this method is ``func_70003_b``.
