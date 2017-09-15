@@ -76,8 +76,8 @@ recent *release* of SpongeAPI.
 Core Branch
 ~~~~~~~~~~~
 
-The core branch for the SpongeDocs is ``master``. Each new commit to ``master`` triggers a rebuild of the `docs website
-<https://docs.spongepowered.org/>`_. Commits to ``master`` are generally made to document the most current SpongeAPI
+The core branch for the SpongeDocs is ``stable``. Each new commit to ``stable`` triggers a rebuild of the `docs website
+<https://docs.spongepowered.org/>`_. Commits to ``stable`` are generally made to document the most current SpongeAPI
 release or to fix minor mistakes on the Docs.
 
 Feature Branches
