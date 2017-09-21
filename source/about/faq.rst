@@ -12,9 +12,9 @@ For Everyone
 What is Sponge?
 ---------------
 
-Sponge is a new versatile Minecraft API. It was made to enrich your Minecraft experience by allowing plugins to add
-functionality to Minecraft. Read more about Sponge here: :doc:`introduction` and about the history of Sponge here:
-:doc:`history`
+Sponge is a new versatile Minecraft: Java Edition API. It was made to enrich your Minecraft experience by allowing
+plugins to add functionality to Minecraft. Read more about Sponge here: :doc:`introduction` and about the history of
+Sponge here: :doc:`history`
 
 What is required to run Sponge?
 -------------------------------
@@ -34,10 +34,10 @@ What Sponge implementations are available?
 
 The Sponge Project currently develops two implementations which both use the SpongeAPI:
 
-(1) **SpongeForge**, a coremod for Minecraft Forge, which is an existing Minecraft modding framework famous for spurring
-    the Minecraft modding scene. Forge lacks a cross-version API, and this is where Sponge steps in. Sponge allows
-    server owners to deploy Sponge plugins with ease, making server management easier.
-    (SpongeForge was formerly known as Sponge, until it was renamed to avoid confusion).
+(1) **SpongeForge**, a coremod for Minecraft Forge, which is an existing Minecraft: Java Edition modding framework
+    famous for spurring the Minecraft modding scene. Forge lacks a cross-version API, and this is where Sponge steps
+    in. Sponge allows server owners to deploy Sponge plugins with ease, making server management easier. (SpongeForge
+    was formerly known as Sponge, until it was renamed to avoid confusion).
 
 (2) **SpongeVanilla**, a stand-alone implementation of the Sponge API, running on top of the vanilla Minecraft server.
     (SpongeVanilla was formerly known as Granite, until the development teams merged).

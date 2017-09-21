@@ -7,8 +7,8 @@ Introduction
 
 Welcome to SpongeDocs, the official documentation for the open-source `Sponge <https://www.spongepowered.org>`__ project.
 
-The SpongeAPI is your all new plugin API for Minecraft. You can run it on a plain vanilla server (as SpongeVanilla) or
-on your fully modded MinecraftForge server (as SpongeForge). Grab your copy
+The SpongeAPI is your all new plugin API for Minecraft: Java Edition. You can run it on a plain vanilla server (as
+SpongeVanilla) or on your fully modded MinecraftForge server (as SpongeForge). Grab your copy
 `here <https://spongepowered.org/downloads>`_.
 
 Not sure what you're looking for? Try our :doc:`about/index` section, which contains a short :doc:`about/introduction`,
