@@ -155,42 +155,9 @@ For this example we will use :javadoc:`DataFormats#JSON` to translate a ItemStac
 **Code Example: Serializing a ItemStackSnapshot to JSON format**
     
 .. code-block:: java
+    String json = DataFormats.JSON.write(itemStack.toContainer());
 
-    public Optional<String> toJson(ItemStackSnapshot itemStackSnapshot) {
-        DataContainer itemStackSnapshotDataContainer = itemStackSnapshot.toContainer();
-        DataFormat dataFormat = DataFormats.JSON;
-        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        try {
-            dataFormat.writeTo(outputStream, itemStackSnapshotDataContainer);
-            return Optional.of(new String(outputStream.toByteArray(), Charset.defaultCharset()));
-        } catch (IOException e) {
-            e.printStackTrace();
-            return Optional.empty();
-        }
- 
-    }
-
-**Code Example: Deserializing a ItemStackSnapshot from json format the short way**
+**Code Example: Deserializing a ItemStackSnapshot from json format**
 
 .. code-block:: java
-
-    public Optional<ItemStackSnapshot> getItemStackSnapshotFromDataContainer(DataContainer dataContainer) {
-        return Sponge.getDataManager().deserialize(ItemStackSnapshot.class, dataContainer);
-    }
-    
-    
-**Code Example: Deserializing a ItemStackSnapshot from json format the long way**
-
-.. code-block:: java
-
-    public Optional<ItemStackSnapshot> fromJson(String json) {
-        InputStream inputStream = new ByteArrayInputStream(json.getBytes());
-        DataFormat dataFormat = DataFormats.JSON;
-        try {
-            DataContainer dataContainer = dataFormat.readFrom(inputStream);
-            return Sponge.getDataManager().deserialize(ItemStackSnapshot.class, dataContainer);
-        } catch (IOException e) {
-            e.printStackTrace();
-            return Optional.empty();
-        }
-    }
+    DataContainer container = DataFormats.JSON.read(json);
