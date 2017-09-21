@@ -161,3 +161,37 @@ For this example we will use :javadoc:`DataFormats#JSON` to translate a ItemStac
 
 .. code-block:: java
     DataContainer container = DataFormats.JSON.read(json);
+
+**Code Example: Writing a ItemStackSnapshot to a file**
+.. code-block:: java
+    public void writeItemStackSnapshotToFile(ItemStackSnapshot itemStackSnapshot, String fileLocation) {
+        DataContainer itemStackSnapshotDataContainer = itemStackSnapshot.toContainer();
+        DataFormat dataFormat = DataFormats.NBT;
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        try {
+            dataFormat.writeTo(outputStream, itemStackSnapshotDataContainer);
+            File file = new File(fileLocation);
+            if (!file.exists())
+                file.createNewFile();
+            FileOutputStream fop = new FileOutputStream(file);
+            fop.write(outputStream.toByteArray());
+            fop.flush();
+            fop.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+**Code Example: Reading a ItemStackSnapshot from a file**
+.. code-block:: java
+    public Optional<ItemStackSnapshot> readItemStackSnapshotToFile(String json, String fileLocation) {
+        try {
+            DataFormat dataFormat = DataFormats.JSON;
+            InputStream inputStream = new FileInputStream(new File(fileLocation));
+            DataContainer dataContainer = dataFormat.readFrom(inputStream);
+            return Sponge.getDataManager().deserialize(ItemStackSnapshot.class, dataContainer);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return Optional.empty();
+        }
+    }
