@@ -162,45 +162,27 @@ For this example we will use :javadoc:`DataFormats#JSON` to translate a ItemStac
 .. code-block:: java
     DataContainer container = DataFormats.JSON.read(json);
 
-**Code Example: Writing a ItemStackSnapshot to a file**
+**Code Example: Writing a ItemStackSnapshot to a file using NBT**
 .. code-block:: java
     public void writeItemStackSnapshotToFile(ItemStackSnapshot itemStackSnapshot, File file) throws FileNotFoundException {
         DataContainer itemStackSnapshotDataContainer = itemStackSnapshot.toContainer();
         DataFormat dataFormat = DataFormats.NBT;
-        FileOutputStream fop = new FileOutputStream(file);
-        try {
+        try(FileOutputStream fop = new FileOutputStream(file)){
             dataFormat.writeTo(fop, itemStackSnapshotDataContainer);
         } catch (IOException e) {
             e.printStackTrace();
-        } finally {
-            try {
-                fop.flush();
-                fop.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
         }
     }
 
-**Code Example: Reading a ItemStackSnapshot from a file**
+**Code Example: Reading a ItemStackSnapshot from a file using NBT**
 .. code-block:: java
     public Optional<ItemStackSnapshot> readItemStackSnapshotFromFile(String fileLocation) {
-        InputStream inputStream = null;
-        try {
-            inputStream = new FileInputStream(fileLocation);
-            DataFormat dataFormat = DataFormats.JSON;
+        try(InputStream inputStream = new FileInputStream(fileLocation)){
+            DataFormat dataFormat = DataFormats.NBT;
             DataContainer dataContainer = dataFormat.readFrom(inputStream);
             return Sponge.getDataManager().deserialize(ItemStackSnapshot.class, dataContainer);
         } catch (IOException e) {
             e.printStackTrace();
-            return Optional.empty();
-        } finally {
-            try {
-                if (inputStream != null) {
-                    inputStream.close();
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
         }
+        return Optional.empty();
     }
