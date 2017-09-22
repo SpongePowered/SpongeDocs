@@ -20,6 +20,8 @@ Serializing Data
     org.spongepowered.api.data.persistence.DataTranslator
     org.spongepowered.api.data.persistence.DataTranslators
     org.spongepowered.api.data.persistence.InvalidDataException
+    org.spongepowered.api.data.persistence.DataFormat
+    org.spongepowered.api.data.persistence.DataFormats
 
 While an :javadoc:`ImmutableDataManipulator` is a good way to store data while the server is running, it will not
 persist over a restart. However, every :javadoc:`DataManipulator` implements the :javadoc:`DataSerializable` interface
@@ -122,4 +124,65 @@ from persistent files using the :doc:`Configurate Library <../configuration/inde
         final DataTranslator<ConfigurationNode> translator = DataTranslators.CONFIGURATION_NODE;
         final DataView container = translator.translate(node);
         return deserializeHealth(container);
+    }
+
+
+DataFormat
+==========
+An alternative to DataTranslators is to use :javadoc:DataFormat, which allows you to store a ``DataContainer`` in HOCON, JSON or NBT format. You can also recreate DataConainters using ``DataFormats``.
+
+For example, you could use ``DataFormat`` to create a json repusentation of a ``DataContainer``, which you could then easily store in a database as JSON. ``DataFormat`` can then be used to recreate the original ``DataContainer`` from json where required.
+
+For this example we will use :javadoc:`DataFormats#JSON` to translate a ItemStackSnapshot to JSON and back! 
+
+**Imports for code examples**
+    import org.spongepowered.api.Sponge;
+    import org.spongepowered.api.data.DataContainer;
+    import org.spongepowered.api.data.DataQuery;
+    import org.spongepowered.api.data.DataView;
+    import org.spongepowered.api.data.persistence.DataBuilder;
+    import org.spongepowered.api.data.persistence.DataFormat;
+    import org.spongepowered.api.data.persistence.DataFormats;
+    import org.spongepowered.api.item.inventory.ItemStackSnapshot;
+
+    import java.io.ByteArrayInputStream;
+    import java.io.ByteArrayOutputStream;
+    import java.io.IOException;
+    import java.io.InputStream;
+    import java.nio.charset.Charset;
+    import java.util.Optional;
+
+**Code Example: Serializing a ItemStackSnapshot to JSON format**
+    
+.. code-block:: java
+    String json = DataFormats.JSON.write(itemStack.toContainer());
+
+**Code Example: Deserializing a ItemStackSnapshot from json format**
+
+.. code-block:: java
+    DataContainer container = DataFormats.JSON.read(json);
+
+**Code Example: Writing a ItemStackSnapshot to a file using NBT**
+.. code-block:: java
+    public void writeItemStackSnapshotToFile(ItemStackSnapshot itemStackSnapshot, File file) throws FileNotFoundException {
+        DataContainer itemStackSnapshotDataContainer = itemStackSnapshot.toContainer();
+        DataFormat dataFormat = DataFormats.NBT;
+        try(FileOutputStream fop = new FileOutputStream(file)){
+            dataFormat.writeTo(fop, itemStackSnapshotDataContainer);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+**Code Example: Reading a ItemStackSnapshot from a file using NBT**
+.. code-block:: java
+    public Optional<ItemStackSnapshot> readItemStackSnapshotFromFile(String fileLocation) {
+        try(InputStream inputStream = new FileInputStream(fileLocation)){
+            DataFormat dataFormat = DataFormats.NBT;
+            DataContainer dataContainer = dataFormat.readFrom(inputStream);
+            return Sponge.getDataManager().deserialize(ItemStackSnapshot.class, dataContainer);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return Optional.empty();
     }
