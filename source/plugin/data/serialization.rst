@@ -150,6 +150,8 @@ of a ``DataContainer``. The output JSON could then easily be stored in a databas
     import java.io.IOException;
     import java.io.InputStream;
     import java.io.OutputStream;
+    import java.nio.file.Files;
+    import java.nio.file.Path;
     import java.util.Optional;
 
 **Code Example: Serializing an ItemStackSnapshot to JSON format**
@@ -168,9 +170,9 @@ of a ``DataContainer``. The output JSON could then easily be stored in a databas
 
 .. code-block:: java
 
-    public void writeItemStackSnapshotToFile(ItemStackSnapshot itemStackSnapshot, File file) {
+    public void writeItemStackSnapshotToFile(ItemStackSnapshot itemStackSnapshot, Path path) {
         DataContainer dataContainer = itemStackSnapshot.toContainer();
-        try (OutputStream outputStream = new FileOutputStream(file)) {
+        try (OutputStream outputStream = Files.newOutputStream(path)) {
             DataFormats.NBT.writeTo(outputStream, dataContainer);
         } catch (IOException e) {
             // For the purposes of this example, we just print the error to the console. However,
@@ -184,8 +186,8 @@ of a ``DataContainer``. The output JSON could then easily be stored in a databas
 
 .. code-block:: java
 
-    public Optional<ItemStackSnapshot> readItemStackSnapshotFromFile(File file) {
-        try (InputStream inputStream = new FileInputStream(file)) {
+    public Optional<ItemStackSnapshot> readItemStackSnapshotFromFile(Path path) {
+        try (InputStream inputStream = Files.newInputStream(path)) {
             DataContainer dataContainer = DataFormats.NBT.readFrom(inputStream);
             return Sponge.getDataManager().deserialize(ItemStackSnapshot.class, dataContainer);
         } catch (IOException e) {
