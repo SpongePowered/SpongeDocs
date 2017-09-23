@@ -11,4 +11,4 @@ The only requirement is that the copyright header must be left intact.
 
 There is true value in licensing Sponge under the MIT license, especially when considering the fate of other projects
 with goals similar to those of Sponge. The license offers peace-of-mind in ensuring Sponge has a bright future. Further
-details on the license can be found at http://choosealicense.com/licenses/mit/.
+details on the license can be found at https://choosealicense.com/licenses/mit/.

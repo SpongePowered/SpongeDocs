@@ -22,7 +22,7 @@ Coremod
   code. http://www.minecraftforge.net/wiki/Core_Mod
 Crowdin
   A web-based translation system for documentation. SpongeDocs uses it to provide translated Docs in many languages.
-  https://translate.spongepowered.org/project/sponge-docs
+  https://crowdin.com/project/sponge-docs
 Developer
   Someone who programs code (Sponge, Plugins, Mods, ...).
 FLARD
@@ -40,7 +40,7 @@ Issue
   A way of flagging problems, bugs, improvements, and things-to-do on GitHub and elsewhere. The Sponge project uses
   GitHub as an Issue Tracker.
 Java
-  The programming language that Minecraft and Sponge are written in, and require to run. http://java.com/en/
+  The programming language that Minecraft and Sponge are written in, and require to run. https://java.com/en/
 MCP
   The Mod Coder Pack helps developers create mods for both the Minecraft server and client. http://www.modcoderpack.com/website
 Mixins

@@ -105,7 +105,7 @@ Command                   Description
                           this command was done.
 /sponge timings report    Generates the timings report on your
                           server performance at
-                          http://timings.aikar.co
+                          https://timings.aikar.co
 /sponge timings verbon    Enables timings monitoring at the
                           verbose level.
 /sponge timings verboff   Disables timings monitoring at the

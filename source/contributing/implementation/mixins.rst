@@ -17,7 +17,7 @@ is available at the `Mixin Wiki <https://github.com/SpongePowered/Mixin/wiki/>`_
 mixins themselves are actually discussed.*
 
 If you're looking to get started writing mixins, we also strongly recommend carefully examining all of the examples in
-the `SpongeForge repository <https://github.com/SpongePowered/SpongeForge/tree/master/src/example/java/org/spongepowered>`__ which
+the `SpongeForge repository <https://github.com/SpongePowered/SpongeCommon/tree/stable-5/src/example/java/org/spongepowered>`__ which
 are extensively documented and cover many of the more complex scenarios. You should also consult the Javadoc of the Mixin
 repository itself, since almost everything is already documented.
 

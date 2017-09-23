@@ -19,6 +19,6 @@ Before installing the JDK, uninstall any older versions of Java that are present
 Oracle provides free downloads of the Java Development Kit on their website. Ensure that you are installing the JDK
 (Java Development Kit), not the JRE (Java Runtime Environment). There is a difference between the two.
 
-* `Java Development Kit 8 <http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html>`__
+* `Java Development Kit 8 <https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html>`__
 
 Upon completion of the installation process, reboot your computer. The JDK should then be ready for use.

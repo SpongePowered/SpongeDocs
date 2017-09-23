@@ -17,18 +17,15 @@ provides a :javadoc:`Task.Builder` with which you can specify task properties su
 Task Builder
 ============
 
-First, obtain an instance of the ``Scheduler``, and retrieve the ``Task.Builder``:
+First, obtain an instance of the ``Task.Builder``:
 
 .. code-block:: java
 
-    import org.spongepowered.api.scheduler.Scheduler;
     import org.spongepowered.api.scheduler.Task;
-    import org.spongepowered.api.Sponge;
 
-    Scheduler scheduler = Sponge.getScheduler();
-    Task.Builder taskBuilder = scheduler.createTaskBuilder();
+    Task.Builder taskBuilder = Task.builder();
 
-The only required property is the `Runnable <http://docs.oracle.com/javase/8/docs/api/java/lang/Runnable.html>`_,
+The only required property is the `Runnable <https://docs.oracle.com/javase/8/docs/api/java/lang/Runnable.html>`_,
 which you can specify using :javadoc:`Task.Builder#execute(Runnable)`:
 
 .. code-block:: java
@@ -66,7 +63,7 @@ Task Properties
 
 Using the ``Task.Builder``, you can specify other, optional properties, as described below.
 
-.. _TimeUnit: http://docs.oracle.com/javase/8/docs/api/java/util/concurrent/TimeUnit.html
+.. _TimeUnit: https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/TimeUnit.html
 
 +-----------------+-------------------------+--------------------------------------------------------------------------+
 | Property        | Method Used             | Description                                                              |
@@ -110,10 +107,7 @@ initial delay of 100 milliseconds could be built and submitted using the followi
 
     import java.util.concurrent.TimeUnit;
 
-    Scheduler scheduler = Sponge.getScheduler();
-    Task.Builder taskBuilder = scheduler.createTaskBuilder();
-
-    Task task = taskBuilder.execute(() -> logger.info("Yay! Schedulers!"))
+    Task task = Task.builder().execute(() -> logger.info("Yay! Schedulers!"))
         .async().delay(100, TimeUnit.MILLISECONDS).interval(5, TimeUnit.MINUTES)
         .name("ExamplePlugin - Fetch Stats from Database").submit(plugin);
 
@@ -131,9 +125,7 @@ reaching 0.
 
     @Listener
     public void onGameInit(GameInitializationEvent event) {
-        Scheduler scheduler = Sponge.getScheduler();
-        Task.Builder taskBuilder = scheduler.createTaskBuilder();
-        Task task = taskBuilder.execute(new CancellingTimerTask())
+        Task task = Task.builder().execute(new CancellingTimerTask())
             .interval(1, TimeUnit.SECONDS)
             .name("Self-Cancelling Timer Task").submit(plugin);
     }
@@ -286,10 +278,10 @@ synchronously using ``Observable#subscribeOn(Scheduler scheduler)``.
 Scala
 ~~~~~
 
-Scala comes with a built-in `Future <http://www.scala-lang.org/api/current/#scala.concurrent.Future>`_ object which 
+Scala comes with a built-in `Future <https://www.scala-lang.org/api/current/#scala.concurrent.Future>`_ object which
 a lot of scala framework mirror in design.
 Most methods of the Future accept an 
-`ExecutionContext <http://www.scala-lang.org/api/current/index.html#scala.concurrent.ExecutionContext$>`_ which
+`ExecutionContext <https://www.scala-lang.org/api/current/index.html#scala.concurrent.ExecutionContext$>`_ which
 determined where that part of the operation is executed.
 This is different from the CompletableFuture or RxJava since they default to executing on the same thread on which
 the previous operation ended.

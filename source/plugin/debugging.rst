@@ -54,7 +54,7 @@ adding the plugin project to Sponge's classpath will rid you of the necessity to
 file into your server directory after every change.
 
 First you need to ensure that you have your Run/Debug Configuration(s) set appropriately, as shown in the Sponge
-`README.md <https://github.com/SpongePowered/Sponge/blob/master/README.md#Running>`_
+`README.md <https://github.com/SpongePowered/SpongeForge/blob/stable-5/README.md#Running>`_
 
 Then you'll need to edit that Run/Debug Configuration so that it will include your project on the class path.
 How to do this, depends on your IDE again:

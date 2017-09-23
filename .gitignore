@@ -126,9 +126,6 @@ _build
 # Node
 node_modules/
 
-# Built theme
-sponge-theme/
-
 # Source code created by pip
 src/
 
@@ -137,3 +134,5 @@ javadoc_dump.txt
 
 # OS Files
 .DS_Store
+
+locale

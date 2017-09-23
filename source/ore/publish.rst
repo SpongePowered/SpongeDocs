@@ -2,7 +2,7 @@
 Publishing Your Plugin
 ======================
 
-Sponge's official plugin / mod repository, `Ore <http://ore.spongepowered.org>`_, is a free and open-source
+Sponge's official plugin / mod repository, `Ore <https://ore.spongepowered.org>`_, is a free and open-source
 project that anyone may publish their Sponge plugins or Forge mods on.
 
 Packaging Your Plugin
@@ -96,7 +96,7 @@ command.
     If you're using build manager such as Gradle or Maven, there is are plugins you can apply to your build script that
     can sign built artifacts and automate this laborious process for you. For more information, please refer to
     `Gradle's documentation <https://docs.gradle.org/current/userguide/signing_plugin.html>`__ or
-    `Maven's documentation <http://maven.apache.org/plugins/maven-gpg-plugin/>`__.
+    `Maven's documentation <https://maven.apache.org/plugins/maven-gpg-plugin/>`__.
 
 Uploading Your Plugin
 ~~~~~~~~~~~~~~~~~~~~~

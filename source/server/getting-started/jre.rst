@@ -11,12 +11,12 @@ Sponge properly.
 Installing Java
 ===============
 
-If you have Windows or Mac OS X for your computer, you can `download Java from the official website
+If you have Windows or macOS for your computer, you can `download Java from the official website
 <https://java.com/en/download/manual.jsp>`__.
 
 Linux users can install OpenJDK via their package manager. OpenJDK is the open source version of the Oracle version of
 Java, and it should work just as well, if not better. However, it's also possible to `download the Oracle version for
-Linux <http://www.oracle.com/technetwork/java/javase/downloads/index.html>`__, but be aware that many Java-dependent
+Linux <https://www.oracle.com/technetwork/java/javase/downloads/index.html>`__, but be aware that many Java-dependent
 Linux packages will still install OpenJDK anyway.
 
 32-bit vs. 64-bit
@@ -38,4 +38,4 @@ The JRE (Java Runtime Environment) is used to run Java applications. The downloa
 The JDK (Java Development Kit) is used to create Java applications, and you do not need it unless you plan to make
 Sponge plugins or work on Sponge. However, in some cases, you may need the JDK to diagnose a running Java application
 such as Sponge. You can download the JDK `from a different site
-<http://www.oracle.com/technetwork/java/javase/downloads/index.html>`__.
+<https://www.oracle.com/technetwork/java/javase/downloads/index.html>`__.

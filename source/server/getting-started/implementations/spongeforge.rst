@@ -10,14 +10,14 @@ Users who do not want to use Minecraft Forge can consider :doc:`SpongeVanilla <s
 Download
 ========
 
-Check :doc:`../../../downloads` for further information.
+Grab your copy of `Sponge Forge here <https://spongepowered.org/downloads>`_.
 
 Reading the Download Filename
 =============================
 
 When you download SpongeForge, the name of the file will provide some important version information. It includes a
 Forge build number which this version of SpongeForge is compatible with. Other builds, even ones differing by only a
-few build numbers are not supported.
+few build numbers are not officially supported.
 
 However, SpongeForge usually updates to a new Forge build fairly soon after it's released, so you needn't
 worry about always having to run an outdated Forge version in order to use SpongeForge.
@@ -40,8 +40,8 @@ The format of the filename is ``spongeforge-{MCVersion}-{ForgeVersion}-{SpongeAP
 Example
 ~~~~~~~
 
-The file name ``spongeforge-1.8-1577-3.0.0-BETA-1000.jar`` is compatible with Minecraft version ``1.8``, requires build
-``1.8-11.14.4.1577`` of Forge, provides SpongeAPI ``3.0.0`` and was build ``1000`` of SpongeForge.
+The file name ``spongeforge-1.10.2-2254-5.2.0-BETA-2234.jar`` is compatible with Minecraft version ``1.10.2``,
+requires build ``1.10.2-12.18.3.2254`` of Forge, provides SpongeAPI ``5.2.0`` and was build ``2234`` of SpongeForge.
 
 .. note::
 
@@ -61,7 +61,7 @@ Installing SpongeForge
 
 .. warning::
   When using the Mojang installer, Mojang makes use of their own Java version and not the one you installed on your
-  system. The installer currently ships with Java ``1.8.0_25`` for Windows and ``1.8.0_60`` for OSX. Note that Sponge
+  system. The installer currently ships with Java ``1.8.0_25`` for Windows and ``1.8.0_60`` for macOS. Note that Sponge
   requires **at least** ``1.8.0_40`` or above to run properly. You can grab the Launcher without included Java here:
   `official Minecraft Launcher <https://minecraft.net/download>`_
 
@@ -69,8 +69,7 @@ Single Player / In-Game LAN Servers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Download the Minecraft Forge installer from the `Minecraft Forge website <http://files.minecraftforge.net/>`_. Make
-   sure to use **exactly the same build number** as :doc:`the one listed in the filename of the Sponge download
-   <spongeforge>`.
+   sure to use **exactly the same build number** as shown above.
 #. Run the provided Forge installer. A new Forge profile will be created in the Minecraft launcher.
 #. Open the Minecraft launcher, and select the new Forge profile.
 #. Click "Options" and click "Open Game Dir".
@@ -87,7 +86,8 @@ Dedicated Servers
 .. note::
 
     If you already have a Forge server, just put the Sponge mod into your ``mods`` folder. Remember to update your Forge
-    version to match the one that :doc:`Sponge requires <spongeforge>`.
+    version to match the one that SpongeForge requires. Have a look at the top of this page if you're unsure which
+    version you need.
 
 Installing Forge via Commandline
 --------------------------------
@@ -106,7 +106,8 @@ Installing Forge via GUI
 ------------------------
 
 1. Download the Minecraft Forge installer from the `Minecraft Forge website <http://files.minecraftforge.net/>`_ for the version
-   matching the one listed :doc:`in the filename of the SpongeForge download <spongeforge>`.
+   matching the one listed in the filename of the SpongeForge download. See above for the naming scheme of SpongeForge
+   and Forge.
 #. Run the provided Forge installer, select "Install Server", choose an empty folder to place the server's files,
    and then click OK.
 #. Continue to Adding SpongeForge to Forge below.
@@ -127,5 +128,5 @@ Next, learn how you can create and use a :doc:`launch-script <../launch-script>`
 Links
 =====
 
-* `Homepage <http://spongepowered.org/>`__
+* `Homepage <https://www.spongepowered.org/>`__
 * `GitHub <https://github.com/SpongePowered/SpongeForge>`__

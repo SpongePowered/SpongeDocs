@@ -15,24 +15,37 @@ Finding Plugins
     Do not download plugins from untrustworthy sources! Malicious plugins can be used to give others unauthorized access
     to your server or computer.
 
+SpongePowered currently runs the `Ore platform <https://ore.spongepowered.org>`_ to make it easy for plugin developers
+and users to distribute and download plugins. Alternatively you can search for plugins on the
+`SpongePowered forums <https://forums.spongepowered.org/c/plugins>`_.
+
 Installation
 ============
 
 SpongeForge
 ~~~~~~~~~~~
 
-In order to install plugins, place them into the "mods" folder of your game or server directory.
+In order to install plugins, place them into the ``/mods/`` folder of your game or server directory. If your download came
+in a .zip file, then you may need to extract it to find a .jar file inside.
 
-If your download came in a .zip file, then you may need to extract it to find a .jar file inside.
+You can also place your plugins inside the ``/mods/plugins/`` subfolder or even set a custom folder in the
+:doc:`global.conf<../getting-started/configuration/sponge-conf>` file via the ``plugins-dir`` setting. SpongeForge will
+automatically search these folders for plugins. Please note that plugins which make use of ``Mixins`` *must* reside
+inside the ``mods`` folder.
 
 SpongeVanilla
 ~~~~~~~~~~~~~
 
-.. note:: For consistency between SpongeForge and SpongeVanilla, plugins are stored in the mods directory on SpongeVanilla.
+.. note::
+    For consistency between SpongeForge and SpongeVanilla, plugins are stored in the mods directory on SpongeVanilla.
 
-In order to install plugins, place them into the "mods" folder of your game or server directory.
+In order to install plugins, place them into the ``/mods/`` folder of your game or server directory. If your download
+came in a .zip file, then you may need to extract it to find a .jar file inside.
 
-If your download came in a .zip file, then you may need to extract it to find a .jar file inside.
+You can also place your plugins inside the ``/mods/plugins/`` subfolder or even set a custom folder in the
+:doc:`global.conf<../getting-started/configuration/sponge-conf>` file via the ``plugins-dir`` setting. SpongeVanilla will
+automatically search these folders for plugins. Please note that plugins which make use of ``Mixins`` *must* reside
+inside the ``mods`` folder.
 
 Common Problems
 ===============
