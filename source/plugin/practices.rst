@@ -111,7 +111,8 @@ IO on the main thread
 
 Executing some IO operations such as loading a config/data file or checking for updates/connecting to a website takes
 much time and greatly affects the TPS on the server. Such tasks should be done either in their own threads, or using the
-inbuilt scheduler's async feature.
+inbuilt scheduler's async feature. It is perfecty fine to load required files/config on the main thread during server
+startup/plugin initialization though.
 
 .. code-block:: text
 
