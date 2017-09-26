@@ -32,7 +32,7 @@ Contents
     plugin-class
     lifecycle
     injection
-    practices
+    practices/index
     optional/index
     logging
     commands/index
