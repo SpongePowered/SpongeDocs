@@ -13,7 +13,7 @@ Spawning an Entity
     org.spongepowered.api.world.extent.Extent
     org.spongepowered.api.world.extent.EntityUniverse
 
-You will need four things for spawning in an :javadoc:`Entity`, a :javadoc:`Location`, an :javadoc:`Extent`, and an
+You will need three things for spawning an :javadoc:`Entity`: a :javadoc:`Location`, an :javadoc:`Extent`, and an
 :javadoc:`EntityType`. The process for getting these is quite simple, you just need to grab a ``Location`` from
 somewhere in your plugin code and choose the type of ``Entity`` you wish to spawn.
 
