@@ -76,7 +76,7 @@ Item Properties
 
 Certain items may hold specific properties. For example, certain items can mine specific blocks, such as a diamond
 pickaxe to obsidian. Properties are used for determining if an item can cause an action without actually checking up
-the type of the item. We can check if a block can mine obsidian by using the
+the type of the item. We can check if an item can mine obsidian by using the
 :javadoc:`HarvestingProperty` of that item.
 
 .. code-block:: java
