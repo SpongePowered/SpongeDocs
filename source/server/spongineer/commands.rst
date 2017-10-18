@@ -36,6 +36,8 @@ Command                 Description                               Permission
 /sponge config          Alters a global, world, or a dimension    sponge.command.config
                         config.
 /sponge heap            Dumps the JVM heap.                       sponge.command.heap
+/sponge help            View information on commands used on the  sponge.command.help
+                        server.
 /sponge plugins         Lists currently installed plugins.        sponge.command.plugins
 /sponge plugins reload  Asks plugins to perform their own reload  sponge.command.plugins.reload
                         procedures.
@@ -171,11 +173,12 @@ Command               Description                               Permission
 
 |
 
-Sponge also creates a spawn-protection bypass permission, and two permissions for controlling the
-ability to edit commandblocks. Note that these permissions use the actual *name* of the commandblock,
+Sponge also creates a spawn-protection bypass permission, a force-gamemode bypass permission, and two permissions for 
+controlling the ability to edit commandblocks. Note that these permissions use the actual *name* of the commandblock,
 which is normally ``@`` by default. 
 
-* Allow player to bypass spawn-protection on all worlds: ``minecraft.spawn-protection.override``
+* Allow player to bypass spawn-protection in all worlds: ``minecraft.spawn-protection.override``
+* Allow player to bypass force-gamemode in all worlds: ``minecraft.force-gamemode.override``
 * Allow editing an ordinary commandblock of the given name: ``minecraft.commandblock.edit.block.<name>``
 * Allow editing a minecart commandblock of the given name: ``minecraft.commandblock.edit.minecart.<name>``
 
@@ -189,7 +192,8 @@ The following commands are available as part of vanilla Minecraft to players wit
 Command               Description                               Permission
 ====================  ========================================  ======================
 /help                 View information on commands used on the  minecraft.command.help
-                      server
+                      server, by default the Sponge command
+                      will be used instead!
 /me                   Tell everyone what you are doing.         minecraft.command.me
 /say                  Display a message to everyone (or, if     minecraft.command.say
                       using selectors, specific players).
