@@ -16,7 +16,7 @@ representation.
     For information on how to use Configurate to create configuration files for your plugin, please refer to
     :doc:`/plugin/configuration/index`.
 
-For example, the text "Hello World!", formatted with the color red and and underline would have the following HOCON
+For example, the text "Hello World!", formatted with the color red and an underline would have the following HOCON
 representation:
 
 .. code-block:: guess
