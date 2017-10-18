@@ -99,7 +99,7 @@ Long Flags
 ==========
 
 As an alternative to short flags like the ones we have been using above, we can also use long flags. Using a long flag,
-you can specify a value along with the flag using equals in the command. To create a long flag, simply prefix your
+you can specify a value along with the flag using equals (``=``) in the command. To create a long flag, simply prefix your
 normal flag with a dash ``-``, like so:
     
 .. code-block:: java
