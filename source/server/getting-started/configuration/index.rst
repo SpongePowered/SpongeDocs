@@ -64,7 +64,7 @@ Here is an example of this command in action:
 
 .. code-block:: java
 
-    /sponge config -d nether logging.chunk-load true
+    /sponge config -d minecraft:nether logging.chunk-load true
 
 This will set the config to log when chunks are loaded for the nether.
 
@@ -73,7 +73,7 @@ If you need to check the value of a key, you would need to omit the *value*. Che
 
 .. code-block:: java
 
-    /sponge config -d nether logging.chunk-load
+    /sponge config -d minecraft:nether logging.chunk-load
 
 Saving a World Config
 ~~~~~~~~~~~~~~~~~~~~~
@@ -107,4 +107,4 @@ Here is an example of reloading the end world config file:
 
 .. code-block:: java
 
-    /sponge reload -d the_end
+    /sponge reload -d minecraft:the_end
