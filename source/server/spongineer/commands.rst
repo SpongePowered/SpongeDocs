@@ -74,7 +74,7 @@ Command                 Description                               Permission
       Since no dimension was specified, the dimension would default to the sender(player) dimension. So if you were in a
       mystcraft dimension, this would alter the mystcraft dimension config.
 
-    b. ``/sponge config -d nether logging.chunk-load true``
+    b. ``/sponge config -d minecraft:nether logging.chunk-load true``
 
     Since a dimension type was specified, this would alter the nether dimension config (and hence all nether worlds).
 
