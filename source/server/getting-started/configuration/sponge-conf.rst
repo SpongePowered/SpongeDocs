@@ -94,7 +94,7 @@ auto-populate                             boolean   false       If enabled, newl
 **Defaults**                                                    Default max collisions used for all entities/blocks
                                                                 unless overridden.
 max-entities-within-aabb                  integer   8           Max amount of entities any given entity or block
-                                                                can collide with(for performance reasons). Set to 
+                                                                can collide with (for performance reasons). Set to 
                                                                 0 to disable (needed for maxEntityCramming).
                                                                 
 **Mods**                                                        Per-mod overrides. Refer to the Minecraft default
