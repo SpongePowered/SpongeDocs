@@ -88,7 +88,7 @@ If you're not using a build system you need to manually enable annotation proces
 Build system integration
 ------------------------
 
-If you're using Gradle, `SpongeGradle <start/project/gradle>`_ will provide additional integration for Gradle and
+If you're using Gradle, `SpongeGradle <https://github.com/SpongePowered/SpongeGradle>`_ will provide additional integration for Gradle and
 plugin metadata. For example, it will automatically include the project version defined in the Gradle build script in
 your plugin metadata. See :doc:`project/gradle` for details.
 
