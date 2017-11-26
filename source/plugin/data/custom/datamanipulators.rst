@@ -22,9 +22,9 @@ Custom DataManipulators
     org.spongepowered.api.data.value.mutable.MapValue
     org.spongepowered.api.data.value.mutable.BoundedComparableValue
     org.spongepowered.api.data.value.ValueContainer
-    org.spongepowered.api.inventory.ItemStack
+    org.spongepowered.api.item.inventory.ItemStack
     org.spongepowered.api.util.TypeTokens
-    java.util.Comparable
+    java.lang.Comparable
     java.util.Comparator
     com.google.common.reflect.TypeToken
 
@@ -37,7 +37,7 @@ You'll want to define an API method for each "unit" your data, such as a ``Strin
 a custom type like ``Home``. These units will be wrapped in a :javadoc:`Value`, which will allow it to be accessed
 with :javadoc:`Key`\ s. There are various extensions of ``Value`` depending on which object will be represented, such
 as :javadoc:`MapValue` which provides the standard map operations, or :javadoc:`BoundedComparableValue` which can set
-limits on the upper and lower bound of an :javadoc:`Comparable` objects like integers.
+limits on the upper and lower bound of a :javadoc:`Comparable` objects like integers.
 
 Now, pick which of the :javadoc:`AbstractData` types you'll extend from. While you could implement from scratch, these
 abstract types remove a *lot* of the work that needs to be done implementing the required methods. A full list can be 

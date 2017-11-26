@@ -5,15 +5,15 @@ Serializing Custom Data
 .. javadoc-import::
     org.spongepowered.api.data.DataHolder
     org.spongepowered.api.data.DataQuery
+    org.spongepowered.api.data.DataSerializable
     org.spongepowered.api.data.manipulator.DataManipulator
+    org.spongepowered.api.data.manipulator.DataManipulatorBuilder
     org.spongepowered.api.data.persistence.AbstractDataBuilder
     org.spongepowered.api.data.persistence.DataBuilder
     org.spongepowered.api.data.persistence.DataContentUpdater
     org.spongepowered.api.data.persistence.DataManipulator
-    org.spongepowered.api.data.persistence.DataManipulatorBuilder
     org.spongepowered.api.data.persistence.DataTranslator
     org.spongepowered.api.data.persistence.DataTranslators
-    org.spongepowered.api.data.serialization.DataSerializable
 
 Without a method for serializing and deserializing, your data will not persist across restarts. Sponge has a few different 
 ways to serialize/deserialize data based on the type of data:
