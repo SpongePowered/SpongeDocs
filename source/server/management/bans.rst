@@ -16,4 +16,4 @@ list of banned IP addresses is available using the command ``/banlist ips``
 A ban can be reversed using the command ``/pardon <name>`` or ``/pardon <ip-address>``
 
 
-More information on Bans can be found at the `Minecraft Wiki <http://minecraft.gamepedia.com/Commands#ban>`_.
+More information on Bans can be found at the `Minecraft Wiki <https://minecraft.gamepedia.com/Commands#ban>`_.

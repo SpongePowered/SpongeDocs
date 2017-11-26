@@ -198,5 +198,5 @@ Command               Description                               Permission
 
 |
 
-A full list of vanilla commands can be found at: http://minecraft.gamepedia.com/Commands#List_of_commands. Permissions
+A full list of vanilla commands can be found at: https://minecraft.gamepedia.com/Commands#List_of_commands. Permissions
 for vanilla Minecraft commands on a Sponge server are of the structure ``minecraft.command.<command>``.

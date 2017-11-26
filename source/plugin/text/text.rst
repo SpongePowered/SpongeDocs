@@ -139,7 +139,7 @@ useful when creating minigame plugins, but have a broad range of applications.
 
 .. tip::
 
-    Read this `Minecraft wiki article <http://minecraft.gamepedia.com/Commands#Target_selectors>`__ for help understanding
+    Read this `Minecraft wiki article <https://minecraft.gamepedia.com/Commands#Target_selectors>`__ for help understanding
     what target selectors are in Minecraft, and how to use them.
 
 To use selectors in text, you must use the :javadoc:`Selector.Builder` interface. This is illustrated in the example

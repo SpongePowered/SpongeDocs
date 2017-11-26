@@ -2,9 +2,9 @@
 JSON Format
 ===========
 
-JSON is `JavaScript Object Notation <http://www.json.org/>`_, a "light-weight data-interchange format" that is "easy
+JSON is `JavaScript Object Notation <https://www.json.org/>`_, a "light-weight data-interchange format" that is "easy
 for humans to read and write" and "for machines to parse and generate". The
-`Minecraft Wiki <http://minecraft.gamepedia.com/Commands#Raw_JSON_Text>`_ details the structure of text represented
+`Minecraft Wiki <https://minecraft.gamepedia.com/Commands#Raw_JSON_Text>`_ details the structure of text represented
 in JSON.
 
 For example, the text "Hello World!", formatted with the color red and an underline would have the following representation
