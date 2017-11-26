@@ -166,14 +166,14 @@ timings                                   boolean   true        Enables timing s
 tracking                                  boolean   true        Enables the tracking module.
 **Optimizations**                                               See :doc:`../../management/performance-tweaks`
 **Spawner**
-spawn-limit-ambient                       int       15          The number of ambients that can spawn around the player.
-spawn-limit-animal                        int       15          The number of animals that can spawn around the player.
-spawn-limit-aquatic                       int       5           The number of aquatics that can spawn around the player.
-spawn-limit-monster                       int       70          The number of monsters that can spawn around the player.
-tick-rate-ambient                         int       400         The ambient spawn tick rate.
-tick-rate-animal                          int       400         The animal spawn tick rate.
-tick-rate-aquatic                         int       400         The aquatic spawn tick rate.
-tick-rate-monster                         int       1           The monster spawn tick rate.
+spawn-limit-ambient                       integer       15          The number of ambients that can spawn around the player.
+spawn-limit-animal                        integer       15          The number of animals that can spawn around the player.
+spawn-limit-aquatic                       integer       5           The number of aquatics that can spawn around the player.
+spawn-limit-monster                       integer       70          The number of monsters that can spawn around the player.
+tick-rate-ambient                         integer       400         The ambient spawn tick rate.
+tick-rate-animal                          integer       400         The animal spawn tick rate.
+tick-rate-aquatic                         integer       400         The aquatic spawn tick rate.
+tick-rate-monster                         integer       1           The monster spawn tick rate.
 **SQL**
 aliases                                   string    null        Aliases for SQL connections. This is done in
                                                                 the format

@@ -38,7 +38,7 @@ not utilizing their metadata at all. On the other hand, logs do use their metada
 properties exceeds 16 possible values (think tree type and direction), logs must be split over two base types.
 
 In the future, there will only be one 16 bit number (65536 possible combinations of base type + properties). Blocks will
-be assigned an ID automatically and this assignment will be stored in the world save file. This is illustrated below::
+be assigned an ID automatically and this assignment will be stored in the world save file. This is illustrated below:
 
     0 => minecraft:dirt[snowy=false,variant=default]
     1 => minecraft:dirt[snowy=true,variant=default]
