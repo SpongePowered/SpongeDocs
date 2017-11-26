@@ -15,8 +15,8 @@ Whenever you report a bug, please include the following:
 * any other mods or plugins installed including their versions
 * your :doc:`logs`
 
- * please use a service like `GitHubs gist <https://gist.github.com/>`_ or `pastebin <https://pastebin.com/>`_ to provide
-   logs, *don't* paste them into the post directly
+* please use a service like `GitHubs gist <https://gist.github.com/>`_ to provide logs, *don't* paste them into the post
+directly
 
 * your crash report (optional, not necessarily created)
 
