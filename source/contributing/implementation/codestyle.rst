@@ -68,7 +68,7 @@ Code Conventions
   ``null`` in the API
 * Method parameters accepting ``null`` must be annotated with ``@Nullable`` (from javax.*), all methods and parameters
   are ``@Nonnull`` by default.
-* Use `Google Preconditions <https://code.google.com/p/guava-libraries/wiki/PreconditionsExplained>`_ for null- and
+* Use `Google Preconditions <https://github.com/google/guava/wiki/PreconditionsExplained>`_ for null- and
   argument checking.
 
 The Gist

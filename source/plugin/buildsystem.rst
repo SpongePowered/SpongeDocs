@@ -70,4 +70,4 @@ your plugin. Continue at :doc:`plugin-identifier` for choosing an identifier for
 .. _`Maven Users Centre`: https://maven.apache.org/users/index.html
 .. _`Maven in 5 Minutes`: https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html
 .. _`Maven Getting Started Guide`: https://maven.apache.org/guides/getting-started/index.html
-.. _`SpongeAPI Download Page`: https://repo.spongepowered.org/maven/org/spongepowered/spongeapi/
+.. _`SpongeAPI Download Page`: https://www.spongepowered.org/downloads/spongeapi/

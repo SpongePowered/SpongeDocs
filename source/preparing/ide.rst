@@ -15,7 +15,7 @@ Which one should I choose?
 
 Every IDE has its pros and cons, and there is no single best IDE for Sponge development. The IDE you choose to use is
 largely a matter of personal preference. That being said, it is worth mentioning that `IntelliJ IDEA Community Edition
-<https://www.jetbrains.com/idea/download>`__ is fairly popular amongst a majority of the core Sponge team.
+<https://www.jetbrains.com/idea/download/>`__ is fairly popular amongst a majority of the core Sponge team.
 
 Downloads
 =========
