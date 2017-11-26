@@ -68,7 +68,7 @@ Installing SpongeForge
 Single Player / In-Game LAN Servers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Download the Minecraft Forge installer from the `Minecraft Forge website <http://files.minecraftforge.net/>`_. Make
+1. Download the Minecraft Forge installer from the `Minecraft Forge website <https://files.minecraftforge.net/>`_. Make
    sure to use **exactly the same build number** as shown above.
 #. Run the provided Forge installer. A new Forge profile will be created in the Minecraft launcher.
 #. Open the Minecraft launcher, and select the new Forge profile.
@@ -92,7 +92,7 @@ Dedicated Servers
 Installing Forge via Commandline
 --------------------------------
 
-1. Visit the `Minecraft Forge website <http://files.minecraftforge.net/>`_ and click "Show all downloads" to view the full
+1. Visit the `Minecraft Forge website <https://files.minecraftforge.net/>`_ and click "Show all downloads" to view the full
    set of available options. Identify the version matching the one listed :doc:`in the filename of the SpongeForge download
    <spongeforge>`, and hover over the (i) next to "Installer" to get the direct download link.
 #. Use your favorite download method to download the jar to its destination.
@@ -105,7 +105,7 @@ Installing Forge via Commandline
 Installing Forge via GUI
 ------------------------
 
-1. Download the Minecraft Forge installer from the `Minecraft Forge website <http://files.minecraftforge.net/>`_ for the version
+1. Download the Minecraft Forge installer from the `Minecraft Forge website <https://files.minecraftforge.net/>`_ for the version
    matching the one listed in the filename of the SpongeForge download. See above for the naming scheme of SpongeForge
    and Forge.
 #. Run the provided Forge installer, select "Install Server", choose an empty folder to place the server's files,
