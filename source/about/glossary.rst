@@ -78,7 +78,6 @@ Sponge Forums
   regularly. https://forums.spongepowered.org/
 Sponge Foundation
   The financial side of the project, a separate entity that accepts, manages and distributes donations.
-  https://spongefoundation.org/
 SpongeVanilla
   An implementation of Sponge API that runs on Vanilla Minecraft (and not Forge).
 Spongie
