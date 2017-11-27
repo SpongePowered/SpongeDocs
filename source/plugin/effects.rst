@@ -5,8 +5,8 @@ Effects
 .. javadoc-import::
     org.spongepowered.api.data.manipulator.mutable.PotionEffectData
     org.spongepowered.api.effect.Viewer
-    org.spongepowered.api.effect.particle.BlockParticle
     org.spongepowered.api.effect.particle.ParticleEffect.Builder
+    org.spongepowered.api.effect.particle.ParticleOptions
     org.spongepowered.api.effect.particle.ParticleTypes
     org.spongepowered.api.effect.potion.PotionEffect
     org.spongepowered.api.effect.sound.PitchModulation
@@ -63,24 +63,29 @@ Similarly to sounds, we can use the ``Viewer`` class to spawn particles within t
     import org.spongepowered.api.effect.particle.ParticleTypes;
     
     ParticleEffect effect = ParticleEffect.builder()
-        .type(ParticleTypes.LAVA).count(50).build();
+            .type(ParticleTypes.LAVA)
+            .quantity(50)
+            .build();
     viewer.spawnParticles(effect, position);
 
 Using a :javadoc:`ParticleEffect.Builder`, we can specify the type of particle we
 would like to spawn. With this, we also specify that fifty particles will be in the particle effect.
 
 Now if we wanted to make a more specific particle, say the particle of a block, then we can use one of the serveral
-classes found in the :javadoc:`org.spongepowered.api.effect.particle` package. For example, let's say we wanted to
-spawn the particle of a sand, :javadoc:`ParticleTypes#BLOCK_CRACK`. We would need to use the :javadoc:`BlockParticle`
-class and specify that we would like to use a sand block. This can be done like so:
+types found in the :javadoc:`ParticleTypes` class. For example, let's say we wanted to spawn the particle of a sand,
+:javadoc:`ParticleTypes#BLOCK_CRACK`. We would need to use the :javadoc:`ParticleOptions#BLOCK_STATE`
+option and specify that we would like to use a sand block. This can be done like so:
 
 .. code-block:: java
     
-    import org.spongepowered.api.effect.particle.BlockParticle;
+    import org.spongepowered.api.block.BlockTypes;
+    import org.spongepowered.api.effect.particle.ParticleOptions;
     
-    BlockParticle blockParticle = BlockParticle.builder()
-        .type(ParticleTypes.BLOCK_CRACK).block(BlockTypes.SAND.getDefaultState()).build();
-    viewer.spawnParticles(blockParticle, position);
+    ParticleEffect particle = ParticleEffect.builder()
+            .type(ParticleTypes.BLOCK_CRACK)
+            .option(ParticleOptions.BLOCK_STATE, BlockTypes.SAND.getDefaultState())
+            .build();
+    viewer.spawnParticles(particle, position);
 
 Creating Potions
 ================
@@ -92,8 +97,11 @@ Similarly to particles and sounds, we need to use a builder to create our potion
     import org.spongepowered.api.effect.potion.PotionEffect;
     import org.spongepowered.api.effect.potion.PotionEffectTypes;
     
-    PotionEffect potion = PotionEffect.builder().potionType(PotionEffectTypes.HASTE)
-        .duration(10).amplifier(5).build();
+    PotionEffect potion = PotionEffect.builder()
+            .potionType(PotionEffectTypes.HASTE)
+            .duration(10)
+            .amplifier(5)
+            .build();
 
 Using this, we can create a haste :javadoc:`PotionEffect` that will last for ten ticks and have an amplifier of five.
 Unlike particles and sounds, potions cannot be applied to a ``Viewer``. Instead, we need an entity that supports
