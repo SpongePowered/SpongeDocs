@@ -23,13 +23,13 @@ However, SpongeForge usually updates to a new Forge build fairly soon after it's
 worry about always having to run an outdated Forge version in order to use SpongeForge.
 
 
-The format of the filename is ``spongeforge-{MCVersion}-{ForgeVersion}-{SpongeAPIVersion}-{SpongeBuildId}``
+The format of the filename is ``spongeforge-<MCVersion>-<ForgeBuildId>-<SpongeAPIVersion>-BETA-<SpongeBuildId>.jar``
 
 +----------------------+-----------------------------------------------------------------------------------------------+
 | ``MCVersion``        | The Minecraft version. Only clients compatible with this version can connect.                 |
 +----------------------+-----------------------------------------------------------------------------------------------+
-| ``ForgeVersion``     | The version of Forge this file is built for. Preferably your server should run this exact     |
-|                      | version of Forge.                                                                             |
+| ``ForgeBuildId``     | The build number of Forge this file is built for. Preferably your server should run this exact|
+|                      | version of Forge. Which is the last part of Forge's version string.                           |
 +----------------------+-----------------------------------------------------------------------------------------------+
 | ``SpongeAPIVersion`` | The version of the SpongeAPI implemented by this file. This is what Sponge plugins depend on. |
 +----------------------+-----------------------------------------------------------------------------------------------+
@@ -40,16 +40,28 @@ The format of the filename is ``spongeforge-{MCVersion}-{ForgeVersion}-{SpongeAP
 Example
 ~~~~~~~
 
-The file name ``spongeforge-1.10.2-2254-5.2.0-BETA-2234.jar`` is compatible with Minecraft version ``1.10.2``,
-requires build ``1.10.2-12.18.3.2254`` of Forge, provides SpongeAPI ``5.2.0`` and was build ``2234`` of SpongeForge.
+SpongeForge Jar files will always follow this naming scheme, to allow you to easily identify compatibility.
+
+For example the file name ``spongeforge-1.10.2-2254-5.2.0-BETA-2234.jar`` is compatible with Minecraft version ``1.10.2``,
+was built with Forge ``12.18.3.2254`` (Build ``2254``), provides SpongeAPI ``5.2.0`` and was build number ``2234`` of
+SpongeForge.
 
 .. note::
 
-    Normal Forge mods can usually run on any build of Forge for a given Minecraft version (e.g. 1.8.0) without
-    any problems. However, SpongeForge needs to access, among other things, internal parts of Forge, which
-    most mods shouldn't be touching, let alone modifying as Sponge does. Since Forge is free to change internal
-    code whenever they want to, its normal guarantee of backwards-compatibility doesn't apply to SpongeForge.
+    Normal Forge mods can usually run on any build of Forge for a given Minecraft version (e.g. 1.8.0) without any
+    problem. However, SpongeForge needs to access, among other things, internal parts of Forge, which most mods
+    shouldn’t be touching, let alone modifying as Sponge does. Since Forge is free to change their internal code
+    whenever they want to, its normal guarantee of backwards-compatibility doesn’t apply to SpongeForge. Feel free to
+    use more recent versions of Forge, than the one used for SpongeForge, but we can't always garantee compatibility.
 
+
+.. warning::
+    
+    When investigating crash issues, you can freely use a newer versions of Forge than listed on the SpongeForge Jar.
+    However it is recommended to also check with the matching versions, to make sure your issue is not related to the
+    version mismatch. 
+    Even though there will be no guarantee of compatibility, please report any breakage to the issue tracker, so that
+    SpongeForge can be updated.
 
 Installing SpongeForge
 ======================
