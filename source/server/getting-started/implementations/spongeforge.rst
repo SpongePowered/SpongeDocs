@@ -25,17 +25,17 @@ worry about always having to run an outdated Forge version in order to use Spong
 
 The format of the filename is ``spongeforge-{MCVersion}-{ForgeVersion}-{SpongeAPIVersion}-{SpongeBuildId}``
 
-+----------------------+----------------------------------------------------------------------------------------------+
-| ``MCVersion``        | The Minecraft version. Only clients compatible with this version can connect.                |
-+----------------------+----------------------------------------------------------------------------------------------+
-| ``ForgeVersion``     | The version of Forge this file is built for. Preferably your server should run this exact    |
-|                      | version of Forge.                                                                            |
-+----------------------+----------------------------------------------------------------------------------------------+
-| ``SpongeAPIVersion`` | The version of the SpongeAPI implemented by this file. This is what Sponge plugins depend on.|
-+----------------------+----------------------------------------------------------------------------------------------+
-| ``SpongeBuildId``    | The build number of Sponge. This is what you should supply when reporting bugs or seeking    |
-|                      | support.                                                                                     |
-+----------------------+----------------------------------------------------------------------------------------------+
++----------------------+-----------------------------------------------------------------------------------------------+
+| ``MCVersion``        | The Minecraft version. Only clients compatible with this version can connect.                 |
++----------------------+-----------------------------------------------------------------------------------------------+
+| ``ForgeVersion``     | The version of Forge this file is built for. Preferably your server should run this exact     |
+|                      | version of Forge.                                                                             |
++----------------------+-----------------------------------------------------------------------------------------------+
+| ``SpongeAPIVersion`` | The version of the SpongeAPI implemented by this file. This is what Sponge plugins depend on. |
++----------------------+-----------------------------------------------------------------------------------------------+
+| ``SpongeBuildId``    | The build number of Sponge. This is what you should supply when reporting bugs or seeking     |
+|                      | support.                                                                                      |
++----------------------+-----------------------------------------------------------------------------------------------+
 
 Example
 ~~~~~~~
@@ -63,7 +63,8 @@ Installing SpongeForge
   When using the Mojang installer, Mojang makes use of their own Java version and not the one you installed on your
   system. The installer currently ships with Java ``1.8.0_25`` for Windows and ``1.8.0_60`` for macOS. Note that Sponge
   requires **at least** ``1.8.0_40`` or above to run properly. You can grab the Launcher without included Java here:
-  `official Minecraft Launcher <https://minecraft.net/download>`_
+  `official Minecraft Launcher <https://minecraft.net/download>`_. Read :doc:`here <../jre>` on how to install and
+  configure Java.
 
 Single Player / In-Game LAN Servers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

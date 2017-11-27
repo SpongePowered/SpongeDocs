@@ -6,7 +6,7 @@ Java is needed to run Sponge and Minecraft. You most likely already have Java, b
 
 Sponge requires Java 8 (specifically ``1.8.0_40`` or above) at this time. Older Java versions are deprecated and will not
 work with Sponge. The difference between major versions of Java (6, 7, 8) is significant, and older versions cannot run
-Sponge properly.
+Sponge properly. Currently Sponge will not run with Java 9.
 
 Installing Java
 ===============
@@ -19,11 +19,16 @@ Java, and it should work just as well, if not better. However, it's also possibl
 Linux <https://www.oracle.com/technetwork/java/javase/downloads/index.html>`__, but be aware that many Java-dependent
 Linux packages will still install OpenJDK anyway.
 
+You may have to configure the path to the JRE/JDK in your 
+
+* launcher using ``Profile`` (``Advanced Options``) -> ``<Your Profile>`` -> ``Java-Executable`` (``.../java.exe``)
+* server using either the ``PATH`` variable or using the full path to your java executable
+
 32-bit vs. 64-bit
 ~~~~~~~~~~~~~~~~~
 
 If your computer supports it, you should use 64-bit versions of Java whenever possible. The Java installers from the
-linked website should detect whether your computer is ready for 64-bit.
+`this website <https://java.com/en/download/>`__ should detect whether your computer is ready for 64-bit.
 
 Because the 64-bit version of Java runs considerably better, and also lets Java use more than ~3 GB of your RAM (memory),
 we always recommend it over 32-bit.
