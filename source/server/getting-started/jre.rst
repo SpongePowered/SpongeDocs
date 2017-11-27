@@ -29,6 +29,7 @@ You may have to configure the path to the JRE/JDK in your
 
 If your computer supports it, you should use 64-bit versions of Java whenever possible. The Java installers from the
 `this website <https://java.com/en/download/>`__ should detect whether your computer is ready for 64-bit.
+However the autodetection is sometimes wrong. It is also possible to look this up in the system information window.
 
 Because the 64-bit version of Java runs considerably better, and also lets Java use more than ~3 GB of your RAM (memory),
 we always recommend it over 32-bit.
