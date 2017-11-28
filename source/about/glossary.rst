@@ -19,7 +19,7 @@ Contributor
   Someone who contributes code to the SpongePowered projects.
 Coremod
   A Forge mod that is loaded before any Mojang classes are loaded. The purpose of a CoreMod is to patch actual Minecraft
-  code. http://www.minecraftforge.net/wiki/Core_Mod
+  code. Replaced by mods/plugins using Mixins.
 Crowdin
   A web-based translation system for documentation. SpongeDocs uses it to provide translated Docs in many languages.
   https://crowdin.com/project/sponge-docs
