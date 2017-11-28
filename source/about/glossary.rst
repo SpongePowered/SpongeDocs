@@ -54,7 +54,7 @@ Ore
   The Official Sponge plugin hosting site, not ready yet. Use the Sponge Forums instead.
 Patreon
   A Service that allows for donations to projects and organizations. If you want to support Sponge, this is the place to
-  look at! `Sponge Patreon Donation Page <https://www.patreon.com/Sponge?ty=h>`__
+  look at! `Sponge Patreon Donation Page <https://www.patreon.com/Sponge>`__
 Plugin
   A Minecraft mod that extends and changes Minecraft via the SpongeAPI, usable only on Sponge servers.
 Project Leaders
