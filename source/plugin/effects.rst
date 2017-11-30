@@ -71,9 +71,9 @@ Similarly to sounds, we can use the ``Viewer`` class to spawn particles within t
 Using a :javadoc:`ParticleEffect.Builder`, we can specify the type of particle we
 would like to spawn. With this, we also specify that fifty particles will be in the particle effect.
 
-Now if we wanted to make a more specific particle, say the particle of a block, then we can use one of the serveral
-types found in the :javadoc:`ParticleTypes` class. For example, let's say we wanted to spawn the particle of a sand,
-:javadoc:`ParticleTypes#BLOCK_CRACK`. We would need to use the :javadoc:`ParticleOptions#BLOCK_STATE`
+Now if we wanted to make a more specific particle, say the particle of a block, then we can use one of the several
+types found in the :javadoc:`ParticleTypes` class. For example, let's say we wanted to spawn particles of a cracking
+block of sand, :javadoc:`ParticleTypes#BLOCK_CRACK`. We would need to use the :javadoc:`ParticleOptions#BLOCK_STATE`
 option and specify that we would like to use a sand block. This can be done like so:
 
 .. code-block:: java
