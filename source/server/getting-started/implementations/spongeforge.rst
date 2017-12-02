@@ -68,15 +68,19 @@ Installing SpongeForge
 
 .. note::
 
-    If you use (or are planning to use) a game server host, they may have a control panel that can install Sponge for you.
+    If you use (or are planning to use) a game server host, they may have a control panel that can install Sponge for
+    you.
 
 
 .. warning::
+
   When using the Mojang installer, Mojang makes use of their own Java version and not the one you installed on your
   system. The installer currently ships with Java ``1.8.0_25`` for Windows and ``1.8.0_60`` for macOS. Note that Sponge
-  requires **at least** ``1.8.0_40`` or above to run properly. You can grab the Launcher without included Java here:
-  `official Minecraft Launcher <https://minecraft.net/download>`_. Read :doc:`here <../jre>` on how to install and
-  configure Java.
+  requires **at least** ``1.8.0_40`` or above to run properly. You can grab that Launcher on the 
+  `official Minecraft download page <https://minecraft.net/download>`_. Please make sure to configure it to use an up to
+  date version of Java. As an alternative you can download a Launcher without an (outdated) Java from
+  `here <https://minecraft.net/download/alternative>`__. Read :doc:`our documentation <../jre>` on how to install and
+  configure Java. 
 
 Single Player / In-Game LAN Servers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
