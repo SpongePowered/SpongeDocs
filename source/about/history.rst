@@ -60,7 +60,7 @@ The History of Spongie
 ----------------------
 
 Spongie first appeared in #Sponge on Esper.NET around September 2014. She was created and posted by
-`DragonsPainter <http://dragonspainter.deviantart.com/>`__. Strad, another user, felt that Spongie would look better with
+`DragonsPainter <https://dragonspainter.deviantart.com/>`__. Strad, another user, felt that Spongie would look better with
 a moogle-like antenna, a Forge furnace instead of a Cauldron and replaced the Spigot with Spout. An anonymous user then
 removed all labels and introduced her as the icon and background logo for the Sponge reddit section.
 

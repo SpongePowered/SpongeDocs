@@ -42,7 +42,7 @@ Vanilla Workspace
         repositories {
             maven {
                 name = 'forge'
-                url = 'http://files.minecraftforge.net/maven'
+                url = 'https://files.minecraftforge.net/maven'
             }
         }
 
@@ -70,7 +70,7 @@ Forge Workspace
         repositories {
             maven {
                 name = 'forge'
-                url = 'http://files.minecraftforge.net/maven'
+                url = 'https://files.minecraftforge.net/maven'
             }
         }
 

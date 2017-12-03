@@ -54,7 +54,7 @@ Here is the default server.properties file of an unmodified Minecraft 1.8.1 serv
 Property Explanation
 ----------------------
 
-Credit goes to the editors at the `Minecraft Wiki <http://minecraft.gamepedia.com>`__ for the explanations.
+Credit goes to the editors at the `Minecraft Wiki <https://minecraft.gamepedia.com>`__ for the explanations.
 
 **Boolean** properties have only two valid values: *true* and *false*.
 **Integer** properties must be whole numbers. Where a range is specified, the number must be in that range.
@@ -134,9 +134,9 @@ Credit goes to the editors at the `Minecraft Wiki <http://minecraft.gamepedia.co
 |                               |             |             | false.                                                     |
 +-------------------------------+-------------+-------------+------------------------------------------------------------+
 | generator-settings            | string      | *blank*     | The settings used to customize world generation. See       |
-|                               |             |             | `Superflat <http://minecraft.gamepedia.com/Superflat>`__   |
+|                               |             |             | `Superflat <https://minecraft.gamepedia.com/Superflat>`__  |
 |                               |             |             | and                                                        |
-|                               |             |             | `Customized <http://minecraft.gamepedia.com/Customized>`__ |
+|                               |             |             | `Customized <https://minecraft.gamepedia.com/Customized>`__|
 |                               |             |             | on the Minecraft Wiki (external links) for possible        |
 |                               |             |             | settings and examples.                                     |
 +-------------------------------+-------------+-------------+------------------------------------------------------------+

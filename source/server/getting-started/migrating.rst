@@ -196,7 +196,7 @@ Migrating to SpongeForge
 ------------------------
 
 You must first ensure you are running a version of Forge that is compatible with the version of SpongeForge your plan to
-use. You may find recommended builds of Forge at `Forge Downloads <http://files.minecraftforge.net>`_. If you are using
+use. You may find recommended builds of Forge at `Forge Downloads <https://files.minecraftforge.net>`_. If you are using
 any other mods, they must also be updated.
 
 When you are ready to install SpongeForge, you may proceed with the following steps:

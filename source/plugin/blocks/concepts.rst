@@ -57,7 +57,7 @@ additional way that *some* blocks have data: tile entities.
 Tile entities themselves are Java objects (like a `Chest` class). Normally, Minecraft code would access data in a tile
 entity by getting its instance and then calling it methods or fields, like a regular object
 (``world.getTileEntity(position).getInventory()``). When tile entities need to be written to the save file, they are
-stored in the `NBT format <http://minecraft.gamepedia.com/NBT_format>`_.
+stored in the `NBT format <https://minecraft.gamepedia.com/NBT_format>`_.
 
 .. tip::
 

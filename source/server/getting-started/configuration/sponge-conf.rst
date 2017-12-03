@@ -243,7 +243,7 @@ This config was generated using SpongeForge build 2360 (with Forge 2282), Sponge
     # # If you need help with the configuration or have any questions related to Sponge,
     # # join us at the IRC or drop by our forums and leave a post.
     #
-    # # IRC: #sponge @ irc.esper.net ( http://webchat.esper.net/?channel=sponge )
+    # # IRC: #sponge @ irc.esper.net ( https://webchat.esper.net/?channel=sponge )
     # # Forums: https://forums.spongepowered.org/
     #
 
