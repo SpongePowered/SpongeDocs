@@ -4,9 +4,9 @@ Installing Java
 
 Java is needed to run Sponge and Minecraft. You most likely already have Java, but you may need to update it.
 
-Sponge requires Java 8 (specifically ``1.8.0_40`` or above) at this time. Older Java versions are deprecated and will not
-work with Sponge. The difference between major versions of Java (6, 7, 8) is significant, and older versions cannot run
-Sponge properly. Currently Sponge will not run with Java 9.
+Sponge requires Java 8 (specifically ``1.8.0_40`` or above) at this time. Older Java versions are deprecated and will
+not work with Sponge. The difference between major versions of Java (6, 7, 8) is significant, and older versions cannot
+run Sponge properly. Currently Sponge will not run with Java 9.
 
 Installing Java
 ===============
@@ -29,12 +29,19 @@ You may have to configure the path to the JRE/JDK in your
 
 If your computer supports it, you should use 64-bit versions of Java whenever possible. The Java installers from the
 `this website <https://java.com/en/download/>`__ should detect whether your computer is ready for 64-bit.
-However the autodetection is sometimes wrong. It is also possible to look this up in the system information window.
+However the autodetection is sometimes wrong (try different browsers, if you are unsure).
+
+It is also possible to look this up in the system information window.
+
+* Windows: Press ``<Win>`` + ``<Pause>`` or via ``Systeminformation`` have a look at your ``system type``.
+* Linux: Open a terminal and type ``arch`` or ``uname -m``. ``i686`` -> 32-bit. ``x86_64`` -> 64-bit.
+* Mac: There is only one download anyway...
+
 If you are sure to about your system's architecture you can
 `manually choose <https://java.com/en/download/manual.jsp>`__ the correct installer yourself.
 
-Because the 64-bit version of Java runs considerably better, and also lets Java use more than ~3 GB of your RAM (memory),
-we always recommend it over 32-bit.
+Because the 64-bit version of Java runs considerably better, and also lets Java use more than ~3 GB of your RAM
+(memory), we always recommend it over 32-bit.
 
 Most modern computers support 64-bit.
 
