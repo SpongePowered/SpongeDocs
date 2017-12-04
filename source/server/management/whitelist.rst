@@ -29,9 +29,10 @@ Permissions
 
 You can also use these :doc:`../../plugin/permissions` to manage the access to your server.
 
-=================================== ====================================================
+=================================== ====================================================================
 Permission                          Description
-=================================== ====================================================
-minecraft.login.bypass-whitelist    Treat the user as whitelisted.
-minecraft.login.bypass-player-limit Allow this user to bypass the server's player limit.
-=================================== ====================================================
+=================================== ====================================================================
+minecraft.login.bypass-whitelist    Treat the user as whitelisted. Defaults to ``Op``-only.
+minecraft.login.bypass-player-limit Allow this user to bypass the server's player limit. Defaults to the
+                                    ``bypassesPlayerLimit`` option in ``ops.json``.
+=================================== ====================================================================
