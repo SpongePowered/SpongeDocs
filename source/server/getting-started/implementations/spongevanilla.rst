@@ -46,7 +46,7 @@ SpongeVanilla only works as a dedicated server.
 
 .. warning::
 
-    Don't double-click the ``.jar`` file! As it will start the server without a window to control it.
+    Don't double-click the ``.jar`` file, as it will start the server without a window to control it!
 
 
 Links
