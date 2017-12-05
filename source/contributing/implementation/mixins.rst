@@ -21,7 +21,7 @@ the `SpongeCommon repository <https://github.com/SpongePowered/SpongeCommon/tree
 are extensively documented and cover many of the more complex scenarios. You should also consult the Javadoc of the Mixin
 repository itself, since almost everything is already documented.
 
-**Caveat: When contributing mixins, note that you can use neither anonymous classes nor lambda expressions.**
+**Caveat: When contributing mixins, note that you cannot use anonymous classes.**
 
 This means expressions like the following will cause mixins to fail horribly and bring death and destruction upon all
 that attempt to use Sponge.
@@ -34,14 +34,6 @@ that attempt to use Sponge.
             return input.getItem().equals(Items.golden_apple);
         }
     }
-
-.. code-block:: java
-
-    return input -> input.getItem().equals(Items.golden_apple);
-
-.. code-block:: java
-
-    return this::checkItem;
 
 This applies to all classes that are annotated with ``@Mixin``. Classes that are not touched by the mixin processor may
 make use of those features. However, you can use a static utility class to create your anonymous classes, as unlike
@@ -67,6 +59,9 @@ specified target class. The following code therefore will work.
             return ItemUtil.typeChecker(Items.golden_apple);
         }
     }
+
+(In a real situation, you would typically use a lambda to accomplish this; Mixin supports both lambdas and method
+references. This is purely for the sake of example.)
 
 .. note::
 
