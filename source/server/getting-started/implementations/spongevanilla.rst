@@ -22,6 +22,22 @@ Grab your copy of `Sponge Vanilla here <https://www.spongepowered.org/downloads>
 Installing SpongeVanilla
 ========================
 
+.. note::
+
+    If you use (or are planning to use) a game server host, they may have a control panel that can install Sponge for
+    you.
+
+
+.. warning::
+
+  When using the Mojang installer, Mojang makes use of their own Java version and not the one you installed on your
+  system. The installer currently ships with Java ``1.8.0_25`` for Windows and ``1.8.0_60`` for macOS. Note that Sponge
+  requires **at least** ``1.8.0_40`` or above to run properly. You can grab that Launcher on the 
+  `official Minecraft download page <https://minecraft.net/download>`_. Please make sure to configure it to use an up to
+  date version of Java. As an alternative you can download a Launcher without an (outdated) Java from
+  `here <https://minecraft.net/download/alternative>`__. Read :doc:`our documentation <../jre>` on how to install and
+  configure Java. 
+
 SpongeVanilla only works as a dedicated server.
 
 1. Download the SpongeVanilla .jar from the Sponge website.
@@ -30,10 +46,11 @@ SpongeVanilla only works as a dedicated server.
 
 .. warning::
 
-    Don't double-click the ``.jar`` file!
+    Don't double-click the ``.jar`` file, as it will start the server without a window to control it!
 
 
 Links
 =====
 
+* `Homepage <https://www.spongepowered.org/>`__
 * `GitHub <https://github.com/SpongePowered/SpongeVanilla>`__
