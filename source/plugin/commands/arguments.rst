@@ -251,5 +251,5 @@ Example: ``Vector2i`` command element usage
 
 .. tip::
 
-    Look at the `source code <https://github.com/SpongePowered/SpongeAPI/blob/stable-6.1.0/src/main/java/org/spongepowered/api/command/args/GenericArguments.java>`_
+    Look at the `source code <https://github.com/SpongePowered/SpongeAPI/blob/stable-7/src/main/java/org/spongepowered/api/command/args/GenericArguments.java>`_
     of the ``GenericArguments`` class for more examples.
