@@ -21,7 +21,7 @@ Setup
     .. code-block:: groovy
 
         dependencies {
-            compile 'org.spongepowered:mixin:0.6.6-SNAPSHOT'
+            compile 'org.spongepowered:mixin:0.7.5-SNAPSHOT'
         }
 
 #. Add a new Mixin configuration for your plugin, e.g. ``mixins.myplugin.json`` inside your resource folder:
@@ -81,7 +81,7 @@ production:
                 }
             }
             dependencies {
-                classpath 'org.spongepowered:mixingradle:0.4-SNAPSHOT'
+                classpath 'org.spongepowered:mixingradle:0.6-SNAPSHOT'
             }
         }
 
