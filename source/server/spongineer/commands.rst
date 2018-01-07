@@ -5,10 +5,10 @@ Commands
 Commands are one method in which server operators can administer their server, and in which players can interact with
 the server.
 
-In Sponge, commands follow a system of permissions. Permissions allow server operators to control who can access what
-commands. By default, all commands are granted to players with OP status. Players without operator status do not have
-access to administrative commands or commands that require an assigned permission node. A server operator can fine-tune
-who can access what commands by adding/negating permission nodes through a permissions plugin.
+In Sponge, commands follow a system of :doc:`../../plugin/permissions`. Permissions allow server operators to control
+who can access what commands. By default, all commands are granted to players with OP status. Players without operator
+status do not have access to administrative commands or commands that require an assigned permission node. A server
+operator can fine-tune who can access what commands by adding/negating permission nodes through a permissions plugin.
 
 .. note::
 
@@ -181,6 +181,11 @@ which is normally ``@`` by default.
 * Allow player to bypass force-gamemode in all worlds: ``minecraft.force-gamemode.override``
 * Allow editing an ordinary commandblock of the given name: ``minecraft.commandblock.edit.block.<name>``
 * Allow editing a minecart commandblock of the given name: ``minecraft.commandblock.edit.minecart.<name>``
+
+There are also extra permissions managing the access to the server:
+
+* Treat the user as whitelisted: ``minecraft.login.bypass-whitelist``
+* Allow this user to bypass the server's player limit: ``minecraft.login.bypass-player-limit``
 
 
 Player Commands

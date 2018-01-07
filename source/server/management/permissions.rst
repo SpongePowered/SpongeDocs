@@ -2,9 +2,8 @@
 Managing Permissions
 ====================
 
-You can configure who has access to what if you are running a server by making use of permissions.
-Specific permissions for Sponge, Forge and Minecraft commands are shown on the :doc:`../../server/spongineer/commands`
-page.
+You can configure who has access to what if you are running a server by making use of :doc:`../../plugin/permissions`.
+Specific permissions for Sponge, Forge and Minecraft commands are shown on the :doc:`../spongineer/commands` page.
 
 
 Operator Level
