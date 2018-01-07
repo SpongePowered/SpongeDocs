@@ -689,4 +689,3 @@ This config was generated using SpongeForge build 2811 (with Forge 2555), Sponge
             world-enabled=true
         }
     }
-
