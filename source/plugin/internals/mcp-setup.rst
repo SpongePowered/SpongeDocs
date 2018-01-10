@@ -47,18 +47,18 @@ Vanilla Workspace
         }
 
         dependencies {
-            classpath 'net.minecraftforge.gradle:ForgeGradle:2.2-SNAPSHOT'
+            classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
         }
     }
 
     plugins {
         id 'org.spongepowered.plugin' version '0.8.1'
-        id 'net.minecrell.vanillagradle.server' version '2.2-3'
+        id 'net.minecrell.vanillagradle.server' version '2.2-6'
     }
 
     minecraft {
-        version = '1.10.2'
-        // TODO: Replace with your mappings version, e.g. snapshot_20170120
+        version = '1.12.2'
+        // TODO: Replace with your mappings version, e.g. snapshot_20180106
         mappings = 'YOUR_MAPPINGS_VERSION'
     }
 
@@ -75,7 +75,7 @@ Forge Workspace
         }
 
         dependencies {
-            classpath 'net.minecraftforge.gradle:ForgeGradle:2.2-SNAPSHOT'
+            classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
         }
     }
 
@@ -86,8 +86,8 @@ Forge Workspace
     apply plugin: 'net.minecraftforge.gradle.forge'
 
     minecraft {
-        forgeVersion = '1944' // TODO: Configure Forge build here
-        // TODO: Replace with your mappings version, e.g. snapshot_20170120
+        forgeVersion = '2584' // TODO: Configure Forge build here
+        // TODO: Replace with your mappings version, e.g. snapshot_20180106
         mappings = 'YOUR_MAPPINGS_VERSION'
     }
 
