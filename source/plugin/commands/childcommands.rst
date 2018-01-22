@@ -56,7 +56,8 @@ The first alias supplied is the primary one and will appear in the usage message
 
     Sponge.getCommandManager().register(plugin, mailCommandSpec, "mail", "email");
 
-## Fallback behavior
+Fallback Behavior
+=================
 
 If a command has child commands, a :javadoc:`CommandExecutor`, set through
 :javadoc:`CommandSpec.Builder#executor(CommandExecutor)` and their associated
