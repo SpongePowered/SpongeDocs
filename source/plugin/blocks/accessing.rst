@@ -113,7 +113,7 @@ use of this is getting an :javadoc:`ImmutableDataManipulator`, as shown below:
     import org.spongepowered.api.block.BlockState;
     import org.spongepowered.api.data.manipulator.immutable.ImmutableWetData;
 
-    public void isWet(Location blockLoc) {
+    public boolean isWet(Location blockLoc) {
         BlockState sponge = blockLoc.getBlock();
         if (!sponge.getType().equals(BlockTypes.SPONGE)) {
             return false;
@@ -135,6 +135,7 @@ get the blast resistance of a block and checking if it is greater than or equal 
 
 .. code-block:: java
 
+    import org.spongepowered.api.data.Property;
     import org.spongepowered.api.data.property.DoubleProperty;
     import org.spongepowered.api.data.property.block.BlastResistanceProperty;
 
@@ -144,7 +145,7 @@ get the blast resistance of a block and checking if it is greater than or equal 
         
         if(optional.isPresent()) {
             BlastResistanceProperty resistance = optional.get();
-            DoubleProperty one = DoubleProperty.greaterThanOrEqual(1);
+            DoubleProperty one = new DoubleProperty(1, Property.Operator.GEQUAL);
             return one.matches(resistance);
         }
         return false;
@@ -153,7 +154,7 @@ get the blast resistance of a block and checking if it is greater than or equal 
 This will get the blast resistance of our block and compare it to a new :javadoc:`DoubleProperty`, as
 :javadoc:`BlastResistanceProperty` inherits from ``DoubleProperty``. The method will then return if the blast
 resistance of our block is greater than one, the value in placed ``matches()``. If we wanted to see if it was less than
-two, we would replace it with ``lessThan()``.
+two, we would replace it with ``Property.Operator.LESS``.
 
 If we were comparing two pre-existing properties, it will take the ``Operator`` of our first value, the one we are
 creating a double property for. If the ``Operator`` is ``DELEGATE``, which is the none operator, then it will take the
@@ -162,6 +163,7 @@ An example of comparing two :javadoc:`PoweredProperty`\ s, a :javadoc:`BooleanPr
 
 .. code-block:: java
 
+    import org.spongepowered.api.data.property.BooleanProperty;
     import org.spongepowered.api.data.property.block.PoweredProperty;
 
     public boolean areBlocksPowered(Location<World> blockLoc, Location<World> blockLoc2) {
@@ -171,11 +173,10 @@ An example of comparing two :javadoc:`PoweredProperty`\ s, a :javadoc:`BooleanPr
         if(optional.isPresent() && optional2.isPresent()) {
             PoweredProperty property1 = optional2.get();
             PoweredProperty property2 = optional2.get();
-            BooleanProperty booleanProperty = BooleanProperty.of(property1);
-            BooleanProperty booleanProperty2 = BooleanProperty.of(true);
-            
-            if(booleanProperty2.matches(property1)) {
-                return booleanProperty.matches(property2);
+            BooleanProperty booleanProperty = new BooleanProperty(true, Property.Operator.EQUAL);
+
+            if(booleanProperty.matches(property1)) {
+                return property1.matches(property2);
             }
         }
         return false;
