@@ -27,12 +27,12 @@ You can specify the origin of the ray using the ``BlockRay#from`` method, passin
 
 To specify the end point, you can use the :javadoc:`BlockRay.BlockRayBuilder#to(Vector3d)` method, which will set both
 the direction and ending location. Alternatively, you can specify a direction using
-:javadoc:`BlockRay.BlockRayBuilder#direction(Vector3d)` and also a block limit using
-:javadoc:`BlockRay.BlockRayBuilder#blockLimit(int)`.
+:javadoc:`BlockRay.BlockRayBuilder#direction(Vector3d)` and also a distance limit using
+:javadoc:`BlockRay.BlockRayBuilder#distanceLimit(double distanceLimit)`.
 
 .. note::
-    The default block limit is 1000 blocks as a safeguard to prevent infinite iteration. To disable the block limit,
-    use a negative value with ``BlockRayBuilder#blockLimit(int)``.
+    The default distance limit is 1000 blocks as a safeguard to prevent infinite iteration. To disable the distance
+    limit, use a negative value with ``BlockRayBuilder#distanceLimit(double distanceLimit)``.
 
 Filtering
 =========
@@ -44,7 +44,6 @@ method, passing in one or many ``Predicate<BlockRayHit<E>>``\ s (where ``E`` ext
  * ``allFilter``: returns a filter accepting all blocks
  * ``onlyAirFilter``: returns a filter accepting only air
  * ``blockTypeFilter(BlockType)``: returns a filter accepting only the specified :javadoc:`BlockType`
- * ``maxDistanceFilter(Vector3d, double)``: returns a filter that stops at certain distance from the given ``Vector3d``
  * ``continueAfterFilter(Predicate<BlockRayHit<E>>, int)``: returns a filter that continues past the given filter by
    the specified number of blocks.
 
@@ -61,7 +60,14 @@ Finally, use :javadoc:`BlockRay.BlockRayBuilder#build()` to finish building the 
 
     Player player;
     BlockRay<World> blockRay = BlockRay.from(player)
-        .filter(BlockRay.continueAfterFilter(BlockRay.onlyAirFilter(), 1)).build();
+        .stopFilter(BlockRay.continueAfterFilter(BlockRay.onlyAirFilter(), 1)).build();
+
+We can rewrite the above to use skipFilter in addition to stopFilter. This will skip all air blocks and stop at the first non-air block it hits.
+
+.. code-block:: java
+
+    BlockRay<World> blockRay = BlockRay.from(player)
+        .skipFilter(BlockRay.onlyAirFilter()).stopFilter(blockRay.allFilter).build();
 
 Using BlockRay
 ==============
