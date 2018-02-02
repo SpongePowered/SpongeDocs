@@ -5,8 +5,8 @@ Introduction
 What Is Sponge?
 ~~~~~~~~~~~~~~~
 
-The purpose of the Sponge project is to create a plugin development framework for Minecraft. Sponge is being created by
-a global community, and its open-source nature means anyone can participate.
+The purpose of the Sponge project is to create a plugin development framework for Minecraft: Java Edition. Sponge is
+being created by a global community, and its open-source nature means anyone can participate.
 
 Sponge was created after seeing the failures of other projects in the Minecraft plugin development community. We are
 trying to avoid making the same mistakes as other projects; thus:
@@ -20,9 +20,9 @@ to be updated. This means that, for the most part, server owners do not need to 
 
 We have two other projects in addition to the Sponge API:
 
-(1) **SpongeForge**, a coremod for Minecraft Forge, which is an existing Minecraft modding framework famous for spurring
-    the Minecraft modding scene. Forge lacks a cross-version API, and this is where Sponge steps in. Sponge allows
-    server owners to deploy Sponge plugins with ease, making server management easier.
+(1) **SpongeForge**, a coremod for Minecraft Forge, which is an existing Minecraft: Java Edition modding framework
+    famous for spurring the Minecraft modding scene. Forge lacks a cross-version API, and this is where Sponge steps
+    in. Sponge allows server owners to deploy Sponge plugins with ease, making server management easier.
 
 (2) **SpongeVanilla**, a stand-alone implementation of the Sponge API, running on top of the vanilla Minecraft server.
     (SpongeVanilla was formerly known as Granite, until the development teams merged).
