@@ -18,8 +18,8 @@ API
 Contributor
   Someone who contributes code to the SpongePowered projects.
 Coremod
-  A Forge mod that is loaded before any Mojang classes are loaded. The purpose of a CoreMod is to patch actual Minecraft
-  code. http://www.minecraftforge.net/wiki/Core_Mod
+  A CoreMod is a Forge mod that loads before Mojang classes are loaded, allowing it to modify native Minecraft code via
+  Access Transformers, ASM class modification, or other Java bytecode manipulation.
 Crowdin
   A web-based translation system for documentation. SpongeDocs uses it to provide translated Docs in many languages.
   https://crowdin.com/project/sponge-docs
@@ -29,7 +29,7 @@ FLARD
   It is green, edible, and explosive. Leave it alone and it will leave you alone.
 Forge
   A long-standing Minecraft modding API, with its own installer. Forge enables mods in single player, LAN, and on
-  dedicated servers. http://www.minecraftforge.net/wiki/
+  dedicated servers. https://mcforge.readthedocs.io/en/latest/
 GitHub
   A free public web-based system for sharing code and creating projects. https://github.com/
 Implementation
@@ -54,7 +54,7 @@ Ore
   The Official Sponge plugin hosting site, not ready yet. Use the Sponge Forums instead.
 Patreon
   A Service that allows for donations to projects and organizations. If you want to support Sponge, this is the place to
-  look at! `Sponge Patreon Donation Page <https://www.patreon.com/Sponge?ty=h>`__
+  look at! `Sponge Patreon Donation Page <https://www.patreon.com/Sponge>`__
 Plugin
   A Minecraft mod that extends and changes Minecraft via the SpongeAPI, usable only on Sponge servers.
 Project Leaders
@@ -78,7 +78,6 @@ Sponge Forums
   regularly. https://forums.spongepowered.org/
 Sponge Foundation
   The financial side of the project, a separate entity that accepts, manages and distributes donations.
-  http://spongefoundation.org/
 SpongeVanilla
   An implementation of Sponge API that runs on Vanilla Minecraft (and not Forge).
 Spongie

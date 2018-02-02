@@ -105,7 +105,7 @@ Block States
 ~~~~~~~~~~~~
 
 A :javadoc:`BlockState` contains a :javadoc:`BlockType`,  any ``DataManipulator``\ s and properties that are applied to
-the block, and any :javadoc:`BlockTrait`\ s for a block. It stores all immutable value's for a particular block. One
+the block, and any :javadoc:`BlockTrait`\ s for a block. It stores all immutable values for a particular block. One
 use of this is getting an :javadoc:`ImmutableDataManipulator`, as shown below:
 
 .. code-block:: java

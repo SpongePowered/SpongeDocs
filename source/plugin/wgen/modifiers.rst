@@ -28,7 +28,7 @@ the ``WorldGeneratorModifier`` interface:
 
     import org.spongepowered.api.world.storage.WorldProperties;
 
-    private class MyModifier implements WorldGeneratorModifier {
+    public class MyModifier implements WorldGeneratorModifier {
 
         @Override
         public String getId() {

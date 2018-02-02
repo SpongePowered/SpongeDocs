@@ -166,14 +166,14 @@ timings                                   boolean   true        Enables timing s
 tracking                                  boolean   true        Enables the tracking module.
 **Optimizations**                                               See :doc:`../../management/performance-tweaks`
 **Spawner**
-spawn-limit-ambient                       int       15          The number of ambients that can spawn around the player.
-spawn-limit-animal                        int       15          The number of animals that can spawn around the player.
-spawn-limit-aquatic                       int       5           The number of aquatics that can spawn around the player.
-spawn-limit-monster                       int       70          The number of monsters that can spawn around the player.
-tick-rate-ambient                         int       400         The ambient spawn tick rate.
-tick-rate-animal                          int       400         The animal spawn tick rate.
-tick-rate-aquatic                         int       400         The aquatic spawn tick rate.
-tick-rate-monster                         int       1           The monster spawn tick rate.
+spawn-limit-ambient                       integer       15          The number of ambients that can spawn around the player.
+spawn-limit-animal                        integer       15          The number of animals that can spawn around the player.
+spawn-limit-aquatic                       integer       5           The number of aquatics that can spawn around the player.
+spawn-limit-monster                       integer       70          The number of monsters that can spawn around the player.
+tick-rate-ambient                         integer       400         The ambient spawn tick rate.
+tick-rate-animal                          integer       400         The animal spawn tick rate.
+tick-rate-aquatic                         integer       400         The aquatic spawn tick rate.
+tick-rate-monster                         integer       1           The monster spawn tick rate.
 **SQL**
 aliases                                   string    null        Aliases for SQL connections. This is done in
                                                                 the format
@@ -234,18 +234,18 @@ weather-thunder                           boolean   true        Enable to initia
 world-enabled                             boolean   true        Enable if this world should be registered.
 ========================================  ========  ==========  ===============================================
 
-This config was generated using SpongeForge build 2360 (with Forge 2282), SpongeAPI version 6.0:
+This config was generated using SpongeForge build 2811 (with Forge 2555), SpongeAPI version 7.0:
 
 .. code-block:: none
-
+    
     # 1.0
-    #
+    # 
     # # If you need help with the configuration or have any questions related to Sponge,
     # # join us at the IRC or drop by our forums and leave a post.
-    #
-    # # IRC: #sponge @ irc.esper.net ( http://webchat.esper.net/?channel=sponge )
+    # 
+    # # IRC: #sponge @ irc.esper.net ( https://webchat.esper.net/?channel=sponge )
     # # Forums: https://forums.spongepowered.org/
-    #
+    # 
 
     sponge {
         block-capturing {
@@ -256,7 +256,7 @@ This config was generated using SpongeForge build 2360 (with Forge 2282), Sponge
                 extrautils2 {
                     # Set to true to perform individual capturing (i.e. skip bulk capturing) for scheduled ticks for a block type
                     block-tick-capturing {
-                        RedstoneClock=true
+                        redstoneclock=true
                     }
                     # Set to false if you want to ignore all specific rules for this mod
                     enabled=true
@@ -274,21 +274,31 @@ This config was generated using SpongeForge build 2360 (with Forge 2282), Sponge
             ip-forwarding=false
         }
         cause-tracker {
+            # If true, when a mod or plugin attempts to spawn an entity
+            # off the main server thread, Sponge will automatically
+            # capture said entity to spawn it properly on the main
+            # server thread. The catch to this is that some mods are
+            # not considering the consequences of spawning an entity
+            # off the server thread, and are unaware of potential race
+            # conditions they may cause. If this is set to false, 
+            # Sponge will politely ignore the entity being spawned,
+            # and emit a warning about said spawn anyways.
+            capture-async-spawning-entities=true
             # If true, when a mod changes a world that is different
             # from an expected world during a WorldTick event, the
-            # cause tracker will identify both the expected changed
+            # phase tracker will identify both the expected changed
             # world and the actual changed world. This does not mean
             # that the changes are being dropped, simply it means that
             # a mod is possibly unknowingly changing a world other
             # than what is expected.
             report-different-world-changes=false
-            # If true, the cause tracker will print out when there are too many phases
+            # If true, the phase tracker will print out when there are too many phases
             # being entered, usually considered as an issue of phase re-entrance and
             # indicates an unexpected issue of tracking phases not to complete.
             # If this is not reported yet, please report to Sponge. If it has been
             # reported, you may disable this.
             verbose=true
-            # If true, the cause tracker will dump extra information about the current phaseswhen certain non-CauseTracker related exceptions occur. This is usually not necessary, as the information in the exception itself can normally be used to determine the cause of the issue
+            # If true, the phase tracker will dump extra information about the current phaseswhen certain non-PhaseTracker related exceptions occur. This is usually not necessary, as the information in the exception itself can normally be used to determine the cause of the issue
             verbose-errors=false
         }
         commands {
@@ -406,7 +416,7 @@ This config was generated using SpongeForge build 2360 (with Forge 2282), Sponge
             prevent-sign-command-exploit=true
         }
         general {
-            # The directory for Sponge plugin configurations, relative to the
+            # The directory for Sponge plugin configurations, relative to the 
             # execution root or specified as an absolute path.
             # Note that the default: "${CANONICAL_GAME_DIR}/config"
             # is going to use the "plugins" directory in the root game directory.
@@ -419,7 +429,7 @@ This config was generated using SpongeForge build 2360 (with Forge 2282), Sponge
             disable-warnings=false
             # Enabled sleeping between chunk saves, beware of memory issues
             file-io-thread-sleep=false
-            # Additional directory to search for plugins, relative to the
+            # Additional directory to search for plugins, relative to the 
             # execution root or specified as an absolute path.
             # Note that the default: "${CANONICAL_MODS_DIR}/plugins"
             # is going to search for a plugins folder in the mods directory.
@@ -473,6 +483,8 @@ This config was generated using SpongeForge build 2360 (with Forge 2282), Sponge
             entity-collisions=true
             exploits=true
             game-fixes=false
+            # Allows configuring Vanilla movement and speed checks
+            movement-checks=false
             optimizations=true
             # Use real (wall) time instead of ticks as much as possible
             realtime=false
@@ -482,18 +494,35 @@ This config was generated using SpongeForge build 2360 (with Forge 2282), Sponge
             timings=true
             tracking=true
         }
+        movement-checks {
+            # Controls whether the 'player/entity moved wrongly!' check will be enforced
+            moved-wrongly=true
+            # Controls whether the 'player moved too quickly!' check will be enforced
+            player-moved-too-quickly=true
+            # Controls whether the 'vehicle of player moved too quickly!' check will be enforced
+            player-vehicle-moved-too-quickly=true
+        }
         optimizations {
             # Runs lighting updates async.
-            async-lighting=true
+            async-lighting {
+                # If enabled, runs lighting updates async.
+                enabled=true
+                # The amount of threads to dedicate for async lighting updates. (Default: 2)
+                num-threads=2
+            }
             # Caches tameable entities owners to avoid constant lookups against data watchers. If mods cause issue, disable.
             cache-tameable-owners=true
-            # If enabled, block item drops are pre-processed to avoid
+            # If enabled, block item drops are pre-processed to avoid 
             # having to spawn extra entities that will be merged post spawning.
             # Usually, Sponge is smart enough to determine when to attempt an item pre-merge
             # and when not to, however, in certain cases, some mods rely on items not being
             # pre-merged and actually spawned, in which case, the items will flow right through
             # without being merged.
-            drops-pre-merge=true
+            drops-pre-merge=false
+            # If enabled, uses Panda4494's Redstone implementation which improves performance.
+            # See https://bugs.mojang.com/browse/MC-11193 for more information.
+            # Note: This optimization has a few issues which is explained in the bug report. We are not responsible for any issues this may cause.
+            panda-redstone=false
             # Handles structures that are saved to disk. Certain structures can take up large amounts
             # of disk space for very large maps and the data for these structures is only needed while the world
             # around them is generating. Disabling saving of these structures can save disk space and time during
@@ -540,12 +569,22 @@ This config was generated using SpongeForge build 2360 (with Forge 2282), Sponge
             # Aliases for SQL connections, in the format jdbc:protocol://[username[:password]@]host/database
             aliases {}
         }
+        # Blocks to blacklist for safe teleportation.
+        teleport-helper {
+            # If enabled, this blacklist will always be respected, otherwise, plugins can choose whetheror not to respect it.
+            force-blacklist=false
+            # Block IDs that are listed here will not be selected by Sponge's safe teleport routine as a safe block for players to warp into.
+            # You should only list blocks here that are incorrectly selected, solid blocks that prevent movement are automatically excluded.
+            unsafe-body-block-ids=[]
+            # Block IDs that are listed here will not be selected by Sponge's safe teleport routine as a safe floor block.
+            unsafe-floor-block-ids=[]
+        }
         tileentity-activation {
             # If enabled, newly discovered tileentities will be added to this config with default settings.
             auto-populate=false
-            # Default activation block range used for all tileentities unless overridden.
+            # Default activation block range used for all tileentities unless overidden.
             default-block-range=64
-            # Default tick rate used for all tileentities unless overridden.
+            # Default tick rate used for all tileentities unless overidden.
             default-tick-rate=1
             # Per-mod overrides. Refer to the minecraft default mod for example.
             mods {}
@@ -564,21 +603,21 @@ This config was generated using SpongeForge build 2360 (with Forge 2282), Sponge
             # The auto-save tick interval used when saving global player data. (Default: 900)
             # Note: 20 ticks is equivalent to 1 second. Set to 0 to disable.
             auto-player-save-interval=900
-            # The auto-save tick interval used to save all loaded chunks in a world.
-            # Set to 0 to disable. (Default: 900)
+            # The auto-save tick interval used to save all loaded chunks in a world. 
+            # Set to 0 to disable. (Default: 900) 
             # Note: 20 ticks is equivalent to 1 second.
             auto-save-interval=900
-            # The number of newly loaded chunks before triggering a forced cleanup.
-            # Note: When triggered, the loaded chunk threshold will reset and start incrementing.
+            # The number of newly loaded chunks before triggering a forced cleanup. 
+            # Note: When triggered, the loaded chunk threshold will reset and start incrementing. 
             # Disabled by default.
             chunk-gc-load-threshold=0
-            # The tick interval used to cleanup all inactive chunks that have leaked in a world.
+            # The tick interval used to cleanup all inactive chunks that have leaked in a world. 
             # Set to 0 to disable which restores vanilla handling. (Default: 600)
             chunk-gc-tick-interval=600
             # The number of seconds to delay a chunk unload once marked inactive. (Default: 15)
             # Note: This gets reset if the chunk becomes active again.
             chunk-unload-delay=15
-            # If enabled, any request for a chunk not currently loaded will be denied (exceptions apply for things like world gen and player movement).
+            # If enabled, any request for a chunk not currently loaded will be denied (exceptions apply for things like world gen and player movement). 
             # Note: As this is an experimental setting for performance gain, if you encounter any issues then we recommend disabling it.
             deny-chunk-requests=true
             # Lava behaves like vanilla water when source block is removed
@@ -596,7 +635,7 @@ This config was generated using SpongeForge build 2360 (with Forge 2282), Sponge
             # Finally, if set to 0 or less, the default interval will be used.
             gameprofile-lookup-task-interval=4
             # Enable if you want the world to generate spawn the moment its loaded.
-            generate-spawn-on-load=false
+            generate-spawn-on-load=null
             # Vanilla water source behavior - is infinite
             infinite-water-source=false
             # The list of uuid's that should never perform a lookup against Mojang's session server.
@@ -615,22 +654,22 @@ This config was generated using SpongeForge build 2360 (with Forge 2282), Sponge
             # areas for more items. Setting to a negative value is not supported!
             item-merge-radius=2.5
             # Enable if this world's spawn should remain loaded with no players.
-            keep-spawn-loaded=false
+            keep-spawn-loaded=null
             # Enable to allow natural leaf decay.
             leaf-decay=true
             # Enable if this world should be loaded on startup.
-            load-on-startup=false
-            # The maximum number of queued unloaded chunks that will be unloaded in a single tick.
-            # Note: With the chunk gc enabled, this setting only applies to the ticks
+            load-on-startup=null
+            # The maximum number of queued unloaded chunks that will be unloaded in a single tick. 
+            # Note: With the chunk gc enabled, this setting only applies to the ticks 
             # where the gc runs (controlled by 'chunk-gc-tick-interval')
             # Note: If the max unloads is too low, too many chunks may remain
             # loaded on the world and increases the chance for a drop in tps. (Default: 100)
             max-chunk-unloads-per-tick=100
-            # Specifies the radius (in chunks) of where creatures will spawn.
+            # Specifies the radius (in chunks) of where creatures will spawn. 
             # This value is capped to the current view distance setting in server.properties
             mob-spawn-range=4
-            # A list of all detected portal agents used in this world.
-            # In order to override, change the target world name to any other valid world.
+            # A list of all detected portal agents used in this world. 
+            # In order to override, change the target world name to any other valid world. 
             # Note: If world is not found, it will fallback to default.
             portal-agents {
                 "minecraft:default_nether"=DIM-1
@@ -638,6 +677,10 @@ This config was generated using SpongeForge build 2360 (with Forge 2282), Sponge
             }
             # Enable if this world allows PVP combat.
             pvp-enabled=true
+            # The view distance.
+            # The value must be greater than or equal to 3 and less than or equal to 32
+            # The server-wide view distance will be used when the value is -1.
+            view-distance=-1
             # Enable to allow the natural formation of ice and snow in supported biomes.
             weather-ice-and-snow=true
             # Enable to initiate thunderstorms in supported biomes.

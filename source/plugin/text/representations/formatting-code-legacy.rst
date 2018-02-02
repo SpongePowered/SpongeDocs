@@ -12,7 +12,7 @@ Text can be represented by using a special character indicating a formatting *of
 indicating the specific formatting to be used. In the SpongeAPI, there are two different characters that are supported
 by default: the ampersand (&) and the section character (§).
 
-Both formatting schemes use the codes found at the `Minecraft Wiki <http://minecraft.gamepedia.com/Formatting_codes>`_.
+Both formatting schemes use the codes found at the `Minecraft Wiki <https://minecraft.gamepedia.com/Formatting_codes>`_.
 It is important to note that the Minecraft Wiki only displays the use of the section character (§), but the same codes
 work with the ampersand (&) as well.
 

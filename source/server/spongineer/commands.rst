@@ -5,10 +5,10 @@ Commands
 Commands are one method in which server operators can administer their server, and in which players can interact with
 the server.
 
-In Sponge, commands follow a system of permissions. Permissions allow server operators to control who can access what
-commands. By default, all commands are granted to players with OP status. Players without operator status do not have
-access to administrative commands or commands that require an assigned permission node. A server operator can fine-tune
-who can access what commands by adding/negating permission nodes through a permissions plugin.
+In Sponge, commands follow a system of :doc:`../../plugin/permissions`. Permissions allow server operators to control
+who can access what commands. By default, all commands are granted to players with OP status. Players without operator
+status do not have access to administrative commands or commands that require an assigned permission node. A server
+operator can fine-tune who can access what commands by adding/negating permission nodes through a permissions plugin.
 
 .. note::
 
@@ -36,6 +36,8 @@ Command                 Description                               Permission
 /sponge config          Alters a global, world, or a dimension    sponge.command.config
                         config.
 /sponge heap            Dumps the JVM heap.                       sponge.command.heap
+/sponge help            View information on commands used on the  sponge.command.help
+                        server.
 /sponge plugins         Lists currently installed plugins.        sponge.command.plugins
 /sponge plugins reload  Asks plugins to perform their own reload  sponge.command.plugins.reload
                         procedures.
@@ -74,7 +76,7 @@ Command                 Description                               Permission
       Since no dimension was specified, the dimension would default to the sender(player) dimension. So if you were in a
       mystcraft dimension, this would alter the mystcraft dimension config.
 
-    b. ``/sponge config -d nether logging.chunk-load true``
+    b. ``/sponge config -d minecraft:nether logging.chunk-load true``
 
     Since a dimension type was specified, this would alter the nether dimension config (and hence all nether worlds).
 
@@ -171,13 +173,19 @@ Command               Description                               Permission
 
 |
 
-Sponge also creates a spawn-protection bypass permission, and two permissions for controlling the
-ability to edit commandblocks. Note that these permissions use the actual *name* of the commandblock,
+Sponge also creates a spawn-protection bypass permission, a force-gamemode bypass permission, and two permissions for 
+controlling the ability to edit commandblocks. Note that these permissions use the actual *name* of the commandblock,
 which is normally ``@`` by default. 
 
-* Allow player to bypass spawn-protection on all worlds: ``minecraft.spawn-protection.override``
+* Allow player to bypass spawn-protection in all worlds: ``minecraft.spawn-protection.override``
+* Allow player to bypass force-gamemode in all worlds: ``minecraft.force-gamemode.override``
 * Allow editing an ordinary commandblock of the given name: ``minecraft.commandblock.edit.block.<name>``
 * Allow editing a minecart commandblock of the given name: ``minecraft.commandblock.edit.minecart.<name>``
+
+There are also extra permissions managing the access to the server:
+
+* Treat the user as whitelisted: ``minecraft.login.bypass-whitelist``
+* Allow this user to bypass the server's player limit: ``minecraft.login.bypass-player-limit``
 
 
 Player Commands
@@ -189,7 +197,8 @@ The following commands are available as part of vanilla Minecraft to players wit
 Command               Description                               Permission
 ====================  ========================================  ======================
 /help                 View information on commands used on the  minecraft.command.help
-                      server
+                      server, by default the Sponge command
+                      will be used instead!
 /me                   Tell everyone what you are doing.         minecraft.command.me
 /say                  Display a message to everyone (or, if     minecraft.command.say
                       using selectors, specific players).
@@ -198,5 +207,5 @@ Command               Description                               Permission
 
 |
 
-A full list of vanilla commands can be found at: http://minecraft.gamepedia.com/Commands#List_of_commands. Permissions
+A full list of vanilla commands can be found at: https://minecraft.gamepedia.com/Commands#List_of_commands. Permissions
 for vanilla Minecraft commands on a Sponge server are of the structure ``minecraft.command.<command>``.

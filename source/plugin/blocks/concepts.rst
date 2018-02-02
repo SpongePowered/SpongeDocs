@@ -38,7 +38,7 @@ not utilizing their metadata at all. On the other hand, logs do use their metada
 properties exceeds 16 possible values (think tree type and direction), logs must be split over two base types.
 
 In the future, there will only be one 16 bit number (65536 possible combinations of base type + properties). Blocks will
-be assigned an ID automatically and this assignment will be stored in the world save file. This is illustrated below::
+be assigned an ID automatically and this assignment will be stored in the world save file. This is illustrated below:
 
     0 => minecraft:dirt[snowy=false,variant=default]
     1 => minecraft:dirt[snowy=true,variant=default]
@@ -57,7 +57,7 @@ additional way that *some* blocks have data: tile entities.
 Tile entities themselves are Java objects (like a `Chest` class). Normally, Minecraft code would access data in a tile
 entity by getting its instance and then calling it methods or fields, like a regular object
 (``world.getTileEntity(position).getInventory()``). When tile entities need to be written to the save file, they are
-stored in the `NBT format <http://minecraft.gamepedia.com/NBT_format>`_.
+stored in the `NBT format <https://minecraft.gamepedia.com/NBT_format>`_.
 
 .. tip::
 

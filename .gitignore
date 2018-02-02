@@ -78,6 +78,9 @@ local.properties
 # PDT-specific
 .buildpath
 
+# eclipse
+.project
+
 # sbteclipse plugin
 .target
 
@@ -136,3 +139,4 @@ javadoc_dump.txt
 .DS_Store
 
 locale
+package-lock.json

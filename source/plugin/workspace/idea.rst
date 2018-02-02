@@ -81,4 +81,4 @@ Git Integration
 
 JetBrains offers documentation on Git integration:
 
-https://www.jetbrains.com/idea/help/using-git-integration.html
+https://www.jetbrains.com/help/idea/using-git-integration.html

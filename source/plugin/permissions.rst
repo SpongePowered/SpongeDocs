@@ -13,6 +13,11 @@ Permissions
     org.spongepowered.api.service.permission.SubjectCollection
     org.spongepowered.api.service.permission.SubjectData
 
+
+If you are interested in the permissions that are used in vanilla commands have a look at 
+:doc:`this page <../../server/spongineer/commands>`. For customizing the permission levels refer to the
+:doc:`server permissions <../../server/management/permissions>` page or your permission plugin's documentation.
+
 Permission
 ==========
 

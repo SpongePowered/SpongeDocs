@@ -9,7 +9,7 @@ Welcome to SpongeDocs, the official documentation for the open-source `Sponge <h
 
 The SpongeAPI is your all new plugin API for Minecraft: Java Edition. You can run it on a plain vanilla server (as
 SpongeVanilla) or on your fully modded MinecraftForge server (as SpongeForge). Grab your copy
-`here <https://spongepowered.org/downloads>`_.
+`here <https://www.spongepowered.org/downloads>`_.
 
 Not sure what you're looking for? Try our :doc:`about/index` section, which contains a short :doc:`about/introduction`,
 our :doc:`about/faq` and an article about :doc:`about/structure`.
@@ -29,7 +29,7 @@ or visit their repositories on GitHub:
 .. note::
 
     Sponge development is ongoing. Beta and Experimental builds of both SpongeForge and SpongeVanilla are currently
-    available for `download <https://spongepowered.org/downloads>`_.
+    available for `download <https://www.spongepowered.org/downloads>`_.
 
 Contents
 ========
@@ -121,13 +121,13 @@ Links
     :maxdepth: 2
     :titlesonly:
 
--  `Sponge Homepage <https://spongepowered.org>`_
+-  `Sponge Homepage <https://www.spongepowered.org>`_
 -  `Sponge Forums <https://forums.spongepowered.org>`_
 -  `Sponge Discord <https://discord.gg/PtaGRAs>`_
--  `Sponge Downloads <https://spongepowered.org/downloads>`_
+-  `Sponge Downloads <https://www.spongepowered.org/downloads>`_
 -  `SpongeAPI Issue Tracker <https://github.com/SpongePowered/SpongeAPI/issues?q=>`_
 -  `SpongeAPI Javadocs <https://jd.spongepowered.org>`_
 -  `Sponge Twitter <https://twitter.com/SpongePowered>`_
--  `Sponge Subreddit <https://reddit.com/r/SpongeProject>`_
+-  `Sponge Subreddit <https://www.reddit.com/r/spongeproject>`_
 -  `Sponge GitHub <https://github.com/SpongePowered>`_
--  `Sponge Patreon Donation Page <https://www.patreon.com/Sponge?ty=h>`_
+-  `Sponge Patreon Donation Page <https://www.patreon.com/Sponge>`_

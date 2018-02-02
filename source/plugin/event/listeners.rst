@@ -7,7 +7,6 @@ Event Listeners
     org.spongepowered.api.event.EventManager
     org.spongepowered.api.event.Listener
     org.spongepowered.api.event.Order
-    org.spongepowered.api.event.SpongeEventFactory
     org.spongepowered.api.event.block.ChangeBlockEvent
     org.spongepowered.api.event.block.ChangeBlockEvent.Break
     org.spongepowered.api.event.cause.Cause
@@ -69,7 +68,7 @@ the class containing the event listeners.
 
 
 Dynamically Registering Event Listeners
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Some plugins (such as scripting plugins) may wish to dynamically register an event listener. In that case the event
 listener is not a method annotated with ``@Listener``, but rather a class implementing the ``EventListener`` interface.
@@ -131,7 +130,7 @@ event listeners, including those registered with ``@Listener`` annotations.
 .. _about_listener:
 
 About @Listener
-~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
 
 The ``@Listener`` annotation has a few configurable fields:
 
@@ -181,7 +180,8 @@ The method returns ``true`` if the event was cancelled, ``false`` if not.
 Firing Sponge Events
 ~~~~~~~~~~~~~~~~~~~~
 
-It is possible to generate instances of built-in events with the static :javadoc:`SpongeEventFactory`. The events
+It is possible to generate instances of built-in events with the static ``SpongeEventFactory``. This class is
+automatically generated so there are no Javadocs. Use your IDE's autocompletion to list the existing methods. The events
 created by the ``SpongeEventFactory`` are then passed to :javadoc:`EventManager#post(Event)`.
 
 Example: Firing LightningEvent

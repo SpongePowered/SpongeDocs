@@ -10,7 +10,7 @@ Users who do not want to use Minecraft Forge can consider :doc:`SpongeVanilla <s
 Download
 ========
 
-Grab your copy of `Sponge Forge here <https://spongepowered.org/downloads>`_.
+Grab your copy of `Sponge Forge here <https://www.spongepowered.org/downloads>`_.
 
 Reading the Download Filename
 =============================
@@ -23,52 +23,69 @@ However, SpongeForge usually updates to a new Forge build fairly soon after it's
 worry about always having to run an outdated Forge version in order to use SpongeForge.
 
 
-The format of the filename is ``spongeforge-{MCVersion}-{ForgeVersion}-{SpongeAPIVersion}-{SpongeBuildId}``
+The format of the filename is ``spongeforge-<MCVersion>-<ForgeBuildId>-<SpongeAPIVersion>-BETA-<SpongeBuildId>.jar``
 
-+----------------------+----------------------------------------------------------------------------------------------+
-| ``MCVersion``        | The Minecraft version. Only clients compatible with this version can connect.                |
-+----------------------+----------------------------------------------------------------------------------------------+
-| ``ForgeVersion``     | The version of Forge this file is built for. Preferably your server should run this exact    |
-|                      | version of Forge.                                                                            |
-+----------------------+----------------------------------------------------------------------------------------------+
-| ``SpongeAPIVersion`` | The version of the SpongeAPI implemented by this file. This is what Sponge plugins depend on.|
-+----------------------+----------------------------------------------------------------------------------------------+
-| ``SpongeBuildId``    | The build number of Sponge. This is what you should supply when reporting bugs or seeking    |
-|                      | support.                                                                                     |
-+----------------------+----------------------------------------------------------------------------------------------+
++----------------------+-----------------------------------------------------------------------------------------------+
+| ``MCVersion``        | The Minecraft version. Only clients compatible with this version can connect.                 |
++----------------------+-----------------------------------------------------------------------------------------------+
+| ``ForgeBuildId``     | Preferably your server should run this exact version of Forge (which can be identified in the |
+|                      | last part of Forge's version string).                                                         |
++----------------------+-----------------------------------------------------------------------------------------------+
+| ``SpongeAPIVersion`` | The version of the SpongeAPI implemented by this file. This is what Sponge plugins depend on. |
++----------------------+-----------------------------------------------------------------------------------------------+
+| ``SpongeBuildId``    | The build number of Sponge. This is what you should supply when reporting bugs or seeking     |
+|                      | support.                                                                                      |
++----------------------+-----------------------------------------------------------------------------------------------+
 
 Example
 ~~~~~~~
 
-The file name ``spongeforge-1.10.2-2254-5.2.0-BETA-2234.jar`` is compatible with Minecraft version ``1.10.2``,
-requires build ``1.10.2-12.18.3.2254`` of Forge, provides SpongeAPI ``5.2.0`` and was build ``2234`` of SpongeForge.
+SpongeForge Jar files will always follow this naming scheme, to allow you to easily identify compatibility.
+
+For example the file name ``spongeforge-1.10.2-2254-5.2.0-BETA-2234.jar`` is compatible with Minecraft version
+``1.10.2``, was built with Forge ``12.18.3.2254`` (Build ``2254``), provides SpongeAPI ``5.2.0`` and was build number
+``2234`` of SpongeForge.
 
 .. note::
 
-    Normal Forge mods can usually run on any build of Forge for a given Minecraft version (e.g. 1.8.0) without
-    any problems. However, SpongeForge needs to access, among other things, internal parts of Forge, which
-    most mods shouldn't be touching, let alone modifying as Sponge does. Since Forge is free to change internal
-    code whenever they want to, its normal guarantee of backwards-compatibility doesn't apply to SpongeForge.
+    Normal Forge mods can usually run on any build of Forge for a given Minecraft version (e.g. 1.8.0) without any
+    problem. However, SpongeForge needs to access, among other things, internal parts of Forge, which most mods
+    shouldn’t be touching, let alone modifying as Sponge does. Since Forge is free to change their internal code
+    whenever they want to, its normal guarantee of backwards-compatibility doesn’t apply to SpongeForge. Feel free to
+    use more recent versions of Forge, than the one used for SpongeForge, but we can't always guarantee compatibility.
 
+
+.. warning::
+    
+    When investigating crash issues, you can freely try newer versions of Forge than listed on the SpongeForge Jar.
+    However it is recommended to also check with the matching version, to make sure your issue is not related to a
+    version mismatch. 
+    Even though there will be no guarantee of compatibility, please report any breakage to the issue tracker, so that
+    SpongeForge can be updated.
 
 Installing SpongeForge
 ======================
 
 .. note::
 
-    If you use (or are planning to use) a game server host, they may have a control panel that can install Sponge for you.
+    If you use (or are planning to use) a game server host, they may have a control panel that can install Sponge for
+    you.
 
 
 .. warning::
+
   When using the Mojang installer, Mojang makes use of their own Java version and not the one you installed on your
   system. The installer currently ships with Java ``1.8.0_25`` for Windows and ``1.8.0_60`` for macOS. Note that Sponge
-  requires **at least** ``1.8.0_40`` or above to run properly. You can grab the Launcher without included Java here:
-  `official Minecraft Launcher <https://minecraft.net/download>`_
+  requires **at least** ``1.8.0_40`` or above to run properly. You can grab that Launcher on the 
+  `official Minecraft download page <https://minecraft.net/download>`_. Please make sure to configure it to use an up to
+  date version of Java. As an alternative you can download a Launcher without an (outdated) Java from
+  `here <https://minecraft.net/download/alternative>`__. Read :doc:`our documentation <../jre>` on how to install and
+  configure Java. 
 
 Single Player / In-Game LAN Servers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Download the Minecraft Forge installer from the `Minecraft Forge website <http://files.minecraftforge.net/>`_. Make
+1. Download the Minecraft Forge installer from the `Minecraft Forge website <https://files.minecraftforge.net/>`_. Make
    sure to use **exactly the same build number** as shown above.
 #. Run the provided Forge installer. A new Forge profile will be created in the Minecraft launcher.
 #. Open the Minecraft launcher, and select the new Forge profile.
@@ -92,7 +109,7 @@ Dedicated Servers
 Installing Forge via Commandline
 --------------------------------
 
-1. Visit the `Minecraft Forge website <http://files.minecraftforge.net/>`_ and click "Show all downloads" to view the full
+1. Visit the `Minecraft Forge website <https://files.minecraftforge.net/>`_ and click "Show all downloads" to view the full
    set of available options. Identify the version matching the one listed :doc:`in the filename of the SpongeForge download
    <spongeforge>`, and hover over the (i) next to "Installer" to get the direct download link.
 #. Use your favorite download method to download the jar to its destination.
@@ -105,7 +122,7 @@ Installing Forge via Commandline
 Installing Forge via GUI
 ------------------------
 
-1. Download the Minecraft Forge installer from the `Minecraft Forge website <http://files.minecraftforge.net/>`_ for the version
+1. Download the Minecraft Forge installer from the `Minecraft Forge website <https://files.minecraftforge.net/>`_ for the version
    matching the one listed in the filename of the SpongeForge download. See above for the naming scheme of SpongeForge
    and Forge.
 #. Run the provided Forge installer, select "Install Server", choose an empty folder to place the server's files,

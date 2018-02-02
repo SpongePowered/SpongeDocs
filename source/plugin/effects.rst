@@ -85,7 +85,7 @@ class and specify that we would like to use a sand block. This can be done like 
 Creating Potions
 ================
 
-Similarly to potions and sounds, we need to use a builder to create our potion effect:
+Similarly to particles and sounds, we need to use a builder to create our potion effect:
 
 .. code-block:: java
     

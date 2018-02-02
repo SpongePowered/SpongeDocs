@@ -2,23 +2,22 @@
 Managing Permissions
 ====================
 
-You can configure who has access to what if you are running a server by making use of permissions.
-Specific permissions for Sponge, Forge and Minecraft commands are shown on the :doc:`../../server/spongineer/commands`
-page.
+You can configure who has access to what if you are running a server by making use of :doc:`../../plugin/permissions`.
+Specific permissions for Sponge, Forge and Minecraft commands are shown on the :doc:`../spongineer/commands` page.
 
 
 Operator Level
 ==============
 
 Minecraft comes with a simple way to give permissions: by setting users as operator (or "op" for short). General
-information on op status can be found at http://minecraft.gamepedia.com/Op
+information on op status can be found at https://minecraft.gamepedia.com/Op
 
 The abilities of op permission may be adjusted by altering the ``op-permission-level`` setting in the
 :doc:`../../server/getting-started/configuration/server-properties` file.
 
 
 A list of native Minecraft server commands available to players with op can be found at the `Minecraft Wiki
-<http://minecraft.gamepedia.com/Commands#Summary_of_commands>`_.
+<https://minecraft.gamepedia.com/Commands#Summary_of_commands>`_.
 
 
 .. warning::

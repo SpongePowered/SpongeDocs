@@ -81,7 +81,7 @@ Thus we can see that allowing implicit nullable contracts leaves us with a selec
 choose from:
 
 * Plugin authors can assume that **all** methods may return null and code defensively accordingly, however we've already seen that this leads to spaghetti code pretty quickly.
-* The API authors can define an implicit nullable contract on every API method, in an attempt to make null handling the plugin author's problem, which only exacerbates the previous problem.
+* The API authors can define an implicit nullable contract on every API method, in an attempt to make null handling the plugin author's problem, which only exacerbates the previous approach.
 * The API authors can assert that any implicit nullable contract they define will never be altered going forward. This means that in the eventuality that they need to handle the removal of a feature from the base game then they must either:
 
  * Throw an exception - hardly elegant but certainly easier to diagnose than a loose NPE which may be triggered elsewhere in the codebase and be hard to track down

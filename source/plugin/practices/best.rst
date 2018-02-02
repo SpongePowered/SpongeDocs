@@ -25,7 +25,7 @@ Economy API
 ~~~~~~~~~~~
 
 The Economy API is used to link economy plugins with other plugins that use the economy (i.e. shops). You can read
-about the Economy API :doc:`here <economy/index>`, which details everything you need to know about the API.
+about the Economy API :doc:`here <../economy/index>`, which details everything you need to know about the API.
 
 
 Packets

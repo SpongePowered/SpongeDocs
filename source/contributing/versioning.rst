@@ -2,7 +2,7 @@
 Versioning System and Repository Branch Layout
 ==============================================
 
-With the release for beta we've moved the SpongeAPI versioning to semantic versioning (see http://semver.org/).
+With the release for beta we've moved the SpongeAPI versioning to semantic versioning (see https://semver.org/).
 This change means that every time that we make a release we have to increment the version according to the rules
 of semver.
 
