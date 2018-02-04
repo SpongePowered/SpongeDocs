@@ -37,9 +37,11 @@ the direction and ending location. Alternatively, you can specify a direction us
 Filtering
 =========
 
-Filters determine what blocks are accepted by the ``BlockRay``. To add a filter, use the ``BlockRayBuilder#filter``
-method, passing in one or many ``Predicate<BlockRayHit<E>>``\ s (where ``E`` extends ``Extent``). For convenience,
-``BlockRay`` contains the following methods for common filter use cases:
+Filters determine what blocks are accepted by the ``BlockRay``. To add a filter, use the ``BlockRayBuilder#stopFilter``
+or ``BlockRayBuilder#skipFilter`` method, passing in one or many ``Predicate<BlockRayHit<E>>``\ s (where ``E`` extends ``Extent``). The ``BlockRayBuilder#stopFilter`` stops the ray cast when it hits a block that passes the given filter 
+and the ``BlockRayBuilder#skipFilter`` skips all blocks that passes the filter. These filters can be chained together
+to create a complex ``BlockRay``. 
+For convenience,``BlockRay`` contains the following methods for common filter use cases:
 
  * ``allFilter``: returns a filter accepting all blocks
  * ``onlyAirFilter``: returns a filter accepting only air
