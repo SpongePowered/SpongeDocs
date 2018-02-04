@@ -17,9 +17,11 @@ Event Causes
     org.spongepowered.api.event.cause.EventContextKeys
     org.spongepowered.api.event.entity.DamageEntityEvent
     org.spongepowered.api.plugin.PluginContainer
+    org.spongepowered.api.profile.GameProfile
     java.lang.Class
     java.lang.Object
     java.lang.String
+    java.util.Stack
 
 Events are great for attaching additional logic to game actions, but they have the drawback of providing next to no
 context as to what has **caused** that event to occur. The :javadoc:`Cause` object allows providing and receiving
@@ -141,7 +143,7 @@ thread or async.
 Using the CauseStackManager
 ===========================
 
-.. note::
+.. warning::
 
     The ``CauseStackManager`` only works on the main server thread. If you call it from a
     different thread, an ``IllegalStateException`` will be thrown. Ensure you are on the main
@@ -165,6 +167,11 @@ you may want to add your acting player in the cause and the game profile of the 
 simulating in the context (as the simulated player is not directly responsible for the event being fired.)
 
 **Creating a custom Cause with the CauseStackManager**
+
+In this example, the variables would be populated, the cause would contain the ``playerToSimulate`` as
+the root cause, the ``sourceRunningSudo`` as the second object in the cause and the :javadoc:`GameProfile`
+as the :javadoc:`EventContextKeys#SIMULATED_PLAYER` context, in addition to anything already in the
+``CauseStackManager``. Your event code would be at the bottom of the method.
 
 .. code-block:: java
 
@@ -190,7 +197,13 @@ simulating in the context (as the simulated player is not directly responsible f
       Cause cause = frame.getCurrentCause();
     }
 
-Note that the last item you push to the cause stack will be the root of the ``Cause``.
+Note that the last item you push to the cause stack will be the root of the ``Cause`` as
+stacks are "last in, first out" (LIFO) structures.
+
+.. tip::
+
+  For more information about the stack data type and why the order matters, see the
+  :javadoc:`Stack` javadocs or `this Wikipedia article <https://en.wikipedia.org/wiki/Stack_(abstract_data_type)>`_.
 
 Using the Cause Builder
 =======================
@@ -212,18 +225,24 @@ Taking the previous example, this is how we would build it using the cause build
 
 **Creating a custom Cause with the Cause and EventContext builders**
 
+Note that in this example, the variables would be populated, and that the first entry appended
+to the cause would be the root cause.
+
 .. code-block:: java
 
-    // In your code these would be populated
     CommandSource sourceRunningSudo;
     Player playerToSimulate;
     PluginContainer plugin;
 
+    EventContext context = EventContext.builder()
+      .add(EventContextKeys.PLAYER_SIMULATED, playerToSimulate.getProfile())
+      .build();
+
     Cause cause = Cause.builder()
-      .append(playerToSimulate) // This would be root
+      .append(playerToSimulate)
       .append(sourceRunningSudo)
       .append(plugin)
-      .build(EventContext.builder().add(EventContextKeys.PLAYER_SIMULATED, playerToSimulate.getProfile()).build());
+      .build(context);
     }
 
 Think carefully about what information to include in your cause.
