@@ -61,8 +61,8 @@ Download Links
 ~~~~~~~~~~~~~~
 
 Ore provides, on each project page, a download button which will automatically choose the most recent release. If you wish to add
-additional download links, all links must point to files hosted on Ore. You may additionally link to unapproved file pages, not
-direct file links, on Ore but these links may not be the most prominently displayed links. Further, you may not attempt to
+additional download links, all links must point to files hosted on Ore. You may additionally link to the download pages of 
+unapproved Ore file submissions but these links may not be the most prominently displayed links. Further, you may not attempt to
 circumvent any plugin warnings on Ore, including warnings that inform the user that a project has not yet been reviewed.
 
 
