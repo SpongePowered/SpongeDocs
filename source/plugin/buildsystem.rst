@@ -6,7 +6,7 @@ Constrói sistemas como Gradle_ ou Maven_ podes gerir os processos de construç�
 independente do teu IDE, podes usá-los para gerir a tua dependência em SpongeAPI ou em outros plugins e possibilitares a outras pessoas
 uma forma mais fácil de construir o teu plugin a partir da fonte.
 
-.. note::
+.. nota::
     SpongeAPI **não** necessita de usar um sistema de construção para criar plugins, sendo que o uso de um deles é por nós fortemente
     recomendado.Tirando a curta eplicação em `Criando um plugin sem um sistema de construção`_, as seguintes partes, irão assumir que tu
     estás a usal um sistema de construção, que poderá gerir as dependências por ti.
