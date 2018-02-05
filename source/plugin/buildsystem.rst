@@ -1,65 +1,66 @@
-=============
-Build Systems
-=============
+==================
+Construir Sistemas
+==================
 
-Build systems such as Gradle_ or Maven_ can manage the build process of your projects. As an independent tool from your
-IDE, you can use them to manage your dependency on SpongeAPI or other plugins and give other people an easy way to
-build your plugin from the source.
+Constrói sistemas como Gradle_ ou Maven_ podes gerir os processos de construção de todos os teus projetos. Sendo uma ferramenta
+independente do teu IDE, podes usá-los para gerir a tua dependência em SpongeAPI ou em outros plugins e possibilitares a outras pessoas
+uma forma mais fácil de construir o teu plugin a partir da fonte.
 
 .. note::
-    SpongeAPI does **not** require using a build system for creating plugins, however we strongly recommend using one.
-    Except the short explanation at `Creating a plugin without a build system`_, the following parts will assume you're
-    using a build system, which can manage the dependencies for you.
+    SpongeAPI **não** necessita de usar um sistema de construção para criar plugins, sendo que o uso de um deles é por nós fortemente
+    recomendado.Tirando a curta eplicação em `Criando um plugin sem um sistema de construção`_, as seguintes partes, irão assumir que tu
+    estás a usal um sistema de construção, que poderá gerir as dependências por ti.
 
-Generally, you can use any build system which supports *Maven dependencies*, which is a standard supported by the
-majority of build systems for Java projects. The following sections will focus on Gradle_ and Maven_, which are the two
-most common choices as build systems. If you're unsure which one to use we recommend using Gradle_ as it is also used
-for the Sponge projects and provides the best integration for Sponge plugins.
+Geralmente, podes usar qualquer tipo de sistema de construção que suporte *Dependências Maven *, que normalmente é um padrão suportado
+pela maioria dos sistemas de construção para projetos Java. As  seguintes irão se  focar em Gradle_ e Maven_, que são os dois sistemas
+de construção mais comuns. Se  não tens a certeza sobre qual usar, recomendamos o uso do Gradle_, pois também é usado
+para os projetos Sponge e fornece também a melhor integração para plugins do Sponge..
 
-.. _gradle-setup:
+.. _gradle-configuração:
 
 Gradle
 ======
-Gradle_ uses Groovy_-based scripts for configuring projects. A Gradle_ project typically consists of a ``build.gradle``
-file in your project's root directory, which tells Gradle_ how to build the project.
+Gradle_ usa scripts baseados em Groovy_ para a configuração de projetos. Um projeto de Gradle_ normalmente consiste num arquivo
+``build.gradle`` que se encontra localizado no diretório raiz do teu projeto, which que informa o Gradle_  de como construir o projeto.
 
-.. tip::
-    Refer to the `Gradle User Guide`_ for the installation and a general introduction of concepts used in Gradle_. If
-    you're only interested in how to use Gradle_ for a simple Java project, a good place to start would be the `Gradle
-    Java Quickstart`_.
+.. dica::
+    Consulta o "Guia do Utilizador Gradle" para o instalares e para verificares a introdução geral dos conceitos usados no Gradle_. Se
+    só estiveres interessado em usar o Gradle_ para um simples projeto Java, então o `Quickstart de Gradle Java ' será um bom local para
+    começares.
 
-Setup your workspace as explained in :doc:`workspace/index` then follow :doc:`project/gradle`.
+Configura o teu espaço de trabalho como explicado em :doc:`espaço de trabalho/índice` depois segue :doc:`project/gradle`.
 
 Maven
 =====
-Maven_ uses a XML-based configuration called `Project Object Model`_ (or *POM*) for configuring projects.
-A Maven_ project typically contains a ``pom.xml`` file in the project root directory which tells Maven_ how to
-build the project.
+Maven_ usa uma configuração baseada em XML chamada `Modelo de Objeto de Projeto`_ (ou *POM*) para configurar projetos. Um projeto Maven_ contém
+geralmente um arquivo ``pom.xml`` no diretório raiz do projeto que diz a Maven_ de como construir o projeto.
 
-.. tip::
-    Refer to the `Maven Users Centre`_ for the installation and a general introduction of concepts used in Maven_. If
-    you're only interested in how to use Maven_ for a simple Java project, a good place to start would be `Maven in 5
-    Minutes`_.
+.. dica::
+    Consulta o `Centro de Utilizadores Maven`_ para o instalares e para verificares a introdução geral dos conceitos usados no Maven_.
+    Se só estiveres interessado em usar o Maven_ para um simples projeto Java, então o`Maven em 5 Minutos`_ será um bom local para
+    começares.
 
-Setup your workspace as explained in :doc:`workspace/index` then follow :doc:`project/maven`.
+Configura o teu espaço de trabalho como explicado em :doc:`espaço de trabalho/índice` depois segue :doc:`project/maven`.
 
-Creating a plugin without a build system
-========================================
 
-It is also possible to create Sponge plugins without the use of a build system, only with the included tools in your
+Criar um plugin sem o uso de um sistema de construção
+=====================================================
+
+Também é possível criares plugins de Sponge sem o uso de um sistema de construção, usando apenas as ferramentas incluídas no teu
 IDE.
 
-.. warning::
-    **We strongly suggest against using SpongeAPI without a build system.** In the long term using a build system will
-    simplify the development process for you and other people wanting to contribute to your project. This method of
-    developing plugins does not receive active testing by the Sponge team.
+.. atenção::
+    **Não recomendamos o uso de SpongeAPI sem um sistema de construção. ** A longo prazo, o uso de um sistema de construção irá
+    simplificar o processo de desenvolvimento para ti e para as outras pessoas que desejem contribuir com o seu projeto. Este método de
+    desenvolvimento de plugins não recebe testes ativos pela equipa do Sponge.
 
-For developing plugins without a build system you need to download the SpongeAPI dependency manually from the
-`SpongeAPI Download Page`_. For developing without a build system, we provide the ``shaded`` artifact which bundles all
-dependencies that would normally be automatically downloaded by the build system.
+Para desenvolver plugins sem um sistema de compilação, precisas de descarregar manualmente a dependência SpongeAPI da 
+`Página de Download SpongeAPI`_. Para o desenvolveres sem um sistema de construção, nós fornecemos-te o artefato ``sombreado`` que
+agrupa todas as dependências que normalmente seriam descarregadas automaticamente pelo sistema de construção.
 
-After you have downloaded the ``shaded`` artifact and have added it to a project in your IDE, you can start developing
-your plugin. Continue at :doc:`plugin-identifier` for choosing an identifier for your project, then continue at :doc:`plugin-class`.
+Depois de teres descarregado o artefato ``sombreado`` e de o adicionar a um projeto no  teu IDE, podes começar a desenvolver o teu
+plugin. Continua em :doc:`identificador de plugin` para escolheres um identificador para o seu projeto, depois continua em :doc:`plugin
+-classe`.
 
 .. _Gradle: https://gradle.org/
 .. _Maven: https://maven.apache.org/
