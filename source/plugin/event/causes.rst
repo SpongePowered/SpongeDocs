@@ -162,6 +162,17 @@ Before adding your own causes, you should push a cause stack frame to the manage
 as a saved state, when you are done with your causes, the removal of the frame returns the manager to
 its original state.
 
+.. tip::
+
+    Adding a frame to the CauseStackManager does not remove what is already in the manager, so anything
+    that is in the cause stack and contexts before a stack frame is added will be there afterwards. You
+    can verify this by calling ``Sponge.getCauseStackManager().getCurrentCause()`` before and after the
+    frame is pushed.
+
+    For example, if the cause stack contains a ``PluginContainer`` and a ``CommandSource`` when a frame
+    is pushed, they will remain on the stack and will form part of the ``Cause`` if one is obtained from
+    the frame.
+
 For example, if you were to fire an event that was simulating another player in a sudo like command,
 you may want to add your acting player in the cause and the game profile of the player that you are
 simulating in the context (as the simulated player is not directly responsible for the event being fired.)
