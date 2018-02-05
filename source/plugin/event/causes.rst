@@ -243,7 +243,6 @@ to the cause would be the root cause.
       .append(sourceRunningSudo)
       .append(plugin)
       .build(context);
-    }
 
 Think carefully about what information to include in your cause.
 If you're firing an event from your plugin which is usually triggered through other means,
