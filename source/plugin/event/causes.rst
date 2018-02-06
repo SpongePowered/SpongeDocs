@@ -52,10 +52,10 @@ that additional information about how the event has come about, but would not ne
 direct cause itself.
 
 Another example that you may need to watch out for is if you simulate a player. The simulated player may not be
-in the direct cause, as the player being simulated may not have been involved in the action, however, the player's
-be in the ``EventContext`` under the :javadoc:`EventContextKeys#PLAYER_SIMULATED`
+in the direct cause, as the player being simulated may not have been involved in the action, however, the player
+would be in the ``EventContext`` under the :javadoc:`EventContextKeys#PLAYER_SIMULATED`
 
-Retrieving objects from the direct cause
+Retrieving Objects from the Direct Cause
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Structurally, a ``Cause`` object contains a sequential list of objects. There are several methods of
@@ -130,7 +130,7 @@ objects.
     Some common identifying names for ``EventContextKey``\s are present as static fields in the
     ``EventContextKeys`` class.
 
-Creating custom Causes
+Creating Custom Causes
 ~~~~~~~~~~~~~~~~~~~~~~
 
 Creating a cause is easy, but depends on whether you are creating your cause on the main server
@@ -155,8 +155,8 @@ causes of events as the game runs, allowing for easy retrieval of the current ``
 To see the current cause, call :javadoc:`CauseStackManager#getCurrentCause()`. You may notice that your
 plugin's :javadoc:`PluginContainer` is already in the returned ``Cause``, as plugins are one of the
 objects tracked by the manager. Using the ``CauseStackManager`` for creating causes removes the
-need for boilerplate-like code where you supply objects like your plugin container, you can concentrate
-on adding your own causes.
+need for boilerplate-like code where you supply objects like your plugin container, so that you can
+concentrate on adding your own causes.
 
 Before adding your own causes, you should push a cause stack frame to the manager. Adding a frame acts
 as a saved state, when you are done with your causes, the removal of the frame returns the manager to
@@ -174,7 +174,7 @@ its original state.
     the frame.
 
 For example, if you were to fire an event that was simulating another player in a sudo like command,
-you may want to add your acting player in the cause and the game profile of the player that you are
+you may want to add the player you are acting as in the cause and the ``GameProfile`` of the player that you are
 simulating in the context (as the simulated player is not directly responsible for the event being fired.)
 
 **Creating a custom Cause with the CauseStackManager**
@@ -186,25 +186,15 @@ as the :javadoc:`EventContextKeys#SIMULATED_PLAYER` context, in addition to anyt
 
 .. code-block:: java
 
-    // In your code these would be populated
     CommandSource sourceRunningSudo;
     Player playerToSimulate;
     try (CauseStackManager.StackFrame frame = Sponge.getCauseStackManager().pushCauseFrame()) {
-      // This would be the player that is causing the action (would have run the /sudo command)
-      frame.pushCause(sourceRunningSudo);
 
-      // You may want to push the simulated player so that it's at the root for compatibility
-      // with other plugins that listen for the direct cause
+      frame.pushCause(sourceRunningSudo);
       frame.pushCause(playerToSimulate);
 
-      // This would contain the GameProfile of the player to simulate, they are not a direct
-      // cause, but provide additional information to the event listeners so that they know
-      // the root player is a simulated one and may not have invoked the event.
       frame.addContext(EventContextKeys.SIMULATED_PLAYER, playerToSimulate.getProfile());
 
-      // Add your event code here.
-      // You can get the current cause at any time using the getCurrentCause method
-      // (which is available on the fram as well as the CauseStackManager)
       Cause cause = frame.getCurrentCause();
     }
 
