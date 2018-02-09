@@ -39,7 +39,7 @@ Filtering
 
 Filters determine what blocks are accepted by the ``BlockRay``. To add a filter, use the ``BlockRayBuilder#stopFilter``
 or ``BlockRayBuilder#skipFilter`` method, passing in one or many ``Predicate<BlockRayHit<E>>``\ s (where ``E`` extends ``Extent``). The ``BlockRayBuilder#stopFilter`` stops the ray cast when it hits a block that passes the given filter 
-and the ``BlockRayBuilder#skipFilter`` skips all blocks that passes the filter. These filters can be chained together
+and the ``BlockRayBuilder#skipFilter`` skips all blocks that pass the filter. These filters can be chained together
 to create a complex ``BlockRay``. 
 For convenience,``BlockRay`` contains the following methods for common filter use cases:
 
