@@ -21,54 +21,116 @@ the `SpongeCommon repository <https://github.com/SpongePowered/SpongeCommon/tree
 are extensively documented and cover many of the more complex scenarios. You should also consult the Javadoc of the Mixin
 repository itself, since almost everything is already documented.
 
-**Caveat: When contributing mixins, note that you can use neither anonymous classes nor lambda expressions.**
+.. note::
+
+  The Mixin project will be servicing a number of other projects in addition to Sponge itself. Therefore Mixin has its'
+  own documentation together with the repository.
+
+
+Mixins and Inner Classes
+========================
+
+While you can use lambdas, anonymous and inner classes inside mixins, you cannot use an anonymous/inner class within
+another anonymous/inner class that is also inside a mixin, unless one of the inner classes is ``static``.
 
 This means expressions like the following will cause mixins to fail horribly and bring death and destruction upon all
 that attempt to use Sponge.
 
 .. code-block:: java
 
-    return new Predicate<ItemStack>() {
+    return new Collection<ItemStack>() {
         @Override
-        public boolean test(ItemStack input) {
-            return input.getItem().equals(Items.golden_apple);
+        public Iterator<ItemStack> iterator() {
+            return new Iterator<ItemStack>() {
+                // THIS WILL NOT WORK!
+
+                @Override
+                public boolean hasNext() {
+                    // Code skipped
+                }
+
+                @Override
+                public ItemStack next() {
+                    // Code skipped
+                }
+            };
         }
+
+        // Other methods skipped
     }
 
-.. code-block:: java
+This applies to all classes that are annotated with ``@Mixin``. Classes that are not touched by the mixin processor may make use of those
+features. There are two ways to work around this.
 
-    return input -> input.getItem().equals(Items.golden_apple);
-
-.. code-block:: java
-
-    return this::checkItem;
-
-This applies to all classes that are annotated with ``@Mixin``. Classes that are not touched by the mixin processor may
-make use of those features. However, you can use a static utility class to create your anonymous classes, as unlike
-your mixin class that utility class will still exist at runtime, while your mixin class will be merged into the
-specified target class. The following code therefore will work.
+One option is to use a separate utility class, as unlike your mixin class that utility class will still exist at runtime, while your mixin
+class will be merged into the specified target class. The following code therefore will work.
 
 .. code-block:: java
 
-    public class ItemUtil {
-        public static Predicate<ItemStack> typeChecker(final Item item) {
-            return new Predicate<ItemStack>() {
-                @Override
-                public boolean test(ItemStack input) {
-                    return input.getItem().equals(item);
-                }
-            }
+    public class SampleCollection implements Collection<ItemStack> {
+
+        private final TargetClass target;
+
+        public SampleCollection(TargetClass target) {
+            this.target = target;
         }
+
+        @Override
+        public Iterator<ItemStack> iterator() {
+            return new Iterator<ItemStack>() {
+
+                @Override
+                public boolean hasNext() {
+                    // Code skipped
+                }
+
+                @Override
+                public ItemStack next() {
+                    // Code skipped
+                }
+            };
+        }
+
+        // Other methods skipped
     }
 
     @Mixin(TargetClass.class)
     public abstract class SomeMixin {
-        public Predicate<ItemStack> someFunction() {
-            return ItemUtil.typeChecker(Items.golden_apple);
+        public Collection<ItemStack> someFunction() {
+            return new SampleCollection((TargetClass) (Object) this);
         }
     }
 
-.. note::
 
-  The Mixin project will be servicing a number of other projects in addition to Sponge itself. Therefore Mixin has its'
-  own documentation together with the repository.
+The other option is simply to place all of the nested inner classes directly into the mixin or one of its methods, as opposed to one inside
+the other. For example:
+
+.. code-block:: java
+
+    @Mixin(TargetClass.class)
+    public abstract class SomeMixin {
+
+        private final class SampleIterator implements Iterator<ItemStack> {
+
+            @Override
+            public boolean hasNext() {
+                // Code skipped
+            }
+
+            @Override
+            public ItemStack next() {
+                // Code skipped
+            }
+        }
+
+        public Collection<ItemStack> someFunction() {
+            return new Collection<ItemStack>() {
+                @Override
+                public Iterator<ItemStack> iterator() {
+                    return new SampleIterator<>();
+                }
+
+                // Other methods skipped
+            }
+        }
+    }
