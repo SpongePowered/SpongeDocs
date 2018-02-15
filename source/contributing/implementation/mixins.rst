@@ -30,8 +30,8 @@ repository itself, since almost everything is already documented.
 Mixins and Inner Classes
 ========================
 
-While you can use lambdas, along with anonymous and inner classes, inside mixins, you cannot use an anonymous/inner class within another
-anonymous/inner class that is also inside a mixin, unless one of the inner classes is ``static``.
+While you can use lambdas, anonymous and inner classes inside mixins, you cannot use an anonymous/inner class within
+another anonymous/inner class that is also inside a mixin, unless one of the inner classes is ``static``.
 
 This means expressions like the following will cause mixins to fail horribly and bring death and destruction upon all
 that attempt to use Sponge.
