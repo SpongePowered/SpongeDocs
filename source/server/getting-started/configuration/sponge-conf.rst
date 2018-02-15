@@ -26,13 +26,26 @@ enabled                                   boolean   true        Adds player trac
                                                                 positions.
 **Bungeecord**
 
-ip-forwarding                             boolean   false       Allows bungeecord to forward ip address, UUID,
+ip-forwarding                             boolean   false       Allows BungeeCord to forward IP address, UUID,
                                                                 and Game Profile to the server.
 **Cause Tracker**
-report-different-world-changes            boolean   false       If enabled, Sponge will report when a mod makes
-                                                                an unexpected world change.
+capture-async-spawning-entities           boolean   true        If enabled, will report when mods/plugins attempt to spawn 
+                                                                entities off the main server thread.
+generate-stacktrace-per-phase             boolean   false       If enabled, Sponge will show some more thorough debugging 
+                                                                for PhaseStates such that a StackTrace is created every 
+                                                                time a PhaseState switches, allowing for more fine grained 
+                                                                troubleshooting in the cases of runaway phase states.
+                                                                Note that this is not extremely performant and may have 
+                                                                some associated costs with generating the stack traces 
+                                                                constantly.
+maximum-printed-runaway-counts            integer   3
 verbose                                   boolean   true        If enabled, the cause tracker will print out
                                                                 when there are too many phases being entered.
+verbose-errors                            boolean   false       If enabled, the phase tracker will dump extra information 
+                                                                about the current phases when certain non-PhaseTracker 
+                                                                related exceptions occur. This is usually not necessary,
+                                                                as the information in the exception itself can normally be
+                                                                used to determine the cause of the issue.
 **Commands**
 aliases                                   string    null        Alias will resolve conflicts when multiple
                                                                 plugins request a specific command. Correct
@@ -123,7 +136,7 @@ prevent-sign-command-exploit              boolean   true        Prevents an expl
                                                                 a player without permission.
 **General Settings**
 config-dir                                string    see config  Sets the directory for plugin configurations.
-disable-warnings                          boolean   false       Disable warning messages to server Admins.
+disable-warnings                          boolean   false       Disable warning messages to server admins.
 file-io-thread-sleep                      boolean   false       Enables sleeping between chunk saves.
 plugins-dir                               string    See config  Sets an additional directory to search for plugins.
 **Ip Sets**
@@ -155,15 +168,26 @@ exploit-sign-command-updates              boolean   false       Logs when a serv
 log-stacktraces                           boolean   false       Add stack traces to dev logging.
 world-auto-save                           boolean   false       If true, logs when a world auto-saves its chunk data.
 **Modules**
-bungeecord                                boolean   false       Enables bungeecord support.
+block-capturing-control                   boolean   true        Enables block capturing control.
+bungeecord                                boolean   false       Enables BungeeCord support.
 entity-activation-range                   boolean   true        Enables the entity activation range settings.
 entity-collisions                         boolean   true        Enables entity collision settings.
 exploits                                  boolean   true        Enables the exploit prevention module.
 game-fixes                                boolean   false       Enables the game fixes module.
+movement-checks                           boolean   false       Enables the configuration of vanilla movement and 
+                                                                speed checks.
 optimizations                             boolean   true        Enables the optimizations module.
 realtime                                  boolean   false       Use real time instead of ticks.
+tileentity-activation                     boolean   false       Enables the tileentity activation range settings.
 timings                                   boolean   true        Enables timing settings.
 tracking                                  boolean   true        Enables the tracking module.
+**Movement Checks**
+moved-wrongly                             boolean   true        Controls whether the 'player/entity moved wrongly!' check 
+                                                                will be enforced
+player-moved-too-quickly                  boolean   true        Controls whether the 'player moved too quickly!' check 
+                                                                will be enforced
+player-vehicle-moved-too-quickly          boolean   true        Controls whether the 'vehicle of player moved too quickly!'
+                                                                check will be enforced
 **Optimizations**                                               See :doc:`../../management/performance-tweaks`
 **Spawner**
 spawn-limit-ambient                       integer       15          The number of ambients that can spawn around the player.
@@ -178,6 +202,14 @@ tick-rate-monster                         integer       1           The monster 
 aliases                                   string    null        Aliases for SQL connections. This is done in
                                                                 the format
                                                                 ``jdbc:protocol://[username[:password]@]host/database``
+**Teleport Helper**
+force-blacklist                           boolean   false       If enabled, this blacklist will always be respected, 
+                                                                otherwise, plugins can choose whether or not to respect it.
+unsafe-body-block-ids                     array     null        Block IDs that are listed here will not be selected by 
+                                                                Sponge's safe teleport routine as a safe block for players 
+                                                                to warp into.
+unsafe-floor-block-ids                    array     null        Block IDs that are listed here will not be selected by 
+                                                                Sponge's safe teleport routine as a safe floor block.
 **Timings**
 enabled                                   boolean   true        If timings are enabled.
 hidden-config-entries                     string    sponge.sql  The hidden config entries.
@@ -201,8 +233,10 @@ chunk-gc-tick-interval                    integer   1           The tick interva
                                                                 chunks in a world.
 chunk-unload-delay                        integer   30          The number of seconds to delay a chunk unload once
                                                                 marked inactive.
-deny-chunk-requests                       boolean   true        If enabled, any request for a chunk not currently
-                                                                loaded will be denied.
+deny-chunk-requests                       boolean   false       If enabled, any request for a chunk not currently
+                                                                loaded will be denied. Note: As this is an experimental 
+                                                                setting for performance gain, if you encounter any issues
+                                                                then we recommend disabling it.
 flowing-lava-decay                        boolean   false       Lava behaves like vanilla water when the source
                                                                 block is removed, when set to true.
 gameprofile-lookup-batch-size             integer   1           The amount of GameProfile requests to make against
@@ -215,9 +249,14 @@ infinite-water-source                     boolean   false       False = Default 
 invalid-lookup-uuids                      array     See config  The list of uuid's that shouldn't be looked up on
                                                                 Mojang's session server.
 item-merge-radius                         integer   2.5         The merge radius for item entities.
-keep-spawn-loaded                         boolean   false       If the spawn should stay loaded with no players. Has no effect in global config. Config doesn't need to be enabled either, because it will always fall back to the world config.
+keep-spawn-loaded                         boolean   false       If the spawn should stay loaded with no players. Has no 
+                                                                effect in global config. Config doesn't need to be enabled 
+                                                                either, because it will always fall back to the world 
+                                                                config.
 leaf-decay                                boolean   true        If enabled, allows natural leaf decay.
-load-on-startup                           boolean   false       If the world should be loaded on startup. Has no effect in global config. Config doesn't need to be enabled either, because it will always fall back to the world config.
+load-on-startup                           boolean   false       If the world should be loaded on startup. Has no effect 
+                                                                in global config. Config doesn't need to be enabled either,
+                                                                because it will always fall back to the world config.
 mob-spawn-range                           integer   8           Specifies the radius (in chunks) of where creatures
                                                                 will spawn. This value is capped to the current
                                                                 view distance setting in server.properties.
@@ -228,13 +267,16 @@ mob-spawn-range                           integer   8           Specifies the ra
 "minecraft:default_nether"                world     DIM-1       The default nether world.
 "minecraft:default_the_end"               world     DIM1        The default end world.
 pvp-enabled                               boolean   true        If the would allows PVP combat.
+view-distance                             integer   -1          Allows you to set view distance per world, valid range 
+                                                                3-32, when set to -1 the server-wide view distance will 
+                                                                be used instead
 weather-ice-and-snow                      boolean   true        Enable to allow the natural formation of ice and
                                                                 snow.
 weather-thunder                           boolean   true        Enable to initiate thunderstorms.
 world-enabled                             boolean   true        Enable if this world should be registered.
 ========================================  ========  ==========  ===============================================
 
-This config was generated using SpongeForge build 2811 (with Forge 2555), SpongeAPI version 7.0:
+This config was generated using SpongeForge build 2916 (with Forge 2611), SpongeAPI version 7.0.0:
 
 .. code-block:: none
     
@@ -251,7 +293,7 @@ This config was generated using SpongeForge build 2811 (with Forge 2555), Sponge
         block-capturing {
             # If enabled, newly discovered blocks will be added to this config with a default value.
             auto-populate=false
-            # Per-mod block id mappings for controlling capturing behavior
+            # Per-mod block id mappings for controlling capturing behaviour
             mods {
                 extrautils2 {
                     # Set to true to perform individual capturing (i.e. skip bulk capturing) for scheduled ticks for a block type
@@ -284,21 +326,27 @@ This config was generated using SpongeForge build 2811 (with Forge 2555), Sponge
             # Sponge will politely ignore the entity being spawned,
             # and emit a warning about said spawn anyways.
             capture-async-spawning-entities=true
-            # If true, when a mod changes a world that is different
-            # from an expected world during a WorldTick event, the
-            # phase tracker will identify both the expected changed
-            # world and the actual changed world. This does not mean
-            # that the changes are being dropped, simply it means that
-            # a mod is possibly unknowingly changing a world other
-            # than what is expected.
-            report-different-world-changes=false
+            # If true, enables some more thorough debugging for PhaseStates
+            # such that a StackTrace is created every time a PhaseState
+            # switches, allowing for more fine grained troubleshooting
+            # in the cases of runaway phase states. Note that this is 
+            # not extremely performant and may have some associated costs
+            # with generating the stack traces constantly.
+            generate-stacktrace-per-phase=false
+            # If verbose is not enabled, this restricts the amount of 
+            # runaway phase state printouts, usually happens on a server
+            # where a PhaseState is not completing. Although rare, it should
+            # never happen, but when it does, sometimes it can continuously print
+            # more and more. This attempts to placate that while a fix can be worked on
+            # to resolve the runaway. If verbose is enabled, they will always print.
+            maximum-printed-runaway-counts=3
             # If true, the phase tracker will print out when there are too many phases
             # being entered, usually considered as an issue of phase re-entrance and
             # indicates an unexpected issue of tracking phases not to complete.
             # If this is not reported yet, please report to Sponge. If it has been
             # reported, you may disable this.
             verbose=true
-            # If true, the phase tracker will dump extra information about the current phaseswhen certain non-PhaseTracker related exceptions occur. This is usually not necessary, as the information in the exception itself can normally be used to determine the cause of the issue
+            # If true, the phase tracker will dump extra information about the current phases when certain non-PhaseTracker related exceptions occur. This is usually not necessary, as the information in the exception itself can normally be used to determine the cause of the issue
             verbose-errors=false
         }
         commands {
@@ -619,7 +667,7 @@ This config was generated using SpongeForge build 2811 (with Forge 2555), Sponge
             chunk-unload-delay=15
             # If enabled, any request for a chunk not currently loaded will be denied (exceptions apply for things like world gen and player movement). 
             # Note: As this is an experimental setting for performance gain, if you encounter any issues then we recommend disabling it.
-            deny-chunk-requests=true
+            deny-chunk-requests=false
             # Lava behaves like vanilla water when source block is removed
             flowing-lava-decay=false
             # The amount of GameProfile requests to make against Mojang's session server. (Default: 1)
@@ -689,3 +737,4 @@ This config was generated using SpongeForge build 2811 (with Forge 2555), Sponge
             world-enabled=true
         }
     }
+
