@@ -55,7 +55,6 @@ Contents
     economy/index
     wgen/index
     manager
-    modularization
     game-profile-manager
     offline-userplayer-data
     debugging
