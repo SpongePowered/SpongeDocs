@@ -11,13 +11,12 @@ Modifying Blocks
     org.spongepowered.api.data.manipulator.mutable.WetData
     org.spongepowered.api.data.manipulator.mutable.block.DirtData
     org.spongepowered.api.data.type.DirtTypes
-    org.spongepowered.api.event.cause.Cause
     org.spongepowered.api.world.Location
 
 Changing a Blocks Type
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Changing the Type of a Block is as simple as calling the :javadoc:`Location#setBlockType(BlockType, Cause)` method with
+Changing the Type of a Block is as simple as calling the :javadoc:`Location#setBlockType(BlockType)` method with
 the new :javadoc:`BlockType`. As with most block modifications, we need to supply a cause for the block change. In most
 cases, this can be your main plugin class. The following code turns the block at the given :javadoc:`Location` into a
 sponge:
@@ -34,12 +33,12 @@ sponge:
     }
 
 It's as simple as that. If you just want to 'delete' a block (which is done by replacing it with air), you may just
-use the :javadoc:`Location#removeBlock(Cause)` method provided by ``Location``.
+use the :javadoc:`Location#removeBlock()` method provided by ``Location``.
 
 Altering Block States
 ~~~~~~~~~~~~~~~~~~~~~
 
-Similar to the above example, the ``Location`` class provides a :javadoc:`Location#setBlock(BlockState, Cause)` method
+Similar to the above example, the ``Location`` class provides a :javadoc:`Location#setBlock(BlockState)` method
 accepting a new :javadoc:`BlockState`. To make use of it, you first must acquire a ``BlockState`` you can modify. You
 can do so either by getting the block's current state via the :javadoc:`Location#getBlock()` method or by using a
 ``BlockType``\ 's default state. The latter is demonstrated below. The default state for a Sponge block is retrieved
