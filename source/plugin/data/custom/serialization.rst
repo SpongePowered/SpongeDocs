@@ -6,12 +6,10 @@ Serializing Custom Data
     org.spongepowered.api.data.DataHolder
     org.spongepowered.api.data.DataQuery
     org.spongepowered.api.data.DataSerializable
-    org.spongepowered.api.data.manipulator.DataManipulator
     org.spongepowered.api.data.manipulator.DataManipulatorBuilder
     org.spongepowered.api.data.persistence.AbstractDataBuilder
     org.spongepowered.api.data.persistence.DataBuilder
     org.spongepowered.api.data.persistence.DataContentUpdater
-    org.spongepowered.api.data.persistence.DataManipulator
     org.spongepowered.api.data.persistence.DataTranslator
     org.spongepowered.api.data.persistence.DataTranslators
 
