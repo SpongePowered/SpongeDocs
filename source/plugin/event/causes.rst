@@ -7,7 +7,6 @@ Event Causes
     org.spongepowered.api.event.CauseStackManager
     org.spongepowered.api.event.Event
     org.spongepowered.api.event.block.ChangeBlockEvent
-    org.spongepowered.api.event.block.ChangeBlockEvent.Break
     org.spongepowered.api.event.block.ChangeBlockEvent.Grow
     org.spongepowered.api.event.cause.Cause
     org.spongepowered.api.event.cause.Cause.Builder
@@ -20,7 +19,6 @@ Event Causes
     org.spongepowered.api.profile.GameProfile
     java.lang.Class
     java.lang.Object
-    java.lang.String
     java.util.Stack
 
 Events are great for attaching additional logic to game actions, but they have the drawback of providing next to no

@@ -4,6 +4,7 @@ Child Commands
 
 .. javadoc-import::
     org.spongepowered.api.command.CommandCallable
+    org.spongepowered.api.command.args.CommandElement
     org.spongepowered.api.command.spec.CommandExecutor
     org.spongepowered.api.command.spec.CommandSpec
     org.spongepowered.api.command.spec.CommandSpec.Builder

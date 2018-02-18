@@ -19,7 +19,7 @@ your event.
 Example: Custom Event Class
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following class describes an event indicating a ``Player`` has come in contact with FLARD and is now about to
+The following class describes an event indicating a :javadoc:`Player` has come in contact with FLARD and is now about to
 mutate in a way specified by the event. Since the event targets a player and can be cancelled by listeners, it
 implements both the ``TargetPlayerEvent`` and ``Cancellable`` interfaces.
 
