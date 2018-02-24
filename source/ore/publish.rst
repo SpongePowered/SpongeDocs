@@ -150,17 +150,17 @@ Support cannot do anything, merely a way of showing that the member is a part of
 Documenting Your Project With Pages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To document your plugin Ore offers the creation of pages, by default you get a 'Home' page when you create your new Project.
-To add new pages you can click on the '+' icon in the Pages bar on the right of the screen, doing so will open a pop-up where you 
+To document your plugin Ore offers the creation of pages. By default you get a 'Home' page when you create your new Project.
+To add new pages you can click on the '+' icon in the Pages bar on the right of the screen; doing so will open a pop-up where you 
 can choose a name and the parent page (adding a page on the Home page is not possible). If you choose the '<None>' option the page 
-will become a root page where you can later add child pages on, if you hover choose to add it to an other page the page will only show
+will become a root page where you can later add child pages on. If you hover choose to add it to another page the page will only show
 when the parent page is expanded.
-To document you pages you can use CommonMark.
+To document your pages you can use CommonMark.
 
-Linking pages
+Linking Pages
 -------------
 
-If you have the following tree structure in you pages:
+If you have the following tree structure in your pages:
 
 - Home
 - Commands
@@ -181,21 +181,23 @@ link that is guaranteed to work.
     WikiLinks are only supported in Ore so if you use them on the Home-page they will not be displayed correctly on the forums.
     However, we still recommend using WikiLinks instead of normal links to guarantee the future working of your wiki.
 
-Project states
+Project States
 ~~~~~~~~~~~~~~~
 
 When creating a new project a banner will appear telling you your project is in a 'new' state.
-The new state is intended to indicated to users and admins you are still working on the setup of your project. If you are done documenting 
-your plugin to make it comply with the guidelines you can click the Button 'Publish' to mark you are done.
-If you however don't Publish it the project will be published after 24 hours since you created the project.
+The new state is intended to indicated to users and admins you are still working on the setup of your project. If you have finished documenting
+your plugin to make it comply with the guidelines, click the 'publish' button to complete the process.
+However, if you don't publish it yourself then the project will be published automatically 24 hours after it's creation.
 
 Needs Changes
 -------------
 
-Ore staff can hide your project and request changes the changes in question will be listed in the banner. This state will hide your project from the 
-public if you are done you can send your project for approval. 
+Ore staff can hide your project and request changes; the changes in question will be listed in the banner. This state will hide your project from the public; if you are done
+you can send your project for approval. 
 
 Needs Approval
 --------------
 
-This state will hide your project from the public while a staff member is going to validate you made the changes that where requested.
+In this state your project is still hidden from the public while waiting for a staff member to review and validate the changes that were requested. 
+Please be patient, the staff members might be busy with other tasks. If the project gets approved it will automatically become visible again. 
+Please make sure to actually fix the points that require changes.
