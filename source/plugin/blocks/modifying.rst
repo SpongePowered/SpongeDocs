@@ -14,8 +14,8 @@ Modifying Blocks
     org.spongepowered.api.event.cause.Cause
     org.spongepowered.api.world.Location
 
-Changing a Blocks Type
-~~~~~~~~~~~~~~~~~~~~~~
+Changing a Block's Type
+~~~~~~~~~~~~~~~~~~~~~~~
 
 Changing the Type of a Block is as simple as calling the :javadoc:`Location#setBlockType(BlockType)` method with
 the new :javadoc:`BlockType`. The following code turns the block at the given :javadoc:`Location` into a
