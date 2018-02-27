@@ -154,7 +154,7 @@ get the blast resistance of a block and checking if it is greater than or equal 
 This will get the blast resistance of our block and compare it to a new :javadoc:`DoubleProperty`, as
 :javadoc:`BlastResistanceProperty` inherits from ``DoubleProperty``. The method will then return if the blast
 resistance of our block is greater than one, the value in placed ``matches()``. If we wanted to see if it was less than
-two, we would replace it with ``Property.Operator.LESS``.
+two, we would replace the property operator in the ``DoubleProperty`` ctor  with ``Property.Operator.LESS``.
 
 If we were comparing two pre-existing properties, it will take the ``Operator`` of our first value, the one we are
 creating a double property for. If the ``Operator`` is ``DELEGATE``, which is the none operator, then it will take the
