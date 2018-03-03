@@ -74,7 +74,8 @@ Below is a list of the following routes that are currently available within the 
 Deprecated Routes
 ~~~~~~~~~~~~~~~~~~
 
-The following routes are deprecated and should not be used the replacements are likley to differ from the old one so consult the docs before migrating.
+The following routes are deprecated and should not be used. The replacements are likely to differ from the old one so
+consult the docs before migrating.
 
 +---------------------------------------------+---------------------------------------------------+
 | Deprecated                                  | Replacement                                       |
