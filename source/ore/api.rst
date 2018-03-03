@@ -69,3 +69,27 @@ Below is a list of the following routes that are currently available within the 
     routes/list-users
     routes/user
     routes/download
+
+
+Deprecated Routes
+~~~~~~~~~~~~~~~~~~
+
+The following routes are deprecated and should not be used the replacements are likley to differ from the old one so consult the docs before migrating.
+
++---------------------------------------------+---------------------------------------------------+
+| Deprecated                                  | Replacement                                       |
++---------------------------------------------+---------------------------------------------------+
+| `/api/projects`                             | `/api/v1/projects`                                |
++---------------------------------------------+---------------------------------------------------+
+| `/api/users`                                | `/api/v1/users`                                   |
++---------------------------------------------+---------------------------------------------------+
+| `/api/projects/:pluginId/version`           | `/api/v1/projects/:pluginId/version`              |
++---------------------------------------------+---------------------------------------------------+
+| `/api/projects/:pluginId/versions/:version` | `/api/v1/projects/:pluginId/versions/:version`    |
++---------------------------------------------+---------------------------------------------------+
+| `/api/projects/:pluginId`                   | `/api/v1/projects/:pluginId`                      |
++---------------------------------------------+---------------------------------------------------+
+| `/api/users/:username`                      | `/api/v1/users/:username`                         |
++---------------------------------------------+---------------------------------------------------+
+| `/api/projects/:pluginId/versions/:name`    | `/api/v1/projects/:pluginId/versions/:name`       |
++---------------------------------------------+---------------------------------------------------+
