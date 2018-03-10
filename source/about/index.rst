@@ -22,6 +22,7 @@ Contents
     license
     posting
     rules
+    tos
     staff
     glossary
     assets
