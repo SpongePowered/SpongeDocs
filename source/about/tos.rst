@@ -1,3 +1,4 @@
+================
 Terms of Service
 ================
 
@@ -18,9 +19,8 @@ The terms of the contract may change at any given time without notice to the Use
 keep up-to-date with the terms of service. It is up to the discretion of the Organization to announce changes to the terms
 of services.
 
-
 Terms
-=====
+~~~~~
 
 - “We”, “Us”, “Our” “SpongePowered”, “Sponge”, “the Organization”, are phrases to refer to the SpongePowered Organization.
 - “The Website”, “Services”, “Ore”, “the Forums”, all direct to all web services rendered by SpongePowered 
