@@ -71,7 +71,7 @@ graphics, an audio file, or computer software. By making Content available, you 
   uses and effects of the materials, whether requested to do so by SpongePowered or otherwise.
 
 (3) User Content License
-~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 (3.1) All Platforms
 -------------------
