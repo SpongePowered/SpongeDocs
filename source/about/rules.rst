@@ -16,6 +16,8 @@ of our various methods of communications, including (but not limited to):
 The Sponge project adheres primarily to Wheaton's Law: "Don't be a dick." We expect everyone using our communication
 systems to act like a reasonable and responsible person, showing respect for other users and staff.
 
+All users should also read our :doc:`tos` and follow the requirements it sets out.
+
 Read on for some more specific guidance, but please remember these rules are meant to be general, not a comprehensive
 list of do's and don'ts. This stuff should all be common sense.
 
