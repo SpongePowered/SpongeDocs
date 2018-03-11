@@ -23,6 +23,7 @@ Contents
     posting
     rules
     tos
+    privacy
     staff
     glossary
     assets
