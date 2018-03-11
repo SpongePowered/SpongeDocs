@@ -4,10 +4,11 @@ Terms of Service
  
  .. code-block:: none
  
-    While our terms of service, privacy policy and community guidelines may be provided in your own language,
-    this is only as a courtesy to You. To the fullest extent as permitted by law, the governing language of
-    these documents is U.S. English. You may view the U.S. English version by clicking on the language
-    selector at the bottom right of the sidebar on this page and clicking on the U.S. flag.
+    While our terms of service, privacy policy and community guidelines may be provided in your
+    own language, this is only as a courtesy to You. To the fullest extent as permitted by law,
+    the governing language of these documents is U.S. English. You may view the U.S. English
+    version by clicking on the language selector at the bottom right of the sidebar on this
+    page and clicking on the U.S. flag.
 
 The following terms and conditions govern all use of the SpongePowered Services and all Content, Websites and products
 available at or through our services, including, but not limited to, SpongePowered Forum Software, (taken together,
