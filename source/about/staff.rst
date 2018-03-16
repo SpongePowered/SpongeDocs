@@ -55,6 +55,12 @@ The **Project Managers** of Sponge each coordinate a separate aspect of the Spon
 +-----------------------------------+------------------------------------+
 | phroa                             | IRC Manager                        |
 +-----------------------------------+------------------------------------+
+| progwml6                          | Ore Development Manager            |
+|                                   |                                    |
+|                                   | Systems Management                 |
+|                                   |                                    |
+|                                   | Web Development                    |
++-----------------------------------+------------------------------------+
 
 
 API and Implementation Developers
@@ -101,21 +107,6 @@ SpongeAPI, SpongeForge and SpongeVanilla.
 | phit                              | Issue Manager                      |
 +-----------------------------------+------------------------------------+
 | ryantheleach                      | Issue Manager                      |
-+-----------------------------------+------------------------------------+
-
-Systems Maintainers
-~~~~~~~~~~~~~~~~~~~
-
-The **Systems Maintainers** ensure the efficient performance of Sponge's servers.
-
-+-----------------------------------+------------------------------------+
-| Name                              | Role                               |
-+===================================+====================================+
-| progwml6                          | Systems Management                 |
-|                                   |                                    |
-|                                   | Web Development                    |
-|                                   |                                    |
-|                                   | Ore Developer                      |
 +-----------------------------------+------------------------------------+
 
 Ore Developers
