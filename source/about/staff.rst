@@ -41,7 +41,7 @@ The **Project Managers** of Sponge each coordinate a separate aspect of the Spon
 +-----------------------------------+------------------------------------+
 | lukegb                            | Systems Manager                    |
 +-----------------------------------+------------------------------------+
-| mbaxter                           | Ore Manager                        |
+| mbaxter                           | Ore Front-end Manager              |
 |                                   |                                    |
 |                                   | Moderator                          |
 +-----------------------------------+------------------------------------+
@@ -55,7 +55,7 @@ The **Project Managers** of Sponge each coordinate a separate aspect of the Spon
 +-----------------------------------+------------------------------------+
 | phroa                             | IRC Manager                        |
 +-----------------------------------+------------------------------------+
-| progwml6                          | Ore Development Manager            |
+| progwml6                          | Ore Back-end Manager               |
 |                                   |                                    |
 |                                   | Systems Management                 |
 |                                   |                                    |
@@ -112,7 +112,7 @@ SpongeAPI, SpongeForge and SpongeVanilla.
 Ore Developers
 ~~~~~~~~~~~~~~
 
-The **Ore Developers** work on producing, enhancing and fixing the Ore plugin distribution platform. 
+The **Ore Developers** work on producing, enhancing, and fixing the Ore plugin distribution platform. 
 
 +-----------------------------------+------------------------------------+
 | Name                              | Role                               |
