@@ -55,10 +55,6 @@ The **Project Managers** of Sponge each coordinate a separate aspect of the Spon
 +-----------------------------------+------------------------------------+
 | phroa                             | IRC Manager                        |
 +-----------------------------------+------------------------------------+
-| windy                             | Ore Manager                        |
-|                                   |                                    |
-|                                   | Developer                          |
-+-----------------------------------+------------------------------------+
 
 
 API and Implementation Developers
@@ -239,4 +235,6 @@ here to thank them and acknowledge their valuable contributions.
 | Tyrannokapi                       | Editor                             |
 +-----------------------------------+------------------------------------+
 | Voltasalt                         | Developer                          |
++-----------------------------------+------------------------------------+
+| windy                             | Ore Manager and Developer          |
 +-----------------------------------+------------------------------------+
