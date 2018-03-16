@@ -114,8 +114,24 @@ The **Systems Maintainers** ensure the efficient performance of Sponge's servers
 | progwml6                          | Systems Management                 |
 |                                   |                                    |
 |                                   | Web Development                    |
+|                                   |                                    |
+|                                   | Ore Developer                      |
 +-----------------------------------+------------------------------------+
 
+Ore Developers
+~~~~~~~~~~~~~~
+
+The **Ore Developers** work on producing, enhancing and fixing the Ore plugin distribution platform. 
+
++-----------------------------------+------------------------------------+
+| Name                              | Role                               |
++===================================+====================================+
+| ewoutvs                           | Ore Developer                      |
++-----------------------------------+------------------------------------+
+| felixoi                           | Ore Developer                      |
++-----------------------------------+------------------------------------+
+| phase                             | Ore Developer                      |
++-----------------------------------+------------------------------------+
 
 Web Developers
 ~~~~~~~~~~~~~~
