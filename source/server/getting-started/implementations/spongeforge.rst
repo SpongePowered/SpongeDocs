@@ -96,7 +96,7 @@ Dedicated Servers
     version to match the one that SpongeForge requires. Have a look at the top of this page if you're unsure which
     version you need.
 
-.. warning::
+.. note::
 
   When using the Mojang installer, Mojang makes use of their own Java version and not the one you installed on your
   system. The installer currently ships with Java ``1.8.0_25`` for Windows and ``1.8.0_60`` for macOS. Note that Sponge
