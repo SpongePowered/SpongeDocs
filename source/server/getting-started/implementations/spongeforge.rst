@@ -70,7 +70,6 @@ Installing SpongeForge
 
     If you use (or are planning to use) a game server host, they may have a control panel that can install Sponge for
     you.
-.. note::
  
 Single Player / In-Game LAN Servers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
