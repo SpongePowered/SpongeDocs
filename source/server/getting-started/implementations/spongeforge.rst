@@ -43,7 +43,7 @@ Example
 SpongeForge Jar files will always follow this naming scheme, to allow you to easily identify compatibility.
 
 For example the file name ``spongeforge-1.12.2-2611-7.1.0-BETA-2990.jar`` is compatible with Minecraft version
-``1.12.2``, was built with Forge ``114.23.2.2611`` (Build ``2611``), provides SpongeAPI ``7.1.0`` and was build number ``2290`` of SpongeForge.
+``1.12.2``, was built with Forge ``114.23.2.2611`` (Build ``2611``), provides SpongeAPI ``7.1.0`` and was build number ``2990`` of SpongeForge.
 
 .. note::
 
