@@ -16,16 +16,16 @@ of your machine in mind.
 
 .. note::
 
-    The following examples are generic. For a Forge server using Sponge (coremod), change ``forge-1.8-XYZ-universal.jar``
+    The following examples are generic. For a Forge server using Sponge (coremod), change ``forge-1.12.2-XYZ-universal.jar``
     to whatever your Forge version in the server directory is named. To launch a SpongeVanilla server, change
-    ``forge-1.8-XYZ-universal.jar`` to the name of the SpongeVanilla.jar file.
+    ``forge-1.12.2-XYZ-universal.jar`` to the name of the SpongeVanilla.jar file.
 
 Windows
 ~~~~~~~
 
 .. code-block:: none
 
-    java -Xms1G -Xmx2G -jar forge-1.8-XYZ-universal.jar
+    java -Xms1G -Xmx2G -jar forge-1.12.2-XYZ-universal.jar
     pause
 
 Save your Windows launch script as ``launch.bat``.
@@ -37,7 +37,7 @@ macOS
 
     #!/bin/bash
     cd "$(dirname "$0")"
-    java -Xms1G -Xmx2G -jar forge-1.8-XYZ-universal.jar
+    java -Xms1G -Xmx2G -jar forge-1.12.2-XYZ-universal.jar
 
 Save your Mac launch script as ``launch.command``.
 
@@ -48,7 +48,7 @@ Linux
 
     #!/bin/sh
     cd "$(dirname "$(readlink -fn "$0")")"
-    java -Xms1G -Xmx2G -jar forge-1.8-XYZ-universal.jar
+    java -Xms1G -Xmx2G -jar forge-1.12.2-XYZ-universal.jar
 
 Save your Linux launch script as ``launch.sh``.
 
