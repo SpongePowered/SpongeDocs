@@ -94,6 +94,7 @@ Next, learn how you can :doc:`configure Sponge <../configuration/index>` and how
 
 Dedicated Servers
 ~~~~~~~~~~~~~~~~~
+
 .. note::
 
     If you already have a Forge server, just put the Sponge mod into your ``mods`` folder. Remember to update your Forge
