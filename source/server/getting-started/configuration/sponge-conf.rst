@@ -278,7 +278,7 @@ weather-thunder                           boolean   true        Enable to initia
 world-enabled                             boolean   true        Enable if this world should be registered.
 ========================================  ========  ==========  ===============================================
 
-This config was generated using SpongeForge build 2931 (with Forge 2611), SpongeAPI version 7.0.0:
+This config was generated using SpongeForge build 2990 (with Forge 2611), SpongeAPI version 7.0.0:
 
 .. code-block:: none
     
