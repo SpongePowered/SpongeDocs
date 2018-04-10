@@ -96,7 +96,7 @@ auto-populate                             boolean   false       If enabled, newl
                                                                 overridden.
 ambient                                   integer   32          Default activation range for ambient entities.
 aquatic                                   integer   32          Default activation range for aquatic entities.
-creature                                  integer   16          Default activation range for creatures.
+creature                                  integer   32          Default activation range for creatures.
 misc                                      integer   16          Default activation range for miscellaneous
                                                                 entities.
 monster                                   integer   32          Default activation range for monsters.
@@ -229,9 +229,9 @@ auto-save-interval                        integer   900         The auto-save ti
                                                                 chunks in a world.
 chunk-gc-load-threshold                   integer   0           The number of newly loaded chunks before triggering
                                                                 a forced cleanup.
-chunk-gc-tick-interval                    integer   1           The tick interval used to cleanup all inactive
+chunk-gc-tick-interval                    integer   600         The tick interval used to cleanup all inactive
                                                                 chunks in a world.
-chunk-unload-delay                        integer   30          The number of seconds to delay a chunk unload once
+chunk-unload-delay                        integer   15          The number of seconds to delay a chunk unload once
                                                                 marked inactive.
 deny-chunk-requests                       boolean   false       If enabled, any request for a chunk not currently
                                                                 loaded will be denied. Note: As this is an experimental 
@@ -241,7 +241,7 @@ flowing-lava-decay                        boolean   false       Lava behaves lik
                                                                 block is removed, when set to true.
 gameprofile-lookup-batch-size             integer   1           The amount of GameProfile requests to make against
                                                                 Mojang's session server.
-gameprofile-lookup-task-interval          integer   1           The interval used to process queued GameProfile
+gameprofile-lookup-task-interval          integer   4           The interval used to process queued GameProfile
                                                                 requests.
 generate-spawn-on-load                    boolean   false       If the world should generate spawn when the
                                                                 world is loaded.
@@ -257,7 +257,9 @@ leaf-decay                                boolean   true        If enabled, allo
 load-on-startup                           boolean   false       If the world should be loaded on startup. Has no effect 
                                                                 in global config. Config doesn't need to be enabled either,
                                                                 because it will always fall back to the world config.
-mob-spawn-range                           integer   8           Specifies the radius (in chunks) of where creatures
+max-chunk-unloads-per-tick                integer   100         The maximum number of queued unloaded chunks that will be
+                                                                unloaded in a single tick.
+mob-spawn-range                           integer   4           Specifies the radius (in chunks) of where creatures
                                                                 will spawn. This value is capped to the current
                                                                 view distance setting in server.properties.
 **Portal Agents**                                               A list of all detected portal agents used in this
@@ -276,7 +278,7 @@ weather-thunder                           boolean   true        Enable to initia
 world-enabled                             boolean   true        Enable if this world should be registered.
 ========================================  ========  ==========  ===============================================
 
-This config was generated using SpongeForge build 2931 (with Forge 2611), SpongeAPI version 7.0.0:
+This config was generated using SpongeForge build 2990 (with Forge 2611), SpongeAPI version 7.0.0:
 
 .. code-block:: none
     
