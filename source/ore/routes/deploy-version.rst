@@ -33,7 +33,7 @@ shown below. Returns a JSON representation of the deployed version.
 
     curl -F "apiKey=string" -F "apiKey=string" -F "channel=string" -F "recommended=boolean" \
     -F "forumPost=boolean" -F "changelog=string" -F pluginFile=@localPluginFile \
-    -F pluginSig=@localpluginSig https://URL.org/api/v1/projects/:pluginId/versions/:version
+    -F pluginSig=@localpluginSig https://ore.spongepowered.org/api/v1/projects/:pluginId/versions/:version
 
 **Example output:**
 
