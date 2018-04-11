@@ -66,6 +66,7 @@ Below is a list of the following routes that are currently available within the 
     routes/project
     routes/list-versions
     routes/project-version
+    routes/deploy-version
     routes/list-users
     routes/user
     routes/download
