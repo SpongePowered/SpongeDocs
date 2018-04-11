@@ -30,7 +30,7 @@ of services.
 Terms
 ~~~~~
 
-- “We”, “Us”, “Our” “SpongePowered”, “Sponge”, “the Organization”, are phrases to refer to the SpongePowered Organization.
+- “We”, “Us”, “Our”, “SpongePowered”, “Sponge”, “the Organization”, are phrases to refer to the SpongePowered Organization.
 - “The Website”, “Services”, “Ore”, “the Forums”, all direct to all web services rendered by SpongePowered 
 - “You”, “the User”, refers to the person or entity agreeing to
 - “Content”, Material submitted to the site including, but not limited to: Forum Posts, Code, Images, Software, Videos, Music
@@ -102,7 +102,7 @@ Attribution-NonCommercial-ShareAlike 3.0 Unported License.
 
 Except where otherwise noted, SpongeDocs is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License. 
 
-(3.4 Ore)
+(3.4) Ore
 ---------
 
 - By uploading content to Ore, you hereby grant SpongePowered a non-exclusive, irrevocable, perpetual, royalty-free right to
