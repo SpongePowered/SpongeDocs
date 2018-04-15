@@ -42,9 +42,8 @@ Example
 
 SpongeForge Jar files will always follow this naming scheme, to allow you to easily identify compatibility.
 
-For example the file name ``spongeforge-1.10.2-2254-5.2.0-BETA-2234.jar`` is compatible with Minecraft version
-``1.10.2``, was built with Forge ``12.18.3.2254`` (Build ``2254``), provides SpongeAPI ``5.2.0`` and was build number
-``2234`` of SpongeForge.
+For example the file name ``spongeforge-1.12.2-2611-7.1.0-BETA-2990.jar`` is compatible with Minecraft version
+``1.12.2``, was built with Forge ``114.23.2.2611`` (Build ``2611``), provides SpongeAPI ``7.1.0`` and was build number ``2990`` of SpongeForge.
 
 .. note::
 
@@ -53,7 +52,6 @@ For example the file name ``spongeforge-1.10.2-2254-5.2.0-BETA-2234.jar`` is com
     shouldn’t be touching, let alone modifying as Sponge does. Since Forge is free to change their internal code
     whenever they want to, its normal guarantee of backwards-compatibility doesn’t apply to SpongeForge. Feel free to
     use more recent versions of Forge, than the one used for SpongeForge, but we can't always guarantee compatibility.
-
 
 .. warning::
     
@@ -71,16 +69,11 @@ Installing SpongeForge
     If you use (or are planning to use) a game server host, they may have a control panel that can install Sponge for
     you.
 
-
-.. warning::
+.. note::
 
   When using the Mojang installer, Mojang makes use of their own Java version and not the one you installed on your
   system. The installer currently ships with Java ``1.8.0_25`` for Windows and ``1.8.0_60`` for macOS. Note that Sponge
-  requires **at least** ``1.8.0_40`` or above to run properly. You can grab that Launcher on the 
-  `official Minecraft download page <https://minecraft.net/download>`_. Please make sure to configure it to use an up to
-  date version of Java. As an alternative you can download a Launcher without an (outdated) Java from
-  `here <https://minecraft.net/download/alternative>`__. Read :doc:`our documentation <../jre>` on how to install and
-  configure Java. 
+  requires **at least** ``1.8.0_20`` or above to run properly but it is recommended to use the latest Java 8 version.
 
 Single Player / In-Game LAN Servers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

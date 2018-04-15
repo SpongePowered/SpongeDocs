@@ -137,3 +137,22 @@ One example of this is baby animals. Normally, they take 20 minutes to grow into
 lagging, each animal will receive fewer ticks thus increasing the time they take to grow up. This setting updates some 
 of their logic to use the actual elapsed wall-clock time, rather than number of ticks. It will also apply to block 
 breaking, so no more "breaking blocks multiple times".
+
+Deny chunk requests
+===================
+
+.. warning::
+
+  This is an experimental setting for performance gain, we recommend to not enable it when you have mods on the server 
+  and to disable it if you experience any issues regarding the loading of tileentities.
+  
+.. code-block:: none
+
+    world {
+        # If enabled, any request for a chunk not currently loaded will be denied (exceptions apply for things like world gen and player movement). 
+        # Note: As this is an experimental setting for performance gain, if you encounter any issues then we recommend disabling it.
+        deny-chunk-requests=false
+    }
+
+When this option is enabled, mods requesting areas to be loaded to perform various tasks will be denied. Only players 
+and specific world generation calls will be allowed to load new chunks.

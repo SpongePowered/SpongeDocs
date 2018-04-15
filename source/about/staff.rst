@@ -41,7 +41,7 @@ The **Project Managers** of Sponge each coordinate a separate aspect of the Spon
 +-----------------------------------+------------------------------------+
 | lukegb                            | Systems Manager                    |
 +-----------------------------------+------------------------------------+
-| mbaxter                           | Ore Manager                        |
+| mbaxter                           | Ore Front-end Manager              |
 |                                   |                                    |
 |                                   | Moderator                          |
 +-----------------------------------+------------------------------------+
@@ -55,9 +55,11 @@ The **Project Managers** of Sponge each coordinate a separate aspect of the Spon
 +-----------------------------------+------------------------------------+
 | phroa                             | IRC Manager                        |
 +-----------------------------------+------------------------------------+
-| windy                             | Ore Manager                        |
+| progwml6                          | Ore Back-end Manager               |
 |                                   |                                    |
-|                                   | Developer                          |
+|                                   | Systems Management                 |
+|                                   |                                    |
+|                                   | Web Development                    |
 +-----------------------------------+------------------------------------+
 
 
@@ -107,19 +109,20 @@ SpongeAPI, SpongeForge and SpongeVanilla.
 | ryantheleach                      | Issue Manager                      |
 +-----------------------------------+------------------------------------+
 
-Systems Maintainers
-~~~~~~~~~~~~~~~~~~~
+Ore Developers
+~~~~~~~~~~~~~~
 
-The **Systems Maintainers** ensure the efficient performance of Sponge's servers.
+The **Ore Developers** work on producing, enhancing, and fixing the Ore plugin distribution platform. 
 
 +-----------------------------------+------------------------------------+
 | Name                              | Role                               |
 +===================================+====================================+
-| progwml6                          | Systems Management                 |
-|                                   |                                    |
-|                                   | Web Development                    |
+| ewoutvs\_                         | Ore Developer                      |
 +-----------------------------------+------------------------------------+
-
+| felixoi                           | Ore Developer                      |
++-----------------------------------+------------------------------------+
+| phase                             | Ore Developer                      |
++-----------------------------------+------------------------------------+
 
 Web Developers
 ~~~~~~~~~~~~~~
@@ -239,4 +242,6 @@ here to thank them and acknowledge their valuable contributions.
 | Tyrannokapi                       | Editor                             |
 +-----------------------------------+------------------------------------+
 | Voltasalt                         | Developer                          |
++-----------------------------------+------------------------------------+
+| windy                             | Ore Manager and Developer          |
 +-----------------------------------+------------------------------------+

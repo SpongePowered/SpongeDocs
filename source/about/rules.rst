@@ -16,6 +16,8 @@ of our various methods of communications, including (but not limited to):
 The Sponge project adheres primarily to Wheaton's Law: "Don't be a dick." We expect everyone using our communication
 systems to act like a reasonable and responsible person, showing respect for other users and staff.
 
+All users should also read our :doc:`tos` and follow the requirements it sets out.
+
 Read on for some more specific guidance, but please remember these rules are meant to be general, not a comprehensive
 list of do's and don'ts. This stuff should all be common sense.
 
@@ -48,14 +50,16 @@ list of do's and don'ts. This stuff should all be common sense.
 
 * Do not attempt to make a sale or sell anything on Sponge websites or systems. This includes but is not limited to
   plugins (mods or any variation of the term), art assets, services, or any work to be provided. We specifically
-  *allow* offering a bounty in an *original post* in the **Devs Wanted** area, and developers may seek commissioned work
+  *allow* offering a bounty in an *original post* in the **Service Exchange** area, and developers may seek commissioned work
   in the **Devs Available** category. Any further discussion of payment in these (or any other) threads is prohibited.
 
-  - Users may post job advertisements (with or without a bounty) within the “Devs Wanted” Category, however they must
-    follow the `Dev Wanted Template and Rules <https://forums.spongepowered.org/t/devs-wanted-template-guidelines/15531>`__.
+  - Users may post job advertisements (with or without a bounty) within the “Service Exchange” Category, however they must
+    follow the `Template and Rules <https://forums.spongepowered.org/t/service-exchange-template-guidelines/15531>`__.
 
   - Users may post job requests (with or without rates) within the “Devs Available” Category, however they must follow
-    the `Dev Available Template and Rules <https://forums.spongepowered.org/t/devs-available-template-guidelines/15532>`__.
+    the `Template and Rules <https://forums.spongepowered.org/t/devs-available-template-guidelines/15532>`__.
+
+  - Paid plugins are still prohibited in the Service Exchange
 
 * If it comes to our attention that a "lite" version plugin hosted by Sponge is being used as a promotion as a for-sale
   "premium" version, we reserve the right to remove the plugin listing. What constitutes a "lite" or "premium" version
