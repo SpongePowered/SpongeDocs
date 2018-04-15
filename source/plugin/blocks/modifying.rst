@@ -11,7 +11,6 @@ Modifying Blocks
     org.spongepowered.api.data.manipulator.mutable.WetData
     org.spongepowered.api.data.manipulator.mutable.block.DirtData
     org.spongepowered.api.data.type.DirtTypes
-    org.spongepowered.api.event.cause.Cause
     org.spongepowered.api.world.Location
 
 Changing a Block's Type

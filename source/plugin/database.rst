@@ -3,6 +3,7 @@ Databases
 =========
 
 .. javadoc-import::
+    java.lang.String
     org.spongepowered.api.service.sql.SqlService
 
 SQL

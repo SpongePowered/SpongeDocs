@@ -7,7 +7,6 @@ Event Causes
     org.spongepowered.api.event.CauseStackManager
     org.spongepowered.api.event.Event
     org.spongepowered.api.event.block.ChangeBlockEvent
-    org.spongepowered.api.event.block.ChangeBlockEvent.Break
     org.spongepowered.api.event.block.ChangeBlockEvent.Grow
     org.spongepowered.api.event.cause.Cause
     org.spongepowered.api.event.cause.Cause.Builder
@@ -20,7 +19,6 @@ Event Causes
     org.spongepowered.api.profile.GameProfile
     java.lang.Class
     java.lang.Object
-    java.lang.String
     java.util.Stack
 
 Events are great for attaching additional logic to game actions, but they have the drawback of providing next to no
@@ -181,7 +179,7 @@ simulating in the context (as the simulated player is not directly responsible f
 
 In this example, the variables would be populated, the cause would contain the ``playerToSimulate`` as
 the root cause, the ``sourceRunningSudo`` as the second object in the cause and the :javadoc:`GameProfile`
-as the :javadoc:`EventContextKeys#SIMULATED_PLAYER` context, in addition to anything already in the
+as the :javadoc:`EventContextKeys#PLAYER_SIMULATED` context, in addition to anything already in the
 ``CauseStackManager``. Your event code would be at the bottom of the method.
 
 .. code-block:: java
@@ -193,7 +191,7 @@ as the :javadoc:`EventContextKeys#SIMULATED_PLAYER` context, in addition to anyt
       frame.pushCause(sourceRunningSudo);
       frame.pushCause(playerToSimulate);
 
-      frame.addContext(EventContextKeys.SIMULATED_PLAYER, playerToSimulate.getProfile());
+      frame.addContext(EventContextKeys.PLAYER_SIMULATED, playerToSimulate.getProfile());
 
       Cause cause = frame.getCurrentCause();
     }
