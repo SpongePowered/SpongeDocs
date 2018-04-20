@@ -27,27 +27,19 @@ IP Forwarding
 ~~~~~~~~~~~~~
 
 BungeeCord has a mode called IP Forwarding, which allows BungeeCord to pass the player's UUID and IP address to any
-connected server, even though the servers are being run in offline mode. With current builds of BungeeCord, IP
-Forwarding works with SpongeVanilla, whilst IP Forwarding only supports SpongeForge when vanilla clients connect -
-modded servers that require modded clients cannot natively make use of IP Forwarding with the current version of
-BungeeCord. SpongeForge is only fully supported with the use of a patched version of BungeeCord, or a community
-supplied BungeeCord plugin.
+connected server, even though the servers are being run in offline mode. 
 
-A pull request has been supplied to BungeeCord to allow BungeeCord to support SpongeForge natively. We are awaiting it
-to be included in the main product:
+.. warning::
+ SpongeForge modded servers that require modded clients, will only work if you use a BungeeCord fork like
+ `Waterfall <https://github.com/WaterfallMC/Waterfall/blob/master/README.md#waterfall->`_, or a BungeeCord plugin like
+ `SpongePls <https://forums.spongepowered.org/t/spongepls/9891>`_. SpongePowered does not officially support these
+ products, although they are developed by trusted members of the community.
 
-* Old PR, has context: `BungeeCord PR 1557 <https://github.com/SpigotMC/BungeeCord/pull/1557>`_
-* New PR, uses a different method to avoid breakages: `BungeeCord PR 1678 <https://github.com/SpigotMC/BungeeCord/pull/1678>`_
-
-Using BungeeCord without IP Forwarding
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-While it is recommended that you use IP Forwarding wherever possible. If you do not wish to do so, simply ensure that
-``online-mode`` is set to ``false`` in your ``server.properties`` file and add the server details to Bungee's
-``config.yml`` file. Bungee will then forward any connections to the server when required. It is a good precaution to
-set the ``server-port`` to something other than ``25565``.
-
-This will work with all implementations of Sponge, including with mods.
+For SpongeVanilla or Vanilla clients connecting to unmodded SpongeForge, IP Forwarding works out of the box.
+`Pull <https://github.com/SpigotMC/BungeeCord/pull/1557>`_
+`requests <https://github.com/SpigotMC/BungeeCord/pull/1678>`_ have been supplied to BungeeCord to allow BungeeCord to
+support SpongeForge natively. We are awaiting it to be included in the main product. For now please use one of the
+solutions mentioned above.
 
 Using BungeeCord with IP Forwarding
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -55,9 +47,18 @@ Using BungeeCord with IP Forwarding
 If you wish to use IP Forwarding:
 
 * In the BungeeCord ``config.yml``, set ``ip_forward`` to ``true``
-* In Sponge's config (config/sponge/global.conf), set ``modules.bungeecord`` to ``true`` and ``bungeecord.ip-forwarding`` to
-  ``true``
+* In Sponge's config (``config/sponge/global.conf``), set ``modules.bungeecord`` to ``true`` and
+  ``bungeecord.ip-forwarding`` to ``true``
 * If you have any other server software, consult the documentation for that server.
 
 This must be done for **all** servers that are connected to the BungeeCord network. Then, just follow the instructions
 for using BungeeCord without IP Forwarding.
+
+Using BungeeCord without IP Forwarding
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+It is recommended that you use IP Forwarding wherever possible, if you do not wish to do so, simply ensure that
+``online-mode`` is set to ``false`` in your ``server.properties`` file and add the server details to Bungee's
+``config.yml`` file. Bungee will then forward any connections to the server when required.
+
+This will work with all implementations of Sponge, including with mods.
