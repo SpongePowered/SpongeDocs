@@ -13,6 +13,8 @@ Plugin Lifecycle
     org.spongepowered.api.event.game.state.GameStartedServerEvent
     org.spongepowered.api.event.game.state.GameStoppingServerEvent
     org.spongepowered.api.event.game.state.GameStoppedServerEvent
+    org.spongepowered.api.event.game.state.GameStoppingEvent
+    org.spongepowered.api.event.game.state.GameStoppedEvent
 
 Prior to any states that make the plugin visible, the plugin loader first sorts through the available plugins, determines
 if all dependencies are present, and sorts plugins by dependency order. Lifecycle events are given to plugins in this
