@@ -110,12 +110,12 @@ the ``/stop`` command is typed. On Clients: The "Close" button or the "Quit Game
 
 **GAME_STOPPING**
 
-The :javadoc:`GameStoppingServerEvent` is triggered.
+The :javadoc:`GameStoppingEvent` is triggered.
 This state occurs immediately before ``GAME_STOPPED``. Plugins providing an API should still be capable of accepting
 basic requests.
 
 **GAME_STOPPED**
 
-The :javadoc:`GameStoppedServerEvent` is triggered.
+The :javadoc:`GameStoppedEvent` is triggered.
 Once this event has finished executing, Minecraft will shut down. No further interaction with the game or other plugins
 should be attempted at this point.
