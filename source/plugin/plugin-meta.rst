@@ -111,4 +111,4 @@ your plugin metadata. See :doc:`project/gradle` for details.
 
 .. note::
     If you're using the Netbeans IDE make sure you've unchecked the _Compile_ _On_ _Save_ option under
-    _Project Properties_ > _Build_ > _Compile_!
+    _Project_ _Properties_ > _Build_ > _Compile_!
