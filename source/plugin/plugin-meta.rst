@@ -108,3 +108,7 @@ your plugin metadata. See :doc:`project/gradle` for details.
 
 .. _Ore: https://github.com/SpongePowered/Ore
 .. _JSON: https://en.wikipedia.org/wiki/JSON
+
+.. note::
+If you're using the Netbeans IDE make sure you've unchecked the _Compile On Save_ option under
+_Project Properties > Build > Compile_!
