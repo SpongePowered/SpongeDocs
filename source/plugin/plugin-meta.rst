@@ -110,5 +110,5 @@ your plugin metadata. See :doc:`project/gradle` for details.
 .. _JSON: https://en.wikipedia.org/wiki/JSON
 
 .. note::
-    If you're using the Netbeans IDE make sure you've unchecked the _Compile_ _On_ _Save_ option under
+    If you're using the NetBeans IDE make sure you've unchecked the _Compile_ _On_ _Save_ option under
     _Project_ _Properties_ > _Build_ > _Compile_ to make sure the mcmod.info file will be generated correctly. 
