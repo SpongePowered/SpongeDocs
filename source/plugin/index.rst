@@ -35,11 +35,11 @@ Contents
     practices/index
     optional/index
     logging
+    text/index
     commands/index
     event/index
-    assets
     configuration/index
-    text/index
+    assets
     data/index
     blocks/index
     entities/index
@@ -57,9 +57,9 @@ Contents
     manager
     game-profile-manager
     offline-userplayer-data
-    debugging
     tab-lists
     plugin-meta
     ray-tracing
+    debugging
     tutorials
     internals/index
