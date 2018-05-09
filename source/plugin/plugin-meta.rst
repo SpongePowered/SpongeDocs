@@ -108,3 +108,7 @@ your plugin metadata. See :doc:`project/gradle` for details.
 
 .. _Ore: https://github.com/SpongePowered/Ore
 .. _JSON: https://en.wikipedia.org/wiki/JSON
+
+.. note::
+    If you're using the NetBeans IDE make sure you've unchecked the *Compile On Save* option under
+    *Project Properties > Build > Compile* to make sure the mcmod.info file will be generated correctly. 
