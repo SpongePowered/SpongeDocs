@@ -77,8 +77,8 @@ Children's Online Privacy Protection Act Compliance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Our site, products and services are all directed to people who are at least 13 years old or older.
-If this server is in the USA, and you are under the age of 13, per the requirements of COPPA (`Children's Online Privacy
-Protection Act <https://en.wikipedia.org/wiki/Children%27s_Online_Privacy_Protection_Act>`_), do not use this site.
+If you are under the age of 13, per the requirements of COPPA (`Children's Online Privacy Protection Act
+<https://en.wikipedia.org/wiki/Children%27s_Online_Privacy_Protection_Act>`_), do not use this site.
 
 
 Online Privacy Policy Only
@@ -96,4 +96,4 @@ Changes To Our Privacy Policy
 
 If we decide to change our privacy policy, we will post those changes on this page.
 
-*This document is CC-BY-SA. It was last updated May 31, 2013.*
+*This document is CC-BY-SA. It was last updated May 10, 2018.*
