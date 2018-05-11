@@ -24,11 +24,12 @@ or visit their repositories on GitHub:
 `SpongeForge <https://github.com/spongepowered/spongeforge>`_ |
 `SpongeVanilla <https://github.com/spongepowered/spongevanilla>`_ | `SpongeAPI <https://github.com/spongepowered/spongeapi>`_ |
 `SpongeDocs <https://github.com/spongepowered/spongedocs>`_ | `SpongeHome <https://github.com/SpongePowered/SpongeHome>`_ |
-`Mixin <https://github.com/SpongePowered/Mixin>`_ |  `Ore <https://github.com/SpongePowered/Ore>`_
+`Mixin <https://github.com/SpongePowered/Mixin>`_ |  `Ore <https://github.com/SpongePowered/Ore>`_ | 
+`SpongeAuth <https://github.com/SpongePowered/SpongeAuth>`_ 
 
 .. note::
 
-    Sponge development is ongoing. Beta and Experimental builds of both SpongeForge and SpongeVanilla are currently
+    Sponge development is ongoing. Stable and Experimental builds of both SpongeForge and SpongeVanilla are currently
     available for `download <https://www.spongepowered.org/downloads>`_.
 
 Contents

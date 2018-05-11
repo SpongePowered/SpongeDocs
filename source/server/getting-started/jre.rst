@@ -7,7 +7,7 @@ it.
 
 Sponge requires Java 8 (specifically ``1.8.0_40`` or above) at this time. Older Java versions are deprecated and will
 not work with Sponge. The difference between major versions of Java (6, 7, 8) is significant, and older versions cannot
-run Sponge properly. Currently Sponge will not run with Java 9.
+run Sponge properly. Currently Sponge will not run with Java 9 or above.
 
 Installing Java
 ===============

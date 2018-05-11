@@ -66,6 +66,8 @@ Sponge
   The name of the entire project.
 SpongeAPI
   The Minecraft Plugin API developed by the Sponge project.
+SpongeAuth
+  The authentication panel and SSO solution for all of the Sponge websites. https://auth.spongepowered.org/
 SpongeCommon
   A repository of code common to the official SpongeAPI implementations, used in building them. SpongeVanilla and SpongeForge
   use this repository.

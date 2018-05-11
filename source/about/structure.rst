@@ -8,23 +8,25 @@ before going into detail:
 +-------------------------------------------------------------------+-------------------------------------------------------+---------------------------------------------------------------------------------+
 | Project                                                           | Description                                           | What is done in the repository?                                                 |
 +===================================================================+=======================================================+=================================================================================+
-| `SpongeAPI <https://github.com/Spongepowered/SpongeAPI>`_         | The API itself                                        | Development of the API itself                                                   |
+| `SpongeAPI <https://github.com/SpongePowered/SpongeAPI>`_         | The API itself                                        | Development of the API itself                                                   |
 +-------------------------------------------------------------------+-------------------------------------------------------+---------------------------------------------------------------------------------+
-| `SpongeForge <https://github.com/Spongepowered/SpongeForge>`_     | A SpongeAPI implementation built on top of Forge      | Development of the parts of SpongeForge which rely on Forge                     |
+| `SpongeForge <https://github.com/SpongePowered/SpongeForge>`_     | A SpongeAPI implementation built on top of Forge      | Development of the parts of SpongeForge which rely on Forge                     |
 +-------------------------------------------------------------------+-------------------------------------------------------+---------------------------------------------------------------------------------+
-| `SpongeVanilla <https://github.com/Spongepowered/SpongeVanilla>`_ | A SpongeAPI implementation built directly on top      | Development of the Vanilla Counterpart of the SpongeForge repository            |
+| `SpongeVanilla <https://github.com/SpongePowered/SpongeVanilla>`_ | A SpongeAPI implementation built directly on top      | Development of the Vanilla Counterpart of the SpongeForge repository            |
 |                                                                   | of Vanilla Minecraft                                  |                                                                                 |
 +-------------------------------------------------------------------+-------------------------------------------------------+---------------------------------------------------------------------------------+
-| `SpongeCommon <https://github.com/Spongepowered/SpongeCommon>`_   | The shared code between SpongeForge and SpongeVanilla | Development of all code which is shared between SpongeForge and SpongeVanilla   |
+| `SpongeCommon <https://github.com/SpongePowered/SpongeCommon>`_   | The shared code between SpongeForge and SpongeVanilla | Development of all code which is shared between SpongeForge and SpongeVanilla   |
 +-------------------------------------------------------------------+-------------------------------------------------------+---------------------------------------------------------------------------------+
-| `Mixin <https://github.com/Spongepowered/Mixin>`_                 | The tool used to inject the implementations into      | Development of our solution to hook Sponge into the Minecraft server            |
+| `Mixin <https://github.com/SpongePowered/Mixin>`_                 | The tool used to inject the implementations into      | Development of our solution to hook Sponge into the Minecraft server            |
 |                                                                   | the underlying code structure                         |                                                                                 |
 +-------------------------------------------------------------------+-------------------------------------------------------+---------------------------------------------------------------------------------+
-| `SpongeDocs <https://github.com/Spongepowered/SpongeDocs>`_       | The official SpongeProject Documentation              | Expanding, fixing and writing the SpongeDocs                                    |
+| `SpongeDocs <https://github.com/SpongePowered/SpongeDocs>`_       | The official SpongeProject Documentation              | Expanding, fixing and writing the SpongeDocs                                    |
 +-------------------------------------------------------------------+-------------------------------------------------------+---------------------------------------------------------------------------------+
-| `SpongeHome <https://github.com/Spongepowered/SpongeHome>`_       | The website for the SpongeProject                     | Development of our website                                                      |
+| `SpongeHome <https://github.com/SpongePowered/SpongeHome>`_       | The website for the SpongeProject                     | Development of our website                                                      |
 +-------------------------------------------------------------------+-------------------------------------------------------+---------------------------------------------------------------------------------+
-| `Ore <https://github.com/Spongepowered/Ore>`_                     | Plugin hosting solution                               | Development of our plugin hosting solution                                      |
+| `Ore <https://github.com/SpongePowered/Ore>`_                     | Plugin hosting solution                               | Development of our plugin hosting solution                                      |
++-------------------------------------------------------------------+-------------------------------------------------------+---------------------------------------------------------------------------------+
+| `SpongeAuth <https://github.com/SpongePowered/SpongeAuth>`_       | The authentication portal and SSO for our websites    | Development of our authentication portal and SSO solution                       |
 +-------------------------------------------------------------------+-------------------------------------------------------+---------------------------------------------------------------------------------+
 
 SpongeCommon, SpongeForge and SpongeVanilla
@@ -41,13 +43,13 @@ building SpongeForge or SpongeVanilla from the repository *without* including Sp
 SpongeHome
 ==========
 
-SpongeHome is the SpongeProject's website. It's written in Golang, using the go-macaron library. It uses SCSS as it's
+SpongeHome is the Sponge Project's website. It's written in Golang, using the go-macaron library. It uses SCSS as it's
 CSS preprocessor.
 
 Ore
 ===
 
-Ore is our very own plugin hosting solution. It's written in Scala, based on the Play Framework and of course open-source!
+Ore is our very own plugin hosting solution. It's written in Scala, based on the Play Framework and of course open source!
 
 How everything is tied together
 ===============================

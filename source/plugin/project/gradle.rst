@@ -23,12 +23,19 @@ you have chosen before.**
 .. code-block:: groovy
 
     plugins {
+        id 'java'
         id 'org.spongepowered.plugin' version '0.8.1'
     }
 
-    group = 'com.example' // TODO
-    version = '1.0-SNAPSHOT'
-    description = 'An example plugin'
+    compileJava.options.encoding = 'UTF-8' // You may not need this, but this has solved issues in the past
+
+    group = 'org.spongepowered' // TODO: Change this to your own group ID
+    version = '1.0.0-SNAPSHOT' // TODO: Change this to match your desired version
+    description = 'Here lie an example plugin definition' // TODO: Match to update your plugin's description
+
+    repositories {
+        jcenter()
+    }
 
     dependencies {
         compile 'org.spongepowered:spongeapi:7.0.0'
@@ -53,7 +60,7 @@ manually:
 
     sponge {
         plugin {
-            id = 'mypluginid'
+            id = 'pluginidgoeshere'
         }
     }
 
@@ -69,9 +76,10 @@ you want to specify them manually:
     sponge {
         plugin {
             meta {
-                name = 'My Plugin'
-                version = '1.0.0'
-                description = 'This is a plugin'
+                name = 'Example Plugin'
+                version = '1.0.0-SNAPSHOT'
+                description = 'This is an example plugin'
+                url = 'http://www.example.com/'
             }
         }
     }
@@ -83,6 +91,7 @@ You can also remove a default value entirely:
     sponge {
         plugin {
             meta {
+                name = null
                 description = null
             }
         }
@@ -101,7 +110,7 @@ dependency to your project:
 .. code-block:: groovy
 
     repositories {
-        mavenCentral()
+        jcenter()
         maven {
             name = 'sponge'
             url = 'https://repo.spongepowered.org/maven'

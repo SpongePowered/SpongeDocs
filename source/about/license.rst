@@ -17,9 +17,8 @@ The SpongeDocs are licensed differently under the `Creative Commons - Share-Alik
 while all code samples are licensed under the MIT license similar to the 
 Sponge projects themselves.
 
-The code examples contained in SpongeDocs are provided as starting points for development, and are necessarily incomplete. 
-We permit the use of these code examples in Sponge plugins under Fair Use, without further license restrictions, and we 
-simply ask that SpongeDocs be acknowledged when this is the case.
+If there is extensive usage of documentation example code, please fulfill the MIT requirements, otherwise if used solely
+as an educational resource we will interpret the usage as Fair Use.
 
 Art assets are held under the `Creative Commons - Non Commercial, No Derivatives license <https://creativecommons.org/licenses/by-nc-nd/4.0/>`_. 
 

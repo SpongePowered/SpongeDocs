@@ -12,7 +12,7 @@ For Everyone
 What is Sponge?
 ---------------
 
-Sponge is a new versatile Minecraft: Java Edition API. It was made to enrich your Minecraft experience by allowing
+Sponge is a versatile Minecraft: Java Edition API. It was made to enrich your Minecraft experience by allowing
 plugins to add functionality to Minecraft. Read more about Sponge here: :doc:`introduction` and about the history of
 Sponge here: :doc:`history`
 

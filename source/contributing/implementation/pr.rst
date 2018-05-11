@@ -53,7 +53,7 @@ A few things that can be taken from this:
 
 .. code-block:: none
 
-  *SpongeAPI*|[SpongeCommon](html link)|[SpongeForge](html link)|[SpongeVanilla](html link)
+  *SpongeAPI* | [SpongeCommon](html link) | [SpongeForge](html link) | [SpongeVanilla](html link)
 
 
 * Clear description of what the API PR is aiming to do, this can be a brief summary as if writing an essay, at most 4
