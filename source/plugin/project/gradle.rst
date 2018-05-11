@@ -27,11 +27,13 @@ you have chosen before.**
         id 'org.spongepowered.plugin' version '0.8.1'
     }
 
-    compileJava.options.encoding = 'UTF-8' // You may not need this, but this has solved issues in the past
+    // This may not be required, but has solved issues in the past
+    compileJava.options.encoding = 'UTF-8'
 
-    group = 'org.spongepowered' // TODO: Change this to your own group ID
-    version = '1.0.0-SNAPSHOT' // TODO: Change this to match your desired version
-    description = 'Here lie an example plugin definition' // TODO: Match to update your plugin's description
+    // TODO: Change the following to match your information
+    group = 'com.example'
+    version = '1.0.0-SNAPSHOT'
+    description = 'Here lies an example plugin definition'
 
     repositories {
         jcenter()
