@@ -67,7 +67,7 @@ manually:
 Overriding defaults
 ~~~~~~~~~~~~~~~~~~~
 
-By default the Gradle plugin will contribute the **plugin name**, **plugin version** and **description** automatically
+By default the Gradle plugin will contribute the **plugin name**, **plugin version**, and **description** automatically
 to :doc:`/plugin/plugin-meta` with defaults defined in the project properties. It is also possible to override these if
 you want to specify them manually:
 
@@ -112,7 +112,7 @@ dependency to your project:
     repositories {
         jcenter()
         maven {
-            name = 'sponge'
+            name = 'sponge-repo'
             url = 'https://repo.spongepowered.org/maven'
         }
     }
