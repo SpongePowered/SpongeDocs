@@ -19,7 +19,7 @@ work with the ampersand (&) as well.
 .. warning::
     Text serialization using any kind of formatting code is limited to representing only some of the capabilities
     of a :javadoc:`Text`, namely formatting. It cannot represent any kind of click or hover actions. If brevity is not
-    an issue (as it is in Minecraft chat), it is recommended to use either the :doc:`./xml` or the :doc:`./json`.
+    an issue (as it is in Minecraft chat), it is recommended to use the :doc:`./json`.
 
 Ampersand Formatting
 ====================
