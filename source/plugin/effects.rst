@@ -32,10 +32,10 @@ With any given ``Viewer``, we can simply play a sound at a location:
     
     viewer.playSound(SoundTypes.ENTITY_CREEPER_PRIMED, new Vector3d(1, 65, 1), 1);
 
-Now let's break this down. First, we have the :javadoc:`SoundType` being played. This is simply the sound that will be
+Now let's break this down. First, the :javadoc:`SoundType` specifies the sound that will be
 played. Next we have a ``Vector3d`` position. This position can be constructed, or it can be retrieved from a
 ``Location`` using the :javadoc:`Location#getPosition()` method. In the example above, the sound will be played at the
-coordinates ``1, 65, 1``. Lastly, we have the volume that the sound will be played at. The volume is a double, that
+coordinates ``1, 65, 1``. Lastly, we have the volume that the sound will be played at. The volume is a double that
 ranges from zero to two.
 
 Now that we can play basic sounds, we can go further in-depth with our sounds. Let's say we wanted to play our sound at
