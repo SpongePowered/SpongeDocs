@@ -124,7 +124,7 @@ max-entities-within-aabb                  integer   8           Max amount of en
                                                                 unless overridden.
 blocks                                    integer   8           Default max collisions for blocks.
 entities                                  integer   8           Default max collisions for entities.
-enabled                                   boolean   true        Set to false if you want mod to ignore entity
+enabled                                   boolean   true        Set to false if you want this mod to ignore entity
                                                                 collision rules.
 **Entities**
 thrownpotion                              integer   -1          Max collisions for a thrown potion.
