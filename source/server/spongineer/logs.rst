@@ -2,7 +2,7 @@
 Log Files
 =========
 
-Logfiles are an essential part when it comes to debugging your server and figuring what went wrong. This pages contains
+Logfiles are an essential part when it comes to debugging your server and figuring what went wrong. This page contains
 logfiles from SpongeForge and SpongeVanilla servers including short descriptions.
 
 .. contents:: **Provided Logfiles**
