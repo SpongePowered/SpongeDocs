@@ -17,7 +17,6 @@ are three applicable formats:
     :titlesonly:
 
     formatting-code-legacy
-    xml
     json
     configurate
 
@@ -27,7 +26,6 @@ The :javadoc:`TextSerializers` class provides three ``TextSerializer``\ s for se
 * ``LEGACY_FORMATTING_CODE``
 * ``FORMATTING_CODE``
 * ``JSON``
-* ``TEXT_XML``
 
 Serializing Text
 ~~~~~~~~~~~~~~~~
