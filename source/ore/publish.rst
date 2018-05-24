@@ -93,7 +93,7 @@ command.
 
 .. note::
 
-    If you're using build manager such as Gradle or Maven, there are plugins you can apply to your build script that
+    If you're using a build manager such as Gradle or Maven, there are plugins you can apply to your build script that
     can sign built artifacts and automate this laborious process for you. For more information, please refer to
     `Gradle's documentation <https://docs.gradle.org/current/userguide/signing_plugin.html>`__ or
     `Maven's documentation <https://maven.apache.org/plugins/maven-gpg-plugin/>`__.
