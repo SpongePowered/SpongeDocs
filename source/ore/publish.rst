@@ -153,7 +153,7 @@ Documenting Your Project With Pages
 To document your plugin Ore offers the creation of pages. By default you get a 'Home' page when you create your new Project.
 To add new pages you can click on the '+' icon in the Pages bar on the right of the screen; doing so will open a pop-up where you 
 can choose a name and the parent page (adding a page on the Home page is not possible). If you choose the '<None>' option the page 
-will become a root page where you can later add child pages on. If you hover choose to add it to another page the page will only show
+will become a root page where you can later add child pages on. If you choose to add it to another page the page will only show
 when the parent page is expanded.
 To document your pages you can use CommonMark.
 
