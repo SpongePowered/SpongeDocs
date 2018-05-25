@@ -87,7 +87,7 @@ option and specify that we would like to use a sand block. This can be done like
             .build();
     viewer.spawnParticles(particle, position);
 
-Creating Potions
+Potion Effects
 ================
 
 Similarly to particles and sounds, we need to use a builder to create our potion effect:
