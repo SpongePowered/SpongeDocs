@@ -32,7 +32,10 @@ The Docs are written in reStructuredText (reST), if you're familiar with Markdow
 hard. If you're having issues with it we suggest that you join our `forums <https://forums.spongepowered.org/>`_ or
 `#SpongeDocs <ircs://irc.esper.net:6697/#spongedocs>`_ on Esper.net and ask for help there.
 
-The Sponge Documentation is licensed under the `Creative Commons - Share-Alike license <https://creativecommons.org/licenses/by-sa/4.0/>`_. Art assets are held under the related `Creative Commons - Non Commercial, No Derivatives license <https://creativecommons.org/licenses/by-nc-nd/4.0/>`_. Contributions implicitly accept this licensing.
+The Sponge Documentation is licensed under the `Creative Commons - Share-Alike license 
+<https://creativecommons.org/licenses/by-sa/4.0/>`_. Art assets are held under the related `Creative Commons - 
+Non Commercial, No Derivatives license <https://creativecommons.org/licenses/by-nc-nd/4.0/>`_. Contributors implicitly 
+accept this licensing.
 
 Style Guide
 ===========
