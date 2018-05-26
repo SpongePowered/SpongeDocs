@@ -65,12 +65,12 @@ Command                 Description                               Permission
 In cases of command conflict, Sponge provides a primary alias mechanism to specify which command is to be used.  For 
 example, Minecraft provides the `reload <https://minecraft.gamepedia.com/Commands#Summary_of_commands>`__ command and 
 Sponge provides the `reload <https://docs.spongepowered.org/stable/en/server/spongineer/commands.html>`__ command. To 
-specify which command to use, prefix it with minecraft or sponge and a ``:``. So, to specify the Sponge reload command 
+specify which command to use, prefix it with minecraft or sponge and a ``:``. So, to use Sponge's reload command 
 above, type in ``/sponge:reload``. This approach can also be used to handle conflicts between mods and/or plugins. Do the 
-same thing, just use the mod-id or the plugin-id and a ``:``.  An example is ``/nucleus:tp``.
+same thing, just use the mod-id or the plugin-id and a ``:``.  An example is ``/examplemodid:tp``.
 
-Furthermore, the primary alias mechanism can be used to overcome incompatibilties.  Let's say a plugin registers a 
-command, but the command is incompatible with your mod.  If you can configure your mod to use a Minecraft native 
+Furthermore, the primary alias mechanism can be used to overcome incompatibilties. Let's say a plugin registers a 
+command, but the command is incompatible with your mod. If you can configure your mod to use a Minecraft native 
 command or another plugin's command, you can restore the expected behavior or prevent unexpected behaviors.
 
 .. note::
