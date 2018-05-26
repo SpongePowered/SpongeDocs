@@ -50,7 +50,10 @@ following code:
     import java.nio.file.Files;
 
     if (Files.notExists(configPath)) {
-        plugin.getAsset("default.conf").copyToFile(configPath);
+        Optional<Asset> asset = plugin.getAsset("default.conf");
+        if (asset.isPresent()) {
+            asset.get().copyToDirectory(configPath);
+        }
     }
 
 .. note::

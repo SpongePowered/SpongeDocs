@@ -47,7 +47,7 @@ Instead of
 
 .. code-block:: java
 
-    Optional<String> optionalString = optionalString();
+    Optional<String> optionalString = getOptionalString();
     String someString;
     if (optionalString.isPresent()) {
         someString = optionalString.get();
@@ -71,7 +71,7 @@ Instead of
 
 .. code-block:: java
 
-    Optional<String> optionalString = optionalString();
+    Optional<String> optionalString = getOptionalString();
     String someString;
     if (optionalString.isPresent()) {
         someString = optionalString.get();
@@ -98,7 +98,7 @@ Instead of
 
 .. code-block:: java
 
-    Optional<String> optionalString = optionalString();
+    Optional<String> optionalString = getOptionalString();
     if (!optionalString.isPresent()) {
         throw new MyException();
     }
@@ -196,7 +196,7 @@ Instead of
 
     Optional<String> optionalString = getOptionalString();
     if (optionalString.isPresent()) {
-        String someString = optionalString.toLowerCase();
+        String someString = optionalString.get().toLowerCase();
         myPlugin.doSomethingWithString(someString);
     }
 

@@ -163,8 +163,7 @@ The recommended way to obtain your config file is through Guice, along with the 
     private Path configDir;
 
     @Inject
-    @ConfigDir(sharedRoot = false)
-    private void setConfigDir(Path configDir) {
+    private void setConfigDir(@ConfigDir(sharedRoot = false) Path configDir) {
         this.configDir = configDir;
     }
 

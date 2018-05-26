@@ -32,7 +32,7 @@ try to heal someone (or something).
 
     import java.util.Optional;
 
-    public static DataTransactionResult heal(DataHolder target) {
+    public static void heal(DataHolder target) {
         Optional<HealthData> healthOptional = target.get(HealthData.class);
         if (healthOptional.isPresent()) {
             HealthData healthData = healthOptional.get();

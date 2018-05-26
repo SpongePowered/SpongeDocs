@@ -111,7 +111,7 @@ an inventory extend the :javadoc:`TileEntityCarrier` interface it suffices to ca
         if (entity instanceof TileEntityCarrier) {
             TileEntityCarrier carrier = (TileEntityCarrier) entity;
             Inventory inventory = carrier.getInventory();
-            ...
+            [...]
         }
     }
 

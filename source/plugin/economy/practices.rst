@@ -55,13 +55,13 @@ Here's how you **should** withdraw money:
     import org.spongepowered.api.service.economy.transaction.ResultType;
     import org.spongepowered.api.service.economy.transaction.TransactionResult;
     
-    EconomyService service = ...
-    Account account = ...
+    EconomyService service = ...;
+    Account account = ...;
     BigDecimal requiredAmount = BigDecimal.valueOf(20);
 
     TransactionResult result = account.withdraw(service.getDefaultCurrency(),
         requiredAmount, Cause.source(this).build());
-    if (result.getResult() == ResultType.SUCCESS)) {
+    if (result.getResult() == ResultType.SUCCESS) {
         // Success!
     } else if (result.getResult() == ResultType.FAILED || result.getResult() == ResultType.ACCOUNT_NO_FUNDS) {
         // Something went wrong!

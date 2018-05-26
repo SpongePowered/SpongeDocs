@@ -75,7 +75,7 @@ The second constructor must
             this.registerGettersAndSetters();
         }
 
-        ...
+        [...]
 
     }
 
@@ -125,7 +125,7 @@ to values. Since a ``Key`` always contains a corresponding ``DataQuery``, just u
 .. code-block:: java
 
     public DataContainer toContainer() {
-        return new MemoryDataContainer()
+        return DataContainer.createNew()
             .set(Keys.HEALTH, this.currentHealth)
             .set(Keys.MAX_HEALTH, this.maximumHealth);
     }
@@ -214,7 +214,7 @@ There add a line to register (and create) your used keys.
 
 .. code-block:: java
 
-    keyMap.put("health"), makeSingleKey(Double.class, MutableBoundedValue.class, of("Health")));
+    keyMap.put("health", makeSingleKey(Double.class, MutableBoundedValue.class, of("Health")));
     keyMap.put("max_health", makeSingleKey(Double.class, MutableBoundedValue.class, of("MaxHealth")));
 
 
@@ -333,7 +333,7 @@ Therefore we just return ``failNoData()`` and do not override the ``doesDataExis
 .. code-block:: java
 
     public DataTransactionResult remove(DataHolder dataHolder) {
-        return DataTransactionBuilder.failNoData();
+        return DataTransactionResult.failNoData();
     }
 
 
@@ -424,7 +424,7 @@ and construct ``HealthValueProcessor`` as follows.
 .. code-block:: java
 
     public class HealthValueProcessor extends AbstractSpongeValueProcessor<EntityLivingBase, Double,
-        MutableBoundedValue<Double> {
+        MutableBoundedValue<Double>> {
 
         public HealthValueProcessor() {
             super(EntityLivingBase.class, Keys.HEALTH);
@@ -486,7 +486,7 @@ This implementation will reject values outside of the bounds used in our value c
 .. code-block:: java
 
     public DataTransactionResult removeFrom(ValueContainer<?> container) {
-        return DataTransactionBuilder.failNoData();
+        return DataTransactionResult.failNoData();
     }
 
 Since the data is guaranteed to be always present, attempts to remove it will just fail.
@@ -506,7 +506,7 @@ handles. For every pair of mutable / immutable ``DataManipulator``\ s at least o
 
 .. code-block:: java
 
-    dataRegistry.registerDataProcessorAndImpl(HealthData.class, SpongeHealthData.class,
+    DataUtil.registerDataProcessorAndImpl(HealthData.class, SpongeHealthData.class,
         ImmutableHealthData.class, ImmutableSpongeHealthData.class,
         new HealthDataProcessor());
 
@@ -519,8 +519,8 @@ can be registered by subsequent calls of the ``registerValueProcessor()`` method
 
 .. code-block:: java
 
-    dataRegistry.registerValueProcessor(Keys.HEALTH, new HealthValueProcessor());
-    dataRegistry.registerValueProcessor(Keys.MAX_HEALTH, new MaxHealthValueProcessor());
+    DataUtil.registerValueProcessor(Keys.HEALTH, new HealthValueProcessor());
+    DataUtil.registerValueProcessor(Keys.MAX_HEALTH, new MaxHealthValueProcessor());
 
 
 Implementing Block Data

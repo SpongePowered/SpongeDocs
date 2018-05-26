@@ -112,7 +112,7 @@ method while providing a ``TypeToken`` representing the ``UUID`` class.
 
     import java.util.UUID;
 
-    UUID mayor = rootNode.getNode("towns", "aFLARDia", "mayor").get(TypeToken.of(UUID.class));
+    UUID mayor = rootNode.getNode("towns", "aFLARDia", "mayor").getValue(TypeToken.of(UUID.class));
 
 This prompts Configurate to locate the proper ``TypeSerializer`` for ``UUID``\ s and then use it to convert the stored
 value into a ``UUID``. The ``TypeSerializer`` (and by extension the above method) may throw an ``ObjectMappingException``

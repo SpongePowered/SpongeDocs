@@ -50,12 +50,12 @@ include this all before ``return superMegaAwesomeSword;``.
 
     EnchantmentData enchantmentData = superMegaAwesomeSword
         .getOrCreate(EnchantmentData.class).get();
-    final List<Enchantment> enchantments = Sponge.getRegistry()
-        .getAllOf(Enchantment.class).stream().collect(Collectors.toList());
+    final List<EnchantmentType> enchantments = Sponge.getRegistry()
+        .getAllOf(EnchantmentType.class).stream().collect(Collectors.toList());
 
-    for (Enchantment enchantment : enchantments) {
+    for (EnchantmentType enchantment : enchantments) {
         enchantmentData.set(enchantmentData.enchantments()
-            .add(new ItemEnchantment(enchantment, 1000)));
+            .add(Enchantment.of(enchantment, 1000)));
     }
     superMegaAwesomeSword.offer(enchantmentData);
 
@@ -107,14 +107,9 @@ An example is shown below:
     
     public void spawnItem(ItemStack superMegaAwesomeSword, Location<World> spawnLocation) {
         Extent extent = spawnLocation.getExtent();
-        Optional<Entity> optional = extent
-            .createEntity(EntityTypes.ITEM, spawnLocation.getPosition());
-        if (optional.isPresent()) {
-            Entity item = optional.get();
-            item.offer(Keys.REPRESENTED_ITEM, superMegaAwesomeSword.createSnapshot());
-            extent.spawnEntity(item, Cause.source(EntitySpawnCause.builder()
-                .entity(item).type(SpawnTypes.PLUGIN).build()).build());
-        }
+        Entity item = extent.createEntity(EntityTypes.ITEM, spawnLocation.getPosition());
+        item.offer(Keys.REPRESENTED_ITEM, superMegaAwesomeSword.createSnapshot());
+        extent.spawnEntity(item);
     }
 
 Creating an ItemStack From a Block

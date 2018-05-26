@@ -80,7 +80,7 @@ two methods:
 
     @Override
     public DataContainer toContainer() {
-        return new MemoryDataContainer()
+        return DataContainer.createNew()
                 .set(DataQuery.of("Name"), this.name)
                 .set(Queries.CONTENT_VERSION, getContentVersion());
     }
@@ -119,8 +119,8 @@ the builder.
 
 .. code-block:: java
 
-    org.spongepowered.api.data.persistence.DataContentUpdater
-    org.spongepowered.api.text.Text
+    import org.spongepowered.api.data.persistence.DataContentUpdater
+    import org.spongepowered.api.text.Text
 
     public class NameUpdater implements DataContentUpdater {
 

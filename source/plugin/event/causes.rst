@@ -184,8 +184,8 @@ as the :javadoc:`EventContextKeys#PLAYER_SIMULATED` context, in addition to anyt
 
 .. code-block:: java
 
-    CommandSource sourceRunningSudo;
-    Player playerToSimulate;
+    CommandSource sourceRunningSudo = ...;
+    Player playerToSimulate = ...;
     try (CauseStackManager.StackFrame frame = Sponge.getCauseStackManager().pushCauseFrame()) {
 
       frame.pushCause(sourceRunningSudo);
@@ -229,9 +229,9 @@ to the cause would be the root cause.
 
 .. code-block:: java
 
-    CommandSource sourceRunningSudo;
-    Player playerToSimulate;
-    PluginContainer plugin;
+    CommandSource sourceRunningSudo = ...;
+    Player playerToSimulate = ...;
+    PluginContainer plugin = ...;
 
     EventContext context = EventContext.builder()
       .add(EventContextKeys.PLAYER_SIMULATED, playerToSimulate.getProfile())

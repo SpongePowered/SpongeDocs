@@ -25,7 +25,7 @@ Imagine a data structure tracking how many diamonds a player has mined. It might
         private UUID playerUUID;
         private int diamonds;
 
-        ...
+        [...]
     }
 
 Also assume some methods to access those fields, a nice constructor setting both of those etc.
@@ -114,7 +114,7 @@ class with the :javadoc:`ConfigSerializable` and :javadoc:`Setting` annotations.
         @Setting(comment="Number of diamonds mined")
         private int diamonds;
 
-        ...
+        [...]
     }
 
 The above example can now be serialized and deserialized from config nodes without further registration. The
@@ -155,14 +155,14 @@ Your plugin can just acquire a ``GuiceObjectMapperFactory`` simply by dependency
     import ninja.leaping.configurate.loader.ConfigurationLoader;
     import ninja.leaping.configurate.objectmapping.GuiceObjectMapperFactory;
 
-    @Plugin(name="IStoleThisFromZml", id="shamelesslystolen", version="0.8.15")
+    @Plugin(name="IStoleThisFromZml", id="shamelesslystolen", version="0.8.15", description = "Stolen")
     public class StolenCodeExample {
 
         @Inject private GuiceObjectMapperFactory factory;
         @Inject private ConfigurationLoader<CommentedConfigurationNode> loader;
 
         @Listener
-        public void enable(GamePreInitializationEvent event) {
+        public void enable(GamePreInitializationEvent event) throws IOException, ObjectMappingException {
             CommentedConfigurationNode node =
               loader.load(ConfigurationOptions.defaults().setObjectMapperFactory(factory));
             DiamondCounter myDiamonds = node.getValue(TypeToken.of(DiamondCounter.class));
