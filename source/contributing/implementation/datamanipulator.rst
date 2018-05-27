@@ -299,7 +299,7 @@ whether the operation was successful or not.
 .. code-block:: java
 
     protected boolean set(EntityLivingBase entity, Map<Key<?>, Object> keyValues) {
-        entity.getEntityAttribute(SharedMonsterAttributes.maxHealth)
+        entity.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH)
             .setBaseValue(((Double) keyValues.get(Keys.MAX_HEALTH)).floatValue());
         entity.setHealth(((Double) keyValues.get(Keys.HEALTH)).floatValue());
         return true;
