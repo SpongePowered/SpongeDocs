@@ -174,9 +174,9 @@ Below is an example of a biome generator which creates one large island centered
         private static final double HILLS_RADIUS = HILLS_SIZE * HILLS_SIZE;
 
         @Override
-        public void generateBiomes(final MutableBiomeVolume buffer) {
-            final Vector3i min = buffer.getBiomeMin();
-            final Vector3i max = buffer.getBiomeMax();
+        public void generateBiomes(MutableBiomeVolume buffer) {
+            Vector3i min = buffer.getBiomeMin();
+            Vector3i max = buffer.getBiomeMax();
 
             for (int x = min.getX(); x <= max.getX(); x++) {
                 for (int z = min.getZ(); z <= max.getZ(); z++) {
