@@ -127,10 +127,10 @@ the other. For example:
             return new Collection<ItemStack>() {
                 @Override
                 public Iterator<ItemStack> iterator() {
-                    return new SampleIterator<>();
+                    return new SampleIterator();
                 }
 
                 // Other methods skipped
-            }
+            };
         }
     }
