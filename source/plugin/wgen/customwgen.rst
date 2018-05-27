@@ -179,7 +179,7 @@ Below is an example of a biome generator which creates one large island centered
             final Vector3i max = buffer.getBiomeMax();
 
             for (int x = min.getX(); x <= max.getX(); x++) {
-                for (int z = min.getY(); z <= max.getY(); z++) {
+                for (int z = min.getZ(); z <= max.getZ(); z++) {
                     if (x * x + z * z < HILLS_RADIUS) {
                         buffer.setBiome(x, 64, z, BiomeTypes.EXTREME_HILLS);
                     } else if (x * x + z * z < FOREST_RADIUS) {

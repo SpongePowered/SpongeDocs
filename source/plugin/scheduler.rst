@@ -65,38 +65,38 @@ Using the ``Task.Builder``, you can specify other, optional properties, as descr
 
 .. _TimeUnit: https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/TimeUnit.html
 
-+-----------------+-------------------------+---------------------------------------------------------------------------+----------------------------------------------------+
-| Property        | Method Used             | Description                                                               |                                                    |
-+=================+=========================+===========================================================================+====================================================+
-| delay           | delayTicks(long delay)  | The optional amount of time to pass before the task is to be run.         |                                                    |
-|                 |                         |                                                                           |                                                    |
-|                 | delay(long delay,       | The time is specified as a number of ticks with the ``delayTicks()``      |                                                    |
-|                 | TimeUnit unit)          | method, or it may be provided as a number of a more convenient time       |                                                    |
-|                 |                         | unit by specifying a TimeUnit_ with the delay() method.                   |                                                    |
-|                 |                         |                                                                           |                                                    |
-|                 |                         | *Either method, but not both, can specified per task.*                    |                                                    |
-+-----------------+-------------------------+---------------------------------------------------------------------------+----------------------------------------------------+
-| interval        | intervalTicks(          | The amount of time between repetitions of the task.  If an interval is    |                                                    |
-|                 | long interval)          | not specified, the task will not be repeated.                             |                                                    |
-|                 |                         |                                                                           |                                                    |
-|                 |                         | The time is specified as a number of ticks with the ``intervalTicks()``   |                                                    |
-|                 |                         | method, or it may be provided as a number of a more convenient time       |                                                    |
-|                 | interval(long interval, | unit by specifying a TimeUnit_ with the interval() method.                |                                                    |
-|                 | TimeUnit unit)          |                                                                           |                                                    |
-|                 |                         | *Either method, but not both, can specified per task.*                    |                                                    |
-+-----------------+-------------------------+---------------------------------------------------------------------------+----------------------------------------------------+
-| synchronization | async()                 | A synchronous task is run in the game's main loop in series with the      |                                                    |
-|                 |                         | tick cycle. If ``Task.Builder#async`` is used, the task will be run       |                                                    |
-|                 |                         | asynchronously. Therefore, it will run in its own thread, independently   |                                                    |
-|                 |                         | of the tick cycle, and may not safely use game state.                     |                                                    |
-|                 |                         | (See `Asynchronous Tasks`_.)                                              |                                                    |
-+-----------------+-------------------------+---------------------------------------------------------------------------+----------------------------------------------------+
-| name            | name(String name)       | The name of the task. By default, the name of the task will be            |                                                    |
-|                 |                         | PLUGIN_ID "-" ( "A-"                                                      | "S-" ) SERIAL_ID. For example, a default task name |
-|                 |                         | could look like "fooplugin-A-12". No two active tasks will have the same  |                                                    |
-|                 |                         | serial ID for the same synchronization type. If a task name is specified, |                                                    |
-|                 |                         | it should be descriptive and aid users in debugging your plugin.          |                                                    |
-+-----------------+-------------------------+---------------------------------------------------------------------------+----------------------------------------------------+
++-----------------+-------------------------+--------------------------------------------------------------------------+
+| Property        | Method Used             | Description                                                              |
++=================+=========================+==========================================================================+
+| delay           |  delayTicks(long delay) | The optional amount of time to pass before the task is to be run.        |
+|                 |                         |                                                                          |
+|                 |  delay(long delay,      | The time is specified as a number of ticks with the ``delayTicks()``     |
+|                 |        TimeUnit unit)   | method, or it may be provided as a number of a more convenient time      |
+|                 |                         | unit by specifying a TimeUnit_ with the delay() method.                  |
+|                 |                         |                                                                          |
+|                 |                         | *Either method, but not both, can specified per task.*                   |
++-----------------+-------------------------+--------------------------------------------------------------------------+
+| interval        |  intervalTicks(         | The amount of time between repetitions of the task.  If an interval is   |
+|                 |          long interval) | not specified, the task will not be repeated.                            |
+|                 |                         |                                                                          |
+|                 |                         | The time is specified as a number of ticks with the ``intervalTicks()``  |
+|                 |                         | method, or it may be provided as a number of a more convenient time      |
+|                 |  interval(long interval,| unit by specifying a TimeUnit_ with the interval() method.               |
+|                 |          TimeUnit unit) |                                                                          |
+|                 |                         | *Either method, but not both, can specified per task.*                   |
++-----------------+-------------------------+--------------------------------------------------------------------------+
+| synchronization | async()                 | A synchronous task is run in the game's main loop in series with the     |
+|                 |                         | tick cycle. If ``Task.Builder#async`` is used, the task will be run      |
+|                 |                         | asynchronously. Therefore, it will run in its own thread, independently  |
+|                 |                         | of the tick cycle, and may not safely use game state.                    |
+|                 |                         | (See `Asynchronous Tasks`_.)                                             |
++-----------------+-------------------------+--------------------------------------------------------------------------+
+| name            | name(String name)       | The name of the task. By default, the name of the task will be           |
+|                 |                         | PLUGIN_ID "-" ( "A-" | "S-" ) SERIAL_ID. For example, a default task name|
+|                 |                         | could look like "fooplugin-A-12". No two active tasks will have the same |
+|                 |                         | serial ID for the same synchronization type. If a task name is specified,|
+|                 |                         | it should be descriptive and aid users in debugging your plugin.         |
++-----------------+-------------------------+--------------------------------------------------------------------------+
 
 Lastly, submit the task to the scheduler using :javadoc:`Task.Builder#submit(Object)`.
 
