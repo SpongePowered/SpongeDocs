@@ -40,6 +40,20 @@ The text builder interface allows for the creation of formatted text in a "build
     Read this `Wikipedia article <https://en.wikipedia.org/wiki/Builder_pattern>`__ for help understanding the purpose
     of the builder pattern in software design.
 
+General Procedure
+~~~~~~~~~~~~~~~~~
+
+1. Start with <code>Text.builder()</code>.
+2. Then add any formatting you want for the first bit of text (<code>.color()</code>, <code>.style()</code>, 
+   <code>.onClick()</code>, etc.)
+3. Then add the text with <code>.append("text")</code>.
+4. Now add the formatting you want for the second bit of text. You can skip anything you want to reuse. If you need to
+   remove text colors or styles, use <code>TextColors.RESET</code> or <code>TextStyles.RESET</code> (note that
+   <code>TextColors.RESET</code> is redundant if you add another color right afterwards).
+5. Then add the next bit of text with <code>.append("...")</code>.
+6. Repeat until you've added everything you need.
+7. When you're done, end with <code>.build()</code> to get your Text object.
+
 Colors
 ~~~~~~
 
