@@ -23,6 +23,7 @@ For example, let's try to spawn a Creeper:
 
     import org.spongepowered.api.entity.Entity;
     import org.spongepowered.api.entity.EntityTypes;
+    import org.spongepowered.api.event.CauseStackManager.StackFrame;
     import org.spongepowered.api.world.Location;
     import org.spongepowered.api.world.World;
 
@@ -30,9 +31,13 @@ For example, let's try to spawn a Creeper:
 
     public void spawnEntity(Location<World> spawnLocation) {
         World world = spawnLocation.getExtent();
-        Entity creeper = world
-            .createEntity(EntityTypes.CREEPER, spawnLocation.getPosition());
-        world.spawnEntity(creeper);
+
+        Entity creeper = world.createEntity(EntityTypes.CREEPER, spawnLocation.getPosition());
+
+        try (StackFrame frame = Sponge.getCauseStackManager().pushCauseFrame()) {
+            frame.addContext(EventContextKeys.PLUGIN, pluginContainer);
+            world.spawnEntity(creeper);
+        }
     }
 
 This will grab the world from our ``Location``, which we will need for the actual spawning. Next, it uses
