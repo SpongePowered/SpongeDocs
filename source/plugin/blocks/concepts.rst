@@ -10,7 +10,7 @@ differentiate these base types, each block has set of different properties, of w
 values (i.e. *podzol* dirt, *brick* stairs, *oak* leaves). A block can have multiple properties (such as *east-facing*,
 *brick* stairs).
 
-.. topic:: Examples of block properties
+**Examples of block properties**
 
     .. code::
 

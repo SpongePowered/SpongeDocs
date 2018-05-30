@@ -61,7 +61,7 @@ Here's how you **should** withdraw money:
 
     TransactionResult result = account.withdraw(service.getDefaultCurrency(),
         requiredAmount, Cause.source(this).build());
-    if (result.getResult() == ResultType.SUCCESS)) {
+    if (result.getResult() == ResultType.SUCCESS) {
         // Success!
     } else if (result.getResult() == ResultType.FAILED || result.getResult() == ResultType.ACCOUNT_NO_FUNDS) {
         // Something went wrong!
