@@ -269,8 +269,8 @@ There add a line to register (and create) your used keys.
 
 The ``register(Key)`` method registers your ``Key``\s for later use. The string used for the id should be the
 corresponding constant name from the ``Keys`` utility class in lowercase. The ``Key`` itself is created by using the
-:javadoc:`Key.Builder` provided by :javadoc:`Key#builder()` method. You have to set a ``TypeToken``, an ``id``, human
-readable ``name`` and a ``DataQuery``.
+:javadoc:`Key.Builder` provided by the :javadoc:`Key#builder()` method. You have to set a ``TypeToken``, an ``id``,
+human readable ``name`` and a ``DataQuery``.
 The ``DataQuery`` is used for serialization. It is created from the statically imported ``DataQuery.of()`` method
 accepting a string. This string should also be the constant name, stripped of underscores and capitalization changed to
 upper camel case.
@@ -421,7 +421,7 @@ and ``doesDataExist()`` both returned true, which means it is run under the assu
     protected Map<Key<?>, ?> getValues(EntityLivingBase entity) {
         final double health = entity.getHealth();
         final double maxHealth = entity.getMaxHealth();
-        return ImmutableMap.of(Keys.HEALTH, health,Keys.MAX_HEALTH, maxHealth);
+        return ImmutableMap.of(Keys.HEALTH, health, Keys.MAX_HEALTH, maxHealth);
     }
 
 Filler Methods
