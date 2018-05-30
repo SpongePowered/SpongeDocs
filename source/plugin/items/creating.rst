@@ -96,9 +96,7 @@ An example is shown below:
 
     import org.spongepowered.api.entity.Entity;
     import org.spongepowered.api.entity.EntityTypes;
-    import org.spongepowered.api.event.cause.Cause;
-    import org.spongepowered.api.event.cause.entity.spawn.EntitySpawnCause;
-    import org.spongepowered.api.event.cause.entity.spawn.SpawnTypes;
+    import org.spongepowered.api.event.CauseStackManager.StackFrame;
     import org.spongepowered.api.world.Location;
     import org.spongepowered.api.world.World;
     import org.spongepowered.api.world.extent.Extent;
@@ -109,7 +107,11 @@ An example is shown below:
         Extent extent = spawnLocation.getExtent();
         Entity item = extent.createEntity(EntityTypes.ITEM, spawnLocation.getPosition());
         item.offer(Keys.REPRESENTED_ITEM, superMegaAwesomeSword.createSnapshot());
-        extent.spawnEntity(item);
+
+        try (StackFrame frame = Sponge.getCauseStackManager().pushStackFrame()) {
+            frame.addContext(EventContextKeys.SPAWN_TYPE, SpawnTypes.PLACEMENT);
+            extent.spawnEntity(item);
+        }
     }
 
 Creating an ItemStack From a Block
