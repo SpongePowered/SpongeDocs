@@ -14,7 +14,7 @@ SpongeAPI offers support to serialize text directly to a Configurate configurati
 
 .. tip::
 
-    For information on how to use Configurate to create configuration files for your plugin, please refer to 
+    For information on how to use Configurate to create configuration files for your plugin, please refer to
     :doc:`/plugin/configuration/index`.
 
 For example, the text "Hello World!", formatted with the color red and an underline, would have the following HOCON
