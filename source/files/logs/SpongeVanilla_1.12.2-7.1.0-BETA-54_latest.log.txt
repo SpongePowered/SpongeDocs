@@ -1,0 +1,871 @@
+[02:09:12] [main/INFO] [LaunchWrapper]: Loading tweak class name org.spongepowered.server.launch.VanillaServerTweaker
+[02:09:12] [main/INFO] [LaunchWrapper]: Using primary tweak class name org.spongepowered.server.launch.VanillaServerTweaker
+[02:09:12] [main/INFO] [LaunchWrapper]: Calling tweak class org.spongepowered.server.launch.VanillaServerTweaker
+[02:09:12] [main/INFO] [Sponge]: Initializing Sponge...
+[02:09:12] [main/DEBUG] [Sponge]: Applying runtime de-obfuscation...
+[02:09:12] [main/INFO] [Sponge]: De-obfuscation mappings are provided by MCP (http://www.modcoderpack.com)
+[02:09:12] [main/DEBUG] [Sponge]: Registering access transformers...
+[02:09:12] [main/DEBUG] [Sponge]: Initializing Mixin environment...
+[02:09:12] [main/DEBUG] [mixin]: MixinService [LaunchWrapper] was successfully booted in sun.misc.Launcher$AppClassLoader@3d4eac69
+[02:09:12] [main/INFO] [mixin]: SpongePowered MIXIN Subsystem Version=0.7.4 Source=file:/example/logs/spongevanilla-1.12.2-7.1.0-BETA-54.jar Service=LaunchWrapper Env=UNKNOWN
+[02:09:12] [main/DEBUG] [mixin]: Adding new mixin transformer proxy #1
+[02:09:12] [main/DEBUG] [mixin]: Initialising Mixin Platform Manager
+[02:09:12] [main/DEBUG] [mixin]: Mixin platform: primary container is file:/example/logs/spongevanilla-1.12.2-7.1.0-BETA-54.jar
+[02:09:12] [main/DEBUG] [mixin]: Adding mixin platform agents for container file:/example/logs/spongevanilla-1.12.2-7.1.0-BETA-54.jar
+[02:09:12] [main/DEBUG] [mixin]: Instancing new MixinPlatformAgentFML for file:/example/logs/spongevanilla-1.12.2-7.1.0-BETA-54.jar
+[02:09:12] [main/INFO] [mixin]: FML platform manager could not load class cpw.mods.fml.relauncher.CoreModManager. Proceeding without FML support.
+[02:09:12] [main/DEBUG] [mixin]: Instancing new MixinPlatformAgentDefault for file:/example/logs/spongevanilla-1.12.2-7.1.0-BETA-54.jar
+[02:09:12] [main/DEBUG] [mixin]: Scanning file:/C:/Program%20Files/Java/jre1.8.0_162/lib/ext/access-bridge-64.jar for mixin tweaker
+[02:09:12] [main/DEBUG] [mixin]: Scanning file:/C:/Program%20Files/Java/jre1.8.0_162/lib/ext/cldrdata.jar for mixin tweaker
+[02:09:12] [main/DEBUG] [mixin]: Scanning file:/C:/Program%20Files/Java/jre1.8.0_162/lib/ext/dnsns.jar for mixin tweaker
+[02:09:12] [main/DEBUG] [mixin]: Scanning file:/C:/Program%20Files/Java/jre1.8.0_162/lib/ext/jaccess.jar for mixin tweaker
+[02:09:12] [main/DEBUG] [mixin]: Scanning file:/C:/Program%20Files/Java/jre1.8.0_162/lib/ext/jfxrt.jar for mixin tweaker
+[02:09:12] [main/DEBUG] [mixin]: Scanning file:/C:/Program%20Files/Java/jre1.8.0_162/lib/ext/localedata.jar for mixin tweaker
+[02:09:12] [main/DEBUG] [mixin]: Scanning file:/C:/Program%20Files/Java/jre1.8.0_162/lib/ext/nashorn.jar for mixin tweaker
+[02:09:12] [main/DEBUG] [mixin]: Scanning file:/C:/Program%20Files/Java/jre1.8.0_162/lib/ext/sunec.jar for mixin tweaker
+[02:09:12] [main/DEBUG] [mixin]: Scanning file:/C:/Program%20Files/Java/jre1.8.0_162/lib/ext/sunjce_provider.jar for mixin tweaker
+[02:09:12] [main/DEBUG] [mixin]: Scanning file:/C:/Program%20Files/Java/jre1.8.0_162/lib/ext/sunmscapi.jar for mixin tweaker
+[02:09:12] [main/DEBUG] [mixin]: Scanning file:/C:/Program%20Files/Java/jre1.8.0_162/lib/ext/sunpkcs11.jar for mixin tweaker
+[02:09:12] [main/DEBUG] [mixin]: Scanning file:/C:/Program%20Files/Java/jre1.8.0_162/lib/ext/zipfs.jar for mixin tweaker
+[02:09:12] [main/DEBUG] [mixin]: Processing prepare() for PlatformAgent[MixinPlatformAgentFML:file:/example/logs/spongevanilla-1.12.2-7.1.0-BETA-54.jar]
+[02:09:12] [main/DEBUG] [mixin]: Processing prepare() for PlatformAgent[MixinPlatformAgentDefault:file:/example/logs/spongevanilla-1.12.2-7.1.0-BETA-54.jar]
+[02:09:12] [main/INFO] [mixin]: Compatibility level set to JAVA_8
+[02:09:12] [main/DEBUG] [Sponge]: Searching for plugins...
+[02:09:12] [main/INFO] [Sponge]: Searching for plugins...
+[02:09:12] [main/INFO] [Sponge]: 0 plugin(s) found
+[02:09:12] [main/INFO] [Sponge]: Initialization finished. Starting Minecraft server...
+[02:09:12] [main/INFO] [LaunchWrapper]: Loading tweak class name org.spongepowered.asm.mixin.EnvironmentStateTweaker
+[02:09:12] [main/INFO] [LaunchWrapper]: Calling tweak class org.spongepowered.asm.mixin.EnvironmentStateTweaker
+[02:09:12] [main/DEBUG] [mixin]: Processing launch tasks for PlatformAgent[MixinPlatformAgentFML:file:/example/logs/spongevanilla-1.12.2-7.1.0-BETA-54.jar]
+[02:09:12] [main/DEBUG] [mixin]: Processing launch tasks for PlatformAgent[MixinPlatformAgentDefault:file:/example/logs/spongevanilla-1.12.2-7.1.0-BETA-54.jar]
+[02:09:12] [main/DEBUG] [mixin]: Scanning file:/C:/Program%20Files/Java/jre1.8.0_162/lib/ext/access-bridge-64.jar for mixin tweaker
+[02:09:12] [main/DEBUG] [mixin]: Scanning file:/C:/Program%20Files/Java/jre1.8.0_162/lib/ext/cldrdata.jar for mixin tweaker
+[02:09:12] [main/DEBUG] [mixin]: Scanning file:/C:/Program%20Files/Java/jre1.8.0_162/lib/ext/dnsns.jar for mixin tweaker
+[02:09:12] [main/DEBUG] [mixin]: Scanning file:/C:/Program%20Files/Java/jre1.8.0_162/lib/ext/jaccess.jar for mixin tweaker
+[02:09:12] [main/DEBUG] [mixin]: Scanning file:/C:/Program%20Files/Java/jre1.8.0_162/lib/ext/jfxrt.jar for mixin tweaker
+[02:09:12] [main/DEBUG] [mixin]: Scanning file:/C:/Program%20Files/Java/jre1.8.0_162/lib/ext/localedata.jar for mixin tweaker
+[02:09:12] [main/DEBUG] [mixin]: Scanning file:/C:/Program%20Files/Java/jre1.8.0_162/lib/ext/nashorn.jar for mixin tweaker
+[02:09:12] [main/DEBUG] [mixin]: Scanning file:/C:/Program%20Files/Java/jre1.8.0_162/lib/ext/sunec.jar for mixin tweaker
+[02:09:12] [main/DEBUG] [mixin]: Scanning file:/C:/Program%20Files/Java/jre1.8.0_162/lib/ext/sunjce_provider.jar for mixin tweaker
+[02:09:12] [main/DEBUG] [mixin]: Scanning file:/C:/Program%20Files/Java/jre1.8.0_162/lib/ext/sunmscapi.jar for mixin tweaker
+[02:09:12] [main/DEBUG] [mixin]: Scanning file:/C:/Program%20Files/Java/jre1.8.0_162/lib/ext/sunpkcs11.jar for mixin tweaker
+[02:09:12] [main/DEBUG] [mixin]: Scanning file:/C:/Program%20Files/Java/jre1.8.0_162/lib/ext/zipfs.jar for mixin tweaker
+[02:09:12] [main/DEBUG] [mixin]: inject() running with 1 agents
+[02:09:12] [main/DEBUG] [mixin]: Processing inject() for PlatformAgent[MixinPlatformAgentFML:file:/example/logs/spongevanilla-1.12.2-7.1.0-BETA-54.jar]
+[02:09:12] [main/DEBUG] [mixin]: Processing inject() for PlatformAgent[MixinPlatformAgentDefault:file:/example/logs/spongevanilla-1.12.2-7.1.0-BETA-54.jar]
+[02:09:12] [main/DEBUG] [mixin]: Adding new mixin transformer proxy #2
+[02:09:12] [main/DEBUG] [mixin]: Preparing mixins for MixinEnvironment[DEFAULT]
+[02:09:12] [main/DEBUG] [mixin]: Selecting config mixins.common.api.json
+[02:09:12] [main/DEBUG] [mixin]: Selecting config mixins.common.core.json
+[02:09:12] [main/DEBUG] [mixin]: Selecting config mixins.common.core.optional.json
+[02:09:12] [main/DEBUG] [mixin]: Selecting config mixins.common.blockcapturing.json
+[02:09:12] [main/DEBUG] [mixin]: Selecting config mixins.common.bungeecord.json
+[02:09:12] [main/DEBUG] [mixin]: Selecting config mixins.common.concurrentchecks.json
+[02:09:12] [main/DEBUG] [mixin]: Selecting config mixins.common.entityactivation.json
+[02:09:12] [main/DEBUG] [mixin]: Selecting config mixins.common.entitycollisions.json
+[02:09:12] [main/DEBUG] [mixin]: Selecting config mixins.common.exploit.json
+[02:09:12] [main/DEBUG] [mixin]: Selecting config mixins.common.movementchecks.json
+[02:09:12] [main/DEBUG] [mixin]: Selecting config mixins.common.tracking.json
+[02:09:12] [main/DEBUG] [mixin]: Selecting config mixins.common.optimization.json
+[02:09:12] [main/DEBUG] [mixin]: Selecting config mixins.common.realtime.json
+[02:09:12] [main/DEBUG] [mixin]: Selecting config mixins.common.tileentityactivation.json
+[02:09:12] [main/DEBUG] [mixin]: Selecting config mixins.common.vanilla-command.json
+[02:09:12] [main/DEBUG] [mixin]: Selecting config mixins.common.multi-world-command.json
+[02:09:12] [main/DEBUG] [mixin]: Selecting config mixins.vanilla.core.json
+[02:09:12] [main/DEBUG] [mixin]: Selecting config mixins.vanilla.entityactivation.json
+[02:09:12] [main/DEBUG] [mixin]: Selecting config mixins.vanilla.chunkio.json
+[02:09:12] [main/DEBUG] [mixin]: Preparing mixins.common.api.json (12)
+[02:09:12] [main/DEBUG] [mixin]: Found name transformer: org.spongepowered.server.launch.transformer.deobf.NotchDeobfuscationTransformer
+[02:09:12] [main/DEBUG] [mixin]: Rebuilding transformer delegation list:
+[02:09:12] [main/DEBUG] [mixin]: Found name transformer: org.spongepowered.server.launch.transformer.deobf.NotchDeobfuscationTransformer
+[02:09:12] [main/DEBUG] [mixin]:   Adding:    org.spongepowered.server.launch.transformer.deobf.NotchDeobfuscationTransformer
+[02:09:12] [main/DEBUG] [mixin]:   Excluding: org.spongepowered.asm.mixin.transformer.Proxy
+[02:09:12] [main/DEBUG] [mixin]:   Adding:    org.spongepowered.server.launch.transformer.at.AccessTransformer
+[02:09:12] [main/DEBUG] [mixin]:   Adding:    org.spongepowered.common.launch.transformer.SpongeSuperclassTransformer
+[02:09:12] [main/DEBUG] [mixin]:   Excluding: org.spongepowered.asm.mixin.transformer.Proxy
+[02:09:12] [main/DEBUG] [mixin]: Transformer delegation list created with 3 entries
+[02:09:12] [main/DEBUG] [mixin]: Preparing mixins.common.core.json (565)
+[02:09:13] [main/DEBUG] [mixin]: Preparing mixins.common.core.optional.json (1)
+[02:09:13] [main/DEBUG] [mixin]: Preparing mixins.common.blockcapturing.json (1)
+[02:09:13] [main/DEBUG] [mixin]: Preparing mixins.common.bungeecord.json (4)
+[02:09:13] [main/DEBUG] [mixin]: Preparing mixins.common.concurrentchecks.json (1)
+[02:09:13] [main/DEBUG] [mixin]: Preparing mixins.common.entityactivation.json (7)
+[02:09:13] [main/DEBUG] [mixin]: Preparing mixins.common.entitycollisions.json (3)
+[02:09:13] [main/DEBUG] [mixin]: Preparing mixins.common.exploit.json (1)
+[02:09:13] [main/DEBUG] [mixin]: Preparing mixins.common.movementchecks.json (1)
+[02:09:13] [main/DEBUG] [mixin]: Preparing mixins.common.tracking.json (3)
+[02:09:13] [main/DEBUG] [mixin]: Preparing mixins.common.optimization.json (9)
+[02:09:13] [main/DEBUG] [mixin]: Preparing mixins.common.realtime.json (16)
+[02:09:13] [main/DEBUG] [mixin]: Preparing mixins.common.tileentityactivation.json (3)
+[02:09:13] [main/DEBUG] [mixin]: Preparing mixins.common.vanilla-command.json (6)
+[02:09:13] [main/DEBUG] [mixin]: Preparing mixins.common.multi-world-command.json (9)
+[02:09:13] [main/DEBUG] [mixin]: Preparing mixins.vanilla.entityactivation.json (1)
+[02:09:13] [main/DEBUG] [mixin]: Preparing mixins.vanilla.core.json (22)
+[02:09:13] [main/DEBUG] [mixin]: Preparing mixins.vanilla.chunkio.json (6)
+[02:09:14] [main/DEBUG] [mixin]: Prepared 637 mixins in 1.591 sec (2.5ms avg) (192ms load, 460ms transform, 0ms plugin)
+[02:09:14] [main/DEBUG] [mixin]: Mixing server.MixinMinecraftServer from mixins.vanilla.core.json into net.minecraft.server.MinecraftServer
+[02:09:14] [main/DEBUG] [mixin]: Mixing command.MixinCommandSource from mixins.common.core.json into net.minecraft.server.MinecraftServer
+[02:09:14] [main/DEBUG] [mixin]: Mixing command.MixinICommandSender from mixins.common.core.json into net.minecraft.server.MinecraftServer
+[02:09:14] [main/DEBUG] [mixin]: Mixing command.MixinSubject from mixins.common.core.json into net.minecraft.server.MinecraftServer
+[02:09:14] [main/DEBUG] [mixin]: Mixing server.MixinMinecraftServer from mixins.common.core.json into net.minecraft.server.MinecraftServer
+[02:09:14] [main/DEBUG] [mixin]: Mixing MixinMinecraftServer_ChunkIO from mixins.vanilla.chunkio.json into net.minecraft.server.MinecraftServer
+[02:09:14] [main/DEBUG] [mixin]: Mixing server.MixinDedicatedServer from mixins.common.core.json into net.minecraft.server.dedicated.DedicatedServer
+[02:09:14] [main/DEBUG] [mixin]: Mixing server.dedicated.MixinDedicatedServer from mixins.vanilla.core.json into net.minecraft.server.dedicated.DedicatedServer
+[02:09:14] [main/INFO] [LaunchWrapper]: Launching wrapped minecraft {org.spongepowered.server.SpongeVanilla}
+[02:09:14] [main/DEBUG] [mixin]: Mixing MixinBootstrap from mixins.common.core.json into net.minecraft.init.Bootstrap
+[02:09:14] [main/DEBUG] [mixin]: Mixing MixinBootstrap from mixins.vanilla.core.json into net.minecraft.init.Bootstrap
+[02:09:14] [main/DEBUG] [mixin]: Mixing sound.MixinSoundEvent from mixins.common.core.json into net.minecraft.util.SoundEvent
+[02:09:14] [main/DEBUG] [mixin]: Mixing block.MixinBlock from mixins.common.core.json into net.minecraft.block.Block
+[02:09:14] [main/DEBUG] [mixin]: Mixing data.MixinPropertyHolder from mixins.common.core.json into net.minecraft.block.Block
+[02:09:14] [main/DEBUG] [mixin]: Mixing MixinBlock_BlockCapturing from mixins.common.blockcapturing.json into net.minecraft.block.Block
+[02:09:14] [main/DEBUG] [mixin]: Mixing MixinBlock_Collisions from mixins.common.entitycollisions.json into net.minecraft.block.Block
+[02:09:14] [main/DEBUG] [mixin]: Mixing data.MixinDataHolder from mixins.common.core.json into net.minecraft.entity.Entity
+[02:09:14] [main/DEBUG] [mixin]: Mixing data.MixinCustomDataHolder from mixins.common.core.json into net.minecraft.entity.Entity
+[02:09:14] [main/DEBUG] [mixin]: Mixing data.MixinPropertyHolder from mixins.common.core.json into net.minecraft.entity.Entity
+[02:09:14] [main/DEBUG] [mixin]: Mixing entity.MixinEntity from mixins.common.core.json into net.minecraft.entity.Entity
+[02:09:14] [main/DEBUG] [mixin]: Discarding sythetic bridge method synthetic in copy because existing method in mixins.common.core.json:entity.MixinEntity is compatible
+[02:09:14] [main/DEBUG] [mixin]: Mixing entity.MixinEntity from mixins.vanilla.core.json into net.minecraft.entity.Entity
+[02:09:14] [main/DEBUG] [mixin]: Mixing MixinEntity_Activation from mixins.common.entityactivation.json into net.minecraft.entity.Entity
+[02:09:14] [main/DEBUG] [mixin]: Mixing MixinEntity_Collisions from mixins.common.entitycollisions.json into net.minecraft.entity.Entity
+[02:09:14] [main/DEBUG] [mixin]: Mixing entity.MixinEntity_Tracker from mixins.common.tracking.json into net.minecraft.entity.Entity
+[02:09:14] [main/DEBUG] [mixin]: Mixing command.MixinCommandSendCommandFeedback from mixins.common.core.json into net.minecraft.entity.player.EntityPlayer
+[02:09:14] [main/DEBUG] [mixin]: Mixing entity.player.MixinEntityPlayer from mixins.common.core.json into net.minecraft.entity.player.EntityPlayer
+[02:09:14] [main/DEBUG] [mixin]: Mixing entity.player.MixinEntityPlayer from mixins.vanilla.core.json into net.minecraft.entity.player.EntityPlayer
+[02:09:14] [main/DEBUG] [mixin]: Mixing entity.MixinEntityLivingBase from mixins.common.core.json into net.minecraft.entity.EntityLivingBase
+[02:09:14] [main/DEBUG] [mixin]: Mixing entity.MixinGriefer from mixins.common.core.json into net.minecraft.entity.EntityLivingBase
+[02:09:14] [main/DEBUG] [mixin]: Mixing MixinEntityLivingBase_Activation from mixins.common.entityactivation.json into net.minecraft.entity.EntityLivingBase
+[02:09:14] [main/DEBUG] [mixin]: Mixing entity.MixinEntityLivingBase from mixins.vanilla.core.json into net.minecraft.entity.EntityLivingBase
+[02:09:14] [main/DEBUG] [mixin]: Mixing block.MixinBlockPistonMoving from mixins.common.core.json into net.minecraft.block.BlockPistonMoving
+[02:09:14] [main/DEBUG] [mixin]: Mixing block.properties.MixinIProperty from mixins.common.core.json into net.minecraft.block.properties.IProperty
+[02:09:14] [main/DEBUG] [mixin]: Mixing block.MixinBlockDaylightDetector from mixins.common.core.json into net.minecraft.block.BlockDaylightDetector
+[02:09:14] [main/DEBUG] [mixin]: Mixing block.MixinBlockDoublePlant from mixins.common.core.json into net.minecraft.block.BlockDoublePlant
+[02:09:14] [main/DEBUG] [mixin]: Mixing block.MixinBlockHorizontal from mixins.common.core.json into net.minecraft.block.BlockHorizontal
+[02:09:14] [main/DEBUG] [mixin]: Mixing entity.item.MixinEntityItem from mixins.common.core.json into net.minecraft.entity.item.EntityItem
+[02:09:14] [main/DEBUG] [mixin]: Mixing MixinEntityItem_Activation from mixins.common.entityactivation.json into net.minecraft.entity.item.EntityItem
+[02:09:14] [main/DEBUG] [mixin]: Mixing entity.item.MixinEntityXPOrb from mixins.common.core.json into net.minecraft.entity.item.EntityXPOrb
+[02:09:14] [main/DEBUG] [mixin]: Mixing data.types.MixinEnumDyeColor from mixins.common.core.json into net.minecraft.item.EnumDyeColor
+[02:09:14] [main/DEBUG] [mixin]: Mixing block.MixinSoundType from mixins.common.core.json into net.minecraft.block.SoundType
+[02:09:14] [main/DEBUG] [mixin]: Mixing block.state.MixinStateImplementation from mixins.common.core.json into net.minecraft.block.state.BlockStateContainer$StateImplementation
+[02:09:14] [main/DEBUG] [mixin]: Mixing block.state.MixinIBlockState from mixins.common.core.json into net.minecraft.block.state.IBlockState
+[02:09:14] [main/DEBUG] [mixin]: Mixing MixinSpongeImplHooks_Item_Pre_Merge from mixins.common.optimization.json into org.spongepowered.common.SpongeImplHooks
+[02:09:14] [main/DEBUG] [mixin]: Mixing common.MixinSpongeImplHooks from mixins.vanilla.core.json into org.spongepowered.common.SpongeImplHooks
+[02:09:14] [main/DEBUG] [mixin]: Mixing world.MixinWorld from mixins.common.core.json into net.minecraft.world.World
+[02:09:14] [main/DEBUG] [mixin]: Mixing world.MixinWorld_Data from mixins.common.core.json into net.minecraft.world.World
+[02:09:14] [main/DEBUG] [mixin]: Mixing world.extent.MixinExtent from mixins.common.core.json into net.minecraft.world.World
+[02:09:14] [main/DEBUG] [mixin]: Mixing MixinWorld_Activation from mixins.vanilla.entityactivation.json into net.minecraft.world.World
+[02:09:14] [main/DEBUG] [mixin]: Mixing MixinWorld_ChunkIO from mixins.vanilla.chunkio.json into net.minecraft.world.World
+[02:09:14] [main/DEBUG] [mixin]: Mixing world.MixinWorld_Tracker from mixins.common.tracking.json into net.minecraft.world.World
+[02:09:14] [main/DEBUG] [mixin]: Mixing util.math.MixinVec3i from mixins.common.core.json into net.minecraft.util.math.Vec3i
+[02:09:14] [main/DEBUG] [mixin]: Mixing data.MixinDataHolder from mixins.common.core.json into net.minecraft.tileentity.TileEntity
+[02:09:14] [main/DEBUG] [mixin]: Mixing tileentity.MixinTileEntity from mixins.vanilla.core.json into net.minecraft.tileentity.TileEntity
+[02:09:14] [main/DEBUG] [mixin]: Mixing data.MixinCustomDataHolder from mixins.common.core.json into net.minecraft.tileentity.TileEntity
+[02:09:14] [main/DEBUG] [mixin]: Mixing data.MixinPropertyHolder from mixins.common.core.json into net.minecraft.tileentity.TileEntity
+[02:09:14] [main/DEBUG] [mixin]: Mixing tileentity.MixinTileEntity from mixins.common.core.json into net.minecraft.tileentity.TileEntity
+[02:09:14] [main/DEBUG] [mixin]: Mixing data.MixinDataHolder from mixins.common.core.json into net.minecraft.item.ItemStack
+[02:09:14] [main/DEBUG] [mixin]: Mixing data.MixinPropertyHolder from mixins.common.core.json into net.minecraft.item.ItemStack
+[02:09:14] [main/DEBUG] [mixin]: Mixing item.MixinItemStack from mixins.common.core.json into net.minecraft.item.ItemStack
+[02:09:14] [main/DEBUG] [mixin]: Discarding sythetic bridge method synthetic in copy because existing method in mixins.common.core.json:item.MixinItemStack is compatible
+[02:09:14] [main/DEBUG] [mixin]: Mixing item.inventory.TraitInventoryObservable from mixins.common.core.json into net.minecraft.item.ItemStack
+[02:09:14] [main/DEBUG] [mixin]: Mixing world.MixinExplosion from mixins.common.core.json into net.minecraft.world.Explosion
+[02:09:15] [main/DEBUG] [mixin]: Mixing item.MixinItem from mixins.common.core.json into net.minecraft.item.Item
+[02:09:15] [main/DEBUG] [mixin]: Mixing item.MixinItem from mixins.vanilla.core.json into net.minecraft.item.Item
+[02:09:15] [main/DEBUG] [mixin]: Mixing util.MixinEnumHand from mixins.common.core.json into net.minecraft.util.EnumHand
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockLeaves from mixins.common.core.json into net.minecraft.block.BlockLeaves
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockLog from mixins.common.core.json into net.minecraft.block.BlockLog
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockGrass from mixins.common.core.json into net.minecraft.block.BlockGrass
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockLiquid from mixins.common.core.json into net.minecraft.block.BlockLiquid
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockStone from mixins.common.core.json into net.minecraft.block.BlockStone
+[02:09:15] [main/DEBUG] [mixin]: Mixing data.types.MixinBlockStoneEnumType from mixins.common.core.json into net.minecraft.block.BlockStone$EnumType
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.properties.MixinPropertyEnum from mixins.common.core.json into net.minecraft.block.properties.PropertyEnum
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.properties.MixinPropertyHelper from mixins.common.core.json into net.minecraft.block.properties.PropertyHelper
+[02:09:15] [main/DEBUG] [mixin]: Mixing nbt.MixinNBTTagCompound from mixins.common.core.json into net.minecraft.nbt.NBTTagCompound
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockDirectional from mixins.common.core.json into net.minecraft.block.BlockDirectional
+[02:09:15] [main/DEBUG] [mixin]: Mixing data.types.MixinEnumLogAxis from mixins.common.core.json into net.minecraft.block.BlockLog$EnumAxis
+[02:09:15] [main/DEBUG] [mixin]: Mixing data.types.MixinBlockPlanksEnumType from mixins.common.core.json into net.minecraft.block.BlockPlanks$EnumType
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockFarmland from mixins.common.core.json into net.minecraft.block.BlockFarmland
+[02:09:15] [main/DEBUG] [mixin]: Mixing util.math.MixinMutableBlockPos from mixins.common.core.optional.json into net.minecraft.util.math.BlockPos$MutableBlockPos
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.properties.MixinPropertyInteger from mixins.common.core.json into net.minecraft.block.properties.PropertyInteger
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockPistonBase from mixins.common.core.json into net.minecraft.block.BlockPistonBase
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockPistonExtension from mixins.common.core.json into net.minecraft.block.BlockPistonExtension
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.properties.MixinPropertyBoolean from mixins.common.core.json into net.minecraft.block.properties.PropertyBool
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockVine from mixins.common.core.json into net.minecraft.block.BlockVine
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockRedSandstone from mixins.common.core.json into net.minecraft.block.BlockRedSandstone
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockReed from mixins.common.core.json into net.minecraft.block.BlockReed
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockMycelium from mixins.common.core.json into net.minecraft.block.BlockMycelium
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockColored from mixins.common.core.json into net.minecraft.block.BlockColored
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinDyeableBlock from mixins.common.core.json into net.minecraft.block.BlockColored
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockTorch from mixins.common.core.json into net.minecraft.block.BlockTorch
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockDirt from mixins.common.core.json into net.minecraft.block.BlockDirt
+[02:09:15] [main/DEBUG] [mixin]: Mixing data.types.MixinBlockDirtDirtType from mixins.common.core.json into net.minecraft.block.BlockDirt$DirtType
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockEndPortalFrame from mixins.common.core.json into net.minecraft.block.BlockEndPortalFrame
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockCarpet from mixins.common.core.json into net.minecraft.block.BlockCarpet
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinDyeableBlock from mixins.common.core.json into net.minecraft.block.BlockCarpet
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockHugeMushroom from mixins.common.core.json into net.minecraft.block.BlockHugeMushroom
+[02:09:15] [main/DEBUG] [mixin]: Mixing data.types.MixinBlockHugeMushroomEnumType from mixins.common.core.json into net.minecraft.block.BlockHugeMushroom$EnumType
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockSnow from mixins.common.core.json into net.minecraft.block.BlockSnow
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockWall from mixins.common.core.json into net.minecraft.block.BlockWall
+[02:09:15] [main/DEBUG] [mixin]: Mixing data.types.MixinBlockWallEnumType from mixins.common.core.json into net.minecraft.block.BlockWall$EnumType
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockStairs from mixins.common.core.json into net.minecraft.block.BlockStairs
+[02:09:15] [main/DEBUG] [mixin]: Mixing data.types.MixinBlockStairsEnumShape from mixins.common.core.json into net.minecraft.block.BlockStairs$EnumShape
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockButton from mixins.common.core.json into net.minecraft.block.BlockButton
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockCactus from mixins.common.core.json into net.minecraft.block.BlockCactus
+[02:09:15] [main/DEBUG] [mixin]: Mixing util.MixinDamageSource from mixins.common.core.json into net.minecraft.util.DamageSource
+[02:09:15] [main/DEBUG] [mixin]: Mixing event.cause.entity.damage.MixinMinecraftBlockDamageSource from mixins.common.core.json into org.spongepowered.common.event.damage.MinecraftBlockDamageSource
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockCrops from mixins.common.core.json into net.minecraft.block.BlockCrops
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockNetherWart from mixins.common.core.json into net.minecraft.block.BlockNetherWart
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockTallGrass from mixins.common.core.json into net.minecraft.block.BlockTallGrass
+[02:09:15] [main/DEBUG] [mixin]: Mixing data.types.MixinBlockDoublePlantEnumPlantType from mixins.common.core.json into net.minecraft.block.BlockDoublePlant$EnumPlantType
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockStem from mixins.common.core.json into net.minecraft.block.BlockStem
+[02:09:15] [main/DEBUG] [mixin]: Mixing data.types.MixinBlockTallGrassEnumType from mixins.common.core.json into net.minecraft.block.BlockTallGrass$EnumType
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockSapling from mixins.common.core.json into net.minecraft.block.BlockSapling
+[02:09:15] [main/DEBUG] [mixin]: Mixing world.gen.populators.MixinWorldGenAbstractTree from mixins.common.core.json into net.minecraft.world.gen.feature.WorldGenAbstractTree
+[02:09:15] [main/DEBUG] [mixin]: Mixing world.gen.populators.MixinWorldGenerator from mixins.common.core.json into net.minecraft.world.gen.feature.WorldGenerator
+[02:09:15] [main/DEBUG] [mixin]: Mixing world.gen.populators.MixinWorldGenBigTree from mixins.common.core.json into net.minecraft.world.gen.feature.WorldGenBigTree
+[02:09:15] [main/DEBUG] [mixin]: Mixing world.gen.populators.MixinWorldGenTrees from mixins.common.core.json into net.minecraft.world.gen.feature.WorldGenTrees
+[02:09:15] [main/DEBUG] [mixin]: Mixing world.gen.populators.MixinWorldGenMegaPineTree from mixins.common.core.json into net.minecraft.world.gen.feature.WorldGenMegaPineTree
+[02:09:15] [main/DEBUG] [mixin]: Mixing world.gen.populators.MixinWorldGenTaiga2 from mixins.common.core.json into net.minecraft.world.gen.feature.WorldGenTaiga2
+[02:09:15] [main/DEBUG] [mixin]: Mixing world.gen.populators.MixinWorldGenBirchTree from mixins.common.core.json into net.minecraft.world.gen.feature.WorldGenBirchTree
+[02:09:15] [main/DEBUG] [mixin]: Mixing world.gen.populators.MixinWorldGenMegaJungle from mixins.common.core.json into net.minecraft.world.gen.feature.WorldGenMegaJungle
+[02:09:15] [main/DEBUG] [mixin]: Mixing world.gen.populators.MixinWorldGenSavannaTree from mixins.common.core.json into net.minecraft.world.gen.feature.WorldGenSavannaTree
+[02:09:15] [main/DEBUG] [mixin]: Mixing world.gen.populators.MixinWorldGenCanopyTree from mixins.common.core.json into net.minecraft.world.gen.feature.WorldGenCanopyTree
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockPrismarine from mixins.common.core.json into net.minecraft.block.BlockPrismarine
+[02:09:15] [main/DEBUG] [mixin]: Mixing data.types.MixinBlockPrismarineEnumType from mixins.common.core.json into net.minecraft.block.BlockPrismarine$EnumType
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockFence from mixins.common.core.json into net.minecraft.block.BlockFence
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockSilverfish from mixins.common.core.json into net.minecraft.block.BlockSilverfish
+[02:09:15] [main/DEBUG] [mixin]: Mixing entity.monster.MixinEntitySilverfish from mixins.common.core.json into net.minecraft.entity.monster.EntitySilverfish
+[02:09:15] [main/DEBUG] [mixin]: Mixing entity.monster.MixinEntityMob from mixins.common.core.json into net.minecraft.entity.monster.EntityMob
+[02:09:15] [main/DEBUG] [mixin]: Mixing entity.MixinEntityCreature from mixins.common.core.json into net.minecraft.entity.EntityCreature
+[02:09:15] [main/DEBUG] [mixin]: Mixing entity.MixinEntityLiving from mixins.common.core.json into net.minecraft.entity.EntityLiving
+[02:09:15] [main/DEBUG] [mixin]: Mixing data.types.MixinBlockSilverfishEnumType from mixins.common.core.json into net.minecraft.block.BlockSilverfish$EnumType
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockPane from mixins.common.core.json into net.minecraft.block.BlockPane
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockStainedGlassPane from mixins.common.core.json into net.minecraft.block.BlockStainedGlassPane
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinDyeableBlock from mixins.common.core.json into net.minecraft.block.BlockStainedGlassPane
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockQuartz from mixins.common.core.json into net.minecraft.block.BlockQuartz
+[02:09:15] [main/DEBUG] [mixin]: Mixing data.types.MixinBlockQuartzEnumType from mixins.common.core.json into net.minecraft.block.BlockQuartz$EnumType
+[02:09:15] [main/DEBUG] [mixin]: Mixing data.types.MixinBlockPistonExtensionEnumPistonType from mixins.common.core.json into net.minecraft.block.BlockPistonExtension$EnumPistonType
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockSandStone from mixins.common.core.json into net.minecraft.block.BlockSandStone
+[02:09:15] [main/DEBUG] [mixin]: Mixing data.types.MixinBlockSandStoneEnumType from mixins.common.core.json into net.minecraft.block.BlockSandStone$EnumType
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockPlanks from mixins.common.core.json into net.minecraft.block.BlockPlanks
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockPortal from mixins.common.core.json into net.minecraft.block.BlockPortal
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockStainedGlass from mixins.common.core.json into net.minecraft.block.BlockStainedGlass
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinDyeableBlock from mixins.common.core.json into net.minecraft.block.BlockStainedGlass
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockRailBase from mixins.common.core.json into net.minecraft.block.BlockRailBase
+[02:09:15] [main/DEBUG] [mixin]: Mixing data.types.MixinBlockRailBaseEnumRailDirection from mixins.common.core.json into net.minecraft.block.BlockRailBase$EnumRailDirection
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockRailPowered from mixins.common.core.json into net.minecraft.block.BlockRailPowered
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockRailDetector from mixins.common.core.json into net.minecraft.block.BlockRailDetector
+[02:09:15] [main/DEBUG] [mixin]: Mixing item.data.MixinItemPotion from mixins.common.core.json into net.minecraft.item.ItemPotion
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockBanner from mixins.common.core.json into net.minecraft.block.BlockBanner
+[02:09:15] [main/DEBUG] [mixin]: Mixing tileentity.MixinTileEntityBanner from mixins.common.core.json into net.minecraft.tileentity.TileEntityBanner
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockSkull from mixins.common.core.json into net.minecraft.block.BlockSkull
+[02:09:15] [main/DEBUG] [mixin]: Mixing tileentity.MixinTileEntitySkull from mixins.common.core.json into net.minecraft.tileentity.TileEntitySkull
+[02:09:15] [main/DEBUG] [mixin]: Mixing entity.boss.MixinEntityWither from mixins.common.core.json into net.minecraft.entity.boss.EntityWither
+[02:09:15] [main/DEBUG] [mixin]: Mixing entity.MixinRanger from mixins.common.core.json into net.minecraft.entity.IRangedAttackMob
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockStandingSign from mixins.common.core.json into net.minecraft.block.BlockStandingSign
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockSign from mixins.common.core.json into net.minecraft.block.BlockSign
+[02:09:15] [main/DEBUG] [mixin]: Mixing tileentity.MixinTileEntitySign from mixins.common.core.json into net.minecraft.tileentity.TileEntitySign
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockBrewingStand from mixins.common.core.json into net.minecraft.block.BlockBrewingStand
+[02:09:15] [main/DEBUG] [mixin]: Mixing tileentity.MixinTileEntityBrewingStand from mixins.common.core.json into net.minecraft.tileentity.TileEntityBrewingStand
+[02:09:15] [main/DEBUG] [mixin]: Mixing item.inventory.MixinTraitInventory from mixins.common.core.json into net.minecraft.tileentity.TileEntityLockable
+[02:09:15] [main/DEBUG] [mixin]: Mixing item.inventory.MixinTraitAdapter from mixins.common.core.json into net.minecraft.tileentity.TileEntityLockable
+[02:09:15] [main/DEBUG] [mixin]: Mixing tileentity.MixinTileEntityLockable from mixins.common.core.json into net.minecraft.tileentity.TileEntityLockable
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockHopper from mixins.common.core.json into net.minecraft.block.BlockHopper
+[02:09:15] [main/DEBUG] [mixin]: Mixing tileentity.MixinTileEntityHopper from mixins.common.core.json into net.minecraft.tileentity.TileEntityHopper
+[02:09:15] [main/DEBUG] [mixin]: Mixing tileentity.MixinTileEntityLockableLoot from mixins.common.core.json into net.minecraft.tileentity.TileEntityLockableLoot
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockFlowerPot from mixins.common.core.json into net.minecraft.block.BlockFlowerPot
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockFlower from mixins.common.core.json into net.minecraft.block.BlockFlower
+[02:09:15] [main/DEBUG] [mixin]: Mixing tileentity.MixinTileEntityFlowerPot from mixins.common.core.json into net.minecraft.tileentity.TileEntityFlowerPot
+[02:09:15] [main/DEBUG] [mixin]: Mixing tileentity.MixinTileEntityDaylightDetector from mixins.common.core.json into net.minecraft.tileentity.TileEntityDaylightDetector
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockDispenser from mixins.common.core.json into net.minecraft.block.BlockDispenser
+[02:09:15] [main/DEBUG] [mixin]: Mixing tileentity.MixinTileEntityDispenser from mixins.common.core.json into net.minecraft.tileentity.TileEntityDispenser
+[02:09:15] [main/DEBUG] [mixin]: Mixing tileentity.MixinTileEntityJukebox from mixins.common.core.json into net.minecraft.block.BlockJukebox$TileEntityJukebox
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockSand from mixins.common.core.json into net.minecraft.block.BlockSand
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockFalling from mixins.common.core.json into net.minecraft.block.BlockFalling
+[02:09:15] [main/DEBUG] [mixin]: Mixing entity.item.MixinEntityFallingBlock from mixins.common.core.json into net.minecraft.entity.item.EntityFallingBlock
+[02:09:15] [main/DEBUG] [mixin]: Mixing data.types.MixinBlockSandEnumType from mixins.common.core.json into net.minecraft.block.BlockSand$EnumType
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockAnvil from mixins.common.core.json into net.minecraft.block.BlockAnvil
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockCake from mixins.common.core.json into net.minecraft.block.BlockCake
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockFire from mixins.common.core.json into net.minecraft.block.BlockFire
+[02:09:15] [main/DEBUG] [mixin]: Mixing data.types.MixinBlockSlabEnumBlockHalf from mixins.common.core.json into net.minecraft.block.BlockSlab$EnumBlockHalf
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockStoneSlab from mixins.common.core.json into net.minecraft.block.BlockStoneSlabNew
+[02:09:15] [main/DEBUG] [mixin]: Mixing data.types.MixinBlockStoneSlabNewEnumType from mixins.common.core.json into net.minecraft.block.BlockStoneSlabNew$EnumType
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockStoneSlab from mixins.common.core.json into net.minecraft.block.BlockStoneSlab
+[02:09:15] [main/DEBUG] [mixin]: Mixing data.types.MixinBlockStoneSlabEnumType from mixins.common.core.json into net.minecraft.block.BlockStoneSlab$EnumType
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockWoodSlab from mixins.common.core.json into net.minecraft.block.BlockWoodSlab
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockSponge from mixins.common.core.json into net.minecraft.block.BlockSponge
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockStaticLiquid from mixins.common.core.json into net.minecraft.block.BlockStaticLiquid
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockTripWireHook from mixins.common.core.json into net.minecraft.block.BlockTripWireHook
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockDoor from mixins.common.core.json into net.minecraft.block.BlockDoor
+[02:09:15] [main/DEBUG] [mixin]: Mixing data.types.MixinBlockDoorEnumHingePosition from mixins.common.core.json into net.minecraft.block.BlockDoor$EnumHingePosition
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockStoneBrick from mixins.common.core.json into net.minecraft.block.BlockStoneBrick
+[02:09:15] [main/DEBUG] [mixin]: Mixing data.types.MixinBlockStoneBrickEnumType from mixins.common.core.json into net.minecraft.block.BlockStoneBrick$EnumType
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockLever from mixins.common.core.json into net.minecraft.block.BlockLever
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockTNT from mixins.common.core.json into net.minecraft.block.BlockTNT
+[02:09:15] [main/DEBUG] [mixin]: Mixing entity.item.MixinEntityTNTPrimed from mixins.common.core.json into net.minecraft.entity.item.EntityTNTPrimed
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockBed from mixins.common.core.json into net.minecraft.block.BlockBed
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockRedstoneComparator from mixins.common.core.json into net.minecraft.block.BlockRedstoneComparator
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockRedstoneDiode from mixins.common.core.json into net.minecraft.block.BlockRedstoneDiode
+[02:09:15] [main/DEBUG] [mixin]: Mixing tileentity.MixinTileEntityComparator from mixins.common.core.json into net.minecraft.tileentity.TileEntityComparator
+[02:09:15] [main/DEBUG] [mixin]: Mixing data.types.MixinBlockRedstoneComparatorMode from mixins.common.core.json into net.minecraft.block.BlockRedstoneComparator$Mode
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockCocoa from mixins.common.core.json into net.minecraft.block.BlockCocoa
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockFenceGate from mixins.common.core.json into net.minecraft.block.BlockFenceGate
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockRedstoneWire from mixins.common.core.json into net.minecraft.block.BlockRedstoneWire
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockTripWire from mixins.common.core.json into net.minecraft.block.BlockTripWire
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockPressurePlateWeighted from mixins.common.core.json into net.minecraft.block.BlockPressurePlateWeighted
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockPressurePlate from mixins.common.core.json into net.minecraft.block.BlockPressurePlate
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockTrapDoor from mixins.common.core.json into net.minecraft.block.BlockTrapDoor
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockRedstoneRepeater from mixins.common.core.json into net.minecraft.block.BlockRedstoneRepeater
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockConcretePowder from mixins.common.core.json into net.minecraft.block.BlockConcretePowder
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinDyeableBlock from mixins.common.core.json into net.minecraft.block.BlockConcretePowder
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockDynamicLiquid from mixins.common.core.json into net.minecraft.block.BlockDynamicLiquid
+[02:09:15] [main/DEBUG] [mixin]: Mixing tileentity.MixinTileEntityNote from mixins.common.core.json into net.minecraft.tileentity.TileEntityNote
+[02:09:15] [main/DEBUG] [mixin]: Mixing tileentity.MixinTileEntityPiston from mixins.common.core.json into net.minecraft.tileentity.TileEntityPiston
+[02:09:15] [main/DEBUG] [mixin]: Mixing data.types.MixinBlockFlowerEnumFlowerType from mixins.common.core.json into net.minecraft.block.BlockFlower$EnumFlowerType
+[02:09:15] [main/DEBUG] [mixin]: Mixing world.gen.populators.MixinWorldGenBigMushroom from mixins.common.core.json into net.minecraft.world.gen.feature.WorldGenBigMushroom
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockDoubleStoneSlab from mixins.common.core.json into net.minecraft.block.BlockDoubleStoneSlab
+[02:09:15] [main/DEBUG] [mixin]: Mixing sound.MixinSoundCategory from mixins.common.core.json into net.minecraft.util.SoundCategory
+[02:09:15] [main/DEBUG] [mixin]: Mixing tileentity.MixinTileEntityMobSpawner from mixins.common.core.json into net.minecraft.tileentity.TileEntityMobSpawner
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockChest from mixins.common.core.json into net.minecraft.block.BlockChest
+[02:09:15] [main/DEBUG] [mixin]: Mixing tileentity.MixinTileEntityChest from mixins.common.core.json into net.minecraft.tileentity.TileEntityChest
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockFurnace from mixins.common.core.json into net.minecraft.block.BlockFurnace
+[02:09:15] [main/DEBUG] [mixin]: Mixing tileentity.MixinTileEntityFurnace from mixins.common.core.json into net.minecraft.tileentity.TileEntityFurnace
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockLadder from mixins.common.core.json into net.minecraft.block.BlockLadder
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockWallSign from mixins.common.core.json into net.minecraft.block.BlockWallSign
+[02:09:15] [main/DEBUG] [mixin]: Mixing util.datafix.MixinDataFixer from mixins.common.core.json into net.minecraft.util.datafix.DataFixer
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockPumpkin from mixins.common.core.json into net.minecraft.block.BlockPumpkin
+[02:09:15] [main/DEBUG] [mixin]: Mixing entity.monster.MixinEntitySnowman from mixins.common.core.json into net.minecraft.entity.monster.EntitySnowman
+[02:09:15] [main/DEBUG] [mixin]: Mixing entity.monster.MixinEntityGolem from mixins.common.core.json into net.minecraft.entity.monster.EntityGolem
+[02:09:15] [main/DEBUG] [mixin]: Mixing entity.monster.MixinEntityIronGolem from mixins.common.core.json into net.minecraft.entity.monster.EntityIronGolem
+[02:09:15] [main/DEBUG] [mixin]: Mixing tileentity.MixinTileEntityEnchantmentTable from mixins.common.core.json into net.minecraft.tileentity.TileEntityEnchantmentTable
+[02:09:15] [main/DEBUG] [mixin]: Mixing tileentity.MixinTileEntityEndPortal from mixins.common.core.json into net.minecraft.tileentity.TileEntityEndPortal
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockDoubleWoodSlab from mixins.common.core.json into net.minecraft.block.BlockDoubleWoodSlab
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockEnderChest from mixins.common.core.json into net.minecraft.block.BlockEnderChest
+[02:09:15] [main/DEBUG] [mixin]: Mixing tileentity.MixinTileEntityEnderChest from mixins.common.core.json into net.minecraft.tileentity.TileEntityEnderChest
+[02:09:15] [main/DEBUG] [mixin]: Mixing block.MixinBlockCommandBlock from mixins.common.core.json into net.minecraft.block.BlockCommandBlock
+[02:09:15] [main/DEBUG] [mixin]: Mixing command.MixinCommandBlockSource from mixins.common.core.json into net.minecraft.tileentity.TileEntityCommandBlock
+[02:09:15] [main/DEBUG] [mixin]: Mixing command.MixinCommandSource from mixins.common.core.json into net.minecraft.tileentity.TileEntityCommandBlock
+[02:09:15] [main/DEBUG] [mixin]: Mixing command.MixinSubject from mixins.common.core.json into net.minecraft.tileentity.TileEntityCommandBlock
+[02:09:15] [main/DEBUG] [mixin]: Mixing tileentity.MixinTileEntityCommandBlock from mixins.common.core.json into net.minecraft.tileentity.TileEntityCommandBlock
+[02:09:15] [main/DEBUG] [mixin]: Mixing tileentity.MixinTileEntityBeacon from mixins.common.core.json into net.minecraft.tileentity.TileEntityBeacon
+[02:09:16] [main/DEBUG] [mixin]: Mixing block.MixinBlockDropper from mixins.common.core.json into net.minecraft.block.BlockDropper
+[02:09:16] [main/DEBUG] [mixin]: Mixing tileentity.MixinTileEntityDropper from mixins.common.core.json into net.minecraft.tileentity.TileEntityDropper
+[02:09:16] [main/DEBUG] [mixin]: Mixing block.MixinBlockHay from mixins.common.core.json into net.minecraft.block.BlockHay
+[02:09:16] [main/DEBUG] [mixin]: Mixing block.MixinBlockBannerStanding from mixins.common.core.json into net.minecraft.block.BlockBanner$BlockBannerStanding
+[02:09:16] [main/DEBUG] [mixin]: Mixing block.MixinBlockBannerHanging from mixins.common.core.json into net.minecraft.block.BlockBanner$BlockBannerHanging
+[02:09:16] [main/DEBUG] [mixin]: Mixing block.MixinBlockDoubleStoneSlab from mixins.common.core.json into net.minecraft.block.BlockDoubleStoneSlabNew
+[02:09:16] [main/DEBUG] [mixin]: Mixing tileentity.MixinTileEntityEndGateway from mixins.common.core.json into net.minecraft.tileentity.TileEntityEndGateway
+[02:09:16] [main/DEBUG] [mixin]: Mixing block.MixinBlockMagma from mixins.common.core.json into net.minecraft.block.BlockMagma
+[02:09:16] [main/DEBUG] [mixin]: Mixing tileentity.MixinTileEntityShulkerBox from mixins.common.core.json into net.minecraft.tileentity.TileEntityShulkerBox
+[02:09:16] [main/DEBUG] [mixin]: Mixing tileentity.MixinTileEntityStructure from mixins.common.core.json into net.minecraft.tileentity.TileEntityStructure
+[02:09:16] [main/DEBUG] [mixin]: Mixing tileentity.MixinTileEntityStructureMode from mixins.common.core.json into net.minecraft.tileentity.TileEntityStructure$Mode
+[02:09:16] [main/DEBUG] [mixin]: Mixing potion.MixinPotion from mixins.common.core.json into net.minecraft.potion.Potion
+[02:09:16] [main/DEBUG] [mixin]: Mixing item.MixinEnchantment from mixins.common.core.json into net.minecraft.enchantment.Enchantment
+[02:09:16] [main/DEBUG] [mixin]: Mixing enchantment.MixinEnchantment from mixins.vanilla.core.json into net.minecraft.enchantment.Enchantment
+[02:09:16] [main/DEBUG] [mixin]: Mixing item.MixinItemBlock from mixins.common.core.json into net.minecraft.item.ItemAir
+[02:09:16] [main/DEBUG] [mixin]: Mixing item.MixinItemBlock from mixins.common.core.json into net.minecraft.item.ItemBlock
+[02:09:16] [main/DEBUG] [mixin]: Mixing item.MixinItemToolMaterial from mixins.common.core.json into net.minecraft.item.Item$ToolMaterial
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.projectile.MixinEntityArrow from mixins.common.core.json into net.minecraft.entity.projectile.EntityArrow
+[02:09:16] [main/DEBUG] [mixin]: Mixing MixinEntityArrow_Activation from mixins.common.entityactivation.json into net.minecraft.entity.projectile.EntityArrow
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.projectile.MixinEntityTippedArrow from mixins.common.core.json into net.minecraft.entity.projectile.EntityTippedArrow
+[02:09:16] [main/DEBUG] [mixin]: Mixing item.MixinItemBlock from mixins.common.core.json into net.minecraft.item.ItemBlockSpecial
+[02:09:16] [main/DEBUG] [mixin]: Mixing item.MixinItemArmorMaterial from mixins.common.core.json into net.minecraft.item.ItemArmor$ArmorMaterial
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.MixinEntityHanging from mixins.common.core.json into net.minecraft.entity.EntityHanging
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.item.MixinEntityPainting from mixins.common.core.json into net.minecraft.entity.item.EntityPainting
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.item.MixinEntityItemFrame from mixins.common.core.json into net.minecraft.entity.item.EntityItemFrame
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.item.MixinEntityMinecart from mixins.common.core.json into net.minecraft.entity.item.EntityMinecart
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.item.MixinEntityMinecart from mixins.vanilla.core.json into net.minecraft.entity.item.EntityMinecart
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.projectile.MixinEntitySnowball from mixins.common.core.json into net.minecraft.entity.projectile.EntitySnowball
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.projectile.MixinEntityThrowable from mixins.common.core.json into net.minecraft.entity.projectile.EntityThrowable
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.item.MixinEntityBoat from mixins.common.core.json into net.minecraft.entity.item.EntityBoat
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.projectile.MixinEntityEgg from mixins.common.core.json into net.minecraft.entity.projectile.EntityEgg
+[02:09:16] [main/DEBUG] [mixin]: Mixing item.MixinItemFishingRod from mixins.common.core.json into net.minecraft.item.ItemFishingRod
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.projectile.MixinEntityFishHook from mixins.common.core.json into net.minecraft.entity.projectile.EntityFishHook
+[02:09:16] [main/DEBUG] [mixin]: Mixing item.MixinItemMap from mixins.common.core.json into net.minecraft.item.ItemMap
+[02:09:16] [main/DEBUG] [mixin]: Mixing potion.MixinPotionEffect from mixins.common.core.json into net.minecraft.potion.PotionEffect
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.item.MixinEntityEnderPearl from mixins.common.core.json into net.minecraft.entity.item.EntityEnderPearl
+[02:09:16] [main/DEBUG] [mixin]: Mixing item.MixinItemEnderEye from mixins.common.core.json into net.minecraft.item.ItemEnderEye
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.item.MixinEntityEnderEye from mixins.common.core.json into net.minecraft.entity.item.EntityEnderEye
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.item.MixinEntityExpBottle from mixins.common.core.json into net.minecraft.entity.item.EntityExpBottle
+[02:09:16] [main/DEBUG] [mixin]: Mixing item.data.MixinItemWritableBook from mixins.common.core.json into net.minecraft.item.ItemWritableBook
+[02:09:16] [main/DEBUG] [mixin]: Mixing item.data.MixinItemWrittenBook from mixins.common.core.json into net.minecraft.item.ItemWrittenBook
+[02:09:16] [main/DEBUG] [mixin]: Mixing item.MixinItemFirework from mixins.common.core.json into net.minecraft.item.ItemFirework
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.item.MixinEntityFireworkRocket from mixins.common.core.json into net.minecraft.entity.item.EntityFireworkRocket
+[02:09:16] [main/DEBUG] [mixin]: Mixing MixinEntityFireworkRocket_Activation from mixins.common.entityactivation.json into net.minecraft.entity.item.EntityFireworkRocket
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.MixinArmorEquipable from mixins.common.core.json into net.minecraft.entity.item.EntityArmorStand
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.item.MixinEntityArmorStand from mixins.common.core.json into net.minecraft.entity.item.EntityArmorStand
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.MixinEntityLeashKnot from mixins.common.core.json into net.minecraft.entity.EntityLeashKnot
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.item.MixinEntityEnderCrystal from mixins.common.core.json into net.minecraft.entity.item.EntityEnderCrystal
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.projectile.MixinEntityPotion from mixins.common.core.json into net.minecraft.entity.projectile.EntityPotion
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.projectile.MixinEntitySpectralArrow from mixins.common.core.json into net.minecraft.entity.projectile.EntitySpectralArrow
+[02:09:16] [main/DEBUG] [mixin]: Mixing item.recipe.crafting.MixinIngredient from mixins.common.core.json into net.minecraft.item.crafting.Ingredient
+[02:09:16] [main/DEBUG] [mixin]: Mixing data.types.MixinFishType from mixins.common.core.json into net.minecraft.item.ItemFishFood$FishType
+[02:09:16] [main/DEBUG] [mixin]: Mixing scoreboard.MixinScorePlayerTeam from mixins.common.core.json into net.minecraft.scoreboard.ScorePlayerTeam
+[02:09:16] [main/DEBUG] [mixin]: Mixing world.MixinWorldServer from mixins.common.core.json into net.minecraft.world.WorldServer
+[02:09:16] [main/DEBUG] [mixin]: Mixing world.MixinWorldServer_Async_Lighting from mixins.common.optimization.json into net.minecraft.world.WorldServer
+[02:09:16] [main/DEBUG] [mixin]: Mixing world.MixinWorldServer from mixins.vanilla.core.json into net.minecraft.world.WorldServer
+[02:09:16] [main/DEBUG] [mixin]: Mixing MixinWorldServer_Activation from mixins.common.entityactivation.json into net.minecraft.world.WorldServer
+[02:09:16] [main/DEBUG] [mixin]: Mixing MixinWorldServer_Explosion from mixins.common.optimization.json into net.minecraft.world.WorldServer
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.IMixinAreaEffectCloud from mixins.common.core.json into net.minecraft.entity.EntityAreaEffectCloud
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.MixinEntityAreaEffectCloud from mixins.common.core.json into net.minecraft.entity.EntityAreaEffectCloud
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.monster.MixinEntityGuardian from mixins.common.core.json into net.minecraft.entity.monster.EntityGuardian
+[02:09:16] [main/DEBUG] [mixin]: Mixing text.MixinText from mixins.common.api.json into org.spongepowered.api.text.Text
+[02:09:16] [main/DEBUG] [mixin]: Mixing text.MixinTextLiteral from mixins.common.api.json into org.spongepowered.api.text.LiteralText
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.ai.MixinEntityAIBase from mixins.common.core.json into net.minecraft.entity.ai.EntityAIBase
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.ai.MixinEntityAIWander from mixins.common.core.json into net.minecraft.entity.ai.EntityAIWander
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.ai.MixinEntityAIWatchClosest from mixins.common.core.json into net.minecraft.entity.ai.EntityAIWatchClosest
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.ai.MixinEntityAILookIdle from mixins.common.core.json into net.minecraft.entity.ai.EntityAILookIdle
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.ai.MixinEntityAINearestAttackableTarget from mixins.common.core.json into net.minecraft.entity.ai.EntityAINearestAttackableTarget
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.ai.MixinEntityAITarget from mixins.common.core.json into net.minecraft.entity.ai.EntityAITarget
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.monster.MixinEntityWitherSkeleton from mixins.common.core.json into net.minecraft.entity.monster.EntityWitherSkeleton
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.MixinArmorEquipable from mixins.common.core.json into net.minecraft.entity.monster.AbstractSkeleton
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.monster.MixinAbstractSkeleton from mixins.common.core.json into net.minecraft.entity.monster.AbstractSkeleton
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.ai.MixinEntityAIAttackMelee from mixins.common.core.json into net.minecraft.entity.ai.EntityAIAttackMelee
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.ai.MixinEntityAISwimming from mixins.common.core.json into net.minecraft.entity.ai.EntityAISwimming
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.ai.MixinEntityAIAvoidEntity from mixins.common.core.json into net.minecraft.entity.ai.EntityAIAvoidEntity
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.monster.MixinEntityStray from mixins.common.core.json into net.minecraft.entity.monster.EntityStray
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.passive.MixinEntityChicken from mixins.common.core.json into net.minecraft.entity.passive.EntityChicken
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.passive.MixinEntityAnimal from mixins.common.core.json into net.minecraft.entity.passive.EntityAnimal
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.MixinEntityAgeable from mixins.common.core.json into net.minecraft.entity.EntityAgeable
+[02:09:16] [main/DEBUG] [mixin]: Mixing MixinEntityAgeable_Activation from mixins.common.entityactivation.json into net.minecraft.entity.EntityAgeable
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.MixinGriefer from mixins.common.core.json into net.minecraft.entity.projectile.EntityLargeFireball
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.projectile.MixinEntityLargeFireball from mixins.common.core.json into net.minecraft.entity.projectile.EntityLargeFireball
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.projectile.MixinEntityFireball from mixins.common.core.json into net.minecraft.entity.projectile.EntityFireball
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.MixinGriefer from mixins.common.core.json into net.minecraft.entity.projectile.EntitySmallFireball
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.projectile.MixinEntitySmallFireball from mixins.common.core.json into net.minecraft.entity.projectile.EntitySmallFireball
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.monster.MixinEntityEndermite from mixins.common.core.json into net.minecraft.entity.monster.EntityEndermite
+[02:09:16] [main/DEBUG] [mixin]: Mixing command.MixinCommandSource from mixins.common.core.json into net.minecraft.entity.player.EntityPlayerMP
+[02:09:16] [main/DEBUG] [mixin]: Mixing command.MixinICommandSender from mixins.common.core.json into net.minecraft.entity.player.EntityPlayerMP
+[02:09:16] [main/DEBUG] [mixin]: Mixing command.MixinSubject from mixins.common.core.json into net.minecraft.entity.player.EntityPlayerMP
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.MixinArmorEquipable from mixins.common.core.json into net.minecraft.entity.player.EntityPlayerMP
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.player.MixinEntityPlayerMP from mixins.common.core.json into net.minecraft.entity.player.EntityPlayerMP
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.player.MixinEntityPlayerMP from mixins.vanilla.core.json into net.minecraft.entity.player.EntityPlayerMP
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.MixinGriefer from mixins.common.core.json into net.minecraft.entity.projectile.EntityWitherSkull
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.projectile.MixinEntityWitherSkull from mixins.common.core.json into net.minecraft.entity.projectile.EntityWitherSkull
+[02:09:16] [main/DEBUG] [mixin]: Mixing event.cause.entity.damage.MixinMinecraftFallingBlockDamageSource from mixins.common.core.json into org.spongepowered.common.event.damage.MinecraftFallingBlockDamageSource
+[02:09:16] [main/DEBUG] [mixin]: Mixing util.MixinEntityDamageSource from mixins.common.core.json into net.minecraft.util.EntityDamageSource
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.monster.MixinEntityHusk from mixins.common.core.json into net.minecraft.entity.monster.EntityHusk
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.MixinArmorEquipable from mixins.common.core.json into net.minecraft.entity.monster.EntityZombie
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.monster.MixinEntityZombie from mixins.common.core.json into net.minecraft.entity.monster.EntityZombie
+[02:09:16] [main/DEBUG] [mixin]: Mixing item.inventory.MixinTraitInventory from mixins.common.core.json into net.minecraft.entity.passive.EntityVillager
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.passive.MixinEntityVillager from mixins.common.core.json into net.minecraft.entity.passive.EntityVillager
+[02:09:16] [main/DEBUG] [mixin]: Mixing item.merchant.MixinMerchant from mixins.common.api.json into org.spongepowered.api.item.merchant.Merchant
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.monster.MixinEntityZombieVillager from mixins.common.core.json into net.minecraft.entity.monster.EntityZombieVillager
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.ai.MixinEntityAIBreakDoor from mixins.common.core.json into net.minecraft.entity.ai.EntityAIBreakDoor
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.MixinEntityShulkerBullet from mixins.common.core.json into net.minecraft.entity.projectile.EntityShulkerBullet
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.projectile.MixinEntityDragonFireball from mixins.common.core.json into net.minecraft.entity.projectile.EntityDragonFireball
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.passive.MixinEntitySkeletonHorse from mixins.common.core.json into net.minecraft.entity.passive.EntitySkeletonHorse
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.passive.MixinAbstractHorse from mixins.common.core.json into net.minecraft.entity.passive.AbstractHorse
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.ai.MixinEntityAIRunAroundLikeCrazy from mixins.common.core.json into net.minecraft.entity.ai.EntityAIRunAroundLikeCrazy
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.ai.MixinEntityAIMate from mixins.common.core.json into net.minecraft.entity.ai.EntityAIMate
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.passive.MixinEntityZombieHorse from mixins.common.core.json into net.minecraft.entity.passive.EntityZombieHorse
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.passive.MixinEntityDonkey from mixins.common.core.json into net.minecraft.entity.passive.EntityDonkey
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.passive.MixinEntityMule from mixins.common.core.json into net.minecraft.entity.passive.EntityMule
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.monster.MixinEntityEvoker from mixins.common.core.json into net.minecraft.entity.monster.EntityEvoker
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.monster.MixinEntityVex from mixins.common.core.json into net.minecraft.entity.monster.EntityVex
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.monster.MixinEntityVindicator from mixins.common.core.json into net.minecraft.entity.monster.EntityVindicator
+[02:09:16] [main/DEBUG] [mixin]: Mixing command.MixinCommandBlockSource from mixins.common.core.json into net.minecraft.entity.item.EntityMinecartCommandBlock
+[02:09:16] [main/DEBUG] [mixin]: Mixing command.MixinCommandSource from mixins.common.core.json into net.minecraft.entity.item.EntityMinecartCommandBlock
+[02:09:16] [main/DEBUG] [mixin]: Mixing command.MixinSubject from mixins.common.core.json into net.minecraft.entity.item.EntityMinecartCommandBlock
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.MixinEntityMinecartCommandBlock from mixins.common.core.json into net.minecraft.entity.item.EntityMinecartCommandBlock
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.item.MixinEntityMinecartChest from mixins.common.core.json into net.minecraft.entity.item.EntityMinecartChest
+[02:09:16] [main/DEBUG] [mixin]: Mixing item.inventory.MixinTraitInventory from mixins.common.core.json into net.minecraft.entity.item.EntityMinecartContainer
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.item.MixinEntityMinecartContainer from mixins.common.core.json into net.minecraft.entity.item.EntityMinecartContainer
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.item.MixinEntityMinecartFurnace from mixins.common.core.json into net.minecraft.entity.item.EntityMinecartFurnace
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.item.MixinEntityMinecartTNT from mixins.common.core.json into net.minecraft.entity.item.EntityMinecartTNT
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.ai.MixinEntityMinecartMobSpawner from mixins.common.core.json into net.minecraft.entity.item.EntityMinecartMobSpawner
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.item.MixinEntityMinecartHopper from mixins.common.core.json into net.minecraft.entity.item.EntityMinecartHopper
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.item.MixinEntityMinecartEmpty from mixins.common.core.json into net.minecraft.entity.item.EntityMinecartEmpty
+[02:09:16] [main/DEBUG] [mixin]: Mixing command.MixinCommandSendCommandFeedback from mixins.common.core.json into net.minecraft.tileentity.CommandBlockBaseLogic
+[02:09:16] [main/DEBUG] [mixin]: Mixing command.MixinICommandSender from mixins.common.core.json into net.minecraft.tileentity.CommandBlockBaseLogic
+[02:09:16] [main/DEBUG] [mixin]: Mixing command.MixinMinecartCommandBlockSender from mixins.common.core.json into net.minecraft.entity.item.EntityMinecartCommandBlock$1
+[02:09:16] [main/DEBUG] [mixin]: Mixing item.inventory.MixinContainer from mixins.common.core.json into net.minecraft.inventory.Container
+[02:09:16] [main/DEBUG] [mixin]: Mixing item.inventory.MixinTraitInventory from mixins.common.core.json into net.minecraft.inventory.Container
+[02:09:16] [main/DEBUG] [mixin]: Mixing item.inventory.MixinContainerCanInteract from mixins.common.core.json into net.minecraft.inventory.ContainerChest
+[02:09:16] [main/DEBUG] [mixin]: Mixing item.inventory.MixinContainerCanInteract from mixins.common.core.json into net.minecraft.inventory.ContainerHopper
+[02:09:16] [main/DEBUG] [mixin]: Mixing tileentity.MixinMobSpawnerBaseLogic from mixins.common.core.json into net.minecraft.tileentity.MobSpawnerBaseLogic
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.monster.MixinEntityCreeper from mixins.common.core.json into net.minecraft.entity.monster.EntityCreeper
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.monster.MixinEntitySkeleton from mixins.common.core.json into net.minecraft.entity.monster.EntitySkeleton
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.monster.MixinEntitySpider from mixins.common.core.json into net.minecraft.entity.monster.EntitySpider
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.MixinArmorEquipable from mixins.common.core.json into net.minecraft.entity.monster.EntityGiantZombie
+[02:09:16] [main/DEBUG] [mixin]: Mixing entity.monster.MixinEntityGiantZombie from mixins.common.core.json into net.minecraft.entity.monster.EntityGiantZombie
+[02:09:17] [main/DEBUG] [mixin]: Mixing entity.monster.MixinEntitySlime from mixins.common.core.json into net.minecraft.entity.monster.EntitySlime
+[02:09:17] [main/DEBUG] [mixin]: Mixing entity.monster.MixinEntityGhast from mixins.common.core.json into net.minecraft.entity.monster.EntityGhast
+[02:09:17] [main/DEBUG] [mixin]: Mixing entity.MixinEntityFlying from mixins.common.core.json into net.minecraft.entity.EntityFlying
+[02:09:17] [main/DEBUG] [mixin]: Mixing entity.ai.MixinEntityGhastAIFireballAttack from mixins.common.core.json into net.minecraft.entity.monster.EntityGhast$AIFireballAttack
+[02:09:17] [main/DEBUG] [mixin]: Mixing entity.monster.MixinEntityPigZombie from mixins.common.core.json into net.minecraft.entity.monster.EntityPigZombie
+[02:09:17] [main/DEBUG] [mixin]: Mixing entity.monster.MixinEntityEnderman from mixins.common.core.json into net.minecraft.entity.monster.EntityEnderman
+[02:09:17] [main/DEBUG] [mixin]: Mixing entity.ai.MixinEntityEndermanAIPlaceBlock from mixins.common.core.json into net.minecraft.entity.monster.EntityEnderman$AIPlaceBlock
+[02:09:17] [main/DEBUG] [mixin]: Mixing entity.ai.MixinEntityEndermanAITakeBlock from mixins.common.core.json into net.minecraft.entity.monster.EntityEnderman$AITakeBlock
+[02:09:17] [main/DEBUG] [mixin]: Mixing entity.monster.MixinEntityCaveSpider from mixins.common.core.json into net.minecraft.entity.monster.EntityCaveSpider
+[02:09:17] [main/DEBUG] [mixin]: Mixing entity.ai.MixinEntitySilverfishAISummon from mixins.common.core.json into net.minecraft.entity.monster.EntitySilverfish$AISummonSilverfish
+[02:09:17] [main/DEBUG] [mixin]: Mixing entity.ai.MixinEntitySilverfishAIHideInStone from mixins.common.core.json into net.minecraft.entity.monster.EntitySilverfish$AIHideInStone
+[02:09:17] [main/DEBUG] [mixin]: Mixing entity.monster.MixinEntityBlaze from mixins.common.core.json into net.minecraft.entity.monster.EntityBlaze
+[02:09:17] [main/DEBUG] [mixin]: Mixing entity.ai.MixinEntityBlazeAIFireballAttack from mixins.common.core.json into net.minecraft.entity.monster.EntityBlaze$AIFireballAttack
+[02:09:17] [main/DEBUG] [mixin]: Mixing entity.monster.MixinEntityMagmaCube from mixins.common.core.json into net.minecraft.entity.monster.EntityMagmaCube
+[02:09:17] [main/DEBUG] [mixin]: Mixing entity.boss.MixinEntityDragon from mixins.common.core.json into net.minecraft.entity.boss.EntityDragon
+[02:09:17] [main/DEBUG] [mixin]: Mixing entity.MixinMultiPartEntityPart from mixins.common.core.json into net.minecraft.entity.MultiPartEntityPart
+[02:09:17] [main/DEBUG] [mixin]: Mixing entity.ai.MixinEntityAIAttackRanged from mixins.common.core.json into net.minecraft.entity.ai.EntityAIAttackRanged
+[02:09:17] [main/DEBUG] [mixin]: Mixing entity.passive.MixinEntityBat from mixins.common.core.json into net.minecraft.entity.passive.EntityBat
+[02:09:17] [main/DEBUG] [mixin]: Mixing entity.passive.MixinEntityAmbientCreature from mixins.common.core.json into net.minecraft.entity.passive.EntityAmbientCreature
+[02:09:17] [main/DEBUG] [mixin]: Mixing entity.monster.MixinEntityWitch from mixins.common.core.json into net.minecraft.entity.monster.EntityWitch
+[02:09:17] [main/DEBUG] [mixin]: Mixing entity.monster.MixinEntityShulker from mixins.common.core.json into net.minecraft.entity.monster.EntityShulker
+[02:09:17] [main/DEBUG] [mixin]: Mixing entity.passive.MixinEntityPig from mixins.common.core.json into net.minecraft.entity.passive.EntityPig
+[02:09:17] [main/DEBUG] [mixin]: Mixing entity.passive.MixinEntitySheep from mixins.common.core.json into net.minecraft.entity.passive.EntitySheep
+[02:09:17] [main/DEBUG] [mixin]: Mixing entity.ai.MixinEntityAIEatGrass from mixins.common.core.json into net.minecraft.entity.ai.EntityAIEatGrass
+[02:09:17] [main/DEBUG] [mixin]: Mixing entity.passive.MixinEntityCow from mixins.common.core.json into net.minecraft.entity.passive.EntityCow
+[02:09:17] [main/DEBUG] [mixin]: Mixing entity.passive.MixinEntitySquid from mixins.common.core.json into net.minecraft.entity.passive.EntitySquid
+[02:09:17] [main/DEBUG] [mixin]: Mixing entity.passive.MixinEntityWaterMob from mixins.common.core.json into net.minecraft.entity.passive.EntityWaterMob
+[02:09:17] [main/DEBUG] [mixin]: Mixing entity.passive.MixinEntityWolf from mixins.common.core.json into net.minecraft.entity.passive.EntityWolf
+[02:09:17] [main/DEBUG] [mixin]: Mixing entity.passive.MixinEntityTameable from mixins.common.core.json into net.minecraft.entity.passive.EntityTameable
+[02:09:17] [main/DEBUG] [mixin]: Mixing entity.MixinEntityTameable_Cached_Owner from mixins.common.optimization.json into net.minecraft.entity.passive.EntityTameable
+[02:09:17] [main/DEBUG] [mixin]: Mixing entity.passive.MixinEntityMooshroom from mixins.common.core.json into net.minecraft.entity.passive.EntityMooshroom
+[02:09:17] [main/DEBUG] [mixin]: Mixing entity.passive.MixinEntityOcelot from mixins.common.core.json into net.minecraft.entity.passive.EntityOcelot
+[02:09:17] [main/DEBUG] [mixin]: Mixing entity.passive.MixinEntityHorse from mixins.common.core.json into net.minecraft.entity.passive.EntityHorse
+[02:09:17] [main/DEBUG] [mixin]: Mixing entity.passive.MixinEntityRabbit from mixins.common.core.json into net.minecraft.entity.passive.EntityRabbit
+[02:09:17] [main/DEBUG] [mixin]: Mixing entity.ai.MixinEntityRabbitAIRaidFarm from mixins.common.core.json into net.minecraft.entity.passive.EntityRabbit$AIRaidFarm
+[02:09:17] [main/DEBUG] [mixin]: Mixing entity.passive.MixinEntityPolarBear from mixins.common.core.json into net.minecraft.entity.monster.EntityPolarBear
+[02:09:17] [main/DEBUG] [mixin]: Mixing entity.passive.MixinEntityLlama from mixins.common.core.json into net.minecraft.entity.passive.EntityLlama
+[02:09:17] [main/DEBUG] [mixin]: Mixing entity.projectile.MixinEntityLlamaSpit from mixins.common.core.json into net.minecraft.entity.projectile.EntityLlamaSpit
+[02:09:17] [main/DEBUG] [mixin]: Mixing entity.passive.MixinEntityParrot from mixins.common.core.json into net.minecraft.entity.passive.EntityParrot
+[02:09:17] [main/DEBUG] [mixin]: Mixing entity.ai.MixinEntityAIHarvestFarmland from mixins.common.core.json into net.minecraft.entity.ai.EntityAIHarvestFarmland
+[02:09:17] [main/DEBUG] [mixin]: Mixing stats.MixinStatList from mixins.common.core.json into net.minecraft.stats.StatList
+[02:09:17] [main/DEBUG] [mixin]: Mixing stats.MixinStatCrafting from mixins.common.core.json into net.minecraft.stats.StatCrafting
+[02:09:17] [main/DEBUG] [mixin]: Mixing stats.MixinStatBase from mixins.common.core.json into net.minecraft.stats.StatBase
+[02:09:17] [main/DEBUG] [mixin]: Mixing text.MixinTextComponentTranslation from mixins.common.core.json into net.minecraft.util.text.TextComponentTranslation
+[02:09:17] [main/DEBUG] [mixin]: Mixing text.MixinTextComponentBase from mixins.common.core.json into net.minecraft.util.text.TextComponentBase
+[02:09:17] [main/DEBUG] [mixin]: Mixing scoreboard.MixinCriterion from mixins.common.core.json into net.minecraft.scoreboard.ScoreCriteria
+[02:09:17] [main/DEBUG] [mixin]: Mixing scoreboard.MixinCriterion from mixins.common.core.json into net.minecraft.scoreboard.ScoreCriteriaColored
+[02:09:17] [main/DEBUG] [mixin]: Mixing world.biome.MixinBiome from mixins.common.core.json into net.minecraft.world.biome.Biome
+[02:09:17] [main/DEBUG] [mixin]: Mixing world.biome.MixinBiomePlains from mixins.common.core.json into net.minecraft.world.biome.BiomePlains
+[02:09:17] [main/DEBUG] [mixin]: Mixing world.biome.MixinBiomeDesert from mixins.common.core.json into net.minecraft.world.biome.BiomeDesert
+[02:09:17] [main/DEBUG] [mixin]: Mixing world.biome.MixinBiomeHills from mixins.common.core.json into net.minecraft.world.biome.BiomeHills
+[02:09:17] [main/DEBUG] [mixin]: Mixing world.biome.MixinBiomeForest from mixins.common.core.json into net.minecraft.world.biome.BiomeForest
+[02:09:17] [main/DEBUG] [mixin]: Mixing world.biome.MixinBiomeTaiga from mixins.common.core.json into net.minecraft.world.biome.BiomeTaiga
+[02:09:17] [main/DEBUG] [mixin]: Mixing world.biome.MixinBiomeSwamp from mixins.common.core.json into net.minecraft.world.biome.BiomeSwamp
+[02:09:17] [main/DEBUG] [mixin]: Mixing world.biome.MixinBiomeHell from mixins.common.core.json into net.minecraft.world.biome.BiomeHell
+[02:09:17] [main/DEBUG] [mixin]: Mixing world.biome.MixinBiomeEnd from mixins.common.core.json into net.minecraft.world.biome.BiomeEnd
+[02:09:17] [main/DEBUG] [mixin]: Mixing world.biome.MixinBiomeSnow from mixins.common.core.json into net.minecraft.world.biome.BiomeSnow
+[02:09:17] [main/DEBUG] [mixin]: Mixing world.biome.MixinBiomeJungle from mixins.common.core.json into net.minecraft.world.biome.BiomeJungle
+[02:09:17] [main/DEBUG] [mixin]: Mixing world.biome.MixinBiomeSavanna from mixins.common.core.json into net.minecraft.world.biome.BiomeSavanna
+[02:09:17] [main/DEBUG] [mixin]: Mixing world.biome.MixinBiomeMesa from mixins.common.core.json into net.minecraft.world.biome.BiomeMesa
+[02:09:17] [main/DEBUG] [mixin]: Mixing world.gen.populators.MixinWorldGenTallGrass from mixins.common.core.json into net.minecraft.world.gen.feature.WorldGenTallGrass
+[02:09:17] [main/DEBUG] [mixin]: Mixing world.gen.populators.MixinWorldGenDoublePlant from mixins.common.core.json into net.minecraft.world.gen.feature.WorldGenDoublePlant
+[02:09:17] [main/DEBUG] [mixin]: Mixing world.gen.populators.MixinWorldGenSwamp from mixins.common.core.json into net.minecraft.world.gen.feature.WorldGenSwamp
+[02:09:17] [main/DEBUG] [mixin]: Mixing world.gen.populators.MixinWorldGenBush from mixins.common.core.json into net.minecraft.world.gen.feature.WorldGenBush
+[02:09:17] [main/DEBUG] [mixin]: Mixing world.gen.populators.MixinWorldGenReed from mixins.common.core.json into net.minecraft.world.gen.feature.WorldGenReed
+[02:09:17] [main/DEBUG] [mixin]: Mixing world.gen.populators.MixinWorldGenCactus from mixins.common.core.json into net.minecraft.world.gen.feature.WorldGenCactus
+[02:09:17] [main/DEBUG] [mixin]: Mixing world.gen.populators.MixinWorldGenWaterLily from mixins.common.core.json into net.minecraft.world.gen.feature.WorldGenWaterlily
+[02:09:17] [main/DEBUG] [mixin]: Mixing world.gen.populators.MixinWorldGenMinable from mixins.common.core.json into net.minecraft.world.gen.feature.WorldGenMinable
+[02:09:17] [main/DEBUG] [mixin]: Mixing world.gen.populators.MixinWorldGenFlowers from mixins.common.core.json into net.minecraft.world.gen.feature.WorldGenFlowers
+[02:09:17] [main/DEBUG] [mixin]: Mixing world.gen.populators.MixinWorldGenTaiga1 from mixins.common.core.json into net.minecraft.world.gen.feature.WorldGenTaiga1
+[02:09:17] [main/DEBUG] [mixin]: Mixing world.gen.populators.MixinWorldGenBlockBlob from mixins.common.core.json into net.minecraft.world.gen.feature.WorldGenBlockBlob
+[02:09:17] [main/DEBUG] [mixin]: Mixing world.gen.populators.MixinWorldGenIceSpike from mixins.common.core.json into net.minecraft.world.gen.feature.WorldGenIceSpike
+[02:09:17] [main/DEBUG] [mixin]: Mixing world.gen.populators.MixinWorldGenIcePath from mixins.common.core.json into net.minecraft.world.gen.feature.WorldGenIcePath
+[02:09:17] [main/DEBUG] [mixin]: Mixing world.gen.populators.MixinWorldGenShrub from mixins.common.core.json into net.minecraft.world.gen.feature.WorldGenShrub
+[02:09:17] [main/DEBUG] [mixin]: Mixing block.MixinBehaviorProjectileDispense from mixins.common.core.json into net.minecraft.dispenser.BehaviorProjectileDispense
+[02:09:17] [main/DEBUG] [mixin]: Mixing MixinBootstrapAnonInner10 from mixins.common.core.json into net.minecraft.init.Bootstrap$10
+[02:09:17] [main/DEBUG] [mixin]: Mixing MixinBootstrapAnonInner11 from mixins.common.core.json into net.minecraft.init.Bootstrap$11
+[02:09:17] [main/DEBUG] [mixin]: Mixing item.recipe.crafting.MixinIRecipe from mixins.common.core.json into net.minecraft.item.crafting.IRecipe
+[02:09:17] [main/DEBUG] [mixin]: Mixing item.recipe.crafting.MixinShapedRecipes from mixins.common.core.json into net.minecraft.item.crafting.ShapedRecipes
+[02:09:17] [main/DEBUG] [mixin]: Mixing item.recipe.crafting.MixinShapelessRecipes from mixins.common.core.json into net.minecraft.item.crafting.ShapelessRecipes
+[02:09:17] [main/DEBUG] [mixin]: Mixing text.MixinTextComponentString from mixins.common.core.json into net.minecraft.util.text.TextComponentString
+[02:09:17] [main/DEBUG] [mixin]: Mixing text.MixinHoverEvent from mixins.common.core.json into net.minecraft.util.text.event.HoverEvent
+[02:09:17] [main/DEBUG] [mixin]: Mixing item.recipe.smelting.MixinFurnaceRecipes from mixins.common.core.json into net.minecraft.item.crafting.FurnaceRecipes
+[02:09:17] [main/DEBUG] [mixin]: Mixing authlib.MixinGameProfile from mixins.common.core.json into com.mojang.authlib.GameProfile
+[02:09:17] [main/DEBUG] [mixin]: Mixing authlib.MixinPropertyMap from mixins.common.core.json into com.mojang.authlib.properties.PropertyMap
+[02:09:17] [main/DEBUG] [mixin]: Mixing server.management.MixinPlayerProfileCache from mixins.common.core.json into net.minecraft.server.management.PlayerProfileCache
+[02:09:17] [main/DEBUG] [mixin]: Mixing server.management.MixinPlayerProfileCacheEntry from mixins.common.core.json into net.minecraft.server.management.PlayerProfileCache$ProfileEntry
+[02:09:17] [main/DEBUG] [mixin]: Mixing server.MixinPlayerList from mixins.common.core.json into net.minecraft.server.management.PlayerList
+[02:09:17] [main/DEBUG] [mixin]: Mixing MixinPlayerList_ChunkIO from mixins.vanilla.chunkio.json into net.minecraft.server.management.PlayerList
+[02:09:17] [main/DEBUG] [mixin]: Mixing server.management.MixinPlayerList from mixins.vanilla.core.json into net.minecraft.server.management.PlayerList
+[02:09:17] [main/DEBUG] [mixin]: Mixing server.MixinDedicatedPlayerList from mixins.common.core.json into net.minecraft.server.dedicated.DedicatedPlayerList
+[02:09:17] [main/DEBUG] [mixin]: Mixing server.dedicated.MixinConsoleHandler from mixins.vanilla.core.json into net.minecraft.server.dedicated.DedicatedServer$2
+[02:09:17] [main/DEBUG] [mixin]: Mixing world.storage.MixinWorldInfo from mixins.common.core.json into net.minecraft.world.storage.WorldInfo
+[02:09:17] [main/DEBUG] [mixin]: Mixing data.types.MixinEnumDifficulty from mixins.common.core.json into net.minecraft.world.EnumDifficulty
+[02:09:17] [main/DEBUG] [mixin]: Mixing item.inventory.MixinContainerCrafting from mixins.common.core.json into net.minecraft.inventory.ContainerPlayer
+[02:09:17] [main/DEBUG] [mixin]: Mixing item.inventory.MixinContainerPlayer from mixins.common.core.json into net.minecraft.inventory.ContainerPlayer
+[02:09:17] [main/DEBUG] [mixin]: Mixing item.inventory.MixinContainerCanInteract from mixins.common.core.json into net.minecraft.inventory.ContainerPlayer
+[02:09:17] [main/DEBUG] [mixin]: Mixing text.MixinTextTranslatable from mixins.common.api.json into org.spongepowered.api.text.TranslatableText
+[02:09:17] [main/DEBUG] [mixin]: Mixing util.MixinCooldownTracker from mixins.common.core.json into net.minecraft.util.CooldownTracker
+[02:09:17] [main/DEBUG] [mixin]: Mixing util.MixinCooldownTrackerServer from mixins.common.core.json into net.minecraft.util.CooldownTrackerServer
+[02:09:17] [main/DEBUG] [mixin]: Mixing item.inventory.MixinContainerCanInteract from mixins.common.core.json into net.minecraft.inventory.ContainerMerchant
+[02:09:17] [main/DEBUG] [mixin]: Mixing item.inventory.MixinContainerCanInteract from mixins.common.core.json into net.minecraft.inventory.ContainerHorseInventory
+[02:09:17] [main/DEBUG] [mixin]: Mixing network.datasync.IMixinEntityDataManager from mixins.common.core.json into net.minecraft.network.datasync.EntityDataManager
+[02:09:17] [main/DEBUG] [mixin]: Mixing network.datasync.MixinEntityDataManager from mixins.common.core.json into net.minecraft.network.datasync.EntityDataManager
+[02:09:17] [main/DEBUG] [mixin]: Mixing network.datasync.MixinDataParameter from mixins.common.core.json into net.minecraft.network.datasync.DataParameter
+[02:09:17] [main/DEBUG] [mixin]: Mixing world.chunk.storage.MixinAnvilChunkLoader from mixins.common.core.json into net.minecraft.world.chunk.storage.AnvilChunkLoader
+[02:09:17] [main/DEBUG] [mixin]: Mixing MixinAnvilChunkLoader_ChunkIO from mixins.vanilla.chunkio.json into net.minecraft.world.chunk.storage.AnvilChunkLoader
+[02:09:17] [main/DEBUG] [mixin]: Mixing entity.passive.IMixinEntityVillager$ITradeList from mixins.common.core.json into net.minecraft.entity.passive.EntityVillager$ITradeList
+[02:09:17] [main/DEBUG] [mixin]: Mixing entity.passive.MixinEntityVillagerEmeraldForItems from mixins.common.core.json into net.minecraft.entity.passive.EntityVillager$EmeraldForItems
+[02:09:17] [main/DEBUG] [mixin]: Mixing entity.passive.MixinEntityVillagerListItemForEmeralds from mixins.common.core.json into net.minecraft.entity.passive.EntityVillager$ListItemForEmeralds
+[02:09:17] [main/DEBUG] [mixin]: Mixing entity.passive.MixinEntityVillagerItemAndEmeraldToItem from mixins.common.core.json into net.minecraft.entity.passive.EntityVillager$ItemAndEmeraldToItem
+[02:09:17] [main/DEBUG] [mixin]: Mixing entity.passive.MixinEntityVillagerListEnchantedItemForEmeralds from mixins.common.core.json into net.minecraft.entity.passive.EntityVillager$ListEnchantedItemForEmeralds
+[02:09:17] [main/DEBUG] [mixin]: Mixing entity.passive.MixinEntityVillagerListEnchantedBookForEmeralds from mixins.common.core.json into net.minecraft.entity.passive.EntityVillager$ListEnchantedBookForEmeralds
+[02:09:17] [main/DEBUG] [mixin]: Mixing item.inventory.MixinContainerCanInteract from mixins.common.core.json into net.minecraft.inventory.ContainerFurnace
+[02:09:17] [main/DEBUG] [mixin]: Mixing data.MixinDataContainer from mixins.common.api.json into org.spongepowered.api.data.DataContainer
+[02:09:17] [main/DEBUG] [mixin]: Mixing item.inventory.MixinTraitInventory from mixins.common.core.json into net.minecraft.entity.player.InventoryPlayer
+[02:09:17] [main/DEBUG] [mixin]: Mixing entity.player.MixinInventoryPlayer from mixins.common.core.json into net.minecraft.entity.player.InventoryPlayer
+[02:09:17] [main/DEBUG] [mixin]: Mixing item.inventory.MixinContainerCanInteract from mixins.common.core.json into net.minecraft.inventory.ContainerBrewingStand
+[02:09:17] [main/DEBUG] [mixin]: Mixing item.inventory.MixinCarrierContainerEnchantment from mixins.common.core.json into net.minecraft.inventory.ContainerEnchantment
+[02:09:17] [main/DEBUG] [mixin]: Mixing item.inventory.MixinContainerCanInteract from mixins.common.core.json into net.minecraft.inventory.ContainerEnchantment
+[02:09:17] [main/DEBUG] [mixin]: Mixing item.inventory.MixinContainerCanInteract from mixins.common.core.json into net.minecraft.inventory.ContainerBeacon
+[02:09:17] [main/DEBUG] [mixin]: Mixing item.inventory.MixinContainerCanInteract from mixins.common.core.json into net.minecraft.inventory.ContainerDispenser
+[02:09:17] [main/DEBUG] [mixin]: Mixing profiler.MixinProfiler from mixins.common.core.json into net.minecraft.profiler.Profiler
+[02:09:17] [main/DEBUG] [mixin]: Mixing status.MixinServerStatusResponse from mixins.common.core.json into net.minecraft.network.ServerStatusResponse
+[02:09:17] [main/DEBUG] [mixin]: Mixing command.server.MixinCommandServerManager from mixins.common.core.json into net.minecraft.command.ServerCommandManager
+[02:09:17] [main/DEBUG] [mixin]: Mixing server.MixinServerCommandManager from mixins.common.core.json into net.minecraft.command.ServerCommandManager
+[02:09:17] [main/DEBUG] [mixin]: Mixing command.MixinCommandHandler from mixins.common.core.json into net.minecraft.command.CommandHandler
+[02:09:17] [main/DEBUG] [mixin]: Mixing MixinCommandTime from mixins.common.multi-world-command.json into net.minecraft.command.CommandTime
+[02:09:17] [main/DEBUG] [mixin]: Mixing command.MixinCommandBase from mixins.common.core.json into net.minecraft.command.CommandBase
+[02:09:17] [main/DEBUG] [mixin]: Mixing MixinCommandDifficulty from mixins.common.multi-world-command.json into net.minecraft.command.CommandDifficulty
+[02:09:17] [main/DEBUG] [mixin]: Mixing command.MixinCommandDefaultGameMode from mixins.common.core.json into net.minecraft.command.CommandDefaultGameMode
+[02:09:17] [main/DEBUG] [mixin]: Mixing MixinCommandDefaultGameMode from mixins.common.multi-world-command.json into net.minecraft.command.CommandDefaultGameMode
+[02:09:17] [main/DEBUG] [mixin]: Mixing MixinCommandToggleDownfall from mixins.common.multi-world-command.json into net.minecraft.command.CommandToggleDownfall
+[02:09:17] [main/DEBUG] [mixin]: Mixing MixinCommandWeather from mixins.common.multi-world-command.json into net.minecraft.command.CommandWeather
+[02:09:17] [main/DEBUG] [mixin]: Mixing command.server.MixinCommandTP from mixins.common.core.json into net.minecraft.command.CommandTP
+[02:09:17] [main/DEBUG] [mixin]: Mixing command.server.MixinCommandTeleport from mixins.common.core.json into net.minecraft.command.server.CommandTeleport
+[02:09:17] [main/DEBUG] [mixin]: Mixing MixinCommandShowSeed from mixins.common.multi-world-command.json into net.minecraft.command.CommandShowSeed
+[02:09:17] [main/DEBUG] [mixin]: Mixing MixinCommandSetDefaultSpawnpoint from mixins.common.multi-world-command.json into net.minecraft.command.server.CommandSetDefaultSpawnpoint
+[02:09:17] [main/DEBUG] [mixin]: Mixing MixinCommandGameRule from mixins.common.multi-world-command.json into net.minecraft.command.CommandGameRule
+[02:09:17] [main/DEBUG] [mixin]: Mixing command.MixinCommandScoreboard from mixins.common.core.json into net.minecraft.command.server.CommandScoreboard
+[02:09:17] [main/DEBUG] [mixin]: Mixing command.MixinCommandExecuteAt from mixins.common.core.json into net.minecraft.command.CommandExecuteAt
+[02:09:17] [main/DEBUG] [mixin]: Mixing command.server.MixinCommandSummon from mixins.common.core.json into net.minecraft.command.server.CommandSummon
+[02:09:17] [main/DEBUG] [mixin]: Mixing entity.effect.MixinEntityLightningBolt from mixins.common.core.json into net.minecraft.entity.effect.EntityLightningBolt
+[02:09:17] [main/DEBUG] [mixin]: Mixing entity.effect.MixinEntityWeatherEffect from mixins.common.core.json into net.minecraft.entity.effect.EntityWeatherEffect
+[02:09:17] [main/DEBUG] [mixin]: Mixing MixinCommandWorldBorder from mixins.common.multi-world-command.json into net.minecraft.command.CommandWorldBorder
+[02:09:17] [main/DEBUG] [mixin]: Mixing command.server.MixinCommandBanIp from mixins.common.core.json into net.minecraft.command.server.CommandBanIp
+[02:09:17] [main/DEBUG] [mixin]: Mixing ban.MixinIPBanEntry from mixins.common.core.json into net.minecraft.server.management.UserListIPBansEntry
+[02:09:17] [main/DEBUG] [mixin]: Mixing ban.MixinBanEntry from mixins.common.core.json into net.minecraft.server.management.UserListEntryBan
+[02:09:17] [main/DEBUG] [mixin]: Mixing command.server.MixinCommandPardonIp from mixins.common.core.json into net.minecraft.command.server.CommandPardonIp
+[02:09:17] [main/DEBUG] [mixin]: Mixing ban.MixinUserBanEntry from mixins.common.core.json into net.minecraft.server.management.UserListBansEntry
+[02:09:17] [main/DEBUG] [mixin]: Mixing world.biome.MixinBiomeProvider from mixins.common.core.json into net.minecraft.world.biome.BiomeProvider
+[02:09:17] [main/DEBUG] [mixin]: Mixing command.MixinCommandSource from mixins.common.core.json into net.minecraft.network.rcon.RConConsoleSource
+[02:09:17] [main/DEBUG] [mixin]: Mixing command.MixinICommandSender from mixins.common.core.json into net.minecraft.network.rcon.RConConsoleSource
+[02:09:17] [main/DEBUG] [mixin]: Mixing command.MixinSubject from mixins.common.core.json into net.minecraft.network.rcon.RConConsoleSource
+[02:09:17] [main/DEBUG] [mixin]: Mixing network.rcon.MixinRConConsoleSource from mixins.common.core.json into net.minecraft.network.rcon.RConConsoleSource
+[02:09:17] [main/DEBUG] [mixin]: Mixing network.MixinNetHandlerPlayServer from mixins.common.core.json into net.minecraft.network.NetHandlerPlayServer
+[02:09:17] [main/DEBUG] [mixin]: Mixing network.MixinNetHandlerPlayServer from mixins.vanilla.core.json into net.minecraft.network.NetHandlerPlayServer
+[02:09:17] [main/DEBUG] [Sponge]: Creating injector in stage 'PRODUCTION'
+[02:09:17] [main/DEBUG] [mixin]: Mixing world.MixinLocation from mixins.common.api.json into org.spongepowered.api.world.Location
+[02:09:17] [main/DEBUG] [mixin]: Mixing crash.MixinCrashReport from mixins.vanilla.core.json into net.minecraft.crash.CrashReport
+[02:09:17] [main/DEBUG] [mixin]: Mixing data.types.MixinGameType from mixins.common.core.json into net.minecraft.world.GameType
+[02:09:17] [main/DEBUG] [mixin]: Mixing world.MixinWorldProvider from mixins.common.core.json into net.minecraft.world.WorldProvider
+[02:09:17] [main/DEBUG] [mixin]: Mixing world.MixinWorldProvider from mixins.vanilla.core.json into net.minecraft.world.WorldProvider
+[02:09:17] [main/DEBUG] [mixin]: Mixing advancement.MixinAdvancementManager from mixins.common.core.json into net.minecraft.advancements.AdvancementManager
+[02:09:17] [main/DEBUG] [mixin]: Mixing advancement.MixinAdvancementManager from mixins.vanilla.core.json into net.minecraft.advancements.AdvancementManager
+[02:09:17] [main/DEBUG] [mixin]: Mixing world.MixinWorldType from mixins.common.core.json into net.minecraft.world.WorldType
+[02:09:17] [main/DEBUG] [mixin]: Mixing entity.MixinEntityTracker from mixins.common.core.json into net.minecraft.entity.EntityTracker
+[02:09:18] [main/DEBUG] [mixin]: Mixing network.MixinPacketBuffer from mixins.common.core.json into net.minecraft.network.PacketBuffer
+[02:09:18] [main/DEBUG] [mixin]: Skipping Intrinsic mixin method readerIndex()I for net/minecraft/network/PacketBuffer
+[02:09:18] [main/DEBUG] [mixin]: Skipping Intrinsic mixin method writerIndex()I for net/minecraft/network/PacketBuffer
+[02:09:18] [main/DEBUG] [mixin]: Skipping Intrinsic mixin method hasArray()Z for net/minecraft/network/PacketBuffer
+[02:09:18] [main/DEBUG] [mixin]: Skipping Intrinsic mixin method array()[B for net/minecraft/network/PacketBuffer
+[02:09:18] [main/DEBUG] [mixin]: Skipping Intrinsic mixin method readBoolean()Z for net/minecraft/network/PacketBuffer
+[02:09:18] [main/DEBUG] [mixin]: Skipping Intrinsic mixin method getBoolean(I)Z for net/minecraft/network/PacketBuffer
+[02:09:18] [main/DEBUG] [mixin]: Skipping Intrinsic mixin method readByte()B for net/minecraft/network/PacketBuffer
+[02:09:18] [main/DEBUG] [mixin]: Skipping Intrinsic mixin method getByte(I)B for net/minecraft/network/PacketBuffer
+[02:09:18] [main/DEBUG] [mixin]: Skipping Intrinsic mixin method readShort()S for net/minecraft/network/PacketBuffer
+[02:09:18] [main/DEBUG] [mixin]: Skipping Intrinsic mixin method getShort(I)S for net/minecraft/network/PacketBuffer
+[02:09:18] [main/DEBUG] [mixin]: Skipping Intrinsic mixin method readChar()C for net/minecraft/network/PacketBuffer
+[02:09:18] [main/DEBUG] [mixin]: Skipping Intrinsic mixin method getChar(I)C for net/minecraft/network/PacketBuffer
+[02:09:18] [main/DEBUG] [mixin]: Skipping Intrinsic mixin method readLong()J for net/minecraft/network/PacketBuffer
+[02:09:18] [main/DEBUG] [mixin]: Skipping Intrinsic mixin method getLong(I)J for net/minecraft/network/PacketBuffer
+[02:09:18] [main/DEBUG] [mixin]: Skipping Intrinsic mixin method readFloat()F for net/minecraft/network/PacketBuffer
+[02:09:18] [main/DEBUG] [mixin]: Skipping Intrinsic mixin method getFloat(I)F for net/minecraft/network/PacketBuffer
+[02:09:18] [main/DEBUG] [mixin]: Skipping Intrinsic mixin method readDouble()D for net/minecraft/network/PacketBuffer
+[02:09:18] [main/DEBUG] [mixin]: Skipping Intrinsic mixin method getDouble(I)D for net/minecraft/network/PacketBuffer
+[02:09:18] [main/INFO] [Sponge]: This server is running SpongeVanilla version 1.12.2-7.1.0-BETA-54
+[02:09:18] [Server thread/INFO]: Starting minecraft server version 1.12.2
+[02:09:18] [Server thread/INFO] [Sponge]: Loading Sponge...
+[02:09:18] [Server thread/DEBUG] [Sponge]: Sponge Timings: true - Verbose: true - Interval: 1m - Length: 3m
+[02:09:18] [Server thread/DEBUG] [mixin]: Mixing advancement.MixinICriterionInstance from mixins.common.core.json into net.minecraft.advancements.ICriterionInstance
+[02:09:18] [Server thread/DEBUG] [mixin]: Mixing util.MixinChatType from mixins.common.core.json into net.minecraft.util.text.ChatType
+[02:09:18] [Server thread/DEBUG] [mixin]: Mixing scoreboard.MixinScoreboardObjectiveDisplayType from mixins.common.core.json into net.minecraft.scoreboard.IScoreCriteria$EnumRenderType
+[02:09:18] [Server thread/DEBUG] [mixin]: Mixing world.gen.populators.MixinWorldGenDesertWells from mixins.common.core.json into net.minecraft.world.gen.feature.WorldGenDesertWells
+[02:09:18] [Server thread/DEBUG] [mixin]: Mixing scoreboard.MixinEnumVisible from mixins.common.core.json into net.minecraft.scoreboard.Team$EnumVisible
+[02:09:18] [Server thread/DEBUG] [mixin]: Mixing data.types.MixinEnumChatVisibility from mixins.common.core.json into net.minecraft.entity.player.EntityPlayer$EnumChatVisibility
+[02:09:18] [Server thread/DEBUG] [mixin]: Mixing data.types.MixinBossInfoColor from mixins.common.core.json into net.minecraft.world.BossInfo$Color
+[02:09:18] [Server thread/DEBUG] [mixin]: Mixing scoreboard.MixinCollisionRule from mixins.common.core.json into net.minecraft.scoreboard.Team$CollisionRule
+[02:09:18] [Server thread/DEBUG] [mixin]: Mixing item.inventory.MixinCarrierContainerWorkbench from mixins.common.core.json into net.minecraft.inventory.ContainerWorkbench
+[02:09:18] [Server thread/DEBUG] [mixin]: Mixing item.inventory.MixinContainerCrafting from mixins.common.core.json into net.minecraft.inventory.ContainerWorkbench
+[02:09:18] [Server thread/DEBUG] [mixin]: Mixing item.inventory.MixinContainerWorkbench from mixins.common.core.json into net.minecraft.inventory.ContainerWorkbench
+[02:09:18] [Server thread/DEBUG] [mixin]: Mixing item.inventory.MixinContainerCanInteract from mixins.common.core.json into net.minecraft.inventory.ContainerWorkbench
+[02:09:18] [Server thread/DEBUG] [mixin]: Mixing item.inventory.MixinCarrierContainerRepair from mixins.common.core.json into net.minecraft.inventory.ContainerRepair
+[02:09:18] [Server thread/DEBUG] [mixin]: Mixing item.inventory.MixinContainerRepair from mixins.common.core.json into net.minecraft.inventory.ContainerRepair
+[02:09:18] [Server thread/DEBUG] [mixin]: Mixing item.inventory.MixinContainerCanInteract from mixins.common.core.json into net.minecraft.inventory.ContainerRepair
+[02:09:18] [Server thread/DEBUG] [mixin]: Mixing advancement.MixinFrameType from mixins.common.core.json into net.minecraft.advancements.FrameType
+[02:09:18] [Server thread/DEBUG] [mixin]: Mixing data.types.MixinEntityArrowPickupStatus from mixins.common.core.json into net.minecraft.entity.projectile.EntityArrow$PickupStatus
+[02:09:18] [Server thread/DEBUG] [mixin]: Mixing world.MixinDimensionType from mixins.common.core.json into net.minecraft.world.DimensionType
+[02:09:18] [Server thread/DEBUG] [mixin]: Mixing world.MixinWorldProviderSurface from mixins.common.core.json into net.minecraft.world.WorldProviderSurface
+[02:09:18] [Server thread/DEBUG] [mixin]: Mixing world.MixinWorldProviderHell from mixins.common.core.json into net.minecraft.world.WorldProviderHell
+[02:09:18] [Server thread/WARN] [Sponge]: sponge: It is no longer required to include the plugin id when specifying a Key id through Key.Builder#id. This is deprecated and may be removed later. The plugin id will be retrieved from the current PluginContainer in the cause stack. 
+[02:09:18] [Server thread/DEBUG] [mixin]: Mixing world.MixinTeleporter from mixins.common.core.json into net.minecraft.world.Teleporter
+[02:09:18] [Server thread/DEBUG] [mixin]: Mixing data.types.MixinArtType from mixins.common.core.json into net.minecraft.entity.item.EntityPainting$EnumArt
+[02:09:18] [Server thread/DEBUG] [mixin]: Mixing item.inventory.MixinTraitInventory from mixins.common.core.json into org.spongepowered.common.item.inventory.custom.CustomInventory
+[02:09:18] [Server thread/DEBUG] [mixin]: Mixing item.inventory.MixinCustomInventory from mixins.common.core.json into org.spongepowered.common.item.inventory.custom.CustomInventory
+[02:09:18] [Server thread/DEBUG] [mixin]: Mixing item.inventory.MixinCustomContainer from mixins.common.core.json into org.spongepowered.common.item.inventory.custom.CustomContainer
+[02:09:18] [Server thread/DEBUG] [mixin]: Mixing util.MixinIndirectEntityDamageSource from mixins.common.core.json into net.minecraft.util.EntityDamageSourceIndirect
+[02:09:18] [Server thread/DEBUG] [mixin]: Mixing world.gen.populators.MixinWorldGenDeadBush from mixins.common.core.json into net.minecraft.world.gen.feature.WorldGenDeadBush
+[02:09:18] [Server thread/DEBUG] [mixin]: Mixing world.gen.populators.MixinWorldGenDungeons from mixins.common.core.json into net.minecraft.world.gen.feature.WorldGenDungeons
+[02:09:18] [Server thread/DEBUG] [mixin]: Mixing world.gen.populators.MixinWorldGenEndIsland from mixins.common.core.json into net.minecraft.world.gen.feature.WorldGenEndIsland
+[02:09:18] [Server thread/DEBUG] [mixin]: Mixing world.gen.populators.MixinWorldGenFire from mixins.common.core.json into net.minecraft.world.gen.feature.WorldGenFire
+[02:09:18] [Server thread/DEBUG] [mixin]: Mixing world.gen.populators.MixinWorldGenFossils from mixins.common.core.json into net.minecraft.world.gen.feature.WorldGenFossils
+[02:09:18] [Server thread/DEBUG] [mixin]: Mixing world.gen.populators.MixinWorldGenGlowstone from mixins.common.core.json into net.minecraft.world.gen.feature.WorldGenGlowStone1
+[02:09:18] [Server thread/DEBUG] [mixin]: Mixing world.gen.populators.MixinWorldGenLake from mixins.common.core.json into net.minecraft.world.gen.feature.WorldGenLakes
+[02:09:18] [Server thread/DEBUG] [mixin]: Mixing world.gen.populators.MixinWorldGenMelon from mixins.common.core.json into net.minecraft.world.gen.feature.WorldGenMelon
+[02:09:18] [Server thread/DEBUG] [mixin]: Mixing world.gen.populators.MixinWorldGenPumpkin from mixins.common.core.json into net.minecraft.world.gen.feature.WorldGenPumpkin
+[02:09:18] [Server thread/DEBUG] [mixin]: Mixing world.gen.populators.MixinWorldGenVines from mixins.common.core.json into net.minecraft.world.gen.feature.WorldGenVines
+[02:09:18] [Server thread/DEBUG] [mixin]: Mixing world.MixinWorldSettings from mixins.common.core.json into net.minecraft.world.WorldSettings
+[02:09:18] [Server thread/DEBUG] [mixin]: Mixing data.types.MixinEnumBannerPattern from mixins.common.core.json into net.minecraft.tileentity.BannerPattern
+[02:09:18] [Server thread/DEBUG] [mixin]: Mixing data.types.MixinBossInfoOverlay from mixins.common.core.json into net.minecraft.world.BossInfo$Overlay
+[02:09:18] [Server thread/DEBUG] [mixin]: Mixing advancement.MixinCriteriaTriggers from mixins.common.core.json into net.minecraft.advancements.CriteriaTriggers
+[02:09:18] [Server thread/DEBUG] [mixin]: Mixing advancement.MixinICriterionTrigger from mixins.common.core.json into net.minecraft.advancements.ICriterionTrigger
+[02:09:18] [Server thread/DEBUG] [mixin]: Mixing entity.MixinArmorEquipable from mixins.common.core.json into org.spongepowered.common.entity.living.human.EntityHuman
+[02:09:18] [Server thread/DEBUG] [mixin]: Mixing entity.human.MixinEntityHuman from mixins.common.core.json into org.spongepowered.common.entity.living.human.EntityHuman
+[02:09:18] [Server thread/DEBUG] [mixin]: Mixing advancement.MixinCriterion from mixins.common.core.json into net.minecraft.advancements.Criterion
+[02:09:18] [Server thread/DEBUG] [mixin]: Mixing entity.ai.MixinEntityAITasks from mixins.common.core.json into net.minecraft.entity.ai.EntityAITasks
+[02:09:19] [Server thread/DEBUG] [mixin]: Mixing server.management.MixinUserList from mixins.common.core.json into net.minecraft.server.management.UserList
+[02:09:19] [Server thread/INFO] [Sponge]: Loading plugins...
+[02:09:19] [Server thread/INFO] [Sponge]: Initializing plugins...
+[02:09:19] [Server thread/DEBUG] [mixin]: Mixing ai.MixinAbstractAITask from mixins.common.api.json into org.spongepowered.api.entity.ai.task.AbstractAITask
+[02:09:19] [Server thread/INFO]: Loading properties
+[02:09:20] [Server thread/INFO]: Default game type: SURVIVAL
+[02:09:20] [Server thread/INFO]: Generating keypair
+[02:09:20] [Server thread/INFO]: Starting Minecraft server on *:25565
+[02:09:20] [Server thread/DEBUG] [io.netty.util.internal.logging.InternalLoggerFactory]: Using SLF4J as the default logging framework
+[02:09:20] [Server thread/INFO]: Using default channel type
+[02:09:20] [Server thread/DEBUG] [io.netty.util.internal.PlatformDependent]: -Dio.netty.noUnsafe: false
+[02:09:20] [Server thread/DEBUG] [io.netty.util.internal.PlatformDependent0]: sun.misc.Unsafe.theUnsafe: available
+[02:09:20] [Server thread/DEBUG] [io.netty.util.internal.PlatformDependent0]: sun.misc.Unsafe.copyMemory: available
+[02:09:20] [Server thread/DEBUG] [io.netty.util.internal.PlatformDependent0]: java.nio.Buffer.address: available
+[02:09:20] [Server thread/DEBUG] [io.netty.util.internal.PlatformDependent0]: direct buffer constructor: available
+[02:09:20] [Server thread/DEBUG] [io.netty.util.internal.PlatformDependent0]: java.nio.Bits.unaligned: available, true
+[02:09:20] [Server thread/DEBUG] [io.netty.util.internal.PlatformDependent0]: java.nio.DirectByteBuffer.<init>(long, int): available
+[02:09:20] [Server thread/DEBUG] [io.netty.util.internal.Cleaner0]: java.nio.ByteBuffer.cleaner(): available
+[02:09:20] [Server thread/DEBUG] [io.netty.util.internal.PlatformDependent]: Platform: Windows
+[02:09:20] [Server thread/DEBUG] [io.netty.util.internal.PlatformDependent]: Java version: 8
+[02:09:20] [Server thread/DEBUG] [io.netty.util.internal.PlatformDependent]: sun.misc.Unsafe: available
+[02:09:20] [Server thread/DEBUG] [io.netty.util.internal.PlatformDependent]: -Dio.netty.tmpdir: C:\Users\phit\AppData\Local\Temp (java.io.tmpdir)
+[02:09:20] [Server thread/DEBUG] [io.netty.util.internal.PlatformDependent]: -Dio.netty.bitMode: 64 (sun.arch.data.model)
+[02:09:20] [Server thread/DEBUG] [io.netty.util.internal.PlatformDependent]: -Dio.netty.noPreferDirect: false
+[02:09:20] [Server thread/DEBUG] [io.netty.util.internal.PlatformDependent]: io.netty.maxDirectMemory: 3804758016 bytes
+[02:09:20] [Server thread/DEBUG] [io.netty.channel.MultithreadEventLoopGroup]: -Dio.netty.eventLoopThreads: 8
+[02:09:20] [Server thread/DEBUG] [io.netty.channel.nio.NioEventLoop]: -Dio.netty.noKeySetOptimization: false
+[02:09:20] [Server thread/DEBUG] [io.netty.channel.nio.NioEventLoop]: -Dio.netty.selectorAutoRebuildThreshold: 512
+[02:09:20] [Server thread/DEBUG] [io.netty.util.internal.PlatformDependent]: org.jctools-core.MpscChunkedArrayQueue: available
+[02:09:20] [Server thread/DEBUG] [io.netty.channel.DefaultChannelId]: -Dio.netty.processId: 14576 (auto-detected)
+[02:09:20] [Server thread/DEBUG] [io.netty.util.NetUtil]: -Djava.net.preferIPv4Stack: false
+[02:09:20] [Server thread/DEBUG] [io.netty.util.NetUtil]: -Djava.net.preferIPv6Addresses: false
+[02:09:20] [Server thread/DEBUG] [io.netty.util.NetUtil]: Loopback interface: lo (Software Loopback Interface 1, 127.0.0.1)
+[02:09:20] [Server thread/DEBUG] [io.netty.util.NetUtil]: \proc\sys\net\core\somaxconn: 200 (non-existent)
+[02:09:20] [Server thread/DEBUG] [io.netty.channel.DefaultChannelId]: -Dio.netty.machineId: 2c:4d:54:ff:fe:55:31:b1 (auto-detected)
+[02:09:20] [Server thread/DEBUG] [io.netty.util.ResourceLeakDetector]: -Dio.netty.leakDetection.level: simple
+[02:09:20] [Server thread/DEBUG] [io.netty.util.ResourceLeakDetector]: -Dio.netty.leakDetection.maxRecords: 4
+[02:09:20] [Server thread/DEBUG] [io.netty.buffer.PooledByteBufAllocator]: -Dio.netty.allocator.numHeapArenas: 8
+[02:09:20] [Server thread/DEBUG] [io.netty.buffer.PooledByteBufAllocator]: -Dio.netty.allocator.numDirectArenas: 8
+[02:09:20] [Server thread/DEBUG] [io.netty.buffer.PooledByteBufAllocator]: -Dio.netty.allocator.pageSize: 8192
+[02:09:20] [Server thread/DEBUG] [io.netty.buffer.PooledByteBufAllocator]: -Dio.netty.allocator.maxOrder: 11
+[02:09:20] [Server thread/DEBUG] [io.netty.buffer.PooledByteBufAllocator]: -Dio.netty.allocator.chunkSize: 16777216
+[02:09:20] [Server thread/DEBUG] [io.netty.buffer.PooledByteBufAllocator]: -Dio.netty.allocator.tinyCacheSize: 512
+[02:09:20] [Server thread/DEBUG] [io.netty.buffer.PooledByteBufAllocator]: -Dio.netty.allocator.smallCacheSize: 256
+[02:09:20] [Server thread/DEBUG] [io.netty.buffer.PooledByteBufAllocator]: -Dio.netty.allocator.normalCacheSize: 64
+[02:09:20] [Server thread/DEBUG] [io.netty.buffer.PooledByteBufAllocator]: -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+[02:09:20] [Server thread/DEBUG] [io.netty.buffer.PooledByteBufAllocator]: -Dio.netty.allocator.cacheTrimInterval: 8192
+[02:09:20] [Server thread/DEBUG] [io.netty.buffer.PooledByteBufAllocator]: -Dio.netty.allocator.useCacheForAllThreads: true
+[02:09:20] [Server thread/DEBUG] [io.netty.buffer.ByteBufUtil]: -Dio.netty.allocator.type: pooled
+[02:09:20] [Server thread/DEBUG] [io.netty.buffer.ByteBufUtil]: -Dio.netty.threadLocalDirectBufferSize: 65536
+[02:09:20] [Server thread/DEBUG] [io.netty.buffer.ByteBufUtil]: -Dio.netty.maxThreadLocalCharBufferSize: 16384
+[02:09:20] [Server thread/DEBUG] [mixin]: Mixing server.management.MixinPlayerInteractionManager from mixins.common.core.json into net.minecraft.server.management.PlayerInteractionManager
+[02:09:20] [Server thread/INFO] [Sponge]: Successfully loaded and initialized plugins.
+[02:09:20] [Server thread/DEBUG] [mixin]: Mixing status.MixinServerStatusResponseVersion from mixins.common.core.json into net.minecraft.network.ServerStatusResponse$Version
+[02:09:20] [Server thread/WARN]: banned-players.json does not exist, creating it.
+[02:09:20] [Server thread/WARN]: banned-ips.json does not exist, creating it.
+[02:09:20] [Server thread/WARN]: ops.json does not exist, creating it.
+[02:09:20] [Server thread/WARN]: whitelist.json does not exist, creating it.
+[02:09:20] [Server thread/INFO]: Preparing level "world"
+[02:09:20] [Server thread/INFO] [Sponge]: Checking for worlds that need to be migrated...
+[02:09:20] [Server thread/INFO] [Sponge]: No worlds were found in need of migration.
+[02:09:20] [Server thread/DEBUG] [mixin]: Mixing world.MixinAnvilSaveHandler from mixins.common.core.json into net.minecraft.world.chunk.storage.AnvilSaveHandler
+[02:09:20] [Server thread/DEBUG] [mixin]: Mixing world.storage.MixinSaveHandler from mixins.common.core.json into net.minecraft.world.storage.SaveHandler
+[02:09:20] [Server thread/DEBUG] [mixin]: Mixing world.storage.MixinSaveHandler from mixins.vanilla.core.json into net.minecraft.world.storage.SaveHandler
+[02:09:20] [Server thread/DEBUG] [mixin]: Mixing world.MixinGameRules from mixins.common.core.json into net.minecraft.world.GameRules
+[02:09:20] [Server thread/DEBUG] [mixin]: Mixing scoreboard.MixinScoreboardClientCheck from mixins.common.core.json into net.minecraft.scoreboard.Scoreboard
+[02:09:20] [Server thread/DEBUG] [mixin]: Mixing scoreboard.MixinScoreboardLogic from mixins.common.core.json into net.minecraft.scoreboard.ServerScoreboard
+[02:09:20] [Server thread/DEBUG] [mixin]: Mixing scoreboard.MixinServerScoreboardPacketSending from mixins.common.core.json into net.minecraft.scoreboard.ServerScoreboard
+[02:09:20] [Server thread/DEBUG] [mixin]: Mixing scoreboard.MixinScoreObjective from mixins.common.core.json into net.minecraft.scoreboard.ScoreObjective
+[02:09:20] [Server thread/DEBUG] [mixin]: Mixing world.MixinWorldBorder from mixins.common.core.json into net.minecraft.world.border.WorldBorder
+[02:09:20] [Server thread/DEBUG] [mixin]: Mixing world.MixinWorldEntitySpawner from mixins.common.core.json into net.minecraft.world.WorldEntitySpawner
+[02:09:20] [Server thread/DEBUG] [mixin]: Mixing server.management.MixinPlayerChunkMap from mixins.common.core.json into net.minecraft.server.management.PlayerChunkMap
+[02:09:20] [Server thread/DEBUG] [mixin]: Mixing world.gen.MixinChunkProviderServer from mixins.common.core.json into net.minecraft.world.gen.ChunkProviderServer
+[02:09:20] [Server thread/DEBUG] [mixin]: Mixing world.gen.MixinChunkProviderServer_Async_Lighting from mixins.common.optimization.json into net.minecraft.world.gen.ChunkProviderServer
+[02:09:20] [Server thread/DEBUG] [mixin]: Mixing MixinChunkProviderServer_ChunkIO from mixins.vanilla.chunkio.json into net.minecraft.world.gen.ChunkProviderServer
+[02:09:20] [Server thread/DEBUG] [mixin]: Mixing world.MixinChunk from mixins.common.core.json into net.minecraft.world.chunk.Chunk
+[02:09:20] [Server thread/DEBUG] [mixin]: Mixing world.extent.MixinExtent from mixins.common.core.json into net.minecraft.world.chunk.Chunk
+[02:09:20] [Server thread/DEBUG] [mixin]: Mixing MixinChunk_Collisions from mixins.common.entitycollisions.json into net.minecraft.world.chunk.Chunk
+[02:09:20] [Server thread/DEBUG] [mixin]: Mixing world.chunk.MixinChunk from mixins.vanilla.core.json into net.minecraft.world.chunk.Chunk
+[02:09:20] [Server thread/DEBUG] [mixin]: Mixing world.MixinChunk_Async_Lighting from mixins.common.optimization.json into net.minecraft.world.chunk.Chunk
+[02:09:20] [Server thread/DEBUG] [mixin]: Mixing world.MixinChunk_Tracker from mixins.common.tracking.json into net.minecraft.world.chunk.Chunk
+[02:09:20] [Server thread/DEBUG] [mixin]: Mixing world.gen.MixinChunkGeneratorOverworld from mixins.common.core.json into net.minecraft.world.gen.ChunkGeneratorOverworld
+[02:09:20] [Server thread/DEBUG] [mixin]: Mixing world.gen.MixinMapGenBase from mixins.common.core.json into net.minecraft.world.gen.MapGenBase
+[02:09:20] [Server thread/DEBUG] [mixin]: Mixing world.gen.structure.MixinMapGenStronghold from mixins.common.core.json into net.minecraft.world.gen.structure.MapGenStronghold
+[02:09:20] [Server thread/DEBUG] [mixin]: Mixing world.gen.structure.MixinMapGenStructure from mixins.common.core.json into net.minecraft.world.gen.structure.MapGenStructure
+[02:09:20] [Server thread/DEBUG] [mixin]: Mixing world.gen.structure.MixinMapGenVillage from mixins.common.core.json into net.minecraft.world.gen.structure.MapGenVillage
+[02:09:20] [Server thread/DEBUG] [mixin]: Mixing world.gen.MixinChunkGeneratorFlat from mixins.common.core.json into net.minecraft.world.gen.ChunkGeneratorFlat
+[02:09:20] [Server thread/DEBUG] [mixin]: Mixing world.gen.MixinChunkGeneratorHell from mixins.common.core.json into net.minecraft.world.gen.ChunkGeneratorHell
+[02:09:20] [Server thread/DEBUG] [mixin]: Mixing world.gen.MixinChunkGeneratorEnd from mixins.common.core.json into net.minecraft.world.gen.ChunkGeneratorEnd
+[02:09:20] [Server thread/DEBUG] [mixin]: Mixing util.MixinClassInheritanceMultiMap from mixins.common.core.json into net.minecraft.util.ClassInheritanceMultiMap
+[02:09:20] [Server thread/DEBUG] [mixin]: Mixing text.MixinTextComponentScore from mixins.common.core.json into net.minecraft.util.text.TextComponentScore
+[02:09:20] [Server thread/DEBUG] [mixin]: Mixing text.MixinTextComponentSelector from mixins.common.core.json into net.minecraft.util.text.TextComponentSelector
+[02:09:20] [Server thread/DEBUG] [mixin]: Mixing advancement.MixinAdvancementList from mixins.common.core.json into net.minecraft.advancements.AdvancementList
+[02:09:20] [Server thread/DEBUG] [mixin]: Mixing advancement.MixinAdvancement from mixins.common.core.json into net.minecraft.advancements.Advancement
+[02:09:20] [Server thread/DEBUG] [mixin]: Mixing advancement.MixinDisplayInfo from mixins.common.core.json into net.minecraft.advancements.DisplayInfo
+[02:09:20] [Server thread/INFO]: Loaded 488 advancements
+[02:09:20] [Server thread/INFO]: Loaded 6 advancement trees
+[02:09:20] [Server thread/DEBUG] [mixin]: Mixing advancement.MixinAdvancementTreeNode from mixins.common.core.json into net.minecraft.advancements.AdvancementTreeNode
+[02:09:20] [Server thread/DEBUG] [mixin]: Mixing network.play.server.MixinSPacketWorldBorder from mixins.common.core.json into net.minecraft.network.play.server.SPacketWorldBorder
+[02:09:21] [Server thread/WARN]: Unable to find spawn biome
+[02:09:21] [Server thread/DEBUG] [mixin]: Mixing world.chunk.MixinBlockStateContainer from mixins.common.core.json into net.minecraft.world.chunk.BlockStateContainer
+[02:09:21] [Server thread/DEBUG] [mixin]: Mixing world.MixinServerWorldEventHandler from mixins.common.core.json into net.minecraft.world.ServerWorldEventHandler
+[02:09:21] [Server thread/INFO]: Preparing start region for level 0 (world)
+[02:09:21] [Server thread/DEBUG] [mixin]: Mixing world.MixinNextTickListEntry from mixins.common.core.json into net.minecraft.world.NextTickListEntry
+[02:09:21] [Server thread/DEBUG] [mixin]: Mixing entity.MixinEntityTrackerEntry from mixins.common.core.json into net.minecraft.entity.EntityTrackerEntry
+[02:09:21] [Server thread/DEBUG] [io.netty.util.internal.ThreadLocalRandom]: -Dio.netty.initialSeedUniquifier: 0xf6e1e4dd8e33c051
+[02:09:22] [Server thread/INFO]: Preparing spawn area: 13%
+[02:09:23] [Server thread/INFO]: Preparing spawn area: 31%
+[02:09:24] [Server thread/INFO]: Preparing spawn area: 49%
+[02:09:24] [Server thread/DEBUG] [mixin]: Mixing item.inventory.MixinTraitInventory from mixins.common.core.json into net.minecraft.inventory.InventoryCrafting
+[02:09:24] [Server thread/DEBUG] [mixin]: Mixing inventory.MixinInventoryCrafting from mixins.common.core.json into net.minecraft.inventory.InventoryCrafting
+[02:09:24] [Server thread/DEBUG] [mixin]: Mixing item.inventory.MixinTraitInventory from mixins.common.core.json into net.minecraft.inventory.Slot
+[02:09:24] [Server thread/DEBUG] [mixin]: Mixing item.inventory.MixinSlot from mixins.common.core.json into net.minecraft.inventory.Slot
+[02:09:24] [Server thread/DEBUG] [mixin]: Mixing item.inventory.TraitInventoryObservable from mixins.common.core.json into net.minecraft.inventory.Slot
+[02:09:25] [Server thread/INFO]: Preparing spawn area: 67%
+[02:09:26] [Server thread/INFO]: Preparing spawn area: 88%
+[02:09:26] [Server thread/INFO] [Sponge]: Loading world [world] (overworld)
+[02:09:27] [Server thread/INFO]: Loaded 488 advancements
+[02:09:27] [Server thread/INFO]: Loaded 6 advancement trees
+[02:09:27] [Server thread/INFO] [Sponge]: Loading world [DIM-1] (the_nether)
+[02:09:27] [Server thread/DEBUG] [mixin]: Mixing world.end.MixinDragonFightManager from mixins.common.core.json into net.minecraft.world.end.DragonFightManager
+[02:09:27] [Server thread/DEBUG] [mixin]: Mixing world.MixinBossInfoServer from mixins.common.core.json into net.minecraft.world.BossInfoServer
+[02:09:27] [Server thread/DEBUG] [mixin]: Mixing world.MixinBossInfo from mixins.common.core.json into net.minecraft.world.BossInfo
+[02:09:27] [Server thread/INFO]: Loaded 488 advancements
+[02:09:27] [Server thread/INFO]: Loaded 6 advancement trees
+[02:09:27] [Server thread/INFO] [Sponge]: Loading world [DIM1] (the_end)
+[02:09:27] [Server thread/INFO]: Done (6.733s)! For help, type "help" or "?"
+[02:09:27] [Server thread/DEBUG] [mixin]: Mixing status.MixinServerStatusResponsePlayers from mixins.common.core.json into net.minecraft.network.ServerStatusResponse$Players
+[02:09:29] [Server thread/DEBUG] [mixin]: Mixing enchantment.MixinEnchantmentHelper_No_Source_Leak from mixins.common.optimization.json into net.minecraft.enchantment.EnchantmentHelper
+[02:09:29] [Server thread/DEBUG] [mixin]: Mixing world.MixinChunkCache from mixins.common.core.json into net.minecraft.world.ChunkCache
+[02:09:38] [Server thread/INFO]: Stopping the server
+[02:09:38] [Server thread/INFO]: Stopping server
+[02:09:38] [Server thread/INFO]: Saving players
+[02:09:38] [Server thread/DEBUG] [mixin]: Mixing data.MixinDataHolder from mixins.common.core.json into org.spongepowered.common.entity.player.SpongeUser
+[02:09:38] [Server thread/DEBUG] [mixin]: Mixing command.MixinSubject from mixins.common.core.json into org.spongepowered.common.entity.player.SpongeUser
+[02:09:38] [Server thread/DEBUG] [mixin]: Mixing data.MixinCustomDataHolder from mixins.common.core.json into org.spongepowered.common.entity.player.SpongeUser
+[02:09:38] [Server thread/DEBUG] [mixin]: Mixing entity.player.MixinSpongeUser from mixins.common.core.json into org.spongepowered.common.entity.player.SpongeUser
+[02:09:38] [Server thread/INFO]: Saving worlds
+[02:09:38] [Server thread/INFO]: Saving chunks for level 'world'/overworld
+[02:09:38] [Server thread/DEBUG] [mixin]: Mixing world.MixinWorldServerMulti from mixins.common.core.json into net.minecraft.world.WorldServerMulti
+[02:09:38] [Server thread/DEBUG] [mixin]: Mixing world.storage.MixinThreadedFileIOBase from mixins.common.core.json into net.minecraft.world.storage.ThreadedFileIOBase
+[02:09:38] [Server thread/INFO]: Saving chunks for level 'DIM-1'/the_nether
+[02:09:38] [Server thread/INFO]: Saving chunks for level 'DIM1'/the_end
+[02:09:38] [Server thread/INFO] [Sponge]: Unloading world [world] (DIM0)
+[02:09:38] [Server thread/INFO] [Sponge]: Unloading world [DIM-1] (DIM-1)
+[02:09:38] [Server thread/INFO] [Sponge]: Unloading world [DIM1] (DIM1)
