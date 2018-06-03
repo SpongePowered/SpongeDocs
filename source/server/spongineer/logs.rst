@@ -45,8 +45,8 @@ The example log indicates that we're running:
 
 .. warning::
 
- SpongeForge won't run anything other than Java 8, and only Update 20 or newer. If you encounter an error stating that 
- you run an older or newer Java build than Java 8, please update your JRE to ``1.8.x`` and try again!
+ In order to run Sponge, you **must** be running Java 8 Update 20 or above.
+ Older builds or newer Java major versions (like 9 or 10) are not supported.
 
 .. code-block:: none
 
