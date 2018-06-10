@@ -71,7 +71,7 @@ hits.
 .. code-block:: java
 
     BlockRay<World> blockRay = BlockRay.from(player)
-        .skipFilter(BlockRay.onlyAirFilter()).stopFilter(blockRay.allFilter()).build();
+        .skipFilter(BlockRay.onlyAirFilter()).stopFilter(BlockRay.allFilter()).build();
 
 Using BlockRay
 ==============
