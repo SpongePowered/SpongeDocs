@@ -12,54 +12,48 @@ logfiles from SpongeForge and SpongeVanilla servers including short descriptions
 SpongeForge logfiles
 ====================
 
-SpongeForge writes several logfiles to the ``/logs`` folder located inside your servers directory. As of Forge 1521
-these are:
+SpongeForge writes several logfiles to the ``/logs`` folder located inside your servers directory. 
+As of Forge 1.12.2 - 14.23.4.2705 these are: 
 
-1. ``fml-junk-earlystartup.log``
-#. ``fml-server-latest.log``
+1. ``debug.log``
 #. ``latest.log``
 
-fml-junk-earlystartup.log
+debug.log
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
  Only a few example lines are shown here. To read the full example log, follow this link:
- :download:`SpongeForge 1521 fml-junk-earlystartup.log file </files/logs/forge-1521-fml-junk-earlystartup.txt>`
-
-fml-server-latest.log
-~~~~~~~~~~~~~~~~~~~~~
-
-.. note::
-
- Only a few example lines are shown here. To read the full example log, follow this link:
- :download:`SpongeForge 1521 fml-server-latest.log </files/logs/forge-1521-fml-server-latest.txt>`
+ :download:`SpongeForge 1.12.2 - 7.1.0-BETA-3126 debug.log file 
+ </files/logs/SpongeForge_1.12.2-2705-7.1.0-BETA-3136_debug.log.txt>`
 
 .. code-block:: none
 
- [main/INFO] [FML/]: Forge Mod Loader version 11.14.3.1521 for Minecraft 1.8 loading
- [main/INFO] [FML/]: Java is Java HotSpot(TM) 64-Bit Server VM, version 1.8.0_51, running on Windows 8.1:amd64:6.3, installed at ##PATH_TO_JAVA_HERE##
- [main/DEBUG] [FML/]: Java classpath at launch is forge.jar
- [main/DEBUG] [FML/]: Java library path at launch is ##PATH_TO_JAVA_HERE##
+ [main/INFO] [FML]: Forge Mod Loader version 14.23.4.2705 for Minecraft 1.12.2 loading
+ [main/INFO] [FML]: Java is Java HotSpot(TM) 64-Bit Server VM, version 1.8.0_162, running on Windows 10:amd64:10.0, installed at C:\Program Files\Java\jre1.8.0_162
+ [main/DEBUG] [FML]: Java classpath at launch is:
+ [main/DEBUG] [FML]:     forge-1.12.2-14.23.4.2705-universal.jar
+ [main/DEBUG] [FML]: Java library path at launch is:
+ [main/DEBUG] [FML]:     C:\ProgramData\Oracle\Java\javapath
 
 The example log indicates that we're running:
 
-* Forge 11.14.3.1521 (Version 1521)
-* Java 8 64bit Update 51
-* Windows 8.1 x64
+* Forge 14.23.4.2705 (Version 2705)
+* Java 8 64bit Update 162
+* Windows 10 x64
 * the ``directory`` Java was installed to (Line 4)
 
 .. warning::
 
- SpongeForge won't run on Java 6 (``1.6.x``) or Java 7 (``1.7.x``). If you encounter an error stating that you run
- an older Java build than Java 8, please update your JRE to ``1.8.x`` and try again!
+ In order to run Sponge, you **must** be running Java 8 Update 20 or above.
+ Older builds or newer Java major versions (like 9 or 10) are not supported.
 
 .. code-block:: none
 
- [main/DEBUG] [FML/]: Examining for coremod candidacy spongeforge-1.8-1521-2.1-DEV-750.jar
- [main/INFO] [FML/]: Loading tweaker org.spongepowered.asm.launch.MixinTweaker from spongeforge-1.8-1521-2.1-DEV-750.jar
+ [main/DEBUG] [FML]: Examining for coremod candidacy spongeforge-1.12.2-2705-7.1.0-BETA-3136.jar
+ [main/INFO] [FML]: Loading tweaker org.spongepowered.asm.launch.MixinTweaker from spongeforge-1.12.2-2705-7.1.0-BETA-3136.jar
 
-This indicates that SpongeForge 750 was found and loaded by Forge. For further help regarding the SpongeForge
+This indicates that SpongeForge 3136 was found and loaded by Forge. For further help regarding the SpongeForge
 naming scheme, have a look here: :doc:`../getting-started/implementations/spongeforge/`.
 
 latest.log
@@ -68,10 +62,9 @@ latest.log
 .. note::
 
  Only a few example lines are shown here. To read the full example log, follow this link:
- :download:`SpongeForge 1521 latest.log </files/logs/forge-1521-latest.txt>`
+ :download:`SpongeForge 1521 latest.log </files/logs/SpongeForge_1.12.2-2705-7.1.0-BETA-3136_latest.log.txt>`
 
 This is the output that you would see in the Minecraft server GUI.
-
 
 
 SpongeVanilla logfiles
@@ -83,7 +76,8 @@ latest.log
 .. note::
 
  Only a few example lines are shown here. To read the full example log, follow this link:
- :download:`SpongeVanilla 47 latest.log </files/logs/vanilla-47-latest.txt>`
+ :download:`SpongeVanilla 1.12.2-7.1.0-BETA-54 latest.log 
+ </files/logs/SpongeVanilla_1.12.2-7.1.0-BETA-54_latest.log.txt>`
 
 This is the output that you would see in the Minecraft server GUI.
 
