@@ -27,7 +27,7 @@ embedded Git control, syntax highlighting, intelligent code completion, snippets
 
 **Visual Studio Code** can be downloaded for free from https://code.visualstudio.com/.
 
-reST Extention can be downloaded for free from https://marketplace.visualstudio.com/items?itemName=lextudio.restructuredtext
+reST Extension can be downloaded for free from https://marketplace.visualstudio.com/items?itemName=lextudio.restructuredtext
 
 Notepad++
 ~~~~~~~~~
