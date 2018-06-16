@@ -19,6 +19,17 @@ depth about the features of Atom's Git integration. If you're interested in addi
 
 **Atom** can be downloaded for free from https://atom.io/.
 
+Visual Studio Code
+~~~~~~~~~~~~~~~~~~
+
+Visual Studio Code is a source code editor developed by Microsoft for Windows, Linux and macOS. 
+It includes support for debugging, embedded Git control, syntax highlighting, 
+intelligent code completion, snippets, and code refactoring.
+
+**Visual Studio Code** can be downloaded for free from https://code.visualstudio.com/.
+
+reST Extension can be downloaded for free from https://marketplace.visualstudio.com/items?itemName=lextudio.restructuredtext
+
 Notepad++
 ~~~~~~~~~
 
