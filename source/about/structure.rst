@@ -26,6 +26,8 @@ before going into detail:
 +-------------------------------------------------------------------+-------------------------------------------------------+---------------------------------------------------------------------------------+
 | `Ore <https://github.com/Spongepowered/Ore>`_                     | Plugin hosting solution                               | Development of our plugin hosting solution                                      |
 +-------------------------------------------------------------------+-------------------------------------------------------+---------------------------------------------------------------------------------+
+| `SpongeAuth <https://github.com/Spongepowered/SpongeAuth>`_       | The authentication portal and SSO for our websites    | Development of our authentication portal and SSO solution                       |
++-------------------------------------------------------------------+-------------------------------------------------------+---------------------------------------------------------------------------------+
 
 SpongeCommon, SpongeForge and SpongeVanilla
 ===========================================
@@ -41,7 +43,7 @@ building SpongeForge or SpongeVanilla from the repository *without* including Sp
 SpongeHome
 ==========
 
-SpongeHome is the SpongeProject's website. It's written in Golang, using the go-macaron library. It uses SCSS as it's
+SpongeHome is the Sponge project's website. It's written in Golang, using the go-macaron library. It uses SCSS as it's
 CSS preprocessor.
 
 Ore

@@ -57,5 +57,5 @@ If you are having problems with a plugin, consider the following things:
 * Do you run a current Java version? Sponge is built for Java 8 and is known to trigger a bug in the JRE 1.8.0_40, so
   make sure you use a version newer than that.
 * The plugin may be outdated. Is there a newer version of the plugin?
-* Does the plugin need a specific Implementation and/or Build of Sponge?  Some plugins may bypass the Sponge API, or
+* Does the plugin need a specific implementation and/or build of Sponge?  Some plugins may bypass the Sponge API, or
   otherwise rely on details that change between versions or platforms. Check at the site you downloaded it from.
