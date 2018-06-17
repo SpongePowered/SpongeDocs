@@ -26,8 +26,7 @@ here: :doc:`../server/getting-started/jre/`
 Where do I get Sponge?
 ----------------------
 
-You can download both stable and experimental builds of SpongeForge and SpongeVanilla on our 
-`downloads page <https://www.spongepowered.org/downloads>`_.
+You can download SpongeForge and SpongeVanilla on our `downloads page <https://www.spongepowered.org/downloads>`_.
 
 What Sponge implementations are available?
 ------------------------------------------
@@ -44,8 +43,8 @@ The Sponge Project currently develops two implementations which both use the Spo
 
 There have also been community implementations due to the flexibility of the API:
 
-(1) **LanternServer**, an open source and compatible Minecraft: Java Edition server that implements the SpongeAPI. It
-    does not rely on the vanilla codebase at all, allowing for it be more configurable, open, and performant. 
+(1) **LanternServer**, an open source and compatible Minecraft: Java Edition server that implements the Sponge API. 
+    It does not rely on the vanilla codebase at all, allowing for it be more configurable, open, and performant. 
     While still a work in progress, their project is quite promising and may one day be the choice for servers not
     looking to run Forge mods. You can find their project `on Github <https://github.com/LanternPowered/LanternServer>`_.
 
@@ -67,10 +66,11 @@ history page: :doc:`history`
 Can I run Bukkit Plugins with this?
 -----------------------------------
 
-Sadly no, not natively. Sponge is using its own API (Sponge API), while Bukkit is using the Bukkit API. While third parties
-explored the idea of implementing the Bukkit API on top of Sponge, due to the design differences of the APIs, none of these
-projects have come to fruition. If you think a feature is missing in Sponge or you cannot find a plugin your server needs,
-consider posting on the `forums <https://forums.spongepowered.org/>`_, and someone may be able to help you.
+No, and enabling this capability is not a goal of ours. Sponge is using its own API (Sponge API), while Bukkit is using
+the Bukkit API. While third parties explored the idea of implementing the Bukkit API on top of Sponge, due to the design 
+differences of the APIs, none of these projects have come to fruition. If you think a feature is missing in Sponge or you
+cannot find a plugin your server needs, consider posting on the `forums <https://forums.spongepowered.org/>`_, and
+someone may be able to help you.
 
 For Server Owners
 =================
