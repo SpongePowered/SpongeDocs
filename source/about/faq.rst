@@ -70,7 +70,7 @@ Can I run Bukkit Plugins with this?
 Sadly no, not natively. Sponge is using its own API (Sponge API), while Bukkit is using the Bukkit API. While third parties
 explored the idea of implementing the Bukkit API on top of Sponge, due to the design differences of the APIs, none of these
 projects have come to fruition. If you think a feature is missing in Sponge or you cannot find a plugin your server needs,
-consider posting on the `SpongeForums <https://forums.spongepowered.org/>`_, and someone may be able to help you.
+consider posting on the `forums <https://forums.spongepowered.org/>`_, and someone may be able to help you.
 
 For Server Owners
 =================
