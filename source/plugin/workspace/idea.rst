@@ -93,9 +93,10 @@ creation much easier while also providing some neat and useful features for deve
 
 Creating your project
 ~~~~~~~~~~~~~~~~~~~~~
+
 * Open **IntelliJ IDEA**.
 * Click ``Create New Project``.
-* Select ``Gradle`` in the popup.
+* Select ``Minecraft`` in the popup.
 * Make sure your **Project SDK** is set to some version of Java 8/1.8.
 * Select ``Sponge plugin`` for your project type, then click ``Next``.
 * Enter your **Group ID**, **Artifact ID**, and **Version**.
@@ -107,7 +108,8 @@ Creating your project
 * Select your desired build tool, either Gradle or Maven, and click ``Next``.
 * Check your **Plugin Name** and **Main Class Name** to make sure they are what you want.
 * Specify your desired plugin **description**, **authors**, **website**, and **dependencies** if you want.
-* Click ``Next`` to move on and verify your project name, location, and module information, then click ``Finish``.
+* Click ``Next`` to move on.
+* Verify your project name, location, and module information, then click ``Finish``.
 
 Editing your project configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
