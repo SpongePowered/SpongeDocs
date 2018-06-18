@@ -93,21 +93,21 @@ The second constructor must
 .. code-block:: java
 
     import static com.google.common.base.Preconditions.checkArgument;
+    
+    import org.spongepowered.common.data.util.DataConstants;
 
     public class SpongeHealthData extends AbstractData<HealthData, ImmutableHealthData> implements HealthData {
 
-        private static final double MINIMUM_HEALTH = 0D;
-        private static final double DEFAULT_HEALTH = 20D; // Move to DataConstants
         private double health;
         private double maxHealth;
 
         public SpongeHealthData() {
-            this(DEFAULT_HEALTH, DEFAULT_HEALTH);
+            this(DataConstants.DEFAULT_HEALTH, DataConstants.DEFAULT_HEALTH);
         }
 
         public SpongeHealthData(double health, double maxHealth) {
             super(HealthData.class);
-            checkArgument(maxHealth > MINIMUM_HEALTH);
+            checkArgument(maxHealth > DataConstants.MINIMUM_HEALTH);
             this.health = health;
             this.maxHealth = maxHealth;
             registerGettersAndSetters();
