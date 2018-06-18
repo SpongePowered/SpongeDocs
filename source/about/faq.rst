@@ -12,22 +12,21 @@ For Everyone
 What is Sponge?
 ---------------
 
-Sponge is a new versatile Minecraft: Java Edition API. It was made to enrich your Minecraft experience by allowing
-plugins to add functionality to Minecraft. Read more about Sponge here: :doc:`introduction` and about the history of
+Sponge is a versatile Minecraft: Java Edition API. It was made to enrich your Minecraft experience by enabling creation 
+of plugins to add functionality to Minecraft. Read more about Sponge here: :doc:`introduction` and about the history of
 Sponge here: :doc:`history`
 
 What is required to run Sponge?
 -------------------------------
 
 Sponge (and Minecraft) needs the Java Runtime Environment to run properly. You will obviously need a computer to run
-the server on too, besides that nothing is required. Learn more about choosing the correct Java version here:
-:doc:`../server/getting-started/jre/`
+the server on too, besides that nothing is required. Learn more about choosing and installing the correct Java version
+here: :doc:`../server/getting-started/jre/`
 
 Where do I get Sponge?
 ----------------------
 
-Beta development builds of SpongeForge and SpongeVanilla are already available:
-`Sponge Downloads <https://spongepowered.org/downloads>`_
+You can download SpongeForge and SpongeVanilla on our `downloads page <https://www.spongepowered.org/downloads>`_.
 
 What Sponge implementations are available?
 ------------------------------------------
@@ -42,11 +41,18 @@ The Sponge Project currently develops two implementations which both use the Spo
 (2) **SpongeVanilla**, a stand-alone implementation of the Sponge API, running on top of the vanilla Minecraft server.
     (SpongeVanilla was formerly known as Granite, until the development teams merged).
 
+There have also been community implementations due to the flexibility of the API:
+
+(1) **LanternServer**, an open source and compatible Minecraft: Java Edition server that implements the Sponge API. 
+    It does not rely on the vanilla codebase at all, allowing for it be more configurable, open, and performant. 
+    While still a work in progress, their project is quite promising and may one day be the choice for servers not
+    looking to run Forge mods. You can find their project `on Github <https://github.com/LanternPowered/LanternServer>`_.
+
 Where do I get Plugins for Sponge?
 ----------------------------------
 
-On our official plugin repository, which is called Ore. Development has already started on GitHub. Temporarily, plugins
-are hosted on the `SpongeForums <https://forums.spongepowered.org/c/plugins/plugin-releases>`_.
+You can find plugins on the `SpongeForums <https://forums.spongepowered.org/c/plugins/plugin-releases>`_ as well as our
+almost complete, official plugin repository, called `Ore <https://ore.spongepowered.org/>`_.
 
 What happened to Bukkit?
 ------------------------
@@ -60,8 +66,11 @@ history page: :doc:`history`
 Can I run Bukkit Plugins with this?
 -----------------------------------
 
-Sadly no, not natively. Sponge is using its own API (Sponge API), while Bukkit is using the Bukkit API. However there is the
-possibility that a third-party plugin for Sponge implements the Bukkit API on top of Sponge API.
+No, and enabling this capability is not a goal of ours. Sponge is using its own API (Sponge API), while Bukkit is using
+the Bukkit API. While third parties explored the idea of implementing the Bukkit API on top of Sponge, due to the design 
+differences of the APIs, none of these projects have come to fruition. If you think a feature is missing in Sponge or you
+cannot find a plugin your server needs, consider posting on the `forums <https://forums.spongepowered.org/>`_, and
+someone may be able to help you.
 
 For Server Owners
 =================
@@ -80,8 +89,7 @@ Sponge-powered servers.
 Worlds will be able to be ported over. It is up to plugin developers to create conversion processes that will allow you
 to keep plugin data, if any exists. Some plugin developers may not do this.
 
-On a related note, we will not be providing support for Bukkit plugins on Sponge. However, it may be possible for a
-third-party to create a way for Bukkit plugins to work on Sponge.
+On a related note, we will not be providing support for Bukkit plugins on Sponge.
 
 How Will Switching to Sponge Affect Players on My Server?
 ---------------------------------------------------------
