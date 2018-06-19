@@ -55,8 +55,8 @@ Here's how you **should** withdraw money:
     import org.spongepowered.api.service.economy.transaction.ResultType;
     import org.spongepowered.api.service.economy.transaction.TransactionResult;
     
-    EconomyService service = ...
-    Account account = ...
+    EconomyService service = ...;
+    Account account = ...;
     BigDecimal requiredAmount = BigDecimal.valueOf(20);
 
     TransactionResult result = account.withdraw(service.getDefaultCurrency(),

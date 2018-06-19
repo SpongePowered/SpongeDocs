@@ -89,7 +89,7 @@ before other server modifications.
 
         @Override
         public void handle(ChangeBlockEvent.Break event) throws Exception {
-            ...
+            [...]
         }
     }
 
@@ -115,7 +115,7 @@ which accepts an instance of the class containing the event listeners.
 
 .. code-block:: java
 
-    EventListener listener = ...
+    EventListener listener = ...;
     Sponge.getEventManager().unregisterListeners(listener);
 
 Alternatively, you can use :javadoc:`EventManager#unregisterPluginListeners(Object)`, passing in a reference to the
@@ -124,7 +124,7 @@ event listeners, including those registered with ``@Listener`` annotations.
 
 .. code-block:: java
 
-    MyPlugin plugin = ...
+    MyPlugin plugin = ...;
     Sponge.getEventManager().unregisterPluginListeners(plugin);
 
 .. _about_listener:
@@ -193,7 +193,7 @@ Example: Firing LightningEvent
     import org.spongepowered.api.event.action.LightningEvent;
     import org.spongepowered.api.event.cause.Cause;
 
-    LightningEvent lightningEvent = SpongeEventFactory.createLightningEvent(Cause.source(plugin).build());
+    LightningEvent lightningEvent = SpongeEventFactory.createLightningEventPre(Cause.source(plugin).build());
     Sponge.getEventManager().post(lightningEvent);
 
 .. warning::

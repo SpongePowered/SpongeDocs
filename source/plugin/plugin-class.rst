@@ -45,7 +45,7 @@ usage is explained on :doc:`plugin-meta`.
 
     import org.spongepowered.api.plugin.Plugin;
 
-    @Plugin(id = "exampleplugin", name = "Example Plugin", version = "1.0")
+    @Plugin(id = "exampleplugin", name = "Example Plugin", version = "1.0", description = "Example")
     public class ExamplePlugin {
 
     }
@@ -69,7 +69,7 @@ of the :javadoc:`Listener` annotation before the method.
     import org.spongepowered.api.event.Listener;
     import org.spongepowered.api.event.game.state.GameStartedServerEvent;
 
-    @Plugin(id = "exampleplugin", name = "Example Plugin", version = "1.0")
+    @Plugin(id = "exampleplugin", name = "Example Plugin", version = "1.0", description = "Example")
     public class ExamplePlugin {
         @Listener
         public void onServerStart(GameStartedServerEvent event) {

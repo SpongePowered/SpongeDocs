@@ -37,7 +37,7 @@ For a quick example, let's look at how we would change the cactii that spawn in 
     import org.spongepowered.api.world.gen.populator.Cactus;
 
     @Override
-    public void modifyWorldGenerator(WorldCreationSettings world, DataContainer settings, WorldGenerator worldGenerator) {
+    public void modifyWorldGenerator(WorldProperties world, DataContainer settings, WorldGenerator worldGenerator) {
         BiomeGenerationSettings desertSettings = worldGenerator.getBiomeSettings(BiomeTypes.DESERT);
         for (Cactus populator : desertSettings.getPopulators(Cactus.class)) {
             populator.setHeight(5);
@@ -63,7 +63,7 @@ scattered everywhere throughout the world.
     import org.spongepowered.api.world.gen.populator.Pumpkin;
 
     @Override
-    public void modifyWorldGenerator(WorldCreationSettings world, DataContainer settings, WorldGenerator worldGenerator) {
+    public void modifyWorldGenerator(WorldProperties world, DataContainer settings, WorldGenerator worldGenerator) {
         Pumpkin pumpkinPopulator = Pumpkin.builder().perChunk(12).build();
         worldGenerator.getPopulators().add(pumpkinPopulator);
     }
@@ -100,10 +100,10 @@ biome-specific ground cover.
     public class SinusoidalGenerator implements GenerationPopulator {
 
         @Override
-        public void populate(World world, MutableBlockVolume buffer, ImmutableBiomeArea biomes) {
+        public void populate(World world, MutableBlockVolume buffer, ImmutableBiomeVolume biomes) {
             for(int x = buffer.getBlockMin().getX(); x < buffer.getBlockMax().getX(); x++) {
                 for(int z = buffer.getBlockMin().getZ(); z < buffer.getBlockMax().getZ(); z++) {
-                    BiomeType biome = biomes.getBiome(x,z);
+                    BiomeType biome = biomes.getBiome(x, 64, z);
                     int height = getHeight(x, z, world.getWorldGenerator().getBiomeSettings(biome));
                     for(int y = 0; y < height || y < 64; y++) {
                         if(y < height) {
@@ -174,20 +174,20 @@ Below is an example of a biome generator which creates one large island centered
         private static final double HILLS_RADIUS = HILLS_SIZE * HILLS_SIZE;
 
         @Override
-        public void generateBiomes(MutableBiomeArea buffer) {
-            Vector2i min = buffer.getBiomeMin();
-            Vector2i max = buffer.getBiomeMax();
+        public void generateBiomes(MutableBiomeVolume buffer) {
+            Vector3i min = buffer.getBiomeMin();
+            Vector3i max = buffer.getBiomeMax();
 
             for (int x = min.getX(); x <= max.getX(); x++) {
-                for (int y = min.getY(); y <= max.getY(); y++) {
-                    if (x * x + y * y < HILLS_RADIUS) {
-                        buffer.setBiome(x, y, BiomeTypes.EXTREME_HILLS);
-                    } else if (x * x + y * y < FOREST_RADIUS) {
-                        buffer.setBiome(x, y, BiomeTypes.FOREST);
-                    } else if (x * x + y * y < BEACH_RADIUS) {
-                        buffer.setBiome(x, y, BiomeTypes.BEACH);
+                for (int z = min.getZ(); z <= max.getZ(); z++) {
+                    if (x * x + z * z < HILLS_RADIUS) {
+                        buffer.setBiome(x, 64, z, BiomeTypes.EXTREME_HILLS);
+                    } else if (x * x + z * z < FOREST_RADIUS) {
+                        buffer.setBiome(x, 64, z, BiomeTypes.FOREST);
+                    } else if (x * x + z * z < BEACH_RADIUS) {
+                        buffer.setBiome(x, 64, z, BiomeTypes.BEACH);
                     } else {
-                        buffer.setBiome(x, y, BiomeTypes.OCEAN);
+                        buffer.setBiome(x, 64, z, BiomeTypes.OCEAN);
                     }
                 }
             }

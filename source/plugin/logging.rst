@@ -80,10 +80,10 @@ Emitting a message with your logger is very simple.
 
 .. code-block:: java
 
-    getLogger().info(String);
-    getLogger().debug(String);
-    getLogger().warn(String);
-    getLogger().error(String);
+    getLogger().info("String");
+    getLogger().debug("String");
+    getLogger().warn("String");
+    getLogger().error("String");
 
 The String is the message you wish to emit. For example:
 

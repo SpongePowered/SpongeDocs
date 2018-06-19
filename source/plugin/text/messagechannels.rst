@@ -118,7 +118,7 @@ front of the message.
 
         @Override
         public Optional<Text> transformMessage(Object sender, MessageReceiver recipient,
-                                                                    Text original) {
+                    Text original, ChatType type) {
             Text text = original;
             text = Text.of(TextColors.RED, "[Admin]", TextColors.RESET, text);
             return Optional.of(text);
@@ -227,7 +227,7 @@ class named ``MutableAdminMessageChannel`` that will implement a ``MutableMessag
 
         @Override
         public Optional<Text> transformMessage(Object sender, MessageReceiver recipient,
-                                                                    Text original) {
+                    Text original, ChatType type) {
             Text text = original;
             if(this.members.contains(recipient)) {
                 text = Text.of(TextColors.RED, "[Admin]", TextColors.RESET, text);

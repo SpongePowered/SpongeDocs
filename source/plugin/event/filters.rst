@@ -62,7 +62,7 @@ An example with :javadoc:`Include` could be:
 
     @Listener
     @Include({DamageEntityEvent.class, DestructEntityEvent.class})
-    public void onEvent(EntityEvent event) {
+    public void onEvent(TargetEntityEvent event) {
         // do something
     }
 

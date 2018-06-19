@@ -27,7 +27,7 @@ Checking the type of the item is very simple. You just need to call the :javadoc
     import org.spongepowered.api.item.inventory.ItemStack;
 
     public boolean isStick(ItemStack stack) {
-        ItemType type = stack.getItem();
+        ItemType type = stack.getType();
         return type.equals(ItemTypes.STICK);
     }
 

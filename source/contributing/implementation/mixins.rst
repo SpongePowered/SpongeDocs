@@ -57,7 +57,7 @@ that attempt to use Sponge.
         }
 
         // Other methods skipped
-    }
+    };
 
 This applies to all classes that are annotated with ``@Mixin``. Classes that are not touched by the mixin processor may make use of those
 features. There are two ways to work around this.
@@ -127,10 +127,10 @@ the other. For example:
             return new Collection<ItemStack>() {
                 @Override
                 public Iterator<ItemStack> iterator() {
-                    return new SampleIterator<>();
+                    return new SampleIterator();
                 }
 
                 // Other methods skipped
-            }
+            };
         }
     }

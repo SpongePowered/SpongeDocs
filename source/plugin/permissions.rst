@@ -394,8 +394,9 @@ Example
 
     public class AwesomeBlock extends Block {
         @Override
-        public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumFacing side, float hitX, float hitY, float hitZ) {
-            if (player.canCommandSenderUseCommand(4, "examplemod.awesomeblock.interact")) {
+        public boolean onBlockActivated(World world, BlockPos pos, IBlockState state,
+                EntityPlayer player, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
+            if (player.canUseCommand(4, "examplemod.awesomeblock.interact")) {
                 // Do cool stuff
                 return true;
             }
