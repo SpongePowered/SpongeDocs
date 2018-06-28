@@ -7,7 +7,7 @@ SpongeAPI, it should run correctly on any sufficiently-complete implementation.
 
 Minecraft can't run Sponge plugins out of the box, but you can modify it to do so.
 
-The Sponge API itself is an `open standard <https://github.com/SpongePowered/SpongeAPI>`__.
+The SpongeAPI itself is an `open standard <https://github.com/SpongePowered/SpongeAPI>`__.
 
 Available Implementations
 =========================

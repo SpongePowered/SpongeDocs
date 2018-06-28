@@ -10,7 +10,7 @@ Users who do not want to use Minecraft Forge can consider :doc:`SpongeVanilla <s
 Download
 ========
 
-Grab your copy of `Sponge Forge here <https://www.spongepowered.org/downloads>`_.
+Grab your copy of `SpongeForge here <https://www.spongepowered.org/downloads>`_.
 
 Reading the Download Filename
 =============================

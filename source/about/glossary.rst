@@ -81,7 +81,7 @@ Sponge Forums
 Sponge Foundation
   The financial side of the project, a separate entity that accepts, manages and distributes donations.
 SpongeVanilla
-  An implementation of Sponge API that runs on Vanilla Minecraft (and not Forge).
+  An implementation of SpongeAPI that runs on Vanilla Minecraft (and not Forge).
 Spongie
   The Sponge Mascot, a valiant little Sponge with a red cape.
 Spongy

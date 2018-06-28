@@ -2,9 +2,9 @@
 Creating a Plugin
 =================
 
-This section is intended for developers who wish to develop plugins with the Sponge API. The articles cover various
-aspects of the Sponge API and the concepts behind it. It is important to understand that the intent of this section is
-to help developers get started with the Sponge API, not to cover every concept. The
+This section is intended for developers who wish to develop plugins with the SpongeAPI. The articles cover various
+aspects of the SpongeAPI and the concepts behind it. It is important to understand that the intent of this section is
+to help developers get started with the SpongeAPI, not to cover every concept. The
 `Javadocs <https://jd.spongepowered.org/>`__ will be of great help to you once you are comfortable with the API.
 
 .. note::

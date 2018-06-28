@@ -4,7 +4,7 @@ Plans for the Future
 
 There is a lot we would like to do. Specifically:
 
-* If Mojang releases an official modding API, we are interested in building the Sponge API on top of Mojang's modding
+* If Mojang releases an official modding API, we are interested in building the SpongeAPI on top of Mojang's modding
   API so Sponge plugins will work on both.
 * We may support client-side Sponge mods that could perform a variety of functions related to the client.
 

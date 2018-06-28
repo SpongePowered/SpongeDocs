@@ -38,12 +38,12 @@ The Sponge Project currently develops two implementations which both use the Spo
     in. Sponge allows server owners to deploy Sponge plugins with ease, making server management easier. (SpongeForge
     was formerly known as Sponge, until it was renamed to avoid confusion).
 
-(2) **SpongeVanilla**, a stand-alone implementation of the Sponge API, running on top of the vanilla Minecraft server.
+(2) **SpongeVanilla**, a stand-alone implementation of the SpongeAPI, running on top of the vanilla Minecraft server.
     (SpongeVanilla was formerly known as Granite, until the development teams merged).
 
 There have also been community implementations due to the flexibility of the API:
 
-(1) **LanternServer**, an open source and compatible Minecraft: Java Edition server that implements the Sponge API. 
+(1) **LanternServer**, an open source and compatible Minecraft: Java Edition server that implements the SpongeAPI. 
     It does not rely on the vanilla codebase at all, allowing for it be more configurable, open, and performant. 
     While still a work in progress, their project is quite promising and may one day be the choice for servers not
     looking to run Forge mods. You can find their project `on Github <https://github.com/LanternPowered/LanternServer>`_.
@@ -66,7 +66,7 @@ history page: :doc:`history`
 Can I run Bukkit Plugins with this?
 -----------------------------------
 
-No, and enabling this capability is not a goal of ours. Sponge is using its own API (Sponge API), while Bukkit is using
+No, and enabling this capability is not a goal of ours. Sponge is using its own API (SpongeAPI), while Bukkit is using
 the Bukkit API. While third parties explored the idea of implementing the Bukkit API on top of Sponge, due to the design 
 differences of the APIs, none of these projects have come to fruition. If you think a feature is missing in Sponge or you
 cannot find a plugin your server needs, consider posting on the `forums <https://forums.spongepowered.org/>`_, and
@@ -111,7 +111,7 @@ What can't I do with Sponge? / Limitations of Sponge?
 -----------------------------------------------------
 
 Sponge can't be used to create new blocks, textures, mobs on the clientside or any other content which would need
-clientside modifications. The Sponge API wont support sending mods or plugins to the client for now due to security
+clientside modifications. The SpongeAPI wont support sending mods or plugins to the client for now due to security
 concerns. However you can make use of the ForgeAPI for clients and create Sponge plugins for the serverside.
 It is even possible to use Sponge on the client-side, but for several tasks mods are still required.
 

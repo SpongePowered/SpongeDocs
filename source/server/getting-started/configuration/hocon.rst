@@ -3,7 +3,7 @@ Introduction to HOCON
 =====================
 
 HOCON (Human-Optimized Config Object Notation) is an easy-to-use configuration format. It is used by Sponge and
-individual plugins utilizing the Sponge API to store important data, such as configuration or player data. HOCON files
+individual plugins utilizing the SpongeAPI to store important data, such as configuration or player data. HOCON files
 typically use the suffix ``.conf``.
 
 Components
@@ -47,7 +47,7 @@ HOCON. Below are two examples of valid HOCON.
     }
 
 In practice, it is best to follow the formatting conventions of the HOCON configuration you are editing. When editing
-a HOCON configuration for Sponge or an individual plugin utilizing the Sponge API, the values are likely the only thing
+a HOCON configuration for Sponge or an individual plugin utilizing the SpongeAPI, the values are likely the only thing
 you will be changing unless otherwise specified.
 
 Debugging your configuration

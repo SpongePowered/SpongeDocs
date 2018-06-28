@@ -10,7 +10,7 @@ Packaging Your Plugin
 
 Ore requires any projects to be packaged with a ``mcmod.info`` descriptor file in the top-level of your JAR file. This
 file is used to automatically infer some important details about your project to make the upload process easier. Ore
-will reject your plugin if this file is missing from the JAR. Luckily, Sponge API has a built in annotation processor
+will reject your plugin if this file is missing from the JAR. Luckily, SpongeAPI has a built in annotation processor
 that creates this file for you automatically, on compile, using the ``@Plugin`` annotation that you have likely
 already created in your plugin's main class.
 

@@ -151,7 +151,7 @@ The types serializable using those methods are:
 Defaults
 ~~~~~~~~
 
-Unlike the Sponge API, the Configurate library does not use ``Optional`` for values that might not be present but null.
+Unlike the SpongeAPI, the Configurate library does not use ``Optional`` for values that might not be present but null.
 While the getters for primitive methods (like ``getBoolean()`` or ``getInt()``) might return ``false`` or ``0``, those
 that would return an object (like ``getString()``) will return ``null`` if no value is present. If you do not want to
 manually handle those special cases, you can use *default values*. Every ``getXXX()`` method discussed above has an

@@ -133,7 +133,7 @@ Forge
 ~~~~~
 
 The following commands are available only when using the SpongeForge coremod on Forge. Other implementations of the
-Sponge API, such as SpongeVanilla, do not include these commands.
+SpongeAPI, such as SpongeVanilla, do not include these commands.
 
 ====================  ========================================  ====================
 Command               Description                               Permission

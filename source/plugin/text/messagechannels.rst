@@ -241,7 +241,7 @@ the recipient is in the member list before transforming the message. If it is, t
 sent, appending the red ``[Admin]`` prefix. In our ``getMembers()`` method we return an immutable set, so that the set
 can only be modified by the appropriate methods in our ``MutableAdminMessageChannel``.
 
-Note that an abstract implementation for ``MutableMessageChannel``\ s exists in the Sponge API as
+Note that an abstract implementation for ``MutableMessageChannel``\ s exists in the SpongeAPI as
 ``AbstractMutableMessageChannel``. Also note that our members do not persist. If a player were to leave the server,
 they would be removed from the set.
 

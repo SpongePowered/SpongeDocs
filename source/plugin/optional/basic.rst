@@ -2,12 +2,12 @@
 Optionals Explained
 ===================
 
-Much of the Sponge API makes use of Java's `Optional` system on object accessors, but if you've never used ``Optional``
+Much of the SpongeAPI makes use of Java's `Optional` system on object accessors, but if you've never used ``Optional``
 before this might seem like a bit of a peculiar way of doing things. You might be tempted to ask:
 *"why do I need to perform an extra step when fetching something from an API object?"*
 
 This section gives a brief summary of ``Optional`` and explains how - and perhaps more importantly why -
-it's used throughout the Sponge API.
+it's used throughout the SpongeAPI.
 
 Let's start with a little history, and look at how accessors - particularly "getters" - typically work when not making
 use of ``Optional``.

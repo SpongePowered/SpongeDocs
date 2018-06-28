@@ -28,7 +28,7 @@ Alternatively, Sponge has a simple archetype that generates the basic structure 
 
 The generated pom includes a release profile that generates gpg-signed jars for javadocs, binary, and sources as
 recommended in the guidelines for submitting projects to Sonatype OSS (However, this option is not currently available
-for Sponge plugins due to the fact that Sponge API is not currently hosted on Maven Central).
+for Sponge plugins due to the fact that SpongeAPI is not currently hosted on Maven Central).
 
 Properties
 ~~~~~~~~~~

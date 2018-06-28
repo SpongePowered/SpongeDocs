@@ -3,7 +3,7 @@ Best Practices
 ==============
 
 There are many ways to create a plugin, and many pitfalls for an unwary developer. Here we describe the plugin
-development practices that will make the most of the Sponge API, setting sensible boundaries for the benefit of
+development practices that will make the most of the SpongeAPI, setting sensible boundaries for the benefit of
 compatibility. This information may change and expand as the Sponge project matures.
 
 
@@ -32,8 +32,8 @@ Packets
 ~~~~~~~
 
 Anything to do with intercepting packets, or introducing custom items/blocks/entities/etc, is *not* planned to be part
-of the Sponge API. Note that using packets may be looking at the problem the wrong way, as there may be a solution
-achievable with the existing Sponge API. In some cases it may be possible to add whatever is needed to the Sponge API;
+of the SpongeAPI. Note that using packets may be looking at the problem the wrong way, as there may be a solution
+achievable with the existing SpongeAPI. In some cases it may be possible to add whatever is needed to the SpongeAPI;
 otherwise, the alternative is to use the Forge API and create a Mod instead.
 
 
@@ -41,9 +41,9 @@ Using Forge or NMS Classes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 We do not recommend working with Forge or Minecraft base classes at all, unless it is to provide compatibility with a
-mod for Sponge API. Most uses of NMS (net.minecraft.server) code in plugins do not fail gracefully, making
-troubleshooting very difficult. Maintaining NMS modifications is also more difficult than using the Sponge API. Mods that
-add to the Sponge API using code internals will have to specifically write an API, which does not rely on underlying
+mod for SpongeAPI. Most uses of NMS (net.minecraft.server) code in plugins do not fail gracefully, making
+troubleshooting very difficult. Maintaining NMS modifications is also more difficult than using the SpongeAPI. Mods that
+add to the SpongeAPI using code internals will have to specifically write an API, which does not rely on underlying
 Minecraft code, to be usable by Sponge plugins. However, plugins can be created that load separate “compatibility”
 modules to interact with the underlying implementation (SpongeForge or SpongeVanilla).
 

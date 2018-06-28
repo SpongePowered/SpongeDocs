@@ -32,7 +32,7 @@ staff to solve these issues as soon as possible.
 
 4. Is every plugin you're using built against your desired Sponge build?
 
-The Sponge API is subject to change sometimes. When you try to use an older plugin on the most recent Sponge build and
+The SpongeAPI is subject to change sometimes. When you try to use an older plugin on the most recent Sponge build and
 a crash occurs, try downgrading Sponge or contact the plugin author to get an updated plugin. If you're on an older
 Sponge build and a recent plugin crashes, try to update Sponge first. If that doesn't fix the issue, contact the
 plugin author and ask for a fix.

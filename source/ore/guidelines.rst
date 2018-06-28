@@ -132,7 +132,7 @@ Core Mods and Mixins: Modification of the Minecraft Base Code
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Plugins and mods that use a system that modifies the Minecraft base code at runtime, (such as core mods and mixins) must disclose
-the edits that they make to the Minecraft code, and their reasoning for them. Sponge plugins should use the Sponge API where
+the edits that they make to the Minecraft code, and their reasoning for them. Sponge plugins should use the SpongeAPI where
 possible. Sponge implementations may implement technical restrictions to prevent such modifications from being applied by default.
 Files are not permitted to attempt to work around these restrictions, but can notify the user that enhanced functionality can be
 enabled via the Sponge provided configuration options.

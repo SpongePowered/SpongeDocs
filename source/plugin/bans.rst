@@ -22,7 +22,7 @@ Getting the BanService
 ======================
 
 You will need to get the ``BanService`` to actually add bans to the server. Fortunately, this can be done similarly to
-other services in the Sponge API:
+other services in the SpongeAPI:
 
 .. code-block:: java
     
