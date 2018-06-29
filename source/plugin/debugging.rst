@@ -74,6 +74,28 @@ IntelliJ IDEA
 * Select ``yourplugin_main``.
 * Do NOT check the ``Export`` option on the module, after it is added to the list.
 
+.. warning::
+
+    Due to a bug in IntelliJ (IDEA-194641_), any dependencies that your plugin has (e.g.
+    the Kotlin standard library, or Gson) will **not** be added to the classpath using the above
+    method. This results in a ``ClassNotFoundException`` when your plugin tries to access one
+    of these classes, even though it successfully compiled against that class.
+
+    This issue only affects running your plugin from IntelliJ as a module. Your final
+    built plugin jar will run normally in both IntelliJ and a production server.
+
+    If your plugin has external dependencies, you'll need to follow these steps
+    in order to run it directly from IntelliJ:
+
+    * Create a new Java module with ``File`` -> ``New`` -> ``Module...``. Name it ``SpongeForgeContainer``.
+    * Open the module settings for ``SpongeForgeContainer`` as described above
+    * In the dependency settings for ``SpongeForgeContainer``, add a module dependency on ``SpongeForge_main``
+    * Edit your server run configuration. Change ``Use classpath of module:`` from ``SpongeForge_main`` to ``SpongeForgeContainer``
+
+    You can leave all of your settings unchanged, including ``SpongeForge_main``'s dependency on your plugin module.
+    Now, all of your plugin's dependencies should be added to the classpath when you run the server.
+
+
 Eclipse
 ~~~~~~~
 
@@ -188,3 +210,5 @@ Eclipse
 No action needed. As soon as you save the file, it will be rebuilt and automatically hotswapped with the
 currently running debug. Unless you changed this particular default behavior, you will not have to trigger a manual
 hotswap.
+
+.. _IDEA-194641: https://youtrack.jetbrains.com/issue/IDEA-194641
