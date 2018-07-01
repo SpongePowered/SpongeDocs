@@ -20,8 +20,21 @@ Name
 ~~~~
 
 Your project’s submitted name should not include a version, tagline, or other description. The name should be unique and original
-and must not have a name implying it is a Sponge project (e.g. *SpongeWarp* is not allowed, *Cool Warps for Sponge* is).
+and must not have a name implying it is an official Sponge project.
 
+Examples of names that are **not acceptable**:
+
+- *SpongeWarp*
+- *SpongeHome*
+- *SpongeEssentials*
+- *SpongeCloud*
+
+Examples of names that are **acceptable**:
+
+- *CoolWarps-Sponge*
+- *MoneyMiner-Sponge*
+- *Golfball-for-Sponge*
+- *Calendar-for-Sponge*
 
 Main Documentation Page (Home)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -104,7 +117,7 @@ Either:
    Plugin X and now I claim credit!”, or
  - Continue a plugin that has been abandoned, with proof the author has not been answering messages or has stated the project
    will no longer be updated.
-    
+
 Acknowledge or credit the past plugin and developers. Essentially, don’t claim it is a new plugin and exclusively your creation.
 
 --------
