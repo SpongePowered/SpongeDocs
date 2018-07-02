@@ -102,16 +102,13 @@ Usage-Example
     import org.spongepowered.api.service.permission.PermissionDescription.Builder;
     import org.spongepowered.api.service.permission.PermissionService;
     import org.spongepowered.api.text.Text;
-    import java.util.Optional;
 
-    Optional<Builder> optBuilder = permissionService.newDescriptionBuilder(myplugin);
-    if (optBuilder.isPresent()) {
-        Builder builder = optBuilder.get();
-        builder.id("myplugin.commands.teleport.execute")
-               .description(Text.of("Allows the user to execute the teleport command."))
-               .assign(PermissionDescription.ROLE_STAFF, true)
-               .register();
-    }
+    Builder builder = permissionService.newDescriptionBuilder(myplugin);
+    
+    builder.id("myplugin.commands.teleport.execute")
+           .description(Text.of("Allows the user to execute the teleport command."))
+           .assign(PermissionDescription.ROLE_STAFF, true)
+           .register();
 
 Simple-Result
 ~~~~~~~~~~~~~
