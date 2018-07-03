@@ -96,7 +96,7 @@ If you have a dynamic element such as a ``World`` or ``ItemType`` then you can u
 Usage-Example
 ~~~~~~~~~~~~~
 
-.. code-block:: text
+.. code-block:: java
 
     import org.spongepowered.api.service.permission.PermissionDescription;
     import org.spongepowered.api.service.permission.PermissionDescription.Builder;
