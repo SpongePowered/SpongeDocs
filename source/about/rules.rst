@@ -32,7 +32,7 @@ list of do's and don'ts. This stuff should all be common sense.
 * Racism, sexism, bigotry, or hateful language is forbidden. Don't even try it. This is a strict rule - don't break it.
 
 * Be nice to the operators and admins. They are *volunteers*, and their time is frequently limited. While they are very
-  often happy to talk with you, please don't overdo private messages, pinging ops in IRC, and so forth.
+  often happy to talk with you, please don't overdo private messages, pinging staff in IRC or Discord, and so forth.
 
 * Only private message ops/mods if something needs to be kept private, they are not your personal search engine.
 
