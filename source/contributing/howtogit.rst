@@ -85,7 +85,7 @@ everything in. Second step finished, well done!
 Alternatively you can do this via CLI (command line interface, ``CMD`` or ``powershell`` on windows). Note
 that you need to create the folder everything is getting cloned to yourself before typing this command:
 
-.. code-block:: none
+.. code-block:: bash
 
   git clone git://github.com/YourGitHubAccount/ClonedRepoName.git
 
@@ -103,7 +103,7 @@ Instead, create a new branch yourself (with a sensible name) and make the change
 This implies that we need to create a ``branch`` first, so let's go! You can do this via your client (there
 should be a ``create branch`` button somewhere), or you can use the CLI with git:
 
-.. code-block:: none
+.. code-block:: bash
 
   git checkout -b [name_of_your_new_branch]
 
@@ -111,7 +111,7 @@ This will create a ``branch`` with the name of your choice and switch to it. All
 on this branch. If you need to switch to another branch ( for example ``master``), just reuse this command. Third step
 done! Good job so far! To get an overview of your branches, just have a look at your git client or use:
 
-.. code-block:: none
+.. code-block:: bash
 
   git branch
 
@@ -139,14 +139,14 @@ via CLI too:
 
 First collect all files and folders you want to put into a commit:
 
-.. code-block:: none
+.. code-block:: bash
 
   git add <file>
   git add <folder>
 
 Now that the files are added to your list of changes you want included in the commit, just do
 
-.. code-block:: none
+.. code-block:: bash
 
   git commit
 
@@ -169,13 +169,13 @@ Now we need to get the changes to your fork on GitHub. Everything you've made so
 right now. As always, you can use your git client to do this (there's a button somewhere in your GUI), or you can do
 it via CLI:
 
-.. code-block:: none
+.. code-block:: bash
 
   git push <remote> <branch>
 
 In this case it should be:
 
-.. code-block:: none
+.. code-block:: bash
 
  git push origin feature/YourFeature
 
@@ -236,19 +236,19 @@ clone. Look below to see how grabbing and updating works.
 
 Alright. This step is done through CLI as most GUIs are missing this (rather advanced) functionality:
 
-.. code-block:: none
+.. code-block:: bash
 
  git remote add upstream https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git
 
 If you're unsure if that worked as intended or if you want to check which remotes are currently set, you can check via:
 
-.. code-block:: none
+.. code-block:: bash
 
  git remote -v
 
 the output should look like:
 
-.. code-block:: none
+.. code-block:: bash
 
  origin    https://github.com/YOUR_USERNAME/YOUR_FORK.git (fetch)
  origin    https://github.com/YOUR_USERNAME/YOUR_FORK.git (push)
@@ -275,7 +275,7 @@ A successfull rebase requires several steps:
 
 First you need to fetch the changes on the remote repository. This is (again) done via CLI:
 
-.. code-block:: none
+.. code-block:: bash
 
  git fetch upstream
 
@@ -286,13 +286,13 @@ This will add all changes from the remote ``upstream`` and put them into a tempo
 
 Now we need to select our local ``master`` branch:
 
-.. code-block:: none
+.. code-block:: bash
 
  git checkout master
 
 After that we'll merge the changes that are included in ``upstream/master`` into our local ``master`` branch:
 
-.. code-block:: none
+.. code-block:: bash
 
  git merge upstream/master
 
@@ -306,7 +306,7 @@ Alright, this is what we've done so far:
 Next up is rebasing the local branch you're working in against local ``master``. We need to switch to your working
 branch (here: ``feature/yourfeature``) and then perform a rebase. This is done via:
 
-.. code-block:: none
+.. code-block:: bash
 
  git checkout feature/yourfeature
  git rebase master
@@ -323,7 +323,7 @@ this:
 The last thing we need to do is to push everything to the fork. If you've already created a PR, it will get updated
 automatically:
 
-.. code-block:: none
+.. code-block:: bash
 
  git checkout master
  git push -f

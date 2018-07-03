@@ -68,14 +68,14 @@ Who Are You?
 Before you even start to work with git and the repository, make sure your
 git configuration has your identity set up. Open up your CLI and enter:
 
-.. code-block:: none
+.. code-block:: bash
 
    git config --list
 
 Look for ``user.name`` and ``user.email``. If they are not the same username and email as your GitHub account
 then set them:
 
-.. code-block:: none
+.. code-block:: bash
 
    git config --global user.name "John Doe"
    git config --global user.email johndoe@example.com

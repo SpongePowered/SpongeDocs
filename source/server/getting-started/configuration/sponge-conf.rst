@@ -280,7 +280,7 @@ world-enabled                             boolean   true        Enable if this w
 
 This config was generated using SpongeForge build 2990 (with Forge 2611), SpongeAPI version 7.0.0:
 
-.. code-block:: none
+.. code-block:: guess
     
     # 1.0
     # 
