@@ -12,6 +12,8 @@ Download
 
 Grab your copy of `Sponge Forge here <https://www.spongepowered.org/downloads>`_.
 
+.. _reading_spongeforge_filename:
+
 Reading the Download Filename
 =============================
 
