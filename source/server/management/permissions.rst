@@ -13,7 +13,7 @@ Minecraft comes with a simple way to give permissions: by setting users as opera
 information on op status can be found at https://minecraft.gamepedia.com/Op
 
 The abilities of op permission may be adjusted by altering the ``op-permission-level`` setting in the
-:doc:`../../server/getting-started/configuration/server-properties` file.
+`server.properties <https://minecraft.gamepedia.com/Server.properties>`__ file.
 
 
 A list of native Minecraft server commands available to players with op can be found at the `Minecraft Wiki
