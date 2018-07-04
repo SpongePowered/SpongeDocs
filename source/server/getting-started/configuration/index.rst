@@ -20,10 +20,10 @@ Sponge Configuration Files
 
 Sponge has multiple configuration files which all can be found in the ``config/sponge/`` directory of your server:
 
-* ``global.conf``
-  and its dimension and world subconfigs in the ``worlds`` folder
 * ``tracker.conf``
 * ``custom_data.conf``
+* ``global.conf``
+  and its dimension and world subconfigs in the ``worlds`` folder
 
 The ``global.conf`` file contains the global configuration settings for Sponge. Its properties can be also overridden
 for each world and dimension type by using the config files in the subfolders of ``config/worlds``.
@@ -31,7 +31,7 @@ for each world and dimension type by using the config files in the subfolders of
 The ``tracker.conf`` can be used to configure the Phase Tracker and the ``custom_data.conf`` is used to manage custom
 data added by plugins.
 
-Modifying the Configuration using a Text Editor
+Modifying the Configuration Using a Text Editor
 ===============================================
 
 Open the desired file using your preferred editor, the Sponge configuration files use HOCON, you can read more
@@ -53,7 +53,7 @@ every world and dimension on your server. Simply add whatever you want to change
 apply in the related worlds. Overriding any less specific configs.
 This follows a simple order: World > Dimension > Global
 
-Modifying the Configuration using Commands
+Modifying the Configuration Using Commands
 ==========================================
 
 It is possible to modify most configs through the in-game command ``/sponge config``. The syntax for the config
