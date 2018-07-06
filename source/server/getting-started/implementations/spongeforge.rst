@@ -31,7 +31,7 @@ The format of the filename is ``spongeforge-<MCVersion>-<ForgeBuildId>-<SpongeAP
 | ``ForgeBuildId``     | Preferably your server should run this exact version of Forge (which can be identified in the |
 |                      | last part of Forge's version string).                                                         |
 +----------------------+-----------------------------------------------------------------------------------------------+
-| ``SpongeAPIVersion`` | The version of SpongeAPI implemented by this file. This is what Sponge plugins depend on. |
+| ``SpongeAPIVersion`` | The version of SpongeAPI implemented by this file. This is what Sponge plugins depend on.     |
 +----------------------+-----------------------------------------------------------------------------------------------+
 | ``SpongeBuildId``    | The build number of Sponge. This is what you should supply when reporting bugs or seeking     |
 |                      | support.                                                                                      |
@@ -54,10 +54,10 @@ For example the file name ``spongeforge-1.12.2-2611-7.1.0-BETA-2990.jar`` is com
     use more recent versions of Forge, than the one used for SpongeForge, but we can't always guarantee compatibility.
 
 .. warning::
-    
+
     When investigating crash issues, you can freely try newer versions of Forge than listed on the SpongeForge Jar.
     However it is recommended to also check with the matching version, to make sure your issue is not related to a
-    version mismatch. 
+    version mismatch.
     Even though there will be no guarantee of compatibility, please report any breakage to the issue tracker, so that
     SpongeForge can be updated.
 
