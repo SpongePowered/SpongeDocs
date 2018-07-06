@@ -96,22 +96,19 @@ If you have a dynamic element such as a ``World`` or ``ItemType`` then you can u
 Usage-Example
 ~~~~~~~~~~~~~
 
-.. code-block:: text
+.. code-block:: java
 
     import org.spongepowered.api.service.permission.PermissionDescription;
     import org.spongepowered.api.service.permission.PermissionDescription.Builder;
     import org.spongepowered.api.service.permission.PermissionService;
     import org.spongepowered.api.text.Text;
-    import java.util.Optional;
 
-    Optional<Builder> optBuilder = permissionService.newDescriptionBuilder(myplugin);
-    if (optBuilder.isPresent()) {
-        Builder builder = optBuilder.get();
-        builder.id("myplugin.commands.teleport.execute")
-               .description(Text.of("Allows the user to execute the teleport command."))
-               .assign(PermissionDescription.ROLE_STAFF, true)
-               .register();
-    }
+    Builder builder = permissionService.newDescriptionBuilder(myplugin);
+    
+    builder.id("myplugin.commands.teleport.execute")
+           .description(Text.of("Allows the user to execute the teleport command."))
+           .assign(PermissionDescription.ROLE_STAFF, true)
+           .register();
 
 Simple-Result
 ~~~~~~~~~~~~~
