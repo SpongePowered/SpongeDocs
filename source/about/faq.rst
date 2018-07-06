@@ -12,7 +12,7 @@ For Everyone
 What is Sponge?
 ---------------
 
-Sponge is a versatile Minecraft: Java Edition API. It was made to enrich your Minecraft experience by enabling creation 
+Sponge is a versatile Minecraft: Java Edition API. It was made to enrich your Minecraft experience by enabling creation
 of plugins to add functionality to Minecraft. Read more about Sponge here: :doc:`introduction` and about the history of
 Sponge here: :doc:`history`
 
@@ -31,20 +31,20 @@ You can download SpongeForge and SpongeVanilla on our `downloads page <https://w
 What Sponge implementations are available?
 ------------------------------------------
 
-The Sponge Project currently develops two implementations which both use the SpongeAPI:
+The Sponge Project currently develops two implementations which both use SpongeAPI:
 
 (1) **SpongeForge**, a coremod for Minecraft Forge, which is an existing Minecraft: Java Edition modding framework
     famous for spurring the Minecraft modding scene. Forge lacks a cross-version API, and this is where Sponge steps
     in. Sponge allows server owners to deploy Sponge plugins with ease, making server management easier. (SpongeForge
     was formerly known as Sponge, until it was renamed to avoid confusion).
 
-(2) **SpongeVanilla**, a stand-alone implementation of the SpongeAPI, running on top of the vanilla Minecraft server.
+(2) **SpongeVanilla**, a stand-alone implementation of SpongeAPI, running on top of the vanilla Minecraft server.
     (SpongeVanilla was formerly known as Granite, until the development teams merged).
 
 There have also been community implementations due to the flexibility of the API:
 
-(1) **LanternServer**, an open source and compatible Minecraft: Java Edition server that implements the SpongeAPI. 
-    It does not rely on the vanilla codebase at all, allowing for it be more configurable, open, and performant. 
+(1) **LanternServer**, an open source and compatible Minecraft: Java Edition server that implements SpongeAPI.
+    It does not rely on the vanilla codebase at all, allowing for it be more configurable, open, and performant.
     While still a work in progress, their project is quite promising and may one day be the choice for servers not
     looking to run Forge mods. You can find their project `on Github <https://github.com/LanternPowered/LanternServer>`_.
 
@@ -67,7 +67,7 @@ Can I run Bukkit Plugins with this?
 -----------------------------------
 
 No, and enabling this capability is not a goal of ours. Sponge is using its own API (SpongeAPI), while Bukkit is using
-the Bukkit API. While third parties explored the idea of implementing the Bukkit API on top of Sponge, due to the design 
+the Bukkit API. While third parties explored the idea of implementing the Bukkit API on top of Sponge, due to the design
 differences of the APIs, none of these projects have come to fruition. If you think a feature is missing in Sponge or you
 cannot find a plugin your server needs, consider posting on the `forums <https://forums.spongepowered.org/>`_, and
 someone may be able to help you.
@@ -111,14 +111,14 @@ What can't I do with Sponge? / Limitations of Sponge?
 -----------------------------------------------------
 
 Sponge can't be used to create new blocks, textures, mobs on the clientside or any other content which would need
-clientside modifications. The SpongeAPI wont support sending mods or plugins to the client for now due to security
+clientside modifications. SpongeAPI wont support sending mods or plugins to the client for now due to security
 concerns. However you can make use of the ForgeAPI for clients and create Sponge plugins for the serverside.
 It is even possible to use Sponge on the client-side, but for several tasks mods are still required.
 
 I'm a Bukkit Plugin Developer! Why Can't Sponge Use Bukkit's API?
 -----------------------------------------------------------------
 
-Bukkit’s API contains code licensed under the GPL. This is a large reason why Bukkit met its demise in September 2014; 
+Bukkit’s API contains code licensed under the GPL. This is a large reason why Bukkit met its demise in September 2014;
 by moving forward with a new API licensed under the MIT license, we can avoid some of the problems that fell upon Bukkit.
 While this does not free us from Mojang’s control, as their code is proprietary, it is our belief that Mojang supports
 modding and will continue to do so.

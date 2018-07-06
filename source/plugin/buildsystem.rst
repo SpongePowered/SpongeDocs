@@ -54,7 +54,7 @@ IDE.
     simplify the development process for you and other people wanting to contribute to your project. This method of
     developing plugins does not receive active testing by the Sponge team.
 
-For developing plugins without a build system you need to download the SpongeAPI dependency manually from the
+For developing plugins without a build system you need to download SpongeAPI dependency manually from the
 `SpongeAPI Download Page`_. For developing without a build system, we provide the ``shaded`` artifact which bundles all
 dependencies that would normally be automatically downloaded by the build system.
 

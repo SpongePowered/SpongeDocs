@@ -42,7 +42,7 @@ File
   directory used for storing configuration files. However, Path (see below) should be preferred.
 
 :javadoc:`Game`
-  The ``Game`` object is the core accessor of the SpongeAPI.
+  The ``Game`` object is the core accessor of SpongeAPI.
 
 :javadoc:`GameRegistry`
   Provides an easy way to retrieve types from a ``Game``.
@@ -93,7 +93,7 @@ Logger
 Game
 ~~~~
 
-The ``Game`` object is the opening for many of the internal functions of the SpongeAPI, from the ``EventManager`` to the
+The ``Game`` object is the opening for many of the internal functions of SpongeAPI, from the ``EventManager`` to the
 :javadoc:`Server` and even the Sync/Async :javadoc:`Scheduler`.
 
 While it is entirely possible to retrieve the ``Game`` object through ``Sponge.getGame()``, it is commonly obtained

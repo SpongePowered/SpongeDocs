@@ -2,7 +2,7 @@
 Versioning System and Repository Branch Layout
 ==============================================
 
-With the release for beta we've moved the SpongeAPI versioning to semantic versioning (see https://semver.org/).
+With the release for beta we've moved SpongeAPI versioning to semantic versioning (see https://semver.org/).
 This change means that every time that we make a release we have to increment the version according to the rules
 of semver.
 
@@ -20,7 +20,7 @@ This means that for example ``3.2.0`` is fully compatible to ``3.0.0`` while ``4
 ``3.0.0``. ``3.1.0`` and ``3.1.2`` are fully interchangeable besides the bugs that were fixed.
 
 The layout of our branches (described below) is designed to assist this process by allowing us to make minor releases
-without a breaking change forcing us to make it a major release. This branch layout applies to the SpongeAPI,
+without a breaking change forcing us to make it a major release. This branch layout applies to SpongeAPI,
 SpongeCommon, SpongeForge, and SpongeVanilla repositories but not to the SpongeDocs.
 
 SpongeAPI, SpongeCommon, SpongeForge and SpongeVanilla

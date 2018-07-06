@@ -28,10 +28,10 @@ While the goals were mostly clear, the route to be taken was not. The soon-to-be
 first mention of Sponge as the projects name was on Sept, 6th by Firehead94. Obviously the name stuck.
 
 The initial commit to SpongeAPI and SpongeForge was made on September 7th and 8th, 2014 by one of the Sponge
-Project leaders, Zidane. This was the beginning of the development of the SpongeAPI and SpongeForge (named Sponge at the time).
+Project leaders, Zidane. This was the beginning of the development of SpongeAPI and SpongeForge (named Sponge at the time).
 
 On September 7th, 2014 the initial commit to Granite, an API based upon Vanilla Minecraft was made. Granite, originally
-started as an independent project, was planned to implement it's own API and the SpongeAPI. Granite and SpongeForge
+started as an independent project, was planned to implement it's own API and SpongeAPI. Granite and SpongeForge
 coexisted until April 20th, 2015.
 
 The development of SpongeForge and the API gained momentum leading to a first API release on December 1st, 2014. However this

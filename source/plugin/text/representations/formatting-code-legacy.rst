@@ -9,7 +9,7 @@ Formatting Code & Legacy Format
     org.spongepowered.api.text.serializer.TextSerializers
 
 Text can be represented by using a special character indicating a formatting *of some kind* followed by a unique character
-indicating the specific formatting to be used. In the SpongeAPI, there are two different characters that are supported
+indicating the specific formatting to be used. In SpongeAPI, there are two different characters that are supported
 by default: the ampersand (&) and the section character (§).
 
 Both formatting schemes use the codes found at the `Minecraft Wiki <https://minecraft.gamepedia.com/Formatting_codes>`_.

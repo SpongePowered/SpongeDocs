@@ -2,7 +2,7 @@
 Setting Up Maven
 ================
 
-Add the following to the ``<project>`` block of your ``pom.xml`` to add the SpongeAPI dependency:
+Add the following to the ``<project>`` block of your ``pom.xml`` to add SpongeAPI dependency:
 
 .. code-block:: xml
 

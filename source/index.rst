@@ -7,7 +7,7 @@ Introduction
 
 Welcome to SpongeDocs, the official documentation for the open-source `Sponge <https://www.spongepowered.org>`__ project.
 
-The SpongeAPI is your all new plugin API for Minecraft: Java Edition. You can run it on a plain vanilla server (as
+SpongeAPI is your all new plugin API for Minecraft: Java Edition. You can run it on a plain vanilla server (as
 SpongeVanilla) or on your fully modded MinecraftForge server (as SpongeForge). Grab your copy
 `here <https://www.spongepowered.org/downloads>`_.
 
@@ -60,7 +60,7 @@ Get yourself and your machine ready to develop Sponge itself or your own plugins
 Creating Plugins
 ~~~~~~~~~~~~~~~~
 
-Need help and information while coding your plugin for the SpongeAPI? Look no further!
+Need help and information while coding your plugin for SpongeAPI? Look no further!
 
 .. toctree::
     :maxdepth: 2

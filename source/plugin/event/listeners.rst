@@ -134,7 +134,7 @@ About @Listener
 
 The ``@Listener`` annotation has a few configurable fields:
 
-* ``order`` is the priority in which the event listener is to be run. See the :javadoc:`Order` enum in the SpongeAPI to
+* ``order`` is the priority in which the event listener is to be run. See the :javadoc:`Order` enum in SpongeAPI to
   see the available options.
 * ``beforeModifications`` specifies if the event listener should be called before other server mods, such as Forge
   mods. By default, this is set to false.

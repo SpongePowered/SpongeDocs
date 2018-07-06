@@ -57,5 +57,5 @@ following code:
 
     Developers coming from Bukkit or some other Java background might be familiar with the ``getResource`` and
     ``getResourceAsStream`` methods in ``Class``\es and ``ClassLoader``\s. **These methods should generally be avoided**
-    within the SpongeAPI environment in favor of the ``AssetManager`` in order to provide a more confluent way of
+    within SpongeAPI environment in favor of the ``AssetManager`` in order to provide a more confluent way of
     retrieving resources not only within your own plugin, but for other plugins as well.

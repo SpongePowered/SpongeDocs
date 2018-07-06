@@ -31,7 +31,7 @@ The format of the filename is ``spongeforge-<MCVersion>-<ForgeBuildId>-<SpongeAP
 | ``ForgeBuildId``     | Preferably your server should run this exact version of Forge (which can be identified in the |
 |                      | last part of Forge's version string).                                                         |
 +----------------------+-----------------------------------------------------------------------------------------------+
-| ``SpongeAPIVersion`` | The version of the SpongeAPI implemented by this file. This is what Sponge plugins depend on. |
+| ``SpongeAPIVersion`` | The version of SpongeAPI implemented by this file. This is what Sponge plugins depend on. |
 +----------------------+-----------------------------------------------------------------------------------------------+
 | ``SpongeBuildId``    | The build number of Sponge. This is what you should supply when reporting bugs or seeking     |
 |                      | support.                                                                                      |

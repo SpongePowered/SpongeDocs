@@ -11,7 +11,7 @@ Tab Lists
     org.spongepowered.api.text.Text
     java.util.UUID
 
-Tab lists are used in Minecraft to display the list of players currently on a server. The SpongeAPI allows for
+Tab lists are used in Minecraft to display the list of players currently on a server. SpongeAPI allows for
 manipulation of the tab list on a per-player basis.
 
 To get a player's :javadoc:`TabList`, you simply need to call the :javadoc:`Player#getTabList()` method:
