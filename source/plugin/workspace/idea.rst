@@ -8,7 +8,7 @@ This article describes how to configure your **IntelliJ IDEA** workspace for plu
 Gradle
 ======
 
-Creating your project
+Creating Your Project
 ~~~~~~~~~~~~~~~~~~~~~
 
 * Open **IntelliJ IDEA**.
@@ -27,7 +27,7 @@ Creating your project
 
 .. _Gradle:
 
-Editing the build script
+Editing the Build Script
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 * Open ``build.gradle`` in the navigator and add the dependencies.
@@ -35,7 +35,7 @@ Editing the build script
 * Open the **Gradle tab** on the right of the IntelliJ window and hit the refresh button.
 * Gradle setup is done! Now you can start coding your plugin.
 
-Importing your project
+Importing Your Project
 ~~~~~~~~~~~~~~~~~~~~~~
 
 If you've already started with your project and want to import it again at a later point you need to import it instead
@@ -48,7 +48,7 @@ of re-creating it inside your IDE:
 Maven
 =====
 
-Creating your project
+Creating Your Project
 ~~~~~~~~~~~~~~~~~~~~~
 
 * Open **IntelliJ IDEA**.
@@ -67,7 +67,7 @@ Creating your project
 
 .. _Maven:
 
-Editing the project configuration
+Editing the Project Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * Open ``pom.xml`` in the navigator.
@@ -75,7 +75,7 @@ Editing the project configuration
 * Refresh your Maven project.
 * Import the Maven changes, if prompted.
 
-Importing your project
+Importing Your Project
 ~~~~~~~~~~~~~~~~~~~~~~
 
 If you've already started with your project and want to import it again at a later point you need to import it instead
@@ -91,7 +91,7 @@ Minecraft Dev Plugin
 The Minecraft Development plugin for IntelliJ is a great plugin by a community member which makes plugin project
 creation much easier while also providing some neat and useful features for development.
 
-Creating your project
+Creating Your Project
 ~~~~~~~~~~~~~~~~~~~~~
 
 * Open **IntelliJ IDEA**.
@@ -111,7 +111,7 @@ Creating your project
 * Click ``Next`` to move on.
 * Verify your project name, location, and module information, then click ``Finish``.
 
-Editing your project configuration
+Editing the Project Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Refer to the Gradle_ or Maven_ configuration sections, depending on what you chose during project creation.
