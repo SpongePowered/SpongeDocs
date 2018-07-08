@@ -2,7 +2,7 @@
 Setting Up Your Project
 =======================
 
-Before you can start developing your Sponge plugin, you need to set up SpongeAPI dependency in your project. If
+Before you can start developing your Sponge plugin, you need to set up the SpongeAPI dependency in your project. If
 you're already experienced with your build system, below is the Maven dependency you need to add. Otherwise, there is a
 more detailed explanation at the :doc:`Gradle <gradle>` and :doc:`Maven <maven>` page.
 

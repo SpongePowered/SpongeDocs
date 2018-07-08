@@ -33,7 +33,7 @@ Alternatively, you can retrieve assets through the ``AssetManager`` class:
     the plugin parameter.
 
 .. note::
-    
+
     The examples above assume that ``myfile.txt`` exists as an :javadoc:`Asset`. If it does not, then ``getAsset()``
     will return ``Optional#empty()``.
 
@@ -57,5 +57,5 @@ following code:
 
     Developers coming from Bukkit or some other Java background might be familiar with the ``getResource`` and
     ``getResourceAsStream`` methods in ``Class``\es and ``ClassLoader``\s. **These methods should generally be avoided**
-    within SpongeAPI environment in favor of the ``AssetManager`` in order to provide a more confluent way of
+    within the SpongeAPI environment in favor of the ``AssetManager`` in order to provide a more confluent way of
     retrieving resources not only within your own plugin, but for other plugins as well.

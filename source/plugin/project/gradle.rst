@@ -95,7 +95,7 @@ Without SpongeGradle
   We recommend using :ref:`SpongeGradle <using-spongegradle>` for Gradle plugins since it will provide additional Gradle
   integration for Sponge plugins.
 
-Generally, everything necessary to compile a Sponge plugin using Gradle can be done by simply adding SpongeAPI
+Generally, everything necessary to compile a Sponge plugin using Gradle can be done by simply adding the SpongeAPI
 dependency to your project:
 
 .. code-block:: groovy
