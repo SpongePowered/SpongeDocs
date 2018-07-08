@@ -11,7 +11,7 @@ branch you need to base your PRs on and where it should get merged afterwards. R
 versioning model here: :doc:`../versioning`
 
 Additionally we require that you ensure the module will compile with ``gradle compileJava``.
-This will run a simple build of the source files. When finished successfully, you can PR your changes to the SpongeAPI
+This will run a simple build of the source files. When finished successfully, you can PR your changes to SpongeAPI
 repo.
 
 Developing the Implementation
@@ -25,7 +25,7 @@ versioning model here: :doc:`../versioning`
 Run ``gradle compileJava`` to check if everything compiles without errors.
 
 Since you are working on the implementation, there is a possibility that your work included changes in the API. This is
-okay. Just remember to ensure the pointers for the version of the SpongeAPI match the version of your branch prior to
+okay. Just remember to ensure the pointers for the version of SpongeAPI match the version of your branch prior to
 committing and pushing. To do this, you may need to add the submodules to the commit (with ``git add SpongeAPI`` and/or
 ``git add Mixin``) prior to committing on your implementation work.
 

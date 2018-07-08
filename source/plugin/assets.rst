@@ -33,7 +33,7 @@ Alternatively, you can retrieve assets through the ``AssetManager`` class:
     the plugin parameter.
 
 .. note::
-    
+
     The examples above assume that ``myfile.txt`` exists as an :javadoc:`Asset`. If it does not, then ``getAsset()``
     will return ``Optional#empty()``.
 

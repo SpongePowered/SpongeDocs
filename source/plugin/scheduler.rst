@@ -152,7 +152,7 @@ requests to another server or database. If done on the main thread, a request to
 the performance of the game, since the next tick cannot be fired until the request is completed.
 
 Since Minecraft is largely single-threaded, there is little you can do in an asynchronous thread. If you must run a
-thread asynchronously, you should execute all of the code that does not use the SpongeAPI/affect Minecraft, then register
+thread asynchronously, you should execute all of the code that does not use SpongeAPI/affect Minecraft, then register
 another `synchronous` task to handle the code that needs the API. There are a few parts of Minecraft that you can work
 with `asynchronously`, including:
 

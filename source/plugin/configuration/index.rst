@@ -40,7 +40,7 @@ Quick Start
 Creating a Default Plugin Configuration
 ---------------------------------------
 
-Plugins using the Sponge API have the option to use one or more configuration files. Configuration files allow plugins
+Plugins using SpongeAPI have the option to use one or more configuration files. Configuration files allow plugins
 to store data, and they allow server administrators to customize plugin options (if applicable).
 
 
@@ -49,7 +49,7 @@ to store data, and they allow server administrators to customize plugin options 
 Getting your Default Plugin Configuration
 -----------------------------------------
 
-The Sponge API offers the use of the :javadoc:`DefaultConfig` annotation on a field or setter method with the type
+SpongeAPI offers the use of the :javadoc:`DefaultConfig` annotation on a field or setter method with the type
 ``Path`` to get the default configuration file for your plugin.
 
 The ``@DefaultConfig`` annotation requires a ``sharedRoot`` boolean. If you set ``sharedRoot`` to ``true``, then the

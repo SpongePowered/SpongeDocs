@@ -3,7 +3,7 @@ Sponge Glossary
 ===============
 
 This is a guide to the more common reserved words, phrases and abbreviations used in the Sponge Project. Links are
-provided in some cases to provide more information. It is not intended to be a guide to the SpongeAPI or Java.
+provided in some cases to provide more information. It is not intended to be a guide to SpongeAPI or Java.
 
 .. note::
 
@@ -33,7 +33,7 @@ Forge
 GitHub
   A free public web-based system for sharing code and creating projects. https://github.com/
 Implementation
-  A mod or program that enables the use of the SpongeAPI in Minecraft.
+  A mod or program that enables the use of SpongeAPI in Minecraft.
 IRC
   Internet Relay Chat, used as a chat platform. Provides chat rooms for all things Sponge.
 Issue
@@ -56,7 +56,7 @@ Patreon
   A Service that allows for donations to projects and organizations. If you want to support Sponge, this is the place to
   look at! `Sponge Patreon Donation Page <https://www.patreon.com/Sponge>`__
 Plugin
-  A Minecraft mod that extends and changes Minecraft via the SpongeAPI, usable only on Sponge servers.
+  A Minecraft mod that extends and changes Minecraft via SpongeAPI, usable only on Sponge servers.
 Project Leaders
   The folks in charge of the entire Sponge Project, responsible for co-ordinating the activities of the various Teams and
   sub-projects.
@@ -81,7 +81,7 @@ Sponge Forums
 Sponge Foundation
   The financial side of the project, a separate entity that accepts, manages and distributes donations.
 SpongeVanilla
-  An implementation of Sponge API that runs on Vanilla Minecraft (and not Forge).
+  An implementation of SpongeAPI that runs on Vanilla Minecraft (and not Forge).
 Spongie
   The Sponge Mascot, a valiant little Sponge with a red cape.
 Spongy
