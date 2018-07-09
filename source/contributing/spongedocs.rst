@@ -52,6 +52,17 @@ writing Sponge Documentation. This list may get added to (or bent out of shape) 
      Contributors are discouraged from commenting in code blocks wherever possible. Simple place-holder text may be
      necessary in some examples. Ideally, code block examples will be short, and followed by an explanation for each
      example in the body text. Of course, there may be some concepts that cannot be illustrated with a short example.
+  ii. Use the following code block types for particular code blocks:
+
+     * Groovy/Gradle-Files -> ``groovy``
+     * Hocon-Config -> ``guess`` (hocon highlighting is not yet supported)
+     * In-Game/Server Console Command -> ``none``
+     * Java-Code -> ``java``
+     * Json-Config -> ``json``
+     * Linux-Terminal -> ``bash``
+     * Logs -> ``none``
+     * Text -> ``text``
+     * Windows-Console -> ``bat``
 
 4. Keep separate areas for Users, Plugin Devs, and Sponge Devs.
 5. Avoid repetition by sharing pages where possible.

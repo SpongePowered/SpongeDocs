@@ -2,7 +2,7 @@
 Terms of Service
 ================
  
- .. code-block:: none
+ .. code-block:: text
  
     While our terms of service, privacy policy and community guidelines may be provided in your
     own language, this is only as a courtesy to You. To the fullest extent as permitted by law,

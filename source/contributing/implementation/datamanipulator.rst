@@ -44,7 +44,7 @@ If the data applies to a block, several methods must also be mixed in to the blo
 
 The following snippet shows the imports/paths for some classes in SpongeCommon that you will need:
 
-.. code-block:: none
+.. code-block:: java
 
     org.spongepowered.common.data.DataProcessor
     org.spongepowered.common.data.ValueProcessor

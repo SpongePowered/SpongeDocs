@@ -51,7 +51,7 @@ A few things that can be taken from this:
 
 * Links to any implementation PRs in clear view at the top of the PR, this can be achieved with GitHub Markdown
 
-.. code-block:: none
+.. code-block:: text
 
   *SpongeAPI*|[SpongeCommon](html link)|[SpongeForge](html link)|[SpongeVanilla](html link)
 
