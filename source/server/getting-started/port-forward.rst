@@ -14,7 +14,7 @@ IP address of your computer. UDP and TCP are the protocols that must be forwarde
 
 .. tip::
 
-    You may change which port is used by editing the appropriate key in your :doc:`configuration/server-properties`.
+    You may change which port is used by editing the appropriate key in your `server.properties <https://minecraft.gamepedia.com/Server.properties>`__.
 
 Port Forwarding can be performed through your router's administrator panel. If you do not know how to navigate to your
 router's administration panel, conduct an internet search for specific instructions on port forwarding for your router.

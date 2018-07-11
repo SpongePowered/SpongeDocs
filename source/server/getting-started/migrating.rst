@@ -49,7 +49,7 @@ This is how it works:
    the ``root`` folder of the server (which is CraftBukkit standard).
 
 #. Now the migration is performed. At this point, worlds are copied over from what we call the ``world container`` into
-   the folder defined in the :doc:`configuration/server-properties` file via the ``level-name`` key.
+   the folder defined in the `server.properties <https://minecraft.gamepedia.com/Server.properties>`__ file via the ``level-name`` key.
    Note that the original files in the ``world container`` remain unchanged, a *copy* is made during migration.
 
 #. Bukkit puts things in weird places (with weird names), thus two important fixes have to be applied. Keep in mind that
