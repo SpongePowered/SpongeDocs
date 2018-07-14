@@ -65,10 +65,10 @@ Following best practice, you should put this in your ``gradle.properties`` file 
 
 .. code-block:: properties
 
-    oreDeloy.apiKey=8c115d0c9b9e425281d870e329dd6741
+    oreDeploy.apiKey=8c115d0c9b9e425281d870e329dd6741
 
 As an alternative you can supply them via command line parameters like this
-``-PoreDeloy.apiKey=8c115d0c9b9e425281d870e329dd6741``.
+``-PoreDeploy.apiKey=8c115d0c9b9e425281d870e329dd6741``.
 
 Deployment Configuration
 ========================
