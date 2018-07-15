@@ -35,7 +35,7 @@ of a config.
     When written down, paths are commonly represented by joining the keys together with a separator char, usually ``.``.
     The above mentioned path would be written ``modules.blockCheats.enabled``.
 
-.. code-block:: none
+.. code-block:: guess
 
     modules {
         blockCheats {

@@ -7,7 +7,7 @@ individual plugins utilizing SpongeAPI to store important data, such as configur
 typically use the suffix ``.conf``.
 
 Components
-===========
+==========
 
 * a ``key`` is a string preceding a value
 * a ``value`` is a string, number, object, array, or boolean following a ``key``
@@ -16,7 +16,7 @@ Components
 
 **Example:**
 
-.. code-block:: none
+.. code-block:: guess
 
       yellow-thing: "Sponge"
 
@@ -30,7 +30,7 @@ HOCON. Below are two examples of valid HOCON.
 
 **Example #1:**
 
-.. code-block:: none
+.. code-block:: guess
 
     player: {
         name: "Steve",
@@ -39,7 +39,7 @@ HOCON. Below are two examples of valid HOCON.
 
 **Example #2:**
 
-.. code-block:: none
+.. code-block:: guess
 
     player {
         name = "Steve"
