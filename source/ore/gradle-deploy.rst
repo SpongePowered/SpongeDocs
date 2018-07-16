@@ -112,3 +112,18 @@ If you've made it this far you're now ready to start publishing directly to Ore!
     Total time: 1.833 secs
 
 .. _SpongeGradle: https://github.com/SpongePowered/SpongeGradle
+
+Trouble-Shooting
+================
+
+If you encounter issues with uploading the file try adding
+
+.. code-block:: groovy
+
+    buildscript {
+       dependencies {
+           classpath 'org.apache.httpcomponents:httpmime:4.5.6'
+       }
+    }
+
+to your `build.gradle` or contact use on irc or discord.
