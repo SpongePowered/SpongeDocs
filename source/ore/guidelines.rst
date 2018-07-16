@@ -4,7 +4,7 @@ Ore Plugin Submission Guidelines
 
 .. warning::
 
-    This document refers to outdated API version and is no longer actively maintained. The policies, guidelines, and
+    This document refers to an outdated API version and is no longer actively maintained. The policies, guidelines, and
     some links have changed. Please refer to the latest version of the documentation instead.
 
 Welcome to the Ore submission guidelines. This document provides an outline of our expectations for both project and file submissions.
