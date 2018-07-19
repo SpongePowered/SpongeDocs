@@ -4,9 +4,9 @@ Sponge Documentation
 
 .. warning::
 
-    This documentation refers to an outdated API version and is no longer actively maintained. While the code examples
-    still work for that API version, the policies, guidelines, and some links might have changed. Please refer to the
-    latest version of the documentation for those.
+    This documentation refers to an outdated SpongeAPI version and is no longer actively maintained. While the code
+    examples still work for that API version, the policies, guidelines, and some links may have changed. Please refer to
+    the latest version of the documentation for those.
 
 Introduction
 ============

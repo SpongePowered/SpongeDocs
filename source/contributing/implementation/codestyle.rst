@@ -2,6 +2,12 @@
 Code Style
 ==========
 
+.. warning::
+
+    This documentation refers to an outdated SpongeAPI version and is no longer actively maintained. While the code
+    examples still work for that API version, the policies, guidelines, and some links may have changed. Please refer to
+    the latest version of the documentation for those.
+
 We follow `Google's Java Style Guidelines <https://google.github.io/styleguide/javaguide.html>`_ with a
 few additions and modifications, which are described herein.
 
