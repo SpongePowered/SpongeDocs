@@ -87,15 +87,11 @@ of the :javadoc:`Listener` annotation before the method.
         @Listener
         public void onServerStart(GameStartedServerEvent event)
         {
-            // This message will show up in the server logs
-            logger.debug("MY NEW PLUGIN IS RUNNING!!!");
+            // This message will show up in the server output
+            logger.info("MY NEW PLUGIN IS RUNNING!!!");
         }
 
     }
-
-.. tip::
-
-    If running the Sponge server from the command line with your mod's jar in the mods directory, you may not see the log output in the console.  You should be able to find the log output in the ``logs/latest.log`` file, which contains more detailed server output.   If you run SpongeVanilla or SpongeForge through an IDE (as described in :doc:`debugging`) you may see the plugin's log prints in the IDE output window.
 
 .. tip::
 
