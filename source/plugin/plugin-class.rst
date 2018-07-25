@@ -66,18 +66,36 @@ of the :javadoc:`Listener` annotation before the method.
 
 .. code-block:: java
 
+    import org.spongepowered.api.plugin.Plugin;
     import org.spongepowered.api.event.Listener;
     import org.spongepowered.api.event.game.state.GameStartedServerEvent;
 
+    // Imports for logger
+    import com.google.inject.Inject;
+    import org.slf4j.Logger;
+
+
     @Plugin(id = "exampleplugin", name = "Example Plugin", version = "1.0", description = "Example")
     public class ExamplePlugin {
+
+        // Logger is automatically assigned to this variable through dependency injection.
+        //  (see the "Logging and Debugging" section in the Sponge documentation for more 
+        //   explanation on logging)
+        @Inject
+        private Logger logger;
+
         @Listener
-        public void onServerStart(GameStartedServerEvent event) {
-            // Hey! The server has started!
-            // Try instantiating your logger in here.
-            // (There's a guide for that)
+        public void onServerStart(GameStartedServerEvent event)
+        {
+            // This message will show up in the server logs
+            logger.debug("MY NEW PLUGIN IS RUNNING!!!");
         }
+
     }
+
+.. tip::
+
+    If running the Sponge server from the command line with your mod's jar in the mods directory, you may not see the log output in the console.  You should be able to find the log output in the ``logs/latest.log`` file, which contains more detailed server output.   If you run SpongeVanilla or SpongeForge through an IDE (as described in :doc:`debugging`) you may see the plugin's log prints in the IDE output window.
 
 .. tip::
 
