@@ -64,7 +64,8 @@ Your plugin can listen for particular events, called **state events**, to be not
 game. In the example below, ``onServerStart()`` is called when the :javadoc:`GameStartedServerEvent` occurs; take note
 of the :javadoc:`Listener` annotation before the method.  
 
-The example below will log a message upon starting the server.  If your plugin is correctly loaded, you should see this message as part of the server's initialization output. 
+The example below will log a message upon starting the server.  If your plugin is correctly loaded,
+you should see this message as part of the server's initialization output.
 
 .. code-block:: java
 
@@ -83,8 +84,7 @@ The example below will log a message upon starting the server.  If your plugin i
         private Logger logger;
 
         @Listener
-        public void onServerStart(GameStartedServerEvent event)
-        {
+        public void onServerStart(GameStartedServerEvent event) {
             logger.info("Successfully running ExamplePlugin!!!");
         }
 
@@ -92,9 +92,9 @@ The example below will log a message upon starting the server.  If your plugin i
 
 .. tip::
 
-    The Sponge documentation provides a guide with more information on events (see :doc:`event/index`). Normally, in addition
-    to prefixing event-handler methods with ``@Listener``, you must also register your object with Sponge's event bus.
-    However, your main plugin class is registered automatically.
+    The Sponge documentation provides a guide with more information on events (see :doc:`event/index`). Normally, in
+    addition to prefixing event-handler methods with ``@Listener``, you must also register your object with Sponge's
+    event bus. However, your main plugin class is registered automatically.
 
 State Events
 ~~~~~~~~~~~~
