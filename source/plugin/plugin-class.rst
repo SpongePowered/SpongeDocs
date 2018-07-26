@@ -62,7 +62,9 @@ interacting with the game, such as registering commands or events.
 
 Your plugin can listen for particular events, called **state events**, to be notified about changes in the state of the
 game. In the example below, ``onServerStart()`` is called when the :javadoc:`GameStartedServerEvent` occurs; take note
-of the :javadoc:`Listener` annotation before the method.
+of the :javadoc:`Listener` annotation before the method.  
+
+The example below will log a message upon starting the server.  If your plugin is correctly loaded, you should see this message as part of the server's initialization output. 
 
 .. code-block:: java
 
@@ -74,21 +76,16 @@ of the :javadoc:`Listener` annotation before the method.
     import com.google.inject.Inject;
     import org.slf4j.Logger;
 
-
     @Plugin(id = "exampleplugin", name = "Example Plugin", version = "1.0", description = "Example")
     public class ExamplePlugin {
 
-        // Logger is automatically assigned to this variable through dependency injection.
-        //  (see the "Logging and Debugging" section in the Sponge documentation for more 
-        //   explanation on logging)
         @Inject
         private Logger logger;
 
         @Listener
         public void onServerStart(GameStartedServerEvent event)
         {
-            // This message will show up in the server output
-            logger.info("MY NEW PLUGIN IS RUNNING!!!");
+            logger.info("Successfully running ExamplePlugin!!!");
         }
 
     }
