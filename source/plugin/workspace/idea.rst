@@ -48,7 +48,7 @@ Refer to the Gradle_ or Maven_ configuration sections, depending on what you cho
 
 
 Creating a Plugin from Scratch -- Gradle
-======
+========================================
 
 * Open **IntelliJ IDEA**.
 * Click ``Create New Project``.
@@ -84,7 +84,7 @@ Editing the Build Script
 
 
 Creating a Plugin from Scratch -- Maven
-=====
+=======================================
 
 Creating Your Project
 ~~~~~~~~~~~~~~~~~~~~~
