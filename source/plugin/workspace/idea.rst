@@ -54,6 +54,8 @@ Editing the Project Configuration
 
 Refer to the Gradle_ or Maven_ configuration sections, depending on what you chose during project creation.
 
+.. _Gradle:
+
 Creating a Plugin from Scratch -- Gradle
 ========================================
 
@@ -81,8 +83,6 @@ Creating a Plugin from Scratch -- Gradle
 * Upon enabling those settings, a ``/src/main/java`` directory should be created, where you can
   start creating your main plugin code files.
 
-.. _Gradle:
-
 Editing the Build Script
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -90,6 +90,8 @@ Editing the Build Script
 * Edit the build script according to the instructions at :doc:`../project/gradle`.
 * Open the **Gradle tab** on the right of the IntelliJ window and hit the refresh button.
 * Gradle setup is done! Now you can start coding your plugin.
+
+.. _Maven:
 
 Creating a Plugin from Scratch -- Maven
 =======================================
@@ -111,23 +113,6 @@ Creating Your Project
 * Click ``Next``.
 * Enter your project's name, and click ``Finish``.
 
-Testing Your Plugin
-====================
-
-The following instructions are a quick way to test your plugin, but won't be the most efficient way
-to iteratively develop.
-
-* Go to ``View`` -> ``Tool Windows`` -> ``Gradle``
-* Under ``Tasks`` -> ``Build``, click on ``jar``
-* The build process should create the jar underneath ``build\libs``
-* Copy your jar file to the ``mods`` directory of a working Sponge server.
-
-For a more efficient development process, see :doc:`../debugging` for instructions on running both
-the Sponge server and your plugin from within IDEA.  This process allows for hot-swapping, allowing
-you to change plugin code without restarting the server.
-
-.. _Maven:
-
 Editing the Project Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -135,6 +120,32 @@ Editing the Project Configuration
 * Edit the build configuration according to the instructions at :doc:`../project/maven`.
 * Refresh your Maven project.
 * Import the Maven changes, if prompted.
+
+Testing Your Plugin
+====================
+
+The following instructions are a quick way to test your plugin, but won't be the most efficient way
+to iteratively develop.
+
+To make a ``.jar`` file, using Gradle:
+
+* Go to ``View`` -> ``Tool Windows`` -> ``Gradle``
+* Under ``Tasks`` -> ``Build``, click on ``jar``
+* The build process should create the jar underneath ``build\libs``
+
+To make a ``.jar`` file, using Maven:
+
+* Go to ``View`` -> ``Tool Windows`` -> ``Maven Projects``
+* In the ``Maven Projects`` window, expand your project's name
+* Under ``Plugins``, expand ``jar``
+* Double click ``jar:jar``
+* The build process should create the jar underneath ``target``
+
+Copy your jar file to the ``mods`` directory of a working Sponge server, then restart the server to test.
+
+For a more efficient development process, see :doc:`../debugging` for instructions on running both
+the Sponge server and your plugin from within IDEA.  This process allows for hot-swapping, allowing
+you to change plugin code without restarting the server.
 
 Importing An Existing Project (Gradle or Maven)
 ===============================================
