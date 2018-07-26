@@ -8,19 +8,19 @@ This article describes how to configure your **IntelliJ IDEA** workspace for plu
 If you want to create your project completely from scratch, please skip ahead to the Gradle or Maven sections.  Using the Minecraft Dev plugin sets up a working starting point and eliminates some of the guesswork in getting your project off the ground.
 
 Using IDEA Minecraft Dev Plugin to Create a Working Starting Point
-=======================================
+==================================================================
 
 The `Minecraft Development plugin <https://minecraftdev.org/>`_ for IntelliJ is a great plugin by a community member which makes plugin project creation much easier while also providing some neat and useful features for development.  By default it will create a project which uses Gradle as the build tool.
 
 Installing the Minecraft Dev Plugin
-~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This plugin is available on the JetBrains IntelliJ plugin repository.
 
 Because of this, you can install the plugin through IntelliJ's internal plugin browser. Navigate to ``File -> Settings -> Plugins`` and click the ``Browse Repositories...`` button at the bottom of the window. In the search box, simply search for ``Minecraft``. You can install it from there and restart IntelliJ to activate the plugin.
 
 Creating Your Project from a Template
-~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * Open **IntelliJ IDEA**.
 * Click ``Create New Project``.
