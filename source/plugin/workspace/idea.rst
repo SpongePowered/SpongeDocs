@@ -46,7 +46,7 @@ Creating Your Project from a Template
 * Click ``Next`` to move on.
 * Verify your project name, location, and module information, then click ``Finish``.
 * The plugin will create a main java file as a starting point, with the logger already injected.
-  You may add a ``logger.info`` statement in the ``onServerStart`` event handler to verify that the plugin
+  You may add a ``logger.info()`` statement in the ``onServerStart`` event handler to verify that the plugin
   is working when you run it.
 
 Editing the Project Configuration
