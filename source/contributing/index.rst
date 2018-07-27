@@ -2,7 +2,13 @@
 Contributing to Sponge
 ======================
 
-This sections intends to show you ways to get involved with Sponge.
+.. warning::
+
+    This documentation refers to an outdated SpongeAPI version and is no longer actively maintained. While the code
+    examples still work for that API version, the policies, guidelines, and some links may have changed. Please refer to
+    the latest version of the documentation for those.
+
+This section shows you how to get involved with Sponge.
 
 What are the projects I can help with?
 ======================================

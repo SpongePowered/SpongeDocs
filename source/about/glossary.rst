@@ -2,6 +2,12 @@
 Sponge Glossary
 ===============
 
+.. warning::
+
+    This documentation refers to an outdated SpongeAPI version and is no longer actively maintained. While the code
+    examples still work for that API version, the policies, guidelines, and some links may have changed. Please refer to
+    the latest version of the documentation for those.
+
 This is a guide to the more common reserved words, phrases and abbreviations used in the Sponge Project. Links are
 provided in some cases to provide more information. It is not intended to be a guide to the SpongeAPI or Java.
 

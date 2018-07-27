@@ -2,6 +2,12 @@
 License
 =======
 
+.. warning::
+
+    This documentation refers to an outdated SpongeAPI version and is no longer actively maintained. While the code
+    examples still work for that API version, the policies, guidelines, and some links may have changed. Please refer to
+    the latest version of the documentation for those.
+
 SpongeForge, SpongeVanilla, SpongeCommon and the Sponge API are licensed under the MIT license. There is no contributor
 license agreement, and contributions to the Sponge project are welcome. We also explicitly grant permission to distribute
 SpongeForge in any third-party modpack.

@@ -2,6 +2,12 @@
 Forum & IRC Rules
 =================
 
+.. warning::
+
+    This documentation refers to an outdated SpongeAPI version and is no longer actively maintained. While the code
+    examples still work for that API version, the policies, guidelines, and some links may have changed. Please refer to
+    the latest version of the documentation for those.
+
 Welcome to the Sponge Project! We're glad you're here and interested in Sponge. We have a few rules that apply to all
 of our various methods of communications, including (but not limited to):
 

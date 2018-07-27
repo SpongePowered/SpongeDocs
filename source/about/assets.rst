@@ -2,6 +2,12 @@
 Art Assets
 ==========
 
+.. warning::
+
+    This documentation refers to an outdated SpongeAPI version and is no longer actively maintained. While the code
+    examples still work for that API version, the policies, guidelines, and some links may have changed. Please refer to
+    the latest version of the documentation for those.
+
 This page provides the official SpongePowered logo and mascot. Feel free to use them to spread the word about Sponge.
 However note that these images are **not** provided under the MIT License.
 

@@ -2,6 +2,12 @@
 About the Sponge Project
 ========================
 
+.. warning::
+
+    This documentation refers to an outdated SpongeAPI version and is no longer actively maintained. While the code
+    examples still work for that API version, the policies, guidelines, and some links may have changed. Please refer to
+    the latest version of the documentation for those.
+
 The articles in this section explain the purpose and goals of the Sponge project. Think of this section as an extended
 FAQ. Rules and guidelines for the Sponge communication channels, including Sponge Forums, IRC Channels and subreddit,
 and a Glossary of common terms, are also provided below.
