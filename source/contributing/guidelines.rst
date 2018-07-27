@@ -2,6 +2,12 @@
 Contribution Guidelines
 =======================
 
+.. warning::
+
+    This documentation refers to an outdated SpongeAPI version and is no longer actively maintained. While the code
+    examples still work for that API version, the policies, guidelines, and some links may have changed. Please refer to
+    the latest version of the documentation for those.
+
 There will always be a need for developers to help us improve SpongeAPI. There is no such thing as a perfect project and
 things can always be improved. If you are a developer and are interested in helping then please do not hesitate. Just
 make sure you follow our guidelines.

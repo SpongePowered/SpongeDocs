@@ -2,6 +2,11 @@
 Ore Plugin Submission Guidelines
 ================================
 
+.. warning::
+
+    This document refers to an outdated SpongeAPI version and is no longer actively maintained. The policies,
+    guidelines, and some links have changed. Please refer to the latest version of the documentation instead.
+
 Welcome to the Ore submission guidelines. This document provides an outline of our expectations for both project and file submissions.
 
 Remember that these are just guidelines and the Ore team, referred to as the “staff” throughout these guidelines, may choose to allow
