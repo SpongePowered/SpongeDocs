@@ -32,20 +32,21 @@ gulp.task('sphinx:dev', shell(
     'sphinx', 'sphinx-build', ['source', 'build/dev/html']
 ));
 
-gulp.task('build', ['clean', 'sphinx']);
+gulp.task('build', gulp.series('clean', 'sphinx'));
+gulp.task('build:dev', gulp.series('clean', 'sphinx:dev'));
 
 // TODO: Don't stop watching if Sphinx or Sass throws an error
-gulp.task('watch', ['clean', 'sphinx:dev'], () =>
-    gulp.watch('./source/**', ['sphinx:dev'])
+gulp.task('watch', () =>
+    gulp.watch('./source/**', gulp.series('sphinx:dev'))
 );
 
-gulp.task('webserver', ['watch'], () =>
+gulp.task('webserver', gulp.series('build:dev', gulp.parallel('watch', () =>
     gulp.src('build/dev/html')
         .pipe(webserver({
             livereload: true,
             enable: true,
             open: true
         }))
-);
+)));
 
-gulp.task('default', ['webserver']);
+gulp.task('default', gulp.series('webserver'));
