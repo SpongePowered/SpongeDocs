@@ -5,11 +5,59 @@ Setting Up IntelliJ IDEA
 This article describes how to configure your **IntelliJ IDEA** workspace for plugin development with SpongeAPI and
 :doc:`a build system such as Maven or Gradle <../buildsystem/>` or the `Minecraft Development plugin <https://minecraftdev.org/>`_.
 
-Gradle
-======
+If you want to create your project completely from scratch, please skip ahead to the Gradle or Maven sections.  
+Using the Minecraft Dev plugin sets up a working starting point and eliminates some of the guesswork in getting
+your project off the ground.
 
-Creating Your Project
-~~~~~~~~~~~~~~~~~~~~~
+Using IDEA Minecraft Dev Plugin to Create a Working Starting Point
+==================================================================
+
+The `Minecraft Development plugin <https://minecraftdev.org/>`_ for IntelliJ is a great plugin by a community
+member which makes plugin project creation much easier while also providing some neat and useful features for
+development.  By default it will create a project which uses Gradle as the build tool.
+
+Installing the Minecraft Dev Plugin
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This plugin is available on the JetBrains IntelliJ plugin repository.
+
+Because of this, you can install the plugin through IntelliJ's internal plugin browser. Navigate to
+``File -> Settings -> Plugins`` and click the ``Browse Repositories...`` button at the bottom of the
+window. In the search box, simply search for ``Minecraft``. You can install it from there and
+restart IntelliJ to activate the plugin.
+
+Creating Your Project from a Template
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* Open **IntelliJ IDEA**.
+* Click ``Create New Project``.
+* Select ``Minecraft`` in the popup.
+* Make sure your **Project SDK** is set to some version of Java 8/1.8.
+* Select ``Sponge plugin`` for your project type, then click ``Next``.
+* Enter your **Group ID**, **Artifact ID**, and **Version**.
+
+  * Your **Group ID** should usually correspond to your Java package name. See :doc:`../plugin-class` for details.
+  * Your **Artifact ID** should usually correspond to your **plugin ID** you chose earlier, e.g. ``myplugin``.
+  * Your **Version** is up to you.
+
+* Select your desired build tool, either Gradle or Maven, and click ``Next``.
+* Check your **Plugin Name** and **Main Class Name** to make sure they are what you want.
+* Specify your desired plugin **description**, **authors**, **website**, and **dependencies** if you want.
+* Click ``Next`` to move on.
+* Verify your project name, location, and module information, then click ``Finish``.
+* The plugin will create a main java file as a starting point, with the logger already injected.
+  You may add a ``logger.info()`` statement in the ``onServerStart`` event handler to verify that the plugin
+  is working when you run it.
+
+Editing the Project Configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Refer to the Gradle_ or Maven_ configuration sections, depending on what you chose during project creation.
+
+.. _Gradle:
+
+Creating a Plugin from Scratch -- Gradle
+========================================
 
 * Open **IntelliJ IDEA**.
 * Click ``Create New Project``.
@@ -24,8 +72,16 @@ Creating Your Project
   * Your **Version** is up to you.
 
 * Click ``Next`` twice, name your project, and click ``Finish``.
+* The project will be created without a ``src`` directory.  If you add java files to the incorrect
+  location underneath the project, they will be ignored and not compiled, so it is a good idea to
+  enable the checkbox "Create directories for empty content roots", found in:
 
-.. _Gradle:
+  * **Windows**: ``File`` -> ``Settings`` -> ``Build, Execution, Deployment`` -> ``Gradle``
+  * **Mac**: ``Intellij IDEA`` -> ``Preferences`` -> ``Build, Execution, Deployment`` -> ``Build Tools`` -> ``Gradle``
+* Enabling ``Use Auto-import`` in the same location will allow change to the gradle configuration to
+  automatically reload without IDEA prompting you each time.
+* Upon enabling those settings, a ``/src/main/java`` directory should be created, where you can
+  start creating your main plugin code files.
 
 Editing the Build Script
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -35,18 +91,10 @@ Editing the Build Script
 * Open the **Gradle tab** on the right of the IntelliJ window and hit the refresh button.
 * Gradle setup is done! Now you can start coding your plugin.
 
-Importing Your Project
-~~~~~~~~~~~~~~~~~~~~~~
+.. _Maven:
 
-If you've already started with your project and want to import it again at a later point you need to import it instead
-of re-creating it inside your IDE:
-
-* Click ``File > Open`` or ``Import Project``.
-* Navigate to the project's ``build.gradle`` file and select it.
-* Make sure the settings are as you desire and click ``Ok``.
-
-Maven
-=====
+Creating a Plugin from Scratch -- Maven
+=======================================
 
 Creating Your Project
 ~~~~~~~~~~~~~~~~~~~~~
@@ -65,8 +113,6 @@ Creating Your Project
 * Click ``Next``.
 * Enter your project's name, and click ``Finish``.
 
-.. _Maven:
-
 Editing the Project Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -75,46 +121,42 @@ Editing the Project Configuration
 * Refresh your Maven project.
 * Import the Maven changes, if prompted.
 
-Importing Your Project
-~~~~~~~~~~~~~~~~~~~~~~
+Testing Your Plugin
+====================
+
+The following instructions are a quick way to test your plugin, but won't be the most efficient way
+to iteratively develop.
+
+To make a ``.jar`` file, using Gradle:
+
+* Go to ``View`` -> ``Tool Windows`` -> ``Gradle``
+* Under ``Tasks`` -> ``Build``, click on ``jar``
+* The build process should create the jar underneath ``build\libs``
+
+To make a ``.jar`` file, using Maven:
+
+* Go to ``View`` -> ``Tool Windows`` -> ``Maven Projects``
+* In the ``Maven Projects`` window, expand your project's name
+* Under ``Plugins``, expand ``jar``
+* Double click ``jar:jar``
+* The build process should create the jar underneath ``target``
+
+Copy your jar file to the ``mods`` directory of a working Sponge server, then restart the server to test.
+
+For a more efficient development process, see :doc:`../debugging` for instructions on running both
+the Sponge server and your plugin from within IDEA.  This process allows for hot-swapping, allowing
+you to change plugin code without restarting the server.
+
+Importing An Existing Project (Gradle or Maven)
+===============================================
 
 If you've already started with your project and want to import it again at a later point you need to import it instead
 of re-creating it inside your IDE:
 
 * Click ``File > Open`` or ``Import Project``.
-* Navigate to the project's ``pom.xml`` file and select it.
+* **Gradle**: Navigate to the project's ``build.gradle`` file and select it.
+* **Maven**: Navigate to the project's ``pom.xml`` file and select it.
 * Make sure the settings are as you desire and click ``Ok``.
-
-Minecraft Dev Plugin
-====================
-
-The Minecraft Development plugin for IntelliJ is a great plugin by a community member which makes plugin project
-creation much easier while also providing some neat and useful features for development.
-
-Creating Your Project
-~~~~~~~~~~~~~~~~~~~~~
-
-* Open **IntelliJ IDEA**.
-* Click ``Create New Project``.
-* Select ``Minecraft`` in the popup.
-* Make sure your **Project SDK** is set to some version of Java 8/1.8.
-* Select ``Sponge plugin`` for your project type, then click ``Next``.
-* Enter your **Group ID**, **Artifact ID**, and **Version**.
-
-  * Your **Group ID** should usually correspond to your Java package name. See :doc:`../plugin-class` for details.
-  * Your **Artifact ID** should usually correspond to your **plugin ID** you chose earlier, e.g. ``myplugin``.
-  * Your **Version** is up to you.
-
-* Select your desired build tool, either Gradle or Maven, and click ``Next``.
-* Check your **Plugin Name** and **Main Class Name** to make sure they are what you want.
-* Specify your desired plugin **description**, **authors**, **website**, and **dependencies** if you want.
-* Click ``Next`` to move on.
-* Verify your project name, location, and module information, then click ``Finish``.
-
-Editing the Project Configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Refer to the Gradle_ or Maven_ configuration sections, depending on what you chose during project creation.
 
 Git Integration
 ===============
