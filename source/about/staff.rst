@@ -40,7 +40,7 @@ The **Project Managers** of Sponge each coordinate a separate aspect of the Spon
 +-----------------------------------+------------------------------------+
 | lukegb                            | Systems Manager                    |
 +-----------------------------------+------------------------------------+
-| mbaxter                           | Ore Front-end Manager              |
+| mbaxter                           | Ore Community Manager              |
 |                                   |                                    |
 |                                   | Moderator                          |
 +-----------------------------------+------------------------------------+
@@ -52,13 +52,11 @@ The **Project Managers** of Sponge each coordinate a separate aspect of the Spon
 |                                   |                                    |
 |                                   | Website Manager                    |
 +-----------------------------------+------------------------------------+
-| phase                             | Ore Back-end Manager               |
+| phase                             | Ore Development Manager            |
 +-----------------------------------+------------------------------------+
 | phroa                             | IRC Manager                        |
 +-----------------------------------+------------------------------------+
-| progwml6                          | Ore Back-end Manager               |
-|                                   |                                    |
-|                                   | Systems Manager                    |
+| progwml6                          | Systems Manager                    |
 |                                   |                                    |
 |                                   | Web Development                    |
 +-----------------------------------+------------------------------------+
