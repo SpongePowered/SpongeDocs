@@ -37,6 +37,8 @@ The **Project Managers** of Sponge each coordinate a separate aspect of the Spon
 | kashike                           | Discord Manager                    |
 |                                   |                                    |
 |                                   | Developer                          |
+|                                   |                                    |
+|                                   | Ore Reviewer                       |
 +-----------------------------------+------------------------------------+
 | lukegb                            | Systems Manager                    |
 +-----------------------------------+------------------------------------+
@@ -55,6 +57,8 @@ The **Project Managers** of Sponge each coordinate a separate aspect of the Spon
 | phase                             | Ore Development Manager            |
 +-----------------------------------+------------------------------------+
 | phroa                             | IRC Manager                        |
+|                                   |                                    | 
+|                                   | Ore Reviewer                       |
 +-----------------------------------+------------------------------------+
 | progwml6                          | Systems Manager                    |
 |                                   |                                    |
@@ -89,6 +93,8 @@ SpongeForge and SpongeVanilla.
 | parlough                          | Developer                          |
 +-----------------------------------+------------------------------------+
 | simon816                          | Developer                          |
+|                                   |                                    |
+|                                   | Ore Reviewer                       |
 +-----------------------------------+------------------------------------+
 
 Issue Managers
@@ -103,6 +109,8 @@ SpongeAPI, SpongeForge and SpongeVanilla.
 | phit                              | Issue Manager                      |
 +-----------------------------------+------------------------------------+
 | ryantheleach                      | Issue Manager                      |
+|                                   |                                    |
+|                                   | Ore Reviewer                       |
 +-----------------------------------+------------------------------------+
 
 Ore Developers
@@ -114,10 +122,14 @@ The **Ore Developers** work on producing, enhancing, and fixing the Ore plugin d
 | Name                              | Role                               |
 +===================================+====================================+
 | ewoutvs\_                         | Ore Developer                      |
+|                                   |                                    |
+|                                   | Ore Reviewer                       |
 +-----------------------------------+------------------------------------+
 | felixoi                           | Ore Developer                      |
 +-----------------------------------+------------------------------------+
 | Katrix                            | Ore Developer                      |
+|                                   |                                    |
+|                                   | Ore Reviewer                       |
 +-----------------------------------+------------------------------------+
 
 Web Developers
@@ -129,6 +141,8 @@ Our **Web Developers** maintain, update and integrate the Sponge website.
 | Name                              | Role                               |
 +===================================+====================================+
 | jamierocks                        | Web Development                    |
+|                                   |                                    |
+|                                   | Ore Reviewer                       |
 +-----------------------------------+------------------------------------+
 
 SpongeDocs Editors
@@ -173,6 +187,30 @@ Moderators and Support
 | Vectrix                           | Moderator                          |
 +-----------------------------------+------------------------------------+
 
+Ore Reviewers
+~~~~~~~~~~~~~
+
+The **Ore Review** staff have the task of assessing plugins uploaded to Ore to make sure they are compliant and safe.
+
++-----------------------------------+------------------------------------+
+| Name                              | Role                               |
++===================================+====================================+
+| DotDash                           | Ore Reviewer                       |
++-----------------------------------+------------------------------------+
+| Eufranio                          | Ore Reviewer                       |
++-----------------------------------+------------------------------------+
+| liach                             | Ore Reviewer                       |
++-----------------------------------+------------------------------------+
+| mosemister                        | Ore Reviewer                       |
++-----------------------------------+------------------------------------+
+| RedNesto                          | Ore Reviewer                       |
++-----------------------------------+------------------------------------+
+| Simon_Flash                       | Ore Reviewer                       |
++-----------------------------------+------------------------------------+
+| Snowie                            | Ore Reviewer                       |
++-----------------------------------+------------------------------------+
+| Yeregorix                         | Ore Reviewer                       |
++-----------------------------------+------------------------------------+
 
 Retired Staff
 ~~~~~~~~~~~~~
