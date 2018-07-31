@@ -39,8 +39,10 @@ The **Project Managers** of Sponge each coordinate a separate aspect of the Spon
 |                                   | Developer                          |
 |                                   |                                    |
 |                                   | Ore Reviewer                       |
+|                                   |                                    |
+|                                   | System Administrator               |
 +-----------------------------------+------------------------------------+
-| lukegb                            | Systems Manager                    |
+| lukegb                            | Systems Team Manager               |
 +-----------------------------------+------------------------------------+
 | mbaxter                           | Ore Community Manager              |
 |                                   |                                    |
@@ -60,7 +62,7 @@ The **Project Managers** of Sponge each coordinate a separate aspect of the Spon
 |                                   |                                    | 
 |                                   | Ore Reviewer                       |
 +-----------------------------------+------------------------------------+
-| progwml6                          | Systems Manager                    |
+| progwml6                          | System Administrator               |
 |                                   |                                    |
 |                                   | Web Development                    |
 +-----------------------------------+------------------------------------+
@@ -93,6 +95,19 @@ SpongeForge and SpongeVanilla.
 | parlough                          | Developer                          |
 +-----------------------------------+------------------------------------+
 | simon816                          | Developer                          |
+|                                   |                                    |
+|                                   | Ore Reviewer                       |
++-----------------------------------+------------------------------------+
+
+System Administrators
+~~~~~~~~~~~~~~~~~~~~~
+
+The System Administrators are responsible for the maintenance and reliable operation of our various systems and servers.
+
++-----------------------------------+------------------------------------+
+| Name                              | Role                               |
++===================================+====================================+
+| Snowie                            | System Administrator               |
 |                                   |                                    |
 |                                   | Ore Reviewer                       |
 +-----------------------------------+------------------------------------+
@@ -206,8 +221,6 @@ The **Ore Review** staff have the task of assessing plugins uploaded to Ore to m
 | RedNesto                          | Ore Reviewer                       |
 +-----------------------------------+------------------------------------+
 | Simon_Flash                       | Ore Reviewer                       |
-+-----------------------------------+------------------------------------+
-| Snowie                            | Ore Reviewer                       |
 +-----------------------------------+------------------------------------+
 | Yeregorix                         | Ore Reviewer                       |
 +-----------------------------------+------------------------------------+
