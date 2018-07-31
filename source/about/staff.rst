@@ -102,7 +102,7 @@ SpongeForge and SpongeVanilla.
 System Administrators
 ~~~~~~~~~~~~~~~~~~~~~
 
-The System Administrators are responsible for the maintenance and reliable operation of our various systems and servers.
+The **System Administrators** are responsible for the maintenance and reliable operation of our various systems and servers.
 
 +-----------------------------------+------------------------------------+
 | Name                              | Role                               |
