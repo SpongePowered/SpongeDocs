@@ -117,7 +117,7 @@ To cancel a task, simply call the :javadoc:`Task#cancel()` method:
 
     task.cancel();
 
-If you need to cancel the task from within the runnable itself, you can instead opt to use a ``Consumer<Task>``` in
+If you need to cancel the task from within the runnable itself, you can instead opt to use a ``Consumer<Task>`` in
 order to access the task. The below example will schedule a task that will count down from 60 and cancel itself upon
 reaching 0.
 
