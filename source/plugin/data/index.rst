@@ -19,15 +19,15 @@ a sign, the looks of a horse or the health of any living entity.
 Where other approaches define the available data using interfaces and inheritance (like a ``LivingEntity``
 interface providing getter and setter functions for current and maximum health), in Sponge every entity, block
 etc. is completely oblivious to what data it holds. While this may appear less straightforward than direct
-accessor methods, it is foremost far more extensible. And thanks to the addition of :javadoc:`Key`\ s, simply accessing
+accessor methods, it is foremost far more extensible. And thanks to the addition of :javadoc:`Key`\s, simply accessing
 specific values is no less straightforward.
 
-.. warning::
+.. tip::
 
-    As of writing, a few parts of the Data API are not implemented. If you are trying to access an API and are receiving
-    an empty ``Optional`` when one is not expected, refer to the `Implementation Tracker
+    If the data API behaves differently from what you expect (e.g. returns an empty ``Optional`` even if the data are
+    supposed to be present) or there is a feature/value missing that you need, check the `Implementation Tracker
     <https://github.com/SpongePowered/SpongeCommon/issues/8>`_, ask in the ``#spongedev`` IRC channel or on the
-    `Forums <https://forums.spongepowered.org>`_ to find out if the data you need to work with is available yet.
+    `Forums <https://forums.spongepowered.org>`_.
 
 Concepts
 ========
