@@ -222,3 +222,25 @@ Command               Description                               Permission
 
 A full list of vanilla commands can be found at: https://minecraft.gamepedia.com/Commands#List_of_commands. Permissions
 for vanilla Minecraft commands on a Sponge server are of the structure ``minecraft.command.<command>``.
+
+Command Features
+================
+
+.. image:: /images/command-features.png
+    :align: center
+    :alt: command features
+
+Sponge and most Sponge plugins support additional command features such as auto completion or hoverable text. The image
+above shows this using the ``/sponge plugins`` command (yellow box). The elements in that list can be hovered to get
+addition information such as the current version number (red box). Some elements in the shown text have additional
+actions bound to them. For example the plugin entries in that list can be clicked to show more detailed information
+(purple box) about that plugin. This is equivalent to sending the ``/sponge plugins <pluginId>`` command. The auto
+completion can be triggered by pressing tab. Entering ``/sponge plugins ﻿`` (with a trailing space) and then pressing
+tab will show a list of possible values (turquoise box) that can be used in that context. Pressing tab again will
+iterate the possibilities, if there are more than one. Theoretically it is possible to write most commands by pressing
+only tab and space (and maybe the first letter of each segment).
+
+.. tip::
+
+    If you are a plugin author and you want to use hoverable text and text actions in your plugin then head over to  our
+    :doc:`Text documentation </plugin/text/text>`.
