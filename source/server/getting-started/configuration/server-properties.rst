@@ -52,7 +52,7 @@ Here is the default server.properties file of an unmodified Minecraft 1.8.1 serv
     enable-rcon=false
 
 Property Explanation
-----------------------
+--------------------
 
 Credit goes to the editors at the `Minecraft Wiki <https://minecraft.gamepedia.com>`__ for the explanations.
 
@@ -375,7 +375,7 @@ Credit goes to the editors at the `Minecraft Wiki <https://minecraft.gamepedia.c
 |                               |             |             | *reduce this value.*                                       |
 +-------------------------------+-------------+-------------+------------------------------------------------------------+
 | white-list                    | boolean     | false       | Enables a whitelist on the server.                         |
-|                               |             |             | See :doc:`../../../server/management/whitelist`.           |
+|                               |             |             | See :doc:`/server/management/whitelist`.                   |
 |                               |             |             | With a whitelist enabled, users not on the whitelist will  |
 |                               |             |             | be unable to connect. Intended for private servers, such   |
 |                               |             |             | as those for real-life friends or strangers carefully      |

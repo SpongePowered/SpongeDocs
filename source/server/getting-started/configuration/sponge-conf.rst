@@ -188,7 +188,7 @@ player-moved-too-quickly                  boolean   true        Controls whether
                                                                 will be enforced
 player-vehicle-moved-too-quickly          boolean   true        Controls whether the 'vehicle of player moved too quickly!'
                                                                 check will be enforced
-**Optimizations**                                               See :doc:`../../management/performance-tweaks`
+**Optimizations**                                               See :doc:`/server/management/performance-tweaks`
 **Spawner**
 spawn-limit-ambient                       integer       15          The number of ambients that can spawn around the player.
 spawn-limit-animal                        integer       15          The number of animals that can spawn around the player.

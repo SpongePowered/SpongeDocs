@@ -22,7 +22,7 @@ files to full advantage.
 .. note::
     Sponge makes use of the HOCON configuration format, a superset of JSON, as the default format for saving
     configuration files. The rest of this guide will assume you are using HOCON as well. See
-    :doc:`../../server/getting-started/configuration/hocon` more for information regarding the HOCON format.
+    :doc:`/server/getting-started/configuration/hocon` more for information regarding the HOCON format.
     Working with different formats is made relatively similar by the Configurate system, so it should not
     pose too much of an issue if you use an alternate format instead.
 

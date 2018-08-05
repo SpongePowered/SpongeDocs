@@ -13,7 +13,7 @@ and what to do about it.
 Java Is Not Installed On Your Computer
 --------------------------------------
 
-**Solution**: Get Java. Visit the :doc:`../../server/getting-started/jre` for more information.
+**Solution**: Get Java. Visit the :doc:`/server/getting-started/jre` for more information.
 
 Network Connection Failure (or DDoS Attack)
 -------------------------------------------
@@ -62,7 +62,7 @@ each time. The problem may originate from one plugin that is out of date - check
 be the cause, having two incompatible plugins.
 
 Operating System Unstable (eg. Virus Infection)
---------------------------------------------------
+-----------------------------------------------
 
 **Symptom**: The server keeps crashing or timing out, and other parts of your operating system are also having problems.
 
