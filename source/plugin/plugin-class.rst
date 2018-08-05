@@ -64,7 +64,7 @@ Your plugin can listen for particular events, called **state events**, to be not
 game. In the example below, ``onServerStart()`` is called when the :javadoc:`GameStartedServerEvent` occurs; take note
 of the :javadoc:`Listener` annotation before the method.  
 
-The example below will log a message upon starting the server.  If your plugin is correctly loaded,
+The example below will log a message upon starting the server. If your plugin is correctly loaded,
 you should see this message as part of the server's initialization output.
 
 .. code-block:: java
