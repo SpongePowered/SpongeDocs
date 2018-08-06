@@ -62,28 +62,39 @@ interacting with the game, such as registering commands or events.
 
 Your plugin can listen for particular events, called **state events**, to be notified about changes in the state of the
 game. In the example below, ``onServerStart()`` is called when the :javadoc:`GameStartedServerEvent` occurs; take note
-of the :javadoc:`Listener` annotation before the method.
+of the :javadoc:`Listener` annotation before the method.  
+
+The example below will log a message upon starting the server. If your plugin is correctly loaded,
+you should see this message as part of the server's initialization output.
 
 .. code-block:: java
 
+    import org.spongepowered.api.plugin.Plugin;
     import org.spongepowered.api.event.Listener;
     import org.spongepowered.api.event.game.state.GameStartedServerEvent;
 
+    // Imports for logger
+    import com.google.inject.Inject;
+    import org.slf4j.Logger;
+
     @Plugin(id = "exampleplugin", name = "Example Plugin", version = "1.0", description = "Example")
     public class ExamplePlugin {
+
+        @Inject
+        private Logger logger;
+
         @Listener
         public void onServerStart(GameStartedServerEvent event) {
-            // Hey! The server has started!
-            // Try instantiating your logger in here.
-            // (There's a guide for that)
+            logger.info("Successfully running ExamplePlugin!!!");
         }
+
     }
 
 .. tip::
 
-    The Sponge documentation provides a guide with more information on events (see :doc:`event/index`). Normally, in addition
-    to prefixing event-handler methods with ``@Listener``, you must also register your object with Sponge's event bus.
-    However, your main plugin class is registered automatically.
+    The Sponge documentation provides a guide with more information on events (see :doc:`event/index`). Normally, in
+    addition to prefixing event-handler methods with ``@Listener``, you must also register your object with Sponge's
+    event bus. However, your main plugin class is registered automatically.
 
 State Events
 ~~~~~~~~~~~~
