@@ -71,6 +71,11 @@ already have lore applied to the item.
         }
     }
 
+.. note::
+
+    Almost all API methods that return an ``ItemStack`` only return a copy of it, so modifying it does not have any
+    impact on the real stack (e.g. in an inventory). You have to explicitly set it for your changes to persist.
+
 Item Properties
 ~~~~~~~~~~~~~~~
 
