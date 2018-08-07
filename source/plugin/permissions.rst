@@ -289,7 +289,9 @@ context key with your plugin id) unless these contexts are meant to be shared.
 
 .. note::
     
-    Please make sure that your ``ContextCalculator`` responds as fast as possible as it will get called frequently.
+    Please make sure that your ``ContextCalculator`` responds as **fast** as possible as it will get called frequently.
+    ``ContextCalculator`` implementations must be **thread safe**, because they might be called for async processing or
+    called in parallel.
 
 Example
 ~~~~~~~
