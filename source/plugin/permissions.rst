@@ -290,8 +290,13 @@ context key with your plugin id) unless these contexts are meant to be shared.
 .. note::
     
     Please make sure that your ``ContextCalculator`` responds as **fast** as possible as it will get called frequently.
-    ``ContextCalculator`` implementations must be **thread safe**, because they might be called for async processing or
-    called in parallel.
+
+.. warning::
+
+    ``ContextCalculator`` implementations must be **thread safe**, because someone will be calling it from outside of
+    the main thread or even calling it in parallel. For to this reason, all non-name or non-uuid based 
+    ``ContextCalculator``\s (such as location based ones) have to utilize some kind of cache and must be to be updated
+    using event listeners or synchronized schedulers.
 
 Example
 ~~~~~~~
