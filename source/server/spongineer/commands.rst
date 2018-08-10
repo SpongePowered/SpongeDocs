@@ -203,7 +203,7 @@ There are also extra permissions managing the access to the server:
 
 .. note::
 
-    Sponge offers improved multi-world support, such as per world world borders. By default Sponge only changes the
+    Sponge offers improved multi-world support, such as per-world world borders. By default Sponge only changes the
     world border (or other world options) of the world the player is currently in. The vanilla behavior of setting it
     for all worlds can be restored using the global configuration and setting
     ``sponge.commands.multi-world-patches.worldborder`` or the corresponding entry to ``false``. See 
