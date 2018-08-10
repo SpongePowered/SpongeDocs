@@ -9,6 +9,8 @@ Catalog Types
     org.spongepowered.api.GameRegistry
     org.spongepowered.api.text.translation.Translatable
     org.spongepowered.api.util.annotation.CatalogedBy
+    java.lang.Class
+    java.lang.String
 
 A big part of the data API consists of special values with a specific meaning. In previous versions of Minecraft these
 have been numbers such as ``1`` that meant something specific in a given context, for example a simple stone in
