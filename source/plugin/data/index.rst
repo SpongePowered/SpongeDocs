@@ -36,6 +36,12 @@ On first glance at the API docs, the data API threatens to overwhelm you with lo
 to simply use the data API, you will not have to deal with many of them, as most interfaces found there are just
 specific data manipulators.
 
+CatalogTypes
+~~~~~~~~~~~~
+
+:doc:`catalog-types` are groups of values that can be used in certain context. Famous examples of these types are
+:javadoc:``BlockType``\s, :javadoc:``EntityType``\s and :javadoc:``EntityType``\s.
+
 DataHolder
 ~~~~~~~~~~
 
@@ -87,6 +93,7 @@ Contents
     :titlesonly:
 
     custom/index
+    catalog-types
     keys
     datamanipulators
     transactions
