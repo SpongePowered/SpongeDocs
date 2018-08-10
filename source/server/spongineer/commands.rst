@@ -207,7 +207,7 @@ There are also extra permissions managing the access to the server:
     world border (or other world options) of the world the player is currently in. The vanilla behavior of setting it
     for all worlds can be restored using the global configuration and setting
     ``sponge.commands.multi-world-patches.worldborder`` or the corresponding entry to ``false``. See 
-    :doc:`../getting-started/configuration/sponge-conf` for details. Sponge assumes that multi-world plugins also
+    :doc:`/server/getting-started/configuration/sponge-conf` for details. Sponge assumes that multi-world plugins also
     provide optimized configuration commands for those options and thus does not provide it's own variants.
 
 Player Commands
