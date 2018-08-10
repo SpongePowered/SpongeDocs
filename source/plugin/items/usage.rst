@@ -18,7 +18,7 @@ actual ``ItemStack`` and thus, you will need to set it back into an inventory if
 Checking an Item's Type
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Checking the type of the item is very simple. You just need to call the :javadoc:`ItemStack#getItem()` method.
+Checking the type of the item is very simple. You just need to call the :javadoc:`ItemStack#getType()` method.
 
 .. code-block:: java
 
