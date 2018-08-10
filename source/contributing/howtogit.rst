@@ -7,7 +7,7 @@ then you'll need to become familiar with ``git`` and GitHub. If you're already f
 issues, pull-requests and commits, then just skip this topic. If you have no clue what we're talking about, then read on.
 
 .. note::
-  This guide assumes that you've read :doc:`../preparing/git` and that you've already setup your machine with a Git
+  This guide assumes that you've read :doc:`/preparing/git` and that you've already setup your machine with a Git
   client of your choice.
 
 The Basic Concept of Git and GitHub
@@ -75,7 +75,7 @@ clone is now located at ``YourGitHubAccount/ClonedRepoName``. Alright, first ste
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Now you need to get this fork to your local machine to make your changes. Open the Git Client of your choice
-(:doc:`../preparing/git`) and ``clone`` your fork to your local machine. The client will ask you for a folder to store
+(:doc:`/preparing/git`) and ``clone`` your fork to your local machine. The client will ask you for a folder to store
 everything in. Second step finished, well done!
 
 .. note::

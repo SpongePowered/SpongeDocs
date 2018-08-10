@@ -20,7 +20,7 @@ advised before starting any work. There are several projects we're currently mai
 * Ore
 
 If you want to know more about the structure of the project and how everything is tied together, head over to
-:doc:`../about/structure`.
+:doc:`/about/structure`.
 
 What kind of help is needed?
 ============================
@@ -36,7 +36,7 @@ This can be done by almost everyone. You don't need to know a programming langua
 
 Reporting bugs best via our `GitHub repositories <https://github.com/spongepowered/>`_, suggestions fit onto our
 `forums <https://forums.spongepowered.org/>`_. Just have a look at our
-:doc:`Bug Reporting page <../server/spongineer/bugreport>` for further instructions.
+:doc:`Bug Reporting page </server/spongineer/bugreport>` for further instructions.
 
 Intermediate Contributions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~

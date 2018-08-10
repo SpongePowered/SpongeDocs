@@ -368,7 +368,7 @@ whether the operation was successful or not.
 .. tip::
 
     To understand :javadoc:`DataTransactionResult`\s, check the :doc:`corresponding docs page
-    <../../plugin/data/transactions>` and refer to the :javadoc:`DataTransactionResult.Builder` docs to create one.
+    </plugin/data/transactions>` and refer to the :javadoc:`DataTransactionResult.Builder` docs to create one.
 
 .. warning::
 

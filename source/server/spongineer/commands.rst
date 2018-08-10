@@ -5,7 +5,7 @@ Commands
 Commands are one method in which server operators can administer their server, and in which players can interact with
 the server.
 
-In Sponge, commands follow a system of :doc:`../../plugin/permissions`. Permissions allow server operators to control
+In Sponge, commands follow a system of :doc:`/plugin/permissions`. Permissions allow server operators to control
 who can access what commands. By default, all commands are granted to players with OP status. Players without operator
 status do not have access to administrative commands or commands that require an assigned permission node. A server
 operator can fine-tune who can access what commands by adding/negating permission nodes through a permissions plugin.

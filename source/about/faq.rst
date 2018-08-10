@@ -21,7 +21,7 @@ What is required to run Sponge?
 
 Sponge (and Minecraft) needs the Java Runtime Environment to run properly. You will obviously need a computer to run
 the server on too, besides that nothing is required. Learn more about choosing and installing the correct Java version
-here: :doc:`../server/getting-started/jre/`
+here: :doc:`/server/getting-started/jre/`
 
 Where do I get Sponge?
 ----------------------
@@ -105,7 +105,7 @@ What can I do with Sponge?
 --------------------------
 
 Sponge provides a Plugin API. This means that you can create new content and gamemodes on the go.
-Have a look at our plugin pages to get a quick-start: :doc:`../plugin/index`
+Have a look at our plugin pages to get a quick-start: :doc:`/plugin/index`
 
 What can't I do with Sponge? / Limitations of Sponge?
 -----------------------------------------------------
@@ -130,4 +130,4 @@ Accessing the server internals (known as "NMS" or "net.minecraft.server" in Craf
 which has a large number of names de-obfuscated. However, be aware that accessing the server internals raises the risk
 of your plugin breaking - this is your prerogative.
 
-See :doc:`../plugin/internals/index` for an introduction about using MCP in your plugin.
+See :doc:`/plugin/internals/index` for an introduction about using MCP in your plugin.
