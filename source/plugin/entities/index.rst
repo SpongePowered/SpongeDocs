@@ -10,3 +10,4 @@ Entities are a huge part of Minecraft, and SpongeAPI in general.
 
     spawning
     modifying
+    ai
