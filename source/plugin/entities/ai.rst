@@ -160,7 +160,7 @@ In this case we remove all AITasks that have the ``AITaskType`` :javadoc:`AITask
 
 .. note::
 
-    Currently this way is seriously limited in usability due to the limited ``AITaskType`` support in the API.
+    Currently this way is seriously limited in usability due to the incomplete ``AITaskType`` support in the API.
 
-If you want to remove all AITasks because you want to configure the entity's AI from scratch you can also use
-:javadoc:`Goal#clear()`, which removes all AITasks at once.
+If you want to remove all AITasks, because you want to configure the entity's AI from scratch, you can also use
+:javadoc:`Goal#clear()`.
