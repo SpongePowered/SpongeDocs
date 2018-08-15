@@ -164,3 +164,117 @@ In this case we remove all AITasks that have the ``AITaskType`` :javadoc:`AITask
 
 If you want to remove all AITasks, because you want to configure the entity's AI from scratch, you can also use
 :javadoc:`Goal#clear()`.
+
+Implement Your Own AITask
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you want to implement your own ``AITask`` then you must extend ``AbstractAITask`` with your task. The following
+example shows an example implementation of such a custom AITask.
+
+.. code-block:: java
+
+    import java.util.Comparator;
+    import java.util.Optional;
+    import java.util.function.Predicate;
+    
+    import org.spongepowered.api.GameRegistry;
+    import org.spongepowered.api.entity.Entity;
+    import org.spongepowered.api.entity.ai.task.AITask;
+    import org.spongepowered.api.entity.ai.task.AITaskType;
+    import org.spongepowered.api.entity.ai.task.AbstractAITask;
+    import org.spongepowered.api.entity.living.Agent;
+    
+    import com.flowpowered.math.vector.Vector3d;
+    import com.google.common.base.Preconditions;
+    
+    import net.minecraft.entity.EntityLiving;
+    import net.minecraft.entity.ai.EntityAIBase;
+    import net.minecraft.pathfinding.PathNavigate;
+    
+    public class CreepyCompanionAITask extends AbstractAITask<Agent> {
+    
+        private static final double APPROACH_DISTANCE_SQUARED = 3 * 3;
+        private static final double MAX_DISTANCE_SQUARED = 3 * 3;
+        private static final float EXECUTION_CHANCE = 0.02F;
+        private static final int MUTEX_FLAG_MOVE = 1;
+        
+        private static AITaskType TYPE;
+        
+        public static void register(Object plugin, GameRegistry gameRegistry) {
+            TYPE = gameRegistry
+                    .registerAITaskType(plugin, "creepy_companion", "CreepyCompanion", CreepyCompanionAITask2.class);
+        }
+        
+        private final Predicate<Entity> entityFilter;
+        
+        private Optional<Entity> optTarget;
+    
+        public CreepyCompanionAITask2(final Predicate<Entity> entityFilter) {
+            super(TYPE);
+            this.entityFilter = Preconditions.checkNotNull(entityFilter);
+            ((EntityAIBase) (Object) this).setMutexBits(MUTEX_FLAG_MOVE);
+        }
+    
+        @Override
+        public boolean canRunConcurrentWith(final AITask<Agent> other) {
+            return (((EntityAIBase) (Object) this).getMutexBits() & ((EntityAIBase) other).getMutexBits()) == 0;
+        }
+    
+        @Override
+        public boolean canBeInterrupted() {
+            return true;
+        }
+    
+        @Override
+        public void start() {
+            getNavigator().getPathToEntityLiving(((EntityLiving) (this.optTarget.get())));
+        }
+    
+        private PathNavigate getNavigator() {
+            return ((EntityLiving) (getOwner().get())).getNavigator();
+        }
+    
+        @Override
+        public boolean shouldUpdate() {
+            final Agent owner = getOwner().get();
+            if (owner.getRandom().nextFloat() > EXECUTION_CHANCE) {
+                return false;
+            }
+            final Vector3d position = getPositionOf(owner);
+    
+            this.optTarget = owner.getWorld()
+                    .getEntities().stream()
+                    .filter(this.entityFilter)
+                    .filter(e -> getPositionOf(e).distanceSquared(position) < MAX_DISTANCE_SQUARED)
+                    .sorted(Comparator.comparingDouble(e -> getPositionOf(e).distanceSquared(position)))
+                    .findFirst();
+            return this.optTarget.isPresent();
+        }
+    
+        @Override
+        public void update() {
+        }
+    
+        @Override
+        public boolean continueUpdating() {
+            if (getNavigator().noPath()) {
+                return false;
+            }
+            if (!this.optTarget.isPresent()) {
+                return false;
+            }
+            final Entity target = this.optTarget.get();
+            return getPositionOf(target).distanceSquared(getPositionOf(getOwner().get())) > APPROACH_DISTANCE_SQUARED;
+        }
+    
+        private Vector3d getPositionOf(final Entity entity) {
+            return entity.getLocation().getPosition();
+        }
+    
+        @Override
+        public void reset() {
+            getNavigator().clearPath();
+            this.optTarget = null;
+        }
+    
+    }
