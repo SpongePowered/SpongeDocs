@@ -64,7 +64,7 @@ The **Project Managers** of Sponge each coordinate a separate aspect of the Spon
 +-----------------------------------+------------------------------------+
 | progwml6                          | System Administrator               |
 |                                   |                                    |
-|                                   | Web Development                    |
+|                                   | Web Developer                      |
 +-----------------------------------+------------------------------------+
 
 API and Implementation Developers
@@ -155,7 +155,7 @@ Our **Web Developers** maintain, update and integrate the Sponge website.
 +-----------------------------------+------------------------------------+
 | Name                              | Role                               |
 +===================================+====================================+
-| jamierocks                        | Web Development                    |
+| jamierocks                        | Web Developer                      |
 |                                   |                                    |
 |                                   | Ore Reviewer                       |
 +-----------------------------------+------------------------------------+
