@@ -11,7 +11,7 @@ using the config files in the subfolders of config/worlds.
 
 Below is a list of available config settings and their comments inside the global.conf file. Note that certain sections
 will not be filled immediately, and may optionally be added to the file when the server encounters them. There's also
-full example of a unmodified ``global.conf`` file at the bottom of this page, below the following table:
+full example of an unmodified ``global.conf`` file at the bottom of this page, below the following list:
 
 Global Properties of Sponge
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -31,8 +31,6 @@ enabled
 block-tick-capturing
     If 'true', individual capturing (i.e. skip bulk capturing) for scheduled ticks for
     a block type will be performed.
-enabled
-    If 'false', all specific rules for this mod will be ignored.
 
 block-tracking
 ==============
@@ -461,6 +459,8 @@ weather-thunder
     If 'true', thunderstorms will be initiated in supported biomes.
 world-enabled
     If 'true', this world will be registered.
+
+------------------------------------------------------------------------------------------------------------
 
 This config was generated using SpongeForge build 2990 (with Forge 2611), SpongeAPI version 7.0.0:
 
