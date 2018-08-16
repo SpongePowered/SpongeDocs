@@ -12,6 +12,7 @@ Entity AI
     org.spongepowered.api.entity.ai.task.builtin.WatchClosestAITask
     org.spongepowered.api.entity.living.Agent
     org.spongepowered.api.entity.living.player.Player
+    java.util.function.Predicate
 
 Entity AI (not to be confused with actual AI) are fixed goals (defeat enemies) that an entity tries to achieve using
 smaller scaled tasks (go to enemy and hit him with your weapon). The following sections will describe what goals, tasks
@@ -168,8 +169,10 @@ If you want to remove all AITasks, because you want to configure the entity's AI
 Implement Your Own AITask
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you want to implement your own ``AITask`` then you must extend ``AbstractAITask`` with your task. The following
-example shows an example implementation of such a custom AITask.
+Before we start implementing our own ``AITask`` we have to make sure our workspace is properly configured. Please follow
+the instructions in :doc:`/plugin/internals/mcp-setup`.
+
+Here is a list of imports we will use while implementing the ``AITask``.
 
 .. code-block:: java
 
@@ -190,14 +193,27 @@ example shows an example implementation of such a custom AITask.
     import net.minecraft.entity.EntityLiving;
     import net.minecraft.entity.ai.EntityAIBase;
     import net.minecraft.pathfinding.PathNavigate;
-    
+
+
+To simplify the implementation we use the following constants. They are optional and could be easily replaced by dynamic
+fields set via a constructor.
+
+.. code-block:: java
+
+    private static final double MOVEMENT_SPEED = 1;
+    private static final double APPROACH_DISTANCE_SQUARED = 2 * 2;
+    private static final double MAX_DISTANCE_SQUARED = 20 * 20;
+    private static final float EXECUTION_CHANCE = 0.2F;
+    private static final int MUTEX_FLAG_MOVE = 1; // Minecraft bit flag
+
+If you want to implement your own ``AITask`` then you must extend ``AbstractAITask`` with your task. The following
+example shows an example implementation of such a custom AITask. Also we need to generate a new ``AITaskType`` for our
+``AITask``. To avoid spreading the logic everywhere we simply create a static field and a ``register`` method for it in
+the class itself as shown by the following code example:
+
+.. code-block:: java
+
     public class CreepyCompanionAITask extends AbstractAITask<Agent> {
-    
-        private static final double MOVEMENT_SPEED = 1;
-        private static final double APPROACH_DISTANCE_SQUARED = 2 * 2;
-        private static final double MAX_DISTANCE_SQUARED = 20 * 20;
-        private static final float EXECUTION_CHANCE = 0.2F;
-        private static final int MUTEX_FLAG_MOVE = 1;
     
         private static AITaskType TYPE;
     
@@ -206,25 +222,71 @@ example shows an example implementation of such a custom AITask.
                     .registerAITaskType(plugin, "creepy_companion", "CreepyCompanion", CreepyCompanionAITask.class);
         }
     
-        private final Predicate<Entity> entityFilter;
+        [...]
     
-        private Optional<Entity> optTarget;
+    }
+
+Of course we still need to call that method from our main class, but that can be easily done like this from our plugin
+main class:
+
+.. code-block:: java
+
+    @Listener
+    public void onInitialize(final GameInitializationEvent event) {
+        CreepyCompanionAITask.register(this, game.getRegistry());
+    }
+
+After that we can finally start implementing the AITask. For this we need to implement a total of seven methods and a
+constructor:
+
+* ``CreepyCompanionAITask(...)``
+* ``boolean canRunConcurrentWith(AITask<Agent>)``
+* ``boolean canBeInterrupted()``
+* ``void start()``
+* ``boolean shouldUpdate()``
+* ``void update()``
+* ``boolean continueUpdating()``
+* ``void reset()``
+
+We need the constructor to set any parameters we want our ``AITask`` to have and configure some base options for it. In
+this case its setting the ``AITaskType`` and configuring the mutex bits along with an ``entityFilter``
+:javadoc:`Predicate`, that we will use later on.
+
+.. code-block:: java
     
-        public CreepyCompanionAITask(final Predicate<Entity> entityFilter) {
-            super(TYPE);
-            this.entityFilter = Preconditions.checkNotNull(entityFilter);
-            ((EntityAIBase) (Object) this).setMutexBits(MUTEX_FLAG_MOVE);
-        }
+    private final Predicate<Entity> entityFilter;
+
+    private Optional<Entity> optTarget;
+
+    public CreepyCompanionAITask(final Predicate<Entity> entityFilter) {
+        super(TYPE);
+        this.entityFilter = Preconditions.checkNotNull(entityFilter);
+        ((EntityAIBase) (Object) this).setMutexBits(MUTEX_FLAG_MOVE);
+    }
+
+Unfortunately we have to resort to dirty casts to plain Minecraft classes. This is also the reason we have to setup our
+workspace with MCP mappings.
+
+After that we continue with the first set of methods: ``canRunConcurrentWith`` and ``canBeInterrupted``. They are very
+easy to implement. For the first one we are going to rely on the default Minecraft logic. However this once again
+requires dirty casts. For the second one we just have to consider whether it can be interrupted or needs to complete
+first.
+
+.. code-block:: java
     
-        @Override
-        public boolean canRunConcurrentWith(final AITask<Agent> other) {
-            return (((EntityAIBase) (Object) this).getMutexBits() & ((EntityAIBase) other).getMutexBits()) == 0;
-        }
+    @Override
+    public boolean canRunConcurrentWith(final AITask<Agent> other) {
+        return (((EntityAIBase) (Object) this).getMutexBits() & ((EntityAIBase) other).getMutexBits()) == 0;
+    }
+
+    @Override
+    public boolean canBeInterrupted() {
+        return true;
+    }
     
-        @Override
-        public boolean canBeInterrupted() {
-            return true;
-        }
+TODO: Continue the explanations...
+
+.. code-block:: java
     
         @Override
         public void start() {
