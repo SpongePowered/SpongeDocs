@@ -193,23 +193,24 @@ example shows an example implementation of such a custom AITask.
     
     public class CreepyCompanionAITask extends AbstractAITask<Agent> {
     
-        private static final double APPROACH_DISTANCE_SQUARED = 3 * 3;
-        private static final double MAX_DISTANCE_SQUARED = 3 * 3;
-        private static final float EXECUTION_CHANCE = 0.02F;
+        private static final double MOVEMENT_SPEED = 1;
+        private static final double APPROACH_DISTANCE_SQUARED = 2 * 2;
+        private static final double MAX_DISTANCE_SQUARED = 20 * 20;
+        private static final float EXECUTION_CHANCE = 0.2F;
         private static final int MUTEX_FLAG_MOVE = 1;
-        
+    
         private static AITaskType TYPE;
-        
-        public static void register(Object plugin, GameRegistry gameRegistry) {
+    
+        public static void register(final Object plugin, final GameRegistry gameRegistry) {
             TYPE = gameRegistry
-                    .registerAITaskType(plugin, "creepy_companion", "CreepyCompanion", CreepyCompanionAITask2.class);
+                    .registerAITaskType(plugin, "creepy_companion", "CreepyCompanion", CreepyCompanionAITask.class);
         }
-        
+    
         private final Predicate<Entity> entityFilter;
-        
+    
         private Optional<Entity> optTarget;
     
-        public CreepyCompanionAITask2(final Predicate<Entity> entityFilter) {
+        public CreepyCompanionAITask(final Predicate<Entity> entityFilter) {
             super(TYPE);
             this.entityFilter = Preconditions.checkNotNull(entityFilter);
             ((EntityAIBase) (Object) this).setMutexBits(MUTEX_FLAG_MOVE);
@@ -227,7 +228,7 @@ example shows an example implementation of such a custom AITask.
     
         @Override
         public void start() {
-            getNavigator().getPathToEntityLiving(((EntityLiving) (this.optTarget.get())));
+            getNavigator().tryMoveToEntityLiving((net.minecraft.entity.Entity) this.optTarget.get(), MOVEMENT_SPEED);
         }
     
         private PathNavigate getNavigator() {
