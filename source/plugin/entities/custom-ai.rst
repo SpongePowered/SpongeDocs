@@ -88,6 +88,12 @@ constructor:
 * ``void update()``
 * ``void reset()``
 
+The following image roughly describes the method execution order:
+
+.. image:: /images/ai-execution-order.png
+    :align: center
+    :alt: The method execution order of the ai task
+
 We need the constructor to set any parameters we want our ``AITask`` to have and configure some base options for it. In
 this case its setting the ``AITaskType`` and configuring the mutex bits along with an ``entityFilter``
 :javadoc:`Predicate`, that we will use later on.
