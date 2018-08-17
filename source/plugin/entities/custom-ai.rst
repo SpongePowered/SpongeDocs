@@ -231,4 +231,4 @@ That's all there is to writing custom ``AITask``\s. Now we can actually use it i
 But why did we call this task ``CreepyCompanionAITask``? There is a simple solution to that. When checking whether the
 ``AITask`` should be executed, we don't check whether the entity is already close enough, thus it will move a tiny bit
 towards the target each time. The next step in creepiness would probably be, that the entity only does this if the
-target is not looking. Image a creeper slowly approaching from your back.
+target is not looking. Imagine a creeper slowly approaching from your back.
