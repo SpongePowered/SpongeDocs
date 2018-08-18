@@ -9,6 +9,9 @@ Entity AI
     org.spongepowered.api.entity.ai.task.AITask
     org.spongepowered.api.entity.ai.task.AITaskType
     org.spongepowered.api.entity.ai.task.AITaskTypes
+    org.spongepowered.api.event.entity.ai.AITaskEvent.Add
+    org.spongepowered.api.event.entity.ai.AITaskEvent.Remove
+    org.spongepowered.api.event.entity.ai.SetAITargetEvent
     org.spongepowered.api.entity.ai.task.builtin.WatchClosestAITask
     org.spongepowered.api.entity.living.Agent
     org.spongepowered.api.entity.living.player.Player
@@ -170,3 +173,23 @@ Implement Your Own AITask
 
 We can also try to implement our own ``AITask``\s. The :doc:`custom-ai` page describes the process and some obstacles
 you will encounter.
+
+Events
+~~~~~~
+
+The AI API as well as most other parts of the SpongeAPI utilize events. You can read more about events
+:doc:`here </plugin/event/index>`.
+
+The AI API itself makes use of the following 3 events:
+
+* :javadoc:`AITaskEvent.Add`
+* :javadoc:`AITaskEvent.Remove`
+* :javadoc:`SetAITargetEvent`
+
+The ``AITaskEvent.Add`` event is published whenever a new ``AITask`` has been added to a ``Goal``, likewise is the
+``AITaskEvent.Remove`` event published if an ``AITask`` has been removed.
+
+The ``SetAITargetEvent`` is published every time that an ``Agent`` selects a new target (usually for attacking) or drops
+a target.
+
+All of these events are cancelable, thus allowing us to prevent unwanted third-party changes to our custom entities.
