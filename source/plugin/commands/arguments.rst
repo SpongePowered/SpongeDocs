@@ -10,7 +10,11 @@ Argument Parsing
     org.spongepowered.api.command.args.CommandContext
     org.spongepowered.api.command.args.CommandElement
     org.spongepowered.api.command.args.GenericArguments
+    org.spongepowered.api.command.args.SelectorCommandElement
     org.spongepowered.api.command.spec.CommandSpec.Builder
+    org.spongepowered.api.entity.Entity
+    org.spongepowered.api.text.selector.Selector
+    java.lang.IllegalArgumentException
     java.lang.String
 
 The Command Builder API comes with a powerful argument parser. It converts the string input to java base types
@@ -194,7 +198,6 @@ The parser in this example reads two input arguments and converts them to a vect
    import java.util.List;
 
    public class Vector2iCommandElement extends CommandElement {
-       CommandArgs errorargs;
 
        protected Vector2iCommandElement(Text key) {
            super(key);
@@ -203,23 +206,20 @@ The parser in this example reads two input arguments and converts them to a vect
        @Override
        protected Object parseValue(CommandSource source, CommandArgs args) throws ArgumentParseException {
 
-           // <x> <y>
-           errorargs=args;
-
            String xInput = args.next();
-           int x = parseInt(xInput);
+           int x = parseInt(xInput, args);
 
            String yInput = args.next();
-           int y = parseInt(yInput);
+           int y = parseInt(yInput, args);
 
            return new Vector2i(x, y);
        }
 
-       private int parseInt(String input) throws ArgumentParseException {
+       private int parseInt(String input, CommandArgs args) throws ArgumentParseException {
            try {
                return Integer.parseInt(input);
            } catch(NumberFormatException e) {
-               throw errorargs.createError(Text.of("'" + input + "' is not a valid number!"));
+               throw args.createError(Text.of("'" + input + "' is not a valid number!"));
            }
        }
 
@@ -253,3 +253,49 @@ Example: ``Vector2i`` command element usage
 
     Look at the `source code <https://github.com/SpongePowered/SpongeAPI/blob/stable-7/src/main/java/org/spongepowered/api/command/args/GenericArguments.java>`_
     of the ``GenericArguments`` class for more examples.
+
+Using Selectors in Custom Command Elements
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Sponge provides support for parsing selectors, meaning that you can make use of them in your custom elements. There
+are two steps in using selectors, **parsing** (getting a :javadoc:`Selector` from the string) and **resolving**
+(getting a set of :javadoc:`Entity` objects selected by the selector).
+
+To **parse** a selector string, use the :javadoc:`Selector#parse(String)` method, passing the entire selector,
+including the ``@`` symbol. This will turn the string into a ``Selector`` object that can be quieried or resolved.
+Note that if the string is not a valid selector, an :javadoc:`IllegalArgumentException` will be thrown.
+
+To **resolve** this selector, use :javadoc:`Selector#resolve(CommandSource)`. This will return a set of ``Entity``
+objects selected by the selector.
+
+The following ``parseValue`` method from the ``CommandElement`` class attempts to parse a selector and return a set of
+entities based on the location of the ``CommandSource``. If the passed string does not start with ``@``, an exception
+is thrown indicating the passed argument is not a selector.
+
+.. code-block:: java
+
+    @Override
+    protected Object parseValue(CommandSource source, CommandArgs args) throws ArgumentParseException {
+        String nextArg = args.next();
+        if (nextArg.startsWith("@")) {
+            Set<Entity> selectedEntities;
+            try {
+                selectedEntities = Selector.parse(nextArg).resolve(source);
+            } catch (IllegalArgumentException e) {
+                throw args.createError(Text.of("Could not parse selector."));
+            }
+
+            if (selectedEntities.isEmpty()) {
+                throw args.createError(Text.of("No entities selected."));
+            }
+
+            return selectedEntities;
+        }
+
+        throw args.createError(Text.of("Not a selector."));
+    }
+
+.. tip::
+
+  Look at the `SelectorCommandElement source code <https://github.com/SpongePowered/SpongeAPI/blob/stable-7/src/main/java/org/spongepowered/api/command/args/SelectorCommandElement.java>`_
+  for an example of how selector parsing is performed in the standard Sponge ``CommandElements``.
