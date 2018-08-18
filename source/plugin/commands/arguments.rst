@@ -10,7 +10,6 @@ Argument Parsing
     org.spongepowered.api.command.args.CommandContext
     org.spongepowered.api.command.args.CommandElement
     org.spongepowered.api.command.args.GenericArguments
-    org.spongepowered.api.command.args.SelectorCommandElement
     org.spongepowered.api.command.spec.CommandSpec.Builder
     org.spongepowered.api.entity.Entity
     org.spongepowered.api.text.selector.Selector
@@ -297,5 +296,5 @@ is thrown indicating the passed argument is not a selector.
 
 .. tip::
 
-  Look at the `SelectorCommandElement source code <https://github.com/SpongePowered/SpongeAPI/blob/stable-7/src/main/java/org/spongepowered/api/command/args/SelectorCommandElement.java>`_
+  Look at the `SelectorCommandElement source code <https://github.com/SpongePowered/SpongeAPI/blob/stable-7/src/main/java/org/spongepowered/api/command/args/SelectorCommandElement.java#L40>`_
   for an example of how selector parsing is performed in the standard Sponge ``CommandElements``.
