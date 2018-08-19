@@ -261,7 +261,7 @@ are two steps in using selectors, **parsing** (getting a :javadoc:`Selector` fro
 (getting a set of :javadoc:`Entity` objects selected by the selector).
 
 To **parse** a selector string, use the :javadoc:`Selector#parse(String)` method, passing the entire selector,
-including the ``@`` symbol. This will turn the string into a ``Selector`` object that can be quieried or resolved.
+including the ``@`` symbol. This will turn the string into a ``Selector`` object that can be queried or resolved.
 Note that if the string is not a valid selector, an :javadoc:`IllegalArgumentException` will be thrown.
 
 To **resolve** this selector, use :javadoc:`Selector#resolve(CommandSource)`. This will return a set of ``Entity``
@@ -269,7 +269,7 @@ objects selected by the selector.
 
 The following ``parseValue`` method from the ``CommandElement`` class attempts to parse a selector and return a set of
 entities based on the location of the ``CommandSource``. If the passed string does not start with ``@``, an exception
-is thrown indicating the passed argument is not a selector.
+will be thrown indicating the passed argument is not a selector.
 
 .. code-block:: java
 
