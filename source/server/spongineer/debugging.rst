@@ -128,6 +128,10 @@ There are two kind of errors that might occur on a modded server, first are plug
 Java. The other kind of error is the error during during Minecraft's ticking of worlds or entities. Sponge handles these
 cases in a special way to provide as much information about those as possible.
 
+Before we look into the details on who caused the exception. Make sure that you read all of the exception, sometimes
+the error is explained in the error report itself or a few lines above or below. Sometimes it indicated by a warning
+during startup.
+
 The following stacktrace shows an example of this special handling (excluding the line prefix with time and severity):
 
 .. code-block:: text
@@ -207,7 +211,7 @@ names (Also check the ``Caused by`` blocks).
     it down by removing mods. Only then should you report the error. If the error occurs while only non Sponge mods are
     present try removing Sponge. If the error persists its not related to Sponge. Its usually a good idea to report bugs
     to the mod authors first as they have good knowledge of the parts of code they are working with. However you can
-    always contact us through IRC or other means.
+    always contact us through IRC or other means. Please provide logs for bug reports, if possible.
 
 Nasty bugs: Minecraft modding uses some advanced technics such as Mixins and ClassLoaderTransformations, which means
 that although a Minecraft class has been reported as the cause, it does not mean the code executed inside is from
