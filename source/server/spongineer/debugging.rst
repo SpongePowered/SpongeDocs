@@ -123,14 +123,16 @@ against or try updating/downgrading your SpongeForge or SpongeVanilla to solve t
 Exceptions at Runtime
 =====================
 
-There are two kind of errors that might occur on a modded server, first are plugin internal errors such as a
-``NullPointerException`` a command execution. These exceptions are logged using the default stacktrace mechanism from
-Java. The other kind of error is the error during during Minecraft's ticking of worlds or entities. Sponge handles these
-cases in a special way to provide as much information about those as possible.
+There are two kinds of errors that may occur on modded servers:
 
-Before we look into the details on who caused the exception. Make sure that you read all of the exception, sometimes
-the error is explained in the error report itself or a few lines above or below. Sometimes it indicated by a warning
-during startup.
+* Plugin internal errors, such as NullPointerExceptions during command execution. These errors are logged using the
+  standard Java error handler.
+* Errors during the ticking of worlds or entities. Sponge prints out more structured errors to provide as much
+  information as possible.
+
+Before we look into the details of what caused the exception, make sure that you read all of the error report. Sometimes
+the error is explained in the error report itself (or a few lines above or below it); sometimes it is indicated by a
+warning during startup.
 
 The following stacktrace shows an example of this special handling (excluding the line prefix with time and severity):
 
@@ -188,13 +190,13 @@ The following stacktrace shows an example of this special handling (excluding th
     /******************************************************************************************************************************/
 
 This stacktrace contains the most important version numbers, as well some information about the phase the server was in.
-In this case a ``NullPointerException`` has been thrown during ``EntityTickPhase``. At this point its important to check
-which plugins are involved with the crash. This requires some research as you have to match the package names with mod
-names (Also check the ``Caused by`` blocks).
+In this case a ``NullPointerException`` has been thrown during ``EntityTickPhase``. At this point it's important to
+check which plugins are involved with the crash. This requires some research as you have to match the package names with
+mod names; checking the ``Caused by`` blocks may also help.
 
 * ``java`` classes can be ignored during the error search.
-* ``net.minecraft`` is the vanilla Minecraft code. If only these elements are present, its either a Minecraft bug or a
-  really nasty one (I explain those later).
+* ``net.minecraft`` is the vanilla Minecraft code. If only these elements are present, it's either a Minecraft bug or a
+  really nasty one (these are explained later).
 * ``org.spongepowered`` is from Sponge itself, having only these and Minecraft packages present usually indicates a
   Sponge bug (or a nasty one). The :doc:`bugreport` chapter explains where to report bugs.
 * Other classes have to be mapped to their mods by hand. In this case there is an entry ``com.example.extendedaiplugin`` 
@@ -202,19 +204,19 @@ names (Also check the ``Caused by`` blocks).
   language code such as ``de`` or ``zh``. The next part usually indicates the mod authors name, but in some cases it may
   also point to a hosting platform such as ``github``. In those cases you should also take a look at the next parts.
   After that there is usually something related to the mod itself. ``extendedaiplugin`` might be related to the plugin
-  name. Please be aware that the mod may use additional separator characters such as ``-`` or spaces or use a different
-  character case for some parts. However this strategy is not always accurate, even less so in mod packs or bundles.
+  name. Please be aware that the mod may use additional separator characters such as ``-`` or spaces, or use a different
+  character case for some parts. Beware this strategy is not always accurate, even less so in mod packs or bundles.
 
 .. note::
 
     If you encounter a bug its usually a good idea to create a backup first, then trying to reproduce it, then narrowing
-    it down by removing mods. Only then should you report the error. If the error occurs while only non Sponge mods are
-    present try removing Sponge. If the error persists its not related to Sponge. Its usually a good idea to report bugs
-    to the mod authors first as they have good knowledge of the parts of code they are working with. However you can
-    always contact us through IRC or other means. Please provide logs for bug reports, if possible.
+    it down by removing mods. Only then should you report the error. If the error occurs in the absence of Sponge
+    plugins, try removing SpongeForge. If the error persists its not related to Sponge. Its usually a good idea to
+    report bugs to the mod authors first as they have good knowledge of the parts of code they are working with. However
+    you can always contact us through IRC or other means. Please provide logs for bug reports, if possible.
 
-Nasty bugs: Minecraft modding uses some advanced technics such as Mixins and ClassLoaderTransformations, which means
+Nasty bugs: Minecraft modding uses some advanced techniques such as Mixins and ClassLoaderTransformations, which means
 that although a Minecraft class has been reported as the cause, it does not mean the code executed inside is from
-Minecraft itself. Sponge and other plugins hook into the native methods and execute their own code parts; such as
-posting events. In that case you have to do a blind search for the causing mod. Unfortunately they also tend to only
-occur with some plugin combinations.
+Minecraft itself. Sponge and other plugins hook into the native methods and execute their own code; such as
+posting events. In that case you have to do a blind search for the malfeasant mod. These often occur only through
+interaction between some combinations of plugins and thus are very hard to find.
