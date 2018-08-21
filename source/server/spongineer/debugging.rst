@@ -209,7 +209,7 @@ mod names; checking the ``Caused by`` blocks may also help.
 
 .. note::
 
-    If you encounter a bug its usually a good idea to create a backup first, then trying to reproduce it, then narrowing
+    If you encounter a bug it is usually a good idea to create a backup first, then try to reproduce it, then narrow
     it down by removing mods. Only then should you report the error. If the error occurs in the absence of Sponge
     plugins, try removing SpongeForge. If the error persists its not related to Sponge. Its usually a good idea to
     report bugs to the mod authors first as they have good knowledge of the parts of code they are working with. However
@@ -217,6 +217,6 @@ mod names; checking the ``Caused by`` blocks may also help.
 
 Nasty bugs: Minecraft modding uses some advanced techniques such as Mixins and ClassLoaderTransformations, which means
 that although a Minecraft class has been reported as the cause, it does not mean the code executed inside is from
-Minecraft itself. Sponge and other plugins hook into the native methods and execute their own code; such as
-posting events. In that case you have to do a blind search for the malfeasant mod. These often occur only through
+Minecraft itself. Sponge and other plugins hook into the native methods and execute their own code, such as
+posting events. In that case you have to do a blind search for the misbehaving mod. These often occur only through
 interaction between some combinations of plugins and thus are very hard to find.
