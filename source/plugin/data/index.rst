@@ -3,6 +3,8 @@ The Data API
 ============
 
 .. javadoc-import::
+
+    org.spongepowered.api.block.BlockType
     org.spongepowered.api.data.DataHolder
     org.spongepowered.api.data.key.Key
     org.spongepowered.api.data.key.Keys
@@ -10,6 +12,8 @@ The Data API
     org.spongepowered.api.data.manipulator.mutable.entity.HealthData
     org.spongepowered.api.data.property.item.DamageAbsorptionProperty
     org.spongepowered.api.data.property.item.HarvestingProperty
+    org.spongepowered.api.entity.EntityType
+    org.spongepowered.api.item.ItemType
 
 The unified Data API aims to provide a consistent way of accessing and modifying data. 'Data', in this context
 means any data that is consistently synchronized between client and server. It can be changed server-side and
@@ -40,7 +44,7 @@ CatalogTypes
 ~~~~~~~~~~~~
 
 :doc:`catalog-types` are groups of values that can be used in certain context. Famous examples of these types are
-:javadoc:``BlockType``\s, :javadoc:``EntityType``\s and :javadoc:``EntityType``\s.
+:javadoc:`BlockType`\s, :javadoc:`EntityType`\s and :javadoc:`ItemType`\s.
 
 DataHolder
 ~~~~~~~~~~
