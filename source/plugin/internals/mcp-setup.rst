@@ -102,11 +102,11 @@ Forge Workspace
         mappings = 'YOUR_MAPPINGS_VERSION'
     }
 
-It is recommended to use the same Forge version as used by the SpongeForge build, you are going to use.
+It is recommended to use the same Forge version as used by the SpongeForge build you are going to use.
 
 .. note::
 
-    Make sure you use a version that belongs to your Minecraft version. Using a wrong version will probably cause
+    Make sure you use a version that corresponds to your Minecraft version. Using a wrong version will probably cause
     inexplicable exceptions during the preparation of the workspace or during development.
 
 Setting Up the Workspace
