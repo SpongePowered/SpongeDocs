@@ -205,14 +205,17 @@ Command               Description                               Permission
 
 |
 
-Sponge also creates permissions for some Minecraft features for better permission management. 
-Note that these permissions use the actual *name* of the commandblock, which is normally ``@`` by default. 
+Sponge also creates permissions for these Minecraft features:
 
 * Allow player to use the entity-selector in commands: ``minecraft.selector``
 * Allow player to bypass spawn-protection in all worlds: ``minecraft.spawn-protection.override``
 * Allow player to bypass force-gamemode in all worlds: ``minecraft.force-gamemode.override``
 * Allow editing an ordinary commandblock of the given name: ``minecraft.commandblock.edit.block.<name>``
 * Allow editing a minecart commandblock of the given name: ``minecraft.commandblock.edit.minecart.<name>``
+
+.. note::
+
+    These permissions use the actual *name* of the commandblock, which is normally ``@`` by default. 
 
 There are also extra permissions managing the access to the server:
 
