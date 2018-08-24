@@ -39,7 +39,7 @@ Command                 Description                                Permission
 /sponge config          Alters a global, world, or a dimension     sponge.command.config
                         config.
 /sponge entityinfo      Shows the type and the some additional     sponge.command.entityinfo
-                        information about the block you are
+                        information about the entity you are
                         looking at.
 /sponge heap            Dumps the JVM heap.                        sponge.command.heap
 /sponge mods            Lists currently installed forge mods.      sponge.command.mods
@@ -59,7 +59,7 @@ Command                 Description                                Permission
                         it's aliases and alternatives.
 /sponge:callback        Internally used for callback actions on 
                         ``Text``\s (such as pagination). Not
-                        meant to be invoked by hand.
+                        intended to be invoked by hand.
 /sponge:help            View information on commands used on the   sponge.command.help
                         server.
 ======================  =========================================  =============================
