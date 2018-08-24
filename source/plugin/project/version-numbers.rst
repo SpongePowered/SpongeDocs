@@ -6,7 +6,7 @@ successor of the other. There are plenty of versioning schemes that you could us
 part we explain a few concepts with their pros and cons.
 
 Sponge recommends to use a version identifier that consists of either two or three numeric version parts separated with
-a ``.`` and additional label appended with a hyphens ``-`` such as ``3.1`` or ``1.0.3-MC1.12.2`` similar to SemVer.
+a ``.`` and additional label appended with a hyphens ``-`` such as ``3.1`` or ``1.0.3-API7`` similar to SemVer.
 Start with ``1.x`` if your plugin is ready. Start with ``0.x`` if your plugin is not yet ready or unstable.
 
 .. note::
@@ -42,7 +42,7 @@ is greater than the other.
 * 0.1.0
 * 1.0.0
 * 1.1.0-SNAPHOT
-* 3.12.21-MC1.12.2
+* 3.12.21-API7
 
 **Pros**
 
