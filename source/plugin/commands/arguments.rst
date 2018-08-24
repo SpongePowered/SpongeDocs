@@ -25,13 +25,15 @@ it with :javadoc:`CommandContext#getOne(String)`. Optional and weak arguments ma
 
 Many of the parsers may return more than one object (e.g. multiple players with a matching username). In that case, you
 must use the :javadoc:`CommandContext#getAll(String)` method to get the ``Collection`` of possible matches.
-**Otherwise, the context object will throw an exception!**
+**Otherwise, the context object will throw an exception!** Please make sure that you make a conscious decision whether
+you need to limit your ``CommandExecutor`` to a single result or can support multiple arguments. If you support multiple
+arguments the users have to type less and shorter commands. Example: ``/tell @a Who took the cookies?``.
 
 .. tip::
 
-   You can use the
-   :javadoc:`GenericArguments#onlyOne(CommandElement)` element to limit the amount of returned values to a single one,
-   so you can safely use ``args.<T>getOne(String)``.
+   You can use the :javadoc:`GenericArguments#onlyOne(CommandElement)` element to limit the amount of returned values to
+   a single one, so you can safely use ``args.<T>getOne(String)``. However the user will still get a message, if he
+   tries to select more than one value.
 
 To create a new :javadoc:`CommandElement` (argument), use the :javadoc:`GenericArguments` factory class. Many command
 elements require a short text key, which is displayed in error and help messages.
@@ -65,17 +67,14 @@ Example: Building a Command with Multiple Arguments
                     GenericArguments.onlyOne(GenericArguments.player(Text.of("player"))),
                     GenericArguments.remainingJoinedStrings(Text.of("message")))
 
-            .executor(new CommandExecutor() {
-                @Override
-                public CommandResult execute(CommandSource src, CommandContext args) throws CommandException {
+            .executor((CommandSource src, CommandContext args) -> {
 
-                    Player player = args.<Player>getOne("player").get();
-                    String message = args.<String>getOne("message").get();
+                Player player = args.<Player>getOne("player").get();
+                String message = args.<String>getOne("message").get();
 
-                    player.sendMessage(Text.of(message));
+                player.sendMessage(Text.of(message));
 
-                    return CommandResult.success();
-                }
+                return CommandResult.success();
             })
             .build();
 
@@ -166,6 +165,12 @@ Overview of the ``GenericArguments`` command elements
 .. tip::
 
     See the Javadocs for :javadoc:`GenericArguments` for more information.
+
+.. warning::
+
+    Some of these ``CommandElement``\s support multiple return values; some might event support regular expressions or
+    use a command selector. This is intentional as it makes commands easier to use. Example:
+    ``/tell @a BanditPlayer has the cookies!``.
 
 Custom Command Elements
 =======================
