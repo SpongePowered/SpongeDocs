@@ -36,10 +36,8 @@ connected server, even though the servers are being run in offline mode.
  products, although they are developed by trusted members of the community.
 
 For SpongeVanilla or Vanilla clients connecting to unmodded SpongeForge, IP Forwarding works out of the box.
-`Pull <https://github.com/SpigotMC/BungeeCord/pull/1557>`_
-`requests <https://github.com/SpigotMC/BungeeCord/pull/1678>`_ have been supplied to BungeeCord to allow BungeeCord to
-support SpongeForge natively. We are awaiting it to be included in the main product. For now please use one of the
-solutions mentioned above.
+Sponge supplied fixes to BungeeCord for modded SpongeForge support, but these haven't been merged since. So use one of
+the solutions mentioned above.
 
 Using BungeeCord with IP Forwarding
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
