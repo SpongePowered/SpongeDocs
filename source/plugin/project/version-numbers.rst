@@ -37,21 +37,18 @@ is greater than the other.
 
     The SpongeAPI uses this versioning scheme.
 
-Examples
-~~~~~~~~
+**Examples**
 
 * 0.1.0
 * 1.0.0
 * 1.1.0-SNAPHOT
 * 3.12.21-MC1.12.2
 
-Pros
-~~~~
+**Pros**
 
 * Easy to read and understand
 
-Cons
-~~~~
+**Cons**
 
 * Mostly API oriented so the terms don't really apply if you don't provide an API in your plugin.
 
@@ -64,20 +61,17 @@ you include. However we recommend you to order date and time parts in the descen
 ``YYYY-MM-DD``. Please make sure that, if you sort your files alphabetically that the order is the same as the version
 order. It is also possible to add a build qualifier or a build number.
 
-Examples
-~~~~~~~~
+**Examples**
 
 * 18.01.31
 * v2018-05-29.1
 * 2018.01.13-SNAPHOT
 
-Pros
-~~~~
+**Pros**
 
 * Easy to read and understand
 
-Cons
-~~~~
+**Cons**
 
 * Does not contain any information about compatibility.
 
