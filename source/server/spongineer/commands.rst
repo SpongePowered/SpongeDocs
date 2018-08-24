@@ -1,6 +1,6 @@
-========
-Commands
-========
+===============
+Ingame Commands
+===============
 
 Commands are one method in which server operators can administer their server, and in which players can interact with
 the server.
