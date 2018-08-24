@@ -40,7 +40,8 @@ These few lines handle most settings you would normally do manually:
 * Set your project to compile with Java 8
 * Add Sponge's Maven repository (and Maven Central)
 * Set up a plugin with the project name in lower case as **plugin ID**
-* Automatically includes the project name, description and version in :doc:`/plugin/plugin-meta`.
+* Automatically includes the project name, description and :doc:`version <../project/version-numbers>` in
+  :doc:`/plugin/plugin-meta`.
 
 Manually setting the plugin ID
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

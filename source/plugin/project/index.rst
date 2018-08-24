@@ -35,3 +35,4 @@ Setting Up Your Project
 
     gradle
     maven
+    version-numbers
