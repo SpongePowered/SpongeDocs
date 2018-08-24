@@ -9,41 +9,56 @@ Checklist
 =========
 
 Whenever you encounter a crash or warning make sure you set SpongeForge or SpongeVanilla up correctly. Here's a short
-checklist to help you out. If you're unsure on how to aquire the information needed, have a look at the :doc:`logs` page.
-It explains how you get the desired answers out of your logfiles.
+checklist to help you out. If you're unsure on how to acquire the information needed, have a look at the :doc:`logs` page.
+It explains how you get the desired answers out of your log files.
 
-1. Is Java 8 installed and is Sponge using it?
+Is Java 8 installed and is Sponge using it?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Sponge requires Java 8 and will crash when using Java 7 or older.
 
-2. Is the recommended Forge version installed?
+Is the recommended Forge version installed?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Usually SpongeForge will run on older or newer Forge builds than the recommended build.
 However it is strongly advised to run the recommended build only.
 If you encounter a crash and your versions are mismatching, match them first and try again.
 If you're unsure which Forge build you need, take a look at :doc:`/server/getting-started/implementations/spongeforge`
 
-3. Are there any other coremods (besides SpongeForge) installed?
+Are there any other coremods installed?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Some coremods modify Forge in a way that makes it impossible to run SpongeForge properly. If you have coremods installed
-and Sponge crashes, try to remove them and test again. Please report any incompatible Coremods on
-`GitHub <https://github.com/SpongePowered>`__ or the `Sponge Forums <https://forums.spongepowered.org>`__. This allows
-staff to solve these issues as soon as possible.
+Some coremods modify Forge or Minecraft in a way that makes it impossible to run SpongeForge properly. If you have 
+coremods installed and Sponge crashes, try to remove them and test again. Please report any incompatible coremods on
+`GitHub <https://github.com/SpongePowered/SpongeForge/issues>`__. This allows staff to solve these issues as soon as
+possible.
 
-4. Is every plugin you're using built against your desired Sponge build?
+Is every plugin you're using built against your desired Sponge build?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 SpongeAPI is subject to change sometimes. When you try to use an older plugin on the most recent Sponge build and
 a crash occurs, try downgrading Sponge or contact the plugin author to get an updated plugin. If you're on an older
 Sponge build and a recent plugin crashes, try to update Sponge first. If that doesn't fix the issue, contact the
 plugin author and ask for a fix.
 
-5. Separating a faulty plugin
+Separating a faulty plugin
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If the problem still persists, try to remove all plugins and re-add them one by one while trying to start the server
 every time you added a plugin.
 
 If you're still unsure why and what exactly crashed, have a look at your crashlog. Some common crashes and common
 solutions are listed below.
+
+.. note::
+
+    If you encounter a bug it is usually a good idea to create a backup first, then try to reproduce it, then narrow
+    it down by removing mods. Only then should you report the error. If the error occurs in the absence of Sponge
+    plugins, try removing SpongeForge. If the error persists its not related to Sponge. Its usually a good idea to
+    report bugs to the mod authors first as they have good knowledge of the parts of code they are working with. However
+    you can always `contact us <https://www.spongepowered.org/chat>`__ for questions. For more information see
+    :doc:`bugreport`.
+
 
 General Warnings
 ================
@@ -195,28 +210,18 @@ check which plugins are involved with the crash. This requires some research as 
 mod names; checking the ``Caused by`` blocks may also help.
 
 * ``java`` classes can be ignored during the error search.
-* ``net.minecraft`` is the vanilla Minecraft code. If only these elements are present, it's either a Minecraft bug or a
-  really nasty one (these are explained later).
+* ``net.minecraft`` is the vanilla Minecraft code. If only these elements are present, it's either a Minecraft bug or a 
+  coremod.
 * ``org.spongepowered`` is from Sponge itself, having only these and Minecraft packages present usually indicates a
-  Sponge bug (or a nasty one). The :doc:`bugreport` chapter explains where to report bugs.
-* Other classes have to be mapped to their mods by hand. In this case there is an entry ``com.example.extendedaiplugin`` 
-  which gives us the following hints. ``com`` probably from an English speaking mod author. This could also be a
-  language code such as ``de`` or ``zh``. The next part usually indicates the mod authors name, but in some cases it may
-  also point to a hosting platform such as ``github``. In those cases you should also take a look at the next parts.
-  After that there is usually something related to the mod itself. ``extendedaiplugin`` might be related to the plugin
-  name. Please be aware that the mod may use additional separator characters such as ``-`` or spaces, or use a different
-  character case for some parts. Beware this strategy is not always accurate, even less so in mod packs or bundles.
-
-.. note::
-
-    If you encounter a bug it is usually a good idea to create a backup first, then try to reproduce it, then narrow
-    it down by removing mods. Only then should you report the error. If the error occurs in the absence of Sponge
-    plugins, try removing SpongeForge. If the error persists its not related to Sponge. Its usually a good idea to
-    report bugs to the mod authors first as they have good knowledge of the parts of code they are working with. However
-    you can always contact us through IRC or other means. Please provide logs for bug reports, if possible.
-
-Nasty bugs: Minecraft modding uses some advanced techniques such as Mixins and ClassLoaderTransformations, which means
-that although a Minecraft class has been reported as the cause, it does not mean the code executed inside is from
-Minecraft itself. Sponge and other plugins hook into the native methods and execute their own code, such as
-posting events. In that case you have to do a blind search for the misbehaving mod. These often occur only through
-interaction between some combinations of plugins and thus are very hard to find.
+  Sponge bug (or another coremod being present). 
+* Other classes have to be mapped to their mods by hand. In this case there is this entry
+  ``com.example.extendedaiplugin``, Java projects usually follow the Maven package naming standard
+  ``groupId.groupId.artifactId`` which gives us the following hints. The group is usually a domain backwards in this 
+  case ``example.com`` followed by the name of the project also known as artifact in the Java world. So this plugin is
+  probably called ``extendedaiplugin``, when in doubt searching the web for the full package name can help.
+  
+.. warning::
+  Be careful when coremods are present, it can mean that although a Minecraft class was reported as the cause, it does 
+  not mean the code executed is necessarily part of the Minecraft source and could have been added by a third party.
+  You can check your logs for loaded coremods and potentially find the culprit by removing them one by one. Though be
+  warned the issue may only occur when certain coremods are loaded at the same time.
