@@ -23,7 +23,7 @@ you have chosen before.**
 .. code-block:: groovy
 
     plugins {
-        id 'org.spongepowered.plugin' version '0.8.1'
+        id 'org.spongepowered.plugin' version '0.8.2'
     }
 
     group = 'com.example' // TODO
