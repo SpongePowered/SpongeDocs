@@ -17,7 +17,7 @@ Argument Parsing
     java.lang.String
 
 The Command Builder API comes with a powerful argument parser. It converts the string input to java base types
-(integers, booleans, strings) or game objects (players, worlds, block types , ...). The parser supports optional
+(integers, booleans, strings) or game objects (players, worlds, block types, ...). The parser supports optional
 arguments and flags. It also handles TAB completion of arguments.
 
 The parsed arguments are stored in the :javadoc:`CommandContext` object. If the parser returns a single object, obtain
@@ -27,9 +27,9 @@ Many of the parsers may return more than one object (e.g. multiple players with 
 must use the :javadoc:`CommandContext#getAll(String)` method to get the ``Collection`` of possible matches.
 **Otherwise, the context object will throw an exception!**
 
-When creating a command, consider whether the argument could return multiple values, for example, whether a
-player argument could support multiple players when using a selector. If you support multiple values the users need
-to type only one command and can use an easier command syntax. Example: ``/tell @a Who took the cookies?``.
+When creating a command, consider whether the argument could return multiple values, for example, whether a player
+argument could support multiple players when using a selector. If you support multiple values the users need to type
+only one command and can use an easier command syntax. Example: ``/tell @a Who took the cookies?``
 
 .. tip::
 
@@ -41,7 +41,7 @@ To create a new :javadoc:`CommandElement` (argument), use the :javadoc:`GenericA
 elements require a short text key, which is displayed in error and help messages.
 
 Apply the ``CommandElement`` to the command builder with the :javadoc:`CommandSpec.Builder#arguments(CommandElement...)`
-method. It is possible to pass more than one ``CommandElement`` to the method, thus chaining multiple arguments (e.g
+method. It is possible to pass more than one ``CommandElement`` to the method, thus chaining multiple arguments (e.g.
 ``/msg <player> <msg>``). This has the same effect as wrapping the ``CommandElement`` objects in a
 :javadoc:`GenericArguments#seq(CommandElement...)` element.
 
