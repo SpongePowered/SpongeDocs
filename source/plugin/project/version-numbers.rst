@@ -30,8 +30,9 @@ the ``MAJOR``, ``MINOR`` and ``PATCH`` version parts.
 The labels can be used to mark builds as pre-releases or contain build metadata such as the supported minecraft version.
 If you increase one part of the version, then you will set the following parts back to zero. Using this strategy you
 can find the latest version by comparing the version blocks with each other, however this scheme does not contain any
-information about the release order for versions where to version blocks have changed and every version has a part that
-is greater than the other.
+information about the release order for versions which differ in two version number blocks. Example: Version ``1.0.9``
+would be released after ``1.0.8``, but version ``1.1.0`` could be released before, after or even at the same time as
+either of them. 
 
 .. note::
 
@@ -39,10 +40,10 @@ is greater than the other.
 
 **Examples**
 
-* 0.1.0
-* 1.0.0
-* 1.1.0-SNAPHOT
-* 3.12.21-API7
+* ``0.1.0``
+* ``1.0.0``
+* ``1.1.0-SNAPHOT``
+* ``3.12.21-API7``
 
 **Pros**
 
@@ -58,14 +59,14 @@ Timestamp
 This is a less commonly used versioning scheme, but it is also a very simple one, as it does not contain any additional
 information in the version numbers. It does not matter which separators you use (if any) or which date and time parts
 you include. However we recommend you to order date and time parts in the descending order of duration like
-``YYYY-MM-DD``. Please make sure that, if you sort your files alphabetically that the order is the same as the version
+``YYYY-MM-DD``. If you sort your files alphabetically, please make sure that the order would be the same as the version
 order. It is also possible to add a build qualifier or a build number.
 
 **Examples**
 
-* 18.01.31
-* v2018-05-29.1
-* 2018.01.13-SNAPHOT
+* ``18.01.31``
+* ``v2018-05-29.1``
+* ``2018.01.13-SNAPHOT``
 
 **Pros**
 
