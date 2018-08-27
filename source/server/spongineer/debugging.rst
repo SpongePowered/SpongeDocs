@@ -215,13 +215,14 @@ mod names; checking the ``Caused by`` blocks may also help.
 * ``org.spongepowered`` is from Sponge itself, having only these and Minecraft packages present usually indicates a
   Sponge bug (or another coremod being present). 
 * Other classes have to be mapped to their mods by hand. In this case there is this entry
-  ``com.example.extendedaiplugin``, Java projects usually follow the Maven package naming standard
-  ``groupId.groupId.artifactId`` which gives us the following hints. The group is usually a domain backwards in this 
-  case ``example.com`` followed by the name of the project also known as artifact in the Java world. So this plugin is
-  probably called ``extendedaiplugin``, when in doubt searching the web for the full package name can help.
+  ``com.example.extendedaiplugin``; Java projects are usually named following this format ``groupId.groupId.artifactId``.
+  The group is usually a domain backwards; in this case ``example.com``, followed by the name of the project also known
+  as artifact, for more information on package naming in Java you can refer to its
+  `official docs <https://docs.oracle.com/javase/specs/jls/se8/html/jls-6.html#jls-6.2>`_. This plugin is probably
+  called ``extendedaiplugin``, when in doubt, searching the web for the full package name can help.
   
 .. warning::
-  Be careful when coremods are present, it can mean that although a Minecraft class was reported as the cause, it does 
-  not mean the code executed is necessarily part of the Minecraft source and could have been added by a third party.
-  You can check your logs for loaded coremods and potentially find the culprit by removing them one by one. Though be
+  Be careful when coremods are present. It can mean that, although a Minecraft class was reported as the cause, it does 
+  not mean the code executed is necessarily part of the Minecraft source, and could have been added by a third party.
+  You can check your logs for loaded coremods and potentially find the culprit by removing them one by one. Be
   warned the issue may only occur when certain coremods are loaded at the same time.
