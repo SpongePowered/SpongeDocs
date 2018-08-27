@@ -52,7 +52,7 @@ Vanilla Workspace
     }
 
     plugins {
-        id 'org.spongepowered.plugin' version '0.8.1'
+        id 'org.spongepowered.plugin' version '0.9.0'
         id 'net.minecrell.vanillagradle.server' version '2.2-6'
     }
 
@@ -80,7 +80,7 @@ Forge Workspace
     }
 
     plugins {
-        id 'org.spongepowered.plugin' version '0.8.1'
+        id 'org.spongepowered.plugin' version '0.9.0'
     }
 
     apply plugin: 'net.minecraftforge.gradle.forge'
