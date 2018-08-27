@@ -118,12 +118,12 @@ The second constructor must
     }
 
 Since we know that both current health and maximum health are bounded values, we need to make sure no values
-outside of these bounds can be passed. To achieve this we use guava's ``Preconditions`` of which we import the
+outside of these bounds can be passed. To achieve this, we use guava's ``Preconditions`` of which we import the
 required methods statically.
 
 .. note::
 
-    Never use so-called magic values (arbitrary numbers, booleans etc) in your code. Instead, locate the
+    Never use so-called magic values (arbitrary numbers, booleans etc.) in your code. Instead, locate the
     ``DataConstants`` class and use a fitting constant - or create one, if necessary.
 
 Accessors defined by the Interface
@@ -235,7 +235,7 @@ The only differences are:
 * Instead of ``registerGettersAndSetters()``, the method is called ``registerGetters()``
 
 When creating ``ImmutableDataHolder``\ s or ``ImmutableValue``\ s, check if it makes sense to use the
-``ImmutableDataCachingUtil``. For example if you have ``WetData`` which contains nothing more than a boolean, it
+``ImmutableDataCachingUtil``. For example, if you have ``WetData`` which contains nothing more than a boolean, it
 is more feasible to retain only two cached instances of ``ImmutableWetData`` - one for each possible value. For
 manipulators and values with many possible values (like ``SignData``) however, caching is proven to be too expensive.
 
@@ -433,7 +433,7 @@ returns ``Optional.empty()`` if the ``DataHolder`` is incompatible.
 
 ``AbstractEntityDataProcessor`` already handles filling from ``DataHolders`` by creating a ``DataManipulator``
 from the holder and then merging it with the supplied manipulator, but the ``DataContainer`` deserialization it
-can not provide.
+cannot provide.
 
 .. code-block:: java
 

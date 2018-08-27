@@ -66,7 +66,7 @@ clone is now located at ``YourGitHubAccount/ClonedRepoName``. Alright, first ste
 
 
 .. note::
-  All branches from the original repository will get forked too, you recieve an exact clone of the forked repo.
+  All branches from the original repository will get forked too, you receive an exact clone of the forked repo.
 
 .. image:: /images/contributing/repo-fork.svg
     :alt: Repo forking

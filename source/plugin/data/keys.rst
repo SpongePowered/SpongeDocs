@@ -121,7 +121,7 @@ a tiny bit above that.
         }
     }
 
-Again, we check if our target support the health key and then obtain the keyed value. A
+Again, we check if our target supports the health key and then obtain the keyed value. A
 ``MutableBoundedValue`` contains a ``getMinValue()`` method, so we obtain the minimal value, add 1 and then set
 it to our data container. Internally, the ``set()`` method performs a check if our supplied value is valid and
 silently fails if it is not. Calling ``health.set(-2)`` would not change the value within ``health`` since it

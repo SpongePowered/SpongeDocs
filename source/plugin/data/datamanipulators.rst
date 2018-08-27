@@ -18,7 +18,7 @@ Accessing and modifying data
 ============================
 
 A data manipulator represents a certain component and all of its data. It stores a representation of that data and can
-be offered to or created from data holders which possess a matching component. Again, let's use an example. And again
+be offered to or created from data holders which possess a matching component. Again, let's use an example. Once more we
 try to heal someone (or something).
 
 **Code Example: Healing with data manipulators**
@@ -46,7 +46,7 @@ try to heal someone (or something).
         }
     }
 
-First we need to check if our target has health data. We do so by first asking it to provide us with its health
+First, we need to check if our target has health data. We do so by first asking it to provide us with its health
 data by passing its class to the ``get()`` method. We get an ``Optional`` which we can use for our check.
 This ``Optional`` will be absent if either our target does not support :javadoc:`HealthData` or if it supports it but
 at the present moment does not hold any health data.
@@ -101,7 +101,7 @@ that it contains *all* data pertaining to a certain component. Let us take a loo
         }
     }
 
-First we check if both targets support HealthData. If they do, we save the health of both in one variable each. We
+First, we check if both targets support HealthData. If they do, we save the health of both in one variable each. We
 don't need to bother with ``Optional`` this time since we verified that ``HealthData`` is supported and the
 ``getOrCreate()`` method ensures that even if no data is present, default values are generated.
 

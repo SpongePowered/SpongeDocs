@@ -107,7 +107,7 @@ value. The following example will dry the block at a given ``Location``, if poss
     }
 
 Since the :javadoc:`WetData` data manipulator represents boolean data, by removing it we set the wetness of the block
-(if it has any) to false. The ``dryState.isPresent()`` check will fail on block states that can not be wet since
+(if it has any) to false. The ``dryState.isPresent()`` check will fail on block states that cannot be wet since
 ``dryState`` will be ``Optional.empty()`` in that case.
 
 Copying Blocks

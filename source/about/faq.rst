@@ -46,7 +46,8 @@ There have also been community implementations due to the flexibility of the API
 (1) **LanternServer**, an open source and compatible Minecraft: Java Edition server that implements SpongeAPI.
     It does not rely on the vanilla codebase at all, allowing for it be more configurable, open, and performant.
     While still a work in progress, their project is quite promising and may one day be the choice for servers not
-    looking to run Forge mods. You can find their project `on Github <https://github.com/LanternPowered/LanternServer>`_.
+    looking to run Forge mods. You can find their project
+    `on GitHub <https://github.com/LanternPowered/LanternServer>`_.
 
 Where do I get Plugins for Sponge?
 ----------------------------------
@@ -110,9 +111,9 @@ Have a look at our plugin pages to get a quick-start: :doc:`/plugin/index`
 What can't I do with Sponge? / Limitations of Sponge?
 -----------------------------------------------------
 
-Sponge can't be used to create new blocks, textures, mobs on the clientside or any other content which would need
-clientside modifications. SpongeAPI wont support sending mods or plugins to the client for now due to security
-concerns. However you can make use of the ForgeAPI for clients and create Sponge plugins for the serverside.
+Sponge can't be used to create new blocks, textures, mobs on the client side or any other content which would need
+client side modifications. SpongeAPI won't support sending mods or plugins to the client for now due to security
+concerns. However you can make use of the ForgeAPI for clients and create Sponge plugins for the server side.
 It is even possible to use Sponge on the client-side, but for several tasks mods are still required.
 
 I'm a Bukkit Plugin Developer! Why Can't Sponge Use Bukkit's API?

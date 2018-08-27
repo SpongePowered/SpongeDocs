@@ -30,7 +30,7 @@ Reading DataViews
 
 Whenever you're reading a serialized object, it's tempting to read all the individual values yourself in order to 
 manually create all the required objects (and their parameters) for your data. However, depending on the data saved in 
-the container there are a few ways ways that are far more convenient:
+the container there are a few ways that are far more convenient:
 
 - Common java types such as ``int``, ``String``, ``double``, ``List`` and ``Map`` can be retrieved using built-in 
   methods ``getInt(DataQuery)``, ``getString(DataQuery)``, etc. Lists of these types can also be retrieved in a 
@@ -89,7 +89,7 @@ The next part is to implement a :javadoc:`DataBuilder`. It's recommended to exte
 it will try to upgrade your data if the version is less than the current version. There's only one method you need to 
 implement - ``build(DataView)``, or ``buildContent(DataView)`` if you're using ``AbstractDataBuilder``.
 
-You'll want to check that all the queries you want to retrieve are present using ``DataView.contains(Key...)``. If not 
+You'll want to check that all the queries you want to retrieve are present using ``DataView.contains(Key...)``. If not,
 the data is likely incomplete and you should return ``Optional.empty()``.
 
 If everything seems to be there, use the ``getX`` methods to construct the values and return a newly created object as 

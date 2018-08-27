@@ -25,18 +25,19 @@ Several goals should be achieved with the new API:
  * protection against DMCA takedowns
 
 While the goals were mostly clear, the route to be taken was not. The soon-to-be Project was still nameless too. The
-first mention of Sponge as the projects name was on Sept, 6th by Firehead94. Obviously the name stuck.
+first mention of Sponge as the projects name was on Sept, 6th by Firehead94. Obviously, the name stuck.
 
 The initial commit to SpongeAPI and SpongeForge was made on September 7th and 8th, 2014 by one of the Sponge
-Project leaders, Zidane. This was the beginning of the development of SpongeAPI and SpongeForge (named Sponge at the time).
+Project leaders, Zidane. This was the beginning of the development of SpongeAPI and SpongeForge (named Sponge at the
+time).
 
 On September 7th, 2014 the initial commit to Granite, an API based upon Vanilla Minecraft was made. Granite, originally
-started as an independent project, was planned to implement it's own API and SpongeAPI. Granite and SpongeForge
+started as an independent project, was planned to implement its own API and SpongeAPI. Granite and SpongeForge
 coexisted until April 20th, 2015.
 
-The development of SpongeForge and the API gained momentum leading to a first API release on December 1st, 2014. However this
-version was far from feature complete and an API-only release, meaning that there was no official implementation available
-at that time.
+The development of SpongeForge and the API gained momentum leading to a first API release on December 1st, 2014. However
+this version was far from feature complete and an API-only release, meaning that there was no official implementation
+available at that time.
 
 On December 26th, 2014 the Granite Team decided to limit Granite to the usage of SpongeAPI. That made Granite the first
 unofficial Sponge Implementation for Vanilla Minecraft. On March 26th, the Granite Team finally joined the Sponge Team
@@ -60,9 +61,9 @@ The History of Spongie
 ----------------------
 
 Spongie first appeared in #Sponge on Esper.NET around September 2014. She was created and posted by
-`DragonsPainter <https://dragonspainter.deviantart.com/>`__. Strad, another user, felt that Spongie would look better with
-a moogle-like antenna, a Forge furnace instead of a Cauldron and replaced the Spigot with Spout. An anonymous user then
-removed all labels and introduced her as the icon and background logo for the Sponge reddit section.
+`DragonsPainter <https://dragonspainter.deviantart.com/>`__. Strad, another user, felt that Spongie would look better
+with a moogle-like antenna, a Forge furnace instead of a Cauldron and replaced the Spigot with Spout. An anonymous user
+then removed all labels and introduced her as the icon and background logo for the Sponge reddit section.
 
 This older version of Spongie sadly isn't available as vector graphic. Thus Sponge staff decided to create a new
 vectorized version. Two new drafts were then posted on

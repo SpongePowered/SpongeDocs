@@ -61,7 +61,7 @@ TradeOfferListMutator
 
 A :javadoc:`TradeOfferListMutator` is an interface that is invoked during ``Villager`` level ups.
 It can be used to replace existing ``TradeOffers`` (ex higher tier) and add new ``TradeOffers``.
-Its simplist and only API provided variant is the ``TradeOfferGenerator``.
+Its simplest and only API provided variant is the ``TradeOfferGenerator``.
 The different ``TradeOfferListMutators`` for each level and ``Career`` can be configured in the :javadoc:`VillagerRegistry`.
 
 .. note::

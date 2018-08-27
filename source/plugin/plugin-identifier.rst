@@ -8,7 +8,7 @@ plugin ID (e.g. when defining plugin dependencies). The plugin ID is also used f
 folders for your plugin.
 
 .. note::
-    The plugin ID must be lowercase and start with a alphabetic character. It may only contain alphanumeric characters,
+    The plugin ID must be lowercase and start with an alphabetic character. It may only contain alphanumeric characters,
     dashes or underscores. The plugin name does **not** have such a limitation and can even contain spaces or
     special characters.
 
