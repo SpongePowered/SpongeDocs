@@ -17,7 +17,7 @@ Argument Parsing
     java.lang.String
 
 The Command Builder API comes with a powerful argument parser. It converts the string input to java base types
-(integers, booleans, strings) or game objects (players, worlds, block types , ...). The parser supports optional
+(integers, booleans, strings) or game objects (players, worlds, block types, ...). The parser supports optional
 arguments and flags. It also handles TAB completion of arguments.
 
 The parsed arguments are stored in the :javadoc:`CommandContext` object. If the parser returns a single object, obtain
@@ -27,17 +27,21 @@ Many of the parsers may return more than one object (e.g. multiple players with 
 must use the :javadoc:`CommandContext#getAll(String)` method to get the ``Collection`` of possible matches.
 **Otherwise, the context object will throw an exception!**
 
+When creating a command, consider whether the argument could return multiple values, for example, whether a player
+argument could support multiple players when using a selector. If you support multiple values the users need to type
+only one command and can use an easier command syntax. Example: ``/tell @a Who took the cookies?``
+
 .. tip::
 
-   You can use the
-   :javadoc:`GenericArguments#onlyOne(CommandElement)` element to limit the amount of returned values to a single one,
-   so you can safely use ``args.<T>getOne(String)``.
+   You can use the :javadoc:`GenericArguments#onlyOne(CommandElement)` element to restrict the amount of returned values
+   to a single one, so you can safely use ``args.<T>getOne(String)``. However the user will still get a message, if they
+   try to select more than one value.
 
 To create a new :javadoc:`CommandElement` (argument), use the :javadoc:`GenericArguments` factory class. Many command
 elements require a short text key, which is displayed in error and help messages.
 
 Apply the ``CommandElement`` to the command builder with the :javadoc:`CommandSpec.Builder#arguments(CommandElement...)`
-method. It is possible to pass more than one ``CommandElement`` to the method, thus chaining multiple arguments (e.g
+method. It is possible to pass more than one ``CommandElement`` to the method, thus chaining multiple arguments (e.g.
 ``/msg <player> <msg>``). This has the same effect as wrapping the ``CommandElement`` objects in a
 :javadoc:`GenericArguments#seq(CommandElement...)` element.
 
@@ -65,17 +69,14 @@ Example: Building a Command with Multiple Arguments
                     GenericArguments.onlyOne(GenericArguments.player(Text.of("player"))),
                     GenericArguments.remainingJoinedStrings(Text.of("message")))
 
-            .executor(new CommandExecutor() {
-                @Override
-                public CommandResult execute(CommandSource src, CommandContext args) throws CommandException {
+            .executor((CommandSource src, CommandContext args) -> {
 
-                    Player player = args.<Player>getOne("player").get();
-                    String message = args.<String>getOne("message").get();
+                Player player = args.<Player>getOne("player").get();
+                String message = args.<String>getOne("message").get();
 
-                    player.sendMessage(Text.of(message));
+                player.sendMessage(Text.of(message));
 
-                    return CommandResult.success();
-                }
+                return CommandResult.success();
             })
             .build();
 
@@ -166,6 +167,13 @@ Overview of the ``GenericArguments`` command elements
 .. tip::
 
     See the Javadocs for :javadoc:`GenericArguments` for more information.
+
+.. warning::
+
+    Don't expect that a ``CommandElement``\s will only ever return a single value, a lot of them support multiple return
+    values; some might even support regular expressions or use a command selector. This is intentional as it makes
+    commands easier to use. Example: ``/tell @a BanditPlayer has the cookies!``. If you want to make sure to only get a
+    single value use ``GenericArguments#onlyOne(CommandElement)``.
 
 Custom Command Elements
 =======================
