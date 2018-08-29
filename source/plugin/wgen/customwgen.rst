@@ -27,7 +27,7 @@ Modifying Vanilla Generation
 Sponge exposes a great deal of vanilla world generation, which can be manipulated through the various interfaces.
 Currently, the only elements of the generation process that are *easily* exposed to manipulation are the populators.
 
-For a quick example, let's look at how we would change the cactii that spawn in deserts to be taller.
+For a quick example, let's look at how we would change the cacti that spawn in deserts to be taller.
 
 .. code-block:: java
 
@@ -78,8 +78,8 @@ Voila, now we have pumpkins everywhere.
 .. note::
 
     In this example we added the pumpkin populator to the end of the populators list, but it should be noted that
-    this list is order dependent. So if you would like your populator to be called earlier than other populators,
-    as is usually a good idea with Forest populators, then your should add your populator to the start of the list.
+    this list is order dependent. So, if you would like your populator to be called earlier than other populators,
+    as is usually a good idea with Forest populators, then you should add your populator to the start of the list.
 
 These two examples should serve to help you get familiar with the realm of working with vanilla populators.
 This only touches the surface of what is possible. See the javadocs for a complete listing of available populators

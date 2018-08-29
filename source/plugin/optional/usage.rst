@@ -61,7 +61,7 @@ just use
 
     String someString = getOptionalString().orElse(DEFAULT_STRING);
 
-In some cases a default value has to be calculated in a way that has side effects or is particularly expensive. In such
+In some cases, a default value has to be calculated in a way that has side effects or is particularly expensive. In such
 a case it is desirable to calculate the default value only if needed (*lazy evaluation*). The ``orElseGet()`` method
 accepts a ``Supplier`` instead of a pre-calculated value. If no value is present on the ``Optional`` itself, the
 ``Supplier`` will be called. Since ``Supplier`` is a functional interface, a lambda expression or method reference can
@@ -241,7 +241,7 @@ using the basic ``isPresent()`` and ``get()`` methods gets nasty really quickly.
         }
     }
 
-However through use of ``Optional``\ s methods for conditional code execution, all those presence checks are hidden,
+However, through the use of ``Optional`` methods for conditional code execution, all those presence checks are hidden,
 reducing the boilerplate and indentation levels and thus leaving the code much more readable:
 
 .. code-block:: java

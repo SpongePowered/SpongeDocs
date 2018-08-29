@@ -33,7 +33,7 @@ start out with an example:
 Now for the details of the above function.
 
 The first line checks if our given data holder supports a current health value. Only if it does, it can be healed after
-all. Since a data holder can not have current health without having a maximum health and vice versa, a check for
+all. Since a data holder cannot have current health without having a maximum health and vice versa, a check for
 one of the keys using the ``supports()`` method suffices.
 
 The second line uses the ``get()`` function to ask the data holder for its maximum health. Besides

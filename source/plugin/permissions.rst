@@ -187,7 +187,7 @@ configuration guideline for server owners use ``PermissionDescription``\'s role-
     assuming that all server owners will want these defaults (at least the first time the plugin runs) and that
     exceptions will require server owners to explicitly deny the permissions (which can't even be done without a custom
     permissions service implementation). This should roughly correspond to a guest on a single player lan world without
-    cheats. For example, a chat plugin would allow sending chat messages by default to imitate vanilla game behaviour
+    cheats. For example, a chat plugin would allow sending chat messages by default to imitate vanilla game behavior
     for features that were changed by the plugin.
 
 .. note::

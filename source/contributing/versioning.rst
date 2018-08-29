@@ -70,7 +70,7 @@ SpongeDocs
 ==========
 
 The SpongeDocs themselves are unversioned following our philosophy that they will never be finished, but instead in a
-constant flux of ever increasing usability. However they *target* a specific version of the API, generally the most
+constant flux of ever increasing usability. However, they *target* a specific version of the API, generally the most
 recent *release* of SpongeAPI.
 
 Core Branch
@@ -90,7 +90,7 @@ may be merged.
 A feature branch may only be merged into master if the changes / additions made in it are correct regarding the
 **SpongeAPI release currently targeted by the SpongeDocs**. Any feature branches that describe features not yet included
 in a release stay unmerged until the corresponding API version is released and becomes the new targeted version for the
-SpongeDocs. However the Docs team might collect additions for a specific version on a single branch.
+SpongeDocs. However, the Docs team might collect additions for a specific version on a single branch.
 
 .. image:: /images/contributing/versioning-release-branch.svg
     :alt: release branch example

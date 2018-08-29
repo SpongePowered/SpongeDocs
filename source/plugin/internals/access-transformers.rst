@@ -12,7 +12,7 @@ environment, but ``func_71217_p`` in production. The re-obfuscation step only ha
 and fields, not the string parameter passed to the reflection call.
 
 As a solution, ForgeGradle supports using access transformers (or AT) that automatically make the specified
-methods/fields public so you can reference them directly (without reflection). While they are primarily intented for
+methods/fields public so you can reference them directly (without reflection). While they are primarily intended for
 usage with the Minecraft code base, they can be also applied to classes from other projects. If configured in the JAR
 manifest of the plugin, SpongeVanilla and Forge will also apply them in production.
 

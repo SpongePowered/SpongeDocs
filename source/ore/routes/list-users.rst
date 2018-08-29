@@ -11,7 +11,7 @@ Returns a list of users based on given criteria.
 +--------+-----------+----------------------------------------------------------+
 | Name   | Data Type | Description                                              |
 +========+===========+==========================================================+
-| limit  | Integer   | Limits the amount of users returned (max / default: 25). |
+| limit  | Integer   | Limits the number of users returned (max / default: 25). |
 +--------+-----------+----------------------------------------------------------+
 | offset | Integer   | Drops the first *n* users from the result list.          |
 +--------+-----------+----------------------------------------------------------+

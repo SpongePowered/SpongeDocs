@@ -143,7 +143,7 @@ methods, which each will return a copy of the data. The only way to obtain an im
 from a data holder is obtaining a mutable one and then using ``asImmutable()``.
 
 A possible use case for this would be a custom event fired when someone is healed. It should provide copies of
-the health data before and after, but event listeners should not be able to change them. Therefore we can write
+the health data before and after, but event listeners should not be able to change them. Therefore, we can write
 our event to only provide ``ImmutableHealthData`` instances. That way, even if third party code gets to interact
 with our data, we can rest assured that it will not be changed.
 

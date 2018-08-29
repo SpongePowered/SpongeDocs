@@ -118,7 +118,7 @@ This prompts Configurate to locate the proper ``TypeSerializer`` for ``UUID``\ s
 value into a ``UUID``. The ``TypeSerializer`` (and by extension the above method) may throw an ``ObjectMappingException``
 if it encounters incomplete or invalid data.
 
-Now if we we want to write a new ``UUID`` to that config node, the syntax is very similar. Use the ``setValue()``
+Now if we want to write a new ``UUID`` to that config node, the syntax is very similar. Use the ``setValue()``
 method with a ``TypeToken`` and the object you want to serialize.
 
 .. code-block:: java

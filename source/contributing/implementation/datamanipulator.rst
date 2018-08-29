@@ -283,7 +283,7 @@ Next up is the ``DataProcessor``. A ``DataProcessor`` serves as a bridge between
 Minecraft's objects. Whenever any data is requested from or offered to ``DataHolders`` that exist in Vanilla
 Minecraft, those calls end up being delegated to a ``DataProcessor`` or a ``ValueProcessor``.
 
-For your name, you should use the name of the ``DataManipulator`` interface and append ``Processor``. Thus for
+For your name, you should use the name of the ``DataManipulator`` interface and append ``Processor``. Thus, for
 ``HealthData`` we create a ``HealthDataProcessor``.
 
 In order to reduce boilerplate code, the ``DataProcessor`` should inherit from the appropriate abstract class in

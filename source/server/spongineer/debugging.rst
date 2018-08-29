@@ -9,8 +9,8 @@ Checklist
 =========
 
 Whenever you encounter a crash or warning make sure you set SpongeForge or SpongeVanilla up correctly. Here's a short
-checklist to help you out. If you're unsure on how to aquire the information needed, have a look at the :doc:`logs` page.
-It explains how you get the desired answers out of your logfiles.
+checklist to help you out. If you're unsure on how to acquire  the information needed, have a look at the :doc:`logs`
+page. It explains how you get the desired answers out of your log files.
 
 1. Is Java 8 installed and is Sponge using it?
 
@@ -19,7 +19,7 @@ Sponge requires Java 8 and will crash when using Java 7 or older.
 2. Is the recommended Forge version installed?
 
 Usually SpongeForge will run on older or newer Forge builds than the recommended build.
-However it is strongly advised to run the recommended build only.
+However, it is strongly advised to run the recommended build only.
 If you encounter a crash and your versions are mismatching, match them first and try again.
 If you're unsure which Forge build you need, take a look at :doc:`/server/getting-started/implementations/spongeforge`
 
@@ -117,7 +117,7 @@ feature too.
 
 A ``NoClassDefFoundError`` occurs when the plugin tries to access a class that isn't on the classpath. This happens
 when the API got adjusted or refactored lately and you're trying to run an older plugin on a newer build of Sponge
-and vice versa. Always try to use the correct version! Either ask the Plugin author which Sponge version he build
+and vice versa. Always try to use the correct version! Either ask the Plugin author which Sponge version he builds
 against or try updating/downgrading your SpongeForge or SpongeVanilla to solve this.
 
 Exceptions at Runtime
@@ -211,9 +211,9 @@ mod names; checking the ``Caused by`` blocks may also help.
 
     If you encounter a bug it is usually a good idea to create a backup first, then try to reproduce it, then narrow
     it down by removing mods. Only then should you report the error. If the error occurs in the absence of Sponge
-    plugins, try removing SpongeForge. If the error persists its not related to Sponge. Its usually a good idea to
-    report bugs to the mod authors first as they have good knowledge of the parts of code they are working with. However
-    you can always contact us through IRC or other means. Please provide logs for bug reports, if possible.
+    plugins, try removing SpongeForge. If the error persists it's not related to Sponge. It's usually a good idea to
+    report bugs to the mod authors first as they have good knowledge of the parts of code they are working with.
+    However, you can always contact us through IRC or other means. Please provide logs for bug reports, if possible.
 
 Nasty bugs: Minecraft modding uses some advanced techniques such as Mixins and ClassLoaderTransformations, which means
 that although a Minecraft class has been reported as the cause, it does not mean the code executed inside is from

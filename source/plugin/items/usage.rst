@@ -33,7 +33,7 @@ Checking the type of the item is very simple. You just need to call the :javadoc
 
 See how simple that is? Because sticks can stack, we can also find out how many are present.
 
-Getting the amount of items in an ``ItemStack`` is relatively easy. The :javadoc:`ItemStack#getQuantity()` method will
+Getting the number of items in an ``ItemStack`` is relatively easy. The :javadoc:`ItemStack#getQuantity()` method will
 handle this for us.
 
 Modifying ItemStack Data

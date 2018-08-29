@@ -116,7 +116,7 @@ entry:
     entry.setLatency(1000);
     entry.setGameMode(GameModes.SPECTATOR);
 
-Alternatively to getting entries, we can also remove a specified entry. We must simply call the
+As an alternative to getting entries, we can also remove a specified entry. We must simply call the
 :javadoc:`TabList#removeEntry(UUID)` method, specifying the ``UUID`` of the entry that we wish to remove. As with
 ``getEntry(UUID)``, this will return ``Optional.empty()`` if the specified UUID cannot be found.
 

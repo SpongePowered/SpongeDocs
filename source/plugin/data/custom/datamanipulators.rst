@@ -190,7 +190,7 @@ To register a ``DataManipulator`` Sponge has the :javadoc:`DataRegistration#buil
 
 .. warning::
 
-    Data that was serialized prior to ``6.0.0``, or data where you have changed the ID, will *not* be recognised unless
+    Data that was serialized prior to ``6.0.0``, or data where you have changed the ID, will *not* be recognized unless
     registered with :javadoc:`DataManager#registerLegacyManipulatorIds(String, DataRegistration)`. If registering a
     pre-6.0.0 ``DataManipulator`` the ID is taken from `Class.getName()`, such as ``com.example.MyCustomData``.
 
@@ -236,7 +236,7 @@ values that will be checked, as well as a :javadoc:`Comparator`.
     ``List`` and ``Mapped`` single types must instead implement ``ListData`` / ``MappedData`` (or the immutable 
     equivalent). This adds additional methods to allow Map-like/List-like behavior directly on the ``DataManipulator``.
 
-The following 3 methods must be defined on mutable manipluators:
+The following 3 methods must be defined on mutable manipulators:
 
 ``fill(DataHolder, MergeFunction)`` should replace the data on your object with that of the given ``DataHolder``, 
 using the result of ``MergeFunction#merge()``.
@@ -299,7 +299,7 @@ using the result of ``MergeFunction#merge()``.
 Custom Single Types
 -------------------
 
-In addition to the , you need to override the following methods:
+In addition to the methods from the simple single types, you need to override the following methods:
 
 ``getValueGetter()`` should pass the ``Value`` representing your data (see above).
 

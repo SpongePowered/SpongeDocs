@@ -12,9 +12,9 @@ under heavy load.
 Entity Activation Range
 =======================
 
-This setting will alter the loading behaviour of entities around players. Lowering the value will only load close
+This setting will alter the loading behavior of entities around players. Lowering the value will only load close
 entities, while raising it will also load entities that are far away from the player. Lower this to improve your
-servers performance, especially with high entity and player counts. To disable activation range for a specific entity 
+server's performance, especially with high entity and player counts. To disable activation range for a specific entity 
 set its value to ``0``.
 
 .. tip::

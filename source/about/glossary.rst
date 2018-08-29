@@ -87,4 +87,4 @@ Spongie
 Spongy
   The sponge GitHub Bot that makes PR previews for the Docs.
 Team Leaders
-  The people who directs the Teams (WebDev, Docs, SysOps, subreddit, IRC).
+  The people who direct the Teams (WebDev, Docs, SysOps, subreddit, IRC).

@@ -10,7 +10,7 @@ The History of the Project
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Sponge was founded as a better alternative to the APIs that were available as of September 2014. The Sponge :doc:`staff`
-consists of many people from different Communities, eg. Spout/Spoutcraft, Forge, Cauldron and a few others.
+consists of many people from different Communities, e.g. Spout/Spoutcraft, Forge, Cauldron and a few others.
 
 When the development of Bukkit and Cauldron reached an abrupt end, the Minecraft community was shocked. Several
 developers from the above mentioned communities gathered in #nextstep on Esper.NET and discussed the future of Minecraft
@@ -35,9 +35,9 @@ On September 7th, 2014 the initial commit to Granite, an API based upon Vanilla 
 started as an independent project, was planned to implement its own API and SpongeAPI. Granite and SpongeForge
 coexisted until April 20th, 2015.
 
-The development of SpongeForge and the API gained momentum leading to a first API release on December 1st, 2014. However
-this version was far from feature complete and an API-only release, meaning that there was no official implementation
-available at that time.
+The development of SpongeForge and the API gained momentum leading to a first API release on December 1st, 2014.
+However, this version was far from feature complete and an API-only release, meaning that there was no official
+implementation available at that time.
 
 On December 26th, 2014 the Granite Team decided to limit Granite to the usage of SpongeAPI. That made Granite the first
 unofficial Sponge Implementation for Vanilla Minecraft. On March 26th, the Granite Team finally joined the Sponge Team

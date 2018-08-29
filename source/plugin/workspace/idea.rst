@@ -14,7 +14,7 @@ Using IDEA Minecraft Dev Plugin to Create a Working Starting Point
 
 The `Minecraft Development plugin <https://minecraftdev.org/>`_ for IntelliJ is a great plugin by a community
 member which makes plugin project creation much easier while also providing some neat and useful features for
-development.  By default it will create a project which uses Gradle as the build tool.
+development.  By default, it will create a project which uses Gradle as the build tool.
 
 Installing the Minecraft Dev Plugin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -50,7 +50,7 @@ Creating Your Project from a Template
   is working when you run it.
 
 Editing the Project Configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Refer to the Gradle_ or Maven_ configuration sections, depending on what you chose during project creation.
 
@@ -122,7 +122,7 @@ Editing the Project Configuration
 * Import the Maven changes, if prompted.
 
 Testing Your Plugin
-====================
+===================
 
 The following instructions are a quick way to test your plugin, but won't be the most efficient way
 to iteratively develop.

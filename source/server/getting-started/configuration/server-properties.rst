@@ -148,8 +148,8 @@ Credit goes to the editors at the `Minecraft Wiki <https://minecraft.gamepedia.c
 |                               |             |             | here, and change the name to the same as that folder's to  |
 |                               |             |             | load it instead.                                           |
 |                               |             |             |                                                            |
-|                               |             |             |  Characters such as \' (apostrophe) may need to be escaped |
-|                               |             |             |  by adding a backslash (\\) before them.                   |
+|                               |             |             |  Characters such as ``'`` (apostrophe) may need to be      |
+|                               |             |             |  escaped by adding a backslash (``\``) before them.        |
 +-------------------------------+-------------+-------------+------------------------------------------------------------+
 | level-seed                    | string      | *blank*     | Add a seed for your world, as in Singleplayer.             |
 |                               |             |             |                                                            |
@@ -215,7 +215,7 @@ Credit goes to the editors at the `Minecraft Wiki <https://minecraft.gamepedia.c
 |                               |             |             |  - If the MOTD is over 59 characters, the server list will |
 |                               |             |             |    likely report a communication error.                    |
 +-------------------------------+-------------+-------------+------------------------------------------------------------+
-| network-compression-threshold | integer     | 256         | By default it allows packets that are n-1 bytes big to go  |
+| network-compression-threshold | integer     | 256         | By default, it allows packets that are n-1 bytes big to go |
 |                               |             |             | normally, but a packet that n bytes or more will be        |
 |                               |             |             | compressed down. So, lower number means more compression   |
 |                               |             |             | but compressing small amounts of bytes might actually end  |

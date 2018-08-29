@@ -43,7 +43,7 @@ MCP uses two different sets of mappings which are applied separately during the 
   the development environment, and then re-obfuscated to Searge or Notch mappings.
 
 .. note::
-    When you create a plugin you work with *MCP mappings* in your development environment. To run the plugin in
+    When you create a plugin, you work with *MCP mappings* in your development environment. To run the plugin in
     production (outside of your IDE) you need to re-obfuscate it to *Searge mappings*.
 
 Using the MCPBot

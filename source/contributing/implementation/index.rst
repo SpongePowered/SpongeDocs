@@ -2,7 +2,7 @@
 Developing Sponge
 =================
 
-These sections describes the best way to approach the project when you're intending to develop Sponge itself. It is
+These sections describe the best way to approach the project when you're intending to develop Sponge itself. It is
 mandatory to be familiar with :doc:`git <../howtogit>` and our :doc:`codestyle`. Basic knowledge of
 :doc:`/about/structure` is also very helpful.
 

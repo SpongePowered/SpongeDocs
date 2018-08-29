@@ -31,9 +31,9 @@ about the Economy API :doc:`here <../economy/index>`, which details everything y
 Packets
 ~~~~~~~
 
-Anything to do with intercepting packets, or introducing custom items/blocks/entities/etc, is *not* planned to be part
+Anything to do with intercepting packets, or introducing custom items/blocks/entities/etc., is *not* planned to be part
 of SpongeAPI. Note that using packets may be looking at the problem the wrong way, as there may be a solution
-achievable with the existing SpongeAPI. In some cases it may be possible to add whatever is needed to SpongeAPI;
+achievable with the existing SpongeAPI. In some cases, it may be possible to add whatever is needed to SpongeAPI;
 otherwise, the alternative is to use the Forge API and create a Mod instead.
 
 
@@ -41,7 +41,7 @@ Using Forge or NMS Classes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 We do not recommend working with Forge or Minecraft base classes at all, unless it is to provide compatibility with a
-mod for SpongeAPI. Most uses of NMS (net.minecraft.server) code in plugins do not fail gracefully, making
+mod for SpongeAPI. Most uses of NMS (``net.minecraft.server``) code in plugins do not fail gracefully, making
 troubleshooting very difficult. Maintaining NMS modifications is also more difficult than using SpongeAPI. Mods that
 add to SpongeAPI using code internals will have to specifically write an API, which does not rely on underlying
 Minecraft code, to be usable by Sponge plugins. However, plugins can be created that load separate “compatibility”
@@ -73,7 +73,7 @@ Some definitions may be helpful here.
 
 Tweak Mod (aka Tweaker)
   a subsystem-level mod which hooks directly into the game using LaunchWrapper, usually used for
-  ModSystems (eg. LiteLoader, FML) and stand-alone mods (eg. Optifine). Can interact with any aspect
+  ModSystems (e.g. LiteLoader, FML) and stand-alone mods (eg. Optifine). Can interact with any aspect
   of the game environment directly. Generally breaks every version.
 
 Core Mod
@@ -108,7 +108,7 @@ because any features accessed via the API are likely to be much more stable.
 
 This type of mod can be used to implement plugins whose needs overflow the capability of the API (in
 the case of a plugin which needs to leverage mixins for a particular feature); but can also be used
-for mods which want to leverage services afforded by the API (eg. a mod which wants to provide direct
+for mods which want to leverage services afforded by the API (e.g. a mod which wants to provide direct
 support for permissions or chat channels).
 
 Unlike NMS-exploiting "plugins", a hybrid mod makes its nature clear.

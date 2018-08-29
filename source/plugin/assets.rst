@@ -9,7 +9,7 @@ The Asset API
 
 The :javadoc:`AssetManager` allows developers to retrieve resources from a plugin JAR.
 
-A plugin's assets resides in a directory named ``assets/myplugin/`` where ``myplugin`` is the plugin ID.
+A plugin's assets reside in a directory named ``assets/myplugin/`` where ``myplugin`` is the plugin ID.
 
 Once properly configured you can retrieve a resource for your (or any) plugin using the following code:
 
