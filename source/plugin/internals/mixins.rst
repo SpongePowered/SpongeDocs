@@ -93,7 +93,7 @@ production:
 
         sourceSets {
             main {
-                refMap = "mixins.myplugin.refmap.json"
+                ext.refMap = "mixins.myplugin.refmap.json"
             }
         }
 
