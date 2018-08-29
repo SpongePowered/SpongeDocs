@@ -3,7 +3,8 @@ Setting Up IntelliJ IDEA
 ========================
 
 This article describes how to configure your **IntelliJ IDEA** workspace for plugin development with SpongeAPI and
-:doc:`a build system such as Maven or Gradle <../buildsystem/>` or the `Minecraft Development plugin <https://minecraftdev.org/>`_.
+:doc:`a build system such as Maven or Gradle <../buildsystem/>` or the
+`Minecraft Development plugin <https://minecraftdev.org/>`_.
 
 If you want to create your project completely from scratch, please skip ahead to the Gradle or Maven sections.  
 Using the Minecraft Dev plugin sets up a working starting point and eliminates some of the guesswork in getting
@@ -38,7 +39,7 @@ Creating Your Project from a Template
 
   * Your **Group ID** should usually correspond to your Java package name. See :doc:`../plugin-class` for details.
   * Your **Artifact ID** should usually correspond to your **plugin ID** you chose earlier, e.g. ``myplugin``.
-  * Your **Version** is up to you.
+  * Your **Version** is up to you. See :doc:`../project/version-numbers` for details.
 
 * Select your desired build tool, either Gradle or Maven, and click ``Next``.
 * Check your **Plugin Name** and **Main Class Name** to make sure they are what you want.
@@ -50,7 +51,7 @@ Creating Your Project from a Template
   is working when you run it.
 
 Editing the Project Configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Refer to the Gradle_ or Maven_ configuration sections, depending on what you chose during project creation.
 
@@ -69,7 +70,7 @@ Creating a Plugin from Scratch -- Gradle
 
   * Your **Group ID** should usually correspond to your Java package name. See :doc:`../plugin-class` for details.
   * Your **Artifact ID** should usually correspond to your **plugin ID** you chose earlier, e.g. ``myplugin``.
-  * Your **Version** is up to you.
+  * Your **Version** is up to you. See :doc:`../project/version-numbers` for details.
 
 * Click ``Next`` twice, name your project, and click ``Finish``.
 * The project will be created without a ``src`` directory.  If you add java files to the incorrect
@@ -108,7 +109,7 @@ Creating Your Project
 
   * Your **Group ID** should usually correspond to your Java package name. See :doc:`../plugin-class` for details.
   * Your **Artifact ID** should usually correspond to your **plugin ID** you chose earlier, e.g. ``myplugin``.
-  * Your **Version** is up to you.
+  * Your **Version** is up to you. See :doc:`../project/version-numbers` for details.
 
 * Click ``Next``.
 * Enter your project's name, and click ``Finish``.
@@ -122,7 +123,7 @@ Editing the Project Configuration
 * Import the Maven changes, if prompted.
 
 Testing Your Plugin
-====================
+===================
 
 The following instructions are a quick way to test your plugin, but won't be the most efficient way
 to iteratively develop.
