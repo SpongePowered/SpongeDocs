@@ -152,8 +152,7 @@ The actual execution is then just doing the desired thing with the target we fou
                 .getEntities().stream()
                 .filter(this.entityFilter)
                 .filter(e -> getPositionOf(e).distanceSquared(position) < MAX_DISTANCE_SQUARED)
-                .sorted(Comparator.comparingDouble(e -> getPositionOf(e).distanceSquared(position)))
-                .findFirst();
+                .min(Comparator.comparingDouble(e -> getPositionOf(e).distanceSquared(position)));
         return this.optTarget.isPresent();
     }
 
@@ -216,7 +215,7 @@ that.
     @Override
     public void reset() {
         getNavigator().clearPath();
-        this.optTarget = null;
+        this.optTarget = Optional.empty();
     }
 
 For our ``AITask`` this is very easy. First we check whether the entity lost its path and then whether the entity is
