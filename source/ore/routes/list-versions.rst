@@ -13,7 +13,7 @@ Returns a list of versions for a project of a given plugin ID based on given cri
 +==========+=============================+=============================================================+
 | channels | Comma Separated String List | Filters versions by channels (inclusive).                   |
 +----------+-----------------------------+-------------------------------------------------------------+
-| limit    | Integer                     | Limits the amount of versions returned (max / default: 10). |
+| limit    | Integer                     | Limits the number of versions returned (max / default: 10). |
 +----------+-----------------------------+-------------------------------------------------------------+
 | offset   | Integer                     | Drops the first *n* versions from the result list.          |
 +----------+-----------------------------+-------------------------------------------------------------+

@@ -21,9 +21,9 @@ You can choose between two different types of workspaces:
     problems on one of the platforms because of changes in the Minecraft code by Forge. Make sure to always test your
     plugin on both platforms when using MCP.
 
-Choosing a MCP mappings version
-```````````````````````````````
-To setup a MCP workspace you need to specify the MCP mappings version that will be used to de-obfuscate the Minecraft
+Choosing an MCP mappings version
+````````````````````````````````
+To setup an MCP workspace you need to specify the MCP mappings version that will be used to de-obfuscate the Minecraft
 source with human-readable names. A list of MCP mappings versions is available on the
 `Export page of the MCPBot <http://export.mcpbot.bspk.rs>`_.
 

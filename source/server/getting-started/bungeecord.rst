@@ -11,11 +11,11 @@ For more information about BungeeCord, what it is, how to set it up and how it w
 .. warning::
  In order to connect servers to BungeeCord, you must run the servers in offline mode. In offline mode, without the
  proper precautions, anyone can log into the server using any name they wish, including those who have admin
- permissions. Make sure you protect your servers using firewalls. If you are using linux, there is an IPTables guide
+ permissions. Make sure you protect your servers using firewalls. If you are using Linux, there is an IPTables guide
  at `SpigotMC Firewall guide <https://www.spigotmc.org/wiki/firewall-guide/>`_, alternatively, some distributions come
  with `UncomplicatedFirewall "ufw" <https://wiki.ubuntu.com/UncomplicatedFirewall>`_.
 
-If you are not comfortable with tinkering with Linux, or you are unsure as to how to prevent unauthorised access to
+If you are not comfortable with tinkering with Linux, or you are unsure as to how to prevent unauthorized access to
 your servers, consider consulting with someone who has more experience to ensure the security of your server.
 
 .. note::

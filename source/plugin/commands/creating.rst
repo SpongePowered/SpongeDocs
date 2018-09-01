@@ -107,7 +107,7 @@ Example: Simple Command Executor
 Player-Only Commands
 ~~~~~~~~~~~~~~~~~~~~
 
-Sometimes it is neccessary that only players can execute a command (e.g. a ``/suicide`` command).
+Sometimes it is necessary that only players can execute a command (e.g. a ``/suicide`` command).
 
 Perform an ``instanceof`` check to determine the type of the :javadoc:`CommandSource`:
 
@@ -166,7 +166,7 @@ This example uses a builder to create a ``CommandResult`` for a command which af
 Error Handling
 ==============
 
-The ``execute()`` method may also throw a :javadoc:`CommandException`, signaling that an error occured while trying to
+The ``execute()`` method may also throw a :javadoc:`CommandException`, signaling that an error occurred while trying to
 execute the command. If such an Exception is thrown, its message will be displayed to the command source, formatted as
 an error. Also, the commands usage message will be displayed. An :javadoc:`ArgumentParseException`, a subtype of
 ``CommandException`` is automatically thrown if the commands arguments could not be parsed.

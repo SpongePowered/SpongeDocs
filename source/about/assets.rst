@@ -3,7 +3,7 @@ Art Assets
 ==========
 
 This page provides the official SpongePowered logo and mascot. Feel free to use them to spread the word about Sponge.
-However note that these images are **not** provided under the MIT License.
+However, note that these images are **not** provided under the MIT License.
 
 .. note::
   If you're reading a translated version, please note that the English license is the one which counts. Translated

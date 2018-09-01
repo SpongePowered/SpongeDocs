@@ -43,7 +43,7 @@ Who Is behind Sponge?
 ~~~~~~~~~~~~~~~~~~~~~
 
 The project leaders are blood, gabizou and Zidane. We are trying to be very open with the team to ensure the project leaders
-do not end up “holding all of the keys.” Nonetheless, these three people make the final decisions to ensure the efficient
+do not end up “holding all the keys.” Nonetheless, these three people make the final decisions to ensure the efficient
 operation of the project.
 
 A full list of staff members is located at :doc:`staff`.

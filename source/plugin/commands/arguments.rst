@@ -277,7 +277,7 @@ objects selected by the selector.
 
 The following ``parseValue`` method from the ``CommandElement`` class attempts to parse a selector and return a set of
 entities based on the location of the ``CommandSource``. If the passed string does not start with ``@``, an exception
-will be thrown indicating the passed argument is not a selector.
+will be thrown indicating that the passed argument is not a selector.
 
 .. code-block:: java
 

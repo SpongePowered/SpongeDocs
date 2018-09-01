@@ -16,7 +16,7 @@ Finding Plugins
     to your server or computer.
 
 SpongePowered currently runs the `Ore platform <https://ore.spongepowered.org>`_ to make it easy for plugin developers
-and users to distribute and download plugins. Alternatively you can search for plugins on the
+and users to distribute and download plugins. Alternatively, you can search for plugins on the
 `SpongePowered forums <https://forums.spongepowered.org/c/plugins>`_.
 
 Installation

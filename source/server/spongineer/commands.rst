@@ -31,14 +31,14 @@ Command                 Description                                Permission
 ======================  =========================================  =============================
 /sponge audit           Forces loading of unloaded classes to      sponge.command.audit
                         enable mixin debugging.
-/sponge blockinfo       Shows the type and the some additional     sponge.command.blockinfo
+/sponge blockinfo       Shows the type and some additional         sponge.command.blockinfo
                         information about the block you are
                         looking at.
 /sponge chunks          Prints out the chunk data for a world, a   sponge.command.chunks
                         dimension, or globally.
 /sponge config          Alters a global, world, or a dimension     sponge.command.config
                         config.
-/sponge entityinfo      Shows the type and the some additional     sponge.command.entityinfo
+/sponge entityinfo      Shows the type and some additional         sponge.command.entityinfo
                         information about the entity you are
                         looking at.
 /sponge heap            Dumps the JVM heap.                        sponge.command.heap
@@ -78,11 +78,11 @@ Command                 Description                                Permission
 In cases of command conflict, Sponge provides a primary alias mechanism to specify which command is to be used.  For 
 example, Minecraft provides the `reload <https://minecraft.gamepedia.com/Commands#Summary_of_commands>`__ command and 
 Sponge provides the `reload <https://docs.spongepowered.org/stable/en/server/spongineer/commands.html>`__ command. To 
-specify which command to use, prefix it with minecraft or sponge and a ``:``. So, to use Sponge's reload command 
+specify which command to use, prefix it with ``minecraft`` or ``sponge`` and a ``:``. So, to use Sponge's reload command 
 above, type in ``/sponge:reload``. This approach can also be used to handle conflicts between mods and/or plugins. Do
 the same thing, just use the mod-id or the plugin-id and a ``:``.  An example is ``/examplemodid:tp``.
 
-Furthermore, the primary alias mechanism can be used to overcome incompatibilties. Let's say a plugin registers a 
+Furthermore, the primary alias mechanism can be used to overcome incompatibilities. Let's say a plugin registers a 
 command, but the command is incompatible with your mod. If you can configure your mod to use a Minecraft native 
 command or another plugin's command, you can restore the expected behavior or prevent unexpected behaviors.
 
@@ -99,8 +99,8 @@ command or another plugin's command, you can restore the expected behavior or pr
 
     a. ``/sponge config logging.chunk-load true``
 
-      Since no dimension was specified, the dimension would default to the sender(player) dimension. So if you were in a
-      mystcraft dimension, this would alter the mystcraft dimension config.
+      Since no dimension was specified, the dimension would default to the sender(player) dimension. So, if you were in
+      a mystcraft dimension, this would alter the mystcraft dimension config.
 
     b. ``/sponge config -d minecraft:nether logging.chunk-load true``
 
@@ -121,7 +121,7 @@ Timings
 Timings are a tool built into Sponge that allows server administrators to monitor the performance of their server.
 Timings will collect information about a server so that a report may later be generated on the data. Information that
 is recorded by timings include the server motd, version, uptime, memory, installed plugins, tps, percent of tps loss,
-amount of players, tile entities, entities, and chunks.
+number of players, tile entities, entities, and chunks.
 Below is a list of sub-commands to ``/sponge timings``:
 
 ========================  ========================================
@@ -224,12 +224,12 @@ There are also extra permissions managing the access to the server:
 
 .. note::
 
-    Sponge offers improved multi-world support, such as per-world world borders. By default Sponge only changes the
+    Sponge offers improved multi-world support, such as per-world world borders. By default, Sponge only changes the
     world border (or other world options) of the world the player is currently in. The vanilla behavior of setting it
     for all worlds can be restored using the global configuration and setting
     ``sponge.commands.multi-world-patches.worldborder`` (or the corresponding entry) to ``false``. See 
     :doc:`/server/getting-started/configuration/sponge-conf` for details. Sponge assumes that multi-world plugins also
-    provide optimized configuration commands for those options and thus does not provide it's own variants.
+    provide optimized configuration commands for those options and thus does not provide its own variants.
 
 Player Commands
 ===============
@@ -259,7 +259,7 @@ Command Features
 Sponge and most Sponge plugins support additional command features such as auto completion and hoverable text. The image
 below shows the output using the ``/sponge plugins`` command (yellow box). The elements in that list can be hovered over
 to get addition information such as the current version number (red box). Some elements in the example below also have
-additional actions bound to them. For example the plugin entries in that list can be clicked to show more detailed
+additional actions bound to them. For example, the plugin entries in that list can be clicked to show more detailed
 information (purple box) about that plugin. This is equivalent to sending the ``/sponge plugins <pluginId>`` command.
 The auto completion can be triggered by pressing tab. Entering ``/sponge plugins ﻿`` (with a trailing space) and then
 pressing tab will show a list of possible values (turquoise box) that can be used in that context. Pressing tab again

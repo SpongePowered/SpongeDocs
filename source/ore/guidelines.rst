@@ -171,7 +171,7 @@ sources, and execution shell scripts.
 Monetization / Advertising
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-All functionality present in your plugin should be usable without restriction, and can not require a license key to operate.
+All functionality present in your plugin should be usable without restriction, and cannot require a license key to operate.
 External APIs, such as translation or geolocation services, that require payment for functionality can be allowed but must be
 discussed among staff prior to approval. Plugins may not be used to display advertisements.
 

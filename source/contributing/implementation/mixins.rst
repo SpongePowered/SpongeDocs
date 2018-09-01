@@ -23,7 +23,7 @@ repository itself, since almost everything is already documented.
 
 .. note::
 
-  The Mixin project will be servicing a number of other projects in addition to Sponge itself. Therefore Mixin has its'
+  The Mixin project will be servicing a number of other projects in addition to Sponge itself. Therefore, Mixin has its
   own documentation together with the repository.
 
 

@@ -53,7 +53,8 @@ The simplest method of installing Git on Linux is by using the package manager t
     You may need to prefix these commands with ``sudo``.
 
 1. Launch the Terminal.
-#. Run ``apt-get install git`` if you are on a Ubuntu or Debian-based distribution. Run ``yum install git`` if you are on Fedora.
+#. Run ``apt-get install git`` if you are on an Ubuntu or Debian-based distribution. Run ``yum install git`` if you are
+   on Fedora.
 
 GitHub Desktop is currently not available for Linux, unlike Windows and Mac.
 

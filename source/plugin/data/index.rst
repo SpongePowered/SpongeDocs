@@ -61,8 +61,8 @@ Property
 A property too is data, but not synchronized between server and clients. Therefore, it can only be
 changed by modifications present on both client and server. Since Sponge is not intended to require a
 client-side counterpart, properties are not modifiable.
-Examples of properties are the harvesting ablities on tools (represented as :javadoc:`HarvestingProperty` or the damage
-absorption of an equippable armor item (represented as :javadoc:`DamageAbsorptionProperty`).
+Examples of properties are the harvesting abilities on tools (represented as :javadoc:`HarvestingProperty` or the damage
+absorption of an equipable armor item (represented as :javadoc:`DamageAbsorptionProperty`).
 
 DataManipulator
 ~~~~~~~~~~~~~~~

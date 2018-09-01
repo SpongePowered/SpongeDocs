@@ -24,7 +24,7 @@ Public methods inside the :javadoc:`PluginManager` are used to grab information 
 plugins, alongside their instances. The plugins are stored inside a :javadoc:`PluginContainer` (discussed in next
 section) to allow for an easy center of information about the specific plugin. As an example, you can use the
 ``PluginManager`` to communicate with another plugin, grabbing its instance and using the methods it offers to provide
-compability or extended features by means of your calling plugin.
+compatibility or extended features by means of your calling plugin.
 
 Obtaining the Plugin Manager
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -13,7 +13,7 @@ JSON files.
     The data are stored in structures called trees. Each data point on a tree is a node. See 
     :doc:`/plugin/configuration/nodes` for more information on this topic.
 
-For example, the text "Hello World!", formatted with the color red and an underline, would have the following 
+For example, the text ``"Hello World!"``, formatted with the color red and an underline, would have the following 
 representation in JSON:
 
 .. code-block:: json

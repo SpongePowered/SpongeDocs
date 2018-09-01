@@ -31,7 +31,7 @@ the commands from the main plugin class, use ``this`` as the ``plugin`` paramete
     many Strings as you want. The first alias that isn't used by another command becomes the primary alias. This means
     aliases used by another command are ignored.
 
-The ``CommandManager`` can also be used to call a command programatically:
+The ``CommandManager`` can also be used to call a command programmatically:
 
 .. code-block:: java
 
