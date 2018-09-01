@@ -62,7 +62,7 @@ with null checking. Assuming they have defined a local constant ``Foo``, the res
     }
 
 In this example, the plugin author is aware that the method can return null and has a constant available with a
-default instance of ``Foo`` which can be used instead. Of course the plugin could just short-circuit the call entirely,
+default instance of ``Foo`` which can be used instead. Of course, the plugin could just short-circuit the call entirely,
 or it could attempt to fetch `Foo` from somewhere else. The key message is that handling nulls even in simple cases
 can lead to spaghetti code quite quickly, and moreover relies on the plugin author to explicitly visit the method's
 contract to check whether a null check is necessary in the first place.
@@ -77,7 +77,7 @@ However, let's now assume that in a later version of the game, the game develope
 checked the method contract when they first wrote their code are unwittingly handling the method incorrectly: with no
 null check in place any code using the ``Foo`` returned from ``getFoo`` is going to raise an NPE.
 
-Thus we can see that allowing implicit nullable contracts leaves us with a selection of pretty awful solutions to
+Thus, we can see that allowing implicit nullable contracts leaves us with a selection of pretty awful solutions to
 choose from:
 
 * Plugin authors can assume that **all** methods may return null and code defensively accordingly, however we've already seen that this leads to spaghetti code pretty quickly.
@@ -94,9 +94,9 @@ there is a better way:
 2. Optional and the Explicit Nullable Contract
 ==============================================
 
-As mentioned above, APIs for Minecraft are in a difficult situation. Ultimately they need to provide a platform with
+As mentioned above, APIs for Minecraft are in a difficult situation. Ultimately, they need to provide a platform with
 a *reasonable amount of implied stability* atop a platform (the game) with *absolutely no amount of implied stability*.
-Thus any API for Minecraft needs to be designed with full awareness that any aspect of the game is liable to change at
+Thus, any API for Minecraft needs to be designed with full awareness that any aspect of the game is liable to change at
 any time for any reason in any way imaginable; up to and including being removed altogether!
 
 This volatility is what leads to the problem with nullable method contracts described above.
@@ -110,7 +110,7 @@ This volatility is what leads to the problem with nullable method contracts desc
 By encoding the possibility of returning ``null`` into an explicit contract, we replace the concept of
 *null checking* with the more nuanced concept of *may not exist*. We also stipulate this contract *from day one*.
 
-So what does this mean?
+So, what does this mean?
 
 In a nutshell, no longer do plugin authors have to worry about the possibility of ``null`` being returned. Instead the
 very possibility of a particular object not being available becomes encoded in the very fabric of their plugin code.
@@ -184,7 +184,7 @@ Using ``Optional`` we can encode this much much more cleanly as:
     }
 
 This is merely the tip of the ``Optional`` iceberg. In java 8 ``Optional`` also supports the ``Consumer`` and
-``Supplier`` interfaces, allowing lambas to be used for *absent* failover. Usage examples for those can be found on the
+``Supplier`` interfaces, allowing lambdas to be used for *absent* failover. Usage examples for those can be found on the
 :doc:`usage` page.
 
 .. note::

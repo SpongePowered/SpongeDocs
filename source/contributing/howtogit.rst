@@ -66,7 +66,7 @@ clone is now located at ``YourGitHubAccount/ClonedRepoName``. Alright, first ste
 
 
 .. note::
-  All branches from the original repository will get forked too, you recieve an exact clone of the forked repo.
+  All branches from the original repository will get forked too, you receive an exact clone of the forked repo.
 
 .. image:: /images/contributing/repo-fork.svg
     :alt: Repo forking
@@ -79,10 +79,11 @@ Now you need to get this fork to your local machine to make your changes. Open t
 everything in. Second step finished, well done!
 
 .. note::
-  Most steps can be done via GUI of your choice. If you're experienced with a command line interface, then you can use
-  it too. Each steps will show you the required commands to achieve the desired result.
 
-Alternatively you can do this via CLI (command line interface, ``CMD`` or ``powershell`` on windows). Note
+  Most steps can be done via GUI of your choice. If you're experienced with a command line interface, then you can use
+  it too. Each step will show you the required commands to achieve the desired result.
+
+Alternatively, you can do this via CLI (command line interface, ``CMD`` or ``powershell`` on windows). Note
 that you need to create the folder everything is getting cloned to yourself before typing this command:
 
 .. code-block:: bash
@@ -108,7 +109,7 @@ should be a ``create branch`` button somewhere), or you can use the CLI with git
   git checkout -b [name_of_your_new_branch]
 
 This will create a ``branch`` with the name of your choice and switch to it. All changes you're about to make will be
-on this branch. If you need to switch to another branch ( for example ``master``), just reuse this command. Third step
+on this branch. If you need to switch to another branch (for example ``master``), just reuse this command. Third step
 done! Good job so far! To get an overview of your branches, just have a look at your git client or use:
 
 .. code-block:: bash
@@ -133,7 +134,7 @@ is to build the Docs locally. Have a look at the
 5. Commit the Changes
 ~~~~~~~~~~~~~~~~~~~~~
 
-When you're done, you need to bundle them into a single package (a ``commit``) and get them into the branch. Again your
+When you're done, you need to bundle them into a single package (a ``commit``) and get them into the branch. Again, your
 git client will help you out. Add a meaningful name to your commit and a short description if needed. This can be done
 via CLI too:
 
@@ -187,7 +188,7 @@ In this case it should be:
 
 You can either go to your forks page on GitHub.com (there should be a notice at the top of your forks page to
 guide you), or you can use your GitHub client to create a pull-request. The official GitHub for Win client uses the
-the top right corner of the window for this.
+top right corner of the window for this.
 
 .. image:: /images/contributing/repo-pr.svg
     :alt: PRs
@@ -209,11 +210,12 @@ Advanced Git
 Squashing with Rebase
 ~~~~~~~~~~~~~~~~~~~~~
 
-Let's say you have finished your additions to the repo, and let's pretend that you made 137 commits while getting it done.
-Your commit history will certainly look cluttered. It would be a shame if they were all recorded into the repo, wouldn't it?
-Too many trivial commits also clutters the project commit history. Fortunately Git has a nice tool to circumvent this, it's
-called a ``rebase``. Rebasing can take your 137 small commits and just turn them into one big commit. Awesome, isn't it?
-Instead of reinventing the wheel, we'll just pass you a link to a very short and easily understandable squashing tutorial:
+Let's say you have finished your additions to the repo, and let's pretend that you made 137 commits while getting it
+done. Your commit history will certainly look cluttered. It would be a shame if they were all recorded into the repo,
+wouldn't it? Too many trivial commits also clutters the project commit history. Fortunately, Git has a nice tool to
+circumvent this, it's called a ``rebase``. Rebasing can take your 137 small commits and just turn them into one big
+commit. Awesome, isn't it? Instead of reinventing the wheel, we'll just pass you a link to a very short and easily
+understandable squashing tutorial:
 
 `Gitready: Squashing with Rebase <http://gitready.com/advanced/2009/02/10/squashing-commits-with-rebase.html>`_
 
@@ -226,7 +228,7 @@ Setting Up a Remote
 ~~~~~~~~~~~~~~~~~~~
 
 Naturally the original repo is the direct parent of your fork and your fork is the direct parent of your local clone.
-However the original repo **isn't** the direct parent of your clone. This isn't a problem in the first place, but it
+However, the original repo **isn't** the direct parent of your clone. This isn't a problem in the first place, but it
 prevents you from updating your clone to the latest changes on the original repo. If you setup the original repo as a
 remote (read: "parent") of your clone, you'll be able to grab all changes made to this repo and apply it to your local
 clone. Look below to see how grabbing and updating works.
@@ -256,9 +258,10 @@ the output should look like:
  upstream  https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git (push)
 
 .. note::
-  If you see the warning ``fatal: The current branch YourBranchName has no upstream branch.``, then the branch may not be on
-  the upstream remote. This may happen if this is the first time you are pushing a commit for the new branch. To push the
-  current branch and set the remote as upstream, use ``git push --set-upstream origin YourBranchName``.
+
+  If you see the warning ``fatal: The current branch YourBranchName has no upstream branch.``, then the branch may not
+  be on the upstream remote. This may happen if this is the first time you are pushing a commit for the new branch. To
+  push the current branch and set the remote as upstream, use ``git push --set-upstream origin YourBranchName``.
 
 Rebasing
 ~~~~~~~~
@@ -268,7 +271,7 @@ means that your fork and your clone are outdated. This is not a big problem, but
 additions later on, it's strongly advised to ``rebase`` your changes against the latest changes on the original repo.
 If you haven't set up the remote repo yet, do it before trying to rebase.
 
-A successfull rebase requires several steps:
+A successful rebase requires several steps:
 
 1. Fetch the Changes on the Remote Repo
 ---------------------------------------

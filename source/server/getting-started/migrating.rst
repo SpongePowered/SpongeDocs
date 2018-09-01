@@ -32,7 +32,7 @@ Worlds
 
 Forge, and thus SpongeForge (and also SpongeVanilla), use the same world structure as vanilla Minecraft. Vanilla Minecraft
 places the nether (typically ``world_nether``) and the end (typically ``world_the_end``) dimensions within the
-``world`` folder. However Bukkit and Spigot *don't* use this system to save the worlds, thus migration is needed.
+``world`` folder. However, Bukkit and Spigot *don't* use this system to save the worlds, thus migration is needed.
 
 SpongeForge and SpongeVanilla provide a fully automated conversion script which converts your worlds for you.
 This is how it works:
@@ -153,21 +153,21 @@ only file from Canary that can be reused on Sponge.
 Nevertheless, it is possible to manually migrate some Canary configuration files to their Sponge counterparts, which
 have been provided below.
 
-+----------------------------+----------------------------+
-| Canary file(s)             | Sponge counterpart(s)      |
-+============================+============================+
-| server.cfg                 | server.properties          |
-| <world>_<dimension>.cfg    |                            |
-+----------------------------+----------------------------+
-| <world>_<dimension>.cfg    | global.conf                |
-|                            | <dimension>/dimension.conf |
-+----------------------------+----------------------------+
-| ops.cfg                    | ops.json                   |
-+----------------------------+----------------------------+
-| db.cfg                     | No counterpart             |
-+----------------------------+----------------------------+
-| motd.txt                   | No counterpart             |
-+----------------------------+----------------------------+
++-------------------------+----------------------------+
+| Canary file(s)          | Sponge counterpart(s)      |
++=========================+============================+
+| server.cfg              | server.properties          |
+| <world>_<dimension>.cfg |                            |
++-------------------------+----------------------------+
+| <world>_<dimension>.cfg | global.conf                |
+|                         | <dimension>/dimension.conf |
++-------------------------+----------------------------+
+| ops.cfg                 | ops.json                   |
++-------------------------+----------------------------+
+| db.cfg                  | No counterpart             |
++-------------------------+----------------------------+
+| motd.txt                | No counterpart             |
++-------------------------+----------------------------+
 
 Plugins
 -------
@@ -238,7 +238,7 @@ vanilla Minecraft, such as ``server.properties``.
 At first you should decide if you want to run SpongeForge or SpongeVanilla.
 
 .. note::
-    Both flavours of Sponge are able to serve vanilla clients. Keep in mind that this only applies to SpongeForge as
+    Both flavors of Sponge are able to serve vanilla clients. Keep in mind that this only applies to SpongeForge as
     long as you don't install Forge mods which require client modifications.
 
 1. Stop your Vanilla server if it is still running

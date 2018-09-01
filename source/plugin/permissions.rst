@@ -65,7 +65,7 @@ all.
 * ``myplugin.commands.teleport.execute``
     * Only grants the user the permission to execute the command. Without this permission he is not able to execute the
       command even if he has other `teleport` permissions.
-      (With this permission alone the user would only be able to teleport himself to others in his current world.)
+      (With this permission alone, the user would only be able to teleport himself to others in his current world.)
 
 * ``myplugin.commands.teleport.all``
     * Only grants the user the permission to teleport all players at once.
@@ -187,7 +187,7 @@ configuration guideline for server owners use ``PermissionDescription``\'s role-
     assuming that all server owners will want these defaults (at least the first time the plugin runs) and that
     exceptions will require server owners to explicitly deny the permissions (which can't even be done without a custom
     permissions service implementation). This should roughly correspond to a guest on a single player lan world without
-    cheats. For example a chat plugin would allow sending chat messages by default to imitate vanilla game behaviour
+    cheats. For example, a chat plugin would allow sending chat messages by default to imitate vanilla game behavior
     for features that were changed by the plugin.
 
 .. note::
@@ -229,7 +229,7 @@ These are the default Subject Collections:
       named ``Subject``\s. Groups should be used if a specific subset of ``Subject``\s have additional permission
       settings such as a team, faction or role.
 * System
-    * Contains other ``Subject``\s used by the server such as the the console and possible remote consoles. 
+    * Contains other ``Subject``\s used by the server such as the console and possible remote consoles. 
 * Command Block
     * Contains all ``Subject``\s for command blocks. These are useful if you would like to run a ``CommandBlock`` only
       with the permissions of the creator.
@@ -295,7 +295,7 @@ context key with your plugin id) unless these contexts are meant to be shared.
 
     ``ContextCalculator`` implementations must be **thread safe**, because they may be called from outside of the main
     thread, or even called in parallel. For to this reason, all non-name or non-uuid based ``ContextCalculator``\s
-    (such as location based ones) have to utilize a cache and must be to be updated using event listeners or
+    (such as location-based ones) have to utilize a cache and must be to be updated using event listeners or
     synchronized schedulers.
 
 Example

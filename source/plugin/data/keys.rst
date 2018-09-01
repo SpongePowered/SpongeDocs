@@ -33,7 +33,7 @@ start out with an example:
 Now for the details of the above function.
 
 The first line checks if our given data holder supports a current health value. Only if it does, it can be healed after
-all. Since a data holder can not have current health without having a maximum health and vice versa, a check for
+all. Since a data holder cannot have current health without having a maximum health and vice versa, a check for
 one of the keys using the ``supports()`` method suffices.
 
 The second line uses the ``get()`` function to ask the data holder for its maximum health. Besides
@@ -121,7 +121,7 @@ a tiny bit above that.
         }
     }
 
-Again, we check if our target support the health key and then obtain the keyed value. A
+Again, we check if our target supports the health key and then obtain the keyed value. A
 ``MutableBoundedValue`` contains a ``getMinValue()`` method, so we obtain the minimal value, add 1 and then set
 it to our data container. Internally, the ``set()`` method performs a check if our supplied value is valid and
 silently fails if it is not. Calling ``health.set(-2)`` would not change the value within ``health`` since it

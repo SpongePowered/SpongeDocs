@@ -57,7 +57,7 @@ well as the `SpongeDocs <https://github.com/spongepowered/SpongeDocs>`_ is done 
 Advanced Contributions
 ~~~~~~~~~~~~~~~~~~~~~~
 
-And finally these are the most difficult things you can help out with. Advanced knowledge of Java, Minecraft and at
+And finally, these are the most difficult things you can help out with. Advanced knowledge of Java, Minecraft and at
 least basic knowledge of the `SpongeAPI <https://github.com/spongepowered/SpongeAPI>`_ and its
 `structure <https://jd.spongepowered.org>`_ is strongly advised before attempting to help out with:
 

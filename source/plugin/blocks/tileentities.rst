@@ -98,7 +98,7 @@ opposed to the immutable ``BlockState``.
 Accessing Inventories
 =====================
 
-Quite a share of tile entities come with their own inventory, most notably chests and furnaces. That inventory can not
+Quite a share of tile entities come with their own inventory, most notably chests and furnaces. That inventory cannot
 be accessed directly from the ``TileEntity`` interface. So a cast will be necessary. Since all tile entities containing
 an inventory extend the :javadoc:`TileEntityCarrier` interface it suffices to cast to that interface as shown below.
 

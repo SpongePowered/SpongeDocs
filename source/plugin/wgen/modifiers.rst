@@ -50,7 +50,7 @@ the ``WorldGeneratorModifier`` interface:
 As you can see, ``WorldGeneratorModifier`` has three methods which we override. :javadoc:`CatalogType#getId()` must be
 overridden to return a constant and unique identifier for your ``WorldGeneratorModifier``, this is the identifier which
 will be used in the world configuration to specify which worlds your modifier should be applied to.
-:javadoc:`CatalogType#getName()` must be overriden with a constant and simple human-readable name for your modifier.
+:javadoc:`CatalogType#getName()` must be overridden with a constant and simple human-readable name for your modifier.
 
 The third overridden method is where you make your changes to the world generator. This method is called by
 the implementation when it is creating the world generator for a world which has specified that your
@@ -75,7 +75,7 @@ the first argument and your modifier as the second.
     }
 
 To apply your WorldGeneratorModifier to a world you must add it to the ``world-generation-modifiers`` array within
-the world config file found at ``config/sponge/worlds/[dimension]/[worldName]/world.conf``. For example to apply
+the world config file found at ``config/sponge/worlds/[dimension]/[worldName]/world.conf``. For example, to apply
 the skylands WorldGeneratorModifier to a world you would add the skylands modifier's id to the modifiers list.
 
 .. code-block:: guess

@@ -1,6 +1,6 @@
-========
-Commands
-========
+========================
+Commands and Permissions
+========================
 
 Commands are one method in which server operators can administer their server, and in which players can interact with
 the server.
@@ -26,30 +26,43 @@ Sponge
 The following commands are available to players with operator status (or the correct permission node) on servers powered
 by Sponge.
 
-======================  ========================================  =============================
-Command                 Description                               Permission
-======================  ========================================  =============================
-/sponge audit           Forces loading of unloaded classes to     sponge.command.audit
+======================  =========================================  =============================
+Command                 Description                                Permission
+======================  =========================================  =============================
+/sponge audit           Forces loading of unloaded classes to      sponge.command.audit
                         enable mixin debugging.
-/sponge chunks          Prints out the chunk data for a world, a  sponge.command.chunks
+/sponge blockinfo       Shows the type and some additional         sponge.command.blockinfo
+                        information about the block you are
+                        looking at.
+/sponge chunks          Prints out the chunk data for a world, a   sponge.command.chunks
                         dimension, or globally.
-/sponge config          Alters a global, world, or a dimension    sponge.command.config
+/sponge config          Alters a global, world, or a dimension     sponge.command.config
                         config.
-/sponge heap            Dumps the JVM heap.                       sponge.command.heap
-/sponge help            View information on commands used on the  sponge.command.help
-                        server.
-/sponge plugins         Lists currently installed plugins.        sponge.command.plugins
-/sponge plugins reload  Asks plugins to perform their own reload  sponge.command.plugins.reload
+/sponge entityinfo      Shows the type and some additional         sponge.command.entityinfo
+                        information about the entity you are
+                        looking at.
+/sponge heap            Dumps the JVM heap.                        sponge.command.heap
+/sponge mods            Lists currently installed forge mods.      sponge.command.mods
+                        (SpongeForge only)
+/sponge plugins         Lists currently installed Sponge plugins.  sponge.command.plugins
+/sponge plugins reload  Asks plugins to perform their own reload   sponge.command.plugins.reload
                         procedures.
-/sponge reload          Reloads the global, world, or dimension   sponge.command.reload
+/sponge reload          Reloads the global, world, or dimension    sponge.command.reload
                         config.
-/sponge save            Saves the global, world, or dimension     sponge.command.save
+/sponge save            Saves the global, world, or dimension      sponge.command.save
                         config.
-/sponge timings         The main command for the timings module.  sponge.command.timings
-/sponge tps             Display ticks per second for each world.  sponge.command.tps
-/sponge version         Prints the Sponge/SpongeAPI versions to   sponge.command.version
+/sponge timings         The main command for the timings module.   sponge.command.timings
+/sponge tps             Display ticks per second for each world.   sponge.command.tps
+/sponge version         Prints the Sponge/SpongeAPI versions to    sponge.command.version
                         the console.
-======================  ========================================  =============================
+/sponge which           Prints which plugin provided the command,  sponge.command.which
+                        it's aliases and alternatives.
+/sponge:callback        Internally used for callback actions on 
+                        ``Text``\s (such as pagination). Not
+                        intended to be invoked by hand.
+/sponge:help            View information on commands used on the   sponge.command.help
+                        server.
+======================  =========================================  =============================
 
 |
 
@@ -65,11 +78,11 @@ Command                 Description                               Permission
 In cases of command conflict, Sponge provides a primary alias mechanism to specify which command is to be used.  For 
 example, Minecraft provides the `reload <https://minecraft.gamepedia.com/Commands#Summary_of_commands>`__ command and 
 Sponge provides the `reload <https://docs.spongepowered.org/stable/en/server/spongineer/commands.html>`__ command. To 
-specify which command to use, prefix it with minecraft or sponge and a ``:``. So, to use Sponge's reload command 
+specify which command to use, prefix it with ``minecraft`` or ``sponge`` and a ``:``. So, to use Sponge's reload command 
 above, type in ``/sponge:reload``. This approach can also be used to handle conflicts between mods and/or plugins. Do
 the same thing, just use the mod-id or the plugin-id and a ``:``.  An example is ``/examplemodid:tp``.
 
-Furthermore, the primary alias mechanism can be used to overcome incompatibilties. Let's say a plugin registers a 
+Furthermore, the primary alias mechanism can be used to overcome incompatibilities. Let's say a plugin registers a 
 command, but the command is incompatible with your mod. If you can configure your mod to use a Minecraft native 
 command or another plugin's command, you can restore the expected behavior or prevent unexpected behaviors.
 
@@ -86,8 +99,8 @@ command or another plugin's command, you can restore the expected behavior or pr
 
     a. ``/sponge config logging.chunk-load true``
 
-      Since no dimension was specified, the dimension would default to the sender(player) dimension. So if you were in a
-      mystcraft dimension, this would alter the mystcraft dimension config.
+      Since no dimension was specified, the dimension would default to the sender(player) dimension. So, if you were in
+      a mystcraft dimension, this would alter the mystcraft dimension config.
 
     b. ``/sponge config -d minecraft:nether logging.chunk-load true``
 
@@ -97,13 +110,18 @@ command or another plugin's command, you can restore the expected behavior or pr
 
     This would alter the config of world named DIM1.
 
+Sponge provides two permissions for debugging purposes:
+
+* Allow using Sponge's block tracking message channel: ``sponge.debug.block-tracking``
+* Allow hovering of command execution errors to get the stacktrace: ``sponge.debug.hover-stacktrace``
+
 Timings
 ~~~~~~~
 
 Timings are a tool built into Sponge that allows server administrators to monitor the performance of their server.
 Timings will collect information about a server so that a report may later be generated on the data. Information that
 is recorded by timings include the server motd, version, uptime, memory, installed plugins, tps, percent of tps loss,
-amount of players, tile entities, entities, and chunks.
+number of players, tile entities, entities, and chunks.
 Below is a list of sub-commands to ``/sponge timings``:
 
 ========================  ========================================
@@ -187,14 +205,17 @@ Command               Description                               Permission
 
 |
 
-Sponge also creates a spawn-protection bypass permission, a force-gamemode bypass permission, and two permissions for 
-controlling the ability to edit commandblocks. Note that these permissions use the actual *name* of the commandblock,
-which is normally ``@`` by default. 
+Sponge also creates permissions for these Minecraft features:
 
+* Allow player to use the entity-selector in commands: ``minecraft.selector``
 * Allow player to bypass spawn-protection in all worlds: ``minecraft.spawn-protection.override``
 * Allow player to bypass force-gamemode in all worlds: ``minecraft.force-gamemode.override``
 * Allow editing an ordinary commandblock of the given name: ``minecraft.commandblock.edit.block.<name>``
 * Allow editing a minecart commandblock of the given name: ``minecraft.commandblock.edit.minecart.<name>``
+
+.. note::
+
+    These permissions use the actual *name* of the commandblock, which is normally ``@`` by default. 
 
 There are also extra permissions managing the access to the server:
 
@@ -203,12 +224,12 @@ There are also extra permissions managing the access to the server:
 
 .. note::
 
-    Sponge offers improved multi-world support, such as per-world world borders. By default Sponge only changes the
+    Sponge offers improved multi-world support, such as per-world world borders. By default, Sponge only changes the
     world border (or other world options) of the world the player is currently in. The vanilla behavior of setting it
     for all worlds can be restored using the global configuration and setting
     ``sponge.commands.multi-world-patches.worldborder`` (or the corresponding entry) to ``false``. See 
     :doc:`/server/getting-started/configuration/sponge-conf` for details. Sponge assumes that multi-world plugins also
-    provide optimized configuration commands for those options and thus does not provide it's own variants.
+    provide optimized configuration commands for those options and thus does not provide its own variants.
 
 Player Commands
 ===============
@@ -238,7 +259,7 @@ Command Features
 Sponge and most Sponge plugins support additional command features such as auto completion and hoverable text. The image
 below shows the output using the ``/sponge plugins`` command (yellow box). The elements in that list can be hovered over
 to get addition information such as the current version number (red box). Some elements in the example below also have
-additional actions bound to them. For example the plugin entries in that list can be clicked to show more detailed
+additional actions bound to them. For example, the plugin entries in that list can be clicked to show more detailed
 information (purple box) about that plugin. This is equivalent to sending the ``/sponge plugins <pluginId>`` command.
 The auto completion can be triggered by pressing tab. Entering ``/sponge plugins ﻿`` (with a trailing space) and then
 pressing tab will show a list of possible values (turquoise box) that can be used in that context. Pressing tab again

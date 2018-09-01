@@ -12,14 +12,14 @@ logfiles from SpongeForge and SpongeVanilla servers including short descriptions
 SpongeForge logfiles
 ====================
 
-SpongeForge writes several logfiles to the ``/logs`` folder located inside your servers directory. 
+SpongeForge writes several logfiles to the ``/logs`` folder located inside your server's directory. 
 As of Forge 1.12.2 - 14.23.4.2705 these are: 
 
 1. ``debug.log``
 #. ``latest.log``
 
 debug.log
-~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~
 
 .. note::
 

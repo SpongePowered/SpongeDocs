@@ -85,7 +85,7 @@ That's it. You now have a fully enchanted, unbreakable, and beautifully named sw
 Spawning the Item
 =================
 
-Sure we can simply put the sword into a player's inventory, but what if we wanted to throw it out into the open world
+Sure, we can simply put the sword into a player's inventory, but what if we wanted to throw it out into the open world
 and spawn the item? This is where :doc:`entity spawning <../entities/spawning>` comes into play. Since the in-game
 graphical representation of an ``ItemStack`` is :javadoc:`Item`, we can spawn it in similarly to a normal
 :javadoc:`Entity`. The :javadoc:`EntityType` will simply be :javadoc:`EntityTypes#ITEM` and we will need to specify

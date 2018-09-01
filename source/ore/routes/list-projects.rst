@@ -17,7 +17,7 @@ Returns a list of projects based on given criteria.
 +------------+------------------------------+-------------------------------------------------------------+
 | q          | String                       | Search query. Checks against name, author, and description. |
 +------------+------------------------------+-------------------------------------------------------------+
-| limit      | Integer                      | Limits the amount of projects returned (max / default: 25). |
+| limit      | Integer                      | Limits the number of projects returned (max / default: 25). |
 +------------+------------------------------+-------------------------------------------------------------+
 | offset     | Integer                      | Drops the first *n* projects from the result list.          |
 +------------+------------------------------+-------------------------------------------------------------+

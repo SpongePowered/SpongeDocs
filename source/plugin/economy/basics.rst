@@ -33,7 +33,7 @@ Currency
 ========
 
 The :javadoc:`Currency` object represents a form of Currency. ``Currency`` stores a display name (plural and singular),
-a symbol, the amount of fractional digits, and whether the currency is the default currency for the economy. If the
+a symbol, the number of fractional digits, and whether the currency is the default currency for the economy. If the
 economy plugin chooses, it can support multiple currencies.
 
 Accounts

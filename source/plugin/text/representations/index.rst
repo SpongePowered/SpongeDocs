@@ -37,7 +37,7 @@ Deserializing to Text
 ~~~~~~~~~~~~~~~~~~~~~
 
 To deserialize a ``String`` into its corresponding ``Text`` object, simply use the
-:javadoc:`TextSerializer#deserialize(String)` method, specififying the input ``String`` as the only argument. If the
+:javadoc:`TextSerializer#deserialize(String)` method, specifying the input ``String`` as the only argument. If the
 input is incorrectly formatted, a :javadoc:`TextParseException` will be thrown. Alternatively, use the
 :javadoc:`TextSerializer#deserializeUnchecked(String)` method to deserialize without any exceptions. If there is an
 error, the raw input will be returned in the form of a ``Text`` object.

@@ -103,7 +103,7 @@ specific directory or to ``true`` to get the shared configuration directory.
 
     When your plugin is running for the first time, returned pathnames for configuration files and directories may not
     yet exist. If you delegate all reading / writing of files to Configurate, you do not need to worry about
-    non-existant paths as the library will handle them appropriately.
+    non-existent paths as the library will handle them appropriately.
 
 .. note::
 

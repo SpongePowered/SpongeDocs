@@ -6,21 +6,21 @@ Developing the API
 ==================
 
 The basic process of adding your changes is explained in the :doc:`../howtogit` section. On top of that we suggest that
-you create your new branch with a meaningful name.With the new branching model you need to be aware which
+you create your new branch with a meaningful name. With the new branching model, you need to be aware which
 branch you need to base your PRs on and where it should get merged afterwards. Read about the new branching and
 versioning model here: :doc:`../versioning`
 
-Additionally we require that you ensure the module will compile with ``gradle compileJava``.
+Additionally, we require that you ensure the module will compile with ``gradle compileJava``.
 This will run a simple build of the source files. When finished successfully, you can PR your changes to SpongeAPI
 repo.
 
 Developing the Implementation
 =============================
 
-The process for the implementations is almost the same as for the API. You add your changes as described in :doc:`../howtogit`.
-Note that you should give your branches a meaningful name. With the new branching model you need to be aware which
-branch you need to base your PRs on and where it should get merged afterwards. Read about the new branching and
-versioning model here: :doc:`../versioning`
+The process for the implementations is almost the same as for the API. You add your changes as described in
+:doc:`../howtogit`. Note that you should give your branches a meaningful name. With the new branching model, you need to
+be aware which branch you need to base your PRs on and where it should get merged afterwards. Read about the new
+branching and versioning model here: :doc:`../versioning`
 
 Run ``gradle compileJava`` to check if everything compiles without errors.
 

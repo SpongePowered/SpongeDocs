@@ -30,7 +30,7 @@ You may have to configure the path to the JRE/JDK in your
 
 If your computer supports it, you should use 64-bit versions of Java whenever possible. The Java installers from the
 `this website <https://java.com/en/download/>`__ should detect whether your computer is ready for 64-bit.
-However the autodetection is sometimes wrong (try different browsers, if you are unsure).
+However, the autodetection is sometimes wrong (try different browsers, if you are unsure).
 
 It is also possible to look this up in the system information window.
 

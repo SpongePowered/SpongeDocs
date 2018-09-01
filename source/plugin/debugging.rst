@@ -117,7 +117,7 @@ Running the Configuration
 
 After you've followed the previous steps, you should be ready to start debugging.
 If you start your server from your IDE, its working directory will be the ``run`` directory in your
-SpongeForge/SpongeVanilla project. All the files usually created by a server (worlds, configs etc) will be stored in
+SpongeForge/SpongeVanilla project. All the files usually created by a server (worlds, configs etc.) will be stored in
 that ``run`` directory and persist over multiple runs of your local test server, just as if you manually copied a
 server .jar to the ``run`` directory and started it from there.
 
@@ -130,7 +130,7 @@ right of it, ``Debug``.
 Eclipse
 ~~~~~~~
 
-Rather than pressing the green right-pointing arrow to run your Run/Debug configuration, click the drop down arrow of
+Rather than pressing the green right-pointing arrow to run your Run/Debug configuration, click the drop-down arrow of
 the Debug icon (the one displaying a bug) and click your ``Test (Server)`` configuration. If it doesn't appear in the
 drop-down menu, click ``Debug Configurations``. Select ``Test (Server)`` configuration and hit the ``Debug`` button
 on the bottom left.

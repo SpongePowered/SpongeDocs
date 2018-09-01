@@ -21,9 +21,9 @@ You can choose between two different types of workspaces:
     problems on one of the platforms because of changes in the Minecraft code by Forge. Make sure to always test your
     plugin on both platforms when using MCP.
 
-Choosing a MCP mappings version
-```````````````````````````````
-To setup a MCP workspace you need to specify the MCP mappings version that will be used to de-obfuscate the Minecraft
+Choosing an MCP mappings version
+````````````````````````````````
+To setup an MCP workspace you need to specify the MCP mappings version that will be used to de-obfuscate the Minecraft
 source with human-readable names. A list of MCP mappings versions is available on the
 `Export page of the MCPBot <http://export.mcpbot.bspk.rs>`_.
 
@@ -52,7 +52,7 @@ Vanilla Workspace
     }
 
     plugins {
-        id 'org.spongepowered.plugin' version '0.8.1'
+        id 'org.spongepowered.plugin' version '0.9.0'
         id 'net.minecrell.vanillagradle.server' version '2.2-6'
     }
 
@@ -80,7 +80,7 @@ Forge Workspace
     }
 
     plugins {
-        id 'org.spongepowered.plugin' version '0.8.1'
+        id 'org.spongepowered.plugin' version '0.9.0'
     }
 
     apply plugin: 'net.minecraftforge.gradle.forge'
