@@ -53,6 +53,7 @@ Contents
     database
     permissions
     bans
+    metrics
     bookview
     economy/index
     wgen/index
