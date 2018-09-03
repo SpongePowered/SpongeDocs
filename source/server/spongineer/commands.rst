@@ -112,7 +112,9 @@ command or another plugin's command, you can restore the expected behavior or pr
 
 Sponge provides two permissions for debugging purposes:
 
-* Allow using Sponge's block tracking message channel: ``sponge.debug.block-tracking``
+* Allow using Sponge's block and entity tracking message channel: ``sponge.debug.block-tracking``
+  This message channel is used by the client (if the SpongeForge mod is installed) to display the block and entity
+  owner and notifier in the debug view.
 * Allow hovering of command execution errors to get the stacktrace: ``sponge.debug.hover-stacktrace``
 
 Timings
