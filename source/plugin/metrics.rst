@@ -8,7 +8,7 @@ Metrics Collection
     org.spongepowered.api.util.metric.MetricsConfigManager
 
 Collection of metrics from servers that use your plugin can be an incredibly useful tool for knowing what direction
-to take your plugin in. However, the :doc:`/ore/guidelines` (under External Connections) state that plugins may
+to take your plugin in. However, the :doc:`/ore/guidelines` (under External Connections) state that plugins may only
 collect metrics if informed consent has been granted. Such consent must be **opt-in**, metrics collection must be off
 by default.
 
@@ -21,7 +21,7 @@ Obtaining Consent
 =================
 
 In order to gain consent from server owners, plugins may request that server owners enable metrics. This can be
-of the form of a message on startup instructing the playes that they can enable metrics by updating the configuration
+of the form of a message on startup instructing the players that they can enable metrics by updating the configuration
 option in configuration files. SpongeForge and SpongeVanilla also provide the ``/sponge metrics <pluginid> enable``
 command.
 
