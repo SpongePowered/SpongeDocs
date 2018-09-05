@@ -35,7 +35,6 @@ correct plugin ID.
 
 .. code-block:: java
 
-
     private Logger logger;
 
     @Inject
@@ -90,3 +89,26 @@ The String is the message you wish to emit. For example:
 .. code-block:: java
 
     getLogger().warn("This is a warning!");
+
+Manipulating The Logging
+========================
+
+.. note::
+
+    These techniques should only be used in very rare cases such as badly chosen logging defaults in libraries.
+    Add an config option to disable those if you use them.
+
+Some libraries use bad logging practices such as logging on a too high log level. In these cases, you have two choices:
+
+* Recommend your users to :doc:`configure the logging </server/spongineer/logs>` using the ``log4j2.xml``. Which is
+  usually the best choice, but especially for beginner server owners this can be hard to achieve.
+* Configure the logging in your plugin yourself.
+
+The later can be achieved like this:
+
+.. code-block:: java
+
+    ((org.apache.logging.log4j.core.Logger) LogManager.getLogger("FtpLoggingFilter")).setLevel(Level.WARN);
+
+This configures the log level of the ``FtpLoggingFilter`` logger to ``WARN``. This will hide all messages that use a
+lower log level such as ``INFO`` and ``DEBUG``.
