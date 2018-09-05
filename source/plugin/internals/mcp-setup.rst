@@ -32,10 +32,11 @@ do not need a specific name that was added recently, use a stable version (if av
 otherwise use the latest snapshot version.
 
 Click the button for the version you want to use and select "Use in ForgeGradle". Then copy the provided version to your
-Gradle build script (insert it in the ``snapshot_xxx`` placeholder below).
+Gradle build script (insert it in the ``YOUR_MAPPINGS_VERSION`` placeholder below).
 
 Vanilla Workspace
 `````````````````
+
 .. code-block:: groovy
 
     buildscript {
@@ -56,14 +57,19 @@ Vanilla Workspace
         id 'net.minecrell.vanillagradle.server' version '2.2-6'
     }
 
+    dependencies {
+        compile 'org.spongepowered:spongeapi:7.0.0'
+    }
+
     minecraft {
         version = '1.12.2'
-        // TODO: Replace with your mappings version, e.g. snapshot_20180106
+        // TODO: Replace with your mappings version, e.g. stable_39 or snapshot_20180814
         mappings = 'YOUR_MAPPINGS_VERSION'
     }
 
 Forge Workspace
 ```````````````
+
 .. code-block:: groovy
 
     buildscript {
@@ -83,13 +89,25 @@ Forge Workspace
         id 'org.spongepowered.plugin' version '0.9.0'
     }
 
+    dependencies {
+        compile 'org.spongepowered:spongeapi:7.0.0'
+    }
+
     apply plugin: 'net.minecraftforge.gradle.forge'
 
     minecraft {
-        forgeVersion = '2584' // TODO: Configure Forge build here
-        // TODO: Replace with your mappings version, e.g. snapshot_20180106
+        // TODO: Configure Forge build here
+        forgeVersion = '2705'
+        // TODO: Replace with your mappings version, e.g. stable_39 or snapshot_20180814
         mappings = 'YOUR_MAPPINGS_VERSION'
     }
+
+It is recommended to use the same Forge version as used by the SpongeForge build you are going to use.
+
+.. note::
+
+    Make sure you use a version that corresponds to your Minecraft version. Using a wrong version will probably cause
+    inexplicable exceptions during the preparation of the workspace or during development.
 
 Setting Up the Workspace
 ------------------------
