@@ -118,6 +118,6 @@ choices:
    .. warning::
    
       This solution assumes that log4j2 is used as logging framework by the server, however that might not be the case
-      of all/future implementations of the SpongeAPI.
+      for all/future implementations of the SpongeAPI.
 
 If you have any questions regarding logging you can always ask us on IRC, Discord or the Forums.
