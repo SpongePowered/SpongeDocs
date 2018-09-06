@@ -105,7 +105,7 @@ config that does only contain the changed logging options. The following example
 
 .. code-block:: bash
 
-    java -Dlog4j.configurationFile=log4j2_server.xml,log4j2_custom.xml server.jar
+    java -Dlog4j.configurationFile=log4j2_server.xml,log4j2_custom.xml -jar server.jar
 
 .. code-block:: xml
 
