@@ -12,19 +12,25 @@ logfiles from SpongeForge and SpongeVanilla servers including short descriptions
 Configure Logging
 =================
 
-Sometimes plugins log too much information and thus spam the logs with useless messages and thus hide more important
-information. It is also possible to configure the logging in a way to split the logs in two or more separate files. One
-could be optimized for the moderators that pay attention to their users' activity/behavior and other logs could be used
-to monitor important or new plugins that are important to the admins.
+Sometimes plugins log messages that the server owner does not need or the sheer number of messages hide some more
+important information. In other cases, plugins or the server log debug messages that normally don't appear in any logs.
+This section explains how to configure the logging. It is also possible to configure the logging in a way that split the
+logs in two or more separate files. One could be optimized for the moderators that pay attention to their users'
+activity/behavior and other logs could be used to monitor plugins that are important to the admins.
 
-The simplest way to configure the logging is modifying the ``log4j2.xml`` configuration that will be used by
-Minecraft/Forge itself. You can find it in the root of the ``forge-...-universal.jar`` and ``minecraft_server.jar``.
+.. note::
+
+    If you think that a plugin logs too many/few messages or on wrong log levels, please report it to its author.
+
+The simplest way to configure the logging is modifying the ``log4j2.xml`` configuration file that will be used by
+Minecraft/Forge itself. You can find and extract it from the root of the ``forge-...-universal.jar`` and
+``minecraft_server.jar``. Do **NOT** edit the file inside the jar.
 
 You can tell log4j2 to use the new config file by adding a start parameter to your server launch script.
 
 .. code-block:: bash
 
-    java -Dlog4j.configurationFile=log4j2_server.xml server.jar
+    java -Dlog4j.configurationFile=log4j2_server.xml -jar server.jar
 
 The default configuration looks similar to the following example.
 

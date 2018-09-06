@@ -98,17 +98,26 @@ Manipulating The Logging
     These techniques should only be used in very rare cases such as badly chosen logging defaults in libraries.
     Add an config option to disable those if you use them.
 
-Some libraries use bad logging practices such as logging on a too high log level. In these cases, you have two choices:
+Some libraries use bad logging practices such as logging on a too high log level. In these cases, you have three
+choices:
 
-* Recommend your users to :doc:`configure the logging </server/spongineer/logs>` using the ``log4j2.xml``. Which is
-  usually the best choice, but especially for beginner server owners this can be hard to achieve.
-* Configure the logging in your plugin yourself.
+1. Ask the author of that library to adjust his logging standards. This probably the best choice as it fixes the problem
+   at its source.
+2. Recommend your users to :doc:`configure the logging </server/spongineer/logs>` using a ``log4j2.xml`` config file.
+   Which is usually the second-best choice, but especially for beginner server owners this can be hard to achieve.
+   Please include a snippet with the recommended configuration additions.
+3. Configure the logging in your plugin yourself:
 
-The later can be achieved like this:
+   .. code-block:: java
 
-.. code-block:: java
+       ((org.apache.logging.log4j.core.Logger) LogManager.getLogger("FtpLoggingFilter")).setLevel(Level.WARN);
 
-    ((org.apache.logging.log4j.core.Logger) LogManager.getLogger("FtpLoggingFilter")).setLevel(Level.WARN);
+   This configures the log level of the ``FtpLoggingFilter`` logger to ``WARN``. This will hide all messages that use a
+   lower log level such as ``INFO`` and ``DEBUG``.
+   
+   .. warning::
+   
+      This solution assumes that log4j2 is used as logging framework by the server, however that might not be the case
+      of all/future implementations of the SpongeAPI.
 
-This configures the log level of the ``FtpLoggingFilter`` logger to ``WARN``. This will hide all messages that use a
-lower log level such as ``INFO`` and ``DEBUG``.
+If you have any questions regarding logging you can always ask us on IRC, Discord or the Forums.
