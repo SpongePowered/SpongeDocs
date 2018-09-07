@@ -160,6 +160,19 @@ system (such as a Sponge plugin that translates chat between languages), connect
 If your plugin sends information (e.g. a plugin list, player data, or map data) to external systems, the information collected
 must be listed on the main page (see above).
 
+    **Metrics (Data Collection)**
+
+    If any collected data (often referred to as "stats" or "metrics" data) about the server, such as version of server or plugins as
+    well as usage information, is to be sent to an external service the plugin must first query the Sponge API `MetricsConfigManager`.
+    Documentation on doing so can be found HERE [HALP, NEED LINK HERE]. This API must be checked before each time data is sent, not
+    only once. Plugins may not modify the values the API returns, but may encourage users to make the decision to enable the
+    collection and sending of this data for their plugin. The use of this API counts as the method by which to check if sending this
+    data is enabled or disabled and no further check needs to be added.
+    
+    Note that this API was added in API 7.1.0 and so plugins build against
+    older API versions must instead have their plugin check against a variable in a configuration file unique to that plugin for
+    the enabled/disabled status, which must also default to disabled.
+
 
 Execution of Downloaded Code
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
