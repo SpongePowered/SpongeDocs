@@ -54,6 +54,7 @@ The following example shows how to use field injections to get the ``MetricsConf
 .. code-block:: java
 
     import com.google.inject.Inject;
+    import org.spongepowered.api.plugin.PluginContainer;
     import org.spongepowered.api.util.metric.MetricsConfigManager;
 
     @Inject
