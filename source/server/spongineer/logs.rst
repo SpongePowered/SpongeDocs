@@ -12,10 +12,10 @@ logfiles from SpongeForge and SpongeVanilla servers including short descriptions
 Configure Logging
 =================
 
-Sometimes plugins log messages that the server owner does not need or the sheer number of messages hide some more
+Sometimes plugins log messages that the server owner does not need, or the sheer number of messages hide some more
 important information. In other cases, plugins or the server log debug messages that normally don't appear in any logs.
-This section explains how to configure the logging. It is also possible to configure the logging in a way that split the
-logs in two or more separate files. One could be optimized for the moderators that pay attention to their users'
+This section explains how to configure the logging. It is also possible to configure the logging in a way that splits
+the logs in two or more separate files. One could be optimized for the moderators that pay attention to their users'
 activity/behavior and other logs could be used to monitor plugins that are important to the admins.
 
 .. note::
@@ -71,16 +71,16 @@ The ``Appenders`` section defines the output channels for the log messages. This
 a central log collection and analysis server. Read more about configuring appenders
 `here <https://logging.apache.org/log4j/2.x/manual/configuration.html#Appenders>`__.
 
-The ``Loggers`` section defines filters for loggers and which to which targets they should be forwarded to. This section
-is usually the section you have to edit if you want to mute a specific plugin in the logs. Let's look into this a bit
-more:
+The ``Loggers`` section defines filters for loggers and to which targets the messages should be forwarded to. This is
+usually the section you must edit if you want to mute a specific plugin in the logs. Let's look into this
+a bit more:
 
 .. code-block:: xml
 
     <Logger level="info" name="com.example.mod"/>
 
-This will limit the logs of ``com.example.mod`` to ``info`` and higher messages. Beware this affects all output channels
-and also any logger that is created for a sub-package of the given path. Read more about filters
+This will limit the logs of ``com.example.mod`` to ``info`` and higher messages. Beware, this affects all output
+channels and also any logger that is created for a sub-package of the given path. Read more about filters
 `here <https://logging.apache.org/log4j/2.x/manual/configuration.html#Filters>`__.
 
 .. code-block:: xml
@@ -96,12 +96,12 @@ target such as a file for later error search.
 
 .. note::
 
-    If you are wondering, why your new plugin's log messages don't seem to show up: The Console's log level is
+    If you are wondering why your new plugin's log messages don't seem to show up: The Console's log level is
     configured to be at least info by default which hides your debug messages.
 
 If you don't want to reconfigure the entire logging, but want to hide a certain plugin from the logs you can also use
-composite logging options. This can be achieved by referencing both the original logging config and you specialized
-config that does only contain the changed logging options. The following example shows this:
+composite logging options. This can be achieved by referencing both the original logging config and your specialized
+config that only contains the changed logging options. The following example shows this:
 
 .. code-block:: bash
 
@@ -117,8 +117,8 @@ config that does only contain the changed logging options. The following example
     </Configuration>
 
 In this example all logs from the ``com.example.logspammer`` package won't be shown or saved. For debugging purposes, it
-might be useful to include your plugin's log messages in the console so you don't have to tail the debug log. This can
-be achieved using the following example:
+might be useful to include your plugin's log messages in the console so you don't have to ``tail`` the debug log. This
+can be achieved using the following example:
 
 .. code-block:: xml
 
@@ -134,8 +134,8 @@ be achieved using the following example:
 
 .. tip::
 
-    Logging affects performance. If you log too much you might lose a small amount of tps. If you don't have (complete)
-    logs nobody can help you to reconstruct what happened on your server.
+    Logging affects performance. If you log too much you might lose a small amount of tps. Also remember that it will
+    become harder to reproduce errors if there are no/incomplete logs available.
 
 SpongeForge logfiles
 ====================

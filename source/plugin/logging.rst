@@ -90,22 +90,19 @@ The String is the message you wish to emit. For example:
 
     getLogger().warn("This is a warning!");
 
-Manipulating The Logging
+Manipulating the Logging
 ========================
 
 .. note::
 
     These techniques should only be used in very rare cases such as badly chosen logging defaults in libraries.
-    Add an config option to disable those if you use them.
+    Add a config option to disable those if you use them.
 
-Some libraries use bad logging practices such as logging on a too high log level. In these cases, you have three
-choices:
+Some libraries use bad logging practices such as logging on too high a level. In these cases, you have three choices:
 
-1. Ask the author of that library to adjust his logging standards. This probably the best choice as it fixes the problem
-   at its source.
+1. Ask the author of that library to adjust their logging standards, as this fixes the problem at its source.
 2. Recommend your users to :doc:`configure the logging </server/spongineer/logs>` using a ``log4j2.xml`` config file.
-   Which is usually the second-best choice, but especially for beginner server owners this can be hard to achieve.
-   Please include a snippet with the recommended configuration additions.
+   Provide users with the recommended configuration additions.
 3. Configure the logging in your plugin yourself:
 
    .. code-block:: java
