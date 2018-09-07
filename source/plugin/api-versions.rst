@@ -58,6 +58,7 @@ Getting it from the Jar
   
   => API-Version ``7.1.0`` (might reference a preview though)
 
+.. _associated-minecraft-version:
 
 Getting the Minecraft Version from Implementations
 ==================================================
@@ -70,6 +71,10 @@ Getting it from the Sources
 
   Go to the referenced SpongeCommon repository and check the ``gradle.properties`` in the project root. It contains an
   entry with the ``minecraftVersion``.
+  
+  .. note::
+  
+      The same works for the ``mcpMappings`` version.
 
 * For `SpongeVanilla <https://github.com/SpongePowered/SpongeVanilla>`__ (only):
 
