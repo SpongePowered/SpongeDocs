@@ -13,10 +13,10 @@ Configure Logging
 =================
 
 Sometimes plugins log messages that the server owner does not need, or the sheer number of messages hide some more
-important information. In other cases, plugins or the server log debug messages that normally don't appear in any logs.
-This section explains how to configure the logging. It is also possible to configure the logging in a way that splits
-the logs in two or more separate files. One could be optimized for the moderators that pay attention to their users'
-activity/behavior and other logs could be used to monitor plugins that are important to the admins.
+important information. In other cases, plugins or the server will log debug messages that normally don't appear in any
+logs. This section explains how to configure the logging. It is also possible to configure the logging in a way that
+splits the logs in two or more separate files. One could be optimized for the moderators that pay attention to their
+users' activity/behavior and other logs could be used to monitor plugins that are important to the admins.
 
 .. note::
 
