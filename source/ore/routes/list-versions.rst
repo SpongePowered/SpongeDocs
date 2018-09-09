@@ -28,7 +28,7 @@ Returns a list of versions for a project of a given plugin ID based on given cri
         "name": "1.1",
         "dependencies": [{
             "pluginId": "spongeapi",
-            "version": "7.0.0"
+            "version": "7.1.0"
         }],
         "pluginId": "auction",
         "channel": {
@@ -42,7 +42,7 @@ Returns a list of versions for a project of a given plugin ID based on given cri
         "tags": [{
             "id": 13,
             "name": "Sponge",
-            "data": "7.0.0",
+            "data": "7.1.0",
             "backgroundColor": "#F7Cf0D",
             "foregroundColor": "#000000"
         }],
@@ -55,7 +55,7 @@ Returns a list of versions for a project of a given plugin ID based on given cri
         "name": "1.0",
         "dependencies": [{
             "pluginId": "spongeapi",
-            "version": "7.0.0"
+            "version": "7.1.0"
         }],
         "pluginId": "auction",
         "channel": {
@@ -69,7 +69,7 @@ Returns a list of versions for a project of a given plugin ID based on given cri
         "tags": [{
             "id": 13,
             "name": "Sponge",
-            "data": "7.0.0",
+            "data": "7.1.0",
             "backgroundColor": "#F7Cf0D",
             "foregroundColor": "#000000"
         }],

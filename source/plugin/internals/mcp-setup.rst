@@ -58,7 +58,7 @@ Vanilla Workspace
     }
 
     dependencies {
-        compile 'org.spongepowered:spongeapi:7.0.0'
+        compile 'org.spongepowered:spongeapi:7.1.0'
     }
 
     minecraft {
@@ -90,7 +90,7 @@ Forge Workspace
     }
 
     dependencies {
-        compile 'org.spongepowered:spongeapi:7.0.0'
+        compile 'org.spongepowered:spongeapi:7.1.0'
     }
 
     apply plugin: 'net.minecraftforge.gradle.forge'
