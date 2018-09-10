@@ -243,6 +243,14 @@ log-stacktraces
 world-auto-save
     Log when a world auto-saves its chunk data. Note: This may be spammy depending on the auto-save-interval configured for world.
 
+metrics-collection
+==================
+
+default-permission
+    Determines whether newly added plugins can collect server metrics by default
+plugin-permissions
+    Per-plugin toggles indicating whether a plugin is allowed to collect server metrics
+
 modules
 =======
 

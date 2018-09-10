@@ -42,6 +42,9 @@ Command                 Description                                Permission
                         information about the entity you are
                         looking at.
 /sponge heap            Dumps the JVM heap.                        sponge.command.heap
+/sponge metrics         Gets or sets whether metric (also known    sponge.command.metrics
+                        as server stats) collection is enabled
+                        for a given plugin.
 /sponge mods            Lists currently installed forge mods.      sponge.command.mods
                         (SpongeForge only)
 /sponge plugins         Lists currently installed Sponge plugins.  sponge.command.plugins
@@ -57,7 +60,7 @@ Command                 Description                                Permission
                         the console.
 /sponge which           Prints which plugin provided the command,  sponge.command.which
                         it's aliases and alternatives.
-/sponge:callback        Internally used for callback actions on 
+/sponge:callback        Internally used for callback actions on
                         ``Text``\s (such as pagination). Not
                         intended to be invoked by hand.
 /sponge:help            View information on commands used on the   sponge.command.help
@@ -75,15 +78,15 @@ Command                 Description                                Permission
 
 **Command Conflicts**
 
-In cases of command conflict, Sponge provides a primary alias mechanism to specify which command is to be used.  For 
-example, Minecraft provides the `reload <https://minecraft.gamepedia.com/Commands#Summary_of_commands>`__ command and 
-Sponge provides the `reload <https://docs.spongepowered.org/stable/en/server/spongineer/commands.html>`__ command. To 
-specify which command to use, prefix it with ``minecraft`` or ``sponge`` and a ``:``. So, to use Sponge's reload command 
+In cases of command conflict, Sponge provides a primary alias mechanism to specify which command is to be used.  For
+example, Minecraft provides the `reload <https://minecraft.gamepedia.com/Commands#Summary_of_commands>`__ command and
+Sponge provides the `reload <https://docs.spongepowered.org/stable/en/server/spongineer/commands.html>`__ command. To
+specify which command to use, prefix it with ``minecraft`` or ``sponge`` and a ``:``. So, to use Sponge's reload command
 above, type in ``/sponge:reload``. This approach can also be used to handle conflicts between mods and/or plugins. Do
 the same thing, just use the mod-id or the plugin-id and a ``:``.  An example is ``/examplemodid:tp``.
 
-Furthermore, the primary alias mechanism can be used to overcome incompatibilities. Let's say a plugin registers a 
-command, but the command is incompatible with your mod. If you can configure your mod to use a Minecraft native 
+Furthermore, the primary alias mechanism can be used to overcome incompatibilities. Let's say a plugin registers a
+command, but the command is incompatible with your mod. If you can configure your mod to use a Minecraft native
 command or another plugin's command, you can restore the expected behavior or prevent unexpected behaviors.
 
 .. note::
@@ -217,7 +220,7 @@ Sponge also creates permissions for these Minecraft features:
 
 .. note::
 
-    These permissions use the actual *name* of the commandblock, which is normally ``@`` by default. 
+    These permissions use the actual *name* of the commandblock, which is normally ``@`` by default.
 
 There are also extra permissions managing the access to the server:
 
@@ -229,7 +232,7 @@ There are also extra permissions managing the access to the server:
     Sponge offers improved multi-world support, such as per-world world borders. By default, Sponge only changes the
     world border (or other world options) of the world the player is currently in. The vanilla behavior of setting it
     for all worlds can be restored using the global configuration and setting
-    ``sponge.commands.multi-world-patches.worldborder`` (or the corresponding entry) to ``false``. See 
+    ``sponge.commands.multi-world-patches.worldborder`` (or the corresponding entry) to ``false``. See
     :doc:`/server/getting-started/configuration/sponge-conf` for details. Sponge assumes that multi-world plugins also
     provide optimized configuration commands for those options and thus does not provide its own variants.
 
