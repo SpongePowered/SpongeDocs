@@ -2,24 +2,24 @@
 API-Versions
 ============
 
-This page explains which API versions exists and to which Minecraft version their implementations belong to.
+This page explains which API versions exist, and to which Minecraft version their implementations belong.
 
 +-------------+--------------+----------------+-------------------------------------------+
 | API-Version | Release Date | End of Support | Known Implementations (Minecraft Version) |
 +=============+==============+================+===========================================+
-| *Planned*   | ---          | --             | * *SpongeForge (1.13.x)*                  |
-| *8.0.0*     |              |                | * *SpongeVanilla (1.13.x)*                |
+| *8.0.0*     | TBA          | TBA            | * *SpongeForge (1.13.x)*                  |
+|             |              |                | * *SpongeVanilla (1.13.x)*                |
 +-------------+--------------+----------------+-------------------------------------------+
-| 7.1.0       | 2018-09-06   | Late 2019      | * SpongeForge (1.12.2)                    |
+| 7.1.0       | Sep 6, 2018  | TBA            | * SpongeForge (1.12.2)                    |
 |             |              |                | * SpongeVanilla (1.12.2)                  |
 +-------------+--------------+----------------+-------------------------------------------+
-| 7.0.0       | 2018-01-01   | ^              | * SpongeForge (1.12.2)                    |
+| 7.0.0       | Jan 1, 2018  | TBA            | * SpongeForge (1.12.2)                    |
 |             |              |                | * SpongeVanilla (1.12.2)                  |
 +-------------+--------------+----------------+-------------------------------------------+
-| 6.0.0       | 2017-05-02   | 2017-12-31     | * SpongeForge (1.11.2)                    |
+| 6.0.0       | Mai 2, 2017  | Dec 31, 2017   | * SpongeForge (1.11.2)                    |
 |             |              |                | * SpongeVanilla (1.11.2)                  |
 +-------------+--------------+----------------+-------------------------------------------+
-| 5.1.0       | 2017-02-25   | 2017-12-31     | * SpongeForge (1.10.2)                    |
+| 5.1.0       | Feb 25, 2017 | Dec 31, 2017   | * SpongeForge (1.10.2)                    |
 |             |              |                | * SpongeVanilla (1.10.2)                  |
 +-------------+--------------+----------------+-------------------------------------------+
 
@@ -27,15 +27,8 @@ It is recommended to always update to the latest stable version of the API or to
 
 .. note::
 
-    You can still release your plugin with an older major API version, but we don't officially support these versions.
-
-
-LTS-Versions
-============
-
-The following versions are LTS (long time support) versions.
-
-* SpongeAPI 7.x until late 2019
+    You may still choose to develop and release plugins against versions that have reached the end of support,
+    but the Sponge team will not provide bug fixes or features to unsupported builds.
 
 
 Getting the API Version from Implementations
