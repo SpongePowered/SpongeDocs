@@ -146,7 +146,7 @@ even generic types can conveniently be written and read.
 	The SpongeAPI provides a :javadoc:`TypeTokens {class}` with many pre-defined type tokens that you can use.
 	If plugin developers need many different or complex ``TypeToken``\s, or use them frequently, it is recommended
 	to create a similar class for themselves to improve code readability. (It is not guaraneteed that all of those
-	entries have registed ``TypeSerializer``\s.)
+	entries have registered ``TypeSerializer``\s.)
 
 The following types can be (de-)serialized using those methods:
 
