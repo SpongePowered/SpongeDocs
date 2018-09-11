@@ -16,7 +16,7 @@ This page explains which API versions exist, and to which Minecraft version thei
 | 7.0.0       | Jan 1, 2018  | TBA            | * SpongeForge (1.12.2)                    |
 |             |              |                | * SpongeVanilla (1.12.2)                  |
 +-------------+--------------+----------------+-------------------------------------------+
-| 6.0.0       | Mai 2, 2017  | Dec 31, 2017   | * SpongeForge (1.11.2)                    |
+| 6.0.0       | May 2, 2017  | Dec 31, 2017   | * SpongeForge (1.11.2)                    |
 |             |              |                | * SpongeVanilla (1.11.2)                  |
 +-------------+--------------+----------------+-------------------------------------------+
 | 5.1.0       | Feb 25, 2017 | Dec 31, 2017   | * SpongeForge (1.10.2)                    |
