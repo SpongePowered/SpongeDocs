@@ -8,6 +8,7 @@ Configuration Nodes
     ninja.leaping.configurate.loader.ConfigurationLoader
     ninja.leaping.configurate.objectmapping.serialize.TypeSerializer
     java.lang.Object
+    org.spongepowered.api.util.TypeTokens
 
 In memory, the configuration is represented using :javadoc:`ConfigurationNode`\ s. A ``ConfigurationNode`` either holds
 a value (like a number, a string or a list) or has child nodes, a tree-like configuration structure. When using a
@@ -140,13 +141,26 @@ even generic types can conveniently be written and read.
     For more information about ``TypeToken``\ s, refer to the `guava documentation
     <https://github.com/google/guava/wiki/ReflectionExplained>`_
 
-The types serializable using those methods are:
+.. tip::
+
+	The SpongeAPI provides a :javadoc:`TypeTokens {class}` with many pre-defined type tokens that you can use.
+	If plugin developers need many different or complex ``TypeToken``\s, or use them frequently, it is recommended
+	to create a similar class for themselves to improve code readability. (It is not guaraneteed that all of those
+	entries have registed ``TypeSerializer``\s.)
+
+The following types can be (de-)serialized using those methods:
 
 * Any basic value (see above)
-* Any ``List`` or ``Map`` of serializable types
+* Any ``List``, ``Set`` or ``Map`` of serializable types
+* Any enum or :doc:`CatalogType </plugin/data/catalog-types>`
 * The types ``java.util.UUID``, ``java.net.URL``, ``java.net.URI`` and ``java.util.regex.Pattern``
+* The types ``Text``, the ``TextFormat`` and ``TextTemplate``
 * Any type that has been made serializable as described on :doc:`the config serialization page <serialization>`
 
+.. warning::
+
+    If you need special constraints or rules for your serialization (such as retaining the order in a ``Set``),
+    then you should consider using your own ``TypeSerializer`` implementations.
 
 Defaults
 ~~~~~~~~
