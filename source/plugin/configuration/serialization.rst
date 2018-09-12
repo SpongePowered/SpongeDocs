@@ -19,8 +19,6 @@ Serializing Objects
     ninja.leaping.configurate.objectmapping.serialize.ConfigSerializable
     ninja.leaping.configurate.objectmapping.serialize.TypeSerializer
     ninja.leaping.configurate.objectmapping.serialize.TypeSerializerCollection
-    org.spongepowered.api.text.Text
-    org.spongepowered.api.text.TextTemplate
     org.spongepowered.api.text.format.TextFormat
 
 The Configurate library also provides the means to tweak automatic serialization and deserialization of objects.
@@ -31,8 +29,8 @@ Per default, a set of data types can be (de)serialized:
 * :javadoc:`Map`\s where both keys and values are serializable (not including specific implementations)
 * The types :javadoc:`UUID`, :javadoc:`URL`, :javadoc:`URI` and :javadoc:`Pattern {(regex) Pattern}`
 * Any enum or :doc:`CatalogType </plugin/data/catalog-types>`
-* The types :javadoc:`Text`, :javadoc:`TextFormat` and :javadoc:`TextTemplate` (See also
-  :doc:`here </plugin/text/index>`)
+* The types :doc:`Text </plugin/text/index>`, :javadoc:`TextFormat` and
+  :doc:`TextTemplate </plugin/text/templates>` (See also :doc:`here </plugin/text/representations/index>`)
 
 .. note::
 
