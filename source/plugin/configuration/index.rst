@@ -5,6 +5,7 @@ Configuring Plugins
 .. javadoc-import::
     ninja.leaping.configurate.hocon.HoconConfigurationLoader
     ninja.leaping.configurate.yaml.YAMLConfigurationLoader
+    ninja.leaping.configurate.gson.GsonConfigurationLoader
     org.spongepowered.api.config.ConfigDir
     org.spongepowered.api.config.DefaultConfig
 
@@ -107,6 +108,7 @@ specific directory or to ``true`` to get the shared configuration directory.
 
 .. note::
 
-    The use of YAML format (http://yaml.org/spec/1.1/) is also supported, but the preferred config format for Sponge
-    plugins is HOCON. Conversion from YAML to HOCON can be automated by using a :javadoc:`YAMLConfigurationLoader` to
-    load the old config and then saving it using a :javadoc:`HoconConfigurationLoader`.
+    The use of YAML format (http://yaml.org/spec/1.1/) and JSON format (https://www.json.org/) is also supported, but
+    the preferred config format for Sponge plugins is HOCON. Conversion from YAML (or JSON) to HOCON can be automated by
+    using a :javadoc:`YAMLConfigurationLoader` (or :javadoc:`GsonConfigurationLoader`) to load the old config and then
+    saving it using a :javadoc:`HoconConfigurationLoader`.
