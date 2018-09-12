@@ -148,19 +148,9 @@ even generic types can conveniently be written and read.
 	to create a similar class for themselves to improve code readability. (It is not guaranteed that all of those
 	entries have registered ``TypeSerializer``\s.)
 
-The following types can be (de-)serialized using those methods:
+You can find a non-exhaustive list of supported types, and ways to add support for new types on the
+:doc:`the config serialization page <serialization>`.
 
-* Any basic value (see above)
-* Any ``List``, ``Set`` or ``Map`` of serializable types
-* Any enum or :doc:`CatalogType </plugin/data/catalog-types>`
-* The types ``java.util.UUID``, ``java.net.URL``, ``java.net.URI`` and ``java.util.regex.Pattern``
-* The types ``Text``, the ``TextFormat`` and ``TextTemplate``
-* Any type that has been made serializable as described on :doc:`the config serialization page <serialization>`
-
-.. warning::
-
-    If you need special constraints or rules for your serialization (such as retaining the order in a ``Set``),
-    then you should consider using your own ``TypeSerializer`` implementations.
 
 Defaults
 ~~~~~~~~

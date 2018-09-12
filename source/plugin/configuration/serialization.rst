@@ -3,6 +3,14 @@ Serializing Objects
 ===================
 
 .. javadoc-import::
+
+    java.util.List
+    java.util.Map
+    java.util.Set
+    java.util.UUID
+    java.net.URL
+    java.net.URI
+    java.util.regex.Pattern
     ninja.leaping.configurate.ConfigurationOptions
     ninja.leaping.configurate.objectmapping.GuiceObjectMapperFactory
     ninja.leaping.configurate.objectmapping.ObjectMapper
@@ -11,11 +19,27 @@ Serializing Objects
     ninja.leaping.configurate.objectmapping.serialize.ConfigSerializable
     ninja.leaping.configurate.objectmapping.serialize.TypeSerializer
     ninja.leaping.configurate.objectmapping.serialize.TypeSerializerCollection
+    org.spongepowered.api.text.Text
+    org.spongepowered.api.text.TextTemplate
+    org.spongepowered.api.text.format.TextFormat
 
 The Configurate library also provides the means to tweak automatic serialization and deserialization of objects.
-Per default, a set of data types can be (de)serialized: among others Strings, ints, doubles, UUIDs, Lists
-(of serializable values) and Maps (where both keys and values are serializable). But if you want to write your
-custom data structures to a config file, this will not be enough.
+Per default, a set of data types can be (de)serialized: 
+
+* ``String``\s, the most commonly used primitive types and their wrappers
+* :javadoc:`List`\s and :javadoc:`Set`\s of serializable values (not including specific implementations)
+* :javadoc:`Map`\s where both keys and values are serializable (not including specific implementations)
+* The types :javadoc:`UUID`, :javadoc:`URL`, :javadoc:`URI` and :javadoc:`Pattern {(regex) Pattern}`
+* Any enum or :doc:`CatalogType </plugin/data/catalog-types>`
+* The types :javadoc:`Text`, :javadoc:`TextFormat` and :javadoc:`TextTemplate` (See also
+  :doc:`here </plugin/text/index>`)
+
+.. note::
+
+    If you need special constraints or rules for your serialization (such as sorting the elements in a ``Set``),
+    then you should consider using your own ``TypeSerializer`` implementations.
+
+But if you want to write your custom data structures to a config file, this will not be enough.
 
 Imagine a data structure tracking how many diamonds a player has mined. It might look a little like this:
 
