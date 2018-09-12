@@ -19,12 +19,16 @@ Let's break down how Configurate works, beginning with the loading process. Conf
 configuration file, allowing you to save and load data from the given resource. They also allow you to load empty
 configurations, giving you the option of hard-coding default values or loading from a pre-written file.
 
+.. tip::
+
+    The default and recommended config format for Sponge plugins is HOCON.
+
 Getting your Loader
 ~~~~~~~~~~~~~~~~~~~
 
 .. note::
-    The default :javadoc:`ConfigurationLoader` can be used instead if you're using HOCON; see the 
-    :doc:`main configuration page <index>`.
+    The default :javadoc:`ConfigurationLoader` can be used instead if you're using only a single HOCON config file;
+    see the :doc:`main configuration page <index>`.
 
 First, let's grab a new :javadoc:`HoconConfigurationLoader` that points to our configuration file.
 
