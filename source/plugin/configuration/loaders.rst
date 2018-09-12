@@ -41,7 +41,7 @@ First, let's grab a new :javadoc:`HoconConfigurationLoader` that points to our c
 
     Path potentialFile = getConfigPath();
     ConfigurationLoader<CommentedConfigurationNode> loader =
-      HoconConfigurationLoader.builder().setPath(potentialFile).build();
+            HoconConfigurationLoader.builder().setPath(potentialFile).build();
 
 The loader will also hold a generic type depending what kind of node it will build. These *Configuration Nodes* will be
 discussed in :doc:`a later section <nodes>`.
@@ -73,7 +73,8 @@ Once you obtained your ``ConfigurationLoader`` you can use it to obtain an empty
     import ninja.leaping.configurate.ConfigurationOptions;
 
     Path potentialFile = getConfigPath();
-    ConfigurationLoader<CommentedConfigurationNode> loader = HoconConfigurationLoader.builder().setPath(potentialFile).build();
+    ConfigurationLoader<CommentedConfigurationNode> loader =
+            HoconConfigurationLoader.builder().setPath(potentialFile).build();
     ConfigurationNode rootNode = loader.createEmptyNode(ConfigurationOptions.defaults());
 
 This method expects the :javadoc:`ConfigurationOptions` to use as a parameter. Unless you want to use
@@ -90,7 +91,8 @@ but also provides a no-args form that is shorthand for
     import java.io.IOException;
 
     Path potentialFile = getConfigPath();
-    ConfigurationLoader<CommentedConfigurationNode> loader = HoconConfigurationLoader.builder().setPath(potentialFile).build();
+    ConfigurationLoader<CommentedConfigurationNode> loader =
+            HoconConfigurationLoader.builder().setPath(potentialFile).build();
     ConfigurationNode rootNode;
     try {
         rootNode = loader.load();
@@ -127,7 +129,7 @@ Example: Loading a default config from the plugin jar file
 
     URL jarConfigFile = Sponge.getAssetManager().getAsset("defaultConfig.conf").get().getUrl();
     ConfigurationLoader<CommentedConfigurationNode> loader =
-      HoconConfigurationLoader.builder().setURL(jarConfigFile).build();
+            HoconConfigurationLoader.builder().setURL(jarConfigFile).build();
 
 For this example it is important to note that the :javadoc:`AssetManager#getAsset(String)` method works relative to the
 plugin's asset folder. So, if in the above example the plugin ID is ``myplugin``, the ``defaultConfig.conf`` file

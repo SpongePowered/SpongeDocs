@@ -182,7 +182,7 @@ that is the value specified on the config. Unless we specify ``true`` as the def
 
 .. code-block:: java
 
-    boolean shouldEnable = rootNode.getNode("modules", "blockCheats", "enabled").getBoolean(true);
+    boolean shouldEnable = rootNode.getNode("modules", "blockCheats", "enabled") .getBoolean(true);
 
 Similarly, you can specify defaults on any value you get from the config, thus avoiding ``null`` returns or
 ``ObjectMappingException`` caused by the absence of the whole value. It also works on the deserializing ``getValue()``
@@ -190,13 +190,15 @@ method. Some examples:
 
 .. code-block:: java
 
-    String greeting = rootNode.getNode("messages", "greeting").getString("FLARD be with you good man!");
+    String greeting = rootNode.getNode("messages", "greeting")
+            .getString("FLARD be with you good man!");
 
     UUID mayor = rootNode.getNode("towns", "aFLARDia", "mayor")
-                            .getValue(TypeToken.of(UUID.class), somePlayer.getUniqueId());
+            .getValue(TypeToken.of(UUID.class), somePlayer.getUniqueId());
 
 Another useful application of those defaults is that they can be copied to your configuration if needed. Upon creation
-of your root configuration node, you can create your ``ConfigurationOptions`` with ``setShouldCopyDefaults(true)``.
+of your root configuration node, you can create your ``ConfigurationOptions`` with
+:javadoc:`ConfigurationOptions#setShouldCopyDefaults(boolean) {setShouldCopyDefaults(true)}`.
 Subsequently, whenever you provide a default value, Configurate will first check if the value you're trying to get is
 present, and if it is not, it will first write your default value to the node before returning the default value.
 
