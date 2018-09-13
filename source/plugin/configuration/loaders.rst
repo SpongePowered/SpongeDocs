@@ -7,6 +7,8 @@ Configuration Loaders
     ninja.leaping.configurate.ConfigurationOptions
     ninja.leaping.configurate.hocon.HoconConfigurationLoader
     ninja.leaping.configurate.hocon.HoconConfigurationLoader.Builder
+    ninja.leaping.configurate.gson.GsonConfigurationLoader
+    ninja.leaping.configurate.yaml.YAMLConfigurationLoader
     ninja.leaping.configurate.loader.AbstractConfigurationLoader.Builder
     ninja.leaping.configurate.loader.ConfigurationLoader
     org.spongepowered.api.asset.AssetManager
@@ -60,6 +62,13 @@ to load a resource without using a :javadoc:`Path` object. Bear in mind that con
 
 This functionality may be used to bundle default configurations with your plugin jar file and load them as initial
 configuration to be edited by the server administrator (or your plugin itself).
+
+.. note::
+
+    This example uses a ``HoconConfigurationLoader``, which is the recommended approach for Sponge plugins, but
+    you can also use a :javadoc:`YAMLConfigurationLoader` or :javadoc:`GsonConfigurationLoader` for loading legacy
+    configs.
+
 
 Loading and Saving
 ~~~~~~~~~~~~~~~~~~
@@ -127,11 +136,22 @@ Example: Loading a default config from the plugin jar file
 
     import java.net.URL;
 
-    URL jarConfigFile = Sponge.getAssetManager().getAsset("defaultConfig.conf").get().getUrl();
-    ConfigurationLoader<CommentedConfigurationNode> loader =
-            HoconConfigurationLoader.builder().setURL(jarConfigFile).build();
+    rootNode = loader.load();
+    if (!rootNode.hasMapChildren()) { // is empty
+        this.logger.info("No config found - loading default");
+        URL jarConfigFile = Sponge.getAssetManager().getAsset("defaultConfig.conf").get().getUrl();
+        ConfigurationLoader<CommentedConfigurationNode> defaultLoader =
+                HoconConfigurationLoader.builder().setURL(jarConfigFile).build();
+        rootNode.setValue(defaultLoader.load());
+    }
 
 For this example it is important to note that the :javadoc:`AssetManager#getAsset(String)` method works relative to the
 plugin's asset folder. So, if in the above example the plugin ID is ``myplugin``, the ``defaultConfig.conf`` file
 must not lie in the jar file root, but instead in the directory ``assets/myplugin``. For more information, see
 :doc:`the Asset API page <../assets>`.
+
+.. note::
+    
+    If the config file cannot be found inside your plugin jar, then you will get a ``NoSuchElementException`` from the
+    ``Optional<Asset>.get()`` method. Please make sure that you configure your :doc:`build system </plugin/buildsystem>`
+    to include it in the jar.
