@@ -142,7 +142,7 @@ Example: Loading a default config from the plugin jar file
         URL jarConfigFile = Sponge.getAssetManager().getAsset("defaultConfig.conf").get().getUrl();
         ConfigurationLoader<CommentedConfigurationNode> defaultLoader =
                 HoconConfigurationLoader.builder().setURL(jarConfigFile).build();
-        rootNode.setValue(defaultLoader.load());
+        rootNode = defaultLoader.load();
     }
 
 For this example it is important to note that the :javadoc:`AssetManager#getAsset(String)` method works relative to the
