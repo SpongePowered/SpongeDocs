@@ -129,7 +129,7 @@ it will be created. If it does exist, all contents will be overwritten.
 
 Again, errors will be propagated as an ``IOException`` and must be handled.
 
-Example: Loading a default config from the plugin jar file
+Example: Loading a Default Config from the Plugin Jar File
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: java
@@ -155,3 +155,6 @@ must not lie in the jar file root, but instead in the directory ``assets/myplugi
     If the config file cannot be found inside your plugin jar, then you will get a ``NoSuchElementException`` from the
     ``Optional<Asset>.get()`` method. Please make sure that you configure your :doc:`build system </plugin/buildsystem>`
     to include it in the jar.
+
+If you have an extra configuration class you can use a much easier approach, that also works if the only a part of your
+config is missing. See also the examples on the :doc:`serialization` page.
