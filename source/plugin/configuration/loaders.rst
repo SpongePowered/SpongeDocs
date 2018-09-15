@@ -129,6 +129,13 @@ it will be created. If it does exist, all contents will be overwritten.
 
 Again, errors will be propagated as an ``IOException`` and must be handled.
 
+.. tip::
+
+    It is recommended to save the config after loading it (for the first time after an update) to ensure that newly
+    added or migrated configuration options are written to disk. If you need to save the config afterwards it is
+    strongly recommended to do this outside of the main thread. See also common :doc:`/plugin/practices/bad` you should
+    avoid.
+
 Example: Loading a Default Config from the Plugin Jar File
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

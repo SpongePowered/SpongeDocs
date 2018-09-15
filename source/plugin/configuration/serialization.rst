@@ -164,6 +164,11 @@ The ``@ConfigSerializable`` annotation eliminates the need for any registration 
 just generate an :javadoc:`ObjectMapper` for the class. The only limitation is that Configurate needs an empty
 constructor to instantiate a new object before filling in the annotated fields.
 
+.. note::
+
+    You can also have fields that are not are not annotated with ``@Setting`` in your ``@ConfigSerializable`` classes.
+    These fields won't be persisted to config files and can be used to store temporary references for your plugin.
+
 Using Default Values in ConfigSerializable Types
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
