@@ -17,8 +17,8 @@ Configuration Nodes
 
 In memory, the configuration is represented using :javadoc:`ConfigurationNode`\ s. A ``ConfigurationNode`` either holds
 a value (like a number, a string or a list) or has child nodes, a tree-like configuration structure. When using a
-:javadoc:`ConfigurationLoader` to load or create new configurations, it will return the **root node**. It is
-recommended that you always keep a reference to that root node stored somewhere, to prevent loading the configuration
+:javadoc:`ConfigurationLoader` to load or create new configurations, it will return the **root node**. We
+recommend that you always keep a reference to that root node stored somewhere, to prevent loading the configuration
 every time you need to access it. As a side effect, this will keep the comments that were present in the file.
 As an alternative, you could store a reference to a :doc:`serializable config instance <serialization>` that holds the
 entire configuration of your plugin.
@@ -154,8 +154,8 @@ even generic types can conveniently be written and read.
 .. tip::
 
     The SpongeAPI provides a :javadoc:`TypeTokens {class}` with many pre-defined type tokens that you can use.
-    If plugin developers need many different or complex ``TypeToken``\s, or use them frequently, it is recommended
-    to create a similar class for themselves to improve code readability. (Beware, it is not guaranteed that all of
+    If plugin developers need many different or complex ``TypeToken``\s, or use them frequently, we recommend
+    creating a similar class for themselves to improve code readability. (Beware, it is not guaranteed that all of
     those entries have registered ``TypeSerializer``\s).
 
 You can find a non-exhaustive list of supported types, and ways to add support for new types on the
