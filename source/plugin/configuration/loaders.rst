@@ -163,5 +163,5 @@ must not lie in the jar file root, but instead in the directory ``assets/myplugi
     ``Optional<Asset>.get()`` method. Please make sure that you configure your :doc:`build system </plugin/buildsystem>`
     to include it in the jar.
 
-If you have an extra configuration class you can use a much easier approach, that also works if the only a part of your
+If you have an extra configuration class, you can use a much easier approach that also works if the only a part of your
 config is missing. See also the examples on the :doc:`serialization` page.

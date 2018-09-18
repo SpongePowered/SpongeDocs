@@ -172,9 +172,9 @@ constructor to instantiate a new object before filling in the annotated fields.
 Using Default Values in ConfigSerializable Types
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-It is also possible to use default values inside of ``@ConfigSerializable`` types, you just have to use Java's field
-initializers to set some default values; as long as the entry is not present in the config file the value won't be
-overwritten.
+It is also possible to use default values inside of ``@ConfigSerializable`` types. You just have to use Java's field
+initializers (or getters) to set some default values. As long as the entry is not present in the config file the value
+won't be overwritten.
 
 .. code-block:: java
 
@@ -221,14 +221,14 @@ configuration. Using such a class has the following benefits:
 
     In this case ``Configuration.generateDefault()`` is called when the config file is missing or empty.
     If you still want to load the shipped default config asset you can load it inside of that method.
-    ``Configuration.generateErrorDefault()`` is called when there was an error reading or parsing the config.
-    It is not necessary to use separate methods for those cases, you can also use the no-arg constructor in those cases,
+    ``Configuration.generateErrorDefault()`` is called when there is an error reading or parsing the config.
+    It is not necessary to use separate methods for those cases; you can also use the no-arg constructor,
     or use an entirely custom solution.
 
 Example: Saving a ConfigSerializable Config
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Saving a ``@ConfigSerializable`` config is also very simple as shown by the following example:
+Saving a ``@ConfigSerializable`` config is also very simple, as shown by the following example:
 
 .. code-block:: java
 

@@ -19,8 +19,9 @@ In memory, the configuration is represented using :javadoc:`ConfigurationNode`\ 
 a value (like a number, a string or a list) or has child nodes, a tree-like configuration structure. When using a
 :javadoc:`ConfigurationLoader` to load or create new configurations, it will return the **root node**. It is
 recommended that you always keep a reference to that root node stored somewhere, to prevent loading the configuration
-every time you need to access it and retaining the comments. As an alternative, you could store a reference to a
-:doc:`serializable config instance <serialization>` that holds the entire configuration of your plugin.
+every time you need to access it. As a side effect, this will keep the comments that were present in the file.
+As an alternative, you could store a reference to a :doc:`serializable config instance <serialization>` that holds the
+entire configuration of your plugin.
 
 .. note::
 
