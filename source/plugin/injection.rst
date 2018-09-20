@@ -13,6 +13,7 @@ Dependency Injection
     org.spongepowered.api.plugin.PluginContainer
     org.spongepowered.api.plugin.PluginManager
     org.spongepowered.api.scheduler.Scheduler
+    ninja.leaping.configurate.commented.CommentedConfigurationNode
     ninja.leaping.configurate.loader.ConfigurationLoader
     ninja.leaping.configurate.objectmapping.GuiceObjectMapperFactory
 

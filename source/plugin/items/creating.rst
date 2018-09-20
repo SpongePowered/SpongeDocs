@@ -108,7 +108,7 @@ An example is shown below:
         Entity item = extent.createEntity(EntityTypes.ITEM, spawnLocation.getPosition());
         item.offer(Keys.REPRESENTED_ITEM, superMegaAwesomeSword.createSnapshot());
 
-        try (StackFrame frame = Sponge.getCauseStackManager().pushStackFrame()) {
+        try (StackFrame frame = Sponge.getCauseStackManager().pushCauseFrame()) {
             frame.addContext(EventContextKeys.SPAWN_TYPE, SpawnTypes.PLACEMENT);
             extent.spawnEntity(item);
         }

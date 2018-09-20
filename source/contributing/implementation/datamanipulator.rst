@@ -46,15 +46,15 @@ The following snippet shows the imports/paths for some classes in SpongeCommon t
 
 .. code-block:: java
 
-    org.spongepowered.common.data.DataProcessor
-    org.spongepowered.common.data.ValueProcessor
-    org.spongepowered.common.data.manipulator.immutable.entity.ImmutableSpongeHealthData
-    org.spongepowered.common.data.manipulator.mutable.common.AbstractData
-    org.spongepowered.common.data.manipulator.mutable.entity.SpongeHealthData
-    org.spongepowered.common.data.processor.common.AbstractEntityDataProcessor
-    org.spongepowered.common.data.util.DataConstants
-    org.spongepowered.common.data.util.NbtDataUtil
-    org.spongepowered.common.registry.type.data.KeyRegistryModule
+    import org.spongepowered.common.data.DataProcessor;
+    import org.spongepowered.common.data.ValueProcessor;
+    import org.spongepowered.common.data.manipulator.immutable.entity.ImmutableSpongeHealthData;
+    import org.spongepowered.common.data.manipulator.mutable.common.AbstractData;
+    import org.spongepowered.common.data.manipulator.mutable.entity.SpongeHealthData;
+    import org.spongepowered.common.data.processor.common.AbstractEntityDataProcessor;
+    import org.spongepowered.common.data.util.DataConstants;
+    import org.spongepowered.common.data.util.NbtDataUtil;
+    import org.spongepowered.common.registry.type.data.KeyRegistryModule;
     
 
 1. Implement the DataManipulator

@@ -76,7 +76,7 @@ two methods:
     import org.spongepowered.api.data.Queries;
     import org.spongepowered.api.data.MemoryDataContainer;
 
-    String name = "Spongie";
+    private String name = "Spongie";
 
     @Override
     public DataContainer toContainer() {
