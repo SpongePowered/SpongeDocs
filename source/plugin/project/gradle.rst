@@ -31,7 +31,7 @@ you have chosen before.**
     description = 'An example plugin'
 
     dependencies {
-        compile 'org.spongepowered:spongeapi:7.0.0'
+        compile 'org.spongepowered:spongeapi:7.1.0'
     }
 
 These few lines handle most settings you would normally do manually:
@@ -110,7 +110,7 @@ dependency to your project:
     }
 
     dependencies {
-        compile 'org.spongepowered:spongeapi:7.0.0'
+        compile 'org.spongepowered:spongeapi:7.1.0'
     }
 
 .. _SpongeGradle: https://github.com/SpongePowered/SpongeGradle

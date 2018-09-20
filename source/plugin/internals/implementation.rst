@@ -27,7 +27,7 @@ Example Using Gradle
 .. code-block:: groovy
 
     dependencies {
-        compile 'org.spongepowered:spongecommon:7.1.0-SNAPSHOT:dev'
+        compile 'org.spongepowered:spongecommon:7.1.0:dev'
     }
 
 SpongeVanilla
@@ -46,7 +46,7 @@ Example Using Gradle
 .. code-block:: groovy
 
     dependencies {
-        compile 'org.spongepowered:spongevanilla:1.12.2-7.1.0-BETA-5:dev'
+        compile 'org.spongepowered:spongevanilla:1.12.2-7.1.0-BETA-116:dev'
     }
 
 SpongeForge
@@ -65,5 +65,5 @@ Example Using Gradle
 .. code-block:: groovy
 
     dependencies {
-        compile 'org.spongepowered:spongeforge:1.12.2-2555-7.1.0-BETA-2825:dev'
+        compile 'org.spongepowered:spongeforge:1.12.2-2705-7.1.0-BETA-3442:dev'
     }

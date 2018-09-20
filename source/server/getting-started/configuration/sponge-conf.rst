@@ -470,7 +470,7 @@ world-enabled
 
 ------------------------------------------------------------------------------------------------------------
 
-This config was generated using SpongeForge build 2990 (with Forge 2611), SpongeAPI version 7.0.0:
+This config was generated using SpongeForge build 3442 (with Forge 2705), SpongeAPI version 7.1.0:
 
 .. code-block:: guess
 
@@ -484,28 +484,12 @@ This config was generated using SpongeForge build 2990 (with Forge 2611), Sponge
     #
 
     sponge {
-        block-capturing {
-            # If 'true', newly discovered blocks will be added to this config with a default value.
-            auto-populate=false
-            # Per-mod block id mappings for controlling capturing behavior
-            mods {
-                extrautils2 {
-                    # If 'true', individual capturing (i.e. skip bulk capturing) for scheduled ticks for
-                    # a block type will be performed.
-                    block-tick-capturing {
-                        redstoneclock=true
-                    }
-                    # If 'false', all specific rules for this mod will be ignored.
-                    enabled=true
-                }
-            }
-        }
-        block-tracking {
-            # Block IDs that will be blacklisted for player block placement tracking.
-            block-blacklist=[]
-            # If 'true', adds player tracking support for block positions.
-            # Note: This should only be disabled if you do not care who caused a block to change.
-            enabled=true
+        # Stopgap measures for dealing with broken mods
+        broken-mods {
+            # A list of mod ids that have broken network handlers (they interact with the game from a Netty handler thread).
+            # All network handlers from a forcibly scheduled to run on the main thread.
+            # Note that this setting should be considered a last resort, and should only be used as a stopgap measure while waiting for a mod to properly fix the issue.
+            broken-network-handler-mods=[]
         }
         bungeecord {
             # If 'true', allows BungeeCord to forward IP address, UUID, and Game Profile to this server.
@@ -529,6 +513,15 @@ This config was generated using SpongeForge build 2990 (with Forge 2611), Sponge
             # not extremely performant and may have some associated costs
             # with generating the stack traces constantly.
             generate-stacktrace-per-phase=false
+            # The maximum number of times to recursively process transactions in a single phase.
+            # Some mods may interact badly with Sponge's block capturing system, causing Sponge to
+            # end up capturing block transactions every time it tries to process an existing batch.
+            # Due to the recursive nature of the depth-first processing that Sponge uses to handle block transactions,
+            # this can result in a stack overflow, which causes us to lose all infomration about the original cause of the issue.
+            # To prevent a stack overflow, Sponge tracks the current processing depth, and aborts processing when it exceeds
+            # this threshold.
+            # The default value should almost always work properly -  it's unlikely you'll ever have to change it.
+            max-block-processing-depth=100
             # If verbose is not enabled, this restricts the amount of
             # runaway phase state printouts, usually happens on a server
             # where a PhaseState is not completing. Although rare, it should
@@ -553,22 +546,12 @@ This config was generated using SpongeForge build 2990 (with Forge 2611), Sponge
             aliases {}
             # Patches the specified commands to respect the world of the sender instead of applying the
             # changes on the all worlds.
-            multi-world-patches {
-                defaultgamemode=true
-                difficulty=true
-                gamerule=true
-                seed=true
-                setdefaultspawnpoint=true
-                time=true
-                toggledownfall=true
-                weather=true
-                worldborder=true
-            }
+            multi-world-patches {}
         }
-        # This setting does nothing in the global config. In dimension/world configs, it allows the config
-        # to override config(s) that it inherits from
-        config-enabled=false
         debug {
+            # Detect and prevent parts of PlayerChunkMap being called off the main thread.
+            # This may decrease sever preformance, so you should only enable it when debugging a specific issue.
+            concurrent-chunk-map-checks=false
             # Detect and prevent certain attempts to use entities concurrently.
             # WARNING: May drastically decrease server performance. Only set this to 'true' to debug a pre-existing issue.
             concurrent-entity-checks=false
@@ -732,8 +715,24 @@ This config was generated using SpongeForge build 2990 (with Forge 2611), Sponge
             # Log when a world auto-saves its chunk data. Note: This may be spammy depending on the auto-save-interval configured for world.
             world-auto-save=false
         }
+        metrics {
+            # Determines whether plugins that are newly added are allowed to perform
+            # data/metric collection by default. Plugins detected by Sponge will be added to the "plugin-permissions" section with this value.
+            #
+            # Set to true to enable metric gathering by default, false otherwise.
+            default-permission=false
+            # Provides (or revokes) permission for metric gathering on a per plugin basis.
+            # Entries should be in the format "plugin-id=<true|false>".
+            #
+            # Deleting an entry from this list will reset it to the default specified in
+            # "default-permission"
+            plugin-permissions {
+                test-gradle-plugin=false
+            }
+        }
         modules {
-            block-capturing-control=true
+            # Enables experimental fixes for broken mods
+            broken-mod=false
             bungeecord=false
             entity-activation-range=true
             entity-collisions=true
@@ -775,6 +774,26 @@ This config was generated using SpongeForge build 2990 (with Forge 2611), Sponge
             # pre-merged and actually spawned, in which case, the items will flow right through
             # without being merged.
             drops-pre-merge=false
+            # If 'true', provides a fix for possible leaks through
+            # Minecraft's enchantment helper code that can leak
+            # entity and world references without much interaction
+            # Forge native (so when running SpongeForge implementation)
+            # has a similar patch, but Sponge's patch works a little harder
+            # at it, but Vanilla (SpongeVanilla implementation) does NOT
+            # have any of the patch, leading to the recommendation that this
+            # patch is enabled "for sure" when using SpongeVanilla implementation.
+            # See https://bugs.mojang.com/browse/MC-128547 for more information.
+            #
+            enchantment-helper-leak-fix=true
+            # If 'true', allows for Sponge to make better assumptinos on single threaded
+            # operations with relation to various checks for server threaded operations.
+            # This is default to true due to Sponge being able to precisely inject when
+            # the server thread is available. This should make an already fast operation
+            # much faster for better thread checks to ensure stability of sponge's systems.
+            faster-thread-checks=true
+            # If 'true', re-writes the incredibly inefficient Vanilla Map code.
+            # This yields enormous performance enhancements when using many maps, but has a tiny chance of breaking mods that invasively modify Vanilla.It is strongly reccomended to keep this on, unless explicitly advised otherwise by a Sponge developer
+            map-optimization=true
             # If 'true', uses Panda4494's redstone implementation which improves performance.
             # See https://bugs.mojang.com/browse/MC-11193 for more information.
             # Note: This optimization has a few issues which are explained in the bug report.
@@ -799,6 +818,13 @@ This config was generated using SpongeForge build 2990 (with Forge 2611), Sponge
                     }
                 }
             }
+        }
+        player-block-tracker {
+            # Block IDs that will be blacklisted for player block placement tracking.
+            block-blacklist=[]
+            # If 'true', adds player tracking support for block positions.
+            # Note: This should only be disabled if you do not care who caused a block to change.
+            enabled=true
         }
         # Used to control spawn limits around players.
         # Note: The radius uses the lower value of mob spawn range and server's view distance.
@@ -857,7 +883,7 @@ This config was generated using SpongeForge build 2990 (with Forge 2611), Sponge
             history-interval=300
             history-length=3600
             server-name-privacy=false
-            verbose=true
+            verbose=false
         }
         world {
             # The auto-save tick interval used when saving global player data. (Default: 900)
@@ -897,7 +923,7 @@ This config was generated using SpongeForge build 2990 (with Forge 2611), Sponge
             # Finally, if set to 0 or less, the default interval will be used.
             gameprofile-lookup-task-interval=4
             # If 'true', this world will generate its spawn the moment its loaded.
-            generate-spawn-on-load=null
+            generate-spawn-on-load=false
             # Vanilla water source behavior - is infinite
             infinite-water-source=false
             # The list of uuid's that should never perform a lookup against Mojang's session server.
@@ -916,11 +942,11 @@ This config was generated using SpongeForge build 2990 (with Forge 2611), Sponge
             # areas for more items. Setting to a negative value is not supported!
             item-merge-radius=2.5
             # If 'true', this worlds spawn will remain loaded with no players.
-            keep-spawn-loaded=null
+            keep-spawn-loaded=true
             # If 'true', natural leaf decay is allowed.
             leaf-decay=true
             # If 'true', this world will load on startup.
-            load-on-startup=null
+            load-on-startup=true
             # The maximum number of queued unloaded chunks that will be unloaded in a single tick.
             # Note: With the chunk gc enabled, this setting only applies to the ticks
             # where the gc runs (controlled by 'chunk-gc-tick-interval')
@@ -934,8 +960,8 @@ This config was generated using SpongeForge build 2990 (with Forge 2611), Sponge
             # In order to override, change the target world name to any other valid world.
             # Note: If world is not found, it will fallback to default.
             portal-agents {
-                "minecraft:default_nether"=DIM-1
                 "minecraft:default_the_end"=DIM1
+                "minecraft:default_the_nether"=DIM-1
             }
             # If 'true', this world will allow PVP combat.
             pvp-enabled=true
