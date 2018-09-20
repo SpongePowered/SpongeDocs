@@ -80,6 +80,8 @@ local.properties
 
 # eclipse
 .project
+.classpath
+.factorypath
 
 # sbteclipse plugin
 .target
