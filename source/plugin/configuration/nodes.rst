@@ -127,7 +127,7 @@ value into a ``UUID``. The ``TypeSerializer`` (and by extension the above method
 :javadoc:`ObjectMappingException` if it encounters incomplete or invalid data.
 
 Now if we want to write a new ``UUID`` to that config node, the syntax is very similar. Use the
-:javadoc:`ConfigurationNode#setValue(TypeToken type, Object value) {setValue(...)}`
+:javadoc:`ConfigurationNode#setValue(TypeToken, Object) {setValue(...)}`
 method with a ``TypeToken`` and the object you want to serialize.
 
 .. code-block:: java

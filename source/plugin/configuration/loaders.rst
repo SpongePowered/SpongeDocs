@@ -56,7 +56,7 @@ We then tell the builder to build the instance (:javadoc:`HoconConfigurationLoad
 and store it in a variable.
 
 Of course, this isn't the only way to load a file. The builder also has the method
-:javadoc:`AbstractConfigurationLoader.Builder#setPath(URL) {setURL(url)}`, in case you want
+:javadoc:`AbstractConfigurationLoader.Builder#setURL(URL) {setURL(url)}`, in case you want
 to load a resource without using a :javadoc:`Path` object. Bear in mind that configuration loaders created from a
 :javadoc:`URL` are read-only as they have no way of writing back data to the URL.
 
