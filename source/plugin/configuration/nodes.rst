@@ -29,7 +29,6 @@ entire configuration of your plugin.
     addition to normal ``ConfigurationNode`` behavior is able to retain a comment that will persist on the saved config
     file.
 
-
 Navigating Nodes
 ================
 
@@ -97,7 +96,6 @@ and can be done as follows:
 
     rootNode.getNode("modules", "blockCheats", "enabled").setValue(false);
 
-
 .. warning::
 
     Anything other than basic value types cannot be handled by those basic functions, and must instead be read and
@@ -161,7 +159,6 @@ even generic types can conveniently be written and read.
 You can find a non-exhaustive list of supported types, and ways to add support for new types on the
 :doc:`the config serialization page <serialization>`.
 
-
 Defaults
 ~~~~~~~~
 
@@ -183,7 +180,7 @@ that is the value specified on the config. Unless we specify ``true`` as the def
 
 .. code-block:: java
 
-    boolean shouldEnable = rootNode.getNode("modules", "blockCheats", "enabled") .getBoolean(true);
+    boolean shouldEnable = rootNode.getNode("modules", "blockCheats", "enabled").getBoolean(true);
 
 Similarly, you can specify defaults on any value you get from the config, thus avoiding ``null`` returns or
 ``ObjectMappingException`` caused by the absence of the whole value. It also works on the deserializing ``getValue()``

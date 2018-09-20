@@ -57,7 +57,7 @@ and store it in a variable.
 
 Of course, this isn't the only way to load a file. The builder also has the method
 :javadoc:`AbstractConfigurationLoader.Builder#setPath(URL) {setURL(url)}`, in case you want
-to load a resource without using a :javadoc:`Path` object. Bear in mind that configuration loaders created from an
+to load a resource without using a :javadoc:`Path` object. Bear in mind that configuration loaders created from a
 :javadoc:`URL` are read-only as they have no way of writing back data to the URL.
 
 This functionality may be used to bundle default configurations with your plugin jar file and load them as initial
@@ -68,7 +68,6 @@ configuration to be edited by the server administrator (or your plugin itself).
     This example uses a ``HoconConfigurationLoader``, which is the recommended approach for Sponge plugins, but
     you can also use a :javadoc:`YAMLConfigurationLoader` or :javadoc:`GsonConfigurationLoader` for loading legacy
     configs.
-
 
 Loading and Saving
 ~~~~~~~~~~~~~~~~~~
