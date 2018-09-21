@@ -27,6 +27,7 @@ Contents
     :maxdepth: 2
     :titlesonly:
 
+    api-versions
     buildsystem
     workspace/index
     project/index

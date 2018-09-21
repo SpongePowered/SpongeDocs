@@ -107,7 +107,8 @@ It is recommended to use the same Forge version as used by the SpongeForge build
 .. note::
 
     Make sure you use a version that corresponds to your Minecraft version. Using a wrong version will probably cause
-    inexplicable exceptions during the preparation of the workspace or during development.
+    inexplicable exceptions during the preparation of the workspace or during development. See also 
+    :ref:`associated-minecraft-version`.
 
 Setting Up the Workspace
 ------------------------
