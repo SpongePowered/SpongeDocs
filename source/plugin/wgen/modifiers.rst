@@ -70,8 +70,8 @@ the first argument and your modifier as the second.
 .. code-block:: java
 
     @Listener
-    public void onGameInitialization(GameInitializationEvent event) {
-        Sponge.getRegistry().register(WorldGeneratorModifier.class , new MyModifier());
+    public void onWorldRegistration(GameRegistryEvent.Register<WorldGeneratorModifier> event) {
+        event.register(new MyModifier());
     }
 
 To apply your WorldGeneratorModifier to a world you must add it to the ``world-generation-modifiers`` array within
