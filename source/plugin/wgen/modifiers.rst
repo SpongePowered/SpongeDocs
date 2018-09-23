@@ -64,12 +64,12 @@ Registering a WorldGeneratorModifier
 ====================================
 
 Now that you have created our modifier, you need to register it. A good time to do this is during the ``GAMEREGISTRY``
-State. To register it, simply call :javadoc:`GameRegistryEvent#Register<WorldGeneratorModifier>(T)` with your modifier as the argument.
+Event. To register it, simply lsiten to :javadoc:`GameRegistryEvent.Register<T extends CatalogType>` then register from there.
 
 .. code-block:: java
 
     @Listener
-    public void onWorldRegistration(GameRegistryEvent.Register<WorldGeneratorModifier> event) {
+    public void onWorldGeneratorModifierRegistration(GameRegistryEvent.Register<WorldGeneratorModifier> event) {
         event.register(new MyModifier());
     }
 
