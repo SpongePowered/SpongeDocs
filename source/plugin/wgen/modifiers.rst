@@ -7,6 +7,7 @@ WorldGeneratorModifiers
     org.spongepowered.api.GameRegistry
     org.spongepowered.api.data.DataContainer
     org.spongepowered.api.event.game.GameRegistryEvent
+    org.spongepowered.api.event.game.WorldGeneratorModifier
     org.spongepowered.api.world.storage.WorldProperties
     java.lang.Class
 
