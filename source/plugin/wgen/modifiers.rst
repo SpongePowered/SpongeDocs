@@ -64,7 +64,10 @@ apply your generator changes to nether worlds.
 Registering a WorldGeneratorModifier
 ====================================
 
-Now that you have created the modifier, all you have to do is register it in the :javadoc:`GameRegistry`. To do this you need to create a :doc:`listener </plugin/event/listeners>` for the :javadoc:`GameRegistryEvent.Register<WorldGeneratorModifier>` event and register your instance there, as shown in the following example:
+Now that you have created the modifier, all you have to do is register it in the :javadoc:`GameRegistry`.
+To do this you need to create a :doc:`listener </plugin/event/listeners>` for the
+:javadoc:`GameRegistryEvent.Register<WorldGeneratorModifier>` event and register your instance there,
+as shown in the following example:
 
 .. code-block:: java
 
