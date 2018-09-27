@@ -9,7 +9,6 @@ WorldGeneratorModifiers
     org.spongepowered.api.event.game.GameRegistryEvent.Register
     org.spongepowered.api.world.gen.WorldGeneratorModifier
     org.spongepowered.api.world.storage.WorldProperties
-    java.lang.Class
 
 For a brief overview of the World Generation process in Sponge, please read :doc:`index`.
 Now, let's show how you can begin making your mark on world generation.
