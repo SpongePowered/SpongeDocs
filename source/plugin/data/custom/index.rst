@@ -28,6 +28,7 @@ Contents
     :titlesonly:
 
     datamanipulators
+    datamanipulators-new
     dataholders
     serialization
 

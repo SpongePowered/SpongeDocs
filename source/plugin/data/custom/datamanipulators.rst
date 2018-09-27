@@ -3,12 +3,14 @@ Custom DataManipulators
 =======================
 
 .. javadoc-import::
+    org.spongepowered.api.CatalogType
     org.spongepowered.api.data.DataManager
     org.spongepowered.api.data.DataRegistration
     org.spongepowered.api.data.DataSerializable
     org.spongepowered.api.data.DataHolder
     org.spongepowered.api.data.DataQuery
     org.spongepowered.api.data.key.Key
+    org.spongepowered.api.data.key.Keys
     org.spongepowered.api.data.key.KeyFactory
     org.spongepowered.api.data.manipulator.DataManipulator
     org.spongepowered.api.data.manipulator.ImmutableDataManipulator
@@ -17,10 +19,12 @@ Custom DataManipulators
     org.spongepowered.api.data.manipulator.mutable.common.AbstractData
     org.spongepowered.api.data.manipulator.mutable.common.AbstractSingleData
     org.spongepowered.api.data.manipulator.mutable.tileentity.FurnaceData
+    org.spongepowered.api.data.merge.MergeFunction
     org.spongepowered.api.data.value.ValueFactory
     org.spongepowered.api.data.value.mutable.MapValue
     org.spongepowered.api.data.value.mutable.MutableBoundedValue
     org.spongepowered.api.data.value.mutable.Value
+    org.spongepowered.api.event.game.GameRegistryEvent.Register
     org.spongepowered.api.event.game.state.GameInitializationEvent
     org.spongepowered.api.item.inventory.ItemStack
     org.spongepowered.api.util.TypeTokens
@@ -85,13 +89,14 @@ different methods to call such as ``createMapValue``, ``createBoundedComparableV
 Note that an ``ImmutableDataManipulator`` would instead return an ``ImmutableValue``, by calling ``asImmutable()`` on
 the returned ``Value``. We recommended that you cache this (such as with a class field) in the immutable version.
 
-Each ``Value`` also needs a :javadoc:`Key` to identify it, seen in the example as ``Keys.DEFAULT_HOME``. Similar
-to values, you use one of the ``makeXKey()`` methods in :javadoc:`KeyFactory` to create a ``Key`` for your value.
+Each ``Value`` also needs a :javadoc:`Key` to identify it, seen in the example as ``Keys.DEFAULT_HOME``.
+The keys should be created and registered during the
+:javadoc:`GameRegistryEvent.Register {GameRegistryEvent.Register<Key<?>>}` event.
 
-You need to pass one ``TypeToken`` representing the *raw* type of your value, and one ``TypeToken`` representing the
-``Value``. You also need to provide a :javadoc:`DataQuery` path - this is most commonly used to serialize the
-``Value``. As with any catalog type you must also provide a unique ID and a name. Put this all together and you have a
-``Key`` you can use in your ``Value``\ s.
+You start with by calling the :javadoc:`Key#builder()` method and then supplementing the required values to the returned
+builder. You need to pass one ``TypeToken`` representing the ``Value`` type for your key. You also need to provide a
+:javadoc:`DataQuery` path - this is most commonly used to serialize the ``Value``. As with any catalog type you must
+also provide a unique ID and a name. Put this all together and you have a ``Key`` you can use in your ``Value``\s.
 
 **Code Example: Creating a Key**
 
@@ -99,28 +104,43 @@ You need to pass one ``TypeToken`` representing the *raw* type of your value, an
 
     import org.spongepowered.api.data.DataQuery;
     import org.spongepowered.api.data.key.Key;
-    import org.spongepowered.api.data.key.KeyFactory;
     import org.spongepowered.api.data.value.mutable.Value;
-    import org.spongepowered.api.data.value.mutable.Value;
+    import org.spongepowered.api.event.Listener;
+    import org.spongepowered.api.event.game.GameRegistryEvent;
+    import org.spongepowered.api.util.generator.dummy.DummyObjectProvider;
 
     import com.google.common.reflect.TypeToken;
 
-    import org.spongepowered.cookbook.myhomes.data.home.Home;
+    public static final TypeToken<Value<Home>> HOME_VALUE_TYPE= new TypeToken<Value<Home>>() { 
+            public static final long serialVersionUID = 1L;
+    };
+    public static Key<Value<Home>> DEFAULT_HOME = DummyObjectProvider.createExtendedFor(Key.class, "DEFAULT_HOME");
 
-    public static final Key<Value<Home>> DEFAULT_HOME = KeyFactory.makeSingleKey(
-            TypeToken.of(Home.class),
-            new TypeToken<Value<Home>>() {},
-            DataQuery.of("DefaultHome"), "myhomes:default_home", "Default Home");
+    @Listener
+    public void onKeyRegistration(GameRegistryEvent.Register<Key<?>> event) {
+        DEFAULT_HOME = Key.builder()
+                .type(HOME_VALUE_TYPE)
+                .id("default_home")
+                .name("Default Home")
+                .query(DataQuery.of("DefaultHome"))
+                .build();
+        event.register(DEFAULT_HOME);
+    }
 
 .. note::
 
-    :javadoc:`TypeToken`\ s are used by the implementation to preserve the generic type of your
+    :javadoc:`TypeToken`\s are used by the implementation to preserve the generic type of your
     values. Sponge provides a long list of pre-built tokens for the API in :javadoc:`TypeTokens`.
 
     If you need to create your own, you can do this in one of two ways:
 
     - For non-generic types, use ``TypeToken.of(MyType.class)``
     - For generic types, create an anonymous class with ``TypeToken<MyGenericType<String>>() {}``
+
+.. tip::
+
+    We recommend storing the references to ``TypeToken``\s and ``Key``\s in a static field in a similar fashion to
+    Sponge's :javadoc:`TypeTokens` and :javadoc:`Keys` classes.
 
 Serialization
 =============
@@ -139,8 +159,6 @@ change is made to the format of your serialized data, and use :ref:`content-upda
 .. code-block:: java
     
     import org.spongepowered.api.data.DataContainer;
-
-    import org.spongepowered.cookbook.myhomes.data.Keys;
 
     @Override
     public DataContainer toContainer() {
@@ -165,28 +183,28 @@ To register a ``DataManipulator`` Sponge has the :javadoc:`DataRegistration#buil
 
 .. note::
 
-    Due to the nature of Data, you *must* register your ``DataManipulator`` during initialization - generally by
-    listening to :javadoc:`GameInitializationEvent` such as in the example below. If you try to register a
-    ``DataManipulator`` once initialization is complete an exception will be thrown.
+    Due to the nature of Data, you *must* register your ``DataManipulator`` during the
+    ``GameRegistryEvent.Register<DataRegistration<?, ?>>`` event.
 
 .. code-block:: java
 
-    import org.spongepowered.api.event.game.state.GameInitializationEvent;
     import org.spongepowered.api.data.DataRegistration;
-
-    import org.example.MyCustomData;
-    import org.example.ImmutableCustomData;
-    import org.example.CustomDataBuilder;
+    import org.spongepowered.api.data.key.Key;
+    import org.spongepowered.api.event.Listener;
+    import org.spongepowered.api.event.game.GameRegistryEvent;
+    import org.spongepowered.api.plugin.PluginContainer;
 
     @Listener
-    public void onInit(GameInitializationEvent event) {
-      DataRegistration.builder()
-          .dataClass(MyCustomData.class)
-          .immutableClass(ImmutableCustomData.class)
-          .builder(new CustomDataBuilder())
-          .manipulatorId("my-custom")
-          .dataName("My Custom")
-          .build();
+    public void onKeyRegistration(GameRegistryEvent.Register<Key<?>> event) {
+        DataRegistration.builder()
+                .manipulatorId("home")
+                .dataName("Home Data")
+                .dataClass(HomeData.class)
+                .immutableClass(ImmutableHomeData.class)
+                .dataImplementation(HomeDataImpl.class)
+                .immutableImplementation(ImmutableHomeDataImpl.class)
+                .builder(new HomeDataBuilder())
+                .buildAndRegister(this.pluginContainer);
     }
 
 .. warning::
@@ -195,7 +213,7 @@ To register a ``DataManipulator`` Sponge has the :javadoc:`DataRegistration#buil
     registered with :javadoc:`DataManager#registerLegacyManipulatorIds(String, DataRegistration)`. If registering a
     pre-6.0.0 ``DataManipulator`` the ID is taken from `Class.getName()`, such as ``com.example.MyCustomData``.
 
-.. _single-data-types:
+.. _single-data-types2:
 
 Single Types
 ============
@@ -210,7 +228,7 @@ The "simple" abstract types are the easiest to implement, but are restricted to 
 - ``Integer``
 - ``List``
 - ``Map``
-- ``CatalogType``
+- :javadoc:`CatalogType`
 - ``Enum``
 
 For all other types you must implement a custom single type by extending ``AbstractSingleData``. This allows you to 
@@ -237,17 +255,16 @@ values that will be checked, as well as a :javadoc:`Comparator`.
     ``List`` and ``Mapped`` single types must instead implement ``ListData`` / ``MappedData`` (or the immutable 
     equivalent). This adds additional methods to allow Map-like/List-like behavior directly on the ``DataManipulator``.
 
-The following 3 methods must be defined on mutable manipulators:
+The following 5 methods must be defined on mutable manipulators:
 
-``fill(DataHolder, MergeFunction)`` should replace the data on your object with that of the given ``DataHolder``, 
-using the result of ``MergeFunction#merge()``.
+:javadoc:`DataManipulator#fill(DataHolder, MergeFunction) {fill(DataHolder, MergeFunction)}` should replace the data on
+your object with that of the given ``DataHolder``, using the result of
+:javadoc:`MergeFunction#merge(ValueContainer, ValueContainer) {MergeFunction#merge()}`.
 
 .. code-block:: java
 
     import org.spongepowered.api.data.DataHolder;
     import org.spongepowered.api.data.merge.MergeFunction;
-
-    import org.spongepowered.cookbook.myhomes.data.friends.FriendsData;
 
     import java.util.Optional;
 
@@ -259,17 +276,13 @@ using the result of ``MergeFunction#merge()``.
         return Optional.of(this);
     }
 
-``from(DataContainer)`` should overwrite its value with the one in the container and return itself, otherwise return
-``Optional.empty()``
+:javadoc:`DataManipulator#from(DataContainer) {from(DataContainer)}` should overwrite its value with the one in the
+container and return itself, otherwise return ``Optional.empty()``
 
 .. code-block:: java
 
     import org.spongepowered.api.data.DataContainer;
     import org.spongepowered.api.data.DataQuery;
-
-    import org.spongepowered.cookbook.myhomes.data.Keys;
-    import org.spongepowered.cookbook.myhomes.data.friends.FriendsData;
-    import org.spongepowered.cookbook.myhomes.data.friends.ImmutableFriendsData;
 
     import com.google.common.collect.Maps;
 
@@ -286,7 +299,7 @@ using the result of ``MergeFunction#merge()``.
         return Optional.empty();
     }
 
-``copy()`` should, as the name suggests, return a copy of itself with the same data.
+:javadoc:`DataManipulator#copy() {copy()}` should, as the name suggests, return a copy of itself with the same data.
 
 .. code-block:: java
 
@@ -297,6 +310,26 @@ using the result of ``MergeFunction#merge()``.
         return new FriendsDataImpl(getValue());
     }
 
+:javadoc:`DataManipulator#asImmutable() {asImmutable()}` should, as the name suggests, return a immutable copy of itself
+with the same data.
+
+.. code-block:: java
+
+    @Override
+    public ImmutableFriendsData asImmutable() {
+        return new ImmutableFriendsDataImpl(getValue());
+    }
+
+And finally :javadoc:`DataManipulator#getContentVersion() {getContentVersion()}` should return the version number of
+this current data implementation. We recommend starting with the version ``1``.
+
+.. code-block:: java
+
+    @Override
+    public int getContentVersion() {
+        return 1;
+    }
+
 Custom Single Types
 -------------------
 
@@ -304,7 +337,7 @@ In addition to the methods from the simple single types, you need to override th
 
 ``getValueGetter()`` should pass the ``Value`` representing your data (see above).
 
-``toContainer()`` should return a ``DataContainer`` representing your data (see above).
+:javadoc:`DataManipulator#toContainer() {toContainer()}` should return a ``DataContainer`` representing your data (see above).
 
 .. _compound-data-types:
 
