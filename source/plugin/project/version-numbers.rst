@@ -11,7 +11,8 @@ Start with ``1.x`` if your plugin is ready. Start with ``0.x`` if your plugin is
 
 .. note::
 
-    While Sponge recommends using the above versioning scheme, plugin authors are free to choose their own. Please keep in mind that your users have to deal with a multitude of versioning schemes, so keep it simple.
+    While Sponge recommends using the above versioning scheme, plugin authors are free to choose their own. Please keep
+    in mind that your users have to deal with a multitude of versioning schemes, so keep it simple.
 
 SemVer
 ------
@@ -27,7 +28,7 @@ the ``MAJOR``, ``MINOR`` and ``PATCH`` version parts.
 
 The labels can be used to mark builds as pre-releases or contain build metadata such as the supported Minecraft version.
 If you increase one part of the version, then you will set the following parts back to zero. Using this strategy you
-can find the latest version by comparing the version blocks with each other, however, this scheme does not contain any
+can find the latest version by comparing the version blocks with each other; however, this scheme does not contain any
 information about the release order for versions which differ in two version number blocks. Example: Version ``1.0.9``
 would be released after ``1.0.8``, but version ``1.1.0`` could be released before, after or even at the same time as
 either of them. 
@@ -56,9 +57,9 @@ Timestamp
 
 This is a less commonly used versioning scheme, but it is also a very simple one, as it does not contain any additional
 information in the version numbers. It does not matter which separators you use (if any) or which date and time parts
-you include. However, we recommend you to order date and time parts in the descending order of duration like
-``YYYY-MM-DD``. If you sort your files alphabetically, please make sure that the order would be the same as the version
-order. It is also possible to add a build qualifier or a build number.
+you include. However, we recommend ordering date and time parts in descending order of duration like ``YYYY-MM-DD``. 
+If you sort your files alphabetically, please make sure that the order would be the same as the versionorder. It is 
+also possible to add a build qualifier or a build number.
 
 **Examples**
 
