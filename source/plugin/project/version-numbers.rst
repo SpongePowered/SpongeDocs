@@ -58,7 +58,7 @@ Timestamp
 This is a less commonly used versioning scheme, but it is also a very simple one, as it does not contain any additional
 information in the version numbers. It does not matter which separators you use (if any) or which date and time parts
 you include. However, we recommend ordering date and time parts in descending order of duration like ``YYYY-MM-DD``. 
-If you sort your files alphabetically, please make sure that the order would be the same as the versionorder. It is 
+If you sort your files alphabetically, please make sure that the order would be the same as the version order. It is 
 also possible to add a build qualifier or a build number.
 
 **Examples**
