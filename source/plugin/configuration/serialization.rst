@@ -88,6 +88,11 @@ This ``TypeSerializer`` must then be registered with Configurate. This can be do
 the default :javadoc:`TypeSerializerCollection` or locally, by specifying it in the :javadoc:`ConfigurationOptions`
 when loading your config.
 
+.. note::
+
+    ``ConfigurationOptions`` are immutable. Every time you try to modify the original instance a new instance is
+    created; so you either have to use the (chained) result directly or update your variable accordingly.
+
 **Code Example: Registering a TypeSerializer globally**
 
 .. code-block:: java
