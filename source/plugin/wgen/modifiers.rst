@@ -6,9 +6,9 @@ WorldGeneratorModifiers
     org.spongepowered.api.CatalogType
     org.spongepowered.api.GameRegistry
     org.spongepowered.api.data.DataContainer
+    org.spongepowered.api.event.game.GameRegistryEvent.Register
     org.spongepowered.api.world.gen.WorldGeneratorModifier
     org.spongepowered.api.world.storage.WorldProperties
-    java.lang.Class
 
 For a brief overview of the World Generation process in Sponge, please read :doc:`index`.
 Now, let's show how you can begin making your mark on world generation.
@@ -63,15 +63,16 @@ apply your generator changes to nether worlds.
 Registering a WorldGeneratorModifier
 ====================================
 
-Now that you have created our modifier, you need to register it. A good time to do this is during the ``INITIALIZATION``
-State. To register it, simply call :javadoc:`GameRegistry#register(Class, T)` with ``WorldGeneratorModifier.class`` as
-the first argument and your modifier as the second.
+Now that you have created the modifier, all you have to do is register it in the :javadoc:`GameRegistry`. To do this
+you need to create a :doc:`listener </plugin/event/listeners>` for the 
+:javadoc:`GameRegistryEvent.Register<WorldGeneratorModifier>` event and register your instance there, as shown in the
+following example:
 
 .. code-block:: java
 
     @Listener
-    public void onGameInitialization(GameInitializationEvent event) {
-        Sponge.getRegistry().register(WorldGeneratorModifier.class , new MyModifier());
+    public void onWorldGeneratorModifierRegistration(GameRegistryEvent.Register<WorldGeneratorModifier> event) {
+        event.register(new MyModifier());
     }
 
 To apply your WorldGeneratorModifier to a world you must add it to the ``world-generation-modifiers`` array within
