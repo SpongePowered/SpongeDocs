@@ -16,9 +16,9 @@ Withdrawing money
 Plugins should *not* check if an account has enough money before attempting to withdraw it. While this may
 sound counter-intuitive, it allows economy plugins to fully control how they handle negative balances.
 
-By checking yourself if the account has enough money, you prevent the economy plugin from (potentially)
-allowing a negative balance. For example, one economy plugin might want to allow negative balances to admins,
-or players with a certain permission. By performing the check yourself, you take this power away from the economy plugin.
+By checking yourself if the account has enough money, you prevent the economy plugin from (potentially) allowing a
+negative balance. For example, one economy plugin might want to allow negative balances to admins, or players with a
+certain permission. By performing the check yourself, you take this power away from the economy plugin.
 
 This code illustrates what **not** to do:
 
@@ -27,6 +27,8 @@ This code illustrates what **not** to do:
     import java.math.BigDecimal;
     
     import org.spongepowered.api.event.cause.Cause;
+    import org.spongepowered.api.event.cause.EventContext;
+    import org.spongepowered.api.event.cause.EventContextKeys;
     import org.spongepowered.api.service.economy.EconomyService;
     import org.spongepowered.api.service.economy.account.Account;
         
@@ -40,7 +42,7 @@ This code illustrates what **not** to do:
     } else {
         // The account has enough, let's withdraw some cash!
         account.withdraw(service.getDefaultCurrency(), requiredAmount,
-            Cause.source(this).build());
+            Cause.of(EventContext.of(ImmutableMap.of(EventContextKeys.PLUGIN, this)), this));
     }
 
 
@@ -59,8 +61,8 @@ Here's how you **should** withdraw money:
     Account account = ...;
     BigDecimal requiredAmount = BigDecimal.valueOf(20);
 
-    TransactionResult result = account.withdraw(service.getDefaultCurrency(),
-        requiredAmount, Cause.source(this).build());
+    TransactionResult result = account.withdraw(service.getDefaultCurrency(), requiredAmount,
+                Cause.of(EventContext.of(ImmutableMap.of(EventContextKeys.PLUGIN, this)), this));
     if (result.getResult() == ResultType.SUCCESS) {
         // Success!
     } else if (result.getResult() == ResultType.FAILED || result.getResult() == ResultType.ACCOUNT_NO_FUNDS) {
