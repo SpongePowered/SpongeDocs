@@ -46,6 +46,7 @@ public class FileChecker {
     private static final Predicate<Object> IS_NOT_JAVADOC_IMPORT_START = Predicate.isEqual(".. javadoc-import::").negate();
     private static final Predicate<String> IS_CODE_BLOCK_START = s -> s.trim().equals(".. code-block:: java");
     private static final Predicate<String> IS_CODE_BLOCK_END = s -> !s.isEmpty() && !s.startsWith("    ");
+    private static final Predicate<String> IS_CODE_BLOCK_END_AND_NOT_START = IS_CODE_BLOCK_END.and(IS_CODE_BLOCK_START.negate());
     private static final Predicate<String> IS_IMPORT = s -> s.startsWith("import ");
 
     private static final Predicate<Collection<?>> IS_EMPTY_COLLECTION = Collection::isEmpty;
@@ -70,6 +71,9 @@ public class FileChecker {
      */
     public FileChecker(final File file, final int pathPrefixLength, File outputDirectory) {
         this.fileName = file.getPath().substring(pathPrefixLength).replace('\\', '/');
+        if (this.fileName.startsWith("/")) {
+            throw new IllegalArgumentException("Invalid prefix length: Path should not start with '/'");
+        }
         this.file = file;
         this.className = "Code_" + this.fileName.replace('/', '_').replace('-', '_').replace(".rst", "");
         this.outputFile = new File(outputDirectory, this.className + ".java");
@@ -191,8 +195,8 @@ public class FileChecker {
     private List<List<String>> collectCodeBlocks() throws IOException {
         return KeywordPartitioner.partition(
                 lines(this.file.toPath())
-                        .filter(new OnOffKeywordPredicate<>(IS_CODE_BLOCK_START, IS_CODE_BLOCK_END))
                         .map(new KeywordBasedDeIndenter(IS_CODE_BLOCK_START))
+                        .filter(new OnOffKeywordPredicate<>(IS_CODE_BLOCK_START, IS_CODE_BLOCK_END_AND_NOT_START))
                         .skip(1) // skip first start keyword
                         // remove leading indent from the code block
                         .map(s -> s.startsWith("    ") ? s.substring(4) : s)

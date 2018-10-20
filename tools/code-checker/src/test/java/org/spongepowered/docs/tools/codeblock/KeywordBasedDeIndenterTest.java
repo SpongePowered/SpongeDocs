@@ -24,32 +24,22 @@
  */
 package org.spongepowered.docs.tools.codeblock;
 
-import static java.util.Objects.requireNonNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.util.function.Predicate;
-import java.util.function.UnaryOperator;
+import java.util.Arrays;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
-public class KeywordBasedDeIndenter implements UnaryOperator<String> {
+import org.junit.jupiter.api.Test;
 
-    private final Predicate<String> keywordPredicate;
-    private int indentionLevel = 0;
+class KeywordBasedDeIndenterTest {
 
-    public KeywordBasedDeIndenter(Predicate<String> keywordPredicate) {
-        this.keywordPredicate = requireNonNull(keywordPredicate, "keywordPredicate");
-    }
-
-    @Override
-    public String apply(String text) {
-        if (this.keywordPredicate.test(text)) {
-            this.indentionLevel = 0;
-            while (text.charAt(this.indentionLevel) == ' ') {
-                this.indentionLevel++;
-            }
-        }
-        for (int i = 0; i < this.indentionLevel && !text.isEmpty() && text.charAt(0) == ' '; i++) {
-            text = text.substring(1);
-        }
-        return text;
+    @Test
+    void test() {
+        assertEquals(Arrays.asList("Hello", "World", "  PARTY", "ON", "FIRE", "", "", "ON", "  NOPE"),
+                Stream.of("Hello", "World", "  PARTY", "  ON", "  FIRE", "", "  ", "ON", "  NOPE")
+                        .map(new KeywordBasedDeIndenter(s -> s.trim().equals("ON")))
+                        .collect(Collectors.toList()));
     }
 
 }

@@ -24,32 +24,32 @@
  */
 package org.spongepowered.docs.tools.codeblock;
 
-import static java.util.Objects.requireNonNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.util.function.Predicate;
-import java.util.function.UnaryOperator;
+import java.util.Arrays;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
-public class KeywordBasedDeIndenter implements UnaryOperator<String> {
+import org.junit.jupiter.api.Test;
 
-    private final Predicate<String> keywordPredicate;
-    private int indentionLevel = 0;
+class RepeatedKeywordPredicateTest {
 
-    public KeywordBasedDeIndenter(Predicate<String> keywordPredicate) {
-        this.keywordPredicate = requireNonNull(keywordPredicate, "keywordPredicate");
-    }
+    @Test
+    void test() {
+        assertEquals(Arrays.asList("Fire", "destroyed"),
+                Stream.of("Foo", "Bar", "ON", "Fire", "OFF", "was", "destroyed")
+                        .filter(new RepeatedKeywordPredicate<>(s -> s.length() > 3, 1))
+                        .collect(Collectors.toList()));
 
-    @Override
-    public String apply(String text) {
-        if (this.keywordPredicate.test(text)) {
-            this.indentionLevel = 0;
-            while (text.charAt(this.indentionLevel) == ' ') {
-                this.indentionLevel++;
-            }
-        }
-        for (int i = 0; i < this.indentionLevel && !text.isEmpty() && text.charAt(0) == ' '; i++) {
-            text = text.substring(1);
-        }
-        return text;
+        assertEquals(Arrays.asList(),
+                Stream.of("Foo", "Bar", "OFF", "Fire", "OFF", "was", "destroyed")
+                        .filter(new RepeatedKeywordPredicate<>(s -> s.length() > 4, 2))
+                        .collect(Collectors.toList()));
+
+        assertEquals(Arrays.asList("Fire", "ON", "was", "destroyed"),
+                Stream.of("Foo", "Bar", "ON", "Fire", "ON", "was", "destroyed")
+                        .filter(new RepeatedKeywordPredicate<>(s -> s.length() >= 2, 4))
+                        .collect(Collectors.toList()));
     }
 
 }

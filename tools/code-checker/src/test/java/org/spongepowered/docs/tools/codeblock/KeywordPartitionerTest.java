@@ -24,32 +24,36 @@
  */
 package org.spongepowered.docs.tools.codeblock;
 
-import static java.util.Objects.requireNonNull;
+import static java.util.Arrays.asList;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.spongepowered.docs.tools.codeblock.KeywordPartitioner.partition;
 
-import java.util.function.Predicate;
-import java.util.function.UnaryOperator;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
-public class KeywordBasedDeIndenter implements UnaryOperator<String> {
+import org.junit.jupiter.api.Test;
 
-    private final Predicate<String> keywordPredicate;
-    private int indentionLevel = 0;
+class KeywordPartitionerTest {
 
-    public KeywordBasedDeIndenter(Predicate<String> keywordPredicate) {
-        this.keywordPredicate = requireNonNull(keywordPredicate, "keywordPredicate");
-    }
+    @Test
+    void test() {
+        assertEquals(asList(asList("Foo", "Bar", "ON"), asList("OFF", "was")),
+                partition(
+                        Stream.of("Foo", "Bar", "ON", "Fire", "OFF", "was", "destroyed"),
+                        s -> s.length() > 3)
+                                .collect(Collectors.toList()));
 
-    @Override
-    public String apply(String text) {
-        if (this.keywordPredicate.test(text)) {
-            this.indentionLevel = 0;
-            while (text.charAt(this.indentionLevel) == ' ') {
-                this.indentionLevel++;
-            }
-        }
-        for (int i = 0; i < this.indentionLevel && !text.isEmpty() && text.charAt(0) == ' '; i++) {
-            text = text.substring(1);
-        }
-        return text;
+        assertEquals(asList(asList("Foo", "Bar", "OFF", "Fire", "OFF", "was")),
+                partition(
+                        Stream.of("Foo", "Bar", "OFF", "Fire", "OFF", "was", "destroyed"),
+                        s -> s.length() > 4)
+                                .collect(Collectors.toList()));
+
+        assertEquals(asList(asList(), asList(), asList("ON"), asList("ON"), asList()),
+                partition(
+                        Stream.of("Foo", "Bar", "ON", "Fire", "ON", "was", "destroyed"),
+                        s -> s.length() > 2)
+                                .collect(Collectors.toList()));
     }
 
 }

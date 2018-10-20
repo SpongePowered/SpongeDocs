@@ -24,11 +24,13 @@
  */
 package org.spongepowered.docs.tools.codeblock;
 
+import static java.util.Objects.requireNonNull;
+
 import java.util.function.Predicate;
 
 /**
  * Predicate that will only match if the input consecutively matches the
- * underlying filter at least a certain number of times .
+ * underlying filter at least a certain number of times.
  *
  * @param <T> The type of data this predicate deals this.
  */
@@ -42,12 +44,21 @@ public class RepeatedKeywordPredicate<T> implements Predicate<T> {
      * Creates a new RepeatedKeywordPredicate using the given predicate that
      * must match at least the given number of repetitions.
      *
+     * <p>
+     * <b>Note:</b> The match counter is increased for the first match, so this
+     * predicate will return true for all matching elements if
+     * requiredRepetitions is set to 1.
+     * </p>
+     *
      * @param predicate The filter used to check the input.
      * @param requiredRepetitions The required number of consecutive matches
-     *        before this predicate will pass any tests.
+     *        before this predicate will pass any tests. Must be &gt; 1.
      */
     public RepeatedKeywordPredicate(Predicate<T> predicate, int requiredRepetitions) {
-        this.predicate = predicate;
+        this.predicate = requireNonNull(predicate, "predicate");
+        if (requiredRepetitions <= 0) {
+            throw new IllegalArgumentException("requiredRepetitions cannot be zero or less");
+        }
         this.requiredRepetitions = requiredRepetitions;
     }
 
