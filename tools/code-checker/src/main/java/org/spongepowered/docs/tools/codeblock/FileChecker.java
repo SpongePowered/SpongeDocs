@@ -44,7 +44,7 @@ public class FileChecker {
     private static final Logger LOGGER = LoggerFactory.getLogger(FileChecker.class);
 
     private static final Predicate<Object> IS_NOT_JAVADOC_IMPORT_START = Predicate.isEqual(".. javadoc-import::").negate();
-    private static final Predicate<String> IS_CODE_BLOCK_START = Predicate.isEqual(".. code-block:: java");
+    private static final Predicate<String> IS_CODE_BLOCK_START = s -> s.trim().equals(".. code-block:: java");
     private static final Predicate<String> IS_CODE_BLOCK_END = s -> !s.isEmpty() && !s.startsWith("    ");
     private static final Predicate<String> IS_IMPORT = s -> s.startsWith("import ");
 
@@ -192,6 +192,7 @@ public class FileChecker {
         return KeywordPartitioner.partition(
                 lines(this.file.toPath())
                         .filter(new OnOffKeywordPredicate<>(IS_CODE_BLOCK_START, IS_CODE_BLOCK_END))
+                        .map(new KeywordBasedDeIndenter(IS_CODE_BLOCK_START))
                         .skip(1) // skip first start keyword
                         // remove leading indent from the code block
                         .map(s -> s.startsWith("    ") ? s.substring(4) : s)
