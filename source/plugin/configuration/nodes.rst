@@ -192,7 +192,7 @@ method. Some examples:
             .getString("FLARD be with you good man!");
 
     UUID mayor = rootNode.getNode("towns", "aFLARDia", "mayor")
-            .getValue(TypeToken.of(UUID.class), somePlayer.getUniqueId());
+            .getValue(TypeTokens.UUID_TOKEN, somePlayer.getUniqueId());
 
 Another useful application of those defaults is that they can be copied to your configuration if needed. Upon creation
 of your root configuration node, you can create your ``ConfigurationOptions`` with
