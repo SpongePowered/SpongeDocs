@@ -140,10 +140,11 @@ method with a ``TypeToken`` and the object you want to serialize.
     can be found.
 
 For simple classes like ``UUID``, you can just create a ``TypeToken`` using the static :javadoc:`TypeToken#of(Class)`
-method. But when the class you want to use has type parameters of its own (like ``Map<String,UUID>``) the syntax gets a
-little more complicated. In most cases you will know exactly what the type parameters will be at compile time, so
-you can just create the ``TypeToken`` as an anonymous class: ``new TypeToken<Map<String,UUID>>() {}``. That way,
-even generic types can conveniently be written and read.
+method. However, ``UUID``\s and some other types already have a constant for it, such as
+:javadoc:`TypeTokens#UUID_TOKEN`, which you should use instead. If the class you want to use has type parameters (like
+``Map<String,UUID>``) and no constant yet exists for it, the syntax gets a bit more complicated. In most cases you will
+know exactly what the type parameters will be at compile time, so you can just create the ``TypeToken`` as an anonymous
+class: ``new TypeToken<Map<String,UUID>>() {}``. That way, even generic types can conveniently be written and read.
 
 .. seealso::
     For more information about ``TypeToken``\s, refer to the `guava documentation
