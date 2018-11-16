@@ -3,23 +3,31 @@ Configuration Nodes
 ===================
 
 .. javadoc-import::
+    com.google.common.reflect.TypeToken
     ninja.leaping.configurate.ConfigurationNode
+    ninja.leaping.configurate.ConfigurationOptions
     ninja.leaping.configurate.commented.CommentedConfigurationNode
     ninja.leaping.configurate.loader.ConfigurationLoader
+    ninja.leaping.configurate.objectmapping.ObjectMappingException
     ninja.leaping.configurate.objectmapping.serialize.TypeSerializer
+    java.lang.Class
     java.lang.Object
+    java.util.UUID
+    org.spongepowered.api.util.TypeTokens
 
 In memory, the configuration is represented using :javadoc:`ConfigurationNode`\ s. A ``ConfigurationNode`` either holds
 a value (like a number, a string or a list) or has child nodes, a tree-like configuration structure. When using a
-:javadoc:`ConfigurationLoader` to load or create new configurations, it will return the **root node**. It is
-recommended that you always keep a reference to that root node stored somewhere.
+:javadoc:`ConfigurationLoader` to load or create new configurations, it will return the **root node**. We
+recommend that you always keep a reference to that root node stored somewhere, to prevent loading the configuration
+every time you need to access it. As a side effect, this will keep the comments that were present in the file.
+As an alternative, you could store a reference to a :doc:`serializable config instance <serialization>` that holds the
+entire configuration of your plugin.
 
 .. note::
 
     Depending on the ``ConfigurationLoader`` used, you might even get a :javadoc:`CommentedConfigurationNode`, which in
     addition to normal ``ConfigurationNode`` behavior is able to retain a comment that will persist on the saved config
     file.
-
 
 Navigating Nodes
 ================
@@ -78,8 +86,8 @@ Yes, it's really as simple as that. Similar to the above example, methods like :
 conveniently grab a value of that type.
 
 To set a basic value to a node, just use the :javadoc:`ConfigurationNode#setValue(Object)` method. Don't be confused
-that it accepts an ``Object`` - this means that it can take anything and will determine how to proceed from there by
-itself.
+that it accepts an :javadoc:`Object` - this means that it can take anything and will determine how to proceed from there
+by itself.
 
 Imagine the blockCheats module is deactivated by a user command. This change will need to be reflected in the config
 and can be done as follows:
@@ -88,25 +96,25 @@ and can be done as follows:
 
     rootNode.getNode("modules", "blockCheats", "enabled").setValue(false);
 
-
 .. warning::
 
     Anything other than basic value types cannot be handled by those basic functions, and must instead be read and
     written using the (de)serializing Methods described below. Basic types are those that are natively handled by the
     underlying implementation of the file format used by the ``ConfigurationLoader``, but generally include the
-    primitive data types, ``String``\ s as well as ``List``\ s and ``Map``\ s of basic types.
+    primitive data types, ``String``\s as well as ``List``\s and ``Map``\s of basic types.
 
 (De)Serialization
 ~~~~~~~~~~~~~~~~~
 
 If you attempt to read or write an object that is not one of the basic types mentioned above, you will need to pass it
-through deserialization first. In the ``ConfigurationOptions`` used to create your root ``ConfigurationNode``, there
-is a collection of :javadoc:`TypeSerializer`\ s that Configurate uses to convert your objects to a
+through deserialization first. In the :javadoc:`ConfigurationOptions` used to create your root ``ConfigurationNode``,
+there is a collection of :javadoc:`TypeSerializer`\s that Configurate uses to convert your objects to a
 ``ConfigurationNode`` and vice versa.
 
-In order to tell Configurate what type it is dealing with, we have to provide a guava ``TypeToken``. Imagine we want
-to read a player ``UUID`` from the config node ``towns.aFLARDia.mayor``. To do so, we need to call the ``getValue()``
-method while providing a ``TypeToken`` representing the ``UUID`` class.
+In order to tell Configurate what type it is dealing with, we have to provide a guava :javadoc:`TypeToken`. Imagine we
+want to read a player :javadoc:`UUID` from the config node ``towns.aFLARDia.mayor``. To do so, we need to call the
+:javadoc:`ConfigurationNode#getValue(TypeToken) {getValue(...)}` method while providing a ``TypeToken``
+representing the ``UUID`` class.
 
 .. code-block:: java
 
@@ -114,11 +122,12 @@ method while providing a ``TypeToken`` representing the ``UUID`` class.
 
     UUID mayor = rootNode.getNode("towns", "aFLARDia", "mayor").getValue(TypeToken.of(UUID.class));
 
-This prompts Configurate to locate the proper ``TypeSerializer`` for ``UUID``\ s and then use it to convert the stored
-value into a ``UUID``. The ``TypeSerializer`` (and by extension the above method) may throw an ``ObjectMappingException``
-if it encounters incomplete or invalid data.
+This prompts Configurate to locate the proper ``TypeSerializer`` for ``UUID``\s and then use it to convert the stored
+value into a ``UUID``. The ``TypeSerializer`` (and by extension the above method) may throw an
+:javadoc:`ObjectMappingException` if it encounters incomplete or invalid data.
 
-Now if we want to write a new ``UUID`` to that config node, the syntax is very similar. Use the ``setValue()``
+Now if we want to write a new ``UUID`` to that config node, the syntax is very similar. Use the
+:javadoc:`ConfigurationNode#setValue(TypeToken, Object) {setValue(...)}`
 method with a ``TypeToken`` and the object you want to serialize.
 
 .. code-block:: java
@@ -130,23 +139,26 @@ method with a ``TypeToken`` and the object you want to serialize.
     Serializing a value will throw an ``ObjectMappingException`` if no ``TypeSerializer`` for the given ``TypeToken``
     can be found.
 
-For simple classes like ``UUID``, you can just create a ``TypeToken`` using the static ``TypeToken.of()`` method.
-But when the class you want to use has type parameters of its own (like ``Map<String,UUID>``) the syntax gets a
-little more complicated. In most cases you will know exactly what the type parameters will be at compile time, so
-you can just create the ``TypeToken`` as an anonymous class: ``new TypeToken<Map<String,UUID>>() {}``. That way,
-even generic types can conveniently be written and read.
+For simple classes like ``UUID``, you can just create a ``TypeToken`` using the static :javadoc:`TypeToken#of(Class)`
+method. However, ``UUID``\s and some other types already have a constant for it, such as
+:javadoc:`TypeTokens#UUID_TOKEN`, which you should use instead. If the class you want to use has type parameters (like
+``Map<String,UUID>``) and no constant yet exists for it, the syntax gets a bit more complicated. In most cases you will
+know exactly what the type parameters will be at compile time, so you can just create the ``TypeToken`` as an anonymous
+class: ``new TypeToken<Map<String,UUID>>() {}``. That way, even generic types can conveniently be written and read.
 
 .. seealso::
-    For more information about ``TypeToken``\ s, refer to the `guava documentation
+    For more information about ``TypeToken``\s, refer to the `guava documentation
     <https://github.com/google/guava/wiki/ReflectionExplained>`_
 
-The types serializable using those methods are:
+.. tip::
 
-* Any basic value (see above)
-* Any ``List`` or ``Map`` of serializable types
-* The types ``java.util.UUID``, ``java.net.URL``, ``java.net.URI`` and ``java.util.regex.Pattern``
-* Any type that has been made serializable as described on :doc:`the config serialization page <serialization>`
+    The SpongeAPI provides a :javadoc:`TypeTokens {class}` with many pre-defined type tokens that you can use.
+    If plugin developers need many different or complex ``TypeToken``\s, or use them frequently, we recommend
+    creating a similar class for themselves to improve code readability. (Beware, it is not guaranteed that all of
+    those entries have registered ``TypeSerializer``\s).
 
+You can find a non-exhaustive list of supported types, and ways to add support for new types on the
+:doc:`the config serialization page <serialization>`.
 
 Defaults
 ~~~~~~~~
@@ -177,13 +189,15 @@ method. Some examples:
 
 .. code-block:: java
 
-    String greeting = rootNode.getNode("messages", "greeting").getString("FLARD be with you good man!");
+    String greeting = rootNode.getNode("messages", "greeting")
+            .getString("FLARD be with you good man!");
 
     UUID mayor = rootNode.getNode("towns", "aFLARDia", "mayor")
-                            .getValue(TypeToken.of(UUID.class), somePlayer.getUniqueId());
+            .getValue(TypeTokens.UUID_TOKEN, somePlayer.getUniqueId());
 
 Another useful application of those defaults is that they can be copied to your configuration if needed. Upon creation
-of your root configuration node, you can create your ``ConfigurationOptions`` with ``setShouldCopyDefaults(true)``.
+of your root configuration node, you can create your ``ConfigurationOptions`` with
+:javadoc:`ConfigurationOptions#setShouldCopyDefaults(boolean) {setShouldCopyDefaults(true)}`.
 Subsequently, whenever you provide a default value, Configurate will first check if the value you're trying to get is
 present, and if it is not, it will first write your default value to the node before returning the default value.
 
