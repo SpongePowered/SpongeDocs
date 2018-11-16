@@ -91,7 +91,7 @@ Tasks
 The behavior of many entity types is similar to each other. For this reason, the entity AI split into multiple
 smaller and reusable parts called :javadoc:`AITask`\s. Each of the ``AITask``\s represents a single behavior trait of an
 entity such as :javadoc:`AITaskTypes#WATCH_CLOSEST {WATCH_CLOSEST}`, which makes the entity look at the nearest matching
-entity, or :javadoc:`AITask#AVOID_ENTITY {AVOID_ENTITY}`, which makes the entity flee from certain matching entities.
+entity, or :javadoc:`AITaskTypes#AVOID_ENTITY {AVOID_ENTITY}`, which makes the entity flee from certain matching entities.
 
 .. note::
 

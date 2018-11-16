@@ -47,7 +47,7 @@ Designing the API this way makes Sponge extremely modular.
     Plugins should provide options to not install their providers if the plugin is not dedicated to a single function.
 
 Example: Providing a simple warp service
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The first step is optional, but recommended. You specify the public methods of your service class in an interface:
 
@@ -94,7 +94,7 @@ the interface) and replace your version.
 
 .. code-block:: java
 
-    Sponge.getServiceManager().setProvider(yourPluginInstance, WarpService.class, new SimpleWarpService());
+    Sponge.getServiceManager().setProvider(plugin, WarpService.class, new SimpleWarpService());
 
 Other plugins can now access your service through the service manager:
 

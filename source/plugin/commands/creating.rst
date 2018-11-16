@@ -117,7 +117,7 @@ Perform an ``instanceof`` check to determine the type of the :javadoc:`CommandSo
     import org.spongepowered.api.command.source.CommandBlockSource;
     import org.spongepowered.api.command.source.ConsoleSource;
 
-    if(src instanceof Player) {
+    if (src instanceof Player) {
         Player player = (Player) src;
         player.sendMessage(Text.of("Hello " + player.getName() + "!"));
     }
