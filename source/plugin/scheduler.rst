@@ -7,6 +7,9 @@ Scheduler
     org.spongepowered.api.scheduler.SpongeExecutorService
     org.spongepowered.api.scheduler.Task
     org.spongepowered.api.scheduler.Task.Builder
+    org.spongepowered.api.Game
+    org.spongepowered.api.GameState
+    org.spongepowered.api.event.game.state.GameStoppingServerEvent
     java.lang.Object
     java.lang.Runnable
 
@@ -115,9 +118,9 @@ To cancel a task, simply call the :javadoc:`Task#cancel()` method:
 
 .. code-block:: java
 
-	task.cancel();
+    task.cancel();
 
-If you need to cancel the task from within the runnable itself, you can instead opt to use a ``Consumer<Task>``` in
+If you need to cancel the task from within the runnable itself, you can instead opt to use a ``Consumer<Task>`` in
 order to access the task. The below example will schedule a task that will count down from 60 and cancel itself upon
 reaching 0.
 
@@ -143,6 +146,12 @@ reaching 0.
             }
         }
     }
+
+.. warning::
+
+    **Any** scheduled tasks should either watch the current :javadoc:`GameState {state}` of the :javadoc:`Game` or
+    should be unregistered if they are no longer needed (e.g. during a :javadoc:`GameStoppingServerEvent`). This is of
+    particular importance for the client because it can start and stop the server multiple times.
     
 Asynchronous Tasks
 ~~~~~~~~~~~~~~~~~~
@@ -152,7 +161,7 @@ requests to another server or database. If done on the main thread, a request to
 the performance of the game, since the next tick cannot be fired until the request is completed.
 
 Since Minecraft is largely single-threaded, there is little you can do in an asynchronous thread. If you must run a
-thread asynchronously, you should execute all of the code that does not use the SpongeAPI/affect Minecraft, then register
+thread asynchronously, you should execute all of the code that does not use SpongeAPI/affect Minecraft, then register
 another `synchronous` task to handle the code that needs the API. There are a few parts of Minecraft that you can work
 with `asynchronously`, including:
 
@@ -170,6 +179,12 @@ In addition, there are a few other operations that are safe to do asynchronously
     Accessing game objects outside of the main thread can lead to crashes, inconsistencies and various other problems
     and should be avoided. If this is done wrong, you can get a ``ConcurrentModificationException`` with or without a
     server crash at best and a corrupted player/world/server at worst.
+
+.. warning::
+
+    **Any** scheduled tasks should either watch the current :javadoc:`GameState {state}` of the :javadoc:`Game` or
+    should be unregistered if they are no longer needed (e.g. during a :javadoc:`GameStoppingServerEvent`). This is of
+    particular importance for the client because it can start and stop the server multiple times.
 
 Compatibility with other libraries
 ==================================
@@ -286,7 +301,7 @@ determined where that part of the operation is executed.
 This is different from the CompletableFuture or RxJava since they default to executing on the same thread on which
 the previous operation ended.
 
-The fact that all these operation try to implicitly find an ``ExecutionContext`` means that you can easily use 
+The fact that all these operations try to implicitly find an ``ExecutionContext`` means that you can easily use 
 the default ``ExecutionContext.global`` and specifically run the parts that need to be thread-safe on the Sponge 
 server thread.
 

@@ -17,14 +17,14 @@ Custom DataManipulators
     org.spongepowered.api.data.manipulator.mutable.common.AbstractSingleData
     org.spongepowered.api.data.manipulator.mutable.tileentity.FurnaceData
     org.spongepowered.api.data.value.ValueFactory
-    org.spongepowered.api.data.value.mutable.BoundedValue
     org.spongepowered.api.data.value.mutable.MapValue
+    org.spongepowered.api.data.value.mutable.MutableBoundedValue
     org.spongepowered.api.data.value.mutable.Value
-    org.spongepowered.api.data.value.ValueContainer
     org.spongepowered.api.event.game.state.GameInitializationEvent
     org.spongepowered.api.item.inventory.ItemStack
     org.spongepowered.api.util.TypeTokens
     java.lang.Comparable
+    java.lang.String
     java.util.Comparator
     com.google.common.reflect.TypeToken
 
@@ -36,7 +36,7 @@ create a separate API for your custom data. Generally speaking it's best to sepa
 You'll want to define an API method for each "unit" your data, such as a ``String``, ``int``, :javadoc:`ItemStack` or 
 a custom type like ``Home``. These units will be wrapped in a :javadoc:`Value`, which will allow it to be accessed
 with :javadoc:`Key`\s. There are various extensions of ``Value`` depending on which object will be represented, such
-as :javadoc:`MapValue` which provides the standard map operations, or :javadoc:`BoundedValue` which can set
+as :javadoc:`MapValue` which provides the standard map operations, or :javadoc:`MutableBoundedValue` which can set
 limits on the upper and lower bound of the value (like integers). The bounds of the values are verified using a
 :javadoc:`Comparator`.
 
@@ -190,7 +190,7 @@ To register a ``DataManipulator`` Sponge has the :javadoc:`DataRegistration#buil
 
 .. warning::
 
-    Data that was serialized prior to ``6.0.0``, or data where you have changed the ID, will *not* be recognised unless
+    Data that was serialized prior to ``6.0.0``, or data where you have changed the ID, will *not* be recognized unless
     registered with :javadoc:`DataManager#registerLegacyManipulatorIds(String, DataRegistration)`. If registering a
     pre-6.0.0 ``DataManipulator`` the ID is taken from `Class.getName()`, such as ``com.example.MyCustomData``.
 
@@ -199,13 +199,13 @@ To register a ``DataManipulator`` Sponge has the :javadoc:`DataRegistration#buil
 Single Types
 ============
 
-Single types require little implementation because much of the work has already been done in the ``AbstractSingleData``
-type you extend from. 
+Single types require little implementation because much of the work has already been done in the
+:javadoc:`AbstractSingleData` type you extend from. 
 
 The "simple" abstract types are the easiest to implement, but are restricted to only the types below:
 
 - ``Boolean``
-- ``Comparable``
+- :javadoc:`Comparable`
 - ``Integer``
 - ``List``
 - ``Map``
@@ -236,7 +236,7 @@ values that will be checked, as well as a :javadoc:`Comparator`.
     ``List`` and ``Mapped`` single types must instead implement ``ListData`` / ``MappedData`` (or the immutable 
     equivalent). This adds additional methods to allow Map-like/List-like behavior directly on the ``DataManipulator``.
 
-The following 3 methods must be defined on mutable manipluators:
+The following 3 methods must be defined on mutable manipulators:
 
 ``fill(DataHolder, MergeFunction)`` should replace the data on your object with that of the given ``DataHolder``, 
 using the result of ``MergeFunction#merge()``.
@@ -299,7 +299,7 @@ using the result of ``MergeFunction#merge()``.
 Custom Single Types
 -------------------
 
-In addition to the , you need to override the following methods:
+In addition to the methods from the simple single types, you need to override the following methods:
 
 ``getValueGetter()`` should pass the ``Value`` representing your data (see above).
 

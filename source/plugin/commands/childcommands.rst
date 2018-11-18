@@ -4,6 +4,7 @@ Child Commands
 
 .. javadoc-import::
     org.spongepowered.api.command.CommandCallable
+    org.spongepowered.api.command.args.CommandElement
     org.spongepowered.api.command.spec.CommandExecutor
     org.spongepowered.api.command.spec.CommandSpec
     org.spongepowered.api.command.spec.CommandSpec.Builder
@@ -80,5 +81,5 @@ is set to:
   commands and arguments from being executed (if the first argument of the fallback could be the same as the
   child command).
 
-In all cases, if the arguments parse succesfully but the child executor throws an exception, the fallback
+In all cases, if the arguments parse successfully but the child executor throws an exception, the fallback
 executor (if any) is not executed and the error message from the child executor is displayed.

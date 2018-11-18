@@ -7,7 +7,7 @@ few additions and modifications, which are described herein.
 
 .. tip::
     You can use our code styles for Eclipse or IntelliJ IDEA to let your IDE format the code correctly for you. See
-    :doc:`../../preparing/index` for more information.
+    :doc:`/preparing/index` for more information.
 
 * Line endings
 

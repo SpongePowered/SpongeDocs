@@ -8,15 +8,16 @@ Configuration Format
     ninja.leaping.configurate.loader.ConfigurationLoader
 
 SpongeAPI offers support to serialize text directly to a Configurate configuration file through the use of the
-``TypeToken`` class. :javadoc:`Text` objects are saved using the same node structure as the ``Text``\'s JSON
-representation.
+``TypeToken`` class. :javadoc:`Text` objects are saved using the same node structure as the ``Text``\'s 
+:doc:`json`, but in a more flexible format called :doc:`Human-Optimized Config Object Notation (HOCON) 
+</server/getting-started/configuration/hocon>`.
 
 .. tip::
 
     For information on how to use Configurate to create configuration files for your plugin, please refer to
     :doc:`/plugin/configuration/index`.
 
-For example, the text "Hello World!", formatted with the color red and an underline would have the following HOCON
+For example, the text ``"Hello World!"``, formatted with the color red and an underline, would have the following HOCON
 representation:
 
 .. code-block:: guess
@@ -24,7 +25,7 @@ representation:
     {
         underlined=true
         color=red
-        text="Hello, world!"
+        text="Hello World!"
     }
 
 To save a ``Text`` object simply set the value of your desired node using the following code:

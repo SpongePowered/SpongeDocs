@@ -17,7 +17,7 @@ Add the following to the ``<project>`` block of your ``pom.xml`` to add the Spon
         <dependency>
             <groupId>org.spongepowered</groupId>
             <artifactId>spongeapi</artifactId>
-            <version>7.0.0</version>
+            <version>7.1.0</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
@@ -28,7 +28,7 @@ Alternatively, Sponge has a simple archetype that generates the basic structure 
 
 The generated pom includes a release profile that generates gpg-signed jars for javadocs, binary, and sources as
 recommended in the guidelines for submitting projects to Sonatype OSS (However, this option is not currently available
-for Sponge plugins due to the fact that Sponge API is not currently hosted on Maven Central).
+for Sponge plugins due to the fact that SpongeAPI is not currently hosted on Maven Central).
 
 Properties
 ~~~~~~~~~~
@@ -42,7 +42,7 @@ groupId         io.github.user             The maven groupId, useful more for pl
                                            more or less match your package name
 artifactId      myproject                  The project id, also used as plugin id and name of the generated folder
 version         1.0-SNAPSHOT               The initial version for your plugin. Can (and should) be changed as
-                                           development progresses
+                                           development progresses. See :doc:`../project/version-numbers` for details.
 package         io.github.user.myproject   The package your plugin class will be generated in
 githubProject   user/repo                  The GitHub project. If a value is specified that is not user/repo, issue
                                            tracking and SCM sections are added to the pom

@@ -9,6 +9,18 @@ a different text editor may prove to be useful.
 Downloads
 =========
 
+Visual Studio Code
+~~~~~~~~~~~~~~~~~~
+
+VS Code is a cross platform, open source, code and text editor by Microsoft licensed under the MIT license. It is a popular
+choice used by many of Sponge's developers, for writing documentation and even for developing plugins. Unlike a regular text
+editor there is support for debugging, syntax highlighting, intelligent code completion, code refactoring, and more. There
+is also `Git support <https://code.visualstudio.com/docs/editor/versioncontrol>`_, a great plugin for 
+`reST support <https://marketplace.visualstudio.com/items?itemName=lextudio.restructuredtext>`_, and even
+a plugin for `HOCON <https://marketplace.visualstudio.com/items?itemName=zzzz.hocon-colorizer>`_.
+
+**VS Code** can be downloaded for free from https://code.visualstudio.com/.
+
 Atom
 ~~~~
 

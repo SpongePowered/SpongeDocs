@@ -1,0 +1,16 @@
+digraph G {
+
+    tick -> shouldUpdate[label="Inactive"];
+    tick -> continueUpdating[label="Active"];
+    shouldUpdate -> start[label=" true"];
+    continueUpdating -> update[label="true"];
+    continueUpdating -> reset[label="false"];
+
+    tick [shape=Mdiamond, label="ai-ticking"];
+    start[label="start()"];
+    shouldUpdate[label="shouldUpdate() : boolean"];
+    continueUpdating[label="continueUpdating() : boolean"];
+    update[label="update()"];
+    reset[label="reset()"];
+
+}

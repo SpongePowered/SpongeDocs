@@ -87,7 +87,7 @@ To achieve the preceding output, we might use the following builder pattern:
 Finally, to send the paginated list to a :javadoc:`MessageReceiver`, use
 :javadoc:`PaginationList.Builder#sendTo(MessageReceiver)`.
 
-And thats it! To recap, a fully functional paginated list could be generated and sent to a previously defined
+And that's it! To recap, a fully functional paginated list could be generated and sent to a previously defined
 ``msgReceiver`` using the following code:
 
 .. code-block:: java

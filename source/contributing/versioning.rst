@@ -2,9 +2,9 @@
 Versioning System and Repository Branch Layout
 ==============================================
 
-With the release for beta we've moved the SpongeAPI versioning to semantic versioning (see https://semver.org/).
+With the release for beta we've moved SpongeAPI versioning to semantic versioning (see https://semver.org/).
 This change means that every time that we make a release we have to increment the version according to the rules
-of semver.
+of SemVer.
 
 SemVer
 ======
@@ -20,7 +20,7 @@ This means that for example ``3.2.0`` is fully compatible to ``3.0.0`` while ``4
 ``3.0.0``. ``3.1.0`` and ``3.1.2`` are fully interchangeable besides the bugs that were fixed.
 
 The layout of our branches (described below) is designed to assist this process by allowing us to make minor releases
-without a breaking change forcing us to make it a major release. This branch layout applies to the SpongeAPI,
+without a breaking change forcing us to make it a major release. This branch layout applies to SpongeAPI,
 SpongeCommon, SpongeForge, and SpongeVanilla repositories but not to the SpongeDocs.
 
 SpongeAPI, SpongeCommon, SpongeForge and SpongeVanilla
@@ -31,7 +31,7 @@ The Bleeding Branch
 
 The core of our repositories is the ``bleeding`` branch. Almost all changes will be added to ``bleeding``, including
 new features, changes, and bugfixes. The version of ``bleeding`` will always be the next major release version
-appended with ``-SNAPSHOT`` (eg ``6.0.0-SNAPSHOT``) to denote that it is not yet a final build and subject to change.
+appended with ``-SNAPSHOT`` (e.g. ``6.0.0-SNAPSHOT``) to denote that it is not yet a final build and subject to change.
 
 The primary reason for having the ``bleeding`` branch is to have a testing ground for changes. Even experienced
 members of the Sponge team can accidentally cause a build to fail or miss a bug. The ``bleeding`` branch will be
@@ -70,7 +70,7 @@ SpongeDocs
 ==========
 
 The SpongeDocs themselves are unversioned following our philosophy that they will never be finished, but instead in a
-constant flux of ever increasing usability. However they *target* a specific version of the API, generally the most
+constant flux of ever increasing usability. However, they *target* a specific version of the API, generally the most
 recent *release* of SpongeAPI.
 
 Core Branch
@@ -90,7 +90,7 @@ may be merged.
 A feature branch may only be merged into master if the changes / additions made in it are correct regarding the
 **SpongeAPI release currently targeted by the SpongeDocs**. Any feature branches that describe features not yet included
 in a release stay unmerged until the corresponding API version is released and becomes the new targeted version for the
-SpongeDocs. However the Docs team might collect additions for a specific version on a single branch.
+SpongeDocs. However, the Docs team might collect additions for a specific version on a single branch.
 
 .. image:: /images/contributing/versioning-release-branch.svg
     :alt: release branch example

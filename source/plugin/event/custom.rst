@@ -19,7 +19,7 @@ your event.
 Example: Custom Event Class
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following class describes an event indicating a ``Player`` has come in contact with FLARD and is now about to
+The following class describes an event indicating a :javadoc:`Player` has come in contact with FLARD and is now about to
 mutate in a way specified by the event. Since the event targets a player and can be cancelled by listeners, it
 implements both the ``TargetPlayerEvent`` and ``Cancellable`` interfaces.
 
@@ -109,6 +109,6 @@ Example: Listen for Custom Event
     public void onPrivateMessage(PlayerMutationEvent event) {
         if(event.getMutation() == PlayerMutationEvent.Mutation.SPONTANEOUS_COMBUSTION) {
             event.setCancelled(true);
-            event.getTargetEntity().sendMessage(Text.of("You can not combust here, this is a non-smoking area!"));
+            event.getTargetEntity().sendMessage(Text.of("You cannot combust here, this is a non-smoking area!"));
         }
     }

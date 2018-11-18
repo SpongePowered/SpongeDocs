@@ -48,7 +48,7 @@ Modifying the Config In-Game
 It is possible to modify these configs through the in-game command ``/sponge config``. The syntax for the config
 command looks like this:
 
-.. code-block:: java
+.. code-block:: none
 
     /sponge config <flag> <key> <value>
 
@@ -62,7 +62,7 @@ The *key* is the value you want to change. The *value* is whatever you want to c
 
 Here is an example of this command in action:
 
-.. code-block:: java
+.. code-block:: none
 
     /sponge config -d minecraft:nether logging.chunk-load true
 
@@ -71,7 +71,7 @@ This will set the config to log when chunks are loaded for the nether.
 If you need to check the value of a key, you would need to omit the *value*. Checking the value of a key such as
 ``logging.chunk-load`` in the nether would be done like so:
 
-.. code-block:: java
+.. code-block:: none
 
     /sponge config -d minecraft:nether logging.chunk-load
 
@@ -82,13 +82,13 @@ Saving a world config to the file may be desired after making modifications. Thi
 unexpected server crash. This would be done by using the ``/sponge save`` command on the sponge server. The syntax for
 this command is similar to the config command:
 
-.. code-block:: java
+.. code-block:: none
 
     /sponge save <flag>
 
 Here is an example for saving the global config:
 
-.. code-block:: java
+.. code-block:: none
 
     /sponge save -g
 
@@ -99,12 +99,12 @@ Sometimes it may be desired that a world config is reloaded while the server is 
 you have made changes to the local config file and would like to reload it for use on the live server. This is made
 possible by the command ``/sponge reload``. The syntax for the command is as follows:
 
-.. code-block:: java
+.. code-block:: none
 
     /sponge reload <flag>
 
 Here is an example of reloading the end world config file:
 
-.. code-block:: java
+.. code-block:: none
 
     /sponge reload -d minecraft:the_end

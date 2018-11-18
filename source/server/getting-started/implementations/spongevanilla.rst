@@ -2,14 +2,14 @@
 Installing SpongeVanilla
 ========================
 
-SpongeVanilla is a vanilla implementation of the Sponge API as a stand-alone server.
+SpongeVanilla is a vanilla implementation of SpongeAPI as a stand-alone server.
 
 
 Overview
 ========
 
-SpongeVanilla is an implementation of the Sponge API that is created by patching the vanilla Minecraft server. This
-means it is a stand-alone server, and does not utilise nor require Minecraft Forge or Forge mod loader (FML).
+SpongeVanilla is an implementation of SpongeAPI that is created by patching the vanilla Minecraft server. This
+means it is a stand-alone server, and does not utilize nor require Minecraft Forge or Forge mod loader (FML).
 SpongeVanilla is being developed in parallel to the Forge version of Sponge, as an alternative platform for users who
 do not want to run a Forge server. Originally started as an independent project and named Granite, by developers
 **AzureusNation** and **VoltaSalt**, the SpongeVanilla team officially joined the Sponge development team in March 2015.
@@ -17,7 +17,7 @@ do not want to run a Forge server. Originally started as an independent project 
 Download
 ========
 
-Grab your copy of `Sponge Vanilla here <https://www.spongepowered.org/downloads>`_.
+Grab your copy of `SpongeVanilla here <https://www.spongepowered.org/downloads>`_.
 
 Installing SpongeVanilla
 ========================
@@ -28,15 +28,11 @@ Installing SpongeVanilla
     you.
 
 
-.. warning::
+.. note::
 
   When using the Mojang installer, Mojang makes use of their own Java version and not the one you installed on your
   system. The installer currently ships with Java ``1.8.0_25`` for Windows and ``1.8.0_60`` for macOS. Note that Sponge
-  requires **at least** ``1.8.0_40`` or above to run properly. You can grab that Launcher on the 
-  `official Minecraft download page <https://minecraft.net/download>`_. Please make sure to configure it to use an up to
-  date version of Java. As an alternative you can download a Launcher without an (outdated) Java from
-  `here <https://minecraft.net/download/alternative>`__. Read :doc:`our documentation <../jre>` on how to install and
-  configure Java. 
+  requires **at least** ``1.8.0_20`` or above to run properly but it is recommended to use the latest Java 8 version.
 
 SpongeVanilla only works as a dedicated server.
 

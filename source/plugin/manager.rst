@@ -24,10 +24,10 @@ Public methods inside the :javadoc:`PluginManager` are used to grab information 
 plugins, alongside their instances. The plugins are stored inside a :javadoc:`PluginContainer` (discussed in next
 section) to allow for an easy center of information about the specific plugin. As an example, you can use the
 ``PluginManager`` to communicate with another plugin, grabbing its instance and using the methods it offers to provide
-compability or extended features by means of your calling plugin.
+compatibility or extended features by means of your calling plugin.
 
 Obtaining the Plugin Manager
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can get an instance of the server's ``PluginManager`` using a few different ways.
 
@@ -62,7 +62,7 @@ parameter.
 
 .. code-block:: java
 
-    private PluginManager pluginManager = serviceManager.provide(PluginManager.class);
+    private PluginManager pluginManager = serviceManager.provideUnchecked(PluginManager.class);
 
 3. The Game Instance
 --------------------
@@ -106,15 +106,15 @@ With the plugin manager, it is possible to get all plugins currently loaded thro
 
     import org.spongepowered.api.plugin.PluginContainer;
 
-    import java.util.List;
+    import java.util.Collection;
 
-    private List<PluginContainer> plugins = pluginManager.getPlugins();
+    private Collection<PluginContainer> plugins = pluginManager.getPlugins();
 
 Or, it is possible to obtain an instance to a plugin container directly, by the example shown below:
 
 .. code-block:: java
 
-    private PluginContainer myOtherPlugin = pluginManager.getPlugin("myOtherPluginId").orNull();
+    private PluginContainer myOtherPlugin = pluginManager.getPlugin("myOtherPluginId").orElse(null);
 
 The PluginContainer Class
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -131,8 +131,8 @@ its name.
 
 .. code-block:: java
 
-    private PluginContainer myOtherPlugin = pluginManager.getPlugin("myOtherPluginId").orNull();
-    private MyOtherPlugin pluginInstance = (MyOtherPlugin) myOtherPlugin.getInstance();
+    private PluginContainer myOtherPlugin = pluginManager.getPlugin("myOtherPluginId").orElse(null);
+    private MyOtherPlugin pluginInstance = (MyOtherPlugin) myOtherPlugin.getInstance().orElse(null);
 
 .. note::
 

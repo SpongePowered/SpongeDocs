@@ -13,6 +13,7 @@ Dependency Injection
     org.spongepowered.api.plugin.PluginContainer
     org.spongepowered.api.plugin.PluginManager
     org.spongepowered.api.scheduler.Scheduler
+    ninja.leaping.configurate.commented.CommentedConfigurationNode
     ninja.leaping.configurate.loader.ConfigurationLoader
     ninja.leaping.configurate.objectmapping.GuiceObjectMapperFactory
 
@@ -42,7 +43,7 @@ File
   directory used for storing configuration files. However, Path (see below) should be preferred.
 
 :javadoc:`Game`
-  The ``Game`` object is the core accessor of the SpongeAPI.
+  The ``Game`` object is the core accessor of SpongeAPI.
 
 :javadoc:`GameRegistry`
   Provides an easy way to retrieve types from a ``Game``.
@@ -93,7 +94,7 @@ Logger
 Game
 ~~~~
 
-The ``Game`` object is the opening for many of the internal functions of the SpongeAPI, from the ``EventManager`` to the
+The ``Game`` object is the opening for many of the internal functions of SpongeAPI, from the ``EventManager`` to the
 :javadoc:`Server` and even the Sync/Async :javadoc:`Scheduler`.
 
 While it is entirely possible to retrieve the ``Game`` object through ``Sponge.getGame()``, it is commonly obtained
@@ -163,8 +164,7 @@ The recommended way to obtain your config file is through Guice, along with the 
     private Path configDir;
 
     @Inject
-    @ConfigDir(sharedRoot = false)
-    private void setConfigDir(Path configDir) {
+    private void setConfigDir(@ConfigDir(sharedRoot = false) Path configDir) {
         this.configDir = configDir;
     }
 

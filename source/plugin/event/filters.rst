@@ -62,7 +62,7 @@ An example with :javadoc:`Include` could be:
 
     @Listener
     @Include({DamageEntityEvent.class, DestructEntityEvent.class})
-    public void onEvent(EntityEvent event) {
+    public void onEvent(TargetEntityEvent event) {
         // do something
     }
 
@@ -71,7 +71,7 @@ recieve :javadoc:`DamageEntityEvent` and :javadoc:`DestructEntityEvent`\ s.
 
 **@IsCancelled**
 This annotation allows filtering events by their cancellation state at the time that your event listener would normally be
-called. By default your event listener will not be called if the event has been cancelled by a previous event listener.
+called. By default, your event listener will not be called if the event has been cancelled by a previous event listener.
 However you can change this behavior to one of three states depending on the :javadoc:`Tristate` value in the
 :javadoc:`IsCancelled` annotation.
 
@@ -134,11 +134,11 @@ The** ``player`` **parameter will be set to that player.**
 **@After** This is similar to ``@Before``, but it instead uses :javadoc:`Cause#after(Class)`.
 
 **@All** This parameter source annotation requires that the annotated parameter be an array type. The returned array
-will be equivalent to the contents of calling :javadoc:`Cause#allOf(Class)`. By default if the returned array would be
+will be equivalent to the contents of calling :javadoc:`Cause#allOf(Class)`. By default, if the returned array would be
 empty then the validation fails however this can be disabled by setting ``ignoreEmpty=false``.
 
-**In this example your listener will always be called, although the players array may be empty if the event's cause contained
-no players.**
+**In this example your listener will always be called, although the players array may be empty if the event's cause
+contained no players.**
 
 .. code-block:: java
 
@@ -155,8 +155,8 @@ parameter.
 parameter (This is equivalent to :javadoc:`Cause#get(String, Class)`). Additionally, the found object must match the
 type of the parameter. If no object is found meeting these criteria, then your listener is not called.
 
-**In this example your listener will only be called if there is a player associated with the name** ``NamedCause.OWNER`` **.
-The** ``player`` **parameter will be set to that player.**
+**In this example your listener will only be called if there is a player associated with the name**
+``NamedCause.OWNER``\ **. The** ``player`` **parameter will be set to that player.**
 
 .. code-block:: java
 

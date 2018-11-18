@@ -2,6 +2,9 @@
 Plugin Metadata
 ===============
 
+.. javadoc-import::
+    org.spongepowered.api.plugin.Dependency
+
 Adding plugin metadata helps users to identify your plugin more easily by giving them the ability to check the name,
 version, description, or even the authors of a plugin at runtime. It will also be used when publishing plugins on a plugin
 portal like Ore_.
@@ -17,7 +20,9 @@ Currently, Sponge supports the following types of plugin metadata:
 Plugin annotation
 =================
 
-You can define the additional (optional) plugin metadata on your ``@Plugin`` annotation:
+You can define the additional (optional) plugin metadata on your ``@Plugin`` annotation. You can provide all meta
+information in the annotation, despite only the id being required. A ``@Plugin`` annotation which uses all fields
+available looks like this:
 
 .. code-block:: java
 
@@ -27,7 +32,16 @@ You can define the additional (optional) plugin metadata on your ``@Plugin`` ann
         description = "This is a very cool plugin I made for me",
         url = "http://example.com",
         authors = {"Spongie", "FLARD"},
-        dependencies = @Dependency(id = "otherplugin", optional = true))
+        dependencies = {@Dependency(id = "otherplugin", optional = true)})
+
+For every ``@Dependency`` you provide, you may also give a ``version`` attribute specifying a version range according to
+:javadoc:`Dependency#version()`. The ``optional`` attribute specifies that your plugin may be loaded even if the
+dependency is not available. Unless explicitly specified as optional, the absence of any dependency will prevent your
+plugin from being loaded.
+
+.. note::
+    For both ``authors`` and ``dependencies``, the curly brackets may be left out if only one element is supplied, e.g.
+    ``dependencies = @Dependency(id = "otherplugin", optional = true)`` in the above example.
 
 
 File metadata
@@ -80,7 +94,7 @@ Enabling
 --------
 
 If you're using a build system such as Gradle or Maven and have not explicitly disabled annotation processing there is
-nothing extra you need to do. By default the annotation processor will automatically run and generate a ``mcmod.info``
+nothing extra you need to do. By default, the annotation processor will automatically run and generate a ``mcmod.info``
 file based on the contents of your ``@Plugin`` annotation.
 
 If you're not using a build system you need to manually enable annotation processing.
@@ -94,3 +108,7 @@ your plugin metadata. See :doc:`project/gradle` for details.
 
 .. _Ore: https://github.com/SpongePowered/Ore
 .. _JSON: https://en.wikipedia.org/wiki/JSON
+
+.. note::
+    If you're using the NetBeans IDE make sure you've unchecked the *Compile On Save* option under
+    *Project Properties > Build > Compile* to make sure the mcmod.info file will be generated correctly. 

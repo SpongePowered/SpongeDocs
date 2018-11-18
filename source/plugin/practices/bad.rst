@@ -50,7 +50,7 @@ much time and greatly affects the TPS on the server. Such tasks should be done e
 inbuilt scheduler's async feature. However, it is perfectly fine to load required files/config on the main thread during
 server startup/plugin initialization.
 
-.. code-block:: text
+.. code-block:: java
 
     this.game.getScheduler().createAsyncExecutor(this).execute(this::checkForUpdates);
 

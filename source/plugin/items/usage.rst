@@ -18,7 +18,7 @@ actual ``ItemStack`` and thus, you will need to set it back into an inventory if
 Checking an Item's Type
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Checking the type of the item is very simple. You just need to call the :javadoc:`ItemStack#getItem()` method.
+Checking the type of the item is very simple. You just need to call the :javadoc:`ItemStack#getType()` method.
 
 .. code-block:: java
 
@@ -27,13 +27,13 @@ Checking the type of the item is very simple. You just need to call the :javadoc
     import org.spongepowered.api.item.inventory.ItemStack;
 
     public boolean isStick(ItemStack stack) {
-        ItemType type = stack.getItem();
+        ItemType type = stack.getType();
         return type.equals(ItemTypes.STICK);
     }
 
 See how simple that is? Because sticks can stack, we can also find out how many are present.
 
-Getting the amount of items in an ``ItemStack`` is relatively easy. The :javadoc:`ItemStack#getQuantity()` method will
+Getting the number of items in an ``ItemStack`` is relatively easy. The :javadoc:`ItemStack#getQuantity()` method will
 handle this for us.
 
 Modifying ItemStack Data
@@ -70,6 +70,11 @@ already have lore applied to the item.
             stack.offer(Keys.ITEM_LORE, itemLore);
         }
     }
+
+.. note::
+
+    Almost all API methods that return an ``ItemStack`` only return a copy of it, so modifying it does not have any
+    impact on the real stack (e.g. in an inventory). You have to explicitly set it for your changes to persist.
 
 Item Properties
 ~~~~~~~~~~~~~~~

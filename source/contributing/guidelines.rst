@@ -14,7 +14,7 @@ make sure you follow our guidelines.
 General steps
 =============
 
-1. Setup your workspace as described in :doc:`../../preparing/index`.
+1. Setup your workspace as described in :doc:`/preparing/index`.
 
 #. Make sure you're familiar with Git and GitHub. If your knowledge needs a refresh, take a look here: :doc:`howtogit`
 

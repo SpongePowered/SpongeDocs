@@ -3,6 +3,7 @@ Databases
 =========
 
 .. javadoc-import::
+    java.lang.String
     org.spongepowered.api.service.sql.SqlService
 
 SQL
@@ -72,5 +73,5 @@ or, preferably, through a try-with-resources block.
 
 NoSQL
 -----
-Sponge does not currently provide any special abstraction over NoSQL databases (MongoDB etc). Plugins that wish to use
+Sponge does not currently provide any special abstraction over NoSQL databases (MongoDB etc.). Plugins that wish to use
 NoSQL databases must provide their own connectors.

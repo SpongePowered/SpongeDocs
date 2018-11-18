@@ -16,12 +16,13 @@ Sponge. The modifications will be bundled directly with your plugin and are only
 
 Setup
 -----
+
 #. Add the Mixin library as dependency to your plugin:
 
     .. code-block:: groovy
 
         dependencies {
-            compile 'org.spongepowered:mixin:0.7.5-SNAPSHOT'
+            compile 'org.spongepowered:mixin:0.7.11-SNAPSHOT'
         }
 
 #. Add a new Mixin configuration for your plugin, e.g. ``mixins.myplugin.json`` inside your resource folder:
@@ -29,6 +30,8 @@ Setup
     .. code-block:: json
 
         {
+            "required": true,
+            "minVersion": "0.7.10",
             "package": "com.example.myplugin.mixin",
             "refmap": "mixins.myplugin.refmap.json",
             "target": "@env(DEFAULT)",
@@ -54,18 +57,20 @@ Setup
 
 Debugging
 `````````
+
 Normally, the Mixin configuration is registered inside JAR manifest of the plugin. Since the plugin is not packaged in a
 JAR while debugging inside the IDE you need specify the Mixins to apply as command line options:
 
 #. Add a ``--mixin <mixin config file name>`` option for each Mixin configuration file to the program arguments of your
    run configuration:
 
-    ::
+    .. code-block:: bash
 
         --mixin mixins.myplugin.json
 
 Production
 ``````````
+
 If your Mixin is working in your development environment you still need to make some changes to make it work in
 production:
 
@@ -93,7 +98,7 @@ production:
 
         sourceSets {
             main {
-                refMap = "mixins.myplugin.refmap.json"
+                ext.refMap = "mixins.myplugin.refmap.json"
             }
         }
 

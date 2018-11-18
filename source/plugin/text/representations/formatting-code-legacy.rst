@@ -9,7 +9,7 @@ Formatting Code & Legacy Format
     org.spongepowered.api.text.serializer.TextSerializers
 
 Text can be represented by using a special character indicating a formatting *of some kind* followed by a unique character
-indicating the specific formatting to be used. In the SpongeAPI, there are two different characters that are supported
+indicating the specific formatting to be used. In SpongeAPI, there are two different characters that are supported
 by default: the ampersand (&) and the section character (§).
 
 Both formatting schemes use the codes found at the `Minecraft Wiki <https://minecraft.gamepedia.com/Formatting_codes>`_.
@@ -19,7 +19,7 @@ work with the ampersand (&) as well.
 .. warning::
     Text serialization using any kind of formatting code is limited to representing only some of the capabilities
     of a :javadoc:`Text`, namely formatting. It cannot represent any kind of click or hover actions. If brevity is not
-    an issue (as it is in Minecraft chat), it is recommended to use either the :doc:`./xml` or the :doc:`./json`.
+    an issue (as it is in Minecraft chat), it is recommended to use the :doc:`./json`.
 
 Ampersand Formatting
 ====================

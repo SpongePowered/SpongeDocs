@@ -2,7 +2,7 @@
 License
 =======
 
-SpongeForge, SpongeVanilla, SpongeCommon and the Sponge API are licensed under the MIT license. There is no contributor
+SpongeForge, SpongeVanilla, SpongeCommon and SpongeAPI are licensed under the MIT license. There is no contributor
 license agreement, and contributions to the Sponge project are welcome. We also explicitly grant permission to distribute
 SpongeForge in any third-party modpack.
 
