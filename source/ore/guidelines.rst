@@ -171,7 +171,7 @@ player data, or map data) to external systems, the information collected must be
 
     Whenever data collected about the server (often referred to as "stats" or "metrics" data, such as server or
     plugin versions, as well as usage information) is to be sent to an external service, the plugin must first query
-    the Sponge API MetricsConfigManager. Documentation on doing so can be found :doc:`Here </plugin/metrics.rst>`.
+    the Sponge API MetricsConfigManager. Documentation on doing so can be found :doc:`Here </plugin/metrics>`.
     This API must be checked each time data is sent, not only once. Plugins may not modify the values the API
     returns, but may encourage users to make the decision to enable the collection and sending of this data for their
     plugin.
