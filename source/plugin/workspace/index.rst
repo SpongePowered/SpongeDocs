@@ -6,11 +6,7 @@ This section shows the basic setup for your IDE, to get yourself ready to develo
 
 Currently we only provide documentation for the two most popular Java IDEs, IntelliJ_ and Eclipse_, 
 but there are many other methods for developing Sponge plugins. Some choose to use Netbeans_ and 
-<<<<<<< HEAD
-others choose to use text editors like `VS Code`_, Atom_, and `Sublime Text`_.
-=======
 others choose to simply use text editors such as `VS Code`_, Atom_, and `Sublime Text`_.
->>>>>>> refs/remotes/origin/stable
 
 Contents
 ========

@@ -12,20 +12,11 @@ Downloads
 Visual Studio Code
 ~~~~~~~~~~~~~~~~~~
 
-<<<<<<< HEAD
 VS Code is an open source editor by Microsoft licensed under the MIT license. It is a popular choice used by
 many of Sponge's developers, for writing documentation and even for developing plugins, and has an extensive
 repository of plugins. There is `Git support <https://code.visualstudio.com/docs/editor/versioncontrol>`_, great support
 for `reST <https://marketplace.visualstudio.com/items?itemName=lextudio.restructuredtext>`_, and even a 
 plugin for `HOCON <https://marketplace.visualstudio.com/items?itemName=zzzz.hocon-colorizer>`_.
-=======
-VS Code is a cross platform, open source, code and text editor by Microsoft licensed under the MIT license. It is a popular
-choice used by many of Sponge's developers, for writing documentation and even for developing plugins. Unlike a regular text
-editor there is support for debugging, syntax highlighting, intelligent code completion, code refactoring, and more. There
-is also `Git support <https://code.visualstudio.com/docs/editor/versioncontrol>`_, a great plugin for 
-`reST support <https://marketplace.visualstudio.com/items?itemName=lextudio.restructuredtext>`_, and even
-a plugin for `HOCON <https://marketplace.visualstudio.com/items?itemName=zzzz.hocon-colorizer>`_.
->>>>>>> refs/remotes/origin/stable
 
 **VS Code** can be downloaded for free from https://code.visualstudio.com/.
 

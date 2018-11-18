@@ -4,7 +4,7 @@ Build Systems
 
 Build systems such as Gradle_ or Maven_ can manage the build process of your projects. As an independent tool from your
 IDE, you can use them to manage your dependency on SpongeAPI or other plugins and give other people an easy way to
-build your plugin from the source. 
+build your plugin from the source.
 
 .. note::
     SpongeAPI does **not** require using a build system for creating plugins, however we strongly recommend using one.
@@ -14,14 +14,14 @@ build your plugin from the source.
 Generally, you can use any build system which supports *Maven dependencies*, which is a standard supported by the
 majority of build systems for Java projects. The following sections will focus on Gradle_ and Maven_, which are the two
 most common choices as build systems. If you're unsure which one to use we recommend using Gradle_ as it is also used
-for the Sponge projects and provides the best integration for Sponge plugins. 
+for the Sponge projects and provides the best integration for Sponge plugins.
 
 .. _gradle-setup:
 
 Gradle
 ======
-Gradle_ uses Groovy_ or Kotlin_ based scripts for configuring projects. A Gradle_ project typically consists of a ``build.gradle``
-file in your project's root directory, which tells Gradle_ how to build the project.
+Gradle_ uses Groovy_ or Kotlin_ based scripts for configuring projects. A Gradle_ project typically consists of a
+``build.gradle`` file in your project's root directory, which tells Gradle_ how to build the project.
 
 .. tip::
     Refer to the `Gradle User Guide`_ for the installation and a general introduction of concepts used in Gradle_. If
@@ -59,7 +59,8 @@ For developing plugins without a build system, you need to download the SpongeAP
 dependencies that would normally be automatically downloaded by the build system.
 
 After you have downloaded the ``shaded`` artifact and have added it to a project in your IDE, you can start developing
-your plugin. Continue at :doc:`plugin-identifier` for choosing an identifier for your project, then continue at :doc:`plugin-class`.
+your plugin. Continue at :doc:`plugin-identifier` for choosing an identifier for your project, then continue at
+:doc:`plugin-class`.
 
 .. _Gradle: https://gradle.org/
 .. _Maven: https://maven.apache.org/

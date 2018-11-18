@@ -11,8 +11,7 @@ Instructions and Guidelines on how to contribute can be found on [the Docs thems
 
 ## Licensing
 
-The Sponge Documentation is licensed under the [Creative Commons - Share-Alike license](LICENSE.txt), 
-while all code samples are licensed under the [MIT license](MIT-LICENSE.txt).
+The Sponge Documentation is licensed under the [Creative Commons - Share-Alike license](LICENSE.txt).
 
 You can read more about our licensing situation on the [documentation itself](https://docs.spongepowered.org/stable/en/about/license.html).
 
