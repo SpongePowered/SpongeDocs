@@ -1,6 +1,6 @@
-========
-Commands
-========
+===============
+Plugin Commands
+===============
 
 .. javadoc-import::
 	org.spongepowered.api.command.CommandCallable

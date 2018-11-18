@@ -70,7 +70,7 @@ listing please see the `Javadocs <https://jd.spongepowered.org>`_.
 the event. Since a ``Cause`` may not be empty, it is guaranteed to have a ``root``.
 
 :javadoc:`Cause#first(Class)` returns the first object in the cause chain whose type is either the same as or is a
-subtype of the given class. For example given a cause which contained a player followed by an entity
+subtype of the given class. For example, given a cause which contained a player followed by an entity
 ``[Player, Entity, ...]``
 
 .. code-block:: java
@@ -82,7 +82,7 @@ subtype of the given class. For example given a cause which contained a player f
         Optional<Entity> firstEntity = cause.first(Entity.class); // 2
     }
 
-Both optionals would contain the player object as it's type directly matched request for a
+Both optionals would contain the player object as its type directly matched request for a
 Player type and it matched the request for an Entity type as Player is a subtype of Entity.
 
 :javadoc:`Cause#last(Class)` is similar to ``Cause#first(Class)`` except it returns the last value in the cause chain
@@ -184,8 +184,8 @@ as the :javadoc:`EventContextKeys#PLAYER_SIMULATED` context, in addition to anyt
 
 .. code-block:: java
 
-    CommandSource sourceRunningSudo;
-    Player playerToSimulate;
+    CommandSource sourceRunningSudo = ...;
+    Player playerToSimulate = ...;
     try (CauseStackManager.StackFrame frame = Sponge.getCauseStackManager().pushCauseFrame()) {
 
       frame.pushCause(sourceRunningSudo);
@@ -229,9 +229,9 @@ to the cause would be the root cause.
 
 .. code-block:: java
 
-    CommandSource sourceRunningSudo;
-    Player playerToSimulate;
-    PluginContainer plugin;
+    CommandSource sourceRunningSudo = ...;
+    Player playerToSimulate = ...;
+    PluginContainer plugin = ...;
 
     EventContext context = EventContext.builder()
       .add(EventContextKeys.PLAYER_SIMULATED, playerToSimulate.getProfile())

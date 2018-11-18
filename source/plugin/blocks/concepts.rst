@@ -10,7 +10,7 @@ differentiate these base types, each block has set of different properties, of w
 values (i.e. *podzol* dirt, *brick* stairs, *oak* leaves). A block can have multiple properties (such as *east-facing*,
 *brick* stairs).
 
-.. topic:: Examples of block properties
+**Examples of block properties**
 
     .. code::
 
@@ -37,7 +37,7 @@ legacy reasons: for example, the furnace block consists of two base types (curre
 not utilizing their metadata at all. On the other hand, logs do use their metadata fully, but because the combination of
 properties exceeds 16 possible values (think tree type and direction), logs must be split over two base types.
 
-In the future, there will only be one 16 bit number (65536 possible combinations of base type + properties). Blocks will
+In the future, there will only be one 16-bit number (65536 possible combinations of base type + properties). Blocks will
 be assigned an ID automatically and this assignment will be stored in the world save file. This is illustrated below:
 
     0 => minecraft:dirt[snowy=false,variant=default]

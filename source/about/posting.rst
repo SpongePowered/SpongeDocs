@@ -33,7 +33,7 @@ Forum Rules
 Categorizing Your Posts
 -----------------------
 
-When creating new topics, use the drop down menu to the right of the topic title to set its category. Try to make sure
+When creating new topics, use the drop-down menu to the right of the topic title to set its category. Try to make sure
 this category fits what you're posting about. If you don't know what a category implies, a description is next to each
 one in the drop down.
 

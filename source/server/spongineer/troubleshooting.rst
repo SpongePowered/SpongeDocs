@@ -13,7 +13,7 @@ and what to do about it.
 Java Is Not Installed On Your Computer
 --------------------------------------
 
-**Solution**: Get Java. Visit the :doc:`../../server/getting-started/jre` for more information.
+**Solution**: Get Java. Visit the :doc:`/server/getting-started/jre` for more information.
 
 Network Connection Failure (or DDoS Attack)
 -------------------------------------------
@@ -31,7 +31,7 @@ Not Enough Free Memory
 **Symptoms**: Server crashes, often accompanied with "Out of Memory" messages.
 
 **Solutions**: Expand the maximum Perm memory size with the startup argument ``-XX:MaxPermSize=128``. Expand your
-server heap memory (if possible) with startup arguments eg. ``-Xms1024M`` (1GB starting memory) and ``-Xmx2048M``
+server heap memory (if possible) with startup arguments e.g. ``-Xms1024M`` (1GB starting memory) and ``-Xmx2048M``
 (2GB maximum). Monitor your free memory on the computer and see if there is some locked up in other processes.
 You may need to kill frozen java processes, or restart your machine. Memory leaks sometimes occur with bugs in
 plugins, which can take time to isolate.
@@ -41,8 +41,8 @@ your Task Manager to see if you are using all available Memory. If you are, the 
 to your system. If there is still plenty of memory available, you are running 32-bit Java. If you are using 32-bit
 Java, we recommend an upgrade to 64-bit Java, provided that your Operating System is also 64-bit.
 
-Malformed Config File (eg. Bad Editing)
----------------------------------------
+Malformed Config File (e.g. Bad Editing)
+----------------------------------------
 
 **Symptom**: One (or more) plugins refuse to load, or behave in unexpected ways. The server log files will contain
 messages about unreadable files on startup. The server may crash, and data may be corrupted.
@@ -61,15 +61,15 @@ incorrectly edited config file (above). Remove suspect plugins and add them agai
 each time. The problem may originate from one plugin that is out of date - check for updates. Plugin conflict may also
 be the cause, having two incompatible plugins.
 
-Operating System Unstable (eg. Virus Infection)
---------------------------------------------------
+Operating System Unstable (e.g. Virus Infection)
+------------------------------------------------
 
 **Symptom**: The server keeps crashing or timing out, and other parts of your operating system are also having problems.
 
 **Solution**: Stop everything. Thoroughly check your system and storage devices for malware and viruses. Good tools
 for this include AdwCleaner, Junkware Removal Tool, MalwareBytes, and most antivirus ware. Check your server files
-for corruption after a clean restart of your system. Examine the hardware for damage too if the problems persist - eg. a
-faulty power supply.
+for corruption after a clean restart of your system. Examine the hardware for damage too if the problems persist - e.g.
+a faulty power supply.
 
 Corrupted Data
 --------------

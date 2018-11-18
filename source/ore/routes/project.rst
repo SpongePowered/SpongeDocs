@@ -33,7 +33,7 @@ Returns a single project with a given plugin ID. Note that there are no two plug
             "name": "1.1",
             "dependencies": [{
                 "pluginId": "spongeapi",
-                "version": "7.0.0"
+                "version": "7.1.0"
             }],
             "pluginId": "auction",
             "channel": {
@@ -47,7 +47,7 @@ Returns a single project with a given plugin ID. Note that there are no two plug
             "tags": [{
                 "id": 13,
                 "name": "Sponge",
-                "data": "7.0.0",
+                "data": "7.1.0",
                 "backgroundColor": "#F7Cf0D",
                 "foregroundColor": "#000000"
             }],

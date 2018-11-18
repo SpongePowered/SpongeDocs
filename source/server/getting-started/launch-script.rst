@@ -23,7 +23,7 @@ of your machine in mind.
 Windows
 ~~~~~~~
 
-.. code-block:: none
+.. code-block:: bat
 
     java -Xms1G -Xmx2G -jar forge-1.12.2-XYZ-universal.jar
     pause
@@ -33,7 +33,7 @@ Save your Windows launch script as ``launch.bat``.
 macOS
 ~~~~~
 
-.. code-block:: none
+.. code-block:: bash
 
     #!/bin/bash
     cd "$(dirname "$0")"
@@ -44,7 +44,7 @@ Save your Mac launch script as ``launch.command``.
 Linux
 ~~~~~
 
-.. code-block:: none
+.. code-block:: sh
 
     #!/bin/sh
     cd "$(dirname "$(readlink -fn "$0")")"

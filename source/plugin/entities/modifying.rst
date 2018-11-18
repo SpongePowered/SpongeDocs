@@ -52,8 +52,8 @@ An example of changing an ``Entity``\ s explosive radius to 50 can be seen below
     import org.spongepowered.api.data.manipulator.mutable.entity.ExplosiveRadiusData;
     
     public void explosionRadius50(Entity creeper) {
-        ExplosiveRadiusData radiusData = creeper.get(ExplosiveRadiusData.class).get();
-        creeper.offer(radiusData.explosiveRadius().set(50));
+        ExplosionRadiusData radiusData = creeper.get(ExplosionRadiusData.class).get();
+        creeper.offer(radiusData.explosionRadius().setTo(50));
     }
     
 This will get the ``ExplosiveRadiusData`` of our ``Entity`` for our use. We then use that data to set the explosive
@@ -83,7 +83,7 @@ Another, shorter way to do this is by just using :javadoc:`Keys` on our ``Entity
     import org.spongepowered.api.data.key.Keys;
     
     public void explosionRadius50(Entity creeper) {
-        creeper.offer(Keys.EXPLOSIVE_RADIUS, 50);
+        creeper.offer(Keys.EXPLOSION_RADIUS, Optional.of(50));
         creeper.offer(Keys.DISPLAY_NAME, Text.of(TextColors.DARK_AQUA, "Inscrutable"));
     }
 

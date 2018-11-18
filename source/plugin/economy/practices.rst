@@ -16,9 +16,9 @@ Withdrawing money
 Plugins should *not* check if an account has enough money before attempting to withdraw it. While this may
 sound counter-intuitive, it allows economy plugins to fully control how they handle negative balances.
 
-By checking yourself if the account has enough money, you prevent the economy plugin from (potentially)
-allowing a negative balance. For example, one economy plugin might want to allow negative balances to admins,
-or players with a certain permission. By performing the check yourself, you take this power away from the economy plugin.
+By checking yourself if the account has enough money, you prevent the economy plugin from (potentially) allowing a
+negative balance. For example, one economy plugin might want to allow negative balances to admins, or players with a
+certain permission. By performing the check yourself, you take this power away from the economy plugin.
 
 This code illustrates what **not** to do:
 
@@ -27,20 +27,23 @@ This code illustrates what **not** to do:
     import java.math.BigDecimal;
     
     import org.spongepowered.api.event.cause.Cause;
+    import org.spongepowered.api.event.cause.EventContext;
+    import org.spongepowered.api.event.cause.EventContextKeys;
     import org.spongepowered.api.service.economy.EconomyService;
     import org.spongepowered.api.service.economy.account.Account;
-        
+    
+    PluginContainer pluginContainer = ...;
     EconomyService service = ...;
     Account account = ...;
     BigDecimal requiredAmount = BigDecimal.valueOf(20);
-
+    EventContext eventContext = EventContext.builder().add(EventContextKeys.PLUGIN, pluginContainer).build();
+    
     // BAD: Don't perform this check
     if (account.getBalance(service.getDefaultCurrency()).compareTo(requiredAmount) < 0) {
         // You don't have enough money!
     } else {
         // The account has enough, let's withdraw some cash!
-        account.withdraw(service.getDefaultCurrency(), requiredAmount,
-            Cause.source(this).build());
+        account.withdraw(service.getDefaultCurrency(), requiredAmount, Cause.of(eventContext, pluginContainer));
     }
 
 
@@ -55,13 +58,15 @@ Here's how you **should** withdraw money:
     import org.spongepowered.api.service.economy.transaction.ResultType;
     import org.spongepowered.api.service.economy.transaction.TransactionResult;
     
-    EconomyService service = ...
-    Account account = ...
+    PluginContainer pluginContainer = ...;
+    EconomyService service = ...;
+    Account account = ...;
     BigDecimal requiredAmount = BigDecimal.valueOf(20);
-
-    TransactionResult result = account.withdraw(service.getDefaultCurrency(),
-        requiredAmount, Cause.source(this).build());
-    if (result.getResult() == ResultType.SUCCESS)) {
+    EventContext eventContext = EventContext.builder().add(EventContextKeys.PLUGIN, pluginContainer).build();
+    
+    TransactionResult result = account.withdraw(service.getDefaultCurrency(), requiredAmount,
+                    Cause.of(eventContext, pluginContainer));
+    if (result.getResult() == ResultType.SUCCESS) {
         // Success!
     } else if (result.getResult() == ResultType.FAILED || result.getResult() == ResultType.ACCOUNT_NO_FUNDS) {
         // Something went wrong!

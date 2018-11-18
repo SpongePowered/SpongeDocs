@@ -71,7 +71,7 @@ hits.
 .. code-block:: java
 
     BlockRay<World> blockRay = BlockRay.from(player)
-        .skipFilter(BlockRay.onlyAirFilter()).stopFilter(blockRay.allFilter()).build();
+        .skipFilter(BlockRay.onlyAirFilter()).stopFilter(BlockRay.allFilter()).build();
 
 Using BlockRay
 ==============
@@ -95,7 +95,7 @@ in front of the player.
     import org.spongepowered.api.util.blockray.BlockRayHit;
     import java.util.Optional;
 
-    BlockRay<World> blockRay;
+    BlockRay<World> blockRay = ...;
     Optional<BlockRayHit<World>> hitOpt = blockRay.end();
     if (hitOpt.isPresent()) {
         BlockRayHit<World> hit = hitOpt.get();

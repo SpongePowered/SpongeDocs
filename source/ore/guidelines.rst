@@ -20,8 +20,21 @@ Name
 ~~~~
 
 Your project’s submitted name should not include a version, tagline, or other description. The name should be unique and original
-and must not have a name implying it is a Sponge project (e.g. *SpongeWarp* is not allowed, *Cool Warps for Sponge* is).
+and must not have a name implying it is an official Sponge project.
 
+Examples of names that are **not acceptable**:
+
+- *SpongeWarp*
+- *SpongeHome*
+- *SpongeEssentials*
+- *SpongeCloud*
+
+Examples of names that are **acceptable**:
+
+- *CoolWarps-Sponge*
+- *MoneyMiner-Sponge*
+- *Golfball-for-Sponge*
+- *Calendar-for-Sponge*
 
 Main Documentation Page (Home)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -104,7 +117,7 @@ Either:
    Plugin X and now I claim credit!”, or
  - Continue a plugin that has been abandoned, with proof the author has not been answering messages or has stated the project
    will no longer be updated.
-    
+
 Acknowledge or credit the past plugin and developers. Essentially, don’t claim it is a new plugin and exclusively your creation.
 
 --------
@@ -132,7 +145,7 @@ Core Mods and Mixins: Modification of the Minecraft Base Code
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Plugins and mods that use a system that modifies the Minecraft base code at runtime, (such as core mods and mixins) must disclose
-the edits that they make to the Minecraft code, and their reasoning for them. Sponge plugins should use the Sponge API where
+the edits that they make to the Minecraft code, and their reasoning for them. Sponge plugins should use SpongeAPI where
 possible. Sponge implementations may implement technical restrictions to prevent such modifications from being applied by default.
 Files are not permitted to attempt to work around these restrictions, but can notify the user that enhanced functionality can be
 enabled via the Sponge provided configuration options.
@@ -158,7 +171,7 @@ sources, and execution shell scripts.
 Monetization / Advertising
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-All functionality present in your plugin should be usable without restriction, and can not require a license key to operate.
+All functionality present in your plugin should be usable without restriction, and cannot require a license key to operate.
 External APIs, such as translation or geolocation services, that require payment for functionality can be allowed but must be
 discussed among staff prior to approval. Plugins may not be used to display advertisements.
 

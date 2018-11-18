@@ -94,7 +94,7 @@ Enabling
 --------
 
 If you're using a build system such as Gradle or Maven and have not explicitly disabled annotation processing there is
-nothing extra you need to do. By default the annotation processor will automatically run and generate a ``mcmod.info``
+nothing extra you need to do. By default, the annotation processor will automatically run and generate a ``mcmod.info``
 file based on the contents of your ``@Plugin`` annotation.
 
 If you're not using a build system you need to manually enable annotation processing.

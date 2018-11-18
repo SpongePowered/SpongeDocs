@@ -17,7 +17,7 @@ are no two versions in a project with the same version string.
         "name": "1.1",
         "dependencies": [{
             "pluginId": "spongeapi",
-            "version": "7.0.0"
+            "version": "7.1.0"
         }],
         "pluginId": "auction",
         "channel": {
@@ -31,7 +31,7 @@ are no two versions in a project with the same version string.
         "tags": [{
             "id": 13,
             "name": "Sponge",
-            "data": "7.0.0",
+            "data": "7.1.0",
             "backgroundColor": "#F7Cf0D",
             "foregroundColor": "#000000"
         }],

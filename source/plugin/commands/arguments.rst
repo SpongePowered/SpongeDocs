@@ -11,10 +11,13 @@ Argument Parsing
     org.spongepowered.api.command.args.CommandElement
     org.spongepowered.api.command.args.GenericArguments
     org.spongepowered.api.command.spec.CommandSpec.Builder
+    org.spongepowered.api.entity.Entity
+    org.spongepowered.api.text.selector.Selector
+    java.lang.IllegalArgumentException
     java.lang.String
 
 The Command Builder API comes with a powerful argument parser. It converts the string input to java base types
-(integers, booleans, strings) or game objects (players, worlds, block types , ...). The parser supports optional
+(integers, booleans, strings) or game objects (players, worlds, block types, ...). The parser supports optional
 arguments and flags. It also handles TAB completion of arguments.
 
 The parsed arguments are stored in the :javadoc:`CommandContext` object. If the parser returns a single object, obtain
@@ -24,17 +27,21 @@ Many of the parsers may return more than one object (e.g. multiple players with 
 must use the :javadoc:`CommandContext#getAll(String)` method to get the ``Collection`` of possible matches.
 **Otherwise, the context object will throw an exception!**
 
+When creating a command, consider whether the argument could return multiple values, for example, whether a player
+argument could support multiple players when using a selector. If you support multiple values the users need to type
+only one command and can use an easier command syntax. Example: ``/tell @a Who took the cookies?``
+
 .. tip::
 
-   You can use the
-   :javadoc:`GenericArguments#onlyOne(CommandElement)` element to limit the amount of returned values to a single one,
-   so you can safely use ``args.<T>getOne(String)``.
+   You can use the :javadoc:`GenericArguments#onlyOne(CommandElement)` element to restrict the amount of returned values
+   to a single one, so you can safely use ``args.<T>getOne(String)``. However the user will still get a message, if they
+   try to select more than one value.
 
 To create a new :javadoc:`CommandElement` (argument), use the :javadoc:`GenericArguments` factory class. Many command
 elements require a short text key, which is displayed in error and help messages.
 
 Apply the ``CommandElement`` to the command builder with the :javadoc:`CommandSpec.Builder#arguments(CommandElement...)`
-method. It is possible to pass more than one ``CommandElement`` to the method, thus chaining multiple arguments (e.g
+method. It is possible to pass more than one ``CommandElement`` to the method, thus chaining multiple arguments (e.g.
 ``/msg <player> <msg>``). This has the same effect as wrapping the ``CommandElement`` objects in a
 :javadoc:`GenericArguments#seq(CommandElement...)` element.
 
@@ -62,17 +69,14 @@ Example: Building a Command with Multiple Arguments
                     GenericArguments.onlyOne(GenericArguments.player(Text.of("player"))),
                     GenericArguments.remainingJoinedStrings(Text.of("message")))
 
-            .executor(new CommandExecutor() {
-                @Override
-                public CommandResult execute(CommandSource src, CommandContext args) throws CommandException {
+            .executor((CommandSource src, CommandContext args) -> {
 
-                    Player player = args.<Player>getOne("player").get();
-                    String message = args.<String>getOne("message").get();
+                Player player = args.<Player>getOne("player").get();
+                String message = args.<String>getOne("message").get();
 
-                    player.sendMessage(Text.of(message));
+                player.sendMessage(Text.of(message));
 
-                    return CommandResult.success();
-                }
+                return CommandResult.success();
             })
             .build();
 
@@ -164,6 +168,13 @@ Overview of the ``GenericArguments`` command elements
 
     See the Javadocs for :javadoc:`GenericArguments` for more information.
 
+.. warning::
+
+    Don't expect that a ``CommandElement``\s will only ever return a single value, a lot of them support multiple return
+    values; some might even support regular expressions or use a command selector. This is intentional as it makes
+    commands easier to use. Example: ``/tell @a BanditPlayer has the cookies!``. If you want to make sure to only get a
+    single value use ``GenericArguments#onlyOne(CommandElement)``.
+
 Custom Command Elements
 =======================
 
@@ -194,7 +205,6 @@ The parser in this example reads two input arguments and converts them to a vect
    import java.util.List;
 
    public class Vector2iCommandElement extends CommandElement {
-       CommandArgs errorargs;
 
        protected Vector2iCommandElement(Text key) {
            super(key);
@@ -203,23 +213,20 @@ The parser in this example reads two input arguments and converts them to a vect
        @Override
        protected Object parseValue(CommandSource source, CommandArgs args) throws ArgumentParseException {
 
-           // <x> <y>
-           errorargs=args;
-
            String xInput = args.next();
-           int x = parseInt(xInput);
+           int x = parseInt(xInput, args);
 
            String yInput = args.next();
-           int y = parseInt(yInput);
+           int y = parseInt(yInput, args);
 
            return new Vector2i(x, y);
        }
 
-       private int parseInt(String input) throws ArgumentParseException {
+       private int parseInt(String input, CommandArgs args) throws ArgumentParseException {
            try {
                return Integer.parseInt(input);
            } catch(NumberFormatException e) {
-               throw errorargs.createError(Text.of("'" + input + "' is not a valid number!"));
+               throw args.createError(Text.of("'" + input + "' is not a valid number!"));
            }
        }
 
@@ -253,3 +260,49 @@ Example: ``Vector2i`` command element usage
 
     Look at the `source code <https://github.com/SpongePowered/SpongeAPI/blob/stable-7/src/main/java/org/spongepowered/api/command/args/GenericArguments.java>`_
     of the ``GenericArguments`` class for more examples.
+
+Using Selectors in Custom Command Elements
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Sponge provides support for parsing selectors, meaning that you can make use of them in your custom elements. There
+are two steps in using selectors, **parsing** (getting a :javadoc:`Selector` from the string) and **resolving**
+(getting a set of :javadoc:`Entity` objects selected by the selector).
+
+To **parse** a selector string, use the :javadoc:`Selector#parse(String)` method, passing the entire selector,
+including the ``@`` symbol. This will turn the string into a ``Selector`` object that can be queried or resolved.
+Note that if the string is not a valid selector, an :javadoc:`IllegalArgumentException` will be thrown.
+
+To **resolve** this selector, use :javadoc:`Selector#resolve(CommandSource)`. This will return a set of ``Entity``
+objects selected by the selector.
+
+The following ``parseValue`` method from the ``CommandElement`` class attempts to parse a selector and return a set of
+entities based on the location of the ``CommandSource``. If the passed string does not start with ``@``, an exception
+will be thrown indicating that the passed argument is not a selector.
+
+.. code-block:: java
+
+    @Override
+    protected Object parseValue(CommandSource source, CommandArgs args) throws ArgumentParseException {
+        String nextArg = args.next();
+        if (nextArg.startsWith("@")) {
+            Set<Entity> selectedEntities;
+            try {
+                selectedEntities = Selector.parse(nextArg).resolve(source);
+            } catch (IllegalArgumentException e) {
+                throw args.createError(Text.of("Could not parse selector."));
+            }
+
+            if (selectedEntities.isEmpty()) {
+                throw args.createError(Text.of("No entities selected."));
+            }
+
+            return selectedEntities;
+        }
+
+        throw args.createError(Text.of("Not a selector."));
+    }
+
+.. tip::
+
+  Look at the `SelectorCommandElement source code <https://github.com/SpongePowered/SpongeAPI/blob/stable-7/src/main/java/org/spongepowered/api/command/args/SelectorCommandElement.java#L40>`_
+  for an example of how selector parsing is performed in the standard Sponge ``CommandElements``.

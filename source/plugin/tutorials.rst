@@ -3,7 +3,7 @@ Tutorials
 =========
 
 This section is a repository of links to instructional videos about sponge plugin development, prepared by trusted
-developers. We hope these help guide you to great heights in sponge plugin development.
+developers. We hope that these will guide you to great heights in sponge plugin development.
 
 
 Intellij IDEA

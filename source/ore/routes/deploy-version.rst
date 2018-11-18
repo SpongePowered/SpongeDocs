@@ -1,31 +1,31 @@
-========================
+======================
 Deploy Project Version
-========================
+======================
 
 **POST /api/v1/projects/:pluginId/versions/:version**
 
 Deploys a new version for the specified project. The body should be sent as ``multipart/form-data`` with the fields 
 shown below. Returns a JSON representation of the deployed version.
 
-+-------------+------------------------------+----------------------------------------------------------------+
-| Name        | Data Type                    | Description                                                    |
-+=============+==============================+================================================================+
-| apiKey      | String                       | An Ore deployment key obtained through the Ore settings.       |
-+-------------+------------------------------+----------------------------------------------------------------+
-| channel     | String                       | The channel the version should be in.                          |
-+-------------+------------------------------+----------------------------------------------------------------+
-| recommended | Boolean                      | If this version should be set as the recommended version.      |
-|             |                              | Defaults to true.                                              |
-+-------------+------------------------------+----------------------------------------------------------------+
-| forumPost   | Boolean                      | Whether a forum post should be created or not. If no value is  |
-|             |                              | specified, it will default to the project's setting. Optional. |
-+-------------+------------------------------+----------------------------------------------------------------+
-| changelog   | String                       | A changelog to include for this version. Optional.             |
-+-------------+------------------------------+----------------------------------------------------------------+
-| pluginFile  | File                         | The plugin file to upload.                                     |
-+-------------+------------------------------+----------------------------------------------------------------+
-| pluginSig   | File                         | A signature of the plugin file.                                |
-+-------------+------------------------------+----------------------------------------------------------------+
++-------------+-----------+----------------------------------------------------------------+
+| Name        | Data Type | Description                                                    |
++=============+===========+================================================================+
+| apiKey      | String    | An Ore deployment key obtained through the Ore settings.       |
++-------------+-----------+----------------------------------------------------------------+
+| channel     | String    | The channel the version should be in.                          |
++-------------+-----------+----------------------------------------------------------------+
+| recommended | Boolean   | If this version should be set as the recommended version.      |
+|             |           | Defaults to true.                                              |
++-------------+-----------+----------------------------------------------------------------+
+| forumPost   | Boolean   | Whether a forum post should be created or not. If no value is  |
+|             |           | specified, it will default to the project's setting. Optional. |
++-------------+-----------+----------------------------------------------------------------+
+| changelog   | String    | A changelog to include for this version. Optional.             |
++-------------+-----------+----------------------------------------------------------------+
+| pluginFile  | File      | The plugin file to upload.                                     |
++-------------+-----------+----------------------------------------------------------------+
+| pluginSig   | File      | A signature of the plugin file.                                |
++-------------+-----------+----------------------------------------------------------------+
 
 **Example curl usage:**
 
@@ -45,7 +45,7 @@ shown below. Returns a JSON representation of the deployed version.
         "name": "1.1",
         "dependencies": [{
             "pluginId": "spongeapi",
-            "version": "7.0.0"
+            "version": "7.1.0"
         }],
         "pluginId": "auction",
         "channel": {
@@ -59,7 +59,7 @@ shown below. Returns a JSON representation of the deployed version.
         "tags": [{
             "id": 13,
             "name": "Sponge",
-            "data": "7.0.0",
+            "data": "7.1.0",
             "backgroundColor": "#F7Cf0D",
             "foregroundColor": "#000000"
         }],

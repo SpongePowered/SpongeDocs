@@ -23,7 +23,7 @@ repository itself, since almost everything is already documented.
 
 .. note::
 
-  The Mixin project will be servicing a number of other projects in addition to Sponge itself. Therefore Mixin has its'
+  The Mixin project will be servicing a number of other projects in addition to Sponge itself. Therefore, Mixin has its
   own documentation together with the repository.
 
 
@@ -57,7 +57,7 @@ that attempt to use Sponge.
         }
 
         // Other methods skipped
-    }
+    };
 
 This applies to all classes that are annotated with ``@Mixin``. Classes that are not touched by the mixin processor may make use of those
 features. There are two ways to work around this.
@@ -127,10 +127,10 @@ the other. For example:
             return new Collection<ItemStack>() {
                 @Override
                 public Iterator<ItemStack> iterator() {
-                    return new SampleIterator<>();
+                    return new SampleIterator();
                 }
 
                 // Other methods skipped
-            }
+            };
         }
     }

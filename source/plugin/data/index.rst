@@ -3,6 +3,8 @@ The Data API
 ============
 
 .. javadoc-import::
+
+    org.spongepowered.api.block.BlockType
     org.spongepowered.api.data.DataHolder
     org.spongepowered.api.data.key.Key
     org.spongepowered.api.data.key.Keys
@@ -10,6 +12,8 @@ The Data API
     org.spongepowered.api.data.manipulator.mutable.entity.HealthData
     org.spongepowered.api.data.property.item.DamageAbsorptionProperty
     org.spongepowered.api.data.property.item.HarvestingProperty
+    org.spongepowered.api.entity.EntityType
+    org.spongepowered.api.item.ItemType
 
 The unified Data API aims to provide a consistent way of accessing and modifying data. 'Data', in this context
 means any data that is consistently synchronized between client and server. It can be changed server-side and
@@ -19,15 +23,15 @@ a sign, the looks of a horse or the health of any living entity.
 Where other approaches define the available data using interfaces and inheritance (like a ``LivingEntity``
 interface providing getter and setter functions for current and maximum health), in Sponge every entity, block
 etc. is completely oblivious to what data it holds. While this may appear less straightforward than direct
-accessor methods, it is foremost far more extensible. And thanks to the addition of :javadoc:`Key`\ s, simply accessing
+accessor methods, it is foremost far more extensible. And thanks to the addition of :javadoc:`Key`\s, simply accessing
 specific values is no less straightforward.
 
-.. warning::
+.. tip::
 
-    As of writing, a few parts of the Data API are not implemented. If you are trying to access an API and are receiving
-    an empty ``Optional`` when one is not expected, refer to the `Implementation Tracker
+    If the data API behaves differently from what you expect (e.g. returns an empty ``Optional`` even if the data are
+    supposed to be present), or there is a feature/value missing that you need, check the `Implementation Tracker
     <https://github.com/SpongePowered/SpongeCommon/issues/8>`_, ask in the ``#spongedev`` IRC channel or on the
-    `Forums <https://forums.spongepowered.org>`_ to find out if the data you need to work with is available yet.
+    `Forums <https://forums.spongepowered.org>`_.
 
 Concepts
 ========
@@ -35,6 +39,12 @@ Concepts
 On first glance at the API docs, the data API threatens to overwhelm you with lots of interfaces and packages. But
 to simply use the data API, you will not have to deal with many of them, as most interfaces found there are just
 specific data manipulators.
+
+CatalogTypes
+~~~~~~~~~~~~
+
+:doc:`catalog-types` are groups of values that can be used in certain context. Famous examples of these types are
+:javadoc:`BlockType`\s, :javadoc:`EntityType`\s and :javadoc:`ItemType`\s.
 
 DataHolder
 ~~~~~~~~~~
@@ -51,8 +61,8 @@ Property
 A property too is data, but not synchronized between server and clients. Therefore, it can only be
 changed by modifications present on both client and server. Since Sponge is not intended to require a
 client-side counterpart, properties are not modifiable.
-Examples of properties are the harvesting ablities on tools (represented as :javadoc:`HarvestingProperty` or the damage
-absorption of an equippable armor item (represented as :javadoc:`DamageAbsorptionProperty`).
+Examples of properties are the harvesting abilities on tools (represented as :javadoc:`HarvestingProperty` or the damage
+absorption of an equipable armor item (represented as :javadoc:`DamageAbsorptionProperty`).
 
 DataManipulator
 ~~~~~~~~~~~~~~~
@@ -87,6 +97,7 @@ Contents
     :titlesonly:
 
     custom/index
+    catalog-types
     keys
     datamanipulators
     transactions

@@ -80,6 +80,8 @@ local.properties
 
 # eclipse
 .project
+.classpath
+.factorypath
 
 # sbteclipse plugin
 .target
@@ -139,4 +141,3 @@ javadoc_dump.txt
 .DS_Store
 
 locale
-package-lock.json

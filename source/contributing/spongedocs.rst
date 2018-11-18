@@ -28,14 +28,14 @@ Changes and additions to SpongeDocs should be submitted as a pull request to the
 requests to be refined during the review process. Incomplete explanations are also welcome, so don't shy away if there
 are some parts you do not understand. There will always be someone able to fill in the gaps.
 
-The Docs are written in reStructuredText (reST), if you're familiar with Markdown (md) the step to reST shouldn't be to
+The Docs are written in reStructuredText (reST), if you're familiar with Markdown (md) the step to reST shouldn't be too
 hard. If you're having issues with it we suggest that you join our `forums <https://forums.spongepowered.org/>`_ or
 `#spongedocs on irc.esper.net <ircs://irc.esper.net:6697/#spongedocs>`_ and ask for help there.
 
-The Sponge Documentation is licensed under the `Creative Commons - Share-Alike license <https://creativecommons.org/licenses/by-sa/4.0/>`_, 
-while all code samples are licensed under the `MIT license <https://choosealicense.com/licenses/mit/>`_ similar to the Sponge projects themselves. 
-Art assets are held under the `Creative Commons - Non Commercial, No Derivatives license <https://creativecommons.org/licenses/by-nc-nd/4.0/>`_. 
-Contributions implicitly accept this licensing.
+The Sponge Documentation is licensed under the `Creative Commons - Share-Alike license 
+<https://creativecommons.org/licenses/by-sa/4.0/>`_. Art assets are held under the related `Creative Commons - 
+Non Commercial, No Derivatives license <https://creativecommons.org/licenses/by-nc-nd/4.0/>`_. Contributors implicitly 
+accept this licensing.
 
 Style Guide
 ===========
@@ -52,6 +52,17 @@ writing Sponge Documentation. This list may get added to (or bent out of shape) 
      Contributors are discouraged from commenting in code blocks wherever possible. Simple place-holder text may be
      necessary in some examples. Ideally, code block examples will be short, and followed by an explanation for each
      example in the body text. Of course, there may be some concepts that cannot be illustrated with a short example.
+  ii. Use the following code block types for particular code blocks:
+
+     * Groovy/Gradle-Files -> ``groovy``
+     * Hocon-Config -> ``guess`` (hocon highlighting is not yet supported)
+     * In-Game/Server Console Command -> ``none``
+     * Java-Code -> ``java``
+     * Json-Config -> ``json``
+     * Linux-Terminal -> ``bash``
+     * Logs -> ``none``
+     * Text -> ``text``
+     * Windows-Console -> ``bat``
 
 4. Keep separate areas for Users, Plugin Devs, and Sponge Devs.
 5. Avoid repetition by sharing pages where possible.
@@ -65,12 +76,12 @@ writing Sponge Documentation. This list may get added to (or bent out of shape) 
 
   i. Some languages may wish to use a phonetic translation as well.
 
-10. Automated translations (eg. Google Translate) are strongly discouraged. These often contain serious errors, and are
+10. Automated translations (e.g. Google Translate) are strongly discouraged. These often contain serious errors, and are
     very likely to be rejected.
 11. Page Titles and Section Headings should be plain text, avoiding literal blocks and other formatting.
-12. Code symbols should be capitalised in their original form and have no extra spaces (eg. blockState (a field name) or
-    BlockState (a class name), rather than *block state*). They should also be formatted as a literal using double
-    backticks (eg. ``blockState``) in body text.
+12. Code symbols should be capitalized in their original form and have no extra spaces (e.g. blockState (a field name)
+    or BlockState (a class name), rather than *block state*). They should also be formatted as a literal using double
+    backticks (e.g. ``blockState``) in body text.
 13. Lines should have a maximum length of 120 characters.
 14. Imports should be written out in code blocks the first time they are referenced in each article, but not repeated
     after the first time.

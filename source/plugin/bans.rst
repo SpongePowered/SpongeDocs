@@ -10,7 +10,7 @@ Bans
     org.spongepowered.api.util.ban.Ban
     org.spongepowered.api.util.ban.Ban.Builder
 
-The :javadoc:`BanService` is a service built into the SpongeAPI that adds the functionality for you to ban or pardon
+The :javadoc:`BanService` is a service built into SpongeAPI that adds the functionality for you to ban or pardon
 users in your plugin. The ``BanService`` provides several methods to do things such as banning users, pardoning users,
 or even getting a :javadoc:`Ban` and the information on the ``Ban``.
 
@@ -22,7 +22,7 @@ Getting the BanService
 ======================
 
 You will need to get the ``BanService`` to actually add bans to the server. Fortunately, this can be done similarly to
-other services in the Sponge API:
+other services in SpongeAPI:
 
 .. code-block:: java
     

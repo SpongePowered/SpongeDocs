@@ -2,7 +2,7 @@
 Terms of Service
 ================
  
- .. code-block:: none
+ .. code-block:: text
  
     While our terms of service, privacy policy and community guidelines may be provided in your
     own language, this is only as a courtesy to You. To the fullest extent as permitted by law,
@@ -124,7 +124,7 @@ Except where otherwise noted, SpongeDocs is licensed under a Creative Commons At
 
 (3.5) Code
 ----------
-SpongeForge, SpongeVanilla, SpongeCommon and the Sponge API are licensed under the MIT license.
+SpongeForge, SpongeVanilla, SpongeCommon and SpongeAPI are licensed under the MIT license.
 There is no contributor license agreement, and contributions to the Sponge project are welcome.
 We also explicitly grant permission to distribute SpongeForge in any third-party modpack.
 

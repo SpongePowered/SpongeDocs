@@ -5,9 +5,9 @@ Installing Java
 Java is needed to run Sponge and Minecraft: Java Edition. You most likely already have Java, but you may need to update
 it.
 
-Sponge requires Java 8 (specifically ``1.8.0_40`` or above) at this time. Older Java versions are deprecated and will
+Sponge requires Java 8 (specifically ``1.8.0_20`` or above) at this time. Older Java versions are deprecated and will
 not work with Sponge. The difference between major versions of Java (6, 7, 8) is significant, and older versions cannot
-run Sponge properly. Currently Sponge will not run with Java 9 or above.
+run Sponge properly. Currently, Sponge will not run with versions of Java greater than 8 either.
 
 Installing Java
 ===============
@@ -30,7 +30,7 @@ You may have to configure the path to the JRE/JDK in your
 
 If your computer supports it, you should use 64-bit versions of Java whenever possible. The Java installers from the
 `this website <https://java.com/en/download/>`__ should detect whether your computer is ready for 64-bit.
-However the autodetection is sometimes wrong (try different browsers, if you are unsure).
+However, the autodetection is sometimes wrong (try different browsers, if you are unsure).
 
 It is also possible to look this up in the system information window.
 
