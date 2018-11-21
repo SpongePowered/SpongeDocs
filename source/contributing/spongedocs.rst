@@ -30,7 +30,7 @@ are some parts you do not understand. There will always be someone able to fill 
 
 The Docs are written in reStructuredText (reST), if you're familiar with Markdown (md) the step to reST shouldn't be too
 hard. If you're having issues with it we suggest that you join our `forums <https://forums.spongepowered.org/>`_ or
-`#SpongeDocs <ircs://irc.esper.net:6697/#spongedocs>`_ on Esper.net and ask for help there.
+`#spongedocs on irc.esper.net <ircs://irc.esper.net:6697/#spongedocs>`_ and ask for help there.
 
 The Sponge Documentation is licensed under the `Creative Commons - Share-Alike license 
 <https://creativecommons.org/licenses/by-sa/4.0/>`_. Art assets are held under the related `Creative Commons - 

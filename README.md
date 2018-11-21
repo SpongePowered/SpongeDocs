@@ -9,6 +9,12 @@ The latest version may be viewed in full by visiting [Sponge Docs](https://docs.
 
 Instructions and Guidelines on how to contribute can be found on [the Docs themselves](https://docs.spongepowered.org/en/contributing/spongedocs.html).
 
+## Licensing
+
+The Sponge Documentation is licensed under the [Creative Commons - Share-Alike license](LICENSE.txt).
+
+You can read more about our licensing situation on the [documentation itself](https://docs.spongepowered.org/stable/en/about/license.html).
+
 ## Translations
 
 We're eagerly looking for translators! Please visit the [CrowdIn translation page](https://crowdin.com/project/sponge-docs), sign up, join the team, and start translating.
