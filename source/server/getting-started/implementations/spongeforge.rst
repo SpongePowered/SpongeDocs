@@ -12,7 +12,7 @@ Download
 
 Grab your copy of `SpongeForge here <https://www.spongepowered.org/downloads>`_.
 
-.. _sponge-forge-file-name:
+.. _reading_spongeforge_filename:
 
 Reading the Download Filename
 =============================
