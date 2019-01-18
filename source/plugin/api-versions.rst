@@ -43,7 +43,7 @@ Getting it from the Jar
   
   => API-Version ``7.1.0``
   
-  See also :ref:`reading-spongeforge-filename`.
+  See also :ref:`sponge-forge-file-name`.
 
 * For `SpongeVanilla <https://www.spongepowered.org/downloads/spongevanilla/>`__:
 
