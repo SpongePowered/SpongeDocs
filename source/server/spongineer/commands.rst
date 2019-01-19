@@ -97,19 +97,14 @@ command or another plugin's command, you can restore the expected behavior or pr
 
 .. tip::
 
-    Here are a few simple examples of the sponge config command in action. Please see
-    :doc:`../getting-started/configuration/index` for a more detailed explanation.
-
-    a. ``/sponge config logging.chunk-load true``
-
-      Since no dimension was specified, the dimension would default to the sender(player) dimension. So, if you were in
-      a mystcraft dimension, this would alter the mystcraft dimension config.
-
-    b. ``/sponge config -d minecraft:nether logging.chunk-load true``
+    Here are a few simple examples of the sponge config command in action. Note that at least one target flag must be
+    specified. Please see :doc:`../getting-started/configuration/index` for a more detailed explanation.
+    
+    a. ``/sponge config -d minecraft:nether logging.chunk-load true``
 
     Since a dimension type was specified, this would alter the nether dimension config (and hence all nether worlds).
 
-    c. ``/sponge config -w DIM1 logging.chunk-load true``
+    b. ``/sponge config -w DIM1 logging.chunk-load true``
 
     This would alter the config of world named DIM1.
 
