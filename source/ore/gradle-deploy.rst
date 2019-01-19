@@ -105,6 +105,11 @@ If you've made it this far you're now ready to start publishing directly to Ore!
     Publishing ore-test-plugin to https://ore.spongepowered.org.
       Recommended: false
       Channel: release
+      forumPost: true
+      changelog = "Version 1.4.3\n" +
+          "* Added FLARD\n" +
+          "* Removed bugs\n" +
+          "* It's faster"
     [success] https://ore.spongepowered.org/TestOrg/Ore-Test-Plugin/versions/1.0.1
 
     BUILD SUCCESSFUL
