@@ -8,8 +8,8 @@ Introduction
 Welcome to SpongeDocs, the official documentation for the open-source `Sponge <https://www.spongepowered.org>`__ project.
 
 SpongeAPI is your all new plugin API for Minecraft: Java Edition. You can run it on a plain vanilla server (as
-SpongeVanilla) or on your fully modded MinecraftForge server (as SpongeForge). Grab your copy
-`here <https://www.spongepowered.org/downloads>`_.
+SpongeVanilla) or on your fully modded MinecraftForge server (as SpongeForge). Check out our :doc:`versions/index` to 
+understand selecting a file and grab your copy from our `downloads page <https://www.spongepowered.org/downloads>`_.
 
 Not sure what you're looking for? Try our :doc:`about/index` section, which contains a short :doc:`about/introduction`,
 our :doc:`about/faq` and an article about :doc:`about/structure`.
@@ -34,6 +34,17 @@ or visit their repositories on GitHub:
 
 Contents
 ========
+
+Versioning Policy
+~~~~~~~~~~~~~~~~~
+
+This section describes how Sponge manages versions.
+
+.. toctree::
+    :maxdepth: 2
+    :titlesonly:
+
+    versions/index
 
 Creating a Server
 ~~~~~~~~~~~~~~~~~
