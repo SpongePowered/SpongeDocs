@@ -15,6 +15,25 @@ See :doc:`../../../about/structure` for more information.
 .. note::
     Be sure to read and understand :doc:`../../howtogit` and :doc:`../../versioning` before proceeding.
 
+Setup the Workspace
+===================
+
+Here are the steps to setup your workspace if you do not have one already:
+
+1. Clone the implementation.
+2. Make changes to the local repository (e.g. create new branch if you will make changes).
+3. Setup the implementation.
+4. Build the implementation.
+5. Run the implementation.
+
+With these instructions successfully completed, you are ready to import the project into your IDE.
+
+.. note::
+    This is an outline of the steps necessary to setup the workspace. See the `SpongeForge 
+    <https://github.com/SpongePowered/SpongeForge>`_ or 
+    `SpongeVanilla <https://github.com/SpongePowered/SpongeVanilla>`_ GitHub pages for complete instructions on 
+    cloning, setup, building, and running the implementation.
+
 Contents
 ========
 
@@ -23,7 +42,6 @@ Contents
     :titlesonly:
 
     git
-    workspace
     ide
     issues
     mixin
