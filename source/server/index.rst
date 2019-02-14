@@ -20,6 +20,7 @@ Contents
     :maxdepth: 2
     :titlesonly:
 
+    quickstart
     getting-started/index
     management/index
     spongineer/index
