@@ -25,7 +25,7 @@ Entity Type
 ~~~~~~~~~~~
 
 Before we can jump behind the wheel with our ``Entity``, we should check what type of ``Entity`` it is, as we may
-receive an ``Entity`` we didn't create and thus, do not know it's type. Doing this is a simple equality check. Here is
+receive an ``Entity`` we didn't create and thus, do not know its type. Doing this is a simple equality check. Here is
 an example of checking if our ``Entity`` is a creeper:
 
 .. code-block:: java
@@ -34,10 +34,7 @@ an example of checking if our ``Entity`` is a creeper:
     import org.spongepowered.api.entity.EntityTypes;
     
     public boolean isCreeper(Entity entity) {
-        if (entity.getType().equals(EntityTypes.CREEPER)) {
-            return true;
-        }
-        return false;
+        return entity.getType().equals(EntityTypes.CREEPER);
     }
 
 Entity Data Manipulators
