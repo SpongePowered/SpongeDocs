@@ -32,7 +32,13 @@ The **Project Managers** of Sponge each coordinate a separate aspect of the Spon
 |                                   |                                    |
 |                                   | Chief Technology Officer           |
 +-----------------------------------+------------------------------------+
+| Grinch                            | Ore Community Manager              |
+|                                   |                                    |
+|                                   | Moderator                          |
++-----------------------------------+------------------------------------+
 | Inscrutable                       | SpongeDocs Chief Editor            |
++-----------------------------------+------------------------------------+
+| katrix                            | Ore Development Manager            |
 +-----------------------------------+------------------------------------+
 | kashike                           | Discord Manager                    |
 |                                   |                                    |
@@ -44,10 +50,6 @@ The **Project Managers** of Sponge each coordinate a separate aspect of the Spon
 +-----------------------------------+------------------------------------+
 | lukegb                            | Systems Team Manager               |
 +-----------------------------------+------------------------------------+
-| mbaxter                           | Ore Community Manager              |
-|                                   |                                    |
-|                                   | Moderator                          |
-+-----------------------------------+------------------------------------+
 | Me4502                            | Subreddit Manager                  |
 |                                   |                                    |
 |                                   | Developer                          |
@@ -55,8 +57,6 @@ The **Project Managers** of Sponge each coordinate a separate aspect of the Spon
 | Owexz                             | Forum & Community Manager          |
 |                                   |                                    |
 |                                   | Website Manager                    |
-+-----------------------------------+------------------------------------+
-| phase                             | Ore Development Manager            |
 +-----------------------------------+------------------------------------+
 | phroa                             | IRC Manager                        |
 |                                   |                                    | 
@@ -81,6 +81,8 @@ SpongeForge and SpongeVanilla.
 | Cybermaxke                        | Developer                          |
 +-----------------------------------+------------------------------------+
 | dualspiral                        | Developer                          |
+|                                   |                                    |
+|                                   | Ore Advisor                        |
 +-----------------------------------+------------------------------------+
 | Faithcaio                         | Developer                          |
 +-----------------------------------+------------------------------------+
@@ -90,7 +92,7 @@ SpongeForge and SpongeVanilla.
 +-----------------------------------+------------------------------------+
 | Minecrell                         | Developer                          |
 +-----------------------------------+------------------------------------+
-| Morph                             | Developer                          |
+| Morpheus                          | Developer                          |
 +-----------------------------------+------------------------------------+
 | Mumfrey                           | Bytecode Engineer                  |
 |                                   |                                    |
@@ -127,10 +129,6 @@ SpongeAPI, SpongeForge and SpongeVanilla.
 +===================================+====================================+
 | phit                              | Issue Manager                      |
 +-----------------------------------+------------------------------------+
-| ryantheleach                      | Issue Manager                      |
-|                                   |                                    |
-|                                   | Ore Reviewer                       |
-+-----------------------------------+------------------------------------+
 
 Ore Developers
 ~~~~~~~~~~~~~~
@@ -146,10 +144,7 @@ The **Ore Developers** work on producing, enhancing, and fixing the Ore plugin d
 +-----------------------------------+------------------------------------+
 | felixoi                           | Ore Developer                      |
 +-----------------------------------+------------------------------------+
-| Katrix                            | Ore Developer                      |
-|                                   |                                    |
-|                                   | Ore Reviewer                       |
-+-----------------------------------+------------------------------------+
+
 
 Web Developers
 ~~~~~~~~~~~~~~
@@ -161,7 +156,7 @@ Our **Web Developers** maintain, update and integrate the Sponge website.
 +===================================+====================================+
 | jamierocks                        | Web Developer                      |
 |                                   |                                    |
-|                                   | Ore Reviewer                       |
+|                                   | Ore Advisor                        |
 +-----------------------------------+------------------------------------+
 
 SpongeDocs Editors
@@ -180,6 +175,8 @@ The **SpongeDocs Editors** write, edit, and maintain articles for Sponge's offic
 +-----------------------------------+------------------------------------+
 | worm424                           | Editor                             |
 |                                   |                                    |
+|                                   | Ore Advisor                        |
+|                                   |                                    |
 |                                   | Moderator                          |
 +-----------------------------------+------------------------------------+
 
@@ -193,9 +190,11 @@ Moderators and Support
 +===================================+====================================+
 | gravityfox                        | Moderator                          |
 +-----------------------------------+------------------------------------+
-| Grinch                            | Moderator                          |
-+-----------------------------------+------------------------------------+
 | Lemonous                          | Moderator                          |
++-----------------------------------+------------------------------------+
+| mbaxter                           | Moderator                          |
++-----------------------------------+------------------------------------+
+| ryantheleach                      | Moderator                          |
 +-----------------------------------+------------------------------------+
 | Vectrix                           | Moderator                          |
 +-----------------------------------+------------------------------------+
@@ -213,6 +212,8 @@ The **Ore Review** staff have the task of assessing plugins uploaded to Ore to m
 | Eufranio                          | Ore Reviewer                       |
 +-----------------------------------+------------------------------------+
 | liach                             | Ore Reviewer                       |
++-----------------------------------+------------------------------------+
+| loki                              | Ore Reviewer                       |
 +-----------------------------------+------------------------------------+
 | mosemister                        | Ore Reviewer                       |
 +-----------------------------------+------------------------------------+
@@ -273,6 +274,8 @@ here to thank them and acknowledge their valuable contributions.
 | modwizcode                        | Developer                          |
 +-----------------------------------+------------------------------------+
 | Pandette                          | Editor                             |
++-----------------------------------+------------------------------------+
+| phase                             | Ore Development Manager            |
 +-----------------------------------+------------------------------------+
 | Saladoc                           | Editor                             |
 +-----------------------------------+------------------------------------+
