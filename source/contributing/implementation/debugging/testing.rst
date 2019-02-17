@@ -36,6 +36,31 @@ in ``SpongeCommon/gradle/implementation.gradle`` can exclude test plugins from t
 command must toggle the functionality of the test plugin whether or not test plugins get included in a jar file or not. 
 
 .. note::
+    @Plugin will automatically register your plugin with Sponge, but it will not allow it to be toggled.
+
+The following code demonstrates registering your plugin and allowing it to be toggled:
+
+.. code-block:: java
+
+    private boolean registered = false;
+
+    @Listener
+    public void onInit(GameInitializationEvent event) {
+        Sponge.getCommandManager().register(this,
+            CommandSpec.builder().executor((source, context) -> {
+                if (this.registered) {
+                    this.registered = false;
+                    Sponge.getEventManager().unregisterListeners(this.listener);
+                } else {
+                    this.registered = true;
+                    Sponge.getEventManager().registerListeners(this, this.listener);
+                }
+                return CommandResult.success();
+            }).build(), "flowerPotTest");
+    }
+
+
+.. note::
     JUnit is used on a limited basis and primarily for internal purposes. Generally speaking, JUnit is useful for 
     testing without a player. However, the best practice is not to use JUnit unless you have agreement from a Sponge 
     staff member.
