@@ -12,9 +12,8 @@ Rebase
 ======
 
 There are times when the project you are working on takes longer to complete than planned, and your branch falls 
-behind the target branch. Whether this occurs because of other responsibilities or the project requires the time due 
-to size, complexity, etc., the project cannot get merged without further testing. To capture the other changes in your 
-branch for testing, use the ``git rebase`` command.
+behind the target branch and cannot get merged without further testing. To capture the other changes in your branch for 
+testing, use the ``git rebase`` command.
 
 Before using the command, ensure your local repository has the changes with the ``git pull`` command or the ``git 
 fetch`` / ``git merge`` commands. Once your local repository is updated with the changes,
@@ -27,7 +26,7 @@ your local repository with any changes to the ``bleeding`` branch, checkout bran
 bleeding``. Your ``feature`` branch will now have the changes included and you can test your own changes with them to 
 ensure no issues are introduced.
 
-Finding a commit
+Finding A Commit
 ================
 
 Knowing a commit can sometimes help in debugging, and there are many ways to identify them. Below are some ways to 
@@ -53,14 +52,14 @@ find a commit:
    the commit displayed on the right hand side along with other commit information.
 
 .. tip::
-    For a summary of changes and a quick find for a commit, use ``git log --oneline -5``, where ``5`` can be any 
+    For a summary of changes and a quick find for a commit, use ``git log --oneline -x``, where ``x`` can be any 
     numeric value representing the number of commits to display.
 
-Checking out a branch
+Checking Out a Branch
 =====================
 
 A good practice when preparing to debug is to create a new branch and give it a name related to the issue you are 
-working. You will delete it after your changes are merged, but the name will help you remember the purpose of the 
+working on. You will delete it after your changes are merged, but the name will help you remember the purpose of the 
 branch.
 
 .. note::
@@ -69,7 +68,7 @@ branch.
 
 With a name picked out and the appropriate branch to create from checked out, you can now use ``git checkout 
 --recurse-submodules -B <new_branch>`` to create the new branch. Git creates the new branch and switches your 
-repository to it. And, you are ready to make any necessary adjustments to settings in your workspace or IDE.
+repository to it. Now, you are ready to make any necessary adjustments to settings in your workspace or IDE.
 
 .. tip::
     The ``--recurse-submodules`` parameter ensures SpongeCommon and SpongeAPI are changed to the proper commit as well.

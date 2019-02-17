@@ -23,13 +23,12 @@ GIT
 IntelliJ
 --------
 
-- The run configurations built by the genIntelliJRuns task results in the GradleStart* main class can't be found.
+- How do I fix my run configurations when a main class is not specified?
 
-  Click on the ``Run`` menu, followed by ``Edit Configurations...``. In the ``Use classpath of module:`` dropdown 
-  list, select a module that has ``.main`` in its name. Click ``Apply``.
+  When in the ``Edit Configurations...`` window, select a module that has ``.main`` in its name in the ``Use classpath 
+  of module:`` dropdown list.   Click ``Apply``.
 
-- I set up my project for a Vanilla Workspace as explained in :doc:`../../../plugin/internals/mcp-setup`. My problem 
-  is there is no ``genIntelliJRuns`` task.
+- Why does my SpongeVanilla workspace not have a ``genIntelliJRuns`` task?
 
   This is by design. See `VanillaGradle doesn't have genIntelliJRuns 
   <https://forums.spongepowered.org/t/vanillagradle-doesnt-have-genintellijruns/19091/2>`_ in Sponge Forums for 

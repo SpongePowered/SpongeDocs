@@ -17,7 +17,7 @@ Testing is an integral part of any software development project. Supplying a tes
 #. Documentation
 
    A well-commented test plugin provides details not necessarily required in PR documentation. Furthermore, comments 
-   in a PR generally lasts until the PR is merged. Comments in a program last as long as the code remains. They should 
+   in a PR generally last until the PR is merged. Comments in a program last as long as the code remains. They should 
    not provide all of the documentation. Instead, well-commented code supports and completes the documentation.
 
 .. tip::
@@ -27,8 +27,8 @@ Testing is an integral part of any software development project. Supplying a tes
 
 You should provide a test plugin when you are contributing new or modified feature(s) to the API or implementation. The 
 plugin is simply a class added to the package ``org.spongepowered.test``, which is found in the 
-``SpongeCommon/testplugins/src/main/java/org/spongepowered/test/`` directory. The PR for the contributions include the 
-test plugin.
+``SpongeCommon/testplugins/src/main/java/org/spongepowered/test/`` directory. The PR for the contributions should 
+include the test plugin.
 
 It is essential that test plugins do not change the game when not intended. As a result, a command should toggle the 
 plugin functionality. Be sure not to confuse this with **excluding** the test plugins in the build process. A setting 
