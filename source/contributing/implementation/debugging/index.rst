@@ -6,8 +6,8 @@ Debugging Sponge
     See :doc:`../../../plugin/debugging` for debugging a plugin and :ref:`usingDebugger` tips.
 
 These sections provide information for debugging Sponge itself. Whether you need to debug SpongeForge, SpongeVanilla,
-SpongeCommon, or SpongeAPI, setup your workspace for a SpongeForge or SpongeVanilla implementation. SpongeCommon and
-SpongeAPI are debugged within the implementation set up.
+SpongeCommon, or SpongeAPI, set up your workspace for a SpongeForge or SpongeVanilla implementation. SpongeCommon and
+SpongeAPI are debugged within the implementation setup.
 
 See :doc:`../../../about/structure` for more information.
 
