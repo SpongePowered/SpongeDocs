@@ -30,7 +30,6 @@ sites.
 IntelliJ
 --------
 
-Learn about `using git integration <https://www.jetbrains.com/help/idea/using-git-integration.html>`_ on JetBrains' 
+Learn about `Git Integration <https://www.jetbrains.com/help/idea/using-git-integration.html>`_  and `Project 
+Structure <http://www.jetbrains.org/intellij/sdk/docs/basics/project_structure.html>`_ on JetBrains' 
 web site.
-
-
