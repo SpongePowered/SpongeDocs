@@ -14,7 +14,7 @@ The Bleeding Branch
 
 The core of our repositories is the ``bleeding`` branch. Almost all changes will be added to ``bleeding``, including
 new features, changes, and bugfixes. The version of ``bleeding`` will always be the next major release version 
-appended with ``-SNAPSHOT`` (e.g. ``8.0-SNAPSHOT``) to denote that it is not yet a final build and subject to change.
+appended with ``-SNAPSHOT`` (e.g. ``7.0.0-SNAPSHOT``) to denote that it is not yet a final build and subject to change.
 
 The primary reason for having the ``bleeding`` branch is to have a testing ground for changes. Even experienced
 members of the Sponge team can accidentally cause a build to fail or miss a bug. The ``bleeding`` branch will be
@@ -29,7 +29,7 @@ will be no breakages to API, only non-breaking additions. There is a branch name
 contains the latest API/implementation for that release including any minor or patch releases.
 
 When the time comes to release a major version, a new ``stable-x`` branch will be created from ``bleeding``, where
-``x`` is the new major version - for example, ``stable-8``. ``bleeding`` will be appropriately updated to be the next
+``x`` is the new major version - for example, ``stable-7``. ``bleeding`` will be appropriately updated to be the next
 major release as described above.
 
 Changes that have been in ``bleeding`` for a while, which have no known bugs, and that can be applied to a previous
