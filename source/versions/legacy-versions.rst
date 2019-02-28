@@ -4,15 +4,13 @@ Older Versions of SpongeForge
 
 .. note::
 
-    Sponge changed our versioning policy in October 2018. **Prior to** SpongeAPI 8.0, the following information 
-    applies. See :doc:`filenames` for information on newer versions.
+    Our versioning policy was updated in October 2018. **Prior to** SpongeAPI 8.0, the following information applies. 
+    See :doc:`filenames` for information on newer versions.
 
-When you download SpongeForge, the name of the file will provide some important version information. It includes a
-Forge build number which this version of SpongeForge is compatible with. Other builds, even ones differing by only a
-few build numbers are not officially supported.
-
-However, SpongeForge usually updates to a new Forge build fairly soon after it's released, so you needn't
-worry about always having to run an outdated Forge version in order to use SpongeForge.
+When you download SpongeForge, the name of the file includes a Forge build number which this version of SpongeForge is 
+built with and guaranteed to be compatible. We do not support newer versions of Forge; however, we try to get an update 
+out when a Forge release breaks SpongeForge. You can try the Forge version needed as it will work fine most of the 
+time. If it doesn't, we hope to release a SpongeForge compatible with that Forge version soon. 
 
 
 The format of the filename is ``spongeforge-<MCVersion>-<ForgeBuildId>-<SpongeAPIVersion>-BETA-<SpongeBuildId>.jar``
