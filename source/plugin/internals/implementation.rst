@@ -27,7 +27,7 @@ Example Using Gradle
 .. code-block:: groovy
 
     dependencies {
-        compile 'org.spongepowered:spongecommon:8.1.0:dev'
+        compile 'org.spongepowered:spongecommon:7.1.0:dev'
     }
 
 SpongeVanilla
