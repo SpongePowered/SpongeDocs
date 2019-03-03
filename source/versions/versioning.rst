@@ -4,115 +4,111 @@ Versioning
 
 .. _sem-ver:
 
-SemVer
-======
+.. tip::
+    Sponge follows a format of the SemVer specification in its projects. You can read about general SemVer usage at 
+    http://semver.org.
 
-Sponge uses the semantic versioning (https://semver.org/) specification. As a result, we increment versions according 
-to the rules of SemVer every time that we make a release.
+The SpongeAPI and implementations (SpongeForge/SpongeVanilla) follow two different policies. Understanding our versions 
+is a matter of interpreting the SemVer version string. The SpongeAPI version utilizes the *Major* and *Minor* parts in 
+the SemVer version string while the implementations use the *Major*, *Minor*, and *Patch* parts.
 
-SemVer uses the scheme ``X.Y.Z``, where ``X`` is a *major* version, ``Y`` is a *minor* version and ``Z`` is a *patch* 
-version. A release containing changes which are not backwards-compatible must be one *major* version ahead of the 
-previous release. If there are only new features that are still backwards compatible, then the new release will be 
-one *minor* version ahead of the previous release, and if the release strictly contains bugfixes then only the *patch* 
-version will be incremented.
+API
+===
 
-This means that ``3.2.0`` is fully compatible to ``3.0.0`` while ``4.0.0`` is not compatible to ``3.0.0``, ``3.1.0``, 
-or ``3.1.2``. These versions are fully compatible also; the difference between them are new features (``3.0.0`` -> 
-``3.1.0``) and bug fixes (``3.1.0`` -> ``3.1.1`` -> ``3.1.2``). ``3.2.0`` introduced more new features beyond those 
-introduced by ``3.1.0``.
+Plugin developers create plugins for a particular SpongeAPI version, such as ``7.0``, ``7.3``, or ``7.9``, so the 
+plugin works with the features provided in that specific version. Versions are incremented to reflect added, removed, 
+or changed features. How the version number changes convey how plugins might be affected.
 
-Version String
-==============
+Major
+-----
 
-Applying the versioning policy to Sponge begins with SpongeAPI. It is the core on which the version string is based. 
-SpongeAPI is the actual API that allows plugins to interact with the game. However, the API is enabled by the Sponge 
-implementation (SpongeForge or SpongeVanilla). Together, these products form the foundation of a Sponge server.
+A change in the Major number (**X**.Y.Z) indicates that changes broke some APIs that were guaranteed to work in the 
+previous version. Plugins *might* break with this kind of version change. For example, a plugin for version 6.9 *might* 
+not run with version 7.0.
 
-As such, the version string reflects the state of these two products. The major and minor release components of a 
-version is based on the API while the patch component of the version is based on the implementation. Let's consider 
-this version string as an example: ``8.2.0``. This string conveys the API is Version 8.2 and the implementation is the 
-first release using this API version.
+Minor
+-----
 
-The following table provides several examples of a version string and its components:
-
-+-----------+---------+----------------+
-|           |         |                |
-| Version   | API     | Implementation |
-|           |         |                |
-+===========+=========+================+
-|           |         |                |
-| ``8.0.2`` | ``8.0`` | ``2``          |
-|           |         |                |
-+-----------+---------+----------------+
-|           |         |                |
-| ``8.1.1`` | ``8.1`` | ``1``          |
-|           |         |                |
-+-----------+---------+----------------+
-|           |         |                |
-| ``8.5.0`` | ``8.5`` | ``0``          |
-|           |         |                |
-+-----------+---------+----------------+
-
-There are two other components of the version string: *SNAPSHOT* and *RC*. Both of these labels indicate a version 
-still in development. These files are used for testing new features and bug fixes, so they are generally used by 
-developers. *SNAPSHOT* is associated with the API, and *RC*, or Release Candidate, is associated with the 
-implementation (SpongeVanilla and SpongeForge).
-
-*SNAPSHOT* and *RC* are **always** associated with a number (e.g., ``1-SNAPSHOT``, ``-RC120``). With *SNAPSHOT*, the 
-number identifies the **next** *minor* release for SpongeAPI. The number associated with *RC* identifies the build 
-number of the implementation and indicates the build is part of the development towards the next 
-implementation/recommended release. 
+A change in the Minor number (X. **Y**.Z) indicates that changes added some APIs, but plugins for previous minor 
+versions in the same major version are still guaranteed to work. For example, a plugin for version ``7.3`` will run 
+with version ``7.4`` or ``7.5``. However, the opposite is not *necessarily* the same. A plugin for version ``7.4`` is 
+not guaranteed to run with version ``7.3``. 
 
 .. note::
 
-    Any file without the *SNAPSHOT* or *RC* label is a released version. A recommended version is a release of an 
-    implementation.
+    The *Minor* number is always reset to zero when the *Major* number changes.
 
-.. tip::
-
-    Keep in mind the diffences between a major release, a minor release, and a patch release while reading the 
-    following.
-
-API
----
-
-An important part to grasp in understanding Sponge versioning is how the version string conveys the API information. 
-The API version is primarily conveyed by the *major* . *minor* labels. The *major* label is always a number. The 
-*minor* label can be just a number, indicating a release, or it can be a number with ``-SNAPSHOT`` appended to it, 
-indicating a **minor release in development**. Developers are the most likely to use snapshots, so most Sponge users 
-can focus on the *major* . *minor* labels to identify which version is represented.
-
-However, the patch release provides important information for understanding which version of the API is represented as 
-well. Even though the API itself does not have patch releases, a Sponge implementation is required to use the 
-SpongeAPI. So, the version string has to convey both API and implementation versions. We achieve this by tying them 
-together and having the implementation release reflect any patch release for the API. This allows the version string to 
-accurately and completely reflect the status of the API *and* the implementation. 
-
-The good news is the policy is straight forward. When the implementation release is ``0``, the API is a release. An 
-example of the version string in this case is ``8.1.0``. When the implementation release is **not** ``0``, the API is 
-in development. An example of the version string in this case is ``8.1.1``. In this example, the API is actually the 
-next version in development (i.e. ``2-SNAPSHOT``). 
+Examples of SpongeAPI version strings are ``spongeapi-7.1.0`` and ``spongeapi-7.2.0``. 
 
 Implementations
----------------
+===============
 
-The patch version for Sponge is added to the version string with the implementation; however, care must be taken to 
-interpret the information correctly. As mentioned above, the patch version provides information about the release 
-status of the API as well as the implementation.
+The version string for the Sponge implementations includes the target Minecraft version as well as the SpongeAPI 
+version. The SpongeForge implementation also specifies the Forge **recommended version** with which it is guaranteed to 
+be compatible.
 
-First, a **zero** in the patch label indicates a release. A full release occurs when a major release occurs (i.e. 
-**zero** in the minor *and* patch components). Examples are ``7.2.0`` and ``8.0.0`` respectively. 
+Patch
+-----
 
-Second, any **non-zero** number in the patch label indicates the next **API minor release in development**. For 
-example, ``spongevanilla-1.12.2-7.1.4`` is using ``7.2`` version of the API (which is in development); it does **NOT** 
-use the ``7.1`` version (which has been released). However, this version is still a **recommended version** because the 
-*RC* label is not used. Plus, it is the ``4`` th recommended version for this implementation.
+A change in the patch number (X.Y. **Z**) occurs with implementation builds. These builds contain bug fixes, 
+performance improvements, configuration changes, and other changes not related to the API. When a patch number is only 
+a number, this build is a **recommended version**. Any plugin developed for the SpongeAPI version in the string, or is  
+compatible with that version, is guaranteed to work.
+
+.. note::
+
+    The *Patch* number is always reset to zero when the *Minor* number changes.
+
+Examples of implementation version strings are ``spongevanilla-1.12.2-7.1.5`` and ``spongeforge-1.12.2-2768-7.1.5``. 
+
+.. warning::
+
+    Plugin developers may choose to develop their plugin for a particular implementation. The plugin's Ore page should 
+    note such decision with a tag by the version. Sponge makes no guarantee of a plugin's compatibility when marked as 
+    such.
+
+Recommended Version
+===================
+
+Recommended Versions are also known as Recommended Builds or Releases. They are versions of reasonable quality of which 
+the implementations can make full use of the functionality available in SpongeAPI, and plugins compatible with the API 
+are guaranteed to work as designed.
+
+.. warning::
+
+    The following information is for Sponge Developers. Plugin Developers and Server Administrators should only use 
+    **Recommended Versions** for development and server installations. Doing otherwise is at your own risk and **not** 
+    encouraged.
+
+SNAPSHOT
+========
+
+A release which has the ``-SNAPSHOT`` label represents the next API version in development. For example, 
+``7.2.0-SNAPSHOT`` means ``7.2.0`` is in development. Another example is ``8.0.0-SNAPSHOT``, which means the next 
+*major* release (``8.0.0``) is in development. New features added in snapshots may break at any time. 
+
+.. note::
+
+    If the minor version is zero (e.g., ``8.0-SNAPSHOT``), **anything** may break before it is released and plugins 
+    cannot expect stability. If the Minor version is greater than zero (e.g., ``7.2-SNAPSHOT``), anything up to the 
+    previous minor version is still guaranteed to work (in this case, ``7.1``). However, anything added since it **may 
+    break** and instability is likely.
+
+    When the minor and patch numbers are zero, and the ``-SNAPSHOT`` label is attached, versions are ``bleeding`` 
+    builds for testing the next version of SpongeAPI only and may break at any time.
+
+    The ``-SNAPSHOT`` label on a SpongeCommon file means the implementation is nearly complete but is still not a 
+    stable release. More importantly, Gradle determines whether or not to append the *-RC{build number}* to the version 
+    string by the presence of the label.
+
+Release Candidate
+=================
+
+Release Candidates (**RC**) are builds in which bug fixes are released for implementations while they are still in 
+development. They are nearly ready for a full release, but require more bug fixes and testing.
+
 
 .. tip::
 
-    ``spongevanilla-1.12.2-7.2.0`` is a released version of the API and a released version of the implementation. It is 
-    also a recommended version because the *RC* label is not used.
-
-Last, a *RC* in the patch version indicates an **implementation version in development**. The implementation is still 
-having features added, bugs fixed, and testing performed for the **next recommended version**. Using the same example 
-above, the version string for this implementation is ``spongevanilla-1.12.2-7.1.5-RC152``.
+    *SNAPSHOT* appears in SpongeAPI and SpongeCommon version strings while *RC* appears in implementation version 
+    strings.
