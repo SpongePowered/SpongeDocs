@@ -77,8 +77,9 @@ are guaranteed to work as designed.
 .. warning::
 
     The following information is for Sponge Developers. Plugin Developers and Server Administrators should only use 
-    **Recommended Versions** for development and server installations. Doing otherwise is at your own risk and **not** 
-    encouraged.
+    **Recommended Versions** for development and server installations. Using a version that is not a recommended build 
+    introduces instability and nearly guarantees problems. We strongly discourage the use of non-recommended builds by 
+    Plugin Developers and Server Administrators.
 
 SNAPSHOT
 ========
@@ -104,9 +105,11 @@ A release which has the ``-SNAPSHOT`` label represents the next API version in d
 Release Candidate
 =================
 
-Release Candidates (**RC**) are builds in which bug fixes are released for implementations while they are still in 
-development. They are nearly ready for a full release, but require more bug fixes and testing.
-
+Any push made to GitHub which is not a *Recommended Build* is a *Release Candidate*. Any release candidate can become a 
+recommended build. Furthermore, the code may or may not change; the change might occur in a settings file. The 
+resulting build may run as well as a recommended build, or it may not run at all. In the end, a change occurred in the 
+repository, it triggered a build, and the resulting build is not a recommended build. Therefore, it is a release 
+candidate.
 
 .. tip::
 

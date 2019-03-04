@@ -33,6 +33,14 @@ of Forge for this purpose.
     whenever they want to, its normal guarantee of backwards-compatibility doesn’t apply to SpongeForge. Feel free to
     use more recent versions of Forge than the one used for SpongeForge, but we can't always guarantee compatibility.
 
+.. warning::
+
+    When investigating crash issues, you can freely try newer versions of Forge than listed on the SpongeForge Jar.
+    However, it is recommended to also check with the matching version, to make sure your issue is not related to a
+    version mismatch.
+    Even though there will be no guarantee of compatibility, please report any breakage to the issue tracker, so that
+    SpongeForge can be updated.
+
 Example
 -------
 
