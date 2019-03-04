@@ -13,9 +13,9 @@ Sponge
 
 The following sections in the SpongeDocs can provide more information for debugging:
 
-- :doc:`../../../server/getting-started/configuration/index`
-- :doc:`../../../server/spongineer/index`
-- :doc:`../../../about/structure`
+- :doc:`/server/getting-started/configuration/index`
+- :doc:`/server/spongineer/index`
+- :doc:`/about/structure`
 
 There also are links at the bottom of the SpongeDocs' home page which leads you to other resources for help and 
 information.

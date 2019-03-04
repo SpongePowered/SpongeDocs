@@ -3,7 +3,7 @@ Debugging Sponge
 ================
 
 .. tip::
-    See :doc:`../../../plugin/debugging` for debugging a plugin and :ref:`usingDebugger` tips.
+    See :doc:`/plugin/debugging` for debugging a plugin and :ref:`usingDebugger` tips.
 
 These sections provide information for debugging Sponge itself. Whether you need to debug SpongeForge, SpongeVanilla,
 SpongeCommon, or SpongeAPI, set up your workspace for a SpongeForge or SpongeVanilla implementation. SpongeCommon and
@@ -12,8 +12,8 @@ SpongeAPI are debugged within the implementation setup.
 See :doc:`../../../about/structure` for more information.
 
 .. note::
-    Be sure to read and understand :doc:`../../howtogit` and :doc:`../../versioning` as well as the entirety of the
-    :doc:`../index` sections before proceeding.
+    Be sure to read and understand :doc:`/contributing/howtogit` and :doc:`/contributing/versioning` as well as the 
+    entirety of the :doc:`../index` sections before proceeding.
 
 Setup the Workspace
 ===================

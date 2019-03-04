@@ -36,7 +36,7 @@ in ``SpongeCommon/gradle/implementation.gradle`` can exclude test plugins from t
 command must toggle the functionality of the test plugin whether or not test plugins get included in a jar file or not. 
 
 .. note::
-    @Plugin will automatically register your plugin with Sponge, but it will not allow it to be toggled.
+    ``@Plugin`` will automatically register your plugin with Sponge, but it will not allow it to be toggled.
 
 The following code demonstrates registering your plugin and allowing it to be toggled:
 
