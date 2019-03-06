@@ -105,11 +105,8 @@ A release which has the ``-SNAPSHOT`` label represents the next API version in d
 Release Candidate
 =================
 
-Any push made to GitHub which is not a *Recommended Build* is a *Release Candidate*. Any release candidate can become a 
-recommended build. Furthermore, the code may or may not change; the change might occur in a settings file. The 
-resulting build may run as well as a recommended build, or it may not run at all. In the end, a change occurred in the 
-repository, it triggered a build, and the resulting build is not a recommended build. Therefore, it is a release 
-candidate.
+Any push made to GitHub which is not a *Recommended Build* is a *Release Candidate*.  It may become a recommended build 
+after further testing. There is also the possibility that a release candidate might not work correctly.
 
 .. tip::
 
