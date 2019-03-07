@@ -112,6 +112,8 @@ Eclipse
 * Click the ``OK`` button.
 * Click the ``Apply`` button on the bottom right corner.
 
+.. _runConfig:
+
 Running the Configuration
 =========================
 
@@ -134,6 +136,8 @@ Rather than pressing the green right-pointing arrow to run your Run/Debug config
 the Debug icon (the one displaying a bug) and click your ``Test (Server)`` configuration. If it doesn't appear in the
 drop-down menu, click ``Debug Configurations``. Select ``Test (Server)`` configuration and hit the ``Debug`` button
 on the bottom left.
+
+.. _usingDebugger:
 
 Using the Debugger
 ==================

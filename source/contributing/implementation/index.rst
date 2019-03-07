@@ -18,7 +18,7 @@ Contents
     codestyle
     git-implementation
     pr
-    debugging
+    debugging/index
     mixins
     datamanipulator
 
