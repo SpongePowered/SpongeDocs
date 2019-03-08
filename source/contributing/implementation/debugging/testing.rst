@@ -21,9 +21,8 @@ Testing is an integral part of any software development project. Supplying a tes
    not provide all of the documentation. Instead, well-commented code supports and completes the documentation.
 
 .. tip::
-    A good understanding of :doc:`../../../plugin/index` provides a solid foundation for writing test plugins. Plugin 
-    requirements apply to test plugins, such as :doc:`../../../plugin/plugin-identifier` and 
-    :doc:`../../../plugin/logging`.
+    A good understanding of :doc:`/plugin/index` provides a solid foundation for writing test plugins. Plugin 
+    requirements apply to test plugins, such as :doc:`/plugin/plugin-identifier` and :doc:`/plugin/logging`.
 
 You should provide a test plugin when you are contributing new or modified feature(s) to the API or implementation. The 
 plugin is simply a class added to the package ``org.spongepowered.test``, which is found in the 
