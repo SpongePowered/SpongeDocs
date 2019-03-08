@@ -10,7 +10,7 @@ Users who do not want to use Minecraft Forge can consider :doc:`SpongeVanilla <s
 Download
 ========
 
-Review our :doc:`../../../../versions/versioning` and grab your copy of `SpongeForge here <https://www.spongepowered.org/downloads>`_.
+Review our :doc:`/versions/versioning` and grab your copy of `SpongeForge here <https://www.spongepowered.org/downloads>`_.
 
 Installing SpongeForge
 ======================
