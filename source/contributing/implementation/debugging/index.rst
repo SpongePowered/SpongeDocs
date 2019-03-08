@@ -15,6 +15,8 @@ See :doc:`../../../about/structure` for more information.
     Be sure to read and understand :doc:`/contributing/howtogit` and :doc:`/contributing/versioning` as well as the 
     entirety of the :doc:`../index` sections before proceeding.
 
+.. _setupWorkspace:
+
 Setup the Workspace
 ===================
 
