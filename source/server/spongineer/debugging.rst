@@ -23,7 +23,7 @@ Is the recommended Forge version installed?
 Usually SpongeForge will run on older or newer Forge builds than the recommended build.
 However, it is strongly advised to run the recommended build only.
 If you encounter a crash and your versions are mismatching, match them first and try again.
-If you're unsure which Forge build you need, take a look at :doc:`/server/getting-started/implementations/spongeforge`
+If you're unsure which Forge build you need, take a look at the **SpongeForge** section of :doc:`../../versions/filenames`.
 
 Are there any other coremods installed?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -95,7 +95,7 @@ Mismatched SpongeForge and Forge
 
 This is a common crash when you try to run SpongeForge on the wrong Forge build. Note that the target/Mixin can vary.
 Always match Forge against SpongeForge! If you're unsure which version of Forge is required and you already got your
-SpongeForge build, take a look at: :doc:`../getting-started/implementations/spongeforge/`
+SpongeForge build, take a look at the **SpongeForge** section of :doc:`../../versions/filenames`. 
 
 Other common errors
 ~~~~~~~~~~~~~~~~~~~

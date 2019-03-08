@@ -182,7 +182,7 @@ The example log indicates that we're running:
  [main/INFO] [FML]: Loading tweaker org.spongepowered.asm.launch.MixinTweaker from spongeforge-1.12.2-2705-7.1.0-BETA-3136.jar
 
 This indicates that SpongeForge 3136 was found and loaded by Forge. For further help regarding the SpongeForge
-naming scheme, have a look here: :doc:`../getting-started/implementations/spongeforge/`.
+naming scheme, have a look at :doc:`../../versions/filenames`.
 
 latest.log
 ~~~~~~~~~~

@@ -17,7 +17,8 @@ do not want to run a Forge server. Originally started as an independent project 
 Download
 ========
 
-Grab your copy of `SpongeVanilla here <https://www.spongepowered.org/downloads>`_.
+Review our :doc:`/versions/versioning` and grab your copy of `SpongeVanilla here 
+<https://www.spongepowered.org/downloads>`_.
 
 Installing SpongeVanilla
 ========================
