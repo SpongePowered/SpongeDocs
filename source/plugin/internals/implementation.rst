@@ -18,7 +18,7 @@ SpongeCommon
 
 - **Group ID**: ``org.spongepowered``
 - **Artifact ID**: ``spongecommon``
-- **Version**: Same as SpongeAPI + current recommended version (see :doc:`../../../versions/versioning` for details)
+- **Version**: Same as SpongeAPI + current recommended version (see :doc:`/versions/versioning` for details)
 - **Classifier**: ``dev``
 
 Example Using Gradle

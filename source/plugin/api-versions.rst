@@ -40,7 +40,7 @@ Getting the API Version from Implementations
 Getting it from the Jar
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-See :doc:`../../versions/versioning`.
+See :doc:`/versions/versioning`.
 
 .. _associated-minecraft-version:
 
