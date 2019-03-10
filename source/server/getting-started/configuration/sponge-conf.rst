@@ -16,30 +16,16 @@ full example of an unmodified ``global.conf`` file at the bottom of this page, b
 Global Properties of Sponge
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-block-capturing
-===============
+broken-mods
+    Stopgap measures for dealing with broken mods
 
-auto-populate
-    If 'true', newly discovered blocks will be added to this config with a default value.
-mods
-    Per-mod block id mappings for controlling capturing behavior
-block-tick-capturing
-    If 'true', individual capturing (i.e. skip bulk capturing) for scheduled ticks for
-    a block type will be performed.
-enabled
-    If 'false', all specific rules for this mod will be ignored.
-block-tick-capturing
-    If 'true', individual capturing (i.e. skip bulk capturing) for scheduled ticks for
-    a block type will be performed.
+broken-mods
+===========
 
-block-tracking
-==============
-
-block-blacklist
-    Block IDs that will be blacklisted for player block placement tracking.
-enabled
-    If 'true', adds player tracking support for block positions.
-    Note: This should only be disabled if you do not care who caused a block to change.
+broken-network-handler-mods
+    A list of mod ids that have broken network handlers (they interact with the game from a Netty handler thread).
+    All network handlers from a forcibly scheduled to run on the main thread.
+    Note that this setting should be considered a last resort, and should only be used as a stopgap measure while waiting for a mod to properly fix the issue.
 
 bungeecord
 ==========
@@ -67,6 +53,15 @@ generate-stacktrace-per-phase
     in the cases of runaway phase states. Note that this is
     not extremely performant and may have some associated costs
     with generating the stack traces constantly.
+max-block-processing-depth
+    The maximum number of times to recursively process transactions in a single phase.
+    Some mods may interact badly with Sponge's block capturing system, causing Sponge to
+    end up capturing block transactions every time it tries to process an existing batch.
+    Due to the recursive nature of the depth-first processing that Sponge uses to handle block transactions,
+    this can result in a stack overflow, which causes us to lose all infomration about the original cause of the issue.
+    To prevent a stack overflow, Sponge tracks the current processing depth, and aborts processing when it exceeds
+    this threshold.
+    The default value should almost always work properly -  it's unlikely you'll ever have to change it.
 maximum-printed-runaway-counts
     If verbose is not enabled, this restricts the amount of
     runaway phase state printouts, usually happens on a server
@@ -94,13 +89,13 @@ aliases
 multi-world-patches
     Patches the specified commands to respect the world of the sender instead of applying the
     changes on the all worlds.
-config-enabled
-    This setting does nothing in the global config. In dimension/world configs, it allows the config
-    to override config(s) that it inherits from
 
 debug
 =====
 
+concurrent-chunk-map-checks
+    Detect and prevent parts of PlayerChunkMap being called off the main thread.
+    This may decrease sever preformance, so you should only enable it when debugging a specific issue.
 concurrent-entity-checks
     Detect and prevent certain attempts to use entities concurrently.
     WARNING: May drastically decrease server performance. Only set this to 'true' to debug a pre-existing issue.
@@ -172,12 +167,42 @@ enabled
 exploits
 ========
 
+book-size-total-multiplier
+    If limit-book-size is enabled, controls the multiplier applied to each book page size
+filter-invalid-entities-on-chunk-save
+    Enables filtering invalid entities when a chunk is being saved
+    such that the entity that does not "belong" in the saving
+    chunk will not be saved, and forced an update to the world's
+    tracked entity lists for chunks.
+    See https://github.com/PaperMC/Paper/blob/fd1bd5223a461b6d98280bb8f2d67280a30dd24a/Spigot-Server-Patches/0311-Prevent-Saving-Bad-entities-to-chunks.patch
+limit-book-size
+    Limits the size of a book that can be sent by the client.
+    See https://github.com/PaperMC/Paper/blob/f8058a8187da9f6185d95bb786783e12c79c8b18/Spigot-Server-Patches/0403-Book-Size-Limits.patch
+load-chunk-on-position-set
+    Enables focing a chunk load when an entity position
+    is set. Usually due to teleportation, vehicle movement
+    etc. can a position lead an entity to no longer exist
+    within it's currently marked and tracked chunk. This will
+    enable that chunk for the position is loaded. Part of several
+    exploits.See https://github.com/PaperMC/Paper/blob/fd1bd5223a461b6d98280bb8f2d67280a30dd24a/Spigot-Server-Patches/0335-Ensure-chunks-are-always-loaded-on-hard-position-set.patch
+mark-chunks-as-dirty-on-entity-list-modification
+    Enables forcing chunks to save when an entity is added
+    or removed from said chunk. This is a partial fix for
+    some exploits using vehicles.See https://github.com/PaperMC/Paper/blob/fd1bd5223a461b6d98280bb8f2d67280a30dd24a/Spigot-Server-Patches/0306-Mark-chunk-dirty-anytime-entities-change-to-guarante.patch
+max-book-page-size
+    If limit-book-size is enabled, controls the maximum size of a book page
 prevent-creative-itemstack-name-exploit
     Prevents an exploit in which the client sends a packet with the
     itemstack name exceeding the string limit.
-prevent-sign-command-exploit
-    Prevents an exploit in which the client sends a packet to update a sign containing
-    commands from a player without permission.
+sync-player-positions-for-vehicle-movement
+    Enables forcing updates to the player's location on vehicle movement.
+    This is partially required to update the server's understanding of
+    where the player exists, and allows chunk loading issues to be avoided
+    with laggy connections and/or hack clients.See https://github.com/PaperMC/Paper/blob/fd1bd5223a461b6d98280bb8f2d67280a30dd24a/Spigot-Server-Patches/0378-Sync-Player-Position-to-Vehicles.patch
+update-tracked-chunk-on-entity-move
+    Enables forcing a chunk-tracking refresh on entity movement.
+    This enables a guarantee that the entity is tracked in the
+    proper chunk when moving.https://github.com/PaperMC/Paper/blob/fd1bd5223a461b6d98280bb8f2d67280a30dd24a/Spigot-Server-Patches/0315-Always-process-chunk-registration-after-moving.patch
 
 general
 =======
@@ -243,17 +268,29 @@ log-stacktraces
 world-auto-save
     Log when a world auto-saves its chunk data. Note: This may be spammy depending on the auto-save-interval configured for world.
 
-metrics-collection
-==================
+metrics
+=======
 
 default-permission
-    Determines whether newly added plugins can collect server metrics by default
+    Determines whether plugins that are newly added are allowed to perform
+    data/metric collection by default. Plugins detected by Sponge will be added to the "plugin-permissions" section with this value.
+    Set to true to enable metric gathering by default, false otherwise.
 plugin-permissions
-    Per-plugin toggles indicating whether a plugin is allowed to collect server metrics
+    Provides (or revokes) permission for metric gathering on a per plugin basis.
+    Entries should be in the format "plugin-id=<true|false>".
+    Deleting an entry from this list will reset it to the default specified in
+    "default-permission"
 
 modules
 =======
 
+broken-mod
+    Enables experimental fixes for broken mods
+exploits
+    Controls whether any exploit patches are applied.
+    If there are issues with any specific exploits, please
+    test in the exploit category first, before disabling all
+    exploits with this toggle.
 movement-checks
     Allows configuring Vanilla movement and speed checks
 realtime
@@ -301,6 +338,15 @@ enchantment-helper-leak-fix
     have any of the patch, leading to the recommendation that this
     patch is enabled "for sure" when using SpongeVanilla implementation.
     See https://bugs.mojang.com/browse/MC-128547 for more information.
+faster-thread-checks
+    If 'true', allows for Sponge to make better assumptinos on single threaded
+    operations with relation to various checks for server threaded operations.
+    This is default to true due to Sponge being able to precisely inject when
+    the server thread is available. This should make an already fast operation
+    much faster for better thread checks to ensure stability of sponge's systems.
+map-optimization
+    If 'true', re-writes the incredibly inefficient Vanilla Map code.
+    This yields enormous performance enhancements when using many maps, but has a tiny chance of breaking mods that invasively modify Vanilla.It is strongly reccomended to keep this on, unless explicitly advised otherwise by a Sponge developer
 panda-redstone
     If 'true', uses Panda4494's redstone implementation which improves performance.
     See https://bugs.mojang.com/browse/MC-11193 for more information.
@@ -317,6 +363,15 @@ mods
     Per-mod overrides. Refer to the minecraft default mod for example.
 enabled
     If 'false', this mod will never save its structures.
+
+player-block-tracker
+====================
+
+block-blacklist
+    Block IDs that will be blacklisted for player block placement tracking.
+enabled
+    If 'true', adds player tracking support for block positions.
+    Note: This should only be disabled if you do not care who caused a block to change.
 spawner
     Used to control spawn limits around players.
     Note: The radius uses the lower value of mob spawn range and server's view distance.
@@ -470,7 +525,7 @@ world-enabled
 
 ------------------------------------------------------------------------------------------------------------
 
-This config was generated using SpongeForge build 3442 (with Forge 2705), SpongeAPI version 7.1.0:
+This config was generated using SpongeForge build 3442 (with Forge 2768), SpongeAPI version 7.1.5:
 
 .. code-block:: guess
 
@@ -483,13 +538,13 @@ This config was generated using SpongeForge build 3442 (with Forge 2705), Sponge
     # # Forums: https://forums.spongepowered.org/
     #
 
-    sponge {
+        sponge {
         # Stopgap measures for dealing with broken mods
         broken-mods {
             # A list of mod ids that have broken network handlers (they interact with the game from a Netty handler thread).
             # All network handlers from a forcibly scheduled to run on the main thread.
             # Note that this setting should be considered a last resort, and should only be used as a stopgap measure while waiting for a mod to properly fix the issue.
-            broken-network-handler-mods=[]
+            broken-network-handler-mods=null
         }
         bungeecord {
             # If 'true', allows BungeeCord to forward IP address, UUID, and Game Profile to this server.
@@ -646,12 +701,42 @@ This config was generated using SpongeForge build 3442 (with Forge 2705), Sponge
             }
         }
         exploits {
+            # If limit-book-size is enabled, controls the multiplier applied to each book page size
+            book-size-total-multiplier=0.98
+            # Enables filtering invalid entities when a chunk is being saved
+            # such that the entity that does not "belong" in the saving
+            # chunk will not be saved, and forced an update to the world's
+            # tracked entity lists for chunks.
+            # See https://github.com/PaperMC/Paper/blob/fd1bd5223a461b6d98280bb8f2d67280a30dd24a/Spigot-Server-Patches/0311-Prevent-Saving-Bad-entities-to-chunks.patch
+            filter-invalid-entities-on-chunk-save=true
+            # Limits the size of a book that can be sent by the client.
+            # See https://github.com/PaperMC/Paper/blob/f8058a8187da9f6185d95bb786783e12c79c8b18/Spigot-Server-Patches/0403-Book-Size-Limits.patch
+            limit-book-size=true
+            # Enables focing a chunk load when an entity position
+            # is set. Usually due to teleportation, vehicle movement
+            # etc. can a position lead an entity to no longer exist
+            # within it's currently marked and tracked chunk. This will
+            # enable that chunk for the position is loaded. Part of several
+            # exploits.See https://github.com/PaperMC/Paper/blob/fd1bd5223a461b6d98280bb8f2d67280a30dd24a/Spigot-Server-Patches/0335-Ensure-chunks-are-always-loaded-on-hard-position-set.patch
+            load-chunk-on-position-set=true
+            # Enables forcing chunks to save when an entity is added
+            # or removed from said chunk. This is a partial fix for
+            # some exploits using vehicles.See https://github.com/PaperMC/Paper/blob/fd1bd5223a461b6d98280bb8f2d67280a30dd24a/Spigot-Server-Patches/0306-Mark-chunk-dirty-anytime-entities-change-to-guarante.patch
+            mark-chunks-as-dirty-on-entity-list-modification=true
+            # If limit-book-size is enabled, controls the maximum size of a book page
+            max-book-page-size=2560
             # Prevents an exploit in which the client sends a packet with the
             # itemstack name exceeding the string limit.
             prevent-creative-itemstack-name-exploit=true
-            # Prevents an exploit in which the client sends a packet to update a sign containing
-            # commands from a player without permission.
-            prevent-sign-command-exploit=true
+            # Enables forcing updates to the player's location on vehicle movement.
+            # This is partially required to update the server's understanding of
+            # where the player exists, and allows chunk loading issues to be avoided
+            # with laggy connections and/or hack clients.See https://github.com/PaperMC/Paper/blob/fd1bd5223a461b6d98280bb8f2d67280a30dd24a/Spigot-Server-Patches/0378-Sync-Player-Position-to-Vehicles.patch
+            sync-player-positions-for-vehicle-movement=true
+            # Enables forcing a chunk-tracking refresh on entity movement.
+            # This enables a guarantee that the entity is tracked in the
+            # proper chunk when moving.https://github.com/PaperMC/Paper/blob/fd1bd5223a461b6d98280bb8f2d67280a30dd24a/Spigot-Server-Patches/0315-Always-process-chunk-registration-after-moving.patch
+            update-tracked-chunk-on-entity-move=true
         }
         general {
             # The directory for Sponge plugin configurations, relative to the
@@ -727,7 +812,7 @@ This config was generated using SpongeForge build 3442 (with Forge 2705), Sponge
             # Deleting an entry from this list will reset it to the default specified in
             # "default-permission"
             plugin-permissions {
-                test-gradle-plugin=false
+                docsconfiglister=false
             }
         }
         modules {
@@ -736,6 +821,10 @@ This config was generated using SpongeForge build 3442 (with Forge 2705), Sponge
             bungeecord=false
             entity-activation-range=true
             entity-collisions=true
+            # Controls whether any exploit patches are applied.
+            # If there are issues with any specific exploits, please
+            # test in the exploit category first, before disabling all
+            # exploits with this toggle.
             exploits=true
             # Allows configuring Vanilla movement and speed checks
             movement-checks=false
@@ -821,7 +910,7 @@ This config was generated using SpongeForge build 3442 (with Forge 2705), Sponge
         }
         player-block-tracker {
             # Block IDs that will be blacklisted for player block placement tracking.
-            block-blacklist=[]
+            block-blacklist=null
             # If 'true', adds player tracking support for block positions.
             # Note: This should only be disabled if you do not care who caused a block to change.
             enabled=true
@@ -860,10 +949,10 @@ This config was generated using SpongeForge build 3442 (with Forge 2705), Sponge
             # a safe block for players to warp into.
             # You should only list blocks here that are incorrectly selected, solid blocks that prevent
             # movement are automatically excluded.
-            unsafe-body-block-ids=[]
+            unsafe-body-block-ids=null
             # Block IDs that are listed here will not be selected by Sponge's safe
             # teleport routine as a safe floor block.
-            unsafe-floor-block-ids=[]
+            unsafe-floor-block-ids=null
         }
         tileentity-activation {
             # If 'true', newly discovered tileentities will be added to this config with default settings.
@@ -946,7 +1035,7 @@ This config was generated using SpongeForge build 3442 (with Forge 2705), Sponge
             # If 'true', natural leaf decay is allowed.
             leaf-decay=true
             # If 'true', this world will load on startup.
-            load-on-startup=true
+            load-on-startup=false
             # The maximum number of queued unloaded chunks that will be unloaded in a single tick.
             # Note: With the chunk gc enabled, this setting only applies to the ticks
             # where the gc runs (controlled by 'chunk-gc-tick-interval')
@@ -975,5 +1064,5 @@ This config was generated using SpongeForge build 3442 (with Forge 2705), Sponge
             weather-thunder=true
             # If 'true', this world will be registered.
             world-enabled=true
+            }
         }
-    }
