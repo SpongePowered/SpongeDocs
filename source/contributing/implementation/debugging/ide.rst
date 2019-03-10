@@ -13,7 +13,7 @@ Debugging Sponge Within the IDE
     to include Eclipse, you can do so on `our GitHub repository <https://github.com/spongepowered/spongedocs>`_. 
 
 Using your IDE to debug Sponge is relatively straight-forward. For the most part, you import the ``build.gradle`` file 
-into your IDE after you have :ref:`setupWorkspace`. Ensure you have JDK 8 installed and specified in your IDE, and you 
+into your IDE after you have :ref:`setupWorkspace`. Ensure you have JDK 8 installed and specified in your IDE and 
 import the project as **a Gradle project**, then you are ready to run the code and perform tests.
 
 Key Settings
@@ -77,11 +77,11 @@ Now with everything working, you can do all of the usual tasks when in your IDE,
 through code, examining variables, and evaluating expressions. You can also utilize regular aspects of the game, such 
 as commands and log output.
 
-Debugging With Mods And Plugins
+Debugging With Mods and Plugins
 -------------------------------
 
-When debugging code with a mod or plugin, place a copy of the mod's or plugin's jar file in the ``run/mods`` directory. 
-The IDE will allow you to examine the code and set breakpoints. However, you must specify the directory as a library.
+When debugging code with a mod or plugin, place a copy of its jar file in the ``run/mods`` directory. The IDE will 
+allow you to examine the code and set breakpoints. However, you must specify the directory as a library.
 
 To do this, open ``Project Settings`` and select the ``Libraries`` project component. Click on ``+`` near the top of 
 the middle column. Click on ``Java`` and navigate to the ``mods`` folder and select it. Click ``OK``. You can now 
