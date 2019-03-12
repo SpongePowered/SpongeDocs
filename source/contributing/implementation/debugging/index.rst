@@ -9,11 +9,13 @@ These sections provide information for debugging Sponge itself. Whether you need
 SpongeCommon, or SpongeAPI, set up your workspace for a SpongeForge or SpongeVanilla implementation. SpongeCommon and
 SpongeAPI are debugged within the implementation setup.
 
-See :doc:`../../../about/structure` for more information.
+See :doc:`/about/structure` for more information.
 
 .. note::
     Be sure to read and understand :doc:`/contributing/howtogit` and :doc:`/contributing/versioning` as well as the 
     entirety of the :doc:`../index` sections before proceeding.
+
+.. _setupWorkspace:
 
 Setup the Workspace
 ===================

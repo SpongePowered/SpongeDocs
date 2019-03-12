@@ -3,8 +3,8 @@ Debugging Mixin
 ===============
 
 .. tip::
-    The **Mixins** section of :doc:`../../../plugin/practices/best` has a discussion on mixins, coremods, and other 
-    low-level definitions.
+    The **Mixins** section of :doc:`/plugin/practices/best` has a discussion on mixins, coremods, and other low-level 
+    definitions.
 
 `Spongepowered Mixin <https://github.com/SpongePowered/Mixin>`_ is the subsystem that allows SpongeAPI and other 
 programs to interface with Minecraft. This article is not to provide a comprehensive explanation of Mixin. Please see 
