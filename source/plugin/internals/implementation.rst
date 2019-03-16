@@ -46,7 +46,7 @@ Example Using Gradle
 .. code-block:: groovy
 
     dependencies {
-        compile 'org.spongepowered:spongevanilla:1.12.2-7.1.0-RC116:dev'
+        compile 'org.spongepowered:spongevanilla:1.12.2-7.1.1-RC123:dev'
     }
 
 SpongeForge
@@ -65,5 +65,5 @@ Example Using Gradle
 .. code-block:: groovy
 
     dependencies {
-        compile 'org.spongepowered:spongeforge:1.12.2-2705-7.1.0-RC3442:dev'
+        compile 'org.spongepowered:spongeforge:1.12.2-2768-7.1.1-RC3484:dev'
     }

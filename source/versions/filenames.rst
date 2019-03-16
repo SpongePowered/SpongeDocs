@@ -62,13 +62,13 @@ Examples
 
 SpongeForge Jar files will always follow this naming scheme to allow you to easily identify compatibility.
 
-For example, the file name ``spongeforge-1.12.2-2705-7.1.4.jar`` is compatible with Minecraft version ``1.12.2``, was 
-built with Forge ``14.23.4.2705`` (Build ``2705``), guarantees compatibility with SpongeAPI ``7.1.0``, is a recommended 
+For example, the file name ``spongeforge-1.12.2-2768-7.1.4.jar`` is compatible with Minecraft version ``1.12.2``, was 
+built with Forge ``14.23.5.2768`` (Build ``2768``), guarantees compatibility with SpongeAPI ``7.1.0``, is a recommended 
 version, and is the ``4`` th release of SpongeForge with this API.
 
-Another example is the file name ``spongeforge-1.12.2-2705-7.1.5-RC3449.jar``. This file is compatible with Minecraft 
-version ``1.12.2``, was built with Forge ``14.23.4.2705`` (Build ``2705``), guarantees compatibility with SpongeAPI 
-``7.1.0``, is not a recommended version, and is build number ``3449`` in development, which will be the ``5`` th 
+Another example is the file name ``spongeforge-1.12.2-2768-7.1.5-RC3505.jar``. This file is compatible with Minecraft 
+version ``1.12.2``, was built with Forge ``14.23.5.2768`` (Build ``2768``), guarantees compatibility with SpongeAPI 
+``7.1.0``, is not a recommended version, and is build number ``3505`` in development, which will be the ``5`` th 
 release of SpongeForge once this version is released. 
 
 SpongeVanilla
@@ -77,7 +77,7 @@ SpongeVanilla
 The information for SpongeVanilla is identical to SpongeForge except that SpongeVanilla does not contain a Forge build 
 number. So, the above examples of SpongeForge jar files will look like the following for SpongeVanilla:
 
-``spongevanilla-1.12.2-7.1.4.jar`` and ``spongevanilla-1.12.2-7.1.5-RC3449.jar``
+``spongevanilla-1.12.2-7.1.4.jar`` and ``spongevanilla-1.12.2-7.1.5-RC148.jar``
 
 SpongeAPI
 =========
