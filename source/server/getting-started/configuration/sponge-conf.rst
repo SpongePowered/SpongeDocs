@@ -538,7 +538,7 @@ This config was generated using SpongeForge build 3442 (with Forge 2768), Sponge
     # # Forums: https://forums.spongepowered.org/
     #
 
-        sponge {
+    sponge {
         # Stopgap measures for dealing with broken mods
         broken-mods {
             # A list of mod ids that have broken network handlers (they interact with the game from a Netty handler thread).
@@ -1064,5 +1064,5 @@ This config was generated using SpongeForge build 3442 (with Forge 2768), Sponge
             weather-thunder=true
             # If 'true', this world will be registered.
             world-enabled=true
-            }
         }
+    }
