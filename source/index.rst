@@ -35,17 +35,6 @@ or visit their repositories on GitHub:
 Contents
 ========
 
-Versioning Policy
-~~~~~~~~~~~~~~~~~
-
-This section describes how Sponge manages versions.
-
-.. toctree::
-    :maxdepth: 2
-    :titlesonly:
-
-    versions/index
-
 Creating a Server
 ~~~~~~~~~~~~~~~~~
 
@@ -56,6 +45,17 @@ This section is for users who have a Sponge server or are interested in creating
     :titlesonly:
 
     server/index
+
+Versioning Policy
+~~~~~~~~~~~~~~~~~
+
+This section describes how Sponge manages versions.
+
+.. toctree::
+    :maxdepth: 2
+    :titlesonly:
+
+    versions/index
 
 Preparing for Development
 ~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -30,8 +30,8 @@ The format of the SpongeForge download filename is:
 | ``LatestAPI``        | The minor version of SpongeAPI implemented by this file (the ``Y`` in                         |
 | ``MinorRelease``     | :ref:`semantic versioning<sem-ver>`).                                                         |
 +----------------------+-----------------------------------------------------------------------------------------------+
-| ``Recommended``      | The released version of the implementation when **not** followed by ``-RC<BuildNumber>.``     |
-| ``Version``          |                                                                                               |
+| ``Recommended``      | The released version of the implementation when **not** followed by ``-RC<BuildNumber>`` (the |
+| ``Version``          | ``Z`` in :ref:`semantic versioning<sem-ver>`).                                                |
 +----------------------+-----------------------------------------------------------------------------------------------+
 | ``-RC``              | The build number in development for the next recommended release. When a build number is      |
 | ``<BuildNumber>``    | present, the ``RecommendedVersion`` has **not** been released yet.                            |
