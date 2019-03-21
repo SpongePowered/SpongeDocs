@@ -10,59 +10,7 @@ Users who do not want to use Minecraft Forge can consider :doc:`SpongeVanilla <s
 Download
 ========
 
-Grab your copy of `SpongeForge here <https://www.spongepowered.org/downloads>`_.
-
-.. _sponge-forge-file-name:
-
-Reading the Download Filename
-=============================
-
-When you download SpongeForge, the name of the file will provide some important version information. It includes a
-Forge build number which this version of SpongeForge is compatible with. Other builds, even ones differing by only a
-few build numbers are not officially supported.
-
-However, SpongeForge usually updates to a new Forge build fairly soon after it's released, so you needn't
-worry about always having to run an outdated Forge version in order to use SpongeForge.
-
-
-The format of the filename is ``spongeforge-<MCVersion>-<ForgeBuildId>-<SpongeAPIVersion>-BETA-<SpongeBuildId>.jar``
-
-+----------------------+-----------------------------------------------------------------------------------------------+
-| ``MCVersion``        | The Minecraft version. Only clients compatible with this version can connect.                 |
-+----------------------+-----------------------------------------------------------------------------------------------+
-| ``ForgeBuildId``     | Preferably your server should run this exact version of Forge (which can be identified in the |
-|                      | last part of Forge's version string).                                                         |
-+----------------------+-----------------------------------------------------------------------------------------------+
-| ``SpongeAPIVersion`` | The version of SpongeAPI implemented by this file. This is what Sponge plugins depend on.     |
-+----------------------+-----------------------------------------------------------------------------------------------+
-| ``SpongeBuildId``    | The build number of Sponge. This is what you should supply when reporting bugs or seeking     |
-|                      | support.                                                                                      |
-+----------------------+-----------------------------------------------------------------------------------------------+
-
-Example
-~~~~~~~
-
-SpongeForge Jar files will always follow this naming scheme, to allow you to easily identify compatibility.
-
-For example, the file name ``spongeforge-1.12.2-2705-7.1.0-BETA-3442.jar`` is compatible with Minecraft version
-``1.12.2``, was built with Forge ``14.23.4.2705`` (Build ``2705``), provides SpongeAPI ``7.1.0`` and was build number
-``3442`` of SpongeForge.
-
-.. note::
-
-    Normal Forge mods can usually run on any build of Forge for a given Minecraft version (e.g. 1.8.0) without any
-    problem. However, SpongeForge needs to access, among other things, internal parts of Forge, which most mods
-    shouldn’t be touching, let alone modifying as Sponge does. Since Forge is free to change their internal code
-    whenever they want to, its normal guarantee of backwards-compatibility doesn’t apply to SpongeForge. Feel free to
-    use more recent versions of Forge, than the one used for SpongeForge, but we can't always guarantee compatibility.
-
-.. warning::
-
-    When investigating crash issues, you can freely try newer versions of Forge than listed on the SpongeForge Jar.
-    However, it is recommended to also check with the matching version, to make sure your issue is not related to a
-    version mismatch.
-    Even though there will be no guarantee of compatibility, please report any breakage to the issue tracker, so that
-    SpongeForge can be updated.
+Review our :doc:`/versions/versioning` and grab your copy of `SpongeForge here <https://www.spongepowered.org/downloads>`_.
 
 Installing SpongeForge
 ======================
@@ -75,8 +23,8 @@ Installing SpongeForge
 .. note::
 
   When using the Mojang installer, Mojang makes use of their own Java version and not the one you installed on your
-  system. The installer currently ships with Java ``1.8.0_25`` for Windows and ``1.8.0_60`` for macOS. Note that Sponge
-  requires **at least** ``1.8.0_20`` or above to run properly but it is recommended to use the latest Java 8 version.
+  system. The installer currently ships with Java ``1.8.0_74``. Note that Sponge requires **at least** ``1.8.0_20`` or 
+  above to run properly but it is recommended to use the latest Java 8 version.
 
 Single Player / In-Game LAN Servers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

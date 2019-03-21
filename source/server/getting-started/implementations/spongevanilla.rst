@@ -17,7 +17,8 @@ do not want to run a Forge server. Originally started as an independent project 
 Download
 ========
 
-Grab your copy of `SpongeVanilla here <https://www.spongepowered.org/downloads>`_.
+Review our :doc:`/versions/versioning` and grab your copy of `SpongeVanilla here 
+<https://www.spongepowered.org/downloads>`_.
 
 Installing SpongeVanilla
 ========================
@@ -31,8 +32,8 @@ Installing SpongeVanilla
 .. note::
 
   When using the Mojang installer, Mojang makes use of their own Java version and not the one you installed on your
-  system. The installer currently ships with Java ``1.8.0_25`` for Windows and ``1.8.0_60`` for macOS. Note that Sponge
-  requires **at least** ``1.8.0_20`` or above to run properly but it is recommended to use the latest Java 8 version.
+  system. The installer currently ships with Java ``1.8.0_74``. Note that Sponge requires **at least** ``1.8.0_20`` or 
+  above to run properly but it is recommended to use the latest Java 8 version.
 
 SpongeVanilla only works as a dedicated server.
 

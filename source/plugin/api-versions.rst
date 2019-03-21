@@ -10,10 +10,13 @@ This page explains which API versions exist, and to which Minecraft version thei
 | *8.0.0*     | TBA          | TBA            | * *SpongeForge (1.13.x)*                  |
 |             |              |                | * *SpongeVanilla (1.13.x)*                |
 +-------------+--------------+----------------+-------------------------------------------+
+| 7.2.0       | TBA          | TBA            | * SpongeForge (1.12.2)                    |
+|             |              |                | * SpongeVanilla (1.12.2)                  |
++-------------+--------------+----------------+-------------------------------------------+
 | 7.1.0       | Sep 6, 2018  | TBA            | * SpongeForge (1.12.2)                    |
 |             |              |                | * SpongeVanilla (1.12.2)                  |
 +-------------+--------------+----------------+-------------------------------------------+
-| 7.0.0       | Jan 1, 2018  | TBA            | * SpongeForge (1.12.2)                    |
+| 7.0.0       | Jan 1, 2018  | Sep 5, 2018    | * SpongeForge (1.12.2)                    |
 |             |              |                | * SpongeVanilla (1.12.2)                  |
 +-------------+--------------+----------------+-------------------------------------------+
 | 6.0.0       | May 2, 2017  | Dec 31, 2017   | * SpongeForge (1.11.2)                    |
@@ -37,41 +40,7 @@ Getting the API Version from Implementations
 Getting it from the Jar
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-* For `SpongeForge <https://www.spongepowered.org/downloads/spongeforge/>`__: 
-
-  **Example:** ``spongeforge-1.12.2-2705-7.1.0-BETA-3361.jar``
-  
-  => API-Version ``7.1.0``
-  
-  See also :ref:`sponge-forge-file-name`.
-
-* For `SpongeVanilla <https://www.spongepowered.org/downloads/spongevanilla/>`__:
-
-  **Example:** ``spongevanilla-1.12.2-7.1.0-BETA-59.jar``
-  
-  => API-Version ``7.1.0``
-
-.. note::
-
-    The version string in SpongeForge & SpongeVanilla is currently flawed, it currently has a minor version number
-    referring to **unreleased** API versions, and is planned to be fixed going forward in some future update.
-
-    As we follow SemVer, changes in 7.1.0 should be backwards compatible with 7.0.0, as such, we often ship
-    SpongeForge & SpongeVanilla with **preview** implementations of the upcoming API release.
-
-    The API contained within the preview API builds can and will change before it's released, so for plugin
-    compatibility sake, it's best to use plugins for the latest stable released API, and not the API preview versions.
-
-    As such, if the API version number in the filename points to 7.2.0 but 7.2.0 is not yet announced to be released,
-    you should use plugins built against 7.1.0 unless specifically testing new functionality as asked by plugin devs, or
-    you are willing to put up with small breakages occasionally for the sake of new features.
-
-    This **WILL** be fixed in the near future. When this happens the Version number of SpongeForge & SpongeVanilla will
-    no longer reference unreleased SpongeAPI minor versions, but will still ship previews of the next minor API for
-    testing purposes.
-
-    Major API version bumps will be reserved for the experimental / bleeding builds, and will be very explicit as their
-    major version number will be different.
+See :doc:`/versions/versioning`.
 
 .. _associated-minecraft-version:
 
