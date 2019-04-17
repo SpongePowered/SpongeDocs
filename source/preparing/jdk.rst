@@ -21,6 +21,6 @@ Oracle provides free downloads of the Java Development Kit on their website. Ens
 
 * `Java Development Kit 8 <https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html>`__
 
-If you don't want to create an Oracle account in order to download, you can also download the JDK from `AdoptOpenJDK <https://adoptopenjdk.net/?variant=openjdk8&jvmVariant=hotspot>`__.
+As an open source alternative you can also download the JDK from `AdoptOpenJDK <https://adoptopenjdk.net/?variant=openjdk8&jvmVariant=hotspot>`__.
 
 Upon completion of the installation process, reboot your computer. The JDK should then be ready for use.
