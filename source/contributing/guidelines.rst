@@ -28,7 +28,7 @@ General steps
    issues we need your help with.
 
 .. note::
-    Please don't submit pull requests for small changes such as typos or identifier refactoring. Instead, `join #sponge on IRC (irc.esper.net)
+    Please don't submit pull requests for small, non-functional changes such as fixing typos or renaming variable names. Instead, `join #sponge on IRC (irc.esper.net)
     <https://webchat.esper.net/?channels=sponge>`_ or `join #spongedev on IRC (irc.esper.net)
     <https://webchat.esper.net/?channels=spongedev>`_ and we'll change it together with the other smaller changes.
 
