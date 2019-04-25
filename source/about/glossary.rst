@@ -51,7 +51,7 @@ Mod
 NPC
   Non-Player Character. Any character not controlled by a player, e.g. a Villager.
 Ore
-  The Official Sponge plugin hosting site, not ready yet. Use the Sponge Forums instead.
+  The Official Sponge plugin hosting site. https://ore.spongepowered.org/
 Patreon
   A Service that allows for donations to projects and organizations. If you want to support Sponge, this is the place to
   look at! `Sponge Patreon Donation Page <https://www.patreon.com/Sponge>`__
