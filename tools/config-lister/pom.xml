@@ -1,0 +1,90 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.spongepowered.docs.tools</groupId>
+	<artifactId>config-lister</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+
+	<name>SpongeDocs global.conf Documenation Generator</name>
+	<description>A helper plugin to generate the sponge global.conf documentation.</description>
+	<url>https://docs.spongepowered.org/</url>
+	<inceptionYear>2019</inceptionYear>
+
+	<licenses>
+		<license>
+			<name>The MIT License</name>
+			<url>https://opensource.org/licenses/MIT</url>
+		</license>
+	</licenses>
+
+	<organization>
+		<name>SpongePowered</name>
+		<url>https://www.spongepowered.org/</url>
+	</organization>
+
+	<properties>
+		<sponge.api.version>7.1.0</sponge.api.version>
+
+		<java.version>1.8</java.version>
+		<maven.compiler.source>${java.version}</maven.compiler.source>
+		<maven.compiler.target>${java.version}</maven.compiler.target>
+
+		<charset>UTF-8</charset>
+		<project.reporting.outputEncoding>${charset}</project.reporting.outputEncoding>
+		<project.build.sourceEncoding>${charset}</project.build.sourceEncoding>
+
+		<maven.build.timestamp.format>yyyy-MM-dd'T'HH:mm:ss'Z'</maven.build.timestamp.format>
+	</properties>
+
+	<repositories>
+		<repository>
+			<id>sponge</id>
+			<url>https://repo.spongepowered.org/maven</url>
+		</repository>
+	</repositories>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.spongepowered</groupId>
+			<artifactId>spongeapi</artifactId>
+			<version>${sponge.api.version}</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<defaultGoal>clean package exec:java</defaultGoal>
+		<resources>
+			<resource>
+				<directory>.</directory>
+				<includes>
+					<include>LICENSE.txt</include>
+				</includes>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+			</resource>
+		</resources>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.1.0</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+							<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+						</manifest>
+						<manifestEntries>
+							<build-timestamp>${maven.build.timestamp}</build-timestamp>
+						</manifestEntries>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

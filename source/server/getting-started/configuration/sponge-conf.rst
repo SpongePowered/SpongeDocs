@@ -525,7 +525,7 @@ world-enabled
 
 ------------------------------------------------------------------------------------------------------------
 
-This config was generated using SpongeForge build 3442 (with Forge 2768), SpongeAPI version 7.1.5:
+This config was generated using SpongeForge recommendation 5 (SpongeForge 3554 with Forge 2768), SpongeAPI version 7.1:
 
 .. code-block:: guess
 
@@ -544,7 +544,7 @@ This config was generated using SpongeForge build 3442 (with Forge 2768), Sponge
             # A list of mod ids that have broken network handlers (they interact with the game from a Netty handler thread).
             # All network handlers from a forcibly scheduled to run on the main thread.
             # Note that this setting should be considered a last resort, and should only be used as a stopgap measure while waiting for a mod to properly fix the issue.
-            broken-network-handler-mods=null
+            broken-network-handler-mods=[]
         }
         bungeecord {
             # If 'true', allows BungeeCord to forward IP address, UUID, and Game Profile to this server.
@@ -910,7 +910,7 @@ This config was generated using SpongeForge build 3442 (with Forge 2768), Sponge
         }
         player-block-tracker {
             # Block IDs that will be blacklisted for player block placement tracking.
-            block-blacklist=null
+            block-blacklist=[]
             # If 'true', adds player tracking support for block positions.
             # Note: This should only be disabled if you do not care who caused a block to change.
             enabled=true
@@ -949,10 +949,10 @@ This config was generated using SpongeForge build 3442 (with Forge 2768), Sponge
             # a safe block for players to warp into.
             # You should only list blocks here that are incorrectly selected, solid blocks that prevent
             # movement are automatically excluded.
-            unsafe-body-block-ids=null
+            unsafe-body-block-ids=[]
             # Block IDs that are listed here will not be selected by Sponge's safe
             # teleport routine as a safe floor block.
-            unsafe-floor-block-ids=null
+            unsafe-floor-block-ids=[]
         }
         tileentity-activation {
             # If 'true', newly discovered tileentities will be added to this config with default settings.
