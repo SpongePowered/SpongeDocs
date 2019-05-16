@@ -3,61 +3,36 @@ Deploy From Gradle
 ==================
 
 SpongeGradle_ makes it easy for plugin developers to deploy new versions of their plugin directly to Ore without even
-needing to open a browser. Once you have created a project on Ore and have published at least one version of your
-plugin, you can begin to deploy new versions of your plugin from your build script.
+needing to open a browser. Once you have created a project on Ore, you can begin to deploy new versions of your plugin from your build script.
 
 .. tip::
 
     For more info on how to get started with Gradle and Sponge, check out :doc:`/plugin/project/gradle`.
 
-Configuring The Signing Plugin
-==============================
-
-Like all Ore uploads, the artifacts you publish from Gradle must be signed with the PGP private key that corresponds to
-the public key you've added to your account in :doc:`/ore/publish`. Luckily, this is easily accomplished with Gradle as
-it comes with a core-plugin that does just this. In order to use the ``oreDeploy`` task in Gradle, *you must*
-configure the signing plugin as it depends on this specific plugin.
-
-For more information on how to configure the signing plugin, please refer to the Gradle User Guide entry:
-`The Signing Plugin <https://docs.gradle.org/current/userguide/signing_plugin.html>`__.
-
-The signing plugin requires the following configuration options:
-
-* ``signing.keyId``
-* ``signing.password``
-* ``signing.secretKeyRingFile``
-
-Following best practice, you should put this in your ``gradle.properties`` file inside your ``GRADLE_USER_HOME`` folder
-(which is your ``HOME`` folder unless configured otherwise). Do **NOT** define them in your project's 
-``gradle.properties`` file or any other resource you upload (to git).
-
-.. code-block:: properties
-
-    signing.keyId=1235ADEF
-    signing.password=secret
-    signing.secretKeyRingFile=/home/me/.gnupg/secring.gpg
-
-As an alternative you can supply them via command line parameters like this
-``-Psigning.keyId=<KEY ID> -Psigning.password=<Password> -Psigning.secretKeyRingFile=<Secring.gpg>``.
-
 Deployment Credentials
 ======================
 
-The first step in enabling direct deployment is generating a deployment key to let Gradle publish to your project
-remotely. You can do this by navigating to your project settings, scrolling down to "Deployment key" and clicking
-"Generate key".
+The first step in enabling direct deployment is generating an API key to let Gradle publish to your projects
+remotely. You can do this by navigating to your user profile, and clicking on they key icon.
 
-.. image:: /images/ore/help_3.png
+.. image:: /images/ore/help_1.png
     :align: center
-    :alt: Deployment key
+    :alt: API key
+
+From there you should see a bunch of permissions. You only need the ``create_version`` permission. Give it a nice name, and click the create key button.
+It should appear on the right. Note that this will be the only time you will be able to see the full key. If you don't copy it now, you will have to 
+create a new one.
+
+.. image:: /images/ore/help_2.png
+    :align: center
+    :alt: API key
 
 .. warning::
 
     Anyone with access to your special deployment key will have the ability to attempt to publish new versions to
-    your project. Of course, they will also need your private PGP key to do so but still... Keep it secret, keep it
-    safe!
+    your projects. Keep it secret, keep it safe!
 
-This deployment key must be supplied as the value of the property ``oreDeploy.apiKey``. 
+This API key must be supplied as the value of the property ``oreDeploy.apiKey``. 
 
 Following best practice, you should put this in your ``gradle.properties`` file inside your ``GRADLE_USER_HOME`` folder
 (which is your ``HOME`` folder unless configured otherwise). Do **NOT** define them in your project's 
@@ -65,22 +40,28 @@ Following best practice, you should put this in your ``gradle.properties`` file 
 
 .. code-block:: properties
 
-    oreDeploy.apiKey=8c115d0c9b9e425281d870e329dd6741
+    oreDeploy.apiKey=3aec9846-b6f7-4f26-bdc1-129c624eba81.4802bbca-4335-4102-9bac-87aebaba451e
 
 As an alternative you can supply them via command line parameters like this
-``-PoreDeploy.apiKey=8c115d0c9b9e425281d870e329dd6741``.
+``-PoreDeploy.apiKey=3aec9846-b6f7-4f26-bdc1-129c624eba81.4802bbca-4335-4102-9bac-87aebaba451e``.
 
 Deployment Configuration
 ========================
 
-In order to start using the ``oreDeploy`` task, you must configure which release channel you would like publish the
-artifact to and you might want to specify whether it should be marked as "recommended" or not.
+That's it for just publishing using the default settings. If you want to customize the build more, here's all the different settings you can use.
 
 .. code-block:: groovy
 
     oreDeploy {
-      channel = 'release'
       recommended = false // default true
+	  forumPost = false // defaults to project setting
+	  description = "Version 1.4.3\nRemoved bugs" // defaults to empty
+	  // Set tags with different names. Case sensitive.
+	  // You can only use valid tags that exists in Ore and can be changed by the user.
+	  tags {
+	    // Channel is also considered a tag here
+	    Channel = 'Release'
+	  }
     }
 
 Deploying Artifacts
@@ -100,16 +81,12 @@ If you've made it this far you're now ready to start publishing directly to Ore!
     :processResources UP-TO-DATE
     :classes
     :jar UP-TO-DATE
-    :signArchives UP-TO-DATE
     :oreDeploy
-    Publishing ore-test-plugin to https://ore.spongepowered.org.
+    Publishing ore-test-plugin to https://ore.spongepowered.org
       Recommended: false
-      Channel: release
+	  tags: [Channel: "Release"]
       forumPost: true
-      changelog = "Version 1.4.3\n" +
-          "* Added FLARD\n" +
-          "* Removed bugs\n" +
-          "* It's faster"
+      changelog = "Version 1.4.3\nRemoved bugs"
     [success] https://ore.spongepowered.org/TestOrg/Ore-Test-Plugin/versions/1.0.1
 
     BUILD SUCCESSFUL
