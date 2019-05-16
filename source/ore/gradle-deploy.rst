@@ -54,14 +54,14 @@ That's it for just publishing using the default settings. If you want to customi
 
     oreDeploy {
       recommended = false // default true
-	  forumPost = false // defaults to project setting
-	  description = "Version 1.4.3\nRemoved bugs" // defaults to empty
-	  // Set tags with different names. Case sensitive.
-	  // You can only use valid tags that exists in Ore and can be changed by the user.
-	  tags {
-	    // Channel is also considered a tag here
-	    Channel = 'Release'
-	  }
+      forumPost = false // defaults to project setting
+      description = "Version 1.4.3\nRemoved bugs" // defaults to empty
+      // Set tags with different names. Case sensitive.
+      // You can only use valid tags that exists in Ore and can be changed by the user.
+      tags {
+        // Channel is also considered a tag here
+        Channel = 'Release'
+      }
     }
 
 Deploying Artifacts
@@ -84,7 +84,7 @@ If you've made it this far you're now ready to start publishing directly to Ore!
     :oreDeploy
     Publishing ore-test-plugin to https://ore.spongepowered.org
       Recommended: false
-	  tags: [Channel: "Release"]
+      tags: [Channel: "Release"]
       forumPost: true
       changelog = "Version 1.4.3\nRemoved bugs"
     [success] https://ore.spongepowered.org/TestOrg/Ore-Test-Plugin/versions/1.0.1
