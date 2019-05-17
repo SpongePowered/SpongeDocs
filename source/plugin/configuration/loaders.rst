@@ -164,3 +164,22 @@ must not lie in the jar file root, but instead in the directory ``assets/myplugi
 
 If you have an extra configuration class, you can use a much easier approach that also works if the only a part of your
 config is missing. See also the examples on the :doc:`serialization` page.
+
+Merging Nodes from an Asset
+===================
+
+If you would like to merge new nodes and their values to your existing configuration file you can use your
+``CommentedConfigurationNode`` and load values from a given asset explained above. This will take each node in 
+your asset file and attempt to place it into the new root node if it does not exist.
+
+.. code-block:: java
+
+    node.mergeValuesFrom(HoconConfigurationLoader.builder()
+                        .setURL(plugin.getAsset("default.conf").get().getUrl())
+                        .build()
+                        .load(ConfigurationOptions.defaults()));
+
+.. note::
+    
+    This will not change the values of preexisting configuration nodes if they are already present so this method can 
+    be called regardless of whether or not the server already has a previous version of your configuration. 
