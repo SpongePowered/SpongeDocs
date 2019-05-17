@@ -261,6 +261,25 @@ Plugin authors should consider whether it is necessary to persist a value when c
 Please refer to the Inheritance section if want to know more about the inheritance and precedence of the transient
 and persistent ``SubjectData``\s.
 
+Example
+~~~~~~~
+
+The following example could be used to give a player a permission with global context and a true value
+
+.. code-block:: java
+
+    import org.spongepowered.api.entity.living.player.Player;
+
+    public void setPermission(Player player, String permission) {
+        if(!player.hasPermission(permission) 
+            player.getSubjectData().setPermission(SubjectData.GLOBAL_CONTEXT, permission, Tristate.TRUE);
+    }
+
+.. note::
+    
+    In the above example ``Tristate.TRUE`` was used but you can also use ``Tristate.FALSE`` for a false permission and
+    ``Tristate.UNDEFINED`` to unset the permission entirely.
+
 Subject Options
 ===============
 
