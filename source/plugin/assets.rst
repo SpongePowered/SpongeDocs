@@ -59,16 +59,3 @@ following code:
     ``getResourceAsStream`` methods in ``Class``\es and ``ClassLoader``\s. **These methods should generally be avoided**
     within the SpongeAPI environment in favor of the ``AssetManager`` in order to provide a more confluent way of
     retrieving resources not only within your own plugin, but for other plugins as well.
-
-Working with Assets
-===================
-
-If you would like to merge new nodes and their values to your existing configuration file you can use your
-``CommentedConfigurationNode`` and load values from a given asset from inside your resources.
-
-.. code-block:: java
-
-    node.mergeValuesFrom(HoconConfigurationLoader.builder()
-                        .setURL(plugin.getAsset("default.conf").get().getUrl())
-                        .build()
-                        .load(ConfigurationOptions.defaults()));
