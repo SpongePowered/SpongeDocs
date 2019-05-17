@@ -166,7 +166,7 @@ If you have an extra configuration class, you can use a much easier approach tha
 config is missing. See also the examples on the :doc:`serialization` page.
 
 Merging Nodes from an Asset
-~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you would like to merge new nodes and their values to your existing configuration file you can use your
 ``CommentedConfigurationNode`` and load values from a given asset explained above. This will take each node in 
