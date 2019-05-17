@@ -26,7 +26,7 @@ configurations, giving you the option of hard-coding default values or loading f
     The default and recommended config format for Sponge plugins is HOCON.
 
 Getting your Loader
-~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
     The default :javadoc:`ConfigurationLoader` can be used instead if you're using only a single HOCON config file;
