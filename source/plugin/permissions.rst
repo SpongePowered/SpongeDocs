@@ -277,8 +277,8 @@ The following example could be used to give a player a permission with global co
 
 .. note::
     
-    In the above example `Tristate.TRUE` was used but you can also use `Tristate.FALSE` for a false permission and
-    `Tristate.UNDEFINED` to unset the permission entirely.
+    In the above example ``Tristate.TRUE`` was used but you can also use ``Tristate.FALSE`` for a false permission and
+    ``Tristate.UNDEFINED`` to unset the permission entirely.
 
 Subject Options
 ===============
