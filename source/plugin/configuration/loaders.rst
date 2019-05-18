@@ -140,21 +140,16 @@ Example: Loading a Default Config from the Plugin Jar File
 
 .. code-block:: java
 
-    import java.net.URL;
-
+    Sponge.getAssetManager().getAsset(myplugin, "defaultConfig.conf").get().copyToFile(path, false, true);
+    loader = HoconConfigurationLoader.builder().setPath(path).build();
     rootNode = loader.load();
-    if (!rootNode.hasMapChildren()) { // is empty
-        this.logger.info("No config found - loading default");
-        URL jarConfigFile = Sponge.getAssetManager().getAsset("defaultConfig.conf").get().getUrl();
-        ConfigurationLoader<CommentedConfigurationNode> defaultLoader =
-                HoconConfigurationLoader.builder().setURL(jarConfigFile).build();
-        rootNode = defaultLoader.load();
-    }
 
 For this example it is important to note that the :javadoc:`AssetManager#getAsset(String)` method works relative to the
 plugin's asset folder. So, if in the above example the plugin ID is ``myplugin``, the ``defaultConfig.conf`` file
 must not lie in the jar file root, but instead in the directory ``assets/myplugin``. For more information, see
 :doc:`the Asset API page <../assets>`.
+
+Additionally, instead of checking to see if the node has an empty children map, this method uses ``copyToFile(path, false, true)``. The first argument is the path in which to set the node to, the second represents whether or not the file should be overriden each time, and the final argument represents if the existing config should be overriden only if absent.
 
 .. note::
     
@@ -170,7 +165,7 @@ Merging Nodes from an Asset
 
 If you would like to merge new nodes and their values to your existing configuration file you can use your
 ``CommentedConfigurationNode`` and load values from a given asset explained above. This will take each node in 
-your asset file and attempt to place it into the new root node if it does not exist.
+your asset file and attempt to place it into the new root node if it does not exist. This method is different to simply copying to a file as this will automatically place values that were absent while just copying to file will not.
 
 .. code-block:: java
 
