@@ -140,7 +140,7 @@ Example: Loading a Default Config from the Plugin Jar File
 
 .. code-block:: java
 
-    Sponge.getAssetManager().getAsset(myplugin, "defaultConfig.conf").get().copyToFile(path, false, true);
+    Sponge.getAssetManager().getAsset(myplugin, "default.conf").get().copyToFile(path, false, true);
     loader = HoconConfigurationLoader.builder().setPath(path).build();
     rootNode = loader.load();
 
