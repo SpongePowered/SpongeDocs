@@ -12,6 +12,7 @@ Configuration Loaders
     ninja.leaping.configurate.loader.AbstractConfigurationLoader.Builder
     ninja.leaping.configurate.loader.ConfigurationLoader
     org.spongepowered.api.asset.AssetManager
+    org.spongepowered.api.asset.Asset
     java.lang.String
     java.net.URL
     java.nio.file.Path
@@ -135,8 +136,10 @@ Again, errors will be propagated as an ``IOException`` and must be handled.
     strongly recommended to do this outside of the main thread. See also common :doc:`/plugin/practices/bad` you should
     avoid.
 
-Example: Loading a Default Config from the Plugin Jar File
+Loading a Default Config from the Plugin Jar File
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A popular way to provide a default configuration file with your plugin is to include a copy of it in your plugin jar, copying it to the config directory when the config file has yet to be created. You can use :doc:`the Asset API page <../assets>` to do this as shown in the example below:
 
 .. code-block:: java
 
@@ -146,13 +149,9 @@ Example: Loading a Default Config from the Plugin Jar File
 
 For this example it is important to note that the :javadoc:`AssetManager#getAsset(String)` method works relative to the
 plugin's asset folder. So, if in the above example the plugin ID is ``myplugin``, the ``default.conf`` file
-must not lie in the jar file root, but instead in the directory ``assets/myplugin``. For more information, see
-:doc:`the Asset API page <../assets>`.
-
-This variant should be used instead of checking whether the root node is empty as it simplifies the process.
-The first argument is the path in which to set the node, the second represents whether or not 
-the file should be overriden each time, and the final argument represents if the existing 
-config should be overriden only if absent.
+must not lie in the jar file root, but instead in the directory ``resources/assets/myplugin``. This example also uses 
+:javadoc:`Asset#copyToFile(String, boolean, boolean)` which allows an the file creation to override existing
+files only if specified. 
 
 .. note::
     
@@ -163,7 +162,7 @@ config should be overriden only if absent.
 If you have an extra configuration class, you can use a much easier approach that also works if the only a part of your
 config is missing. See also the examples on the :doc:`serialization` page.
 
-Example: Merging Nodes from an Asset
+Updating Configuration Files from the Default Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you would like to merge new nodes and their values to your existing configuration file you can use your
