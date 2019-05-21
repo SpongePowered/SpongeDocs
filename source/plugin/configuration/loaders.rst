@@ -137,7 +137,7 @@ Again, errors will be propagated as an ``IOException`` and must be handled.
     avoid.
 
 Loading a Default Config from the Plugin Jar File
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A popular way to provide a default configuration file with your plugin is to include a copy of it in your plugin jar, copying it to the config directory when the config file has yet to be created. You can use :doc:`the Asset API page <../assets>` to do this as shown in the example below:
 
@@ -163,7 +163,7 @@ If you have an extra configuration class, you can use a much easier approach tha
 config is missing. See also the examples on the :doc:`serialization` page.
 
 Updating Configuration Files from the Default Configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you would like to merge new nodes and their values to your existing configuration file you can use your
 ``CommentedConfigurationNode`` and load values from a given asset explained above. This will take each node in 
