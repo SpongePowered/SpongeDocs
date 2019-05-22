@@ -12,6 +12,7 @@ Configuration Loaders
     ninja.leaping.configurate.loader.AbstractConfigurationLoader.Builder
     ninja.leaping.configurate.loader.ConfigurationLoader
     org.spongepowered.api.asset.AssetManager
+    org.spongepowered.api.asset.Asset
     java.lang.String
     java.net.URL
     java.nio.file.Path
@@ -135,26 +136,22 @@ Again, errors will be propagated as an ``IOException`` and must be handled.
     strongly recommended to do this outside of the main thread. See also common :doc:`/plugin/practices/bad` you should
     avoid.
 
-Example: Loading a Default Config from the Plugin Jar File
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Loading a Default Config from the Plugin Jar File
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A popular way to provide a default configuration file with your plugin is to include a copy of it in your plugin jar, copying it to the config directory when the config file has yet to be created. You can use :doc:`the Asset API page <../assets>` to do this as shown in the example below:
 
 .. code-block:: java
 
-    import java.net.URL;
-
+    Sponge.getAssetManager().getAsset(myplugin, "default.conf").get().copyToFile(path, false, true);
+    loader = HoconConfigurationLoader.builder().setPath(path).build();
     rootNode = loader.load();
-    if (!rootNode.hasMapChildren()) { // is empty
-        this.logger.info("No config found - loading default");
-        URL jarConfigFile = Sponge.getAssetManager().getAsset("defaultConfig.conf").get().getUrl();
-        ConfigurationLoader<CommentedConfigurationNode> defaultLoader =
-                HoconConfigurationLoader.builder().setURL(jarConfigFile).build();
-        rootNode = defaultLoader.load();
-    }
 
 For this example it is important to note that the :javadoc:`AssetManager#getAsset(String)` method works relative to the
-plugin's asset folder. So, if in the above example the plugin ID is ``myplugin``, the ``defaultConfig.conf`` file
-must not lie in the jar file root, but instead in the directory ``assets/myplugin``. For more information, see
-:doc:`the Asset API page <../assets>`.
+plugin's asset folder. So, if in the above example the plugin ID is ``myplugin``, the ``default.conf`` file
+must not lie in the jar file root, but instead in the directory ``resources/assets/myplugin``. This example also uses 
+:javadoc:`Asset#copyToFile(String, boolean, boolean)` which allows an the file creation to override existing
+files only if specified. 
 
 .. note::
     
@@ -164,3 +161,23 @@ must not lie in the jar file root, but instead in the directory ``assets/myplugi
 
 If you have an extra configuration class, you can use a much easier approach that also works if the only a part of your
 config is missing. See also the examples on the :doc:`serialization` page.
+
+Updating Configuration Files from the Default Configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you would like to merge new nodes and their values to your existing configuration file you can use your
+``CommentedConfigurationNode`` and load values from a given asset explained above. This will take each node in 
+your asset file and attempt to place it into the new root node if it does not exist. This method is different to simply
+copying to a file as this will automatically place values that were absent while just copying to file will not.
+
+.. code-block:: java
+
+    node.mergeValuesFrom(HoconConfigurationLoader.builder()
+                        .setURL(plugin.getAsset("default.conf").get().getUrl())
+                        .build()
+                        .load(ConfigurationOptions.defaults()));
+
+.. note::
+    
+    This will not change the values of preexisting configuration nodes if they are already present so this method can 
+    be called regardless of whether or not the server already has a previous version of your configuration. 
