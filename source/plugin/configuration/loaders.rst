@@ -139,7 +139,9 @@ Again, errors will be propagated as an ``IOException`` and must be handled.
 Loading a Default Config from the Plugin Jar File
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A popular way to provide a default configuration file with your plugin is to include a copy of it in your plugin jar, copying it to the config directory when the config file has yet to be created. You can use :doc:`the Asset API page <../assets>` to do this as shown in the example below:
+A popular way to provide a default configuration file with your plugin is to include a copy of it in your plugin jar,
+copying it to the config directory when the config file has yet to be created.
+You can use :doc:`the Asset API <../assets>` to do this, as shown in the example below:
 
 .. code-block:: java
 
@@ -149,7 +151,7 @@ A popular way to provide a default configuration file with your plugin is to inc
 
 For this example it is important to note that the :javadoc:`AssetManager#getAsset(String)` method works relative to the
 plugin's asset folder. So, if in the above example the plugin ID is ``myplugin``, the ``default.conf`` file
-must not lie in the jar file root, but instead in the directory ``resources/assets/myplugin``. This example also uses 
+must not lie in the jar file root, but instead in the directory ``assets/myplugin``. This example also uses 
 :javadoc:`Asset#copyToFile(String, boolean, boolean)` which allows an the file creation to override existing
 files only if specified. 
 
@@ -179,5 +181,5 @@ copying to a file as this will automatically place values that were absent while
 
 .. note::
     
-    This will not change the values of preexisting configuration nodes if they are already present so this method can 
+    This will not change the values of preexisting configuration nodes if they are already present, so this method can 
     be called regardless of whether or not the server already has a previous version of your configuration. 
