@@ -24,20 +24,14 @@ function shell(plugin, command, args) {
 
 function webserver(done) {
   browsersync.init({
-    server: {
-      baseDir: "./build/dev/html/"
-    },
-    livereload: true
+    watch: true,
+    server: "./build/dev/html/"
   }, function () { this.server.on('close', done) })
 };
 
-function reload(done) {
-  browsersync.reload();
-  done();
-}
 
 function watch() {
-  gulp.watch('./source/**', gulp.series('sphinx:dev', reload));
+  gulp.watch('./source/**', gulp.series('sphinx:dev'));
 };
 
 gulp.task('clean', () => del(['build']));
