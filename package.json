@@ -3,10 +3,9 @@
   "version": "0.0.2",
   "private": true,
   "devDependencies": {
+    "browser-sync": "^2.26.5",
     "del": "^3.0.0",
-    "gulp": "^4.0.2",
-    "gulp-connect": "^5.7.0",
-    "gulp-shell": "^0.7.0"
+    "gulp": "^4.0.2"
   },
   "dependencies": {}
 }
