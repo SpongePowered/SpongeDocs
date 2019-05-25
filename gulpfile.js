@@ -1,6 +1,7 @@
 'use strict';
 
 const gulp = require('gulp');
+const pluginerror = require('plugin-error');
 const browsersync = require('browser-sync').create();
 const del = require('del');
 const spawn = require('child_process').spawn;
@@ -9,14 +10,14 @@ function shell(plugin, command, args) {
     return (done) =>
         spawn(command, args, {stdio: 'inherit'})
             .on('error', (err) => {
-                done(new gutil.PluginError(plugin, err))
+                done(new pluginerror(plugin, err))
             })
             .on('exit', (code) => {
                 if (code == 0) {
                     // Process completed successfully
                     done()
                 } else {
-                    done(new gutil.PluginError(plugin, `Process failed with exit code ${code}`));
+                    done(new pluginerror(plugin, `Process failed with exit code ${code}`));
                 }
             })
 }
