@@ -53,9 +53,9 @@ Getting your Default Plugin Configuration
 SpongeAPI offers the use of the :javadoc:`DefaultConfig` annotation on a field or setter method with the type
 ``Path`` to get the default configuration file for your plugin.
 
-If you place the ``@DefaultConfig`` annotation on a field with the type ``ConfigurationLoader`` then you can use it to 
-load and save the default config file in the file system. Please keep in mind that the annotated ``ConfigurationLoader``
-does not use any default config file that you might ship with your jar, unless you explicitly load it.
+If you place the ``@DefaultConfig`` annotation on a field with the type ``ConfigurationLoader<CommentedConfigurationNode>`` 
+then you can use it to load and save the default config file in the file system. Please keep in mind that the annotated 
+``ConfigurationLoader`` does not use any default config file that you might ship with your jar, unless you explicitly load it.
 
 The ``@DefaultConfig`` annotation requires a ``sharedRoot`` boolean. If you set ``sharedRoot`` to ``true``, then the
 returned pathname will be in a shared configuration directory. In that case, the configuration file for your plugin
