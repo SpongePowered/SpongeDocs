@@ -23,7 +23,7 @@ Properties Available
 |                                    | Forces all boolean "performance" checks for common SpongeAPI events to be       |  
 | **sponge.shouldFireAll**           | forcibly created and fired, regardless whether there is a registered event      |
 |                                    | listener for the desired event (Sponge will normally not construct and throw a  |
-| (boolean, default:false)           | ``ChangeBlockEvent`` if there's no listeners for that event or it's sub         |
+| (boolean, default:false)           | ``ChangeBlockEvent`` if there are no listeners for that event or its sub        |
 |                                    | events).                                                                        |
 +------------------------------------+---------------------------------------------------------------------------------+
 | **sponge.debugShouldFire**         | Logs changes to the ``ShouldFire`` flags when event listeners are               |  
@@ -53,10 +53,10 @@ Properties Available
 | (boolean, default: false)          |                                                                                 |
 +------------------------------------+---------------------------------------------------------------------------------+
 | **sponge.print_all_catalog_types** | Prints out all registered ``CatalogType`` s and their ``String`` id's at the    | 
-|                                    | end of startup, useful for finding out what id's are registered from vanilla,   |
-| (boolean, default: false)          | mods, and plugins for all created ``CatalogType`` s.                            |
+|                                    | end of startup, which is useful for finding out what id's are registered from   |
+| (boolean, default: false)          | vanilla, mods, and plugins for all created ``CatalogType`` s.                   |
 +------------------------------------+---------------------------------------------------------------------------------+
-|                                    | Prints out a very spam filled log for every block captured that is processed,   |
+|                                    | Prints out a very verbose log entry for every block captured that is processed, |
 |                                    | information about what ``BlockStates`` are proxied, what ``BlockStates`` exist  |
 | **sponge.debugBlockTransactions**  | on the ``Chunk`` during processing, and potentially what ``BlockStates``        |
 |                                    | existed prior to a future transaction changing positions. Likewise applies to   |
@@ -70,5 +70,5 @@ Properties Available
    every frame in the duration of the game's lifecycle.
 
    **sponge.debugProxyChanges** has the same potential to increase performance costs in potentially intensive 
-   environments due to the exception creation for every potential ``Entity`` / ``TileEntity`` / ``Block`` being ticked 
-   in the game.
+   environments due to exception creation for every potential ``Entity`` / ``TileEntity`` / ``Block`` being ticked in 
+   the game.
