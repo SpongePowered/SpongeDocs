@@ -64,3 +64,11 @@ Properties Available
 |                                    | implementation, and potentially plugins, when dealing with                      |
 |                                    | ``ChangeBlockEvents`` and their processing.                                     |
 +------------------------------------+---------------------------------------------------------------------------------+
+
+.. warning::
+   **sponge.debugcauseframes** has the potential to increase performance costs due to the stack trace creation for
+   every frame in the duration of the game's lifecycle.
+
+   **sponge.debugProxyChanges** has the same potential to increase performance costs in potentially intensive 
+   environments due to the exception creation for every potential ``Entity`` / ``TileEntity`` / ``Block`` being ticked 
+   in the game.
