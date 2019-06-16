@@ -30,6 +30,26 @@ Windows
 
 Save your Windows launch script as ``launch.bat``.
 
+.. warning::
+   Launching your server in a Command Prompt or PowerShell environment can lead to the server randomly hanging. During 
+   this time, the only messages captured in the log state the server skipped many seconds or minutes worth of ticks. 
+   The cause is the ``Quick Edit Mode`` of these shells. This mode freezes the process when you mark something for a 
+   quick edit. You can disable the ``Quick Edit Mode`` in the Properties dialogue to prevent the hangs from occurring.
+
+Disabling Quick Edit Mode
++++++++++++++++++++++++++
+
+.. note::
+   The ``Defaults`` menu and the ``Properties`` menu of both shells are the same, except that changes made in the 
+   ``Defaults`` menu apply to new instances.
+
+To disable ``Quick Edit Mode`` in either shell, 
+
+1. Right-click on the window's icon and click on ``Properties``
+#. Click on the ``Options`` tab
+#. Uncheck ``Quick Edit Mode`` in the ``Edit Options`` section.
+#. Click ``OK``.
+
 macOS
 ~~~~~
 
