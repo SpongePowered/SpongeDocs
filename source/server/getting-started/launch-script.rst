@@ -32,10 +32,10 @@ Save your Windows launch script as ``launch.bat``.
 
 .. warning::
    Launching your server in a Command Prompt or PowerShell environment can lead to the server hanging. During this 
-   time, the only messages captured in the log state the server skipped many seconds or minutes worth of ticks. 
-   The cause is the ``Quick Edit Mode`` of these shells. This mode freezes the process when you mark (or highlight) 
-   something for a quick edit (e.g., copy/paste). You can prevent hangs from occurring by not highlighting any text on 
-   the screen or by disabling the ``Quick Edit Mode`` in the Properties dialogue.
+   time, messages captured in the log will state the server skipped many seconds or minutes worth of ticks. The cause 
+   is the ``Quick Edit Mode`` of these shells, which freezes the process when you mark (or highlight) something for a 
+   quick edit (e.g., copy/paste). You can prevent this from occurring by not highlighting any text on the screen, or by 
+   disabling the ``Quick Edit Mode`` in the Properties dialogue.
 
 macOS
 ~~~~~
