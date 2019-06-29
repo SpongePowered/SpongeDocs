@@ -10,7 +10,7 @@ folders for your plugin.
 .. note::
     The plugin ID must be lowercase and start with an alphabetic character. It may only contain alphanumeric characters,
     dashes or underscores. The plugin name does **not** have such a limitation and can even contain spaces or
-    special characters.
+    special characters. It cannot be longer than 64 characters.
 
 Keep in mind your plugin ID will be the main identification of your plugin, used in other plugins as dependencies, for
 your configuration files, as well as other properties stored for your plugin. That's why it is important you always
