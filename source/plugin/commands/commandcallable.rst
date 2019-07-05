@@ -82,6 +82,7 @@ passing your plugin, an instance of the command, and any needed aliases as param
     import org.spongepowered.api.command.CommandManager;
 
     CommandManager cmdService = Sponge.getCommandManager();
+    PluginContainer plugin = ...;
     cmdService.register(plugin, new MyBroadcastCommand(), "message", "broadcast");
 
 .. note::

@@ -110,6 +110,8 @@ initial delay of 100 milliseconds could be built and submitted using the followi
 
     import java.util.concurrent.TimeUnit;
 
+    PluginContainer plugin = ...;
+
     Task task = Task.builder().execute(() -> logger.info("Yay! Schedulers!"))
         .async().delay(100, TimeUnit.MILLISECONDS).interval(5, TimeUnit.MINUTES)
         .name("ExamplePlugin - Fetch Stats from Database").submit(plugin);
@@ -209,6 +211,8 @@ to be thread-safe.
 .. code-block:: java
 
     import org.spongepowered.api.scheduler.SpongeExecutorService;
+
+    PluginContainer plugin = ...;
     
     SpongeExecutorService minecraftExecutor = Sponge.getScheduler().createSyncExecutor(plugin);
     
@@ -237,6 +241,8 @@ CompletableFuture_ is a fluent interface which usually has the following three v
 .. code-block:: java
 
     import java.util.concurrent.CompletableFuture;
+
+    PluginContainer plugin = ...;
     
     SpongeExecutorService minecraftExecutor = Sponge.getScheduler().createSyncExecutor(plugin);
 
@@ -273,6 +279,8 @@ synchronously using ``Observable#subscribeOn(Scheduler scheduler)``.
     import rx.Observable;
     import rx.Scheduler;
     import rx.schedulers.Schedulers;
+
+    PluginContainer plugin = ...;
 
     SpongeExecutorService executor = Sponge.getScheduler().createSyncExecutor(plugin);
     Scheduler minecraftScheduler = Schedulers.from(executor);

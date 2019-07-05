@@ -48,6 +48,8 @@ The first alias supplied is the primary one and will appear in the usage message
 
     import org.spongepowered.api.Sponge;
 
+    PluginContainer plugin = ...;
+
     CommandSpec mailCommandSpec = CommandSpec.builder()
         .permission("myplugin.mail")
         .description(Text.of("Send and receive mails"))
