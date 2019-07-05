@@ -151,20 +151,6 @@ contained no players.**
 :javadoc:`Cause#root()`. It also performs an additional check that the type of the root object matches the type of your
 parameter.
 
-**@Named** This parameter source annotation tells the event system to find the object with the name specified by the annotation
-parameter (This is equivalent to :javadoc:`Cause#get(String, Class)`). Additionally, the found object must match the
-type of the parameter. If no object is found meeting these criteria, then your listener is not called.
-
-**In this example your listener will only be called if there is a player associated with the name**
-``NamedCause.OWNER``\ **. The** ``player`` **parameter will be set to that player.**
-
-.. code-block:: java
-
-    @Listener
-    public void onInteract(InteractBlockEvent.Secondary event, @Named(NamedCause.OWNER) Player player) {
-        // do something
-    }
-
 **@Getter** This parameter source annotation will fetch a getter on the event with the specified name. If the specified
 getter returns an ``Optional``, ``@Getter`` will automatically unwrap the ``Optional``.
 
