@@ -52,8 +52,7 @@ There have also been community implementations due to the flexibility of the API
 Where do I get Plugins for Sponge?
 ----------------------------------
 
-You can find plugins on the `SpongeForums <https://forums.spongepowered.org/c/plugins/plugin-releases>`_ as well as our
-almost complete, official plugin repository, called `Ore <https://ore.spongepowered.org/>`_.
+You can find plugins on our official plugin repository, called `Ore <https://ore.spongepowered.org/>`_.
 
 What happened to Bukkit?
 ------------------------
