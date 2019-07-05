@@ -78,7 +78,7 @@ For Server Owners
 I'm a Server Owner! How Will Switching to Sponge Affect My Server?
 ------------------------------------------------------------------
 
-For an existing Forge server, you will need to download Sponge and place it into the mods folder. The server can then
+For an existing Forge server, you will need to download SpongeForge and place it into the mods folder. The server can then
 be started like any other Forge server.
 
 Non-Forge servers may elect to use SpongeVanilla instead, an implementation that does not rely on Forge. There are
