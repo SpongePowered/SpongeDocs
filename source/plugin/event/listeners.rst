@@ -124,7 +124,7 @@ event listeners, including those registered with ``@Listener`` annotations.
 
 .. code-block:: java
 
-    MyPlugin plugin = ...;
+    PluginContainer plugin = ...;
     Sponge.getEventManager().unregisterPluginListeners(plugin);
 
 .. _about_listener:
