@@ -415,7 +415,7 @@ gameprofile-lookup-batch-size
     If you are running multiple servers behind the same IP, it is recommended to raise the 'gameprofile-task-interval' setting
     in order to compensate for the amount requests being sent.
     Finally, if set to 0 or less, the default batch size will be used.
-    For more information visit http://wiki.vg/Mojang_API
+    For more information visit https://wiki.vg/Mojang_API
 gameprofile-lookup-task-interval
     The interval, in seconds, used by the GameProfileQueryTask to process queued GameProfile requests. (Default: 4)
     Note: This setting should be raised if you experience the following error:
@@ -915,7 +915,7 @@ This config was generated using SpongeForge build 3442 (with Forge 2705), Sponge
             # If you are running multiple servers behind the same IP, it is recommended to raise the 'gameprofile-task-interval' setting
             # in order to compensate for the amount requests being sent.
             # Finally, if set to 0 or less, the default batch size will be used.
-            # For more information visit http://wiki.vg/Mojang_API
+            # For more information visit https://wiki.vg/Mojang_API
             gameprofile-lookup-batch-size=1
             # The interval, in seconds, used by the GameProfileQueryTask to process queued GameProfile requests. (Default: 4)
             # Note: This setting should be raised if you experience the following error:

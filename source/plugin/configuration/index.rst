@@ -113,7 +113,7 @@ specific directory or to ``true`` to get the shared configuration directory.
 
 .. note::
 
-    The use of YAML format (http://yaml.org/spec/1.1/) and JSON format (https://www.json.org/) is also supported, but
+    The use of YAML format (https://yaml.org/spec/1.1/) and JSON format (https://www.json.org/) is also supported, but
     the preferred config format for Sponge plugins is HOCON. Conversion from YAML (or JSON) to HOCON can be automated by
     using a :javadoc:`YAMLConfigurationLoader` (or :javadoc:`GsonConfigurationLoader`) to load the old config and then
     saving it using a :javadoc:`HoconConfigurationLoader`.

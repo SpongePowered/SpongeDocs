@@ -6,7 +6,7 @@ Versioning
 
 .. tip::
     Sponge follows a format of the SemVer specification in its projects. You can read about general SemVer usage at 
-    http://semver.org.
+    https://semver.org/.
 
 The SpongeAPI and implementations (SpongeForge/SpongeVanilla) follow two different policies. Understanding our versions 
 is a matter of interpreting the SemVer version string. The SpongeAPI version utilizes the *Major* and *Minor* parts in 

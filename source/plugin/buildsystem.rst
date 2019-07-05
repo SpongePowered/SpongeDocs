@@ -64,8 +64,8 @@ your plugin. Continue at :doc:`plugin-identifier` for choosing an identifier for
 
 .. _Gradle: https://gradle.org/
 .. _Maven: https://maven.apache.org/
-.. _Groovy: http://www.groovy-lang.org/
-.. _Kotlin: http://kotlinlang.org/
+.. _Groovy: https://www.groovy-lang.org/
+.. _Kotlin: https://kotlinlang.org/
 .. _`Gradle User Guide`: https://docs.gradle.org/current/userguide/userguide.html
 .. _`Gradle Java Quickstart`: https://docs.gradle.org/current/userguide/tutorial_java_projects.html
 .. _`Project Object Model`: https://maven.apache.org/guides/introduction/introduction-to-the-pom.html
