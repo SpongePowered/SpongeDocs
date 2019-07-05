@@ -145,7 +145,9 @@ You can use :doc:`the Asset API <../assets>` to do this, as shown in the example
 
 .. code-block:: java
 
-    Sponge.getAssetManager().getAsset(myplugin, "default.conf").get().copyToFile(path, false, true);
+    PluginContainer plugin = ...;
+
+    Sponge.getAssetManager().getAsset(plugin, "default.conf").get().copyToFile(path, false, true);
     loader = HoconConfigurationLoader.builder().setPath(path).build();
     rootNode = loader.load();
 
@@ -173,6 +175,8 @@ your asset file and attempt to place it into the new root node if it does not ex
 copying to a file as this will automatically place values that were absent while just copying to file will not.
 
 .. code-block:: java
+
+    PluginContainer plugin = ...;
 
     node.mergeValuesFrom(HoconConfigurationLoader.builder()
                         .setURL(plugin.getAsset("default.conf").get().getUrl())
