@@ -19,7 +19,6 @@ Event Filters
     org.spongepowered.api.data.value.mutable.CompositeValueStore
     org.spongepowered.api.util.Tristate
     java.lang.Class
-    java.lang.String
 
 Now that you've spent a bit of time working with events you've probably noticed that there are several preconditions that you
 very commonly check while writing an event listener. Event filters are a group of annotations that assist you by allowing you
