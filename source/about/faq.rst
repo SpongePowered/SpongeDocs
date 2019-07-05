@@ -111,7 +111,7 @@ What can't I do with Sponge? / Limitations of Sponge?
 -----------------------------------------------------
 
 Sponge can't be used to create new blocks, textures, mobs on the client-side or any other content which would need
-client-side modifications. SpongeAPI won't support sending mods or plugins to the client for now due to security
+client-side modifications. SpongeAPI won't support sending mods or plugins to the client due to security
 concerns. However, you can make use of the ForgeAPI for clients and create Sponge plugins for the server-side.
 It is even possible to use Sponge on the client-side, but for several tasks mods are still required.
 
