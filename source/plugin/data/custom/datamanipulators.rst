@@ -186,7 +186,7 @@ To register a ``DataManipulator`` Sponge has the :javadoc:`DataRegistration#buil
           .builder(new CustomDataBuilder())
           .manipulatorId("my-custom")
           .dataName("My Custom")
-          .buildAndRegister(myPluginContainer);
+          .build();
     }
 
 .. warning::
