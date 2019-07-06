@@ -194,8 +194,9 @@ Example: Firing LightningEvent
     import org.spongepowered.api.event.cause.Cause;
 
     PluginContainer plugin = ...;
+    EventContext eventContext = EventContext.builder().add(EventContextKeys.PLUGIN, plugin).build();
 
-    LightningEvent lightningEvent = SpongeEventFactory.createLightningEventPre(Cause.source(plugin).build());
+    LightningEvent lightningEvent = SpongeEventFactory.createLightningEventPre(Cause.of(eventContext, plugin));
     Sponge.getEventManager().post(lightningEvent);
 
 .. warning::
