@@ -35,8 +35,8 @@ General steps
     `Minor Issues on GitHub <https://github.com/search?q=org%3ASpongePowered+Ongoing+Minor+Issue+List&type=Issues>`_.
 
 4. If the issue requires a bigger change you may want to submit the issues without the necessary changes first, so we
-   can confirm the issue and know that you're working on fixing it. You should also create a WIP (work in process) pull
-   request prefixed with ``[WIP]`` early so we can already start reviewing them.
+   can confirm the issue and know that you're working on fixing it. You should also create a draft pull
+   request or comment with ``~wip`` so we can already start reviewing them.
 
 #. Fork the project, clone it and make your changes in an extra branch.
 
