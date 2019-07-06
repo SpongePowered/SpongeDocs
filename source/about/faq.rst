@@ -46,8 +46,8 @@ There have also been community implementations due to the flexibility of the API
 (1) **LanternServer**, an open source and compatible Minecraft: Java Edition server that implements SpongeAPI.
     It does not rely on the vanilla codebase at all, allowing for it be more configurable, open, and performant.
     While still a work in progress, their project is quite promising and may one day be the choice for servers not
-    looking to run Forge mods. You can find their project
-    `on GitHub <https://github.com/LanternPowered/LanternServer>`_.
+    looking to run Forge mods. You can find more information `on their website <https://www.lanternpowered.org/>`_
+    as well as `on GitHub <https://github.com/LanternPowered/LanternServer>`_.
 
 Where do I get Plugins for Sponge?
 ----------------------------------
