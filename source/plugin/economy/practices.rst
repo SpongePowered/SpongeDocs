@@ -54,7 +54,10 @@ return :javadoc:`ResultType#ACCOUNT_NO_FUNDS`, or :javadoc:`ResultType#FAILED` i
 Here's how you **should** withdraw money:
 
 .. code-block:: java
-    
+
+    import org.spongepowered.api.event.cause.Cause;
+    import org.spongepowered.api.event.cause.EventContext;
+    import org.spongepowered.api.event.cause.EventContextKeys;
     import org.spongepowered.api.service.economy.transaction.ResultType;
     import org.spongepowered.api.service.economy.transaction.TransactionResult;
     

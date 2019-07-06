@@ -235,6 +235,7 @@ to the cause would be the root cause.
 
     EventContext context = EventContext.builder()
       .add(EventContextKeys.PLAYER_SIMULATED, playerToSimulate.getProfile())
+      .add(EventContextKeys.PLUGIN, plugin)
       .build();
 
     Cause cause = Cause.builder()

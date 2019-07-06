@@ -85,6 +85,9 @@ Example: Fire Custom Event
 
 .. code-block:: java
 
+    import org.spongepowered.api.event.cause.Cause;
+    import org.spongepowered.api.event.cause.EventContext;
+    import org.spongepowered.api.event.cause.EventContextKeys;
     import org.spongepowered.api.Sponge;
 
     PluginContainer plugin = ...;

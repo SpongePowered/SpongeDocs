@@ -189,9 +189,11 @@ Example: Firing LightningEvent
 
 .. code-block:: java
 
-    import org.spongepowered.api.event.SpongeEventFactory;
     import org.spongepowered.api.event.action.LightningEvent;
     import org.spongepowered.api.event.cause.Cause;
+    import org.spongepowered.api.event.cause.EventContext;
+    import org.spongepowered.api.event.cause.EventContextKeys;
+    import org.spongepowered.api.event.SpongeEventFactory;
 
     PluginContainer plugin = ...;
     EventContext eventContext = EventContext.builder().add(EventContextKeys.PLUGIN, plugin).build();
