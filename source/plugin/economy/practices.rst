@@ -32,18 +32,18 @@ This code illustrates what **not** to do:
     import org.spongepowered.api.service.economy.EconomyService;
     import org.spongepowered.api.service.economy.account.Account;
     
-    PluginContainer pluginContainer = ...;
+    PluginContainer plugin = ...;
     EconomyService service = ...;
     Account account = ...;
     BigDecimal requiredAmount = BigDecimal.valueOf(20);
-    EventContext eventContext = EventContext.builder().add(EventContextKeys.PLUGIN, pluginContainer).build();
+    EventContext eventContext = EventContext.builder().add(EventContextKeys.PLUGIN, plugin).build();
     
     // BAD: Don't perform this check
     if (account.getBalance(service.getDefaultCurrency()).compareTo(requiredAmount) < 0) {
         // You don't have enough money!
     } else {
         // The account has enough, let's withdraw some cash!
-        account.withdraw(service.getDefaultCurrency(), requiredAmount, Cause.of(eventContext, pluginContainer));
+        account.withdraw(service.getDefaultCurrency(), requiredAmount, Cause.of(eventContext, plugin));
     }
 
 
@@ -58,14 +58,14 @@ Here's how you **should** withdraw money:
     import org.spongepowered.api.service.economy.transaction.ResultType;
     import org.spongepowered.api.service.economy.transaction.TransactionResult;
     
-    PluginContainer pluginContainer = ...;
+    PluginContainer plugin = ...;
     EconomyService service = ...;
     Account account = ...;
     BigDecimal requiredAmount = BigDecimal.valueOf(20);
-    EventContext eventContext = EventContext.builder().add(EventContextKeys.PLUGIN, pluginContainer).build();
+    EventContext eventContext = EventContext.builder().add(EventContextKeys.PLUGIN, plugin).build();
     
     TransactionResult result = account.withdraw(service.getDefaultCurrency(), requiredAmount,
-                    Cause.of(eventContext, pluginContainer));
+                    Cause.of(eventContext, plugin));
     if (result.getResult() == ResultType.SUCCESS) {
         // Success!
     } else if (result.getResult() == ResultType.FAILED || result.getResult() == ResultType.ACCOUNT_NO_FUNDS) {
