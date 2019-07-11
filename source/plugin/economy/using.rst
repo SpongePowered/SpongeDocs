@@ -80,5 +80,5 @@ Some :javadoc:`Account` methods require variables such as:
 These are for more advanced uses, but still must be filled in. Below is a list of acceptable default values:
 
 * Currency: :javadoc:`EconomyService#getDefaultCurrency()`
-* Cause: ``Cause.source(myPlugin).build()``
+* Cause: ``Cause.of(EventContext.builder().add(EventContextKeys.PLUGIN, plugin).build(), plugin)``
 * Context: ``new HashSet<Context>()``

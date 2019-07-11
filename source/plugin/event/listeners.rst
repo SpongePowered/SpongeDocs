@@ -124,7 +124,7 @@ event listeners, including those registered with ``@Listener`` annotations.
 
 .. code-block:: java
 
-    MyPlugin plugin = ...;
+    PluginContainer plugin = ...;
     Sponge.getEventManager().unregisterPluginListeners(plugin);
 
 .. _about_listener:
@@ -189,11 +189,16 @@ Example: Firing LightningEvent
 
 .. code-block:: java
 
-    import org.spongepowered.api.event.SpongeEventFactory;
     import org.spongepowered.api.event.action.LightningEvent;
     import org.spongepowered.api.event.cause.Cause;
+    import org.spongepowered.api.event.cause.EventContext;
+    import org.spongepowered.api.event.cause.EventContextKeys;
+    import org.spongepowered.api.event.SpongeEventFactory;
 
-    LightningEvent lightningEvent = SpongeEventFactory.createLightningEventPre(Cause.source(plugin).build());
+    PluginContainer plugin = ...;
+    EventContext eventContext = EventContext.builder().add(EventContextKeys.PLUGIN, plugin).build();
+
+    LightningEvent lightningEvent = SpongeEventFactory.createLightningEventPre(Cause.of(eventContext, plugin));
     Sponge.getEventManager().post(lightningEvent);
 
 .. warning::

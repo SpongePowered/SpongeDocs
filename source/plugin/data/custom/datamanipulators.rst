@@ -12,6 +12,7 @@ Custom DataManipulators
     org.spongepowered.api.data.key.KeyFactory
     org.spongepowered.api.data.manipulator.DataManipulator
     org.spongepowered.api.data.manipulator.ImmutableDataManipulator
+    org.spongepowered.api.data.manipulator.immutable.common.AbstractImmutableData
     org.spongepowered.api.data.manipulator.mutable.common.AbstractBoundedComparableData
     org.spongepowered.api.data.manipulator.mutable.common.AbstractData
     org.spongepowered.api.data.manipulator.mutable.common.AbstractSingleData
@@ -185,7 +186,7 @@ To register a ``DataManipulator`` Sponge has the :javadoc:`DataRegistration#buil
           .builder(new CustomDataBuilder())
           .manipulatorId("my-custom")
           .dataName("My Custom")
-          .buildAndRegister(myPluginContainer);
+          .build();
     }
 
 .. warning::
@@ -321,8 +322,8 @@ Registering Values
 ------------------
 
 Next, you'll want to register these so that the :doc:`Keys <../keys>`-based system can reference them. To do this,
-implement either :javadoc:`DataManipulator#registerGettersAndSetters()` or 
-:javadoc:`ImmutableDataManipulator#registerGetters()` depending on whether the data is mutable or not.
+implement either :javadoc:`AbstractData#registerGettersAndSetters()` or
+:javadoc:`AbstractImmutableData#registerGetters()` depending on whether the data is mutable or not.
 
 For each value you must call:
 

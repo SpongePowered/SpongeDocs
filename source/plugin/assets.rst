@@ -25,6 +25,8 @@ Alternatively, you can retrieve assets through the ``AssetManager`` class:
 
     import org.spongepowered.api.Sponge;
 
+    PluginContainer plugin = ...;
+
     Asset asset = Sponge.getAssetManager().getAsset(plugin, "myfile.txt").get();
 
 .. tip::

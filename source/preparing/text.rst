@@ -2,7 +2,7 @@
 Installing a Text Editor
 ========================
 
-Articles on SpongeDocs are saved as text files in the `reStructuredText <http://www.sphinx-doc.org/en/stable/rest.html>`_ markup
+Articles on SpongeDocs are saved as text files in the `reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html>`_ markup
 language. Although your operating system's default text editor is likely sufficient for editing these files, installing
 a different text editor may prove to be useful.
 

@@ -61,6 +61,8 @@ Example: Building a Command with Multiple Arguments
     import org.spongepowered.api.command.spec.CommandExecutor;
     import org.spongepowered.api.command.spec.CommandSpec;
 
+    PluginContainer plugin = ...;
+
     CommandSpec myCommandSpec = CommandSpec.builder()
             .description(Text.of("Send a message to a player"))
             .permission("myplugin.command.message")

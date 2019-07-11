@@ -60,7 +60,7 @@ The first step is to create a class for the command. The class has to implement 
             return usage;
         }
 
-        public List<String> getSuggestions(CommandSource source, String arguments) throws CommandException {
+        public List<String> getSuggestions(CommandSource source, String arguments, @Nullable Location<World> targetPosition) throws CommandException {
             return Collections.emptyList();
         }
     }
@@ -82,6 +82,7 @@ passing your plugin, an instance of the command, and any needed aliases as param
     import org.spongepowered.api.command.CommandManager;
 
     CommandManager cmdService = Sponge.getCommandManager();
+    PluginContainer plugin = ...;
     cmdService.register(plugin, new MyBroadcastCommand(), "message", "broadcast");
 
 .. note::

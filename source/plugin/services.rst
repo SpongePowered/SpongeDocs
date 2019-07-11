@@ -94,6 +94,8 @@ the interface) and replace your version.
 
 .. code-block:: java
 
+    PluginContainer plugin = ...;
+
     Sponge.getServiceManager().setProvider(plugin, WarpService.class, new SimpleWarpService());
 
 Other plugins can now access your service through the service manager:

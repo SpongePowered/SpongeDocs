@@ -59,7 +59,7 @@ There are a several ways to view the class files from the mixin process.
 
   Having the fernflower jar on your runtime classpath will cause the class files to be decompiled as they are created. 
 
-* `JD-Gui <http://jd.benow.ca/>`_ is a standalone graphical utility that displays Java source codes of class files. 
+* `JD-Gui <https://java-decompiler.github.io/>`_ is a standalone graphical utility that displays Java source codes of class files.
 
 Phases And Environments
 =======================

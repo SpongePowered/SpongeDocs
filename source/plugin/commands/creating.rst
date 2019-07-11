@@ -28,6 +28,8 @@ Example: Building a Simple Command
     import org.spongepowered.api.text.Text;
     import org.spongepowered.api.command.spec.CommandSpec;
 
+    PluginContainer plugin = ...;
+
     CommandSpec myCommandSpec = CommandSpec.builder()
         .description(Text.of("Hello World Command"))
         .permission("myplugin.command.helloworld")

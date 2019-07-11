@@ -52,7 +52,7 @@ The following snippet shows the imports/paths for some classes in SpongeCommon t
     import org.spongepowered.common.data.manipulator.mutable.common.AbstractData;
     import org.spongepowered.common.data.manipulator.mutable.entity.SpongeHealthData;
     import org.spongepowered.common.data.processor.common.AbstractEntityDataProcessor;
-    import org.spongepowered.common.data.util.DataConstants;
+    import org.spongepowered.common.util.Constants;
     import org.spongepowered.common.data.util.NbtDataUtil;
     import org.spongepowered.common.registry.type.data.KeyRegistryModule;
     
@@ -94,20 +94,18 @@ The second constructor must
 
     import static com.google.common.base.Preconditions.checkArgument;
     
-    import org.spongepowered.common.data.util.DataConstants;
-
     public class SpongeHealthData extends AbstractData<HealthData, ImmutableHealthData> implements HealthData {
 
         private double health;
         private double maxHealth;
 
         public SpongeHealthData() {
-            this(DataConstants.DEFAULT_HEALTH, DataConstants.DEFAULT_HEALTH);
+            this(20D, 20D);
         }
 
         public SpongeHealthData(double health, double maxHealth) {
             super(HealthData.class);
-            checkArgument(maxHealth > DataConstants.MINIMUM_HEALTH);
+            checkArgument(maxHealth > 0);
             this.health = health;
             this.maxHealth = maxHealth;
             registerGettersAndSetters();
@@ -136,10 +134,10 @@ The interface we implement specifies some methods to access :javadoc:`Value` obj
 
     public MutableBoundedValue<Double> health() {
         return SpongeValueFactory.boundedBuilder(Keys.HEALTH)
-            .minimum(DataConstants.MINIMUM_HEALTH)
-            .maximum(this.maximumHealth)
-            .defaultValue(this.maximumHealth)
-            .actualValue(this.currentHealth)
+            .minimum(0)
+            .maximum(this.maxHealth)
+            .defaultValue(this.maxHealth)
+            .actualValue(this.health)
             .build();
     }
 
@@ -164,9 +162,9 @@ contains a corresponding ``DataQuery``, just use those by passing the ``Key`` di
 .. code-block:: java
 
     public DataContainer toContainer() {
-        return DataContainer.createNew()
-            .set(Keys.HEALTH, this.currentHealth)
-            .set(Keys.MAX_HEALTH, this.maximumHealth);
+        return super.toContainer()
+            .set(Keys.HEALTH, this.health)
+            .set(Keys.MAX_HEALTH, this.maxHealth);
     }
 
 registerGettersAndSetters()
@@ -184,29 +182,30 @@ by ``AbstractData``, but we must tell it which data it can access and how. There
 
 .. code-block:: java
 
-    private void setCurrentHealthIfValid(double value) {
-        if (value >= DataConstants.MINIMUM_HEALTH && value <= (double) Float.MAX_VALUE) {
-            this.currentHealth = value;
+    private SpongeHealthData setCurrentHealthIfValid(double value) {
+        if (value >= 0 && value <= (double) Float.MAX_VALUE) {
+            this.health = value;
         } else {
             throw new IllegalArgumentException("Invalid value for current health");
         }
+        return this;
     }
 
-    private void setMaximumHealthIfValid(double value) {
-        if (value >= DataConstants.MINIMUM_HEALTH && value <= (double) Float.MAX_VALUE) {
-            this.maximumHealth = value;
+    private SpongeHealthData setMaximumHealthIfValid(double value) {
+        if (value >= 0 && value <= (double) Float.MAX_VALUE) {
+            this.maxHealth = value;
         } else {
             throw new IllegalArgumentException("Invalid value for maximum health");
         }
-
+        return this;
     }
 
     private void registerGettersAndSetters() {
-        registerFieldGetter(Keys.HEALTH, () -> this.currentHealth);
+        registerFieldGetter(Keys.HEALTH, () -> this.health);
         registerFieldSetter(Keys.HEALTH, this::setCurrentHealthIfValid);
         registerKeyValue(Keys.HEALTH, this::health);
 
-        registerFieldGetter(Keys.MAX_HEALTH, () -> this.maximumHealth);
+        registerFieldGetter(Keys.MAX_HEALTH, () -> this.maxHealth);
         registerFieldSetter(Keys.MAX_HEALTH, this::setMaximumHealthIfValid);
         registerKeyValue(Keys.MAX_HEALTH, this::maxHealth);
     }
@@ -218,7 +217,7 @@ This applies especially for :javadoc:`DataHolder`\s which won't accept negative 
 .. tip::
 
     The validity criteria for those setters are the same as for the respective ``Value`` object, so you might delegate
-    the validity check to a call of ``this.health().set()`` and just set ``this.currentHealth = value`` if the first
+    the validity check to a call of ``this.health().set()`` and just set ``this.health = value`` if the first
     line has not thrown an exception yet.
 
 That's it. The ``DataManipulator`` should be done now.
@@ -253,13 +252,15 @@ There add a line to register (and create) your used keys.
 
 .. code-block:: java
 
-    this.register(Key.builder()
+    import static org.spongepowered.api.data.DataQuery.of;
+
+    this.register("health", Key.builder()
             .type(TypeTokens.BOUNDED_DOUBLE_VALUE_TOKEN)
             .id("health")
             .name("Health")
             .query(of("Health"))
             .build());
-    this.register(Key.builder()
+    this.register("max_health", Key.builder()
             .type(TypeTokens.BOUNDED_DOUBLE_VALUE_TOKEN)
             .id("max_health")
             .name("Max Health")
@@ -511,9 +512,9 @@ a ``Value`` and its immutable counterpart and three methods to get, set and remo
     @Override
     protected MutableBoundedValue<Double> constructValue(Double health) {
         return SpongeValueFactory.boundedBuilder(Keys.HEALTH)
-            .minimum(DataConstants.MINIMUM_HEALTH)
+            .minimum(0D)
             .maximum(((Float) Float.MAX_VALUE).doubleValue())
-            .defaultValue(DataConstants.DEFAULT_HEALTH)
+            .defaultValue(20D)
             .actualValue(health)
             .build();
     }
@@ -539,7 +540,7 @@ Since it is impossible for an ``EntityLivingBase`` to not have health, this meth
 
     @Override
     protected boolean set(EntityLivingBase container, Double value) {
-        if (value >= DataConstants.MINIMUM_HEALTH && value <= (double) Float.MAX_VALUE) {
+        if (value >= 0 && value <= (double) Float.MAX_VALUE) {
             container.setHealth(value.floatValue());
             return true;
         }

@@ -31,5 +31,5 @@ IntelliJ
 --------
 
 Learn about `Git Integration <https://www.jetbrains.com/help/idea/using-git-integration.html>`_  and `Project 
-Structure <http://www.jetbrains.org/intellij/sdk/docs/basics/project_structure.html>`_ on JetBrains' 
+Structure <https://www.jetbrains.org/intellij/sdk/docs/basics/project_structure.html>`_ on JetBrains'
 web site.

@@ -46,14 +46,13 @@ There have also been community implementations due to the flexibility of the API
 (1) **LanternServer**, an open source and compatible Minecraft: Java Edition server that implements SpongeAPI.
     It does not rely on the vanilla codebase at all, allowing for it be more configurable, open, and performant.
     While still a work in progress, their project is quite promising and may one day be the choice for servers not
-    looking to run Forge mods. You can find their project
-    `on GitHub <https://github.com/LanternPowered/LanternServer>`_.
+    looking to run Forge mods. You can find more information `on their website <https://www.lanternpowered.org/>`_
+    as well as `on GitHub <https://github.com/LanternPowered/LanternServer>`_.
 
 Where do I get Plugins for Sponge?
 ----------------------------------
 
-You can find plugins on the `SpongeForums <https://forums.spongepowered.org/c/plugins/plugin-releases>`_ as well as our
-almost complete, official plugin repository, called `Ore <https://ore.spongepowered.org/>`_.
+You can find plugins on our official plugin repository, called `Ore <https://ore.spongepowered.org/>`_.
 
 What happened to Bukkit?
 ------------------------
@@ -79,7 +78,7 @@ For Server Owners
 I'm a Server Owner! How Will Switching to Sponge Affect My Server?
 ------------------------------------------------------------------
 
-For an existing Forge server, you will need to download Sponge and place it into the mods folder. The server can then
+For an existing Forge server, you will need to download SpongeForge and place it into the mods folder. The server can then
 be started like any other Forge server.
 
 Non-Forge servers may elect to use SpongeVanilla instead, an implementation that does not rely on Forge. There are
@@ -112,7 +111,7 @@ What can't I do with Sponge? / Limitations of Sponge?
 -----------------------------------------------------
 
 Sponge can't be used to create new blocks, textures, mobs on the client-side or any other content which would need
-client-side modifications. SpongeAPI won't support sending mods or plugins to the client for now due to security
+client-side modifications. SpongeAPI won't support sending mods or plugins to the client due to security
 concerns. However, you can make use of the ForgeAPI for clients and create Sponge plugins for the server-side.
 It is even possible to use Sponge on the client-side, but for several tasks mods are still required.
 

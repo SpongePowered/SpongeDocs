@@ -52,8 +52,8 @@ Properties Available
 |                                    | ``.sponge.debug.out`` folder, named after the class they are altering.          |
 | (boolean, default: false)          |                                                                                 |
 +------------------------------------+---------------------------------------------------------------------------------+
-| **sponge.print_all_catalog_types** | Prints out all registered ``CatalogType`` s and their ``String`` id's at the    | 
-|                                    | end of startup, which is useful for finding out what id's are registered from   |
+| **sponge.print_all_catalog_types** | Prints out all Sponge provided ``CatalogType`` s and their ``String`` id's      |
+|                                    | before preInit, which is useful for finding out what id's are registered from   |
 | (boolean, default: false)          | vanilla, mods, and plugins for all created ``CatalogType`` s.                   |
 +------------------------------------+---------------------------------------------------------------------------------+
 |                                    | Prints out a very verbose log entry for every block captured that is processed, |

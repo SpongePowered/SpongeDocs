@@ -91,7 +91,7 @@ gettext_compact = False
 
 javadoc_links = {
     'https://jd.spongepowered.org/%s/' % release: ['org.spongepowered.api'],
-    'http://configurate.aoeu.xyz/apidocs/': ['ninja.leaping.configurate'],
+    'https://configurate.aoeu.xyz/apidocs/': ['ninja.leaping.configurate'],
     'https://docs.oracle.com/javase/8/docs/api/': ['java'],
     'https://google.github.io/guava/releases/17.0/api/docs/': ['com.google.common']
 }
