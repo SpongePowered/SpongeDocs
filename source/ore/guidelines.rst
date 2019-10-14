@@ -187,8 +187,9 @@ player data, or map data) to external systems, the information collected must be
 Execution of Downloaded Code
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-We cannot ensure that content that is downloaded and executed at runtime is safe and complies with our guidelines. Any project that performs downloads and execution of code will have warnings on said project page
-and a warning prior to download to ensure users know the risk.
+We cannot ensure that content that is downloaded and executed at runtime is safe and complies with our guidelines.
+Any project that performs downloads and execution of code will have warnings on the project page and a warning
+prior to download to ensure users know the risk.
 
 The following conditions must be also be met by the project:
 
