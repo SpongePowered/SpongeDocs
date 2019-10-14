@@ -40,11 +40,9 @@ Examples of names that are **acceptable**:
 Main Documentation Page (Home)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This is the first page anyone sees when visiting your project. Information here should include a description of your
-project’s features. The following, if present in your plugin, should be documented on the main page if not documented
-elsewhere on the Ore project: commands, configuration, and permission nodes. Additionally, the below information must
-be documented on the main page if relevant:
-
+This is the first page that anyone will see when visiting your project. Information here should include a clear and concise
+description of your project's features and goals. The following, if present in your plugin, should be documented on the main
+page if relevant:
 
     **External Connections**
 
@@ -63,6 +61,10 @@ be documented on the main page if relevant:
      - Web server that runs on the plugin, serving information to users
      - Server that runs on the plugin, listening to requests from other services
      - IRC/Discord/Telegram/WhatsApp bot or relay
+    
+    Examples of systems that do **not** require documentation:
+
+     - Local databases or database connections specified by the end-user
 
 
 Category
@@ -175,7 +177,7 @@ player data, or map data) to external systems, the information collected must be
     This API must be checked each time data is sent, not only once. Plugins may not modify the values the API
     returns, but may encourage users to make the decision to enable the collection and sending of this data for their
     plugin.
-    
+
 .. note::
 
     This API was added in API 7.1.0. Plugins built against older API versions must instead check against a variable in
@@ -185,8 +187,16 @@ player data, or map data) to external systems, the information collected must be
 Execution of Downloaded Code
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This is a security risk we will not tolerate. This includes downloading jar or class files, generation of bytecode
-from downloaded sources, and execution shell scripts.
+We cannot ensure that content that is downloaded and executed at runtime is safe and complies with our guidelines. Any project that performs downloads and execution of code will have warnings on said project page
+and a warning prior to download to ensure users know the risk.
+
+The following conditions must be also be met by the project:
+
+  - Downloaded content must have hard-coded SHA256 (or better) based hash checking
+  - Downloaded content must be explained in the main project page as to what is downloaded and what purpose it serves
+  - Downloaded content must be performed over HTTPS connections
+  - Downloaded content must not be hosted in a location that will limit downloads (e.g. DropBox, Google Drive)
+  - Downloading another plugin must go through Ore's API in the same fashion as Update Checking
 
 
 Monetization / Advertising
@@ -203,6 +213,7 @@ Update Checking
 Checking for updates should be performed using the provided Ore API. Your plugin may not link anywhere but Ore
 when directing users of your plugin to download new versions. Note that this update checking counts as an external
 connection, which must be documented and for which configuration must exist to disable it.
+
 
 Privilege Granting
 ~~~~~~~~~~~~~~~~~~
