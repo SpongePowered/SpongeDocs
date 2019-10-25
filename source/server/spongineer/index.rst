@@ -14,3 +14,4 @@ Contents
     logs
     debugging
     bugreport
+    properties

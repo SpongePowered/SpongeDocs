@@ -23,15 +23,24 @@ you have chosen before.**
 .. code-block:: groovy
 
     plugins {
-        id 'org.spongepowered.plugin' version '0.8.1'
+        id 'java'
+        id 'org.spongepowered.plugin' version '0.9.0'
     }
 
-    group = 'com.example' // TODO
-    version = '1.0-SNAPSHOT'
-    description = 'An example plugin'
+    // This may not be required, but has solved issues in the past
+    compileJava.options.encoding = 'UTF-8'
+
+    // TODO: Change the following to match your information
+    group = 'com.example'
+    version = '1.0.0-SNAPSHOT'
+    description = 'Here lies an example plugin definition'
+
+    repositories {
+        jcenter()
+    }
 
     dependencies {
-        compile 'org.spongepowered:spongeapi:7.0.0'
+        compile 'org.spongepowered:spongeapi:7.1.0'
     }
 
 These few lines handle most settings you would normally do manually:
@@ -40,7 +49,8 @@ These few lines handle most settings you would normally do manually:
 * Set your project to compile with Java 8
 * Add Sponge's Maven repository (and Maven Central)
 * Set up a plugin with the project name in lower case as **plugin ID**
-* Automatically includes the project name, description and version in :doc:`/plugin/plugin-meta`.
+* Automatically includes the project name, description and :doc:`version <../project/version-numbers>` in
+  :doc:`/plugin/plugin-meta`.
 
 Manually setting the plugin ID
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -53,14 +63,14 @@ manually:
 
     sponge {
         plugin {
-            id = 'mypluginid'
+            id = 'pluginidgoeshere'
         }
     }
 
 Overriding defaults
 ~~~~~~~~~~~~~~~~~~~
 
-By default the Gradle plugin will contribute the **plugin name**, **plugin version** and **description** automatically
+By default, the Gradle plugin will contribute the **plugin name**, **plugin version**, and **description** automatically
 to :doc:`/plugin/plugin-meta` with defaults defined in the project properties. It is also possible to override these if
 you want to specify them manually:
 
@@ -69,9 +79,10 @@ you want to specify them manually:
     sponge {
         plugin {
             meta {
-                name = 'My Plugin'
-                version = '1.0.0'
-                description = 'This is a plugin'
+                name = 'Example Plugin'
+                version = '1.0.0-SNAPSHOT'
+                description = 'This is an example plugin'
+                url = 'http://www.example.com/'
             }
         }
     }
@@ -83,6 +94,7 @@ You can also remove a default value entirely:
     sponge {
         plugin {
             meta {
+                name = null
                 description = null
             }
         }
@@ -101,15 +113,15 @@ dependency to your project:
 .. code-block:: groovy
 
     repositories {
-        mavenCentral()
+        jcenter()
         maven {
-            name = 'sponge'
+            name = 'sponge-repo'
             url = 'https://repo.spongepowered.org/maven'
         }
     }
 
     dependencies {
-        compile 'org.spongepowered:spongeapi:7.0.0'
+        compile 'org.spongepowered:spongeapi:7.1.0'
     }
 
 .. _SpongeGradle: https://github.com/SpongePowered/SpongeGradle

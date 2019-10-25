@@ -1,0 +1,106 @@
+[02:14:59] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLServerTweaker
+[02:14:59] [main/INFO] [LaunchWrapper]: Using primary tweak class name net.minecraftforge.fml.common.launcher.FMLServerTweaker
+[02:14:59] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLServerTweaker
+[02:14:59] [main/INFO] [FML]: Forge Mod Loader version 14.23.4.2705 for Minecraft 1.12.2 loading
+[02:14:59] [main/INFO] [FML]: Java is Java HotSpot(TM) 64-Bit Server VM, version 1.8.0_162, running on Windows 10:amd64:10.0, installed at C:\Program Files\Java\jre1.8.0_162
+[02:14:59] [main/INFO] [FML]: Searching example\.\mods for mods
+[02:14:59] [main/INFO] [FML]: Loading tweaker org.spongepowered.asm.launch.MixinTweaker from spongeforge-1.12.2-2705-7.1.0-BETA-3136.jar
+[02:14:59] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweaker
+[02:14:59] [main/INFO] [LaunchWrapper]: Loading tweak class name org.spongepowered.asm.launch.MixinTweaker
+[02:14:59] [main/INFO] [mixin]: SpongePowered MIXIN Subsystem Version=0.7.4 Source=file:/example/./mods/spongeforge-1.12.2-2705-7.1.0-BETA-3136.jar Service=LaunchWrapper Env=SERVER
+[02:15:00] [main/INFO] [mixin]: Compatibility level set to JAVA_8
+[02:15:00] [main/INFO] [mixin]: Adding new token provider org.spongepowered.mod.SpongeCoremod$TokenProvider to MixinEnvironment[DEFAULT]
+[02:15:00] [main/INFO] [mixin]: Adding new token provider org.spongepowered.mod.SpongeCoremod$TokenProvider to MixinEnvironment[PREINIT]
+[02:15:00] [main/INFO] [mixin]: Adding new token provider org.spongepowered.mod.SpongeCoremod$TokenProvider to MixinEnvironment[INIT]
+[02:15:00] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLDeobfTweaker
+[02:15:00] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweaker
+[02:15:00] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweaker
+[02:15:00] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.relauncher.CoreModManager$FMLPluginWrapper
+[02:15:01] [main/INFO] [FML]: Found valid fingerprint for Minecraft Forge. Certificate fingerprint e3c3d50c7c986df74c645c0ac54639741c90a557
+[02:15:01] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.relauncher.CoreModManager$FMLPluginWrapper
+[02:15:01] [main/INFO] [LaunchWrapper]: Calling tweak class org.spongepowered.asm.launch.MixinTweaker
+[02:15:01] [main/INFO] [mixin]: Initialised Mixin FML Remapper Adapter with net.minecraftforge.fml.common.asm.transformers.deobf.FMLDeobfuscatingRemapper@1136b469
+[02:15:01] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLDeobfTweaker
+[02:15:02] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.fml.common.launcher.TerminalTweaker
+[02:15:02] [main/INFO] [LaunchWrapper]: Loading tweak class name org.spongepowered.asm.mixin.EnvironmentStateTweaker
+[02:15:02] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.TerminalTweaker
+[02:15:02] [main/INFO] [LaunchWrapper]: Calling tweak class org.spongepowered.asm.mixin.EnvironmentStateTweaker
+[02:15:07] [main/WARN] [mixin]: Static binding violation: PRIVATE overwrite method initializeConnectionToPlayer in mixins.common.core.json:server.MixinPlayerList cannot reduce visibiliy of PUBLIC target method, visibility will be upgraded.
+[02:15:07] [main/INFO] [LaunchWrapper]: Launching wrapped minecraft {net.minecraft.server.MinecraftServer}
+[02:15:14] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: Starting minecraft server version 1.12.2
+[02:15:14] [Server thread/INFO] [FML]: MinecraftForge v14.23.4.2705 Initialized
+[02:15:14] [Server thread/INFO] [FML]: Starts to replace vanilla recipe ingredients with ore ingredients.
+[02:15:14] [Server thread/INFO] [FML]: Replaced 1036 ore ingredients
+[02:15:14] [Server thread/INFO] [Sponge]: Found mcmod.info at jar:file:/example/./mods/spongeforge-1.12.2-2705-7.1.0-BETA-3136.jar!/mcmod.info
+[02:15:14] [Server thread/INFO] [Sponge]: Creating injector in stage 'PRODUCTION'
+[02:15:20] [Server thread/WARN] [Sponge]: sponge: It is no longer required to include the plugin id when specifying a Key id through Key.Builder#id. This is deprecated and may be removed later. The plugin id will be retrieved from the current PluginContainer in the cause stack. 
+[02:15:26] [Server thread/INFO] [FML]: Searching example\.\mods for mods
+[02:15:26] [Server thread/INFO] [FML]: Forge Mod Loader has identified 6 mods to load
+[02:15:26] [Server thread/WARN] [FML]: Missing English translation for FML: assets/fml/lang/en_us.lang
+[02:15:26] [Server thread/WARN] [FML]: Missing English translation for spongeapi: assets/spongeapi/lang/en_us.lang
+[02:15:26] [Server thread/INFO] [FML]: Attempting connection with missing mods [minecraft, mcp, FML, forge, spongeapi, sponge] at CLIENT
+[02:15:26] [Server thread/INFO] [FML]: Attempting connection with missing mods [minecraft, mcp, FML, forge, spongeapi, sponge] at SERVER
+[02:15:27] [Server thread/INFO] [FML]: Processing ObjectHolder annotations
+[02:15:27] [Server thread/INFO] [FML]: Found 1169 ObjectHolder annotations
+[02:15:27] [Server thread/INFO] [FML]: Identifying ItemStackHolder annotations
+[02:15:27] [Server thread/INFO] [FML]: Found 0 ItemStackHolder annotations
+[02:15:27] [Server thread/INFO] [FML]: Configured a dormant chunk cache size of 0
+[02:15:27] [Forge Version Check/INFO] [forge.VersionCheck]: [forge] Starting version check at http://files.minecraftforge.net/maven/net/minecraftforge/forge/promotions_slim.json
+[02:15:27] [Forge Version Check/INFO] [forge.VersionCheck]: [forge] Found status: UP_TO_DATE Target: null
+[02:15:30] [Server thread/INFO] [FML]: Applying holder lookups
+[02:15:30] [Server thread/INFO] [FML]: Holder lookups applied
+[02:15:30] [Server thread/INFO] [FML]: Applying holder lookups
+[02:15:30] [Server thread/INFO] [FML]: Holder lookups applied
+[02:15:30] [Server thread/INFO] [FML]: Applying holder lookups
+[02:15:30] [Server thread/INFO] [FML]: Holder lookups applied
+[02:15:30] [Server thread/INFO] [FML]: Applying holder lookups
+[02:15:30] [Server thread/INFO] [FML]: Holder lookups applied
+[02:15:30] [Server thread/INFO] [FML]: Injecting itemstacks
+[02:15:30] [Server thread/INFO] [FML]: Itemstack injection complete
+[02:15:30] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: Loading properties
+[02:15:30] [Server thread/WARN] [net.minecraft.server.dedicated.PropertyManager]: server.properties does not exist
+[02:15:30] [Server thread/INFO] [net.minecraft.server.dedicated.PropertyManager]: Generating new properties file
+[02:15:30] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: Default game type: SURVIVAL
+[02:15:30] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: Generating keypair
+[02:15:30] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: Starting Minecraft server on *:25565
+[02:15:30] [Server thread/INFO] [net.minecraft.network.NetworkSystem]: Using default channel type
+[02:15:30] [Server thread/INFO] [FML]: Applying holder lookups
+[02:15:30] [Server thread/INFO] [FML]: Holder lookups applied
+[02:15:30] [Server thread/INFO] [FML]: Injecting itemstacks
+[02:15:30] [Server thread/INFO] [FML]: Itemstack injection complete
+[02:15:30] [Server thread/INFO] [FML]: Forge Mod Loader has successfully loaded 6 mods
+[02:15:30] [Server thread/WARN] [net.minecraft.server.management.UserList]: banned-players.json does not exist, creating it.
+[02:15:30] [Server thread/WARN] [net.minecraft.server.management.UserList]: banned-ips.json does not exist, creating it.
+[02:15:30] [Server thread/WARN] [net.minecraft.server.management.UserList]: ops.json does not exist, creating it.
+[02:15:30] [Server thread/WARN] [net.minecraft.server.management.UserList]: whitelist.json does not exist, creating it.
+[02:15:31] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: Preparing level "world"
+[02:15:31] [Server thread/INFO] [Sponge]: Checking for worlds that need to be migrated...
+[02:15:31] [Server thread/INFO] [Sponge]: No worlds were found in need of migration.
+[02:15:31] [Server thread/INFO] [net.minecraft.advancements.AdvancementList]: Loaded 488 advancements
+[02:15:31] [Server thread/INFO] [net.minecraft.advancements.AdvancementList]: Loaded 6 advancement trees
+[02:15:32] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Preparing start region for level 0 (world)
+[02:15:33] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Preparing spawn area: 9%
+[02:15:34] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Preparing spawn area: 18%
+[02:15:35] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Preparing spawn area: 30%
+[02:15:36] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Preparing spawn area: 48%
+[02:15:37] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Preparing spawn area: 66%
+[02:15:38] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Preparing spawn area: 85%
+[02:15:39] [Server thread/INFO] [Sponge]: Loading world [world] (overworld)
+[02:15:39] [Server thread/INFO] [net.minecraft.advancements.AdvancementList]: Loaded 488 advancements
+[02:15:39] [Server thread/INFO] [net.minecraft.advancements.AdvancementList]: Loaded 6 advancement trees
+[02:15:39] [Server thread/INFO] [Sponge]: Loading world [DIM-1] (the_nether)
+[02:15:40] [Server thread/INFO] [net.minecraft.advancements.AdvancementList]: Loaded 488 advancements
+[02:15:40] [Server thread/INFO] [net.minecraft.advancements.AdvancementList]: Loaded 6 advancement trees
+[02:15:40] [Server thread/INFO] [Sponge]: Loading world [DIM1] (the_end)
+[02:15:40] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: Done (9.011s)! For help, type "help" or "?"
+[02:15:42] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: Stopping the server§r
+[02:15:42] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Stopping server
+[02:15:42] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving players
+[02:15:42] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving worlds
+[02:15:42] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'world'/overworld
+[02:15:43] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'DIM-1'/the_nether
+[02:15:43] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'DIM1'/the_end
+[02:15:43] [Server thread/INFO] [Sponge]: Unloading world [world] (DIM0)
+[02:15:43] [Server thread/INFO] [Sponge]: Unloading world [DIM-1] (DIM-1)
+[02:15:43] [Server thread/INFO] [Sponge]: Unloading world [DIM1] (DIM1)
+[02:15:43] [Server Shutdown Thread/INFO] [net.minecraft.server.MinecraftServer]: Stopping server

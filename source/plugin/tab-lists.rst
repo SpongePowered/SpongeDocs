@@ -11,7 +11,7 @@ Tab Lists
     org.spongepowered.api.text.Text
     java.util.UUID
 
-Tab lists are used in Minecraft to display the list of players currently on a server. The SpongeAPI allows for
+Tab lists are used in Minecraft to display the list of players currently on a server. SpongeAPI allows for
 manipulation of the tab list on a per-player basis.
 
 To get a player's :javadoc:`TabList`, you simply need to call the :javadoc:`Player#getTabList()` method:
@@ -69,7 +69,7 @@ Now let's break this down. We set the list associated with the :javadoc:`TabList
 using the :javadoc:`TabListEntry.Builder#list(TabList)` method. We then set the game mode of our entry to
 :javadoc:`GameModes#SURVIVAL`. The game mode of our entry is used to determine various things. On the client, it is
 used to determine if a player is in creative or perhaps a spectator. If the game mode is spectator, then their name
-will also appears gray and italicized. We then need to specify the ``GameProfile`` that the entry is associated with.
+will also appear gray and italicized. We then need to specify the ``GameProfile`` that the entry is associated with.
 The ``GameProfile`` may be constructed using the ``GameProfile#of()`` method, or it can be obtained from a real
 profile, such as a player. For more information, see the :doc:`game-profile-manager` article. To apply the entry to the
 tab list, we simply need to call the :javadoc:`TabList#addEntry(TabListEntry)` method.
@@ -116,7 +116,7 @@ entry:
     entry.setLatency(1000);
     entry.setGameMode(GameModes.SPECTATOR);
 
-Alternatively to getting entries, we can also remove a specified entry. We must simply call the
+As an alternative to getting entries, we can also remove a specified entry. We must simply call the
 :javadoc:`TabList#removeEntry(UUID)` method, specifying the ``UUID`` of the entry that we wish to remove. As with
 ``getEntry(UUID)``, this will return ``Optional.empty()`` if the specified UUID cannot be found.
 

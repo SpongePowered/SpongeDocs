@@ -32,7 +32,7 @@ You can read more about game states on the :doc:`lifecycle` page.
 Providing your own service
 ==========================
 Your plugin can provide the implementation for a core interface like :javadoc:`PermissionService`, or for a custom
-interface that is not part of the Sponge API (e.g. economy, web server):
+interface that is not part of SpongeAPI (e.g. economy, web server):
 
 .. code-block:: java
 
@@ -47,7 +47,7 @@ Designing the API this way makes Sponge extremely modular.
     Plugins should provide options to not install their providers if the plugin is not dedicated to a single function.
 
 Example: Providing a simple warp service
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The first step is optional, but recommended. You specify the public methods of your service class in an interface:
 
@@ -94,7 +94,9 @@ the interface) and replace your version.
 
 .. code-block:: java
 
-    Sponge.getServiceManager().setProvider(yourPluginInstance, WarpService.class, new SimpleWarpService());
+    PluginContainer plugin = ...;
+
+    Sponge.getServiceManager().setProvider(plugin, WarpService.class, new SimpleWarpService());
 
 Other plugins can now access your service through the service manager:
 

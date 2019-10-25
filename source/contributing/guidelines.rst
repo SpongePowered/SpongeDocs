@@ -14,7 +14,7 @@ make sure you follow our guidelines.
 General steps
 =============
 
-1. Setup your workspace as described in :doc:`../../preparing/index`.
+1. Setup your workspace as described in :doc:`/preparing/index`.
 
 #. Make sure you're familiar with Git and GitHub. If your knowledge needs a refresh, take a look here: :doc:`howtogit`
 
@@ -28,13 +28,15 @@ General steps
    issues we need your help with.
 
 .. note::
-    Please don't submit pull request for small changes under 20 lines. Instead, `join #sponge on IRC (irc.esper.net)
-    <https://webchat.esper.net/?channels=sponge>`_ or `join #spongedev on IRC (irc.esper.net)
-    <https://webchat.esper.net/?channels=spongedev>`_ and we'll change it together with the other smaller changes.
+    Please don't submit pull requests for small, non-functional changes such as fixing typos or renaming variable names.
+    Instead, `join #sponge on IRC (irc.esper.net) <https://webchat.esper.net/?channels=sponge>`_ or 
+    `join #spongedev on IRC (irc.esper.net) <https://webchat.esper.net/?channels=spongedev>`_ and we'll change it
+    together with the other smaller changes. You can also add it to our list of 
+    `Minor Issues on GitHub <https://github.com/search?q=org%3ASpongePowered+Ongoing+Minor+Issue+List&type=Issues>`_.
 
 4. If the issue requires a bigger change you may want to submit the issues without the necessary changes first, so we
-   can confirm the issue and know that you're working on fixing it. You should also create a WIP (work in process) pull
-   request prefixed with ``[WIP]`` early so we can already start reviewing them.
+   can confirm the issue and know that you're working on fixing it. You should also create a draft pull
+   request or comment with ``~wip`` so we can already start reviewing them.
 
 #. Fork the project, clone it and make your changes in an extra branch.
 

@@ -77,5 +77,5 @@ during this phase is a 16x16 area offset by 8 in each of the x and z axes.
 Only the :javadoc:`Populator`\ s of the biome at the position (x*16+16, 0, z*16+16) are applied to this area. It does
 not apply a union of all the biomes as is the case for ``GenerationPopulator``\ s.
 
-Populators are ideal for small features (eg. desert wells) and additional terrain covering (eg. trees).
+Populators are ideal for small features (e.g. desert wells) and additional terrain covering (e.g. trees).
 Sponge provides access to a great number of vanilla specified populators which may be reconfigured for your use.

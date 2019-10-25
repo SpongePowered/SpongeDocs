@@ -60,7 +60,7 @@ The first step is to create a class for the command. The class has to implement 
             return usage;
         }
 
-        public List<String> getSuggestions(CommandSource source, String arguments) throws CommandException {
+        public List<String> getSuggestions(CommandSource source, String arguments, @Nullable Location<World> targetPosition) throws CommandException {
             return Collections.emptyList();
         }
     }
@@ -82,6 +82,7 @@ passing your plugin, an instance of the command, and any needed aliases as param
     import org.spongepowered.api.command.CommandManager;
 
     CommandManager cmdService = Sponge.getCommandManager();
+    PluginContainer plugin = ...;
     cmdService.register(plugin, new MyBroadcastCommand(), "message", "broadcast");
 
 .. note::
@@ -101,14 +102,14 @@ A ``Dispatcher`` is also a ``CommandCallable``, so it can be registered like any
 
 .. code-block:: java
 
-     import org.spongepowered.api.command.dispatcher.SimpleDispatcher;
+    import org.spongepowered.api.command.dispatcher.SimpleDispatcher;
 
-     CommandCallable subCommand1 = ...;
-     CommandCallable subCommand2 = ...;
+    CommandCallable subCommand1 = ...;
+    CommandCallable subCommand2 = ...;
 
-     SimpleDispatcher rootCommand = new SimpleDispatcher();
+    SimpleDispatcher rootCommand = new SimpleDispatcher();
 
-     rootCommand.register(subCommand1, "subcommand1", "sub1");
-     rootCommand.register(subCommand2, "subcommand2", "sub2");
+    rootCommand.register(subCommand1, "subcommand1", "sub1");
+    rootCommand.register(subCommand2, "subcommand2", "sub2");
 
-     Sponge.getCommandManager().register(this, rootCommand, "root");
+    Sponge.getCommandManager().register(this, rootCommand, "root");

@@ -18,7 +18,7 @@ SpongeCommon
 
 - **Group ID**: ``org.spongepowered``
 - **Artifact ID**: ``spongecommon``
-- **Version**: Same as SpongeAPI
+- **Version**: Same as SpongeAPI + current recommended version (see :doc:`/versions/versioning` for details)
 - **Classifier**: ``dev``
 
 Example Using Gradle
@@ -27,7 +27,7 @@ Example Using Gradle
 .. code-block:: groovy
 
     dependencies {
-        compile 'org.spongepowered:spongecommon:7.1.0-SNAPSHOT:dev'
+        compile 'org.spongepowered:spongecommon:7.1.0:dev'
     }
 
 SpongeVanilla
@@ -46,7 +46,7 @@ Example Using Gradle
 .. code-block:: groovy
 
     dependencies {
-        compile 'org.spongepowered:spongevanilla:1.12.2-7.1.0-BETA-5:dev'
+        compile 'org.spongepowered:spongevanilla:1.12.2-7.1.1-RC123:dev'
     }
 
 SpongeForge
@@ -65,5 +65,5 @@ Example Using Gradle
 .. code-block:: groovy
 
     dependencies {
-        compile 'org.spongepowered:spongeforge:1.12.2-2555-7.1.0-BETA-2825:dev'
+        compile 'org.spongepowered:spongeforge:1.12.2-2768-7.1.1-RC3484:dev'
     }

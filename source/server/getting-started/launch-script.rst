@@ -16,39 +16,46 @@ of your machine in mind.
 
 .. note::
 
-    The following examples are generic. For a Forge server using Sponge (coremod), change ``forge-1.8-XYZ-universal.jar``
+    The following examples are generic. For a Forge server using Sponge (coremod), change ``forge-1.12.2-XYZ-universal.jar``
     to whatever your Forge version in the server directory is named. To launch a SpongeVanilla server, change
-    ``forge-1.8-XYZ-universal.jar`` to the name of the SpongeVanilla.jar file.
+    ``forge-1.12.2-XYZ-universal.jar`` to the name of the SpongeVanilla.jar file.
 
 Windows
 ~~~~~~~
 
-.. code-block:: none
+.. code-block:: bat
 
-    java -Xms1G -Xmx2G -jar forge-1.8-XYZ-universal.jar
+    java -Xms1G -Xmx2G -jar forge-1.12.2-XYZ-universal.jar
     pause
 
 Save your Windows launch script as ``launch.bat``.
 
+.. warning::
+   Launching your server in a Command Prompt or PowerShell environment can lead to the server hanging due to the 
+   ``Quick Edit Mode`` of these shells. This mode freezes the process when you highlight something or click inside the 
+   console window. During this time, messages captured in the log will state that the server skipped many seconds or 
+   minutes worth of ticks. You can prevent this from occurring by not highlighting any text on the screen and not 
+   clicking inside the window, or by disabling the ``Quick Edit Mode`` in the Properties dialogue.
+
 macOS
 ~~~~~
 
-.. code-block:: none
+.. code-block:: bash
 
     #!/bin/bash
     cd "$(dirname "$0")"
-    java -Xms1G -Xmx2G -jar forge-1.8-XYZ-universal.jar
+    java -Xms1G -Xmx2G -jar forge-1.12.2-XYZ-universal.jar
 
 Save your Mac launch script as ``launch.command``.
 
 Linux
 ~~~~~
 
-.. code-block:: none
+.. code-block:: sh
 
     #!/bin/sh
     cd "$(dirname "$(readlink -fn "$0")")"
-    java -Xms1G -Xmx2G -jar forge-1.8-XYZ-universal.jar
+    java -Xms1G -Xmx2G -jar forge-1.12.2-XYZ-universal.jar
 
 Save your Linux launch script as ``launch.sh``.
 

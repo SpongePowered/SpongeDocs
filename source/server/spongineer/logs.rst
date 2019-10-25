@@ -2,65 +2,187 @@
 Log Files
 =========
 
-Logfiles are an essential part when it comes to debugging your server and figuring what went wrong. This pages contains
+Logfiles are an essential part when it comes to debugging your server and figuring what went wrong. This page contains
 logfiles from SpongeForge and SpongeVanilla servers including short descriptions.
 
 .. contents:: **Provided Logfiles**
    :depth: 2
    :local:
 
+Configure Logging
+=================
+
+Sometimes plugins log messages that the server owner does not need, or the sheer number of messages hide some more
+important information. In other cases, plugins or the server will log debug messages that normally don't appear in any
+logs. This section explains how to configure the logging. It is also possible to configure the logging in a way that
+splits the logs in two or more separate files. One could be optimized for the moderators that pay attention to their
+users' activity/behavior and other logs could be used to monitor plugins that are important to the admins.
+
+.. note::
+
+    If you think that a plugin logs too many/few messages or on wrong log levels, please report it to its author.
+
+The simplest way to configure the logging is modifying the ``log4j2.xml`` configuration file that will be used by
+Minecraft/Forge itself. You can find and extract it from the root of the ``forge-...-universal.jar`` and
+``minecraft_server.jar``. Do **NOT** edit the file inside the jar.
+
+You can tell log4j2 to use the new config file by adding a start parameter to your server launch script.
+
+.. code-block:: bash
+
+    java -Dlog4j.configurationFile=log4j2_server.xml -jar server.jar
+
+The default configuration looks similar to the following example.
+
+.. code-block:: xml
+
+    <?xml version="1.0" encoding="UTF-8"?>
+    <Configuration status="warn" packages="com.mojang.util,net.minecraftforge.server.console.log4j">
+        <Appenders>
+            <TerminalConsole name="Console">
+                <PatternLayout pattern="[%d{HH:mm:ss}] [%t/%level] [%logger]: %msg%n"/>
+            </TerminalConsole>
+
+            <RollingRandomAccessFile name="DebugFile" fileName="logs/debug.log" filePattern="logs/debug-%i.log.gz">
+                <PatternLayout pattern="[%d{HH:mm:ss}] [%t/%level] [%logger]: %msg%n"/>
+                <Policies>
+                    <OnStartupTriggeringPolicy/>
+                    <SizeBasedTriggeringPolicy size="200MB"/>
+                </Policies>
+                <DefaultRolloverStrategy max="5" fileIndex="min"/>
+            </RollingRandomAccessFile>
+        </Appenders>
+        <Loggers>
+            <Logger level="info" name="org.spongepowered"/>
+            <Logger level="info" name="com.example.mod"/>
+            <Root level="all">
+                <AppenderRef ref="Console" level="info"/>
+                <AppenderRef ref="DebugFile"/>
+            </Root>
+        </Loggers>
+    </Configuration>
+
+.. note::
+
+    This example lacks some comments that are present in the original, make sure you read them to understand why they
+    are there.
+
+The ``Appenders`` section defines the output channels for the log messages. This could be a file, the console, or even
+a central log collection and analysis server. Read more about configuring appenders
+`here <https://logging.apache.org/log4j/2.x/manual/configuration.html#Appenders>`__.
+
+The ``Loggers`` section defines filters for loggers and to which targets the messages should be forwarded to. This is
+usually the section you must edit if you want to mute a specific plugin in the logs. Let's look into this
+a bit more:
+
+.. code-block:: xml
+
+    <Logger level="info" name="com.example.mod"/>
+
+This will limit the logs of ``com.example.mod`` to ``info`` and higher messages. Beware, this affects all output
+channels and also any logger that is created for a sub-package of the given path. Read more about filters
+`here <https://logging.apache.org/log4j/2.x/manual/configuration.html#Filters>`__.
+
+.. code-block:: xml
+
+    <Root level="all">
+        <AppenderRef ref="Console" level="info"/>
+        <AppenderRef ref="DebugFile"/>
+    </Root>
+    
+This section configures two output channels. First, the appender called ``Console`` with a log level filter of ``info``
+and higher, and last, the appender called ``DebugFile``. It is recommended to keep at least one logger to a persistent
+target such as a file for later error search.
+
+.. note::
+
+    If you are wondering why your new plugin's log messages don't seem to show up: The Console's log level is
+    configured to be at least info by default which hides your debug messages.
+
+If you don't want to reconfigure the entire logging, but want to hide a certain plugin from the logs you can also use
+composite logging options. This can be achieved by referencing both the original logging config and your specialized
+config that only contains the changed logging options. The following example shows this:
+
+.. code-block:: bash
+
+    java -Dlog4j.configurationFile=log4j2_server.xml,log4j2_custom.xml -jar server.jar
+
+.. code-block:: xml
+
+    <?xml version="1.0" encoding="UTF-8"?>
+    <Configuration status="WARN">
+        <Loggers>
+            <Logger name="com.example.logspammer" level="off"/>
+        </Loggers>
+    </Configuration>
+
+In this example all logs from the ``com.example.logspammer`` package won't be shown or saved. For debugging purposes, it
+might be useful to include your plugin's log messages in the console so you don't have to ``tail`` the debug log. This
+can be achieved using the following example:
+
+.. code-block:: xml
+
+    <?xml version="1.0" encoding="UTF-8"?>
+    <Configuration status="WARN">
+        <Loggers>
+            <Logger name="com.example.newplugin" level="all" additivity="false">
+                <AppenderRef ref="Console"/>
+                [...]
+            </Logger>
+        </Loggers>
+    </Configuration>
+
+.. tip::
+
+    Logging affects performance. If you log too much you might lose a small amount of tps. Also remember that it will
+    become harder to reproduce errors if there are no/incomplete logs available.
+
 SpongeForge logfiles
 ====================
 
-SpongeForge writes several logfiles to the ``/logs`` folder located inside your servers directory. As of Forge 1521
-these are:
+SpongeForge writes several logfiles to the ``/logs`` folder located inside your server's directory. 
+As of Forge 1.12.2 - 14.23.4.2705 these are: 
 
-1. ``fml-junk-earlystartup.log``
-#. ``fml-server-latest.log``
+1. ``debug.log``
 #. ``latest.log``
 
-fml-junk-earlystartup.log
-~~~~~~~~~~~~~~~~~~~~~~~~~
+debug.log
+~~~~~~~~~
 
 .. note::
 
  Only a few example lines are shown here. To read the full example log, follow this link:
- :download:`SpongeForge 1521 fml-junk-earlystartup.log file </files/logs/forge-1521-fml-junk-earlystartup.txt>`
-
-fml-server-latest.log
-~~~~~~~~~~~~~~~~~~~~~
-
-.. note::
-
- Only a few example lines are shown here. To read the full example log, follow this link:
- :download:`SpongeForge 1521 fml-server-latest.log </files/logs/forge-1521-fml-server-latest.txt>`
+ :download:`SpongeForge 1.12.2 - 7.1.0-BETA-3126 debug.log file 
+ </files/logs/SpongeForge_1.12.2-2705-7.1.0-BETA-3136_debug.log.txt>`
 
 .. code-block:: none
 
- [main/INFO] [FML/]: Forge Mod Loader version 11.14.3.1521 for Minecraft 1.8 loading
- [main/INFO] [FML/]: Java is Java HotSpot(TM) 64-Bit Server VM, version 1.8.0_51, running on Windows 8.1:amd64:6.3, installed at ##PATH_TO_JAVA_HERE##
- [main/DEBUG] [FML/]: Java classpath at launch is forge.jar
- [main/DEBUG] [FML/]: Java library path at launch is ##PATH_TO_JAVA_HERE##
+ [main/INFO] [FML]: Forge Mod Loader version 14.23.4.2705 for Minecraft 1.12.2 loading
+ [main/INFO] [FML]: Java is Java HotSpot(TM) 64-Bit Server VM, version 1.8.0_162, running on Windows 10:amd64:10.0, installed at C:\Program Files\Java\jre1.8.0_162
+ [main/DEBUG] [FML]: Java classpath at launch is:
+ [main/DEBUG] [FML]:     forge-1.12.2-14.23.4.2705-universal.jar
+ [main/DEBUG] [FML]: Java library path at launch is:
+ [main/DEBUG] [FML]:     C:\ProgramData\Oracle\Java\javapath
 
 The example log indicates that we're running:
 
-* Forge 11.14.3.1521 (Version 1521)
-* Java 8 64bit Update 51
-* Windows 8.1 x64
+* Forge 14.23.4.2705 (Version 2705)
+* Java 8 64bit Update 162
+* Windows 10 x64
 * the ``directory`` Java was installed to (Line 4)
 
 .. warning::
 
- SpongeForge won't run on Java 6 (``1.6.x``) or Java 7 (``1.7.x``). If you encounter an error stating that you run
- an older Java build than Java 8, please update your JRE to ``1.8.x`` and try again!
+ In order to run Sponge, you **must** be running Java 8 Update 20 or above.
+ Older builds or newer Java major versions (like 9 or 10) are not supported.
 
 .. code-block:: none
 
- [main/DEBUG] [FML/]: Examining for coremod candidacy spongeforge-1.8-1521-2.1-DEV-750.jar
- [main/INFO] [FML/]: Loading tweaker org.spongepowered.asm.launch.MixinTweaker from spongeforge-1.8-1521-2.1-DEV-750.jar
+ [main/DEBUG] [FML]: Examining for coremod candidacy spongeforge-1.12.2-2705-7.1.0-BETA-3136.jar
+ [main/INFO] [FML]: Loading tweaker org.spongepowered.asm.launch.MixinTweaker from spongeforge-1.12.2-2705-7.1.0-BETA-3136.jar
 
-This indicates that SpongeForge 750 was found and loaded by Forge. For further help regarding the SpongeForge
-naming scheme, have a look here: :doc:`../getting-started/implementations/spongeforge/`.
+This indicates that SpongeForge 3136 was found and loaded by Forge. For further help regarding the SpongeForge
+naming scheme, have a look at :doc:`/versions/filenames`.
 
 latest.log
 ~~~~~~~~~~
@@ -68,10 +190,9 @@ latest.log
 .. note::
 
  Only a few example lines are shown here. To read the full example log, follow this link:
- :download:`SpongeForge 1521 latest.log </files/logs/forge-1521-latest.txt>`
+ :download:`SpongeForge 1521 latest.log </files/logs/SpongeForge_1.12.2-2705-7.1.0-BETA-3136_latest.log.txt>`
 
 This is the output that you would see in the Minecraft server GUI.
-
 
 
 SpongeVanilla logfiles
@@ -83,7 +204,8 @@ latest.log
 .. note::
 
  Only a few example lines are shown here. To read the full example log, follow this link:
- :download:`SpongeVanilla 47 latest.log </files/logs/vanilla-47-latest.txt>`
+ :download:`SpongeVanilla 1.12.2-7.1.0-BETA-54 latest.log 
+ </files/logs/SpongeVanilla_1.12.2-7.1.0-BETA-54_latest.log.txt>`
 
 This is the output that you would see in the Minecraft server GUI.
 

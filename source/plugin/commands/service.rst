@@ -14,16 +14,17 @@ them to the right command handler. To register your command, use the method
 :javadoc:`CommandManager#register(Object, CommandCallable, String...)` passing your plugin, an instance of the command,
 and any needed aliases as parameters.
 
-Usually you want to register your commands when the :javadoc:`GameInitializationEvent` is called. If you are registering
-the commands from the main plugin class, use ``this`` as the ``plugin`` parameter.
+Usually you want to register your commands when the :javadoc:`GameInitializationEvent` is called.
 
 .. code-block:: java
 
     import org.spongepowered.api.Sponge;
     import org.spongepowered.api.command.CommandManager;
 
+    PluginContainer plugin = ...;
+
     CommandManager cmdManager = Sponge.getCommandManager();
-    cmdManager.register(this, myCommandSpec, "alias1", "alias2", "alias3");
+    cmdManager.register(plugin, myCommandSpec, "alias1", "alias2", "alias3");
 
 .. note::
 
@@ -31,7 +32,7 @@ the commands from the main plugin class, use ``this`` as the ``plugin`` paramete
     many Strings as you want. The first alias that isn't used by another command becomes the primary alias. This means
     aliases used by another command are ignored.
 
-The ``CommandManager`` can also be used to call a command programatically:
+The ``CommandManager`` can also be used to call a command programmatically:
 
 .. code-block:: java
 

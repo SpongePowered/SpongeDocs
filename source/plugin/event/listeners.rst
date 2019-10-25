@@ -89,7 +89,7 @@ before other server modifications.
 
         @Override
         public void handle(ChangeBlockEvent.Break event) throws Exception {
-            ...
+            [...]
         }
     }
 
@@ -115,7 +115,7 @@ which accepts an instance of the class containing the event listeners.
 
 .. code-block:: java
 
-    EventListener listener = ...
+    EventListener listener = ...;
     Sponge.getEventManager().unregisterListeners(listener);
 
 Alternatively, you can use :javadoc:`EventManager#unregisterPluginListeners(Object)`, passing in a reference to the
@@ -124,7 +124,7 @@ event listeners, including those registered with ``@Listener`` annotations.
 
 .. code-block:: java
 
-    MyPlugin plugin = ...
+    PluginContainer plugin = ...;
     Sponge.getEventManager().unregisterPluginListeners(plugin);
 
 .. _about_listener:
@@ -134,7 +134,7 @@ About @Listener
 
 The ``@Listener`` annotation has a few configurable fields:
 
-* ``order`` is the priority in which the event listener is to be run. See the :javadoc:`Order` enum in the SpongeAPI to
+* ``order`` is the priority in which the event listener is to be run. See the :javadoc:`Order` enum in SpongeAPI to
   see the available options.
 * ``beforeModifications`` specifies if the event listener should be called before other server mods, such as Forge
   mods. By default, this is set to false.
@@ -147,7 +147,7 @@ cancellable and has been cancelled (such as by another plugin).
 GameReloadEvent
 ~~~~~~~~~~~~~~~
 
-To prevent all plugins providing their own reload commands, Sponge provides a built in callback for plugins to listen
+To prevent all plugins providing their own reload commands, Sponge provides a built-in callback for plugins to listen
 to, and when executed, perform any reloading actions. What constitutes as a 'reloading action' is purely up to the
 plugin to decide. The :javadoc:`GameReloadEvent` will fire when a player executes the
 ``/sponge plugins reload`` command. The event is not necessarily limited to reloading configuration.
@@ -189,11 +189,16 @@ Example: Firing LightningEvent
 
 .. code-block:: java
 
-    import org.spongepowered.api.event.SpongeEventFactory;
     import org.spongepowered.api.event.action.LightningEvent;
     import org.spongepowered.api.event.cause.Cause;
+    import org.spongepowered.api.event.cause.EventContext;
+    import org.spongepowered.api.event.cause.EventContextKeys;
+    import org.spongepowered.api.event.SpongeEventFactory;
 
-    LightningEvent lightningEvent = SpongeEventFactory.createLightningEvent(Cause.source(plugin).build());
+    PluginContainer plugin = ...;
+    EventContext eventContext = EventContext.builder().add(EventContextKeys.PLUGIN, plugin).build();
+
+    LightningEvent lightningEvent = SpongeEventFactory.createLightningEventPre(Cause.of(eventContext, plugin));
     Sponge.getEventManager().post(lightningEvent);
 
 .. warning::

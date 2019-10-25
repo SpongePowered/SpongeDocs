@@ -7,8 +7,8 @@ build system such as Maven or Gradle <../buildsystem/>`.
 
 .. note::
 
-    A tutorial by Mumfrey showing the setup of a Sponge workspace in Eclipse, using the new features in Buildship and ForgeGradle,
-    can be viewed `here <https://www.youtube.com/watch?v=R8NcakQtHVI>`_.
+    A tutorial by Mumfrey showing the setup of a Sponge workspace in Eclipse, using the new features in Buildship and
+    ForgeGradle, can be viewed `here <https://www.youtube.com/watch?v=R8NcakQtHVI>`_.
     
 Gradle
 ======
@@ -18,7 +18,8 @@ Preparing Gradle
 
 .. note::
 
-    Gradle is automatically included in Eclipse starting from the Neon release (June 22, 2016) and later. These steps are only required for earlier versions.
+    Gradle is automatically included in Eclipse starting from the Neon release (June 22, 2016) and later. These steps
+    are only required for earlier versions.
 
 You must first install the **Gradle Integration Plugin** before using Gradle in Eclipse. This only needs to be done
 upon the creation of your first project.
@@ -75,7 +76,7 @@ Creating your project
 
   * Your **Group ID** should usually correspond to your Java package name. See :doc:`../plugin-class` for details.
   * Your **Artifact ID** should usually correspond to your **plugin ID** you chose earlier, e.g. ``myplugin``.
-  * Your **Version** is up to you.
+  * Your **Version** is up to you. See :doc:`../project/version-numbers` for details.
 
 * Click ``Finish``.
 

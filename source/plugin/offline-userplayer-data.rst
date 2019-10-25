@@ -38,25 +38,17 @@ Here's an example for a utility method that can be used to get a ``User``:
     import org.spongepowered.api.service.user.UserStorageService;
     
     public Optional<User> getUser(UUID uuid) {
-        Optional<Player> onlinePlayer = Sponge.getServer().getPlayer(uuid);
-    
-        if (onlinePlayer.isPresent()) {
-            return onlinePlayer;
-        }
-        
         Optional<UserStorageService> userStorage = Sponge.getServiceManager().provide(UserStorageService.class);
-        
         return userStorage.get().get(uuid);
     }
 
-First check if a ``Player`` instance exists meaning that the user is online.
-If so, the object is returned. 
-If not get the ``UserStorageService`` from the ``ServiceManager`` and then retrieve the ``User`` from there.
+This code will get the ``UserStorageService`` from the ``ServiceManager`` and then retrieve the ``User`` from there.
 
 .. note::
 
     The ``UserStorageService`` can only return ``User``\s who previously were connected.
 
-.. tip::
+.. note::
 
-    This solution can be used to get online and offline ``User``\s which makes it dynamically usable within your plugin.    
+    This solution will not return ``Player`` instances. This makes it safe to store the returned ``User`` objects,
+    but you will need to use the ``User.getPlayer()`` method to retrieve the online entity.   

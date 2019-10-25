@@ -9,7 +9,7 @@ The Asset API
 
 The :javadoc:`AssetManager` allows developers to retrieve resources from a plugin JAR.
 
-A plugin's assets resides in a directory named ``assets/myplugin/`` where ``myplugin`` is the plugin ID.
+A plugin's assets reside in a directory named ``assets/myplugin/`` where ``myplugin`` is the plugin ID.
 
 Once properly configured you can retrieve a resource for your (or any) plugin using the following code:
 
@@ -25,6 +25,8 @@ Alternatively, you can retrieve assets through the ``AssetManager`` class:
 
     import org.spongepowered.api.Sponge;
 
+    PluginContainer plugin = ...;
+
     Asset asset = Sponge.getAssetManager().getAsset(plugin, "myfile.txt").get();
 
 .. tip::
@@ -33,7 +35,7 @@ Alternatively, you can retrieve assets through the ``AssetManager`` class:
     the plugin parameter.
 
 .. note::
-    
+
     The examples above assume that ``myfile.txt`` exists as an :javadoc:`Asset`. If it does not, then ``getAsset()``
     will return ``Optional#empty()``.
 
@@ -50,7 +52,7 @@ following code:
     import java.nio.file.Files;
 
     if (Files.notExists(configPath)) {
-        plugin.getAsset("default.conf").copyToFile(configPath);
+        plugin.getAsset("default.conf").ifPresent(asset -> asset.copyToDirectory(configPath));
     }
 
 .. note::

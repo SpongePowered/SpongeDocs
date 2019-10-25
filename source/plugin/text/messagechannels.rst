@@ -118,7 +118,7 @@ front of the message.
 
         @Override
         public Optional<Text> transformMessage(Object sender, MessageReceiver recipient,
-                                                                    Text original) {
+                    Text original, ChatType type) {
             Text text = original;
             text = Text.of(TextColors.RED, "[Admin]", TextColors.RESET, text);
             return Optional.of(text);
@@ -227,7 +227,7 @@ class named ``MutableAdminMessageChannel`` that will implement a ``MutableMessag
 
         @Override
         public Optional<Text> transformMessage(Object sender, MessageReceiver recipient,
-                                                                    Text original) {
+                    Text original, ChatType type) {
             Text text = original;
             if(this.members.contains(recipient)) {
                 text = Text.of(TextColors.RED, "[Admin]", TextColors.RESET, text);
@@ -241,7 +241,7 @@ the recipient is in the member list before transforming the message. If it is, t
 sent, appending the red ``[Admin]`` prefix. In our ``getMembers()`` method we return an immutable set, so that the set
 can only be modified by the appropriate methods in our ``MutableAdminMessageChannel``.
 
-Note that an abstract implementation for ``MutableMessageChannel``\ s exists in the Sponge API as
+Note that an abstract implementation for ``MutableMessageChannel``\ s exists in SpongeAPI as
 ``AbstractMutableMessageChannel``. Also note that our members do not persist. If a player were to leave the server,
 they would be removed from the set.
 

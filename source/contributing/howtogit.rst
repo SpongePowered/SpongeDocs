@@ -7,7 +7,7 @@ then you'll need to become familiar with ``git`` and GitHub. If you're already f
 issues, pull-requests and commits, then just skip this topic. If you have no clue what we're talking about, then read on.
 
 .. note::
-  This guide assumes that you've read :doc:`../preparing/git` and that you've already setup your machine with a Git
+  This guide assumes that you've read :doc:`/preparing/git` and that you've already setup your machine with a Git
   client of your choice.
 
 The Basic Concept of Git and GitHub
@@ -66,7 +66,7 @@ clone is now located at ``YourGitHubAccount/ClonedRepoName``. Alright, first ste
 
 
 .. note::
-  All branches from the original repository will get forked too, you recieve an exact clone of the forked repo.
+  All branches from the original repository will get forked too, you receive an exact clone of the forked repo.
 
 .. image:: /images/contributing/repo-fork.svg
     :alt: Repo forking
@@ -75,17 +75,18 @@ clone is now located at ``YourGitHubAccount/ClonedRepoName``. Alright, first ste
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Now you need to get this fork to your local machine to make your changes. Open the Git Client of your choice
-(:doc:`../preparing/git`) and ``clone`` your fork to your local machine. The client will ask you for a folder to store
+(:doc:`/preparing/git`) and ``clone`` your fork to your local machine. The client will ask you for a folder to store
 everything in. Second step finished, well done!
 
 .. note::
-  Most steps can be done via GUI of your choice. If you're experienced with a command line interface, then you can use
-  it too. Each steps will show you the required commands to achieve the desired result.
 
-Alternatively you can do this via CLI (command line interface, ``CMD`` or ``powershell`` on windows). Note
+  Most steps can be done via GUI of your choice. If you're experienced with a command line interface, then you can use
+  it too. Each step will show you the required commands to achieve the desired result.
+
+Alternatively, you can do this via CLI (command line interface, ``CMD`` or ``powershell`` on windows). Note
 that you need to create the folder everything is getting cloned to yourself before typing this command:
 
-.. code-block:: none
+.. code-block:: bash
 
   git clone git://github.com/YourGitHubAccount/ClonedRepoName.git
 
@@ -103,15 +104,15 @@ Instead, create a new branch yourself (with a sensible name) and make the change
 This implies that we need to create a ``branch`` first, so let's go! You can do this via your client (there
 should be a ``create branch`` button somewhere), or you can use the CLI with git:
 
-.. code-block:: none
+.. code-block:: bash
 
   git checkout -b [name_of_your_new_branch]
 
 This will create a ``branch`` with the name of your choice and switch to it. All changes you're about to make will be
-on this branch. If you need to switch to another branch ( for example ``master``), just reuse this command. Third step
+on this branch. If you need to switch to another branch (for example ``master``), just reuse this command. Third step
 done! Good job so far! To get an overview of your branches, just have a look at your git client or use:
 
-.. code-block:: none
+.. code-block:: bash
 
   git branch
 
@@ -133,20 +134,20 @@ is to build the Docs locally. Have a look at the
 5. Commit the Changes
 ~~~~~~~~~~~~~~~~~~~~~
 
-When you're done, you need to bundle them into a single package (a ``commit``) and get them into the branch. Again your
+When you're done, you need to bundle them into a single package (a ``commit``) and get them into the branch. Again, your
 git client will help you out. Add a meaningful name to your commit and a short description if needed. This can be done
 via CLI too:
 
 First collect all files and folders you want to put into a commit:
 
-.. code-block:: none
+.. code-block:: bash
 
   git add <file>
   git add <folder>
 
 Now that the files are added to your list of changes you want included in the commit, just do
 
-.. code-block:: none
+.. code-block:: bash
 
   git commit
 
@@ -169,13 +170,13 @@ Now we need to get the changes to your fork on GitHub. Everything you've made so
 right now. As always, you can use your git client to do this (there's a button somewhere in your GUI), or you can do
 it via CLI:
 
-.. code-block:: none
+.. code-block:: bash
 
   git push <remote> <branch>
 
 In this case it should be:
 
-.. code-block:: none
+.. code-block:: bash
 
  git push origin feature/YourFeature
 
@@ -187,7 +188,7 @@ In this case it should be:
 
 You can either go to your forks page on GitHub.com (there should be a notice at the top of your forks page to
 guide you), or you can use your GitHub client to create a pull-request. The official GitHub for Win client uses the
-the top right corner of the window for this.
+top right corner of the window for this.
 
 .. image:: /images/contributing/repo-pr.svg
     :alt: PRs
@@ -209,11 +210,12 @@ Advanced Git
 Squashing with Rebase
 ~~~~~~~~~~~~~~~~~~~~~
 
-Let's say you have finished your additions to the repo, and let's pretend that you made 137 commits while getting it done.
-Your commit history will certainly look cluttered. It would be a shame if they were all recorded into the repo, wouldn't it?
-Too many trivial commits also clutters the project commit history. Fortunately Git has a nice tool to circumvent this, it's
-called a ``rebase``. Rebasing can take your 137 small commits and just turn them into one big commit. Awesome, isn't it?
-Instead of reinventing the wheel, we'll just pass you a link to a very short and easily understandable squashing tutorial:
+Let's say you have finished your additions to the repo, and let's pretend that you made 137 commits while getting it
+done. Your commit history will certainly look cluttered. It would be a shame if they were all recorded into the repo,
+wouldn't it? Too many trivial commits also clutters the project commit history. Fortunately, Git has a nice tool to
+circumvent this, it's called a ``rebase``. Rebasing can take your 137 small commits and just turn them into one big
+commit. Awesome, isn't it? Instead of reinventing the wheel, we'll just pass you a link to a very short and easily
+understandable squashing tutorial:
 
 `Gitready: Squashing with Rebase <http://gitready.com/advanced/2009/02/10/squashing-commits-with-rebase.html>`_
 
@@ -226,7 +228,7 @@ Setting Up a Remote
 ~~~~~~~~~~~~~~~~~~~
 
 Naturally the original repo is the direct parent of your fork and your fork is the direct parent of your local clone.
-However the original repo **isn't** the direct parent of your clone. This isn't a problem in the first place, but it
+However, the original repo **isn't** the direct parent of your clone. This isn't a problem in the first place, but it
 prevents you from updating your clone to the latest changes on the original repo. If you setup the original repo as a
 remote (read: "parent") of your clone, you'll be able to grab all changes made to this repo and apply it to your local
 clone. Look below to see how grabbing and updating works.
@@ -236,19 +238,19 @@ clone. Look below to see how grabbing and updating works.
 
 Alright. This step is done through CLI as most GUIs are missing this (rather advanced) functionality:
 
-.. code-block:: none
+.. code-block:: bash
 
  git remote add upstream https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git
 
 If you're unsure if that worked as intended or if you want to check which remotes are currently set, you can check via:
 
-.. code-block:: none
+.. code-block:: bash
 
  git remote -v
 
 the output should look like:
 
-.. code-block:: none
+.. code-block:: bash
 
  origin    https://github.com/YOUR_USERNAME/YOUR_FORK.git (fetch)
  origin    https://github.com/YOUR_USERNAME/YOUR_FORK.git (push)
@@ -256,9 +258,10 @@ the output should look like:
  upstream  https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git (push)
 
 .. note::
-  If you see the warning ``fatal: The current branch YourBranchName has no upstream branch.``, then the branch may not be on
-  the upstream remote. This may happen if this is the first time you are pushing a commit for the new branch. To push the
-  current branch and set the remote as upstream, use ``git push --set-upstream origin YourBranchName``.
+
+  If you see the warning ``fatal: The current branch YourBranchName has no upstream branch.``, then the branch may not
+  be on the upstream remote. This may happen if this is the first time you are pushing a commit for the new branch. To
+  push the current branch and set the remote as upstream, use ``git push --set-upstream origin YourBranchName``.
 
 Rebasing
 ~~~~~~~~
@@ -268,14 +271,14 @@ means that your fork and your clone are outdated. This is not a big problem, but
 additions later on, it's strongly advised to ``rebase`` your changes against the latest changes on the original repo.
 If you haven't set up the remote repo yet, do it before trying to rebase.
 
-A successfull rebase requires several steps:
+A successful rebase requires several steps:
 
 1. Fetch the Changes on the Remote Repo
 ---------------------------------------
 
 First you need to fetch the changes on the remote repository. This is (again) done via CLI:
 
-.. code-block:: none
+.. code-block:: bash
 
  git fetch upstream
 
@@ -286,13 +289,13 @@ This will add all changes from the remote ``upstream`` and put them into a tempo
 
 Now we need to select our local ``master`` branch:
 
-.. code-block:: none
+.. code-block:: bash
 
  git checkout master
 
 After that we'll merge the changes that are included in ``upstream/master`` into our local ``master`` branch:
 
-.. code-block:: none
+.. code-block:: bash
 
  git merge upstream/master
 
@@ -306,7 +309,7 @@ Alright, this is what we've done so far:
 Next up is rebasing the local branch you're working in against local ``master``. We need to switch to your working
 branch (here: ``feature/yourfeature``) and then perform a rebase. This is done via:
 
-.. code-block:: none
+.. code-block:: bash
 
  git checkout feature/yourfeature
  git rebase master
@@ -323,7 +326,7 @@ this:
 The last thing we need to do is to push everything to the fork. If you've already created a PR, it will get updated
 automatically:
 
-.. code-block:: none
+.. code-block:: bash
 
  git checkout master
  git push -f

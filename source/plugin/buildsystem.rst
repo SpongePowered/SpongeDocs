@@ -20,8 +20,8 @@ for the Sponge projects and provides the best integration for Sponge plugins.
 
 Gradle
 ======
-Gradle_ uses Groovy_-based scripts for configuring projects. A Gradle_ project typically consists of a ``build.gradle``
-file in your project's root directory, which tells Gradle_ how to build the project.
+Gradle_ uses Groovy_ or Kotlin_ based scripts for configuring projects. A Gradle_ project typically consists of a
+``build.gradle`` file in your project's root directory, which tells Gradle_ how to build the project.
 
 .. tip::
     Refer to the `Gradle User Guide`_ for the installation and a general introduction of concepts used in Gradle_. If
@@ -54,16 +54,18 @@ IDE.
     simplify the development process for you and other people wanting to contribute to your project. This method of
     developing plugins does not receive active testing by the Sponge team.
 
-For developing plugins without a build system you need to download the SpongeAPI dependency manually from the
+For developing plugins without a build system, you need to download the SpongeAPI dependency manually from the
 `SpongeAPI Download Page`_. For developing without a build system, we provide the ``shaded`` artifact which bundles all
 dependencies that would normally be automatically downloaded by the build system.
 
 After you have downloaded the ``shaded`` artifact and have added it to a project in your IDE, you can start developing
-your plugin. Continue at :doc:`plugin-identifier` for choosing an identifier for your project, then continue at :doc:`plugin-class`.
+your plugin. Continue at :doc:`plugin-identifier` for choosing an identifier for your project, then continue at
+:doc:`plugin-class`.
 
 .. _Gradle: https://gradle.org/
 .. _Maven: https://maven.apache.org/
-.. _Groovy: http://www.groovy-lang.org/
+.. _Groovy: https://www.groovy-lang.org/
+.. _Kotlin: https://kotlinlang.org/
 .. _`Gradle User Guide`: https://docs.gradle.org/current/userguide/userguide.html
 .. _`Gradle Java Quickstart`: https://docs.gradle.org/current/userguide/tutorial_java_projects.html
 .. _`Project Object Model`: https://maven.apache.org/guides/introduction/introduction-to-the-pom.html

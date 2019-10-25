@@ -50,12 +50,12 @@ include this all before ``return superMegaAwesomeSword;``.
 
     EnchantmentData enchantmentData = superMegaAwesomeSword
         .getOrCreate(EnchantmentData.class).get();
-    final List<Enchantment> enchantments = Sponge.getRegistry()
-        .getAllOf(Enchantment.class).stream().collect(Collectors.toList());
+    final List<EnchantmentType> enchantments = Sponge.getRegistry()
+        .getAllOf(EnchantmentType.class).stream().collect(Collectors.toList());
 
-    for (Enchantment enchantment : enchantments) {
+    for (EnchantmentType enchantment : enchantments) {
         enchantmentData.set(enchantmentData.enchantments()
-            .add(new ItemEnchantment(enchantment, 1000)));
+            .add(Enchantment.of(enchantment, 1000)));
     }
     superMegaAwesomeSword.offer(enchantmentData);
 
@@ -85,7 +85,7 @@ That's it. You now have a fully enchanted, unbreakable, and beautifully named sw
 Spawning the Item
 =================
 
-Sure we can simply put the sword into a player's inventory, but what if we wanted to throw it out into the open world
+Sure, we can simply put the sword into a player's inventory, but what if we wanted to throw it out into the open world
 and spawn the item? This is where :doc:`entity spawning <../entities/spawning>` comes into play. Since the in-game
 graphical representation of an ``ItemStack`` is :javadoc:`Item`, we can spawn it in similarly to a normal
 :javadoc:`Entity`. The :javadoc:`EntityType` will simply be :javadoc:`EntityTypes#ITEM` and we will need to specify
@@ -96,9 +96,7 @@ An example is shown below:
 
     import org.spongepowered.api.entity.Entity;
     import org.spongepowered.api.entity.EntityTypes;
-    import org.spongepowered.api.event.cause.Cause;
-    import org.spongepowered.api.event.cause.entity.spawn.EntitySpawnCause;
-    import org.spongepowered.api.event.cause.entity.spawn.SpawnTypes;
+    import org.spongepowered.api.event.CauseStackManager.StackFrame;
     import org.spongepowered.api.world.Location;
     import org.spongepowered.api.world.World;
     import org.spongepowered.api.world.extent.Extent;
@@ -107,13 +105,12 @@ An example is shown below:
     
     public void spawnItem(ItemStack superMegaAwesomeSword, Location<World> spawnLocation) {
         Extent extent = spawnLocation.getExtent();
-        Optional<Entity> optional = extent
-            .createEntity(EntityTypes.ITEM, spawnLocation.getPosition());
-        if (optional.isPresent()) {
-            Entity item = optional.get();
-            item.offer(Keys.REPRESENTED_ITEM, superMegaAwesomeSword.createSnapshot());
-            extent.spawnEntity(item, Cause.source(EntitySpawnCause.builder()
-                .entity(item).type(SpawnTypes.PLUGIN).build()).build());
+        Entity item = extent.createEntity(EntityTypes.ITEM, spawnLocation.getPosition());
+        item.offer(Keys.REPRESENTED_ITEM, superMegaAwesomeSword.createSnapshot());
+
+        try (StackFrame frame = Sponge.getCauseStackManager().pushCauseFrame()) {
+            frame.addContext(EventContextKeys.SPAWN_TYPE, SpawnTypes.PLACEMENT);
+            extent.spawnEntity(item);
         }
     }
 

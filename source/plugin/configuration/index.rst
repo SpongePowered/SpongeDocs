@@ -4,6 +4,7 @@ Configuring Plugins
 
 .. javadoc-import::
     ninja.leaping.configurate.hocon.HoconConfigurationLoader
+    ninja.leaping.configurate.gson.GsonConfigurationLoader
     ninja.leaping.configurate.yaml.YAMLConfigurationLoader
     org.spongepowered.api.config.ConfigDir
     org.spongepowered.api.config.DefaultConfig
@@ -22,7 +23,7 @@ files to full advantage.
 .. note::
     Sponge makes use of the HOCON configuration format, a superset of JSON, as the default format for saving
     configuration files. The rest of this guide will assume you are using HOCON as well. See
-    :doc:`../../server/getting-started/configuration/hocon` more for information regarding the HOCON format.
+    :doc:`/server/getting-started/configuration/hocon` more for information regarding the HOCON format.
     Working with different formats is made relatively similar by the Configurate system, so it should not
     pose too much of an issue if you use an alternate format instead.
 
@@ -40,7 +41,7 @@ Quick Start
 Creating a Default Plugin Configuration
 ---------------------------------------
 
-Plugins using the Sponge API have the option to use one or more configuration files. Configuration files allow plugins
+Plugins using SpongeAPI have the option to use one or more configuration files. Configuration files allow plugins
 to store data, and they allow server administrators to customize plugin options (if applicable).
 
 
@@ -49,8 +50,13 @@ to store data, and they allow server administrators to customize plugin options 
 Getting your Default Plugin Configuration
 -----------------------------------------
 
-The Sponge API offers the use of the :javadoc:`DefaultConfig` annotation on a field or setter method with the type
+SpongeAPI offers the use of the :javadoc:`DefaultConfig` annotation on a field or setter method with the type
 ``Path`` to get the default configuration file for your plugin.
+
+If you place the ``@DefaultConfig`` annotation on a field with the type 
+``ConfigurationLoader<CommentedConfigurationNode>`` then you can use it to load and save the default config file in 
+the file system. Please keep in mind that the annotated ``ConfigurationLoader`` does not use any default config file 
+that you might ship with your jar, unless you explicitly load it.
 
 The ``@DefaultConfig`` annotation requires a ``sharedRoot`` boolean. If you set ``sharedRoot`` to ``true``, then the
 returned pathname will be in a shared configuration directory. In that case, the configuration file for your plugin
@@ -103,10 +109,11 @@ specific directory or to ``true`` to get the shared configuration directory.
 
     When your plugin is running for the first time, returned pathnames for configuration files and directories may not
     yet exist. If you delegate all reading / writing of files to Configurate, you do not need to worry about
-    non-existant paths as the library will handle them appropriately.
+    non-existent paths as the library will handle them appropriately.
 
 .. note::
 
-    The use of YAML format (http://yaml.org/spec/1.1/) is also supported, but the preferred config format for Sponge
-    plugins is HOCON. Conversion from YAML to HOCON can be automated by using a :javadoc:`YAMLConfigurationLoader` to
-    load the old config and then saving it using a :javadoc:`HoconConfigurationLoader`.
+    The use of YAML format (https://yaml.org/spec/1.1/) and JSON format (https://www.json.org/) is also supported, but
+    the preferred config format for Sponge plugins is HOCON. Conversion from YAML (or JSON) to HOCON can be automated by
+    using a :javadoc:`YAMLConfigurationLoader` (or :javadoc:`GsonConfigurationLoader`) to load the old config and then
+    saving it using a :javadoc:`HoconConfigurationLoader`.
