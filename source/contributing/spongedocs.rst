@@ -19,7 +19,7 @@ there are four ways of making us aware of the problem:
 #. Create an `Issue on the SpongeDocs GitHub <https://github.com/SpongePowered/SpongeDocs/issues>`_
 #. Create a Posting on the `SpongeDocs Forums Category <https://forums.spongepowered.org/c/sponge-docs>`_
 #. Visit us in the `#spongedocs channel on irc.esper.net <ircs://irc.esper.net:6697/#spongedocs>`_ (you need to be registered)
-#. Visit us on our `Discord Server <https://discord.gg/PtaGRAs>`_, namely the ``#docs`` channel.
+#. Visit us on our `Discord Server <https://discord.gg/sponge>`_, namely the ``#docs`` channel.
 
 Writing the Docs
 ================
@@ -31,7 +31,7 @@ are some parts you do not understand. There will always be someone able to fill 
 
 The Docs are written in reStructuredText (reST), if you're familiar with Markdown (md) the step to reST shouldn't be too
 hard. If you're having issues with it we suggest that you join our `#spongedocs on irc.esper.net <ircs://irc.esper.net:6697/#spongedocs>`_
-and ask for help there, or join our `Discord Server <https://discord.gg/PtaGRAs>`_ and post on the ``#docs`` channel.
+and ask for help there, or join our `Discord Server <https://discord.gg/sponge>`_ and post on the ``#docs`` channel.
 Discord and IRC are linked, so you'll get the same support irrespective of the platform you choose.
 Alternatively, you can post on our `forums <https://forums.spongepowered.org/>`_ if you think it is more apropriate.
 

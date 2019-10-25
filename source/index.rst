@@ -135,7 +135,7 @@ Links
 
 -  `Sponge Homepage <https://www.spongepowered.org>`_
 -  `Sponge Forums <https://forums.spongepowered.org>`_
--  `Sponge Discord <https://discord.gg/PtaGRAs>`_
+-  `Sponge Discord <https://discord.gg/sponge>`_
 -  `Sponge Downloads <https://www.spongepowered.org/downloads>`_
 -  `SpongeAPI Issue Tracker <https://github.com/SpongePowered/SpongeAPI/issues?q=>`_
 -  `SpongeAPI Javadocs <https://jd.spongepowered.org>`_

@@ -31,11 +31,10 @@ General steps
     Please don't submit pull requests for small, non-functional changes such as fixing typos or renaming variable names.
     Instead, you can:
     
-    * `join #sponge on IRC (irc.esper.net) <https://webchat.esper.net/?channels=sponge>`_ or
-      `join #spongedev on IRC (irc.esper.net) <https://webchat.esper.net/?channels=spongedev>`_
+    * `join #spongedev on IRC (irc.esper.net) <https://webchat.esper.net/?channels=spongedev>`_
       and we'll change it together with the other smaller changes.
 
-    * Join our `Discord Server <https://discord.gg/PtaGRAs>`_ and post on the ``#general`` or ``#dev`` channels.
+    * Join our `Discord Server <https://discord.gg/sponge>`_ and post on the or ``#dev`` channels.
       Discord and IRC are linked, so don't worry. We won't miss your message!
 
     * You can also add it to our list of 
