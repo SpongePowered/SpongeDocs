@@ -34,7 +34,7 @@ General steps
     * `join #spongedev on IRC (irc.esper.net) <https://webchat.esper.net/?channels=spongedev>`_
       and we'll change it together with the other smaller changes.
 
-    * Join our `Discord Server <https://discord.gg/sponge>`_ and post on the or ``#dev`` channels.
+    * Join our `Discord Server <https://discord.gg/sponge>`_ and post on the ``#dev`` channel.
       Discord and IRC are linked, so don't worry. We won't miss your message!
 
     * You can also add it to our list of 
