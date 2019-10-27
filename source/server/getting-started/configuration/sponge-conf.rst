@@ -477,9 +477,10 @@ This config was generated using SpongeForge build 3442 (with Forge 2705), Sponge
     # 1.0
     #
     # # If you need help with the configuration or have any questions related to Sponge,
-    # # join us at the IRC or drop by our forums and leave a post.
+    # # join us at the IRC, Discord, or drop by our forums and leave a post.
     #
     # # IRC: #sponge @ irc.esper.net ( https://webchat.esper.net/?channel=sponge )
+    # # Discord: (https://discord.gg/sponge)
     # # Forums: https://forums.spongepowered.org/
     #
 
