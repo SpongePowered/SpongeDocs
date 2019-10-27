@@ -1,6 +1,6 @@
-=================
-Forum & IRC Rules
-=================
+==========================
+Forum, Discord & IRC Rules
+==========================
 
 Welcome to the Sponge Project! We're glad you're here and interested in Sponge. We have a few rules that apply to all
 of our various methods of communications, including (but not limited to):
