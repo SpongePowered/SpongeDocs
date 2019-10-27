@@ -30,8 +30,8 @@ specific values is no less straightforward.
 
     If the data API behaves differently from what you expect (e.g. returns an empty ``Optional`` even if the data are
     supposed to be present), or there is a feature/value missing that you need, check the `Implementation Tracker
-    <https://github.com/SpongePowered/SpongeCommon/issues/8>`_, ask in the ``#spongedev`` IRC channel or on the
-    `Forums <https://forums.spongepowered.org>`_.
+    <https://github.com/SpongePowered/SpongeCommon/issues/8>`_, ask in the ``#spongedev`` IRC channel,
+    in the ``#dev`` Discord channel,  or on the `Forums <https://forums.spongepowered.org>`_.
 
 Concepts
 ========
