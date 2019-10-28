@@ -26,7 +26,8 @@ Crowdin
 Developer
   Someone who programs code (Sponge, Plugins, Mods, ...).
 Discord
-  Discord is a free voice, video and text chat app, and is used as a chat platform. Like IRC, Provides chat rooms for all things Sponge.
+  Discord is a free voice, video and text chat app, and is used as a chat platform.
+  Like IRC, Provides chat rooms for all things Sponge.
   Sponge's Discord server is synced with Sponge's IRC server.
 FLARD
   It is green, edible, and explosive. Leave it alone and it will leave you alone.
