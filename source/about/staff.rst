@@ -102,18 +102,6 @@ The **System Administrators** are responsible for the maintenance and reliable o
 | Snowie                            | System Administrator               |
 +-----------------------------------+------------------------------------+
 
-Issue Managers
-~~~~~~~~~~~~~~
-
-The **Issue Managers** help classify and test issues that are reported on the GitHub repositories for
-SpongeAPI, SpongeForge and SpongeVanilla.
-
-+-----------------------------------+------------------------------------+
-| Name                              | Role                               |
-+===================================+====================================+
-| phit                              | Issue Manager                      |
-+-----------------------------------+------------------------------------+
-
 Ore Developers
 ~~~~~~~~~~~~~~
 
@@ -126,7 +114,6 @@ The **Ore Developers** work on producing, enhancing, and fixing the Ore plugin d
 +-----------------------------------+------------------------------------+
 | felixoi                           | Ore Developer                      |
 +-----------------------------------+------------------------------------+
-
 
 Web Developers
 ~~~~~~~~~~~~~~
@@ -276,6 +263,8 @@ here to thank them and acknowledge their valuable contributions.
 | parlough                          | Developer                          |
 +-----------------------------------+------------------------------------+
 | phase                             | Ore Development Manager            |
++-----------------------------------+------------------------------------+
+| phit                              | Issue Manager                      |
 +-----------------------------------+------------------------------------+
 | Saladoc                           | Editor                             |
 +-----------------------------------+------------------------------------+
