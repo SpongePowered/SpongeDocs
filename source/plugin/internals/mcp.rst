@@ -48,8 +48,9 @@ MCP uses two different sets of mappings which are applied separately during the 
 
 Using the MCPBot
 ----------------
-The MCPBot_ is available in the Sponge and MCP IRC channels and allows you to lookup MCP mappings or contribute new
-names. You can send commands to the bot by sending messages in one of the supported channels (e.g. ``#spongedev``).
+The MCPBot_ is available in the Sponge and MCP IRC channels, or in the ``#bot-spam`` channel on Discord,
+and allows you to lookup MCP mappings or contribute new names.
+You can send commands to the bot by sending messages in one of the supported channels (e.g. ``#spongedev``).
 
 .. tip::
     Check out the `MCPBot help page`_ for a list of all available commands.

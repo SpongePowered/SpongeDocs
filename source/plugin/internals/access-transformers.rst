@@ -51,10 +51,10 @@ refresh your Gradle project:
     gradle setupDecompWorkspace
 
 .. tip::
-    You can use the `MCP bot <http://mcpbot.bspk.rs/help>`_ which is present in the MCP and Sponge IRC channels to
-    quickly get the access transformer line for a field or method. After looking up a method using ``!gm <mcp method
-    name>`` or a field using ``!gf <mcp field name>``, simply copy the listed ``AT`` line to your access transformer
-    file.
+    You can use the `MCP bot <http://mcpbot.bspk.rs/help>`_ which is present in the MCP and Sponge IRC channels,
+    or in the ``#bot-spam`` channel on Discord, to quickly get the access transformer line for a field or method.
+    After looking up a method using ``!gm <mcp method name>`` or a field using ``!gf <mcp field name>``,
+    simply copy the listed ``AT`` line to your access transformer file.
 
 .. note::
     Making a field/method less accessible (e.g. ``public`` -> ``private``) is not supported.

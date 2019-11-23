@@ -25,6 +25,10 @@ Crowdin
   https://crowdin.com/project/sponge-docs
 Developer
   Someone who programs code (Sponge, Plugins, Mods, ...).
+Discord
+  Discord is a free voice, video and text chat app, and is used as a chat platform.
+  Like IRC, Provides chat rooms for all things Sponge.
+  Sponge's Discord server is synced with Sponge's IRC server.
 FLARD
   It is green, edible, and explosive. Leave it alone and it will leave you alone.
 Forge
@@ -36,6 +40,7 @@ Implementation
   A mod or program that enables the use of SpongeAPI in Minecraft.
 IRC
   Internet Relay Chat, used as a chat platform. Provides chat rooms for all things Sponge.
+  Sponge's IRC server is synced with Sponge's Discord server.
 Issue
   A way of flagging problems, bugs, improvements, and things-to-do on GitHub and elsewhere. The Sponge project uses
   GitHub as an Issue Tracker.

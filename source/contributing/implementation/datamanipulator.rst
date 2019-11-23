@@ -668,6 +668,7 @@ With ``Data`` being a rather abstract concept in Sponge, it is hard to give gene
 acquire the needed data from the Minecraft classes itself. It may be helpful to take a look at already
 implemented processors similar to the one you are working on to get a better understanding of how it should work.
 
-If you are stuck or are unsure about certain aspects, go visit the ``#spongedev`` IRC channel, the forums, or
-open up an Issue on GitHub. Be sure to check the `Data Processor Implementation Checklist
-<https://github.com/SpongePowered/SpongeCommon/issues/8>`_ for general contribution requirements.
+If you are stuck or are unsure about certain aspects, go visit the ``#spongedev`` IRC channel,
+the ``#dev`` channel on Discord, the forums, or open up an Issue on GitHub.
+Be sure to check the `Data Processor Implementation Checklist <https://github.com/SpongePowered/SpongeCommon/issues/8>`_
+for general contribution requirements.

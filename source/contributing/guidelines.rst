@@ -29,10 +29,16 @@ General steps
 
 .. note::
     Please don't submit pull requests for small, non-functional changes such as fixing typos or renaming variable names.
-    Instead, `join #sponge on IRC (irc.esper.net) <https://webchat.esper.net/?channels=sponge>`_ or 
-    `join #spongedev on IRC (irc.esper.net) <https://webchat.esper.net/?channels=spongedev>`_ and we'll change it
-    together with the other smaller changes. You can also add it to our list of 
-    `Minor Issues on GitHub <https://github.com/search?q=org%3ASpongePowered+Ongoing+Minor+Issue+List&type=Issues>`_.
+    Instead, you can:
+    
+    * `join #spongedev on IRC (irc.esper.net) <https://webchat.esper.net/?channels=spongedev>`_
+      and we'll change it together with the other smaller changes.
+
+    * Join our `Discord Server <https://discord.gg/sponge>`_ and post on the ``#dev`` channel.
+      Discord and IRC are linked, so don't worry. We won't miss your message!
+
+    * You can also add it to our list of 
+      `Minor Issues on GitHub <https://github.com/search?q=org%3ASpongePowered+Ongoing+Minor+Issue+List&type=Issues>`_.
 
 4. If the issue requires a bigger change you may want to submit the issues without the necessary changes first, so we
    can confirm the issue and know that you're working on fixing it. You should also create a draft pull
