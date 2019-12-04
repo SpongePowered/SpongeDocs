@@ -87,6 +87,20 @@ SpongeForge and SpongeVanilla.
 | simon816                          | Developer                          |
 +-----------------------------------+------------------------------------+
 
+Issue Managers
+~~~~~~~~~~~~~~
+
+The **Issue Managers** help classify and test issues that are reported on the GitHub repositories for
+SpongeAPI, SpongeForge and SpongeVanilla.
+
++-----------------------------------+------------------------------------+
+| Name                              | Role                               |
++===================================+====================================+
+| Cybermaxke                        | Issue Manager                      |
++-----------------------------------+------------------------------------+
+| Morpheus                          | Issue Manager                      |
++-----------------------------------+------------------------------------+
+
 System Administrators
 ~~~~~~~~~~~~~~~~~~~~~
 
