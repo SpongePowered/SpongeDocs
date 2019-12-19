@@ -38,10 +38,11 @@ Filtering
 =========
 
 Filters determine what blocks are accepted by the ``BlockRay``. To add a filter, use the ``BlockRayBuilder#stopFilter``
-or ``BlockRayBuilder#skipFilter`` method, passing in one or many ``Predicate<BlockRayHit<E>>``\ s (where ``E`` extends ``Extent``). The ``BlockRayBuilder#stopFilter`` stops the ray cast when it hits a block that passes the given filter 
-and the ``BlockRayBuilder#skipFilter`` skips all blocks that pass the filter. These filters can be chained together
-to create a complex ``BlockRay``. 
-For convenience,``BlockRay`` contains the following methods for common filter use cases:
+or ``BlockRayBuilder#skipFilter`` method, passing in one or many ``Predicate<BlockRayHit<E>>``\ s (where ``E`` extends 
+``Extent``). The ``BlockRayBuilder#stopFilter`` continues the ray cast when it hits a block that passes the given 
+filter and the ``BlockRayBuilder#skipFilter`` skips all blocks that pass the filter. These filters can be chained 
+together to create a complex ``BlockRay``. For convenience, ``BlockRay`` contains the following methods for common 
+filter use cases:
 
  * ``allFilter``: returns a filter accepting all blocks
  * ``onlyAirFilter``: returns a filter accepting only air
@@ -62,7 +63,7 @@ Finally, use :javadoc:`BlockRay.BlockRayBuilder#build()` to finish building the 
 
     Player player;
     BlockRay<World> blockRay = BlockRay.from(player)
-        .stopFilter(BlockRay.continueAfterFilter(BlockRay.onlyAirFilter(), 1)).build();
+        .skipFilter(BlockRay.onlyAirFilter()).stopFilter(BlockRay.onlyAirFilter()).build();
 
 We can rewrite the above to use ``BlockRay#skipFilter(Predicate<BlockRayHit>)`` in addition to 
 ``BlockRay#stopFilter(Predicate<BlockRayHit>)``. This will skip all air blocks and stop at the first non-air block it
