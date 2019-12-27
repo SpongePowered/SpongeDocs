@@ -32,6 +32,8 @@ The **Project Managers** of Sponge each coordinate a separate aspect of the Spon
 |                                   |                                    |
 |                                   | Chief Technology Officer           |
 +-----------------------------------+------------------------------------+
+| Dualspiral                        | Long Term Support (LTS) Manager    |
++-----------------------------------+------------------------------------+
 | Grinch                            | Ore Community Manager              |
 +-----------------------------------+------------------------------------+
 | Inscrutable                       | SpongeDocs Chief Editor            |
