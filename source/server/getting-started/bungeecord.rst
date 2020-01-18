@@ -1,63 +1,72 @@
-Using Sponge with BungeeCord
-============================
-
-BungeeCord is a piece of server proxy software written by md_5 and the SpigotMC team that allows server owners to link
-Minecraft servers together so that players can jump between servers without having to disconnect and re-connect.
-BungeeCord is typically used by server networks that offer many game modes.
-
-For more information about BungeeCord, what it is, how to set it up and how it works, have a look at the
-`BungeeCord website <https://www.spigotmc.org/wiki/bungeecord/>`_. This page will focus on Sponge specific steps.
-
-.. warning::
- In order to connect servers to BungeeCord, you must run the servers in offline mode. In offline mode, without the
- proper precautions, anyone can log into the server using any name they wish, including those who have admin
- permissions. Make sure you protect your servers using firewalls. If you are using Linux, there is an IPTables guide
- at `SpigotMC Firewall guide <https://www.spigotmc.org/wiki/firewall-guide/>`_, alternatively, some distributions come
- with `UncomplicatedFirewall "ufw" <https://wiki.ubuntu.com/UncomplicatedFirewall>`_.
-
-If you are not comfortable with tinkering with Linux, or you are unsure as to how to prevent unauthorized access to
-your servers, consider consulting with someone who has more experience to ensure the security of your server.
+Using Sponge with Server Proxies
+================================
 
 .. note::
 
-  Be sure that if you use SSH to make sure port 22 is ALLOWED, otherwise you run a very real risk of locking yourself
-  out of your server!
+  While SpongeForge and SpongeVanilla offer the ability to enable "IP forwarding" for connecting to server proxies,
+  Sponge does not officially support or recommend any specific proxy software. Any issues with the proxies themselves
+  should be directed to the relevant support community.
 
-IP Forwarding
-~~~~~~~~~~~~~
+Server proxies allow server owners to link Minecraft servers together so that players can jump between
+servers without having to disconnect and re-connect. One of the most well known of these is BungeeCord, written
+by md_5 of SpigotMC, though forks exist that improve Forge and Sponge compatibility, such as Waterfall and Hexacord.
+There are also other alternatives, such as Velocity. Server proxies are typically used by server networks that offer
+many game modes. Sponge can work with most server proxies, with player information forwarding (or IP forwarding) 
+support for servers that support adding Forge markers into a player's game profile.
 
-BungeeCord has a mode called IP Forwarding, which allows BungeeCord to pass the player's UUID and IP address to any
-connected server, even though the servers are being run in offline mode. 
-
-.. warning::
- SpongeForge modded servers that require modded clients, will only work if you use a BungeeCord fork like
- `Waterfall <https://github.com/WaterfallMC/Waterfall/blob/master/README.md#waterfall->`_, or a BungeeCord plugin like
- `SpongePls <https://forums.spongepowered.org/t/spongepls/9891>`_. SpongePowered does not officially support these
- products, although they are developed by trusted members of the community.
-
-For SpongeVanilla or Vanilla clients connecting to unmodded SpongeForge, IP Forwarding works out of the box.
-`Pull <https://github.com/SpigotMC/BungeeCord/pull/1557>`_
-`requests <https://github.com/SpigotMC/BungeeCord/pull/1678>`_ were made to BungeeCord for modded SpongeForge support,
-but these haven't been accepted. Other solutions (mentioned above) include these patches and should be used instead.
-
-Using BungeeCord with IP Forwarding
+Choosing Your Proxy Server Software
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you wish to use IP Forwarding:
+SpongeVanilla works with most proxy server software. However, SpongeForge servers that require modded clients to join
+**will not work** with the standard BungeeCord software. Should you wish to link modded servers together via a proxy,
+you should use a fork of BungeeCord (such as
+`Waterfall <https://github.com/WaterfallMC/Waterfall/blob/master/README.md#waterfall->`_) or a different proxy solution
+(such as `Velocity <https://velocitypowered.com>`_) that both contain code to support Forge environments.
 
-* In the BungeeCord ``config.yml``, set ``ip_forward`` to ``true``
-* In Sponge's config (``config/sponge/global.conf``), set ``modules.bungeecord`` to ``true`` and
-  ``bungeecord.ip-forwarding`` to ``true``
-* If you have any other server software, consult the documentation for that server.
+Setting Up Your Proxy Server Network
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This must be done for **all** servers that are connected to the BungeeCord network. Then, just follow the instructions
-for using BungeeCord without IP Forwarding.
+.. warning::
 
-Using BungeeCord without IP Forwarding
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  In order to connect servers to your server proxy, you must run the servers in offline mode. In offline mode, without
+  the proper precautions, anyone can log into the server using any name they wish, including those who have admin
+  permissions. Make sure you protect your servers using firewalls. If you are using Linux, there is an IPTables guide
+  at `SpigotMC Firewall guide <https://www.spigotmc.org/wiki/firewall-guide/>`_, alternatively, some distributions come
+  with `UncomplicatedFirewall "ufw" <https://wiki.ubuntu.com/UncomplicatedFirewall>`_.
 
-It is recommended that you use IP Forwarding wherever possible, if you do not wish to do so, simply ensure that
-``online-mode`` is set to ``false`` in your ``server.properties`` file and add the server details to Bungee's
-``config.yml`` file. Bungee will then forward any connections to the server when required.
+  Be sure that if you use SSH to make sure port 22 is ALLOWED, otherwise you run a very real risk of locking yourself
+  out of your server!
+ 
+  If you are not comfortable with tinkering with Linux, or you are unsure as to how to prevent unauthorized access to
+  your servers, consider consulting with someone who has more experience to ensure the security of your server.
 
-This will work with all implementations of Sponge, including with mods.
+To accept connections from a proxy, ensure that ``online-mode`` is set to ``false`` in your ``server.properties`` file
+on your Sponge server - this is because the proxy will do the authentication for you. Follow the server proxy's
+documentation to add your server to the proxy.
+
+While this is all you need to do to enable the proxy to connect, we **strongly** recommend that you enable either
+Player Information Forwarding or IP Forwarding to enable Sponge to treat the server as if it's in online mode.
+
+Player Information Forwarding (also known as IP Forwarding)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Server proxy sofware typically comes with a mode known as either "Player Information Forwarding" or "IP Forwarding",
+which allows the proxy server software to pass the player's UUID and IP address to any connected server, enabling
+servers to act as if they are in online mode. We strongly recommend that these options are enabled, and they must be
+enabled on both your proxy and in Sponge.
+
+To enable player information forwarding on the proxy, consult your proxy software documentation for how to enable this
+option. It may be named "IP forwarding" on BungeeCord and its forks. If you are using SpongeForge, you may also need to
+enable forge support on the proxy. If you are using Velocity, ensure that you are using the ``LEGACY`` player
+information forwarding option.
+
+To enable player information forwarding on Sponge, you must set the following two options in Sponge's config
+(``config/sponge/global.conf``) to ``true``:
+
+* ``modules.bungeecord``
+* ``bungeecord.ip-forwarding``
+
+While these options are named after BungeeCord, they will work for any proxy that uses the same protocol.
+
+Once set, you **must** restart your server. You must ensure these options are enabled for **all** Sponge servers on 
+your network. Equivalent options must also be set on other servers that will be accessed by the proxy.
