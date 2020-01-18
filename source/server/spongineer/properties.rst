@@ -61,7 +61,7 @@ Properties Available
 |                                    | events).                                                                        |
 +------------------------------------+---------------------------------------------------------------------------------+
 | **sponge.world.migrate_old**       | World migration is disabled when this is set to false.                          |
-|                                    |                                                                                 |
+|                                    | The migration process is described in :doc:`/server/getting-started/migrating`. |
 | (boolean, default: true)           |                                                                                 |
 +------------------------------------+---------------------------------------------------------------------------------+
 | **timings.bypassMax**              | Allows for bypassing the max number of frames to send to the Aikar's timing     |
