@@ -13,1160 +13,1422 @@ Below is a list of available config settings and their comments inside the globa
 will not be filled immediately, and may optionally be added to the file when the server encounters them. There's also
 full example of an unmodified ``global.conf`` file at the bottom of this page, below the following list:
 
+.. note::
+
+    The following section headings refer to the simple class names of the configuration classes. Each of the entries in
+    a section refers to a configurable property in the associated class. The `Type` information refers to the
+    section/class that describes the nested configuration structure.
+
+.. _ConfigType_GlobalConfig:
+
 GlobalConfig
 ============
 
-**broken-mods**
+| The main configuration for Sponge: ``global.conf``
+|
 
-| Stopgap measures for dealing with broken mods
+* **broken-mods**
 
-* **Type:** ``BrokenModCategory``
+  | Stopgap measures for dealing with broken mods
+  | **Type:** :ref:`BrokenModCategory<ConfigType_BrokenModCategory>`
+  |
 
-**bungeecord**
+* **bungeecord**
 
-* **Type:** ``BungeeCordCategory``
+  | **Type:** :ref:`BungeeCordCategory<ConfigType_BungeeCordCategory>`
+  |
 
-**cause-tracker**
+* **cause-tracker**
 
-* **Type:** ``PhaseTrackerCategory``
+  | **Type:** :ref:`PhaseTrackerCategory<ConfigType_PhaseTrackerCategory>`
+  |
 
-**commands**
+* **commands**
 
-* **Type:** ``CommandsCategory``
+  | **Type:** :ref:`CommandsCategory<ConfigType_CommandsCategory>`
+  |
 
-**debug**
+* **debug**
 
-* **Type:** ``DebugCategory``
+  | **Type:** :ref:`DebugCategory<ConfigType_DebugCategory>`
+  |
 
-**entity**
+* **entity**
 
-* **Type:** ``EntityCategory``
+  | **Type:** :ref:`EntityCategory<ConfigType_EntityCategory>`
+  |
 
-**entity-activation-range**
+* **entity-activation-range**
 
-* **Type:** ``EntityActivationRangeCategory``
+  | **Type:** :ref:`EntityActivationRangeCategory<ConfigType_EntityActivationRangeCategory>`
+  |
 
-**entity-collisions**
+* **entity-collisions**
 
-* **Type:** ``EntityCollisionCategory``
+  | **Type:** :ref:`EntityCollisionCategory<ConfigType_EntityCollisionCategory>`
+  |
 
-**exploits**
+* **exploits**
 
-* **Type:** ``ExploitCategory``
+  | **Type:** :ref:`ExploitCategory<ConfigType_ExploitCategory>`
+  |
 
-**general**
+* **general**
 
-* **Type:** ``GlobalGeneralCategory``
+  | **Type:** :ref:`GlobalGeneralCategory<ConfigType_GlobalGeneralCategory>`
+  |
 
-**ip-sets**
+* **ip-sets**
 
-* **Type:** ``Map<String, List<IpSet>>``
+  | **Type:** ``Map<String, List<IpSet>>``
+  |
 
-**logging**
+* **logging**
 
-* **Type:** ``LoggingCategory``
+  | **Type:** :ref:`LoggingCategory<ConfigType_LoggingCategory>`
+  |
 
-**metrics**
+* **metrics**
 
-* **Type:** ``MetricsCategory``
+  | **Type:** :ref:`MetricsCategory<ConfigType_MetricsCategory>`
+  |
 
-**modules**
+* **modules**
 
-* **Type:** ``ModuleCategory``
+  | **Type:** :ref:`ModuleCategory<ConfigType_ModuleCategory>`
+  |
 
-**movement-checks**
+* **movement-checks**
 
-* **Type:** ``MovementChecksCategory``
+  | **Type:** :ref:`MovementChecksCategory<ConfigType_MovementChecksCategory>`
+  |
 
-**optimizations**
+* **optimizations**
 
-* **Type:** ``OptimizationCategory``
+  | **Type:** :ref:`OptimizationCategory<ConfigType_OptimizationCategory>`
+  |
 
-**player-block-tracker**
+* **player-block-tracker**
 
-* **Type:** ``PlayerBlockTracker``
+  | **Type:** :ref:`PlayerBlockTracker<ConfigType_PlayerBlockTracker>`
+  |
 
-**spawner**
+* **spawner**
 
-| Used to control spawn limits around players. 
-| Note: The radius uses the lower value of mob spawn range and server's view distance.
+  | Used to control spawn limits around players. 
+  | **Note**: The radius uses the lower value of mob spawn range and server's view distance.
+  | **Type:** :ref:`SpawnerCategory<ConfigType_SpawnerCategory>`
+  |
 
-* **Type:** ``SpawnerCategory``
+* **sql**
 
-**sql**
+  | Configuration options related to the Sql service, including connection aliases etc
+  | **Type:** :ref:`SqlCategory<ConfigType_SqlCategory>`
+  |
 
-| Configuration options related to the Sql service, including connection aliases etc
+* **teleport-helper**
 
-* **Type:** ``SqlCategory``
+  | Blocks to blacklist for safe teleportation.
+  | **Type:** :ref:`TeleportHelperCategory<ConfigType_TeleportHelperCategory>`
+  |
 
-**teleport-helper**
+* **tileentity-activation**
 
-| Blocks to blacklist for safe teleportation.
+  | **Type:** :ref:`TileEntityActivationCategory<ConfigType_TileEntityActivationCategory>`
+  |
 
-* **Type:** ``TeleportHelperCategory``
+* **timings**
 
-**tileentity-activation**
+  | **Type:** :ref:`TimingsCategory<ConfigType_TimingsCategory>`
+  |
 
-* **Type:** ``TileEntityActivationCategory``
+* **world**
 
-**timings**
+  | **Type:** :ref:`GlobalWorldCategory<ConfigType_GlobalWorldCategory>`
+  |
 
-* **Type:** ``TimingsCategory``
+.. _ConfigType_AsyncLightingCategory:
 
-**world**
+AsyncLightingCategory
+=====================
 
-* **Type:** ``GlobalWorldCategory``
+| Runs lighting updates asynchronously.
+|
+
+* **enabled**
+
+  | If ``true``, lighting updates are run asynchronously.
+  | **Type:** ``boolean``
+  | **Default:** ``true``
+  |
+
+* **num-threads**
+
+  | The amount of threads to dedicate for asynchronous lighting updates.
+  | **Type:** ``int``
+  | **Default:** ``2``
+  |
+
+.. _ConfigType_BrokenModCategory:
 
 BrokenModCategory
 =================
 
-**broken-network-handler-mods**
+| Stopgap measures for dealing with broken mods
+|
 
-| A list of mod ids that have broken network handlers (they interact with the game from a Netty handler thread).
-| All network handlers from a forcibly scheduled to run on the main thread.
-| Note that this setting should be considered a last resort, and should only be used as a stopgap measure while waiting for a mod to properly fix the issue.
+* **broken-network-handler-mods**
 
-* **Type:** ``List<String>``
+  | A list of mod ids that have broken network handlers (they interact with the game from a Netty handler thread).
+  | All network handlers from a forcibly scheduled to run on the main thread.
+  | Note that this setting should be considered a last resort, and should only be used as a stopgap measure while waiting for a mod to properly fix the issue.
+  | **Type:** ``List<String>``
+  |
+
+.. _ConfigType_BungeeCordCategory:
 
 BungeeCordCategory
 ==================
 
-**ip-forwarding**
+* **ip-forwarding**
 
-| If 'true', allows BungeeCord to forward IP address, UUID, and Game Profile to this server.
+  | If ``true``, allows BungeeCord to forward IP address, UUID, and Game Profile to this server.
+  | **Type:** ``boolean``
+  | **Default:** ``false``
+  |
 
-* **Type:** ``boolean``
-* **Default:** ``false``
+.. _ConfigType_CollisionModCategory:
 
-PhaseTrackerCategory
+CollisionModCategory
 ====================
 
-**capture-async-spawning-entities**
+| Per-mod overrides. Refer to the minecraft default mod for example.
+|
 
-| If set to 'true', when a mod or plugin attempts to spawn an entity 
-| off the main server thread, Sponge will automatically 
-| capture said entity to spawn it properly on the main 
-| server thread. The catch to this is that some mods are 
-| not considering the consequences of spawning an entity 
-| off the server thread, and are unaware of potential race 
-| conditions they may cause. If this is set to false, 
-| Sponge will politely ignore the entity being spawned, 
-| and emit a warning about said spawn anyways.
+* **blocks**
 
-* **Type:** ``boolean``
-* **Default:** ``true``
+  | **Type:** ``Map<String, Integer>``
+  |
 
-**generate-stacktrace-per-phase**
+* **defaults**
 
-| If 'true', more thorough debugging for PhaseStates 
-| such that a StackTrace is created every time a PhaseState 
-| switches, allowing for more fine grained troubleshooting 
-| in the cases of runaway phase states. Note that this is 
-| not extremely performant and may have some associated costs 
-| with generating the stack traces constantly.
+  | Default maximum collisions used for all entities/blocks unless overridden.
+  | **Type:** ``Map<String, Integer>``
+  |
 
-* **Type:** ``boolean``
-* **Default:** ``false``
+* **enabled**
 
-**max-block-processing-depth**
+  | If ``false``, entity collision rules for this mod will be ignored.
+  | **Type:** ``boolean``
+  | **Default:** ``true``
+  |
 
-| The maximum number of times to recursively process transactions in a single phase.
-| Some mods may interact badly with Sponge's block capturing system, causing Sponge to
-| end up capturing block transactions every time it tries to process an existing batch.
-| Due to the recursive nature of the depth-first processing that Sponge uses to handle block transactions,
-| this can result in a stack overflow, which causes us to lose all infomration about the original cause of the issue.
-| To prevent a stack overflow, Sponge tracks the current processing depth, and aborts processing when it exceeds
-| this threshold.
-| The default value should almost always work properly -  it's unlikely you'll ever have to change it.
+* **entities**
 
-* **Type:** ``int``
-* **Default:** ``100``
+  | **Type:** ``Map<String, Integer>``
+  |
 
-**maximum-printed-runaway-counts**
-
-| If verbose is not enabled, this restricts the amount of 
-| runaway phase state printouts, usually happens on a server 
-| where a PhaseState is not completing. Although rare, it should 
-| never happen, but when it does, sometimes it can continuously print 
-| more and more. This attempts to placate that while a fix can be worked on 
-| to resolve the runaway. If verbose is enabled, they will always print.
-
-* **Type:** ``int``
-* **Default:** ``3``
-
-**verbose**
-
-| If 'true', the phase tracker will print out when there are too many phases 
-| being entered, usually considered as an issue of phase re-entrance and 
-| indicates an unexpected issue of tracking phases not to complete. 
-| If this is not reported yet, please report to Sponge. If it has been 
-| reported, you may disable this.
-
-* **Type:** ``boolean``
-* **Default:** ``true``
-
-**verbose-errors**
-
-| If 'true', the phase tracker will dump extra information about the current phases 
-| when certain non-PhaseTracker related exceptions occur. This is usually not necessary, as the information 
-| in the exception itself can normally be used to determine the cause of the issue
-
-* **Type:** ``boolean``
-* **Default:** ``false``
+.. _ConfigType_CommandsCategory:
 
 CommandsCategory
 ================
 
-**aliases**
+* **aliases**
 
-| Command aliases will resolve conflicts when multiple plugins request a specific command, 
-| Correct syntax is <unqualified command>=<plugin name> e.g. "sethome=homeplugin"
+  | Command aliases will resolve conflicts when multiple plugins request a specific command, 
+  | Correct syntax is <unqualified command>=<plugin name> e.g. ``sethome=homeplugin``
+  | **Type:** ``Map<String, String>``
+  |
 
-* **Type:** ``Map<String, String>``
+* **multi-world-patches**
 
-**multi-world-patches**
+  | Patches the specified commands to respect the world of the sender instead of applying the 
+  | changes on the all worlds.
+  | **Type:** ``Map<String, Boolean>``
+  |
 
-| Patches the specified commands to respect the world of the sender instead of applying the 
-| changes on the all worlds.
-
-* **Type:** ``Map<String, Boolean>``
+.. _ConfigType_DebugCategory:
 
 DebugCategory
 =============
 
-**concurrent-chunk-map-checks**
+* **concurrent-chunk-map-checks**
 
-| Detect and prevent parts of PlayerChunkMap being called off the main thread.
-| This may decrease sever preformance, so you should only enable it when debugging a specific issue.
+  | Detect and prevent parts of PlayerChunkMap being called off the main thread.
+  | This may decrease sever preformance, so you should only enable it when debugging a specific issue.
+  | **Type:** ``boolean``
+  | **Default:** ``false``
+  |
 
-* **Type:** ``boolean``
-* **Default:** ``false``
+* **concurrent-entity-checks**
 
-**concurrent-entity-checks**
+  | Detect and prevent certain attempts to use entities concurrently. 
+  | **WARNING**: May drastically decrease server performance. Only set this to ``true`` to debug a pre-existing issue.
+  | **Type:** ``boolean``
+  | **Default:** ``false``
+  |
 
-| Detect and prevent certain attempts to use entities concurrently. 
-| WARNING: May drastically decrease server performance. Only set this to 'true' to debug a pre-existing issue.
+* **dump-chunks-on-deadlock**
 
-* **Type:** ``boolean``
-* **Default:** ``false``
+  | Dump chunks in the event of a deadlock
+  | **Type:** ``boolean``
+  | **Default:** ``false``
+  |
 
-**dump-chunks-on-deadlock**
+* **dump-heap-on-deadlock**
 
-| Dump chunks in the event of a deadlock
+  | Dump the heap in the event of a deadlock
+  | **Type:** ``boolean``
+  | **Default:** ``false``
+  |
 
-* **Type:** ``boolean``
-* **Default:** ``false``
+* **dump-threads-on-warn**
 
-**dump-heap-on-deadlock**
+  | Dump the server thread on deadlock warning
+  | **Type:** ``boolean``
+  | **Default:** ``false``
+  |
 
-| Dump the heap in the event of a deadlock
+* **thread-contention-monitoring**
 
-* **Type:** ``boolean``
-* **Default:** ``false``
+  | If ``true``, Java's thread contention monitoring for thread dumps is enabled.
+  | **Type:** ``boolean``
+  | **Default:** ``false``
+  |
 
-**dump-threads-on-warn**
+.. _ConfigType_EntityActivationModCategory:
 
-| Dump the server thread on deadlock warning
+EntityActivationModCategory
+===========================
 
-* **Type:** ``boolean``
-* **Default:** ``false``
+| Per-mod overrides. Refer to the minecraft default mod for example.
+|
 
-**thread-contention-monitoring**
+* **defaults**
 
-| If 'true', Java's thread contention monitoring for thread dumps is enabled.
+  | **Type:** ``Map<String, Integer>``
+  |
 
-* **Type:** ``boolean``
-* **Default:** ``false``
+* **enabled**
 
-EntityCategory
-==============
+  | If ``false``, entity activation rules for this mod will be ignored and always tick.
+  | **Type:** ``boolean``
+  | **Default:** ``true``
+  |
 
-**collision-warn-size**
+* **entities**
 
-| Number of colliding entities in one spot before logging a warning. Set to 0 to disable
+  | **Type:** ``Map<String, Integer>``
+  |
 
-* **Type:** ``int``
-* **Default:** ``200``
-
-**count-warn-size**
-
-| Number of entities in one dimension before logging a warning. Set to 0 to disable
-
-* **Type:** ``int``
-* **Default:** ``0``
-
-**entity-painting-respawn-delay**
-
-| Number of ticks before a painting is respawned on clients when their art is changed
-
-* **Type:** ``int``
-* **Default:** ``2``
-
-**human-player-list-remove-delay**
-
-| Number of ticks before the fake player entry of a human is removed from the tab list (range of 0 to 100 ticks).
-
-* **Type:** ``int``
-* **Default:** ``10``
-
-**item-despawn-rate**
-
-| Controls the time in ticks for when an item despawns.
-
-* **Type:** ``int``
-* **Default:** ``6000``
-
-**living-hard-despawn-range**
-
-| The upper bounded range where living entities farther from a player will likely despawn
-
-* **Type:** ``int``
-* **Default:** ``128``
-
-**living-soft-despawn-minimum-life**
-
-| The amount of seconds before a living entity between the soft and hard despawn ranges from a player to be considered for despawning
-
-* **Type:** ``int``
-* **Default:** ``30``
-
-**living-soft-despawn-range**
-
-| The lower bounded range where living entities near a player may potentially despawn
-
-* **Type:** ``int``
-* **Default:** ``32``
-
-**max-bounding-box-size**
-
-| Maximum size of an entity's bounding box before removing it. Set to 0 to disable
-
-* **Type:** ``int``
-* **Default:** ``1000``
-
-**max-speed**
-
-| Square of the maximum speed of an entity before removing it. Set to 0 to disable
-
-* **Type:** ``int``
-* **Default:** ``100``
+.. _ConfigType_EntityActivationRangeCategory:
 
 EntityActivationRangeCategory
 =============================
 
-**auto-populate**
+* **auto-populate**
 
-| If 'true', newly discovered entities will be added to this config with a default value.
+  | If ``true``, newly discovered entities will be added to this config with a default value.
+  | **Type:** ``boolean``
+  | **Default:** ``false``
+  |
 
-* **Type:** ``boolean``
-* **Default:** ``false``
+* **defaults**
 
-**defaults**
+  | Default activation ranges used for all entities unless overridden.
+  | **Type:** ``Map<String, Integer>``
+  |
 
-| Default activation ranges used for all entities unless overridden.
+* **mods**
 
-* **Type:** ``Map<String, Integer>``
+  | Per-mod overrides. Refer to the minecraft default mod for example.
+  | **Type:** :ref:`Map\<String, EntityActivationModCategory><ConfigType_EntityActivationModCategory>`
+  |
 
-**mods**
+.. _ConfigType_EntityCategory:
 
-| Per-mod overrides. Refer to the minecraft default mod for example.
+EntityCategory
+==============
 
-* **Type:** ``Map<String, EntityActivationModCategory>``
+* **collision-warn-size**
+
+  | Number of colliding entities in one spot before logging a warning. Set to ``0`` to disable
+  | **Type:** ``int``
+  | **Default:** ``200``
+  |
+
+* **count-warn-size**
+
+  | Number of entities in one dimension before logging a warning. Set to ``0`` to disable
+  | **Type:** ``int``
+  | **Default:** ``0``
+  |
+
+* **entity-painting-respawn-delay**
+
+  | Number of ticks before a painting is respawned on clients when their art is changed
+  | **Type:** ``int``
+  | **Default:** ``2``
+  |
+
+* **human-player-list-remove-delay**
+
+  | Number of ticks before the fake player entry of a human is removed from the tab list (range of ``0`` to ``100`` ticks).
+  | **Type:** ``int``
+  | **Default:** ``10``
+  |
+
+* **item-despawn-rate**
+
+  | Controls the time in ticks for when an item despawns.
+  | **Type:** ``int``
+  | **Default:** ``6000``
+  |
+
+* **living-hard-despawn-range**
+
+  | The upper bounded range where living entities farther from a player will likely despawn
+  | **Type:** ``int``
+  | **Default:** ``128``
+  |
+
+* **living-soft-despawn-minimum-life**
+
+  | The amount of seconds before a living entity between the soft and hard despawn ranges from a player to be considered for despawning
+  | **Type:** ``int``
+  | **Default:** ``30``
+  |
+
+* **living-soft-despawn-range**
+
+  | The lower bounded range where living entities near a player may potentially despawn
+  | **Type:** ``int``
+  | **Default:** ``32``
+  |
+
+* **max-bounding-box-size**
+
+  | Maximum size of an entity's bounding box before removing it. Set to ``0`` to disable
+  | **Type:** ``int``
+  | **Default:** ``1000``
+  |
+
+* **max-speed**
+
+  | Square of the maximum speed of an entity before removing it. Set to ``0`` to disable
+  | **Type:** ``int``
+  | **Default:** ``100``
+  |
+
+.. _ConfigType_EntityCollisionCategory:
 
 EntityCollisionCategory
 =======================
 
-**auto-populate**
+* **auto-populate**
 
-| If 'true', newly discovered entities/blocks will be added to this config with a default value.
+  | If ``true``, newly discovered entities/blocks will be added to this config with a default value.
+  | **Type:** ``boolean``
+  | **Default:** ``false``
+  |
 
-* **Type:** ``boolean``
-* **Default:** ``false``
+* **defaults**
 
-**defaults**
+  | Default maximum collisions used for all entities/blocks unless overridden.
+  | **Type:** ``Map<String, Integer>``
+  |
 
-| Default maximum collisions used for all entities/blocks unless overridden.
+* **max-entities-within-aabb**
 
-* **Type:** ``Map<String, Integer>``
+  | Maximum amount of entities any given entity or block can collide with. This improves 
+  | performance when there are more than ``8`` entities on top of each other such as a 1x1 
+  | spawn pen. Set to ``0`` to disable.
+  | **Type:** ``int``
+  | **Default:** ``8``
+  |
 
-**max-entities-within-aabb**
+* **mods**
 
-| Maximum amount of entities any given entity or block can collide with. This improves 
-| performance when there are more than 8 entities on top of each other such as a 1x1 
-| spawn pen. Set to 0 to disable.
+  | Per-mod overrides. Refer to the minecraft default mod for example.
+  | **Type:** :ref:`Map\<String, CollisionModCategory><ConfigType_CollisionModCategory>`
+  |
 
-* **Type:** ``int``
-* **Default:** ``8``
-
-**mods**
-
-| Per-mod overrides. Refer to the minecraft default mod for example.
-
-* **Type:** ``Map<String, CollisionModCategory>``
+.. _ConfigType_ExploitCategory:
 
 ExploitCategory
 ===============
 
-**prevent-creative-itemstack-name-exploit**
+* **prevent-creative-itemstack-name-exploit**
 
-| Prevents an exploit in which the client sends a packet with the 
-| itemstack name exceeding the string limit.
+  | Prevents an exploit in which the client sends a packet with the 
+  | itemstack name exceeding the string limit.
+  | **Type:** ``boolean``
+  | **Default:** ``true``
+  |
 
-* **Type:** ``boolean``
-* **Default:** ``true``
+* **prevent-sign-command-exploit**
 
-**prevent-sign-command-exploit**
+  | Prevents an exploit in which the client sends a packet to update a sign containing 
+  | commands from a player without permission.
+  | **Type:** ``boolean``
+  | **Default:** ``true``
+  |
 
-| Prevents an exploit in which the client sends a packet to update a sign containing 
-| commands from a player without permission.
-
-* **Type:** ``boolean``
-* **Default:** ``true``
+.. _ConfigType_GlobalGeneralCategory:
 
 GlobalGeneralCategory
 =====================
 
-**config-dir**
+* **config-dir**
 
-| The directory for Sponge plugin configurations, relative to the  
-| execution root or specified as an absolute path. 
-| Note that the default: "${CANONICAL_GAME_DIR}/config" 
-| is going to use the "plugins" directory in the root game directory. 
-| If you wish for plugin configs to reside within a child of the configuration 
-| directory, change the value to, for example, "${CANONICAL_CONFIG_DIR}/sponge/plugins". 
-| Note: It is not recommended to set this to "${CANONICAL_CONFIG_DIR}/sponge", as there is 
-| a possibility that plugin configurations can conflict the Sponge core configurations.
+  | The directory for Sponge plugin configurations, relative to the  
+  | execution root or specified as an absolute path. 
+  | Note that the default: ``${CANONICAL_GAME_DIR}/config`` 
+  | is going to use the ``plugins`` directory in the root game directory. 
+  | If you wish for plugin configs to reside within a child of the configuration 
+  | directory, change the value to, for example, ``${CANONICAL_CONFIG_DIR}/sponge/plugins``. 
+  | **Note**: It is not recommended to set this to ``${CANONICAL_CONFIG_DIR}/sponge``, as there is 
+  | a possibility that plugin configurations can conflict the Sponge core configurations.
+  | **Type:** ``String``
+  | **Default:** ``${CANONICAL_GAME_DIR}/config``
+  |
 
-* **Type:** ``String``
-* **Default:** ``${CANONICAL_GAME_DIR}/config``
+* **disable-warnings**
 
-**disable-warnings**
+  | Disable warning messages to server admins
+  | **Type:** ``boolean``
+  | **Default:** ``false``
+  |
 
-| Disable warning messages to server admins
+* **file-io-thread-sleep**
 
-* **Type:** ``boolean``
-* **Default:** ``false``
+  | If ``true``, sleeping between chunk saves will be enabled, beware of memory issues.
+  | **Type:** ``boolean``
+  | **Default:** ``false``
+  |
 
-**file-io-thread-sleep**
+* **plugins-dir**
 
-| If 'true', sleeping between chunk saves will be enabled, beware of memory issues.
+  | Additional directory to search for plugins, relative to the 
+  | execution root or specified as an absolute path. 
+  | Note that the default: ``${CANONICAL_MODS_DIR}/plugins`` 
+  | is going to search for a plugins folder in the mods directory. 
+  | If you wish for the plugins folder to reside in the root game 
+  | directory, change the value to ``${CANONICAL_GAME_DIR}/plugins``.
+  | **Type:** ``String``
+  | **Default:** ``${CANONICAL_MODS_DIR}/plugins``
+  |
 
-* **Type:** ``boolean``
-* **Default:** ``false``
+.. _ConfigType_GlobalWorldCategory:
 
-**plugins-dir**
+GlobalWorldCategory
+===================
 
-| Additional directory to search for plugins, relative to the 
-| execution root or specified as an absolute path. 
-| Note that the default: "${CANONICAL_MODS_DIR}/plugins" 
-| is going to search for a plugins folder in the mods directory. 
-| If you wish for the plugins folder to reside in the root game 
-| directory, change the value to "${CANONICAL_GAME_DIR}/plugins".
+* **auto-player-save-interval**
 
-* **Type:** ``String``
-* **Default:** ``${CANONICAL_MODS_DIR}/plugins``
+  | The auto-save tick interval used when saving global player data. 
+  | **Note**: ``20`` ticks is equivalent to ``1`` second. Set to ``0`` to disable.
+  | **Type:** ``int``
+  | **Default:** ``900``
+  |
+
+* **auto-save-interval**
+
+  | The auto-save tick interval used to save all loaded chunks in a world. 
+  | Set to ``0`` to disable. 
+  | **Note**: ``20`` ticks is equivalent to ``1`` second.
+  | **Type:** ``int``
+  | **Default:** ``900``
+  |
+
+* **chunk-gc-load-threshold**
+
+  | The number of newly loaded chunks before triggering a forced cleanup. 
+  | **Note**: When triggered, the loaded chunk threshold will reset and start incrementing. 
+  | Disabled by default.
+  | **Type:** ``int``
+  | **Default:** ``0``
+  |
+
+* **chunk-gc-tick-interval**
+
+  | The tick interval used to cleanup all inactive chunks that have leaked in a world. 
+  | Set to ``0`` to disable which restores vanilla handling.
+  | **Type:** ``int``
+  | **Default:** ``600``
+  |
+
+* **chunk-unload-delay**
+
+  | The number of seconds to delay a chunk unload once marked inactive. 
+  | **Note**: This gets reset if the chunk becomes active again.
+  | **Type:** ``int``
+  | **Default:** ``15``
+  |
+
+* **deny-chunk-requests**
+
+  | If ``true``, any request for a chunk not currently loaded will be denied (exceptions apply 
+  | for things like world gen and player movement). 
+  | **Warning**: As this is an experimental setting for performance gain, if you encounter any issues 
+  | then we recommend disabling it.
+  | **Type:** ``boolean``
+  | **Default:** ``true``
+  |
+
+* **flowing-lava-decay**
+
+  | Lava behaves like vanilla water when source block is removed
+  | **Type:** ``boolean``
+  | **Default:** ``false``
+  |
+
+* **gameprofile-lookup-batch-size**
+
+  | The amount of GameProfile requests to make against Mojang's session server. 
+  | **Note**: Mojang accepts a maximum of ``600`` requests every ``10`` minutes from a single IP address. 
+  | If you are running multiple servers behind the same IP, it is recommended to raise the ``gameprofile-task-interval`` setting  
+  | in order to compensate for the amount requests being sent. 
+  | Finally, if set to ``0`` or less, the default batch size will be used. 
+  | For more information visit http://wiki.vg/Mojang_API
+  | **Type:** ``int``
+  | **Default:** ``1``
+  |
+
+* **gameprofile-lookup-task-interval**
+
+  | The interval, in seconds, used by the GameProfileQueryTask to process queued GameProfile requests. 
+  | **Note**: This setting should be raised if you experience the following error: 
+  | ``The client has sent too many requests within a certain amount of time``. 
+  | Finally, if set to ``0`` or less, the default interval will be used.
+  | **Type:** ``int``
+  | **Default:** ``4``
+  |
+
+* **generate-spawn-on-load**
+
+  | If ``true``, this world will generate its spawn the moment its loaded.
+  | **Type:** ``Boolean``
+  |
+
+* **infinite-water-source**
+
+  | Vanilla water source behavior - is infinite
+  | **Type:** ``boolean``
+  | **Default:** ``false``
+  |
+
+* **invalid-lookup-uuids**
+
+  | The list of uuid's that should never perform a lookup against Mojang's session server. 
+  | **Note**: If you are using SpongeForge, make sure to enter any mod fake player's UUID to this list.
+  | **Type:** ``List<UUID>``
+  |
+
+* **item-merge-radius**
+
+  | The defined merge radius for Item entities such that when two items are 
+  | within the defined radius of each other, they will attempt to merge. Usually, 
+  | the default radius is set to ``0.5`` in Vanilla, however, for performance reasons 
+  | ``2.5`` is generally acceptable. 
+  | **Note**: Increasing the radius higher will likely cause performance degradation 
+  | with larger amount of items as they attempt to merge and search nearby 
+  | areas for more items. Setting to a negative value is not supported!
+  | **Type:** ``double``
+  | **Default:** ``2.5``
+  |
+
+* **keep-spawn-loaded**
+
+  | If ``true``, this worlds spawn will remain loaded with no players.
+  | **Type:** ``Boolean``
+  | **Default:** ``true``
+  |
+
+* **leaf-decay**
+
+  | If ``true``, natural leaf decay is allowed.
+  | **Type:** ``boolean``
+  | **Default:** ``true``
+  |
+
+* **load-on-startup**
+
+  | If ``true``, this world will load on startup.
+  | **Type:** ``Boolean``
+  | **Default:** ``true``
+  |
+
+* **max-chunk-unloads-per-tick**
+
+  | The maximum number of queued unloaded chunks that will be unloaded in a single tick. 
+  | **Note**: With the chunk gc enabled, this setting only applies to the ticks 
+  | where the gc runs (controlled by ``chunk-gc-tick-interval``) 
+  | **Note**: If the maximum unloads is too low, too many chunks may remain 
+  | loaded on the world and increases the chance for a drop in tps.
+  | **Type:** ``int``
+  | **Default:** ``100``
+  |
+
+* **mob-spawn-range**
+
+  | Specifies the radius (in chunks) of where creatures will spawn. 
+  | This value is capped to the current view distance setting in server.properties
+  | **Type:** ``int``
+  | **Default:** ``4``
+  |
+
+* **portal-agents**
+
+  | A list of all detected portal agents used in this world. 
+  | In order to override, change the target world name to any other valid world. 
+  | **Note**: If world is not found, it will fallback to default.
+  | **Type:** ``Map<String, String>``
+  |
+
+* **pvp-enabled**
+
+  | If ``true``, this world will allow PVP combat.
+  | **Type:** ``boolean``
+  | **Default:** ``true``
+  |
+
+* **view-distance**
+
+  | Override world distance per world/dimension 
+  | The value must be greater than or equal to ``3`` and less than or equal to ``32`` 
+  | The server-wide view distance will be used when the value is ``1``.
+  | **Type:** ``int``
+  | **Default:** ``-1``
+  |
+
+* **weather-ice-and-snow**
+
+  | If ``true``, natural formation of ice and snow in supported biomes will be allowed.
+  | **Type:** ``boolean``
+  | **Default:** ``true``
+  |
+
+* **weather-thunder**
+
+  | If ``true``, thunderstorms will be initiated in supported biomes.
+  | **Type:** ``boolean``
+  | **Default:** ``true``
+  |
+
+* **world-enabled**
+
+  | If ``true``, this world will be registered.
+  | **Type:** ``boolean``
+  | **Default:** ``true``
+  |
+
+.. _ConfigType_LoggingCategory:
 
 LoggingCategory
 ===============
 
-**block-break**
+* **block-break**
 
-| Log when blocks are broken
+  | Log when blocks are broken
+  | **Type:** ``boolean``
+  | **Default:** ``false``
+  |
 
-* **Type:** ``boolean``
-* **Default:** ``false``
+* **block-modify**
 
-**block-modify**
+  | Log when blocks are modified
+  | **Type:** ``boolean``
+  | **Default:** ``false``
+  |
 
-| Log when blocks are modified
+* **block-place**
 
-* **Type:** ``boolean``
-* **Default:** ``false``
+  | Log when blocks are placed
+  | **Type:** ``boolean``
+  | **Default:** ``false``
+  |
 
-**block-place**
+* **block-populate**
 
-| Log when blocks are placed
+  | Log when blocks are populated in a chunk
+  | **Type:** ``boolean``
+  | **Default:** ``false``
+  |
 
-* **Type:** ``boolean``
-* **Default:** ``false``
+* **block-tracking**
 
-**block-populate**
+  | Log when blocks are placed by players and tracked
+  | **Type:** ``boolean``
+  | **Default:** ``false``
+  |
 
-| Log when blocks are populated in a chunk
+* **chunk-gc-queue-unload**
 
-* **Type:** ``boolean``
-* **Default:** ``false``
+  | Log when chunks are queued to be unloaded by the chunk garbage collector.
+  | **Type:** ``boolean``
+  | **Default:** ``false``
+  |
 
-**block-tracking**
+* **chunk-load**
 
-| Log when blocks are placed by players and tracked
+  | Log when chunks are loaded
+  | **Type:** ``boolean``
+  | **Default:** ``false``
+  |
 
-* **Type:** ``boolean``
-* **Default:** ``false``
+* **chunk-unload**
 
-**chunk-gc-queue-unload**
+  | Log when chunks are unloaded
+  | **Type:** ``boolean``
+  | **Default:** ``false``
+  |
 
-| Log when chunks are queued to be unloaded by the chunk garbage collector.
+* **entity-collision-checks**
 
-* **Type:** ``boolean``
-* **Default:** ``false``
+  | Whether to log entity collision/count checks
+  | **Type:** ``boolean``
+  | **Default:** ``false``
+  |
 
-**chunk-load**
+* **entity-death**
 
-| Log when chunks are loaded
+  | Log when living entities are destroyed
+  | **Type:** ``boolean``
+  | **Default:** ``false``
+  |
 
-* **Type:** ``boolean``
-* **Default:** ``false``
+* **entity-despawn**
 
-**chunk-unload**
+  | Log when living entities are despawned
+  | **Type:** ``boolean``
+  | **Default:** ``false``
+  |
 
-| Log when chunks are unloaded
+* **entity-spawn**
 
-* **Type:** ``boolean``
-* **Default:** ``false``
+  | Log when living entities are spawned
+  | **Type:** ``boolean``
+  | **Default:** ``false``
+  |
 
-**entity-collision-checks**
+* **entity-speed-removal**
 
-| Whether to log entity collision/count checks
+  | Whether to log entity removals due to speed
+  | **Type:** ``boolean``
+  | **Default:** ``false``
+  |
 
-* **Type:** ``boolean``
-* **Default:** ``false``
+* **exploit-itemstack-name-overflow**
 
-**entity-death**
+  | Log when server receives exploited packet with itemstack name exceeding string limit.
+  | **Type:** ``boolean``
+  | **Default:** ``false``
+  |
 
-| Log when living entities are destroyed
+* **exploit-respawn-invisibility**
 
-* **Type:** ``boolean``
-* **Default:** ``false``
+  | Log when player attempts to respawn invisible to surrounding players.
+  | **Type:** ``boolean``
+  | **Default:** ``false``
+  |
 
-**entity-despawn**
+* **exploit-sign-command-updates**
 
-| Log when living entities are despawned
+  | Log when server receives exploited packet to update a sign containing commands from player with no permission.
+  | **Type:** ``boolean``
+  | **Default:** ``false``
+  |
 
-* **Type:** ``boolean``
-* **Default:** ``false``
+* **log-stacktraces**
 
-**entity-spawn**
+  | Add stack traces to dev logging
+  | **Type:** ``boolean``
+  | **Default:** ``false``
+  |
 
-| Log when living entities are spawned
+* **world-auto-save**
 
-* **Type:** ``boolean``
-* **Default:** ``false``
+  | Log when a world auto-saves its chunk data. 
+  | **Note**: This may be spammy depending on the auto-save-interval configured for world.
+  | **Type:** ``boolean``
+  | **Default:** ``false``
+  |
 
-**entity-speed-removal**
-
-| Whether to log entity removals due to speed
-
-* **Type:** ``boolean``
-* **Default:** ``false``
-
-**exploit-itemstack-name-overflow**
-
-| Log when server receives exploited packet with itemstack name exceeding string limit.
-
-* **Type:** ``boolean``
-* **Default:** ``false``
-
-**exploit-respawn-invisibility**
-
-| Log when player attempts to respawn invisible to surrounding players.
-
-* **Type:** ``boolean``
-* **Default:** ``false``
-
-**exploit-sign-command-updates**
-
-| Log when server receives exploited packet to update a sign containing commands from player with no permission.
-
-* **Type:** ``boolean``
-* **Default:** ``false``
-
-**log-stacktraces**
-
-| Add stack traces to dev logging
-
-* **Type:** ``boolean``
-* **Default:** ``false``
-
-**world-auto-save**
-
-| Log when a world auto-saves its chunk data. Note: This may be spammy depending on the auto-save-interval configured for world.
-
-* **Type:** ``boolean``
-* **Default:** ``false``
+.. _ConfigType_MetricsCategory:
 
 MetricsCategory
 ===============
 
-**default-permission**
+* **default-permission**
 
-| Determines whether plugins that are newly added are allowed to perform
-| data/metric collection by default. Plugins detected by Sponge will be added to the "plugin-permissions" section with this value.
-| 
-| Set to true to enable metric gathering by default, false otherwise.
+  | Determines whether plugins that are newly added are allowed to perform
+  | data/metric collection by default. Plugins detected by Sponge will be added to the ``plugin-permissions`` section with this value.
+  | Set to true to enable metric gathering by default, false otherwise.
+  | **Type:** ``boolean``
+  | **Default:** ``false``
+  |
 
-* **Type:** ``boolean``
-* **Default:** ``false``
+* **plugin-permissions**
 
-**plugin-permissions**
+  | Provides (or revokes) permission for metric gathering on a per plugin basis.
+  | Entries should be in the format ``plugin-id=<true|false>``.
+  | Deleting an entry from this list will reset it to the default specified in
+  | ``default-permission``
+  | **Type:** ``Map<String, Boolean>``
+  |
 
-| Provides (or revokes) permission for metric gathering on a per plugin basis.
-| Entries should be in the format "plugin-id=<true|false>".
-| 
-| Deleting an entry from this list will reset it to the default specified in
-| "default-permission"
-
-* **Type:** ``Map<String, Boolean>``
+.. _ConfigType_ModuleCategory:
 
 ModuleCategory
 ==============
 
-**broken-mod**
+* **broken-mod**
 
-| Enables experimental fixes for broken mods
+  | Enables experimental fixes for broken mods
+  | **Type:** ``boolean``
+  | **Default:** ``false``
+  |
 
-* **Type:** ``boolean``
-* **Default:** ``false``
+* **bungeecord**
 
-**bungeecord**
+  | **Type:** ``boolean``
+  | **Default:** ``false``
+  |
 
-* **Type:** ``boolean``
-* **Default:** ``false``
+* **entity-activation-range**
 
-**entity-activation-range**
+  | **Type:** ``boolean``
+  | **Default:** ``true``
+  |
 
-* **Type:** ``boolean``
-* **Default:** ``true``
+* **entity-collisions**
 
-**entity-collisions**
+  | **Type:** ``boolean``
+  | **Default:** ``true``
+  |
 
-* **Type:** ``boolean``
-* **Default:** ``true``
+* **exploits**
 
-**exploits**
+  | **Type:** ``boolean``
+  | **Default:** ``true``
+  |
 
-* **Type:** ``boolean``
-* **Default:** ``true``
+* **movement-checks**
 
-**movement-checks**
+  | Allows configuring Vanilla movement and speed checks
+  | **Type:** ``boolean``
+  | **Default:** ``false``
+  |
 
-| Allows configuring Vanilla movement and speed checks
+* **optimizations**
 
-* **Type:** ``boolean``
-* **Default:** ``false``
+  | **Type:** ``boolean``
+  | **Default:** ``true``
+  |
 
-**optimizations**
+* **realtime**
 
-* **Type:** ``boolean``
-* **Default:** ``true``
+  | Use real (wall) time instead of ticks as much as possible
+  | **Type:** ``boolean``
+  | **Default:** ``false``
+  |
 
-**realtime**
+* **tileentity-activation**
 
-| Use real (wall) time instead of ticks as much as possible
+  | Controls block range and tick rate of tileentities. 
+  | Use with caution as this can break intended functionality.
+  | **Type:** ``boolean``
+  | **Default:** ``false``
+  |
 
-* **Type:** ``boolean``
-* **Default:** ``false``
+* **timings**
 
-**tileentity-activation**
+  | **Type:** ``boolean``
+  | **Default:** ``true``
+  |
 
-| Controls block range and tick rate of tileentities. 
-| Use with caution as this can break intended functionality.
+* **tracking**
 
-* **Type:** ``boolean``
-* **Default:** ``false``
+  | **Type:** ``boolean``
+  | **Default:** ``true``
+  |
 
-**timings**
-
-* **Type:** ``boolean``
-* **Default:** ``true``
-
-**tracking**
-
-* **Type:** ``boolean``
-* **Default:** ``true``
+.. _ConfigType_MovementChecksCategory:
 
 MovementChecksCategory
 ======================
 
-**moved-wrongly**
+* **moved-wrongly**
 
-| Controls whether the 'player/entity moved wrongly!' check will be enforced
+  | Controls whether the ``player/entity moved wrongly!`` check will be enforced
+  | **Type:** ``boolean``
+  | **Default:** ``true``
+  |
 
-* **Type:** ``boolean``
-* **Default:** ``true``
+* **player-moved-too-quickly**
 
-**player-moved-too-quickly**
+  | Controls whether the ``player moved too quickly!`` check will be enforced
+  | **Type:** ``boolean``
+  | **Default:** ``true``
+  |
 
-| Controls whether the 'player moved too quickly!' check will be enforced
+* **player-vehicle-moved-too-quickly**
 
-* **Type:** ``boolean``
-* **Default:** ``true``
+  | Controls whether the ``vehicle of player moved too quickly!`` check will be enforced
+  | **Type:** ``boolean``
+  | **Default:** ``true``
+  |
 
-**player-vehicle-moved-too-quickly**
-
-| Controls whether the 'vehicle of player moved too quickly!' check will be enforced
-
-* **Type:** ``boolean``
-* **Default:** ``true``
+.. _ConfigType_OptimizationCategory:
 
 OptimizationCategory
 ====================
 
-**async-lighting**
+* **async-lighting**
 
-| Runs lighting updates asynchronously.
+  | Runs lighting updates asynchronously.
+  | **Type:** :ref:`AsyncLightingCategory<ConfigType_AsyncLightingCategory>`
+  |
 
-* **Type:** ``AsyncLightingCategory``
+* **cache-tameable-owners**
 
-**cache-tameable-owners**
+  | Caches tameable entities owners to avoid constant lookups against data watchers. If mods 
+  | cause issues, disable this.
+  | **Type:** ``boolean``
+  | **Default:** ``true``
+  |
 
-| Caches tameable entities owners to avoid constant lookups against data watchers. If mods 
-| cause issues, disable this.
+* **drops-pre-merge**
 
-* **Type:** ``boolean``
-* **Default:** ``true``
+  | If ``true``, block item drops are pre-processed to avoid 
+  | having to spawn extra entities that will be merged post spawning. 
+  | Usually, Sponge is smart enough to determine when to attempt an item pre-merge 
+  | and when not to, however, in certain cases, some mods rely on items not being 
+  | pre-merged and actually spawned, in which case, the items will flow right through 
+  | without being merged.
+  | **Type:** ``boolean``
+  | **Default:** ``true``
+  |
 
-**drops-pre-merge**
+* **enchantment-helper-leak-fix**
 
-| If 'true', block item drops are pre-processed to avoid 
-| having to spawn extra entities that will be merged post spawning. 
-| Usually, Sponge is smart enough to determine when to attempt an item pre-merge 
-| and when not to, however, in certain cases, some mods rely on items not being 
-| pre-merged and actually spawned, in which case, the items will flow right through 
-| without being merged.
+  | If ``true``, provides a fix for possible leaks through
+  | Minecraft's enchantment helper code that can leak
+  | entity and world references without much interaction
+  | Forge native (so when running SpongeForge implementation)
+  | has a similar patch, but Sponge's patch works a little harder
+  | at it, but Vanilla (SpongeVanilla implementation) does NOT
+  | have any of the patch, leading to the recommendation that this
+  | patch is enabled ``for sure`` when using SpongeVanilla implementation.
+  | See https://bugs.mojang.com/browse/MC-``128547`` for more information.
+  | **Type:** ``boolean``
+  | **Default:** ``true``
+  |
 
-* **Type:** ``boolean``
-* **Default:** ``true``
+* **faster-thread-checks**
 
-**enchantment-helper-leak-fix**
+  | If ``true``, allows for Sponge to make better assumptinos on single threaded
+  | operations with relation to various checks for server threaded operations.
+  | This is default to true due to Sponge being able to precisely inject when
+  | the server thread is available. This should make an already fast operation
+  | much faster for better thread checks to ensure stability of sponge's systems.
+  | **Type:** ``boolean``
+  | **Default:** ``true``
+  |
 
-| If 'true', provides a fix for possible leaks through
-| Minecraft's enchantment helper code that can leak
-| entity and world references without much interaction
-| Forge native (so when running SpongeForge implementation)
-| has a similar patch, but Sponge's patch works a little harder
-| at it, but Vanilla (SpongeVanilla implementation) does NOT
-| have any of the patch, leading to the recommendation that this
-| patch is enabled "for sure" when using SpongeVanilla implementation.
-| See https://bugs.mojang.com/browse/MC-128547 for more information.
+* **map-optimization**
 
-* **Type:** ``boolean``
-* **Default:** ``true``
+  | If ``true``, re-writes the incredibly inefficient Vanilla Map code.
+  | This yields enormous performance enhancements when using many maps, but has a tiny chance of breaking mods that invasively modify Vanilla.It is strongly reccomended to keep this on, unless explicitly advised otherwise by a Sponge developer
+  | **Type:** ``boolean``
+  | **Default:** ``true``
+  |
 
-**faster-thread-checks**
+* **panda-redstone**
 
-| If 'true', allows for Sponge to make better assumptinos on single threaded
-| operations with relation to various checks for server threaded operations.
-| This is default to true due to Sponge being able to precisely inject when
-| the server thread is available. This should make an already fast operation
-| much faster for better thread checks to ensure stability of sponge's systems.
+  | If ``true``, uses Panda4494's redstone implementation which improves performance. 
+  | See https://bugs.mojang.com/browse/MC-``11193`` for more information. 
+  | **Note**: This optimization has a few issues which are explained in the bug report.
+  | **Type:** ``boolean``
+  | **Default:** ``false``
+  |
 
-* **Type:** ``boolean``
-* **Default:** ``true``
+* **structure-saving**
 
-**map-optimization**
+  | Handles structures that are saved to disk. Certain structures can take up large amounts 
+  | of disk space for very large maps and the data for these structures is only needed while the 
+  | world around them is generating. Disabling saving of these structures can save disk space and 
+  | time during saves if your world is already fully generated. 
+  | **Warning**: disabling structure saving will break the vanilla locate command.
+  | **Type:** :ref:`StructureSaveCategory<ConfigType_StructureSaveCategory>`
+  |
 
-| If 'true', re-writes the incredibly inefficient Vanilla Map code.
-| This yields enormous performance enhancements when using many maps, but has a tiny chance of breaking mods that invasively modify Vanilla.It is strongly reccomended to keep this on, unless explicitly advised otherwise by a Sponge developer
+.. _ConfigType_PhaseTrackerCategory:
 
-* **Type:** ``boolean``
-* **Default:** ``true``
+PhaseTrackerCategory
+====================
 
-**panda-redstone**
+* **capture-async-spawning-entities**
 
-| If 'true', uses Panda4494's redstone implementation which improves performance. 
-| See https://bugs.mojang.com/browse/MC-11193 for more information. 
-| Note: This optimization has a few issues which are explained in the bug report.
+  | If set to ``true``, when a mod or plugin attempts to spawn an entity 
+  | off the main server thread, Sponge will automatically 
+  | capture said entity to spawn it properly on the main 
+  | server thread. The catch to this is that some mods are 
+  | not considering the consequences of spawning an entity 
+  | off the server thread, and are unaware of potential race 
+  | conditions they may cause. If this is set to false, 
+  | Sponge will politely ignore the entity being spawned, 
+  | and emit a warning about said spawn anyways.
+  | **Type:** ``boolean``
+  | **Default:** ``true``
+  |
 
-* **Type:** ``boolean``
-* **Default:** ``false``
+* **generate-stacktrace-per-phase**
 
-**structure-saving**
+  | If ``true``, more thorough debugging for PhaseStates 
+  | such that a StackTrace is created every time a PhaseState 
+  | switches, allowing for more fine grained troubleshooting 
+  | in the cases of runaway phase states. Note that this is 
+  | not extremely performant and may have some associated costs 
+  | with generating the stack traces constantly.
+  | **Type:** ``boolean``
+  | **Default:** ``false``
+  |
+
+* **max-block-processing-depth**
+
+  | The maximum number of times to recursively process transactions in a single phase.
+  | Some mods may interact badly with Sponge's block capturing system, causing Sponge to
+  | end up capturing block transactions every time it tries to process an existing batch.
+  | Due to the recursive nature of the depth-first processing that Sponge uses to handle block transactions,
+  | this can result in a stack overflow, which causes us to lose all infomration about the original cause of the issue.
+  | To prevent a stack overflow, Sponge tracks the current processing depth, and aborts processing when it exceeds
+  | this threshold.
+  | The default value should almost always work properly -  it's unlikely you'll ever have to change it.
+  | **Type:** ``int``
+  | **Default:** ``100``
+  |
+
+* **maximum-printed-runaway-counts**
+
+  | If verbose is not enabled, this restricts the amount of 
+  | runaway phase state printouts, usually happens on a server 
+  | where a PhaseState is not completing. Although rare, it should 
+  | never happen, but when it does, sometimes it can continuously print 
+  | more and more. This attempts to placate that while a fix can be worked on 
+  | to resolve the runaway. If verbose is enabled, they will always print.
+  | **Type:** ``int``
+  | **Default:** ``3``
+  |
+
+* **verbose**
+
+  | If ``true``, the phase tracker will print out when there are too many phases 
+  | being entered, usually considered as an issue of phase re-entrance and 
+  | indicates an unexpected issue of tracking phases not to complete. 
+  | If this is not reported yet, please report to Sponge. If it has been 
+  | reported, you may disable this.
+  | **Type:** ``boolean``
+  | **Default:** ``true``
+  |
+
+* **verbose-errors**
+
+  | If ``true``, the phase tracker will dump extra information about the current phases 
+  | when certain non-PhaseTracker related exceptions occur. This is usually not necessary, as the information 
+  | in the exception itself can normally be used to determine the cause of the issue
+  | **Type:** ``boolean``
+  | **Default:** ``false``
+  |
+
+.. _ConfigType_PlayerBlockTracker:
+
+PlayerBlockTracker
+==================
+
+* **block-blacklist**
+
+  | Block IDs that will be blacklisted for player block placement tracking.
+  | **Type:** ``List<String>``
+  |
+
+* **enabled**
+
+  | If ``true``, adds player tracking support for block positions. 
+  | **Note**: This should only be disabled if you do not care who caused a block to change.
+  | **Type:** ``boolean``
+  | **Default:** ``true``
+  |
+
+.. _ConfigType_SpawnerCategory:
+
+SpawnerCategory
+===============
+
+| Used to control spawn limits around players. 
+| **Note**: The radius uses the lower value of mob spawn range and server's view distance.
+|
+
+* **spawn-limit-ambient**
+
+  | The number of ambients the spawner can potentially spawn around a player.
+  | **Type:** ``int``
+  | **Default:** ``15``
+  |
+
+* **spawn-limit-animal**
+
+  | The number of animals the spawner can potentially spawn around a player.
+  | **Type:** ``int``
+  | **Default:** ``15``
+  |
+
+* **spawn-limit-aquatic**
+
+  | The number of aquatics the spawner can potentially spawn around a player.
+  | **Type:** ``int``
+  | **Default:** ``5``
+  |
+
+* **spawn-limit-monster**
+
+  | The number of monsters the spawner can potentially spawn around a player.
+  | **Type:** ``int``
+  | **Default:** ``70``
+  |
+
+* **tick-rate-ambient**
+
+  | The ambient spawning tick rate. Default: ``400``
+  | **Type:** ``int``
+  | **Default:** ``400``
+  |
+
+* **tick-rate-animal**
+
+  | The animal spawning tick rate. Default: ``400``
+  | **Type:** ``int``
+  | **Default:** ``400``
+  |
+
+* **tick-rate-aquatic**
+
+  | The aquatic spawning tick rate. Default: ``400``
+  | **Type:** ``int``
+  | **Default:** ``400``
+  |
+
+* **tick-rate-monster**
+
+  | The monster spawning tick rate. Default: ``1``
+  | **Type:** ``int``
+  | **Default:** ``1``
+  |
+
+.. _ConfigType_SqlCategory:
+
+SqlCategory
+===========
+
+| Configuration options related to the Sql service, including connection aliases etc
+|
+
+* **aliases**
+
+  | Aliases for SQL connections, in the format jdbc:protocol://[username[:password]@]host/database
+  | **Type:** ``Map<String, String>``
+  |
+
+.. _ConfigType_StructureModCategory:
+
+StructureModCategory
+====================
+
+| Per-mod overrides. Refer to the minecraft default mod for example.
+|
+
+* **enabled**
+
+  | If ``false``, this mod will never save its structures.
+  | **Type:** ``boolean``
+  | **Default:** ``true``
+  |
+
+* **structures**
+
+  | **Type:** ``Map<String, Boolean>``
+  |
+
+.. _ConfigType_StructureSaveCategory:
+
+StructureSaveCategory
+=====================
 
 | Handles structures that are saved to disk. Certain structures can take up large amounts 
 | of disk space for very large maps and the data for these structures is only needed while the 
 | world around them is generating. Disabling saving of these structures can save disk space and 
 | time during saves if your world is already fully generated. 
-| Warning: disabling structure saving will break the vanilla locate command.
+| **Warning**: disabling structure saving will break the vanilla locate command.
+|
 
-* **Type:** ``StructureSaveCategory``
+* **auto-populate**
 
-PlayerBlockTracker
-==================
+  | If ``true``, newly discovered structures will be added to this config with a default value.
+  | **Type:** ``boolean``
+  | **Default:** ``false``
+  |
 
-**block-blacklist**
+* **enabled**
 
-| Block IDs that will be blacklisted for player block placement tracking.
+  | **Type:** ``boolean``
+  | **Default:** ``false``
+  |
 
-* **Type:** ``List<String>``
+* **mods**
 
-**enabled**
+  | Per-mod overrides. Refer to the minecraft default mod for example.
+  | **Type:** :ref:`Map\<String, StructureModCategory><ConfigType_StructureModCategory>`
+  |
 
-| If 'true', adds player tracking support for block positions. 
-| Note: This should only be disabled if you do not care who caused a block to change.
-
-* **Type:** ``boolean``
-* **Default:** ``true``
-
-SpawnerCategory
-===============
-
-**spawn-limit-ambient**
-
-| The number of ambients the spawner can potentially spawn around a player.
-
-* **Type:** ``int``
-* **Default:** ``15``
-
-**spawn-limit-animal**
-
-| The number of animals the spawner can potentially spawn around a player.
-
-* **Type:** ``int``
-* **Default:** ``15``
-
-**spawn-limit-aquatic**
-
-| The number of aquatics the spawner can potentially spawn around a player.
-
-* **Type:** ``int``
-* **Default:** ``5``
-
-**spawn-limit-monster**
-
-| The number of monsters the spawner can potentially spawn around a player.
-
-* **Type:** ``int``
-* **Default:** ``70``
-
-**tick-rate-ambient**
-
-| The ambient spawning tick rate. Default: 400
-
-* **Type:** ``int``
-* **Default:** ``400``
-
-**tick-rate-animal**
-
-| The animal spawning tick rate. Default: 400
-
-* **Type:** ``int``
-* **Default:** ``400``
-
-**tick-rate-aquatic**
-
-| The aquatic spawning tick rate. Default: 400
-
-* **Type:** ``int``
-* **Default:** ``400``
-
-**tick-rate-monster**
-
-| The monster spawning tick rate. Default: 1
-
-* **Type:** ``int``
-* **Default:** ``1``
-
-SqlCategory
-===========
-
-**aliases**
-
-| Aliases for SQL connections, in the format jdbc:protocol://[username[:password]@]host/database
-
-* **Type:** ``Map<String, String>``
+.. _ConfigType_TeleportHelperCategory:
 
 TeleportHelperCategory
 ======================
 
-**force-blacklist**
+| Blocks to blacklist for safe teleportation.
+|
 
-| If 'true', this blacklist will always be respected, otherwise, plugins can choose whether 
-| or not to respect it.
+* **force-blacklist**
 
-* **Type:** ``boolean``
-* **Default:** ``false``
+  | If ``true``, this blacklist will always be respected, otherwise, plugins can choose whether 
+  | or not to respect it.
+  | **Type:** ``boolean``
+  | **Default:** ``false``
+  |
 
-**unsafe-body-block-ids**
+* **unsafe-body-block-ids**
 
-| Block IDs that are listed here will not be selected by Sponge's safe teleport routine as 
-| a safe block for players to warp into. 
-| You should only list blocks here that are incorrectly selected, solid blocks that prevent 
-| movement are automatically excluded.
+  | Block IDs that are listed here will not be selected by Sponge's safe teleport routine as 
+  | a safe block for players to warp into. 
+  | You should only list blocks here that are incorrectly selected, solid blocks that prevent 
+  | movement are automatically excluded.
+  | **Type:** ``List<String>``
+  |
 
-* **Type:** ``List<String>``
+* **unsafe-floor-block-ids**
 
-**unsafe-floor-block-ids**
+  | Block IDs that are listed here will not be selected by Sponge's safe 
+  | teleport routine as a safe floor block.
+  | **Type:** ``List<String>``
+  |
 
-| Block IDs that are listed here will not be selected by Sponge's safe 
-| teleport routine as a safe floor block.
-
-* **Type:** ``List<String>``
+.. _ConfigType_TileEntityActivationCategory:
 
 TileEntityActivationCategory
 ============================
 
-**auto-populate**
+* **auto-populate**
 
-| If 'true', newly discovered tileentities will be added to this config with default settings.
+  | If ``true``, newly discovered tileentities will be added to this config with default settings.
+  | **Type:** ``boolean``
+  | **Default:** ``false``
+  |
 
-* **Type:** ``boolean``
-* **Default:** ``false``
+* **default-block-range**
 
-**default-block-range**
+  | Default activation block range used for all tileentities unless overridden.
+  | **Type:** ``int``
+  | **Default:** ``64``
+  |
 
-| Default activation block range used for all tileentities unless overridden.
+* **default-tick-rate**
 
-* **Type:** ``int``
-* **Default:** ``64``
+  | Default tick rate used for all tileentities unless overridden.
+  | **Type:** ``int``
+  | **Default:** ``1``
+  |
 
-**default-tick-rate**
+* **mods**
 
-| Default tick rate used for all tileentities unless overridden.
+  | Per-mod overrides. Refer to the minecraft default mod for example.
+  | **Type:** :ref:`Map\<String, TileEntityActivationModCategory><ConfigType_TileEntityActivationModCategory>`
+  |
 
-* **Type:** ``int``
-* **Default:** ``1``
+.. _ConfigType_TileEntityActivationModCategory:
 
-**mods**
+TileEntityActivationModCategory
+===============================
 
 | Per-mod overrides. Refer to the minecraft default mod for example.
+|
 
-* **Type:** ``Map<String, TileEntityActivationModCategory>``
+* **block-range**
+
+  | **Type:** ``Map<String, Integer>``
+  |
+
+* **default-block-range**
+
+  | **Type:** ``Integer``
+  |
+
+* **default-tick-rate**
+
+  | **Type:** ``Integer``
+  |
+
+* **enabled**
+
+  | If ``false``, tileentity activation rules for this mod will be ignored and always tick.
+  | **Type:** ``boolean``
+  | **Default:** ``true``
+  |
+
+* **tick-rate**
+
+  | **Type:** ``Map<String, Integer>``
+  |
+
+.. _ConfigType_TimingsCategory:
 
 TimingsCategory
 ===============
 
-**enabled**
+* **enabled**
 
-* **Type:** ``boolean``
-* **Default:** ``true``
+  | **Type:** ``boolean``
+  | **Default:** ``true``
+  |
 
-**hidden-config-entries**
+* **hidden-config-entries**
 
-* **Type:** ``List<String>``
+  | **Type:** ``List<String>``
+  |
 
-**history-interval**
+* **history-interval**
 
-* **Type:** ``int``
-* **Default:** ``300``
+  | **Type:** ``int``
+  | **Default:** ``300``
+  |
 
-**history-length**
+* **history-length**
 
-* **Type:** ``int``
-* **Default:** ``3600``
+  | **Type:** ``int``
+  | **Default:** ``3600``
+  |
 
-**server-name-privacy**
+* **server-name-privacy**
 
-* **Type:** ``boolean``
-* **Default:** ``false``
+  | **Type:** ``boolean``
+  | **Default:** ``false``
+  |
 
-**verbose**
+* **verbose**
 
-* **Type:** ``boolean``
-* **Default:** ``false``
-
-GlobalWorldCategory
-===================
-
-**auto-player-save-interval**
-
-| The auto-save tick interval used when saving global player data. (Default: 900) 
-| Note: 20 ticks is equivalent to 1 second. Set to 0 to disable.
-
-* **Type:** ``int``
-* **Default:** ``900``
-
-**auto-save-interval**
-
-| The auto-save tick interval used to save all loaded chunks in a world. 
-| Set to 0 to disable. (Default: 900) 
-| Note: 20 ticks is equivalent to 1 second.
-
-* **Type:** ``int``
-* **Default:** ``900``
-
-**chunk-gc-load-threshold**
-
-| The number of newly loaded chunks before triggering a forced cleanup. 
-| Note: When triggered, the loaded chunk threshold will reset and start incrementing. 
-| Disabled by default.
-
-* **Type:** ``int``
-* **Default:** ``0``
-
-**chunk-gc-tick-interval**
-
-| The tick interval used to cleanup all inactive chunks that have leaked in a world. 
-| Set to 0 to disable which restores vanilla handling. (Default: 600)
-
-* **Type:** ``int``
-* **Default:** ``600``
-
-**chunk-unload-delay**
-
-| The number of seconds to delay a chunk unload once marked inactive. (Default: 15) 
-| Note: This gets reset if the chunk becomes active again.
-
-* **Type:** ``int``
-* **Default:** ``15``
-
-**deny-chunk-requests**
-
-| If 'true', any request for a chunk not currently loaded will be denied (exceptions apply 
-| for things like world gen and player movement). 
-| Warning: As this is an experimental setting for performance gain, if you encounter any issues 
-| then we recommend disabling it.
-
-* **Type:** ``boolean``
-* **Default:** ``true``
-
-**flowing-lava-decay**
-
-| Lava behaves like vanilla water when source block is removed
-
-* **Type:** ``boolean``
-* **Default:** ``false``
-
-**gameprofile-lookup-batch-size**
-
-| The amount of GameProfile requests to make against Mojang's session server. (Default: 1) 
-| Note: Mojang accepts a maximum of 600 requests every 10 minutes from a single IP address. 
-| If you are running multiple servers behind the same IP, it is recommended to raise the 'gameprofile-task-interval' setting  
-| in order to compensate for the amount requests being sent. 
-| Finally, if set to 0 or less, the default batch size will be used. 
-| For more information visit http://wiki.vg/Mojang_API
-
-* **Type:** ``int``
-* **Default:** ``1``
-
-**gameprofile-lookup-task-interval**
-
-| The interval, in seconds, used by the GameProfileQueryTask to process queued GameProfile requests. (Default: 4) 
-| Note: This setting should be raised if you experience the following error: 
-| "The client has sent too many requests within a certain amount of time". 
-| Finally, if set to 0 or less, the default interval will be used.
-
-* **Type:** ``int``
-* **Default:** ``4``
-
-**generate-spawn-on-load**
-
-| If 'true', this world will generate its spawn the moment its loaded.
-
-* **Type:** ``Boolean``
-
-**infinite-water-source**
-
-| Vanilla water source behavior - is infinite
-
-* **Type:** ``boolean``
-* **Default:** ``false``
-
-**invalid-lookup-uuids**
-
-| The list of uuid's that should never perform a lookup against Mojang's session server. 
-| Note: If you are using SpongeForge, make sure to enter any mod fake player's UUID to this list.
-
-* **Type:** ``List<UUID>``
-
-**item-merge-radius**
-
-| The defined merge radius for Item entities such that when two items are 
-| within the defined radius of each other, they will attempt to merge. Usually, 
-| the default radius is set to 0.5 in Vanilla, however, for performance reasons 
-| 2.5 is generally acceptable. 
-| Note: Increasing the radius higher will likely cause performance degradation 
-| with larger amount of items as they attempt to merge and search nearby 
-| areas for more items. Setting to a negative value is not supported!
-
-* **Type:** ``double``
-* **Default:** ``2.5``
-
-**keep-spawn-loaded**
-
-| If 'true', this worlds spawn will remain loaded with no players.
-
-* **Type:** ``Boolean``
-* **Default:** ``true``
-
-**leaf-decay**
-
-| If 'true', natural leaf decay is allowed.
-
-* **Type:** ``boolean``
-* **Default:** ``true``
-
-**load-on-startup**
-
-| If 'true', this world will load on startup.
-
-* **Type:** ``Boolean``
-* **Default:** ``true``
-
-**max-chunk-unloads-per-tick**
-
-| The maximum number of queued unloaded chunks that will be unloaded in a single tick. 
-| Note: With the chunk gc enabled, this setting only applies to the ticks 
-| where the gc runs (controlled by 'chunk-gc-tick-interval') 
-| Note: If the maximum unloads is too low, too many chunks may remain 
-| loaded on the world and increases the chance for a drop in tps. (Default: 100)
-
-* **Type:** ``int``
-* **Default:** ``100``
-
-**mob-spawn-range**
-
-| Specifies the radius (in chunks) of where creatures will spawn. 
-| This value is capped to the current view distance setting in server.properties
-
-* **Type:** ``int``
-* **Default:** ``4``
-
-**portal-agents**
-
-| A list of all detected portal agents used in this world. 
-| In order to override, change the target world name to any other valid world. 
-| Note: If world is not found, it will fallback to default.
-
-* **Type:** ``Map<String, String>``
-
-**pvp-enabled**
-
-| If 'true', this world will allow PVP combat.
-
-* **Type:** ``boolean``
-* **Default:** ``true``
-
-**view-distance**
-
-| Override world distance per world/dimension 
-| The value must be greater than or equal to 3 and less than or equal to 32 
-| The server-wide view distance will be used when the value is -1.
-
-* **Type:** ``int``
-* **Default:** ``-1``
-
-**weather-ice-and-snow**
-
-| If 'true', natural formation of ice and snow in supported biomes will be allowed.
-
-* **Type:** ``boolean``
-* **Default:** ``true``
-
-**weather-thunder**
-
-| If 'true', thunderstorms will be initiated in supported biomes.
-
-* **Type:** ``boolean``
-* **Default:** ``true``
-
-**world-enabled**
-
-| If 'true', this world will be registered.
-
-* **Type:** ``boolean``
-* **Default:** ``true``
-
+  | **Type:** ``boolean``
+  | **Default:** ``false``
+  |
 
 
 ------------------------------------------------------------------------------------------------------------
