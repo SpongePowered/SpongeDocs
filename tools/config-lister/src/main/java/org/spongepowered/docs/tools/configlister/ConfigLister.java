@@ -204,8 +204,9 @@ public class ConfigLister {
         writeTypeHeadline(toSimpleName(clazz), TYPE_HEADLINE_LEVEL, sb);
         sb.append('\n');
         if (classComment != null) {
-            sb.append("| ").append(classComment
-                    .replace("\n", "\n| ")).append("\n|\n\n");
+            sb.append("| ").append(classComment.replace("\n", "\n| ")).append('\n');
+            sb.append("|\n"); // Extra line to force some space between the end of this section and the next
+            sb.append('\n');
         }
 
         // Fields
@@ -239,7 +240,7 @@ public class ConfigLister {
                     sb.append("  | **Default:** ``").append(defaultValue).append("``\n");
                 }
             }
-            sb.append("  |\n");
+            sb.append("  |\n"); // Extra line to force some space between the end of this section and the next
             sb.append('\n');
         }
     }
