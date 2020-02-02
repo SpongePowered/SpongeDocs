@@ -200,9 +200,8 @@ public class ConfigLister {
      */
     public static void writeDocumentation(final Class<?> clazz, final String classComment, final StringBuilder sb) {
         final Object defaultInstance = createDefaultInstance(clazz);
-        final String simpleName = clazz.getSimpleName();
         // Class header
-        writeTypeHeadline(simpleName, TYPE_HEADLINE_LEVEL, sb);
+        writeTypeHeadline(toSimpleName(clazz), TYPE_HEADLINE_LEVEL, sb);
         sb.append('\n');
         if (classComment != null) {
             sb.append("| ").append(classComment
@@ -231,7 +230,7 @@ public class ConfigLister {
             } else {
                 // Nested type -> Generate link
                 sb.append("  | **Type:** :ref:`").append(toText(fieldType).replace("<", "\\<"))
-                        .append("<ConfigType_").append(singularType.getSimpleName()).append(">`\n");
+                        .append("<ConfigType_").append(toSimpleName(singularType)).append(">`\n");
             }
             // Field-Default
             if (DATA_CLASSES.contains(field.getType())) {
@@ -266,7 +265,13 @@ public class ConfigLister {
      */
     private static String toText(final Type type) {
         return TypeToken.of(type).toString()
-                .replaceAll("[A-Za-z]+\\.", "");
+                .replaceAll("[A-Za-z]+\\.", "") // Remove package names
+                .replaceAll("Category(\\W|$)", "$1"); // Remove confusing Category suffix
+    }
+
+    private static String toSimpleName(final Class<?> clazz) {
+        return clazz.getSimpleName()
+                .replaceAll("Category$", ""); // Remove confusing Category suffix
     }
 
     /**

@@ -30,52 +30,52 @@ GlobalConfig
 * **broken-mods**
 
   | Stopgap measures for dealing with broken mods
-  | **Type:** :ref:`BrokenModCategory<ConfigType_BrokenModCategory>`
+  | **Type:** :ref:`BrokenMod<ConfigType_BrokenMod>`
   |
 
 * **bungeecord**
 
-  | **Type:** :ref:`BungeeCordCategory<ConfigType_BungeeCordCategory>`
+  | **Type:** :ref:`BungeeCord<ConfigType_BungeeCord>`
   |
 
 * **cause-tracker**
 
-  | **Type:** :ref:`PhaseTrackerCategory<ConfigType_PhaseTrackerCategory>`
+  | **Type:** :ref:`PhaseTracker<ConfigType_PhaseTracker>`
   |
 
 * **commands**
 
-  | **Type:** :ref:`CommandsCategory<ConfigType_CommandsCategory>`
+  | **Type:** :ref:`Commands<ConfigType_Commands>`
   |
 
 * **debug**
 
-  | **Type:** :ref:`DebugCategory<ConfigType_DebugCategory>`
+  | **Type:** :ref:`Debug<ConfigType_Debug>`
   |
 
 * **entity**
 
-  | **Type:** :ref:`EntityCategory<ConfigType_EntityCategory>`
+  | **Type:** :ref:`Entity<ConfigType_Entity>`
   |
 
 * **entity-activation-range**
 
-  | **Type:** :ref:`EntityActivationRangeCategory<ConfigType_EntityActivationRangeCategory>`
+  | **Type:** :ref:`EntityActivationRange<ConfigType_EntityActivationRange>`
   |
 
 * **entity-collisions**
 
-  | **Type:** :ref:`EntityCollisionCategory<ConfigType_EntityCollisionCategory>`
+  | **Type:** :ref:`EntityCollision<ConfigType_EntityCollision>`
   |
 
 * **exploits**
 
-  | **Type:** :ref:`ExploitCategory<ConfigType_ExploitCategory>`
+  | **Type:** :ref:`Exploit<ConfigType_Exploit>`
   |
 
 * **general**
 
-  | **Type:** :ref:`GlobalGeneralCategory<ConfigType_GlobalGeneralCategory>`
+  | **Type:** :ref:`GlobalGeneral<ConfigType_GlobalGeneral>`
   |
 
 * **ip-sets**
@@ -85,27 +85,27 @@ GlobalConfig
 
 * **logging**
 
-  | **Type:** :ref:`LoggingCategory<ConfigType_LoggingCategory>`
+  | **Type:** :ref:`Logging<ConfigType_Logging>`
   |
 
 * **metrics**
 
-  | **Type:** :ref:`MetricsCategory<ConfigType_MetricsCategory>`
+  | **Type:** :ref:`Metrics<ConfigType_Metrics>`
   |
 
 * **modules**
 
-  | **Type:** :ref:`ModuleCategory<ConfigType_ModuleCategory>`
+  | **Type:** :ref:`Module<ConfigType_Module>`
   |
 
 * **movement-checks**
 
-  | **Type:** :ref:`MovementChecksCategory<ConfigType_MovementChecksCategory>`
+  | **Type:** :ref:`MovementChecks<ConfigType_MovementChecks>`
   |
 
 * **optimizations**
 
-  | **Type:** :ref:`OptimizationCategory<ConfigType_OptimizationCategory>`
+  | **Type:** :ref:`Optimization<ConfigType_Optimization>`
   |
 
 * **player-block-tracker**
@@ -117,40 +117,40 @@ GlobalConfig
 
   | Used to control spawn limits around players. 
   | **Note**: The radius uses the lower value of mob spawn range and server's view distance.
-  | **Type:** :ref:`SpawnerCategory<ConfigType_SpawnerCategory>`
+  | **Type:** :ref:`Spawner<ConfigType_Spawner>`
   |
 
 * **sql**
 
   | Configuration options related to the Sql service, including connection aliases etc
-  | **Type:** :ref:`SqlCategory<ConfigType_SqlCategory>`
+  | **Type:** :ref:`Sql<ConfigType_Sql>`
   |
 
 * **teleport-helper**
 
   | Blocks to blacklist for safe teleportation.
-  | **Type:** :ref:`TeleportHelperCategory<ConfigType_TeleportHelperCategory>`
+  | **Type:** :ref:`TeleportHelper<ConfigType_TeleportHelper>`
   |
 
 * **tileentity-activation**
 
-  | **Type:** :ref:`TileEntityActivationCategory<ConfigType_TileEntityActivationCategory>`
+  | **Type:** :ref:`TileEntityActivation<ConfigType_TileEntityActivation>`
   |
 
 * **timings**
 
-  | **Type:** :ref:`TimingsCategory<ConfigType_TimingsCategory>`
+  | **Type:** :ref:`Timings<ConfigType_Timings>`
   |
 
 * **world**
 
-  | **Type:** :ref:`GlobalWorldCategory<ConfigType_GlobalWorldCategory>`
+  | **Type:** :ref:`GlobalWorld<ConfigType_GlobalWorld>`
   |
 
-.. _ConfigType_AsyncLightingCategory:
+.. _ConfigType_AsyncLighting:
 
-AsyncLightingCategory
-=====================
+AsyncLighting
+=============
 
 | Runs lighting updates asynchronously.
 |
@@ -169,10 +169,10 @@ AsyncLightingCategory
   | **Default:** ``2``
   |
 
-.. _ConfigType_BrokenModCategory:
+.. _ConfigType_BrokenMod:
 
-BrokenModCategory
-=================
+BrokenMod
+=========
 
 | Stopgap measures for dealing with broken mods
 |
@@ -185,10 +185,10 @@ BrokenModCategory
   | **Type:** ``List<String>``
   |
 
-.. _ConfigType_BungeeCordCategory:
+.. _ConfigType_BungeeCord:
 
-BungeeCordCategory
-==================
+BungeeCord
+==========
 
 * **ip-forwarding**
 
@@ -197,10 +197,10 @@ BungeeCordCategory
   | **Default:** ``false``
   |
 
-.. _ConfigType_CollisionModCategory:
+.. _ConfigType_CollisionMod:
 
-CollisionModCategory
-====================
+CollisionMod
+============
 
 | Per-mod overrides. Refer to the minecraft default mod for example.
 |
@@ -228,10 +228,10 @@ CollisionModCategory
   | **Type:** ``Map<String, Integer>``
   |
 
-.. _ConfigType_CommandsCategory:
+.. _ConfigType_Commands:
 
-CommandsCategory
-================
+Commands
+========
 
 * **aliases**
 
@@ -247,10 +247,10 @@ CommandsCategory
   | **Type:** ``Map<String, Boolean>``
   |
 
-.. _ConfigType_DebugCategory:
+.. _ConfigType_Debug:
 
-DebugCategory
-=============
+Debug
+=====
 
 * **concurrent-chunk-map-checks**
 
@@ -296,10 +296,10 @@ DebugCategory
   | **Default:** ``false``
   |
 
-.. _ConfigType_EntityActivationModCategory:
+.. _ConfigType_EntityActivationMod:
 
-EntityActivationModCategory
-===========================
+EntityActivationMod
+===================
 
 | Per-mod overrides. Refer to the minecraft default mod for example.
 |
@@ -321,10 +321,10 @@ EntityActivationModCategory
   | **Type:** ``Map<String, Integer>``
   |
 
-.. _ConfigType_EntityActivationRangeCategory:
+.. _ConfigType_EntityActivationRange:
 
-EntityActivationRangeCategory
-=============================
+EntityActivationRange
+=====================
 
 * **auto-populate**
 
@@ -342,13 +342,13 @@ EntityActivationRangeCategory
 * **mods**
 
   | Per-mod overrides. Refer to the minecraft default mod for example.
-  | **Type:** :ref:`Map\<String, EntityActivationModCategory><ConfigType_EntityActivationModCategory>`
+  | **Type:** :ref:`Map\<String, EntityActivationMod><ConfigType_EntityActivationMod>`
   |
 
-.. _ConfigType_EntityCategory:
+.. _ConfigType_Entity:
 
-EntityCategory
-==============
+Entity
+======
 
 * **collision-warn-size**
 
@@ -420,10 +420,10 @@ EntityCategory
   | **Default:** ``100``
   |
 
-.. _ConfigType_EntityCollisionCategory:
+.. _ConfigType_EntityCollision:
 
-EntityCollisionCategory
-=======================
+EntityCollision
+===============
 
 * **auto-populate**
 
@@ -450,13 +450,13 @@ EntityCollisionCategory
 * **mods**
 
   | Per-mod overrides. Refer to the minecraft default mod for example.
-  | **Type:** :ref:`Map\<String, CollisionModCategory><ConfigType_CollisionModCategory>`
+  | **Type:** :ref:`Map\<String, CollisionMod><ConfigType_CollisionMod>`
   |
 
-.. _ConfigType_ExploitCategory:
+.. _ConfigType_Exploit:
 
-ExploitCategory
-===============
+Exploit
+=======
 
 * **prevent-creative-itemstack-name-exploit**
 
@@ -474,10 +474,10 @@ ExploitCategory
   | **Default:** ``true``
   |
 
-.. _ConfigType_GlobalGeneralCategory:
+.. _ConfigType_GlobalGeneral:
 
-GlobalGeneralCategory
-=====================
+GlobalGeneral
+=============
 
 * **config-dir**
 
@@ -519,10 +519,10 @@ GlobalGeneralCategory
   | **Default:** ``${CANONICAL_MODS_DIR}/plugins``
   |
 
-.. _ConfigType_GlobalWorldCategory:
+.. _ConfigType_GlobalWorld:
 
-GlobalWorldCategory
-===================
+GlobalWorld
+===========
 
 * **auto-player-save-interval**
 
@@ -723,10 +723,10 @@ GlobalWorldCategory
   | **Default:** ``true``
   |
 
-.. _ConfigType_LoggingCategory:
+.. _ConfigType_Logging:
 
-LoggingCategory
-===============
+Logging
+=======
 
 * **block-break**
 
@@ -855,10 +855,10 @@ LoggingCategory
   | **Default:** ``false``
   |
 
-.. _ConfigType_MetricsCategory:
+.. _ConfigType_Metrics:
 
-MetricsCategory
-===============
+Metrics
+=======
 
 * **default-permission**
 
@@ -878,10 +878,10 @@ MetricsCategory
   | **Type:** ``Map<String, Boolean>``
   |
 
-.. _ConfigType_ModuleCategory:
+.. _ConfigType_Module:
 
-ModuleCategory
-==============
+Module
+======
 
 * **broken-mod**
 
@@ -954,10 +954,10 @@ ModuleCategory
   | **Default:** ``true``
   |
 
-.. _ConfigType_MovementChecksCategory:
+.. _ConfigType_MovementChecks:
 
-MovementChecksCategory
-======================
+MovementChecks
+==============
 
 * **moved-wrongly**
 
@@ -980,15 +980,15 @@ MovementChecksCategory
   | **Default:** ``true``
   |
 
-.. _ConfigType_OptimizationCategory:
+.. _ConfigType_Optimization:
 
-OptimizationCategory
-====================
+Optimization
+============
 
 * **async-lighting**
 
   | Runs lighting updates asynchronously.
-  | **Type:** :ref:`AsyncLightingCategory<ConfigType_AsyncLightingCategory>`
+  | **Type:** :ref:`AsyncLighting<ConfigType_AsyncLighting>`
   |
 
 * **cache-tameable-owners**
@@ -1061,13 +1061,13 @@ OptimizationCategory
   | world around them is generating. Disabling saving of these structures can save disk space and 
   | time during saves if your world is already fully generated. 
   | **Warning**: disabling structure saving will break the vanilla locate command.
-  | **Type:** :ref:`StructureSaveCategory<ConfigType_StructureSaveCategory>`
+  | **Type:** :ref:`StructureSave<ConfigType_StructureSave>`
   |
 
-.. _ConfigType_PhaseTrackerCategory:
+.. _ConfigType_PhaseTracker:
 
-PhaseTrackerCategory
-====================
+PhaseTracker
+============
 
 * **capture-async-spawning-entities**
 
@@ -1161,10 +1161,10 @@ PlayerBlockTracker
   | **Default:** ``true``
   |
 
-.. _ConfigType_SpawnerCategory:
+.. _ConfigType_Spawner:
 
-SpawnerCategory
-===============
+Spawner
+=======
 
 | Used to control spawn limits around players. 
 | **Note**: The radius uses the lower value of mob spawn range and server's view distance.
@@ -1226,10 +1226,10 @@ SpawnerCategory
   | **Default:** ``1``
   |
 
-.. _ConfigType_SqlCategory:
+.. _ConfigType_Sql:
 
-SqlCategory
-===========
+Sql
+===
 
 | Configuration options related to the Sql service, including connection aliases etc
 |
@@ -1240,10 +1240,10 @@ SqlCategory
   | **Type:** ``Map<String, String>``
   |
 
-.. _ConfigType_StructureModCategory:
+.. _ConfigType_StructureMod:
 
-StructureModCategory
-====================
+StructureMod
+============
 
 | Per-mod overrides. Refer to the minecraft default mod for example.
 |
@@ -1260,10 +1260,10 @@ StructureModCategory
   | **Type:** ``Map<String, Boolean>``
   |
 
-.. _ConfigType_StructureSaveCategory:
+.. _ConfigType_StructureSave:
 
-StructureSaveCategory
-=====================
+StructureSave
+=============
 
 | Handles structures that are saved to disk. Certain structures can take up large amounts 
 | of disk space for very large maps and the data for these structures is only needed while the 
@@ -1288,13 +1288,13 @@ StructureSaveCategory
 * **mods**
 
   | Per-mod overrides. Refer to the minecraft default mod for example.
-  | **Type:** :ref:`Map\<String, StructureModCategory><ConfigType_StructureModCategory>`
+  | **Type:** :ref:`Map\<String, StructureMod><ConfigType_StructureMod>`
   |
 
-.. _ConfigType_TeleportHelperCategory:
+.. _ConfigType_TeleportHelper:
 
-TeleportHelperCategory
-======================
+TeleportHelper
+==============
 
 | Blocks to blacklist for safe teleportation.
 |
@@ -1323,10 +1323,10 @@ TeleportHelperCategory
   | **Type:** ``List<String>``
   |
 
-.. _ConfigType_TileEntityActivationCategory:
+.. _ConfigType_TileEntityActivation:
 
-TileEntityActivationCategory
-============================
+TileEntityActivation
+====================
 
 * **auto-populate**
 
@@ -1352,13 +1352,13 @@ TileEntityActivationCategory
 * **mods**
 
   | Per-mod overrides. Refer to the minecraft default mod for example.
-  | **Type:** :ref:`Map\<String, TileEntityActivationModCategory><ConfigType_TileEntityActivationModCategory>`
+  | **Type:** :ref:`Map\<String, TileEntityActivationMod><ConfigType_TileEntityActivationMod>`
   |
 
-.. _ConfigType_TileEntityActivationModCategory:
+.. _ConfigType_TileEntityActivationMod:
 
-TileEntityActivationModCategory
-===============================
+TileEntityActivationMod
+=======================
 
 | Per-mod overrides. Refer to the minecraft default mod for example.
 |
@@ -1390,10 +1390,10 @@ TileEntityActivationModCategory
   | **Type:** ``Map<String, Integer>``
   |
 
-.. _ConfigType_TimingsCategory:
+.. _ConfigType_Timings:
 
-TimingsCategory
-===============
+Timings
+=======
 
 * **enabled**
 
