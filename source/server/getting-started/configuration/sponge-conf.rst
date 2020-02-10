@@ -528,7 +528,7 @@ Exploit
   | such that the entity that does not ``belong`` in the saving
   | chunk will not be saved, and forced an update to the world's
   | tracked entity lists for chunks.
-  | See https://github.com/PaperMC/Paper/blob/fd1bd5223a461b6d98280bb8f2d67280a30dd24a/Spigot-Server-Patches/``0311``-Prevent-Saving-Bad-entities-to-chunks.patch
+  | See https://github.com/PaperMC/Paper/blob/fd1bd5223a461b6d98280bb8f2d67280a30dd24a/Spigot-Server-Patches/0311-Prevent-Saving-Bad-entities-to-chunks.patch
   | **Type:** ``boolean``
   | **Default:** ``true``
   |
@@ -536,7 +536,7 @@ Exploit
 * **limit-book-size**
 
   | Limits the size of a book that can be sent by the client.
-  | See https://github.com/PaperMC/Paper/blob/f8058a8187da9f6185d95bb786783e12c79c8b18/Spigot-Server-Patches/``0403``-Book-Size-Limits.patch
+  | See https://github.com/PaperMC/Paper/blob/f8058a8187da9f6185d95bb786783e12c79c8b18/Spigot-Server-Patches/0403-Book-Size-Limits.patch
   | (Only affects SpongeVanilla)
   | **Type:** ``boolean``
   | **Default:** ``true``
@@ -549,7 +549,7 @@ Exploit
   | etc. can a position lead an entity to no longer exist
   | within it's currently marked and tracked chunk. This will
   | enable that chunk for the position is loaded. Part of several
-  | exploits.See https://github.com/PaperMC/Paper/blob/fd1bd5223a461b6d98280bb8f2d67280a30dd24a/Spigot-Server-Patches/``0335``-Ensure-chunks-are-always-loaded-on-hard-position-set.patch
+  | exploits.See https://github.com/PaperMC/Paper/blob/fd1bd5223a461b6d98280bb8f2d67280a30dd24a/Spigot-Server-Patches/0335-Ensure-chunks-are-always-loaded-on-hard-position-set.patch
   | (Only affects SpongeVanilla)
   | **Type:** ``boolean``
   | **Default:** ``true``
@@ -559,7 +559,7 @@ Exploit
 
   | Enables forcing chunks to save when an entity is added
   | or removed from said chunk. This is a partial fix for
-  | some exploits using vehicles.See https://github.com/PaperMC/Paper/blob/fd1bd5223a461b6d98280bb8f2d67280a30dd24a/Spigot-Server-Patches/``0306``-Mark-chunk-dirty-anytime-entities-change-to-guarante.patch
+  | some exploits using vehicles.See https://github.com/PaperMC/Paper/blob/fd1bd5223a461b6d98280bb8f2d67280a30dd24a/Spigot-Server-Patches/0306-Mark-chunk-dirty-anytime-entities-change-to-guarante.patch
   | (Only affects SpongeVanilla)
   | **Type:** ``boolean``
   | **Default:** ``true``
@@ -585,7 +585,7 @@ Exploit
   | Enables forcing updates to the player's location on vehicle movement.
   | This is partially required to update the server's understanding of
   | where the player exists, and allows chunk loading issues to be avoided
-  | with laggy connections and/or hack clients.See https://github.com/PaperMC/Paper/blob/fd1bd5223a461b6d98280bb8f2d67280a30dd24a/Spigot-Server-Patches/``0378``-Sync-Player-Position-to-Vehicles.patch
+  | with laggy connections and/or hack clients.See https://github.com/PaperMC/Paper/blob/fd1bd5223a461b6d98280bb8f2d67280a30dd24a/Spigot-Server-Patches/0378-Sync-Player-Position-to-Vehicles.patch
   | (Only affects SpongeVanilla)
   | **Type:** ``boolean``
   | **Default:** ``true``
@@ -595,7 +595,7 @@ Exploit
 
   | Enables forcing a chunk-tracking refresh on entity movement.
   | This enables a guarantee that the entity is tracked in the 
-  | proper chunk when moving.https://github.com/PaperMC/Paper/blob/fd1bd5223a461b6d98280bb8f2d67280a30dd24a/Spigot-Server-Patches/``0315``-Always-process-chunk-registration-after-moving.patch
+  | proper chunk when moving.https://github.com/PaperMC/Paper/blob/fd1bd5223a461b6d98280bb8f2d67280a30dd24a/Spigot-Server-Patches/0315-Always-process-chunk-registration-after-moving.patch
   | (Only affects SpongeVanilla)
   | **Type:** ``boolean``
   | **Default:** ``true``
@@ -1174,7 +1174,7 @@ Optimization
   | little to no benefit to the client. Because of the nature of the
   | change, the default will be ``false`` due to the inability to pre-emptively
   | foretell whether mod compatibility will fail with these changes or not.
-  | Refer to: https://github.com/PaperMC/Paper/blob/8175ec916f31dcd130fe0884fe46bdc187d829aa/Spigot-Server-Patches/``0269``-Optimize-Hoppers.patch
+  | Refer to: https://github.com/PaperMC/Paper/blob/8175ec916f31dcd130fe0884fe46bdc187d829aa/Spigot-Server-Patches/0269-Optimize-Hoppers.patch
   | for more details.
   | **Type:** ``boolean``
   | **Default:** ``false``
@@ -1249,11 +1249,11 @@ PhaseTracker
   | error-prone usage of the field ``blockType``. You can refer them to
   | the following links for the issue:
   |  https://gist.github.com/gabizou/ad570dc09dfed259cac9d74284e78e8b
-  |  https://github.com/SpongePowered/SpongeForge/issues/``2787``
+  |  https://github.com/SpongePowered/SpongeForge/issues/2787
   | Also, please provide them with these links for the example PR to
   | fix the issue itself, as the fix is very simple:
-  | https://github.com/TehNut/Soul-Shards-Respawn/pull/``24``
-  | https://github.com/Epoxide-Software/Enchanting-Plus/pull/``135``
+  | https://github.com/TehNut/Soul-Shards-Respawn/pull/24
+  | https://github.com/Epoxide-Software/Enchanting-Plus/pull/135
   | **Type:** ``Map<String, Boolean>``
   |
 
@@ -1325,7 +1325,7 @@ PhaseTracker
   | This is ``false`` by default in SpongeVanilla.
   | Review the following links for more info:
   |  https://gist.github.com/gabizou/ad570dc09dfed259cac9d74284e78e8b
-  |  https://github.com/SpongePowered/SpongeForge/issues/``2787``
+  |  https://github.com/SpongePowered/SpongeForge/issues/2787
   | **Type:** ``boolean``
   | **Default:** ``true``
   |

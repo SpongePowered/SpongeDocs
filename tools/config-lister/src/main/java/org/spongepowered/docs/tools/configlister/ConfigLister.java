@@ -187,7 +187,7 @@ public class ConfigLister {
                 .replaceAll("\n\n+", "\n") // Remove empty lines
                 .replace("\"", "``") // " -> ``
                 .replaceAll("(\\W|^)'(.*)'(\\W|$)", "$1``$2``$3") // 'highlighted' -> ``highlighted``, ignore "it's"
-                .replaceAll("(\\W|^)-?([0-9]*\\.?[0-9]+)(\\W|$)", "$1``$2``$3") // 1 -> ``1``, ignore 1x1
+                .replaceAll("([^a-zA-Z0-9/]|^)-?([0-9]*\\.?[0-9]+)([^a-zA-Z0-9/]|$)", "$1``$2``$3") // 1 -> ``1``, ignore 1x1
                 .replaceAll("\n?(Note|Warning|WARNING):", "\n**$1**:"); // Highlight keywords
     }
 
