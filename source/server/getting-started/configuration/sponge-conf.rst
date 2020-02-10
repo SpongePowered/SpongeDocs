@@ -345,8 +345,8 @@ EigenRedstone
 * **enabled**
 
   | If ``true``, uses theosib's redstone implementation which improves performance. 
-  | See https://bugs.mojang.com/browse/MC-``11193`` and 
-  |      https://bugs.mojang.com/browse/MC-``81098`` for more information. 
+  | See https://bugs.mojang.com/browse/MC-11193 and 
+  |      https://bugs.mojang.com/browse/MC-81098 for more information. 
   | **Note**: We cannot guarantee compatibility with mods. Use at your discretion.
   | **Type:** ``boolean``
   | **Default:** ``false``
@@ -792,7 +792,7 @@ GlobalWorld
 
   | Override world distance per world/dimension 
   | The value must be greater than or equal to ``3`` and less than or equal to ``32`` 
-  | The server-wide view distance will be used when the value is ``1``.
+  | The server-wide view distance will be used when the value is ``-1``.
   | **Type:** ``int``
   | **Default:** ``-1``
   |
@@ -1141,7 +1141,7 @@ Optimization
   | at it, but Vanilla (SpongeVanilla implementation) does NOT
   | have any of the patch, leading to the recommendation that this
   | patch is enabled ``for sure`` when using SpongeVanilla implementation.
-  | See https://bugs.mojang.com/browse/MC-``128547`` for more information.
+  | See https://bugs.mojang.com/browse/MC-128547 for more information.
   | **Type:** ``boolean``
   | **Default:** ``true``
   |
@@ -1183,7 +1183,7 @@ Optimization
 * **panda-redstone**
 
   | If ``true``, uses Panda4494's redstone implementation which improves performance. 
-  | See https://bugs.mojang.com/browse/MC-``11193`` for more information. 
+  | See https://bugs.mojang.com/browse/MC-11193 for more information. 
   | **Note**: This optimization has a few issues which are explained in the bug report. 
   | We strongly recommend using eigen redstone over this implementation as this will
   | be removed in a future release.
