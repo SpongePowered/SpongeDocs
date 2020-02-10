@@ -186,7 +186,8 @@ public class ConfigLister {
                 .replaceAll(" ?\\(Default: [^\\)]+\\)", "") // Remove default value, we already have that
                 .replaceAll("\n\n+", "\n") // Remove empty lines
                 .replace("\"", "``") // " -> ``
-                .replaceAll("(\\W|^)'(.*)'(\\W|$)", "$1``$2``$3") // 'highlighted' -> ``highlighted``, ignore "it's"
+                .replaceAll("(^|\\W)'([^,']*)'(\\W|$)", "$1``$2``$3") // 'highlighted' -> ``highlighted``, ignore "it's"
+                .replaceAll("(^|\\W)'([^,']*)'s(\\W|$)", "$1``$2``\\\\s$3") // 'highlight's -> ``highlight``\s, ignore "it's"
                 .replaceAll("(^|[ \n\\(])(-?[0-9]+(?:\\.[0-9]+)?)([ \n\\)\\.]|$)", "$1``$2``$3") // 1 -> ``1``, ignore 1x1
                 .replaceAll("\n?(Note|Warning|WARNING):", "\n**$1**:"); // Highlight keywords
     }

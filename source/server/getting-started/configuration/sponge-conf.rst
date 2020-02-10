@@ -1519,7 +1519,7 @@ StructureSave
   | structures from saving, leave this ``enabled=true``. When ``true``, the
   | modification allows for specific ``named`` structures to NOT be saved to
   | disk. Examples of some structures that are costly and somewhat irrelivent
-  | is 'mineshaft's, as they build several structures and save, even after
+  | is ``mineshaft``\s, as they build several structures and save, even after
   | finished generating.
   | **Type:** ``boolean``
   | **Default:** ``false``
