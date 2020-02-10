@@ -96,7 +96,7 @@ public class ConfigLister {
             for (final Field field : getAllFieldsFrom(current)) {
                 final String comment = extractComment(field);
                 final Class<?> fieldClass = extractSingularType(field.getGenericType());
-                if (!DATA_CLASSES.contains(fieldClass) && !result.containsKey(fieldClass)) {
+                if (!DATA_CLASSES.contains(fieldClass) && !fieldClass.isEnum() && !result.containsKey(fieldClass)) {
                     result.put(fieldClass, comment);
                     queue.add(fieldClass);
                 }
@@ -225,20 +225,35 @@ public class ConfigLister {
                         .replace("\n", "\n  | ")).append('\n');
             }
             // Field-Type
-            if (DATA_CLASSES.contains(singularType)) {
+            if (singularType.isEnum()) {
+                // Enum type -> Just text + possible values
+                sb.append("  | **Type:** ``").append(toText(fieldType)).append("``\n");
+                sb.append("  | **Possible values:** ").append("\n");
+                for (final Object constant : singularType.getEnumConstants()) {
+                    sb.append("  | - ``").append(((Enum<?>) constant).name()).append("``\n");
+                }
+                // Field-Default
+                if (field.getType().isEnum()) {
+                    final Object defaultValue = getDefaultValue(defaultInstance, field);
+                    if (defaultValue != null) {
+                        sb.append("  | **Default:** ``").append(defaultValue).append("``\n");
+                    }
+                }
+
+            } else if (DATA_CLASSES.contains(singularType)) {
                 // Simple type -> Just text
                 sb.append("  | **Type:** ``").append(toText(fieldType)).append("``\n");
+                // Field-Default
+                if (DATA_CLASSES.contains(field.getType())) {
+                    final Object defaultValue = getDefaultValue(defaultInstance, field);
+                    if (defaultValue != null) {
+                        sb.append("  | **Default:** ``").append(defaultValue).append("``\n");
+                    }
+                }
             } else {
                 // Nested type -> Generate link
                 sb.append("  | **Type:** :ref:`").append(toText(fieldType).replace("<", "\\<"))
                         .append("<ConfigType_").append(toSimpleName(singularType)).append(">`\n");
-            }
-            // Field-Default
-            if (DATA_CLASSES.contains(field.getType())) {
-                final Object defaultValue = getDefaultValue(defaultInstance, field);
-                if (defaultValue != null) {
-                    sb.append("  | **Default:** ``").append(defaultValue).append("``\n");
-                }
             }
             sb.append("  |\n"); // Extra line to force some space between the end of this section and the next
             sb.append('\n');
