@@ -72,10 +72,11 @@ public class ConfigLister {
      */
     public static void main(final String... args) {
 
-        final Map<Class<?>, String> configClasses = scanForNestedTypes(GlobalConfig.class);
+        final Map<Class<?>, TypeEntry> configClasses = scanForNestedTypes(GlobalConfig.class);
         final StringBuilder sb = new StringBuilder();
-        writeDocumentation(GlobalConfig.class, "The main configuration for Sponge: ``global.conf``", sb);
-        for (final Entry<Class<?>, String> entry : configClasses.entrySet()) {
+        writeDocumentation(GlobalConfig.class,
+                new TypeEntry("GlobalConfig", "The main configuration for Sponge: ``global.conf``"), sb);
+        for (final Entry<Class<?>, TypeEntry> entry : configClasses.entrySet()) {
             writeDocumentation(entry.getKey(), entry.getValue(), sb);
         }
         System.out.println(sb);
@@ -88,17 +89,22 @@ public class ConfigLister {
      * @return A sorted map containing all nested configuration classes, with their
      *         primary description.
      */
-    public static Map<Class<?>, String> scanForNestedTypes(final Class<?> clazz) {
-        final Map<Class<?>, String> result = new TreeMap<>(Comparator.comparing(Class::getSimpleName));
+    public static Map<Class<?>, TypeEntry> scanForNestedTypes(final Class<?> clazz) {
+        final Map<Class<?>, TypeEntry> result = new TreeMap<>(Comparator.comparing(Class::getSimpleName));
         final Queue<Class<?>> queue = new LinkedList<>();
         Class<?> current = clazz;
         do {
             for (final Field field : getAllFieldsFrom(current)) {
+                final String name = extractName(field);
                 final String comment = extractComment(field);
                 final Class<?> fieldClass = extractSingularType(field.getGenericType());
-                if (!DATA_CLASSES.contains(fieldClass) && !fieldClass.isEnum() && !result.containsKey(fieldClass)) {
-                    result.put(fieldClass, comment);
-                    queue.add(fieldClass);
+                if (!DATA_CLASSES.contains(fieldClass) && !fieldClass.isEnum()) {
+                    if (!result.containsKey(fieldClass)) {
+                        result.put(fieldClass, new TypeEntry(name, comment));
+                        queue.add(fieldClass);
+                    } else {
+                        result.merge(fieldClass, new TypeEntry(name, comment), TypeEntry::merge);
+                    }
                 }
             }
         } while ((current = queue.poll()) != null);
@@ -187,8 +193,10 @@ public class ConfigLister {
                 .replaceAll("\n\n+", "\n") // Remove empty lines
                 .replace("\"", "``") // " -> ``
                 .replaceAll("(^|\\W)'([^,']*)'(\\W|$)", "$1``$2``$3") // 'highlighted' -> ``highlighted``, ignore "it's"
-                .replaceAll("(^|\\W)'([^,']*)'s(\\W|$)", "$1``$2``\\\\s$3") // 'highlight's -> ``highlight``\s, ignore "it's"
-                .replaceAll("(^|[ \n\\(])(-?[0-9]+(?:\\.[0-9]+)?)([ \n\\)\\.]|$)", "$1``$2``$3") // 1 -> ``1``, ignore 1x1
+                .replaceAll("(^|\\W)'([^,']*)'s(\\W|$)", "$1``$2``\\\\s$3") // 'highlight's -> ``highlight``\s, ignore
+                                                                            // "it's"
+                .replaceAll("(^|[ \n\\(])(-?[0-9]+(?:\\.[0-9]+)?)([ \n\\)\\.]|$)", "$1``$2``$3") // 1 -> ``1``, ignore
+                                                                                                 // 1x1
                 .replaceAll("\n?(Note|Warning|WARNING):", "\n**$1**:"); // Highlight keywords
     }
 
@@ -196,14 +204,15 @@ public class ConfigLister {
      * Writes the documentation for the given class to the given string builder.
      *
      * @param clazz The class to write the documentation for.
-     * @param classComment The comment for the class. Can be null.
+     * @param typeEntry Additional type information gathered from the usage.
      * @param sb The string builder to write the documentation to.
      */
-    public static void writeDocumentation(final Class<?> clazz, final String classComment, final StringBuilder sb) {
+    public static void writeDocumentation(final Class<?> clazz, final TypeEntry typeEntry, final StringBuilder sb) {
         final Object defaultInstance = createDefaultInstance(clazz);
         // Class header
-        writeTypeHeadline(toSimpleName(clazz), TYPE_HEADLINE_LEVEL, sb);
+        writeTypeHeadline(toSimpleName(clazz), typeEntry.getName(), TYPE_HEADLINE_LEVEL, sb);
         sb.append('\n');
+        final String classComment = typeEntry.getDescription();
         if (classComment != null) {
             sb.append("| ").append(classComment.replace("\n", "\n| ")).append('\n');
             sb.append("|\n"); // Extra line to force some space between the end of this section and the next
@@ -268,10 +277,11 @@ public class ConfigLister {
      * @param headlineLevel The headline level char to use.
      * @param sb The string builder to write the headline to.
      */
-    private static void writeTypeHeadline(final String simpleName, final char headlineLevel, final StringBuilder sb) {
-        sb.append(".. _ConfigType_").append(simpleName).append(":\n\n");
-        sb.append(simpleName).append('\n');
-        sb.append(StringUtils.repeat(headlineLevel, simpleName.length())).append('\n');
+    private static void writeTypeHeadline(final String simpleTypeName, final String typeAlias, final char headlineLevel,
+            final StringBuilder sb) {
+        sb.append(".. _ConfigType_").append(simpleTypeName).append(":\n\n");
+        sb.append(typeAlias).append('\n');
+        sb.append(StringUtils.repeat(headlineLevel, typeAlias.length())).append('\n');
     }
 
     /**
@@ -323,6 +333,37 @@ public class ConfigLister {
         } catch (final Exception e) {
             return null;
         }
+    }
+
+    private static class TypeEntry {
+
+        private final String name;
+        private final String description;
+
+        public TypeEntry(final String name, final String description) {
+            this.name = name;
+            this.description = description;
+        }
+
+        public String getName() {
+            return this.name;
+        }
+
+        public String getDescription() {
+            return this.description;
+        }
+
+        TypeEntry merge(final TypeEntry entry) {
+            if (!this.name.equals(entry.name)) {
+                throw new IllegalArgumentException("Dismatching name: " + this.name + " <-> " + entry.name);
+            }
+            if (!this.description.equals(entry.description)) {
+                throw new IllegalArgumentException(
+                        "Dismatching description: " + this.description + " <-> " + entry.description);
+            }
+            return this;
+        }
+
     }
 
 }

@@ -160,8 +160,8 @@ GlobalConfig
 
 .. _ConfigType_AsyncLighting:
 
-AsyncLighting
-=============
+async-lighting
+==============
 
 | Runs lighting updates asynchronously.
 |
@@ -182,8 +182,8 @@ AsyncLighting
 
 .. _ConfigType_BrokenMod:
 
-BrokenMod
-=========
+broken-mods
+===========
 
 | Stopgap measures for dealing with broken mods
 |
@@ -198,7 +198,7 @@ BrokenMod
 
 .. _ConfigType_BungeeCord:
 
-BungeeCord
+bungeecord
 ==========
 
 * **ip-forwarding**
@@ -210,8 +210,8 @@ BungeeCord
 
 .. _ConfigType_CollisionMod:
 
-CollisionMod
-============
+mods
+====
 
 | Per-mod overrides. Refer to the minecraft default mod for example.
 |
@@ -241,7 +241,7 @@ CollisionMod
 
 .. _ConfigType_Commands:
 
-Commands
+commands
 ========
 
 * **aliases**
@@ -281,7 +281,7 @@ Commands
 
 .. _ConfigType_CommandsHidden:
 
-CommandsHidden
+command-hiding
 ==============
 
 | Defines how Sponge should act when a user tries to access a command they do not have
@@ -308,7 +308,7 @@ CommandsHidden
 
 .. _ConfigType_Debug:
 
-Debug
+debug
 =====
 
 * **concurrent-chunk-map-checks**
@@ -336,8 +336,8 @@ Debug
 
 .. _ConfigType_EigenRedstone:
 
-EigenRedstone
-=============
+eigen-redstone
+==============
 
 | Uses theosib's redstone algorithms to completely overhaul the way redstone works.
 |
@@ -368,8 +368,8 @@ EigenRedstone
 
 .. _ConfigType_EntityActivationMod:
 
-EntityActivationMod
-===================
+mods
+====
 
 | Per-mod overrides. Refer to the minecraft default mod for example.
 |
@@ -393,8 +393,8 @@ EntityActivationMod
 
 .. _ConfigType_EntityActivationRange:
 
-EntityActivationRange
-=====================
+entity-activation-range
+=======================
 
 * **auto-populate**
 
@@ -417,7 +417,7 @@ EntityActivationRange
 
 .. _ConfigType_Entity:
 
-Entity
+entity
 ======
 
 * **collision-warn-size**
@@ -485,8 +485,8 @@ Entity
 
 .. _ConfigType_EntityCollision:
 
-EntityCollision
-===============
+entity-collisions
+=================
 
 * **auto-populate**
 
@@ -512,8 +512,8 @@ EntityCollision
 
 .. _ConfigType_Exploit:
 
-Exploit
-=======
+exploits
+========
 
 * **book-size-total-multiplier**
 
@@ -603,8 +603,8 @@ Exploit
 
 .. _ConfigType_GlobalGeneral:
 
-GlobalGeneral
-=============
+general
+=======
 
 * **config-dir**
 
@@ -641,8 +641,8 @@ GlobalGeneral
 
 .. _ConfigType_GlobalWorld:
 
-GlobalWorld
-===========
+world
+=====
 
 * **auto-player-save-interval**
 
@@ -820,7 +820,7 @@ GlobalWorld
 
 .. _ConfigType_Logging:
 
-Logging
+logging
 =======
 
 * **block-break**
@@ -952,7 +952,7 @@ Logging
 
 .. _ConfigType_Metrics:
 
-Metrics
+metrics
 =======
 
 * **global-state**
@@ -978,8 +978,8 @@ Metrics
 
 .. _ConfigType_Module:
 
-Module
-======
+modules
+=======
 
 * **broken-mod**
 
@@ -1058,8 +1058,8 @@ Module
 
 .. _ConfigType_MovementChecks:
 
-MovementChecks
-==============
+movement-checks
+===============
 
 * **moved-wrongly**
 
@@ -1084,8 +1084,8 @@ MovementChecks
 
 .. _ConfigType_Optimization:
 
-Optimization
-============
+optimizations
+=============
 
 * **async-lighting**
 
@@ -1219,7 +1219,7 @@ Optimization
 
 .. _ConfigType_Permission:
 
-Permission
+permission
 ==========
 
 * **forge-permissions-handler**
@@ -1231,8 +1231,8 @@ Permission
 
 .. _ConfigType_PhaseTracker:
 
-PhaseTracker
-============
+cause-tracker
+=============
 
 * **auto-fix-null-source-block-providing-tile-entities**
 
@@ -1367,8 +1367,8 @@ PhaseTracker
 
 .. _ConfigType_PlayerBlockTracker:
 
-PlayerBlockTracker
-==================
+player-block-tracker
+====================
 
 * **block-blacklist**
 
@@ -1386,7 +1386,7 @@ PlayerBlockTracker
 
 .. _ConfigType_Spawner:
 
-Spawner
+spawner
 =======
 
 | Used to control spawn limits around players. 
@@ -1451,7 +1451,7 @@ Spawner
 
 .. _ConfigType_Sql:
 
-Sql
+sql
 ===
 
 | Configuration options related to the Sql service, including connection aliases etc
@@ -1465,8 +1465,8 @@ Sql
 
 .. _ConfigType_StructureMod:
 
-StructureMod
-============
+mods
+====
 
 | Per-mod overrides. Refer to the minecraft default mod for example.
 |
@@ -1492,8 +1492,8 @@ StructureMod
 
 .. _ConfigType_StructureSave:
 
-StructureSave
-=============
+structure-saving
+================
 
 | Handles structures that are saved to disk. Certain structures can take up large amounts 
 | of disk space for very large maps and the data for these structures is only needed while the 
@@ -1533,8 +1533,8 @@ StructureSave
 
 .. _ConfigType_TeleportHelper:
 
-TeleportHelper
-==============
+teleport-helper
+===============
 
 | Blocks to blacklist for safe teleportation.
 |
@@ -1565,8 +1565,8 @@ TeleportHelper
 
 .. _ConfigType_TileEntityActivation:
 
-TileEntityActivation
-====================
+tileentity-activation
+=====================
 
 * **auto-populate**
 
@@ -1597,8 +1597,8 @@ TileEntityActivation
 
 .. _ConfigType_TileEntityActivationMod:
 
-TileEntityActivationMod
-=======================
+mods
+====
 
 | Per-mod overrides. Refer to the minecraft default mod for example.
 |
@@ -1632,7 +1632,7 @@ TileEntityActivationMod
 
 .. _ConfigType_Timings:
 
-Timings
+timings
 =======
 
 * **enabled**
