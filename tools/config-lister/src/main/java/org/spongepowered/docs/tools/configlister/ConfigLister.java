@@ -376,11 +376,11 @@ public class ConfigLister {
         }
 
         String getName() {
-            return this.declaration == null ? ".." : extractName(this.declaration);
+            return extractName(this.declaration);
         }
 
         String getNameAsChild() {
-            final String name = extractName(this.declaration);
+            final String name = getName();
             if (ROOT_PLACEHOLDER.equals(name)) {
                 return toSimpleName(this);
             }
