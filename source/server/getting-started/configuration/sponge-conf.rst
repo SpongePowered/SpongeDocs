@@ -158,32 +158,10 @@ GlobalConfig
   | **Type:** ``List<String>``
   |
 
-.. _ConfigType_AsyncLighting:
-
-async-lighting
-==============
-
-| Runs lighting updates asynchronously.
-|
-
-* **enabled**
-
-  | If ``true``, lighting updates are run asynchronously.
-  | **Type:** ``boolean``
-  | **Default:** ``true``
-  |
-
-* **num-threads**
-
-  | The amount of threads to dedicate for asynchronous lighting updates.
-  | **Type:** ``int``
-  | **Default:** ``2``
-  |
-
 .. _ConfigType_BrokenMod:
 
-broken-mods
-===========
+broken-mods (BrokenMod)
+-----------------------
 
 | Stopgap measures for dealing with broken mods
 |
@@ -198,8 +176,8 @@ broken-mods
 
 .. _ConfigType_BungeeCord:
 
-bungeecord
-==========
+bungeecord (BungeeCord)
+-----------------------
 
 * **ip-forwarding**
 
@@ -208,41 +186,10 @@ bungeecord
   | **Default:** ``false``
   |
 
-.. _ConfigType_CollisionMod:
-
-mods
-====
-
-| Per-mod overrides. Refer to the minecraft default mod for example.
-|
-
-* **blocks**
-
-  | **Type:** ``Map<String, Integer>``
-  |
-
-* **defaults**
-
-  | Default maximum collisions used for all entities/blocks unless overridden.
-  | **Type:** ``Map<String, Integer>``
-  |
-
-* **enabled**
-
-  | If ``false``, entity collision rules for this mod will be ignored.
-  | **Type:** ``boolean``
-  | **Default:** ``true``
-  |
-
-* **entities**
-
-  | **Type:** ``Map<String, Integer>``
-  |
-
 .. _ConfigType_Commands:
 
-commands
-========
+commands (Commands)
+-------------------
 
 * **aliases**
 
@@ -281,8 +228,8 @@ commands
 
 .. _ConfigType_CommandsHidden:
 
-command-hiding
-==============
+commands.command-hiding (CommandsHidden)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 | Defines how Sponge should act when a user tries to access a command they do not have
 | permission for
@@ -308,8 +255,8 @@ command-hiding
 
 .. _ConfigType_Debug:
 
-debug
-=====
+debug (Debug)
+-------------
 
 * **concurrent-chunk-map-checks**
 
@@ -334,91 +281,10 @@ debug
   | **Default:** ``false``
   |
 
-.. _ConfigType_EigenRedstone:
-
-eigen-redstone
-==============
-
-| Uses theosib's redstone algorithms to completely overhaul the way redstone works.
-|
-
-* **enabled**
-
-  | If ``true``, uses theosib's redstone implementation which improves performance. 
-  | See https://bugs.mojang.com/browse/MC-11193 and 
-  |      https://bugs.mojang.com/browse/MC-81098 for more information. 
-  | **Note**: We cannot guarantee compatibility with mods. Use at your discretion.
-  | **Type:** ``boolean``
-  | **Default:** ``false``
-  |
-
-* **vanilla-decrement**
-
-  | If ``true``, restores the vanilla algorithm for computing wire power levels when powering off.
-  | **Type:** ``boolean``
-  | **Default:** ``false``
-  |
-
-* **vanilla-search**
-
-  | If ``true``, restores the vanilla algorithm for propagating redstone wire changes.
-  | **Type:** ``boolean``
-  | **Default:** ``false``
-  |
-
-.. _ConfigType_EntityActivationMod:
-
-mods
-====
-
-| Per-mod overrides. Refer to the minecraft default mod for example.
-|
-
-* **defaults**
-
-  | **Type:** ``Map<String, Integer>``
-  |
-
-* **enabled**
-
-  | If ``false``, entity activation rules for this mod will be ignored and always tick.
-  | **Type:** ``boolean``
-  | **Default:** ``true``
-  |
-
-* **entities**
-
-  | **Type:** ``Map<String, Integer>``
-  |
-
-.. _ConfigType_EntityActivationRange:
-
-entity-activation-range
-=======================
-
-* **auto-populate**
-
-  | If ``true``, newly discovered entities will be added to this config with a default value.
-  | **Type:** ``boolean``
-  | **Default:** ``false``
-  |
-
-* **defaults**
-
-  | Default activation ranges used for all entities unless overridden.
-  | **Type:** ``Map<String, Integer>``
-  |
-
-* **mods**
-
-  | Per-mod overrides. Refer to the minecraft default mod for example.
-  | **Type:** :ref:`Map\<String, EntityActivationMod><ConfigType_EntityActivationMod>`
-  |
-
 .. _ConfigType_Entity:
 
-entity
-======
+entity (Entity)
+---------------
 
 * **collision-warn-size**
 
@@ -483,10 +349,59 @@ entity
   | **Default:** ``100``
   |
 
+.. _ConfigType_EntityActivationRange:
+
+entity-activation-range (EntityActivationRange)
+-----------------------------------------------
+
+* **auto-populate**
+
+  | If ``true``, newly discovered entities will be added to this config with a default value.
+  | **Type:** ``boolean``
+  | **Default:** ``false``
+  |
+
+* **defaults**
+
+  | Default activation ranges used for all entities unless overridden.
+  | **Type:** ``Map<String, Integer>``
+  |
+
+* **mods**
+
+  | Per-mod overrides. Refer to the minecraft default mod for example.
+  | **Type:** :ref:`Map\<String, EntityActivationMod><ConfigType_EntityActivationMod>`
+  |
+
+.. _ConfigType_EntityActivationMod:
+
+entity-activation-range.mods (EntityActivationMod)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+| Per-mod overrides. Refer to the minecraft default mod for example.
+|
+
+* **defaults**
+
+  | **Type:** ``Map<String, Integer>``
+  |
+
+* **enabled**
+
+  | If ``false``, entity activation rules for this mod will be ignored and always tick.
+  | **Type:** ``boolean``
+  | **Default:** ``true``
+  |
+
+* **entities**
+
+  | **Type:** ``Map<String, Integer>``
+  |
+
 .. _ConfigType_EntityCollision:
 
-entity-collisions
-=================
+entity-collisions (EntityCollision)
+-----------------------------------
 
 * **auto-populate**
 
@@ -510,10 +425,41 @@ entity-collisions
   | **Type:** :ref:`Map\<String, CollisionMod><ConfigType_CollisionMod>`
   |
 
+.. _ConfigType_CollisionMod:
+
+entity-collisions.mods (CollisionMod)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+| Per-mod overrides. Refer to the minecraft default mod for example.
+|
+
+* **blocks**
+
+  | **Type:** ``Map<String, Integer>``
+  |
+
+* **defaults**
+
+  | Default maximum collisions used for all entities/blocks unless overridden.
+  | **Type:** ``Map<String, Integer>``
+  |
+
+* **enabled**
+
+  | If ``false``, entity collision rules for this mod will be ignored.
+  | **Type:** ``boolean``
+  | **Default:** ``true``
+  |
+
+* **entities**
+
+  | **Type:** ``Map<String, Integer>``
+  |
+
 .. _ConfigType_Exploit:
 
-exploits
-========
+exploits (Exploit)
+------------------
 
 * **book-size-total-multiplier**
 
@@ -603,8 +549,8 @@ exploits
 
 .. _ConfigType_GlobalGeneral:
 
-general
-=======
+general (GlobalGeneral)
+-----------------------
 
 * **config-dir**
 
@@ -641,8 +587,8 @@ general
 
 .. _ConfigType_GlobalWorld:
 
-world
-=====
+world (GlobalWorld)
+-------------------
 
 * **auto-player-save-interval**
 
@@ -820,8 +766,8 @@ world
 
 .. _ConfigType_Logging:
 
-logging
-=======
+logging (Logging)
+-----------------
 
 * **block-break**
 
@@ -952,8 +898,8 @@ logging
 
 .. _ConfigType_Metrics:
 
-metrics
-=======
+metrics (Metrics)
+-----------------
 
 * **global-state**
 
@@ -978,8 +924,8 @@ metrics
 
 .. _ConfigType_Module:
 
-modules
-=======
+modules (Module)
+----------------
 
 * **broken-mod**
 
@@ -1058,8 +1004,8 @@ modules
 
 .. _ConfigType_MovementChecks:
 
-movement-checks
-===============
+movement-checks (MovementChecks)
+--------------------------------
 
 * **moved-wrongly**
 
@@ -1084,8 +1030,8 @@ movement-checks
 
 .. _ConfigType_Optimization:
 
-optimizations
-=============
+optimizations (Optimization)
+----------------------------
 
 * **async-lighting**
 
@@ -1217,10 +1163,132 @@ optimizations
   | **Default:** ``false``
   |
 
+.. _ConfigType_AsyncLighting:
+
+optimizations.async-lighting (AsyncLighting)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+| Runs lighting updates asynchronously.
+|
+
+* **enabled**
+
+  | If ``true``, lighting updates are run asynchronously.
+  | **Type:** ``boolean``
+  | **Default:** ``true``
+  |
+
+* **num-threads**
+
+  | The amount of threads to dedicate for asynchronous lighting updates.
+  | **Type:** ``int``
+  | **Default:** ``2``
+  |
+
+.. _ConfigType_EigenRedstone:
+
+optimizations.eigen-redstone (EigenRedstone)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+| Uses theosib's redstone algorithms to completely overhaul the way redstone works.
+|
+
+* **enabled**
+
+  | If ``true``, uses theosib's redstone implementation which improves performance. 
+  | See https://bugs.mojang.com/browse/MC-11193 and 
+  |      https://bugs.mojang.com/browse/MC-81098 for more information. 
+  | **Note**: We cannot guarantee compatibility with mods. Use at your discretion.
+  | **Type:** ``boolean``
+  | **Default:** ``false``
+  |
+
+* **vanilla-decrement**
+
+  | If ``true``, restores the vanilla algorithm for computing wire power levels when powering off.
+  | **Type:** ``boolean``
+  | **Default:** ``false``
+  |
+
+* **vanilla-search**
+
+  | If ``true``, restores the vanilla algorithm for propagating redstone wire changes.
+  | **Type:** ``boolean``
+  | **Default:** ``false``
+  |
+
+.. _ConfigType_StructureSave:
+
+optimizations.structure-saving (StructureSave)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+| Handles structures that are saved to disk. Certain structures can take up large amounts 
+| of disk space for very large maps and the data for these structures is only needed while the 
+| world around them is generating. Disabling saving of these structures can save disk space and 
+| time during saves if your world is already fully generated. 
+| **Warning**: disabling structure saving will break the vanilla locate command.
+|
+
+* **auto-populate**
+
+  | If ``true``, newly discovered structures will be added to this config
+  | with a default value of ``true``. This is useful for finding out
+  | potentially what structures are being saved from various mods, and
+  | allowing those structures to be selectively disabled.
+  | **Type:** ``boolean``
+  | **Default:** ``false``
+  |
+
+* **enabled**
+
+  | If ``false``, disables the modification to prevent certain structures
+  | from saving to the world's data folder. If you wish to prevent certain
+  | structures from saving, leave this ``enabled=true``. When ``true``, the
+  | modification allows for specific ``named`` structures to NOT be saved to
+  | disk. Examples of some structures that are costly and somewhat irrelivent
+  | is ``mineshaft``\s, as they build several structures and save, even after
+  | finished generating.
+  | **Type:** ``boolean``
+  | **Default:** ``false``
+  |
+
+* **mods**
+
+  | Per-mod overrides. Refer to the minecraft default mod for example.
+  | **Type:** :ref:`Map\<String, StructureMod><ConfigType_StructureMod>`
+  |
+
+.. _ConfigType_StructureMod:
+
+optimizations.structure-saving.mods (StructureMod)
+""""""""""""""""""""""""""""""""""""""""""""""""""
+
+| Per-mod overrides. Refer to the minecraft default mod for example.
+|
+
+* **enabled**
+
+  | If ``false``, this mod will never save its structures. This may
+  | break some mod functionalities when requesting to locate their
+  | structures in a World. If true, allows structures not overridden
+  | in the section below to be saved by default. If you wish to find
+  | a structure to prevent it being saved, enable ``auto-populate`` and
+  | restart the server/world instance.
+  | **Type:** ``boolean``
+  | **Default:** ``true``
+  |
+
+* **structures**
+
+  | Per structure override. Having the value of ``false`` will prevent
+  | that specific named structure from saving.
+  | **Type:** ``Map<String, Boolean>``
+  |
+
 .. _ConfigType_Permission:
 
-permission
-==========
+permission (Permission)
+-----------------------
 
 * **forge-permissions-handler**
 
@@ -1231,8 +1299,8 @@ permission
 
 .. _ConfigType_PhaseTracker:
 
-cause-tracker
-=============
+cause-tracker (PhaseTracker)
+----------------------------
 
 * **auto-fix-null-source-block-providing-tile-entities**
 
@@ -1367,8 +1435,8 @@ cause-tracker
 
 .. _ConfigType_PlayerBlockTracker:
 
-player-block-tracker
-====================
+player-block-tracker (PlayerBlockTracker)
+-----------------------------------------
 
 * **block-blacklist**
 
@@ -1386,8 +1454,8 @@ player-block-tracker
 
 .. _ConfigType_Spawner:
 
-spawner
-=======
+spawner (Spawner)
+-----------------
 
 | Used to control spawn limits around players. 
 | **Note**: The radius uses the lower value of mob spawn range and server's view distance.
@@ -1451,8 +1519,8 @@ spawner
 
 .. _ConfigType_Sql:
 
-sql
-===
+sql (Sql)
+---------
 
 | Configuration options related to the Sql service, including connection aliases etc
 |
@@ -1463,78 +1531,10 @@ sql
   | **Type:** ``Map<String, String>``
   |
 
-.. _ConfigType_StructureMod:
-
-mods
-====
-
-| Per-mod overrides. Refer to the minecraft default mod for example.
-|
-
-* **enabled**
-
-  | If ``false``, this mod will never save its structures. This may
-  | break some mod functionalities when requesting to locate their
-  | structures in a World. If true, allows structures not overridden
-  | in the section below to be saved by default. If you wish to find
-  | a structure to prevent it being saved, enable ``auto-populate`` and
-  | restart the server/world instance.
-  | **Type:** ``boolean``
-  | **Default:** ``true``
-  |
-
-* **structures**
-
-  | Per structure override. Having the value of ``false`` will prevent
-  | that specific named structure from saving.
-  | **Type:** ``Map<String, Boolean>``
-  |
-
-.. _ConfigType_StructureSave:
-
-structure-saving
-================
-
-| Handles structures that are saved to disk. Certain structures can take up large amounts 
-| of disk space for very large maps and the data for these structures is only needed while the 
-| world around them is generating. Disabling saving of these structures can save disk space and 
-| time during saves if your world is already fully generated. 
-| **Warning**: disabling structure saving will break the vanilla locate command.
-|
-
-* **auto-populate**
-
-  | If ``true``, newly discovered structures will be added to this config
-  | with a default value of ``true``. This is useful for finding out
-  | potentially what structures are being saved from various mods, and
-  | allowing those structures to be selectively disabled.
-  | **Type:** ``boolean``
-  | **Default:** ``false``
-  |
-
-* **enabled**
-
-  | If ``false``, disables the modification to prevent certain structures
-  | from saving to the world's data folder. If you wish to prevent certain
-  | structures from saving, leave this ``enabled=true``. When ``true``, the
-  | modification allows for specific ``named`` structures to NOT be saved to
-  | disk. Examples of some structures that are costly and somewhat irrelivent
-  | is ``mineshaft``\s, as they build several structures and save, even after
-  | finished generating.
-  | **Type:** ``boolean``
-  | **Default:** ``false``
-  |
-
-* **mods**
-
-  | Per-mod overrides. Refer to the minecraft default mod for example.
-  | **Type:** :ref:`Map\<String, StructureMod><ConfigType_StructureMod>`
-  |
-
 .. _ConfigType_TeleportHelper:
 
-teleport-helper
-===============
+teleport-helper (TeleportHelper)
+--------------------------------
 
 | Blocks to blacklist for safe teleportation.
 |
@@ -1565,8 +1565,8 @@ teleport-helper
 
 .. _ConfigType_TileEntityActivation:
 
-tileentity-activation
-=====================
+tileentity-activation (TileEntityActivation)
+--------------------------------------------
 
 * **auto-populate**
 
@@ -1597,8 +1597,8 @@ tileentity-activation
 
 .. _ConfigType_TileEntityActivationMod:
 
-mods
-====
+tileentity-activation.mods (TileEntityActivationMod)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 | Per-mod overrides. Refer to the minecraft default mod for example.
 |
@@ -1632,8 +1632,8 @@ mods
 
 .. _ConfigType_Timings:
 
-timings
-=======
+timings (Timings)
+-----------------
 
 * **enabled**
 
