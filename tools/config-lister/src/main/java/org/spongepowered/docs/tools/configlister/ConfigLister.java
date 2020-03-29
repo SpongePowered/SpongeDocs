@@ -74,7 +74,7 @@ public class ConfigLister {
      */
     public static void main(final String... args) {
 
-        final Map<Class<?>, TypeEntry> configTypes = scanForNestedTypes(GlobalConfigWrapper.class);
+        final Map<Class<?>, TypeEntry> configTypes = scanForNestedTypes(DocumentedConfigTypes.class);
         final StringBuilder sb = new StringBuilder();
 
         final List<TypeEntry> roots = new ArrayList<>();
@@ -357,7 +357,7 @@ public class ConfigLister {
         private final Class<?> parentClass;
         private final Field declaration;
         private final String description;
-        private final Set<TypeEntry> children = new TreeSet<>(Comparator.comparing(ConfigLister::toSimpleName));
+        private final Set<TypeEntry> children = new TreeSet<>(Comparator.comparing(TypeEntry::getNameAsChild));
 
         public TypeEntry(final Class<?> type, final Class<?> parentClass, final Field declaration,
                 final String description) {
@@ -375,13 +375,14 @@ public class ConfigLister {
             return this.parentClass;
         }
 
-        public String getName() {
-            if (this.declaration == null) {
-                return null;
-            }
+        String getName() {
+            return this.declaration == null ? ".." : extractName(this.declaration);
+        }
+
+        String getNameAsChild() {
             final String name = extractName(this.declaration);
             if (ROOT_PLACEHOLDER.equals(name)) {
-                return null;
+                return toSimpleName(this);
             }
             return name;
         }
@@ -389,11 +390,14 @@ public class ConfigLister {
         public String getFullName() {
             TypeEntry current = this;
             String name = getName();
-            if (name == null) {
+            if (ROOT_PLACEHOLDER.equals(name)) {
                 return toSimpleName(this);
             }
-            while ((current = current.parent) != null && current.getName() != null) {
-                name = current.getName() + '.' + name;
+            while ((current = current.parent) != null) {
+                final String currentName = current.getName();
+                if (!ROOT_PLACEHOLDER.equals(currentName)) {
+                    name = currentName + '.' + name;
+                }
             }
             return name + " (" + toSimpleName(this) + ")";
         }
@@ -436,7 +440,7 @@ public class ConfigLister {
 
     }
 
-    public static class GlobalConfigWrapper {
+    public static class DocumentedConfigTypes {
 
         @Setting(value = ROOT_PLACEHOLDER, comment = "The main configuration for Sponge: ``global.conf``")
         GlobalConfig global;

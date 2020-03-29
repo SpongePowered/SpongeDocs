@@ -186,6 +186,142 @@ bungeecord (BungeeCord)
   | **Default:** ``false``
   |
 
+.. _ConfigType_PhaseTracker:
+
+cause-tracker (PhaseTracker)
+----------------------------
+
+* **auto-fix-null-source-block-providing-tile-entities**
+
+  | A mapping that is semi-auto-populating for TileEntities whose types
+  | are found to be providing ``null`` Block sources as neighbor notifications
+  | that end up causing crashes or spam reports. If the value is set to 
+  | ``true``, then a ``workaround`` will be attempted. If not, the 
+  | current BlockState at the target source will be queried from the world.
+  | This map having a specific
+  | entry of a TileEntity will prevent a log or warning come up to any logs
+  | when that ``null`` arises, and Sponge will self-rectify the TileEntity
+  | by calling the method ``getBlockType()``. It is advised that if the mod
+  | id in question is coming up, that the mod author is notified about the
+  | error-prone usage of the field ``blockType``. You can refer them to
+  | the following links for the issue:
+  |  https://gist.github.com/gabizou/ad570dc09dfed259cac9d74284e78e8b
+  |  https://github.com/SpongePowered/SpongeForge/issues/2787
+  | Also, please provide them with these links for the example PR to
+  | fix the issue itself, as the fix is very simple:
+  | https://github.com/TehNut/Soul-Shards-Respawn/pull/24
+  | https://github.com/Epoxide-Software/Enchanting-Plus/pull/135
+  | **Type:** ``Map<String, Boolean>``
+  |
+
+* **capture-async-spawning-entities**
+
+  | If set to ``true``, when a mod or plugin attempts to spawn an entity 
+  | off the main server thread, Sponge will automatically 
+  | capture said entity to spawn it properly on the main 
+  | server thread. The catch to this is that some mods are 
+  | not considering the consequences of spawning an entity 
+  | off the server thread, and are unaware of potential race 
+  | conditions they may cause. If this is set to false, 
+  | Sponge will politely ignore the entity being spawned, 
+  | and emit a warning about said spawn anyways.
+  | **Type:** ``boolean``
+  | **Default:** ``true``
+  |
+
+* **generate-stacktrace-per-phase**
+
+  | If ``true``, more thorough debugging for PhaseStates 
+  | such that a StackTrace is created every time a PhaseState 
+  | switches, allowing for more fine grained troubleshooting 
+  | in the cases of runaway phase states. Note that this is 
+  | not extremely performant and may have some associated costs 
+  | with generating the stack traces constantly.
+  | **Type:** ``boolean``
+  | **Default:** ``false``
+  |
+
+* **max-block-processing-depth**
+
+  | The maximum number of times to recursively process transactions in a single phase.
+  | Some mods may interact badly with Sponge's block capturing system, causing Sponge to
+  | end up capturing block transactions every time it tries to process an existing batch.
+  | Due to the recursive nature of the depth-first processing that Sponge uses to handle block transactions,
+  | this can result in a stack overflow, which causes us to lose all infomration about the original cause of the issue.
+  | To prevent a stack overflow, Sponge tracks the current processing depth, and aborts processing when it exceeds
+  | this threshold.
+  | The default value should almost always work properly -  it's unlikely you'll ever have to change it.
+  | **Type:** ``int``
+  | **Default:** ``1000``
+  |
+
+* **maximum-printed-runaway-counts**
+
+  | If verbose is not enabled, this restricts the amount of 
+  | runaway phase state printouts, usually happens on a server 
+  | where a PhaseState is not completing. Although rare, it should 
+  | never happen, but when it does, sometimes it can continuously print 
+  | more and more. This attempts to placate that while a fix can be worked on 
+  | to resolve the runaway. If verbose is enabled, they will always print.
+  | **Type:** ``int``
+  | **Default:** ``3``
+  |
+
+* **report-null-source-blocks-on-neighbor-notifications**
+
+  | If true, when a mod attempts to perform a neighbor notification
+  | on a block, some mods do not know to perform a ``null`` check
+  | on the source block of their TileEntity. This usually goes by
+  | unnoticed by other mods, because they may perform ``==`` instance
+  | equality checks instead of calling methods on the potentially
+  | null Block, but Sponge uses the block to build information to
+  | help tracking. This has caused issues in the past. Generally,
+  | this can be useful for leaving ``true`` so a proper report is
+  | generated once for your server, and can be reported to the
+  | offending mod author.
+  | This is ``false`` by default in SpongeVanilla.
+  | Review the following links for more info:
+  |  https://gist.github.com/gabizou/ad570dc09dfed259cac9d74284e78e8b
+  |  https://github.com/SpongePowered/SpongeForge/issues/2787
+  | **Type:** ``boolean``
+  | **Default:** ``true``
+  |
+
+* **resync-commands-from-async**
+
+  | If set to ``true``, when a mod or plugin attempts to submit a command
+  | asynchronously, Sponge will automatically capture said command
+  | and submit it for processing on the server thread. The catch to
+  | this is that some mods are performing these commands in vanilla
+  | without considering the possible consequences of such commands
+  | affecting any thread-unsafe parts of Minecraft, such as worlds,
+  | block edits, entity spawns, etc. If this is set to false, Sponge
+  | will politely ignore the command being executed, and emit a warning
+  | about said command anyways.
+  | **Type:** ``boolean``
+  | **Default:** ``true``
+  |
+
+* **verbose**
+
+  | If ``true``, the phase tracker will print out when there are too many phases 
+  | being entered, usually considered as an issue of phase re-entrance and 
+  | indicates an unexpected issue of tracking phases not to complete. 
+  | If this is not reported yet, please report to Sponge. If it has been 
+  | reported, you may disable this.
+  | **Type:** ``boolean``
+  | **Default:** ``true``
+  |
+
+* **verbose-errors**
+
+  | If ``true``, the phase tracker will dump extra information about the current phases 
+  | when certain non-PhaseTracker related exceptions occur. This is usually not necessary, as the information 
+  | in the exception itself can normally be used to determine the cause of the issue
+  | **Type:** ``boolean``
+  | **Default:** ``false``
+  |
+
 .. _ConfigType_Commands:
 
 commands (Commands)
@@ -583,185 +719,6 @@ general (GlobalGeneral)
   | directory, change the value to ``${CANONICAL_GAME_DIR}/plugins``.
   | **Type:** ``String``
   | **Default:** ``${CANONICAL_MODS_DIR}/plugins``
-  |
-
-.. _ConfigType_GlobalWorld:
-
-world (GlobalWorld)
--------------------
-
-* **auto-player-save-interval**
-
-  | The auto-save tick interval used when saving global player data. 
-  | **Note**: ``20`` ticks is equivalent to ``1`` second. Set to ``0`` to disable.
-  | **Type:** ``int``
-  | **Default:** ``900``
-  |
-
-* **auto-save-interval**
-
-  | The auto-save tick interval used to save all loaded chunks in a world. 
-  | Set to ``0`` to disable. 
-  | **Note**: ``20`` ticks is equivalent to ``1`` second.
-  | **Type:** ``int``
-  | **Default:** ``900``
-  |
-
-* **chunk-gc-load-threshold**
-
-  | The number of newly loaded chunks before triggering a forced cleanup. 
-  | **Note**: When triggered, the loaded chunk threshold will reset and start incrementing. 
-  | Disabled by default.
-  | **Type:** ``int``
-  | **Default:** ``0``
-  |
-
-* **chunk-gc-tick-interval**
-
-  | The tick interval used to cleanup all inactive chunks that have leaked in a world. 
-  | Set to ``0`` to disable which restores vanilla handling.
-  | **Type:** ``int``
-  | **Default:** ``600``
-  |
-
-* **chunk-unload-delay**
-
-  | The number of seconds to delay a chunk unload once marked inactive. 
-  | **Note**: This gets reset if the chunk becomes active again.
-  | **Type:** ``int``
-  | **Default:** ``15``
-  |
-
-* **deny-chunk-requests**
-
-  | If ``true``, any request for a chunk not currently loaded will be denied (exceptions apply 
-  | for things like world gen and player movement). 
-  | **Warning**: As this is an experimental setting for performance gain, if you encounter any issues 
-  | then we recommend disabling it.
-  | **Type:** ``boolean``
-  | **Default:** ``true``
-  |
-
-* **gameprofile-lookup-task-interval**
-
-  | The interval, in seconds, used by the GameProfileQueryTask to process queued GameProfile requests. 
-  | **Note**: This setting should be raised if you experience the following error: 
-  | ``The client has sent too many requests within a certain amount of time``. 
-  | Finally, if set to ``0`` or less, the default interval will be used.
-  | **Type:** ``int``
-  | **Default:** ``4``
-  |
-
-* **generate-spawn-on-load**
-
-  | If ``true``, this world will generate its spawn the moment its loaded.
-  | **Type:** ``Boolean``
-  | **Default:** ``false``
-  |
-
-* **invalid-lookup-uuids**
-
-  | The list of uuid's that should never perform a lookup against Mojang's session server. 
-  | **Note**: If you are using SpongeForge, make sure to enter any mod fake player's UUID to this list.
-  | **Type:** ``List<UUID>``
-  |
-
-* **item-merge-radius**
-
-  | The defined merge radius for Item entities such that when two items are 
-  | within the defined radius of each other, they will attempt to merge. Usually, 
-  | the default radius is set to ``0.5`` in Vanilla, however, for performance reasons 
-  | ``2.5`` is generally acceptable. 
-  | **Note**: Increasing the radius higher will likely cause performance degradation 
-  | with larger amount of items as they attempt to merge and search nearby 
-  | areas for more items. Setting to a negative value is not supported!
-  | **Type:** ``double``
-  | **Default:** ``2.5``
-  |
-
-* **keep-spawn-loaded**
-
-  | If ``true``, this worlds spawn will remain loaded with no players.
-  | **Type:** ``Boolean``
-  | **Default:** ``true``
-  |
-
-* **leaf-decay**
-
-  | If ``true``, natural leaf decay is allowed.
-  | **Type:** ``boolean``
-  | **Default:** ``true``
-  |
-
-* **load-on-startup**
-
-  | If ``true``, this world will load on startup.
-  | **Type:** ``Boolean``
-  | **Default:** ``false``
-  |
-
-* **max-chunk-unloads-per-tick**
-
-  | The maximum number of queued unloaded chunks that will be unloaded in a single tick. 
-  | **Note**: With the chunk gc enabled, this setting only applies to the ticks 
-  | where the gc runs (controlled by ``chunk-gc-tick-interval``) 
-  | **Note**: If the maximum unloads is too low, too many chunks may remain 
-  | loaded on the world and increases the chance for a drop in tps.
-  | **Type:** ``int``
-  | **Default:** ``100``
-  |
-
-* **mob-spawn-range**
-
-  | Specifies the radius (in chunks) of where creatures will spawn. 
-  | This value is capped to the current view distance setting in server.properties
-  | **Type:** ``int``
-  | **Default:** ``4``
-  |
-
-* **portal-agents**
-
-  | A list of all detected portal agents used in this world. 
-  | In order to override, change the target world name to any other valid world. 
-  | **Note**: If world is not found, it will fallback to default.
-  | **Type:** ``Map<String, String>``
-  |
-
-* **pvp-enabled**
-
-  | If ``true``, this world will allow PVP combat.
-  | **Type:** ``boolean``
-  | **Default:** ``true``
-  |
-
-* **view-distance**
-
-  | Override world distance per world/dimension 
-  | The value must be greater than or equal to ``3`` and less than or equal to ``32`` 
-  | The server-wide view distance will be used when the value is ``-1``.
-  | **Type:** ``int``
-  | **Default:** ``-1``
-  |
-
-* **weather-ice-and-snow**
-
-  | If ``true``, natural formation of ice and snow in supported biomes will be allowed.
-  | **Type:** ``boolean``
-  | **Default:** ``true``
-  |
-
-* **weather-thunder**
-
-  | If ``true``, thunderstorms will be initiated in supported biomes.
-  | **Type:** ``boolean``
-  | **Default:** ``true``
-  |
-
-* **world-enabled**
-
-  | If ``true``, this world will be registered.
-  | **Type:** ``boolean``
-  | **Default:** ``true``
   |
 
 .. _ConfigType_Logging:
@@ -1297,142 +1254,6 @@ permission (Permission)
   | **Default:** ``false``
   |
 
-.. _ConfigType_PhaseTracker:
-
-cause-tracker (PhaseTracker)
-----------------------------
-
-* **auto-fix-null-source-block-providing-tile-entities**
-
-  | A mapping that is semi-auto-populating for TileEntities whose types
-  | are found to be providing ``null`` Block sources as neighbor notifications
-  | that end up causing crashes or spam reports. If the value is set to 
-  | ``true``, then a ``workaround`` will be attempted. If not, the 
-  | current BlockState at the target source will be queried from the world.
-  | This map having a specific
-  | entry of a TileEntity will prevent a log or warning come up to any logs
-  | when that ``null`` arises, and Sponge will self-rectify the TileEntity
-  | by calling the method ``getBlockType()``. It is advised that if the mod
-  | id in question is coming up, that the mod author is notified about the
-  | error-prone usage of the field ``blockType``. You can refer them to
-  | the following links for the issue:
-  |  https://gist.github.com/gabizou/ad570dc09dfed259cac9d74284e78e8b
-  |  https://github.com/SpongePowered/SpongeForge/issues/2787
-  | Also, please provide them with these links for the example PR to
-  | fix the issue itself, as the fix is very simple:
-  | https://github.com/TehNut/Soul-Shards-Respawn/pull/24
-  | https://github.com/Epoxide-Software/Enchanting-Plus/pull/135
-  | **Type:** ``Map<String, Boolean>``
-  |
-
-* **capture-async-spawning-entities**
-
-  | If set to ``true``, when a mod or plugin attempts to spawn an entity 
-  | off the main server thread, Sponge will automatically 
-  | capture said entity to spawn it properly on the main 
-  | server thread. The catch to this is that some mods are 
-  | not considering the consequences of spawning an entity 
-  | off the server thread, and are unaware of potential race 
-  | conditions they may cause. If this is set to false, 
-  | Sponge will politely ignore the entity being spawned, 
-  | and emit a warning about said spawn anyways.
-  | **Type:** ``boolean``
-  | **Default:** ``true``
-  |
-
-* **generate-stacktrace-per-phase**
-
-  | If ``true``, more thorough debugging for PhaseStates 
-  | such that a StackTrace is created every time a PhaseState 
-  | switches, allowing for more fine grained troubleshooting 
-  | in the cases of runaway phase states. Note that this is 
-  | not extremely performant and may have some associated costs 
-  | with generating the stack traces constantly.
-  | **Type:** ``boolean``
-  | **Default:** ``false``
-  |
-
-* **max-block-processing-depth**
-
-  | The maximum number of times to recursively process transactions in a single phase.
-  | Some mods may interact badly with Sponge's block capturing system, causing Sponge to
-  | end up capturing block transactions every time it tries to process an existing batch.
-  | Due to the recursive nature of the depth-first processing that Sponge uses to handle block transactions,
-  | this can result in a stack overflow, which causes us to lose all infomration about the original cause of the issue.
-  | To prevent a stack overflow, Sponge tracks the current processing depth, and aborts processing when it exceeds
-  | this threshold.
-  | The default value should almost always work properly -  it's unlikely you'll ever have to change it.
-  | **Type:** ``int``
-  | **Default:** ``1000``
-  |
-
-* **maximum-printed-runaway-counts**
-
-  | If verbose is not enabled, this restricts the amount of 
-  | runaway phase state printouts, usually happens on a server 
-  | where a PhaseState is not completing. Although rare, it should 
-  | never happen, but when it does, sometimes it can continuously print 
-  | more and more. This attempts to placate that while a fix can be worked on 
-  | to resolve the runaway. If verbose is enabled, they will always print.
-  | **Type:** ``int``
-  | **Default:** ``3``
-  |
-
-* **report-null-source-blocks-on-neighbor-notifications**
-
-  | If true, when a mod attempts to perform a neighbor notification
-  | on a block, some mods do not know to perform a ``null`` check
-  | on the source block of their TileEntity. This usually goes by
-  | unnoticed by other mods, because they may perform ``==`` instance
-  | equality checks instead of calling methods on the potentially
-  | null Block, but Sponge uses the block to build information to
-  | help tracking. This has caused issues in the past. Generally,
-  | this can be useful for leaving ``true`` so a proper report is
-  | generated once for your server, and can be reported to the
-  | offending mod author.
-  | This is ``false`` by default in SpongeVanilla.
-  | Review the following links for more info:
-  |  https://gist.github.com/gabizou/ad570dc09dfed259cac9d74284e78e8b
-  |  https://github.com/SpongePowered/SpongeForge/issues/2787
-  | **Type:** ``boolean``
-  | **Default:** ``true``
-  |
-
-* **resync-commands-from-async**
-
-  | If set to ``true``, when a mod or plugin attempts to submit a command
-  | asynchronously, Sponge will automatically capture said command
-  | and submit it for processing on the server thread. The catch to
-  | this is that some mods are performing these commands in vanilla
-  | without considering the possible consequences of such commands
-  | affecting any thread-unsafe parts of Minecraft, such as worlds,
-  | block edits, entity spawns, etc. If this is set to false, Sponge
-  | will politely ignore the command being executed, and emit a warning
-  | about said command anyways.
-  | **Type:** ``boolean``
-  | **Default:** ``true``
-  |
-
-* **verbose**
-
-  | If ``true``, the phase tracker will print out when there are too many phases 
-  | being entered, usually considered as an issue of phase re-entrance and 
-  | indicates an unexpected issue of tracking phases not to complete. 
-  | If this is not reported yet, please report to Sponge. If it has been 
-  | reported, you may disable this.
-  | **Type:** ``boolean``
-  | **Default:** ``true``
-  |
-
-* **verbose-errors**
-
-  | If ``true``, the phase tracker will dump extra information about the current phases 
-  | when certain non-PhaseTracker related exceptions occur. This is usually not necessary, as the information 
-  | in the exception itself can normally be used to determine the cause of the issue
-  | **Type:** ``boolean``
-  | **Default:** ``false``
-  |
-
 .. _ConfigType_PlayerBlockTracker:
 
 player-block-tracker (PlayerBlockTracker)
@@ -1668,6 +1489,185 @@ timings (Timings)
 
   | **Type:** ``boolean``
   | **Default:** ``false``
+  |
+
+.. _ConfigType_GlobalWorld:
+
+world (GlobalWorld)
+-------------------
+
+* **auto-player-save-interval**
+
+  | The auto-save tick interval used when saving global player data. 
+  | **Note**: ``20`` ticks is equivalent to ``1`` second. Set to ``0`` to disable.
+  | **Type:** ``int``
+  | **Default:** ``900``
+  |
+
+* **auto-save-interval**
+
+  | The auto-save tick interval used to save all loaded chunks in a world. 
+  | Set to ``0`` to disable. 
+  | **Note**: ``20`` ticks is equivalent to ``1`` second.
+  | **Type:** ``int``
+  | **Default:** ``900``
+  |
+
+* **chunk-gc-load-threshold**
+
+  | The number of newly loaded chunks before triggering a forced cleanup. 
+  | **Note**: When triggered, the loaded chunk threshold will reset and start incrementing. 
+  | Disabled by default.
+  | **Type:** ``int``
+  | **Default:** ``0``
+  |
+
+* **chunk-gc-tick-interval**
+
+  | The tick interval used to cleanup all inactive chunks that have leaked in a world. 
+  | Set to ``0`` to disable which restores vanilla handling.
+  | **Type:** ``int``
+  | **Default:** ``600``
+  |
+
+* **chunk-unload-delay**
+
+  | The number of seconds to delay a chunk unload once marked inactive. 
+  | **Note**: This gets reset if the chunk becomes active again.
+  | **Type:** ``int``
+  | **Default:** ``15``
+  |
+
+* **deny-chunk-requests**
+
+  | If ``true``, any request for a chunk not currently loaded will be denied (exceptions apply 
+  | for things like world gen and player movement). 
+  | **Warning**: As this is an experimental setting for performance gain, if you encounter any issues 
+  | then we recommend disabling it.
+  | **Type:** ``boolean``
+  | **Default:** ``true``
+  |
+
+* **gameprofile-lookup-task-interval**
+
+  | The interval, in seconds, used by the GameProfileQueryTask to process queued GameProfile requests. 
+  | **Note**: This setting should be raised if you experience the following error: 
+  | ``The client has sent too many requests within a certain amount of time``. 
+  | Finally, if set to ``0`` or less, the default interval will be used.
+  | **Type:** ``int``
+  | **Default:** ``4``
+  |
+
+* **generate-spawn-on-load**
+
+  | If ``true``, this world will generate its spawn the moment its loaded.
+  | **Type:** ``Boolean``
+  | **Default:** ``false``
+  |
+
+* **invalid-lookup-uuids**
+
+  | The list of uuid's that should never perform a lookup against Mojang's session server. 
+  | **Note**: If you are using SpongeForge, make sure to enter any mod fake player's UUID to this list.
+  | **Type:** ``List<UUID>``
+  |
+
+* **item-merge-radius**
+
+  | The defined merge radius for Item entities such that when two items are 
+  | within the defined radius of each other, they will attempt to merge. Usually, 
+  | the default radius is set to ``0.5`` in Vanilla, however, for performance reasons 
+  | ``2.5`` is generally acceptable. 
+  | **Note**: Increasing the radius higher will likely cause performance degradation 
+  | with larger amount of items as they attempt to merge and search nearby 
+  | areas for more items. Setting to a negative value is not supported!
+  | **Type:** ``double``
+  | **Default:** ``2.5``
+  |
+
+* **keep-spawn-loaded**
+
+  | If ``true``, this worlds spawn will remain loaded with no players.
+  | **Type:** ``Boolean``
+  | **Default:** ``true``
+  |
+
+* **leaf-decay**
+
+  | If ``true``, natural leaf decay is allowed.
+  | **Type:** ``boolean``
+  | **Default:** ``true``
+  |
+
+* **load-on-startup**
+
+  | If ``true``, this world will load on startup.
+  | **Type:** ``Boolean``
+  | **Default:** ``false``
+  |
+
+* **max-chunk-unloads-per-tick**
+
+  | The maximum number of queued unloaded chunks that will be unloaded in a single tick. 
+  | **Note**: With the chunk gc enabled, this setting only applies to the ticks 
+  | where the gc runs (controlled by ``chunk-gc-tick-interval``) 
+  | **Note**: If the maximum unloads is too low, too many chunks may remain 
+  | loaded on the world and increases the chance for a drop in tps.
+  | **Type:** ``int``
+  | **Default:** ``100``
+  |
+
+* **mob-spawn-range**
+
+  | Specifies the radius (in chunks) of where creatures will spawn. 
+  | This value is capped to the current view distance setting in server.properties
+  | **Type:** ``int``
+  | **Default:** ``4``
+  |
+
+* **portal-agents**
+
+  | A list of all detected portal agents used in this world. 
+  | In order to override, change the target world name to any other valid world. 
+  | **Note**: If world is not found, it will fallback to default.
+  | **Type:** ``Map<String, String>``
+  |
+
+* **pvp-enabled**
+
+  | If ``true``, this world will allow PVP combat.
+  | **Type:** ``boolean``
+  | **Default:** ``true``
+  |
+
+* **view-distance**
+
+  | Override world distance per world/dimension 
+  | The value must be greater than or equal to ``3`` and less than or equal to ``32`` 
+  | The server-wide view distance will be used when the value is ``-1``.
+  | **Type:** ``int``
+  | **Default:** ``-1``
+  |
+
+* **weather-ice-and-snow**
+
+  | If ``true``, natural formation of ice and snow in supported biomes will be allowed.
+  | **Type:** ``boolean``
+  | **Default:** ``true``
+  |
+
+* **weather-thunder**
+
+  | If ``true``, thunderstorms will be initiated in supported biomes.
+  | **Type:** ``boolean``
+  | **Default:** ``true``
+  |
+
+* **world-enabled**
+
+  | If ``true``, this world will be registered.
+  | **Type:** ``boolean``
+  | **Default:** ``true``
   |
 
 
