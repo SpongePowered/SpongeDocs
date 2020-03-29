@@ -15,9 +15,9 @@ full example of an unmodified ``global.conf`` file at the bottom of this page, b
 
 .. note::
 
-    The following section headings refer to the simple class names of the configuration classes. Each of the entries in
-    a section refers to a configurable property in the associated class. The `Type` information refers to the
-    section/class that describes the nested configuration structure.
+    The following section headings refer to the path within the configuration (and the corresponding simple class name).
+    Each of the entries in a section refers to a configurable property in the associated class. The `Type` information
+    refers to the section/class that describes the nested configuration structure.
 
 .. _ConfigType_GlobalConfig:
 
