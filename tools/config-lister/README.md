@@ -12,7 +12,7 @@ Requirements
 Usage
 -----
 
-1. Update the SpongeCommon dependendy to the latest recommended release in the pom.
+1. Update the SpongeCommon dependency to the latest recommended release in the pom.
 2. And then run the generated jar file:
 
 ````bash
