@@ -213,6 +213,7 @@ public class ConfigLister {
      *
      * @param typeEntry Additional type information gathered from the usage.
      * @param sb The string builder to write the documentation to.
+     * @param headlineLevel The level of headlines to use.
      */
     public static void writeDocumentation(final TypeEntry typeEntry, final StringBuilder sb, final int headlineLevel) {
         final Object defaultInstance = createDefaultInstance(typeEntry.getType());
@@ -284,7 +285,8 @@ public class ConfigLister {
     /**
      * Writes a headline for the given type.
      *
-     * @param simpleName The simple name of the type to write.
+     * @param simpleTypeName The simple name of the type to write.
+     * @param typeAlias The alias to use.
      * @param headlineLevel The headline level char to use.
      * @param sb The string builder to write the headline to.
      */

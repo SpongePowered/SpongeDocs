@@ -66,8 +66,7 @@ public class FileChecker {
      * @param file The file to handle in this instance.
      * @param pathPrefixLength The pathPrefix length that can be ignored for the
      *        file name.
-     * @param checkDeprecated Whether this checker should check for deprecated
-     *        references.
+     * @param outputDirectory The location to generate the files in.
      */
     public FileChecker(final File file, final int pathPrefixLength, File outputDirectory) {
         this.fileName = file.getPath().substring(pathPrefixLength).replace('\\', '/');
