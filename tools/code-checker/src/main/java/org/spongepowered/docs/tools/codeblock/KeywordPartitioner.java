@@ -50,6 +50,7 @@ public class KeywordPartitioner<E> implements Iterator<List<E>> {
      * Creates a new stream that will partition the data from the given stream
      * using the given predicate as separator.
      *
+     * @param <T> The type of the elements in the stream.
      * @param stream The stream that should be partitioned.
      * @param partitionSeparator The predicate that will be used to detect the
      *        separator. The matching separator will be removed from the output.

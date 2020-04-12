@@ -27,7 +27,7 @@
 	</organization>
 
 	<properties>
-		<sponge.api.version>7.1.0</sponge.api.version>
+		<sponge.api.version>7.2.0</sponge.api.version>
 
 		<java.version>11</java.version>
 		<maven.compiler.source>${java.version}</maven.compiler.source>

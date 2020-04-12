@@ -1673,11 +1673,11 @@ world (GlobalWorld)
 
 ------------------------------------------------------------------------------------------------------------
 
-This configuration file was generated using SpongeForge 7.1.9 (Forge 2838, SpongeAPI 7.1):
+This configuration file was generated using SpongeForge 7.2.0 (Forge 2838, SpongeAPI 7.2):
 
 .. code-block:: guess
 
-        # 1.0
+    # 1.0
     # 
     # # If you need help with the configuration or have any questions related to Sponge,
     # # join us at the IRC or drop by our forums and leave a post.
@@ -1821,7 +1821,15 @@ This configuration file was generated using SpongeForge 7.1.9 (Forge 2838, Spong
             # Patches the specified commands to respect the world of the sender instead of applying the 
             # changes on the all worlds.
             multi-world-patches {
-                ""=true
+                defaultgamemode=true
+                difficulty=true
+                gamerule=true
+                seed=true
+                setdefaultspawnpoint=true
+                time=true
+                toggledownfall=true
+                weather=true
+                worldborder=true
             }
         }
         debug {

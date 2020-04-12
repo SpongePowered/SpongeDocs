@@ -60,7 +60,7 @@ public class OnOffKeywordPredicate<T> implements Predicate<T> {
      *        throughout.
      * @param offKeyword The predicate used to decide to stop letting entries
      *        throughout.
-     * @param The initial status of this filter.
+     * @param initialStatus The initial status of this filter.
      */
     public OnOffKeywordPredicate(Predicate<T> onKeyword, Predicate<T> offKeyword, boolean initialStatus) {
         this.onKeyword = onKeyword;
