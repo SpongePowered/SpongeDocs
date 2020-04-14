@@ -4,6 +4,8 @@ Debugging
 
 Logs are an essential part when it comes to debugging your server and figuring what went wrong. This page will show
 some basic logging examples and will try to explain what you can do to fix your issues, when encountering them.
+If you're looking for details about specific mods that can cause problems with SpongeForge, then we recommend
+checking the :doc:`incompatible` page first.
 
 Checklist
 =========
