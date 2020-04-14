@@ -59,7 +59,8 @@ with a train of error messages in the server log files.
 **Solution**: Stop the server, and check to see nothing has been corrupted. Be sure to check that it isn't from an
 incorrectly edited config file (above). Remove suspect plugins and add them again one by one, restarting the server
 each time. The problem may originate from one plugin that is out of date - check for updates. Plugin conflict may also
-be the cause, having two incompatible plugins.
+be the cause, having two incompatible plugins. You can also check our :doc:`incompatible` page to see if the problem
+is already known, and if there's a way to fix it.
 
 Operating System Unstable (e.g. Virus Infection)
 ------------------------------------------------
