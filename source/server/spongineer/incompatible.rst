@@ -28,34 +28,35 @@ load the Sponge version of Mixin first, and can resolve many problems in one ste
 FarSeek
 ~~~~~~~
 - Dependencies: Streams mod
-- Versions:
-- Problem: Crash on startup
-- Solution: No compatibility at present. Choose one or the other.
+- Versions: 2.3, 2.4
+- Problem: Crash on startup / Failed world generation
+- Solution: Update to version 2.5.
 
 FoamFix
 ~~~~~~~
-- Versions: 
+- Versions: up to 0.10.7
 - Problem: Crash on startup (block collision error)
-- Solution: configuration changes
-- *Newer versions of FoamFix automatically correct this when SpongeForge is present.*
+- Solution: update to version 0.10.8 or newer, or change these two configuration options:
+  ``optimizedBlockPos=false`` and ``patchChunkSerialization=false``
+- *Newer versions of FoamFix (0.10.8+) automatically correct this when SpongeForge is present.*
 
-Hammercore
-~~~~~~~~~~
-- Dependencies: TBA
-- Versions: 
+Hammer Core
+~~~~~~~~~~~
+- Dependencies: Many
+- Versions: 2.0.6.1.2+
 - Problem: Crash on startup
-- Solution: Enable World.ITickable.Override in asm/hammercore.xml
+- Solution: change ``<entry key="World.ITickable.Override">true</entry>`` to ``false`` in the ``/asm/hammercore.xml`` file
 
 Open Terrain Generator (OTG)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - Dependencies: OTGcore
-- Versions: 
+- Versions: All (so far)
 - Problem: Crash on startup / Multiworld Wgen problems
 - Solution: Pre-generate world without SpongeForge, then remove OTG and add SpongeForge.
 
 MystCraft
 ~~~~~~~~~
-- Versions: 
+- Versions: All (so far)
 - Problem: Crash on startup
 - Solution: No compatibility at present. Choose one or the other.
 
