@@ -27,7 +27,7 @@ load the Sponge version of Mixin first, and can resolve many problems in one ste
 
 FarSeek
 ~~~~~~~
-- Dependencies: Streams mod
+- Dependents: Streams mod
 - Versions: 2.3, 2.4
 - Problem: Crash on startup / Failed world generation
 - Solution: Update to version 2.5.
@@ -42,7 +42,7 @@ FoamFix
 
 Hammer Core
 ~~~~~~~~~~~
-- Dependencies: Many
+- Dependents: Many
 - Versions: 2.0.6.1.2+
 - Problem: Crash on startup. Typically, the following error message is returned:
 
@@ -51,6 +51,12 @@ Hammer Core
     org.spongepowered.asm.mixin.injection.throwables.InjectionError: Critical injection failure: Redirector onUpdateTileEntities(Lnet/minecraft/util/ITickable;)V in mixins.common.core.json:world.WorldMixin failed injection check, (0/1) succeeded. Scanned 1 target(s). Using refmap mixins.common.refmap.json
 
 - Solution: change ``<entry key="World.ITickable.Override">true</entry>`` to ``false`` in the ``/asm/hammercore.xml`` file
+
+Just Enough IDs (JEID)
+~~~~~~~~~~~~~~~~~~~~~~
+- Versions: up to 1.0.3-48
+- Problem: Crash on startup (mixin conflict).
+- Solution: Update to version 1.0.3-54 or newer.
 
 Open Terrain Generator (OTG)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
