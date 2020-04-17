@@ -44,7 +44,12 @@ Hammer Core
 ~~~~~~~~~~~
 - Dependencies: Many
 - Versions: 2.0.6.1.2+
-- Problem: Crash on startup
+- Problem: Crash on startup. Typically, the following error message is returned:
+
+.. code-block:: none
+
+    org.spongepowered.asm.mixin.injection.throwables.InjectionError: Critical injection failure: Redirector onUpdateTileEntities(Lnet/minecraft/util/ITickable;)V in mixins.common.core.json:world.WorldMixin failed injection check, (0/1) succeeded. Scanned 1 target(s). Using refmap mixins.common.refmap.json
+
 - Solution: change ``<entry key="World.ITickable.Override">true</entry>`` to ``false`` in the ``/asm/hammercore.xml`` file
 
 Open Terrain Generator (OTG)
