@@ -13,5 +13,6 @@ Contents
     troubleshooting
     logs
     debugging
+    incompatible
     bugreport
     properties
