@@ -81,9 +81,9 @@ Phosphor
 ~~~~~~~~
 - Versions: up to 0.2.4
 - Problem (1): Crash on startup
-- Solution: Version 0.2.5 or newer is compatible with Sponge RC3844.
+- Solution: Update to version 0.2.5 or newer, which is compatible with Sponge RC3844.
 - Problem (2): Poor graphic performance
-- Solution: Set the optimisation `async-lighting` to `false` in the Sponge global.conf file.
+- Solution: Set the optimisation ``async-lighting`` to ``false`` in the Sponge ``global.conf`` file.
 
 There may be many more, please help us keep this list maintained by contributing to the SpongeDocs on GitHub!
 The :doc:`debugging` page may also be of help if your issue is not one of those mentioned above.
