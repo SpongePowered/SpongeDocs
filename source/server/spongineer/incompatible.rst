@@ -58,6 +58,18 @@ Just Enough IDs (JEID)
 - Problem: Crash on startup (mixin conflict).
 - Solution: Update to version 1.0.3-54 or newer.
 
+LagGoggles
+~~~~~~~~~~
+- Versions: 1.12.2-4.4-FAT and newer
+- Problem: Crash on startup
+- Solution: Servers running SpongeForge should install the `THIN` version instead.
+
+MystCraft
+~~~~~~~~~
+- Versions: All (so far)
+- Problem: Crash on startup
+- Solution: No compatibility at present. Choose one or the other.
+
 Open Terrain Generator (OTG)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - Dependencies: OTGcore
@@ -65,11 +77,13 @@ Open Terrain Generator (OTG)
 - Problem: Crash on startup / Multiworld Wgen problems
 - Solution: Pre-generate world without SpongeForge, then remove OTG and add SpongeForge.
 
-MystCraft
-~~~~~~~~~
-- Versions: All (so far)
-- Problem: Crash on startup
-- Solution: No compatibility at present. Choose one or the other.
+Phosphor
+~~~~~~~~
+- Versions: up to 0.2.4
+- Problem (1): Crash on startup
+- Solution: Version 0.2.5 or newer is compatible with Sponge RC3844.
+- Problem (2): Poor graphic performance
+- Solution: Set the optimisation `async-lighting` to `false` in the Sponge global.conf file.
 
 There may be many more, please help us keep this list maintained by contributing to the SpongeDocs on GitHub!
 The :doc:`debugging` page may also be of help if your issue is not one of those mentioned above.
