@@ -34,9 +34,9 @@ FarSeek
 
 FoamFix
 ~~~~~~~
-- Versions: up to 0.10.7
+- Versions: Up to 0.10.7
 - Problem: Crash on startup (block collision error)
-- Solution: update to version 0.10.8 or newer, or change these two configuration options:
+- Solution: Update to version 0.10.8 or newer, or change these two configuration options:
   ``optimizedBlockPos=false`` and ``patchChunkSerialization=false``
 - *Newer versions of FoamFix (0.10.8+) automatically correct this when SpongeForge is present.*
 
@@ -50,19 +50,19 @@ Hammer Core
 
     org.spongepowered.asm.mixin.injection.throwables.InjectionError: Critical injection failure: Redirector onUpdateTileEntities(Lnet/minecraft/util/ITickable;)V in mixins.common.core.json:world.WorldMixin failed injection check, (0/1) succeeded. Scanned 1 target(s). Using refmap mixins.common.refmap.json
 
-- Solution: change ``<entry key="World.ITickable.Override">true</entry>`` to ``false`` in the ``/asm/hammercore.xml`` file
+- Solution: Change ``<entry key="World.ITickable.Override">true</entry>`` to ``false`` in the ``/asm/hammercore.xml`` file
 
 Just Enough IDs (JEID)
 ~~~~~~~~~~~~~~~~~~~~~~
-- Versions: up to 1.0.3-48
+- Versions: Up to 1.0.3-48
 - Problem: Crash on startup (mixin conflict).
 - Solution: Update to version 1.0.3-54 or newer.
 
 LagGoggles
 ~~~~~~~~~~
-- Versions: 1.12.2-4.4-FAT and newer
-- Problem: Crash on startup
-- Solution: Servers running SpongeForge should install the `THIN` version instead.
+- Versions: Older than 1.12.2-5.3-113
+- Problem: Crash on startup (mixin conflict).
+- Solution: Update to version 1.12.2-5.3-113 and install *TickCentral* core-mod.
 
 MystCraft
 ~~~~~~~~~
@@ -79,7 +79,7 @@ Open Terrain Generator (OTG)
 
 Phosphor
 ~~~~~~~~
-- Versions: up to 0.2.4
+- Versions: Up to 0.2.4
 - Problem (1): Crash on startup
 - Solution: Update to version 0.2.5 or newer, which is compatible with Sponge RC3844.
 - Problem (2): Poor graphic performance
