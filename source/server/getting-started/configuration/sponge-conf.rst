@@ -35,92 +35,110 @@ GlobalConfig
 
 * **bungeecord**
 
+  | Configuration options related for server proxies, such as bungeecord
   | **Type:** :ref:`BungeeCord<ConfigType_BungeeCord>`
   |
 
 * **cause-tracker**
 
+  | Options related to Sponge's cause tracking system
   | **Type:** :ref:`PhaseTracker<ConfigType_PhaseTracker>`
   |
 
 * **commands**
 
+  | Configuration options related to commands, including command aliases and hidden commands.
   | **Type:** :ref:`Commands<ConfigType_Commands>`
   |
 
 * **debug**
 
+  | Configuratiom options related to debugging features that are disabled by default.
   | **Type:** :ref:`Debug<ConfigType_Debug>`
   |
 
 * **entity**
 
+  | Configuration options related to entities and their performance impact.
   | **Type:** :ref:`Entity<ConfigType_Entity>`
   |
 
 * **entity-activation-range**
 
+  | Allows the configuration of the default entity activation ranges.
   | **Type:** :ref:`EntityActivationRange<ConfigType_EntityActivationRange>`
   |
 
 * **entity-collisions**
 
+  | Configuration options related to entity collision checks.
   | **Type:** :ref:`EntityCollision<ConfigType_EntityCollision>`
   |
 
 * **exploits**
 
+  | Configuration option related to sponge provided exploit patches
   | **Type:** :ref:`Exploit<ConfigType_Exploit>`
   |
 
 * **general**
 
+  | Contains general configuration options for Sponge that don't fit into a specific classification
   | **Type:** :ref:`GlobalGeneral<ConfigType_GlobalGeneral>`
   |
 
 * **ip-sets**
 
+  | ???
   | **Type:** ``Map<String, List<IpSet>>``
   |
 
 * **logging**
 
+  | Configuration option related to logging certain action such as chunk loading.
   | **Type:** :ref:`Logging<ConfigType_Logging>`
   |
 
 * **metrics**
 
+  | Configuration options related to metric collection.
+  | Metric collection is disabled by default.
   | **Type:** :ref:`Metrics<ConfigType_Metrics>`
   |
 
 * **modules**
 
+  | Options related to optional modules, that can be enabled or disabled.
   | **Type:** :ref:`Module<ConfigType_Module>`
   |
 
 * **movement-checks**
 
+  | Options related to minecraft'S movement checks, that can be enabled or disabled.
   | **Type:** :ref:`MovementChecks<ConfigType_MovementChecks>`
   |
 
 * **optimizations**
 
+  | Configuration options related to sponge provided performance optimizations.
   | **Type:** :ref:`Optimization<ConfigType_Optimization>`
   |
 
 * **permission**
 
+  | Configuration options related to permissions and permission handling
   | **Type:** :ref:`Permission<ConfigType_Permission>`
   |
 
 * **player-block-tracker**
 
+  | Configuration options related to tracking player interactions with blocks
   | **Type:** :ref:`PlayerBlockTracker<ConfigType_PlayerBlockTracker>`
   |
 
 * **spawner**
 
-  | Used to control spawn limits around players. 
+  | Used to control spawn limits around players.
   | **Note**: The radius uses the lower value of mob spawn range and server's view distance.
   | **Type:** :ref:`Spawner<ConfigType_Spawner>`
   |
@@ -139,16 +157,19 @@ GlobalConfig
 
 * **tileentity-activation**
 
+  | Configuration options related to activation ranges of tile entities.
   | **Type:** :ref:`TileEntityActivation<ConfigType_TileEntityActivation>`
   |
 
 * **timings**
 
+  | ???
   | **Type:** :ref:`Timings<ConfigType_Timings>`
   |
 
 * **world**
 
+  | Configuration options that will affect all worlds.
   | **Type:** :ref:`GlobalWorld<ConfigType_GlobalWorld>`
   |
 
@@ -170,7 +191,8 @@ broken-mods (BrokenMod)
 
   | A list of mod ids that have broken network handlers (they interact with the game from a Netty handler thread).
   | All network handlers from a forcibly scheduled to run on the main thread.
-  | Note that this setting should be considered a last resort, and should only be used as a stopgap measure while waiting for a mod to properly fix the issue.
+  | Note that this setting should be considered a last resort, and should only be used as a stopgap measure
+  | while waiting for a mod to properly fix the issue.
   | **Type:** ``List<String>``
   |
 
@@ -178,6 +200,9 @@ broken-mods (BrokenMod)
 
 bungeecord (BungeeCord)
 -----------------------
+
+| Configuration options related for server proxies, such as bungeecord
+|
 
 * **ip-forwarding**
 
@@ -191,12 +216,15 @@ bungeecord (BungeeCord)
 cause-tracker (PhaseTracker)
 ----------------------------
 
+| Options related to Sponge's cause tracking system
+|
+
 * **auto-fix-null-source-block-providing-tile-entities**
 
   | A mapping that is semi-auto-populating for TileEntities whose types
   | are found to be providing ``null`` Block sources as neighbor notifications
-  | that end up causing crashes or spam reports. If the value is set to 
-  | ``true``, then a ``workaround`` will be attempted. If not, the 
+  | that end up causing crashes or spam reports. If the value is set to
+  | ``true``, then a ``workaround`` will be attempted. If not, the
   | current BlockState at the target source will be queried from the world.
   | This map having a specific
   | entry of a TileEntity will prevent a log or warning come up to any logs
@@ -216,14 +244,14 @@ cause-tracker (PhaseTracker)
 
 * **capture-async-spawning-entities**
 
-  | If set to ``true``, when a mod or plugin attempts to spawn an entity 
-  | off the main server thread, Sponge will automatically 
-  | capture said entity to spawn it properly on the main 
-  | server thread. The catch to this is that some mods are 
-  | not considering the consequences of spawning an entity 
-  | off the server thread, and are unaware of potential race 
-  | conditions they may cause. If this is set to false, 
-  | Sponge will politely ignore the entity being spawned, 
+  | If set to ``true``, when a mod or plugin attempts to spawn an entity
+  | off the main server thread, Sponge will automatically
+  | capture said entity to spawn it properly on the main
+  | server thread. The catch to this is that some mods are
+  | not considering the consequences of spawning an entity
+  | off the server thread, and are unaware of potential race
+  | conditions they may cause. If this is set to false,
+  | Sponge will politely ignore the entity being spawned,
   | and emit a warning about said spawn anyways.
   | **Type:** ``boolean``
   | **Default:** ``true``
@@ -231,11 +259,11 @@ cause-tracker (PhaseTracker)
 
 * **generate-stacktrace-per-phase**
 
-  | If ``true``, more thorough debugging for PhaseStates 
-  | such that a StackTrace is created every time a PhaseState 
-  | switches, allowing for more fine grained troubleshooting 
-  | in the cases of runaway phase states. Note that this is 
-  | not extremely performant and may have some associated costs 
+  | If ``true``, more thorough debugging for PhaseStates
+  | such that a StackTrace is created every time a PhaseState
+  | switches, allowing for more fine grained troubleshooting
+  | in the cases of runaway phase states. Note that this is
+  | not extremely performant and may have some associated costs
   | with generating the stack traces constantly.
   | **Type:** ``boolean``
   | **Default:** ``false``
@@ -250,19 +278,19 @@ cause-tracker (PhaseTracker)
   | this can result in a stack overflow, which causes us to lose all infomration about the original cause of the issue.
   | To prevent a stack overflow, Sponge tracks the current processing depth, and aborts processing when it exceeds
   | this threshold.
-  | The default value should almost always work properly -  it's unlikely you'll ever have to change it.
+  | The default value should almost always work properly - it's unlikely you'll ever have to change it.
   | **Type:** ``int``
   | **Default:** ``1000``
   |
 
 * **maximum-printed-runaway-counts**
 
-  | If verbose is not enabled, this restricts the amount of 
-  | runaway phase state printouts, usually happens on a server 
-  | where a PhaseState is not completing. Although rare, it should 
-  | never happen, but when it does, sometimes it can continuously print 
-  | more and more. This attempts to placate that while a fix can be worked on 
-  | to resolve the runaway. If verbose is enabled, they will always print.
+  | If verbose is not enabled, this restricts the amount of
+  | runaway phase state printouts, usually happens on a server
+  | where a PhaseState is not completing. Although rare, it should
+  | never happen, but when it does, sometimes it can continuously print
+  | more and more. This attempts to placate that while a fix can be worked on
+  | to resolve the runaway. If ``verbose`` is enabled, they will always print.
   | **Type:** ``int``
   | **Default:** ``3``
   |
@@ -304,10 +332,10 @@ cause-tracker (PhaseTracker)
 
 * **verbose**
 
-  | If ``true``, the phase tracker will print out when there are too many phases 
-  | being entered, usually considered as an issue of phase re-entrance and 
-  | indicates an unexpected issue of tracking phases not to complete. 
-  | If this is not reported yet, please report to Sponge. If it has been 
+  | If ``true``, the phase tracker will print out when there are too many phases
+  | being entered, usually considered as an issue of phase re-entrance and
+  | indicates an unexpected issue of tracking phases not to complete.
+  | If this is not reported yet, please report to Sponge. If it has been
   | reported, you may disable this.
   | **Type:** ``boolean``
   | **Default:** ``true``
@@ -315,9 +343,9 @@ cause-tracker (PhaseTracker)
 
 * **verbose-errors**
 
-  | If ``true``, the phase tracker will dump extra information about the current phases 
-  | when certain non-PhaseTracker related exceptions occur. This is usually not necessary, as the information 
-  | in the exception itself can normally be used to determine the cause of the issue
+  | If ``true``, the phase tracker will dump extra information about the current phases
+  | when certain non-PhaseTracker related exceptions occur. This is usually not necessary, as the information
+  | in the exception itself can normally be used to determine the cause of the issue.
   | **Type:** ``boolean``
   | **Default:** ``false``
   |
@@ -327,10 +355,13 @@ cause-tracker (PhaseTracker)
 commands (Commands)
 -------------------
 
+| Configuration options related to commands, including command aliases and hidden commands.
+|
+
 * **aliases**
 
-  | Command aliases will resolve conflicts when multiple plugins request a specific command, 
-  | Correct syntax is <unqualified command>=<plugin name> e.g. ``sethome=homeplugin``
+  | Command aliases will resolve conflicts when multiple plugins request a specific command.
+  | Correct syntax is ``<unqualified command>=<plugin name>`` e.g. ``sethome=homeplugin``
   | **Type:** ``Map<String, String>``
   |
 
@@ -344,12 +375,12 @@ commands (Commands)
 * **enforce-permission-checks-on-non-sponge-commands**
 
   | Some mods may not trigger a permission check when running their command. Setting this to
-  | true will enforce a check of the Sponge provided permission (``<modid>.command.<commandname>``).
-  | Note that setting this to true may cause some commands that are generally accessible to all to
+  | ``true`` will enforce a check of the Sponge provided permission (``<modid>.command.<commandname>``).
+  | Note that setting this to ``true`` may cause some commands that are generally accessible to all to
   | require a permission to run.
-  | Setting this to true will enable greater control over whether a command will appear in
+  | Setting this to ``true`` will enable greater control over whether a command will appear in
   | tab completion and Sponge's help command.
-  | If you are not using a permissions plugin, it is highly recommended that this is set to false
+  | If you are not using a permissions plugin, it is highly recommended that this is set to ``false``
   | (as it is by default).
   | **Type:** ``boolean``
   | **Default:** ``false``
@@ -357,7 +388,7 @@ commands (Commands)
 
 * **multi-world-patches**
 
-  | Patches the specified commands to respect the world of the sender instead of applying the 
+  | Patches the specified commands to respect the world of the sender instead of applying the
   | changes on the all worlds.
   | **Type:** ``Map<String, Boolean>``
   |
@@ -373,7 +404,7 @@ commands.command-hiding (CommandsHidden)
 
 * **hide-on-discovery-attempt**
 
-  | If this is true, when a user tries to tab complete a command, or use ``/sponge which`` or 
+  | If this is true, when a user tries to tab complete a command, or use ``/sponge which`` or
   | ``/sponge:help`` this prevents commands a user does not have permission for from being completed.
   | Note that some commands may not show up during tab complete if a user does not have permission
   | regardless of this setting.
@@ -394,6 +425,9 @@ commands.command-hiding (CommandsHidden)
 debug (Debug)
 -------------
 
+| Configuratiom options related to debugging features that are disabled by default.
+|
+
 * **concurrent-chunk-map-checks**
 
   | Detect and prevent parts of PlayerChunkMap being called off the main thread.
@@ -404,8 +438,9 @@ debug (Debug)
 
 * **concurrent-entity-checks**
 
-  | Detect and prevent certain attempts to use entities concurrently. 
-  | **WARNING**: May drastically decrease server performance. Only set this to ``true`` to debug a pre-existing issue.
+  | Detect and prevent certain attempts to use entities concurrently.
+  | **WARNING**: May drastically decrease server performance.
+  | Only set this to ``true`` to debug a pre-existing issue.
   | **Type:** ``boolean``
   | **Default:** ``false``
   |
@@ -422,23 +457,28 @@ debug (Debug)
 entity (Entity)
 ---------------
 
+| Configuration options related to entities and their performance impact.
+|
+
 * **collision-warn-size**
 
-  | Number of colliding entities in one spot before logging a warning. Set to ``0`` to disable
+  | Number of colliding entities in one spot before logging a warning.
+  | Set to ``0`` to disable.
   | **Type:** ``int``
   | **Default:** ``200``
   |
 
 * **entity-painting-respawn-delay**
 
-  | Number of ticks before a painting is respawned on clients when their art is changed
+  | Number of ticks before a painting is respawned on clients when their art is changed.
   | **Type:** ``int``
   | **Default:** ``2``
   |
 
 * **human-player-list-remove-delay**
 
-  | Number of ticks before the fake player entry of a human is removed from the tab list (range of ``0`` to ``100`` ticks).
+  | Number of ticks before the fake player entry of a human is removed from the tab list
+  | (ranges from ``0`` to ``100`` ticks).
   | **Type:** ``int``
   | **Default:** ``10``
   |
@@ -452,35 +492,38 @@ entity (Entity)
 
 * **living-hard-despawn-range**
 
-  | The upper bounded range where living entities farther from a player will likely despawn
+  | The upper bounded range where living entities farther from a player will likely despawn.
   | **Type:** ``int``
   | **Default:** ``128``
   |
 
 * **living-soft-despawn-minimum-life**
 
-  | The amount of seconds before a living entity between the soft and hard despawn ranges from a player to be considered for despawning
+  | The amount of seconds before a living entity between the soft and hard despawn ranges
+  | from a player to be considered for despawning.
   | **Type:** ``int``
   | **Default:** ``30``
   |
 
 * **living-soft-despawn-range**
 
-  | The lower bounded range where living entities near a player may potentially despawn
+  | The lower bounded range where living entities near a player may potentially despawn.
   | **Type:** ``int``
   | **Default:** ``32``
   |
 
 * **max-bounding-box-size**
 
-  | Maximum size of an entity's bounding box before removing it. Set to ``0`` to disable
+  | Maximum size of an entity's bounding box before removing it.
+  | Set to ``0`` to disable.
   | **Type:** ``int``
   | **Default:** ``1000``
   |
 
 * **max-speed**
 
-  | Square of the maximum speed of an entity before removing it. Set to ``0`` to disable
+  | Square of the maximum speed of an entity before removing it.
+  | Set to ``0`` to disable.
   | **Type:** ``int``
   | **Default:** ``100``
   |
@@ -489,6 +532,9 @@ entity (Entity)
 
 entity-activation-range (EntityActivationRange)
 -----------------------------------------------
+
+| Allows the configuration of the default entity activation ranges.
+|
 
 * **auto-populate**
 
@@ -519,6 +565,7 @@ entity-activation-range.mods (EntityActivationMod)
 
 * **defaults**
 
+  | Default activation ranges used for mod entities unless overridden.
   | **Type:** ``Map<String, Integer>``
   |
 
@@ -531,6 +578,7 @@ entity-activation-range.mods (EntityActivationMod)
 
 * **entities**
 
+  | ???
   | **Type:** ``Map<String, Integer>``
   |
 
@@ -538,6 +586,9 @@ entity-activation-range.mods (EntityActivationMod)
 
 entity-collisions (EntityCollision)
 -----------------------------------
+
+| Configuration options related to entity collision checks.
+|
 
 * **auto-populate**
 
@@ -548,9 +599,9 @@ entity-collisions (EntityCollision)
 
 * **max-entities-within-aabb**
 
-  | Maximum amount of entities any given entity or block can collide with. This improves 
-  | performance when there are more than ``8`` entities on top of each other such as a 1x1 
-  | spawn pen. Set to ``0`` to disable.
+  | Maximum amount of entities any given entity or block can collide with.
+  | This improves performance when there are more than ``8`` entities on top of each other
+  | such as a 1x1 spawn pen.Set to ``0`` to disable.
   | **Type:** ``int``
   | **Default:** ``8``
   |
@@ -597,9 +648,12 @@ entity-collisions.mods (CollisionMod)
 exploits (Exploit)
 ------------------
 
+| Configuration option related to sponge provided exploit patches
+|
+
 * **book-size-total-multiplier**
 
-  | If limit-book-size is enabled, controls the multiplier applied to each book page size
+  | If ``limit-book-size`` is enabled, controls the multiplier applied to each book page size
   | **Type:** ``double``
   | **Default:** ``0.98``
   |
@@ -607,9 +661,8 @@ exploits (Exploit)
 * **filter-invalid-entities-on-chunk-save**
 
   | Enables filtering invalid entities when a chunk is being saved
-  | such that the entity that does not ``belong`` in the saving
-  | chunk will not be saved, and forced an update to the world's
-  | tracked entity lists for chunks.
+  | such that the entity that does not ``belong`` in the saving chunk will not be saved,
+  | and forced an update to the world's tracked entity lists for chunks.
   | See https://github.com/PaperMC/Paper/blob/fd1bd5223a461b6d98280bb8f2d67280a30dd24a/Spigot-Server-Patches/0311-Prevent-Saving-Bad-entities-to-chunks.patch
   | **Type:** ``boolean``
   | **Default:** ``true``
@@ -626,12 +679,11 @@ exploits (Exploit)
 
 * **load-chunk-on-position-set**
 
-  | Enables focing a chunk load when an entity position
-  | is set. Usually due to teleportation, vehicle movement
-  | etc. can a position lead an entity to no longer exist
-  | within it's currently marked and tracked chunk. This will
-  | enable that chunk for the position is loaded. Part of several
-  | exploits.See https://github.com/PaperMC/Paper/blob/fd1bd5223a461b6d98280bb8f2d67280a30dd24a/Spigot-Server-Patches/0335-Ensure-chunks-are-always-loaded-on-hard-position-set.patch
+  | Enables focing a chunk load when an entity position is set.
+  | Usually due to teleportation, vehicle movement etc. can a position lead an entity to no longer exist
+  | within it's currently marked and tracked chunk. This will enable that chunk for the position is loaded.
+  | Part of several exploits.
+  | See https://github.com/PaperMC/Paper/blob/fd1bd5223a461b6d98280bb8f2d67280a30dd24a/Spigot-Server-Patches/0335-Ensure-chunks-are-always-loaded-on-hard-position-set.patch
   | (Only affects SpongeVanilla)
   | **Type:** ``boolean``
   | **Default:** ``true``
@@ -639,9 +691,9 @@ exploits (Exploit)
 
 * **mark-chunks-as-dirty-on-entity-list-modification**
 
-  | Enables forcing chunks to save when an entity is added
-  | or removed from said chunk. This is a partial fix for
-  | some exploits using vehicles.See https://github.com/PaperMC/Paper/blob/fd1bd5223a461b6d98280bb8f2d67280a30dd24a/Spigot-Server-Patches/0306-Mark-chunk-dirty-anytime-entities-change-to-guarante.patch
+  | Enables forcing chunks to save when an entity is added or removed from said chunk.
+  | This is a partial fix for some exploits using vehicles.
+  | See https://github.com/PaperMC/Paper/blob/fd1bd5223a461b6d98280bb8f2d67280a30dd24a/Spigot-Server-Patches/0306-Mark-chunk-dirty-anytime-entities-change-to-guarante.patch
   | (Only affects SpongeVanilla)
   | **Type:** ``boolean``
   | **Default:** ``true``
@@ -649,15 +701,15 @@ exploits (Exploit)
 
 * **max-book-page-size**
 
-  | If limit-book-size is enabled, controls the maximum size of a book page
+  | If ``limit-book-size`` is enabled, controls the maximum size of a book page
   | **Type:** ``int``
   | **Default:** ``2560``
   |
 
 * **prevent-creative-itemstack-name-exploit**
 
-  | Prevents an exploit in which the client sends a packet with the 
-  | itemstack name exceeding the string limit.
+  | Prevents an exploit in which the client sends a packet with the itemstack name
+  | exceeding the string limit.
   | **Type:** ``boolean``
   | **Default:** ``true``
   |
@@ -665,9 +717,9 @@ exploits (Exploit)
 * **sync-player-positions-for-vehicle-movement**
 
   | Enables forcing updates to the player's location on vehicle movement.
-  | This is partially required to update the server's understanding of
-  | where the player exists, and allows chunk loading issues to be avoided
-  | with laggy connections and/or hack clients.See https://github.com/PaperMC/Paper/blob/fd1bd5223a461b6d98280bb8f2d67280a30dd24a/Spigot-Server-Patches/0378-Sync-Player-Position-to-Vehicles.patch
+  | This is partially required to update the server's understanding of where the player exists,
+  | and allows chunk loading issues to be avoided with laggy connections and/or hack clients.
+  | See https://github.com/PaperMC/Paper/blob/fd1bd5223a461b6d98280bb8f2d67280a30dd24a/Spigot-Server-Patches/0378-Sync-Player-Position-to-Vehicles.patch
   | (Only affects SpongeVanilla)
   | **Type:** ``boolean``
   | **Default:** ``true``
@@ -676,8 +728,8 @@ exploits (Exploit)
 * **update-tracked-chunk-on-entity-move**
 
   | Enables forcing a chunk-tracking refresh on entity movement.
-  | This enables a guarantee that the entity is tracked in the 
-  | proper chunk when moving.https://github.com/PaperMC/Paper/blob/fd1bd5223a461b6d98280bb8f2d67280a30dd24a/Spigot-Server-Patches/0315-Always-process-chunk-registration-after-moving.patch
+  | This enables a guarantee that the entity is tracked in the proper chunk when moving.
+  | See https://github.com/PaperMC/Paper/blob/fd1bd5223a461b6d98280bb8f2d67280a30dd24a/Spigot-Server-Patches/0315-Always-process-chunk-registration-after-moving.patch
   | (Only affects SpongeVanilla)
   | **Type:** ``boolean``
   | **Default:** ``true``
@@ -688,15 +740,18 @@ exploits (Exploit)
 general (GlobalGeneral)
 -----------------------
 
+| Contains general configuration options for Sponge that don't fit into a specific classification
+|
+
 * **config-dir**
 
-  | The directory for Sponge plugin configurations, relative to the  
-  | execution root or specified as an absolute path. 
-  | Note that the default: ``${CANONICAL_GAME_DIR}/config`` 
-  | is going to use the ``config`` directory in the root game directory. 
-  | If you wish for plugin configs to reside within a child of the configuration 
-  | directory, change the value to, for example, ``${CANONICAL_CONFIG_DIR}/sponge/plugins``. 
-  | **Note**: It is not recommended to set this to ``${CANONICAL_CONFIG_DIR}/sponge``, as there is 
+  | The directory for Sponge plugin configurations, relative to the
+  | execution root or specified as an absolute path.
+  | Note that the default: ``${CANONICAL_GAME_DIR}/config``
+  | is going to use the ``config`` directory in the root game directory.
+  | If you wish for plugin configs to reside within a child of the configuration
+  | directory, change the value to, for example, ``${CANONICAL_CONFIG_DIR}/sponge/plugins``.
+  | **Note**: It is not recommended to set this to ``${CANONICAL_CONFIG_DIR}/sponge``, as there is
   | a possibility that plugin configurations can conflict the Sponge core configurations.
   | **Type:** ``String``
   | **Default:** ``${CANONICAL_GAME_DIR}/config``
@@ -711,11 +766,11 @@ general (GlobalGeneral)
 
 * **plugins-dir**
 
-  | Additional directory to search for plugins, relative to the 
-  | execution root or specified as an absolute path. 
-  | Note that the default: ``${CANONICAL_MODS_DIR}/plugins`` 
-  | is going to search for a plugins folder in the mods directory. 
-  | If you wish for the plugins folder to reside in the root game 
+  | Additional directory to search for plugins, relative to the
+  | execution root or specified as an absolute path.
+  | Note that the default: ``${CANONICAL_MODS_DIR}/plugins``
+  | is going to search for a plugins folder in the mods directory.
+  | If you wish for the plugins folder to reside in the root game
   | directory, change the value to ``${CANONICAL_GAME_DIR}/plugins``.
   | **Type:** ``String``
   | **Default:** ``${CANONICAL_MODS_DIR}/plugins``
@@ -725,6 +780,9 @@ general (GlobalGeneral)
 
 logging (Logging)
 -----------------
+
+| Configuration option related to logging certain action such as chunk loading.
+|
 
 * **block-break**
 
@@ -833,7 +891,8 @@ logging (Logging)
 
 * **exploit-sign-command-updates**
 
-  | Log when server receives exploited packet to update a sign containing commands from player with no permission.
+  | Log when server receives exploited packet to update a sign containing commands
+  | from player with no permission.
   | **Type:** ``boolean``
   | **Default:** ``false``
   |
@@ -847,7 +906,7 @@ logging (Logging)
 
 * **world-auto-save**
 
-  | Log when a world auto-saves its chunk data. 
+  | Log when a world auto-saves its chunk data.
   | **Note**: This may be spammy depending on the auto-save-interval configured for world.
   | **Type:** ``boolean``
   | **Default:** ``false``
@@ -858,9 +917,13 @@ logging (Logging)
 metrics (Metrics)
 -----------------
 
+| Configuration options related to metric collection.
+| Metric collection is disabled by default.
+|
+
 * **global-state**
 
-  | The global collection state that should be respected by all plugins that have no specified collection state. If undefined then it is treated as disabled.
+  | The global collection state that should be respected by all plugins that have no specified collection state. If ``undefined`` then it is treated as disabled.
   | **Type:** ``Tristate``
   | **Possible values:** 
   | - ``TRUE``
@@ -884,6 +947,9 @@ metrics (Metrics)
 modules (Module)
 ----------------
 
+| Options related to optional modules, that can be enabled or disabled.
+|
+
 * **broken-mod**
 
   | Enables experimental fixes for broken mods
@@ -893,18 +959,21 @@ modules (Module)
 
 * **bungeecord**
 
+  | ???
   | **Type:** ``boolean``
   | **Default:** ``false``
   |
 
 * **entity-activation-range**
 
+  | ???
   | **Type:** ``boolean``
   | **Default:** ``true``
   |
 
 * **entity-collisions**
 
+  | ???
   | **Type:** ``boolean``
   | **Default:** ``true``
   |
@@ -912,9 +981,8 @@ modules (Module)
 * **exploits**
 
   | Controls whether any exploit patches are applied.
-  | If there are issues with any specific exploits, please
-  | test in the exploit category first, before disabling all
-  | exploits with this toggle.
+  | If there are issues with any specific exploits, please test in the exploit category first,
+  | before disabling all exploits with this toggle.
   | **Type:** ``boolean``
   | **Default:** ``true``
   |
@@ -941,7 +1009,7 @@ modules (Module)
 
 * **tileentity-activation**
 
-  | Controls block range and tick rate of tileentities. 
+  | Controls block range and tick rate of tileentities.
   | Use with caution as this can break intended functionality.
   | **Type:** ``boolean``
   | **Default:** ``false``
@@ -949,12 +1017,14 @@ modules (Module)
 
 * **timings**
 
+  | ???
   | **Type:** ``boolean``
   | **Default:** ``true``
   |
 
 * **tracking**
 
+  | ???
   | **Type:** ``boolean``
   | **Default:** ``true``
   |
@@ -963,6 +1033,9 @@ modules (Module)
 
 movement-checks (MovementChecks)
 --------------------------------
+
+| Options related to minecraft'S movement checks, that can be enabled or disabled.
+|
 
 * **moved-wrongly**
 
@@ -990,6 +1063,9 @@ movement-checks (MovementChecks)
 optimizations (Optimization)
 ----------------------------
 
+| Configuration options related to sponge provided performance optimizations.
+|
+
 * **async-lighting**
 
   | Runs lighting updates asynchronously.
@@ -998,32 +1074,28 @@ optimizations (Optimization)
 
 * **cache-tameable-owners**
 
-  | Caches tameable entities owners to avoid constant lookups against data watchers. If mods 
-  | cause issues, disable this.
+  | Caches tameable entities owners to avoid constant lookups against data watchers.
+  | If mods cause issues, disable this.
   | **Type:** ``boolean``
   | **Default:** ``true``
   |
 
 * **disable-failing-deserialization-log-spam**
 
-  | Occasionally, some built in advancements, 
-  | recipes, etc. can fail to deserialize properly
-  | which ends up potentially spamming the server log
-  | and the original provider of the failing content
-  | is not able to fix. This provides an option to
-  | suppress the exceptions printing out in the log.
+  | Occasionally, some built in advancements, recipes, etc. can fail to deserialize properly
+  | which ends up potentially spamming the server log and the original provider of the failing content
+  | is not able to fix them. This provides an option to suppress the exceptions printing out in the log.
   | **Type:** ``boolean``
   | **Default:** ``true``
   |
 
 * **drops-pre-merge**
 
-  | If ``true``, block item drops are pre-processed to avoid 
-  | having to spawn extra entities that will be merged post spawning. 
-  | Usually, Sponge is smart enough to determine when to attempt an item pre-merge 
-  | and when not to, however, in certain cases, some mods rely on items not being 
-  | pre-merged and actually spawned, in which case, the items will flow right through 
-  | without being merged.
+  | If ``true``, block item drops are pre-processed to avoid
+  | having to spawn extra entities that will be merged post spawning.
+  | Usually, Sponge is smart enough to determine when to attempt an item pre-merge and when not to,
+  | however, in certain cases, some mods rely on items not being pre-merged and actually spawned,
+  | in which case, the items will flow right through without being merged.
   | **Type:** ``boolean``
   | **Default:** ``true``
   |
@@ -1063,7 +1135,9 @@ optimizations (Optimization)
 * **map-optimization**
 
   | If ``true``, re-writes the incredibly inefficient Vanilla Map code.
-  | This yields enormous performance enhancements when using many maps, but has a tiny chance of breaking mods that invasively modify Vanilla.It is strongly reccomended to keep this on, unless explicitly advised otherwise by a Sponge developer
+  | This yields enormous performance enhancements when using many maps,
+  | but has a tiny chance of breaking mods that invasively modify Vanilla.
+  | It is strongly reccomended to keep this on, unless explicitly advised otherwise by a Sponge developer
   | **Type:** ``boolean``
   | **Default:** ``true``
   |
@@ -1071,11 +1145,10 @@ optimizations (Optimization)
 * **optimize-hoppers**
 
   | Based on Aikar's optimizationo of Hoppers, setting this to ``true``
-  | will allow for hoppers to save performing server -> client updates
-  | when transferring items. Because hoppers can transfer items multiple
-  | times per tick, these updates can get costly on the server, with
-  | little to no benefit to the client. Because of the nature of the
-  | change, the default will be ``false`` due to the inability to pre-emptively
+  | will allow for hoppers to save performing server -> client updates when transferring items.
+  | Because hoppers can transfer items multiple times per tick, these updates can get costly on the server,
+  | with little to no benefit to the client. Because of the nature of the change,
+  | the default will be ``false`` due to the inability to pre-emptively
   | foretell whether mod compatibility will fail with these changes or not.
   | Refer to: https://github.com/PaperMC/Paper/blob/8175ec916f31dcd130fe0884fe46bdc187d829aa/Spigot-Server-Patches/0269-Optimize-Hoppers.patch
   | for more details.
@@ -1085,9 +1158,9 @@ optimizations (Optimization)
 
 * **panda-redstone**
 
-  | If ``true``, uses Panda4494's redstone implementation which improves performance. 
-  | See https://bugs.mojang.com/browse/MC-11193 for more information. 
-  | **Note**: This optimization has a few issues which are explained in the bug report. 
+  | If ``true``, uses Panda4494's redstone implementation which improves performance.
+  | See https://bugs.mojang.com/browse/MC-11193 for more information.
+  | **Note**: This optimization has a few issues which are explained in the bug report.
   | We strongly recommend using eigen redstone over this implementation as this will
   | be removed in a future release.
   | **Type:** ``boolean``
@@ -1096,26 +1169,22 @@ optimizations (Optimization)
 
 * **structure-saving**
 
-  | Handles structures that are saved to disk. Certain structures can take up large amounts 
-  | of disk space for very large maps and the data for these structures is only needed while the 
-  | world around them is generating. Disabling saving of these structures can save disk space and 
-  | time during saves if your world is already fully generated. 
+  | Handles structures that are saved to disk. Certain structures can take up large amounts
+  | of disk space for very large maps and the data for these structures is only needed while the
+  | world around them is generating. Disabling saving of these structures can save disk space and
+  | time during saves if your world is already fully generated.
   | **Warning**: disabling structure saving will break the vanilla locate command.
   | **Type:** :ref:`StructureSave<ConfigType_StructureSave>`
   |
 
 * **use-active-chunks-for-collisions**
 
-  | Vanilla performs a lot of is area loaded checks during
-  | entity collision calculations with blocks, and because
-  | these calculations require fetching the chunks to see
-  | if they are loaded, before getting the block states
-  | from those chunks, there can be some small performance
-  | increase by checking the entity's owned active chunk
-  | it may currently reside in. Essentially, instead of
-  | asking the world if those chunks are loaded, the entity
-  | would know whether it's chunks are loaded and that neighbor's
-  | chunks are loaded.
+  | Vanilla performs a lot of is area loaded checks during entity collision calculations with blocks,
+  | and because these calculations require fetching the chunks to see if they are loaded,
+  | before getting the block states from those chunks, there can be some small performance
+  | increase by checking the entity's owned active chunk it may currently reside in.
+  | Essentially, instead of asking the world if those chunks are loaded, the entity
+  | would know whether it's chunks are loaded and that neighbor's chunks are loaded.
   | **Type:** ``boolean``
   | **Default:** ``false``
   |
@@ -1152,9 +1221,9 @@ optimizations.eigen-redstone (EigenRedstone)
 
 * **enabled**
 
-  | If ``true``, uses theosib's redstone implementation which improves performance. 
-  | See https://bugs.mojang.com/browse/MC-11193 and 
-  |      https://bugs.mojang.com/browse/MC-81098 for more information. 
+  | If ``true``, uses theosib's redstone implementation which improves performance.
+  | See https://bugs.mojang.com/browse/MC-11193 and
+  |      https://bugs.mojang.com/browse/MC-81098 for more information.
   | **Note**: We cannot guarantee compatibility with mods. Use at your discretion.
   | **Type:** ``boolean``
   | **Default:** ``false``
@@ -1179,19 +1248,18 @@ optimizations.eigen-redstone (EigenRedstone)
 optimizations.structure-saving (StructureSave)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-| Handles structures that are saved to disk. Certain structures can take up large amounts 
-| of disk space for very large maps and the data for these structures is only needed while the 
-| world around them is generating. Disabling saving of these structures can save disk space and 
-| time during saves if your world is already fully generated. 
+| Handles structures that are saved to disk. Certain structures can take up large amounts
+| of disk space for very large maps and the data for these structures is only needed while the
+| world around them is generating. Disabling saving of these structures can save disk space and
+| time during saves if your world is already fully generated.
 | **Warning**: disabling structure saving will break the vanilla locate command.
 |
 
 * **auto-populate**
 
-  | If ``true``, newly discovered structures will be added to this config
-  | with a default value of ``true``. This is useful for finding out
-  | potentially what structures are being saved from various mods, and
-  | allowing those structures to be selectively disabled.
+  | If ``true``, newly discovered structures will be added to this config with a default value of ``true``.
+  | This is useful for finding out potentially what structures are being saved from various mods,
+  | and allowing those structures to be selectively disabled.
   | **Type:** ``boolean``
   | **Default:** ``false``
   |
@@ -1225,8 +1293,8 @@ optimizations.structure-saving.mods (StructureMod)
 
 * **enabled**
 
-  | If ``false``, this mod will never save its structures. This may
-  | break some mod functionalities when requesting to locate their
+  | If ``false``, this mod will never save its structures.
+  | This may break some mod functionalities when requesting to locate their
   | structures in a World. If true, allows structures not overridden
   | in the section below to be saved by default. If you wish to find
   | a structure to prevent it being saved, enable ``auto-populate`` and
@@ -1247,6 +1315,9 @@ optimizations.structure-saving.mods (StructureMod)
 permission (Permission)
 -----------------------
 
+| Configuration options related to permissions and permission handling
+|
+
 * **forge-permissions-handler**
 
   | If ``true``, Sponge plugins will be used to handle permissions rather than any Forge mod
@@ -1259,6 +1330,9 @@ permission (Permission)
 player-block-tracker (PlayerBlockTracker)
 -----------------------------------------
 
+| Configuration options related to tracking player interactions with blocks
+|
+
 * **block-blacklist**
 
   | Block IDs that will be blacklisted for player block placement tracking.
@@ -1267,7 +1341,7 @@ player-block-tracker (PlayerBlockTracker)
 
 * **enabled**
 
-  | If ``true``, adds player tracking support for block positions. 
+  | If ``true``, adds player tracking support for block positions.
   | **Note**: This should only be disabled if you do not care who caused a block to change.
   | **Type:** ``boolean``
   | **Default:** ``true``
@@ -1278,7 +1352,7 @@ player-block-tracker (PlayerBlockTracker)
 spawner (Spawner)
 -----------------
 
-| Used to control spawn limits around players. 
+| Used to control spawn limits around players.
 | **Note**: The radius uses the lower value of mob spawn range and server's view distance.
 |
 
@@ -1362,7 +1436,7 @@ teleport-helper (TeleportHelper)
 
 * **force-blacklist**
 
-  | If ``true``, this blacklist will always be respected, otherwise, plugins can choose whether 
+  | If ``true``, this blacklist will always be respected, otherwise, plugins can choose whether
   | or not to respect it.
   | **Type:** ``boolean``
   | **Default:** ``false``
@@ -1370,16 +1444,16 @@ teleport-helper (TeleportHelper)
 
 * **unsafe-body-block-ids**
 
-  | Block IDs that are listed here will not be selected by Sponge's safe teleport routine as 
-  | a safe block for players to warp into. 
-  | You should only list blocks here that are incorrectly selected, solid blocks that prevent 
+  | Block IDs that are listed here will not be selected by Sponge's safe teleport routine as
+  | a safe block for players to warp into.
+  | You should only list blocks here that are incorrectly selected, solid blocks that prevent
   | movement are automatically excluded.
   | **Type:** ``List<String>``
   |
 
 * **unsafe-floor-block-ids**
 
-  | Block IDs that are listed here will not be selected by Sponge's safe 
+  | Block IDs that are listed here will not be selected by Sponge's safe
   | teleport routine as a safe floor block.
   | **Type:** ``List<String>``
   |
@@ -1388,6 +1462,9 @@ teleport-helper (TeleportHelper)
 
 tileentity-activation (TileEntityActivation)
 --------------------------------------------
+
+| Configuration options related to activation ranges of tile entities.
+|
 
 * **auto-populate**
 
@@ -1426,16 +1503,19 @@ tileentity-activation.mods (TileEntityActivationMod)
 
 * **block-range**
 
+  | ???
   | **Type:** ``Map<String, Integer>``
   |
 
 * **default-block-range**
 
+  | ???
   | **Type:** ``Integer``
   |
 
 * **default-tick-rate**
 
+  | ???
   | **Type:** ``Integer``
   |
 
@@ -1448,6 +1528,7 @@ tileentity-activation.mods (TileEntityActivationMod)
 
 * **tick-rate**
 
+  | ???
   | **Type:** ``Map<String, Integer>``
   |
 
@@ -1456,37 +1537,46 @@ tileentity-activation.mods (TileEntityActivationMod)
 timings (Timings)
 -----------------
 
+| ???
+|
+
 * **enabled**
 
+  | ???
   | **Type:** ``boolean``
   | **Default:** ``true``
   |
 
 * **hidden-config-entries**
 
+  | ???
   | **Type:** ``List<String>``
   |
 
 * **history-interval**
 
+  | ???
   | **Type:** ``int``
   | **Default:** ``300``
   |
 
 * **history-length**
 
+  | ???
   | **Type:** ``int``
   | **Default:** ``3600``
   |
 
 * **server-name-privacy**
 
+  | ???
   | **Type:** ``boolean``
   | **Default:** ``false``
   |
 
 * **verbose**
 
+  | ???
   | **Type:** ``boolean``
   | **Default:** ``false``
   |
@@ -1496,9 +1586,12 @@ timings (Timings)
 world (GlobalWorld)
 -------------------
 
+| Configuration options that will affect all worlds.
+|
+
 * **auto-player-save-interval**
 
-  | The auto-save tick interval used when saving global player data. 
+  | The auto-save tick interval used when saving global player data.
   | **Note**: ``20`` ticks is equivalent to ``1`` second. Set to ``0`` to disable.
   | **Type:** ``int``
   | **Default:** ``900``
@@ -1506,8 +1599,8 @@ world (GlobalWorld)
 
 * **auto-save-interval**
 
-  | The auto-save tick interval used to save all loaded chunks in a world. 
-  | Set to ``0`` to disable. 
+  | The auto-save tick interval used to save all loaded chunks in a world.
+  | Set to ``0`` to disable.
   | **Note**: ``20`` ticks is equivalent to ``1`` second.
   | **Type:** ``int``
   | **Default:** ``900``
@@ -1515,8 +1608,8 @@ world (GlobalWorld)
 
 * **chunk-gc-load-threshold**
 
-  | The number of newly loaded chunks before triggering a forced cleanup. 
-  | **Note**: When triggered, the loaded chunk threshold will reset and start incrementing. 
+  | The number of newly loaded chunks before triggering a forced cleanup.
+  | **Note**: When triggered, the loaded chunk threshold will reset and start incrementing.
   | Disabled by default.
   | **Type:** ``int``
   | **Default:** ``0``
@@ -1524,7 +1617,7 @@ world (GlobalWorld)
 
 * **chunk-gc-tick-interval**
 
-  | The tick interval used to cleanup all inactive chunks that have leaked in a world. 
+  | The tick interval used to cleanup all inactive chunks that have leaked in a world.
   | Set to ``0`` to disable which restores vanilla handling.
   | **Type:** ``int``
   | **Default:** ``600``
@@ -1532,7 +1625,7 @@ world (GlobalWorld)
 
 * **chunk-unload-delay**
 
-  | The number of seconds to delay a chunk unload once marked inactive. 
+  | The number of seconds to delay a chunk unload once marked inactive.
   | **Note**: This gets reset if the chunk becomes active again.
   | **Type:** ``int``
   | **Default:** ``15``
@@ -1540,19 +1633,19 @@ world (GlobalWorld)
 
 * **deny-chunk-requests**
 
-  | If ``true``, any request for a chunk not currently loaded will be denied (exceptions apply 
-  | for things like world gen and player movement). 
-  | **Warning**: As this is an experimental setting for performance gain, if you encounter any issues 
-  | then we recommend disabling it.
+  | If ``true``, any request for a chunk not currently loaded will be denied
+  | (exceptions apply for things like world gen and player movement).
+  | **Warning**: As this is an experimental setting for performance gain,
+  | if you encounter any issues then we recommend disabling it.
   | **Type:** ``boolean``
   | **Default:** ``true``
   |
 
 * **gameprofile-lookup-task-interval**
 
-  | The interval, in seconds, used by the GameProfileQueryTask to process queued GameProfile requests. 
-  | **Note**: This setting should be raised if you experience the following error: 
-  | ``The client has sent too many requests within a certain amount of time``. 
+  | The interval, in seconds, used by the GameProfileQueryTask to process queued GameProfile requests.
+  | **Note**: This setting should be raised if you experience the following error:
+  | ``The client has sent too many requests within a certain amount of time``.
   | Finally, if set to ``0`` or less, the default interval will be used.
   | **Type:** ``int``
   | **Default:** ``4``
@@ -1567,19 +1660,19 @@ world (GlobalWorld)
 
 * **invalid-lookup-uuids**
 
-  | The list of uuid's that should never perform a lookup against Mojang's session server. 
+  | The list of uuid's that should never perform a lookup against Mojang's session server.
   | **Note**: If you are using SpongeForge, make sure to enter any mod fake player's UUID to this list.
   | **Type:** ``List<UUID>``
   |
 
 * **item-merge-radius**
 
-  | The defined merge radius for Item entities such that when two items are 
-  | within the defined radius of each other, they will attempt to merge. Usually, 
-  | the default radius is set to ``0.5`` in Vanilla, however, for performance reasons 
-  | ``2.5`` is generally acceptable. 
-  | **Note**: Increasing the radius higher will likely cause performance degradation 
-  | with larger amount of items as they attempt to merge and search nearby 
+  | The defined merge radius for Item entities such that when two items are
+  | within the defined radius of each other, they will attempt to merge.
+  | Usually, the default radius is set to ``0.5`` in Vanilla, however, for performance reasons
+  | ``2.5`` is generally acceptable.
+  | **Note**: Increasing the radius higher will likely cause performance degradation
+  | with larger amount of items as they attempt to merge and search nearby
   | areas for more items. Setting to a negative value is not supported!
   | **Type:** ``double``
   | **Default:** ``2.5``
@@ -1608,18 +1701,18 @@ world (GlobalWorld)
 
 * **max-chunk-unloads-per-tick**
 
-  | The maximum number of queued unloaded chunks that will be unloaded in a single tick. 
-  | **Note**: With the chunk gc enabled, this setting only applies to the ticks 
-  | where the gc runs (controlled by ``chunk-gc-tick-interval``) 
-  | **Note**: If the maximum unloads is too low, too many chunks may remain 
-  | loaded on the world and increases the chance for a drop in tps.
+  | The maximum number of queued unloaded chunks that will be unloaded in a single tick.
+  | **Note**: With the chunk gc enabled, this setting only applies to the ticks
+  | where the gc runs (controlled by ``chunk-gc-tick-interval``)
+  | **Note**: If the maximum unloads is too low, too many chunks may remain loaded on the world
+  | and increases the chance for a drop in tps.
   | **Type:** ``int``
   | **Default:** ``100``
   |
 
 * **mob-spawn-range**
 
-  | Specifies the radius (in chunks) of where creatures will spawn. 
+  | Specifies the radius (in chunks) of where creatures will spawn.
   | This value is capped to the current view distance setting in server.properties
   | **Type:** ``int``
   | **Default:** ``4``
@@ -1627,8 +1720,8 @@ world (GlobalWorld)
 
 * **portal-agents**
 
-  | A list of all detected portal agents used in this world. 
-  | In order to override, change the target world name to any other valid world. 
+  | A list of all detected portal agents used in this world.
+  | In order to override, change the target world name to any other valid world.
   | **Note**: If world is not found, it will fallback to default.
   | **Type:** ``Map<String, String>``
   |
@@ -1642,8 +1735,8 @@ world (GlobalWorld)
 
 * **view-distance**
 
-  | Override world distance per world/dimension 
-  | The value must be greater than or equal to ``3`` and less than or equal to ``32`` 
+  | Override world distance per world/dimension
+  | The value must be greater than or equal to ``3`` and less than or equal to ``32``
   | The server-wide view distance will be used when the value is ``-1``.
   | **Type:** ``int``
   | **Default:** ``-1``
