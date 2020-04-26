@@ -52,6 +52,43 @@ Hammer Core
 
 - Solution: Change ``<entry key="World.ITickable.Override">true</entry>`` to ``false`` in the ``/asm/hammercore.xml`` file
 
+ICBM Classic
+~~~~~~~~~~~~
+- Versions: All
+- Problem: Missiles stop in midair and appear to lag in place.
+- Solution: Add the commented section to the ``sponge/global.conf`` entity-activation-range -> mods section
+
+.. code-block:: none
+
+    entity-activation-range {
+        # If 'true', newly discovered entities will be added to this config with a default value.
+        auto-populate=false
+        # Default activation ranges used for all entities unless overridden.
+        defaults {
+            ambient=32
+            aquatic=32
+            creature=32
+            misc=16
+            monster=32
+        }
+        # Per-mod overrides. Refer to the minecraft default mod for example.
+        mods {
+            # COPY THIS - START
+            icbmclassic {
+                defaults {
+                    misc=16
+                }
+                # If 'false', entity activation rules for this mod will be ignored and always tick.
+                enabled=false
+                entities {
+                    missile=16
+                    seat=16
+                }
+            }
+            # COPY THIS - END
+        }
+    }
+
 Just Enough IDs (JEID)
 ~~~~~~~~~~~~~~~~~~~~~~
 - Versions: Up to 1.0.3-48
