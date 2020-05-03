@@ -22,7 +22,7 @@ There are two ways to obtain a registered :javadoc:`PlaceholderParser`:
 * Obtain the parser via :javadoc:`PlaceholderService#getParser(String)`.
 
 In general, we recommend that the second option is used, as plugin-provided implementations may allow for shorthand 
-tokens to resolve to a parser, such as accepting ``name`` as a tokne, retrieving the parser for ``sponge:name``, 
+tokens to resolve to a parser, such as accepting ``name`` as a token, retrieving the parser for ``sponge:name``, 
 thereby allowing for a consistent experience across entire servers.
 
 Creating Text From A PlaceholderParser
