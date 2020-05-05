@@ -42,6 +42,12 @@ This is the minimum as specified by Sponge. If another plugin replaces the :java
 If your placeholder is unable to provide text because there is insufficient information, the placeholder should return
 and empty :javadoc:`Text` and not throw an exception.
 
+.. tip::
+  If you wish to provide the ability to add multiple arguments to your placeholder, consider specifying a way to split 
+  up the argument string.
+  
+  Remember to tell users of your plugin what you expect your argument string to look like.
+
 Example: Default World Name PlaceholderParser
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -79,16 +85,16 @@ This :javadoc:`PlaceholderParser` attempts to get the player's location in the w
 
 .. code-block:: java
 
-    public class PlayerBalancePlaceholder implements PlaceholderParser {
+    public class PlayerLocationPlaceholder implements PlaceholderParser {
         
         @Override
         public String getId() {
-            return "spongedocs:balance"
+            return "spongedocs:location"
         }
 
         @Override
         public String getName() {
-            return "Balance Placeholder"
+            return "Location Placeholder"
         }
 
         @Override
@@ -104,6 +110,10 @@ This :javadoc:`PlaceholderParser` attempts to get the player's location in the w
 
 Example: Player Balance PlaceholderParser
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. note::
+  This example uses the :javadoc:`EconomyService`. To learn more about this service and how to use it, visit our pages
+  on the :doc:`../economy/index`.
 
 This :javadoc:`PlaceholderParser` attempts to get the player's balance, with an optional argument that may contain the 
 ID of a currency to check, else checking the default currency. It does the following:
@@ -138,39 +148,41 @@ ID of a currency to check, else checking the default currency. It does the follo
             // First: check the EconomyService is available
             Optional<EconomyService> optionalEconService = Sponge.getServiceManager()
                 .provide(EconomyService.class);
-            if (optionalEconService.isPresent()) {
-                EconomyService econService = optionalEconService.get();
-
-                // This placeholder only applies to players, so check that
-                Optional<Player> player = placeholderText.getAssociatedReceiver()
-                    .map(x -> x instanceof Player ? (Player) x : null);
-                if (player.isPresent()) {
-
-                    // Check the argument string, try to get a valid currency out of it
-                    Currency currency;
-                    if (placeholderText.getArgumentString().isPresent()) {
-                        // If we have an argument string, for this placeholder, we assume the 
-                        // entire string is the argument - so is it a valid Currency ID?
-                        Optional<Currency> co = Sponge.getRegistry()
-                            .getType(Currency.class, placeholderText.getArgumentString().get());
-                        if (!co.isPresent()) {
-                            // If not, then the placeholder is invalid and should return an empty text.
-                            return Text.EMPTY;
-                        }
-                        // It is, so this is what we use
-                        currency = co.get();
-                    } else {
-                        currency = econService.getDefaultCurrency();
-                    }
-
-                    // Finally, check the account exists, and if so, return the value
-                    Optional<UniqueAccount> account = econService
-                        .getOrCreateAccount(player.get().getUniqueId());
-                    return account.map(x -> Text.of(x.getBalance(currency))).orElse(Text.EMPTY);
-                }
+            if (!optionalEconService.isPresent()) {
+                return Text.EMPTY;
             }
 
-            return Text.EMPTY;
+            EconomyService econService = optionalEconService.get();
+
+            // This placeholder only applies to players, so check that
+            Optional<MessageReceiver> receiver = placeholderText.getAssociatedReceiver()
+                .filter(x -> x instanceof Player);
+            if (!receiver.isPresent()) {
+                return Text.EMPTY;
+            }
+            Player player = (Player) receiver.get();
+
+            // Check the argument string, try to get a valid currency out of it
+            Currency currency;
+            if (placeholderText.getArgumentString().isPresent()) {
+                // If we have an argument string, for this placeholder, we assume the 
+                // entire string is the argument - so is it a valid Currency ID?
+                Optional<Currency> co = Sponge.getRegistry()
+                    .getType(Currency.class, placeholderText.getArgumentString().get());
+                if (!co.isPresent()) {
+                    // If not, then the placeholder is invalid and should return an empty text.
+                    return Text.EMPTY;
+                }
+                // It is, so this is what we use
+                currency = co.get();
+            } else {
+                currency = econService.getDefaultCurrency();
+            }
+
+            // Finally, check the account exists, and if so, return the value
+            Optional<UniqueAccount> account = econService
+                .getOrCreateAccount(player.getUniqueId());
+            return account.map(x -> Text.of(x.getBalance(currency))).orElse(Text.EMPTY);
         }
     }
 
