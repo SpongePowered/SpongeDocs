@@ -40,7 +40,7 @@ This is the minimum as specified by Sponge. If another plugin replaces the :java
 :javadoc:`PlaceholderText` that provides more information.
 
 If your placeholder is unable to provide text because there is insufficient information, the placeholder should return
-and empty :javadoc:`Text` and not throw an exception.
+an empty :javadoc:`Text` and not throw an exception.
 
 .. tip::
   If you wish to provide the ability to add multiple arguments to your placeholder, consider specifying a way to split 
