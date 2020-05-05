@@ -17,7 +17,7 @@ requiring a specific placeholder library being installed.
 Placeholder libraries can replace the :javadoc:`PlaceholderService` to enhance its operation.
 
 .. note::
-  The Sponge placeholder service does not provide a way to parse entire strings that contains tokens.
+  The Sponge placeholder service does not provide a way to parse entire strings that contain tokens.
 
 Contents
 ========
