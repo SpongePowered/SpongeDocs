@@ -56,22 +56,11 @@ ICBM Classic
 ~~~~~~~~~~~~
 - Versions: All
 - Problem: Missiles stop in midair and appear to lag in place.
-- Solution: Add the commented section to the ``sponge/global.conf`` entity-activation-range -> mods section
+- Solution: Add the commented text below to the ``entity-activation-range/mods`` section of the ``sponge/global.conf`` file:
 
 .. code-block:: none
 
     entity-activation-range {
-        # If 'true', newly discovered entities will be added to this config with a default value.
-        auto-populate=false
-        # Default activation ranges used for all entities unless overridden.
-        defaults {
-            ambient=32
-            aquatic=32
-            creature=32
-            misc=16
-            monster=32
-        }
-        # Per-mod overrides. Refer to the minecraft default mod for example.
         mods {
             # COPY THIS - START
             icbmclassic {
