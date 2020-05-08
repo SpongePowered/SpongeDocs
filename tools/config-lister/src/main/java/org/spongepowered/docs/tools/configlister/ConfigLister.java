@@ -98,7 +98,7 @@ public class ConfigLister {
      *
      * @param clazz The class to scan for nested types.
      * @return A map containing all nested configuration classes, with their primary
-     *         description.
+     *             description.
      */
     public static Map<Class<?>, TypeEntry> scanForNestedTypes(final Class<?> clazz) {
         final Map<Class<?>, TypeEntry> result = new HashMap<>();
@@ -205,7 +205,7 @@ public class ConfigLister {
                                                                             // "it's"
                 .replaceAll("(^|[ \n\\(])(-?[0-9]+(?:\\.[0-9]+)?)([ \n\\)\\.]|$)", "$1``$2``$3") // 1 -> ``1``, ignore
                                                                                                  // 1x1
-                .replaceAll("\n?(Note|Warning|WARNING):", "\n**$1**:"); // Highlight keywords
+                .replaceAll("\n*(Note|Warning|WARNING):", "\n\n**$1**:"); // Highlight keywords
     }
 
     /**
@@ -222,9 +222,7 @@ public class ConfigLister {
         sb.append('\n');
         final String classComment = typeEntry.getDescription();
         if (classComment != null) {
-            sb.append("| ").append(classComment.replace("\n", "\n| ")).append('\n');
-            sb.append("|\n"); // Extra line to force some space between the end of this section and the next
-            sb.append('\n');
+            sb.append(classComment.replaceAll(" *\n *", "\n")).append("\n\n");
         }
 
         // Fields
@@ -239,41 +237,40 @@ public class ConfigLister {
             sb.append('\n');
             // Field-Comment
             if (comment != null) {
-                sb.append("  | ").append(comment
-                        .replace("\n", "\n  | ")).append('\n');
+                sb.append("  ").append(comment.replaceAll(" *\n *", "\n  ")).append("\n\n");
             }
             // Field-Type
             if (singularType.isEnum()) {
                 // Enum type -> Just text + possible values
-                sb.append("  | **Type:** ``").append(toText(fieldType)).append("``\n");
-                sb.append("  | **Possible values:** ").append("\n");
+                sb.append("| **Type:** ``").append(toText(fieldType)).append("``\n");
+                sb.append("| **Possible values:** ").append("\n");
                 for (final Object constant : singularType.getEnumConstants()) {
-                    sb.append("  | - ``").append(((Enum<?>) constant).name()).append("``\n");
+                    sb.append("| - ``").append(((Enum<?>) constant).name()).append("``\n");
                 }
                 // Field-Default
                 if (field.getType().isEnum()) {
                     final Object defaultValue = getDefaultValue(defaultInstance, field);
                     if (defaultValue != null) {
-                        sb.append("  | **Default:** ``").append(defaultValue).append("``\n");
+                        sb.append("| **Default:** ``").append(defaultValue).append("``\n");
                     }
                 }
 
             } else if (DATA_CLASSES.contains(singularType)) {
                 // Simple type -> Just text
-                sb.append("  | **Type:** ``").append(toText(fieldType)).append("``\n");
+                sb.append("| **Type:** ``").append(toText(fieldType)).append("``\n");
                 // Field-Default
                 if (DATA_CLASSES.contains(field.getType())) {
                     final Object defaultValue = getDefaultValue(defaultInstance, field);
                     if (defaultValue != null) {
-                        sb.append("  | **Default:** ``").append(defaultValue).append("``\n");
+                        sb.append("| **Default:** ``").append(defaultValue).append("``\n");
                     }
                 }
             } else {
                 // Nested type -> Generate link
-                sb.append("  | **Type:** :ref:`").append(toText(fieldType).replace("<", "\\<"))
+                sb.append("| **Type:** :ref:`").append(toText(fieldType).replace("<", "\\<"))
                         .append("<ConfigType_").append(toSimpleName(singularType)).append(">`\n");
             }
-            sb.append("  |\n"); // Extra line to force some space between the end of this section and the next
+            sb.append("|\n"); // Extra line to force some space between the end of this section and the next
             sb.append('\n');
         }
 
