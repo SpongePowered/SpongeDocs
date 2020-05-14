@@ -16,7 +16,7 @@ files to full advantage.
 
 .. tip::
 
-    See the official `Configurate wiki <https://github.com/zml2008/configurate/wiki>`_ to gain more in-depth information
+    See the official `Configurate wiki <https://github.com/spongepowered/configurate/wiki>`_ to gain more in-depth information
     about working with its components.
 
 
@@ -116,4 +116,5 @@ specific directory or to ``true`` to get the shared configuration directory.
     The use of YAML format (https://yaml.org/spec/1.1/) and JSON format (https://www.json.org/) is also supported, but
     the preferred config format for Sponge plugins is HOCON. Conversion from YAML (or JSON) to HOCON can be automated by
     using a :javadoc:`YAMLConfigurationLoader` (or :javadoc:`GsonConfigurationLoader`) to load the old config and then
-    saving it using a :javadoc:`HoconConfigurationLoader`.
+    saving it using a :javadoc:`HoconConfigurationLoader`. The `examples repository <https://github.com/SpongePowered/Configurate/blob/master/configurate-examples/src/main/java/org/spongepowered/configurate/examples/FormatConversion.java>`_
+    provides a demonstration of a proper format conversion.
