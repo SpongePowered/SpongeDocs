@@ -4,6 +4,7 @@ Serializing Objects
 
 .. javadoc-import::
 
+    com.google.common.reflect.TypeToken
     java.util.List
     java.util.Map
     java.util.Set
@@ -17,6 +18,7 @@ Serializing Objects
     ninja.leaping.configurate.objectmapping.ObjectMapperFactory
     ninja.leaping.configurate.objectmapping.Setting
     ninja.leaping.configurate.objectmapping.serialize.ConfigSerializable
+    ninja.leaping.configurate.objectmapping.serialize.Scalars
     ninja.leaping.configurate.objectmapping.serialize.TypeSerializer
     ninja.leaping.configurate.objectmapping.serialize.TypeSerializerCollection
     org.spongepowered.api.text.format.TextFormat
@@ -26,9 +28,10 @@ The Configurate library also provides the means to tweak automatic serialization
 Per default, a set of data types can be (de)serialized: 
 
 * ``String``\s, the most commonly used primitive types and their wrappers
-* :javadoc:`List`\s and :javadoc:`Set`\s of serializable values (not including specific implementations)
+* :javadoc:`List`\s, :javadoc:`Set`\s, and arrays of serializable values (not including specific implementations)
 * :javadoc:`Map`\s where both keys and values are serializable (not including specific implementations)
 * The types :javadoc:`UUID`, :javadoc:`URL`, :javadoc:`URI` and :javadoc:`Pattern {(regex) Pattern}`
+* Any other :javadoc:`Scalars {scalar type}`
 * Any enum or :doc:`CatalogType </plugin/data/catalog-types>`
 * The types :doc:`Text </plugin/text/index>`, :javadoc:`TextFormat` and
   :doc:`TextTemplate </plugin/text/templates>` (See also :doc:`here </plugin/text/representations/index>`)
@@ -36,9 +39,9 @@ Per default, a set of data types can be (de)serialized:
 .. note::
 
     If you need special constraints or rules for your serialization (such as sorting the elements in a ``Set``),
-    then you should consider using your own ``TypeSerializer`` implementations.
+    then you should consider using your own ``TypeSerializer`` implementations. Configurate provides several abstract types.
 
-But if you want to write your custom data structures to a config file, this will not be enough.
+But if you want to write your custom data structures to a config file, this may not be enough.
 
 Imagine a data structure tracking how many diamonds a player has mined. It might look a little like this:
 
@@ -56,7 +59,7 @@ Also assume some methods to access those fields, a nice constructor setting both
 Creating a Custom TypeSerializer
 ================================
 
-A very straightforward way of writing and loading such a data structure is providing a custom :javadoc:`TypeSerializer`.
+The first way you might think of writing and loading such a data structure is providing a custom :javadoc:`TypeSerializer`.
 The ``TypeSerializer`` interface provides two methods, one to write the data from an object to a configuration node and
 one to create an object from a given configuration node.
 
@@ -67,6 +70,7 @@ one to create an object from a given configuration node.
     import ninja.leaping.configurate.objectmapping.serialize.TypeSerializer;
 
     public class DiamondCounterSerializer implements TypeSerializer<DiamondCounter> {
+        public static final TypeToken<DiamondCounter> TYPE = TypeToken.of(DiamondCounter.class);
 
         @Override
         public DiamondCounter deserialize(TypeToken<?> type, ConfigurationNode value)
@@ -84,25 +88,16 @@ one to create an object from a given configuration node.
         }
     }
 
-This ``TypeSerializer`` must then be registered with Configurate. This can be done either globally, by registering to
-the default :javadoc:`TypeSerializerCollection` or locally, by specifying it in the :javadoc:`ConfigurationOptions`
-when loading your config.
+This ``TypeSerializer`` must then be registered with Configurate. This can be done by specifying it in the :javadoc:`ConfigurationOptions`
+when loading your config. In the past, global registration has been supported, but 
 
 .. note::
 
     ``ConfigurationOptions`` are immutable. Every time you try to modify the original instance a new instance is
     created; so you either have to use the (chained) result directly or update your variable accordingly.
 
-**Code Example: Registering a TypeSerializer globally**
 
-.. code-block:: java
-
-    import ninja.leaping.configurate.objectmapping.serialize.TypeSerializers;
-
-    TypeSerializers.getDefaultSerializers().registerType(TypeToken.of(DiamondCounter.class), new DiamondCounterSerializer());
-
-
-**Code Example: Registering a TypeSerializer locally**
+**Code Example: Registering a TypeSerializer**
 
 .. code-block:: java
 
@@ -111,22 +106,15 @@ when loading your config.
     import ninja.leaping.configurate.objectmapping.serialize.TypeSerializerCollection;
     import ninja.leaping.configurate.objectmapping.serialize.TypeSerializers;
 
-    TypeSerializerCollection serializers = TypeSerializers.getDefaultSerializers().newChild();
-    serializers.registerType(TypeToken.of(DiamondCounter.class), new DiamondCounterSerializer());
-    ConfigurationOptions options = ConfigurationOptions.defaults().setSerializers(serializers);
+    ConfigurationOptions options = someConfigurationLoader.getDefaultOptions().withSerializers(collection -> {
+        collection.registerType(DiamondCounterSerializer.TYPE, new DiamondCounterSerializer());
+    });
     ConfigurationNode rootNode = someConfigurationLoader.load(options);
 
-.. warning::
-
-    If you provide a custom ``TypeSerializer`` for types that are not introduced by your own plugin, you should only
-    ever register them locally in order to avoid conflicts with other plugins or Sponge, caused by a ``TypeSerializer``
-    being overwritten.
-
 .. tip::
+    Generally, serializers should provide their :javadoc:`TypeToken` as a constant so 
+    that it is easily available for any users who may want to register an instance.
 
-    If you need the ``TypeToken.of(DiamondCounter.class)`` in multiple places, then you should consider creating a
-    constant for it. You can do it in a similar fashion as Sponge does in the :javadoc:`TypeTokens` class, or just
-    define the constant inside of your data or serializer class.
 
 Using ObjectMappers
 ===================
@@ -173,13 +161,20 @@ constructor to instantiate a new object before filling in the annotated fields.
 
     You can also have fields that are not are not annotated with ``@Setting`` in your ``@ConfigSerializable`` classes.
     These fields won't be persisted to config files and can be used to store temporary references for your plugin.
+    For better compatility with future versions of the ObjectMapper, these changes should be 
 
 Using Default Values in ConfigSerializable Types
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 It is also possible to use default values inside of ``@ConfigSerializable`` types. You just have to use Java's field
-initializers (or getters) to set some default values. As long as the entry is not present in the config file the value
-won't be overwritten.
+initializers (or getters) to set some default values. Any default values set will override null values in the 
+configuration being loaded from.
+
+.. tip::
+
+    Starting from Configurate 4.0, ``ObjectMapper`` defaults will only be written to the underlying node if 
+    the :javadoc:`ConfigurationOptions#shouldCopyDefaults()` option has been set to ``true``. To ease migration,
+    this value should be set even in v3.7.
 
 .. code-block:: java
 
@@ -207,7 +202,7 @@ it if it is missing.
 .. code-block:: java
 
     try {
-        this.config = this.configManager.load().<Configuration>getValue(Configuration.TYPE, Configuration::generateDefault);
+        this.config = this.configManager.load().getValue(Configuration.TYPE, Configuration::generateDefault);
     } catch (ObjectMappingException | IOException e) {
         this.logger.error("Failed to load the config - Using a default", e);
         this.config = Configuration.generateErrorDefault();
@@ -246,37 +241,42 @@ Saving a ``@ConfigSerializable`` config is also very simple, as shown by the fol
 Providing a custom ObjectMapperFactory
 ======================================
 
-That restriction, however, can be lifted if we use a different :javadoc:`ObjectMapperFactory`, for example a
-:javadoc:`GuiceObjectMapperFactory`. Instead of requiring an empty constructor, it will work on any class that guice
+While normally an object mapper can only construct instances of objects with empty constructors, an :javadoc:`ObjectMapperFactory`, for example a
+:javadoc:`GuiceObjectMapperFactory` can provide other methods for object construction.. Instead of requiring an empty constructor, it will work on any class that guice
 can create via dependency injection. This also allows for a mixture of ``@Inject`` and ``@Setting`` annotated fields.
 
-Your plugin can just acquire a ``GuiceObjectMapperFactory`` simply by dependency injection
-(see :doc:`../injection`) and then pass it to the ``ConfigurationOptions``.
+Any ``ConfigurationLoader`` provided by Sponge will use the Guice ``ObjectMapperFactory`` to construct any instances of objects created using 
+the ``getValue(TypeToken)`` method on ConfigurationNode. For more complicated scenarios, the :javadoc:`GuiceObjectMapperFactory` is available 
+through the plugin`s ``Injector`` (see :doc:`../injection`) directly.
 
 .. code-block:: java
 
-    import org.spongepowered.api.event.Listener;
-    import org.spongepowered.api.event.game.state.GamePreInitializationEvent;
-    import org.spongepowered.api.plugin.Plugin;
     import com.google.inject.Inject;
+    import java.nio.file.Path;
     import ninja.leaping.configurate.commented.CommentedConfigurationNode;
     import ninja.leaping.configurate.loader.ConfigurationLoader;
     import ninja.leaping.configurate.objectmapping.GuiceObjectMapperFactory;
+    import org.spongepowered.api.event.Listener;
+    import org.spongepowered.api.event.game.state.GamePreInitializationEvent;
+    import org.spongepowered.api.plugin.Plugin;
 
     @Plugin(name="IStoleThisFromZml", id="shamelesslystolen", version="0.8.15", description = "Stolen")
     public class StolenCodeExample {
 
         @Inject private GuiceObjectMapperFactory factory;
-        @Inject private ConfigurationLoader<CommentedConfigurationNode> loader;
+        @Inject private @ConfigDir(sharedRoot=true) Path configBase;
 
         @Listener
-        public void enable(GamePreInitializationEvent event) throws IOException, ObjectMappingException {
-            CommentedConfigurationNode node =
-              loader.load(ConfigurationOptions.defaults().setObjectMapperFactory(factory));
+        public void enable(final GamePreInitializationEvent event) throws IOException, ObjectMappingException {
+            final Path specificPath = configBase.resolve("mangos.conf");
+            final HoconConfigurationLoader loader = HoconConfigurationLoader.builder()
+                            .setDefaultOptions(o -> o.withObjectMapperFactory(factory))
+                            .build();
+            CommentedConfigurationNode node = loader.load();
             DiamondCounter myDiamonds = node.getValue(TypeToken.of(DiamondCounter.class));
         }
     }
 
 .. note::
 
-    The above code is an example and, for brevity, lacks proper exception handling.
+    The above code is an example and, for brevity, lacks proper error handling.
