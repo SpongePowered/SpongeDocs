@@ -64,8 +64,8 @@ may also require an update to Minecraft Forge.
 .. warning::
 
     Some mods may clash with SpongeForge's changes causing errors to appear on the console.
-    Before reporting this to Sponge, please refer to :ref:`quickstart-when-things-go-wrong`.
-    You can also ask us for help on our support channels.
+    Before reporting this to Sponge, please refer to :ref:`quickstart-when-things-go-wrong`, particularly
+    :doc:`spongineer/incompatible`. You can also ask us for help on our support channels.
 
 For more information on how to create a Minecraft Forge server and install SpongeForge, see
 :doc:`getting-started/implementations/spongeforge`.
@@ -142,6 +142,7 @@ When Things Go Wrong
 From time to time, incompatible mods or other strange behavior might cause problems on your server. Before
 reaching out for help, following the advice on these pages may help you fix your problems quickly:
 
+* :doc:`spongineer/incompatible`
 * :doc:`spongineer/troubleshooting`
 * :doc:`spongineer/debugging`
 * :doc:`spongineer/logs`
