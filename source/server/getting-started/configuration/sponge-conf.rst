@@ -114,7 +114,6 @@ The main configuration for Sponge: ``global.conf``
 * **metrics**
 
   Configuration options related to metric collection.
-  Metric collection is disabled by default.
 
 | **Type:** :ref:`Metrics<ConfigType_Metrics>`
 |
@@ -675,14 +674,9 @@ entity-collisions.mods (CollisionMod)
 
 Per-mod overrides. Refer to the minecraft default mod for example.
 
-* **blocks**
-
-| **Type:** ``Map<String, Integer>``
-|
-
 * **defaults**
 
-  Default maximum collisions used for all entities/blocks unless overridden.
+  Default maximum collisions used for all entities unless overridden.
 
 | **Type:** ``Map<String, Integer>``
 |
@@ -806,6 +800,20 @@ general (GlobalGeneral)
 -----------------------
 
 Contains general configuration options for Sponge that don't fit into a specific classification
+
+* **check-file-when-saving-sponge-data-file**
+
+  If ``true``, Sponge will try to ensure that its data is on disk
+  when saving the ``level_sponge.dat`` file,
+  but this may cause a slight performance hit.
+  Setting this to ``false`` will mean Sponge does not
+  perform any consistency checks, but you may end up
+  with corrupt data if an unexpected failure occurs on your server,
+  requiring restoring this file from backup.
+
+| **Type:** ``boolean``
+| **Default:** ``true``
+|
 
 * **config-dir**
 
@@ -1004,7 +1012,6 @@ metrics (Metrics)
 -----------------
 
 Configuration options related to metric collection.
-Metric collection is disabled by default.
 
 * **global-state**
 
@@ -1386,13 +1393,13 @@ time during saves if your world is already fully generated.
 
 * **enabled**
 
-  If ``false``, disables the modification to prevent certain structures
-  from saving to the world's data folder. If you wish to prevent certain
-  structures from saving, leave this ``enabled=true``. When ``true``, the
-  modification allows for specific ``named`` structures to NOT be saved to
-  disk. Examples of some structures that are costly and somewhat irrelivent
-  is ``mineshaft``\s, as they build several structures and save, even after
-  finished generating.
+  Global switch to enable sponge's changes to the structure saving mechansim.
+  By default, this option is disabled, i.e. saving structures is not affected.
+  If you want to prevent that a certain ``named`` structure is saved to the world's folder,
+  you have to enable this module/setting and disable the structure in the further settings.
+  An example of a structure that is costly and somewhat irrelevant is ``mineshaft``,
+  as they build and save several structures even after the mine shafts have been completely generated.
+  However, this has the disadvantage that these structures may no longer be locatable by some mods.
 
 | **Type:** ``boolean``
 | **Default:** ``false``
@@ -1414,12 +1421,9 @@ Per-mod overrides. Refer to the minecraft default mod for example.
 
 * **enabled**
 
+  Global flag, whether this mod's structures will be saved.
   If ``false``, this mod will never save its structures.
-  This may break some mod functionalities when requesting to locate their
-  structures in a World. If true, allows structures not overridden
-  in the section below to be saved by default. If you wish to find
-  a structure to prevent it being saved, enable ``auto-populate`` and
-  restart the server/world instance.
+  If ``true``, it will check the ``structureList`` for disabled structures.
 
 | **Type:** ``boolean``
 | **Default:** ``true``
@@ -1427,8 +1431,10 @@ Per-mod overrides. Refer to the minecraft default mod for example.
 
 * **structures**
 
-  Per structure override. Having the value of ``false`` will prevent
-  that specific named structure from saving.
+  The configuration for each struture.
+  A value of ``false`` prevents that struture from being saved.
+  Entries that are either missing in this list or have the value ``true`` will still be saved,
+  unless the structure saving of the mod is globally disabled.
 
 | **Type:** ``Map<String, Boolean>``
 |
@@ -1684,7 +1690,7 @@ https://github.com/aikar/timings#aikars-minecraft-timings-viewer-v2
 
 * **enabled**
 
-  ???
+  Enables the timing module
 
 | **Type:** ``boolean``
 | **Default:** ``true``
@@ -1692,7 +1698,11 @@ https://github.com/aikar/timings#aikars-minecraft-timings-viewer-v2
 
 * **hidden-config-entries**
 
-  ???
+  These configuration entries/paths/sections are removed before the report is sent.
+  This is to prevent credentials from being leaked unintentionally.
+  
+  **Note**: The ``sponge.sql`` section is always ignored
+  and thus is never sent to the webviewer regardless of this config.
 
 | **Type:** ``List<String>``
 |
@@ -1715,7 +1725,7 @@ https://github.com/aikar/timings#aikars-minecraft-timings-viewer-v2
 
 * **server-name-privacy**
 
-  Hides the server name in the Airkar webviewer to no leak the l33t server you are running
+  Hides the server name in the Aikar webviewer to no leak the l33t server you are running
 
 | **Type:** ``boolean``
 | **Default:** ``false``
