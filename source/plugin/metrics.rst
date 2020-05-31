@@ -43,8 +43,8 @@ can either be injected into your plugin class, or obtained via :javadoc:`Sponge#
 on demand.
 
 **Every time** your plugin wishes to send metrics, you must check the
-:javadoc:`MetricsConfigManager#areMetricsEnabled(PluginContainer)`, supplying the :javadoc:`PluginContainer` of
-your plugin. Metrics must only be sent if this returns ``true`` for your plugin.
+:javadoc:`MetricsConfigManager#getCollectionState(PluginContainer)`, supplying the :javadoc:`PluginContainer` of
+your plugin. Metrics must only be sent if this returns ``Tristate#TRUE`` for your plugin.
 
 The following example shows how to use field injections to get the ``MetricsConfigManager`` and the
 ``PluginContainer`` for your plugin, and uses those to determine whether consent to send metrics has been obtained.
@@ -64,5 +64,5 @@ The following example shows how to use field injections to get the ``MetricsConf
     private MetricsConfigManager metricsConfigManager;
 
     public boolean hasConsent() {
-        return this.metricsConfigManager.areMetricsEnabled(this.container);
+        return this.metricsConfigManager.getCollectionState(this.container).asBoolean();
     }
