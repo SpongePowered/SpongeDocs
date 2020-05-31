@@ -177,5 +177,4 @@ The implementation of ``translate`` is identical to ``toContainer()`` and ``buil
 ``DataSerializable`` as shown above, except that an ``InvalidDataException`` is thrown if data is missing in place of 
 returning an ``Optional``.
 
-As with other data, ensure that you register the translator with 
-``DataManager#registerTranslator(Class, DataTranslator)``.
+As with other data, ensure that you register the translator during ``GameRegistryEvent.Register<DataTranslator<?>>``.
