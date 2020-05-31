@@ -10,10 +10,10 @@ This page explains which API versions exist, and to which Minecraft version thei
 | *8.0.0*     | TBA          | TBA            | * *SpongeForge*                           |
 |             |              |                | * *SpongeVanilla*                         |
 +-------------+--------------+----------------+-------------------------------------------+
-| 7.2.0       | TBA          | TBA            | * SpongeForge (1.12.2)                    |
+| 7.2.0       | Mar 29, 2020 | TBA            | * SpongeForge (1.12.2)                    |
 |             |              |                | * SpongeVanilla (1.12.2)                  |
 +-------------+--------------+----------------+-------------------------------------------+
-| 7.1.0       | Sep 6, 2018  | TBA            | * SpongeForge (1.12.2)                    |
+| 7.1.0       | Sep 6, 2018  | Mar 28, 2020   | * SpongeForge (1.12.2)                    |
 |             |              |                | * SpongeVanilla (1.12.2)                  |
 +-------------+--------------+----------------+-------------------------------------------+
 | 7.0.0       | Jan 1, 2018  | Sep 5, 2018    | * SpongeForge (1.12.2)                    |
