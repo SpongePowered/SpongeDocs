@@ -6,13 +6,19 @@ Dependency Injection
     org.spongepowered.api.Game
     org.spongepowered.api.GameRegistry
     org.spongepowered.api.Server
+    org.spongepowered.api.asset.Asset
+    org.spongepowered.api.asset.AssetId
     org.spongepowered.api.config.ConfigDir
     org.spongepowered.api.config.DefaultConfig
     org.spongepowered.api.event.EventManager
+    org.spongepowered.api.network.ChannelBinding
+    org.spongepowered.api.network.ChannelId
     org.spongepowered.api.plugin.Plugin
     org.spongepowered.api.plugin.PluginContainer
     org.spongepowered.api.plugin.PluginManager
+    org.spongepowered.api.scheduler.AsynchronousExecutor
     org.spongepowered.api.scheduler.Scheduler
+    org.spongepowered.api.scheduler.SynchronousExecutor
     ninja.leaping.configurate.commented.CommentedConfigurationNode
     ninja.leaping.configurate.loader.ConfigurationLoader
     ninja.leaping.configurate.objectmapping.GuiceObjectMapperFactory
@@ -27,12 +33,32 @@ Temporary List of Injected Types
   Used to inject the plugin's configuration directory:
   ``./config/`` OR ``./config/<Plugin#id>/`` depending on :javadoc:`ConfigDir#sharedRoot()`
 
+:javadoc:`DefaultConfig` (annotation on Path, ConfigurationLoader or File)
+  Used to inject the plugin's specific configuration file: ``<Plugin#id>.conf``
+
+:javadoc:`AssetId` (annotation on Asset)
+  Used to inject a ``Asset`` from the asset folder of the plugin
+
+:javadoc:`AsynchronousExecutor` (annotation on SpongeExecutorService)
+  Used to inject the plugin's specific AsynchronousExecutor
+
+:javadoc:`SynchronousExecutor` (annotation on SpongeExecutorService)
+  Used to inject the plugin's specific SynchronousExecutor
+
+:javadoc:`ChannelId` (annotation on ChannelBinding.IndexedMessageChannel or ChannelBinding.RawDataChannel)
+  Used to inject a ``ChannelBinding`` with the given channel id
+
+:javadoc:`Asset`
+  Must be annotated with ``@AssetId``.
+
+:javadoc:`SpongeExecutorService`
+  Must be annotated with either ``@AsynchronousExecutor`` or ``@SynchronousExecutor``.
+  Depending on the annotation given this will contain a reference to the plugin's specific
+  Asynchronous or Synchronous Executor.
+
 :javadoc:`ConfigurationLoader<CommentedConfigurationNode>`
   Must be annotated with ``@DefaultConfig``.
   Used to inject a pre-generated ``ConfigurationLoader`` for the ``File`` of the same annotation.
-
-:javadoc:`DefaultConfig` (annotation on Path, ConfigurationLoader or File)
-  Used to inject the plugin's specific configuration file: ``<Plugin#id>.conf``
 
 :javadoc:`EventManager`
   Manages the registration of event handlers and the dispatching of events.
