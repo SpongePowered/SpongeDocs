@@ -26,7 +26,7 @@ here: :doc:`/server/getting-started/jre/`
 Where do I get Sponge?
 ----------------------
 
-You can download SpongeForge and SpongeVanilla on our `downloads page <https://www.spongepowered.org/downloads>`_.
+You can download SpongeForge and SpongeVanilla on our `downloads page <https://www.spongepowered.org/downloads/>`_.
 
 What Sponge implementations are available?
 ------------------------------------------

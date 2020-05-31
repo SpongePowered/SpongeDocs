@@ -24,7 +24,7 @@ Mixin
 -----
 
 Learn about `Mixin <https://github.com/SpongePowered/Mixin>`_ on its `wiki 
-<https://github.com/SpongePowered/Mixin/wiki>`_ and `javadoc <http://jenkins.liteloader.com/job/Mixin/javadoc/>`_ 
+<https://github.com/SpongePowered/Mixin/wiki>`_ and `javadoc <https://jenkins.liteloader.com/job/Mixin/javadoc/>`_
 sites.
 
 IntelliJ
