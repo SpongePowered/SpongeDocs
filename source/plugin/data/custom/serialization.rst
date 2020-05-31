@@ -95,9 +95,6 @@ the data is likely incomplete and you should return ``Optional.empty()``.
 If everything seems to be there, use the ``getX`` methods to construct the values and return a newly created object as 
 an ``Optional``.
 
-Finally, you need to register this builder so that it can be found by plugins. To do this, simply call 
-``DataManager#registerDataBuilder(Class, DataBuilder)`` referencing the data class and an instance of the builder.
-
 .. _content-updaters:
 
 DataContentUpdaters
