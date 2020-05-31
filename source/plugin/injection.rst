@@ -18,6 +18,7 @@ Dependency Injection
     org.spongepowered.api.plugin.PluginManager
     org.spongepowered.api.scheduler.AsynchronousExecutor
     org.spongepowered.api.scheduler.Scheduler
+    org.spongepowered.api.scheduler.SpongeExecutorService
     org.spongepowered.api.scheduler.SynchronousExecutor
     ninja.leaping.configurate.commented.CommentedConfigurationNode
     ninja.leaping.configurate.loader.ConfigurationLoader
