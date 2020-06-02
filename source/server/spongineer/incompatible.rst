@@ -84,11 +84,12 @@ Just Enough IDs (JEID)
 - Problem: Crash on startup (mixin conflict).
 - Solution: Update to version 1.0.3-54 or newer.
 
-LagGoggles
+LagGoggles/TickCentral
 ~~~~~~~~~~
-- Versions: Older than 1.12.2-5.3-113
-- Problem: Crash on startup (mixin conflict).
-- Solution: Update to version 1.12.2-5.3-113 and install *TickCentral* core-mod.
+- Versions: All
+- Problem: Crash on startup (mixin conflict) or .
+- Solution: Due to the very invasive nature of these mods, it's hard for SpongeForge to run properly alongside them. Only use LagGoggles/TickCentral when you need to debug issues, and do not leave it on your server for production constant use.
+- Issues: https://github.com/SpongePowered/SpongeForge/issues/3171
 
 MystCraft
 ~~~~~~~~~
