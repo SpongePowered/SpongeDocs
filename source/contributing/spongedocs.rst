@@ -49,7 +49,7 @@ writing Sponge Documentation. This list may get added to (or bent out of shape) 
 
 1. Headings Should Be Written in Title Case (<- example) [unless #8 applies].
 2. Page headings should be meaningful (the heading appears as a link).
-3. Program code should be contained in `inline literals <http://docutils.sourceforge.net/docs/ref/rst/roles.html#literal>`__
+3. Program code should be contained in `inline literals <https://docutils.sourceforge.io/docs/ref/rst/roles.html#literal>`__
    or code blocks.
 
   i. Try not to put too much text in code blocks, as they cannot be translated.

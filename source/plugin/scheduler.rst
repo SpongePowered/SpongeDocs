@@ -304,7 +304,7 @@ Scala
 Scala comes with a built-in `Future <https://www.scala-lang.org/api/current/#scala.concurrent.Future>`_ object which
 a lot of scala framework mirror in design.
 Most methods of the Future accept an 
-`ExecutionContext <https://www.scala-lang.org/api/current/index.html#scala.concurrent.ExecutionContext$>`_ which
+`ExecutionContext <https://www.scala-lang.org/api/current/scala/concurrent/ExecutionContext.html>`_ which
 determined where that part of the operation is executed.
 This is different from the CompletableFuture or RxJava since they default to executing on the same thread on which
 the previous operation ended.
