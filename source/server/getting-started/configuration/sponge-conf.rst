@@ -35,14 +35,15 @@ The main configuration for Sponge: ``global.conf``
 
 * **bungeecord**
 
-  Configuration options related for server proxies, such as bungeecord
+  Controls how Sponge interacts with server proxies, such as BungeeCord and Velocity.
+  Requires that the ``bungeecord`` module is enabled.
 
 | **Type:** :ref:`BungeeCord<ConfigType_BungeeCord>`
 |
 
 * **cause-tracker**
 
-  Options related to Sponge's cause tracking system
+  Configuration options related to Sponge's cause tracking system
 
 | **Type:** :ref:`PhaseTracker<ConfigType_PhaseTracker>`
 |
@@ -99,7 +100,7 @@ The main configuration for Sponge: ``global.conf``
 * **ip-sets**
 
   Automatically assigns (permission) contexts to users that use any of the given ips.
-  This can be used to restrict/grand permissions, based on the player's source or target ip.
+  This can be used to restrict/grant permissions, based on the player's source or target ip.
 
 | **Type:** ``Map<String, List<IpSet>>``
 |
@@ -120,14 +121,16 @@ The main configuration for Sponge: ``global.conf``
 
 * **modules**
 
-  Options related to optional modules, that can be enabled or disabled.
+  Sponge provides a number of modules that allow for enabling or disabling
+  certain specific features. These may be enabled or disabled below.
+  Any changes here require a server restart as modules are applied at startup.
 
 | **Type:** :ref:`Module<ConfigType_Module>`
 |
 
 * **movement-checks**
 
-  Options related to minecraft's movement checks, that can be enabled or disabled.
+  Configuration options related to minecraft's movement checks, that can be enabled or disabled.
 
 | **Type:** :ref:`MovementChecks<ConfigType_MovementChecks>`
 |
@@ -227,7 +230,8 @@ Stopgap measures for dealing with broken mods
 bungeecord (BungeeCord)
 -----------------------
 
-Configuration options related for server proxies, such as bungeecord
+Controls how Sponge interacts with server proxies, such as BungeeCord and Velocity.
+Requires that the ``bungeecord`` module is enabled.
 
 * **ip-forwarding**
 
@@ -242,7 +246,7 @@ Configuration options related for server proxies, such as bungeecord
 cause-tracker (PhaseTracker)
 ----------------------------
 
-Options related to Sponge's cause tracking system
+Configuration options related to Sponge's cause tracking system
 
 * **auto-fix-null-source-block-providing-tile-entities**
 
@@ -1041,7 +1045,9 @@ Configuration options related to metric collection.
 modules (Module)
 ----------------
 
-Options related to optional modules, that can be enabled or disabled.
+Sponge provides a number of modules that allow for enabling or disabling
+certain specific features. These may be enabled or disabled below.
+Any changes here require a server restart as modules are applied at startup.
 
 * **broken-mod**
 
@@ -1141,7 +1147,7 @@ Options related to optional modules, that can be enabled or disabled.
 movement-checks (MovementChecks)
 --------------------------------
 
-Options related to minecraft's movement checks, that can be enabled or disabled.
+Configuration options related to minecraft's movement checks, that can be enabled or disabled.
 
 * **moved-wrongly**
 
