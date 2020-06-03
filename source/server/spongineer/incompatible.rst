@@ -88,9 +88,7 @@ LagGoggles/TickCentral
 ~~~~~~~~~~~~~~~~~~~~~~
 - Versions: All
 - Problem: Crash on startup (mixin conflict).
-- Solution: Due to the very invasive nature of these mods, SpongeForge cannot run properly alongside them. 
-  Only use these mods when you need to debug issues, and do not leave it on your server for production constant use.
-- Issues: https://github.com/SpongePowered/SpongeForge/issues/3171
+- Solution: No compatibility at present. Choose one or the other.
 
 MystCraft
 ~~~~~~~~~
