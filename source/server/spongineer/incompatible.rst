@@ -84,11 +84,11 @@ Just Enough IDs (JEID)
 - Problem: Crash on startup (mixin conflict).
 - Solution: Update to version 1.0.3-54 or newer.
 
-LagGoggles
-~~~~~~~~~~
-- Versions: Older than 1.12.2-5.3-113
+LagGoggles/TickCentral
+~~~~~~~~~~~~~~~~~~~~~~
+- Versions: All
 - Problem: Crash on startup (mixin conflict).
-- Solution: Update to version 1.12.2-5.3-113 and install *TickCentral* core-mod.
+- Solution: No compatibility at present. Choose one or the other.
 
 MystCraft
 ~~~~~~~~~
