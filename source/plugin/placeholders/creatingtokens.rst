@@ -31,8 +31,8 @@ There are two ways you can create a ``PlaceholderParser``:
 
 .. note::
   ``PlaceholderParsers`` are :doc:`Catalog Types<../data/catalog-types>`. If you implement the interface directly,
-  remember that the ID of the parser should be plugin namespaced, of the form  ``[pluginid]:[placeholderid]``. IDs must
-  also be unique.
+  remember that the ID of the parser should be plugin namespaced, of the form  ``[pluginid]:[placeholderid]``. IDs 
+  must also be unique.
 
 :javadoc:`PlaceholderParser` objects take a :javadoc:`PlaceholderContext` object which contains the context of the
 request and returns a :javadoc:`Text` based on that context. Information that the ``PlaveholderContext`` may 
@@ -55,8 +55,8 @@ an empty ``Text`` and not throw an exception.
 Example: Default World Name PlaceholderParser
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This ``PlaceholderParser`` attempts to get the default world's name, returning an empty ``Text`` if it cannot be found.
-It uses the builder to create the parser with ID ``spongedocs:defaultworld``, assuming the plugin has an ID of 
+This ``PlaceholderParser`` attempts to get the default world's name, returning an empty ``Text`` if it cannot be 
+found. It uses the builder to create the parser with ID ``spongedocs:defaultworld``, assuming the plugin has an ID of 
 ``spongedocs``.
 
 .. code-block:: java
