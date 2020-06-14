@@ -3,82 +3,86 @@ Retrieving and Parsing Placeholders
 ===================================
 
 .. javadoc-import::
-    org.spongepowered.api.service.placeholder.PlaceholderService
+    org.spongepowered.api.CatalogType
+    org.spongepowered.api.entity.living.player.Player
+    org.spongepowered.api.service.placeholder.PlaceholderContext
+    org.spongepowered.api.service.placeholder.PlaceholderContext.Builder
     org.spongepowered.api.service.placeholder.PlaceholderParser
     org.spongepowered.api.service.placeholder.PlaceholderText
     org.spongepowered.api.service.placeholder.PlaceholderText.Builder
     org.spongepowered.api.text.Text
+    org.spongepowered.api.text.Text.Builder
     org.spongepowered.api.text.TextRepresentable
     org.spongepowered.api.text.channel.MessageReceiver
 
 
-Obtaining A PlaceholderParser
+Obtaining a PlaceholderParser
 =============================
 
-There are two ways to obtain a registered :javadoc:`PlaceholderParser`:
+:javadoc:`PlaceholderParser {PlaceholderParsers}` are stored in the Sponge registry, meaning they can be obtained the
+same way as any other :javadoc:`CatalogType`:
 
-* Directly obtain the parser from the Sponge Registry by calling 
-  ``Sponge.getRegistry().getType(PlaceholderParser.class, id);``; or
-* Obtain the parser via :javadoc:`PlaceholderService#getParser(String)`.
+.. code-block:: java
 
-In general, we recommend that the second option is used, as plugin-provided implementations may allow for shorthand 
-tokens to resolve to a parser, such as accepting ``name`` as a token, retrieving the parser for ``sponge:name``, 
-thereby allowing for a consistent experience across entire servers.
+  Sponge.getRegistry().getType(PlaceholderParser.class, id);
 
-Creating Text From A PlaceholderParser
+
+.. tip::
+
+  Remember that the ``PlaceholderParser`` ID is of the form ``pluginid:placeholderid``, for example ``sponge:name``.
+
+Creating Text from a PlaceholderParser
 ======================================
 
-A :javadoc:`PlaceholderParser` requires a :javadoc:`PlaceholderText` in order to generate an appropriate :javadoc:`Text`
-object. :javadoc:`PlaceholderText {PlaceholderTexts}` can be created by using a :javadoc:`PlaceholderText.Builder` 
-obtained from :javadoc:`PlaceholderService#placeholderBuilder()`.
+A ``PlaceholderParser`` requires a :javadoc:`PlaceholderContext` in order to generate an appropriate :javadoc:`Text`
+object. ``PlaceholderContexts`` can be created by using a :javadoc:`PlaceholderContext.Builder` obtained from the 
+:javadoc:`PlaceholderContext#builder()` method.
 
-The builder, as a minimum, allows for the following context to be provided:
+The builder allows for the following optional context to be provided:
 
-* The :javadoc:`PlaceholderParser` to use to generate the :javadoc:`Text` (this must be provided)
-* An associated :javadoc:`MessageReceiver`, allowing for the placeholder to modify its output
-* An argument string that the :javadoc:`PlaceholderParser` can parse, often provided by templating engines
+* An associated object, allowing for the placeholder to modify its output (this will usually be a :javadoc:`Player` or 
+  other :javadoc:`MessageReceiver`)
+* An argument string that a ``PlaceholderParser`` can parse
 
-If the service is not the Sponge provided service, the builder may be able to provide more context, though this will 
-require depending on the service providing plugin in question.
+A built ``PlaceholderContext`` can then be supplied to the ``PlaceholderParser`` by using 
+:javadoc:`PlaceholderParser#parse(PlaceholderContext)`.
 
-A built :javadoc:`PlaceholderText` is a :javadoc:`TextRepresentable`, meaning it can be used in :javadoc:`Text` objects
-like other text-based objects. This will generate the appropriate text.
-
-Examples
-========
-
-If you wish to include a player's name using the ``sponge:name`` parser, you could do the following:
+For example, if you wish to include a player's name using the ``sponge:name`` parser, you could do the following:
 
 .. code-block:: java
   
   Player player = ...;
-  PlaceholderService placeholderService = Sponge.getServiceManager()
-      .provideUnchecked(PlaceholderService.class);
 
   // We know this exists
-  PlaceholderParser nameParser = placeholderService.getParser("sponge:name").get();
-  PlaceholderText placeholderText = placeholderService.placeholderBuilder()
-      .setParser(nameParser)
-      .setAssociatedSource(player)
+  PlaceholderParser parser = Sponge.getRegistry().getType(PlaceholderParser.class, "sponge:name").get();
+  PlaceholderContext context = PlaceholderContext.builder()
+      .setAssociatedObject(player)
       .build();
+  Text text = parser.parse(context);
   
-  // Use in text like this
-  player.sendMessage(Text.of("Hello! Your name is ", placeholderText, "!"));
 
-You can also use the shorthand methods like so:
+If the player name is "SpongePlayer", the returned text will say ``SpongePlayer``
+
+Including Placeholders in Text
+==============================
+
+Placeholders can also be used in ``Text.of(...)`` and :javadoc:`Text.Builder` objects without parsing them
+first. Sponge provides a :javadoc:`PlaceholderText` object that bundles a ``PlaceholderParser`` and 
+``PlaceholderContext`` together into a :javadoc:`TextRepresentable`.
+
+To create a ``PlaceholderText``, use :javadoc:`PlaceholderText#builder()` and add the ``PlaceholderParser`` and 
+``PlaceholderContext`` objects as appropriate. You can then use the built ``PlaceholderText`` in the ``Text`` objects.
+
+If you wished to use the parser and context from the previous example in ``Text.of()``, you could write the following:
 
 .. code-block:: java
-  
-  Player player = ...;
-  PlaceholderService placeholderService = Sponge.getServiceManager()
-      .provideUnchecked(PlaceholderService.class);
+    
+    PlaceholderText placeholderText = PlaceholderText.builder().setContext(context).setParser(parser).build();
+    Text result = Text.of("Hello! Your name is ", placeholderText, "!");
 
-  // We know this exists
-  PlaceholderText placeholderText = placeholderService.parse("sponge:name", player).get();
-  
-  // Use in text like this
-  player.sendMessage(Text.of("Hello! Your name is ", placeholderText, "!"));
+The text will say "Hello! Your name is SpongePlayer!"
 
-
-If the player name is "SpongePlayer", either example will send the player the message 
-``Hello! Your name is SpongePlayer!``
+.. note::
+    
+    A ``PlaceholderText`` will be parsed when the ``Text`` it is placed in is built, that is, either when placed in
+    ``Text.of(...)```, or when added to a :javadoc:`Text.Builder` and :javadoc:`Text.Builder#build()` is called.

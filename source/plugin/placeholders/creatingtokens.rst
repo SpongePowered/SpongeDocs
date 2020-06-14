@@ -4,6 +4,7 @@ Creating Placeholder Tokens
 
 .. javadoc-import::
     org.spongepowered.api.CatalogType
+    org.spongepowered.api.plugin.PluginContainer
     org.spongepowered.api.entity.living.player.Player
     org.spongepowered.api.event.game.GameRegistryEvent.Register
     org.spongepowered.api.service.economy.Currency
@@ -19,28 +20,31 @@ At the heart of the Sponge Placeholder API is the ability to create your own tok
 plugins. To create your own placeholder, you must create an object that implements :javadoc:`PlaceholderParser` and
 register it in the Sponge Registry.
 
-:javadoc:`PlaceholderParser {PlaceholderParsers}` are independent of a plugin's :javadoc:`PlaceholderService`.
+Creating PlaceholderParsers
+===========================
 
-Implementing PlaceholderParser
-==============================
+There are two ways you can create a ``PlaceholderParser``:
+
+* Using :javadoc:`PlaceholderParser#builder()`, supplying your :javadoc:`PluginContainer`, un-namespaced ID and 
+  a function that takes a ``PlaceholderContext`` and returns a ``Text``.
+* Directly implement the interface.
 
 .. note::
-  :javadoc:`PlaceholderParser {PlaceholderParsers}` are :doc:`Catalog Types<../data/catalog-types>`. As with all
-  Catalog Types, the ID of the parser should be plugin namespaced, and therefore be of the form  
-  ``[pluginid]:[placeholderid]``, and must be unique.
+  ``PlaceholderParsers`` are :doc:`Catalog Types<../data/catalog-types>`. If you implement the interface directly,
+  remember that the ID of the parser should be plugin namespaced, of the form  ``[pluginid]:[placeholderid]``. IDs must
+  also be unique.
 
-:javadoc:`PlaceholderParser` objects take a :javadoc:`PlaceholderText` object which contains the context of the
-request and returns a :javadoc:`Text` based on that context. Information that the :javadoc:`PlaceholderText` may 
+:javadoc:`PlaceholderParser` objects take a :javadoc:`PlaceholderContext` object which contains the context of the
+request and returns a :javadoc:`Text` based on that context. Information that the ``PlaveholderContext`` may 
 contain includes:
 
-* An associated :javadoc:`MessageReceiver`, such as a :javadoc:`Player`
-* An argument string which has been provided by a templating engine
+* An associated object, such as a :javadoc:`Player`
+* An argument string which generally will be provided by a templating engine
 
-This is the minimum as specified by Sponge. If another plugin replaces the :javadoc:`PlaceholderService`, there may a
-:javadoc:`PlaceholderText` that provides more information.
+This is the minimum as specified by Sponge. 
 
 If your placeholder is unable to provide text because there is insufficient information, the placeholder should return
-an empty :javadoc:`Text` and not throw an exception.
+an empty ``Text`` and not throw an exception.
 
 .. tip::
   If you wish to provide the ability to add multiple arguments to your placeholder, consider specifying a way to split 
@@ -51,37 +55,31 @@ an empty :javadoc:`Text` and not throw an exception.
 Example: Default World Name PlaceholderParser
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This :javadoc:`PlaceholderParser` attempts to get the default world's name, returning an empty :javadoc:`Text` if it
-cannot be found.
+This ``PlaceholderParser`` attempts to get the default world's name, returning an empty ``Text`` if it cannot be found.
+It uses the builder to create the parser with ID ``spongedocs:defaultworld``, assuming the plugin has an ID of 
+``spongedocs``.
 
 .. code-block:: java
-
-    public class DefaultWorldNameParser implements PlaceholderParser {
-        
-        @Override
-        public String getId() {
-            return "spongedocs:defaultworld"
-        }
-
-        @Override
-        public String getName() {
-            return "Default World Placeholder"
-        }
-
-        @Override
-        public Text parse(PlaceholderText placeholderText) {
+    
+    PluginContainer thisPlugin = ...;
+    
+    PlaceholderParser parser = PlaceholderParser.builder()
+        .plugin(this.thisPlugin)
+        .id("defaultworld")
+        .name("Default World Placeholder")
+        .parser(placeholderContext -> {
             return Sponge.getServer()
                 .getDefaultWorld()
                 .map(x -> x.getWorldName())
                 .orElse(Text.EMPTY);
-        }
-    }
+        })
+        .build();
 
 Example: Player Location PlaceholderParser
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This :javadoc:`PlaceholderParser` attempts to get the player's location in the world. If used without a 
-:javadoc:`Player` as the associated receiver, returns an empty :javadoc:`Text`.
+This ``PlaceholderParser`` attempts to get the player's location in the world. If used without a ``Player`` as the 
+associated object, it returns an empty :javadoc:`Text`. This implements the ``PlaveholderParser`` interface directly.
 
 .. code-block:: java
 
@@ -108,82 +106,35 @@ This :javadoc:`PlaceholderParser` attempts to get the player's location in the w
     }
 
 
-Example: Player Balance PlaceholderParser
+Example: Current Time PlaceholderParser
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. note::
-  This example uses the :javadoc:`EconomyService`. To learn more about this service and how to use it, visit our pages
-  on the :doc:`../economy/index`.
-
-This :javadoc:`PlaceholderParser` attempts to get the player's balance, with an optional argument that may contain the 
-ID of a currency to check, else checking the default currency. It does the following:
-
-* Checks if an :javadoc:`EconomyService` exists
-* Checks if the associated receiver in the :javadoc:`PlaceholderText` is a :javadoc:`Player` 
-* Gets the string returned by :javadoc:`PlaceholderText#getArgumentString()`
-
-  * If the string exists and matches a valid :javadoc:`Currency` and the player has an :javadoc:`Account` in that 
-    currency, returns the balance of that account.
-  * If the string exists and does not match a valid :javadoc:`Currency`, or the player does not have an 
-    :javadoc:`Account` in that currency, returns an empty :javadoc:`Text`.
-  * If the string does not exist, if the player has an :javadoc:`Account` in the default :javadoc:`Currency`, return
-    that balance, else return an empty :javadoc:`Text`.
+This ``PlaceholderParser`` returns the current time in the server's local timezone. If the string "UTC" is provided as
+the argument string, it returns the current time in the UTC time zone. This implements the ``PlaveholderParser`` 
+interface directly.
 
 .. code-block:: java
 
-    public class PlayerBalancePlaceholder implements PlaceholderParser {
-        
+    public class PlayerLocationPlaceholder implements PlaceholderParser {
+
+        @Override
+        public Text parse(PlaceholderContext placeholderContext) {
+            if (placeholderContext.getArgumentString().map(x -> x.equalsIgnoreCase("UTC")).isPresent()) {
+                return Text.of(OffsetDateTime.now(ZoneOffset.UTC).format(FORMATTER));
+            }
+            return Text.of(OffsetDateTime.now().format(FORMATTER));
+        }
+
         @Override
         public String getId() {
-            return "spongedocs:balance"
+            return "spongedocs:currenttime";
         }
 
         @Override
         public String getName() {
-            return "Balance Placeholder"
+            return "Placeholder Test";
         }
 
-        @Override
-        public Text parse(PlaceholderText placeholderText) {
-            // First: check the EconomyService is available
-            Optional<EconomyService> optionalEconService = Sponge.getServiceManager()
-                .provide(EconomyService.class);
-            if (!optionalEconService.isPresent()) {
-                return Text.EMPTY;
-            }
-
-            EconomyService econService = optionalEconService.get();
-
-            // This placeholder only applies to players, so check that
-            Optional<MessageReceiver> receiver = placeholderText.getAssociatedReceiver()
-                .filter(x -> x instanceof Player);
-            if (!receiver.isPresent()) {
-                return Text.EMPTY;
-            }
-            Player player = (Player) receiver.get();
-
-            // Check the argument string, try to get a valid currency out of it
-            Currency currency;
-            if (placeholderText.getArgumentString().isPresent()) {
-                // If we have an argument string, for this placeholder, we assume the 
-                // entire string is the argument - so is it a valid Currency ID?
-                Optional<Currency> co = Sponge.getRegistry()
-                    .getType(Currency.class, placeholderText.getArgumentString().get());
-                if (!co.isPresent()) {
-                    // If not, then the placeholder is invalid and should return an empty text.
-                    return Text.EMPTY;
-                }
-                // It is, so this is what we use
-                currency = co.get();
-            } else {
-                currency = econService.getDefaultCurrency();
-            }
-
-            // Finally, check the account exists, and if so, return the value
-            Optional<UniqueAccount> account = econService
-                .getOrCreateAccount(player.getUniqueId());
-            return account.map(x -> Text.of(x.getBalance(currency))).orElse(Text.EMPTY);
-        }
     }
 
 
@@ -205,3 +156,4 @@ Example: Registering a PlaceholderParser
     public void registerTokensEvent(GameRegistryEvent.Register<PlaceholderParser> event) {
         event.register(this.parser);
     }
+
