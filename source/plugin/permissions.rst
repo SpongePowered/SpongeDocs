@@ -343,16 +343,16 @@ Your ``ContextCalculator`` may look like this:
         private final Map<UUID, String> playerArenas = new ConcurrentHashMap<>();
     
         @Override
-        public void accumulateContexts(Subject calculable, Set<Context> accumulator) {
-            final Optional<CommandSource> commandSource = calculable.getCommandSource();
+        public void accumulateContexts(Subject subject, Set<Context> accumulator) {
+            CommandSource commandSource = subject.getCommandSource().orElse(null);
     
-            if (commandSource.isPresent() && commandSource.get() instanceof Player) {
-                final Player player = (Player) commandSource.get();
+            if (commandSource instanceof Player) {
+                UUID uuid = ((Player) commandSource).getUniqueId();
     
-                final UUID uuid = player.getUniqueId();
-                if (this.playerArenas.containsKey(uuid)) {
+                String arena = this.playerArenas.get(uuid);
+                if (arena != null) {
                     accumulator.add(IN_ANY_ARENA);
-                    accumulator.add(new Context(ARENA_KEY, this.playerArenas.get(uuid)));
+                    accumulator.add(new Context(ARENA_KEY, arena));
                 } else {
                     accumulator.add(NOT_ANY_ARENA);
                 }
@@ -361,37 +361,23 @@ Your ``ContextCalculator`` may look like this:
     
         @Override
         public boolean matches(Context context, Subject subject) {
-            if (!context.equals(IN_ANY_ARENA) && !context.equals(NOT_ANY_ARENA) && !context.getKey().equals(ARENA_KEY)) {
-                return false;
-            }
+            CommandSource commandSource = subject.getCommandSource().orElse(null);
     
-            final Optional<CommandSource> commandSource = subject.getCommandSource();
-            if (!commandSource.isPresent() || !(commandSource.get() instanceof Player)) {
-                return false;
-            }
+            if (commandSource instanceof Player) {
+                UUID uuid = ((Player) commandSource).getUniqueId();
     
-            final Player player = (Player) commandSource.get();
-    
-            if (context.equals(IN_ANY_ARENA) && !this.playerArenas.containsKey(player.getUniqueId())) {
-                return false;
-            }
-    
-            if (context.equals(NOT_ANY_ARENA) && this.playerArenas.containsKey(player.getUniqueId())) {
-                return false;
-            }
-    
-            if (context.getKey().equals(ARENA_KEY)) {
-                if (!this.playerArenas.containsKey(player.getUniqueId())) {
-                    return false;
-                }
-    
-                if (!this.playerArenas.get(player.getUniqueId()).equals(context.getValue())) {
-                    return false;
+                if (context.equals(IN_ANY_ARENA)) {
+                    return this.playerArenas.containsKey(uuid);
+                } else if (context.equals(NOT_ANY_ARENA)) {
+                    return !this.playerArenas.containsKey(uuid);
+                } else if (context.getKey().equals(ARENA_KEY)) {
+                    return context.getValue().equals(this.playerArenas.get(uuid));
                 }
             }
     
-            return true;
+            return false;
         }
+    
     }
 
 The ``ContextCalculator`` can be registered via: 
