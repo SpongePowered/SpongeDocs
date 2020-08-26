@@ -329,10 +329,10 @@ Your ``ContextCalculator`` may look like this:
     import org.spongepowered.api.service.context.Context;
     import org.spongepowered.api.service.context.ContextCalculator;
     import org.spongepowered.api.service.permission.Subject;
-    import java.util.HashMap;
     import java.util.Map;
     import java.util.Set;
     import java.util.UUID;
+    import java.util.concurrent.ConcurrentHashMap;
 
     public class ExampleCalculator implements ContextCalculator<Subject> {
     
@@ -340,7 +340,7 @@ Your ``ContextCalculator`` may look like this:
         private static final Context NOT_ANY_ARENA = new Context("myarenaplugin-inAnyArena", "false");
         private static final String ARENA_KEY = "myarenaplugin-arena";
     
-        private final Map<UUID, String> playerArenas = new HashMap<>();
+        private final Map<UUID, String> playerArenas = new ConcurrentHashMap<>();
     
         @Override
         public void accumulateContexts(Subject calculable, Set<Context> accumulator) {
