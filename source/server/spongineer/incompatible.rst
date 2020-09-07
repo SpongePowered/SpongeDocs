@@ -40,6 +40,13 @@ FoamFix
   ``optimizedBlockPos=false`` and ``patchChunkSerialization=false``
 - *Newer versions of FoamFix (0.10.8+) automatically correct this when SpongeForge is present.*
 
+ForgeEssentials
+~~~~~~~~~~~~~~~
+- Versions: Up to 12.3.82
+- Problem: Crash on startup (mixin NoSuchMethodError)
+- Solution: Update to 12.3.83 or newer.
+- *Newer versions of ForgeEssentials have updated their Mixin usage to version 0.8.*
+
 Hammer Core
 ~~~~~~~~~~~
 - Dependents: Many
