@@ -11,6 +11,7 @@ Creating Placeholder Tokens
     org.spongepowered.api.service.economy.EconomyService
     org.spongepowered.api.service.economy.account.Account
     org.spongepowered.api.service.placeholder.PlaceholderService
+    org.spongepowered.api.service.placeholder.PlaceholderContext
     org.spongepowered.api.service.placeholder.PlaceholderParser
     org.spongepowered.api.service.placeholder.PlaceholderText
     org.spongepowered.api.text.Text
@@ -43,8 +44,8 @@ contain includes:
 
 This is the minimum as specified by Sponge. 
 
-If your placeholder is unable to provide text because there is insufficient information, the placeholder should return
-an empty ``Text`` and not throw an exception.
+If your placeholder is unable to provide text because the context does not provide the context or arguments it requires,
+the placeholder should return an empty ``Text`` and not throw an exception.
 
 .. tip::
   If you wish to provide the ability to add multiple arguments to your placeholder, consider specifying a way to split 
@@ -118,21 +119,21 @@ interface directly.
     public class CurrentTimePlaceholder implements PlaceholderParser {
 
         @Override
-        public Text parse(PlaceholderContext placeholderContext) {
-            if (placeholderContext.getArgumentString().filter(x -> x.equalsIgnoreCase("UTC")).isPresent()) {
-                return Text.of(OffsetDateTime.now(ZoneOffset.UTC).format(FORMATTER));
-            }
-            return Text.of(OffsetDateTime.now().format(FORMATTER));
-        }
-
-        @Override
         public String getId() {
             return "spongedocs:currenttime";
         }
 
         @Override
         public String getName() {
-            return "Placeholder Test";
+            return "Current Time parser";
+        }
+
+        @Override
+        public Text parse(PlaceholderContext placeholderContext) {
+            if (placeholderContext.getArgumentString().filter(x -> x.equalsIgnoreCase("UTC")).isPresent()) {
+                return Text.of(OffsetDateTime.now(ZoneOffset.UTC).format(FORMATTER));
+            }
+            return Text.of(OffsetDateTime.now().format(FORMATTER));
         }
 
     }
