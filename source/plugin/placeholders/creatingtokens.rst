@@ -35,7 +35,7 @@ There are two ways you can create a ``PlaceholderParser``:
   must also be unique.
 
 :javadoc:`PlaceholderParser` objects take a :javadoc:`PlaceholderContext` object which contains the context of the
-request and returns a :javadoc:`Text` based on that context. Information that the ``PlaveholderContext`` may 
+request and returns a :javadoc:`Text` based on that context. Information that the ``PlaceholderContext`` may 
 contain includes:
 
 * An associated object, such as a :javadoc:`Player`
@@ -79,7 +79,7 @@ Example: Player Location PlaceholderParser
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This ``PlaceholderParser`` attempts to get the player's location in the world. If used without a ``Player`` as the 
-associated object, it returns an empty :javadoc:`Text`. This implements the ``PlaveholderParser`` interface directly.
+associated object, it returns an empty :javadoc:`Text`. This implements the ``PlaceholderParser`` interface directly.
 
 .. code-block:: java
 
@@ -110,16 +110,16 @@ Example: Current Time PlaceholderParser
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This ``PlaceholderParser`` returns the current time in the server's local timezone. If the string "UTC" is provided as
-the argument string, it returns the current time in the UTC time zone. This implements the ``PlaveholderParser`` 
+the argument string, it returns the current time in the UTC time zone. This implements the ``PlaceholderParser`` 
 interface directly.
 
 .. code-block:: java
 
-    public class PlayerLocationPlaceholder implements PlaceholderParser {
+    public class CurrentTimePlaceholder implements PlaceholderParser {
 
         @Override
         public Text parse(PlaceholderContext placeholderContext) {
-            if (placeholderContext.getArgumentString().map(x -> x.equalsIgnoreCase("UTC")).isPresent()) {
+            if (placeholderContext.getArgumentString().filter(x -> x.equalsIgnoreCase("UTC")).isPresent()) {
                 return Text.of(OffsetDateTime.now(ZoneOffset.UTC).format(FORMATTER));
             }
             return Text.of(OffsetDateTime.now().format(FORMATTER));
@@ -156,4 +156,3 @@ Example: Registering a PlaceholderParser
     public void registerTokensEvent(GameRegistryEvent.Register<PlaceholderParser> event) {
         event.register(this.parser);
     }
-
