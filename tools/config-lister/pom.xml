@@ -25,8 +25,10 @@
     </organization>
 
     <properties>
-        <sponge.api.version>7.2.0</sponge.api.version>
-        <sponge.common.version>1.12.2-7.2.0</sponge.common.version>
+        <sponge.api.version>7.3.0</sponge.api.version>
+        <sponge.common.version>1.12.2-7.3.0</sponge.common.version>
+
+        <mainClass>org.spongepowered.docs.tools.configlister.ConfigLister</mainClass>
 
         <java.version>8</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
@@ -74,10 +76,32 @@
             </resource>
         </resources>
         <plugins>
+            <!-- Meta -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <version>3.0.0-M3</version>
+                <executions>
+                    <execution>
+                        <id>enforce-maven</id>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <configuration>
+                            <rules>
+                                <requireMavenVersion>
+                                    <version>3.5</version>
+                                </requireMavenVersion>
+                            </rules>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- Packaging -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
-                <version>3.1.0</version>
+                <version>3.2.0</version>
                 <configuration>
                     <archive>
                         <manifest>
@@ -88,6 +112,14 @@
                             <build-timestamp>${maven.build.timestamp}</build-timestamp>
                         </manifestEntries>
                     </archive>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.0.0</version>
+                <configuration>
+                    <mainClass>${mainClass}</mainClass>
                 </configuration>
             </plugin>
         </plugins>
