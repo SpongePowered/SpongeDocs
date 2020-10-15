@@ -115,8 +115,6 @@ The **System Administrators** are responsible for the maintenance and reliable o
 +-----------------------------------+------------------------------------+
 | progwml6                          | System Administrator               |
 +-----------------------------------+------------------------------------+
-| Snowie                            | System Administrator               |
-+-----------------------------------+------------------------------------+
 
 Ore Developers
 ~~~~~~~~~~~~~~
@@ -216,8 +214,6 @@ The **Ore Review** staff have the task of assessing plugins uploaded to Ore to m
 +-----------------------------------+------------------------------------+
 | simon816                          | Ore Reviewer                       |
 +-----------------------------------+------------------------------------+
-| Snowie                            | Ore Reviewer                       |
-+-----------------------------------+------------------------------------+
 | WillBAnders                       | Ore Reviewer                       |
 +-----------------------------------+------------------------------------+
 | Yeregorix                         | Ore Reviewer                       |
@@ -287,6 +283,8 @@ here to thank them and acknowledge their valuable contributions.
 | sibomots                          | Developer                          |
 +-----------------------------------+------------------------------------+
 | sk89q                             | Resources Leader                   |
++-----------------------------------+------------------------------------+
+| Snowie                            | System Administrator               |
 +-----------------------------------+------------------------------------+
 | theresajayne                      | Developer                          |
 +-----------------------------------+------------------------------------+
