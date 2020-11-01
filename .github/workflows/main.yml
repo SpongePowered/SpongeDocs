@@ -17,6 +17,7 @@ jobs:
 
     - name: Set crowdin branch
       run: |
+          echo "${${GITHUB_REF##*/}##*-}"
           echo "VERSION=${${GITHUB_REF##*/}##*-}" >> $GITHUB_ENV
           [[ "$VERSION" != "stable" ]] && echo "CROWDIN_BRANCH=$VERSION" >> $GITHUB_ENV
 
