@@ -3,7 +3,7 @@ name: main
 on:
   push:
 #    branches: [ stable, release-* ]
-     branches: [ * ]
+     branches: [ '*' ]
 
 jobs:
   synchronize-with-crowdin:
