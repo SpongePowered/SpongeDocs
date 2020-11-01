@@ -30,6 +30,7 @@ jobs:
       with:
         crowdin_branch_name: ${{ env.CROWDIN_BRANCH }} 
         dryrun_action: true
+        config: 'crowdin.yaml'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID }}
