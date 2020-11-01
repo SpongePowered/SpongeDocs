@@ -17,7 +17,7 @@ jobs:
 
     - name: Set crowdin branch
       run: |
-          echo "TESTREF=refs/heads/stable-8" >> $GITHUB_ENV
+          TESTREF=refs/heads/stable-8
           echo "$TESTREF"
           echo "${TESTREF##*/}"
           echo "${${TESTREF##*/}##*-}"
