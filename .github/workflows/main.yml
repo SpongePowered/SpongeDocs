@@ -2,7 +2,8 @@ name: main
 
 on:
   push:
-    branches: [ stable, release-* ]
+#    branches: [ stable, release-* ]
+     branches: [ * ]
 
 jobs:
   synchronize-with-crowdin:
@@ -11,6 +12,30 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
+
+    - name: Cache pip dependencies
+      uses: actions/cache@v2
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+
+    - name: Setup Python 3.x
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.x
+
+    - name: Install Python dependencies
+      run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+    - name: Test build
+      run: sphinx-build -W -d build/doctrees source build/html
+
+    - name: Build translation files
+      run: sphinx-build -W -q -b gettext source build/locale
 
     - name: Set crowdin branch
       run: |
@@ -25,6 +50,7 @@ jobs:
       with:
         crowdin_branch_name: ${{ env.CROWDIN_BRANCH }} 
         config: 'crowdin.yaml'
+        dryrun_action: true
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID }}
