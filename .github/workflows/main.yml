@@ -18,9 +18,10 @@ jobs:
     - name: Set crowdin branch
       run: |
           TESTREF=refs/heads/stable-8 
-          echo "$TESTREF" BRANCH=${TESTREF##*/}
+          echo "$TESTREF"
+          BRANCH=${TESTREF##*/}
           echo $BRANCH
-          VERSION="${$(echo $BRANCH)##*-}"
+          VERSION="${TESTREF##*/*-}"
           echo $VERSION
           [[ "$VERSION" != "stable" ]] && echo "CROWDIN_BRANCH=$VERSION" >> $GITHUB_ENV
       shell: bash
