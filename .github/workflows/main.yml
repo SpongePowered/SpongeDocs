@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+    branches: [ stable, release-* ]
+# THIS NEEDS TO BE REMOVED BEFORE MERGING
+  pull_request:
+    branches: [ stable ]
+
+jobs:
+  synchronize-with-crowdin:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Set crowdin branch
+      run: |
+          echo "VERSION=${${GITHUB_REF##*/}##*-}" >> $GITHUB_ENV
+          [[ "$VERSION" != "stable" ]] && echo "CROWDIN_BRANCH=$VERSION" >> $GITHUB_ENV
+
+    - name: Upload to crowdin
+      uses: crowdin/github-action@1.0.10
+      with:
+        crowdin_branch_name: ${{ env.CROWDIN_BRANCH }} 
+        dryrun_action: true
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID }}
+        CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
