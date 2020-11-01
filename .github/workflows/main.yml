@@ -17,11 +17,11 @@ jobs:
 
     - name: Set crowdin branch
       run: |
-          TESTREF=refs/heads/stable-8
-          echo "$TESTREF"
-          echo "${TESTREF##*/}"
-          echo "${${TESTREF##*/}##*-}"
-          echo "VERSION=${${TESTREF##*/}##*-}" >> $GITHUB_ENV
+          TESTREF=refs/heads/stable-8 
+          echo "$TESTREF" BRANCH=${TESTREF##*/}
+          echo $BRANCH
+          VERSION="${$BRANCH##*-}"
+          echo $VERSION
           [[ "$VERSION" != "stable" ]] && echo "CROWDIN_BRANCH=$VERSION" >> $GITHUB_ENV
       shell: bash
     - name: Upload to crowdin
