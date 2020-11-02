@@ -2,8 +2,7 @@ name: main
 
 on:
   push:
-#   branches: [ stable, release-* ]
-    branches: [ '*' ]
+    branches: [ stable, release-* ]
 
 jobs:
   build-n-upload-translations:
@@ -40,8 +39,7 @@ jobs:
     - name: Set crowdin branch
       run: |
           echo "Ref: $GITHUB_REF"
-          TESTREF=refs/heads/release-6.0.0
-          BRANCH=${TESTREF##*/}
+          BRANCH=${GITHUB_REF##*/}
           echo "Branch: $BRANCH"
           VERSION="${BRANCH##*-}"
           if [[ "$VERSION" != "stable" ]]; then 
@@ -56,7 +54,6 @@ jobs:
       with:
         crowdin_branch_name: ${{ env.CROWDIN_BRANCH }} 
         config: 'crowdin.yaml'
-        dryrun_action: true
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID }}
