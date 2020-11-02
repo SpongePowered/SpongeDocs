@@ -41,9 +41,9 @@ jobs:
           echo "Ref: $GITHUB_REF"
           BRANCH=${GITHUB_REF##*/}
           echo "Calculated branch: $BRANCH"
-          VERSION="${GITHUB_REF##*/*-}"
-          echo "Calculated crowdin directory: $VERSION/"
-          [[ "$VERSION" != "stable" ]] && echo "CROWDIN_BRANCH=$VERSION" >> $GITHUB_ENV
+          VERSION="${BRANCH##*-}"
+          [[ "$VERSION" == "stable" ]] && echo "Using crowdin root directory" && echo "CROWDIN_BRANCH=" >> $GITHUB_ENV
+          [[ "$VERSION" != "stable" ]] && echo "Using crowdin directory: $VERSION" && echo "CROWDIN_BRANCH=$VERSION" >> $GITHUB_ENV
     - name: Upload to crowdin
       uses: crowdin/github-action@1.0.10
       with:
