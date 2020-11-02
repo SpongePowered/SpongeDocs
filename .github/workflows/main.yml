@@ -2,11 +2,10 @@ name: main
 
 on:
   push:
-#    branches: [ stable, release-* ]
-     branches: [ '*' ]
+     branches: [ stable, release-* ]
 
 jobs:
-  synchronize-with-crowdin:
+  build-n-upload-translations:
     runs-on: ubuntu-latest
 
     steps:
