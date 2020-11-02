@@ -49,61 +49,12 @@ For reference, here is a sample ``mcmod.info`` file:
 
 At the very least, each Ore project *must* have the ``modid``, ``name`` and, ``version`` fields completed.
 
-Signing your Plugin
-~~~~~~~~~~~~~~~~~~~
-
-Due to security concerns, Ore requires each plugin file (ZIP or JAR) to be uploaded with a detached
-`Pretty Good Privacy (PGP) <https://en.wikipedia.org/wiki/Pretty_Good_Privacy>`__ signature for a public key that is
-associated with the email that you signed up to Sponge with. This digital signature ensures that any file uploaded by a
-user was intended to be uploaded by the actual account holder.
-
-.. note::
-
-    A digital signature certifies and timestamps a document. If the document is subsequently modified in any way, a
-    verification of the signature will fail. A digital signature can serve the same purpose as a hand-written signature
-    with the additional benefit of being tamper-resistant. The GnuPG source distribution, for example, is signed so
-    that users can verify that the source code has not been modified since it was packaged.
-
-In order to sign your plugin, you must first download a PGP compliant software program, such as
-`GnuPG (GPG) <https://www.gnupg.org/>`__. GPG is available for all major platforms and the binaries can be downloaded
-`here <https://www.gnupg.org/download/index.html#sec-1-2>`__.
-
-Once you have installed GPG and have generated your first public key, you will need to add the key to your account.
-To do this, you can navigate to your profile and click the key symbol next to your avatar.
-
-.. image:: /images/ore/help_1.png
-    :align: center
-    :alt: PGP public key 1
-
-You will then be prompted to enter your key into a text box. You must be sure to enter the key in its entirety or
-signature validation will fail.
-
-.. image:: /images/ore/help_2.png
-    :align: center
-    :alt: PGP public key 2
-
-Finally, you must sign your built plugin with your *private* key of the public key you uploaded. You only need to sign
-the file that you are uploading: for instance, if you are uploading a ZIP with your plugin JAR included, only the ZIP
-needs to (and should only be) signed. The easiest way to sign the file you intend to upload is with the following GPG
-command.
-
-.. code-block:: bash
-
-    gpg --output myplugin-1.0.0.jar.sig --detach-sig myplugin-1.0.0.jar
-
-.. note::
-
-    If you're using a build manager such as Gradle or Maven, there are plugins you can apply to your build script that
-    can sign built artifacts and automate this laborious process for you. For more information, please refer to
-    `Gradle's documentation <https://docs.gradle.org/current/userguide/signing_plugin.html>`__ or
-    `Maven's documentation <https://maven.apache.org/plugins/maven-gpg-plugin/>`__.
-
 Uploading Your Plugin
 ~~~~~~~~~~~~~~~~~~~~~
 
-Once your plugin's JAR file is packaged with an ``mcmod.info`` descriptor file in the top-level and signed with your
-PGP private key, your plugin is ready for uploading! To create a project on Ore, you must have an active Sponge
-account. Hitting the "Sign up" button in the top-right corner will take you to the appropriate page to create one. If
+Once your plugin's JAR file is packaged with an ``mcmod.info`` descriptor file in the top-level,
+it is ready for uploading! To create a project on Ore, you must have an active Sponge account.
+Hitting the "Sign up" button in the top-right corner will take you to the appropriate page to create one. If
 you already have an account, just hit the "Log in" button in the top-right corner to log into Ore.
 
 Once logged in, navigate to your avatar and select the "New" option in the drop-down menu that appears, or just press
