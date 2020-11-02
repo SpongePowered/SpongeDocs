@@ -2,7 +2,8 @@ name: main
 
 on:
   push:
-     branches: [ stable, release-* ]
+#   branches: [ stable, release-* ]
+    branches: [ '*' ]
 
 jobs:
   build-n-upload-translations:
@@ -42,13 +43,19 @@ jobs:
           BRANCH=${GITHUB_REF##*/}
           echo "Calculated branch: $BRANCH"
           VERSION="${BRANCH##*-}"
-          [[ "$VERSION" == "stable" ]] && echo "Using crowdin root directory" && echo "CROWDIN_BRANCH=" >> $GITHUB_ENV
-          [[ "$VERSION" != "stable" ]] && echo "Using crowdin directory: $VERSION" && echo "CROWDIN_BRANCH=$VERSION" >> $GITHUB_ENV
+          if [[ "$VERSION" != "stable" ]]; then 
+            echo "Using crowdin directory: $VERSION"
+            echo "CROWDIN_BRANCH=$VERSION" >> $GITHUB_ENV 
+          else
+            echo "Using crowdin root directory"
+            echo "CROWDIN_BRANCH=" >> $GITHUB_ENV
+          fi
     - name: Upload to crowdin
       uses: crowdin/github-action@1.0.10
       with:
         crowdin_branch_name: ${{ env.CROWDIN_BRANCH }} 
         config: 'crowdin.yaml'
+        dryrun_action: true
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID }}
