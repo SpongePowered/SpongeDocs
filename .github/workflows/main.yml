@@ -97,8 +97,8 @@ jobs:
       - name: Generate Dockerfile
         run: ./deployment/generate-dockerfile.sh
         env:
-          GITHUB_USER: {{ github.actor }}
-          GITHUB_TOKEN: {{ github.token }}
+          GITHUB_USER: ${{ github.actor }}
+          GITHUB_TOKEN: ${{ github.token }}
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
       - name: Set up Docker Buildx
