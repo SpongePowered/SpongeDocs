@@ -4,10 +4,10 @@ versions=$(list-versions)
 
 touch deployment/Dockerfile
 
-echo "FROM felixoi/sponge-docs-theme:latest as homepage" >> deployment/Dockerfile
+echo "FROM ghcr.io/felixoi/sponge-docs-theme:latest as homepage" >> deployment/Dockerfile
 i=0
 for version in $versions; do
-    echo "FROM felixoi/spongedocs:$version as builder-$i" >> deployment/Dockerfile
+    echo "FROM ghcr.io/felixoi/spongedocs:$version as builder-$i" >> deployment/Dockerfile
     i=$(( i + 1 ))
 done
 
