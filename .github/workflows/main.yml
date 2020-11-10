@@ -1,10 +1,6 @@
 name: main
 
-on:
-  push:
-    branches:
-      - stable
-      - release-**
+on: push
 
 jobs:
   build-n-upload-translations:
