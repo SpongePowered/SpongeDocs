@@ -23,7 +23,7 @@ COPY . /app
 RUN sphinx-build -W -d build/doctrees source build/html
 RUN sphinx-build -W -q -b gettext source build/locale
 
-RUN cd /app && crowdin -v download -b ${VERSION}
+RUN cd /app && crowdin download -b ${VERSION}
 
 RUN sphinx-intl build > /dev/null
 
