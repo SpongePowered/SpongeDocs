@@ -25,7 +25,10 @@
 package org.spongepowered.docs.tools.javadoc;
 
 import java.io.File;
-import java.io.IOException;
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
 import java.time.Instant;
 import java.util.Arrays;
 import java.util.Objects;
@@ -34,12 +37,14 @@ import java.util.stream.Stream;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.spongepowered.api.Game;
+import org.spongepowered.api.Sponge;
 
 public class Main {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(Main.class);
 
-    public static void main(final String[] args) throws IOException {
+    public static void main(final String[] args) throws Exception {
         LOGGER.info("Javadoc-Checker-{}", Objects.toString(Main.class.getPackage().getImplementationVersion(), "DEV"));
         File docsSourceRoot;
         if (args.length >= 1) {
@@ -69,6 +74,7 @@ public class Main {
 
         final File processingRoot = docsSourceRoot.getCanonicalFile();
         final int pathPrefixLength = processingRoot.getPath().length() + 1;
+        dummyInitSponge();
         LOGGER.info("Started {} on {}", Instant.now(), processingRoot.getAbsolutePath());
 
         final AtomicInteger fileCount = new AtomicInteger();
@@ -94,6 +100,25 @@ public class Main {
         if (errorCount.get() > 0) {
             System.exit(1);
         }
+    }
+
+    private static void dummyInitSponge() throws Exception {
+        final Field gameField = Sponge.class.getDeclaredField("game");
+        final InvocationHandler handler = new InvocationHandler() {
+
+            @Override
+            public Object invoke(final Object proxy, final Method method, final Object[] args) throws Throwable {
+                final Class<?> returnType = method.getReturnType();
+                if (returnType.isInterface()) {
+                    return Proxy.newProxyInstance(Sponge.class.getClassLoader(), new Class[] {returnType}, this);
+                } else {
+                    return null;
+                }
+            }
+
+        };
+        gameField.setAccessible(true);
+        gameField.set(null, Proxy.newProxyInstance(Sponge.class.getClassLoader(), new Class[] {Game.class}, handler));
     }
 
     /**
