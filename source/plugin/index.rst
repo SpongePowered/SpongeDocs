@@ -57,6 +57,7 @@ Contents
     metrics
     bookview
     economy/index
+    placeholders/index
     wgen/index
     manager
     game-profile-manager

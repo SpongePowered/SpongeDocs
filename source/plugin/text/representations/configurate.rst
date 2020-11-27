@@ -20,7 +20,7 @@ SpongeAPI offers support to serialize text directly to a Configurate configurati
 For example, the text ``"Hello World!"``, formatted with the color red and an underline, would have the following HOCON
 representation:
 
-.. code-block:: guess
+.. code-block:: text
 
     {
         underlined=true

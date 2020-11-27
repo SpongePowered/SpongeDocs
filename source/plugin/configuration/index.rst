@@ -16,7 +16,7 @@ files to full advantage.
 
 .. tip::
 
-    See the official `Configurate wiki <https://github.com/zml2008/configurate/wiki>`_ to gain more in-depth information
+    See the official `Configurate wiki <https://github.com/SpongePowered/configurate/wiki>`_ to gain more in-depth information
     about working with its components.
 
 

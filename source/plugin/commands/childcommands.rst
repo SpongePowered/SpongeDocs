@@ -51,7 +51,7 @@ The first alias supplied is the primary one and will appear in the usage message
     PluginContainer plugin = ...;
 
     CommandSpec mailCommandSpec = CommandSpec.builder()
-        .permission("myplugin.mail")
+        .permission("myplugin.mail.base")
         .description(Text.of("Send and receive mails"))
         .child(readCmd, "read", "r", "inbox")
         .child(sendCmd, "send", "s", "write")

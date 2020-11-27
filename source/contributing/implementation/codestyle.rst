@@ -6,8 +6,8 @@ We follow `Google's Java Style Guidelines <https://google.github.io/styleguide/j
 few additions and modifications, which are described herein.
 
 .. tip::
-    You can use our code styles for Eclipse or IntelliJ IDEA to let your IDE format the code correctly for you. See
-    :doc:`/preparing/index` for more information.
+    You can use our code styles for Eclipse or IntelliJ IDEA to let your IDE format the code correctly for you. Visit
+    `Sponge Code Styles <https://github.com/SpongePowered/SpongeAPI/tree/e4abe364d98f6f068018fd96525f88f5fb47a0cf/extra>`_.
 
 * Line endings
 

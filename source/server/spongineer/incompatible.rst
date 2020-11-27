@@ -40,6 +40,13 @@ FoamFix
   ``optimizedBlockPos=false`` and ``patchChunkSerialization=false``
 - *Newer versions of FoamFix (0.10.8+) automatically correct this when SpongeForge is present.*
 
+ForgeEssentials
+~~~~~~~~~~~~~~~
+- Versions: Up to 12.3.82
+- Problem: Crash on startup (mixin NoSuchMethodError)
+- Solution: Update to 12.3.83 or newer.
+- *Newer versions of ForgeEssentials have updated their Mixin usage to version 0.8.*
+
 Hammer Core
 ~~~~~~~~~~~
 - Dependents: Many
@@ -84,11 +91,11 @@ Just Enough IDs (JEID)
 - Problem: Crash on startup (mixin conflict).
 - Solution: Update to version 1.0.3-54 or newer.
 
-LagGoggles
-~~~~~~~~~~
-- Versions: Older than 1.12.2-5.3-113
+LagGoggles/TickCentral
+~~~~~~~~~~~~~~~~~~~~~~
+- Versions: All
 - Problem: Crash on startup (mixin conflict).
-- Solution: Update to version 1.12.2-5.3-113 and install *TickCentral* core-mod.
+- Solution: No compatibility at present. Choose one or the other.
 
 MystCraft
 ~~~~~~~~~

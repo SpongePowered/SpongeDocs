@@ -30,7 +30,7 @@ HOCON. Below are two examples of valid HOCON.
 
 **Example #1:**
 
-.. code-block:: guess
+.. code-block:: text
 
     player: {
         name: "Steve",
@@ -39,7 +39,7 @@ HOCON. Below are two examples of valid HOCON.
 
 **Example #2:**
 
-.. code-block:: guess
+.. code-block:: text
 
     player {
         name = "Steve"

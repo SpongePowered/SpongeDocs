@@ -45,7 +45,7 @@ find a commit:
    file. The file is located in the META-INF directory and contains many key-value pairs. One is the ``Git-Commit`` key 
    and the value of this key is the last commit of the GitHub repository at the time the Sponge jar file was created.
 
-#. Sponge `Downloads <https://www.spongepowered.org/downloads>`_ page.
+#. Sponge `Downloads <https://www.spongepowered.org/downloads/>`_ page.
    
    Another method for determing the last commit in the file is to locate the build on the Sponge `Downloads`_ page. 
    Under the build's title, click on the first commit message. A new browser tab or window will open on GitHub with 

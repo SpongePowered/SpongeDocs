@@ -112,6 +112,7 @@ front of the message.
     import org.spongepowered.api.text.Text;
     import org.spongepowered.api.text.channel.MessageChannel;
     import org.spongepowered.api.text.channel.MessageReceiver;
+    import org.spongepowered.api.text.chat.ChatType;
     import org.spongepowered.api.text.format.TextColors;
 
     public class AdminMessageChannel implements MessageChannel {
@@ -145,6 +146,7 @@ addition of the ``AdminMessageChannel``, a red ``[Admin]`` tag will be prefixed.
     import org.spongepowered.api.entity.living.player.Player;
     import org.spongepowered.api.event.Listener;
     import org.spongepowered.api.event.network.ClientConnectionEvent;
+    import org.spongepowered.api.text.channel.MessageChannel;
 
     private AdminMessageChannel adminChannel = new AdminMessageChannel();
 
@@ -187,10 +189,17 @@ class named ``MutableAdminMessageChannel`` that will implement a ``MutableMessag
 
 .. code-block:: java
 
+    import java.util.Collection;
+    import java.util.Collections;
+    import java.util.Optional;
     import java.util.Set;
     import java.util.WeakHashMap;
 
+    import org.spongepowered.api.text.Text;
+    import org.spongepowered.api.text.channel.MessageReceiver;
     import org.spongepowered.api.text.channel.MutableMessageChannel;
+    import org.spongepowered.api.text.chat.ChatType;
+    import org.spongepowered.api.text.format.TextColors;
 
     public class MutableAdminMessageChannel implements MutableMessageChannel {
 

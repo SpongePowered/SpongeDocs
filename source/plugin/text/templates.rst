@@ -65,7 +65,7 @@ of their server.
 
 This will produce the following output:
 
-.. code-block:: guess
+.. code-block:: text
 
     serverName="My Sponge Server"
     mytemplate {

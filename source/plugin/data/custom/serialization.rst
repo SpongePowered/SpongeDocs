@@ -95,9 +95,6 @@ the data is likely incomplete and you should return ``Optional.empty()``.
 If everything seems to be there, use the ``getX`` methods to construct the values and return a newly created object as 
 an ``Optional``.
 
-Finally, you need to register this builder so that it can be found by plugins. To do this, simply call 
-``DataManager#registerDataBuilder(Class, DataBuilder)`` referencing the data class and an instance of the builder.
-
 .. _content-updaters:
 
 DataContentUpdaters
@@ -177,5 +174,4 @@ The implementation of ``translate`` is identical to ``toContainer()`` and ``buil
 ``DataSerializable`` as shown above, except that an ``InvalidDataException`` is thrown if data is missing in place of 
 returning an ``Optional``.
 
-As with other data, ensure that you register the translator with 
-``DataManager#registerTranslator(Class, DataTranslator)``.
+As with other data, ensure that you register the translator during ``GameRegistryEvent.Register<DataTranslator<?>>``.

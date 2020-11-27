@@ -165,6 +165,9 @@ Overview of the ``GenericArguments`` command elements
 | ``requiringPermission``    | Requires the command sender to have the specified permission in order to use the given  | inherited                     |
 |                            | command argument                                                                        |                               |
 +----------------------------+-----------------------------------------------------------------------------------------+-------------------------------+
+| ``requiringPermissionWeak``| Requires the command sender to have the specified permission in order to use the given  | inherited                     |
+|                            | command argument. Does not throw an error if the user does not have the permission.     |                               |
++----------------------------+-----------------------------------------------------------------------------------------+-------------------------------+
 
 .. tip::
 

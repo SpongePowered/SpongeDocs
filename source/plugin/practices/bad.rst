@@ -8,7 +8,10 @@ Bad Practices
     org.spongepowered.api.data.DataHolder
     org.spongepowered.api.entity.Entity
     org.spongepowered.api.entity.living.player.Player
+    org.spongepowered.api.entity.living.player.User
     org.spongepowered.api.service.permission.Subject
+    org.spongepowered.api.world.Chunk
+    org.spongepowered.api.world.Dimension
     org.spongepowered.api.world.World
 
 These bad practices should be avoided, as they can lead to memory leaks (``OutOfMemoryError``), lag or
@@ -26,7 +29,10 @@ Some instances such as
 * :javadoc:`Entity`
 * :javadoc:`Player`
 * :javadoc:`Subject`
+* :javadoc:`Chunk`
+* :javadoc:`Dimension`
 * :javadoc:`World`
+* :javadoc:`User`
 * and containers that **MIGHT** contain any of the above elements, including
     * ``Collections``
     * ``Maps``

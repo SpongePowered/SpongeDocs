@@ -22,7 +22,7 @@ set its value to ``0``.
   will then add all available mobs to the activation range list, it is advised to disable it after the list is filled.
   If you add new mobs to the game, just repeat the procedure and those new mobs will also be added to the list below.
 
-.. code-block:: guess
+.. code-block:: text
 
     entity-activation-range {
         # If enabled, newly discovered entities will be added to this config with a default value.
@@ -42,7 +42,7 @@ Async Lighting
 
 This setting will run lighting checks on a separate thread to improve performance.
 
-.. code-block:: guess
+.. code-block:: text
 
     optimizations {
         # Runs lighting updates async.
@@ -59,7 +59,7 @@ Cache Tameable Owners
 
 This setting will cache tameable entities owners' UUID to save constant lookups from the data watcher.
 
-.. code-block:: guess
+.. code-block:: text
 
     optimizations {
         # Caches tameable entities owners to avoid constant lookups against data watchers. If mods cause issue, disable.
@@ -72,7 +72,7 @@ Drops Pre Merge
 This setting will pre-process and potentially merge item drops to avoid spawning extra entities that are then merged
 post-spawning.
 
-.. code-block:: guess
+.. code-block:: text
 
     optimizations {
         # If enabled, block item drops are pre-processed to avoid
@@ -89,7 +89,7 @@ Panda Redstone
 
 An alternative Redstone update algorithm, leads to less block updates when Redstone changes.
 
-.. code-block:: guess
+.. code-block:: text
 
     optimizations {
         # If enabled, uses Panda4494's Redstone implementation which improves performance.
@@ -104,7 +104,7 @@ Auto-Saving Interval Adjustment
 Vanilla Minecraft defaults to saving all chunks every 900 ticks (45 seconds). If you wish to raise or
 lower this interval, then change it in the servers ``global.conf`` file:
 
-.. code-block:: guess
+.. code-block:: text
 
     world {
         # The auto-save tick interval used when saving global player data.
@@ -126,7 +126,7 @@ Realtime
 Enabling this will just improve your players experience when tick rate is low, it will not improve performance. 
 A limited set of entities, tile entities, and world time will use real time instead of ticks to update.
 
-.. code-block:: guess
+.. code-block:: text
 
     modules {
         # Use real (wall) time instead of ticks as much as possible
@@ -146,7 +146,7 @@ Deny chunk requests
   This is an experimental setting for performance gain, we recommend to not enable it when you have mods on the server 
   and to disable it if you experience any issues regarding the loading of tileentities.
   
-.. code-block:: guess
+.. code-block:: text
 
     world {
         # If enabled, any request for a chunk not currently loaded will be denied (exceptions apply for things like world gen and player movement). 

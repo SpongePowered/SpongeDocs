@@ -18,7 +18,7 @@ Download
 ========
 
 Review our :doc:`/versions/versioning` and grab your copy of `SpongeVanilla here 
-<https://www.spongepowered.org/downloads>`_.
+<https://www.spongepowered.org/downloads/>`_.
 
 Installing SpongeVanilla
 ========================
