@@ -14,7 +14,7 @@ The Bleeding Branch
 
 The core of our repositories is the ``bleeding`` branch. Almost all changes will be added to ``bleeding``, including
 new features, changes, and bugfixes. The version of ``bleeding`` will always be the next major release version 
-appended with ``-SNAPSHOT`` (e.g. ``7.0.0-SNAPSHOT``) to denote that it is not yet a final build and subject to change.
+appended with ``-SNAPSHOT`` (e.g. ``8.0.0-SNAPSHOT``) to denote that it is not yet a final build and subject to change.
 
 The primary reason for having the ``bleeding`` branch is to have a testing ground for changes. Even experienced
 members of the Sponge team can accidentally cause a build to fail or miss a bug. The ``bleeding`` branch will be

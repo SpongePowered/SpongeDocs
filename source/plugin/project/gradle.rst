@@ -24,7 +24,7 @@ you have chosen before.**
 
     plugins {
         id 'java'
-        id 'org.spongepowered.plugin' version '0.9.0'
+        id 'org.spongepowered.plugin' version '0.11.3'
     }
 
     // This may not be required, but has solved issues in the past
@@ -40,7 +40,7 @@ you have chosen before.**
     }
 
     dependencies {
-        compile 'org.spongepowered:spongeapi:7.2.0'
+        compile 'org.spongepowered:spongeapi:8.0.0'
     }
 
 These few lines handle most settings you would normally do manually:
@@ -121,7 +121,7 @@ dependency to your project:
     }
 
     dependencies {
-        compile 'org.spongepowered:spongeapi:7.2.0'
+        compile 'org.spongepowered:spongeapi:8.0.0'
     }
 
 .. _SpongeGradle: https://github.com/SpongePowered/SpongeGradle
