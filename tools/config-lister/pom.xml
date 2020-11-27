@@ -28,6 +28,8 @@
         <sponge.api.version>7.3.0</sponge.api.version>
         <sponge.common.version>1.12.2-7.3.0</sponge.common.version>
 
+        <mainClass>org.spongepowered.docs.tools.configlister.ConfigLister</mainClass>
+
         <java.version>8</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
@@ -37,8 +39,6 @@
         <project.build.sourceEncoding>${charset}</project.build.sourceEncoding>
 
         <maven.build.timestamp.format>yyyy-MM-dd'T'HH:mm:ss'Z'</maven.build.timestamp.format>
-
-        <mainClass>org.spongepowered.docs.tools.configlister.ConfigLister</mainClass>
     </properties>
 
     <repositories>
