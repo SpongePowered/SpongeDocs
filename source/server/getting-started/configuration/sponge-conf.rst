@@ -1000,6 +1000,15 @@ Configuration option related to logging certain action such as chunk loading.
 | **Default:** ``false``
 |
 
+* **transaction-merge-fail**
+
+  Log when two conflicting changes are merged into one. (This number specifies the maximum number of
+  messages to log. Set to ``0`` to show all messages.)
+
+| **Type:** ``int``
+| **Default:** ``25``
+|
+
 * **world-auto-save**
 
   Log when a world auto-saves its chunk data.
@@ -1206,6 +1215,28 @@ Configuration options related to sponge provided performance optimizations.
 | **Default:** ``true``
 |
 
+* **disable-pathfinding-chunk-loads**
+
+  In vanilla, pathfinding may result in loading chunks.
+  You can disable that here, which may result in a
+  performance improvement. This may not work well
+  with mods.
+
+| **Type:** ``boolean``
+| **Default:** ``false``
+|
+
+* **disable-raytracing-chunk-loads**
+
+  In vanilla, ray tracing may result in loading chunks.
+  You can disable that here, which may result in a
+  performance improvement. This may not work well
+  with mods.
+
+| **Type:** ``boolean``
+| **Default:** ``false``
+|
+
 * **drops-pre-merge**
 
   If ``true``, block item drops are pre-processed to avoid
@@ -1215,7 +1246,7 @@ Configuration options related to sponge provided performance optimizations.
   in which case, the items will flow right through without being merged.
 
 | **Type:** ``boolean``
-| **Default:** ``false``
+| **Default:** ``true``
 |
 
 * **eigen-redstone**
@@ -1807,6 +1838,17 @@ Configuration options that will affect all worlds.
 
   If ``true``, any request for a chunk not currently loaded will be denied
   (exceptions apply for things like world gen and player movement).
+  
+  **Warning**: As this is an experimental setting for performance gain,
+  if you encounter any issues then we recommend disabling it.
+
+| **Type:** ``boolean``
+| **Default:** ``true``
+|
+
+* **deny-neighbor-notification-chunk-requests**
+
+  If ``true``, any neighbour notification for a chunk not currently loaded will be denied
   
   **Warning**: As this is an experimental setting for performance gain,
   if you encounter any issues then we recommend disabling it.
