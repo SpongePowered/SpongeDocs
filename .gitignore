@@ -145,6 +145,4 @@ locale
 
 # SpongeDocs
 deployment/Dockerfile
-
-#TODO: Remove DEBUG
 docker-compose.yml
