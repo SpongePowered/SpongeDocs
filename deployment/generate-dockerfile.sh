@@ -1,11 +1,13 @@
 #!/usr/bin/env sh
 
+REGISTRY=docker-registry.spongepowered.org
+IMAGE_NAME=spongedocs
 touch deployment/Dockerfile
 
-echo "FROM ghcr.io/felixoi/sponge-docs-theme:latest as homepage" >> deployment/Dockerfile
+echo "FROM $REGISTRY/sponge-docs-theme:latest as homepage" >> deployment/Dockerfile
 i=0
 for version in $VERSIONS; do
-    echo "FROM ghcr.io/felixoi/spongedocs:$version as builder-$i" >> deployment/Dockerfile
+    echo "FROM $REGISTRY/$IMAGE_NAME:$version as builder-$i" >> deployment/Dockerfile
     i=$(( i + 1 ))
 done
 
