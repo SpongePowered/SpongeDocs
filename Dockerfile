@@ -29,6 +29,7 @@ RUN sphinx-intl build > /dev/null
 
 RUN export VERSIONS=`list-versions` \
       && translations=`list-translations ${VERSION}` \
+      && for version in $VERSIONS ; do export LOCALES_$(echo $version | tr '.' '_')="en $(list-translations $version)" ; done \
       && export LOCALES="en $translations" \
       && build-language en \
       && echo "$translations" | xargs -n1 -P4 build-language
