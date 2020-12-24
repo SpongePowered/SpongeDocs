@@ -32,9 +32,8 @@ With these instructions successfully completed, you are ready to import the proj
 
 .. note::
     This is an outline of the steps necessary to setup the workspace. See the `SpongeForge 
-    <https://github.com/SpongePowered/SpongeForge>`_ or 
-    `SpongeVanilla <https://github.com/SpongePowered/SpongeVanilla>`_ GitHub pages for complete instructions on 
-    cloning, setup, building, and running the implementation.
+    <https://github.com/SpongePowered/SpongeCommon>`_ GitHub page for complete instructions on cloning, setup, building,
+    and running the implementation.
 
 Contents
 ========
@@ -51,4 +50,3 @@ Contents
     tools
     more
     faq
-

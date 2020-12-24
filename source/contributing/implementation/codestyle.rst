@@ -7,7 +7,7 @@ few additions and modifications, which are described herein.
 
 .. tip::
     You can use our code styles for Eclipse or IntelliJ IDEA to let your IDE format the code correctly for you. Visit
-    `Sponge Code Styles <https://github.com/SpongePowered/SpongeAPI/tree/e4abe364d98f6f068018fd96525f88f5fb47a0cf/extra>`_.
+    `Sponge Code Styles <https://github.com/SpongePowered/SpongeAPI/tree/api-8/extra>`_.
 
 * Line endings
 
@@ -72,7 +72,8 @@ Code Conventions
   ``null`` in the API
 * Method parameters accepting ``null`` must be annotated with ``@Nullable`` (from javax.*), all methods and parameters
   are ``@Nonnull`` by default.
-* Use `Google Preconditions <https://github.com/google/guava/wiki/PreconditionsExplained>`_ for null- and
+* API: Use ``java.util.Objects.requireNonNull`` for null checks and ``if``\s for argument checking.
+* Impl: Use `Google Preconditions <https://github.com/google/guava/wiki/PreconditionsExplained>`_ for null- and
   argument checking.
 
 The Gist
