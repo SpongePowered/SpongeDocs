@@ -658,7 +658,8 @@ Configuration options related to entity collision checks.
 
   Maximum amount of entities any given entity or block can collide with.
   This improves performance when there are more than ``8`` entities on top of each other
-  such as a 1x1 spawn pen.Set to ``0`` to disable.
+  such as a 1x1 spawn pen.
+  Set to ``0`` to disable.
 
 | **Type:** ``int``
 | **Default:** ``8``
@@ -736,7 +737,7 @@ Configuration option related to sponge provided exploit patches
 
 * **load-chunk-on-position-set**
 
-  Enables focing a chunk load when an entity position is set.
+  Enables forcing a chunk load when an entity position is set.
   Usually due to teleportation, vehicle movement etc. can a position lead an entity to no longer exist
   within it's currently marked and tracked chunk. This will enable that chunk for the position is loaded.
   Part of several exploits.
@@ -1028,7 +1029,8 @@ Configuration options related to metric collection.
 
 * **global-state**
 
-  The global collection state that should be respected by all plugins that have no specified collection state. If ``undefined`` then it is treated as disabled.
+  The global collection state that should be respected by all plugins that have no specified collection state.
+  If ``undefined`` then it is treated as disabled.
 
 | **Type:** ``Tristate``
 | **Possible values:** 
@@ -1289,7 +1291,7 @@ Configuration options related to sponge provided performance optimizations.
   If ``true``, re-writes the incredibly inefficient Vanilla Map code.
   This yields enormous performance enhancements when using many maps,
   but has a tiny chance of breaking mods that invasively modify Vanilla.
-  It is strongly reccomended to keep this on, unless explicitly advised otherwise by a Sponge developer
+  It is strongly recommended to keep this on, unless explicitly advised otherwise by a Sponge developer
 
 | **Type:** ``boolean``
 | **Default:** ``true``
@@ -1337,7 +1339,7 @@ Configuration options related to sponge provided performance optimizations.
 
 * **use-active-chunks-for-collisions**
 
-  Vanilla performs a lot of is area loaded checks during entity collision calculations with blocks,
+  Vanilla performs a lot of ``is area loaded`` checks during entity collision calculations with blocks,
   and because these calculations require fetching the chunks to see if they are loaded,
   before getting the block states from those chunks, there can be some small performance
   increase by checking the entity's owned active chunk it may currently reside in.
@@ -1432,9 +1434,9 @@ time during saves if your world is already fully generated.
 
   Global switch to enable sponge's changes to the structure saving mechansim.
   By default, this option is disabled, i.e. saving structures is not affected.
-  If you want to prevent that a certain ``named`` structure is saved to the world's folder,
+  If you want to prevent a certain ``named`` structure being saved to the world's folder,
   you have to enable this module/setting and disable the structure in the further settings.
-  An example of a structure that is costly and somewhat irrelevant is ``mineshaft``,
+  An example of a structure being costly and somewhat irrelevant is ``mineshaft``,
   as they build and save several structures even after the mine shafts have been completely generated.
   However, this has the disadvantage that these structures may no longer be locatable by some mods.
 
@@ -1468,8 +1470,8 @@ Per-mod overrides. Refer to the minecraft default mod for example.
 
 * **structures**
 
-  The configuration for each struture.
-  A value of ``false`` prevents that struture from being saved.
+  The configuration for each structure.
+  A value of ``false`` prevents that structure from being saved.
   Entries that are either missing in this list or have the value ``true`` will still be saved,
   unless the structure saving of the mod is globally disabled.
 
@@ -1762,7 +1764,7 @@ https://github.com/aikar/timings#aikars-minecraft-timings-viewer-v2
 
 * **server-name-privacy**
 
-  Hides the server name in the Aikar webviewer to no leak the l33t server you are running
+  Hides the server name in the Aikar webviewer to no leak the l337 server you are running
 
 | **Type:** ``boolean``
 | **Default:** ``false``
@@ -1925,12 +1927,29 @@ Configuration options that will affect all worlds.
 | **Default:** ``false``
 |
 
+* **max-chunk-lifetime**
+
+  The number of ticks a chunk will stay in memory without saving.
+  
+  **Note**: this setting only applies to chunks gc forcibly saving chunks
+  (controlled by ``chunk-gc-tick-interval`` and ``chunk-gc-load-threshold``)
+  
+  **Note**: Useless if ``auto-save-interval`` is enabled and less than this value
+  
+  **Note**: ``auto-save-interval`` becomes mostly useless if both are enabled and
+  it is bigger than this value
+  
+
+| **Type:** ``int``
+| **Default:** ``0``
+|
+
 * **max-chunk-unloads-per-tick**
 
   The maximum number of queued unloaded chunks that will be unloaded in a single tick.
   
-  **Note**: With the chunk gc enabled, this setting only applies to the ticks
-  where the gc runs (controlled by ``chunk-gc-tick-interval``)
+  **Note**: this setting only controls the amount chunk gc is allowed to save
+  (controlled by ``chunk-gc-tick-interval`` and ``chunk-gc-load-threshold``)
   
   **Note**: If the maximum unloads is too low, too many chunks may remain loaded on the world
   and increases the chance for a drop in tps.
