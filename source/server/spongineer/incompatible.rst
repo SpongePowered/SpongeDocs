@@ -101,7 +101,7 @@ MystCraft
 ~~~~~~~~~
 - Versions: All (so far)
 - Problem: Crash on startup
-- Solution: Update to Spongeforge 7.3.0 or newer.
+- Solution: Change ``B:useconfigs=false`` to ``true`` in the ``config/mystcraft/core.cfg`` file
 
 Open Terrain Generator (OTG)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
