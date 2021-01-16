@@ -95,13 +95,13 @@ LagGoggles/TickCentral
 ~~~~~~~~~~~~~~~~~~~~~~
 - Versions: All
 - Problem: Crash on startup (mixin conflict).
-- Solution: No compatibility at present. Choose one or the other.
+- Solution: Update to Spongeforge 7.2.0 or newer.
 
 MystCraft
 ~~~~~~~~~
 - Versions: All (so far)
 - Problem: Crash on startup
-- Solution: No compatibility at present. Choose one or the other.
+- Solution: Update to Spongeforge 7.3.0 or newer.
 
 Open Terrain Generator (OTG)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
