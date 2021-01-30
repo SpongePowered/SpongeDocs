@@ -55,7 +55,7 @@ jobs:
         echo "Ref: $GITHUB_REF"
         BRANCH=${GITHUB_REF##*/}
         echo "Branch: $BRANCH"
-        echo "::set-output name=branach::$(echo $BRANCH)"
+        echo "::set-output name=branch::$(echo $BRANCH)"
         VERSION="${BRANCH##*-}"
         echo "Current Version: $VERSION"
         echo "::set-output name=version::$(echo $VERSION)"
