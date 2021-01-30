@@ -94,7 +94,7 @@ jobs:
           push: true
           tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ needs.build-n-upload-translations.outputs.version }}
           build-args: |
-            GITHUB_USER=${{ github.actor }}
+            GITHUB_USER=SpongePowered
             GITHUB_TOKEN=${{ github.token }}
             GITHUB_REPO=SpongeDocs
             GITHUB_VERSION=${{ needs.build-n-upload-translations.outputs.branch }}
@@ -110,7 +110,7 @@ jobs:
       - name: Generate Dockerfile
         run: ./deployment/generate-dockerfile.sh
         env:
-          GITHUB_USER: ${{ github.actor }}
+          GITHUB_USER: SpongePowered
           GITHUB_TOKEN: ${{ github.token }}
           VERSIONS: ${{ needs.build-n-upload-translations.outputs.versions }}
       - name: Set up QEMU
