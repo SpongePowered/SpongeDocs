@@ -57,7 +57,7 @@ jobs:
         echo "Branch: $BRANCH"
         echo "::set-output name=branach::$(echo $BRANCH)"
         VERSION="${BRANCH##*-}"
-        echo "Current Version: $BRANCH"
+        echo "Current Version: $VERSION"
         echo "::set-output name=version::$(echo $VERSION)"
         VERSIONS=$(list-versions)
         echo "Available Versions: $VERSIONS"
