@@ -31,9 +31,9 @@ Here are the steps to setup your workspace if you do not have one already:
 With these instructions successfully completed, you are ready to import the project into your IDE.
 
 .. note::
-    This is an outline of the steps necessary to setup the workspace. See the `SpongeForge 
+    This is an outline of the steps necessary to setup the workspace. See the `Sponge
     <https://github.com/SpongePowered/SpongeCommon>`_ GitHub page for complete instructions on cloning, setup, building,
-    and running the implementation.
+    and running the implementations.
 
 Contents
 ========
