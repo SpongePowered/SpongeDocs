@@ -44,7 +44,7 @@
     <repositories>
         <repository>
             <id>sponge</id>
-            <url>https://repo.spongepowered.org/maven</url>
+            <url>https://repo.spongepowered.org/repository/maven-public/</url>
         </repository>
     </repositories>
 
