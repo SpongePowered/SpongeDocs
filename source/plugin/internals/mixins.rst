@@ -82,7 +82,7 @@ production:
             repositories {
                 maven {
                     name = 'sponge'
-                    url = 'https://repo.spongepowered.org/maven'
+                    url = 'https://repo.spongepowered.org/repository/maven-public/'
                 }
             }
             dependencies {

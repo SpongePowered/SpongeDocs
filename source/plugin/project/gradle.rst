@@ -116,7 +116,7 @@ dependency to your project:
         jcenter()
         maven {
             name = 'sponge-repo'
-            url = 'https://repo.spongepowered.org/maven'
+            url = 'https://repo.spongepowered.org/repository/maven-public/'
         }
     }
 
