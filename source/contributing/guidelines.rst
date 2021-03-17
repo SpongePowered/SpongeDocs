@@ -19,9 +19,7 @@ General steps
 #. Make sure you're familiar with Git and GitHub. If your knowledge needs a refresh, take a look here: :doc:`howtogit`
 
 #. Check for existing issues in the `SpongeAPI <https://github.com/SpongePowered/SpongeAPI/issues>`_,
-   `SpongeCommon <https://github.com/SpongePowered/SpongeCommon>`_,
-   `SpongeForge <https://github.com/SpongePowered/SpongeForge>`_,
-   `SpongeVanilla <https://github.com/SpongePowered/SpongeVanilla>`_, and
+   `SpongeCommon <https://github.com/SpongePowered/SpongeCommon>`_ and
    `SpongeDocs <https://github.com/SpongePowered/SpongeDocs>`_ repositories. There is possibly someone else already
    working on the same thing. You can also check
    `issues marked with "help wanted" <https://github.com/SpongePowered/SpongeAPI/labels/help%20wanted>`_ for existing
