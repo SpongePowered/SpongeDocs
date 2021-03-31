@@ -108,13 +108,13 @@ Example: Listen for Custom Event
 
 .. code-block:: java
 
+    import net.kyori.adventure.text.Component;
     import org.spongepowered.api.event.Listener;
-    import org.spongepowered.api.text.Text;
 
     @Listener
     public void onPrivateMessage(PlayerMutationEvent event) {
         if(event.getMutation() == PlayerMutationEvent.Mutation.SPONTANEOUS_COMBUSTION) {
             event.setCancelled(true);
-            event.getTargetEntity().sendMessage(Text.of("You cannot combust here, this is a non-smoking area!"));
+            event.getTargetEntity().sendMessage(Component.text("You cannot combust here, this is a non-smoking area!"));
         }
     }

@@ -22,8 +22,8 @@ The first step is to create a class for the command. The class has to implement 
 
 .. code-block:: java
 
+    import net.kyori.adventure.text.Component;
     import org.spongepowered.api.Sponge;
-    import org.spongepowered.api.text.Text;
     import org.spongepowered.api.command.CommandCallable;
     import org.spongepowered.api.command.CommandException;
     import org.spongepowered.api.command.CommandResult;
@@ -35,12 +35,12 @@ The first step is to create a class for the command. The class has to implement 
 
     public class MyBroadcastCommand implements CommandCallable {
 
-        private final Optional<Text> desc = Optional.of(Text.of("Displays a message to all players"));
-        private final Optional<Text> help = Optional.of(Text.of("Displays a message to all players. It has no color support!"));
-        private final Text usage = Text.of("<message>");
+        private final Optional<Component> desc = Optional.of(Component.text("Displays a message to all players"));
+        private final Optional<Component> help = Optional.of(Component.text("Displays a message to all players. It has no color support!"));
+        private final Component usage = Component.text("<message>");
 
         public CommandResult process(CommandSource source, String arguments) throws CommandException {
-            Sponge.getServer().getBroadcastChannel().send(Text.of(arguments));
+            Sponge.getServer().getBroadcastChannel().send(Component.text(arguments));
             return CommandResult.success();
         }
 
@@ -48,15 +48,15 @@ The first step is to create a class for the command. The class has to implement 
             return source.hasPermission("myplugin.broadcast");
         }
 
-        public Optional<Text> getShortDescription(CommandSource source) {
+        public Optional<Component> getShortDescription(CommandSource source) {
             return desc;
         }
 
-        public Optional<Text> getHelp(CommandSource source) {
+        public Optional<Component> getHelp(CommandSource source) {
             return help;
         }
 
-        public Text getUsage(CommandSource source) {
+        public Component getUsage(CommandSource source) {
             return usage;
         }
 

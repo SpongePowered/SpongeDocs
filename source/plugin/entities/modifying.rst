@@ -62,14 +62,14 @@ Perhaps we want to give our ``Entity`` a name to customize it a bit! This would 
 
 .. code-block:: java
 
+    import net.kyori.adventure.text.Component;
+    import net.kyori.adventure.text.format.NamedTextColor;
     import org.spongepowered.api.data.manipulator.mutable.DisplayNameData;
-    import org.spongepowered.api.text.Text;
-    import org.spongepowered.api.text.format.TextColors;
     
     public void setDisplayName(Entity creeper) {
         DisplayNameData displayData = creeper.get(DisplayNameData.class).get();
-        creeper.offer(displayData.displayName().set(Text.of(TextColors.DARK_AQUA,
-                                                              "Inscrutable")));
+        creeper.offer(displayData.displayName()
+            .set(Component.text("Inscrutable").color(NamedTextColor.DARK_AQUA)));
     }
 
 Another, shorter way to do this is by just using :javadoc:`Keys` on our ``Entity`` instead of using
@@ -81,7 +81,7 @@ Another, shorter way to do this is by just using :javadoc:`Keys` on our ``Entity
     
     public void explosionRadius50(Entity creeper) {
         creeper.offer(Keys.EXPLOSION_RADIUS, Optional.of(50));
-        creeper.offer(Keys.DISPLAY_NAME, Text.of(TextColors.DARK_AQUA, "Inscrutable"));
+        creeper.offer(Keys.DISPLAY_NAME, Component.text("Inscrutable").color(NamedTextColor.DARK_AQUA));
     }
 
 This would neaten our code and is easier to perform. See the :doc:`data documentation <../data/datamanipulators>` on

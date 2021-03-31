@@ -8,7 +8,6 @@ Tab Lists
     org.spongepowered.api.entity.living.player.tab.TabList
     org.spongepowered.api.entity.living.player.tab.TabListEntry
     org.spongepowered.api.entity.living.player.tab.TabListEntry.Builder
-    org.spongepowered.api.text.Text
     java.util.UUID
 
 Tab lists are used in Minecraft to display the list of players currently on a server. SpongeAPI allows for
@@ -28,22 +27,22 @@ the footer of the ``TabList``, we simply need to call their appropriate methods:
 
 .. code-block:: java
     
-    import org.spongepowered.api.text.Text;
-    import org.spongepowered.api.text.format.TextColors;
+    import net.kyori.adventure.text.Component;
+    import net.kyori.adventure.text.format.NamedTextColor;
     
-    tablist.setHeader(Text.of(TextColors.GOLD, "The tab list header"));
-    tablist.setFooter(Text.of(TextColors.RED, "The tab list footer"));
+    tablist.setHeader(Component.text("The tab list header").color(NamedTextColor.GOLD));
+    tablist.setFooter(Component.text("The tab list footer").color(NamedTextColor.RED));
 
-We can call the :javadoc:`TabList#setHeaderAndFooter(Text, Text)` method if we want to alter both of them at once:
+We can call the :javadoc:`TabList#setHeaderAndFooter(Component, Component)` method if we want to alter both of them at once:
 
 .. code-block:: java
     
-    tablist.setHeaderAndFooter(Text.of("header"), Text.of("footer"));
+    tablist.setHeaderAndFooter(Component.text("header"), Component.text("footer"));
 
 .. note::
     
     If you are wanting to alter the tab list header *and* footer, it is recommended to use the ``setHeaderAndFooter()``
-    method over individually calling the :javadoc:`TabList#setHeader(Text)` and :javadoc:`TabList#setFooter(Text)`
+    method over individually calling the :javadoc:`TabList#setHeader(Component)` and :javadoc:`TabList#setFooter(Component)`
     methods, as it only sends one packet instead of two separate packets for the header and the footer.
 
 Tab List Entries
@@ -80,14 +79,14 @@ We can flesh out our basic example by specifying things such as the display name
     
     TabListEntry entry = TabListEntry.builder()
         .list(tablist)
-        .displayName(Text.of("Spongie"))
+        .displayName(Component.text("Spongie"))
         .latency(0)
         .profile(gameProfile)
         .build();
     tablist.addEntry(entry);
 
 Here, we set the display name that our entry will appear under to `Spongie` using the
-:javadoc:`TabListEntry.Builder#displayName(Text)` method. We then set the latency for our ``TabListEntry`` to five bars.
+:javadoc:`TabListEntry.Builder#displayName(Component)` method. We then set the latency for our ``TabListEntry`` to five bars.
 See the :javadoc:`TabListEntry#setLatency(int)` method for more information on how to specify other types of bars for
 our entry.
 
@@ -112,7 +111,7 @@ entry:
 
 .. code-block:: java
     
-    entry.setDisplayName(Text.of("Pretender Spongie"));
+    entry.setDisplayName(Component.text("Pretender Spongie"));
     entry.setLatency(1000);
     entry.setGameMode(GameModes.SPECTATOR);
 

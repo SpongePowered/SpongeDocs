@@ -7,7 +7,6 @@ Command Flags
     org.spongepowered.api.command.args.CommandElement
     org.spongepowered.api.command.args.CommandFlags.Builder
     org.spongepowered.api.command.args.GenericArguments
-    org.spongepowered.api.text.Text
     java.lang.String
 
 Command flags are useful for specifying extra parameters to be used for the processing of a command that doesn't belong
@@ -38,10 +37,10 @@ we are checking if the :javadoc:`CommandContext` for the command has a value for
 
 .. code-block:: java
     
-    import org.spongepowered.api.text.Text;
+    import net.kyori.adventure.text.Component;
     
     if (args.hasAny("s")) {
-        src.sendMessage(Text.of("The command flag s was specified!"));
+        src.sendMessage(Component.text("The command flag s was specified!"));
     }
 
 Permission Flags
@@ -75,11 +74,11 @@ integer or string. Creating an integer value flag can be done like so:
     CommandSpec myCommand = CommandSpec.builder()
             .executor(new MyCommand())
             .arguments(GenericArguments.flags().valueFlag(GenericArguments
-                    .integer(Text.of("value")), "s").buildWith(GenericArguments.none()))
+                    .integer(Component.text("value")), "s").buildWith(GenericArguments.none()))
             .build();
 
-You may replace :javadoc:`GenericArguments#integer(Text)` with any other flag type you would like to specify, such as
-:javadoc:`GenericArguments#string(Text)`.
+You may replace :javadoc:`GenericArguments#integer(Component)` with any other flag type you would like to specify, such as
+:javadoc:`GenericArguments#string(Component)`.
 
 Now to retrieve the flag value from our command, we can simply treat it like any other command argument. We simply need
 to check if it exists before retrieving it:
@@ -92,7 +91,7 @@ to check if it exists before retrieving it:
     if (optional.isPresent()) {
         int value = optional.get().intValue();
     } else {
-        src.sendMessage(Text.of("The value flag was not specified."));
+        src.sendMessage(Component.text("The value flag was not specified."));
     }
 
 Long Flags

@@ -64,15 +64,15 @@ the ``ItemStack``. Using this key, we can change the name of the ``ItemStack`` t
 
 .. code-block:: java
 
+    import net.kyori.adventure.text.Component;
+    import net.kyori.adventure.text.format.NamedTextColor;
     import org.spongepowered.api.data.key.Keys;
-    import org.spongepowered.api.text.Text;
-    import org.spongepowered.api.text.format.TextColors;
 
-    superMegaAwesomeSword.offer(Keys.DISPLAY_NAME, Text.of(
-        TextColors.BLUE, "SUPER ",
-        TextColors.GOLD, "MEGA ",
-        TextColors.DARK_AQUA, "AWESOME ",
-        TextColors.AQUA, "Diamond Sword"));
+    superMegaAwesomeSword.offer(Keys.DISPLAY_NAME, Component.join(
+        Component.text("SUPER ").color(NamedTextColor.BLUE),
+        Component.text("MEGA ").color(NamedTextColor.GOLD),
+        Component.text("AWESOME ").color(NamedTextColor.DARK_AQUA),
+        Component.text("Diamond Sword").color(NamedTextColor.AQUA));
 
 Finally, to make the sword unbreakable, we can use keys again:
 
