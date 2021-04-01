@@ -3,6 +3,7 @@ Tab Lists
 =========
 
 .. javadoc-import::
+    net.kyori.adventure.text.Component
     org.spongepowered.api.entity.living.player.Player
     org.spongepowered.api.entity.living.player.gamemode.GameModes
     org.spongepowered.api.entity.living.player.tab.TabList
@@ -30,8 +31,8 @@ the footer of the ``TabList``, we simply need to call their appropriate methods:
     import net.kyori.adventure.text.Component;
     import net.kyori.adventure.text.format.NamedTextColor;
     
-    tablist.setHeader(Component.text("The tab list header").color(NamedTextColor.GOLD));
-    tablist.setFooter(Component.text("The tab list footer").color(NamedTextColor.RED));
+    tablist.setHeader(Component.text("The tab list header", NamedTextColor.GOLD));
+    tablist.setFooter(Component.text("The tab list footer", NamedTextColor.RED));
 
 We can call the :javadoc:`TabList#setHeaderAndFooter(Component, Component)` method if we want to alter both of them at once:
 

@@ -3,6 +3,7 @@ The Pagination Service
 ======================
 
 .. javadoc-import::
+    net.kyori.adventure.audience.Audience
     org.spongepowered.api.service.pagination.PaginationList.Builder
     org.spongepowered.api.service.pagination.PaginationService
 
@@ -83,7 +84,7 @@ To achieve the preceding output, we might use the following builder pattern:
     With the exception of contents, all components of the paginated list are optional. However, a title is strongly
     recommended.
 
-Finally, to send the paginated list to a player or another ``Audience``-like object, use
+Finally, to send the paginated list to a player or another :javadoc:`Audience`-like object, use
 :javadoc:`PaginationList.Builder#sendTo(Audience)`.
 
 And that's it! To recap, a fully functional paginated list could be generated and sent to a previously defined

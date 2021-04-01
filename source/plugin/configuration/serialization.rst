@@ -11,6 +11,7 @@ Serializing Objects
     java.net.URL
     java.net.URI
     java.util.regex.Pattern
+    net.kyori.adventure.text.Component
     ninja.leaping.configurate.ConfigurationOptions
     ninja.leaping.configurate.objectmapping.GuiceObjectMapperFactory
     ninja.leaping.configurate.objectmapping.ObjectMapper
@@ -29,8 +30,7 @@ Per default, a set of data types can be (de)serialized:
 * :javadoc:`Map`\s where both keys and values are serializable (not including specific implementations)
 * The types :javadoc:`UUID`, :javadoc:`URL`, :javadoc:`URI` and :javadoc:`Pattern {(regex) Pattern}`
 * Any enum or :doc:`CatalogType </plugin/data/catalog-types>`
-* The types :doc:`Component </plugin/text/index>`, ``Style`` and
-  :doc:`TextTemplate </plugin/text/templates>` (See also :doc:`here </plugin/text/representations/index>`)
+* The text type :doc:`Component </plugin/text/index>` (See also :doc:`here </plugin/text/representations/index>`)
 
 .. note::
 

@@ -3,6 +3,7 @@ Bans
 ====
 
 .. javadoc-import::
+    net.kyori.adventure.text.Component
     org.spongepowered.api.entity.living.player.User
     org.spongepowered.api.profile.GameProfile
     org.spongepowered.api.service.ban.BanService

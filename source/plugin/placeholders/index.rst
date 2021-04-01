@@ -2,7 +2,10 @@
 Placeholders
 ============
 
-A common task for chat plugins is to provide and consume placeholders, tokens that map to ``Component`` based on 
+.. javadoc-import::
+    net.kyori.adventure.text.Component
+
+A common task for chat plugins is to provide and consume placeholders, tokens that map to :javadoc:`Component` based on 
 context. For example, a "name" placeholder may return a player's name, or a "balance" placeholder may return the value
 of a player's default account.
 

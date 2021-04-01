@@ -69,7 +69,7 @@ Perhaps we want to give our ``Entity`` a name to customize it a bit! This would 
     public void setDisplayName(Entity creeper) {
         DisplayNameData displayData = creeper.get(DisplayNameData.class).get();
         creeper.offer(displayData.displayName()
-            .set(Component.text("Inscrutable").color(NamedTextColor.DARK_AQUA)));
+            .set(Component.text("Inscrutable", NamedTextColor.DARK_AQUA)));
     }
 
 Another, shorter way to do this is by just using :javadoc:`Keys` on our ``Entity`` instead of using
@@ -81,7 +81,7 @@ Another, shorter way to do this is by just using :javadoc:`Keys` on our ``Entity
     
     public void explosionRadius50(Entity creeper) {
         creeper.offer(Keys.EXPLOSION_RADIUS, Optional.of(50));
-        creeper.offer(Keys.DISPLAY_NAME, Component.text("Inscrutable").color(NamedTextColor.DARK_AQUA));
+        creeper.offer(Keys.DISPLAY_NAME, Component.text("Inscrutable", NamedTextColor.DARK_AQUA));
     }
 
 This would neaten our code and is easier to perform. See the :doc:`data documentation <../data/datamanipulators>` on

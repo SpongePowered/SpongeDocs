@@ -3,6 +3,9 @@ Retrieving and Parsing Placeholders
 ===================================
 
 .. javadoc-import::
+    net.kyori.adventure.audience.Audience
+    net.kyori.adventure.text.Component
+    net.kyori.adventure.text.ComponentBuilder
     org.spongepowered.api.CatalogType
     org.spongepowered.api.entity.living.player.Player
     org.spongepowered.api.service.placeholder.PlaceholderContext
@@ -30,14 +33,14 @@ same way as any other :javadoc:`CatalogType`:
 Creating Text from a PlaceholderParser
 ======================================
 
-A ``PlaceholderParser`` requires a :javadoc:`PlaceholderContext` in order to generate an appropriate ``Component``
+A ``PlaceholderParser`` requires a :javadoc:`PlaceholderContext` in order to generate an appropriate :javadoc:`Component`
 object. ``PlaceholderContexts`` can be created by using a :javadoc:`PlaceholderContext.Builder` obtained from the 
 :javadoc:`PlaceholderContext#builder()` method.
 
 The builder allows for the following optional context to be provided:
 
 * An associated object, allowing for the placeholder to modify its output (this will usually be a :javadoc:`Player` or 
-  other ``Audience``)
+  other :javadoc:`Audience`)
 * An argument string that a ``PlaceholderParser`` can parse
 
 A built ``PlaceholderContext`` can then be supplied to the ``PlaceholderParser`` by using 
@@ -62,7 +65,7 @@ If the player name is "SpongePlayer", the returned text will say ``SpongePlayer`
 Including Placeholders in Text
 ==============================
 
-Placeholders can also be used in ``Component`` and ``ComponentBuilder`` objects without parsing them
+Placeholders can also be used in :javadoc:`Component` and :javadoc:`ComponentBuilder` objects without parsing them
 first. Sponge provides a :javadoc:`PlaceholderComponent` object that bundles a ``PlaceholderParser`` and 
 ``PlaceholderContext`` together.
 
@@ -82,4 +85,4 @@ The text will say "Hello! Your name is SpongePlayer!"
 
 .. note::
     
-    A ``PlaceholderComponent`` will be parsed as soon as it is added to a ``Component`` or ``ComponentBuilder`` using ``component.append(...)``.
+    A ``PlaceholderComponent`` will be parsed as soon as it is added to a :javadoc:`Component` or :javadoc:`ComponentBuilder` using :javadoc:`Component#append(Component)`.

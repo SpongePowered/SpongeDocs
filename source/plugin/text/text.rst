@@ -3,10 +3,15 @@ Creating Text
 =============
 
 .. javadoc-import::
-    net.kyori.adventure.text.Component
     java.lang.Object
+    net.kyori.adventure.text.Component
+    net.kyori.adventure.text.event.ClickEvent
+    net.kyori.adventure.text.event.HoverEvent
+    net.kyori.adventure.text.format.NamedTextColor
+    net.kyori.adventure.text.format.TextColor
+    org.spongepowered.api.adventure.SpongeComponents
 
-Formatted text can be created using ``Component`` factories as described in this section.
+Formatted text can be created using :javadoc:`Component` factories as described in this section.
 The robust text API can be used in a variety of ways to combine styling, coloring, and actions.
 
 Unformatted Text
@@ -51,9 +56,9 @@ Example: Colored Text
 
     import net.kyori.adventure.text.format.NamedTextColor;
 
-    Component coloredText = Component.text("Woot! Golden text is golden.").color(NamedTextColor.GOLD);
+    Component coloredText = Component.text("Woot! Golden text is golden.", NamedTextColor.GOLD);
 
-Any Minecraft color specified within the ``NamedTextColor`` class can be used when coloring text, as well as full-RGB colors using ``TextColor``.
+Any Minecraft color specified within the :javadoc:`NamedTextColor` class can be used when coloring text, as well as full-RGB colors using :javadoc:`TextColor`.
 Multiple colors can be used in text by appending additional texts with different colors:
 
 Example: Multi-colored Text
@@ -63,8 +68,8 @@ Example: Multi-colored Text
 
     import net.kyori.adventure.text.format.TextColor;
 
-    Component multiColoredText = Component.text("Sponges are ").color(NamedTextColor.YELLOW).append(
-            Component.text("invincible!").color(TextColor.color(0x5fb0ff)));
+    Component multiColoredText = Component.text("Sponges are ", NamedTextColor.YELLOW).append(
+            Component.text("invincible!", TextColor.color(0x5fb0ff)));
 
 Styling
 =======
@@ -79,6 +84,7 @@ Example: Styled Text
     import net.kyori.adventure.text.format.TextDecoration;
 
     Component styledText = Component.text("Yay! Styled text!").decorate(TextDecoration.ITALIC);
+    Component shortcutText = Component.text("Shortcut for both!", NamedTextColor.GRAY, TextDecoration.UNDERLINE);
 
 Just like with colors, multiple styles can be used by chaining together separately styled texts.
 
@@ -95,8 +101,8 @@ Example: Multi-styled Text
 Text Events
 ===========
 
-Components also offer the ability to create actions for text. Any action specified within the
-``HoverEvent`` or ``ClickEvent`` classes can be used when creating text actions for text.
+Components also offer the ability to create actions for text. Any action within the
+:javadoc:`HoverEvent` or :javadoc:`ClickEvent` classes can be used when creating text actions for text. Sponge provides additional actions in :javadoc:`SpongeComponents`.
 The method below is a small example of what text actions can do.
 
 Example: Text with an Event
@@ -107,13 +113,13 @@ Example: Text with an Event
     import net.kyori.adventure.text.event.ClickEvent;
 
     Component clickableText = Component.text("Click here!")
-        .clickEvent(ClickEvent.runCommand("tell Spongesquad I'm ready!"));
+            .clickEvent(ClickEvent.runCommand("tell Spongesquad I'm ready!"));
 
 In the method above, players can click the "Click here!" text to run the specified command.
 
 .. note::
 
-    Some text actions, such as ``ClickEvent#changePage(int)``, can only be used with book items.
+    Some text actions, such as :javadoc:`ClickEvent#changePage(int)`, can only be used with book items.
 
 .. tip::
 
@@ -139,8 +145,33 @@ Example: Selector-generated Text
 
 .. code-block:: java
 
-    Component adventurers = Component.text("These players are in adventure mode: ").append(
-            Component.selector("@a[m=2]"));
+    Component adventurers = Component.text("These players are in adventure mode: ")
+            .append(Component.selector("@a[m=2]"));
 
 In this example, the target selector ``@a[m=2]`` is targeting every online player who is in adventure mode. When the
-method is called, a Component will be returned containing the usernames of every online player who is in adventure mode.
+method is called, a Component will be returned with a selector of all the usernames of every online player who is in adventure mode.
+To send this selector to players, the selector will have to be expanded to the real usernames using ``SpongeComponents#resolve``.
+
+Text Builders
+=============
+
+Mutable builder classes exist for every kind of ``Component``. These are available should you need a mutable representation, and they are also used in a few convenience methods throughout the library to expose parts of an existing Component for editing.
+
+Example: Text Component builder
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: java
+
+    Component weBuiltThisText = Component.text()
+            .content("with Sponge and Flard")
+            .color(NamedTextColor.YELLOW)
+            .decorate(TextDecoration.ITALIC, TextDecoration.BOLD)
+            .build()
+
+Example: Editing text with a StyleBuilder
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: java
+
+    Component limitedEdition = weBuiltThisText.style(
+            styleBuilder -> styleBuilder.decorate(TextDecoration.UNDERLINE));

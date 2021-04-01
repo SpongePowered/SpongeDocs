@@ -3,6 +3,7 @@ Command Flags
 =============
 
 .. javadoc-import::
+    net.kyori.adventure.text.Component
     org.spongepowered.api.command.args.CommandContext
     org.spongepowered.api.command.args.CommandElement
     org.spongepowered.api.command.args.CommandFlags.Builder

@@ -5,7 +5,7 @@ Text
 The Text API is used to create formatted text, which can be sent to players in chat messages and be used in
 places such as in books and on signs.
 
-Sponge uses the `Adventure <https://docs.adventure.kyori.net/>`__ library as its text implementation.
+Sponge uses the :doc:`Adventure <adventure:index>` library as its text implementation.
 Since Adventure already provides docs on how to create and manipulate text objects,
 we will supply you with Sponge-specific guides and a basic introduction.
 
@@ -23,5 +23,3 @@ Contents
 	text
 	representations/index
 	pagination
-	messagechannels
-	templates

@@ -3,6 +3,7 @@ Book Views
 ==========
 
 .. javadoc-import::
+    net.kyori.adventure.text.Component
     org.spongepowered.api.effect.Viewer
     org.spongepowered.api.item.inventory.ItemStack
     org.spongepowered.api.text.BookView
@@ -10,7 +11,7 @@ Book Views
     java.util.Collection
 
 A :javadoc:`BookView` is the representation of the Book GUI on the client. The ``BookView`` is not associated with an
-actual :javadoc:`ItemStack` and is only for displaying ``Component`` through a book to the player. Note that a
+actual :javadoc:`ItemStack` and is only for displaying :javadoc:`Component` through a book to the player. Note that a
 ``BookView`` is read-only, due to it being impossible to tell the client to open an unsigned book.
 
 To create a ``BookView``, we simply need to obtain a :javadoc:`BookView.Builder`, which is provided through the

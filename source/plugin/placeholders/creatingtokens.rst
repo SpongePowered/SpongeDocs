@@ -3,6 +3,7 @@ Creating Placeholder Tokens
 ===========================
 
 .. javadoc-import::
+    net.kyori.adventure.text.Component
     org.spongepowered.api.CatalogType
     org.spongepowered.api.plugin.PluginContainer
     org.spongepowered.api.entity.living.player.Player
@@ -34,7 +35,7 @@ There are two ways you can create a ``PlaceholderParser``:
   must also be unique.
 
 :javadoc:`PlaceholderParser` objects take a :javadoc:`PlaceholderContext` object which contains the context of the
-request and returns a ``Component`` based on that context. Information that the ``PlaceholderContext`` may 
+request and returns a :javadoc:`Component` based on that context. Information that the ``PlaceholderContext`` may 
 contain includes:
 
 * An associated object, such as a :javadoc:`Player`
@@ -59,6 +60,8 @@ found. It uses the builder to create the parser with ID ``spongedocs:defaultworl
 ``spongedocs``.
 
 .. code-block:: java
+
+    import net.kyori.adventure.text.Component;
     
     PluginContainer thisPlugin = ...;
     
@@ -78,9 +81,11 @@ Example: Player Location PlaceholderParser
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This ``PlaceholderParser`` attempts to get the player's location in the world. If used without a ``Player`` as the 
-associated object, it returns an empty ``Component``. This implements the ``PlaceholderParser`` interface directly.
+associated object, it returns an empty :javadoc:`Component`. This implements the ``PlaceholderParser`` interface directly.
 
 .. code-block:: java
+
+    import net.kyori.adventure.text.TextComponent;
 
     public class PlayerLocationPlaceholder implements PlaceholderParser {
         
@@ -99,7 +104,7 @@ associated object, it returns an empty ``Component``. This implements the ``Plac
             placeholderContext.associatedObject()
                 .filter(x -> x instanceof Player)
                 .map(player -> ((Player) player).getLocation())
-                .map(location -> Component.join(
+                .map(location -> TextComponent.ofChildren(
                     Component.text("World: "),
                     Component.text(location.getExtent().getName()),
                     Component.text(" - "),
