@@ -26,7 +26,7 @@ Creating PlaceholderParsers
 There are two ways you can create a ``PlaceholderParser``:
 
 * Using :javadoc:`PlaceholderParser#builder()`, supplying your :javadoc:`PluginContainer`, un-namespaced ID and 
-  a function that takes a ``PlaceholderContext`` and returns a ``Component``.
+  a function that takes a ``PlaceholderContext`` and returns a :javadoc:`Component`.
 * Directly implement the interface.
 
 .. note::
@@ -35,7 +35,7 @@ There are two ways you can create a ``PlaceholderParser``:
   must also be unique.
 
 :javadoc:`PlaceholderParser` objects take a :javadoc:`PlaceholderContext` object which contains the context of the
-request and returns a :javadoc:`Component` based on that context. Information that the ``PlaceholderContext`` may 
+request and returns a ``Component`` based on that context. Information that the ``PlaceholderContext`` may 
 contain includes:
 
 * An associated object, such as a :javadoc:`Player`
@@ -81,7 +81,7 @@ Example: Player Location PlaceholderParser
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This ``PlaceholderParser`` attempts to get the player's location in the world. If used without a ``Player`` as the 
-associated object, it returns an empty :javadoc:`Component`. This implements the ``PlaceholderParser`` interface directly.
+associated object, it returns an empty ``Component``. This implements the ``PlaceholderParser`` interface directly.
 
 .. code-block:: java
 

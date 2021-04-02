@@ -65,7 +65,7 @@ If the player name is "SpongePlayer", the returned text will say ``SpongePlayer`
 Including Placeholders in Text
 ==============================
 
-Placeholders can also be used in :javadoc:`Component` and :javadoc:`ComponentBuilder` objects without parsing them
+Placeholders can also be used in ``Component`` and :javadoc:`ComponentBuilder` objects without parsing them
 first. Sponge provides a :javadoc:`PlaceholderComponent` object that bundles a ``PlaceholderParser`` and 
 ``PlaceholderContext`` together.
 
@@ -85,4 +85,4 @@ The text will say "Hello! Your name is SpongePlayer!"
 
 .. note::
     
-    A ``PlaceholderComponent`` will be parsed as soon as it is added to a :javadoc:`Component` or :javadoc:`ComponentBuilder` using :javadoc:`Component#append(Component)`.
+    A ``PlaceholderComponent`` will be parsed as soon as it is added to a ``Component`` or ``ComponentBuilder`` using :javadoc:`Component#append(Component)`.
