@@ -58,7 +58,8 @@ Example: Colored Text
 
     Component coloredText = Component.text("Woot! Golden text is golden.", NamedTextColor.GOLD);
 
-Any Minecraft color specified within the :javadoc:`NamedTextColor` class can be used when coloring text, as well as full-RGB colors using :javadoc:`TextColor`.
+Any Minecraft color specified within the :javadoc:`NamedTextColor` class can be used when coloring text,
+as well as full-RGB colors using :javadoc:`TextColor`.
 Multiple colors can be used in text by appending additional texts with different colors:
 
 Example: Multi-colored Text
@@ -74,7 +75,8 @@ Example: Multi-colored Text
 Styling
 =======
 
-The API can also be used to style text, including underlining, italicizing, etc. This is called "decorating" in the Adventure library.
+The API can also be used to style text, including underlining, italicizing, etc.
+This is called "decorating" in the Adventure library.
 
 Example: Styled Text
 ~~~~~~~~~~~~~~~~~~~~
@@ -102,7 +104,8 @@ Text Events
 ===========
 
 Components also offer the ability to create actions for text. Any action within the
-:javadoc:`HoverEvent` or :javadoc:`ClickEvent` classes can be used when creating text actions for text. Sponge provides additional actions in :javadoc:`SpongeComponents`.
+:javadoc:`HoverEvent` or :javadoc:`ClickEvent` classes can be used when creating text actions for text.
+Sponge provides additional actions in :javadoc:`SpongeComponents`.
 The method below is a small example of what text actions can do.
 
 Example: Text with an Event
@@ -113,7 +116,11 @@ Example: Text with an Event
     import net.kyori.adventure.text.event.ClickEvent;
 
     Component clickableText = Component.text("Click here!")
-            .clickEvent(ClickEvent.runCommand("tell Spongesquad I'm ready!"));
+        .clickEvent(ClickEvent.runCommand("tell Spongesquad I'm ready!"));
+
+    Component callbackText = Component.text("Click here too!")
+        .clickEvent(SpongeComponents.executeCallback(
+            cause -> cause.audience().sendMessage(Component.text("You clicked!"))));
 
 In the method above, players can click the "Click here!" text to run the specified command.
 
@@ -155,7 +162,9 @@ To send this selector to players, the selector will have to be expanded to the r
 Text Builders
 =============
 
-Mutable builder classes exist for every kind of ``Component``. These are available should you need a mutable representation, and they are also used in a few convenience methods throughout the library to expose parts of an existing Component for editing.
+Mutable builder classes exist for every kind of ``Component``.
+These are available should you need a mutable representation, and they are also used in a few convenience methods
+throughout the library to expose parts of an existing Component for editing.
 
 Example: Text Component builder
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

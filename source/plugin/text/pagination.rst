@@ -12,7 +12,8 @@ The Pagination Service
     For a basic understanding of services, make sure you read :doc:`../services` first.
 
 The :javadoc:`PaginationService` acts as a way to split up content into discrete pages. The service provides a
-:javadoc:`PaginationList.Builder` with which you can specify attributes such as title, contents, header, and padding. This is a Sponge-specific feature.
+:javadoc:`PaginationList.Builder` with which you can specify attributes such as title, contents, header, and padding.
+This is a Sponge-specific feature.
 
 Pagination List Builder
 =======================

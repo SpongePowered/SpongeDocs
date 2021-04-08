@@ -12,7 +12,8 @@ Text Serializers
     java.lang.String
 
 ..
-	Note to editors: These used to be many other files in this folder, which were made irrelevant. This file was not moved to keep the URLs to this page alive.
+	Note to editors: There used to be many other files in this folder, which were made irrelevant.
+	This file was not moved to keep the URLs to this page alive.
 
 :javadoc:`ComponentSerializer`\ s provide a convenient way to serialize and de-serialize :javadoc:`Component` instances.
 There are four applicable formats:

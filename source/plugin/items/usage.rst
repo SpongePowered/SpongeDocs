@@ -55,7 +55,7 @@ value to ``true`` to imply that the item will never break. All of this is enclos
 ``ItemStack`` to return our changes back to the ``ItemStack``.
 
 Different keys will require different values based on their job. For example, to change the lore of an item, one would
-need to specify a ``List`` of :javadoc:`Component` rather than an boolean or other value. It is also important to perform
+need to specify a ``List`` of :javadoc:`Component` rather than a boolean or other value. It is also important to perform
 checks to see if the key can actually apply to the item. For example, some items might not have durability or may
 already have lore applied to the item.
 
