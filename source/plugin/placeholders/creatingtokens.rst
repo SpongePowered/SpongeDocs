@@ -10,10 +10,9 @@ Creating Placeholder Tokens
     org.spongepowered.api.service.economy.Currency
     org.spongepowered.api.service.economy.EconomyService
     org.spongepowered.api.service.economy.account.Account
-    org.spongepowered.api.service.placeholder.PlaceholderService
-    org.spongepowered.api.service.placeholder.PlaceholderContext
-    org.spongepowered.api.service.placeholder.PlaceholderParser
-    org.spongepowered.api.service.placeholder.PlaceholderText
+    org.spongepowered.api.placeholder.PlaceholderContext
+    org.spongepowered.api.placeholder.PlaceholderParser
+    org.spongepowered.api.placeholder.PlaceholderText
     org.spongepowered.api.text.Text
     org.spongepowered.api.text.channel.MessageReceiver
 

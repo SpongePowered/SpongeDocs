@@ -5,11 +5,11 @@ Retrieving and Parsing Placeholders
 .. javadoc-import::
     org.spongepowered.api.CatalogType
     org.spongepowered.api.entity.living.player.Player
-    org.spongepowered.api.service.placeholder.PlaceholderContext
-    org.spongepowered.api.service.placeholder.PlaceholderContext.Builder
-    org.spongepowered.api.service.placeholder.PlaceholderParser
-    org.spongepowered.api.service.placeholder.PlaceholderText
-    org.spongepowered.api.service.placeholder.PlaceholderText.Builder
+    org.spongepowered.api.placeholder.PlaceholderContext
+    org.spongepowered.api.placeholder.PlaceholderContext.Builder
+    org.spongepowered.api.placeholder.PlaceholderParser
+    org.spongepowered.api.placeholder.PlaceholderText
+    org.spongepowered.api.placeholder.PlaceholderText.Builder
     org.spongepowered.api.text.Text
     org.spongepowered.api.text.Text.Builder
     org.spongepowered.api.text.TextRepresentable
