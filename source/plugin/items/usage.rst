@@ -3,12 +3,12 @@ Basic Item Usage
 ================
 
 .. javadoc-import::
+    net.kyori.adventure.text.Component
     org.spongepowered.api.data.key.Keys
     org.spongepowered.api.data.property.item.HarvestingProperty
     org.spongepowered.api.entity.Item
     org.spongepowered.api.item.ItemType
     org.spongepowered.api.item.inventory.ItemStack
-    org.spongepowered.api.text.Text
 
 Items are represented through an :javadoc:`ItemStack`. An ``ItemStack`` is an inventory item with information such as
 the amount of the item in the stack, the type of the item, and extra data such as durability. An :javadoc:`Item` itself
@@ -55,17 +55,17 @@ value to ``true`` to imply that the item will never break. All of this is enclos
 ``ItemStack`` to return our changes back to the ``ItemStack``.
 
 Different keys will require different values based on their job. For example, to change the lore of an item, one would
-need to specify a ``List`` of :javadoc:`Text` rather than an boolean or other value. It is also important to perform
+need to specify a ``List`` of :javadoc:`Component` rather than a boolean or other value. It is also important to perform
 checks to see if the key can actually apply to the item. For example, some items might not have durability or may
 already have lore applied to the item.
 
 .. code-block:: java
 
-    import org.spongepowered.api.text.Text;
+    import net.kyori.adventure.text.Component;
 
     import java.util.List;
 
-    public void setLore(ItemStack stack, List<Text> itemLore) {
+    public void setLore(ItemStack stack, List<Component> itemLore) {
         if (stack.get(Keys.ITEM_LORE).isPresent()) {
             stack.offer(Keys.ITEM_LORE, itemLore);
         }

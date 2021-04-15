@@ -22,20 +22,20 @@ Every child command is a separate ``CommandSpec`` and can be created in the same
 
 .. code-block:: java
 
-    import org.spongepowered.api.text.Text;
+    import net.kyori.adventure.text.Component;
     import org.spongepowered.api.command.spec.CommandSpec;
 
     // /mail read
     CommandSpec readCmd = CommandSpec.builder()
         .permission("myplugin.mail.read")
-        .description(Text.of("Read your inbox"))
+        .description(Component.text("Read your inbox"))
         .executor(...)
         .build();
 
     // /mail send
     CommandSpec sendCmd = CommandSpec.builder()
         .permission("myplugin.mail.send")
-        .description(Text.of("Send a mail"))
+        .description(Component.text("Send a mail"))
         .arguments(...)
         .executor(...)
         .build();
@@ -52,7 +52,7 @@ The first alias supplied is the primary one and will appear in the usage message
 
     CommandSpec mailCommandSpec = CommandSpec.builder()
         .permission("myplugin.mail.base")
-        .description(Text.of("Send and receive mails"))
+        .description(Component.text("Send and receive mails"))
         .child(readCmd, "read", "r", "inbox")
         .child(sendCmd, "send", "s", "write")
         .build();

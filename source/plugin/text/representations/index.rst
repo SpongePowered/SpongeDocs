@@ -3,41 +3,41 @@ Text Serializers
 ================
 
 .. javadoc-import::
-    org.spongepowered.api.text.Text
-    org.spongepowered.api.text.serializer.TextParseException
-    org.spongepowered.api.text.serializer.TextSerializer
-    org.spongepowered.api.text.serializer.TextSerializers
+    net.kyori.adventure.text.Component
+    net.kyori.adventure.text.serializer.ComponentSerializer
+    net.kyori.adventure.text.serializer.gson.GsonComponentSerializer
+    net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer
+    net.kyori.adventure.text.serializer.plain.PlainComponentSerializer
+    net.kyori.adventure.serializer.configurate4.ConfigurateComponentSerializer
     java.lang.String
 
-:javadoc:`TextSerializer`\ s provide a convenient way to serialize and de-serialize :javadoc:`Text` instances. There
-are three applicable formats:
+..
+	Note to editors: There used to be many other files in this folder, which were made irrelevant.
+	This file was not moved to keep the URLs to this page alive.
 
-.. toctree::
-    :maxdepth: 2
-    :titlesonly:
+:javadoc:`ComponentSerializer`\ s provide a convenient way to serialize and de-serialize :javadoc:`Component` instances.
+There are four applicable formats:
 
-    formatting-code-legacy
-    json
-    configurate
+* Unformatted string - :javadoc:`PlainComponentSerializer`
+* Legacy ``&`` or ``§`` formatting - :javadoc:`LegacyComponentSerializer`
+* Configurate nodes - :javadoc:`ConfigurateComponentSerializer`
+* Minecraft JSON - :javadoc:`GsonComponentSerializer`
 
-The :javadoc:`TextSerializers` class provides three ``TextSerializer``\ s for serializing to a representative
-``String`` or deserializing to a ``Text`` instance:
-
-* ``LEGACY_FORMATTING_CODE``
-* ``FORMATTING_CODE``
-* ``JSON``
+For a full documentation of each serializer, see the Adventure docs' :doc:`Text Serializers <adventure:serializer/index>` section.
 
 Serializing Text
 ~~~~~~~~~~~~~~~~
 
-To serialize a ``Text`` object, simply use the :javadoc:`TextSerializer#serialize(Text)` method, specifying the
-appropriate ``Text`` object as the only argument. The method will return a ``String`` representing the ``Text`` object.
+To serialize a ``Component`` object, simply use the :javadoc:`ComponentSerializer#serialize(Component)`
+method, providing the text object as the only argument.
+The method will return a serializer-specific object representing the ``Component``.
+For example, `ConfigurateComponentSerializer` will return a ``ConfigurationNode`` object.
 
 Deserializing to Text
 ~~~~~~~~~~~~~~~~~~~~~
 
-To deserialize a ``String`` into its corresponding ``Text`` object, simply use the
-:javadoc:`TextSerializer#deserialize(String)` method, specifying the input ``String`` as the only argument. If the
-input is incorrectly formatted, a :javadoc:`TextParseException` will be thrown. Alternatively, use the
-:javadoc:`TextSerializer#deserializeUnchecked(String)` method to deserialize without any exceptions. If there is an
-error, the raw input will be returned in the form of a ``Text`` object.
+To deserialize a ``String`` or other serialized object into its corresponding ``Component``, simply use the
+:javadoc:`ComponentSerializer#deserialize(R)` method, specifying the serialized object from above as the only argument. If the
+input is incorrectly formatted, an exception will be thrown. Alternatively, use the
+:javadoc:`ComponentSerializer#deserializeOr(R, Component)` method to deserialize without any exceptions. If there is an
+error, the second argument will be returned as a fallback.

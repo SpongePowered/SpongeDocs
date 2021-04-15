@@ -142,7 +142,7 @@ reaching 0.
             seconds--;
             Sponge.getServer()
                 .getBroadcastChannel()
-                .send(Text.of("Remaining Time: "+seconds+"s"));
+                .send(Component.text("Remaining Time: "+seconds+"s"));
             if (seconds < 1) {
                 task.cancel();
             }
@@ -295,7 +295,7 @@ synchronously using ``Observable#subscribeOn(Scheduler scheduler)``.
               .observeOn(minecraftScheduler) // -> SYNC: minecraftScheduler
               .subscribe(player -> {
                   // SYNC: minecraftScheduler
-                  player.kick(Text.of("Computer says no"));
+                  player.kick(Component.text("Computer says no"));
               });
 
 Scala

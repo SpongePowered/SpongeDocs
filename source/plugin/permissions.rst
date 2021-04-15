@@ -98,16 +98,16 @@ Usage-Example
 
 .. code-block:: java
 
+    import net.kyori.adventure.text.Component;
     import org.spongepowered.api.service.permission.PermissionDescription;
     import org.spongepowered.api.service.permission.PermissionDescription.Builder;
     import org.spongepowered.api.service.permission.PermissionService;
-    import org.spongepowered.api.text.Text;
 
     PluginContainer plugin = ...;
     Builder builder = permissionService.newDescriptionBuilder(plugin);
     
     builder.id("myplugin.commands.teleport.execute")
-           .description(Text.of("Allows the user to execute the teleport command."))
+           .description(Component.text("Allows the user to execute the teleport command."))
            .assign(PermissionDescription.ROLE_STAFF, true)
            .register();
 

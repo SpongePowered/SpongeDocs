@@ -24,14 +24,14 @@ Example: Building a Simple Command
 
 .. code-block:: java
 
+    import net.kyori.adventure.text.Component;
     import org.spongepowered.api.Sponge;
-    import org.spongepowered.api.text.Text;
     import org.spongepowered.api.command.spec.CommandSpec;
 
     PluginContainer plugin = ...;
 
     CommandSpec myCommandSpec = CommandSpec.builder()
-        .description(Text.of("Hello World Command"))
+        .description(Component.text("Hello World Command"))
         .permission("myplugin.command.helloworld")
         .executor(new HelloWorldCommand())
         .build();
@@ -96,7 +96,7 @@ Example: Simple Command Executor
 
         @Override
         public CommandResult execute(CommandSource src, CommandContext args) throws CommandException {
-            src.sendMessage(Text.of("Hello World!"));
+            src.sendMessage(Component.text("Hello World!"));
             return CommandResult.success();
         }
     }
@@ -121,14 +121,14 @@ Perform an ``instanceof`` check to determine the type of the :javadoc:`CommandSo
 
     if (src instanceof Player) {
         Player player = (Player) src;
-        player.sendMessage(Text.of("Hello " + player.getName() + "!"));
+        player.sendMessage(Component.text("Hello " + player.getName() + "!"));
     }
     else if(src instanceof ConsoleSource) {
-        src.sendMessage(Text.of("Hello GLaDOS!"));
+        src.sendMessage(Component.text("Hello GLaDOS!"));
         // The Cake Is a Lie
     }
     else if(src instanceof CommandBlockSource) {
-        src.sendMessage(Text.of("Hello Companion Cube!"));
+        src.sendMessage(Component.text("Hello Companion Cube!"));
         // <3
     }
 

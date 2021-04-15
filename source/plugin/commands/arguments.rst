@@ -12,7 +12,7 @@ Argument Parsing
     org.spongepowered.api.command.args.GenericArguments
     org.spongepowered.api.command.spec.CommandSpec.Builder
     org.spongepowered.api.entity.Entity
-    org.spongepowered.api.text.selector.Selector
+    org.spongepowered.api.command.selector.Selector
     java.lang.IllegalArgumentException
     java.lang.String
 
@@ -50,8 +50,8 @@ Example: Building a Command with Multiple Arguments
 
 .. code-block:: java
 
+    import net.kyori.adventure.text.Component;
     import org.spongepowered.api.Sponge;
-    import org.spongepowered.api.text.Text;
     import org.spongepowered.api.entity.living.player.Player;
     import org.spongepowered.api.command.CommandException;
     import org.spongepowered.api.command.CommandResult;
@@ -64,19 +64,19 @@ Example: Building a Command with Multiple Arguments
     PluginContainer plugin = ...;
 
     CommandSpec myCommandSpec = CommandSpec.builder()
-            .description(Text.of("Send a message to a player"))
+            .description(Component.text("Send a message to a player"))
             .permission("myplugin.command.message")
 
             .arguments(
-                    GenericArguments.onlyOne(GenericArguments.player(Text.of("player"))),
-                    GenericArguments.remainingJoinedStrings(Text.of("message")))
+                    GenericArguments.onlyOne(GenericArguments.player(Component.text("player"))),
+                    GenericArguments.remainingJoinedStrings(Component.text("message")))
 
             .executor((CommandSource src, CommandContext args) -> {
 
                 Player player = args.<Player>getOne("player").get();
                 String message = args.<String>getOne("message").get();
 
-                player.sendMessage(Text.of(message));
+                player.sendMessage(Component.text(message));
 
                 return CommandResult.success();
             })
@@ -201,9 +201,9 @@ The parser in this example reads two input arguments and converts them to a vect
 .. code-block:: java
 
    import com.flowpowered.math.vector.Vector2i;
+   import net.kyori.adventure.text.Component;
    import org.spongepowered.api.command.args.ArgumentParseException;
    import org.spongepowered.api.command.args.CommandArgs;
-   import org.spongepowered.api.text.Text;
    import org.spongepowered.api.command.args.CommandElement;
 
    import java.util.Collections;
@@ -211,7 +211,7 @@ The parser in this example reads two input arguments and converts them to a vect
 
    public class Vector2iCommandElement extends CommandElement {
 
-       protected Vector2iCommandElement(Text key) {
+       protected Vector2iCommandElement(Component key) {
            super(key);
        }
 
@@ -231,7 +231,7 @@ The parser in this example reads two input arguments and converts them to a vect
            try {
                return Integer.parseInt(input);
            } catch(NumberFormatException e) {
-               throw args.createError(Text.of("'" + input + "' is not a valid number!"));
+               throw args.createError(Component.text("'" + input + "' is not a valid number!"));
            }
        }
 
@@ -241,8 +241,8 @@ The parser in this example reads two input arguments and converts them to a vect
        }
 
        @Override
-       public Text getUsage(CommandSource src) {
-           return Text.of("<x> <y>");
+       public Component getUsage(CommandSource src) {
+           return Component.text("<x> <y>");
        }
    }
 
@@ -253,10 +253,10 @@ Example: ``Vector2i`` command element usage
 
     // /plottp <x> <y>
     CommandSpec myCommandSpec = CommandSpec.builder()
-            .description(Text.of("Teleport to a plot"))
+            .description(Component.text("Teleport to a plot"))
             .permission("myplugin.command.plot.tp")
 
-            .arguments(new Vector2iCommandElement(Text.of("coordinates")))
+            .arguments(new Vector2iCommandElement(Component.text("coordinates")))
 
             .executor(new MyCommandExecutor())
             .build();
@@ -294,17 +294,17 @@ will be thrown indicating that the passed argument is not a selector.
             try {
                 selectedEntities = Selector.parse(nextArg).resolve(source);
             } catch (IllegalArgumentException e) {
-                throw args.createError(Text.of("Could not parse selector."));
+                throw args.createError(Component.text("Could not parse selector."));
             }
 
             if (selectedEntities.isEmpty()) {
-                throw args.createError(Text.of("No entities selected."));
+                throw args.createError(Component.text("No entities selected."));
             }
 
             return selectedEntities;
         }
 
-        throw args.createError(Text.of("Not a selector."));
+        throw args.createError(Component.text("Not a selector."));
     }
 
 .. tip::

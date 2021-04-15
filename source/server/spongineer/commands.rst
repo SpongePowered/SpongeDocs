@@ -61,7 +61,7 @@ Command                 Description                                Permission
 /sponge which           Prints which plugin provided the command,  sponge.command.which
                         it's aliases and alternatives.
 /sponge:callback        Internally used for callback actions on
-                        ``Text``\s (such as pagination). Not
+                        ``Component``\s (such as pagination). Not
                         intended to be invoked by hand.
 /sponge:help            View information on commands used on the   sponge.command.help
                         server.

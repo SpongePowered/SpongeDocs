@@ -2,13 +2,12 @@
 Text
 ====
 
-.. javadoc-import::
-	org.spongepowered.api.text.Text
-	org.spongepowered.api.text.Text.Builder
-	org.spongepowered.api.text.action.TextAction
+The Text API is used to create formatted text, which can be sent to players in chat messages and be used in
+places such as in books and on signs.
 
-Formatted :javadoc:`Text` can be created using the :javadoc:`Text.Builder`, as described in this section. The robust
-Text API can be used in a variety of ways to combine styling, coloring, and :javadoc:`TextAction`\s.
+Sponge uses the :doc:`Adventure <adventure:index>` library as its text implementation.
+Since Adventure already provides docs on how to create and manipulate text objects,
+we will supply you with Sponge-specific guides and a basic introduction.
 
 Pagination, the process of splitting content (such as lists of Text) into discrete pages, will also be discussed in
 this section.
@@ -20,8 +19,7 @@ Contents
 	:maxdepth: 2
 	:titlesonly:
 
+	Adventure Docs (external) <https://docs.adventure.kyori.net/>
 	text
 	representations/index
 	pagination
-	messagechannels
-	templates
