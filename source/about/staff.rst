@@ -13,11 +13,11 @@ operates efficiently.
 +-----------------------------------+------------------------------------+
 | Name                              | Role                               |
 +===================================+====================================+
-| blood                             | Implementation (Forge) Leader      |
+| dualspiral                        | Sponge Leader                      |
 +-----------------------------------+------------------------------------+
-| gabizou                           | API Design Specialist & Leader     |
+| gabizou                           | Sponge Leader                      |
 +-----------------------------------+------------------------------------+
-| Zidane                            | API/Implementation (Vanilla) Leader|
+| Zidane                            | Sponge Leader                      |
 +-----------------------------------+------------------------------------+
 
 Project Managers
@@ -31,8 +31,6 @@ The **Project Managers** of Sponge each coordinate a separate aspect of the Spon
 | Dockter                           | Chief Financial Officer            |
 |                                   |                                    |
 |                                   | Chief Technology Officer           |
-+-----------------------------------+------------------------------------+
-| Dualspiral                        | Long Term Support (LTS) Manager    |
 +-----------------------------------+------------------------------------+
 | Grinch                            | Ore Community Manager              |
 +-----------------------------------+------------------------------------+
@@ -229,6 +227,8 @@ here to thank them and acknowledge their valuable contributions.
 | Name                              | Former Role                        |
 +===================================+====================================+
 | AzureusNation                     | Developer                          |
++-----------------------------------+------------------------------------+
+| blood                             | Implementation (Forge) Leader      |
 +-----------------------------------+------------------------------------+
 | Boformer                          | Editor                             |
 +-----------------------------------+------------------------------------+
