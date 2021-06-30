@@ -20,8 +20,8 @@ Migrating to Sponge
 To migrate to SpongeForge or SpongeVanilla, look at the sections below. Most instructions are identical for both,
 differences are stated below.
 
-Migrating from CraftBukkit or Spigot
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Migrating from CraftBukkit, Spigot, or Paper
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
@@ -127,8 +127,8 @@ When finding replacements for your Bukkit plugins, there are a few points to kee
 * Some Sponge plugins that are ported from Bukkit may change in functionality, or may not even use the same
   configuration structure.
 
-Migrating from Canary
-~~~~~~~~~~~~~~~~~~~~~
+Migrating from CanaryMod
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 Worlds
 ------
