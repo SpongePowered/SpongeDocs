@@ -3,7 +3,7 @@ The Asset API
 =============
 
 .. javadoc-import::
-    org.spongepowered.api.asset.Asset
+    sponge:asset.Asset
     org.spongepowered.api.asset.AssetManager
     org.spongepowered.api.plugin.PluginContainer
 
