@@ -1,6 +1,6 @@
 #------- Build
 
-FROM felixoi/crowdin-docker:latest as builder
+FROM crowdin/cli:latest as builder
 
 ARG GITHUB_USER
 ARG GITHUB_TOKEN
