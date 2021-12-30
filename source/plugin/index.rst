@@ -42,7 +42,6 @@ Contents
     commands/index
     event/index
     configuration/index
-    assets
     data/index
     blocks/index
     entities/index
