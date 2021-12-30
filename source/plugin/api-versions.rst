@@ -8,7 +8,7 @@ This page explains which API versions exist, and to which Minecraft version thei
 | API-Version | Release Date | End of Support | Known Implementations (Minecraft Version) |
 +=============+==============+================+===========================================+
 | *9.0.0*     | TBA          | TBA            | * SpongeForge (1.18.1 - expected)         |
-|             |              |                | * SpongeVanilla (1.18.1 - expected)      |
+|             |              |                | * SpongeVanilla (1.18.1 - expected)       |
 +-------------+--------------+----------------+-------------------------------------------+
 | *8.0.0*     | TBA          | TBA            | * SpongeForge (1.16.5)                    |
 |             |              |                | * SpongeVanilla (1.16.5)                  |
