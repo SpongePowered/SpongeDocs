@@ -25,6 +25,12 @@
 
 package org.spongepowered.docs.tools.configlister;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.IOException;
+import java.io.UncheckedIOException;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.lang.reflect.Type;
@@ -41,12 +47,14 @@ import java.util.Queue;
 import java.util.Set;
 import java.util.TreeSet;
 import java.util.UUID;
+import java.util.function.Consumer;
 
 import org.apache.commons.lang3.StringUtils;
 import org.spongepowered.common.config.type.GlobalConfig;
 import org.spongepowered.common.util.IpSet;
 
 import com.google.common.collect.ImmutableSet;
+import com.google.common.io.Files;
 import com.google.common.reflect.TypeToken;
 
 import ninja.leaping.configurate.objectmapping.Setting;
@@ -73,6 +81,17 @@ public class ConfigLister {
      * @param args No args.
      */
     public static void main(final String... args) {
+        Consumer<String> printer;
+        if (args.length == 0) {
+            printer = newFilePrinter("../../source/server/getting-started/configuration/global.conf-rst.generated");
+        } else {
+            final String path = args[0];
+            if ("-".equals(path)) {
+                printer = text -> System.out.print(text);
+            } else {
+                printer = newFilePrinter(path);
+            }
+        }
 
         final Map<Class<?>, TypeEntry> configTypes = scanForNestedTypes(DocumentedConfigTypes.class);
         final StringBuilder sb = new StringBuilder();
@@ -90,7 +109,23 @@ public class ConfigLister {
         for (final TypeEntry typeEntry : roots) {
             writeDocumentation(typeEntry, sb, 2);
         }
-        System.out.println(sb);
+
+        printer.accept(sb.toString());
+    }
+
+    private static Consumer<String> newFilePrinter(final String path) {
+        return newFilePrinter(new File(path));
+    }
+
+    private static Consumer<String> newFilePrinter(final File target) {
+        System.err.println("Writing to " + target.getAbsolutePath());
+        return text -> {
+            try (BufferedWriter writer = Files.newWriter(target, UTF_8)) {
+                writer.write(text);
+            } catch (final IOException e) {
+                throw new UncheckedIOException("Failed to write outout file", e);
+            }
+        };
     }
 
     /**

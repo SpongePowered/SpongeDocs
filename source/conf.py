@@ -49,9 +49,9 @@ source_suffix = ".rst"
 master_doc = "index"
 
 # General information about the project.
-project = "Sponge"
-copyright = "2014-2020, Sponge Contributors"
-author = "Sponge Contributors"
+project = 'Sponge'
+copyright = '2014-2021, Sponge Contributors'
+author = 'Sponge Contributors'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the

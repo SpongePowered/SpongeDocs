@@ -85,4 +85,5 @@ The text will say "Hello! Your name is SpongePlayer!"
 
 .. note::
     
-    A ``PlaceholderComponent`` will be parsed as soon as it is added to a ``Component`` or ``ComponentBuilder`` using :javadoc:`Component#append(Component)`.
+    A ``PlaceholderComponent`` will be parsed as soon as it is added to a ``Component`` or ``ComponentBuilder`` using 
+    :javadoc:`Component#append(Component)`.
