@@ -66,8 +66,8 @@ one to create an object from a given configuration node.
 .. code-block:: java
 
     import com.google.common.reflect.TypeToken;
-    import ninja.leaping.configurate.objectmapping.ObjectMappingException;
-    import ninja.leaping.configurate.objectmapping.serialize.TypeSerializer;
+    import org.spongepowered.configurate.objectmapping.ObjectMappingException;
+    import org.spongepowered.configurate.objectmapping.serialize.TypeSerializer;
 
     public class DiamondCounterSerializer implements TypeSerializer<DiamondCounter> {
 
@@ -100,7 +100,7 @@ when loading your config.
 
 .. code-block:: java
 
-    import ninja.leaping.configurate.objectmapping.serialize.TypeSerializers;
+    import org.spongepowered.configurate.objectmapping.serialize.TypeSerializers;
 
     TypeSerializers.getDefaultSerializers().registerType(TypeToken.of(DiamondCounter.class), new DiamondCounterSerializer());
 
@@ -109,10 +109,10 @@ when loading your config.
 
 .. code-block:: java
 
-    import ninja.leaping.configurate.ConfigurationNode;
-    import ninja.leaping.configurate.ConfigurationOptions;
-    import ninja.leaping.configurate.objectmapping.serialize.TypeSerializerCollection;
-    import ninja.leaping.configurate.objectmapping.serialize.TypeSerializers;
+    import org.spongepowered.configurate.ConfigurationNode;
+    import org.spongepowered.configurate.ConfigurationOptions;
+    import org.spongepowered.configurate.objectmapping.serialize.TypeSerializerCollection;
+    import org.spongepowered.configurate.objectmapping.serialize.TypeSerializers;
 
     TypeSerializerCollection serializers = TypeSerializers.getDefaultSerializers().newChild();
     serializers.registerType(TypeToken.of(DiamondCounter.class), new DiamondCounterSerializer());
@@ -140,8 +140,8 @@ class with the :javadoc:`ConfigSerializable` and :javadoc:`Setting` annotations.
 
 .. code-block:: java
 
-    import ninja.leaping.configurate.objectmapping.Setting;
-    import ninja.leaping.configurate.objectmapping.serialize.ConfigSerializable;
+    import org.spongepowered.configurate.objectmapping.Setting;
+    import org.spongepowered.configurate.objectmapping.serialize.ConfigSerializable;
 
     @ConfigSerializable
     public class DiamondCounter {
@@ -262,9 +262,9 @@ Your plugin can just acquire a ``GuiceObjectMapperFactory`` simply by dependency
     import org.spongepowered.api.event.game.state.GamePreInitializationEvent;
     import org.spongepowered.api.plugin.Plugin;
     import com.google.inject.Inject;
-    import ninja.leaping.configurate.commented.CommentedConfigurationNode;
-    import ninja.leaping.configurate.loader.ConfigurationLoader;
-    import ninja.leaping.configurate.objectmapping.GuiceObjectMapperFactory;
+    import org.spongepowered.configurate.commented.CommentedConfigurationNode;
+    import org.spongepowered.configurate.loader.ConfigurationLoader;
+    import org.spongepowered.configurate.objectmapping.GuiceObjectMapperFactory;
 
     @Plugin(name="IStoleThisFromZml", id="shamelesslystolen", version="0.8.15", description = "Stolen")
     public class StolenCodeExample {

@@ -94,8 +94,8 @@ specific directory or to ``true`` to get the shared configuration directory.
     import com.google.inject.Inject;
     import org.spongepowered.api.config.ConfigDir;
     import org.spongepowered.api.config.DefaultConfig;
-    import ninja.leaping.configurate.commented.CommentedConfigurationNode;
-    import ninja.leaping.configurate.loader.ConfigurationLoader;
+    import org.spongepowered.configurate.CommentedConfigurationNode;
+    import org.spongepowered.configurate.loader.ConfigurationLoader;
 
     @Inject
     @DefaultConfig(sharedRoot = true)
