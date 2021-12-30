@@ -2,6 +2,10 @@
 Implementation-dependent Plugins
 ================================
 
+.. warning::
+    These docs were written for SpongeAPI 7 and are likely out of date. 
+    `If you feel like you can help update them, please submit a PR! <https://github.com/SpongePowered/SpongeDocs> __`
+
 There are various reasons for bypassing SpongeAPI and accessing the internal Minecraft implementation directly:
 
 - A part of SpongeAPI is not implemented yet. In this case you can temporarily bypass the API in your plugins. However,

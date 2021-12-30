@@ -2,6 +2,10 @@
 Properties
 ==========
 
+.. warning::
+    These docs were written for SpongeAPI 7 and are likely out of date. 
+    `If you feel like you can help update them, please submit a PR! <https://github.com/SpongePowered/SpongeDocs> __
+
 Sponge has some properties you can set on the command-line that can assist with debugging and other tasks. These 
 properties provide useful information in the logs when submitting issues.
 

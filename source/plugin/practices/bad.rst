@@ -58,7 +58,7 @@ server startup/plugin initialization.
 
 .. code-block:: java
 
-    this.game.getScheduler().createAsyncExecutor(this).execute(this::checkForUpdates);
+    Sponge.asyncScheduler().submit(Task.builder().execute(this::checkForUpdates).build());
 
 For more details refer to the :doc:`scheduler <../scheduler>` docs.
 

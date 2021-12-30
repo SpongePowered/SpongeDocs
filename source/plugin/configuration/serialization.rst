@@ -2,6 +2,10 @@
 Serializing Objects
 ===================
 
+.. warning::
+    These docs were written for SpongeAPI 7 and are likely out of date. 
+    `If you feel like you can help update them, please submit a PR! <https://github.com/SpongePowered/SpongeDocs> __`
+
 .. javadoc-import::
 
     java.util.List
@@ -12,14 +16,14 @@ Serializing Objects
     java.net.URI
     java.util.regex.Pattern
     net.kyori.adventure.text.Component
-    ninja.leaping.configurate.ConfigurationOptions
-    ninja.leaping.configurate.objectmapping.GuiceObjectMapperFactory
-    ninja.leaping.configurate.objectmapping.ObjectMapper
-    ninja.leaping.configurate.objectmapping.ObjectMapperFactory
-    ninja.leaping.configurate.objectmapping.Setting
-    ninja.leaping.configurate.objectmapping.serialize.ConfigSerializable
-    ninja.leaping.configurate.objectmapping.serialize.TypeSerializer
-    ninja.leaping.configurate.objectmapping.serialize.TypeSerializerCollection
+    org.spongepowered.configurate.ConfigurationOptions
+    org.spongepowered.configurate.objectmapping.GuiceObjectMapperFactory
+    org.spongepowered.configurate.objectmapping.ObjectMapper
+    org.spongepowered.configurate.objectmapping.ObjectMapperFactory
+    org.spongepowered.configurate.objectmapping.Setting
+    org.spongepowered.configurate.objectmapping.serialize.ConfigSerializable
+    org.spongepowered.configurate.objectmapping.serialize.TypeSerializer
+    org.spongepowered.configurate.objectmapping.serialize.TypeSerializerCollection
     org.spongepowered.api.util.TypeTokens
 
 The Configurate library also provides the means to tweak automatic serialization and deserialization of objects.

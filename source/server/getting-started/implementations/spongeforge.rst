@@ -20,12 +20,6 @@ Installing SpongeForge
     If you use (or are planning to use) a game server host, they may have a control panel that can install Sponge for
     you.
 
-.. note::
-
-  When using the Mojang installer, Mojang makes use of their own Java version and not the one you installed on your
-  system. The installer currently ships with Java ``1.8.0_74``. Note that Sponge requires **at least** ``1.8.0_20`` or 
-  above to run properly but it is recommended to use the latest Java 8 version.
-
 Single Player / In-Game LAN Servers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

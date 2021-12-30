@@ -7,6 +7,12 @@ Using Sponge with Server Proxies
   Sponge does not officially support or recommend any specific proxy software. Any issues with the proxies themselves
   should be directed to the relevant support community.
 
+.. warning::
+
+  Sponge for Minecraft 1.16.5 and later only support environments where users can connect with vanilla clients due to
+  changes in how Forge sets up modded connections. Server owners who wish to set up proxies for modded servers are unable
+  to do so at this time.
+
 Server proxies allow server owners to link Minecraft servers together so that players can jump between
 servers without having to disconnect and re-connect. One of the most well known of these is BungeeCord, written
 by md_5 of SpigotMC, though forks exist that improve Forge and Sponge compatibility, such as Waterfall and Hexacord.

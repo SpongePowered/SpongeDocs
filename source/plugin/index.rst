@@ -15,10 +15,9 @@ to help developers get started with SpongeAPI, not to cover every concept. The
 
 .. tip::
 
-    The `Cookbook <https://github.com/SpongePowered/Cookbook>`__ is a collection of fully functional plugins that each
-    demonstrate a specific part of the SpongeAPI. These plugin "recipes" are standalone and are compilable via Gradle
-    or Maven. Some of them demonstrate how to create plugins using other JVM languages such as Scala and Kotlin. Note
-    that some of the examples may not yet be updated for the latest API revisions!
+    The `Test Plugin Suite <https://github.com/SpongePowered/Sponge/tree/api-8/testplugins>`__ is a collection of 
+    fully functional plugins that each demonstrate a specific part of the SpongeAPI. These plugin "recipes" are 
+    standalone and are compilable via Gradle or Maven.
 
 Contents
 ========

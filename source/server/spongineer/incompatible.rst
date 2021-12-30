@@ -14,8 +14,8 @@ To help you resolve which is which, and how to fix the problem (if possible), we
 can cause problems when used alongside SpongeForge. Please note that, whilst we will try to keep it current, changes may
 happen as mods are updated. You can help by letting us know when relevant changes happen, on Discord or GitHub.
 
-Known Incompatibilities
-=======================
+Known Incompatibilities (SpongeAPI 7)
+=====================================
 
 Old Mixins
 ~~~~~~~~~~

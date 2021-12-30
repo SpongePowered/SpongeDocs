@@ -43,7 +43,6 @@ It is recommended to always update to the latest stable version of the API or to
     but the Sponge team will not provide bug fixes or features to unsupported builds.
 
 
-
 Getting the API Version from Implementations
 ============================================
 

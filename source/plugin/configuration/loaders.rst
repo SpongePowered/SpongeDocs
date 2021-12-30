@@ -2,15 +2,19 @@
 Configuration Loaders
 =====================
 
+.. warning::
+    These docs were written for SpongeAPI 7 and are likely out of date. 
+    `If you feel like you can help update them, please submit a PR! <https://github.com/SpongePowered/SpongeDocs> __`
+
 .. javadoc-import::
-    ninja.leaping.configurate.ConfigurationNode
-    ninja.leaping.configurate.ConfigurationOptions
-    ninja.leaping.configurate.hocon.HoconConfigurationLoader
-    ninja.leaping.configurate.hocon.HoconConfigurationLoader.Builder
-    ninja.leaping.configurate.gson.GsonConfigurationLoader
-    ninja.leaping.configurate.yaml.YAMLConfigurationLoader
-    ninja.leaping.configurate.loader.AbstractConfigurationLoader.Builder
-    ninja.leaping.configurate.loader.ConfigurationLoader
+    org.spongepowered.configurate.ConfigurationNode
+    org.spongepowered.configurate.ConfigurationOptions
+    org.spongepowered.configurate.hocon.HoconConfigurationLoader
+    org.spongepowered.configurate.hocon.HoconConfigurationLoader.Builder
+    org.spongepowered.configurate.gson.GsonConfigurationLoader
+    org.spongepowered.configurate.yaml.YAMLConfigurationLoader
+    org.spongepowered.configurate.loader.AbstractConfigurationLoader.Builder
+    org.spongepowered.configurate.loader.ConfigurationLoader
     org.spongepowered.api.asset.AssetManager
     org.spongepowered.api.asset.Asset
     java.lang.String
@@ -38,9 +42,9 @@ First, let's grab a new :javadoc:`HoconConfigurationLoader` that points to our c
 .. code-block:: java
 
     import java.nio.file.Path;
-    import ninja.leaping.configurate.commented.CommentedConfigurationNode;
-    import ninja.leaping.configurate.hocon.HoconConfigurationLoader;
-    import ninja.leaping.configurate.loader.ConfigurationLoader;
+    import org.spongepowered.configurate.commented.CommentedConfigurationNode;
+    import org.spongepowered.configurate.hocon.HoconConfigurationLoader;
+    import org.spongepowered.configurate.loader.ConfigurationLoader;
 
     Path potentialFile = getConfigPath();
     ConfigurationLoader<CommentedConfigurationNode> loader =
@@ -78,8 +82,8 @@ Once you obtained your ``ConfigurationLoader`` you can use it to obtain an empty
 
 .. code-block:: java
 
-    import ninja.leaping.configurate.ConfigurationNode;
-    import ninja.leaping.configurate.ConfigurationOptions;
+    import org.spongerpowered.configurate.ConfigurationNode;
+    import org.spongerpowered.configurate.ConfigurationOptions;
 
     Path potentialFile = getConfigPath();
     ConfigurationLoader<CommentedConfigurationNode> loader =

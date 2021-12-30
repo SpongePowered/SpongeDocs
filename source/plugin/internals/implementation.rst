@@ -2,6 +2,10 @@
 Internal Sponge Classes
 =======================
 
+.. warning::
+    These docs were written for SpongeAPI 7 and are likely out of date. 
+    `If you feel like you can help update them, please submit a PR! <https://github.com/SpongePowered/SpongeDocs> __`
+
 You can add SpongeCommon, SpongeVanilla or SpongeForge as a dependency to your plugin project if you need to access
 internal Sponge classes.
 

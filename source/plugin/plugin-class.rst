@@ -2,6 +2,10 @@
 Main Plugin Class
 =================
 
+.. warning::
+    These docs were written for SpongeAPI 7 and are likely out of date. 
+    `If you feel like you can help update them, please submit a PR! <https://github.com/SpongePowered/SpongeDocs> __
+
 .. javadoc-import::
     org.spongepowered.api.event.Listener
     org.spongepowered.api.event.game.state.GameConstructionEvent
@@ -43,9 +47,9 @@ usage is explained on :doc:`plugin-meta`.
 
     package io.github.username.project;
 
-    import org.spongepowered.api.plugin.Plugin;
+    import org.spongepowered.plugin.Plugin;
 
-    @Plugin(id = "exampleplugin", name = "Example Plugin", version = "1.0", description = "Example")
+    @Plugin(id = "exampleplugin")
     public class ExamplePlugin {
 
     }

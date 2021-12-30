@@ -32,22 +32,12 @@ Example: Loading the EconomyService
 	import org.spongepowered.api.service.economy.EconomyService;
 	import org.spongepowered.api.Sponge;
 
-	Optional<EconomyService> serviceOpt = Sponge.getServiceManager().provide(EconomyService.class);
+	Optional<EconomyService> serviceOpt = Sponge.server().serviceProvider().economyService();
 	if (!serviceOpt.isPresent()) {
 	    // handle there not being an economy implementation
 	}
 	EconomyService economyService = serviceOpt.get();
 	
-.. warning:: 
-  Keep this service in a local variable instead of a member variable, since the provider (implementation) 
-  could change at any point. If you need to place it in a member variable, for whatever reason, use 
-  :javadoc:`ChangeServiceProviderEvent` to keep the implementation updated.
-
-.. note::
-  Unlike other services, you should try to use :javadoc:`ServiceManager#provide(java.lang.Class)` instead of
-  :javadoc:`ServiceManager#provideUnchecked(java.lang.Class)` because Sponge does not provide a default implementation 
-  of the :javadoc:`EconomyService`, and therefore it is not guaranteed that it exists.
-
 Using the EconomyService
 ========================
 
@@ -65,10 +55,10 @@ Example: Getting a player's balance
     import java.math.BigDecimal;
     import java.util.Optional;
     
-    Optional<UniqueAccount> uOpt = economyService.getOrCreateAccount(player.getUniqueId());
+    Optional<UniqueAccount> uOpt = economyService.findOrCreateAccount(player.getUniqueId());
     if (uOpt.isPresent()) {
-        UniqueAccount acc = uOpt.get();
-    	BigDecimal balance = acc.getBalance(economyService.getDefaultCurrency());
+      UniqueAccount acc = uOpt.get();
+    	BigDecimal balance = acc.balance(economyService.defaultCurrency());
     }
 
 Some :javadoc:`Account` methods require variables such as:
@@ -79,6 +69,6 @@ Some :javadoc:`Account` methods require variables such as:
 
 These are for more advanced uses, but still must be filled in. Below is a list of acceptable default values:
 
-* Currency: :javadoc:`EconomyService#getDefaultCurrency()`
+* Currency: :javadoc:`EconomyService#defaultCurrency()`
 * Cause: ``Cause.of(EventContext.builder().add(EventContextKeys.PLUGIN, plugin).build(), plugin)``
 * Context: ``new HashSet<Context>()``

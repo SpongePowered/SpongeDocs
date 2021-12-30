@@ -114,8 +114,3 @@ support for permissions or chat channels).
 Unlike NMS-exploiting "plugins", a hybrid mod makes its nature clear.
 
 
-
-Plugin Interoperability
-=======================
-
-An explanation of how to communicate with other plugins, *TBA*.

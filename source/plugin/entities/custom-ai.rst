@@ -1,6 +1,10 @@
 Implement Your Own AITasks
 ==========================
 
+.. warning::
+    These docs were written for SpongeAPI 7 and are likely out of date. 
+    `If you feel like you can help update them, please submit a PR! <https://github.com/SpongePowered/SpongeDocs> __`
+
 .. javadoc-import::
 
     org.spongepowered.api.entity.Entity

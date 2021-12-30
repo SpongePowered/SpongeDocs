@@ -2,6 +2,10 @@
 Plugin Manager
 ==============
 
+.. warning::
+    These docs were written for SpongeAPI 7 and are likely out of date. 
+    `If you feel like you can help update them, please submit a PR! <https://github.com/SpongePowered/SpongeDocs> __
+
 .. javadoc-import::
     org.spongepowered.api.Game
     org.spongepowered.api.Sponge
@@ -90,7 +94,7 @@ would need to do with ``Game``.
 
     import org.spongepowered.api.Sponge;
 
-    private PluginManager pluginManager = Sponge.getPluginManager();
+    private PluginManager pluginManager = Sponge.pluginManager();
 
 Using the Plugin Manager
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -104,7 +108,7 @@ With the plugin manager, it is possible to get all plugins currently loaded thro
 
 .. code-block:: java
 
-    import org.spongepowered.api.plugin.PluginContainer;
+    import org.spongepowered.plugin.PluginContainer;
 
     import java.util.Collection;
 

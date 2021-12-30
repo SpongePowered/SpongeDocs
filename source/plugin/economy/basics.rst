@@ -47,12 +47,12 @@ Virtual Accounts
 
 Virtual accounts are tied to an identifier, which is stored as a string. Virtual accounts can be tied to almost
 anything, but are commonly used for things such as banks, or non-players. To get the id of a virtual account, use
-``getIdentifier()``.
+``identifier()``.
 
 Unique Accounts
 ~~~~~~~~~~~~~~~
 
-Unique accounts are tied to a UUID, usually a player. To get the UUID of an unique account, use ``getUUID()``.
+Unique accounts are tied to a UUID, usually a player. To get the UUID of an unique account, use ``uniqueId()``.
 
 Transactions
 ============

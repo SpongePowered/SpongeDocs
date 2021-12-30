@@ -2,6 +2,10 @@
 Configuration Nodes
 ===================
 
+.. warning::
+    These docs were written for SpongeAPI 7 and are likely out of date. 
+    `If you feel like you can help update them, please submit a PR! <https://github.com/SpongePowered/SpongeDocs> __`
+
 .. javadoc-import::
     com.google.common.reflect.TypeToken
     ninja.leaping.configurate.ConfigurationNode

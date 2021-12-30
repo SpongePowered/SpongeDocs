@@ -2,6 +2,10 @@
 Using MCP in Plugins
 ====================
 
+.. warning::
+    These docs were written for SpongeAPI 7 and are likely out of date. 
+    `If you feel like you can help update them, please submit a PR! <https://github.com/SpongePowered/SpongeDocs> __`
+
 ForgeGradle_ is a Gradle plugin which integrates the MCP workflow into the Gradle build system. It handles setting up
 the workspace, as well as the re-obfuscation of your plugin.
 
