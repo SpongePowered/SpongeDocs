@@ -4,7 +4,7 @@ Access Transformers
 
 .. warning::
     These docs were written for SpongeAPI 7 and are likely out of date. 
-    `If you feel like you can help update them, please submit a PR! <https://github.com/SpongePowered/SpongeDocs> __`
+    `If you feel like you can help update them, please submit a PR! <https://github.com/SpongePowered/SpongeDocs>`__
 
 Since some parts of the Minecraft code were not designed to be used from the outside, you may find yourself in a
 situation in which you need to access a field or method that is not public. While you would normally use reflection to

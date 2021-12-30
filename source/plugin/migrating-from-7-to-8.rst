@@ -31,3 +31,4 @@ To generate the metadata file, you can either:
   <https://github.com/SpongePowered/sponge-plugin-template/blob/88d3c35853a687a7dc1540db43a9f9a135c03819/build.gradle.kts#L16-L40> __`
 
 More information about the metadata file can be found at :doc:`plugin-meta` page
+

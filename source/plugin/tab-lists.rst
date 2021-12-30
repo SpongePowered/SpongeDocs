@@ -4,7 +4,7 @@ Tab Lists
 
 .. warning::
     These docs were written for SpongeAPI 7 and are likely out of date. 
-    `If you feel like you can help update them, please submit a PR! <https://github.com/SpongePowered/SpongeDocs> __
+    `If you feel like you can help update them, please submit a PR! <https://github.com/SpongePowered/SpongeDocs>`__
 
 .. javadoc-import::
     net.kyori.adventure.text.Component

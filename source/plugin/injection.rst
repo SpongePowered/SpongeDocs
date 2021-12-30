@@ -2,6 +2,11 @@
 Dependency Injection
 ====================
 
+.. warning::
+
+    These docs were written for SpongeAPI 7 and are likely out of date. 
+    `If you feel like you can help update them, please submit a PR! <https://github.com/SpongePowered/SpongeDocs>`__
+
 .. javadoc-import::
     org.spongepowered.api.Game
     org.spongepowered.api.GameRegistry
@@ -20,9 +25,9 @@ Dependency Injection
     org.spongepowered.api.scheduler.Scheduler
     org.spongepowered.api.scheduler.SpongeExecutorService
     org.spongepowered.api.scheduler.SynchronousExecutor
-    ninja.leaping.configurate.commented.CommentedConfigurationNode
-    ninja.leaping.configurate.loader.ConfigurationLoader
-    ninja.leaping.configurate.objectmapping.GuiceObjectMapperFactory
+    org.spongepowered.configurate.commented.CommentedConfigurationNode
+    org.spongepowered.configurate.loader.ConfigurationLoader
+    org.spongepowered.configurate.objectmapping.GuiceObjectMapperFactory
 
 Sponge uses dependency injection to provide instances of the API to plugins.
 Dependency injection allows plugins to designate a few API types that will be injected after construction.
@@ -30,11 +35,11 @@ Dependency injection allows plugins to designate a few API types that will be in
 Temporary List of Injected Types
 ================================
 
-:javadoc:`ConfigDir` (annotation on Path or File)
+:javadoc:`ConfigDir` (annotation on Path)
   Used to inject the plugin's configuration directory:
   ``./config/`` OR ``./config/<Plugin#id>/`` depending on :javadoc:`ConfigDir#sharedRoot()`
 
-:javadoc:`DefaultConfig` (annotation on Path, ConfigurationLoader or File)
+:javadoc:`DefaultConfig` (annotation on Path, ConfigurationLoader)
   Used to inject the plugin's specific configuration file: ``<Plugin#id>.conf``
 
 :javadoc:`AssetId` (annotation on Asset)
@@ -63,11 +68,6 @@ Temporary List of Injected Types
 
 :javadoc:`EventManager`
   Manages the registration of event handlers and the dispatching of events.
-
-File
-  Must be annotated with either ``@DefaultConfig`` or ``@ConfigDir``.
-  Depending on the annotation given this will contain a file reference to the plugins default config file or the
-  directory used for storing configuration files. However, Path (see below) should be preferred.
 
 :javadoc:`Game`
   The ``Game`` object is the core accessor of SpongeAPI.

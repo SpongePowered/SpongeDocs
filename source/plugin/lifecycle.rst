@@ -4,7 +4,7 @@ Plugin Lifecycle
 
 .. warning::
     These docs were written for SpongeAPI 7 and are likely out of date. 
-    `If you feel like you can help update them, please submit a PR! <https://github.com/SpongePowered/SpongeDocs> __
+    `If you feel like you can help update them, please submit a PR! <https://github.com/SpongePowered/SpongeDocs>`__
 
 Prior to any states that make the plugin visible, the plugin loader first sorts through the available plugins, determines
 if all dependencies are present, and sorts plugins by dependency order. Lifecycle events are given to plugins in this

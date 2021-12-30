@@ -4,7 +4,7 @@ MCP (Mod Coder Pack)
 
 .. warning::
     These docs were written for SpongeAPI 7 and are likely out of date. 
-    `If you feel like you can help update them, please submit a PR! <https://github.com/SpongePowered/SpongeDocs> __`
+    `If you feel like you can help update them, please submit a PR! <https://github.com/SpongePowered/SpongeDocs>`__
 
 The `Mod Coder Pack`_ (short MCP) was originally created as a collection of scripts, tools and mappings to make the
 development of mods for Minecraft easier. Since Minecraft is not open-source and for the most part obfuscated,
