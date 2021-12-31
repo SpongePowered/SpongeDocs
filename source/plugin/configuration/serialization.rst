@@ -33,7 +33,7 @@ Per default, a set of data types can be (de)serialized:
 * :javadoc:`List`\s and :javadoc:`Set`\s of serializable values (not including specific implementations)
 * :javadoc:`Map`\s where both keys and values are serializable (not including specific implementations)
 * The types :javadoc:`UUID`, :javadoc:`URL`, :javadoc:`URI` and :javadoc:`Pattern {(regex) Pattern}`
-* Any enum or :doc:`CatalogType </plugin/data/catalog-types>`
+* Any enum or CatalogType (FIXME)
 * The text type :doc:`Component </plugin/text/index>` (See also :doc:`here </plugin/text/representations/index>`)
 
 .. note::

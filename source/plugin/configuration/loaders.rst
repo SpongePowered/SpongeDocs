@@ -145,7 +145,7 @@ Loading a Default Config from the Plugin Jar File
 
 A popular way to provide a default configuration file with your plugin is to include a copy of it in your plugin jar,
 copying it to the config directory when the config file has yet to be created.
-You can use :doc:`the Asset API <../assets>` to do this, as shown in the example below:
+You can use FIXME to do this, as shown in the example below:
 
 .. code-block:: java
 

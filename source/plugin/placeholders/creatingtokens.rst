@@ -34,7 +34,7 @@ There are two ways you can create a ``PlaceholderParser``:
 * Directly implement the interface.
 
 .. note::
-  ``PlaceholderParsers`` are :doc:`Catalog Types<../data/catalog-types>`. If you implement the interface directly,
+  ``PlaceholderParsers`` are Catalog Types (FIXME). If you implement the interface directly,
   remember that the ID of the parser should be plugin namespaced, of the form  ``[pluginid]:[placeholderid]``. IDs 
   must also be unique.
 

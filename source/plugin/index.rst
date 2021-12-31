@@ -27,6 +27,7 @@ Contents
     :titlesonly:
 
     api-versions
+    migrating-from-7-to-8
     buildsystem
     workspace/index
     project/index

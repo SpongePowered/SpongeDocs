@@ -6,6 +6,8 @@ Plugin Metadata
     The metadata described here is for plugins for SpongeAPI 8 or later. Plugins for version 7 or later should define
     their metadata in the ``@Plugin`` annotation
 
+.. _Ore: https://github.com/SpongePowered/Ore
+
 Every Sponge plugin must have an entry in a metadata file known as ``sponge-plugins.json``, which is found in the 
 ``META-INF`` directory. In most cases, a plugin JAR will contain this file, and the file will refer to one plugin.
 However, it is possible for there to be multiple plugins in a JAR, and the metadata file can represent multiple plugins.
