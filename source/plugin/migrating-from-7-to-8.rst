@@ -3,6 +3,13 @@ Migrating from API 7 to API 8
 =============================
 
 .. javadoc-import::
+    net.kyori.adventure.text
+    org.spongepowered.api
+    org.spongepowered.command
+    org.spongepowered.command.registrar
+    org.spongepowered.api.data
+    org.spongepowered.api.event.lifecycle
+    org.spongepowered.api.registry
     org.spongepowered.plugin.builtin.jvm.Plugin
 
 SpongeAPI 8 is a significally upgraded API compared to SpongeAPI 7, such that every plugin will need to be updated to
@@ -99,10 +106,20 @@ Command Creation and Registration
 =================================
 
 Commands have been completely overhauled in SpongeAPI 8 in order to support Minecraft's command completions, as well as
-to resolve long standing issues with the previous system. Additionally, commands should now be registered during the
-``RegisterCommandEvent``.
+to resolve long standing issues with the previous system. Most developers will want to use the structured command builder
+via :javadoc:`Command#builder()`.  Additionally, commands should now be registered during the ``RegisterCommandEvent``,
+those who use the command builder should register commands for the generic event 
+``RegisterCommandEvent<Command.Parameterized>``.
 
 SpongeAPI 8 also provides for ways to allow alternate frameworks to integrate at a low-level using 
 :javadoc:`CommandRegistrar`.
 
 More information about commands can be found at :doc:`commands/index`.
+
+Migration of Text to Adventure
+==============================
+
+SpongeAPI 8 uses the `Adventure <https://docs.adventure.kyori.net/>`__ library to provide text manipulation. In general,
+``Text`` objects have become :javadoc:`Component`s.
+
+For those who wish to emulate a ``Text.of(...)`` like behaviour, use the ``linear`` method in :javadoc:`LinearComponents`.
