@@ -114,8 +114,8 @@ Unlike the cause stack, which makes no guarantees as to the objects contained wi
 .. code-block:: java
 
     @Listener
-    public void onGrow(ChangeBlockEvent.Grow event) {
-        Optional<User> notifier = event.getCause().getContext().get(EventContextKeys.NOTIFIER);
+    public void onGrow(ChangeBlockEvent.All event) {
+        Optional<UUID> notifier = event.getCause().getContext().get(EventContextKeys.NOTIFIER);
     }
 
 This example makes use of :javadoc:`EventContext#get(EventContextKey)` which can be used to retrieve the expected object
