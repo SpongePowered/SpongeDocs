@@ -2,19 +2,15 @@
 Event Listeners
 ===============
 
-.. warning::
-    These docs were written for SpongeAPI 7 and are likely out of date. 
-    `If you feel like you can help update them, please submit a PR! <https://github.com/SpongePowered/SpongeDocs>`__
-
 .. javadoc-import::
     org.spongepowered.api.event.Event
     org.spongepowered.api.event.EventManager
     org.spongepowered.api.event.Listener
     org.spongepowered.api.event.Order
     org.spongepowered.api.event.block.ChangeBlockEvent
-    org.spongepowered.api.event.block.ChangeBlockEvent.Break
+    org.spongepowered.api.event.block.ChangeBlockEvent.All
     org.spongepowered.api.event.cause.Cause
-    org.spongepowered.api.event.game.GameReloadEvent
+    org.spongepowered.api.event.lifecycle.GameRefreshEvent
     org.spongepowered.api.plugin.Plugin
     java.lang.Object
 
@@ -40,9 +36,9 @@ In addition, the class containing these methods must be registered with the even
 
 
 .. note::
-    The event bus **supports supertypes**. For example, :javadoc:`ChangeBlockEvent.Break` extends
+    The event bus **supports supertypes**. For example, :javadoc:`ChangeBlockEvent.All` extends
     :javadoc:`ChangeBlockEvent`. Therefore, a plugin could listen to ``ChangeBlockEvent`` and still receive
-    ``ChangeBlockEvent.Break``\ s. However, a plugin listening to just ``ChangeBlockEvent.Break`` would not be notified
+    ``ChangeBlockEvent.All``\ s. However, a plugin listening to just ``ChangeBlockEvent.All`` would not be notified
     of other types of ``ChangeBlockEvent``.
 
 
@@ -89,7 +85,7 @@ before other server modifications.
     import org.spongepowered.api.event.EventListener;
     import org.spongepowered.api.event.block.ChangeBlockEvent;
 
-    public class ExampleListener implements EventListener<ChangeBlockEvent.Break> {
+    public class ExampleListener implements EventListener<ChangeBlockEvent.All> {
 
         @Override
         public void handle(ChangeBlockEvent.Break event) throws Exception {
@@ -101,8 +97,8 @@ before other server modifications.
 
 .. code-block:: java
 
-    EventListener<ChangeBlockEvent.Break> listener = new ExampleListener();
-    Sponge.getEventManager().registerListener(this, ChangeBlockEvent.Break.class, listener);
+    EventListener<ChangeBlockEvent.All> listener = new ExampleListener();
+    Sponge.getEventManager().registerListener(this, ChangeBlockEvent.All.class, listener);
 
 .. tip::
 
@@ -148,21 +144,21 @@ cancellable and has been cancelled (such as by another plugin).
 
 .. _game-reload:
 
-GameReloadEvent
-~~~~~~~~~~~~~~~
+GameRefreshEvent
+~~~~~~~~~~~~~~~~
 
 To prevent all plugins providing their own reload commands, Sponge provides a built-in callback for plugins to listen
-to, and when executed, perform any reloading actions. What constitutes as a 'reloading action' is purely up to the
-plugin to decide. The :javadoc:`GameReloadEvent` will fire when a player executes the
-``/sponge plugins reload`` command. The event is not necessarily limited to reloading configuration.
+to, and when executed, perform any refresh actions. What constitutes as a 'refresh action' is purely up to the
+plugin to decide. The :javadoc:`GameRefreshEvent` will fire when a player executes the
+``/sponge plugins refresh`` command. The event is not necessarily limited to reloading configuration.
 
 .. code-block:: java
 
-    import org.spongepowered.api.event.game.GameReloadEvent;
+    import org.spongepowered.api.event.lifecycle.GameRefreshEvent;
 
     @Listener
-    public void reload(GameReloadEvent event) {
-        // Do reload stuff
+    public void refresh(GameRefreshEvent event) {
+        // Do refresh stuff
     }
 
 Note that this is different for what generally is considered a 'reload', as the event is purely all callback for
@@ -180,31 +176,3 @@ You can fire events using the event bus (:javadoc:`EventManager`):
     boolean cancelled = Sponge.getEventManager().post(theEventObject);
 
 The method returns ``true`` if the event was cancelled, ``false`` if not.
-
-Firing Sponge Events
-~~~~~~~~~~~~~~~~~~~~
-
-It is possible to generate instances of built-in events with the static ``SpongeEventFactory``. This class is
-automatically generated so there are no Javadocs. Use your IDE's autocompletion to list the existing methods. The events
-created by the ``SpongeEventFactory`` are then passed to :javadoc:`EventManager#post(Event)`.
-
-Example: Firing LightningEvent
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. code-block:: java
-
-    import org.spongepowered.api.event.action.LightningEvent;
-    import org.spongepowered.api.event.cause.Cause;
-    import org.spongepowered.api.event.cause.EventContext;
-    import org.spongepowered.api.event.cause.EventContextKeys;
-    import org.spongepowered.api.event.SpongeEventFactory;
-
-    PluginContainer plugin = ...;
-    EventContext eventContext = EventContext.builder().add(EventContextKeys.PLUGIN, plugin).build();
-
-    LightningEvent lightningEvent = SpongeEventFactory.createLightningEventPre(Cause.of(eventContext, plugin));
-    Sponge.getEventManager().post(lightningEvent);
-
-.. warning::
-
-    A :javadoc:`Cause` can never be empty. At the very least it should contain your plugin container.

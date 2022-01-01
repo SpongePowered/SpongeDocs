@@ -172,6 +172,8 @@ interface. For those who wish to emulate a ``Text.of(...)`` like behaviour, use 
 There are additional Sponge specific helper operations in the ``org.spongepowered.api.adventure`` package, specifically
 :javadoc:`SpongeComponents` for those who used the ``executeCallback`` function in SpongeAPI 7.
 
+More information about text within Sponge can be found at :doc:`text/index`.
+
 Scheduler 
 =========
 
@@ -212,6 +214,7 @@ Configurate
 ===========
 
 Configurate has been updated from version 3 to version 4, and along with it, its package name has changed from
-``ninja.leaping.configurate`` to ``org.spongepowered.configurate``. 
+``ninja.leaping.configurate`` to ``org.spongepowered.configurate``, and has mostly dropped the use of ``get`` and ``set``
+prefixes.
 
 For more information on Configurate, `you can view its manual here <https://github.com/SpongePowered/Configurate/wiki>`__.
