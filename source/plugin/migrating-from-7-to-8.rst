@@ -31,9 +31,9 @@ build no longer contains an annotation processor that will generate the metadata
 
 To generate the metadata file, you can either:
 
-* Create the file yourself by creating ``sponge_plugins.json`` in your resources root and filling it out with the required
+- Create the file yourself by creating ``sponge_plugins.json`` in your resources root and filling it out with the required
   information
-* Use SpongeGradle 2 and define the metadata in the buildscript `as in this example 
+- Use SpongeGradle 2 and define the metadata in the buildscript `as in this example 
   <https://github.com/SpongePowered/sponge-plugin-template/blob/88d3c35853a687a7dc1540db43a9f9a135c03819/build.gradle.kts#L16-L40>`__
 
 More information about the metadata file can be found at :doc:`plugin-meta`.
@@ -89,9 +89,9 @@ Custom Data
 Data gets an overhaul in SpongeAPI 8, but the most impactful change to consider when migrating plugins is that custom
 data is now much simpler to use. In particular, there are two large changes as to how you implement custom data:
 
-* Data is now primarily driven by the :javadoc:`Key` system, rather than ``DataManipulator``s. Keys can be created at
+- Data is now primarily driven by the :javadoc:`Key` system, rather than ``DataManipulator``s. Keys can be created at
   any time and do not need to be registered.
-* Any data supplied to data holders using an unregistered key are transient - for example, if data is supplied to a
+- Any data supplied to data holders using an unregistered key are transient - for example, if data is supplied to a
   player using an unregistered key and the player dies (so their player object is recreated) that data is lost. To
   persist custom data, plugins must register their keys during the :javadoc:`RegisterDataEvent` and supply a
   :javadoc:`DataRegistration` (via the :javadoc:`DataRegistration.Builder`) that tells Sponge how to persist the data.
@@ -131,9 +131,9 @@ Scheduler
 
 The scheduler has been updated to better reflect the scope in which a scheduler resides:
 
-* The asynchronus :javadoc:`Scheduler` is game scoped and remains on the :javadoc:`Game` object (and the ``Sponge``
+- The asynchronus :javadoc:`Scheduler` is game scoped and remains on the :javadoc:`Game` object (and the ``Sponge``
   object)
-* Each ``Engine`` now has its own synchronus scheduler, and is available via the engine's instance.
+- Each ``Engine`` now has its own synchronus scheduler, and is available via the engine's instance.
 
 The :javadoc:`Task` object is no longer responsible for determining whether it is asynchronus or not, as such, the 
 ``Task.Builder#async`` method has been removed. Additionally, building a ``Task`` no longer submits it, instead, you must
