@@ -1,10 +1,6 @@
 name: main
 
-on:
-  push:
-    branches:
-      - stable
-      - release-**
+on: [push, pull_request]
 
 env:
   REGISTRY: ghcr.io
@@ -13,7 +9,7 @@ env:
   IMAGE_NAME: spongepowered/spongedocs
 
 jobs:
-  build-n-upload-translations:
+  build:
     runs-on: ubuntu-latest
 
     outputs:
@@ -44,6 +40,7 @@ jobs:
 
     - name: Set crowdin branch
       id: variables
+      if: github.ref_name == 'stable' || startsWith(github.ref_name, 'release-')
       run: |
         echo "Ref: $GITHUB_REF"
         BRANCH=${GITHUB_REF##*/}
@@ -60,6 +57,7 @@ jobs:
         GITHUB_TOKEN: ${{ github.token }}
     - name: Upload to crowdin
       uses: crowdin/github-action@1.0.10
+      if: github.ref_name == 'stable' || startsWith(github.ref_name, 'release-')
       with:
         crowdin_branch_name: ${{ steps.variables.outputs.version }}
         config: 'crowdin.yaml'
@@ -70,7 +68,8 @@ jobs:
 
   publish-docker:
     runs-on: ubuntu-latest
-    needs: build-n-upload-translations
+    if: github.ref_name == 'stable' || startsWith(github.ref_name, 'release-')
+    needs: build
     steps:
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
@@ -86,12 +85,12 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ needs.build-n-upload-translations.outputs.version }}
+          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ needs.build.outputs.version }}
           build-args: |
             GITHUB_USER=SpongePowered
             GITHUB_TOKEN=${{ github.token }}
             GITHUB_REPO=SpongeDocs
-            GITHUB_VERSION=${{ needs.build-n-upload-translations.outputs.branch }}
+            GITHUB_VERSION=${{ needs.build.outputs.branch }}
             CROWDIN_TOKEN=${{ secrets.CROWDIN_TOKEN }}
             CROWDIN_PROJECT_ID=${{ secrets.CROWDIN_PROJECT_ID }}
-            VERSION=${{ needs.build-n-upload-translations.outputs.version }}
+            VERSION=${{ needs.build.outputs.version }}
