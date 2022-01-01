@@ -7,7 +7,7 @@ Event Causes
     org.spongepowered.api.event.CauseStackManager
     org.spongepowered.api.event.Event
     org.spongepowered.api.event.block.ChangeBlockEvent
-    org.spongepowered.api.event.block.ChangeBlockEvent.Grow
+    org.spongepowered.api.event.block.ChangeBlockEvent.All
     org.spongepowered.api.event.cause.Cause
     org.spongepowered.api.event.cause.Cause.Builder
     org.spongepowered.api.event.cause.EventContext
@@ -15,8 +15,8 @@ Event Causes
     org.spongepowered.api.event.cause.EventContextKey
     org.spongepowered.api.event.cause.EventContextKeys
     org.spongepowered.api.event.entity.DamageEntityEvent
-    org.spongepowered.api.plugin.PluginContainer
     org.spongepowered.api.profile.GameProfile
+    org.spongepowered.plugin.PluginContainer
     java.lang.Class
     java.lang.Object
     java.util.Stack
@@ -103,7 +103,7 @@ Event Context
 Sometimes the ordering of objects within the cause isn't enough to get the proper idea of what an object represents in
 relation to the event. This is where :javadoc:`EventContext` comes in. The event context allows objects to be
 associated with unique names, in the form of :javadoc:`EventContextKeys`, allowing them to be easily identified and
-requested. Some examples of use cases for named causes is the `Notifier` of a :javadoc:`ChangeBlockEvent.Grow` or the
+requested. Some examples of use cases for named causes is the `Notifier` of a :javadoc:`ChangeBlockEvent.All` or the
 ``Source`` of a :javadoc:`DamageEntityEvent`.
 
 Unlike the cause stack, which makes no guarantees as to the objects contained witin it, an object associated with a
