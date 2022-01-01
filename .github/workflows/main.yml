@@ -2,9 +2,6 @@ name: main
 
 on:
   push:
-    branches:
-      - stable
-      - release-**
 
 env:
   REGISTRY: ghcr.io
@@ -44,6 +41,7 @@ jobs:
 
     - name: Set crowdin branch
       id: variables
+      if: github.ref_name == 'stable' || startsWith(github.ref_name, 'release-')
       run: |
         echo "Ref: $GITHUB_REF"
         BRANCH=${GITHUB_REF##*/}
@@ -60,6 +58,7 @@ jobs:
         GITHUB_TOKEN: ${{ github.token }}
     - name: Upload to crowdin
       uses: crowdin/github-action@1.0.10
+      if: github.ref_name == 'stable' || startsWith(github.ref_name, 'release-')
       with:
         crowdin_branch_name: ${{ steps.variables.outputs.version }}
         config: 'crowdin.yaml'
@@ -70,6 +69,7 @@ jobs:
 
   publish-docker:
     runs-on: ubuntu-latest
+    if: github.ref_name == 'stable' || startsWith(github.ref_name, 'release-')
     needs: build-n-upload-translations
     steps:
       - name: Set up QEMU
