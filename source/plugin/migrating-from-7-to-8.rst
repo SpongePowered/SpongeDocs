@@ -19,6 +19,9 @@ Migrating from API 7 to API 8
     org.spongepowered.api.data.DataRegistration.Builder
     org.spongepowered.api.data.Key
     org.spongepowered.api.data.Keys
+    org.spongepowered.api.entity.living.player.Player
+    org.spongepowered.api.entity.living.player.client.ClientPlayer
+    org.spongepowered.api.entity.living.player.server.ServerPlayer
     org.spongepowered.api.event.lifecycle.LoadedGameEvent
     org.spongepowered.api.event.lifecycle.ProvideServiceEvent
     org.spongepowered.api.event.lifecycle.RegisterCommandEvent
@@ -36,6 +39,12 @@ Migrating from API 7 to API 8
     org.spongepowered.api.scheduler.Scheduler
     org.spongepowered.api.scheduler.Task
     org.spongepowered.api.scheduler.TaskExecutorService
+    org.spongepowered.api.world.Location
+    org.spongepowered.api.world.World
+    org.spongepowered.api.world.client.ClientLocation
+    org.spongepowered.api.world.client.ClientWorld
+    org.spongepowered.api.world.server.ServerLocation
+    org.spongepowered.api.world.server.ServerWorld
     org.spongepowered.plugin.builtin.jvm.Plugin
 
 SpongeAPI 8 is a significally upgraded API compared to SpongeAPI 7, such that every plugin will need to be updated to
@@ -88,6 +97,18 @@ be aware of when each engine starts.
 
 As before, engines can restart multiple times within a game instance (generally, this will happen in clients where the
 server is started multiple times - a new server is started when a singleplayer game is started.)
+
+Migrating to Engine Scoped Objects
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+With the introduction of ``Engines``, some objects have now got engine specific versions. In particular:
+
+- :javadoc:`Player` now has :javadoc:`ClientPlayer` and :javadoc:`ServerPlayer` subinterfaces
+- :javadoc:`World` now has :javadoc:`ClientWorld` and :javadoc:`ServerWorld` subinterfaces
+- :javadoc:`Location` now has :javadoc:`ClientLocation` and :javadoc:`ServerLocation` subinterfaces
+
+When migrating your plugin, you will generally want to use the server variants of these interfaces. Be careful to check
+the return type of various methods that return these object to make sure you're getting the correct type.
 
 CatalogTypes and Registries
 ===========================
@@ -187,3 +208,10 @@ to register a factory that implements that interface.
 
 More information about services can be found at :doc:`services`
 
+Configurate
+===========
+
+Configurate has been updated from version 3 to version 4, and along with it, its package name has changed from
+``ninja.leaping.configurate`` to ``org.spongepowered.configurate``. 
+
+For more information on Configurate, `you can view its manual here <https://github.com/SpongePowered/Configurate/wiki>`__.
