@@ -58,7 +58,7 @@ Example: Getting a player's balance
     Optional<UniqueAccount> uOpt = economyService.findOrCreateAccount(player.getUniqueId());
     if (uOpt.isPresent()) {
       UniqueAccount acc = uOpt.get();
-    	BigDecimal balance = acc.balance(economyService.defaultCurrency());
+      BigDecimal balance = acc.balance(economyService.defaultCurrency());
     }
 
 Some :javadoc:`Account` methods require variables such as:
