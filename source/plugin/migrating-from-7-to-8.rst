@@ -3,15 +3,37 @@ Migrating from API 7 to API 8
 =============================
 
 .. javadoc-import::
-    java.util.concurrent
-    net.kyori.adventure.text
-    org.spongepowered.api
-    org.spongepowered.api.command
-    org.spongepowered.api.command.registrar
-    org.spongepowered.api.data
-    org.spongepowered.api.event.lifecycle
-    org.spongepowered.api.registry
-    org.spongepowered.api.scheduler
+    java.util.concurrent.ExecutorService
+    net.kyori.adventure.text.Component
+    net.kyori.adventure.text.LinearComponents
+    org.spongepowered.api.Client
+    org.spongepowered.api.Engine
+    org.spongepowered.api.Game
+    org.spongepowered.api.Server
+    org.spongepowered.api.adventure.SpongeComponents
+    org.spongepowered.api.command.Command.Builder
+    org.spongepowered.api.command.Command.Parameterized
+    org.spongepowered.api.command.registrar.CommandRegistrar
+    org.spongepowered.api.data.DataProvider
+    org.spongepowered.api.data.DataRegistration
+    org.spongepowered.api.data.DataRegistration.Builder
+    org.spongepowered.api.event.lifecycle.LoadedGameEvent
+    org.spongepowered.api.event.lifecycle.ProvideServiceEvent
+    org.spongepowered.api.event.lifecycle.RegisterCommandEvent
+    org.spongepowered.api.event.lifecycle.RegisterDataEvent
+    org.spongepowered.api.event.lifecycle.RegisterRegistryEvent
+    org.spongepowered.api.event.lifecycle.RegisterRegistryEvent.EngineScoped
+    org.spongepowered.api.event.lifecycle.RegisterRegistryEvent.GameScoped
+    org.spongepowered.api.event.lifecycle.RegisterRegistryEvent.WorldScoped
+    org.spongepowered.api.event.lifecycle.RegisterRegistryValueEvent
+    org.spongepowered.api.event.lifecycle.StartedEngineEvent
+    org.spongepowered.api.event.lifecycle.StartingEngineEvent
+    org.spongepowered.api.event.lifecycle.StoppingEngineEvent
+    org.spongepowered.api.registry.RegistryType
+    org.spongepowered.api.registry.RegistryTypes
+    org.spongepowered.api.scheduler.Scheduler
+    org.spongepowered.api.scheduler.Task
+    org.spongepowered.api.scheduler.TaskExecutorService
     org.spongepowered.plugin.builtin.jvm.Plugin
 
 SpongeAPI 8 is a significally upgraded API compared to SpongeAPI 7, such that every plugin will need to be updated to
@@ -54,8 +76,9 @@ Engines
 SpongeAPI 8 introduces the concept of an engine. While SpongeAPI 7 was mostly designed for servers, SpongeAPI 8 considers
 the client as a first class citizen. The :javadoc:`Server` and :javadoc:`Client` are both :javadoc:`Engine`s.
 
-In general plugin development, it is likely that you will only really consider the server. However, be aware that there
-are times when running on the client where the server engine does not exist.
+In general plugin development, it is likely that you will only really consider the server - this is true even in 
+singleplayer environments as the game client starts a singleplayer server. However, be aware that there are times when
+running on the client where the server engine does not exist.
 
 There are generic lifecylce events that fire when each engine starts. You can use the :javadoc:`StartingEngineEvent`,
 :javadoc:`StartedEngineEvent` and :javadoc:`StoppingEngineEvent` (if the engine hasn't crashed) events if you need to
@@ -151,7 +174,8 @@ Plugin Services
 SpongeAPI 8 no longer supports custom plugin services, only supporting its own. If you want to provide an implementation
 for a Sponge service, you must now listen to the :javadoc:`ProvideServiceEvent` for the service interface you wish to
 provide the implementation for. Within this method, you may suggest a supplier that will create the service in the event
-your plugin is selected to provide the service.
+your plugin is selected to provide the service. Note that most services are server scoped, meaning that it is possible
+for there to be multiple requests to provide some services during a game's lifetime.
 
 There is no guarantee that the event will get called for your plugin if another plugin has provided the service first or
 if Sponge is configured to only look for a specific service.
