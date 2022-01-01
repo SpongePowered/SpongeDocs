@@ -3,13 +3,15 @@ Migrating from API 7 to API 8
 =============================
 
 .. javadoc-import::
+    java.util.concurrent
     net.kyori.adventure.text
     org.spongepowered.api
-    org.spongepowered.command
-    org.spongepowered.command.registrar
+    org.spongepowered.api.command
+    org.spongepowered.api.command.registrar
     org.spongepowered.api.data
     org.spongepowered.api.event.lifecycle
     org.spongepowered.api.registry
+    org.spongepowered.api.scheduler
     org.spongepowered.plugin.builtin.jvm.Plugin
 
 SpongeAPI 8 is a significally upgraded API compared to SpongeAPI 7, such that every plugin will need to be updated to
@@ -17,12 +19,9 @@ be compatible. While we cannot list every little thing that you will need to cha
 the more common migrations that will be required.
 
 .. note::
-
-    `We provide a plugin template that you can clone to create your own plugins 
-    <https://github.com/SpongePowered/sponge-plugin-template> __`.
+    `We provide a plugin template that you can clone to create your own plugins <https://github.com/SpongePowered/sponge-plugin-template>`__.
     While this guide is primarily intend for migrating plugins, you may find it useful to investigate this template to
     help your migration, particularly with the plugin metadata changes.
-
 
 ``@Plugin`` annotation and migration from ``mcmod.info`` to ``sponge_plugins.json``
 ===================================================================================
@@ -35,7 +34,7 @@ To generate the metadata file, you can either:
 * Create the file yourself by creating ``sponge_plugins.json`` in your resources root and filling it out with the required
   information
 * Use SpongeGradle 2 and define the metadata in the buildscript `as in this example 
-  <https://github.com/SpongePowered/sponge-plugin-template/blob/88d3c35853a687a7dc1540db43a9f9a135c03819/build.gradle.kts#L16-L40> __`
+  <https://github.com/SpongePowered/sponge-plugin-template/blob/88d3c35853a687a7dc1540db43a9f9a135c03819/build.gradle.kts#L16-L40>`__
 
 More information about the metadata file can be found at :doc:`plugin-meta`.
 
@@ -120,6 +119,45 @@ Migration of Text to Adventure
 ==============================
 
 SpongeAPI 8 uses the `Adventure <https://docs.adventure.kyori.net/>`__ library to provide text manipulation. In general,
-``Text`` objects have become :javadoc:`Component`s.
+``Text`` objects have become :javadoc:`Component`s, most components will be created via builder methods on that 
+interface. For those who wish to emulate a ``Text.of(...)`` like behaviour, use the ``linear`` method in 
+:javadoc:`LinearComponents`.
 
-For those who wish to emulate a ``Text.of(...)`` like behaviour, use the ``linear`` method in :javadoc:`LinearComponents`.
+There are additional Sponge specific helper operations in the ``org.spongepowered.api.adventure`` package, specifically
+:javadoc:`SpongeComponents` for those who used the ``executeCallback`` function in SpongeAPI 7.
+
+Scheduler 
+=========
+
+The scheduler has been updated to better reflect the scope in which a scheduler resides:
+
+* The asynchronus :javadoc:`Scheduler` is game scoped and remains on the :javadoc:`Game` object (and the ``Sponge``
+  object)
+* Each ``Engine`` now has its own synchronus scheduler, and is available via the engine's instance.
+
+The :javadoc:`Task` object is no longer responsible for determining whether it is asynchronus or not, as such, the 
+``Task.Builder#async`` method has been removed. Additionally, building a ``Task`` no longer submits it, instead, you must
+submit the task to the relavant ``Scheduler`` via the ``submit(Task)`` method.
+
+Sponge also provides a :javadoc:`TaskExecutorService` for each scheduler, should users prefer to the the Java 
+:javadoc:`ExecutorService` for their tasks.
+
+More information about the scheduler can be found at :doc:`scheduler`.
+
+
+Plugin Services
+===============
+
+SpongeAPI 8 no longer supports custom plugin services, only supporting its own. If you want to provide an implementation
+for a Sponge service, you must now listen to the :javadoc:`ProvideServiceEvent` for the service interface you wish to
+provide the implementation for. Within this method, you may suggest a supplier that will create the service in the event
+your plugin is selected to provide the service.
+
+There is no guarantee that the event will get called for your plugin if another plugin has provided the service first or
+if Sponge is configured to only look for a specific service.
+
+Plugins that wish to provide their own service interfaces should provide their own service management, or direct plugins
+to register a factory that implements that interface.
+
+More information about services can be found at :doc:`services`
+
