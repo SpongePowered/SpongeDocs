@@ -7,6 +7,7 @@ Dependency Injection
     These docs were written for SpongeAPI 7 and are likely out of date. 
     `If you feel like you can help update them, please submit a PR! <https://github.com/SpongePowered/SpongeDocs>`__
 
+
 .. javadoc-import::
     org.spongepowered.api.Game
     org.spongepowered.api.GameRegistry
@@ -28,6 +29,7 @@ Dependency Injection
     org.spongepowered.configurate.commented.CommentedConfigurationNode
     org.spongepowered.configurate.loader.ConfigurationLoader
     org.spongepowered.configurate.objectmapping.GuiceObjectMapperFactory
+
 
 Sponge uses dependency injection to provide instances of the API to plugins.
 Dependency injection allows plugins to designate a few API types that will be injected after construction.
