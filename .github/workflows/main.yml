@@ -10,7 +10,7 @@ env:
   IMAGE_NAME: spongepowered/spongedocs
 
 jobs:
-  build-n-upload-translations:
+  build:
     runs-on: ubuntu-latest
 
     outputs:
@@ -70,7 +70,7 @@ jobs:
   publish-docker:
     runs-on: ubuntu-latest
     if: github.ref_name == 'stable' || startsWith(github.ref_name, 'release-')
-    needs: build-n-upload-translations
+    needs: build
     steps:
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
@@ -86,12 +86,12 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ needs.build-n-upload-translations.outputs.version }}
+          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ needs.build.outputs.version }}
           build-args: |
             GITHUB_USER=SpongePowered
             GITHUB_TOKEN=${{ github.token }}
             GITHUB_REPO=SpongeDocs
-            GITHUB_VERSION=${{ needs.build-n-upload-translations.outputs.branch }}
+            GITHUB_VERSION=${{ needs.build.outputs.branch }}
             CROWDIN_TOKEN=${{ secrets.CROWDIN_TOKEN }}
             CROWDIN_PROJECT_ID=${{ secrets.CROWDIN_PROJECT_ID }}
-            VERSION=${{ needs.build-n-upload-translations.outputs.version }}
+            VERSION=${{ needs.build.outputs.version }}
