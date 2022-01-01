@@ -21,7 +21,7 @@ System Requirements
 
 The version of Java that you require depends on the version of Sponge (and therefore Minecraft) that you wish to run:
 
-.. list-table:: Required Java Versions
+.. list-table::
     :widths: 15 15 15 55
     :header-rows: 1
 
@@ -32,7 +32,7 @@ The version of Java that you require depends on the version of Sponge (and there
     * - 7.x
       - 1.12.2
       - Java 8
-      - Requires at least update 20. Does not work with Java 9.
+      - Requires at least update 20. Does not work with Java 9 or later.
     * - 8.x
       - 1.16.5
       - Java 8

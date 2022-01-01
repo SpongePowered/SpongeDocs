@@ -17,7 +17,6 @@ our :doc:`about/faq` and an article about :doc:`about/structure`.
 Server owners should read our tips and instructions in :doc:`server/index` on how to install, run and maintain a Sponge
 based server.
 
-
 The Sponge project has several main components. Learn more about the project structure :doc:`here <about/structure>`
 or visit their repositories on GitHub:
 

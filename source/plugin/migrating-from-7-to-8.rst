@@ -17,6 +17,8 @@ Migrating from API 7 to API 8
     org.spongepowered.api.data.DataProvider
     org.spongepowered.api.data.DataRegistration
     org.spongepowered.api.data.DataRegistration.Builder
+    org.spongepowered.api.data.Key
+    org.spongepowered.api.data.Keys
     org.spongepowered.api.event.lifecycle.LoadedGameEvent
     org.spongepowered.api.event.lifecycle.ProvideServiceEvent
     org.spongepowered.api.event.lifecycle.RegisterCommandEvent
@@ -74,7 +76,7 @@ Engines
 =======
 
 SpongeAPI 8 introduces the concept of an engine. While SpongeAPI 7 was mostly designed for servers, SpongeAPI 8 considers
-the client as a first class citizen. The :javadoc:`Server` and :javadoc:`Client` are both :javadoc:`Engine`s.
+the client as a first class citizen. The :javadoc:`Server` and :javadoc:`Client` are both :javadoc:`Engine`.
 
 In general plugin development, it is likely that you will only really consider the server - this is true even in 
 singleplayer environments as the game client starts a singleplayer server. However, be aware that there are times when
@@ -90,7 +92,7 @@ server is started multiple times - a new server is started when a singleplayer g
 CatalogTypes and Registries
 ===========================
 
-The Sponge registry has been overhauled and ``CatalogType``s no longer exist.
+The Sponge registry has been overhauled and ``CatalogTypes`` no longer exist.
 
 In the previous system, objects had an awareness of their own identifier through the ``CatalogType#getId`` method.
 This generally restricted these types to only exist in one registry. In SpongeAPI 8, any object can be placed in 
@@ -112,7 +114,7 @@ Custom Data
 Data gets an overhaul in SpongeAPI 8, but the most impactful change to consider when migrating plugins is that custom
 data is now much simpler to use. In particular, there are two large changes as to how you implement custom data:
 
-- Data is now primarily driven by the :javadoc:`Key` system, rather than ``DataManipulator``s. Keys can be created at
+- Data is now primarily driven by the :javadoc:`Key` system, rather than ``DataManipulators``. Keys can be created at
   any time and do not need to be registered.
 - Any data supplied to data holders using an unregistered key are transient - for example, if data is supplied to a
   player using an unregistered key and the player dies (so their player object is recreated) that data is lost. To

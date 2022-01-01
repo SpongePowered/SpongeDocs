@@ -7,6 +7,11 @@ aspects of SpongeAPI and the concepts behind it. It is important to understand t
 to help developers get started with SpongeAPI, not to cover every concept. The
 `Javadocs <https://jd.spongepowered.org/>`__ will be of great help to you once you are comfortable with the API.
 
+.. note:: 
+
+    If you are familar with SpongeAPI 7 and need assistance migrating your plugin to SpongeAPI 8 or later, see
+    :doc:`migrating-from-7-to-8`.
+
 .. note::
 
     It is suggested to have prior experience with developing in Java! It is also highly recommended to take code
