@@ -99,7 +99,7 @@ javadoc_links = {
     "https://configurate.aoeu.xyz/apidocs/": ["org.spongepowered.configurate"],
     "https://jd.spongepowered.org/plugin-spi/0.3.0/": ["org.spongepowered.plugin"],
     "https://docs.oracle.com/javase/8/docs/api/": ["java"],
-    "https://guava.dev/releases/31.0.1-jre/api/docs/": ["com.google.common"],
+    "https://guava.dev/releases/21.0/api/docs/": ["com.google.common"],
     "https://jd.adventure.kyori.net/api/4.9.3/": ["net.kyori.adventure"],
 }
 
