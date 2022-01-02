@@ -42,8 +42,6 @@ The **Project Managers** of Sponge each coordinate a separate aspect of the Spon
 +-----------------------------------+------------------------------------+
 | lukegb                            | Systems Team Manager               |
 +-----------------------------------+------------------------------------+
-| Me4502                            | Subreddit Manager                  |
-+-----------------------------------+------------------------------------+
 | Owexz                             | Forum & Community Manager          |
 |                                   |                                    |
 |                                   | Website Manager                    |
