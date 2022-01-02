@@ -14,7 +14,7 @@ However, it is possible for there to be multiple plugins in a JAR, and the metad
 
 If you are using Gradle, SpongeGradle 2 makes it easy to define the metadata for your plugin. If you are creating a new
 plugin, or you want a reference on how to use SpongeGradle 2, `take a look at our plugin template repository
-<https://github.com/SpongePowered/sponge-plugin-template/blob/88d3c35853a687a7dc1540db43a9f9a135c03819/build.gradle.kts#L16-L40> __`
+<https://github.com/SpongePowered/sponge-plugin-template/blob/88d3c35853a687a7dc1540db43a9f9a135c03819/build.gradle.kts#L16-L40>`__
 which provides an example configuration to use.
 
 While much of the metadata is optional, adding it helps users to identify your plugin more easily by giving them the 
