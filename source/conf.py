@@ -96,6 +96,7 @@ gettext_compact = False
 
 javadoc_links = {
     "https://jd.spongepowered.org/spongeapi/%s/" % release: ["org.spongepowered.api"],
+    "https://jd.spongepowered.org/spongeapi/0.3.0/": ["org.spongepowered.plugin"],
     "https://configurate.aoeu.xyz/apidocs/": ["org.spongepowered.configurate"],
     "https://jd.spongepowered.org/plugin-spi/0.3.0/": ["org.spongepowered.plugin"],
     "https://docs.oracle.com/javase/8/docs/api/": ["java"],

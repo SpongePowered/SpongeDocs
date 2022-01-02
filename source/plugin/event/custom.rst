@@ -8,7 +8,6 @@ Custom Events
     org.spongepowered.api.event.Event
     org.spongepowered.api.event.cause.Cause
     org.spongepowered.api.event.entity.AffectEntityEvent
-    org.spongepowered.api.event.entity.TargetPlayerEvent
     org.spongepowered.api.event.impl.AbstractEvent
 
 You can write your own event classes and dispatch those events using the method described above. An event class must
