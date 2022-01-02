@@ -11,6 +11,7 @@ Migrating from API 7 to API 8
     org.spongepowered.api.Game
     org.spongepowered.api.Server
     org.spongepowered.api.adventure.SpongeComponents
+    org.spongepowered.api.command.Command
     org.spongepowered.api.command.Command.Builder
     org.spongepowered.api.command.Command.Parameterized
     org.spongepowered.api.command.registrar.CommandRegistrar
@@ -165,7 +166,7 @@ Migration of Text to Adventure
 ==============================
 
 SpongeAPI 8 uses the `Adventure <https://docs.adventure.kyori.net/>`__ library to provide text manipulation. In general,
-``Text`` objects have become :javadoc:`Component`s, most components will be created via builder methods on that 
+``Text`` objects have become :javadoc:`Component`\s, most components will be created via builder methods on that
 interface. For those who wish to emulate a ``Text.of(...)`` like behaviour, use the ``linear`` method in 
 :javadoc:`LinearComponents`.
 

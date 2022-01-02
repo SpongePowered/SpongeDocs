@@ -7,6 +7,7 @@ Custom Events
     org.spongepowered.api.event.Cancellable
     org.spongepowered.api.event.Event
     org.spongepowered.api.event.cause.Cause
+    org.spongepowered.api.event.entity.AffectEntityEvent
     org.spongepowered.api.event.entity.TargetPlayerEvent
     org.spongepowered.api.event.impl.AbstractEvent
 

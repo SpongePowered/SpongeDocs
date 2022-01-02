@@ -18,6 +18,9 @@ Plugin Lifecycle
     org.spongepowered.api.event.lifecycle.RegisterRegistryValueEvent.EngineScoped
     org.spongepowered.api.event.lifecycle.RegisterRegistryValueEvent.GameScoped
     org.spongepowered.api.event.lifecycle.RegisterRegistryValueEvent.WorldScoped
+    org.spongepowered.api.event.lifecycle.StartedEngineEvent
+    org.spongepowered.api.event.lifecycle.StartingEngineEvent
+    org.spongepowered.api.event.lifecycle.StoppingEngineEvent
     org.spongepowered.api.event.lifecycle.StoppedGameEvent
 
 During initialization, refresh and shutdown of the game, server and world, Sponge has a series of lifecycle events that 
@@ -36,7 +39,7 @@ Game Lifecycle Events
 
 In Sponge, the :javadoc:`Game` is a representation of the entire Minecraft process -- effectively from the point
 Minecraft starts to when the process terminates. As a result, it can only start once and only stop once, and will
-start before any :javadoc:`Engine`s start, and will terminate after all ``Engine``s stop. As a result, the following
+start before any :javadoc:`Engine`\s start, and will terminate after all ``Engine``\s stop. As a result, the following
 events will fire at most once during the game's lifetime:
 
 - :javadoc:`LoadedGameEvent` will fire when the game itself has loaded and is ready to start loading engines
@@ -91,7 +94,7 @@ Some of the important registration events for most plugins are:
 - :javadoc:`RegisterCommandEvent` for registering commands as they are now engine scoped and are tied to datapacks,
   not listening to this event may result in commands not being re-registered when requested 
   (see :doc:`commands/index`).
-- :javadoc:`RegisterDataEvent` for providing :javadoc:`DataRegistration`s, allowing for persistent storage of
+- :javadoc:`RegisterDataEvent` for providing :javadoc:`DataRegistration`\s, allowing for persistent storage of
   custom data (see :doc:`data/index`).
 - :javadoc:`RegisterRegistryValueEvent.GameScoped`, :javadoc:`RegisterRegistryValueEvent.EngineScoped` and
   :javadoc:`RegisterRegistryValueEvent.WorldScoped` for providing additional entries to registries.

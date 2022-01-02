@@ -3,6 +3,7 @@ Event Causes
 ============
 
 .. javadoc-import::
+    org.spongepowered.api.Engine
     org.spongepowered.api.Sponge
     org.spongepowered.api.event.CauseStackManager
     org.spongepowered.api.event.Event
