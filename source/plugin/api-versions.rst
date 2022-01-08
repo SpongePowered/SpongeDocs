@@ -10,7 +10,7 @@ This page explains which API versions exist, and to which Minecraft version thei
 | *9.0.0*     | TBA          | TBA            | * SpongeForge (1.18.1 - expected)         |
 |             |              |                | * SpongeVanilla (1.18.1 - expected)       |
 +-------------+--------------+----------------+-------------------------------------------+
-| *8.0.0*     | TBA          | TBA            | * SpongeForge (1.16.5)                    |
+| 8.0.0       | Jan 8, 2022  | TBA            | * SpongeForge (1.16.5)                    |
 |             |              |                | * SpongeVanilla (1.16.5)                  |
 +-------------+--------------+----------------+-------------------------------------------+
 | 7.4.0       | Nov 28, 2020 | TBA            | * SpongeForge (1.12.2)                    |
