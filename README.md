@@ -1,4 +1,4 @@
-# Sponge Documentation [![Build Status](https://travis-ci.org/SpongePowered/SpongeDocs.svg?branch=master)](https://travis-ci.org/SpongePowered/SpongeDocs)
+# Sponge Documentation [![Build Status](https://github.com/spongepowered/spongedocs/actions/workflows/build.yml/badge.svg)
 
 This is the repository where the Sponge documentation is held.
 
