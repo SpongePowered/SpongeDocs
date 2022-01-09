@@ -89,10 +89,10 @@ SpongeAPI 8 introduces the concept of an engine. While SpongeAPI 7 was mostly de
 the client as a first class citizen. The :javadoc:`Server` and :javadoc:`Client` are both :javadoc:`Engine`.
 
 In general plugin development, it is likely that you will only really consider the server - this is true even in 
-singleplayer environments as the game client starts a singleplayer server. However, be aware that there are times when
-running on the client where the server engine does not exist.
+singleplayer environments as the game client starts a singleplayer server. However, note that there can be times where the
+client is running but no server engine exists.
 
-There are generic lifecylce events that fire when each engine starts. You can use the :javadoc:`StartingEngineEvent`,
+There are generic lifecycle events that fire when each engine starts. You can use the :javadoc:`StartingEngineEvent`,
 :javadoc:`StartedEngineEvent` and :javadoc:`StoppingEngineEvent` (if the engine hasn't crashed) events if you need to
 be aware of when each engine starts.
 
@@ -138,7 +138,7 @@ data is now much simpler to use. In particular, there are two large changes as t
 
 - Data is now primarily driven by the :javadoc:`Key` system, rather than ``DataManipulators``. Keys can be created at
   any time and do not need to be registered.
-- Any data supplied to data holders using an unregistered key are transient - for example, if data is supplied to a
+- Any data supplied to data holders using an unregistered key is transient - for example, if data is supplied to a
   player using an unregistered key and the player dies (so their player object is recreated) that data is lost. To
   persist custom data, plugins must register their keys during the :javadoc:`RegisterDataEvent` and supply a
   :javadoc:`DataRegistration` (via the :javadoc:`DataRegistration.Builder`) that tells Sponge how to persist the data.

@@ -2,7 +2,7 @@
 Quick Start Guide
 =================
 
-This is a step by step reference on how to create a Minecraft server with Sponge, versions 7 and above.
+This is a step by step reference on how to create a Minecraft server with Sponge version 7 and above.
 
 .. note::
 

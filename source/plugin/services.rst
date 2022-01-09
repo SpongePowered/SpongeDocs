@@ -21,7 +21,7 @@ the API (for example, the ``PermissionService`` supports various methods on the 
 
 Services themselves can be :javadoc:`Server` scoped or :javadoc:`Game` scoped. Due to the potential for servers restarting
 multiple times within a game instance, server scoped services should at least change instance across restarts, and may 
-be provided different plugins.
+be provided by different plugins.
 
 .. note::
     In previous versions of SpongeAPI, plugins could register their own arbitary services to arbitary interfaces. This
