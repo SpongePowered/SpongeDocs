@@ -2,7 +2,12 @@
 Creating Placeholder Tokens
 ===========================
 
+.. warning::
+    These docs were written for SpongeAPI 7 and are likely out of date. 
+    `If you feel like you can help update them, please submit a PR! <https://github.com/SpongePowered/SpongeDocs>`__
+
 .. javadoc-import::
+    net.kyori.adventure.text.Component
     org.spongepowered.api.CatalogType
     org.spongepowered.api.plugin.PluginContainer
     org.spongepowered.api.entity.living.player.Player
@@ -10,15 +15,14 @@ Creating Placeholder Tokens
     org.spongepowered.api.service.economy.Currency
     org.spongepowered.api.service.economy.EconomyService
     org.spongepowered.api.service.economy.account.Account
-    org.spongepowered.api.placeholder.PlaceholderContext
-    org.spongepowered.api.placeholder.PlaceholderParser
-    org.spongepowered.api.placeholder.PlaceholderText
-    org.spongepowered.api.text.Text
-    org.spongepowered.api.text.channel.MessageReceiver
+    org.spongepowered.api.service.placeholder.PlaceholderService
+    org.spongepowered.api.service.placeholder.PlaceholderContext
+    org.spongepowered.api.service.placeholder.PlaceholderParser
+    org.spongepowered.api.service.placeholder.PlaceholderComponent
 
 At the heart of the Sponge Placeholder API is the ability to create your own tokens and have them accessible to all 
 plugins. To create your own placeholder, you must create an object that implements :javadoc:`PlaceholderParser` and
-register it in the Sponge Registry.
+then registered in the appropriate registry.
 
 Creating PlaceholderParsers
 ===========================
@@ -26,16 +30,11 @@ Creating PlaceholderParsers
 There are two ways you can create a ``PlaceholderParser``:
 
 * Using :javadoc:`PlaceholderParser#builder()`, supplying your :javadoc:`PluginContainer`, un-namespaced ID and 
-  a function that takes a ``PlaceholderContext`` and returns a ``Text``.
+  a function that takes a ``PlaceholderContext`` and returns a :javadoc:`Component`.
 * Directly implement the interface.
 
-.. note::
-  ``PlaceholderParsers`` are :doc:`Catalog Types<../data/catalog-types>`. If you implement the interface directly,
-  remember that the ID of the parser should be plugin namespaced, of the form  ``[pluginid]:[placeholderid]``. IDs 
-  must also be unique.
-
 :javadoc:`PlaceholderParser` objects take a :javadoc:`PlaceholderContext` object which contains the context of the
-request and returns a :javadoc:`Text` based on that context. Information that the ``PlaceholderContext`` may 
+request and returns a ``Component`` based on that context. Information that the ``PlaceholderContext`` may 
 contain includes:
 
 * An associated object, such as a :javadoc:`Player`
@@ -44,7 +43,7 @@ contain includes:
 This is the minimum as specified by Sponge. 
 
 If your placeholder is unable to provide text because the context does not provide the context or arguments it requires,
-the placeholder should return an empty ``Text`` and not throw an exception.
+the placeholder should return an empty ``Component`` and not throw an exception.
 
 .. tip::
   If you wish to provide the ability to add multiple arguments to your placeholder, consider specifying a way to split 
@@ -55,11 +54,13 @@ the placeholder should return an empty ``Text`` and not throw an exception.
 Example: Default World Name PlaceholderParser
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This ``PlaceholderParser`` attempts to get the default world's name, returning an empty ``Text`` if it cannot be 
+This ``PlaceholderParser`` attempts to get the default world's name, returning an empty ``Component`` if it cannot be 
 found. It uses the builder to create the parser with ID ``spongedocs:defaultworld``, assuming the plugin has an ID of 
 ``spongedocs``.
 
 .. code-block:: java
+
+    import net.kyori.adventure.text.Component;
     
     PluginContainer thisPlugin = ...;
     
@@ -71,7 +72,7 @@ found. It uses the builder to create the parser with ID ``spongedocs:defaultworl
             return Sponge.getServer()
                 .getDefaultWorld()
                 .map(x -> x.getWorldName())
-                .orElse(Text.EMPTY);
+                .orElse(Component.empty());
         })
         .build();
 
@@ -79,9 +80,11 @@ Example: Player Location PlaceholderParser
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This ``PlaceholderParser`` attempts to get the player's location in the world. If used without a ``Player`` as the 
-associated object, it returns an empty :javadoc:`Text`. This implements the ``PlaceholderParser`` interface directly.
+associated object, it returns an empty ``Component``. This implements the ``PlaceholderParser`` interface directly.
 
 .. code-block:: java
+
+    import net.kyori.adventure.text.TextComponent;
 
     public class PlayerLocationPlaceholder implements PlaceholderParser {
         
@@ -96,12 +99,16 @@ associated object, it returns an empty :javadoc:`Text`. This implements the ``Pl
         }
 
         @Override
-        public Text parse(PlaceholderText placeholderText) {
-            placeholderText.getAssociatedReceiver()
+        public Component parse(PlaceholderContext placeholderContext) {
+            placeholderContext.associatedObject()
                 .filter(x -> x instanceof Player)
                 .map(player -> ((Player) player).getLocation())
-                .map(location -> Text.of("World: ", location.getExtent().getName(), " - ", location.getPosition()))
-                .orElse(Text.EMPTY);
+                .map(location -> TextComponent.ofChildren(
+                    Component.text("World: "),
+                    Component.text(location.getExtent().getName()),
+                    Component.text(" - "),
+                    Component.text(location.getPosition())))
+                .orElse(Component.empty());
         }
     }
 
@@ -128,11 +135,11 @@ interface directly.
         }
 
         @Override
-        public Text parse(PlaceholderContext placeholderContext) {
-            if (placeholderContext.getArgumentString().filter(x -> x.equalsIgnoreCase("UTC")).isPresent()) {
-                return Text.of(OffsetDateTime.now(ZoneOffset.UTC).format(FORMATTER));
+        public Component parse(PlaceholderContext placeholderContext) {
+            if (placeholderContext.argumentString().filter(x -> x.equalsIgnoreCase("UTC")).isPresent()) {
+                return Component.text(OffsetDateTime.now(ZoneOffset.UTC).format(FORMATTER));
             }
-            return Text.of(OffsetDateTime.now().format(FORMATTER));
+            return Component.text(OffsetDateTime.now().format(FORMATTER));
         }
 
     }

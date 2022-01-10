@@ -2,11 +2,15 @@
 Bans
 ====
 
+.. warning::
+    These docs were written for SpongeAPI 7 and are likely out of date. 
+    `If you feel like you can help update them, please submit a PR! <https://github.com/SpongePowered/SpongeDocs>`__
+
 .. javadoc-import::
+    net.kyori.adventure.text.Component
     org.spongepowered.api.entity.living.player.User
     org.spongepowered.api.profile.GameProfile
     org.spongepowered.api.service.ban.BanService
-    org.spongepowered.api.text.Text
     org.spongepowered.api.util.ban.Ban
     org.spongepowered.api.util.ban.Ban.Builder
 
@@ -40,17 +44,17 @@ An example of this is shown below:
     
     import java.util.Optional;
     
+    import net.kyori.adventure.text.Component;
     import org.spongepowered.api.entity.living.player.User;
-    import org.spongepowered.api.text.Text;
     import org.spongepowered.api.util.ban.Ban;
     
     if (service.isBanned(user.getProfile())) {
         Optional<Ban.Profile> optionalBan = service.getBanFor(player.getProfile());
         if (optionalBan.isPresent()) {
             Ban.Profile profileBan = optionalBan.get();
-            Optional<Text> optionalReason = profileBan.getReason();
+            Optional<Component> optionalReason = profileBan.getReason();
             if (optionalReason.isPresent()) {
-                Text banReason = optionalReason.get();
+                Component banReason = optionalReason.get();
             }
         }
     }
@@ -68,7 +72,7 @@ the ban, or the ``User`` we wish to ban. An example of all of these things is sh
     import org.spongepowered.api.util.ban.BanTypes;
     
     Ban ban = Ban.builder().type(BanTypes.PROFILE).profile(user.getProfile())
-        .reason(Text.of("The Sponge Council has Spoken!")).build();
+        .reason(Component.text("The Sponge Council has Spoken!")).build();
 
 Alternatively, you can specify an ip ban on an online player:
 
@@ -76,10 +80,10 @@ Alternatively, you can specify an ip ban on an online player:
     
     Ban ban = Ban.builder().type(BanTypes.IP)
         .address(player.getConnection().getAddress().getAddress())
-        .reason(Text.of("The Sponge Council has Spoken!")).build();
+        .reason(Component.text("The Sponge Council has Spoken!")).build();
 
 Note that if you wish to create a simple, indefinite ban on a ``User``, you can use the :javadoc:`Ban#of(GameProfile)`
-method or the :javadoc:`Ban#of(GameProfile, Text)` method to quickly construct a ban.
+method or the :javadoc:`Ban#of(GameProfile, Component)` method to quickly construct a ban.
 
 Adding a Ban
 ~~~~~~~~~~~~
@@ -105,5 +109,5 @@ and use it to add our ``Ban``. Here is the full code for doing this:
     
     BanService service = Sponge.getServiceManager().provide(BanService.class).get();
     Ban ban = Ban.builder().type(BanTypes.PROFILE).profile(user.getProfile())
-        .reason(Text.of("The Sponge Council has Spoken!")).build();
+        .reason(Component.text("The Sponge Council has Spoken!")).build();
     service.addBan(ban);

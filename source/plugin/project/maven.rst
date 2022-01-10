@@ -11,7 +11,7 @@ If you already have a pom.xml set up you can simply add the following to the ``<
         <repository>
             <id>sponge-repo</id>
             <name>Sponge Maven Repository</name>
-            <url>https://repo.spongepowered.org/maven</url>
+            <url>https://repo.spongepowered.org/repository/maven-public/</url>
         </repository>
     </repositories>
 
@@ -19,7 +19,7 @@ If you already have a pom.xml set up you can simply add the following to the ``<
         <dependency>
             <groupId>org.spongepowered</groupId>
             <artifactId>spongeapi</artifactId>
-            <version>7.2.0</version>
+            <version>8.0.0</version>
             <type>jar</type>
             <scope>provided</scope>
         </dependency>
@@ -52,7 +52,7 @@ use the following as your basis:
         <repositories>
             <repository>
                 <id>sponge-repo</id>
-                <url>https://repo.spongepowered.org/maven</url>
+                <url>https://repo.spongepowered.org/repository/maven-public/</url>
             </repository>
         </repositories>
 
@@ -60,7 +60,7 @@ use the following as your basis:
             <dependency>
                 <groupId>org.spongepowered</groupId>
                 <artifactId>spongeapi</artifactId>
-                <version>7.2.0</version>
+                <version>8.0.0</version>
                 <type>jar</type>
                 <optional>true</optional>
                 <scope>provided</scope>

@@ -3,121 +3,107 @@ Plugin Lifecycle
 ================
 
 .. javadoc-import::
-    org.spongepowered.api.event.game.state.GameConstructionEvent
-    org.spongepowered.api.event.game.state.GamePreInitializationEvent
-    org.spongepowered.api.event.game.state.GameInitializationEvent
-    org.spongepowered.api.event.game.state.GamePostInitializationEvent
-    org.spongepowered.api.event.game.state.GameLoadCompleteEvent
-    org.spongepowered.api.event.game.state.GameAboutToStartServerEvent
-    org.spongepowered.api.event.game.state.GameStartingServerEvent
-    org.spongepowered.api.event.game.state.GameStartedServerEvent
-    org.spongepowered.api.event.game.state.GameStoppingServerEvent
-    org.spongepowered.api.event.game.state.GameStoppedServerEvent
-    org.spongepowered.api.event.game.state.GameStoppingEvent
-    org.spongepowered.api.event.game.state.GameStoppedEvent
+    org.spongepowered.api.Client
+    org.spongepowered.api.Engine
+    org.spongepowered.api.Game
+    org.spongepowered.api.Server
+    org.spongepowered.api.data.DataRegistration
+    org.spongepowered.api.event.lifecycle.EngineLifecycleEvent
+    org.spongepowered.api.event.lifecycle.LoadedGameEvent
+    org.spongepowered.api.event.lifecycle.ProvideServiceEvent.EngineScoped
+    org.spongepowered.api.event.lifecycle.ProvideServiceEvent.GameScoped
+    org.spongepowered.api.event.lifecycle.RefreshGameEvent
+    org.spongepowered.api.event.lifecycle.RegisterCommandEvent
+    org.spongepowered.api.event.lifecycle.RegisterDataEvent
+    org.spongepowered.api.event.lifecycle.RegisterRegistryValueEvent.EngineScoped
+    org.spongepowered.api.event.lifecycle.RegisterRegistryValueEvent.GameScoped
+    org.spongepowered.api.event.lifecycle.RegisterRegistryValueEvent.WorldScoped
+    org.spongepowered.api.event.lifecycle.StartedEngineEvent
+    org.spongepowered.api.event.lifecycle.StartingEngineEvent
+    org.spongepowered.api.event.lifecycle.StoppingEngineEvent
+    org.spongepowered.api.event.lifecycle.StoppedGameEvent
 
-Prior to any states that make the plugin visible, the plugin loader first sorts through the available plugins, determines
-if all dependencies are present, and sorts plugins by dependency order. Lifecycle events are given to plugins in this
-order. For example, plugin A containing "[required-]after:B" will get each event after plugin B has completed work for
-the given state. Additionally, lifecycle states are global. This means that all plugins visible to each other must be
-transitioned through all states at once.
+During initialization, refresh and shutdown of the game, server and world, Sponge has a series of lifecycle events that 
+plugins can listen to such that they can act accordingly. All lifecycle events are in the 
+``org.spongepowered.api.event.lifecycle`` package.
 
 .. warning::
-    The Sponge ``Server`` object is not always available. Availability can be checked using the method
-    ``Sponge.isServerAvailable()`` or ``Game.isServerAvailable()``.
+    
+    All lifecycle events assume that the game is currently working and no errors have occurred. Some events may
+    not fire if the game crashes or otherwise terminates abnormally, particularly any event that concerns itself
+    with ending something. Your plugins should therefore not rely on these events to finalize and store any 
+    important state.
 
-State Events
-============
-
-There are three categories of state events:
-
-1. **Initialization:** When Sponge and plugins are loading, before the actual game has started. Initialization states
-   only occur once.
-2. **Running:** When the game and world are loading. Running states may occur multiple times.
-3. **Stopping:** When the game is shutting down. Stopping states, like initialization states, only occur once.
-
-Initialization States
+Game Lifecycle Events
 =====================
 
-Initialization states only occur once during a single run.
+In Sponge, the :javadoc:`Game` is a representation of the entire Minecraft process -- effectively from the point
+Minecraft starts to when the process terminates. As a result, it can only start once and only stop once, and will
+start before any :javadoc:`Engine`\s start, and will terminate after all ``Engine``\s stop. As a result, the following
+events will fire at most once during the game's lifetime:
 
-**CONSTRUCTION**
+- :javadoc:`LoadedGameEvent` will fire when the game itself has loaded and is ready to start loading engines
+  (but importantly, none have yet started to load). All plugins have been loaded and inter-plugin communication should
+  be possible, as well as any game-scoped registries.
+- :javadoc:`StoppedGameEvent` will fire when the game has shut down all engines and is about to terminate. No
+  engines are available. May not fire if the game terminates abnormally.
 
-The :javadoc:`GameConstructionEvent` is triggered.
-During this state, the ``@Plugin`` class instance for each plugin is triggered.
+Engine Lifecycle Events
+=======================
 
-**PRE_INITIALIZATION**
+Unlike the ``Game``, ``Engines`` may startup and shutdown multiple times during a game's lifetime. There may also be 
+multiple engines running at the same time. For example, for a singleplayer world, there will be a :javadoc:`Client` and
+a :javadoc:`Server` running concurrently.
 
-The :javadoc:`GamePreInitializationEvent` is triggered.
-During this state, the plugin gets ready for initialization. Access to a default logger instance and access to
-information regarding preferred configuration file locations is available.
+The :javadoc:`EngineLifecycleEvent` is the base event for the engine lifecycle and is generic, bound to the type of 
+Engine it is acting for. Listeners to any sub event must also specify the engine in the generic when the sub event
+requires it, for example, for the ``StartingEngineEvent`` on the ``Server``, you would write your listener like this:
 
-**INITIALIZATION**
+.. code-block:: java
 
-The :javadoc:`GameInitializationEvent` is triggered.
-During this state, the plugin should finish any work needed in order to be functional. Global event handlers should get
-registered in this stage.
+    import org.spongepowered.api.Server
+    import org.spongepowered.api.event.Listener
+    import org.spongepowered.api.event.lifecycle.StartingEngineEvent
 
-**POST_INITIALIZATION**
+    @Listener
+    public void onServerStarting(final StartingEngineEvent<Server> event) {
+        // ...
+    }
 
-The :javadoc:`GamePostInitializationEvent` is triggered.
-By this state, inter-plugin communication should be ready to occur. Plugins providing an API should be ready to accept
-basic requests.
+The following events run during the engine lifecycle:
 
-**LOAD_COMPLETE**
+- :javadoc:`StartingEngineEvent` will fire when the specified ``Engine`` is starting. Nothing about this engine has
+  initialized at this point, worlds will not exist and the engine scoped registry will not be ready at this point.
+- :javadoc:`StartedEngineEvent` will fire when the specified ``Engine`` has completed initialization. Specifically,
+  this means that the registry has been populated and in the case of the server engine, worlds have been created.
+- :javadoc:`StoppingEngineEvent` will fire when the engine has been told to shutdown and is about to shut down
+  everything it is responsible for. May not fire if the game terminates abnormally.
 
-The :javadoc:`GameLoadCompleteEvent` is triggered.
-By this state, all plugin initialization should be completed.
+Registration Events
+===================
 
-Running States
+At various points in the lifecycle of the game, Sponge will fire registration events to prompt plugins to perform 
+specific tasks. These registration requests may come at any time, even during normal game play if, for example, a
+datapack reload is required. It is important that plugins that perform actions prompted by such lifecycle events
+listen to these events.
+
+Some of the important registration events for most plugins are:
+
+- :javadoc:`ProvideServiceEvent.GameScoped` and :javadoc:`ProvideServiceEvent.EngineScoped` for plugins that provide
+  services (see :doc:`services`).
+- :javadoc:`RegisterCommandEvent` for registering commands as they are now engine scoped and are tied to datapacks,
+  not listening to this event may result in commands not being re-registered when requested 
+  (see :doc:`commands/index`).
+- :javadoc:`RegisterDataEvent` for providing :javadoc:`DataRegistration`\s, allowing for persistent storage of
+  custom data (see :doc:`data/index`).
+- :javadoc:`RegisterRegistryValueEvent.GameScoped`, :javadoc:`RegisterRegistryValueEvent.EngineScoped` and
+  :javadoc:`RegisterRegistryValueEvent.WorldScoped` for providing additional entries to registries.
+
+There are other registration events that plugins may be interested in, see the ``org.spongepowered.api.event.lifecycle``
+package `in the javadocs <https://jd.spongepowered.org/>`__.
+
+Refresh Events
 ==============
 
-Running States can occur multiple times during a single run. ``SERVER_ABOUT_TO_START`` may follow ``SERVER_STOPPED``,
-and ``SERVER_STOPPED`` may occur at any point during the process if there is an error.
-
-**SERVER_ABOUT_TO_START**
-
-The :javadoc:`GameAboutToStartServerEvent` event is triggered.
-The server instance exists, but worlds are not yet loaded.
-
-**SERVER_STARTING**
-
-The :javadoc:`GameStartingServerEvent` is triggered.
-The server instance exists, and worlds are loaded. Command registration is handled during this state.
-
-**SERVER_STARTED**
-
-The :javadoc:`GameStartedServerEvent` event is triggered.
-The server instance exists, and worlds are loaded.
-
-**SERVER_STOPPING**
-
-The :javadoc:`GameStoppingServerEvent` is triggered.
-This state occurs immediately before the final tick, before the worlds are saved.
-
-**SERVER_STOPPED**
-
-The :javadoc:`GameStoppedServerEvent` is triggered.
-During this state, no players are connected and no changes to worlds are saved.
-
-Stopping States
-===============
-
-Stopping states never occur more than once during a single run. They occur when the game stops normally. (On Servers:
-the ``/stop`` command is typed. On Clients: The "Close" button or the "Quit Game" button are clicked)
-
-.. warning::
-    Stopping states are not guaranteed to be run during shutdown. They may **not** fire if the game is force-stopped via
-    Ctrl-C, Task Manager, a computer crash, or similar situations.
-
-**GAME_STOPPING**
-
-The :javadoc:`GameStoppingEvent` is triggered.
-This state occurs immediately before ``GAME_STOPPED``. Plugins providing an API should still be capable of accepting
-basic requests.
-
-**GAME_STOPPED**
-
-The :javadoc:`GameStoppedEvent` is triggered.
-Once this event has finished executing, Minecraft will shut down. No further interaction with the game or other plugins
-should be attempted at this point.
+The :javadoc:`RefreshGameEvent` may be fired in response to a user requesting that all configuration be refreshed.
+Plugins should listen to this event and reload their configuration in response.

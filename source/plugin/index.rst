@@ -7,6 +7,11 @@ aspects of SpongeAPI and the concepts behind it. It is important to understand t
 to help developers get started with SpongeAPI, not to cover every concept. The
 `Javadocs <https://jd.spongepowered.org/>`__ will be of great help to you once you are comfortable with the API.
 
+.. note:: 
+
+    If you are familar with SpongeAPI 7 and need assistance migrating your plugin to SpongeAPI 8 or later, see
+    :doc:`migrating-from-7-to-8`.
+
 .. note::
 
     It is suggested to have prior experience with developing in Java! It is also highly recommended to take code
@@ -15,10 +20,9 @@ to help developers get started with SpongeAPI, not to cover every concept. The
 
 .. tip::
 
-    The `Cookbook <https://github.com/SpongePowered/Cookbook>`__ is a collection of fully functional plugins that each
-    demonstrate a specific part of the SpongeAPI. These plugin "recipes" are standalone and are compilable via Gradle
-    or Maven. Some of them demonstrate how to create plugins using other JVM languages such as Scala and Kotlin. Note
-    that some of the examples may not yet be updated for the latest API revisions!
+    The `Test Plugin Suite <https://github.com/SpongePowered/Sponge/tree/api-8/testplugins>`__ is a collection of 
+    fully functional plugins that each demonstrate a specific part of the SpongeAPI. These plugin "recipes" are 
+    standalone and are compilable via Gradle or Maven.
 
 Contents
 ========
@@ -28,6 +32,7 @@ Contents
     :titlesonly:
 
     api-versions
+    migrating-from-7-to-8
     buildsystem
     workspace/index
     project/index
@@ -42,7 +47,6 @@ Contents
     commands/index
     event/index
     configuration/index
-    assets
     data/index
     blocks/index
     entities/index

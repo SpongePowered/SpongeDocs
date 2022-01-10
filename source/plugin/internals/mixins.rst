@@ -2,6 +2,10 @@
 Plugin Mixins
 =============
 
+.. warning::
+    These docs were written for SpongeAPI 7 and are likely out of date. 
+    `If you feel like you can help update them, please submit a PR! <https://github.com/SpongePowered/SpongeDocs>`__
+
 `Mixins <https://github.com/SpongePowered/Mixin>`_ can be used to modify classes at runtime before they are loaded. You
 can use them in plugins if you want to optimize a part of the game specifically for your server - without having to fork
 Sponge. The modifications will be bundled directly with your plugin and are only active as long as the plugin is loaded.
@@ -82,7 +86,7 @@ production:
             repositories {
                 maven {
                     name = 'sponge'
-                    url = 'https://repo.spongepowered.org/maven'
+                    url = 'https://repo.spongepowered.org/repository/maven-public/'
                 }
             }
             dependencies {

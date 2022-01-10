@@ -2,8 +2,12 @@
 Serializing Data
 ================
 
+.. warning::
+    These docs were written for SpongeAPI 7 and are likely out of date. 
+    `If you feel like you can help update them, please submit a PR! <https://github.com/SpongePowered/SpongeDocs>`__
+
 .. javadoc-import::
-    ninja.leaping.configurate.ConfigurationNode
+    org.spongepowered.configurate.ConfigurationNode
     org.spongepowered.api.Game
     org.spongepowered.api.Sponge
     org.spongepowered.api.data.DataContainer
@@ -104,7 +108,7 @@ from persistent files using the :doc:`Configurate Library <../configuration/inde
 
 .. code-block:: java
 
-    import ninja.leaping.configurate.ConfigurationNode;
+    import org.spongepowered.configurate.ConfigurationNode;
     import org.spongepowered.api.data.persistence.DataTranslator;
     import org.spongepowered.api.data.persistence.DataTranslators;
 

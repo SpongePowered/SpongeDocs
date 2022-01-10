@@ -2,6 +2,10 @@
 Serializing Objects
 ===================
 
+.. warning::
+    These docs were written for SpongeAPI 7 and are likely out of date. 
+    `If you feel like you can help update them, please submit a PR! <https://github.com/SpongePowered/SpongeDocs>`__
+
 .. javadoc-import::
 
     java.util.List
@@ -11,15 +15,15 @@ Serializing Objects
     java.net.URL
     java.net.URI
     java.util.regex.Pattern
-    ninja.leaping.configurate.ConfigurationOptions
-    ninja.leaping.configurate.objectmapping.GuiceObjectMapperFactory
-    ninja.leaping.configurate.objectmapping.ObjectMapper
-    ninja.leaping.configurate.objectmapping.ObjectMapperFactory
-    ninja.leaping.configurate.objectmapping.Setting
-    ninja.leaping.configurate.objectmapping.serialize.ConfigSerializable
-    ninja.leaping.configurate.objectmapping.serialize.TypeSerializer
-    ninja.leaping.configurate.objectmapping.serialize.TypeSerializerCollection
-    org.spongepowered.api.text.format.TextFormat
+    net.kyori.adventure.text.Component
+    org.spongepowered.configurate.ConfigurationOptions
+    org.spongepowered.configurate.objectmapping.GuiceObjectMapperFactory
+    org.spongepowered.configurate.objectmapping.ObjectMapper
+    org.spongepowered.configurate.objectmapping.ObjectMapperFactory
+    org.spongepowered.configurate.objectmapping.Setting
+    org.spongepowered.configurate.objectmapping.serialize.ConfigSerializable
+    org.spongepowered.configurate.objectmapping.serialize.TypeSerializer
+    org.spongepowered.configurate.objectmapping.serialize.TypeSerializerCollection
     org.spongepowered.api.util.TypeTokens
 
 The Configurate library also provides the means to tweak automatic serialization and deserialization of objects.
@@ -29,9 +33,8 @@ Per default, a set of data types can be (de)serialized:
 * :javadoc:`List`\s and :javadoc:`Set`\s of serializable values (not including specific implementations)
 * :javadoc:`Map`\s where both keys and values are serializable (not including specific implementations)
 * The types :javadoc:`UUID`, :javadoc:`URL`, :javadoc:`URI` and :javadoc:`Pattern {(regex) Pattern}`
-* Any enum or :doc:`CatalogType </plugin/data/catalog-types>`
-* The types :doc:`Text </plugin/text/index>`, :javadoc:`TextFormat` and
-  :doc:`TextTemplate </plugin/text/templates>` (See also :doc:`here </plugin/text/representations/index>`)
+* Any enum or CatalogType (FIXME)
+* The text type :doc:`Component </plugin/text/index>` (See also :doc:`here </plugin/text/representations/index>`)
 
 .. note::
 
@@ -63,8 +66,8 @@ one to create an object from a given configuration node.
 .. code-block:: java
 
     import com.google.common.reflect.TypeToken;
-    import ninja.leaping.configurate.objectmapping.ObjectMappingException;
-    import ninja.leaping.configurate.objectmapping.serialize.TypeSerializer;
+    import org.spongepowered.configurate.objectmapping.ObjectMappingException;
+    import org.spongepowered.configurate.objectmapping.serialize.TypeSerializer;
 
     public class DiamondCounterSerializer implements TypeSerializer<DiamondCounter> {
 
@@ -97,7 +100,7 @@ when loading your config.
 
 .. code-block:: java
 
-    import ninja.leaping.configurate.objectmapping.serialize.TypeSerializers;
+    import org.spongepowered.configurate.objectmapping.serialize.TypeSerializers;
 
     TypeSerializers.getDefaultSerializers().registerType(TypeToken.of(DiamondCounter.class), new DiamondCounterSerializer());
 
@@ -106,10 +109,10 @@ when loading your config.
 
 .. code-block:: java
 
-    import ninja.leaping.configurate.ConfigurationNode;
-    import ninja.leaping.configurate.ConfigurationOptions;
-    import ninja.leaping.configurate.objectmapping.serialize.TypeSerializerCollection;
-    import ninja.leaping.configurate.objectmapping.serialize.TypeSerializers;
+    import org.spongepowered.configurate.ConfigurationNode;
+    import org.spongepowered.configurate.ConfigurationOptions;
+    import org.spongepowered.configurate.objectmapping.serialize.TypeSerializerCollection;
+    import org.spongepowered.configurate.objectmapping.serialize.TypeSerializers;
 
     TypeSerializerCollection serializers = TypeSerializers.getDefaultSerializers().newChild();
     serializers.registerType(TypeToken.of(DiamondCounter.class), new DiamondCounterSerializer());
@@ -137,8 +140,8 @@ class with the :javadoc:`ConfigSerializable` and :javadoc:`Setting` annotations.
 
 .. code-block:: java
 
-    import ninja.leaping.configurate.objectmapping.Setting;
-    import ninja.leaping.configurate.objectmapping.serialize.ConfigSerializable;
+    import org.spongepowered.configurate.objectmapping.Setting;
+    import org.spongepowered.configurate.objectmapping.serialize.ConfigSerializable;
 
     @ConfigSerializable
     public class DiamondCounter {
@@ -259,9 +262,9 @@ Your plugin can just acquire a ``GuiceObjectMapperFactory`` simply by dependency
     import org.spongepowered.api.event.game.state.GamePreInitializationEvent;
     import org.spongepowered.api.plugin.Plugin;
     import com.google.inject.Inject;
-    import ninja.leaping.configurate.commented.CommentedConfigurationNode;
-    import ninja.leaping.configurate.loader.ConfigurationLoader;
-    import ninja.leaping.configurate.objectmapping.GuiceObjectMapperFactory;
+    import org.spongepowered.configurate.commented.CommentedConfigurationNode;
+    import org.spongepowered.configurate.loader.ConfigurationLoader;
+    import org.spongepowered.configurate.objectmapping.GuiceObjectMapperFactory;
 
     @Plugin(name="IStoleThisFromZml", id="shamelesslystolen", version="0.8.15", description = "Stolen")
     public class StolenCodeExample {

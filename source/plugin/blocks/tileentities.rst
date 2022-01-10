@@ -2,6 +2,10 @@
 Tile Entities
 =============
 
+.. warning::
+    These docs were written for SpongeAPI 7 and are likely out of date. 
+    `If you feel like you can help update them, please submit a PR! <https://github.com/SpongePowered/SpongeDocs>`__
+
 .. javadoc-import::
     org.spongepowered.api.block.BlockType
     org.spongepowered.api.block.tileentity.Jukebox
@@ -69,12 +73,12 @@ line, the second attempts to set it and returns the boolean value indicating its
 
  .. code-block:: java
 
+    import net.kyori.adventure.text.Component;
     import org.spongepowered.api.data.manipulator.mutable.tileentity.SignData;
-    import org.spongepowered.api.text.Text;
 
     import java.util.Optional;
 
-    public Optional<Text> getFirstLine(TileEntity entity) {
+    public Optional<Component> getFirstLine(TileEntity entity) {
         Optional<SignData> data = entity.getOrCreate(SignData.class);
         if (data.isPresent()) {
             return Optional.of(data.get().lines().get(0));
@@ -82,7 +86,7 @@ line, the second attempts to set it and returns the boolean value indicating its
         return Optional.empty();
     }
 
-    public boolean setFirstLine(TileEntity entity, Text line) {
+    public boolean setFirstLine(TileEntity entity, Component line) {
         if (entity.supports(SignData.class)) {
             SignData sign = entity.getOrCreate(SignData.class).get();
             sign.set(sign.lines().set(0, line));

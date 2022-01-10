@@ -3,18 +3,10 @@ Main Plugin Class
 =================
 
 .. javadoc-import::
+    org.spongepowered.api.Server
     org.spongepowered.api.event.Listener
-    org.spongepowered.api.event.game.state.GameConstructionEvent
-    org.spongepowered.api.event.game.state.GamePreInitializationEvent
-    org.spongepowered.api.event.game.state.GameInitializationEvent
-    org.spongepowered.api.event.game.state.GamePostInitializationEvent
-    org.spongepowered.api.event.game.state.GameLoadCompleteEvent
-    org.spongepowered.api.event.game.state.GameAboutToStartServerEvent
-    org.spongepowered.api.event.game.state.GameStartingServerEvent
-    org.spongepowered.api.event.game.state.GameStartedServerEvent
-    org.spongepowered.api.event.game.state.GameStoppingServerEvent
-    org.spongepowered.api.event.game.state.GameStoppedServerEvent
-    org.spongepowered.api.plugin.Plugin
+    org.spongepowered.api.event.lifecycle.StartedEngineEvent
+    org.spongepowered.plugin.builtin.jvm.Plugin
 
 .. note::
 
@@ -43,9 +35,9 @@ usage is explained on :doc:`plugin-meta`.
 
     package io.github.username.project;
 
-    import org.spongepowered.api.plugin.Plugin;
+    import org.spongepowered.plugin.Plugin;
 
-    @Plugin(id = "exampleplugin", name = "Example Plugin", version = "1.0", description = "Example")
+    @Plugin(id = "exampleplugin")
     public class ExamplePlugin {
 
     }
@@ -57,34 +49,32 @@ usage is explained on :doc:`plugin-meta`.
 Initializing Your Plugin
 ========================
 
-Plugins are loaded before the game and the world(s). This leaves a specific timeframe when your plugin should begin
-interacting with the game, such as registering commands or events.
+Your plugin can listen for particular events, called **lifecycle events**, to be notified about changes in the state of 
+the game or be to prompted to peform a specific task, such as registering a command. In the example below, 
+``onServerStart(StartedEngineEvent<Server>)`` is called when the :javadoc:`StartedEngineEvent` occurs for the 
+:javadoc:`Server`. Note that the method is annotated with the :javadoc:`Listener` annotation.
 
-Your plugin can listen for particular events, called **state events**, to be notified about changes in the state of the
-game. In the example below, ``onServerStart()`` is called when the :javadoc:`GameStartedServerEvent` occurs; take note
-of the :javadoc:`Listener` annotation before the method.  
-
-The example below will log a message upon starting the server. If your plugin is correctly loaded,
-you should see this message as part of the server's initialization output.
+The example below will log a message upon starting the server. If your plugin is correctly loaded, you should see this 
+message as part of the server's initialization output.
 
 .. code-block:: java
 
-    import org.spongepowered.api.plugin.Plugin;
     import org.spongepowered.api.event.Listener;
-    import org.spongepowered.api.event.game.state.GameStartedServerEvent;
+    import org.spongepowered.api.event.lifecycle.StartedEngineEvent;
+    import org.spongepowered.plugin.builtin.jvm.Plugin;
 
     // Imports for logger
     import com.google.inject.Inject;
-    import org.slf4j.Logger;
+    import org.apache.logging.log4j.Logger;
 
-    @Plugin(id = "exampleplugin", name = "Example Plugin", version = "1.0", description = "Example")
+    @Plugin(id = "exampleplugin")
     public class ExamplePlugin {
 
         @Inject
         private Logger logger;
 
         @Listener
-        public void onServerStart(GameStartedServerEvent event) {
+        public void onServerStart(final StartedEngineEvent<Server> event) {
             logger.info("Successfully running ExamplePlugin!!!");
         }
 
@@ -94,27 +84,11 @@ you should see this message as part of the server's initialization output.
 
     The Sponge documentation provides a guide with more information on events (see :doc:`event/index`). Normally, in
     addition to prefixing event-handler methods with ``@Listener``, you must also register your object with Sponge's
-    event bus. However, your main plugin class is registered automatically.
+    event bus, which can be done at any time. However, your main plugin class is registered automatically.
 
-State Events
-~~~~~~~~~~~~
+Lifecycle Events
+~~~~~~~~~~~~~~~~
 
-It may also be desirable to listen for other state events, particularly the ``GameStoppingServerEvent``. There are two
-categories of state events:
-
-* **Initialization**: These events occur when Sponge and plugins are loading.
-
-  * :javadoc:`GameConstructionEvent`
-  * :javadoc:`GamePreInitializationEvent`
-  * :javadoc:`GameInitializationEvent`
-  * :javadoc:`GamePostInitializationEvent`
-  * :javadoc:`GameLoadCompleteEvent`
-* **Running**: These events occur when the game and world are loading.
-
-  * :javadoc:`GameAboutToStartServerEvent`
-  * :javadoc:`GameStartingServerEvent`
-  * :javadoc:`GameStartedServerEvent`
-  * :javadoc:`GameStoppingServerEvent`
-  * :javadoc:`GameStoppedServerEvent`
-
-For information regarding when each state event occurs, see the :doc:`plugin lifecycle documentation <lifecycle>`.
+It may also be desirable to listen for other lifecycle events in your plugin, such that you can react to re-registration
+requests or engine/game state changes. See the :doc:`plugin lifecycle documentation <lifecycle>` for more information on
+the lifecycle events available for plugins to listen to.

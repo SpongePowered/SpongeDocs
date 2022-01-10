@@ -2,10 +2,14 @@
 Placeholders
 ============
 
-.. javadoc-import::
-    org.spongepowered.api.text.Text
+.. warning::
+    These docs were written for SpongeAPI 7 and are likely out of date. 
+    `If you feel like you can help update them, please submit a PR! <https://github.com/SpongePowered/SpongeDocs>`__
 
-A common task for chat plugins is to provide and consume placeholders, tokens that map to :javadoc:`Text` based on 
+.. javadoc-import::
+    net.kyori.adventure.text.Component
+
+A common task for chat plugins is to provide and consume placeholders, tokens that map to :javadoc:`Component` based on 
 context. For example, a "name" placeholder may return a player's name, or a "balance" placeholder may return the value
 of a player's default account.
 

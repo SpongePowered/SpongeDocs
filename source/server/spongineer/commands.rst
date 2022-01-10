@@ -2,6 +2,10 @@
 Commands and Permissions
 ========================
 
+.. warning::
+    These docs were written for SpongeAPI 7 and are likely out of date. 
+    `If you feel like you can help update them, please submit a PR! <https://github.com/SpongePowered/SpongeDocs>`__
+
 Commands are one method in which server operators can administer their server, and in which players can interact with
 the server.
 
@@ -61,7 +65,7 @@ Command                 Description                                Permission
 /sponge which           Prints which plugin provided the command,  sponge.command.which
                         it's aliases and alternatives.
 /sponge:callback        Internally used for callback actions on
-                        ``Text``\s (such as pagination). Not
+                        ``Component``\s (such as pagination). Not
                         intended to be invoked by hand.
 /sponge:help            View information on commands used on the   sponge.command.help
                         server.

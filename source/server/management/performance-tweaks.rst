@@ -2,6 +2,10 @@
 Performance Tweaks
 ==================
 
+.. warning::
+    These docs were written for SpongeAPI 7 and are likely out of date. 
+    `If you feel like you can help update them, please submit a PR! <https://github.com/SpongePowered/SpongeDocs>`__
+
 Sponge provides several performance enhancing and tweaking options to help you run a lag-free server, even
 under heavy load.
 

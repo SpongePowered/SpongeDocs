@@ -2,6 +2,10 @@
 Serializing Custom Data
 =======================
 
+.. warning::
+    These docs were written for SpongeAPI 7 and are likely out of date. 
+    `If you feel like you can help update them, please submit a PR! <https://github.com/SpongePowered/SpongeDocs>`__
+
 .. javadoc-import::
     org.spongepowered.api.data.DataHolder
     org.spongepowered.api.data.DataQuery
@@ -116,8 +120,8 @@ the builder.
 
 .. code-block:: java
 
-    import org.spongepowered.api.data.persistence.DataContentUpdater
-    import org.spongepowered.api.text.Text
+    import net.kyori.adventure.text.Component;
+    import org.spongepowered.api.data.persistence.DataContentUpdater;
 
     public class NameUpdater implements DataContentUpdater {
 
@@ -136,7 +140,7 @@ the builder.
             String name = content.getString(DataQuery.of("Name")).get();
             
             // For example, version 2 uses a text for the name
-            return content.set(DataQuery.of("Name"), Text.of(name));
+            return content.set(DataQuery.of("Name"), Component.text(name));
         }
     }
 

@@ -4,6 +4,10 @@ Setting Up Gradle
 
 .. _using-spongegradle:
 
+.. warning::
+    These docs were written for SpongeAPI 7 and are likely out of date. 
+    `If you feel like you can help update them, please submit a PR! <https://github.com/SpongePowered/SpongeDocs>`__
+
 Using SpongeGradle
 ==================
 
@@ -24,7 +28,7 @@ you have chosen before.**
 
     plugins {
         id 'java'
-        id 'org.spongepowered.plugin' version '0.9.0'
+        id 'org.spongepowered.plugin' version '0.11.3'
     }
 
     // This may not be required, but has solved issues in the past
@@ -40,7 +44,7 @@ you have chosen before.**
     }
 
     dependencies {
-        compile 'org.spongepowered:spongeapi:7.2.0'
+        compile 'org.spongepowered:spongeapi:8.0.0'
     }
 
 These few lines handle most settings you would normally do manually:
@@ -116,12 +120,12 @@ dependency to your project:
         jcenter()
         maven {
             name = 'sponge-repo'
-            url = 'https://repo.spongepowered.org/maven'
+            url = 'https://repo.spongepowered.org/repository/maven-public/'
         }
     }
 
     dependencies {
-        compile 'org.spongepowered:spongeapi:7.2.0'
+        compile 'org.spongepowered:spongeapi:8.0.0'
     }
 
 .. _SpongeGradle: https://github.com/SpongePowered/SpongeGradle

@@ -2,10 +2,14 @@
 Configuring Plugins
 ===================
 
+.. warning::
+    These docs were written for SpongeAPI 7 and are likely out of date. 
+    `If you feel like you can help update them, please submit a PR! <https://github.com/SpongePowered/SpongeDocs>`__
+
 .. javadoc-import::
-    ninja.leaping.configurate.hocon.HoconConfigurationLoader
-    ninja.leaping.configurate.gson.GsonConfigurationLoader
-    ninja.leaping.configurate.yaml.YAMLConfigurationLoader
+    org.spongepowered.configurate.hocon.HoconConfigurationLoader
+    org.spongepowered.configurate.gson.GsonConfigurationLoader
+    org.spongepowered.configurate.yaml.YAMLConfigurationLoader
     org.spongepowered.api.config.ConfigDir
     org.spongepowered.api.config.DefaultConfig
 
@@ -90,8 +94,8 @@ specific directory or to ``true`` to get the shared configuration directory.
     import com.google.inject.Inject;
     import org.spongepowered.api.config.ConfigDir;
     import org.spongepowered.api.config.DefaultConfig;
-    import ninja.leaping.configurate.commented.CommentedConfigurationNode;
-    import ninja.leaping.configurate.loader.ConfigurationLoader;
+    import org.spongepowered.configurate.CommentedConfigurationNode;
+    import org.spongepowered.configurate.loader.ConfigurationLoader;
 
     @Inject
     @DefaultConfig(sharedRoot = true)

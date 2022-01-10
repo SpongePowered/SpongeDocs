@@ -2,6 +2,10 @@
 Custom Data
 ===========
 
+.. warning::
+    These docs were written for SpongeAPI 7 and are likely out of date. 
+    `If you feel like you can help update them, please submit a PR! <https://github.com/SpongePowered/SpongeDocs>`__
+
 Sponge has a powerful :doc:`data <../index>` system, that can do much more than just vanilla features. It's also 
 possible to create your own data objects, allowing you to :doc:`serialize <../serialization>` objects directly to 
 players, entities and more!
