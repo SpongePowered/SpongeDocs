@@ -7,10 +7,19 @@ This page explains which API versions exist, and to which Minecraft version thei
 +-------------+--------------+----------------+-------------------------------------------+
 | API-Version | Release Date | End of Support | Known Implementations (Minecraft Version) |
 +=============+==============+================+===========================================+
-| *8.0.0*     | TBA          | TBA            | * *SpongeForge*                           |
-|             |              |                | * *SpongeVanilla*                         |
+| *9.0.0*     | TBA          | TBA            | * SpongeForge (1.18.1 - expected)         |
+|             |              |                | * SpongeVanilla (1.18.1 - expected)       |
 +-------------+--------------+----------------+-------------------------------------------+
-| 7.2.0       | Mar 29, 2020 | TBA            | * SpongeForge (1.12.2)                    |
+| 8.0.0       | Jan 8, 2022  | TBA            | * SpongeForge (1.16.5)                    |
+|             |              |                | * SpongeVanilla (1.16.5)                  |
++-------------+--------------+----------------+-------------------------------------------+
+| 7.4.0       | Nov 28, 2020 | TBA            | * SpongeForge (1.12.2)                    |
+|             |              |                | * SpongeVanilla (1.12.2)                  |
++-------------+--------------+----------------+-------------------------------------------+
+| 7.3.0       | Aug 30, 2020 | Nov 28, 2020   | * SpongeForge (1.12.2)                    |
+|             |              |                | * SpongeVanilla (1.12.2)                  |
++-------------+--------------+----------------+-------------------------------------------+
+| 7.2.0       | Mar 29, 2020 | Aug 30, 2020   | * SpongeForge (1.12.2)                    |
 |             |              |                | * SpongeVanilla (1.12.2)                  |
 +-------------+--------------+----------------+-------------------------------------------+
 | 7.1.0       | Sep 6, 2018  | Mar 28, 2020   | * SpongeForge (1.12.2)                    |
@@ -49,6 +58,10 @@ Getting the Minecraft Version from Implementations
 
 Getting it from the Sources
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* For `SpongeAPI 8 or later <https://github.com/SpongePowered/Sponge>`__:
+  
+  Check the ``gradle.properties`` in the project root. It contains an entry with the ``minecraftVersion``.  
 
 * For `SpongeForge <https://github.com/SpongePowered/SpongeForge>`__ or
   `SpongeVanilla <https://github.com/SpongePowered/SpongeVanilla>`__:

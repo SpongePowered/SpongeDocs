@@ -2,218 +2,173 @@
 Dependency Injection
 ====================
 
+.. warning::
+
+    These docs were written for SpongeAPI 7 and are likely out of date. 
+    `If you feel like you can help update them, please submit a PR! <https://github.com/SpongePowered/SpongeDocs>`__
+
+
 .. javadoc-import::
+    java.nio.file.Path
     org.spongepowered.api.Game
-    org.spongepowered.api.GameRegistry
-    org.spongepowered.api.Server
-    org.spongepowered.api.asset.Asset
-    org.spongepowered.api.asset.AssetId
+    org.spongepowered.api.MinecraftVersion
+    org.spongepowered.api.Sponge
     org.spongepowered.api.config.ConfigDir
+    org.spongepowered.api.config.ConfigManager
     org.spongepowered.api.config.DefaultConfig
-    org.spongepowered.api.event.EventManager
-    org.spongepowered.api.network.ChannelBinding
-    org.spongepowered.api.network.ChannelId
-    org.spongepowered.api.plugin.Plugin
-    org.spongepowered.api.plugin.PluginContainer
+    org.spongepowered.api.data.DataManager
+    org.spongepowered.api.network.channel.ChannelManager
     org.spongepowered.api.plugin.PluginManager
-    org.spongepowered.api.scheduler.AsynchronousExecutor
-    org.spongepowered.api.scheduler.Scheduler
-    org.spongepowered.api.scheduler.SpongeExecutorService
-    org.spongepowered.api.scheduler.SynchronousExecutor
-    ninja.leaping.configurate.commented.CommentedConfigurationNode
-    ninja.leaping.configurate.loader.ConfigurationLoader
-    ninja.leaping.configurate.objectmapping.GuiceObjectMapperFactory
-
-Sponge uses dependency injection to provide instances of the API to plugins.
-Dependency injection allows plugins to designate a few API types that will be injected after construction.
-
-Temporary List of Injected Types
-================================
-
-:javadoc:`ConfigDir` (annotation on Path or File)
-  Used to inject the plugin's configuration directory:
-  ``./config/`` OR ``./config/<Plugin#id>/`` depending on :javadoc:`ConfigDir#sharedRoot()`
-
-:javadoc:`DefaultConfig` (annotation on Path, ConfigurationLoader or File)
-  Used to inject the plugin's specific configuration file: ``<Plugin#id>.conf``
-
-:javadoc:`AssetId` (annotation on Asset)
-  Used to inject a ``Asset`` from the asset folder of the plugin
-
-:javadoc:`AsynchronousExecutor` (annotation on SpongeExecutorService)
-  Used to inject the plugin's specific AsynchronousExecutor
-
-:javadoc:`SynchronousExecutor` (annotation on SpongeExecutorService)
-  Used to inject the plugin's specific SynchronousExecutor
-
-:javadoc:`ChannelId` (annotation on ChannelBinding.IndexedMessageChannel or ChannelBinding.RawDataChannel)
-  Used to inject a ``ChannelBinding`` with the given channel id
-
-:javadoc:`Asset`
-  Must be annotated with ``@AssetId``.
-
-:javadoc:`SpongeExecutorService`
-  Must be annotated with either ``@AsynchronousExecutor`` or ``@SynchronousExecutor``.
-  Depending on the annotation given this will contain a reference to the plugin's specific
-  Asynchronous or Synchronous Executor.
-
-:javadoc:`ConfigurationLoader<CommentedConfigurationNode>`
-  Must be annotated with ``@DefaultConfig``.
-  Used to inject a pre-generated ``ConfigurationLoader`` for the ``File`` of the same annotation.
-
-:javadoc:`EventManager`
-  Manages the registration of event handlers and the dispatching of events.
-
-File
-  Must be annotated with either ``@DefaultConfig`` or ``@ConfigDir``.
-  Depending on the annotation given this will contain a file reference to the plugins default config file or the
-  directory used for storing configuration files. However, Path (see below) should be preferred.
-
-:javadoc:`Game`
-  The ``Game`` object is the core accessor of SpongeAPI.
-
-:javadoc:`GameRegistry`
-  Provides an easy way to retrieve types from a ``Game``.
-
-:javadoc:`GuiceObjectMapperFactory`
-  A tool provided by Configurate to allow easier mapping of objects to configuration nodes.
-  See :doc:`configuration/serialization` for usage.
-
-Injector
-  ``com.google.inject.Injector`` is available from Guice, it is the injector that was used to inject your plugin's
-  dependencies. You can use it to create a child injector with your own module in order to inject your own classes
-  with either the Sponge provided dependencies listed on this page, or configure your own classes
-
-Logger
-  Used to identify the plugin from which logged messages are sent.
-
-Path
-  Must be annotated with either ``@DefaultConfig`` or ``@ConfigDir``.
-  Depending on the annotation given this will contain a path reference to the plugins default config file or the
-  directory used for storing configuration files.
-
-:javadoc:`PluginContainer`
-  A :javadoc:`Plugin` class wrapper, used to retrieve information from the annotation for easier use.
-
-:javadoc:`PluginManager`
-  Manages the plugins loaded by the implementation.
-  Can retrieve another plugin's ``PluginContainer``.
+    org.spongepowered.api.registry.BuilderProvider
+    org.spongepowered.api.registry.FactoryProvider
+    org.spongepowered.api.service.ServiceProvider
+    org.spongepowered.api.sql.SqlManager
+    org.spongepowered.api.util.metric.MetricsConfigManager
+    org.spongepowered.configurate.commented.CommentedConfigurationNode
+    org.spongepowered.configurate.loader.ConfigurationLoader
+    org.spongepowered.configurate.reference.ConfigurationReference
+    org.spongepowered.configurate.serialize.TypesSerializerCollection
+    org.spongepowered.plugin.PluginContainer
 
 
-Injection Examples
-==================
+When creating your plugin class, Sponge uses a technique called Dependency Injection to supply API objects to your
+plugin's main class. Some of these objects, such as loggers and configuration loaders, are specific to your plugin 
+and reduce the code you have to write to perform some of these tasks.
 
-There are a few references which are difficult to get - or, in some cases, impossible - without injection. While these
-may not be absolutely vital to every plugin, they're quite frequently used.
+.. warning::
 
-.. note::
+    Sponge only performs injection on your main plugin class. Using ``@Inject`` on other classes will not work unless
+    you inject an ``Injector`` into your main class and then use that to create other classes.
 
-    Remember that it's *almost always* best practice to inject your objects within the main class, as it's
-    instantiated with the Guice injector when the plugin is loaded.
 
-Logger
-~~~~~~
+Simple Injections
+=================
 
-.. tip::
+Fields or constructor parameters of the following types can be annotated with ``@com.google.inject.Inject`` to ask Sponge
+to provide simple objects.
 
-    View :doc:`logging` for a complete guide, specifically for the Logger.
+The following objects are the same, no matter which plugin requests the injection:
 
-Game
-~~~~
+- :javadoc:`Game`
+- :javadoc:`MinecraftVersion`
+- :javadoc:`ChannelManager`
+- :javadoc:`PluginManager`
+- :javadoc:`DataManager`
+- :javadoc:`ConfigManager`
+- :javadoc:`MetricsConfigManager`
+- :javadoc:`SqlManager`
+- :javadoc:`ServiceProvider`
+- :javadoc:`FactoryProvider`
+- :javadoc:`BuilderProvider`
 
-The ``Game`` object is the opening for many of the internal functions of SpongeAPI, from the ``EventManager`` to the
-:javadoc:`Server` and even the Sync/Async :javadoc:`Scheduler`.
+The following types return an appropriate instance for the plugin:
 
-While it is entirely possible to retrieve the ``Game`` object through ``Sponge.getGame()``, it is commonly obtained
-through an injection.
+- :javadoc:`PluginContainer` - returns the plugin container associated with the plugin it is being injected into
+- ``org.apache.logging.log4j.Logger`` - returns the logger associated with the plugin it is being injected into
 
-**Example - Field**
+Example: Injecting the Plugin Specific Logger and PluginContainer
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+We can signal to Sponge that you want to inject the logger in one of two ways, field or constructor injection. All simple
+injections work the same way in Sponge.
+
+For **field injection**, you must annotate non-final fields with the ``@Inject`` annotation, as in the example below:
 
 .. code-block:: java
 
     import com.google.inject.Inject;
-    import org.spongepowered.api.Game;
+    import org.apache.logging.log4j.Logger;
 
     @Inject
-    private Game game;
+    private Logger logger;
 
-**Example - Method**
+    @Inject
+    private PluginContainer pluginContainer;
+
+For **constructor injection**, you must create a constructor, annotate it with ``@Inject``, and add the objects you
+want injecting as parameters, as in the example below:
 
 .. code-block:: java
 
-    private Game game;
+    import com.google.inject.Inject;
+    import org.apache.logging.log4j.Logger;
+
+    // For the purpose of this example, "Banana" is the class name
+
+    private final Logger logger;
+    private final PluginContainer pluginContainer;
 
     @Inject
-    private void setGame(Game game) {
-        this.game = game;
+    public Banana(Logger logger, PluginContainer pluginContainer) {
+        this.logger = logger;
+        this.pluginContainer = pluginContainer;
     }
 
-**Example - Constructor**
+In both of these examples, the ``logger`` field will contain a Sponge provided logger and the ``pluginContainer`` field
+will contain the plugin's ``PluginContainer`` after the object is constructed.
 
-    *For the purpose of this tutorial, "Apple" is the class name.*
 
-.. code-block:: java
-
-    private Game game;
-
-    @Inject
-    public Apple(Game game) {
-        this.game = game;
-    }
-
-Config Directory
-~~~~~~~~~~~~~~~~
-
-The recommended way to obtain your config file is through Guice, along with the :javadoc:`ConfigDir` annotation.
+Configurate Injections
+======================
 
 .. tip::
 
-    If you set ``sharedRoot`` to ``true``, your ``ConfigDir`` will be the same directory which - potentially - houses
-    the configuration for other plugins. In most cases where grabbing the ``ConfigDir`` is required, this should be
-    ``false``.
+    View :doc:`configuration/index` for a guide to configuration, specifically using the ``@DefaultConfig`` annotation.
 
-**Example - Field**
 
-.. code-block:: java
+Sponge is also able to inject Configurate specific objects into your plugin class, set up with suggested locations for
+your plugin configuration. These injections require an additional annotation on your injected type, which will be
+either :javadoc:`ConfigDir` or  :javadoc:`DefaultConfig`, dependent on your use case.
 
-    import org.spongepowered.api.config.ConfigDir;
+The ``DefaultConfig`` Annotation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    import java.nio.file.Path;
+The :javadoc:`DefaultConfig` annotation is used to resolve a **file location**. ``DefaultConfig`` has a parameter
+``sharedRoot``, which alters the file that it points to (where ``<pluginid>`` is your plugin's ID):
 
-    @Inject
-    @ConfigDir(sharedRoot = false)
-    private Path configDir;
+- If ``sharedRoot`` is ``false``, the annotation will point to the file ``config/<pluginid>/<pluginid>.conf``.
+- If ``sharedRoot`` is ``true``, the annotation will point to the file ``config/<pluginid>.conf``.
 
-**Example - Method**
+The ``DefaultConfig`` annotation can be applied on the following types:
 
-.. code-block:: java
+- ``ConfigurationLoader<CommentedConfigurationNode>`` - provides a configuration loader that will load and save a HOCON
+  file from the resolved file location
+- ``ConfigurationReference<CommentedConfigurationNode>`` - provides a :javadoc:`ConfigurationReference` that will
+  load and save a HOCON file from the resolved file location
+- ``Path`` - stores the path to the file location, useful if you wish to use a different file format for your 
+  configuration (such as YAML).
 
-    private Path configDir;
+**Example Injection**
 
-    @Inject
-    private void setConfigDir(@ConfigDir(sharedRoot = false) Path configDir) {
-        this.configDir = configDir;
-    }
-
-**Example - Constructor**
-
-  *For the purposes of this tutorial, "Orange" is the class name.*
+The following example injects the HOCON configuration loader and the path it is pointing to via field injection.
 
 .. code-block:: java
 
-    private Path configDir;
+    import com.google.inject.Inject;
+    import org.spongepowered.api.config.DefaultConfig
+    import org.spongepowered.configurate.CommentedConfigurationNode;
+    import org.spongepowered.configurate.loader.ConfigurationLoader;
 
     @Inject
-    public Orange(@ConfigDir(sharedRoot = false) Path configDir) {
-        this.configDir = configDir;
-    }
+    @DefaultConfig(sharedRoot = false)
+    private ConfigurationLoader<CommentedConfigurationNode> loader;
 
-DefaultConfig
-~~~~~~~~~~~~~
+    @Inject
+    @DefaultConfig(sharedRoot = false)
+    private Path configFilePath;
 
-The way that ``@DefaultConfig`` works is very similar to ``@ConfigDir``. The biggest difference is that
-``@DefaultConfig`` refers to a specific file, whereas ``@ConfigDir`` refers to a directory.
+Most users will only require the provided ``loader``, which can then be interacted with in the normal way.
 
-.. tip::
+The ``ConfigDir`` annotation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    View :doc:`configuration/index` for a complete guide, specifically for ``@DefaultConfig``.
+The :javadoc:`ConfigDir` annotation is used to resolve a **folder**. The ``sharedRoot`` parameter works as follows
+(where ``<pluginid>`` is your plugin's ID):
+
+- If ``sharedRoot`` is ``false``, the annotation will point to the file ``config/<pluginid>/``.
+- If ``sharedRoot`` is ``true``, the annotation will point to the file ``config/``.
+
+The ``ConfigDir`` annotation can only be applied on the ``Path`` type to retrive this directory. It is generally most
+useful for plugins that require multiple configuration files, providing the directory to place them rather than a
+single file.
+

@@ -2,6 +2,10 @@
 Commands and Permissions
 ========================
 
+.. warning::
+    These docs were written for SpongeAPI 7 and are likely out of date. 
+    `If you feel like you can help update them, please submit a PR! <https://github.com/SpongePowered/SpongeDocs>`__
+
 Commands are one method in which server operators can administer their server, and in which players can interact with
 the server.
 

@@ -2,6 +2,10 @@
 Creating Placeholder Tokens
 ===========================
 
+.. warning::
+    These docs were written for SpongeAPI 7 and are likely out of date. 
+    `If you feel like you can help update them, please submit a PR! <https://github.com/SpongePowered/SpongeDocs>`__
+
 .. javadoc-import::
     net.kyori.adventure.text.Component
     org.spongepowered.api.CatalogType
@@ -18,7 +22,7 @@ Creating Placeholder Tokens
 
 At the heart of the Sponge Placeholder API is the ability to create your own tokens and have them accessible to all 
 plugins. To create your own placeholder, you must create an object that implements :javadoc:`PlaceholderParser` and
-register it in the Sponge Registry.
+then registered in the appropriate registry.
 
 Creating PlaceholderParsers
 ===========================
@@ -28,11 +32,6 @@ There are two ways you can create a ``PlaceholderParser``:
 * Using :javadoc:`PlaceholderParser#builder()`, supplying your :javadoc:`PluginContainer`, un-namespaced ID and 
   a function that takes a ``PlaceholderContext`` and returns a :javadoc:`Component`.
 * Directly implement the interface.
-
-.. note::
-  ``PlaceholderParsers`` are :doc:`Catalog Types<../data/catalog-types>`. If you implement the interface directly,
-  remember that the ID of the parser should be plugin namespaced, of the form  ``[pluginid]:[placeholderid]``. IDs 
-  must also be unique.
 
 :javadoc:`PlaceholderParser` objects take a :javadoc:`PlaceholderContext` object which contains the context of the
 request and returns a ``Component`` based on that context. Information that the ``PlaceholderContext`` may 

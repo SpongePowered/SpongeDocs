@@ -3,11 +3,12 @@ Event Causes
 ============
 
 .. javadoc-import::
+    org.spongepowered.api.Engine
     org.spongepowered.api.Sponge
     org.spongepowered.api.event.CauseStackManager
     org.spongepowered.api.event.Event
     org.spongepowered.api.event.block.ChangeBlockEvent
-    org.spongepowered.api.event.block.ChangeBlockEvent.Grow
+    org.spongepowered.api.event.block.ChangeBlockEvent.All
     org.spongepowered.api.event.cause.Cause
     org.spongepowered.api.event.cause.Cause.Builder
     org.spongepowered.api.event.cause.EventContext
@@ -15,8 +16,8 @@ Event Causes
     org.spongepowered.api.event.cause.EventContextKey
     org.spongepowered.api.event.cause.EventContextKeys
     org.spongepowered.api.event.entity.DamageEntityEvent
-    org.spongepowered.api.plugin.PluginContainer
     org.spongepowered.api.profile.GameProfile
+    org.spongepowered.plugin.PluginContainer
     java.lang.Class
     java.lang.Object
     java.util.Stack
@@ -32,7 +33,7 @@ creating a multitude of subevents for the different source conditions this infor
 ``Cause`` of the event.
 
 Every event provides a ``Cause`` object which can be interrogated for the information pertaining to why the event was
-fired. The Cause object can be retrieved from an event by simply calling :javadoc:`Event#getCause()`.
+fired. The Cause object can be retrieved from an event by simply calling :javadoc:`Event#cause()`.
 
 Cause and Context
 ~~~~~~~~~~~~~~~~~
@@ -77,7 +78,7 @@ subtype of the given class. For example, given a cause which contained a player 
 
     @Listener
     public void onEvent(ExampleCauseEvent event) {
-        Cause cause = event.getCause(); // [Player, Entity]
+        Cause cause = event.cause(); // [Player, Entity]
         Optional<Player> firstPlayer = cause.first(Player.class); // 1
         Optional<Entity> firstEntity = cause.first(Entity.class); // 2
     }
@@ -103,7 +104,7 @@ Event Context
 Sometimes the ordering of objects within the cause isn't enough to get the proper idea of what an object represents in
 relation to the event. This is where :javadoc:`EventContext` comes in. The event context allows objects to be
 associated with unique names, in the form of :javadoc:`EventContextKeys`, allowing them to be easily identified and
-requested. Some examples of use cases for named causes is the `Notifier` of a :javadoc:`ChangeBlockEvent.Grow` or the
+requested. Some examples of use cases for named causes is the `Notifier` of a :javadoc:`ChangeBlockEvent.All` or the
 ``Source`` of a :javadoc:`DamageEntityEvent`.
 
 Unlike the cause stack, which makes no guarantees as to the objects contained witin it, an object associated with a
@@ -114,8 +115,8 @@ Unlike the cause stack, which makes no guarantees as to the objects contained wi
 .. code-block:: java
 
     @Listener
-    public void onGrow(ChangeBlockEvent.Grow event) {
-        Optional<User> notifier = event.getCause().getContext().get(EventContextKeys.NOTIFIER);
+    public void onGrow(ChangeBlockEvent.All event) {
+        Optional<UUID> notifier = event.getCause().getContext().get(EventContextKeys.NOTIFIER);
     }
 
 This example makes use of :javadoc:`EventContext#get(EventContextKey)` which can be used to retrieve the expected object
@@ -147,14 +148,14 @@ Using the CauseStackManager
     different thread, an ``IllegalStateException`` will be thrown. Ensure you are on the main
     server thread **before** calling methods on the ``CauseStackManager``.
 
-If you are creating your event on the main thread, then use the :javadoc:`CauseStackManager`, which can
-be found at :javadoc:`Sponge#getCauseStackManager()`. The ``CauseStackManager`` tracks the potential
-causes of events as the game runs, allowing for easy retrieval of the current ``Cause`` without effort.
-To see the current cause, call :javadoc:`CauseStackManager#getCurrentCause()`. You may notice that your
-plugin's :javadoc:`PluginContainer` is already in the returned ``Cause``, as plugins are one of the
-objects tracked by the manager. Using the ``CauseStackManager`` for creating causes removes the
-need for boilerplate-like code where you supply objects like your plugin container, so that you can
-concentrate on adding your own causes.
+If you are creating your event on the main thread, then use the :javadoc:`CauseStackManager` from the
+appropriate :javadoc:`Engine`, which can be found at :javadoc:`Engine#causeStackManager()`. 
+The ``CauseStackManager`` tracks the potential causes of events as the game runs, allowing for easy 
+retrieval of the current ``Cause`` without effort. To see the current cause, call 
+:javadoc:`CauseStackManager#currentCause()`. You may notice that your plugin's :javadoc:`PluginContainer`
+is already in the returned ``Cause``, as plugins are one of the objects tracked by the manager. Using the 
+``CauseStackManager`` for creating causes removes the need for boilerplate-like code where you supply 
+objects like your plugin container, so that you can concentrate on adding your own causes.
 
 Before adding your own causes, you should push a cause stack frame to the manager. Adding a frame acts
 as a saved state, when you are done with your causes, the removal of the frame returns the manager to
@@ -164,10 +165,10 @@ its original state.
 
     Adding a frame to the CauseStackManager does not remove what is already in the manager, so anything
     that is in the cause stack and contexts before a stack frame is added will be there afterwards. You
-    can verify this by calling ``Sponge.getCauseStackManager().getCurrentCause()`` before and after the
+    can verify this by calling ``Sponge.server().causeStackManager().currentCause()`` before and after the
     frame is pushed.
 
-    For example, if the cause stack contains a ``PluginContainer`` and a ``CommandSource`` when a frame
+    For example, if the cause stack contains a ``PluginContainer`` and a ``ServerPlayer`` when a frame
     is pushed, they will remain on the stack and will form part of the ``Cause`` if one is obtained from
     the frame.
 
@@ -186,14 +187,14 @@ as the :javadoc:`EventContextKeys#PLAYER_SIMULATED` context, in addition to anyt
 
     CommandSource sourceRunningSudo = ...;
     Player playerToSimulate = ...;
-    try (CauseStackManager.StackFrame frame = Sponge.getCauseStackManager().pushCauseFrame()) {
+    try (CauseStackManager.StackFrame frame = Sponge.server().causeStackManager().pushCauseFrame()) {
 
       frame.pushCause(sourceRunningSudo);
       frame.pushCause(playerToSimulate);
 
       frame.addContext(EventContextKeys.PLAYER_SIMULATED, playerToSimulate.getProfile());
 
-      Cause cause = frame.getCurrentCause();
+      Cause cause = frame.currentCause();
     }
 
 Note that the last item you push to the cause stack will be the root of the ``Cause`` as
@@ -234,7 +235,7 @@ to the cause would be the root cause.
     PluginContainer plugin = ...;
 
     EventContext context = EventContext.builder()
-      .add(EventContextKeys.PLAYER_SIMULATED, playerToSimulate.getProfile())
+      .add(EventContextKeys.PLAYER_SIMULATED, playerToSimulate.profile())
       .add(EventContextKeys.PLUGIN, plugin)
       .build();
 

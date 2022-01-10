@@ -2,7 +2,7 @@
 Quick Start Guide
 =================
 
-This is a step by step reference on how to create a Minecraft server with Sponge.
+This is a step by step reference on how to create a Minecraft server with Sponge version 7 and above.
 
 .. note::
 
@@ -19,9 +19,31 @@ This is a step by step reference on how to create a Minecraft server with Sponge
 System Requirements
 ===================
 
-Sponge requires Java 8 update 20 or higher to run. Sponge **does not** work with Java 9 or above.
-We also recommend a CPU with a large single core speed and at least 2GB of RAM (higher if you
-plan to run with mods). We highly recommend using the 64bit Java runtime.
+The version of Java that you require depends on the version of Sponge (and therefore Minecraft) that you wish to run:
+
+.. list-table::
+    :widths: 15 15 15 55
+    :header-rows: 1
+
+    * - SpongeAPI version
+      - Minecraft version
+      - Minimum Java Version
+      - Notes
+    * - 7.x
+      - 1.12.2
+      - Java 8
+      - Requires at least update 20. Does not work with Java 9 or later.
+    * - 8.x
+      - 1.16.5
+      - Java 8
+      - Java 17 is recommended
+    * - 9.x (unreleased)
+      - 1.18
+      - Java 17
+      - Java 8 is not supported
+
+We also recommend a CPU with a large single core speed and at least 2GB of RAM (higher if you plan to run with mods).
+We highly recommend using the 64bit Java runtime.
 
 See :doc:`getting-started/jre` for more help with how to install Java 8.
 
@@ -53,7 +75,7 @@ SpongeForge
 
 SpongeForge is a mod for Minecraft Forge and therefore requires a Minecraft Forge server. Set up your
 Minecraft Forge server first. Once you have your server set up, you can get SpongeForge from our
-`downloads page <https://www.spongepowered.org/downloads/spongeforge/stable/1.12.2>`__ and place it in
+`downloads page <https://www.spongepowered.org/downloads/spongeforge>`__ and place it in
 the "mods" directory alongside any other mods you may wish to install. You can then start your Forge
 server and Sponge should be loaded.
 
@@ -79,7 +101,7 @@ therefore simpler to setup and update, making it a good option for those that si
 experience.
 
 You can get SpongeVanilla from our
-`downloads page <https://www.spongepowered.org/downloads/spongevanilla/stable/1.12.2>`__. Once downloaded,
+`downloads page <https://www.spongepowered.org/downloads/spongevanilla>`__. Once downloaded,
 ensure that you run SpongeVanilla using the command line, as Sponge disables the server console GUI to
 increase performance. SpongeVanilla will download the appropriate version of Minecraft and setup the server
 structure for you.
@@ -100,9 +122,13 @@ For more information about how to configure Sponge, see :doc:`getting-started/co
 Installing Plugins
 ==================
 
-By default, Sponge plugins are installed in the `mods` directory, the same directory as Forge mods. Simply
-add the plugins to this directory and start (or restart) your server. Your plugins should then be available,
-which you can verify by running the ``/sponge plugins`` command.
+The directory where plugins are installed depends on the version of Sponge that you are using.
+
+* For **SpongeAPI 7** and earlier, plugins go in the `/mods` directory.
+* For **SpongeAPI 8** and later, plugins go in the `/plugins` directory.
+
+Once you have added your plugins to the plugins directory, start (or restart) your server. Your plugins should then be 
+available, which you can verify by running the ``/sponge plugins`` command.
 
 .. note::
 

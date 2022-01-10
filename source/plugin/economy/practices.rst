@@ -39,11 +39,11 @@ This code illustrates what **not** to do:
     EventContext eventContext = EventContext.builder().add(EventContextKeys.PLUGIN, plugin).build();
     
     // BAD: Don't perform this check
-    if (account.getBalance(service.getDefaultCurrency()).compareTo(requiredAmount) < 0) {
+    if (account.getBalance(service.defaultCurrency()).compareTo(requiredAmount) < 0) {
         // You don't have enough money!
     } else {
         // The account has enough, let's withdraw some cash!
-        account.withdraw(service.getDefaultCurrency(), requiredAmount, Cause.of(eventContext, plugin));
+        account.withdraw(service.defaultCurrency(), requiredAmount, Cause.of(eventContext, plugin));
     }
 
 
@@ -69,9 +69,9 @@ Here's how you **should** withdraw money:
     
     TransactionResult result = account.withdraw(service.getDefaultCurrency(), requiredAmount,
                     Cause.of(eventContext, plugin));
-    if (result.getResult() == ResultType.SUCCESS) {
+    if (result.result() == ResultType.SUCCESS) {
         // Success!
-    } else if (result.getResult() == ResultType.FAILED || result.getResult() == ResultType.ACCOUNT_NO_FUNDS) {
+    } else if (result.result() == ResultType.FAILED || result.result() == ResultType.ACCOUNT_NO_FUNDS) {
         // Something went wrong!
     } else {
         // Handle other conditions

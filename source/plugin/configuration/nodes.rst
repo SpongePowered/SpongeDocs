@@ -2,14 +2,18 @@
 Configuration Nodes
 ===================
 
+.. warning::
+    These docs were written for SpongeAPI 7 and are likely out of date. 
+    `If you feel like you can help update them, please submit a PR! <https://github.com/SpongePowered/SpongeDocs>`__
+
 .. javadoc-import::
     com.google.common.reflect.TypeToken
-    ninja.leaping.configurate.ConfigurationNode
-    ninja.leaping.configurate.ConfigurationOptions
-    ninja.leaping.configurate.commented.CommentedConfigurationNode
-    ninja.leaping.configurate.loader.ConfigurationLoader
-    ninja.leaping.configurate.objectmapping.ObjectMappingException
-    ninja.leaping.configurate.objectmapping.serialize.TypeSerializer
+    org.spongepowered.configurate.ConfigurationNode
+    org.spongepowered.configurate.ConfigurationOptions
+    org.spongepowered.configurate.commented.CommentedConfigurationNode
+    org.spongepowered.configurate.loader.ConfigurationLoader
+    org.spongepowered.configurate.objectmapping.ObjectMappingException
+    org.spongepowered.configurate.objectmapping.serialize.TypeSerializer
     java.lang.Class
     java.lang.Object
     java.util.UUID
@@ -57,7 +61,7 @@ acquired as follows.
 
 .. code-block:: java
 
-    import ninja.leaping.configurate.ConfigurationNode;
+    import org.spongepowered.configurate.ConfigurationNode;
 
     ConfigurationNode rootNode = ...;
     ConfigurationNode targetNode = rootNode.getNode("modules", "blockCheats", "enabled");

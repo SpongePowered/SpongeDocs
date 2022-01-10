@@ -9,7 +9,7 @@ There are a few logging frameworks available for use in Java. Logging is prefera
 * Logged messages have a severity level which allows for simple filtering (e.g. disable all non-critical notices).
 * The available logger frameworks allow you to enable or disable messages from certain sources.
 
-Sponge uses ``org.slf4j.Logger``, not ``java.util.logging.Logger``.
+Sponge uses ``org.apache.logging.log4j.Logger``, not ``java.util.logging.Logger``.
 
 Getting a Logger
 ================
@@ -26,7 +26,7 @@ correct plugin ID.
 .. code-block:: java
 
     import com.google.inject.Inject;
-    import org.slf4j.Logger;
+    import org.apache.logging.log4j.Logger;
 
     @Inject
     private Logger logger;
@@ -48,7 +48,7 @@ correct plugin ID.
 
     // For the purpose of this example, "Banana" is the class name
 
-    private Logger logger;
+    private final Logger logger;
 
     @Inject
     public Banana(Logger logger) {
@@ -90,31 +90,3 @@ The String is the message you wish to emit. For example:
 
     getLogger().warn("This is a warning!");
 
-Manipulating the Logging
-========================
-
-.. note::
-
-    These techniques should only be used in very rare cases such as badly chosen logging defaults in libraries.
-    Add a config option to disable those if you use them.
-
-Some libraries use bad logging practices such as logging on too high a level. In these cases, you have three choices:
-
-1. Ask the author of that library to adjust their logging standards, as this fixes the problem at its source.
-2. Recommend your users to :doc:`configure the logging </server/spongineer/logs>` using a ``log4j2.xml`` config file.
-   Provide users with the recommended configuration additions.
-3. Configure the logging in your plugin yourself:
-
-   .. code-block:: java
-
-       ((org.apache.logging.log4j.core.Logger) LogManager.getLogger("FtpLoggingFilter")).setLevel(Level.WARN);
-
-   This configures the log level of the ``FtpLoggingFilter`` logger to ``WARN``. This will hide all messages that use a
-   lower log level such as ``INFO`` and ``DEBUG``.
-   
-   .. warning::
-   
-      This solution assumes that log4j2 is used as logging framework by the server, however that might not be the case
-      for all/future implementations of the SpongeAPI.
-
-If you have any questions regarding logging you can always ask us on IRC, Discord or the Forums.

@@ -95,11 +95,12 @@ gettext_compact = False
 # -- sphinx-JDLinker Configuration ----------------------------------------
 
 javadoc_links = {
-    "https://jd.spongepowered.org/%s/" % release: ["org.spongepowered.api"],
-    "https://configurate.aoeu.xyz/apidocs/": ["ninja.leaping.configurate"],
+    "https://jd.spongepowered.org/spongeapi/%s/" % release: ["org.spongepowered.api"],
+    "https://configurate.aoeu.xyz/apidocs/": ["org.spongepowered.configurate"],
+    "https://jd.spongepowered.org/plugin-spi/0.3.0/": ["org.spongepowered.plugin"],
     "https://docs.oracle.com/javase/8/docs/api/": ["java"],
-    "https://google.github.io/guava/releases/17.0/api/docs/": ["com.google.common"],
-    "https://jd.adventure.kyori.net/api/4.7.0/": ["net.kyori.adventure"],
+    "https://guava.dev/releases/21.0/api/docs/": ["com.google.common"],
+    "https://jd.adventure.kyori.net/api/4.9.3/": ["net.kyori.adventure"],
 }
 
 # -- sphinx-intersphinx Configuration -------------------------------------

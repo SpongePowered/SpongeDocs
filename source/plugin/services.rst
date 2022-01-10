@@ -3,107 +3,56 @@ Services
 ========
 
 .. javadoc-import::
+    java.util.function.Supplier
+    org.spongepowered.api.Game
+    org.spongepowered.api.Server
+    org.spongepowered.api.event.lifecycle.ProvideServiceEvent
+    org.spongepowered.api.service.ServiceProvider
+    org.spongepowered.api.service.ServiceProvider.GameScoped
+    org.spongepowered.api.service.ServiceProvider.ServerScoped
     org.spongepowered.api.service.permission.PermissionService
+    org.spongepowered.api.service.permission.Subject
 
-Pretty much everything (events, permissions, etc.) is handled through services. All services are accessed through the
-service manager:
 
-.. code-block:: java
+Services provide common server functionality that is intended to be provided by plugins so that plugins that wish to use
+this functionality do not need to depend on any third-party plugins. Some services, such as the 
+:javadoc:`PermissionService`, are tightly integrated into the API itself, providing the core functionality for some of
+the API (for example, the ``PermissionService`` supports various methods on the :javadoc:`Subject` interface).
 
-    import org.spongepowered.api.Sponge;
-
-    Sponge.getServiceManager().provide(EventManager.class);
-
-If you need to get an object reference to something, just get it off the service manager.
-
-Service Guidelines
-==================
-
-* Services should be registered during the ``POST_INITIALIZATION`` game state at the latest.
-* Services should be fully operational by the ``SERVER_ABOUT_TO_START`` game state.
-
-You can read more about game states on the :doc:`lifecycle` page.
+Services themselves can be :javadoc:`Server` scoped or :javadoc:`Game` scoped. Due to the potential for servers restarting
+multiple times within a game instance, server scoped services should at least change instance across restarts, and may 
+be provided by different plugins.
 
 .. note::
+    In previous versions of SpongeAPI, plugins could register their own arbitary services to arbitary interfaces. This
+    is no longer possible using the Sponge service provider in SpongeAPI 8 and later.
 
-    It is a good practice to register services as soon as possible so that other plugins can note that the service will
-    be provided.
+Obtaining a Service
+===================
 
-Providing your own service
-==========================
-Your plugin can provide the implementation for a core interface like :javadoc:`PermissionService`, or for a custom
-interface that is not part of SpongeAPI (e.g. economy, web server):
+Services can be retrieved from the :javadoc:`ServiceProvider` via the ``serviceProvider`` method on either 
+``Game`` or ``Server``. Inspect :javadoc:`ServiceProvider.GameScoped` and 
+:javadoc:`ServiceProvider.ServerScoped` for details of what services are provided in these scopes.
 
-.. code-block:: java
+Providing a Service
+===================
 
-    Sponge.getServiceManager().setProvider(Object plugin, Class<T> service, T provider);
-
-The ``provider`` object has to implement the ``service`` interface or class.
-
-Designing the API this way makes Sponge extremely modular.
-
-.. note::
-
-    Plugins should provide options to not install their providers if the plugin is not dedicated to a single function.
-
-Example: Providing a simple warp service
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The first step is optional, but recommended. You specify the public methods of your service class in an interface:
+Service implementations are provided during the generic :javadoc:`ProvideServiceEvent`. For example, to supply a
+``PermissionService``, you would listen to the event like so (swapping out the "new" call for your service
+construction code):
 
 .. code-block:: java
 
-    import org.spongepowered.api.world.Location;
-    import org.spongepowered.api.world.World;
-    import java.util.Optional;
+    import org.spongepowered.api.event.Listener
+    import org.spongepowered.api.service.ServiceProvider.ServerScoped
+    import org.spongepowered.api.service.permission.PermissionService
 
-    public interface WarpService {
-        void setWarp(String name, Location<World> location);
-        Optional<Location<World>> getWarp(String name);
+    @Listener
+    public void providePermissionService(final ProvideServiceEvent.ServerScoped<PermissionService> event) {
+        event.suggest(() -> new ConcretePermissionService());
     }
 
-Now you can write the class that implements your interface:
-
-.. code-block:: java
-
-    import java.util.HashMap;
-
-    public class SimpleWarpService implements WarpService {
-        HashMap<String, Location<World>> warpMap = new HashMap<String, Location<World>>();
-
-        @Override
-        public Optional<Location<World>> getWarp(String name) {
-            if(!warpMap.containsKey(name)) {
-                return Optional.empty();
-            } else {
-                return Optional.of(warpMap.get(name));
-            }
-        }
-
-        @Override
-        public void setWarp(String name, Location<World> location) {
-            warpMap.put(name, location);
-        }
-    }
-
-Now we can register a new instance of the class in the service manager. We are using the interface
-``WarpService.class`` as the ``service`` key.
-
-This makes it possible for other plugin developers to write their own implementation of your service (that implements
-the interface) and replace your version.
-
-.. code-block:: java
-
-    PluginContainer plugin = ...;
-
-    Sponge.getServiceManager().setProvider(plugin, WarpService.class, new SimpleWarpService());
-
-Other plugins can now access your service through the service manager:
-
-.. code-block:: java
-
-    Sponge.getServiceManager().provide(WarpService.class);
-
-.. tip::
-    If you don't want to use interfaces,
-    just replace the ``service`` key with your class (``SimpleWarpService.class`` in the example).
+It is important to note that it is possible that your listener will never get called. It is left up to the 
+API implementation to decide which plugin to pick to provide a given service. With this in mind, it is highly
+recommended that you do not construct your service implementation yourself, instead doing so within the 
+:javadoc:`Supplier` supplied to the ``suggest`` method.
