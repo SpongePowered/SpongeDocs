@@ -4,10 +4,6 @@ Setting Up Gradle
 
 .. _using-spongegradle:
 
-.. warning::
-    These docs were written for SpongeAPI 7 and are likely out of date. 
-    `If you feel like you can help update them, please submit a PR! <https://github.com/SpongePowered/SpongeDocs>`__
-
 Using SpongeGradle
 ==================
 
@@ -27,24 +23,44 @@ you have chosen before.**
 .. code-block:: groovy
 
     plugins {
-        id 'java'
-        id 'org.spongepowered.plugin' version '0.11.3'
+        `java-library`
+        id("org.spongepowered.gradle.plugin") version "2.0.0"
     }
-
-    // This may not be required, but has solved issues in the past
-    compileJava.options.encoding = 'UTF-8'
 
     // TODO: Change the following to match your information
     group = 'com.example'
     version = '1.0.0-SNAPSHOT'
-    description = 'Here lies an example plugin definition'
 
     repositories {
-        jcenter()
+        mavenCentral()
     }
 
-    dependencies {
-        compile 'org.spongepowered:spongeapi:8.0.0'
+    sponge {
+        apiVersion("8.0.0-SNAPSHOT")
+        license("CHANGEME")
+        loader {
+            name(PluginLoaders.JAVA_PLAIN)
+            version("1.0")
+        }
+        plugin("example") {
+            description("Just testing things...")
+            entrypoint("org.spongepowered.example.Example")
+        }
+    }
+
+    val javaTarget = 8 // Sponge targets a minimum of Java 8
+    java {
+        sourceCompatibility = JavaVersion.toVersion(javaTarget)
+        targetCompatibility = JavaVersion.toVersion(javaTarget)
+    }
+
+    tasks.withType(JavaCompile::class).configureEach {
+        options.apply {
+            encoding = "utf-8" // Consistent source file encoding
+            if (JavaVersion.current().isJava10Compatible) {
+                release.set(javaTarget)
+            }
+        }
     }
 
 These few lines handle most settings you would normally do manually:
@@ -52,24 +68,8 @@ These few lines handle most settings you would normally do manually:
 * Basic Gradle Java setup
 * Set your project to compile with Java 8
 * Add Sponge's Maven repository (and Maven Central)
-* Set up a plugin with the project name in lower case as **plugin ID**
 * Automatically includes the project name, description and :doc:`version <../project/version-numbers>` in
   :doc:`/plugin/plugin-meta`.
-
-Manually setting the plugin ID
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-By default, the Gradle plugin will configure your **plugin ID** with project name (in lowercase) you have configured.
-If you want to use a custom **plugin ID** and still use the :doc:`/plugin/plugin-meta` integration you can change it
-manually:
-
-.. code-block:: groovy
-
-    sponge {
-        plugin {
-            id = 'pluginidgoeshere'
-        }
-    }
 
 Overriding defaults
 ~~~~~~~~~~~~~~~~~~~
@@ -81,25 +81,27 @@ you want to specify them manually:
 .. code-block:: groovy
 
     sponge {
-        plugin {
-            meta {
-                name = 'Example Plugin'
-                version = '1.0.0-SNAPSHOT'
-                description = 'This is an example plugin'
-                url = 'http://www.example.com/'
-            }
+        apiVersion("8.0.0-SNAPSHOT")
+        license("CHANGEME")
+        loader {
+            name(PluginLoaders.JAVA_PLAIN)
+            version("1.0")
         }
-    }
-
-You can also remove a default value entirely:
-
-.. code-block:: groovy
-
-    sponge {
-        plugin {
-            meta {
-                name = null
-                description = null
+        plugin("example") {
+            displayName("Example")
+            entrypoint("org.spongepowered.example.Example")
+            description("Just testing things...")
+            links {
+                homepage("https://spongepowered.org")
+                source("https://spongepowered.org/source")
+                issues("https://spongepowered.org/issues")
+            }
+            contributor("Spongie") {
+                description("Lead Developer")
+            }
+            dependency("spongeapi") {
+                loadOrder(PluginDependency.LoadOrder.AFTER)
+                optional(false)
             }
         }
     }
@@ -117,7 +119,7 @@ dependency to your project:
 .. code-block:: groovy
 
     repositories {
-        jcenter()
+        mavenCentral()
         maven {
             name = 'sponge-repo'
             url = 'https://repo.spongepowered.org/repository/maven-public/'
