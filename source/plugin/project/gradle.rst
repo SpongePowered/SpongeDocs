@@ -23,7 +23,7 @@ you have chosen before.**
 .. code-block:: groovy
 
     plugins {
-        `java-library`
+        'java-library'
         id("org.spongepowered.gradle.plugin") version "2.0.0"
     }
 
