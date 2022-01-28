@@ -64,7 +64,8 @@ The following objects are the same, no matter which plugin requests the injectio
 The following types return an appropriate instance for the plugin:
 
 - :javadoc:`PluginContainer` - returns the plugin container associated with the plugin it is being injected into
-- ``org.apache.logging.log4j.Logger`` - returns the logger associated with the plugin it is being injected into
+- ``org.apache.logging.log4j.Logger`` - returns the preferred logger associated with the plugin it is being injected into
+- ``System.Logger`` - returns an alternate logger using the JDK facade, supported for integration with libraries which use it
 
 Example: Injecting the Plugin Specific Logger and PluginContainer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

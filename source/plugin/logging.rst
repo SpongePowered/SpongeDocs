@@ -11,6 +11,10 @@ There are a few logging frameworks available for use in Java. Logging is prefera
 
 Sponge uses ``org.apache.logging.log4j.Logger``, not ``java.util.logging.Logger``.
 
+Additionally, Sponge supports injection of a ``java.lang.System$Logger`` for better integration with libraries which use that framework. 
+While this abstraction is built into the JDK, it is also significantly more limited in functionality compared to the recommended 
+Log4J logger. As such, it is only useful for code that may run both within a Sponge environment, as well as on its own.
+
 Getting a Logger
 ================
 
