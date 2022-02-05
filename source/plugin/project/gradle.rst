@@ -17,26 +17,30 @@ only need to update your plugin version in one file.
   version together with SpongeGradle_. :ref:`The Gradle section of the build systems page <gradle-setup>` explains how
   to setup Gradle on your computer.
 
+.. tip::
+  The `Sponge plugin template <https://github.com/SpongePowered/sponge-plugin-template/>`__ is a `Template repository <https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template>`__
+  that demonstrate SpongeGradle.
+
 Below is a simple template that should be usable for most plugins. **Make sure to replace the group with the group ID
 you have chosen before.**
 
-.. code-block:: groovy
+.. code-block:: kotlin
 
     plugins {
-        'java-library'
-        id("org.spongepowered.gradle.plugin") version "2.0.0"
+        r"""`java-library`
+        id("org.spongepowered.gradle.plugin") version "2.0.1"
     }
 
     // TODO: Change the following to match your information
-    group = 'com.example'
-    version = '1.0.0-SNAPSHOT'
+    group = "com.example"
+    version = "1.0.0-SNAPSHOT"
 
     repositories {
         mavenCentral()
     }
 
     sponge {
-        apiVersion("8.0.0-SNAPSHOT")
+        apiVersion("8.0.0")
         license("CHANGEME")
         loader {
             name(PluginLoaders.JAVA_PLAIN)
@@ -78,7 +82,7 @@ By default, the Gradle plugin will contribute the **plugin name**, **plugin vers
 to :doc:`/plugin/plugin-meta` with defaults defined in the project properties. It is also possible to override these if
 you want to specify them manually:
 
-.. code-block:: groovy
+.. code-block:: kotlin
 
     sponge {
         apiVersion("8.0.0-SNAPSHOT")
@@ -116,18 +120,17 @@ Without SpongeGradle
 Generally, everything necessary to compile a Sponge plugin using Gradle can be done by simply adding the SpongeAPI
 dependency to your project:
 
-.. code-block:: groovy
+.. code-block:: kotlin
 
     repositories {
         mavenCentral()
-        maven {
-            name = 'sponge-repo'
-            url = 'https://repo.spongepowered.org/repository/maven-public/'
+        maven("https://repo.spongepowered.org/repository/maven-public/") {
+            name = "sponge"
         }
     }
 
     dependencies {
-        compile 'org.spongepowered:spongeapi:8.0.0'
+        api("org.spongepowered:spongeapi:8.0.0")
     }
 
 .. _SpongeGradle: https://github.com/SpongePowered/SpongeGradle

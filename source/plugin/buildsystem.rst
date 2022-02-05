@@ -21,7 +21,8 @@ for the Sponge projects and provides the best integration for Sponge plugins.
 Gradle
 ======
 Gradle_ uses Groovy_ or Kotlin_ based scripts for configuring projects. A Gradle_ project typically consists of a
-``build.gradle`` file in your project's root directory, which tells Gradle_ how to build the project.
+``build.gradle`` or a ``build.gradle.kts`` file in your project's root directory, which tells Gradle_ how to build
+the project.
 
 .. tip::
     Refer to the `Gradle User Guide`_ for the installation and a general introduction of concepts used in Gradle_. If
