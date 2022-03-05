@@ -11,7 +11,7 @@ ViewableInventory can be used in menus to allow low level callbacks on the open 
 You can swap out the ViewableInventory of an open menu.
 If the ViewableInventory has the same ContainerType this can even happen without closing it on the client side.
 
-Registering `InventoryCallbackHandler`s provides low level callbacks for actions with the container.
+Registering `InventoryCallbackHandler` s provides low level callbacks for actions with the container.
 
 Setting the container title.
 Setting readonly mode.
