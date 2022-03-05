@@ -1,8 +1,8 @@
 .. _inventory-menu:
 
-========
+==============
 Inventory Menu
-========
+==============
 
 InventoryMenu is Helper and wrapper around ViewableInventories/Containers.
 

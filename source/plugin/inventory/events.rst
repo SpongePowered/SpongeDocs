@@ -1,9 +1,9 @@
 .. _inventory-events:
 
 
-====
+================
 Inventory Events
-====
+================
 
 Inventory events have a bunch of sub-events for specific actions that happen but they usually fall in those 3 base categories:
 
@@ -22,18 +22,18 @@ Dropping a single item from the cursor with right-click outside the menu will ca
 Filling in a recipe using the recipe-book will cause a bunch of slot-transactions. Event: `ClickContainerEvent.Recipe.Single`
 Scrolling through the hotbar has no cursor or slot-transactions. Event: ChangeInventoryEvent.Held
 
-==
+===============
 Crafting Events
-==
+===============
 
 Crafting events fire in addition to the normal click events to allow plugins to change or cancel the recipe result.
 
 `CraftItemEvent.Preview` fires after completing a recipe. Canceling it removes the result from the crafting output slot.
 `CraftItemEvent.Craft` fires taking an item out of the crafting slot in any way.
 
-==
+=================
 Enchanting Events
-==
+=================
 
 Enchanting an item happens in three steps:
 `EnchantItemEvent.CalculateLevelRequirement`

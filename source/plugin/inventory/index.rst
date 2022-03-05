@@ -1,6 +1,6 @@
-=====
+=========
 Inventory
-=====
+=========
 
 Inventories hold items.
 This section show how to interact with inventories

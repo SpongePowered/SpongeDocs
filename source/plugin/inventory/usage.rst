@@ -1,6 +1,6 @@
-=========
+=====================
 Basic Inventory Usage
-=========
+=====================
 
 .. javadoc-import::
     org.spongepowered.api.item.inventory.Inventory
@@ -10,7 +10,7 @@ Basic Inventory Usage
 :javadoc:`Inventory` is the base interface for inventories. Sub-Interfaces may provide specialised methods for peek/offer/poll/set/query.
 
 Slots
-=========
+=====
 
 A :javadoc:`Slot` is a special inventory with a capacity of one.
 Slots are accessible by index but some inventories may allow accessing them in different ways too.
@@ -25,7 +25,7 @@ Slots are accessible by index but some inventories may allow accessing them in d
     int capacity = inventory.capacity();
 
 Get items | peek
-============
+================
 .. code-block:: java
 
      // Returns the first non-empty ItemStack following the order of `slots()`
@@ -46,7 +46,7 @@ Get items | peek
 
 
 Adding items | offer
-============
+====================
 
 To add items to an inventory use the offer methods:
 
@@ -73,7 +73,7 @@ To add items to an inventory use the offer methods:
     combined.revertOnFailure();
 
 Removing items | poll
-============
+=====================
 
 To remove items from an inventory use the polling methods:
 
@@ -100,7 +100,7 @@ To remove items from an inventory use the polling methods:
 Note that you can combine `InventoryTransactionResult` and if needed `revert()` or `revertOnFailure()` all of them in one go.
 
 Setting items | set
-=============
+===================
 
 .. code-block:: java
 
@@ -116,7 +116,7 @@ Setting items | set
 
 
 Querying Inventories | query
-==========
+============================
 
 An inventory may have more than just indexed access.
 
@@ -143,7 +143,7 @@ If applicable some inventory interfaces also provide more specific peek/offer/po
     }
 
 Opening Inventories
-============
+===================
 
 ViewableInventory are a subset of inventories that can be opened by a player.
 If possible Sponge tracks players currently viewing this inventory.

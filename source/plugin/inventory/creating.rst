@@ -1,10 +1,10 @@
-=========
+==================
 Inventory Creation
-=========
+==================
 
 
 Building free form inventories
-======
+==============================
 
 You can build inventories by either joining two inventories together using `union(inventory)`
 or building a new inventory from scratch or based on other inventories:
@@ -39,7 +39,7 @@ or building a new inventory from scratch or based on other inventories:
     }
 
 Building viewable inventories
-=========
+=============================
 
 To build a viewable inventory you need to follow the strict structure of a `ContainerType`.
 Completing the structure on en empty structure will attempt to replicate the vanilla inventory.
