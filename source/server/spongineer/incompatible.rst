@@ -25,6 +25,23 @@ to rename the SpongeForge file, to make it first in the mod loading order. This 
 SpongeForge jar file name with ``aaa_``, giving a filename like ``aaa_spongeforge-1.12.2-2838-7.2.1-RC4011``. This makes it
 load the Sponge version of Mixin first, and can resolve many problems in one step.
 
+Log4J error
+~~~~~~~~~~~
+
+Though this is not strictly a mod error, it is often confused with being one. You may see the following line in your 
+crash log:
+
+.. code-block:: none
+
+    java.lang.NoSuchMethodError: org.apache.logging.log4j.spi.LoggerContextFactory.isClassLoaderDependent()Z
+
+If you do, **update to Forge 2860**. It is vitally important that you do so as Forge 2860 patches a severe vulnerability
+that was discovered in Log4J, a component that Minecraft uses, and can expose your clients as well as your server to 
+remote code execution vulnerabiltiies.
+
+If you update Forge by installing locally and copying Forge to a remote server, make sure you also copy the ``libraries`` 
+directory across, as this will contain a patched version of Log4J.
+
 FarSeek
 ~~~~~~~
 - Dependents: Streams mod
