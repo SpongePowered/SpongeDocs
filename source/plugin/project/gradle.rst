@@ -130,7 +130,7 @@ dependency to your project:
     }
 
     dependencies {
-        api("org.spongepowered:spongeapi:8.0.0")
+        compileOnlyApi("org.spongepowered:spongeapi:8.0.0")
     }
 
 .. _SpongeGradle: https://github.com/SpongePowered/SpongeGradle
