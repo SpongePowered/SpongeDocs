@@ -56,23 +56,23 @@ Player Information Forwarding or IP Forwarding to enable Sponge to treat the ser
 Player Information Forwarding (also known as IP Forwarding)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Server proxy sofware typically comes with a mode known as either "Player Information Forwarding" or "IP Forwarding",
+Server proxy software typically comes with a mode known as either "Player Information Forwarding" or "IP Forwarding",
 which allows the proxy server software to pass the player's UUID and IP address to any connected server, enabling
 servers to act as if they are in online mode. We strongly recommend that these options are enabled, and they must be
 enabled on both your proxy and in Sponge.
 
 To enable player information forwarding on the proxy, consult your proxy software documentation for how to enable this
 option. It may be named "IP forwarding" on BungeeCord and its forks. If you are using SpongeForge, you may also need to
-enable forge support on the proxy. If you are using Velocity, ensure that you are using the ``LEGACY`` player
-information forwarding option.
+enable forge support on the proxy.
 
-To enable player information forwarding on Sponge, you must set the following two options in Sponge's config
-(``config/sponge/global.conf``) to ``true``:
+To enable player information forwarding on Sponge, you must set the following option in Sponge's config
+(``config/sponge/sponge.conf``) to ``true``:
 
-* ``modules.bungeecord``
-* ``bungeecord.ip-forwarding``
+* ``modules.ip-forwarding``
 
-While these options are named after BungeeCord, they will work for any proxy that uses the same protocol.
+Additionally, you must configure the forwarding mode in the ``ip-forwarding`` category.
+Choose ``LEGACY`` for BungeeCord or ``MODERN`` for Velocity.
+If you choose ``MODERN`` you need to set the ``secret`` used on the proxy.
 
 Once set, you **must** restart your server. You must ensure these options are enabled for **all** Sponge servers on 
 your network. Equivalent options must also be set on other servers that will be accessed by the proxy.
