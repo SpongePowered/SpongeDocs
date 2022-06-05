@@ -17,7 +17,7 @@ You can read more about our licensing situation on the [documentation itself](ht
 
 ## Translations
 
-We're eagerly looking for translators! Please visit the [CrowdIn translation page](https://crowdin.com/project/sponge-docs), sign up, join the team, and start translating.
+We're eagerly looking for translators! Please visit the [Crowdin translation page](https://translate.spongepowered.org), sign up, join the team, and start translating.
 
 ## Local Environment
 
