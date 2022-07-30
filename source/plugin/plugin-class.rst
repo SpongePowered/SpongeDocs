@@ -35,7 +35,7 @@ usage is explained on :doc:`plugin-meta`.
 
     package io.github.username.project;
 
-    import org.spongepowered.plugin.Plugin;
+    import org.spongepowered.plugin.builtin.jvm.Plugin;
 
     @Plugin("exampleplugin")
     public class ExamplePlugin {
