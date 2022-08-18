@@ -51,6 +51,7 @@ Contents
     blocks/index
     entities/index
     items/index
+    inventory/index
     trade-offers
     effects
     scheduler
