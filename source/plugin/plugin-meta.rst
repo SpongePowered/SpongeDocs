@@ -3,8 +3,8 @@ Plugin Metadata
 ===============
 
 .. note::
-    The metadata described here is for plugins for SpongeAPI 8 or later. Plugins for version 7 or later should define
-    their metadata in the ``@Plugin`` annotation
+    The metadata described here is for plugins for SpongeAPI 8 or later. Plugins for version 7 should define their
+    metadata in the ``@Plugin`` annotation
 
 .. _Ore: https://github.com/SpongePowered/Ore
 
