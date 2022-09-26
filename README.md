@@ -7,7 +7,7 @@ The latest version may be viewed in full by visiting [Sponge Docs](https://docs.
 
 ## Contributing
 
-Instructions and Guidelines on how to contribute can be found on [the Docs themselves](https://docs.spongepowered.org/en/contributing/spongedocs.html).
+Instructions and Guidelines on how to contribute can be found on [the Docs themselves](https://docs.spongepowered.org/stable/en/contributing/spongedocs.html).
 
 ## Licensing
 
