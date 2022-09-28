@@ -3,5 +3,8 @@
   "extends": [
     "local>SpongePowered/.github:renovate-config"
   ],
+  "labels": [
+    "dependencies"
+  ],
   "ignorePaths": ["tools/**"]
 }
