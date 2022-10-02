@@ -2,6 +2,7 @@
   "name": "SpongeDocs",
   "version": "0.0.2",
   "private": true,
+  "type": "module",
   "devDependencies": {
     "browser-sync": "2.27.7",
     "del": "7.0.0",
