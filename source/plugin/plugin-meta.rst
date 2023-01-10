@@ -3,8 +3,8 @@ Plugin Metadata
 ===============
 
 .. note::
-    The metadata described here is for plugins for SpongeAPI 8 or later. Plugins for version 7 or later should define
-    their metadata in the ``@Plugin`` annotation
+    The metadata described here is for plugins for SpongeAPI 8 or later. Plugins for version 7 should define their
+    metadata in the ``@Plugin`` annotation
 
 .. _Ore: https://github.com/SpongePowered/Ore
 
@@ -165,8 +165,11 @@ can be overridden on a per plugin basis.
 |              |               |               | ``version``: The version, or a maven version range, that  |
 |              |               |               | represents the versions this plugin depends on. Required. |
 |              |               |               |                                                           |
-|              |               |               | ``loadOrder``: "before" or "after", whether this plugin   |
+|              |               |               | ``load-order``: "before" or "after", whether this plugin  |
 |              |               |               | must load before or after the specified the plugin.       |
 |              |               |               | Optional - if not defined, the loader will try to load    |
 |              |               |               | the plugin at an implementation defined point.            |
+|              |               |               |                                                           |
+|              |               |               | ``optional``: true or false, whether the dependency must  |
+|              |               |               | be present for the plugin to function                     |
 +--------------+---------------+---------------+-----------------------------------------------------------+
