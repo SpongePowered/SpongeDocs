@@ -3,7 +3,7 @@ Commands and Permissions
 ========================
 
 .. warning::
-    These docs were written for SpongeAPI 7 and are likely out of date. 
+    These docs have not been fully updated to SpongeAPI 8 and may be out of date.
     `If you feel like you can help update them, please submit a PR! <https://github.com/SpongePowered/SpongeDocs>`__
 
 Commands are one method in which server operators can administer their server, and in which players can interact with
@@ -30,45 +30,44 @@ Sponge
 The following commands are available to players with operator status (or the correct permission node) on servers powered
 by Sponge.
 
-======================  =========================================  =============================
-Command                 Description                                Permission
-======================  =========================================  =============================
-/sponge audit           Forces loading of unloaded classes to      sponge.command.audit
-                        enable mixin debugging.
-/sponge blockinfo       Shows the type and some additional         sponge.command.blockinfo
-                        information about the block you are
-                        looking at.
-/sponge chunks          Prints out the chunk data for a world, a   sponge.command.chunks
-                        dimension, or globally.
-/sponge config          Alters a global, world, or a dimension     sponge.command.config
-                        config.
-/sponge entityinfo      Shows the type and some additional         sponge.command.entityinfo
-                        information about the entity you are
-                        looking at.
-/sponge heap            Dumps the JVM heap.                        sponge.command.heap
-/sponge metrics         Gets or sets whether metric (also known    sponge.command.metrics
-                        as server stats) collection is enabled
-                        for a given plugin.
-/sponge mods            Lists currently installed forge mods.      sponge.command.mods
-                        (SpongeForge only)
-/sponge plugins         Lists currently installed Sponge plugins.  sponge.command.plugins
-/sponge plugins reload  Asks plugins to perform their own reload   sponge.command.plugins.reload
-                        procedures.
-/sponge reload          Reloads the global, world, or dimension    sponge.command.reload
-                        config.
-/sponge save            Saves the global, world, or dimension      sponge.command.save
-                        config.
-/sponge timings         The main command for the timings module.   sponge.command.timings
-/sponge tps             Display ticks per second for each world.   sponge.command.tps
-/sponge version         Prints the Sponge/SpongeAPI versions to    sponge.command.version
-                        the console.
-/sponge which           Prints which plugin provided the command,  sponge.command.which
-                        it's aliases and alternatives.
-/sponge:callback        Internally used for callback actions on
-                        ``Component``\s (such as pagination). Not
-                        intended to be invoked by hand.
-/sponge:help            View information on commands used on the   sponge.command.help
-                        server.
+=======================  =========================================  =============================
+Command                  Description                                Permission
+=======================  =========================================  =============================
+/sponge audit            Forces loading of unloaded classes to      sponge.command.audit
+                         enable mixin debugging.
+/sponge blockinfo        Shows the type and some additional         sponge.command.blockinfo
+                         information about the block you are
+                         looking at.
+/sponge chunks           Prints out the chunk data for a world, a   sponge.command.chunks
+                         dimension, or globally.
+/sponge config           Alters a global, world, or a dimension     sponge.command.config
+                         config.
+/sponge entityinfo       Shows the type and some additional         sponge.command.entityinfo
+                         information about the entity you are
+                         looking at.
+/sponge heap             Dumps the JVM heap.                        sponge.command.heap
+/sponge metrics          Gets or sets whether metric (also known    sponge.command.metrics
+                         as server stats) collection is enabled
+                         for a given plugin.
+/sponge mods             Lists currently installed forge mods.      sponge.command.mods
+                         (SpongeForge only)
+/sponge plugins list     Lists currently installed Sponge plugins.  sponge.command.plugins
+/sponge plugins refresh  Asks plugins to perform their own reload   sponge.command.plugins.refresh
+                         procedures.
+/sponge reload           Reloads the global, world, or dimension    sponge.command.reload
+                         config.
+/sponge save             Saves the global, world, or dimension      sponge.command.save
+                         config.
+/sponge tps              Display ticks per second for each world.   sponge.command.tps
+/sponge version          Prints the Sponge/SpongeAPI versions to    sponge.command.version
+                         the console.
+/sponge which            Prints which plugin provided the command,  sponge.command.which
+                         it's aliases and alternatives.
+/sponge:callback         Internally used for callback actions on
+                         ``Component``\s (such as pagination). Not
+                         intended to be invoked by hand.
+/sponge:help             View information on commands used on the   sponge.command.help
+                         server.
 ======================  =========================================  =============================
 
 |
@@ -103,7 +102,7 @@ command or another plugin's command, you can restore the expected behavior or pr
 
     Here are a few simple examples of the sponge config command in action. Note that at least one target flag must be
     specified. Please see :doc:`../getting-started/configuration/index` for a more detailed explanation.
-    
+
     a. ``/sponge config -d minecraft:nether logging.chunk-load true``
 
     Since a dimension type was specified, this would alter the nether dimension config (and hence all nether worlds).
@@ -118,38 +117,6 @@ Sponge provides two permissions for debugging purposes:
   This message channel is used by the client (if the SpongeForge mod is installed) to display the block and entity
   owner and notifier in the debug view.
 * Allow hovering of command execution errors to get the stacktrace: ``sponge.debug.hover-stacktrace``
-
-Timings
-~~~~~~~
-
-Timings are a tool built into Sponge that allows server administrators to monitor the performance of their server.
-Timings will collect information about a server so that a report may later be generated on the data. Information that
-is recorded by timings include the server motd, version, uptime, memory, installed plugins, tps, percent of tps loss,
-number of players, tile entities, entities, and chunks.
-Below is a list of sub-commands to ``/sponge timings``:
-
-========================  ========================================
-Command                   Description
-========================  ========================================
-/sponge timings on        Enables timings. Note that this will
-                          also reset timings data.
-/sponge timings off       Disables timings. Note that most timings
-                          commands will not function and timings
-                          will not be recorded if timings are
-                          disabled.
-/sponge timings reset     Resets all timing data and begins
-                          recording timing data after the time
-                          this command was done.
-/sponge timings report    Generates the timings report on your
-                          server performance at
-                          https://timings.aikar.co
-/sponge timings verbon    Enables timings monitoring at the
-                          verbose level.
-/sponge timings verboff   Disables timings monitoring at the
-                          verbose level. Note that high-frequency
-                          timings will not be available.
-/sponge timings cost      Gets the cost of using timings.
-========================  ========================================
 
 Forge
 ~~~~~
