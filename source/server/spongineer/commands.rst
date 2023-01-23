@@ -68,7 +68,7 @@ Command                  Description                                Permission
                          intended to be invoked by hand.
 /sponge:help             View information on commands used on the   sponge.command.help
                          server.
-======================  =========================================  =============================
+=======================  =========================================  =============================
 
 |
 
