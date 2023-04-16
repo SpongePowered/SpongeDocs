@@ -13,6 +13,8 @@ Accessing Blocks
     org.spongepowered.api.world.World
     org.spongepowered.api.world.server.ServerLocation
     org.spongepowered.api.world.server.ServerWorld
+    org.spongepowered.api.state.BooleanStateProperty
+    org.spongepowered.api.data.DataManipulator.Immutable
 
 Basic Information
 ~~~~~~~~~~~~~~~~~
@@ -65,7 +67,7 @@ Block Data Manipulators
 
 The data of a block is held as a :javadoc:`DataManipulator`, similar to other parts of the API. This is the container
 that holds information on components of our block such as the orientation of a block, the blocks light level, and so on. Checking the values of these manipulators is easy, you just need to check the block's direction
-:javadoc:`DirectionalData`.
+:javadoc:`Key`.
 
 .. code-block:: java
 
@@ -101,8 +103,8 @@ Block States
 ~~~~~~~~~~~~
 
 A :javadoc:`BlockState` contains a :javadoc:`BlockType`,  any ``DataManipulator``\ s and properties that are applied to
-the block, and any :javadoc:`BlockTrait`\ s for a block. It stores all immutable values for a particular block. One
-use of this is getting an :javadoc:`ImmutableDataManipulator`, as shown below:
+the block, and any :javadoc:`StateProperty`\ s for a block. It stores all immutable values for a particular block. One
+use of this is getting an :javadoc:`DataManipulator.Immutable`, as shown below:
 
 .. code-block:: java
 
@@ -124,10 +126,10 @@ More information on mutable and immutable ``DataManipulator``\s can be found in 
 <../data/datamanipulators>`.
 
 Block State Properties
-~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
 
 A block state property is a certain value on the current state of a block. A block may or may not contain properties depending
-on the type of block. For example, a bed has a :javadoc:`BooleanBlockProperty` called
+on the type of block. For example, a bed has a :javadoc:`BooleanStateProperty` called
 ``BED_OCCUPIED``. As a boolean can only have two values, true and false, the ``BED_OCCUPIED`` property can only be true or
 false. Checking this value is simple, just call the :javadoc:`BlockState#stateProperty(StateProperty<T>)` method. An example
 of this with a bed is shown below:
