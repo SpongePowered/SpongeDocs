@@ -2,17 +2,16 @@
 Concepts
 ========
 
-.. warning::
-    These docs were written for SpongeAPI 7 and are likely out of date. 
-    `If you feel like you can help update them, please submit a PR! <https://github.com/SpongePowered/SpongeDocs>`__
+.. javadoc-import::
+    org.spongepowered.api.block.entity.carrier.chest.Chest
 
 Properties
 ~~~~~~~~~~
 
-All blocks are of a *base type*. Examples of base types include dirt, stairs, and leaves. However, to further
-differentiate these base types, each block has set of different properties, of which each can take a limited set of
-values (i.e. *podzol* dirt, *brick* stairs, *oak* leaves). A block can have multiple properties (such as *east-facing*,
-*brick* stairs).
+All blocks are of a *base type*. Examples of base types include redstone dust, brick stairs, and chest. 
+However, to further differentiate these base types, each block has set of different properties, 
+of which each can take a limited set of values (i.e. *activated* redstone, *corner* brick stairs, *double* chest). 
+A block can have multiple properties (such as *corner*,*upsidedown* stairs).
 
 **Examples of block properties**
 
@@ -22,9 +21,6 @@ values (i.e. *podzol* dirt, *brick* stairs, *oak* leaves). A block can have mult
         minecraft:dirt[snowy=true,variant=default]
         minecraft:dirt[snowy=false,variant=grassless]
         minecraft:dirt[snowy=true,variant=grassless]
-        minecraft:planks[variant=oak]
-        minecraft:planks[variant=spruce]
-        minecraft:planks[variant=birch]
         minecraft:redstone_wire[east=up,north=up,power=0,south=up,west=up]
         minecraft:redstone_wire[east=side,north=up,power=0,south=up,west=up]
         minecraft:redstone_wire[east=none,north=up,power=0,south=up,west=up]
@@ -35,33 +31,41 @@ the save file because their values can be detected automatically. For example, w
 powered or not can be detected based on the environment (is there a lever that is on?). In this case, the ``power``
 property of ``minecraft:redstone_wire`` as illustrated above is an ephemeral property.
 
-As of writing, Minecraft still stores block data to an old format with 12 bits for a base type (4096 possible base types)
-and 4 bits for "metadata" (16 possible values per base type). However, properties do not map directly to metadata due to
-legacy reasons: for example, the furnace block consists of two base types (currently smelting versus not smelting), each
-not utilizing their metadata at all. On the other hand, logs do use their metadata fully, but because the combination of
-properties exceeds 16 possible values (think tree type and direction), logs must be split over two base types.
+Each property will have a finite number of valid values that can be assigned to the property. 
+Exampeles would be that redstone power can only be a value between 0 and 15. This means that Minecraft knows each 
+possible state of a block prior to fully booting the server. This is required knowledge as sending blocks over the 
+network are compressed to a number.
 
-In the future, there will only be one 16-bit number (65536 possible combinations of base type + properties). Blocks will
-be assigned an ID automatically and this assignment will be stored in the world save file. This is illustrated below:
-
-    0 => minecraft:dirt[snowy=false,variant=default]
-    1 => minecraft:dirt[snowy=true,variant=default]
-    2 => minecraft:dirt[snowy=false,variant=grassless]
-    3 => minecraft:dirt[snowy=true,variant=grassless]
-    4 => minecraft:planks[variant=oak]
-    5 => minecraft:planks[variant=spruce]
-    etc.
-
-Tile Entity Data
+Block Entity Data
 ~~~~~~~~~~~~~~~~
 
-With 65536 possible combinations, it is not possible to store a lot of information like inventory, so there's an
-additional way that *some* blocks have data: tile entities.
+With block properties having a known preset of possible values, these cannot be used when attempting to store data 
+whereby there is a infinite amount of possibilities. Examples include sign text and block inventories. 
 
-Tile entities themselves are Java objects (like a `Chest` class). Normally, Minecraft code would access data in a tile
-entity by getting its instance and then calling it methods or fields, like a regular object
-(``world.getTileEntity(position).getInventory()``). When tile entities need to be written to the save file, they are
-stored in the `NBT format <https://minecraft.gamepedia.com/NBT_format>`_.
+Minecraft's solution to this is block entities, which are Java objects that store additional data on a `Location`
+the block is at in `NBT format <https://minecraft.gamepedia.com/NBT_format>`_. Examples of block entities are 
+:javadoc:`Chest`
+
+Example use would be to receive the inventory of a chest. This can be done as follows
+
+.. code-block:: java
+
+    import org.spongepowered.api.world.server.ServerLocation;
+    import org.spongepowered.api.block.entity.BlockEntity;
+    import org.spongepowered.api.block.entity.carrier.chest.Chest;
+    import org.spongepowered.api.item.inventory.type.BlockEntityInventory;
+
+    public Optional<BlockEntityInventory<Chest>> getChestInventory(ServerLocation location){
+        Optional<BlockEntity> optionalBlockEntity = location.blockEntity();
+        if(optionalBlockEntity.isPresent()){
+            BlockEntity blockEntity = optionalBlockEntity.get();
+            if(blockEntity instanceof Chest){
+                Chest chest = (Chest) blockEntity;
+                return Optional.of(chest.inventory());
+            }
+        }
+        return Optional.empty();
+    }
 
 .. tip::
 
@@ -69,3 +73,16 @@ stored in the `NBT format <https://minecraft.gamepedia.com/NBT_format>`_.
 
     However, tile entities can also override rendering so they don't look like a regular block, although this is
     generally inefficient and causes a client framerate drop.
+
+Block Type Tags
+~~~~~~~~~~~~~~~
+
+Prior to Minecraft 1.13, blocks had a base id with all variants of that block being set using block properties. 
+In Minecraft 1.13 and onwards, this has changed so now all variants have a different base id. This change can be
+great as it allows plugin developers to be more specific, however what do you do when all you want to know is if
+the block is wool of any kind? 
+
+The answer is to use a tagging system to group similar blocks together under a category. An example of this would
+be the tag of `Wool` that can be used to determine if a block is any kind of wool.
+
+An example of Block tags being used can be found in the :doc:`accessing <./accessing#basic-information>`
