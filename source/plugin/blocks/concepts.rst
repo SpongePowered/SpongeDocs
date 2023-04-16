@@ -37,7 +37,7 @@ possible state of a block prior to fully booting the server. This is required kn
 network are compressed to a number.
 
 Block Entity Data
-~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
 
 With block properties having a known preset of possible values, these cannot be used when attempting to store data 
 whereby there is a infinite amount of possibilities. Examples include sign text and block inventories. 
