@@ -20,7 +20,7 @@ Basic Information
 ~~~~~~~~~~~~~~~~~
 
 Blocks are most commonly identified and accessed by their :javadoc:`Location`. This location points to a certain
-coordinate within an :javadoc:`World`. In most cases a :javadoc:`ServerWorld` will be used as the ``World``.
+coordinate within an :javadoc:`World`. In most cases an :javadoc:`ServerWorld` will be used as the ``World``.
 
 .. code-block:: java
 
@@ -41,8 +41,8 @@ coordinate within an :javadoc:`World`. In most cases a :javadoc:`ServerWorld` wi
     is no world of that name loaded.
 
 
-With this ``ServerLocation`` object you can then obtain further information about the block. The following code checks if a
-referenced block is any kind of banner by checking the blocks type.
+With this ``ServerLocation`` object you can then obtain further information about the block. The following code checks
+if a referenced block is any kind of banner by checking the blocks type.
 
 .. code-block:: java
 
@@ -59,15 +59,15 @@ referenced block is any kind of banner by checking the blocks type.
 
 .. tip::
     
-    The function ``==`` could be used in place of ``equals()`` when it comes to comparing two :javadoc:`BlockType`'s as there are a fixed number of instance for
-    every block, however it is generally recommended to use ``equals()``.
+    The function ``==`` could be used in place of ``equals()`` when it comes to comparing two :javadoc:`BlockType`'s as 
+    there are a fixed number of instances for every block, however it is generally recommended to use ``equals()``.
 
 Block Data Manipulators
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 The data of a block is held as a :javadoc:`DataManipulator`, similar to other parts of the API. This is the container
-that holds information on components of our block such as the orientation of a block, the blocks light level, and so on. Checking the values of these manipulators is easy, you just need to check the block's direction
-:javadoc:`Key`.
+that holds information on components of our block such as the orientation, light level, and so on. 
+Checking the values of these manipulators is easy, you just need to check the direction :javadoc:`Key`.
 
 .. code-block:: java
 
@@ -88,16 +88,17 @@ that holds information on components of our block such as the orientation of a b
 
 First, we need to know which ``DataManipulator`` ``Key`` we need. We can then pass the ``get(Key)`` method of 
 ``ServerLocation`` which will return an ``Optional``. We then have to check if our ``DataManipulator`` actually
-exists for out block by checking ``ifPresent()``. If it exists, then we can use it.
+exists for our block by checking ``ifPresent()``. If it exists, then we can use it.
 
 More on ``DataManipulator``\s can be found in the :doc:`data documentation <../data/datamanipulators>`.
 
 .. tip::
     
     If a block will never stop supporting a particular ``DataManipulator``, such as ``DirectionalData`` with stairs,
-    then there is no need to check for ``isPresent()``. Just remove the optional around the ``DataManipulator``'s value output and
-    fetch the non-optional data by adding ``.get()`` to the end of the statement. Note, that this will cause a
-    ``NoSuchElementException`` if a block ever stops supporting a particular ``DataManipulator``.
+    then there is no need to check for ``isPresent()``. 
+    Just remove the optional around the ``DataManipulator``'s value output and fetch the non-optional data 
+    by adding ``.get()`` to the end of the statement. Note, that this will cause a ``NoSuchElementException`` 
+    if a block ever stops supporting a particular ``DataManipulator``.
 
 Block States
 ~~~~~~~~~~~~
@@ -128,11 +129,11 @@ More information on mutable and immutable ``DataManipulator``\s can be found in 
 Block State Properties
 ~~~~~~~~~~~~~~~~~~~~~~
 
-A block state property is a certain value on the current state of a block. A block may or may not contain properties depending
-on the type of block. For example, a bed has a :javadoc:`BooleanStateProperty` called
-``BED_OCCUPIED``. As a boolean can only have two values, true and false, the ``BED_OCCUPIED`` property can only be true or
-false. Checking this value is simple, just call the :javadoc:`BlockState#stateProperty(StateProperty<T>)` method. An example
-of this with a bed is shown below:
+A block state property is a certain value on the current state of a block. A block may or may not contain 
+properties depending on the type of block. For example, a bed has a :javadoc:`BooleanStateProperty` called
+``BED_OCCUPIED``. As a boolean can only have two values, true and false, the ``BED_OCCUPIED`` property can only be
+true or false. Checking this value is simple, just call the :javadoc:`BlockState#stateProperty(StateProperty<T>)` 
+method. An example of this with a bed is shown below:
 
 .. code-block:: java
 
@@ -147,5 +148,5 @@ of this with a bed is shown below:
 
 .. warning::
 
-    If possible, it is recommended to use ``DataManipulator``\s in place of ``StateProperty``\s where possible as they are
-    only to be meant as a fallback for modded compatibility.
+    If possible, it is recommended to use ``DataManipulator``\s in place of ``StateProperty``\s where possible as 
+    they are only to be meant as a fallback for modded compatibility.
