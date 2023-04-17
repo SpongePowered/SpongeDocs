@@ -37,7 +37,7 @@ Besides specifying three integers for the co-ordinates, you may also specify a `
 
 .. tip::
 
-    If you wish to send a virtual block to all clients, you can now use :javadoc:`BlockChangeFlags.NOTIFY_CLIENTS`
+    If you wish to send a virtual block to all clients, you can now use :javadoc:`BlockChangeFlags#NOTIFY_CLIENTS`
 
 Resetting Changes
 ~~~~~~~~~~~~~~~~~
