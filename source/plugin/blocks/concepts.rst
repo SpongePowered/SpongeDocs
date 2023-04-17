@@ -85,4 +85,4 @@ the block is wool of any kind?
 The answer is to use a tagging system to group similar blocks together under a category. An example of this would
 be the tag of `Wool` that can be used to determine if a block is any kind of wool.
 
-An example of Block tags being used can be found in the :doc:`accessing <./accessing#basic-information>`
+An example of Block tags being used can be found in the :doc:`accessing <./accessing>`
