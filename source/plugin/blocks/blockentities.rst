@@ -14,13 +14,13 @@ Block Entities
 
 Block entities are blocks that are capable of additional operations like autonomically crafting (furnaces and brewing
 stands) or provide effects (like a beacon or a note block). They also contain additional data like an inventory or
-text (like chests, signs or command blocks).
+text (like chests, signs, or command blocks).
 
 Identifying Block Entities and their Type
 =========================================
 
-Again, it all starts with a :javadoc:`Location`. The :javadoc:`Location#blockEntity()` function will return the tile
-entity corresponding to the block or ``Optional.empty()`` if the block is not a tile entity.
+It all starts with a :javadoc:`Location`. The :javadoc:`Location#blockEntity()` function will return the tile
+entity corresponding to the block, or ``Optional.empty()`` if the block is not a tile entity.
 
  .. code-block:: java
 
@@ -31,7 +31,7 @@ entity corresponding to the block or ``Optional.empty()`` if the block is not a 
     }
 
 The type of a block entity can then be obtained by the :javadoc:`BlockEntity#type()` function which returns a
-:javadoc:`BlockEntityType`. Which can then be compared similar to a :javadoc:`BlockType`. After performing this check
+:javadoc:`BlockEntityType`. This can then be compared in a manner similar to a :javadoc:`BlockType`. After performing this check
 the :javadoc:`BlockEntity` variable can safely be cast to the according subtype.
 
  .. code-block:: java
@@ -56,11 +56,11 @@ After performing this cast, the methods provided by the particular interface can
 methods refer to the :javadoc:`org.spongepowered.api.block.entity` package and its subpackages in the API.
 
 
-Accessing and Modifying a Block Entity's Data
+Accessing and Modifying Block Entity's Data
 =============================================
 
 Similar to block states, the data stored in a tile entity is accessed using a :javadoc:`DataManipulator`. Since the
-kind of a data is fully described by the ``DataManipulator`` used, all data manipulation can be done with the
+type of data is fully described by the ``DataManipulator`` used, all data manipulation can be done with the
 ``BlockEntity`` interface itself and does not require a cast.
 
 The following example contains two methods to alter the data of a sign. The first method reads (if possible) the first
@@ -98,8 +98,8 @@ Accessing Inventories
 =====================
 
 Quite a share of block entities come with their own inventory, most notably chests and furnaces. That inventory cannot
-be accessed directly from the ``BlockEntity`` interface. So a cast will be necessary. Since all block entities containing
-an inventory extend the :javadoc:`CarrierBlockEntity` interface it suffices to cast to that interface as shown below.
+be accessed directly from the ``BlockEntity`` interface, so a cast will be necessary. Since all block entities containing
+an inventory extend the :javadoc:`CarrierBlockEntity` interface, it suffices to cast to that interface as shown below.
 
  .. code-block:: java
 

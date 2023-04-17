@@ -80,7 +80,7 @@ given data set, overwriting existing values. The following example will change a
 
 The ``without()`` method accepts a class reference and will create a new ``BlockState`` without the data
 represented by the given class. If the block state would not be valid without that data, a default value will be used.
-So if the ``Keys.DIRECTION`` from a blocks state is removed, it will fall back to :javadoc:`Direction#NORTH`, 
+So if the ``Keys.DIRECTION`` from a block's state is removed, it will fall back to :javadoc:`Direction#NORTH`, 
 the default value. 
 The following example will dry the block at a given ``Location``, if possible.
 
@@ -95,7 +95,7 @@ The following example will dry the block at a given ``Location``, if possible.
     }
 
 Since the :javadoc:`Keys#IS_WET` data manipulator represents boolean data, by removing it we set the wetness of the block
-(if it has any) to false. The ``withEastState.isPresent()`` check will fail on block states that cannot be wet since
+(if it has any) to false. The ``dryState.isPresent()`` check will fail on block states that cannot be wet since
 ``Keys.IS_WET`` will be ``Optional.empty()`` in that case.
 
 Copying Blocks
