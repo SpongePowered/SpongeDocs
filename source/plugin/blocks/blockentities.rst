@@ -57,7 +57,7 @@ methods refer to the :javadoc:`org.spongepowered.api.block.entity` package and i
 
 
 Accessing and Modifying Block Entity's Data
-=============================================
+===========================================
 
 Similar to block states, the data stored in a tile entity is accessed using a :javadoc:`DataManipulator`. Since the
 type of data is fully described by the ``DataManipulator`` used, all data manipulation can be done with the
