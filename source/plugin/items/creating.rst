@@ -2,14 +2,9 @@
 Creating an ItemStack
 =====================
 
-.. warning::
-    These docs were written for SpongeAPI 7 and are likely out of date. 
-    `If you feel like you can help update them, please submit a PR! <https://github.com/SpongePowered/SpongeDocs>`__
-
 .. javadoc-import::
     org.spongepowered.api.block.BlockState
-    org.spongepowered.api.data.key.Keys
-    org.spongepowered.api.data.manipulator.mutable.item.EnchantmentData
+    org.spongepowered.api.data.Keys
     org.spongepowered.api.entity.Entity
     org.spongepowered.api.entity.EntityType
     org.spongepowered.api.entity.EntityTypes
@@ -38,9 +33,8 @@ and is unbreakable. If you want a plain sword without any other data, then this 
     }
 
 Creating the basic item is done. Now this is a normal diamond sword that we created, but what if we wanted something
-more interesting? What about enchanting and naming our sword? We can use :javadoc:`EnchantmentData` to give our sword
-some enchantments. The following example will give our sword every enchantment in the game, to level 1000. Make sure to
-include this all before ``return superMegaAwesomeSword;``.
+more interesting? What about enchanting and naming our sword? We can use :javadoc:`Keys#APPLIED_ENCHANTMENTS` to give 
+our sword some enchantments. The following example will give our sword every enchantment in the game, to level 1000.
 
 .. code-block:: java
 
@@ -48,20 +42,20 @@ include this all before ``return superMegaAwesomeSword;``.
     import java.util.stream.Collectors;
 
     import org.spongepowered.api.Sponge;
-    import org.spongepowered.api.data.manipulator.mutable.item.EnchantmentData;
     import org.spongepowered.api.data.meta.ItemEnchantment
     import org.spongepowered.api.item.Enchantment;
 
-    EnchantmentData enchantmentData = superMegaAwesomeSword
-        .getOrCreate(EnchantmentData.class).get();
-    final List<EnchantmentType> enchantments = Sponge.getRegistry()
-        .getAllOf(EnchantmentType.class).stream().collect(Collectors.toList());
+    public void withThousandEnchantmentLevel(ItemStack superMegaAwesomeSword){
+        List<Enchantment> enchantments = RegistryTypes
+            .ENCHANTMENT_TYPE
+            .get()
+            .stream()
+            .filter(type -> type.canBeAppliedToStack(superMegaAwesomeSword))
+            .map(type -> Enchantment.of(type, 1000))
+            .collect(Collectors.toList());
 
-    for (EnchantmentType enchantment : enchantments) {
-        enchantmentData.set(enchantmentData.enchantments()
-            .add(Enchantment.of(enchantment, 1000)));
+        superMegaAwesomeSword.offer(Keys.APPLIED_ENCHANTMENTS);
     }
-    superMegaAwesomeSword.offer(enchantmentData);
 
 Now let's say we wanted to give our overpowered sword a cool name to go with it. Here, we can directly offer a key to
 the ``ItemStack``. Using this key, we can change the name of the ``ItemStack`` to "SUPER MEGA AWESOME Diamond Sword"
@@ -71,14 +65,14 @@ the ``ItemStack``. Using this key, we can change the name of the ``ItemStack`` t
     import net.kyori.adventure.text.Component;
     import net.kyori.adventure.text.TextComponent;
     import net.kyori.adventure.text.format.NamedTextColor;
-    import org.spongepowered.api.data.key.Keys;
+    import org.spongepowered.api.data.Keys;
     import org.spongepowered.api.item.ItemTypes;
 
     superMegaAwesomeSword.offer(Keys.DISPLAY_NAME, TextComponent.ofChildren(
         Component.text("SUPER ", NamedTextColor.BLUE),
         Component.text("MEGA ", NamedTextColor.GOLD),
         Component.text("AWESOME ", NamedTextColor.DARK_AQUA),
-        ItemTypes.DIAMOND_SWORD.asComponent().color(NamedTextColor.AQUA));
+        ItemTypes.DIAMOND_SWORD.get().asComponent().color(NamedTextColor.AQUA));
 
 Finally, to make the sword unbreakable, we can use keys again:
 
@@ -105,13 +99,13 @@ An example is shown below:
     import org.spongepowered.api.event.CauseStackManager.StackFrame;
     import org.spongepowered.api.world.Location;
     import org.spongepowered.api.world.World;
-    import org.spongepowered.api.world.extent.Extent;
+    import org.spongepowered.api.world.server.ServerWorld;
 
     import java.util.Optional;
     
-    public void spawnItem(ItemStack superMegaAwesomeSword, Location<World> spawnLocation) {
-        Extent extent = spawnLocation.getExtent();
-        Entity item = extent.createEntity(EntityTypes.ITEM, spawnLocation.getPosition());
+    public void spawnItem(ItemStack superMegaAwesomeSword, ServerLocation spawnLocation) {
+        ServerWorld world = spawnLocation.world();
+        Item item = world.createEntity(EntityTypes.ITEM, spawnLocation.getPosition());
         item.offer(Keys.REPRESENTED_ITEM, superMegaAwesomeSword.createSnapshot());
 
         try (StackFrame frame = Sponge.getCauseStackManager().pushCauseFrame()) {
