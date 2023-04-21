@@ -36,7 +36,7 @@ Applied Energistics 2
 ~~~~~~~~~~~~~~~~~~~~~
 
 - Versions: 8.4.7
-- Problem: Error when opening `Drive` gui
+- Problem: Non-fatal console error when opening `Drive` gui
 - Solution: None so far
 - Github issue: `Logged slot transactions without event <https://github.com/SpongePowered/Sponge/issues/3680>`_
 
@@ -83,7 +83,7 @@ Create Mod
 ~~~~~~~~~~
 
 - Version: mc1.16.5_v0.3.2g
-- Problem: Error when opening an inventory
+- Problem: Non-fatal console error when opening an inventory
 - Solution: None so far
 - Github issue: `Logged slot transactions without event <https://github.com/SpongePowered/Sponge/issues/3680>`_
 
@@ -127,13 +127,13 @@ Physics Mod
 - Solution: None so far
 - Github issue: `Fatel server lag when using TNT and Physics mod <https://github.com/SpongePowered/Sponge/issues/3517>`_
 
-Tickers Construct
-~~~~~~~~~~~~~~~~~
+Tickers' Construct
+~~~~~~~~~~~~~~~~~~
 
 - Version: 1.16.5-3.1.2.265
-- Problem: Error when opening an inventory
+- Problem: Non-fatal console error when opening an inventory
 - Solution: None so far
-- Github issue: `Tinkers Construct slot transaction spam with SpongeForge <https://github.com/SpongePowered/Sponge/issues/3527>`_
+- Github issue: `Tinkers' Construct slot transaction spam with SpongeForge <https://github.com/SpongePowered/Sponge/issues/3527>`_
 
 Valkyrien Skies
 ~~~~~~~~~~~~~~~
@@ -147,6 +147,6 @@ World Edit
 ~~~~~~~~~~
 
 - Version: 7.2.5
-- Problem: Errors after startup relating to commands
+- Problem: Fatal errors after startup relating to commands
 - Solution: None so far
 - Github issue: `WorldEdit command registrar issue on server start <https://github.com/SpongePowered/Sponge/issues/3540>`_
