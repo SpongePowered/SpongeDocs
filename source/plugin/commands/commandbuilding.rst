@@ -162,3 +162,33 @@ The result's input number has three meanings.
       - Unsuccessful execution (but not necessarily an error)
     * - Negative
       - Undefined in the Minecraft spec, can result in different effects
+
+Error handling
+~~~~~~~~~~~~~~
+
+The ``execute`` method may also throw a :javadoc:`CommandException`, signaling that an error occured while trying to 
+execute the command. If such an Exception is thrown, its message will be displayed to the command source, formatted 
+as an error. An :javadoc:`ArgumentParseException`, a subtype of ``CommandExeption`` is automaticlly thrown if the 
+commands arguments could not be parsed.
+
+Registering a Command
+~~~~~~~~~~~~~~~~~~~~~
+
+Commands are registered on a :javadoc:`RegisterCommandEvent`. The event takes a generic which is the type of command 
+that is being registered to it. To register a command, the 
+:javadoc:`RegisterCommandEvent#register(PluginContainer, C, String, String...)` method needs to be invoked.
+
+.. code-block:: java
+
+  @Inject
+  PluginContainer container;
+
+  @Listener
+  public void onRegisterCommands(final RegisterCommandEvent<Command.Parameterized> event){
+    event.register(this.container, buildCommand(), "helloworld", "hello", "test");
+  }
+
+  @Listener
+  public void onRegisterRawCommands(final RegisterCommandEvent<Command.Raw> event){
+    event.register(this.container, new MyRawCommand(), "raw");
+  }
