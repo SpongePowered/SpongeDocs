@@ -32,13 +32,12 @@ Some mods may register there own permissions with Forge. These cannot be tracked
 bug that was fixed in December 2021 (after forge stopped updating 1.16.5) so permissions plugins will not be able to use
 these permissions.
 
-Applied Energistics 2
-~~~~~~~~~~~~~~~~~~~~~
+Abnormals_core
+~~~~~~~~~~~~~~
 
-- Versions: 8.4.7
-- Problem: Non-fatal console error when opening `Drive` gui
-- Solution: None so far
-- Github issue: `Logged slot transactions without event <https://github.com/SpongePowered/Sponge/issues/3680>`_
+- Version: 3.3.1
+- Problem: Crash on startup
+- Solution: Use unoffical patched for Sponge version on the server. Download `Abnormals_core-1.16.5-3.3.1 <https://cdn.discordapp.com/attachments/406987481825804290/949798054117122058/abnormals_core-1.16.5-3.3.1.jar>`_
 
 AlexsMobs
 ~~~~~~~~~
@@ -48,13 +47,6 @@ AlexsMobs
 - Solution: None so far
 - Github issue: `Exception exiting Phase crash from AlexsMobs <https://github.com/SpongePowered/Sponge/issues/3535>`_
 
-Abnormals_core
-~~~~~~~~~~~~~~
-
-- Version: 3.3.1
-- Problem: Crash on startup
-- Solution: Use unoffical patched for Sponge version on the server. Download `Abnormals_core-1.16.5-3.3.1 <https://cdn.discordapp.com/attachments/406987481825804290/949798054117122058/abnormals_core-1.16.5-3.3.1.jar>`_
-
 All The Mods 6
 ~~~~~~~~~~~~~~
 
@@ -62,6 +54,14 @@ All The Mods 6
 - Problem: Crash on startup
 - Solution: Update SpongeForge to the latest
 - Github issue: `SpongeForge 1.16.5 InvalidMixinException ATM6 <https://github.com/SpongePowered/Sponge/issues/3647>`_
+
+Applied Energistics 2
+~~~~~~~~~~~~~~~~~~~~~
+
+- Versions: 8.4.7
+- Problem: Non-fatal console error when opening `Drive` gui
+- Solution: None so far
+- Github issue: `Logged slot transactions without event <https://github.com/SpongePowered/Sponge/issues/3680>`_
 
 Bountiful Baubles
 ~~~~~~~~~~~~~~~~~
@@ -87,30 +87,6 @@ Create Mod
 - Solution: None so far
 - Github issue: `Logged slot transactions without event <https://github.com/SpongePowered/Sponge/issues/3680>`_
 
-Random patches
-~~~~~~~~~~~~~~
-
-- Version: 2.4.4
-- Problem: Crash on startup
-- Solution: Update SpongeForge to the latest
-- Github issue: `Server crash with Randompatches <https://github.com/SpongePowered/Sponge/issues/3589>`_
-
-Twilight Forest
-~~~~~~~~~~~~~~~
-
-- Version: 4.0.870
-- Problem: Crash on startup
-- Solution: Update SpongeForge to the latest
-- Github issue: `SpongeForge has fatal errors with Twilight Forest mod <https://github.com/SpongePowered/Sponge/issues/3574>`_
-
-Progressive Bosses
-~~~~~~~~~~~~~~~~~~
-
-- Version 3.4.3
-- Problem: Crash on startup
-- Solution: Update SpongeForge to the latest
-- Github issue: `Illegal State Exception with Progressive Bosses mod <https://github.com/SpongePowered/Sponge/issues/3714>`_
-
 Pehkui
 ~~~~~~
 
@@ -127,6 +103,22 @@ Physics Mod
 - Solution: None so far
 - Github issue: `Fatel server lag when using TNT and Physics mod <https://github.com/SpongePowered/Sponge/issues/3517>`_
 
+Progressive Bosses
+~~~~~~~~~~~~~~~~~~
+
+- Version 3.4.3
+- Problem: Crash on startup
+- Solution: Update SpongeForge to the latest
+- Github issue: `Illegal State Exception with Progressive Bosses mod <https://github.com/SpongePowered/Sponge/issues/3714>`_
+
+Random patches
+~~~~~~~~~~~~~~
+
+- Version: 2.4.4
+- Problem: Crash on startup
+- Solution: Update SpongeForge to the latest
+- Github issue: `Server crash with Randompatches <https://github.com/SpongePowered/Sponge/issues/3589>`_
+
 Tickers' Construct
 ~~~~~~~~~~~~~~~~~~
 
@@ -134,6 +126,14 @@ Tickers' Construct
 - Problem: Non-fatal console error when opening an inventory
 - Solution: None so far
 - Github issue: `Tinkers' Construct slot transaction spam with SpongeForge <https://github.com/SpongePowered/Sponge/issues/3527>`_
+
+Twilight Forest
+~~~~~~~~~~~~~~~
+
+- Version: 4.0.870
+- Problem: Crash on startup
+- Solution: Update SpongeForge to the latest
+- Github issue: `SpongeForge has fatal errors with Twilight Forest mod <https://github.com/SpongePowered/Sponge/issues/3574>`_
 
 Valkyrien Skies
 ~~~~~~~~~~~~~~~
