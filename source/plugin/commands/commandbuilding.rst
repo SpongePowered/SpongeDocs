@@ -79,7 +79,7 @@ a target player on the command cause.
             .executor(new HelloWorldCommand())
             .permission("myplugin.command.helloWorld")
             .shortDescription(Component.text("Hello World Command"))
-            .executionRequirements(context -> context.cause().get(EventContextKeys.PLAYER).isPresent())
+            .executionRequirements(context -> context.cause().context().get(EventContextKeys.PLAYER).isPresent())
             .build();
     }
 
@@ -94,8 +94,8 @@ a target player on the command cause.
 .. tip::
 
     Often times command are put in as player-only as they require the location in the world the command was
-    executed from. Best practise would be to check if the subject is an instance of ``Locatable`` instead of
-    a player to allow for subjects such as Command Blocks.
+    executed from. Best practise would be to check for the target location using :javadoc:`EventContextKeys.LOCATION`
+    instead of the player as this would allow command blocks to run the command without specifing a player.
 
 Writing a Command Executor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
