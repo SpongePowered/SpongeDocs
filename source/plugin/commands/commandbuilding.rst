@@ -10,6 +10,7 @@ Building a Command
     org.spongepowered.api.command.exception.CommandException
     org.spongepowered.api.command.exception.ArgumentParseException
     org.spongepowered.api.event.lifecycle.RegisterCommandEvent
+    org.spongepowered.api.event.EventContextKeys
     
 The first step is to get a new :javadoc:`Command.Builder` builder. 
 The builder provides methods to modify the command help messages, command arguments and the command logic. 
@@ -94,7 +95,7 @@ a target player on the command cause.
 .. tip::
 
     Often times command are put in as player-only as they require the location in the world the command was
-    executed from. Best practise would be to check for the target location using :javadoc:`EventContextKeys.LOCATION`
+    executed from. Best practise would be to check for the target location using :javadoc:`EventContextKeys#LOCATION`
     instead of the player as this would allow command blocks to run the command without specifing a player.
 
 Writing a Command Executor
