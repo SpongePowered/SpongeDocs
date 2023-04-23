@@ -65,7 +65,8 @@ Player-Only commands
 ~~~~~~~~~~~~~~~~~~~~
 
 Sometimes it is necessary that only players can execute a command. Example ``/suicide`` command. 
-This is best done though the ``executionRequirements`` on the command's builder. 
+This is best done though the ``executionRequirements`` on the command's builder where we check for
+a target player on the command cause. 
 
 .. code-block:: java
 
@@ -75,7 +76,7 @@ This is best done though the ``executionRequirements`` on the command's builder.
             .executor(new HelloWorldCommand())
             .permission("myplugin.command.helloWorld")
             .shortDescription(Component.text("Hello World Command"))
-            .executionRequirements(context -> context.subject() instanceof ServerPlayer)
+            .executionRequirements(context -> context.cause().get(EventContextKeys.PLAYER).isPresent())
             .build();
     }
 
@@ -84,7 +85,8 @@ This is best done though the ``executionRequirements`` on the command's builder.
     We recommend you to add an optional ``[player]`` argument to make the command *console-friendly*. 
     Example ``/suicide [player]``
 
-    The easiest solution for this is to append a ``playerOrTarget`` command parameter (see :doc:`argumentparsing`).
+    The easiest solution for this is to append a ``playerOrTarget`` command parameter (see :doc:`argumentparsing`) 
+    instead of providing a execution requirement.
 
 .. tip::
 
