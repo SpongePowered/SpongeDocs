@@ -7,6 +7,9 @@ Building a Command
     org.spongepowered.api.command.CommandExecutor
     org.spongepowered.api.command.parameter.CommandContext
     org.spongepowered.api.command.CommandResult
+    org.spongepowered.api.command.exception.CommandException
+    org.spongepowered.api.command.exception.ArgumentParseException
+    org.spongepowered.api.event.lifecycle.RegisterCommandEvent
     
 The first step is to get a new :javadoc:`Command.Builder` builder. 
 The builder provides methods to modify the command help messages, command arguments and the command logic. 
@@ -35,7 +38,7 @@ Overview of the Command.Builder methods
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. list-table:: 
-    :widths: 25 50
+    :widths: 25 75
     :header-rows: 1
 
     * - method
@@ -153,7 +156,7 @@ Example: Building a CommandResult
 The result's input number has three meanings.
 
 .. list-table:: 
-    :widths: 25 25 50
+    :widths: 25 75
     :header-rows: 1
 
     * - Value

@@ -2,6 +2,11 @@
 Child Commands
 ==============
 
+.. javadoc-import::
+    org.spongepowered.api.command.Command.Builder
+    org.spongepowered.api.command.Command.CommandExecutor
+    org.spongepowered.api.command.exception.ArgumentParseException
+
 The :javadoc:`Command.Builder` supports hierachical command structure like this:
 
 - ``/mail`` (parent command)
@@ -33,7 +38,7 @@ Instead of registering them to the event, child commands are registered on their
 :javadoc:`Command.Builder#child(Command, String, String...)` method. They are registered with a list of aliases. 
 The first alias supplied is the primary one and will appear in the usage message.
 
-code-block:: java
+.. code-block:: java
 
     Command.Paramertized mailCommand = Command.builder()
         .permission("myplugin.mail.base")
