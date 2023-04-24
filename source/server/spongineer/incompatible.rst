@@ -103,7 +103,7 @@ Physics Mod
 ~~~~~~~~~~~
 
 - Version: 1.3.4
-- Problem: Lag on TNT use 
+- Problem: Fatal: Lag on TNT use 
 - Solution: Update SpongeForge to RC1313+ and Physics Mod to 2.6.7 
 - Github issue: `Fatel server lag when using TNT and Physics mod <https://github.com/SpongePowered/Sponge/issues/3517>`_
 
@@ -113,9 +113,9 @@ Progressive Bosses
 - Version 3.4.3
 - Problem: Crash on startup
 - Solution: Update SpongeForge to RC1313+
-- Github issue: `Illegal state exception with Progressive Bosses mod <https://github.com/SpongePowered/Sponge/issues/3714>`_
+- Github issue: `Illegal State Exception with Progressive Bosses mod <https://github.com/SpongePowered/Sponge/issues/3714>`_
 
-Random patches
+Random Patches
 ~~~~~~~~~~~~~~
 
 - Version: 2.4.4
