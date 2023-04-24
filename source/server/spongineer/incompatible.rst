@@ -120,7 +120,7 @@ Random patches
 
 - Version: 2.4.4
 - Problem: Crash on startup
-- Solution: Update SpongeForge to the latest
+- Solution: Update SpongeForge to the RC1313+
 - Github issue: `Server crash with Randompatches <https://github.com/SpongePowered/Sponge/issues/3589>`_
 
 Tinkers' Construct
@@ -136,7 +136,7 @@ Twilight Forest
 
 - Version: 4.0.870
 - Problem: Crash on startup
-- Solution: Update SpongeForge to the latest
+- Solution: Update SpongeForge to the RC1313+
 - Github issue: `SpongeForge has fatal errors with Twilight Forest mod <https://github.com/SpongePowered/Sponge/issues/3574>`_
 
 Valkyrien Skies
