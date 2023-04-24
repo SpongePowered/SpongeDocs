@@ -28,8 +28,8 @@ This makes it load the Sponge version of Mixin first, and can resolve many probl
 Forge Permissions
 ~~~~~~~~~~~~~~~~~
 
-Some mods may register there own permissions with Forge. These cannot be tracked by mods including SpongeForge due to a 
-bug that was fixed in December 2021 (after forge stopped updating 1.16.5) so permissions plugins will not be able to use
+Some mods may register their own permissions with Forge. These cannot be tracked by mods, including SpongeForge due to 
+a bug that was fixed in December 2021 (after forge stopped updating 1.16.5) so permissions plugins will not be able to use
 these permissions.
 
 Abnormals_core
@@ -37,14 +37,18 @@ Abnormals_core
 
 - Version: 3.3.1
 - Problem: Crash on startup
-- Solution: Use unoffical patched for Sponge version on the server. Download `Abnormals_core-1.16.5-3.3.1 <https://cdn.discordapp.com/attachments/406987481825804290/949798054117122058/abnormals_core-1.16.5-3.3.1.jar>`_
+- Solution: Use unoffical patched version on the server. Download `Abnormals_core-1.16.5-3.3.1 <https://cdn.discordapp.com/attachments/406987481825804290/949798054117122058/abnormals_core-1.16.5-3.3.1.jar>`_
 
-AlexsMobs
-~~~~~~~~~
+Alex's Mobs
+~~~~~~~~~~~
 
 - Version: 1.10.1
 - Problem: Crashes randomly
-- Solution: None so far
+- Solution: Update mods to at least
+    - SpongeForge: RC1313
+    - Forge: 1.16.5-36.2.39
+    - Alex's Mobs: 1.12.1
+    - Citadel: 1.8.1
 - Github issue: `Exception exiting Phase crash from AlexsMobs <https://github.com/SpongePowered/Sponge/issues/3535>`_
 
 All The Mods 6
@@ -52,7 +56,7 @@ All The Mods 6
 
 - Version: 1.8.28
 - Problem: Crash on startup
-- Solution: Update SpongeForge to the latest
+- Solution: Update SpongeForge to RC1313
 - Github issue: `SpongeForge 1.16.5 InvalidMixinException ATM6 <https://github.com/SpongePowered/Sponge/issues/3647>`_
 
 Applied Energistics 2
@@ -77,7 +81,7 @@ Conquest Reforged
 - Version: 5.0.7
 - Problem: Breaking a block with a snow layer in hand causes crash
 - Solution: None so far
-- Github issue: `Server crashes when creaking a block with snow layer in your hand <https://github.com/SpongePowered/Sponge/issues/3621>`_
+- Github issue: `Server crashes when breaking a block with snow layer in your hand <https://github.com/SpongePowered/Sponge/issues/3621>`_
 
 Create Mod
 ~~~~~~~~~~
@@ -100,7 +104,7 @@ Physics Mod
 
 - Version: 1.3.4
 - Problem: Lag on TNT use 
-- Solution: None so far
+- Solution: Update SpongeForge to RC1313+ and Physics Mod to 2.6.7 
 - Github issue: `Fatel server lag when using TNT and Physics mod <https://github.com/SpongePowered/Sponge/issues/3517>`_
 
 Progressive Bosses
@@ -108,8 +112,8 @@ Progressive Bosses
 
 - Version 3.4.3
 - Problem: Crash on startup
-- Solution: Update SpongeForge to the latest
-- Github issue: `Illegal State Exception with Progressive Bosses mod <https://github.com/SpongePowered/Sponge/issues/3714>`_
+- Solution: Update SpongeForge to RC1313+
+- Github issue: `Illegal state exception with Progressive Bosses mod <https://github.com/SpongePowered/Sponge/issues/3714>`_
 
 Random patches
 ~~~~~~~~~~~~~~
@@ -119,7 +123,7 @@ Random patches
 - Solution: Update SpongeForge to the latest
 - Github issue: `Server crash with Randompatches <https://github.com/SpongePowered/Sponge/issues/3589>`_
 
-Tickers' Construct
+Tinkers' Construct
 ~~~~~~~~~~~~~~~~~~
 
 - Version: 1.16.5-3.1.2.265
@@ -149,4 +153,6 @@ World Edit
 - Version: 7.2.5
 - Problem: Fatal errors after startup relating to commands
 - Solution: None so far
-- Github issue: `WorldEdit command registrar issue on server start <https://github.com/SpongePowered/Sponge/issues/3540>`_
+- Github issue: 
+    - `WorldEdit command registrar issue on server start <https://github.com/SpongePowered/Sponge/issues/3540>`_
+    - `WorldEdit mod malfunctions with SpongeForge present <https://github.com/SpongePowered/Sponge/issues/3811>`_
