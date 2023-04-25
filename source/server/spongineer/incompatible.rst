@@ -105,7 +105,7 @@ Physics Mod
 - Version: 1.3.4
 - Problem: Fatal: Lag on TNT use 
 - Solution: Update SpongeForge to RC1313+ and Physics Mod to 2.6.7 
-- Github issue: `Fatel server lag when using TNT and Physics mod <https://github.com/SpongePowered/Sponge/issues/3517>`_
+- Github issue: `Fatal server lag when using TNT and Physics mod <https://github.com/SpongePowered/Sponge/issues/3517>`_
 
 Progressive Bosses
 ~~~~~~~~~~~~~~~~~~
