@@ -16,20 +16,20 @@ suggestions of arguments.
 The parsed arguments are stored in the :javadoc:`CommandContext` object. If the parser returns a single object, 
 obtain it with :javadoc:`CommandContext#one(ResourceKey)`. Optional and weak arguments may return ``Optional.empty()``
 
-Many of the parsers may return more than one object. Example multiple players with a matching username. In that case, 
+Many of the parsers may return more than one object; for example, multiple players with a matching username. In that case, 
 you must use the :javadoc:`CommandContext#all(ResourceKey)` method to get the ``Collection`` of possible matches. 
 *Otherwise, the context object will throw an exception!*
 
 When creating a command, consider whether the argument could return multiple values, for example whether a player 
-argument could support multiple players when using a selector. If you support multiple values the users need to type 
-only one command and can use an easier command sytax. Example ``/tell @a Who took the cookies?``
+argument could support multiple players when using a selector. If you support multiple values, the users need to type 
+only one command, and can use an easier command sytax, e.g ``/tell @a Who took the cookies?``
 
 To create a new :javadoc:`Parameter` (argument), use the :javadoc:`Parameter` class that will give you many 
 :javadoc:`Parameter.Builder` options. Each parameter will need its :javadoc:`Parameter.Builder#key(String)` 
 filled out before being built. 
 
 Apply the ``Parameter`` to the command builder with the :javadoc:`Command.Builder#addParameter` method. 
-It is possible to pass more than one ``Parameter`` to the method, thus chaining multiple arguemtns. 
+It is possible to pass more than one ``Parameter`` to the method, thus chaining multiple arguments. 
 Example ``/msg <player> <msg>``. This has the same effect as wrapping the ``Parameter`` objects in a 
 :javadoc:`Parameter#seq(Parameter, Parameter, Parameter...)` element.
 
@@ -61,7 +61,7 @@ Example: Building a Command with Multiple Arguments
             .build();
     }
 
-Overview of the ``Parameter`` command elements
+Overview of the ``Parameter`` Command Elements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. list-table::
@@ -136,7 +136,7 @@ Overview of the ``Parameter`` command elements
 
     Don't expect that a ``Parameter`` will only ever return a single value, 
     a lot of them support multiple return values; some might support regular expressions or use command selector. 
-    This is intensional as it makes commands easier to use. Example ``/tell @a BanditPlayer has cookies!``.
+    This is intentional as it makes commands easier to use, e.g ``/tell @a BanditPlayer has cookies!``.
     
 Custom Parameter
 ~~~~~~~~~~~~~~~~

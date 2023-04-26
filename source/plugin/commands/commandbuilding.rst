@@ -137,10 +137,10 @@ Command Result
 ~~~~~~~~~~~~~~
 
 The command result is used to give more information about how the command was executed.
-In the example above we used :javadoc:`CommandResult#success` however we can give more information then this,
+In the example above we used :javadoc:`CommandResult#success`, however we can give more information than this,
 which is then sent back to the client to provide a correctly formatted message.
 
-By going the builder route you gain access to the ``result`` method which is a integer value sent back to the client.
+By going the builder route you gain access to the ``result`` method which is an integer value sent back to the client.
 Generally this can be ignored and the static helper methods of :javadoc:`CommandResult#success` and 
 :javadoc:`CommandResult#error(Component)` will be used.
 
@@ -169,7 +169,7 @@ The result's input number has three meanings.
     * - Negative
       - Undefined in the Minecraft spec, can result in different effects
 
-Error handling
+Error Handling
 ~~~~~~~~~~~~~~
 
 The ``execute`` method may also throw a :javadoc:`CommandException`, signaling that an error occured while trying to 

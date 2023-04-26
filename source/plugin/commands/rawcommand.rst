@@ -11,7 +11,7 @@ The raw command interface can be used to define commands. The interface can be u
 
 It is recommended to use the :doc:`commandbuilding` for simple command definitions.
 
-Writing a command
+Writing a Command
 ~~~~~~~~~~~~~~~~~
 
 The first step is to create a class for the command. The class has to implement the interface ``Command.Raw``:
@@ -60,7 +60,7 @@ The first step is to create a class for the command. The class has to implement 
 
     See the JavaDoc for :javadoc:`Command.Raw` for the purposes of each method in the example
 
-Registering the command
+Registering the Command
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 Now we can register the class in the :javadoc:`RegisterCommandEvent` event. You can register the command using the 
