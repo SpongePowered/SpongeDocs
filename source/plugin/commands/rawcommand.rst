@@ -6,6 +6,10 @@ Raw Command
 .. javadoc-import::
     org.spongepowered.api.event.lifecycle.RegisterCommandEvent
     org.spongepowered.api.command.Command.Raw
+    org.spongepowered.api.command.Command
+    org.spongepowered.plugin.PluginContainer
+    java.lang.String
+
 
 The raw command interface can be used to define commands. The interface can be used as a base for custom command APIs.
 

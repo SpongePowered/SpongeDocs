@@ -3,7 +3,7 @@ Command Manager
 ===============
 
 .. javadoc-import::
-    org.spongepowered.api.command.CommandManager
+    org.spongepowered.api.command.manager.CommandManager
     org.spongepowered.api.event.lifecycle.RegisterCommandEvent
 
 

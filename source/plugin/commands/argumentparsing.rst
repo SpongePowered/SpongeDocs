@@ -5,8 +5,9 @@ Argument Parsing
 .. javadoc-import::
     org.spongepowered.api.command.parameter.CommandContext
     org.spongepowered.api.command.parameter.Parameter
-    org.spongepowered.api.command.Parameter.Parameter.Builder
+    org.spongepowered.api.command.parameter.Parameter.Builder
     org.spongepowered.api.command.Command.Builder
+    java.lang.Class
 
 Minecraft's Brigadier system includes a powerful argument parser that Sponge can take advantage of. 
 It converts the string input to java base types (integer, booleans, string) or game objects 
@@ -16,8 +17,8 @@ suggestions of arguments.
 The parsed arguments are stored in the :javadoc:`CommandContext` object. If the parser returns a single object, 
 obtain it with :javadoc:`CommandContext#one(ResourceKey)`. Optional and weak arguments may return ``Optional.empty()``
 
-Many of the parsers may return more than one object; for example, multiple players with a matching username. In that case, 
-you must use the :javadoc:`CommandContext#all(ResourceKey)` method to get the ``Collection`` of possible matches. 
+Many of the parsers may return more than one object; for example, multiple players with a matching username. In that 
+case, you must use the :javadoc:`CommandContext#all(ResourceKey)` method to get the ``Collection`` of possible matches. 
 *Otherwise, the context object will throw an exception!*
 
 When creating a command, consider whether the argument could return multiple values, for example whether a player 
@@ -28,7 +29,7 @@ To create a new :javadoc:`Parameter` (argument), use the :javadoc:`Parameter` cl
 :javadoc:`Parameter.Builder` options. Each parameter will need its :javadoc:`Parameter.Builder#key(String)` 
 filled out before being built. 
 
-Apply the ``Parameter`` to the command builder with the :javadoc:`Command.Builder#addParameter` method. 
+Apply the ``Parameter`` to the command builder with the :javadoc:`Command.Builder#addParameter(Parameter)` method. 
 It is possible to pass more than one ``Parameter`` to the method, thus chaining multiple arguments. 
 Example ``/msg <player> <msg>``. This has the same effect as wrapping the ``Parameter`` objects in a 
 :javadoc:`Parameter#seq(Parameter, Parameter, Parameter...)` element.

@@ -3,6 +3,7 @@ Building a Command
 ==================
 
 .. javadoc-import::
+    org.spongepowered.api.command.Command
     org.spongepowered.api.command.Command.Builder
     org.spongepowered.api.command.CommandExecutor
     org.spongepowered.api.command.parameter.CommandContext
@@ -11,13 +12,15 @@ Building a Command
     org.spongepowered.api.command.exception.ArgumentParseException
     org.spongepowered.api.event.lifecycle.RegisterCommandEvent
     org.spongepowered.api.event.EventContextKeys
+    org.spongepowered.plugin.PluginContainer
+    net.kyori.adventure.text.Component
     
 The first step is to get a new :javadoc:`Command.Builder` builder. 
 The builder provides methods to modify the command help messages, command arguments and the command logic. 
 These methods can be chained.
 
 To finally build the command, you'll want to call the 
-:javadoc:`Command.Builder#build` method.
+:javadoc:`Command.Builder#build()` method.
 
 Example: Building a Simple Command
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -137,11 +140,11 @@ Command Result
 ~~~~~~~~~~~~~~
 
 The command result is used to give more information about how the command was executed.
-In the example above we used :javadoc:`CommandResult#success`, however we can give more information than this,
+In the example above we used :javadoc:`CommandResult#success()`, however we can give more information than this,
 which is then sent back to the client to provide a correctly formatted message.
 
 By going the builder route you gain access to the ``result`` method which is an integer value sent back to the client.
-Generally this can be ignored and the static helper methods of :javadoc:`CommandResult#success` and 
+Generally this can be ignored and the static helper methods of :javadoc:`CommandResult#success()` and 
 :javadoc:`CommandResult#error(Component)` will be used.
 
 Example: Building a CommandResult

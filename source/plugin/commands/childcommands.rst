@@ -4,8 +4,9 @@ Child Commands
 
 .. javadoc-import::
     org.spongepowered.api.command.Command.Builder
-    org.spongepowered.api.command.Command.CommandExecutor
+    org.spongepowered.api.command.CommandExecutor
     org.spongepowered.api.command.exception.ArgumentParseException
+    java.lang.String
 
 The :javadoc:`Command.Builder` supports hierachical command structure like this:
 
@@ -35,7 +36,7 @@ Every child command is a seperate ``Command`` and can be cheated in the same way
         .build();
 
 Instead of registering them to the event, child commands are registered on their parent command using the 
-:javadoc:`Command.Builder#child(Command, String, String...)` method. They are registered with a list of aliases. 
+:javadoc:`Command.Builder#addChild(Command, String, String...)` method. They are registered with a list of aliases. 
 The first alias supplied is the primary one and will appear in the usage message.
 
 .. code-block:: java
