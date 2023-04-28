@@ -25,7 +25,7 @@
 	</organization>
 
 	<properties>
-		<sponge.api.version>8.0.0-SNAPSHOT</sponge.api.version>
+		<sponge.api.version>8.1.0</sponge.api.version>
 
 		<mainClass>org.spongepowered.docs.tools.javadoc.Main</mainClass>
 
@@ -51,7 +51,7 @@
 		<dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>
-			<version>29.0-jre</version>
+			<version>31.1-jre</version>
 		</dependency>
 		<dependency>
 			<groupId>com.google.code.findbugs</groupId>
@@ -61,13 +61,13 @@
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
-			<version>1.7.30</version>
+			<version>1.7.36</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-slf4j-impl</artifactId>
-			<version>2.13.3</version>
+			<version>2.20.0</version>
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
@@ -95,7 +95,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-enforcer-plugin</artifactId>
-				<version>3.0.0-M3</version>
+				<version>3.3.0</version>
 				<executions>
 					<execution>
 						<id>enforce-maven</id>
@@ -116,7 +116,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
-				<version>3.2.0</version>
+				<version>3.3.0</version>
 				<configuration>
 					<archive>
 						<manifest>
@@ -133,7 +133,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-shade-plugin</artifactId>
-				<version>3.2.4</version>
+				<version>3.4.1</version>
 				<executions>
 					<!-- Create a jar that can be run standalone -->
 					<execution>
@@ -191,7 +191,7 @@
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>exec-maven-plugin</artifactId>
-				<version>3.0.0</version>
+				<version>3.1.0</version>
 				<configuration>
 					<mainClass>${mainClass}</mainClass>
 				</configuration>

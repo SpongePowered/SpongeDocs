@@ -25,12 +25,12 @@
     </organization>
 
     <properties>
-        <sponge.api.version>7.3.0</sponge.api.version>
-        <sponge.common.version>1.12.2-7.3.0</sponge.common.version>
+        <sponge.api.version>8.1.0</sponge.api.version>
+        <sponge.vanilla.version>1.16.5-8.1.0-RC1321</sponge.vanilla.version>
 
         <mainClass>org.spongepowered.docs.tools.configlister.ConfigLister</mainClass>
 
-        <java.version>8</java.version>
+        <java.version>11</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
 
@@ -56,9 +56,9 @@
         </dependency>
         <dependency>
             <groupId>org.spongepowered</groupId>
-            <artifactId>spongecommon</artifactId>
-            <version>${sponge.common.version}</version>
-            <classifier>dev</classifier>
+            <artifactId>spongevanilla</artifactId>
+            <version>${sponge.vanilla.version}</version>
+            <classifier>universal</classifier>
         </dependency>
     </dependencies>
 
@@ -80,7 +80,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
-                <version>3.0.0-M3</version>
+                <version>3.3.0</version>
                 <executions>
                     <execution>
                         <id>enforce-maven</id>
@@ -101,7 +101,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
-                <version>3.2.0</version>
+                <version>3.3.0</version>
                 <configuration>
                     <archive>
                         <manifest>
@@ -117,7 +117,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
-                <version>3.0.0</version>
+                <version>3.1.0</version>
                 <configuration>
                     <mainClass>${mainClass}</mainClass>
                 </configuration>

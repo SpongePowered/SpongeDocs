@@ -50,14 +50,14 @@ import java.util.UUID;
 import java.util.function.Consumer;
 
 import org.apache.commons.lang3.StringUtils;
-import org.spongepowered.common.config.type.GlobalConfig;
-import org.spongepowered.common.util.IpSet;
+import org.spongepowered.common.applaunch.config.core.IpSet;
+import org.spongepowered.common.config.inheritable.GlobalConfig;
+import org.spongepowered.configurate.objectmapping.meta.Comment;
+import org.spongepowered.configurate.objectmapping.meta.Setting;
 
 import com.google.common.collect.ImmutableSet;
 import com.google.common.io.Files;
 import com.google.common.reflect.TypeToken;
-
-import ninja.leaping.configurate.objectmapping.Setting;
 
 public class ConfigLister {
 
@@ -227,11 +227,11 @@ public class ConfigLister {
      * @return The processed comment for the given field or null.
      */
     public static String extractComment(final Field field) {
-        final Setting setting = field.getAnnotation(Setting.class);
-        if (setting.comment().isEmpty()) {
+        final Comment annotation = field.getAnnotation(Comment.class);
+        if (annotation == null || annotation.value().isEmpty()) {
             return null;
         }
-        return setting.comment().trim()
+        return annotation.value().trim()
                 .replaceAll(" ?\\(Default: [^\\)]+\\)", "") // Remove default value, we already have that
                 .replaceAll("\n\n+", "\n") // Remove empty lines
                 .replace("\"", "``") // " -> ``
@@ -345,9 +345,23 @@ public class ConfigLister {
         return toSimpleName(typeEntry.getType());
     }
 
+    private static final Map<Class<?>, String> SIMPLE_NAMES = new HashMap<>();
+
     private static String toSimpleName(final Class<?> clazz) {
-        return clazz.getSimpleName()
+        return SIMPLE_NAMES.computeIfAbsent(clazz, c -> toSimpleName0(c));
+    }
+
+    private static String toSimpleName0(final Class<?> clazz) {
+        String name =  clazz.getSimpleName()
                 .replaceAll("Category$", ""); // Remove confusing Category suffix
+        if (!SIMPLE_NAMES.values().contains(name)) {
+            return name;
+        }
+        int i = 1;
+        while (SIMPLE_NAMES.values().contains(name + i)) {
+            i++;
+        }
+        return name + i;
     }
 
     /**
@@ -476,7 +490,8 @@ public class ConfigLister {
 
     public static class DocumentedConfigTypes {
 
-        @Setting(value = ROOT_PLACEHOLDER, comment = "The main configuration for Sponge: ``global.conf``")
+        @Setting(ROOT_PLACEHOLDER)
+        @Comment("The main configuration for Sponge: ``global.conf``")
         GlobalConfig global;
 
     }

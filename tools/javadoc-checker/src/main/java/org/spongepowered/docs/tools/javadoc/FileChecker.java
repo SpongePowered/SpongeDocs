@@ -139,6 +139,8 @@ public class FileChecker {
                         clazz = ClassUtils.getClassForName(fqcn);
                     } catch (final IllegalArgumentException e) {
                         report("Unknown import", key, fqcn);
+                    } catch (final ExceptionInInitializerError e) {
+                        report("Import verification error", key, fqcn);
                     }
                     if (clazz != null) {
                         this.imports.put(key, clazz);
