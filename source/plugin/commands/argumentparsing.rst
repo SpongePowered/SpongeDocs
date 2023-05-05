@@ -5,9 +5,11 @@ Argument Parsing
 .. javadoc-import::
     org.spongepowered.api.command.parameter.CommandContext
     org.spongepowered.api.command.parameter.Parameter
-    org.spongepowered.api.command.parameter.Parameter.Builder
+    org.spongepowered.api.command.parameter.Parameter.Key
+    org.spongepowered.api.command.parameter.Parameter.Value.Builder
     org.spongepowered.api.command.Command.Builder
     java.lang.Class
+    java.lang.String
 
 Minecraft's Brigadier system includes a powerful argument parser that Sponge can take advantage of. 
 It converts the string input to java base types (integer, booleans, string) or game objects 
@@ -15,10 +17,10 @@ It converts the string input to java base types (integer, booleans, string) or g
 suggestions of arguments.
 
 The parsed arguments are stored in the :javadoc:`CommandContext` object. If the parser returns a single object, 
-obtain it with :javadoc:`CommandContext#one(ResourceKey)`. Optional and weak arguments may return ``Optional.empty()``
+obtain it with :javadoc:`CommandContext#one(Key)`. Optional and weak arguments may return ``Optional.empty()``
 
 Many of the parsers may return more than one object; for example, multiple players with a matching username. In that 
-case, you must use the :javadoc:`CommandContext#all(ResourceKey)` method to get the ``Collection`` of possible matches. 
+case, you must use the :javadoc:`CommandContext#all(Key)` method to get the ``Collection`` of possible matches. 
 *Otherwise, the context object will throw an exception!*
 
 When creating a command, consider whether the argument could return multiple values, for example whether a player 
@@ -26,13 +28,13 @@ argument could support multiple players when using a selector. If you support mu
 only one command, and can use an easier command sytax, e.g ``/tell @a Who took the cookies?``
 
 To create a new :javadoc:`Parameter` (argument), use the :javadoc:`Parameter` class that will give you many 
-:javadoc:`Parameter.Builder` options. Each parameter will need its :javadoc:`Parameter.Builder#key(String)` 
+:javadoc:`Builder` options. Each parameter will need its :javadoc:`Builder#key(String)` 
 filled out before being built. 
 
 Apply the ``Parameter`` to the command builder with the :javadoc:`Command.Builder#addParameter(Parameter)` method. 
 It is possible to pass more than one ``Parameter`` to the method, thus chaining multiple arguments. 
 Example ``/msg <player> <msg>``. This has the same effect as wrapping the ``Parameter`` objects in a 
-:javadoc:`Parameter#seq(Parameter, Parameter, Parameter...)` element.
+:javadoc:`Parameter#seq(Iterable<Parameter>)` element.
 
 Example: Building a Command with Multiple Arguments
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -143,7 +145,7 @@ Custom Parameter
 ~~~~~~~~~~~~~~~~
 
 It is possible to create custom command elements. Example Vector2i. This is done though the 
-:javadoc:`Parameter#builder(Class)` method, which returns a :javadoc:`Parameter.Builder` where all data of the parameter
+:javadoc:`Parameter#builder(Class)` method, which returns a :javadoc:`Parameter` where all data of the parameter
 is needed to be provided. Once done call the ``build`` method to build the parameter.
 
 When building a new parameter, only the ``parser`` and ``key`` are required for build. The ``parser`` is where the logic

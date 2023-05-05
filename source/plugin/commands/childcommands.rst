@@ -8,7 +8,7 @@ Child Commands
     org.spongepowered.api.command.exception.ArgumentParseException
     java.lang.String
 
-The :javadoc:`Command.Builder` supports hierachical command structure like this:
+The :javadoc:`Builder` supports hierachical command structure like this:
 
 - ``/mail`` (parent command)
     - ``/main send`` (child command)
@@ -36,7 +36,7 @@ Every child command is a seperate ``Command`` and can be cheated in the same way
         .build();
 
 Instead of registering them to the event, child commands are registered on their parent command using the 
-:javadoc:`Command.Builder#addChild(Command, String, String...)` method. They are registered with a list of aliases. 
+:javadoc:`Builder#addChild(Command, String, String...)` method. They are registered with a list of aliases. 
 The first alias supplied is the primary one and will appear in the usage message.
 
 .. code-block:: java
@@ -52,7 +52,7 @@ Fallback Behavior
 =================
 
 If a command has child commands, a :javadoc:`CommandExecutor`, set through 
-:javadoc:`Command.Builder#executor(CommandExecutor)` and the parameters for the executor are set to optional. 
+:javadoc:`Builder#executor(CommandExecutor)` and the parameters for the executor are set to optional. 
 The behavior of error in selection and argument parsing of child commands is dependent on whether this parent 
 executor exists.
 

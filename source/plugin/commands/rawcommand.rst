@@ -62,7 +62,7 @@ The first step is to create a class for the command. The class has to implement 
 
 .. tip::
 
-    See the JavaDoc for :javadoc:`Command.Raw` for the purposes of each method in the example
+    See the JavaDoc for :javadoc:`Raw` for the purposes of each method in the example
 
 Registering the Command
 ~~~~~~~~~~~~~~~~~~~~~~~

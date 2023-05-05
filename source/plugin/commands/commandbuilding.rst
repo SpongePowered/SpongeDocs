@@ -15,7 +15,7 @@ Building a Command
     org.spongepowered.plugin.PluginContainer
     net.kyori.adventure.text.Component
     
-The first step is to get a new :javadoc:`Command.Builder` builder. 
+The first step is to get a new :javadoc:`Builder` builder. 
 The builder provides methods to modify the command help messages, command arguments and the command logic. 
 These methods can be chained.
 
