@@ -10,27 +10,30 @@ Modifying Blocks
     org.spongepowered.api.block.BlockSnapshot
     org.spongepowered.api.block.BlockState
     org.spongepowered.api.block.BlockType
-    org.spongepowered.api.data.ImmutableDataHolder
-    org.spongepowered.api.data.manipulator.ImmutableDataManipulator
-    org.spongepowered.api.data.manipulator.mutable.WetData
-    org.spongepowered.api.data.manipulator.mutable.block.DirtData
     org.spongepowered.api.data.type.DirtTypes
     org.spongepowered.api.world.Location
+    org.spongepowered.api.world.server.ServerLocation
+    org.spongepowered.api.data.DataManipulator
+    org.spongepowered.api.data.DataManipulator.Immutable
+    org.spongepowered.api.data.DataHolder
+    org.spongepowered.api.data.DataHolder.Immutable
+    org.spongepowered.api.util.Direction
+    org.spongepowered.api.data.Keys
 
 Changing a Block's Type
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Changing the Type of a Block is as simple as calling the :javadoc:`Location#setBlockType(BlockType)` method with
+Changing the Type of a Block is as simple as calling the :javadoc:`Location#blockType(BlockType)` method with
 the new :javadoc:`BlockType`. The following code turns the block at the given :javadoc:`Location` into a
 sponge:
 
  .. code-block:: java
 
     import org.spongepowered.api.block.BlockTypes;
-    import org.spongepowered.api.world.Location;
-    import org.spongepowered.api.world.World;
+    import org.spongepowered.api.world.server.ServerLocation;
+    import org.spongepowered.api.world.server.ServerWorld;
 
-    public void setToSponge(Location<World> blockLoc) {
+    public void setToSponge(ServerLocation blockLoc) {
         blockLoc.setBlockType(BlockTypes.SPONGE);
     }
 
@@ -42,7 +45,7 @@ Altering Block States
 
 Similar to the above example, the ``Location`` class provides a :javadoc:`Location#setBlock(BlockState)` method
 accepting a new :javadoc:`BlockState`. To make use of it, you first must acquire a ``BlockState`` you can modify. You
-can do so either by getting the block's current state via the :javadoc:`Location#getBlock()` method or by using a
+can do so either by getting the block's current state via the :javadoc:`Location#block()` method or by using a
 ``BlockType``\ 's default state. The latter is demonstrated below. The default state for a Sponge block is retrieved
 and then modified to directly create a wet sponge block:
 
@@ -50,69 +53,50 @@ and then modified to directly create a wet sponge block:
 
     import org.spongepowered.api.Sponge;
     import org.spongepowered.api.block.BlockState;
-    import org.spongepowered.api.data.manipulator.mutable.WetData;
+    import org.spongepowered.api.data.Keys;
 
-    public void setToWetSponge(Location<World> blockLoc) {
-        BlockState state = BlockTypes.SPONGE.getDefaultState();
-        WetData wetness = Sponge.getDataManager().
-            getManipulatorBuilder(WetData.class).get().create();
-        wetness.set(wetness.wet().set(true));
-        BlockState newState = state.with(wetness.asImmutable()).get();
+    public void setToWetSponge(ServerLocation blockLoc) {
+        BlockState state = BlockTypes.SPONGE.get().getDefaultState();
+        BlockState newState = state.with(Keys.IS_WET, true).get();
         blockLoc.setBlock(newState);
     }
 
-Since a ``BlockState`` is an :javadoc:`ImmutableDataHolder`, you may use the provided methods ``with()`` and
+Since a ``BlockState`` is an :javadoc:`DataHolder.Immutable`, you may use the provided methods ``with()`` and
 ``without()``, both of which will return a new altered ``BlockState`` or ``Optional.empty()`` if the given
-:javadoc:`ImmutableDataManipulator` is not applicable to the kind of block represented by the ``BlockState``.
+:javadoc:`DataManipulator.Immutable` is not applicable to the kind of block represented by the ``BlockState``.
 
-The ``with()`` method accepts an ``ImmutableDataManipulator`` and will try to create a new ``BlockState`` with the
-given data set, overwriting existing values. The following example will change any dirt block to podzol.
+The ``with()`` method accepts an ``DataManipulator.Immutable`` and will try to create a new ``BlockState`` with the
+given data set, overwriting existing values. The following example will change any stairs block to face east.
 
  .. code-block:: java
 
-    import org.spongepowered.api.data.key.Keys;
-    import
-        org.spongepowered.api.data.manipulator.immutable.block.ImmutableDirtData;
-    import org.spongepowered.api.data.manipulator.mutable.block.DirtData;
-    import org.spongepowered.api.data.type.DirtTypes;
-
-    public void dirtToPodzol(Location<World> blockLoc) {
-        BlockState state = blockLoc.getBlock();
-        Optional<ImmutableDirtData> dirtDataOpt =
-            state.get(ImmutableDirtData.class);
-
-        if (dirtDataOpt.isPresent()) {
-            DirtData dirtData = dirtDataOpt.get().asMutable();
-            dirtData.set(Keys.DIRT_TYPE, DirtTypes.PODZOL);
-            BlockState dirtState = state.with(dirtData.asImmutable()).get();
+    public void faceEast(ServerLocation blockLoc) {
+        BlockState state = blockLoc.block();
+        Optional<BlockState> withEastState = state.with(Keys.DIRECTION, Direction.EAST);
+        if (withEastState.isPresent()) {
             blockLoc.setBlock(dirtState);
         }
     }
 
-Note that the :javadoc:`DirtData` is a mutable copy of the data held in the ``BlockState``. It is changed and then
-converted back to an immutable and used to create a new ``BlockState`` which then replaces the original block.
-
 The ``without()`` method accepts a class reference and will create a new ``BlockState`` without the data
 represented by the given class. If the block state would not be valid without that data, a default value will be used.
-So if the ``DirtData`` from a dirt blocks state is removed, it will fall back to :javadoc:`DirtTypes#DIRT`, the default
-value. The following example will dry the block at a given ``Location``, if possible.
+So if the ``Keys.DIRECTION`` from a block's state is removed, it will fall back to :javadoc:`Direction#NORTH`, 
+the default value. 
+The following example will dry the block at a given ``Location``, if possible.
 
  .. code-block:: java
 
-    import
-        org.spongepowered.api.data.manipulator.immutable.block.ImmutableWetData;
-
-    public void dry(Location<World> blockLoc) {
-        BlockState wetState = blockLoc.getBlock();
-        Optional<BlockState> dryState = wetState.without(ImmutableWetData.class);
+    public void dry(ServerLocation blockLoc) {
+        BlockState wetState = blockLoc.block();
+        Optional<BlockState> dryState = wetState.without(Keys.IS_WET);
         if (dryState.isPresent()) {
             blockLoc.setBlock(dryState.get());
         }
     }
 
-Since the :javadoc:`WetData` data manipulator represents boolean data, by removing it we set the wetness of the block
+Since the :javadoc:`Keys#IS_WET` data manipulator represents boolean data, by removing it we set the wetness of the block
 (if it has any) to false. The ``dryState.isPresent()`` check will fail on block states that cannot be wet since
-``dryState`` will be ``Optional.empty()`` in that case.
+``Keys.IS_WET`` will be ``Optional.empty()`` in that case.
 
 Copying Blocks
 ~~~~~~~~~~~~~~
@@ -126,8 +110,10 @@ very simple:
  .. code-block:: java
 
     import org.spongepowered.api.block.BlockSnapshot;
+    import org.spongepowered.api.world.BlockChangeFlags;
 
-    public void copyBlock(Location<World> from, Location<World> to) {
+    public void copyBlock(ServerLocation from, ServerLocation to) {
         BlockSnapshot snapshot = from.createSnapshot();
-        to.setBlock(snapshot.getState());
+        to.restoreSnapshot(snapshot, false, BlockChangeFlags.ALL);
     }
+
