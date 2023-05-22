@@ -20,7 +20,7 @@ only need to update your plugin version in one file.
 Below is a simple template in Kotlin format that should be usable for most plugins. **Make sure to replace the group with the group ID
 you have chosen before.**
 
-.. code-block:: kotlin
+.. code-block:: groovy
 
     plugins {
         id 'java-library'
@@ -75,7 +75,7 @@ Without SpongeGradle
 Generally, everything necessary to compile a Sponge plugin using Gradle can be done by simply adding the SpongeAPI
 dependency to your project:
 
-.. code-block:: kotlin
+.. code-block:: groovy
 
     repositories {
         mavenCentral()
