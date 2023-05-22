@@ -17,7 +17,7 @@ only need to update your plugin version in one file.
   version together with SpongeGradle_. :ref:`The Gradle section of the build systems page <gradle-setup>` explains how
   to setup Gradle on your computer.
 
-Below is a simple template in Kotlin format that should be usable for most plugins. **Make sure to replace the group with the group ID
+Below is a simple template that should be usable for most plugins. **Make sure to replace the group with the group ID
 you have chosen before.**
 
 .. code-block:: groovy
