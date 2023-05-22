@@ -4,10 +4,6 @@ Setting Up Gradle
 
 .. _using-spongegradle:
 
-.. warning::
-    These docs were written for SpongeAPI 7 and are likely out of date. 
-    `If you feel like you can help update them, please submit a PR! <https://github.com/SpongePowered/SpongeDocs>`__
-
 Using SpongeGradle
 ==================
 
@@ -21,14 +17,14 @@ only need to update your plugin version in one file.
   version together with SpongeGradle_. :ref:`The Gradle section of the build systems page <gradle-setup>` explains how
   to setup Gradle on your computer.
 
-Below is a simple template that should be usable for most plugins. **Make sure to replace the group with the group ID
+Below is a simple template in Kotlin format that should be usable for most plugins. **Make sure to replace the group with the group ID
 you have chosen before.**
 
-.. code-block:: groovy
+.. code-block:: kotlin
 
     plugins {
-        id 'java'
-        id 'org.spongepowered.plugin' version '0.11.3'
+        id 'java-library'
+        id("org.spongepowered.plugin") version '0.11.3'
     }
 
     // This may not be required, but has solved issues in the past
@@ -40,69 +36,34 @@ you have chosen before.**
     description = 'Here lies an example plugin definition'
 
     repositories {
-        jcenter()
+        mavenCentral()
     }
 
-    dependencies {
-        compile 'org.spongepowered:spongeapi:8.0.0'
+    sponge {
+        apiVersion("8.1.0")
+        licence("MIT")
+        loader {
+            name(PluginLoaders.JAVA_PLAIN)
+            version("1.0")
+        }
+        plugin("**plugin Id**") {
+            displayName("**Plugin Name**")
+            entrypoint("**Plugin Entrypoint**")
+            description("**Plugin Description**")
+            dependency("spongeapi") {
+                loadOrder(PluginDependency.LoadOrder.AFTER)
+                optional(false)
+            }
+        }
     }
 
 These few lines handle most settings you would normally do manually:
 
 * Basic Gradle Java setup
-* Set your project to compile with Java 8
 * Add Sponge's Maven repository (and Maven Central)
 * Set up a plugin with the project name in lower case as **plugin ID**
 * Automatically includes the project name, description and :doc:`version <../project/version-numbers>` in
   :doc:`/plugin/plugin-meta`.
-
-Manually setting the plugin ID
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-By default, the Gradle plugin will configure your **plugin ID** with project name (in lowercase) you have configured.
-If you want to use a custom **plugin ID** and still use the :doc:`/plugin/plugin-meta` integration you can change it
-manually:
-
-.. code-block:: groovy
-
-    sponge {
-        plugin {
-            id = 'pluginidgoeshere'
-        }
-    }
-
-Overriding defaults
-~~~~~~~~~~~~~~~~~~~
-
-By default, the Gradle plugin will contribute the **plugin name**, **plugin version**, and **description** automatically
-to :doc:`/plugin/plugin-meta` with defaults defined in the project properties. It is also possible to override these if
-you want to specify them manually:
-
-.. code-block:: groovy
-
-    sponge {
-        plugin {
-            meta {
-                name = 'Example Plugin'
-                version = '1.0.0-SNAPSHOT'
-                description = 'This is an example plugin'
-                url = 'http://www.example.com/'
-            }
-        }
-    }
-
-You can also remove a default value entirely:
-
-.. code-block:: groovy
-
-    sponge {
-        plugin {
-            meta {
-                name = null
-                description = null
-            }
-        }
-    }
 
 Without SpongeGradle
 ====================
@@ -114,10 +75,10 @@ Without SpongeGradle
 Generally, everything necessary to compile a Sponge plugin using Gradle can be done by simply adding the SpongeAPI
 dependency to your project:
 
-.. code-block:: groovy
+.. code-block:: kotlin
 
     repositories {
-        jcenter()
+        mavenCentral()
         maven {
             name = 'sponge-repo'
             url = 'https://repo.spongepowered.org/repository/maven-public/'
