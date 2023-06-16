@@ -9,7 +9,7 @@ to help developers get started with SpongeAPI, not to cover every concept. The
 
 .. note:: 
 
-    If you are familar with SpongeAPI 7 and need assistance migrating your plugin to SpongeAPI 8 or later, see
+    If you are familiar with SpongeAPI 7 and need assistance migrating your plugin to SpongeAPI 8 or later, see
     :doc:`migrating-from-7-to-8`.
 
 .. note::
