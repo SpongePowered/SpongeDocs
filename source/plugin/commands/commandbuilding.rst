@@ -16,7 +16,7 @@ Building a Command
     net.kyori.adventure.text.Component
     
 The first step is to get a new :javadoc:`Builder` builder. 
-The builder provides methods to modify the command help messages, command arguments and the command logic. 
+The builder provides methods to modify the command help messages, command arguments, and the command logic. 
 These methods can be chained.
 
 To finally build the command, you'll want to call the 
@@ -68,7 +68,7 @@ Overview of the Command.Builder methods
     * - build
       - Builds the command. After that you need to register the command
 
-Player-Only commands
+Player-Only Commands
 ~~~~~~~~~~~~~~~~~~~~
 
 Sometimes it is necessary that only players can execute a command. Example ``/suicide`` command. 
@@ -89,17 +89,17 @@ a target player on the command cause.
 
 .. note::
 
-    We recommend you to add an optional ``[player]`` argument to make the command *console-friendly*. 
-    Example ``/suicide [player]``
+    We recommend you to add an optional ``[player]`` argument to make the command *console-friendly* for example,
+    ``/suicide [player]``
 
     The easiest solution for this is to append a ``playerOrTarget`` command parameter (see :doc:`argumentparsing`) 
-    instead of providing a execution requirement.
+    instead of providing an execution requirement.
 
 .. tip::
 
     Often times command are put in as player-only as they require the location in the world the command was
     executed from. Best practise would be to check for the target location using :javadoc:`EventContextKeys#LOCATION`
-    instead of the player as this would allow command blocks to run the command without specifing a player.
+    instead of the player as this would allow command blocks to run the command without specifying a player.
 
 Writing a Command Executor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -144,12 +144,12 @@ Overview of the ``Parameter`` Command Elements
 Custom Parameter
 ~~~~~~~~~~~~~~~~
 
-It is possible to create custom command elements. Example Vector2i. This is done though the 
-:javadoc:`Parameter#builder(Class)` method, which returns a :javadoc:`Parameter` where all data of the parameter
-is needed to be provided. Once done call the ``build`` method to build the parameter.
+It is possible to create custom command elements; for example, Vector2i. This is done though the 
+:javadoc:`Parameter#builder(Class)` method, which returns a :javadoc:`Parameter` where all data the parameter neededs 
+should be provided. Once done call the ``build`` method to build the parameter.
 
-When building a new parameter, only the ``parser`` and ``key`` are required for build. The ``parser`` is where the logic
-of mapping the ``String`` input to the desired value is.
+When building a new parameter, only the ``parser`` and ``key`` are required for build. The ``parser`` contains the logic
+for mapping the ``String`` input to the desired value.
 
 Example: Creating a Custom Parameter
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -173,7 +173,7 @@ In this example we will make a Vector2i parameter. This requires reading two Int
 
 .. tip::
 
-    When building a new parameter, you can base your parameter from a exsiting parameter. Example: taking 
-    :javadoc:`Parameter#string()` and giving it client suggestions
+    When building a new parameter, you can base your parameter on a exsiting parameters. Example: taking 
+    :javadoc:`Parameter#string()` and giving it client suggestions.
 
 
