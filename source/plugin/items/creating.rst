@@ -108,9 +108,9 @@ An example is shown below:
         Item item = world.createEntity(EntityTypes.ITEM, spawnLocation.getPosition());
         item.offer(Keys.REPRESENTED_ITEM, superMegaAwesomeSword.createSnapshot());
 
-        try (StackFrame frame = Sponge.getCauseStackManager().pushCauseFrame()) {
+        try (StackFrame frame = Sponge.server().causeStackManager().pushCauseFrame()) {
             frame.addContext(EventContextKeys.SPAWN_TYPE, SpawnTypes.PLACEMENT);
-            extent.spawnEntity(item);
+            word.spawnEntity(item);
         }
     }
 
