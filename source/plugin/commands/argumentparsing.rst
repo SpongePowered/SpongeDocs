@@ -54,8 +54,8 @@ Example: Building a Command with Multiple Arguments
         return Command
             .builder()
             .executor((CommandContext context) -> {
-                ServerPlayer player = context.one(playerParameter);
-                String message = context.one(messageParameter);
+                ServerPlayer player = context.requireOne(playerParameter);
+                String message = context.requireOne(messageParameter);
 
                 player.sendMessage(Component.text(message));
                 return CommandResult.success();
@@ -63,6 +63,10 @@ Example: Building a Command with Multiple Arguments
             .addParameter(playerParameter, messageParameter)
             .build();
     }
+
+.. note::
+    The example above uses :javadoc:`CommandContext#requireOne(Parameter.Value<T>)`, this is for arguments that must be provided. 
+    Use :javadoc:`CommandContext#one(Parameter.Value<T>)` for optional arguments 
 
 Overview of the ``Parameter`` Command Elements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
