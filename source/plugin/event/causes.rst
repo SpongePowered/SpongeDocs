@@ -9,8 +9,8 @@ Event Causes
     org.spongepowered.api.event.Event
     org.spongepowered.api.event.block.ChangeBlockEvent
     org.spongepowered.api.event.block.ChangeBlockEvent.All
-    org.spongepowered.api.event.cause.Cause
-    org.spongepowered.api.event.cause.Cause.Builder
+    org.spongepowered.api.event.Cause
+    org.spongepowered.api.event.Cause.Builder
     org.spongepowered.api.event.cause.EventContext
     org.spongepowered.api.event.cause.EventContext.Builder
     org.spongepowered.api.event.cause.EventContextKey
@@ -46,7 +46,7 @@ The ``Cause`` object contains two distinct sets of information, the cause stack 
   order, they are all equally important.
 
 As an example, if a sheep owned by a player eats some grass, the most direct cause of this is the sheep. The
-player would be in the ``EventContext`` as the :javadoc:`EventContextKeys#OWNER`, giving event consumers
+player would be in the ``EventContext`` as the :javadoc:`EventContextKeys#PLAYER`, giving event consumers
 that additional information about how the event has come about, but would not necessarily be within the
 direct cause itself.
 
@@ -116,7 +116,7 @@ Unlike the cause stack, which makes no guarantees as to the objects contained wi
 
     @Listener
     public void onGrow(ChangeBlockEvent.All event) {
-        Optional<UUID> notifier = event.getCause().getContext().get(EventContextKeys.NOTIFIER);
+        Optional<UUID> notifier = event.cause().context().get(EventContextKeys.NOTIFIER);
     }
 
 This example makes use of :javadoc:`EventContext#get(EventContextKey)` which can be used to retrieve the expected object
