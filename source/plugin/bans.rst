@@ -2,17 +2,13 @@
 Bans
 ====
 
-.. warning::
-    These docs were written for SpongeAPI 7 and are likely out of date. 
-    `If you feel like you can help update them, please submit a PR! <https://github.com/SpongePowered/SpongeDocs>`__
-
 .. javadoc-import::
     net.kyori.adventure.text.Component
     org.spongepowered.api.entity.living.player.User
     org.spongepowered.api.profile.GameProfile
     org.spongepowered.api.service.ban.BanService
-    org.spongepowered.api.util.ban.Ban
-    org.spongepowered.api.util.ban.Ban.Builder
+    org.spongepowered.api.service.ban.Ban
+    org.spongepowered.api.service.ban.Ban.Builder
 
 The :javadoc:`BanService` is a service built into SpongeAPI that adds the functionality for you to ban or pardon
 users in your plugin. The ``BanService`` provides several methods to do things such as banning users, pardoning users,
@@ -33,7 +29,7 @@ other services in SpongeAPI:
     import org.spongepowered.api.Sponge;
     import org.spongepowered.api.service.ban.BanService;
     
-    BanService service = Sponge.getServiceManager().provide(BanService.class).get();
+    BanService service = Sponge.serviceManager().provide(BanService.class).get();
 
 Now with the ``BanService``, we can perform additional operations. For example, if we want to check if a provided
 :javadoc:`User` is already banned, we can use the :javadoc:`BanService#isBanned(GameProfile)` method. Or perhaps if we
@@ -49,14 +45,16 @@ An example of this is shown below:
     import org.spongepowered.api.util.ban.Ban;
     
     if (service.isBanned(user.getProfile())) {
-        Optional<Ban.Profile> optionalBan = service.getBanFor(player.getProfile());
-        if (optionalBan.isPresent()) {
-            Ban.Profile profileBan = optionalBan.get();
-            Optional<Component> optionalReason = profileBan.getReason();
-            if (optionalReason.isPresent()) {
-                Component banReason = optionalReason.get();
+        CompletableFuture<Optional<Ban.Profile>> optionalBanFuture = service.find(player.getProfile());
+        optionalBanFuture.thenAccept(optionalBan -> {
+            if (optionalBan.isPresent()) {
+                Ban.Profile profileBan = optionalBan.get();
+                Optional<Component> optionalReason = profileBan.getReason();
+                if (optionalReason.isPresent()) {
+                    Component banReason = optionalReason.get();
+                }
             }
-        }
+        });
     }
 
 Creating a Ban
