@@ -54,7 +54,7 @@ An example of this is shown below:
                     Component banReason = optionalReason.get();
                 }
             }
-        })
+        });
     }
 
 Creating a Ban
