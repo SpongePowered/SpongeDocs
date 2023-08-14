@@ -2,20 +2,12 @@
 The Data API
 ============
 
-.. warning::
-    These docs were written for SpongeAPI 7 and are likely out of date. 
-    `If you feel like you can help update them, please submit a PR! <https://github.com/SpongePowered/SpongeDocs>`__
-
 .. javadoc-import::
 
     org.spongepowered.api.block.BlockType
     org.spongepowered.api.data.DataHolder
-    org.spongepowered.api.data.key.Key
-    org.spongepowered.api.data.key.Keys
-    org.spongepowered.api.data.manipulator.mutable.DyeableData
-    org.spongepowered.api.data.manipulator.mutable.entity.HealthData
-    org.spongepowered.api.data.property.item.DamageAbsorptionProperty
-    org.spongepowered.api.data.property.item.HarvestingProperty
+    org.spongepowered.api.data.Key
+    org.spongepowered.api.data.Keys
     org.spongepowered.api.entity.EntityType
     org.spongepowered.api.item.ItemType
 
@@ -59,23 +51,23 @@ Property
 A property too is data, but not synchronized between server and clients. Therefore, it can only be
 changed by modifications present on both client and server. Since Sponge is not intended to require a
 client-side counterpart, properties are not modifiable.
-Examples of properties are the harvesting abilities on tools (represented as :javadoc:`HarvestingProperty` or the damage
-absorption of an equipable armor item (represented as :javadoc:`DamageAbsorptionProperty`).
+Examples of properties are the applicable potion effects on tools (represented as :javadoc:`Keys#APPLICABLE_POTION_EFFECTS` or the damage
+absorption of an equipable armor item (represented as :javadoc:`Keys#ABSORPTION`).
 
 DataManipulator
 ~~~~~~~~~~~~~~~
 
 A data manipulator represents points of cohesive data that describes a certain component of its holder. For
-example :javadoc:`HealthData`, which contains both current and maximum health. If a data holder has ``HealthData``, it
+example HealthData, which contains both current and maximum health. If a data holder has ``HealthData``, it
 has health that can somehow be depleted and replenished and can die if that health is depleted. This allows for the
 re-use of such components over the API and prevents duplication of accessor methods. For example, sheep, stained glass
-blocks and leather armor all can share the :javadoc:`DyeableData` holding the color they are dyed in.
+blocks and leather armor all can share the DyeableData holding the color they are dyed in.
 
 Key
 ~~~
 
 A ``Key`` is a unique identifier for a single point of data and can be used to directly read or set that point of
-data without worrying about data manipulators. It was designed to provide a convenient way of accessing data
+data without worrying about data manipulators. It was designed to provide a way of accessing data
 similar to direct getter/setter methods. All keys used within Sponge are listed as constants in the
 :javadoc:`Keys` utility class.
 
@@ -96,6 +88,5 @@ Contents
 
     custom/index
     keys
-    datamanipulators
     transactions
     serialization

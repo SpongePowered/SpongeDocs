@@ -2,17 +2,13 @@
 Using Keys
 ==========
 
-.. warning::
-    These docs were written for SpongeAPI 7 and are likely out of date. 
-    `If you feel like you can help update them, please submit a PR! <https://github.com/SpongePowered/SpongeDocs>`__
-
 .. javadoc-import::
     org.spongepowered.api.data.DataHolder
     org.spongepowered.api.data.DataTransactionResult
     org.spongepowered.api.data.key.Key
     org.spongepowered.api.data.key.Keys
     org.spongepowered.api.data.value.BaseValue
-    org.spongepowered.api.data.value.mutable.MutableBoundedValue
+    org.spongepowered.api.data.value.WeightedCollectionValue
 
 Getting and offering data using a key
 =====================================
@@ -106,29 +102,17 @@ Keyed Values
 
 There are cases where you may care about not only the direct value for a Key, but the keyed value
 encapsulating it. In that case, use the ``getValue(key)`` method instead of ``get(key)``. You will receive an
-object inheriting from :javadoc:`BaseValue` which contains a copy of the original value. Since we know that current
-health is a :javadoc:`MutableBoundedValue`, we can find out the minimum possible value and set our target's health just
-a tiny bit above that.
+object inheriting from :javadoc:`Value` which contains a copy of the original value. As ``Keys#SPAWNABLE_ENTITIES``
+is a :javadoc:`WeightedCollectionValue`, we can get a list of potentional entity that could spawn using the ``Value``
+of the key.
 
 **Code Example: Bring a target to the brink of death**
 
 .. code-block:: java
 
-    import org.spongepowered.api.data.value.mutable.MutableBoundedValue;
-
     public void scare(DataHolder target) {
-        if (target.supports(Keys.HEALTH)) {
-            MutableBoundedValue<Double> health = target.getValue(Keys.HEALTH).get();
-            double nearDeath = health.getMinValue() + 1;
-            health.set(nearDeath);
-            target.offer(health);
+        if (target.supports(Keys.NEXT_ENTITY_TO_SPAWN)) {
+            WeightedCollectionValue value = target.getValue(Keys.NEXT_ENTITY_TO_SPAWN).get();
+            List<Entity> entities = value.get(new Random());
         }
     }
-
-Again, we check if our target supports the health key and then obtain the keyed value. A
-``MutableBoundedValue`` contains a ``getMinValue()`` method, so we obtain the minimal value, add 1 and then set
-it to our data container. Internally, the ``set()`` method performs a check if our supplied value is valid and
-silently fails if it is not. Calling ``health.set(-2)`` would not change the value within ``health`` since it
-would fail the validity checks. To finally apply our changes to the target, we need to offer the keyed value
-back to it. As a keyed value also contains the ``Key`` used to identify it, calling ``target.offer(health)``
-is equivalent to ``target.offer(health.getKey(), health.get())``.

@@ -2,159 +2,99 @@
 Custom DataManipulators
 =======================
 
-.. warning::
-    These docs were written for SpongeAPI 7 and are likely out of date. 
-    `If you feel like you can help update them, please submit a PR! <https://github.com/SpongePowered/SpongeDocs>`__
-
 .. javadoc-import::
-    org.spongepowered.api.data.DataManager
-    org.spongepowered.api.data.DataRegistration
-    org.spongepowered.api.data.DataSerializable
     org.spongepowered.api.data.DataHolder
-    org.spongepowered.api.data.DataQuery
-    org.spongepowered.api.data.key.Key
-    org.spongepowered.api.data.key.KeyFactory
-    org.spongepowered.api.data.manipulator.DataManipulator
-    org.spongepowered.api.data.manipulator.ImmutableDataManipulator
-    org.spongepowered.api.data.manipulator.immutable.common.AbstractImmutableData
-    org.spongepowered.api.data.manipulator.mutable.common.AbstractBoundedComparableData
-    org.spongepowered.api.data.manipulator.mutable.common.AbstractData
-    org.spongepowered.api.data.manipulator.mutable.common.AbstractSingleData
-    org.spongepowered.api.data.manipulator.mutable.tileentity.FurnaceData
-    org.spongepowered.api.data.value.ValueFactory
-    org.spongepowered.api.data.value.mutable.MapValue
-    org.spongepowered.api.data.value.mutable.MutableBoundedValue
-    org.spongepowered.api.data.value.mutable.Value
-    org.spongepowered.api.event.game.state.GameInitializationEvent
-    org.spongepowered.api.item.inventory.ItemStack
-    org.spongepowered.api.util.TypeTokens
-    java.lang.Comparable
-    java.lang.String
-    java.util.Comparator
-    com.google.common.reflect.TypeToken
+    org.spongepowered.api.data.DataManager
+    org.spongepowered.api.data.DataManipulator
+    org.spongepowered.api.data.DataRegistration
+    org.spongepowered.api.data.Key
+    org.spongepowered.api.data.persistence.DataContentUpdater
+    org.spongepowered.api.data.persistence.DataContainer
+    org.spongepowered.api.data.persistence.DataBuilder
+    org.spongepowered.api.data.persistence.DataQuery
+    org.spongepowered.api.data.persistence.DataSerializable
+    org.spongepowered.api.data.persistence.DataStore
+    org.spongepowered.api.data.value.MapValue
+    org.spongepowered.api.data.value.Value
+    org.spongepowered.api.entity.Entity
+    org.spongepowered.api.event.lifecycle.RegisterDataEvent
+
 
 
 The core part of custom data is the :javadoc:`DataManipulator`. To implement it, you must first decide if you want to 
 create a separate API for your custom data. Generally speaking it's best to separate the API from the implementation 
 (as SpongeAPI does), but if it won't be seen by other developers then you can just put both in the same class.
 
-You'll want to define an API method for each "unit" your data, such as a ``String``, ``int``, :javadoc:`ItemStack` or 
-a custom type like ``Home``. These units will be wrapped in a :javadoc:`Value`, which will allow it to be accessed
-with :javadoc:`Key`\s. There are various extensions of ``Value`` depending on which object will be represented, such
-as :javadoc:`MapValue` which provides the standard map operations, or :javadoc:`MutableBoundedValue` which can set
-limits on the upper and lower bound of the value (like integers). The bounds of the values are verified using a
-:javadoc:`Comparator`.
-
-Now, pick which of the :javadoc:`AbstractData` types you'll extend from. While you could implement from scratch, these
-abstract types remove a *lot* of the work that needs to be done implementing the required methods. A full list can be 
-found in :javadoc:`org.spongepowered.api.data.manipulator.mutable.common`. See either :ref:`single-data-types` or 
-:ref:`compound-data-types` below for implementation details each type.
-
-You need to create two different classes - one which is mutable and implements :javadoc:`DataManipulator` and your
-abstract type, and an immutable version which implements :javadoc:`ImmutableDataManipulator` and your *immutable* 
-abstract type.
-
-.. note::
-    
-    **All** data must have mutable and immutable versions, you must implement both.
-
-For all types, you'll need to define the :javadoc:`DataManipulator#asImmutable()`/
-:javadoc:`ImmutableDataManipulator#asMutable() {asMutable()}` methods - this is as simple as copying the existing
-objects into a constructor for the alternate version.
-
-Values
-======
-
-Your value getter(s) need to return a value. In the example below, we get the :javadoc:`ValueFactory`. This saves us a
-lot of type by using Sponge's already implemented ``Value`` objects. Depending on what value you're creating there a
-different methods to call such as ``createMapValue``, ``createBoundedComparableValue``, etc.
-
-**Code Example: Implementing a Value Getter**
+First, create a class and define the data you wish to store. In the following example we will use the idea of storing A
+players last attacker, therefore we will have only the data of the last attackers UUID.
 
 .. code-block:: java
+
+    import java.util.UUID;
+
+    public class LastAttackerDataManipulator {
     
-    import org.spongepowered.api.Sponge;
-    import org.spongepowered.api.data.value.ValueFactory;
-    import org.spongepowered.api.data.value.mutable.Value;
-
-    import org.spongepowered.cookbook.myhomes.data.home.Home;
-    import org.spongepowered.cookbook.myhomes.data.Keys;
-
-    @Override
-    protected Value<Home> defaultHome() {
-        return Sponge.getRegistry().getValueFactory()
-                .createValue(Keys.DEFAULT_HOME, getValue(), null);
+        private UUID lastAttackerId;
+    
     }
 
-Note that an ``ImmutableDataManipulator`` would instead return an ``ImmutableValue``, by calling ``asImmutable()`` on
-the returned ``Value``. We recommended that you cache this (such as with a class field) in the immutable version.
+.. note::
 
-Each ``Value`` also needs a :javadoc:`Key` to identify it, seen in the example as ``Keys.DEFAULT_HOME``. Similar
-to values, you use one of the ``makeXKey()`` methods in :javadoc:`KeyFactory` to create a ``Key`` for your value.
+    Any data you wish to store must be able to be serialized into java primitives and/or strings
 
-You need to pass one ``TypeToken`` representing the *raw* type of your value, and one ``TypeToken`` representing the
-``Value``. You also need to provide a :javadoc:`DataQuery` path - this is most commonly used to serialize the
-``Value``. As with any catalog type you must also provide a unique ID and a name. Put this all together and you have a
-``Key`` you can use in your ``Value``\ s.
 
-**Code Example: Creating a Key**
+From here you will want to implement the javadoc:`DataSerializable` which will give you two methods to implement. The
+first is ``contentVersion`` which is for the version of your data manipulator. The other method (``toContainer``) is 
+used for serializing your data to the dataholder it belongs to. To do this you want to create a new :javadoc:`DataContainer`
+then set your value(s) to the newly created ``DataContainer``
+
 
 .. code-block:: java
 
-    import org.spongepowered.api.data.DataQuery;
-    import org.spongepowered.api.data.key.Key;
-    import org.spongepowered.api.data.key.KeyFactory;
-    import org.spongepowered.api.data.value.mutable.Value;
-    import org.spongepowered.api.data.value.mutable.Value;
+    import org.spongepowered.api.data.persistence.DataSerializable;
+    import org.spongepowered.api.data.persistence.DataContainer;
+    import org.spongepowered.api.data.persistence.DataQuery;
 
-    import com.google.common.reflect.TypeToken;
-
-    import org.spongepowered.cookbook.myhomes.data.home.Home;
-
-    public static final Key<Value<Home>> DEFAULT_HOME = KeyFactory.makeSingleKey(
-            TypeToken.of(Home.class),
-            new TypeToken<Value<Home>>() {},
-            DataQuery.of("DefaultHome"), "myhomes:default_home", "Default Home");
-
-.. note::
-
-    :javadoc:`TypeToken`\ s are used by the implementation to preserve the generic type of your
-    values. Sponge provides a long list of pre-built tokens for the API in :javadoc:`TypeTokens`.
-
-    If you need to create your own, you can do this in one of two ways:
-
-    - For non-generic types, use ``TypeToken.of(MyType.class)``
-    - For generic types, create an anonymous class with ``TypeToken<MyGenericType<String>>() {}``
-
-Serialization
-=============
-
-To make your data :doc:`serializable <../serialization>` to :javadoc:`DataHolder`\ s or config files, you must also
-implement :javadoc:`DataSerializable#toContainer()`. We recommend calling ``super.toContainer()`` as this will
-include the version from :javadoc:`DataSerializable#getContentVersion()`. You should increase the version each time a
-change is made to the format of your serialized data, and use :ref:`content-updaters` to allow backwards compatability.
-
-.. note::
-
-    This is not required for simple single types, as the already implement ``toContainer()``
-
-**Code Example: Implementing toContainer**
-
-.. code-block:: java
+    public class LastAttackerDataManipulator implements DataSerializable {
     
-    import org.spongepowered.api.data.DataContainer;
+        private UUID lastAttackerId;
 
-    import org.spongepowered.cookbook.myhomes.data.Keys;
+        public static final DataQuery UUID_PATH = DataQuery.of("attack", "last");
 
-    @Override
-    public DataContainer toContainer() {
-        DataContainer container = super.toContainer();
-        // This is the simplest, but use whatever structure you want!
-        container.set(Keys.DEFAULT_HOME.getQuery(), this.defaultHome);
-        container.set(Keys.HOMES, this.homes);
+        @Override
+        public int contentVersion(){
+            return 1;
+        }
 
-        return container;
+        @Override
+        public DataContainer toContainer(){
+            return DataContainer.createNew()
+                .set(LastAttackerDataManipulator.UUID_PATH, lastAttackerId.toString());
+        }
+    
+    }    
+
+After that you will want to create a class that can build the data from a ``DataContainer`` this is known as 
+the :javadoc:`DataBuilder` which can be implemented as follows.
+
+.. code-block:: java
+
+    import org.spongepowered.api.data.persistence.InvalidDataException;
+
+    public class LastAttackerDataBuilder implements DataBuilder<LastAttackerDataManipulator> {
+    
+        @Override
+        public Optional<LastAttackerDataManipulator> build(DataView container) throws InvalidDataException {
+            Optional<String> lastAttackerAsStringId container.getString(LastAttackerDataManipulator.UUID_PATH);
+            if(lastAttackerAsStringId.isPresent()){
+                UUID lastAttacker = UUID.fromString(lastAttackerAsStringId.get());
+                return Optional.of(new LastAttackerDataManipulator(lastAttacker));
+            }
+            return Optional.empty();
+        }
+    
     }
+
 
 Registration
 ============
@@ -163,200 +103,195 @@ Registering your ``DataManipulator`` allows it to be accessible by Sponge and by
 game/plugin can create copies of your data and serialize/deserialize your data without referencing any of your classes
 directly.
 
-To register a ``DataManipulator`` Sponge has the :javadoc:`DataRegistration#builder()` helper. This will build a
-:javadoc:`DataRegistration` and automatically register it.
+To register a ``DataManipulator`` Sponge has the :javadoc:`RegisterDataEvent` event. This will allow you to register
+your data with the appropriate ``DataHolder``
 
+Registration Key
+================
 
-.. note::
+When it comes to registering your data, you are required to register it with a :javadoc:`Key` which will allow you and
+other developers access to your data manipulator.
 
-    Due to the nature of Data, you *must* register your ``DataManipulator`` during initialization - generally by
-    listening to :javadoc:`GameInitializationEvent` such as in the example below. If you try to register a
-    ``DataManipulator`` once initialization is complete an exception will be thrown.
 
 .. code-block:: java
 
-    import org.spongepowered.api.event.game.state.GameInitializationEvent;
-    import org.spongepowered.api.data.DataRegistration;
+    import org.spongepowered.api.ResourceKey;
+    import org.spongepowered.api.data.Key;
+    import org.spongepowered.api.data.value.Value;
 
-    import org.example.MyCustomData;
-    import org.example.ImmutableCustomData;
-    import org.example.CustomDataBuilder;
-
-    @Listener
-    public void onInit(GameInitializationEvent event) {
-      DataRegistration.builder()
-          .dataClass(MyCustomData.class)
-          .immutableClass(ImmutableCustomData.class)
-          .builder(new CustomDataBuilder())
-          .manipulatorId("my-custom")
-          .dataName("My Custom")
-          .build();
-    }
+    ResourceKey resourceKey = ResourceKey(pluginContainer, "last_attacker_manipulator");
+    Key<? extends Value<LastAttackerDataManipulator>> key = Key
+        .builder()
+        .key(resourceKey)
+        .elementType(LastAttackerDataManipulator.class)
+        .build();
 
 .. warning::
 
-    Data that was serialized prior to ``6.0.0``, or data where you have changed the ID, will *not* be recognized unless
-    registered with :javadoc:`DataManager#registerLegacyManipulatorIds(String, DataRegistration)`. If registering a
-    pre-6.0.0 ``DataManipulator`` the ID is taken from `Class.getName()`, such as ``com.example.MyCustomData``.
-
-.. _single-data-types:
-
-Single Types
-============
-
-Single types require little implementation because much of the work has already been done in the
-:javadoc:`AbstractSingleData` type you extend from. 
-
-The "simple" abstract types are the easiest to implement, but are restricted to only the types below:
-
-- ``Boolean``
-- :javadoc:`Comparable`
-- ``Integer``
-- ``List``
-- ``Map``
-- ``CatalogType``
-- ``Enum``
-
-For all other types you must implement a custom single type by extending ``AbstractSingleData``. This allows you to 
-define your own single data with whatever type you want, while still doing most of the work for you.
+    Be sure to store your ``Key`` somewhere global so you can access it later.
 
 .. tip::
 
-    The abstract implementations save the object for you in the constructor. You can access it in your implementation 
-    by calling the ``getValue()`` and ``getValueGetter()`` methods.
+    You are able to register multiple keys for a single ``DataManipulator`` for accessing specific parts of your data.
 
-Simple Single Types
--------------------
+Data Store
+==========
 
-Almost all the work is done for you with simple abstract types. All you need to do is:
+The :javadoc:`DataStore` is used to register your ``Key`` with the appropriate ``DataHolder`` and also register
+any other keys you may have accessing your ``DataManipulator``. In the example below, it creates a ``DataStore``
+and makes it appliciable to only the :javadoc:`Entity` ``DataHolder``.
 
-- Extend the relevant abstract type
-- pass the `Key` for your data, the object itself, and the default object (if the object is null) in the constructor
+.. code-block:: java
 
-:javadoc:`AbstractBoundedComparableData` (and the immutable equivalent) additionally require minimum and maximum 
-values that will be checked, as well as a :javadoc:`Comparator`.
+    import org.spongepowered.api.data.persistence.DataStore;
+
+    DataStore datastore = DataStore
+        .builder()
+        .pluginData(resourceKey)
+        .holder(Entity.class)
+        .key(key)
+        .build();
+
+Simple Data Store
+=================
+
+The above code is a lot for such a simple DataStore, so thankfully Sponge allows a quick way to create a ``DataStore``
+for a single key. The following example does the same as the above example.
+
+.. code-block:: java
+
+    DataStore datastore = DataStore.of(key, DataQuery.of(), Entity.class);
+
+Multi-Key Data Store
+====================
+
+If you are registering multiple keys onto a single ``DataStore`` then the first approach should be used, however the
+other keys should be specified with the original key, such as the following example.
+
+.. code-block:: java
+
+    import org.spongepowered.api.entity.Entity;
+
+    DataStore datastore = DataStore
+        .builder()
+        .pluginData(resourceKey)
+        .holder(Entity.class)
+        .key(key)
+        .key(innerKey, DataQuery.of("inner_data"))
+        .build();
+
+Data Provider
+=============
+
+For data that requires more code to be used whenever the getter, setter, deleter are used will require the use of
+a ``DataProvider``. With a ``dataProvider`` a plugin is able to manipulate how its data should be received, set and
+deleted automaticly. 
+
+In the following example, we will be getting the UUID from the last attacker but if there is no last attacker, then
+return the player's UUID instead.
+
+.. code-block:: java
+
+    import org.spongepowered.api.data.DataProvider;
+
+    DataProvider<Value<UUID>, UUID> provider = DataProvider.mutableBuilder()
+        .dataKey(innerKey)
+        .dataHolder(ServerPlayer.class)
+        .get(this::myCustomGetter)
+        .build();
+
+    public UUID myCustomGetter(ServerPlayer player){
+        return player.get(key).orElse(player.uniqueId());
+    }
 
 .. note::
 
-    ``List`` and ``Mapped`` single types must instead implement ``ListData`` / ``MappedData`` (or the immutable 
-    equivalent). This adds additional methods to allow Map-like/List-like behavior directly on the ``DataManipulator``.
+    Data Provider's are completely optional, if your data does not require one then don't use one
 
-The following 3 methods must be defined on mutable manipulators:
+.. tip::
 
-``fill(DataHolder, MergeFunction)`` should replace the data on your object with that of the given ``DataHolder``, 
-using the result of ``MergeFunction#merge()``.
+    Data Providers are great if you wish to have your data be synced with a database
 
-.. code-block:: java
 
-    import org.spongepowered.api.data.DataHolder;
-    import org.spongepowered.api.data.merge.MergeFunction;
+Data Registeration
+==================
 
-    import org.spongepowered.cookbook.myhomes.data.friends.FriendsData;
-
-    import java.util.Optional;
-
-    @Override
-    public Optional<FriendsData> fill(DataHolder dataHolder, MergeFunction overlap) {
-        FriendsData merged = overlap.merge(this, dataHolder.get(FriendsData.class).orElse(null));
-        setValue(merged.friends().get());
-
-        return Optional.of(this);
-    }
-
-``from(DataContainer)`` should overwrite its value with the one in the container and return itself, otherwise return
-``Optional.empty()``
+The final object you will need to register your data is the :javadoc:`DataRegistration` which combines 
+your ``Key``, ``DataStore`` and ``DataProvider`` together into a single package that you can register.
 
 .. code-block:: java
 
-    import org.spongepowered.api.data.DataContainer;
-    import org.spongepowered.api.data.DataQuery;
+    import org.spongepowered.api.data.DataRegistration;
 
-    import org.spongepowered.cookbook.myhomes.data.Keys;
-    import org.spongepowered.cookbook.myhomes.data.friends.FriendsData;
-    import org.spongepowered.cookbook.myhomes.data.friends.ImmutableFriendsData;
+    DataRegistration myData = DataRegistration.builder()
+        .key(key)
+        .store(datastore)
+        .provider(provider)
+        .build();
 
-    import com.google.common.collect.Maps;
+    event.register(myData);
 
-    import java.util.Optional;
-    import java.util.UUID;
+Data Builder Register
+=====================
 
-    @Override
-    public Optional<FriendsData> from(DataContainer container) {
-        if(container.contains(Keys.FRIENDS)) {
-            List<UUID> friends = container.getObjectList(Keys.FRIENDS.getQuery(), UUID.class).get();
-            return Optional.of(setValue(friends));
+The final part of your custom data registeration is registering the data builder so your data can be
+constructed upon reboot. This is registered though the :javadoc:`DataManager`, although it is recommended
+that you register it within the ``RegisterDataEvent``.
+
+.. code-block:: java
+
+    Sponge.dataManager().registerBuilder(LastAttackerDataManipulator.class, new LastAttackerDataBuilder());
+
+Simple Custom Data
+==================
+
+All of above is a lot of work if you are just wanting to register a java primitive or ``String`` to
+a ``DataHolder``. Thankfully there is a much shorter way to do all of that. 
+
+.. code-block:: java
+
+    Key<? extends Value<String>> key = Key.from(pluginContainer, "my_simple_data", String.class);
+    DataRegistration myData = DataRegistration.of(key, ServerPlayer.class);
+    event.register(myData);
+
+Updating Data Manipulator
+=========================
+
+You may wish to update the data found within a DataHolder to a new and improved ``DataManipualator``. 
+This can be done with the use of the :javadoc:`DataContentUpdater` interface. In the example below
+we will be adding a field of the nano second the attack occured, with the update value being ``LocalDateTime.MIN``. 
+
+.. code-block:: java
+
+    import org.spongepowered.api.data.persistence.DataContentUpdater;
+
+    public class LastAttackerUpdater implements DataContentUpdater {
+    
+        @Override
+        public int inputVersion(){
+            return 1;
         }
 
-        return Optional.empty();
-    }
+        @Override
+        public int outputVersion(){
+            return 2;
+        }
 
-``copy()`` should, as the name suggests, return a copy of itself with the same data.
-
-.. code-block:: java
-
-    import org.spongepowered.cookbook.myhomes.data.friends.FriendsData;
-
-    @Override
-    public FriendsData copy() {
-        return new FriendsDataImpl(getValue());
-    }
-
-Custom Single Types
--------------------
-
-In addition to the methods from the simple single types, you need to override the following methods:
-
-``getValueGetter()`` should pass the ``Value`` representing your data (see above).
-
-``toContainer()`` should return a ``DataContainer`` representing your data (see above).
-
-.. _compound-data-types:
-
-Compound Types
-==============
-
-Whereas single types only support one value, "compound" types support however many values you want. This is useful 
-when multiple objects are grouped, such as :javadoc:`FurnaceData`. The downside, however, is that they are more 
-complex to implement.
-
-To start with, create all the ``Value`` getters that your data will have. For each value, create a method to get and 
-set the *raw* object, which you'll use later. For immutable data, only the getters are necessary.
-
-Registering Values
-------------------
-
-Next, you'll want to register these so that the :doc:`Keys <../keys>`-based system can reference them. To do this,
-implement either :javadoc:`AbstractData#registerGettersAndSetters()` or
-:javadoc:`AbstractImmutableData#registerGetters()` depending on whether the data is mutable or not.
-
-For each value you must call:
-
-- ``registerKeyValue(Key, Supplier)`` referencing the ``Value`` getter for the given key
-- ``registerFieldGetter(Key, Supplier)`` referencing the getter method for the *raw* object defined above
-- ``registerFieldSetter(Key, Consumer)`` referencing the setter method above if you are implementing the mutable
-  version
-
-We recommend using Java 8's ``::`` syntax for easy ``Supplier`` and ``Consumer`` functions.
-
-**Code Example: Implementing Getters and Setters**
-
-.. code-block:: java
-
-    import org.spongepowered.cookbook.myhomes.data.Keys
+        @Override
+        public DataView update(DataView view){
+            view.set(DataQuery.of("attack", "occured"), LocalDateTime.MIN.getNano());
+            return view;
+        }
     
-    // registerGetters() for immutable implementation
-    @Override
-    protected void registerGettersAndSetters() {
-        registerKeyValue(Keys.DEFAULT_HOME, this::defaultHome);
-        registerKeyValue(Keys.HOMES, this::homes);
-
-        registerFieldGetter(Keys.DEFAULT_HOME, this::getDefaultHome);
-        registerFieldGetter(Keys.HOMES, this::getHomes);
-
-        // Only on mutable implementation
-        registerFieldSetter(Keys.DEFAULT_HOME, this::setDefaultHome);
-        registerFieldSetter(Keys.HOMES, this::setHomes);
     }
 
-``fill(DataHolder, MergeFunction)`` and ``from(DataContainer)`` are similar to the implementations for single data, 
-but loading all your values.
+This can then be registered with your ``DataStore``, whereby specifying a version number
+on the ``pluginData`` function will allow you to register your ``DataContentUpdater``.
+
+.. code-block:: java
+
+    DataStore.builder()
+        .pluginData(resourceKey, 1)
+        .updater(new LastAttackerUpdater())
+        //continue with the normal registeration
+

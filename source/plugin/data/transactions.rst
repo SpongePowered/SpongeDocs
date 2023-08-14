@@ -2,14 +2,9 @@
 Transactions
 ============
 
-.. warning::
-    These docs were written for SpongeAPI 7 and are likely out of date. 
-    `If you feel like you can help update them, please submit a PR! <https://github.com/SpongePowered/SpongeDocs>`__
-
 .. javadoc-import::
     org.spongepowered.api.data.DataTransactionResult
     org.spongepowered.api.data.DataTransactionResult.Type
-    org.spongepowered.api.data.manipulator.mutable.entity.HealthData
     org.spongepowered.api.world.Location
 
 Reading the Result
@@ -43,11 +38,11 @@ The result also provides a couple of immutable lists containing immutable value 
 the data that was involved in the transaction.
 
 +-------------------------+---------------------------------------------------------------+
-| ``getSuccessfulData()`` | contains all data that was successfully set                   |
+| ``successfulData()`` | contains all data that was successfully set                      |
 +-------------------------+---------------------------------------------------------------+
-| ``getReplacedData()``   | contains all data that got replaced by successfully set data  |
+| ``replacedData()``   | contains all data that got replaced by successfully set data     |
 +-------------------------+---------------------------------------------------------------+
-| ``getRejectedData()``   | contains all data that could not be set                       |
+| ``rejectedData()``   | contains all data that could not be set                          |
 +-------------------------+---------------------------------------------------------------+
 
 Examples
@@ -64,8 +59,8 @@ Surely you remember the healing example in the :doc:`keys` page. Imagine a playe
 - ``getReplacedData()`` would contain one value container for the ``Keys.HEALTH`` key with a value of 1.0
 - ``getSuccessfulData()`` would contain one value container for the ``Keys.HEALTH`` key with a value of 20.0
 
-Now what would be different if we used the healing example from the :doc:`datamanipulators` page instead? Since the
-:javadoc:`HealthData` data manipulator contains values for both the current and the maximum health, in addition to the
+Now what would be different if we used the healing example from the :doc:`custom/datamanipulators` page instead? Since the
+``HealthData`` data manipulator contains values for both the current and the maximum health, in addition to the
 above result, both the ``getReplacedData()`` list and the ``getSuccessfulData()`` list would contain one more element:
 A value container for the ``Keys.MAX_HEALTH`` key with a value of 20.0.
 
