@@ -90,7 +90,7 @@ First, we need to know which ``DataManipulator`` ``Key`` we need. We can then pa
 ``ServerLocation`` which will return an ``Optional``. We then have to check if our ``DataManipulator`` actually
 exists for our block by checking ``ifPresent()``. If it exists, then we can use it.
 
-More on ``DataManipulator``\s can be found in the :doc:`data documentation <../data/custom/customdata>`.
+More on ``DataManipulator``\s can be found in the :doc:`data documentation <../data/customdata>`.
 
 .. tip::
     
@@ -124,7 +124,7 @@ use of this is getting an :javadoc:`DataManipulator.Immutable`, as shown below:
     }
 
 More information on mutable and immutable ``DataManipulator``\s can be found in the :doc:`data documentation
-<../data/custom/customdata>`.
+<../data/customdata>`.
 
 Block State Properties
 ~~~~~~~~~~~~~~~~~~~~~~

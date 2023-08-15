@@ -18,13 +18,14 @@ Custom Data
     org.spongepowered.api.entity.Entity
     org.spongepowered.api.event.lifecycle.RegisterDataEvent
 
-
+Object Custom Data
+==================
 
 The core part of custom data is the :javadoc:`DataSerializable`. To implement it, you must first decide if you want to 
 create a separate API for your custom data. Generally speaking it's best to separate the API from the implementation 
 (as SpongeAPI does), but if it won't be seen by other developers then you can just put both in the same class.
 
-First, create a class and define the data you wish to store. In the following example we will use the idea of storing A
+First, create a class and define the data you wish to store. In the following example we will use the idea of storing a
 players last attacker, therefore we will have only the data of the last attackers UUID.
 
 .. code-block:: java
@@ -44,7 +45,7 @@ players last attacker, therefore we will have only the data of the last attacker
 
 From here you will want to implement the javadoc:`DataSerializable` which will give you two methods to implement. The
 first is ``contentVersion`` which is for the version of your data manipulator. The other method (``toContainer``) is 
-used for serializing your data to the dataholder it belongs to. To do this you want to create a new :javadoc:`DataContainer`
+used for serializing your data to the dataholder it belongs to. To do this you need to create a new :javadoc:`DataContainer`
 then set your value(s) to the newly created ``DataContainer``
 
 
@@ -74,7 +75,7 @@ then set your value(s) to the newly created ``DataContainer``
     }    
 
 After that you will want to create a class that can build the data from a ``DataContainer`` this is known as 
-the :javadoc:`DataBuilder` which can be implemented as follows.
+the :javadoc:`DataBuilder` which can be implemented as follows:
 
 .. code-block:: java
 
@@ -105,6 +106,18 @@ directly.
 To register a ``DataSerializable`` Sponge has the :javadoc:`RegisterDataEvent` event. This will allow you to register
 your data with the appropriate ``DataHolder``
 
+Simple Custom Data
+==================
+
+All of above is a lot of work if you just wanting to register a java primitive or ``String`` to
+a ``DataHolder``. Thankfully there is a much shorter way to do all of that. 
+
+.. code-block:: java
+
+    Key<? extends Value<String>> key = Key.from(pluginContainer, "my_simple_data", String.class);
+    DataRegistration myData = DataRegistration.of(key, ServerPlayer.class);
+    event.register(myData);
+
 Registration Key
 ================
 
@@ -131,7 +144,7 @@ other developers access to your data manipulator.
 
 .. tip::
 
-    You are able to register multiple keys for a single custom data for accessing specific parts of your data.
+    You can register a key for a specific element within a DataSerializable
 
 Data Store
 ==========
@@ -183,8 +196,8 @@ Data Provider
 =============
 
 For data that requires more code to be used whenever the getter, setter, deleter are used will require the use of
-a ``DataProvider``. With a ``dataProvider`` a plugin is able to manipulate how its data should be received, set and
-deleted automaticly. 
+a ``DataProvider``. With a ``dataProvider`` a plugin is able to manipulate how its data should be received, set, and
+deleted automatically. 
 
 In the following example, we will be getting the UUID from the last attacker but if there is no last attacker, then
 return the player's UUID instead.
@@ -205,7 +218,7 @@ return the player's UUID instead.
 
 .. note::
 
-    Data Provider's are completely optional, if your data does not require one then don't use one
+    Data Providers are completely optional, if your data does not require one then don't use one
 
 .. tip::
 
@@ -241,24 +254,12 @@ that you register it within the ``RegisterDataEvent``.
 
     Sponge.dataManager().registerBuilder(LastAttackerDataSerilizable.class, new LastAttackerDataBuilder());
 
-Simple Custom Data
-==================
-
-All of above is a lot of work if you are just wanting to register a java primitive or ``String`` to
-a ``DataHolder``. Thankfully there is a much shorter way to do all of that. 
-
-.. code-block:: java
-
-    Key<? extends Value<String>> key = Key.from(pluginContainer, "my_simple_data", String.class);
-    DataRegistration myData = DataRegistration.of(key, ServerPlayer.class);
-    event.register(myData);
-
 Updating Data Containers
 ========================
 
 You may wish to update the data found within a DataHolder to a new and improved ``DataSerializable``. 
 This can be done with the use of the :javadoc:`DataContentUpdater` interface. In the example below
-we will be adding a field of the nano second the attack occurred, with the update value being ``LocalDateTime.MIN``. 
+we will be adding a field of the nanosecond the attack occurred, with the update value being ``LocalDateTime.MIN``. 
 
 .. code-block:: java
 

@@ -86,7 +86,7 @@ Contents
     :maxdepth: 2
     :titlesonly:
 
-    custom/index
     keys
     transactions
     serialization
+    customdata
