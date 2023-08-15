@@ -1,11 +1,10 @@
-=======================
-Custom DataManipulators
-=======================
+===========
+Custom Data
+===========
 
 .. javadoc-import::
     org.spongepowered.api.data.DataHolder
     org.spongepowered.api.data.DataManager
-    org.spongepowered.api.data.DataManipulator
     org.spongepowered.api.data.DataRegistration
     org.spongepowered.api.data.Key
     org.spongepowered.api.data.persistence.DataContentUpdater
@@ -21,7 +20,7 @@ Custom DataManipulators
 
 
 
-The core part of custom data is the :javadoc:`DataManipulator`. To implement it, you must first decide if you want to 
+The core part of custom data is the :javadoc:`DataSerializable`. To implement it, you must first decide if you want to 
 create a separate API for your custom data. Generally speaking it's best to separate the API from the implementation 
 (as SpongeAPI does), but if it won't be seen by other developers then you can just put both in the same class.
 
@@ -32,7 +31,7 @@ players last attacker, therefore we will have only the data of the last attacker
 
     import java.util.UUID;
 
-    public class LastAttackerDataManipulator {
+    public class LastAttackerDataSerilizable {
     
         private UUID lastAttackerId;
     
@@ -55,7 +54,7 @@ then set your value(s) to the newly created ``DataContainer``
     import org.spongepowered.api.data.persistence.DataContainer;
     import org.spongepowered.api.data.persistence.DataQuery;
 
-    public class LastAttackerDataManipulator implements DataSerializable {
+    public class LastAttackerDataSerilizable implements DataSerializable {
     
         private UUID lastAttackerId;
 
@@ -69,7 +68,7 @@ then set your value(s) to the newly created ``DataContainer``
         @Override
         public DataContainer toContainer(){
             return DataContainer.createNew()
-                .set(LastAttackerDataManipulator.UUID_PATH, lastAttackerId.toString());
+                .set(LastAttackerDataSerilizable.UUID_PATH, lastAttackerId.toString());
         }
     
     }    
@@ -81,14 +80,14 @@ the :javadoc:`DataBuilder` which can be implemented as follows.
 
     import org.spongepowered.api.data.persistence.InvalidDataException;
 
-    public class LastAttackerDataBuilder implements DataBuilder<LastAttackerDataManipulator> {
+    public class LastAttackerDataBuilder implements DataBuilder<LastAttackerDataSerilizable> {
     
         @Override
-        public Optional<LastAttackerDataManipulator> build(DataView container) throws InvalidDataException {
-            Optional<String> lastAttackerAsStringId container.getString(LastAttackerDataManipulator.UUID_PATH);
+        public Optional<LastAttackerDataSerilizable> build(DataView container) throws InvalidDataException {
+            Optional<String> lastAttackerAsStringId container.getString(LastAttackerDataSerilizable.UUID_PATH);
             if(lastAttackerAsStringId.isPresent()){
                 UUID lastAttacker = UUID.fromString(lastAttackerAsStringId.get());
-                return Optional.of(new LastAttackerDataManipulator(lastAttacker));
+                return Optional.of(new LastAttackerDataSerilizable(lastAttacker));
             }
             return Optional.empty();
         }
@@ -99,11 +98,11 @@ the :javadoc:`DataBuilder` which can be implemented as follows.
 Registration
 ============
 
-Registering your ``DataManipulator`` allows it to be accessible by Sponge and by other plugins in a generic way. The
+Registering your ``DataSerializable`` allows it to be accessible by Sponge and by other plugins in a generic way. The
 game/plugin can create copies of your data and serialize/deserialize your data without referencing any of your classes
 directly.
 
-To register a ``DataManipulator`` Sponge has the :javadoc:`RegisterDataEvent` event. This will allow you to register
+To register a ``DataSerializable`` Sponge has the :javadoc:`RegisterDataEvent` event. This will allow you to register
 your data with the appropriate ``DataHolder``
 
 Registration Key
@@ -120,10 +119,10 @@ other developers access to your data manipulator.
     import org.spongepowered.api.data.value.Value;
 
     ResourceKey resourceKey = ResourceKey(pluginContainer, "last_attacker_manipulator");
-    Key<? extends Value<LastAttackerDataManipulator>> key = Key
+    Key<? extends Value<LastAttackerDataSerilizable>> key = Key
         .builder()
         .key(resourceKey)
-        .elementType(LastAttackerDataManipulator.class)
+        .elementType(LastAttackerDataSerilizable.class)
         .build();
 
 .. warning::
@@ -132,13 +131,13 @@ other developers access to your data manipulator.
 
 .. tip::
 
-    You are able to register multiple keys for a single ``DataManipulator`` for accessing specific parts of your data.
+    You are able to register multiple keys for a single custom data for accessing specific parts of your data.
 
 Data Store
 ==========
 
 The :javadoc:`DataStore` is used to register your ``Key`` with the appropriate ``DataHolder`` and also register
-any other keys you may have accessing your ``DataManipulator``. In the example below, it creates a ``DataStore``
+any other keys you may have accessing your ``DataSerializable``. In the example below, it creates a ``DataStore``
 and makes it appliciable to only the :javadoc:`Entity` ``DataHolder``.
 
 .. code-block:: java
@@ -213,8 +212,8 @@ return the player's UUID instead.
     Data Providers are great if you wish to have your data be synced with a database
 
 
-Data Registeration
-==================
+Data Registration
+=================
 
 The final object you will need to register your data is the :javadoc:`DataRegistration` which combines 
 your ``Key``, ``DataStore`` and ``DataProvider`` together into a single package that you can register.
@@ -234,13 +233,13 @@ your ``Key``, ``DataStore`` and ``DataProvider`` together into a single package 
 Data Builder Register
 =====================
 
-The final part of your custom data registeration is registering the data builder so your data can be
+The final part of your custom data registration is registering the data builder so your data can be
 constructed upon reboot. This is registered though the :javadoc:`DataManager`, although it is recommended
 that you register it within the ``RegisterDataEvent``.
 
 .. code-block:: java
 
-    Sponge.dataManager().registerBuilder(LastAttackerDataManipulator.class, new LastAttackerDataBuilder());
+    Sponge.dataManager().registerBuilder(LastAttackerDataSerilizable.class, new LastAttackerDataBuilder());
 
 Simple Custom Data
 ==================
@@ -259,7 +258,7 @@ Updating Data Manipulator
 
 You may wish to update the data found within a DataHolder to a new and improved ``DataManipualator``. 
 This can be done with the use of the :javadoc:`DataContentUpdater` interface. In the example below
-we will be adding a field of the nano second the attack occured, with the update value being ``LocalDateTime.MIN``. 
+we will be adding a field of the nano second the attack occurred, with the update value being ``LocalDateTime.MIN``. 
 
 .. code-block:: java
 

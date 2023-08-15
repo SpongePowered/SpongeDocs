@@ -59,7 +59,7 @@ Surely you remember the healing example in the :doc:`keys` page. Imagine a playe
 - ``getReplacedData()`` would contain one value container for the ``Keys.HEALTH`` key with a value of 1.0
 - ``getSuccessfulData()`` would contain one value container for the ``Keys.HEALTH`` key with a value of 20.0
 
-Now what would be different if we used the healing example from the :doc:`custom/datamanipulators` page instead? Since the
+Now what would be different if we used the healing example from the :doc:`custom/customdata` page instead? Since the
 ``HealthData`` data manipulator contains values for both the current and the maximum health, in addition to the
 above result, both the ``getReplacedData()`` list and the ``getSuccessfulData()`` list would contain one more element:
 A value container for the ``Keys.MAX_HEALTH`` key with a value of 20.0.

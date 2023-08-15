@@ -13,8 +13,8 @@ on your own implementation.
 There are two main areas of custom data:
 
 - DataHolders, which store data such as items and entities
-- :doc:`DataManipulators <datamanipulators>`, which are attached to a ``DataHolder`` and can contain any number of 
-  serializable objects. Manipulators will stay attached to their owner, even across reboots
+- :doc:`DataSerializer <customdata>`, which are attached to a ``DataHolder`` and can contain any number of 
+  serializable objects. These objects will stay attached to their owner, even across reboots
 
 We will provide and explain snippets of code throughout the tutorials, however we also provide a `full implementation`_
 for those that prefer to look through an example implementation.
@@ -26,6 +26,6 @@ Contents
     :maxdepth: 1
     :titlesonly:
 
-    datamanipulators
+    customdata
 
 .. _full implementation: https://github.com/SpongePowered/Cookbook/tree/master/Plugin/MyHomes

@@ -88,5 +88,5 @@ Another, shorter way to do this is by just using :javadoc:`Keys` on our ``Entity
         creeper.offer(Keys.DISPLAY_NAME, Component.text("Inscrutable", NamedTextColor.DARK_AQUA));
     }
 
-This would neaten our code and is easier to perform. See the :doc:`data documentation <../data/datamanipulators>` on
+This would neaten our code and is easier to perform. See the :doc:`data documentation <../data/custom/customdata>` on
 the specific benefits of using either ``DataManipulator``\ s or just ``Keys``.
