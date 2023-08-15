@@ -253,10 +253,10 @@ a ``DataHolder``. Thankfully there is a much shorter way to do all of that.
     DataRegistration myData = DataRegistration.of(key, ServerPlayer.class);
     event.register(myData);
 
-Updating Data Manipulator
-=========================
+Updating Data Containers
+========================
 
-You may wish to update the data found within a DataHolder to a new and improved ``DataManipualator``. 
+You may wish to update the data found within a DataHolder to a new and improved ``DataSerializable``. 
 This can be done with the use of the :javadoc:`DataContentUpdater` interface. In the example below
 we will be adding a field of the nano second the attack occurred, with the update value being ``LocalDateTime.MIN``. 
 
@@ -278,7 +278,7 @@ we will be adding a field of the nano second the attack occurred, with the updat
 
         @Override
         public DataView update(DataView view){
-            view.set(DataQuery.of("attack", "occured"), LocalDateTime.MIN.getNano());
+            view.set(DataQuery.of("attack", "occurred"), LocalDateTime.MIN.getNano());
             return view;
         }
     
