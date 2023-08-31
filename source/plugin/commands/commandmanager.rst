@@ -42,7 +42,7 @@ Sending a Command As a Player
     CommandManager cmdManager = Sponge.server().commandManager();
     cmdManager.process(player, "msg Notch hi notch!");
 
-Sending a command as a console
+Sending a Command As a Console
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: java
