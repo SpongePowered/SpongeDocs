@@ -12,6 +12,7 @@ Building a Command
     org.spongepowered.api.command.exception.ArgumentParseException
     org.spongepowered.api.event.lifecycle.RegisterCommandEvent
     org.spongepowered.api.event.EventContextKeys
+    org.spongepowered.api.world.Locatable
     org.spongepowered.plugin.PluginContainer
     net.kyori.adventure.text.Component
     
@@ -83,7 +84,7 @@ a target player on the command cause.
             .executor(new HelloWorldCommand())
             .permission("myplugin.command.helloWorld")
             .shortDescription(Component.text("Hello World Command"))
-            .executionRequirements(context -> context.cause().context().get(EventContextKeys.PLAYER).isPresent())
+            .executionRequirements(context -> context.cause().root() instanceof ServerPlayer)
             .build();
     }
 
@@ -98,7 +99,7 @@ a target player on the command cause.
 .. tip::
 
     Often times command are put in as player-only as they require the location in the world the command was
-    executed from. Best practise would be to check for the target location using :javadoc:`EventContextKeys#LOCATION`
+    executed from. Best practise would be to check if the root of the command is :javadoc:`Locatable`
     instead of the player as this would allow command blocks to run the command without specifying a player.
 
 Writing a Command Executor
@@ -186,6 +187,11 @@ Registering a Command
 Commands are registered on a :javadoc:`RegisterCommandEvent`. The event takes a generic which is the type of command 
 that is being registered to it. To register a command, the 
 :javadoc:`RegisterCommandEvent#register(PluginContainer, C, String, String...)` method needs to be invoked.
+
+In the following example, we register two commands. ``helloworld`` which is from the building a simple command example 
+above, as well as a raw command which is explained in :doc:`rawcommand`. These two commands need to be registered in different listeners
+as they are different command types, however in most cases a single listener will suffice as all commands in a single plugin
+are typically of the same type.
 
 .. code-block:: java
 
