@@ -63,4 +63,4 @@ Sending a Command As a Player With Console Permissions
 
     Sponge.server().causeStackManager().pushCause(player);
     CommandManager cmdManager = Sponge.server().commandManager();
-    cmdManager.process(console, player, "kill Nitch");
+    cmdManager.process(console, player, "kill Notch");
