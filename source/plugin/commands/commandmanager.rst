@@ -23,7 +23,7 @@ the actual ``sender`` who is the object that sent the command.
 
 .. warning::
 
-    When executing a command programticly, you need to specifiy the permissions
+    When executing a command programmatically, you need to specifiy the permissions
     subject and the audience but not the sender as by default the sender will be
     the permissions manager. 
 
@@ -42,6 +42,8 @@ Sending a Command As a Player
     CommandManager cmdManager = Sponge.server().commandManager();
     cmdManager.process(player, "msg Notch hi notch!");
 
+Sending a Command As a Console
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Sending a Command As a Console
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
