@@ -36,16 +36,30 @@ The version of Java that you require depends on the version of Sponge (and there
     * - 8.x
       - 1.16.5
       - Java 8
-      - Java 17 is recommended
-    * - 9.x (unreleased)
+      - | Java 17 is recommended on Sponge Vanilla.
+        | Java 11 is recommended on Sponge Forge.
+    * - 9.x
       - 1.18
       - Java 17
-      - Java 8 is not supported
+      - No longer in development
+    * - 10.x (unreleased)
+      - 1.19.4
+      - Java 17
+      - Still in development
+    * - 11.x (unreleased)
+      - 1.20.1
+      - Java 17
+      - Minecraft version may change
 
 We also recommend a CPU with a large single core speed and at least 2GB of RAM (higher if you plan to run with mods).
 We highly recommend using the 64bit Java runtime.
 
 See :doc:`getting-started/jre` for more help with how to install Java 8.
+
+.. warning::
+
+  Forge for 1.16.5 cannot run on Java 17 or newer, for this reason we recommend Java 11 as it is the latest Java that
+  is long term supported.
 
 SpongeForge or SpongeVanilla?
 =============================
@@ -124,11 +138,12 @@ Installing Plugins
 
 The directory where plugins are installed depends on the version of Sponge that you are using.
 
-* For **SpongeAPI 7** and earlier, plugins go in the `/mods` directory.
-* For **SpongeAPI 8** and later, plugins go in the `/plugins` directory.
+* For **SpongeAPI 7** and earlier, plugins go in the ``/mods`` directory.
+* For **SpongeAPI 8** and later, plugins go in the ``/plugins`` directory.
 
 Once you have added your plugins to the plugins directory, start (or restart) your server. Your plugins should then be 
-available, which you can verify by running the ``/sponge plugins`` command.
+available, which you can verify by running the ``/sponge plugins list`` command (On Sponge API 7 and earlier this 
+command is ``/sponge plugins``).
 
 .. note::
 
