@@ -82,7 +82,7 @@ Command                  Description                                Permission
 **Command Conflicts**
 
 In cases of command conflict, Sponge provides a primary alias mechanism to specify which command is to be used.  For
-example, Minecraft provides the `reload <https://minecraft.gamepedia.com/Commands#Summary_of_commands>`__ command and
+example, Minecraft provides the `reload <https://minecraft.wiki/w/Commands#List_and_summary_of_commands>`__ command and
 Sponge provides the `reload <https://docs.spongepowered.org/stable/en/server/spongineer/commands.html>`__ command. To
 specify which command to use, prefix it with ``minecraft`` or ``sponge`` and a ``:``. So, to use Sponge's reload command
 above, type in ``/sponge:reload``. This approach can also be used to handle conflicts between mods and/or plugins. Do
@@ -221,7 +221,7 @@ Command               Description                               Permission
 
 |
 
-A full list of vanilla commands can be found at: https://minecraft.gamepedia.com/Commands#List_of_commands. Permissions
+A full list of vanilla commands can be found at: https://minecraft.wiki/w/Commands#List_and_summary_of_commands. Permissions
 for vanilla Minecraft commands on a Sponge server are of the structure ``minecraft.command.<command>``.
 
 Command Features

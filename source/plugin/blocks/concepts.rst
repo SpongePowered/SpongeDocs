@@ -43,7 +43,7 @@ With block properties having a known preset of possible values, these cannot be 
 whereby there is a infinite amount of possibilities. Examples include sign text and block inventories. 
 
 Minecraft's solution to this is block entities, which are Java objects that store additional data on a `Location`
-the block is at in `NBT format <https://minecraft.gamepedia.com/NBT_format>`_. Examples of block entities are 
+the block is at in `NBT format <https://minecraft.wiki/w/NBT_format>`_. Examples of block entities are 
 :javadoc:`Chest`
 
 Example use would be to receive the inventory of a chest. This can be done as follows

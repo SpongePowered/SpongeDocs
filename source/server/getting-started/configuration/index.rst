@@ -13,7 +13,7 @@ Configuring Sponge
 
 This article is about configuring Sponge itself; plugins will usually create their own configuration files inside the 
 server "config" directory.
-For Vanilla configuration check out the `Minecraft Wiki <https://minecraft.gamepedia.com/Server.properties>`__.
+For Vanilla configuration check out the `Minecraft Wiki <https://minecraft.wiki/w/Server.properties>`__.
 
 Sponge Configuration Files
 ==========================
