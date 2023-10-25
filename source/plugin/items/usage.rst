@@ -2,10 +2,6 @@
 Basic Item Usage
 ================
 
-.. warning::
-    These docs were written for SpongeAPI 7 and are likely out of date. 
-    `If you feel like you can help update them, please submit a PR! <https://github.com/SpongePowered/SpongeDocs>`__
-
 .. javadoc-import::
     net.kyori.adventure.text.Component
     org.spongepowered.api.data.key.Keys
@@ -22,7 +18,7 @@ actual ``ItemStack`` and thus, you will need to set it back into an inventory if
 Checking an Item's Type
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Checking the type of the item is very simple. You just need to call the :javadoc:`ItemStack#getType()` method.
+Checking the type of the item is very simple. You just need to call the :javadoc:`ItemStack#type()` method.
 
 .. code-block:: java
 
@@ -31,13 +27,13 @@ Checking the type of the item is very simple. You just need to call the :javadoc
     import org.spongepowered.api.item.inventory.ItemStack;
 
     public boolean isStick(ItemStack stack) {
-        ItemType type = stack.getType();
-        return type.equals(ItemTypes.STICK);
+        ItemType type = stack.type();
+        return type.equals(ItemTypes.STICK.get());
     }
 
 See how simple that is? Because sticks can stack, we can also find out how many are present.
 
-Getting the number of items in an ``ItemStack`` is relatively easy. The :javadoc:`ItemStack#getQuantity()` method will
+Getting the number of items in an ``ItemStack`` is relatively easy. The :javadoc:`ItemStack#quantity()` method will
 handle this for us.
 
 Modifying ItemStack Data
@@ -86,29 +82,22 @@ Item Properties
 Certain items may hold specific properties. For example, certain items can mine specific blocks, such as a diamond
 pickaxe to obsidian. Properties are used for determining if an item can cause an action without actually checking up
 the type of the item. We can check if an item can mine obsidian by using the
-:javadoc:`HarvestingProperty` of that item.
+:javadoc:`Keys#CAN_HARVEST` of that item.
 
 .. code-block:: java
 
     import org.spongepowered.api.block.BlockTypes;
-    import org.spongepowered.api.data.property.item.HarvestingProperty;
-
-    import java.util.Optional;
 
     public boolean canMineObsidian(ItemStack stack) {
-        Optional<HarvestingProperty> optional =
-            stack.getProperty(HarvestingProperty.class);
-
-        if (optional.isPresent()) {
-            HarvestingProperty property = optional.get();
-            return property.getValue().contains(BlockTypes.OBSIDIAN);
-        }
-        return false;
+        List<BlockType> canHarvest =
+            stack.get(Keys.CAN_HARVEST).orElse(Collections.emptyList());
+        return canHarvest.contains(BlockTypes.OBSIDIAN.get());
     }
 
-This code will check to see if the item has a ``HarvestingProperty``, such as a pickaxe. If present, it will then
-return if this item can harvest obsidian without the need to check the type of the item. This is useful in the event
-that a mod or a Minecraft update adds a new tool with the capabilities of mining obsidian.
+This code will check to see if the item has a assigned key of ``CAN_HARVEST``, such as a pickaxe, 
+if it doesn't then it uses an empty array. It will then return if obsidian is contained within the list of blocks the 
+item can harvest. This is useful in the event that a mod or a Minecraft update adds a new tool with the capabilities of 
+mining obsidian.
 
 Comparing ItemStacks
 ~~~~~~~~~~~~~~~~~~~~
