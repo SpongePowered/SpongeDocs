@@ -8,13 +8,13 @@ Child Commands
     org.spongepowered.api.command.exception.ArgumentParseException
     java.lang.String
 
-The :javadoc:`Builder` supports hierachical command structure like this:
+The :javadoc:`Builder` supports hierarchical command structure like this:
 
 - ``/mail`` (parent command)
-    - ``/main send`` (child command)
-    - ``/main read`` (child command)
+    - ``/mail send`` (child command)
+    - ``/mail read`` (child command)
 
-Every child command is a seperate ``Command`` and can be created in the same way as a regular command is.
+Every child command is a separate ``Command`` and can be created in the same way as a regular command is.
 
 .. code-block:: java
 
@@ -55,7 +55,7 @@ If a command has child commands, a :javadoc:`CommandExecutor`, set through
 :javadoc:`Builder#executor(CommandExecutor)` and the parameters for the executor are set to optional. 
 
 What happens with errors in selection and argument parsing of child commands is dependent on whether this parent 
-executor exists. If a parent exector has not been set, and if the requested child command could not be found or the 
+executor exists. If a parent executor has not been set, and if the requested child command could not be found or the
 arguments cannot be parsed, then an :javadoc:`ArgumentParseException` will be thrown.
 
 .. warning::
