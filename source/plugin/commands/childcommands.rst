@@ -52,7 +52,7 @@ Fallback Behavior
 =================
 
 If a command has child commands, a :javadoc:`CommandExecutor`, set through 
-:javadoc:`Builder#executor(CommandExecutor)` and the parameters for the executor are set to optional. 
+:javadoc:`Builder#executor(CommandExecutor)`, and the parameters for the executor become optional.
 
 What happens with errors in selection and argument parsing of child commands is dependent on whether this parent 
 executor exists. If a parent executor has not been set, and if the requested child command could not be found or the
