@@ -5,7 +5,7 @@ API-Versions
 This page explains which API versions exist, and to which Minecraft version their implementations belong.
 
 +-------------+--------------+----------------+-------------------------------------------+
-| API-Version | Release Date | End of Support | Known Implementations (Minecraft Version) |
+| API-Version | Release Date | End of Updates | Known Implementations (Minecraft Version) |
 +=============+==============+================+===========================================+
 | *11.0.0*    | TBA          | TBA            | * SpongeForge (1.20.4 - expected)         |
 |             |              |                | * SpongeVanilla (1.20.4 - expected)       |
@@ -15,13 +15,13 @@ This page explains which API versions exist, and to which Minecraft version thei
 +-------------+--------------+----------------+-------------------------------------------+
 | 9.0.0       | May 19 2022  | April 1, 2023  | * SpongeVanilla (1.18.2)                  |
 +-------------+--------------+----------------+-------------------------------------------+
-| 8.2.0       | May 19, 2022 | Sep 3, 2023    | * SpongeForge (1.16.5)                    |
+| 8.2.0       | Sep 3, 2023  | Sep 3, 2023    | * SpongeForge (1.16.5)                    |
 |             |              |                | * SpongeVanilla (1.16.5)                  |
 +-------------+--------------+----------------+-------------------------------------------+
-| 8.1.0       | Jan 8, 2022  | May 19, 2022   | * SpongeForge (1.16.5)                    |
+| 8.1.0       | Jan 8, 2022  | Sep 3, 2023    | * SpongeForge (1.16.5)                    |
 |             |              |                | * SpongeVanilla (1.16.5)                  |
 +-------------+--------------+----------------+-------------------------------------------+
-| 8.0.0       | Dec 1, 2020  | Jan 8, 2022    | * SpongeForge (1.16.5)                    |
+| 8.0.0       | May 19, 2022 | Jan 8, 2022    | * SpongeForge (1.16.5)                    |
 |             |              |                | * SpongeVanilla (1.16.5)                  |
 +-------------+--------------+----------------+-------------------------------------------+
 | 7.4.0       | Nov 28, 2020 | Dec 28, 2021   | * SpongeForge (1.12.2)                    |
