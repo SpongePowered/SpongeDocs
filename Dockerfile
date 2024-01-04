@@ -11,7 +11,11 @@ ARG CROWDIN_PROJECT_ID
 ARG CROWDIN_BASE_URL
 ARG VERSION
 
-RUN apk add --no-cache python3 py3-pip bash zip
+RUN apk add --no-cache python3 bash zip
+
+ENV VIRTUAL_ENV=/opt/venv
+RUN python3 -m venv $VIRTUAL_ENV
+ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
 WORKDIR /app
 
