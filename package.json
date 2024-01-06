@@ -5,7 +5,7 @@
   "type": "module",
   "devDependencies": {
     "browser-sync": "2.29.3",
-    "del": "7.0.0",
+    "del": "7.1.0",
     "gulp": "4.0.2",
     "plugin-error": "2.0.1"
   }
