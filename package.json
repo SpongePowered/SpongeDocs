@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "devDependencies": {
-    "browser-sync": "2.29.3",
+    "browser-sync": "3.0.2",
     "del": "7.0.0",
     "gulp": "4.0.2",
     "plugin-error": "2.0.1"
