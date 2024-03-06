@@ -38,6 +38,13 @@ Notepad++ is, arguably, one of the most popular text editors.
 
 **Notepad++** can be downloaded for free from https://notepad-plus-plus.org/.
 
+CodeLobster
+~~~~~~~~~
+
+CodeLobster is free text editor with a set of plug-ins for all popular frameworks.
+
+**CodeLobster** can be downloaded for free from https://codelobster.com/.
+
 Sublime Text
 ~~~~~~~~~~~~
 
