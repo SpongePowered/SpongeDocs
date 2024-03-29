@@ -54,8 +54,6 @@ The version of Java that you require depends on the version of Sponge (and there
 We also recommend a CPU with a large single core speed and at least 2GB of RAM (higher if you plan to run with mods).
 We highly recommend using the 64bit Java runtime.
 
-See :doc:`getting-started/jre` for more help with how to install Java 8.
-
 .. warning::
 
   Forge for 1.16.5 cannot run on Java 17 or newer, for this reason we recommend Java 11 as it is the latest Java that
