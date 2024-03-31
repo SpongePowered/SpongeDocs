@@ -118,5 +118,11 @@ Phosphor
 - Problem (2): Poor graphic performance
 - Solution: Set the optimisation ``async-lighting`` to ``false`` in the Sponge ``global.conf`` file.
 
+LoliASM
+~~~~~~~~
+- Versions: Up to 5.14
+- Problem (1): Crash on startup
+- Solution: Change ``B:threadPriorityFix=true`` to ``false`` in the ``config/loliasm.cfg`` file
+
 There may be many more, please help us keep this list maintained by contributing to the SpongeDocs on GitHub!
 The :doc:`debugging` page may also be of help if your issue is not one of those mentioned above.
