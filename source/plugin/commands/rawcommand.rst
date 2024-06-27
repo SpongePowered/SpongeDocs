@@ -25,7 +25,7 @@ The first step is to create a class for the command. The class has to implement 
     public class MyBroadcastCommand implements Command.Raw {
 
         private final Component usage = Component.text("<message>");
-        private final Component descritption = Component.text("Display a message to all players");
+        private final Component description = Component.text("Display a message to all players");
 
         @Override
         public CommandResult process(CommandCause cause, ArgumentReader.Mutable arguments) throws CommandException {
@@ -46,7 +46,7 @@ The first step is to create a class for the command. The class has to implement 
 
         @Override
         public Optional<Component> shortDescription(CommandCause cause) {
-            return Optional.of(this.descritption);
+            return Optional.of(this.description);
         }
 
         @Override
