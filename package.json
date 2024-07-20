@@ -6,7 +6,7 @@
   "devDependencies": {
     "browser-sync": "2.29.3",
     "del": "7.0.0",
-    "gulp": "4.0.2",
+    "gulp": "5.0.0",
     "plugin-error": "2.0.1"
   }
 }
