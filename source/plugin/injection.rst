@@ -2,12 +2,6 @@
 Dependency Injection
 ====================
 
-.. warning::
-
-    These docs were written for SpongeAPI 7 and are likely out of date. 
-    `If you feel like you can help update them, please submit a PR! <https://github.com/SpongePowered/SpongeDocs>`__
-
-
 .. javadoc-import::
     java.nio.file.Path
     org.spongepowered.api.Game
@@ -172,3 +166,44 @@ The ``ConfigDir`` annotation can only be applied on the ``Path`` type to retrive
 useful for plugins that require multiple configuration files, providing the directory to place them rather than a
 single file.
 
+
+Full List of injectables
+~~~~~~~~~~~~~~~~~~~~~~~~
+
++----------------------------+------------------------------------------------------------------------------------------------------+
+| Type                       | Description                                                                                          |
++============================+======================================================================================================+
+| PluginContainer            | Your plugin's container                                                                              |
++----------------------------+------------------------------------------------------------------------------------------------------+
+| Logger                     | Your plugin's log4j logger                                                                           |
++----------------------------+------------------------------------------------------------------------------------------------------+
+| System.Logger              | Your plugin's Java Logger                                                                            |
++----------------------------+------------------------------------------------------------------------------------------------------+
+| Path                       | Your plugin's config location, use the ``@DefaultConfig`` or the ``@ConfigDir`` to give more detials |
++----------------------------+------------------------------------------------------------------------------------------------------+
+| TypeSerializerCollection   | Your plugin's specific TypeSerializer's                                                              |
++----------------------------+------------------------------------------------------------------------------------------------------+
+| ConfigurationLoader        | Your plugin's config loader, use the ``@DefaultConfig`` to give more detail                          |
++----------------------------+------------------------------------------------------------------------------------------------------+
+| ConfigurationReference     | Your plugin's config reference, use the ``@DefaultConfig`` to give more detial                       |
++----------------------------+------------------------------------------------------------------------------------------------------+
+| Game                       | The Sponge global game instance                                                                      |
++----------------------------+------------------------------------------------------------------------------------------------------+
+| MinecraftVersion           | The minecraft version the server is running                                                          |
++----------------------------+------------------------------------------------------------------------------------------------------+
+| ChannelManager             | The server's channel manager                                                                         |
++----------------------------+------------------------------------------------------------------------------------------------------+
+| PluginManager              | the server's plugin manager                                                                          |
++----------------------------+------------------------------------------------------------------------------------------------------+
+| ConfigManager              | the server's configuration file manager                                                              |
++----------------------------+------------------------------------------------------------------------------------------------------+
+| MetricsConfigManager       | the server's metric configurations manager                                                           |
++----------------------------+------------------------------------------------------------------------------------------------------+
+| ServiceProvider.GameScoped | The initial service provider for the server                                                          |
++----------------------------+------------------------------------------------------------------------------------------------------+
+| FactoryProvider            | Not something plugins typically use                                                                  |
++----------------------------+------------------------------------------------------------------------------------------------------+
+| BuilderProvider            | Not something plugins typically use                                                                  |
++----------------------------+------------------------------------------------------------------------------------------------------+
+| Path                       | Shared configuration path, used when ``@DefaultConfig`` and ``@ConfigDir`` are not used              |
++----------------------------+------------------------------------------------------------------------------------------------------+
