@@ -13,6 +13,7 @@ Custom Data
     org.spongepowered.api.data.persistence.DataQuery
     org.spongepowered.api.data.persistence.DataSerializable
     org.spongepowered.api.data.persistence.DataStore
+    org.spongepowered.api.data.DataProvider
     org.spongepowered.api.data.value.MapValue
     org.spongepowered.api.data.value.Value
     org.spongepowered.api.entity.Entity
@@ -99,12 +100,15 @@ the :javadoc:`DataBuilder` which can be implemented as follows:
 Registration
 ============
 
-Registering your ``DataSerializable`` allows it to be accessible by Sponge and by other plugins in a generic way. The
-game/plugin can create copies of your data and serialize/deserialize your data without referencing any of your classes
-directly.
+All data needs to be registered before the Minecraft registers freeze, therefore the event of :javadoc:`RegisterDataEvent`
+exsits for your plugin to register custom data. Data is registered using the :javadoc:`DataRegistration` class that holds
+your custom :javadoc:`Key`, custom :javadoc:`DataStore` and custom :javadoc:`DataProvider`.
 
-To register a ``DataSerializable`` Sponge has the :javadoc:`RegisterDataEvent` event. This will allow you to register
-your data with the appropriate ``DataHolder``
+Data is required to be registered so that your custom data can be serialized/deserialize into persistence data containers,
+such as Players, Entity, BlockEntity, ItemStacks, etc.
+
+.. tip::
+    Not including either the DataStore or the DataProvider is valid, however your custom data will not persist across reboots 
 
 Simple Custom Data
 ==================
@@ -131,7 +135,7 @@ other developers access to your data manipulator.
     import org.spongepowered.api.data.Key;
     import org.spongepowered.api.data.value.Value;
 
-    ResourceKey resourceKey = ResourceKey(pluginContainer, "last_attacker_manipulator");
+    ResourceKey resourceKey = ResourceKey(pluginContainer, "last_attacker_data");
     Key<? extends Value<LastAttackerDataSerilizable>> key = Key
         .builder()
         .key(resourceKey)
@@ -140,18 +144,18 @@ other developers access to your data manipulator.
 
 .. warning::
 
-    Be sure to store your ``Key`` somewhere global so you can access it later.
+    Retain your ``Key`` reference readily available for later access, otherwise you incur additional processing expense recreating a new `Key` each time.
 
 .. tip::
 
-    You can register a key for a specific element within a DataSerializable
+    You can register a key for a specific field within a DataSerializable
 
 Data Store
 ==========
 
-The :javadoc:`DataStore` is used to register your ``Key`` with the appropriate ``DataHolder`` and also register
-any other keys you may have accessing your ``DataSerializable``. In the example below, it creates a ``DataStore``
-and makes it appliciable to only the :javadoc:`Entity` ``DataHolder``.
+The :javadoc:`DataStore` is used to register your ``Key`` with the appropriate ``DataHolder`` so that Key knows how/where to store the custom data whenever
+serializing/deserializing. The DataStore also is used to register any other keys you may have accessing your ``DataSerializable``. In the example below, 
+it creates a ``DataStore`` and makes it appliciable to only the :javadoc:`Entity` ``DataHolder``.
 
 .. code-block:: java
 
@@ -197,7 +201,7 @@ Data Provider
 
 For data that requires more code to be used whenever the getter, setter, deleter are used will require the use of
 a ``DataProvider``. With a ``dataProvider`` a plugin is able to manipulate how its data should be received, set, and
-deleted automatically. 
+deleted automatically such as being stored to a external database. 
 
 In the following example, we will be getting the UUID from the last attacker but if there is no last attacker, then
 return the player's UUID instead.
@@ -230,6 +234,8 @@ Data Registration
 
 The final object you will need to register your data is the :javadoc:`DataRegistration` which combines 
 your ``Key``, ``DataStore`` and ``DataProvider`` together into a single package that you can register.
+Only the ``key`` is required, however not providing the ``store`` or the ``provider`` will mean that
+data will not persist across reboots.
 
 .. code-block:: java
 
