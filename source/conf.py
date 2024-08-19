@@ -100,7 +100,11 @@ javadoc_links = {
     "https://jd.spongepowered.org/plugin-spi/0.3.0/": ["org.spongepowered.plugin"],
     "https://docs.oracle.com/javase/8/docs/api/": ["java"],
     "https://guava.dev/releases/21.0/api/docs/": ["com.google.common"],
-    "https://jd.adventure.kyori.net/api/4.9.3/": ["net.kyori.adventure"],
+    "https://jd.advntr.dev/serializer-configurate4/4.9.3/": ["net.kyori.adventure.serializer.configurate4"],
+    "https://jd.advntr.dev/text-serializer-plain/4.9.3/":["net.kyori.adventure.text.serializer.plain"],
+    "https://jd.advntr.dev/text-serializer-legacy/4.9.3/":["net.kyori.adventure.text.serializer.legacy"],
+    "https://jd.advntr.dev/text-serializer-gson/4.9.3/":["net.kyori.adventure.text.serializer.gson"],
+    "https://jd.advntr.dev/api/4.9.3/": ["net.kyori.adventure"],
 }
 
 # -- sphinx-intersphinx Configuration -------------------------------------
