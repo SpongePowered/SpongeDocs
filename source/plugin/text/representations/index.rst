@@ -7,7 +7,7 @@ Text Serializers
     net.kyori.adventure.text.serializer.ComponentSerializer
     net.kyori.adventure.text.serializer.gson.GsonComponentSerializer
     net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer
-    net.kyori.adventure.text.serializer.plain.PlainComponentSerializer
+    net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer
     net.kyori.adventure.serializer.configurate4.ConfigurateComponentSerializer
     java.lang.String
 
@@ -18,7 +18,7 @@ Text Serializers
 :javadoc:`ComponentSerializer`\ s provide a convenient way to serialize and de-serialize :javadoc:`Component` instances.
 There are four applicable formats:
 
-* Unformatted string - :javadoc:`PlainComponentSerializer`
+* Unformatted string - :javadoc:`PlainTextComponentSerializer`
 * Legacy ``&`` or ``§`` formatting - :javadoc:`LegacyComponentSerializer`
 * Configurate nodes - :javadoc:`ConfigurateComponentSerializer`
 * Minecraft JSON - :javadoc:`GsonComponentSerializer`
