@@ -13,6 +13,7 @@ Custom Data
     org.spongepowered.api.data.persistence.DataQuery
     org.spongepowered.api.data.persistence.DataSerializable
     org.spongepowered.api.data.persistence.DataStore
+    org.spongepowered.api.data.DataProvider
     org.spongepowered.api.data.value.MapValue
     org.spongepowered.api.data.value.Value
     org.spongepowered.api.entity.Entity
