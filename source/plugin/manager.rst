@@ -2,15 +2,11 @@
 Plugin Manager
 ==============
 
-.. warning::
-    These docs were written for SpongeAPI 7 and are likely out of date. 
-    `If you feel like you can help update them, please submit a PR! <https://github.com/SpongePowered/SpongeDocs>`__
-
 .. javadoc-import::
     org.spongepowered.api.Game
     org.spongepowered.api.Sponge
     org.spongepowered.api.plugin.Plugin
-    org.spongepowered.api.plugin.PluginContainer
+    org.spongepowered.plugin.PluginContainer
     org.spongepowered.api.plugin.PluginManager
     org.spongepowered.api.service.ServiceManager
     java.lang.Class
@@ -53,22 +49,7 @@ for a reference, create a new variable to hold the ``PluginManager`` instance an
     @Inject
     private PluginManager pluginManager;
 
-2. The Service Manager
-----------------------
-
-.. tip::
-
-    See :doc:`services` for a full guide about the Service Manager.
-
-The service manager also holds an instance of the server's ``PluginManager``. Simply use the method
-:javadoc:`ServiceManager#provide(Class)`, passing the ``PluginManager``\ 's class (``PluginManager.class``) as a
-parameter.
-
-.. code-block:: java
-
-    private PluginManager pluginManager = serviceManager.provideUnchecked(PluginManager.class);
-
-3. The Game Instance
+2. The Game Instance
 --------------------
 
 .. tip::
@@ -79,11 +60,11 @@ A game instance can provide a reference to the server's ``PluginManager`` as wel
 
 .. code-block:: java
 
-    private PluginManager pluginManager = game.getPluginManager();
+    private PluginManager pluginManager = game.pluginManager();
 
 Now that you have an instance to the plugin manager, let's use it.
 
-4. Using the Sponge Class
+3. Using the Sponge Class
 -------------------------
 
 The :javadoc:`Sponge` class works similarly to ``Game``, with the exception that since ``Sponge`` contains static
@@ -112,13 +93,13 @@ With the plugin manager, it is possible to get all plugins currently loaded thro
 
     import java.util.Collection;
 
-    private Collection<PluginContainer> plugins = pluginManager.getPlugins();
+    private Collection<PluginContainer> plugins = pluginManager.plugins();
 
 Or, it is possible to obtain an instance to a plugin container directly, by the example shown below:
 
 .. code-block:: java
 
-    private PluginContainer myOtherPlugin = pluginManager.getPlugin("myOtherPluginId").orElse(null);
+    private PluginContainer myOtherPlugin = pluginManager.plugin("myOtherPluginId").orElse(null);
 
 The PluginContainer Class
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -130,15 +111,15 @@ plugin attained from its ``@Plugin`` annotation in its main class, as well as th
 The ``PluginContainer`` will hold any generic information about the plugin set by its owning developer. You can use
 information from here instead of hard-coding what you know about it in your supporting plugin. An example scenario would
 be if the owning developer changes the name of the plugin, references to the latter in the supporting plugin would not
-become wrong as a result of this change, provided you've used the method :javadoc:`PluginContainer#getName()` to get
-its name.
+become wrong as a result of this change, provided you've used the method :javadoc:`PluginContainer#metadata()` to get
+its metadata which contains the name of the plugin.
 
 .. code-block:: java
 
     private PluginContainer myOtherPlugin = pluginManager.getPlugin("myOtherPluginId").orElse(null);
-    private MyOtherPlugin pluginInstance = (MyOtherPlugin) myOtherPlugin.getInstance().orElse(null);
+    private MyOtherPlugin pluginInstance = (MyOtherPlugin) myOtherPlugin.instance().orElse(null);
 
 .. note::
 
-    :javadoc:`PluginContainer#getInstance()` will return as an ``Object``. You need to cast it as the target plugin
+    :javadoc:`PluginContainer#instance()` will return as an ``Object``. You need to cast it as the target plugin
     after obtaining it from the container.
