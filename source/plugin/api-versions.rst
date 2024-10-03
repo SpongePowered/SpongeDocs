@@ -7,7 +7,9 @@ This page explains which API versions exist, and to which Minecraft version thei
 +-------------+--------------+----------------+-------------------------------------------+
 | API-Version | Release Date | End of Updates | Known Implementations (Minecraft Version) |
 +=============+==============+================+===========================================+
-| *12.0.0*    | Jun 13, 2023 | TBA            | * SpongeVanilla (1.21.1 - expected)       |
+| *12.0.0*    | Jun 13, 2023 | TBA            | * SpongeVanilla (1.21.1)                  |
+|             |              |                | * SpongeForge (1.21.1)                    |
+|             |              |                | * SpongeNeo (1.21.1)                      |
 +-------------+--------------+----------------+-------------------------------------------+
 | *11.0.0*    | May 28, 2023 | TBA            | * SpongeForge (1.20.6)                    |
 |             |              |                | * SpongeVanilla (1.20.6)                  |
