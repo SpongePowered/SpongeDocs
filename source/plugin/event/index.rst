@@ -32,4 +32,5 @@ Contents
 	listeners
 	causes
 	filters
+	connection
 	custom
