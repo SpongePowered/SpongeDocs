@@ -2,7 +2,7 @@
 API-Versions
 ============
 
-This page explains which API versions exist, and to which Minecraft version their implementations belong.
+This page explains which API versions exist, and to which Minecraft version(s) their implementations belong.
 
 +-------------+--------------+----------------+-------------------------------------------+
 | API-Version | Release Date | End of Updates | Known Implementations (Minecraft Version) |
@@ -54,8 +54,14 @@ This page explains which API versions exist, and to which Minecraft version thei
 | 6.0.0       | May 2, 2017  | Dec 31, 2017   | * SpongeForge (1.11.2)                    |
 |             |              |                | * SpongeVanilla (1.11.2)                  |
 +-------------+--------------+----------------+-------------------------------------------+
-| 5.1.0       | Feb 25, 2017 | Dec 31, 2017   | * SpongeForge (1.10.2)                    |
+| 5.2.0       | Sep 17, 2017 | Dec 31, 2017   | * SpongeForge (1.10.2)                    |
 |             |              |                | * SpongeVanilla (1.10.2)                  |
++-------------+--------------+----------------+-------------------------------------------+
+| 5.1.0       | Feb 25, 2017 | Sep 16, 2017   | * SpongeForge (1.10.2)                    |
+|             |              |                | * SpongeVanilla (1.10.2)                  |
++-------------+--------------+----------------+-------------------------------------------+
+| 5.0.0       |              |                | * SpongeForge (1.9.4)                     |
+|             |              |                | * SpongeVanilla (1.9.4)                   |
 +-------------+--------------+----------------+-------------------------------------------+
 
 It is recommended to always update to the latest stable version of the API or to an LTS version.
