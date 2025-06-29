@@ -44,11 +44,11 @@ construction code):
 .. code-block:: java
 
     import org.spongepowered.api.event.Listener
-    import org.spongepowered.api.service.ServiceProvider.ServerScoped
+    import org.spongepowered.api.event.lifecycle.ProvideServiceEvent
     import org.spongepowered.api.service.permission.PermissionService
 
     @Listener
-    public void providePermissionService(final ProvideServiceEvent.ServerScoped<PermissionService> event) {
+    public void providePermissionService(final ProvideServiceEvent.EngineScoped<PermissionService> event) {
         event.suggest(() -> new ConcretePermissionService());
     }
 

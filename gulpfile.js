@@ -1,10 +1,10 @@
-'use strict';
+import { deleteAsync } from 'del'
+import gulp from 'gulp'
+import pluginerror from 'plugin-error'
+import browsersync from 'browser-sync'
+import {spawn} from 'child_process'
 
-const gulp = require('gulp');
-const pluginerror = require('plugin-error');
-const browsersync = require('browser-sync').create();
-const del = require('del');
-const spawn = require('child_process').spawn;
+const devServer = browsersync.create();
 
 function shell(plugin, command, args) {
     return (done) =>
@@ -23,7 +23,7 @@ function shell(plugin, command, args) {
 }
 
 function webserver(done) {
-  browsersync.init({
+  devServer.init({
     watch: true,
     server: "./build/dev/html/"
   }, function () { this.server.on('close', done) })
@@ -34,7 +34,7 @@ function watch() {
   gulp.watch('./source/**', gulp.series('sphinx:dev'));
 };
 
-gulp.task('clean', () => del(['build']));
+gulp.task('clean', () => deleteAsync(['build']));
 
 gulp.task('sphinx', shell(
     'sphinx', 'sphinx-build', ['-W', '-d', 'build/doctrees', 'source', 'build/html']

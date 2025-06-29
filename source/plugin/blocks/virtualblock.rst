@@ -2,14 +2,11 @@
 Virtual Block Changes
 =====================
 
-.. warning::
-    These docs were written for SpongeAPI 7 and are likely out of date. 
-    `If you feel like you can help update them, please submit a PR! <https://github.com/SpongePowered/SpongeDocs>`__
-
 .. javadoc-import::
-    com.flowpowered.math.vector.Vector3i
+    org.spongepowered.math.vector.Vector3i
     org.spongepowered.api.block.BlockState
     org.spongepowered.api.effect.Viewer
+    org.spongepowered.api.world.BlockChangeFlags
 
 Virtual block changes allow you to make it seem as if a block has changed on the client without actually changing any
 physical blocks in the world.
@@ -33,10 +30,14 @@ Besides specifying three integers for the co-ordinates, you may also specify a `
 
 .. code-block:: java
 
-    import com.flowpowered.math.vector.Vector3i;
+    import org.spongepowered.math.vector.Vector3i;
 
     Vector3i vector = new Vector3i(0, 65, 0);
     viewer.sendBlockChange(vector, BlockTypes.COMMAND_BLOCK.getDefaultState());
+
+.. tip::
+
+    If you wish to send a virtual block to all clients, you can now use :javadoc:`BlockChangeFlags#NOTIFY_CLIENTS`
 
 Resetting Changes
 ~~~~~~~~~~~~~~~~~

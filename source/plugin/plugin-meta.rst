@@ -3,12 +3,12 @@ Plugin Metadata
 ===============
 
 .. note::
-    The metadata described here is for plugins for SpongeAPI 8 or later. Plugins for version 7 or later should define
-    their metadata in the ``@Plugin`` annotation
+    The metadata described here is for plugins for SpongeAPI 8 or later. Plugins for version 7 should define their
+    metadata in the ``@Plugin`` annotation
 
 .. _Ore: https://github.com/SpongePowered/Ore
 
-Every Sponge plugin must have an entry in a metadata file known as ``sponge-plugins.json``, which is found in the 
+Every Sponge plugin must have an entry in a metadata file known as ``sponge_plugins.json``, which is found in the 
 ``META-INF`` directory. In most cases, a plugin JAR will contain this file, and the file will refer to one plugin.
 However, it is possible for there to be multiple plugins in a JAR, and the metadata file can represent multiple plugins.
 
@@ -165,8 +165,11 @@ can be overridden on a per plugin basis.
 |              |               |               | ``version``: The version, or a maven version range, that  |
 |              |               |               | represents the versions this plugin depends on. Required. |
 |              |               |               |                                                           |
-|              |               |               | ``loadOrder``: "before" or "after", whether this plugin   |
+|              |               |               | ``load-order``: "before" or "after", whether this plugin  |
 |              |               |               | must load before or after the specified the plugin.       |
 |              |               |               | Optional - if not defined, the loader will try to load    |
 |              |               |               | the plugin at an implementation defined point.            |
+|              |               |               |                                                           |
+|              |               |               | ``optional``: true or false, whether the dependency must  |
+|              |               |               | be present for the plugin to function                     |
 +--------------+---------------+---------------+-----------------------------------------------------------+

@@ -9,9 +9,9 @@ Event Listeners
     org.spongepowered.api.event.Order
     org.spongepowered.api.event.block.ChangeBlockEvent
     org.spongepowered.api.event.block.ChangeBlockEvent.All
-    org.spongepowered.api.event.cause.Cause
-    org.spongepowered.api.event.lifecycle.GameRefreshEvent
-    org.spongepowered.api.plugin.Plugin
+    org.spongepowered.api.event.lifecycle.RefreshGameEvent
+    org.spongepowered.plugin.PluginContainer
+    org.spongepowered.plugin.builtin.jvm.Plugin
     java.lang.Object
 
 In order to listen for an event, an event listener must be registered. This is done by making a method with any name,
@@ -46,7 +46,7 @@ Registering and Unregistering Event Listeners
 =============================================
 
 To register event listeners annotated by ``@Listener`` that are not in the main plugin class, you can use
-:javadoc:`EventManager#registerListeners(Object, Object)`, which accepts a reference to the plugin and an instance of
+:javadoc:`EventManager#registerListeners(PluginContainer, Object)`, which accepts a reference to the plugin and an instance of
 the class containing the event listeners.
 
 **Example: Registering Event Listeners in Other Classes**
@@ -63,7 +63,7 @@ the class containing the event listeners.
         }
     }
 
-    Sponge.getEventManager().registerListeners(this, new ExampleListener());
+    Sponge.eventManager().registerListeners(this, new ExampleListener());
 
 
 
@@ -98,7 +98,12 @@ before other server modifications.
 .. code-block:: java
 
     EventListener<ChangeBlockEvent.All> listener = new ExampleListener();
-    Sponge.getEventManager().registerListener(this, ChangeBlockEvent.All.class, listener);
+    EventListenerRegistration registeration = EventListenerRegistration
+        .builder(ChangeBlockEvent.All.class)
+        .listener(listener)
+        .plugin(pluginContainer)
+        .build();
+    Sponge.eventManager().registerListener(registeration);
 
 .. tip::
 
@@ -125,7 +130,7 @@ event listeners, including those registered with ``@Listener`` annotations.
 .. code-block:: java
 
     PluginContainer plugin = ...;
-    Sponge.getEventManager().unregisterPluginListeners(plugin);
+    Sponge.eventManager().unregisterListeners(plugin);
 
 .. _about_listener:
 
@@ -144,17 +149,17 @@ cancellable and has been cancelled (such as by another plugin).
 
 .. _game-reload:
 
-GameRefreshEvent
+RefreshGameEvent
 ~~~~~~~~~~~~~~~~
 
 To prevent all plugins providing their own reload commands, Sponge provides a built-in callback for plugins to listen
 to, and when executed, perform any refresh actions. What constitutes as a 'refresh action' is purely up to the
-plugin to decide. The :javadoc:`GameRefreshEvent` will fire when a player executes the
+plugin to decide. The :javadoc:`RefreshGameEvent` will fire when a player executes the
 ``/sponge plugins refresh`` command. The event is not necessarily limited to reloading configuration.
 
 .. code-block:: java
 
-    import org.spongepowered.api.event.lifecycle.GameRefreshEvent;
+    import org.spongepowered.api.event.lifecycle.RefreshGameEvent;
 
     @Listener
     public void refresh(GameRefreshEvent event) {
@@ -173,6 +178,6 @@ You can fire events using the event bus (:javadoc:`EventManager`):
 
 .. code-block:: java
 
-    boolean cancelled = Sponge.getEventManager().post(theEventObject);
+    boolean cancelled = Sponge.eventManager().post(theEventObject);
 
 The method returns ``true`` if the event was cancelled, ``false`` if not.

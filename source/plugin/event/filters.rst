@@ -2,15 +2,11 @@
 Event Filters
 =============
 
-.. warning::
-    These docs were written for SpongeAPI 7 and are likely out of date. 
-    `If you feel like you can help update them, please submit a PR! <https://github.com/SpongePowered/SpongeDocs>`__
-
 .. javadoc-import::
     org.spongepowered.api.event.Listener
     org.spongepowered.api.event.block.InteractBlockEvent.Primary
     org.spongepowered.api.event.block.InteractBlockEvent.Secondary
-    org.spongepowered.api.event.cause.Cause
+    org.spongepowered.api.event.Cause
     org.spongepowered.api.event.entity.AffectEntityEvent
     org.spongepowered.api.event.entity.DamageEntityEvent
     org.spongepowered.api.event.entity.DestructEntityEvent
@@ -57,7 +53,7 @@ For example:
 
 This listener would normally be called for all events extending InteractBlockEvent. However, the :javadoc:`Exclude`
 annotationte will prevent your listener from being called for the :javadoc:`InteractBlockEvent.Primary` event (leaving
-just the :javadoc:`InteractBlockEvent.Secondary` event).
+just the :javadoc:`InteractBlockEvent.Secondary` extended events).
 
 An example with :javadoc:`Include` could be:
 

@@ -1,10 +1,12 @@
-=====
-Items
-=====
+=========
+Inventory
+=========
+
+Inventories hold items.
+This section show how to interact with inventories
 
 Items are a fundamental feature of Minecraft and plugins. This section shows some basic usage examples and how to
 create your own items.
-
 
 
 .. toctree::
@@ -13,3 +15,6 @@ create your own items.
 
     usage
     creating
+    menu
+    events
+

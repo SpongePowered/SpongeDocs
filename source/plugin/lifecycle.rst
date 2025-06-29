@@ -34,6 +34,29 @@ plugins can listen to such that they can act accordingly. All lifecycle events a
     with ending something. Your plugins should therefore not rely on these events to finalize and store any 
     important state.
 
+Registration Lifecycle Events
+=============================
+
+At various points in the lifecycle of the game, Sponge will fire registration events to prompt plugins to perform 
+specific tasks. These registration requests may come at any time, even during normal game play if, for example, a
+datapack reload is required. It is important that plugins that perform actions prompted by such lifecycle events
+listen to these events.
+
+Some of the important registration events for most plugins are:
+
+- :javadoc:`ProvideServiceEvent.GameScoped` and :javadoc:`ProvideServiceEvent.EngineScoped` for plugins that provide
+  services (see :doc:`services`).
+- :javadoc:`RegisterCommandEvent` for registering commands as they are now engine scoped and are tied to datapacks,
+  not listening to this event may result in commands not being re-registered when requested 
+  (see :doc:`commands/index`).
+- :javadoc:`RegisterDataEvent` for providing :javadoc:`DataRegistration`\s, allowing for persistent storage of
+  custom data (see :doc:`data/index`).
+- :javadoc:`RegisterRegistryValueEvent.GameScoped`, :javadoc:`RegisterRegistryValueEvent.EngineScoped` and
+  :javadoc:`RegisterRegistryValueEvent.WorldScoped` for providing additional entries to registries.
+
+There are other registration events that plugins may be interested in, see the ``org.spongepowered.api.event.lifecycle``
+package `in the javadocs <https://jd.spongepowered.org/>`__.
+
 Game Lifecycle Events
 =====================
 
@@ -78,29 +101,6 @@ The following events run during the engine lifecycle:
   this means that the registry has been populated and in the case of the server engine, worlds have been created.
 - :javadoc:`StoppingEngineEvent` will fire when the engine has been told to shutdown and is about to shut down
   everything it is responsible for. May not fire if the game terminates abnormally.
-
-Registration Events
-===================
-
-At various points in the lifecycle of the game, Sponge will fire registration events to prompt plugins to perform 
-specific tasks. These registration requests may come at any time, even during normal game play if, for example, a
-datapack reload is required. It is important that plugins that perform actions prompted by such lifecycle events
-listen to these events.
-
-Some of the important registration events for most plugins are:
-
-- :javadoc:`ProvideServiceEvent.GameScoped` and :javadoc:`ProvideServiceEvent.EngineScoped` for plugins that provide
-  services (see :doc:`services`).
-- :javadoc:`RegisterCommandEvent` for registering commands as they are now engine scoped and are tied to datapacks,
-  not listening to this event may result in commands not being re-registered when requested 
-  (see :doc:`commands/index`).
-- :javadoc:`RegisterDataEvent` for providing :javadoc:`DataRegistration`\s, allowing for persistent storage of
-  custom data (see :doc:`data/index`).
-- :javadoc:`RegisterRegistryValueEvent.GameScoped`, :javadoc:`RegisterRegistryValueEvent.EngineScoped` and
-  :javadoc:`RegisterRegistryValueEvent.WorldScoped` for providing additional entries to registries.
-
-There are other registration events that plugins may be interested in, see the ``org.spongepowered.api.event.lifecycle``
-package `in the javadocs <https://jd.spongepowered.org/>`__.
 
 Refresh Events
 ==============

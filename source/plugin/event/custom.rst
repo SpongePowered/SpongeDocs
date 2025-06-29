@@ -6,15 +6,17 @@ Custom Events
     org.spongepowered.api.entity.living.player.server.ServerPlayer
     org.spongepowered.api.event.Cancellable
     org.spongepowered.api.event.Event
-    org.spongepowered.api.event.cause.Cause
+    org.spongepowered.api.event.Cause
     org.spongepowered.api.event.entity.AffectEntityEvent
     org.spongepowered.api.event.impl.AbstractEvent
 
 You can write your own event classes and dispatch those events using the method described above. An event class must
-extend the :javadoc:`AbstractEvent` class, thus implementing the :javadoc:`Event` interface. Depending on the exact
-nature of the event, more interfaces should be implemented, like :javadoc:`Cancellable` for events that can be
-cancelled by a listener or interfaces like :javadoc:`AffectEntityEvent` clarifying what sort of object is affected by
-your event.
+extend the :javadoc:`Event` class. Depending on the exact nature of the event, more interfaces should be implemented, 
+like :javadoc:`Cancellable` for events that can be cancelled by a listener or interfaces like 
+:javadoc:`AffectEntityEvent` clarifying what sort of object is affected by your event.
+
+.. tip::
+    You can extend :javadoc:`AbstractEvent` for common methods to be implementated for you
 
 Example: Custom Event Class
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -31,7 +33,7 @@ would probably be mentioned that the root cause is generally an object of the fi
 
     import org.spongepowered.api.entity.living.player.server.ServerPlayer;
     import org.spongepowered.api.event.Cancellable;
-    import org.spongepowered.api.event.cause.Cause;
+    import org.spongepowered.api.event.Cause;
     import org.spongepowered.api.event.impl.AbstractEvent;
 
     public class PlayerMutationEvent extends AbstractEvent implements Cancellable {
@@ -75,7 +77,6 @@ would probably be mentioned that the root cause is generally an object of the fi
         public Cause cause() {
             return this.cause;
         }
-
     }
 
 Example: Fire Custom Event
@@ -83,9 +84,9 @@ Example: Fire Custom Event
 
 .. code-block:: java
 
-    import org.spongepowered.api.event.cause.Cause;
-    import org.spongepowered.api.event.cause.EventContext;
-    import org.spongepowered.api.event.cause.EventContextKeys;
+    import org.spongepowered.api.event.Cause;
+    import org.spongepowered.api.event.EventContext;
+    import org.spongepowered.api.event.EventContextKeys;
     import org.spongepowered.api.Sponge;
 
     PluginContainer plugin = ...;

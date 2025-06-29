@@ -35,9 +35,9 @@ usage is explained on :doc:`plugin-meta`.
 
     package io.github.username.project;
 
-    import org.spongepowered.plugin.Plugin;
+    import org.spongepowered.plugin.builtin.jvm.Plugin;
 
-    @Plugin(id = "exampleplugin")
+    @Plugin("exampleplugin")
     public class ExamplePlugin {
 
     }
@@ -67,7 +67,7 @@ message as part of the server's initialization output.
     import com.google.inject.Inject;
     import org.apache.logging.log4j.Logger;
 
-    @Plugin(id = "exampleplugin")
+    @Plugin("exampleplugin")
     public class ExamplePlugin {
 
         @Inject

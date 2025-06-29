@@ -17,7 +17,7 @@ Players can be added to the whitelist through the usage of in-game :doc:`../spon
 - To reload the whitelist after a manual change to the file, use ``/whitelist reload``
 
 The whitelist can also be enabled or disabled by editing the
-`server.properties <https://minecraft.gamepedia.com/Server.properties>`__ file,
+`server.properties <https://minecraft.wiki/w/Server.properties>`__ file,
 although this will only affect the game after server reload or restart.
 
 Permissions

@@ -10,13 +10,13 @@ Operator Level
 ==============
 
 Minecraft comes with a simple way to give permissions: by setting users as operator (or "op" for short). General
-information on op status can be found at https://minecraft.gamepedia.com/Op
+information on op status can be found at https://minecraft.wiki/w/Server#Managing_and_maintaining_a_server
 
 The abilities of op permission may be adjusted by altering the ``op-permission-level`` setting in the
-`server.properties <https://minecraft.gamepedia.com/Server.properties>`__ file.
+`server.properties <https://minecraft.wiki/w/Server.properties>`__ file.
 
 A list of native Minecraft server commands available to players with op can be found at the `Minecraft Wiki
-<https://minecraft.gamepedia.com/Commands#Summary_of_commands>`_.
+<https://minecraft.wiki/w/Commands#List_and_summary_of_commands>`_.
 
 
 .. warning::
