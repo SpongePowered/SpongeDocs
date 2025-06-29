@@ -2,32 +2,21 @@
 Offline Player Data
 ===================
 
-.. warning::
-    
-    These docs were written for SpongeAPI 7 and are likely out of date. 
-    `If you feel like you can help update them, please submit a PR! <https://github.com/SpongePowered/SpongeDocs>`__
-
-
 .. javadoc-import::
-    org.spongepowered.api.entity.living.player.Player
+    org.spongepowered.api.entity.living.player.server.ServerPlayer
     org.spongepowered.api.entity.living.player.User
     org.spongepowered.api.profile.GameProfileManager
-    org.spongepowered.api.service.ServiceManager
-    org.spongepowered.api.service.user.UserStorageService
+    org.spongepowered.api.user.UserManager
 
 It may be necessary for plugins to access player data even when the player is offline.
-You might think that ``Sponge.getServer().getPlayer()`` returning a :javadoc:`Player` can be used for this.
-But since ``Player`` objects only exist for online players, another solution must be used.
+You might think that ``Sponge.server().player()`` returning a :javadoc:`ServerPlayer` can be used for this.
+But since all ``Player`` objects only exist for online players, 
+another solution must be used.
 
 Some plugins store the relevant data themselves and associate the user by using the :javadoc:`GameProfileManager`.
 But writing different code for offline and online users is not necessary.
-The :javadoc:`ServiceManager` natively provides a service known as the :javadoc:`UserStorageService` which is capable
-of returning :javadoc:`User` instances for ``Player``\s who are currently offline.
-Since the ``Player`` interface extends ``User`` most methods you call on a ``Player`` are also available. 
-
-For example:
-
-* ``#hasPermission(String permission)`` is available from both instances.
+The :javadoc:`UserManager` is capable of returning :javadoc:`User` instances for ``Player``\s who are currently 
+offline. 
 
 Code Example
 ------------
@@ -38,23 +27,26 @@ Here's an example for a utility method that can be used to get a ``User``:
     
     import java.util.Optional;
     import java.util.UUID;
+    import java.util.concurrent;
     
     import org.spongepowered.api.Sponge;
     import org.spongepowered.api.entity.living.player.User;
-    import org.spongepowered.api.service.user.UserStorageService;
+    import org.spongepowered.api.user.UserManager;
     
-    public Optional<User> getUser(UUID uuid) {
-        Optional<UserStorageService> userStorage = Sponge.getServiceManager().provide(UserStorageService.class);
-        return userStorage.get().get(uuid);
+    public CompletableFuture<Optional<User>> getUser(UUID uuid) {
+        UserManager userManager = Sponge.server().userManager();
+        return userManager.load(uuid);
     }
 
-This code will get the ``UserStorageService`` from the ``ServiceManager`` and then retrieve the ``User`` from there.
+This code will get the ``UserManager`` and then retrieve the ``User`` from there. 
 
 .. note::
 
-    The ``UserStorageService`` can only return ``User``\s who previously were connected.
+    The ``UserManager`` will use local cached versions of the user, however will contact Mojang servers if
+    the user has not previously joined, hence why the load returns a ``CompletableFuture``. If the user 
+    cannot be found in either cache or Mojang then the ``CompletableFuture`` will return ``Optional.empty`` 
 
 .. note::
 
-    This solution will not return ``Player`` instances. This makes it safe to store the returned ``User`` objects,
-    but you will need to use the ``User.getPlayer()`` method to retrieve the online entity.   
+    You can check if the player is loaded in cache with the ``exists(UUID playerUuid)`` method found in
+    ``UserManager``
