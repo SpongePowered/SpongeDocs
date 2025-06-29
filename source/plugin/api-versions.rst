@@ -2,18 +2,30 @@
 API-Versions
 ============
 
-This page explains which API versions exist, and to which Minecraft version their implementations belong.
+This page explains which API versions exist, and to which Minecraft version(s) their implementations belong.
 
 +-------------+--------------+----------------+-------------------------------------------+
 | API-Version | Release Date | End of Updates | Known Implementations (Minecraft Version) |
 +=============+==============+================+===========================================+
-| *11.0.0*    | TBA          | TBA            | * SpongeForge (1.20.4 - expected)         |
-|             |              |                | * SpongeVanilla (1.20.4 - expected)       |
+| *14.0.0*    | Nov 14, 2024 | TBA            | * SpongeVanilla (1.21.4)                  |
+|             |              |                | * SpongeForge (1.21.4)                    |
+|             |              |                | * SpongeNeo (1.21.4)                      |
 +-------------+--------------+----------------+-------------------------------------------+
-| 10.0.0      | Sep 3 2023   | TBA            | * SpongeForge (1.19.4)                    |
+| 13.0.0      | Aug 6, 2024  | Dec 29, 2024   | * SpongeVanilla (1.21.2-1.21.3)           |
+|             |              |                | * SpongeForge (1.21.3)                    |
+|             |              |                | * SpongeNeo (1.21.2-1.21.3)               |
++-------------+--------------+----------------+-------------------------------------------+
+| 12.0.0      | Jun 13, 2023 | TBA            | * SpongeVanilla (1.20.0-1.21.1)           |
+|             |              |                | * SpongeForge (1.20.0-1.21.1)             |
+|             |              |                | * SpongeNeo (1.20.0-1.21.1)               |
++-------------+--------------+----------------+-------------------------------------------+
+| 11.0.0      | May 28, 2023 | Nov 21, 2024   | * SpongeForge (1.20.6)                    |
+|             |              |                | * SpongeVanilla (1.20.6)                  |
++-------------+--------------+----------------+-------------------------------------------+
+| 10.0.0      | Sep 3, 2023  | May 13, 2023   | * SpongeForge (1.19.4)                    |
 |             |              |                | * SpongeVanilla (1.19.4)                  |
 +-------------+--------------+----------------+-------------------------------------------+
-| 9.0.0       | May 19 2022  | April 1, 2023  | * SpongeVanilla (1.18.2)                  |
+| 9.0.0       | May 19, 2022 | April 1, 2023  | * SpongeVanilla (1.18.2)                  |
 +-------------+--------------+----------------+-------------------------------------------+
 | 8.2.0       | Sep 3, 2023  | Sep 3, 2023    | * SpongeForge (1.16.5)                    |
 |             |              |                | * SpongeVanilla (1.16.5)                  |
@@ -42,8 +54,14 @@ This page explains which API versions exist, and to which Minecraft version thei
 | 6.0.0       | May 2, 2017  | Dec 31, 2017   | * SpongeForge (1.11.2)                    |
 |             |              |                | * SpongeVanilla (1.11.2)                  |
 +-------------+--------------+----------------+-------------------------------------------+
-| 5.1.0       | Feb 25, 2017 | Dec 31, 2017   | * SpongeForge (1.10.2)                    |
+| 5.2.0       | Sep 17, 2017 | Dec 31, 2017   | * SpongeForge (1.10.2)                    |
 |             |              |                | * SpongeVanilla (1.10.2)                  |
++-------------+--------------+----------------+-------------------------------------------+
+| 5.1.0       | Feb 25, 2017 | Sep 16, 2017   | * SpongeForge (1.10.2)                    |
+|             |              |                | * SpongeVanilla (1.10.2)                  |
++-------------+--------------+----------------+-------------------------------------------+
+| 5.0.0       |              |                | * SpongeForge (1.9.4)                     |
+|             |              |                | * SpongeVanilla (1.9.4)                   |
 +-------------+--------------+----------------+-------------------------------------------+
 
 It is recommended to always update to the latest stable version of the API or to an LTS version.

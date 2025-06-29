@@ -4,9 +4,9 @@
   "private": true,
   "type": "module",
   "devDependencies": {
-    "browser-sync": "2.29.3",
-    "del": "7.0.0",
-    "gulp": "4.0.2",
+    "browser-sync": "3.0.4",
+    "del": "8.0.0",
+    "gulp": "5.0.1",
     "plugin-error": "2.0.1"
   }
 }
