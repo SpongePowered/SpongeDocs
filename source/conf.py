@@ -112,7 +112,7 @@ javadoc_links = {
 # External Sphinx projects to be available for direct linking via :doc:
 # references.
 intersphinx_mapping = {
-    "adventure": ("https://docs.adventure.kyori.net/", None),
+    "adventure": ("https://docs.papermc.io/adventure/", None),
 }
 
 # Set to true to enable sphinx-JDLinker debug dump.
