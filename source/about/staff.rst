@@ -92,17 +92,6 @@ The **System Administrators** are responsible for the maintenance and reliable o
 | progwml6                          | System Administrator               |
 +-----------------------------------+------------------------------------+
 
-Ore Developers
-~~~~~~~~~~~~~~
-
-The **Ore Developers** work on producing, enhancing, and fixing the Ore plugin distribution platform. 
-
-+-----------------------------------+------------------------------------+
-| Name                              | Role                               |
-+===================================+====================================+
-| felixoi                           | Ore Developer                      |
-+-----------------------------------+------------------------------------+
-
 Web Developers
 ~~~~~~~~~~~~~~
 
@@ -205,6 +194,8 @@ here to thank them and acknowledge their valuable contributions.
 | Eufranio                          | Ore Reviewer                       |
 +-----------------------------------+------------------------------------+
 | ewoutvs\_                         | Ore Developer & Reviewer           |
++-----------------------------------+------------------------------------+
+| felixoi                           | Ore Developer, SysAdmin & more     |
 +-----------------------------------+------------------------------------+
 | FerusGrim                         | Moderator                          | 
 +-----------------------------------+------------------------------------+
