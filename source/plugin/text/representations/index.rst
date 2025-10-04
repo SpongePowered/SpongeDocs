@@ -23,7 +23,7 @@ There are four applicable formats:
 * Configurate nodes - :javadoc:`ConfigurateComponentSerializer`
 * Minecraft JSON - :javadoc:`GsonComponentSerializer`
 
-For a full documentation of each serializer, see the Adventure docs' :doc:`Text Serializers <adventure:serializer/index>` section.
+For a full documentation of each serializer, see the Adventure docs' `AdventureSerializer`_ section.
 
 Serializing Text
 ~~~~~~~~~~~~~~~~
@@ -41,3 +41,5 @@ To deserialize a ``String`` or other serialized object into its corresponding ``
 input is incorrectly formatted, an exception will be thrown. Alternatively, use the
 :javadoc:`ComponentSerializer#deserializeOr(R, Component)` method to deserialize without any exceptions. If there is an
 error, the second argument will be returned as a fallback.
+
+.. _AdventureSerializer: https://docs.papermc.io/adventure/serializer/
