@@ -5,6 +5,6 @@ sponge-docs-theme==1.1.0
 sphinxcontrib-applehelp==1.0.4
 sphinxcontrib.devhelp==1.0.2
 sphinxcontrib.htmlhelp==2.0.0
-sphinxcontrib.qthelp==1.0.3
+sphinxcontrib.qthelp==2.0.0
 sphinxcontrib.serializinghtml==1.1.5
 standard-imghdr==3.13.0
