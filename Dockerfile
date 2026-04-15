@@ -41,6 +41,6 @@ RUN export VERSIONS=`list-versions` \
 
 #------- Copy to nginx
 
-FROM nginx:1.29.0-alpine
+FROM nginx:1.30.0-alpine
 
 COPY --from=builder /app/dist /usr/share/nginx/html
