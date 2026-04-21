@@ -40,7 +40,7 @@ jobs:
 
     - name: Set crowdin branch
       id: variables
-      if: github.ref_name == 'stable' || startsWith(github.ref_name, 'release-')
+      if: github.ref_name == 'stable' || startsWith(github.ref_name, 'release-') || github.ref_name == 'dev'
       run: |
         echo "Ref: $GITHUB_REF"
         BRANCH=${GITHUB_REF##*/}
@@ -71,6 +71,9 @@ jobs:
     runs-on: ubuntu-latest
     if: github.ref_name == 'stable' || startsWith(github.ref_name, 'release-')
     needs: build
+    permissions:
+      contents: read
+      packages: write
     steps:
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
@@ -99,8 +102,15 @@ jobs:
 
   publish-docker-all:
     runs-on: ubuntu-latest
-    if: github.ref_name == 'stable'
     needs: [build, publish-docker]
+    if: |
+      !cancelled() &&
+      needs.build.result == 'success' &&
+      (needs.publish-docker.result == 'success' || needs.publish-docker.result == 'skipped') &&
+      (github.ref_name == 'stable' || github.ref_name == 'dev')
+    permissions:
+      contents: read
+      packages: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -124,6 +134,6 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
+          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.ref_name == 'dev' && 'dev-latest' || 'latest' }}
           context: .
           file: ./deployment/Dockerfile
