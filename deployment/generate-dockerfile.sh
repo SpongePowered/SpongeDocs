@@ -11,7 +11,7 @@ for version in $VERSIONS; do
     i=$(( i + 1 ))
 done
 
-echo "FROM nginx:1.19.4-alpine" >> deployment/Dockerfile
+echo "FROM nginx:1.29.0-alpine" >> deployment/Dockerfile
 echo "COPY --from=homepage /usr/share/nginx/html /usr/share/nginx/html" >> deployment/Dockerfile
 
 i=0
