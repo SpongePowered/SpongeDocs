@@ -1,0 +1,28 @@
+[tools]
+python = "3.12"
+node = "22"
+
+[env]
+_.python.venv = { path = "venv", create = true }
+
+[tasks.install]
+description = "Install Python and Node dependencies"
+run = [
+  "pip install -U pip",
+  "pip install -r requirements.txt",
+  "npm install",
+]
+
+[tasks.dev]
+description = "Build docs and run live-reload dev server"
+depends = ["install"]
+run = "npx gulp"
+
+[tasks.build]
+description = "Build docs (strict, warnings-as-errors)"
+depends = ["install"]
+run = "npx gulp build"
+
+[tasks.clean]
+description = "Remove build output"
+run = "rm -rf build"

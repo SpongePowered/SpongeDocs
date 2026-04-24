@@ -23,14 +23,20 @@ We're eagerly looking for translators! Please visit the [Crowdin translation pag
 
 You can setup an environment so you can instantly see the changes that have been made to the docs.
 
-1. [Install Python 3](https://www.python.org)
-2. [Install node.js](https://nodejs.org)
+### Prerequisites
 
-In terminal or the command line, within the directory containing this README, run the following commands:
+Install [`mise`](https://mise.jdx.dev/getting-started.html). It manages the pinned Python and Node versions this project needs (see `mise.toml`) and orchestrates the build tasks.
 
-	npm install -g gulp
-	npm install
-	pip install -r requirements.txt
-	gulp
+### Run the live-reload dev server
 
-Your browser should open to reveal the docs. When you make a change to the documentation, the docs should refresh in the browser (possibly after a few seconds).
+From the directory containing this README:
+
+	mise run dev
+
+On first run, `mise` installs the pinned Python and Node versions, creates a local `venv/`, installs Python and npm dependencies, and then launches the gulp-based dev server. Your browser should open to reveal the docs. When you make a change to the documentation, the docs will refresh in the browser (possibly after a few seconds).
+
+### Other tasks
+
+	mise run build    # one-shot strict build (warnings-as-errors)
+	mise run install  # re-run just the dependency install step
+	mise run clean    # remove build output
