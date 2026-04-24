@@ -19,10 +19,10 @@ jobs:
 
     steps:
     - name: Checkout
-      uses: actions/checkout@v4
+      uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
 
     - name: Setup Python
-      uses: actions/setup-python@v5
+      uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
       with:
         python-version: 3.x
         cache: 'pip'
@@ -45,18 +45,18 @@ jobs:
         echo "Ref: $GITHUB_REF"
         BRANCH=${GITHUB_REF##*/}
         echo "Branch: $BRANCH"
-        echo "::set-output name=branch::$(echo $BRANCH)"
+        echo "branch=$BRANCH" >> "$GITHUB_OUTPUT"
         VERSION="${BRANCH##*-}"
         echo "Current Version: $VERSION"
-        echo "::set-output name=version::$(echo $VERSION)"
+        echo "version=$VERSION" >> "$GITHUB_OUTPUT"
         VERSIONS=$(list-versions)
         echo "Available Versions: $VERSIONS"
-        echo "::set-output name=versions::$(echo $VERSIONS)"
+        echo "versions=$VERSIONS" >> "$GITHUB_OUTPUT"
       env:
         GITHUB_USER: ${{ github.actor }}
         GITHUB_TOKEN: ${{ github.token }}
     - name: Upload to crowdin
-      uses: crowdin/github-action@v2.8.0
+      uses: crowdin/github-action@8868a33591d21088edfc398968173a3b98d51706 # v2.16.2
       if: github.ref_name == 'stable' || startsWith(github.ref_name, 'release-')
       with:
         crowdin_branch_name: ${{ steps.variables.outputs.version }}
@@ -76,17 +76,17 @@ jobs:
       packages: write
     steps:
       - name: Set up QEMU
-        uses: docker/setup-qemu-action@v3
+        uses: docker/setup-qemu-action@ce360397dd3f832beb865e1373c09c0e9f86d70a # v4.0.0
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
+        uses: docker/setup-buildx-action@4d04d5d9486b7bd6fa91e7baf45bbb4f8b9deedd # v4.0.0
       - name: Login to Registry
-        uses: docker/login-action@v3
+        uses: docker/login-action@4907a6ddec9925e35a0a9e82d7399ccc52663121 # v4.1.0
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ env.REGISTRY_USER }}
           password: ${{ env.REGISTRY_PASSWORD }}
       - name: Build and push
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@bcafcacb16a39f128d818304e6c9c0c18556b85f # v7.1.0
         with:
           push: true
           tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ needs.build.outputs.version }}
@@ -113,7 +113,7 @@ jobs:
       packages: write
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
       - name: Generate Dockerfile
         run: ./deployment/generate-dockerfile.sh
         env:
@@ -121,17 +121,17 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
           VERSIONS: ${{ needs.build.outputs.versions }}
       - name: Set up QEMU
-        uses: docker/setup-qemu-action@v3
+        uses: docker/setup-qemu-action@ce360397dd3f832beb865e1373c09c0e9f86d70a # v4.0.0
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
+        uses: docker/setup-buildx-action@4d04d5d9486b7bd6fa91e7baf45bbb4f8b9deedd # v4.0.0
       - name: Login to Registry
-        uses: docker/login-action@v3
+        uses: docker/login-action@4907a6ddec9925e35a0a9e82d7399ccc52663121 # v4.1.0
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ env.REGISTRY_USER }}
           password: ${{ env.REGISTRY_PASSWORD }}
       - name: Build and push
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@bcafcacb16a39f128d818304e6c9c0c18556b85f # v7.1.0
         with:
           push: true
           tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.ref_name == 'dev' && 'dev-latest' || 'latest' }}
