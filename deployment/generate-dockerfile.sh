@@ -2,12 +2,19 @@
 
 REGISTRY=ghcr.io
 IMAGE_NAME=spongepowered/spongedocs
+ACTIVE_VERSION="${ACTIVE_VERSION:-}"
+TAG_PREFIX="${TAG_PREFIX:-}"
 touch deployment/Dockerfile
 
 echo "FROM $REGISTRY/spongepowered/sponge-docs-theme:latest as homepage" >> deployment/Dockerfile
 i=0
 for version in $VERSIONS; do
-    echo "FROM $REGISTRY/$IMAGE_NAME:$version as builder-$i" >> deployment/Dockerfile
+    if [ -n "$ACTIVE_VERSION" ] && [ "$version" = "$ACTIVE_VERSION" ]; then
+        tag="${TAG_PREFIX}${version}"
+    else
+        tag="$version"
+    fi
+    echo "FROM $REGISTRY/$IMAGE_NAME:$tag as builder-$i" >> deployment/Dockerfile
     i=$(( i + 1 ))
 done
 

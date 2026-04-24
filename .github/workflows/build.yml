@@ -69,7 +69,7 @@ jobs:
 
   publish-docker:
     runs-on: ubuntu-latest
-    if: github.ref_name == 'stable' || startsWith(github.ref_name, 'release-')
+    if: github.ref_name == 'stable' || startsWith(github.ref_name, 'release-') || github.ref_name == 'dev'
     needs: build
     permissions:
       contents: read
@@ -89,7 +89,7 @@ jobs:
         uses: docker/build-push-action@bcafcacb16a39f128d818304e6c9c0c18556b85f # v7.1.0
         with:
           push: true
-          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ needs.build.outputs.version }}
+          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.ref_name == 'dev' && 'dev-stable' || needs.build.outputs.version }}
           build-args: |
             GITHUB_USER=SpongePowered
             GITHUB_TOKEN=${{ github.token }}
@@ -98,7 +98,7 @@ jobs:
             CROWDIN_TOKEN=${{ secrets.CROWDIN_TOKEN }}
             CROWDIN_PROJECT_ID=${{ secrets.CROWDIN_PROJECT_ID }}
             CROWDIN_BASE_URL=https://spongepowered.crowdin.com
-            VERSION=${{ needs.build.outputs.version }}
+            VERSION=${{ github.ref_name == 'dev' && 'stable' || needs.build.outputs.version }}
 
   publish-docker-all:
     runs-on: ubuntu-latest
@@ -120,6 +120,8 @@ jobs:
           GITHUB_USER: SpongePowered
           GITHUB_TOKEN: ${{ github.token }}
           VERSIONS: ${{ needs.build.outputs.versions }}
+          ACTIVE_VERSION: ${{ github.ref_name == 'dev' && 'stable' || '' }}
+          TAG_PREFIX: ${{ github.ref_name == 'dev' && 'dev-' || '' }}
       - name: Set up QEMU
         uses: docker/setup-qemu-action@ce360397dd3f832beb865e1373c09c0e9f86d70a # v4.0.0
       - name: Set up Docker Buildx
