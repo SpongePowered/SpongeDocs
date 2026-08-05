@@ -35,49 +35,42 @@ Command                  Description                                Permission
 =======================  =========================================  =============================
 /sponge audit            Forces loading of unloaded classes to      sponge.command.audit
                          enable mixin debugging.
-/sponge blockinfo        Shows the type and some additional         sponge.command.blockinfo
-                         information about the block you are
-                         looking at.
-/sponge chunks           Prints out the chunk data for a world, a   sponge.command.chunks
+/sponge chunks           Prints out the chunk data for a world, a   sponge.command.chunk
                          dimension, or globally.
-/sponge config           Alters a global, world, or a dimension     sponge.command.config
-                         config.
-/sponge entityinfo       Shows the type and some additional         sponge.command.entityinfo
-                         information about the entity you are
-                         looking at.
 /sponge heap             Dumps the JVM heap.                        sponge.command.heap
-/sponge metrics          Gets or sets whether metric (also known    sponge.command.metrics
-                         as server stats) collection is enabled
-                         for a given plugin.
 /sponge mods             Lists currently installed forge mods.      sponge.command.mods
                          (SpongeForge only)
-/sponge plugins list     Lists currently installed Sponge plugins.  sponge.command.plugins
+/sponge info             Shows the type and some additional         sponge.command.info
+                         information about the block or entity 
+                         you are looking at.
+/sponge plugins list     Lists currently installed Sponge plugins.  sponge.command.plugins.list
 /sponge plugins refresh  Asks plugins to perform their own reload   sponge.command.plugins.refresh
                          procedures.
-/sponge reload           Reloads the global, world, or dimension    sponge.command.reload
-                         config.
-/sponge save             Saves the global, world, or dimension      sponge.command.save
-                         config.
+/sponge plugins info     Provides information relating to the       sponge.command.plugins.info                         
+                         provided plugin
+/sponge reload global    Reloads the global config                  sponge.command.reload.global
+/sponge reload world     Reloads the world config                   sponge.command.reload.world
 /sponge tps              Display ticks per second for each world.   sponge.command.tps
 /sponge version          Prints the Sponge/SpongeAPI versions to    sponge.command.version
                          the console.
 /sponge which            Prints which plugin provided the command,  sponge.command.which
                          it's aliases and alternatives.
-/sponge:callback         Internally used for callback actions on
-                         ``Component``\s (such as pagination). Not
+/sponge:callback         Internally used for callback actions on    
+                         ``Component``\s. Not
                          intended to be invoked by hand.
-/sponge:help             View information on commands used on the   sponge.command.help
-                         server.
+/sponge:pagination       Internally used for callback actions on
+                         ``Component``\s for pagination. Not
+                         intended to be invoked by hand.                         
 =======================  =========================================  =============================
-
-|
 
 **Sponge Command Parameters**
 
-* /sponge chunks [-g] [-d dim] [-w world]
-* /sponge config [-g] [-d dim] [-w world] key value
+* /sponge chunks <global | world <world> | dump all>
+* /sponge info [block | blockat [world] <x y z> | entity]
 * /sponge save [-g] [-d dim|*] [-w world|*]
-* /sponge reload [-g] [-d dim|*] [-w world|*]
+* /sponge plugins refresh [pluginId]
+* /sponge plugins info <pluginId>
+* /sponge reload world <world>
 
 **Command Conflicts**
 
@@ -97,19 +90,6 @@ command or another plugin's command, you can restore the expected behavior or pr
     The ``/sponge audit`` command forces loading of any classes which have not yet been loaded, allowing the full output
     from all mixin debugging environment variables to be captured. This also requires the mixins.checks variable, see
     the `Mixin wiki <https://github.com/SpongePowered/Mixin/wiki/Mixin-Java-System-Properties>`__ for more information.
-
-.. tip::
-
-    Here are a few simple examples of the sponge config command in action. Note that at least one target flag must be
-    specified. Please see :doc:`../getting-started/configuration/index` for a more detailed explanation.
-
-    a. ``/sponge config -d minecraft:nether logging.chunk-load true``
-
-    Since a dimension type was specified, this would alter the nether dimension config (and hence all nether worlds).
-
-    b. ``/sponge config -w DIM1 logging.chunk-load true``
-
-    This would alter the config of world named DIM1.
 
 Sponge provides two permissions for debugging purposes:
 
