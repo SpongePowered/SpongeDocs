@@ -7,6 +7,7 @@ Spawning an Entity
     org.spongepowered.math.vector.Vector3d
     org.spongepowered.api.entity.Entity
     org.spongepowered.api.entity.EntityType
+    org.spongepowered.api.registry.DefaultedRegistryReference
     org.spongepowered.api.event.cause.entity.SpawnType
     org.spongepowered.api.event.cause.entity.SpawnTypes
     org.spongepowered.api.world.server.ServerLocation
@@ -49,6 +50,13 @@ This will grab the world from our ``ServerLocation``, which we will need for the
 :javadoc:`EntityVolume.Modifiable#createEntity(Supplier, Vector3d)` to create the entity, but do note that this does not
 spawn the entity into the world, it just will create it. We will need to specify the type of ``Entity`` to spawn, and
 the co-ordinates from our ``Location``.
+
+.. note::
+
+    ``EntityTypes.CREEPER`` is not an ``EntityType`` itself, but a :javadoc:`DefaultedRegistryReference` to one. As a
+    registry reference is also a ``Supplier``, it can be passed to ``createEntity`` directly. If you already have an
+    ``EntityType``, use :javadoc:`EntityVolume.Modifiable#createEntity(EntityType, Vector3d)` instead. See
+    :doc:`../migrating-from-7-to-8` for more on registry references.
 
 Once we have created our ``Entity`` we can then use the world for spawning the ``Entity``. We should specify a
 ``Cause`` for the spawning so other plugins can handle it accordingly. For spawning ``Entity``\ s, it is best to use a

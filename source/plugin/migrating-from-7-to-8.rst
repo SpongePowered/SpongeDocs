@@ -4,6 +4,7 @@ Migrating from API 7 to API 8
 
 .. javadoc-import::
     java.util.concurrent.ExecutorService
+    java.util.function.Supplier
     net.kyori.adventure.text.Component
     net.kyori.adventure.text.LinearComponents
     org.spongepowered.api.Client
@@ -35,6 +36,7 @@ Migrating from API 7 to API 8
     org.spongepowered.api.event.lifecycle.StartedEngineEvent
     org.spongepowered.api.event.lifecycle.StartingEngineEvent
     org.spongepowered.api.event.lifecycle.StoppingEngineEvent
+    org.spongepowered.api.registry.DefaultedRegistryReference
     org.spongepowered.api.registry.RegistryType
     org.spongepowered.api.registry.RegistryTypes
     org.spongepowered.api.scheduler.Scheduler
@@ -123,6 +125,19 @@ separately, allowing an object to exist in multiple registries with different ke
 
 Additionally, unlike in SpongeAPI 7 and earlier where all registries were global to the game instance, in SpongeAPI 8
 and later registries can be scoped to the engine
+
+The constants in classes such as ``BlockTypes``, ``ItemTypes`` and ``EntityTypes`` are no longer the objects
+themselves, but :javadoc:`DefaultedRegistryReference`\ s pointing at them. Call ``get()`` to resolve the actual value,
+for example ``BlockTypes.STONE.get()``. Since a ``DefaultedRegistryReference`` is also a :javadoc:`Supplier`, many
+methods across the API have an overload accepting a ``Supplier`` of the type, so the constant can be passed as-is:
+
+.. code-block:: java
+
+    // These are equivalent
+    world.createEntity(EntityTypes.CREEPER.get(), position);
+    world.createEntity(EntityTypes.CREEPER, position);
+
+Comparisons still need the resolved value, for example ``state.type().equals(BlockTypes.STONE.get())``.
 
 Plugins that wish to add items to the registry must do so during the :javadoc:`RegisterRegistryValueEvent` for the
 :javadoc:`RegistryType` they wish to register the object to. The standard registry types can be found at
