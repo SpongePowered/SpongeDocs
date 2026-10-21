@@ -3,16 +3,17 @@ Spawning an Entity
 ==================
 
 .. javadoc-import::
-    com.flowpowered.math.vector.Vector3d
+    java.util.function.Supplier
+    org.spongepowered.math.vector.Vector3d
     org.spongepowered.api.entity.Entity
     org.spongepowered.api.entity.EntityType
-    org.spongepowered.api.event.cause.entity.spawn.SpawnType
-    org.spongepowered.api.event.cause.entity.spawn.SpawnTypes
+    org.spongepowered.api.event.cause.entity.SpawnType
+    org.spongepowered.api.event.cause.entity.SpawnTypes
     org.spongepowered.api.world.server.ServerLocation
     org.spongepowered.api.world.server.ServerWorld
     org.spongepowered.api.world.volume.entity.EntityVolume.Modifiable
 
-You will need three things for spawning an :javadoc:`Entity`: a **Position** as a ``Vector3d``, an :javadoc:`World`, and an
+You will need three things for spawning an :javadoc:`Entity`: a **Position** as a ``Vector3d``, a :javadoc:`ServerWorld`, and an
 :javadoc:`EntityType`. The process for getting these is quite simple, you just need to grab a ``Position`` from
 somewhere in your plugin code and choose the type of ``Entity`` you wish to spawn.
 
@@ -20,19 +21,19 @@ For example, let's try to spawn a Creeper:
 
 .. code-block:: java
 
+    import org.spongepowered.api.Sponge;
     import org.spongepowered.api.entity.living.monster.Creeper;
     import org.spongepowered.api.entity.EntityTypes;
     import org.spongepowered.api.event.CauseStackManager.StackFrame;
-    import org.spongepowered.api.event.cause.entity.spawn.SpawnTypes;
+    import org.spongepowered.api.event.EventContextKeys;
+    import org.spongepowered.api.event.cause.entity.SpawnTypes;
     import org.spongepowered.api.world.server.ServerLocation;
     import org.spongepowered.api.world.server.ServerWorld;
-
-    import java.util.Optional;
 
     public void spawnEntity(ServerLocation spawnLocation) {
         ServerWorld world = spawnLocation.world();
 
-        Creaper creeper = world.createEntity(EntityTypes.CREEPER, spawnLocation.getPosition());
+        Creeper creeper = world.createEntity(EntityTypes.CREEPER, spawnLocation.position());
 
         // We need to push a new cause StackFrame to the stack so we can add our own causes
         // In previous versions of the API you had to submit a Cause parameter
@@ -45,7 +46,7 @@ For example, let's try to spawn a Creeper:
     }
 
 This will grab the world from our ``ServerLocation``, which we will need for the actual spawning. Next, it uses
-:javadoc:`EntityVolume.Modifiable#createEntity(EntityType, Vector3d)` to create the entity, but do note that this does not
+:javadoc:`EntityVolume.Modifiable#createEntity(Supplier, Vector3d)` to create the entity, but do note that this does not
 spawn the entity into the world, it just will create it. We will need to specify the type of ``Entity`` to spawn, and
 the co-ordinates from our ``Location``.
 
